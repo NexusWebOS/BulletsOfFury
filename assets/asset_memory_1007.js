@@ -8,6 +8,8 @@ function bofDerivedCachesRetire(){
   _stage7TerrainCache,_landMasks,_terrMasks,_btmCache,_opnSil,_lateSpriteCache,
   CFX_FLIGHT_LIGHT,hammerTintCache,archTintCache,hammerStormPaletteCache,hammerChromiumCache];
  for(const cache of caches){if(cache instanceof Map)cache.clear();else for(const k in cache)delete cache[k];}
+ // The map was cleared above; its byte counter must retire with the plates.
+ _lateSpriteBytes=0;
  if(typeof ROT5!=='undefined'){ROT5.cache.clear();ROT5.bytes=0;}
 }
 function bofMemoryBegin(stage,keys){

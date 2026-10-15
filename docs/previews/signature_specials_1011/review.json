@@ -1,0 +1,81 @@
+{
+  "pilots": [
+    {
+      "key": "axel",
+      "name": "MEGA SHIELD MK II",
+      "bonus": "50% STRONGER REFLECTED SHOTS"
+    },
+    {
+      "key": "decker",
+      "name": "CLOAKING SYSTEM MK II",
+      "bonus": "20 SECOND TARGETING DISRUPTION"
+    },
+    {
+      "key": "maverick",
+      "name": "HELIX BEAM MK II",
+      "bonus": "25% STRONGER CHARGED HELIX"
+    },
+    {
+      "key": "freezer",
+      "name": "THERMOSHOCK MK II",
+      "bonus": "DEEPER TIME FREEZE"
+    },
+    {
+      "key": "juggernaut",
+      "name": "WRECKING BALL MK II",
+      "bonus": "20% FASTER FLAIL ROTATION"
+    },
+    {
+      "key": "yuri",
+      "name": "CHAIN LIGHTNING MK II",
+      "bonus": "EXTRA CHAIN TIER"
+    },
+    {
+      "key": "cole",
+      "name": "NUKE STRIKE MK II",
+      "bonus": "TWO ADDITIONAL WARHEADS"
+    },
+    {
+      "key": "lizzie",
+      "name": "ATOM BOMB MK II",
+      "bonus": "TWO ADDITIONAL ATOM BOMBS"
+    },
+    {
+      "key": "falva",
+      "name": "ROLLER BALL MK II",
+      "bonus": "25% STRONGER ROLLER BALL"
+    }
+  ],
+  "rebels": [
+    {
+      "key": "voss",
+      "kind": "turbo",
+      "name": "TURBO OVERDRIVE"
+    },
+    {
+      "key": "nyx",
+      "kind": "cloak",
+      "name": "GHOSTKNIFE CLOAK"
+    },
+    {
+      "key": "rook",
+      "kind": "slug",
+      "name": "HEAVY GUN BARRAGE"
+    },
+    {
+      "key": "kaia",
+      "kind": "rockets",
+      "name": "TWIN SEEKER RACK"
+    },
+    {
+      "key": "jace",
+      "kind": "helix",
+      "name": "MOLTEN HELIX NOVA"
+    }
+  ],
+  "native": {
+    "passed": 57,
+    "failed": 0,
+    "errors": []
+  }
+}

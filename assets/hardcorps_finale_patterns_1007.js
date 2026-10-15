@@ -72,8 +72,14 @@ aa5GhostRig=function(b){return hf7PoseApply(b,HF7.base.ghost.apply(this,argument
 r30Parts=function(b){return hf7PoseApply(b,HF7.base.parts.apply(this,arguments));};
 function hf7PhysicalPose(b,Q){const {K,u}=Q,kind=K.def.kind;K.pose={};
  const attack=clamp(u/K.active,0,1),reach=u<0?-.12*Math.sin(clamp(K.t/K.tell,0,1)*Math.PI):u<K.active?Math.sin(Math.min(1,attack*1.7)*Math.PI/2):Math.max(0,1-(u-K.active)/K.recover);
- if(['arms','gate','pincer'].includes(kind))for(const L of K.lines){if(!hf7Alive(b,L.module))continue;
-  const dx=(L.ex-L.x)*reach,dy=(L.ey-L.y)*reach;K.pose[L.module]={x:L.cx+dx,y:L.cy+dy};}
+ if(['arms','gate','pincer'].includes(kind)){
+  // An arm strike drives the attached body forward. Sliding an entire arm
+  // plate to the target tears its shoulder away from the torso.
+  const L=K.lines[0],wide=kind!=='arms',armReach=wide?145:98;
+  b.x=lerp(K.origin.x,clamp(K.tx,camLeftX()+105,camRightX()-105),reach);
+  b.y=lerp(K.origin.y,clamp(K.ty-armReach,viewTopY()+125,VH-armReach-35),reach);
+  for(const p of K.ports)K.pose[p.module]={rot:(p.module==='left'?-1:1)*(.75*(1-clamp(u/K.active,0,1))-.25)*Math.max(0,reach)};
+ }
  if(kind==='riposte'){const k=u<0?0:u<K.active?clamp(u/.65,0,1):1-clamp((u-K.active)/K.recover,0,1);
   b.x=lerp(K.origin.x,K.tx+35,k);b.y=lerp(K.origin.y,K.ty-85,k)-(u<K.active?Math.sin(k*Math.PI)*90:0);}
  if(kind==='bellows')for(const p of K.ports)K.pose[p.module]={x:p.cx,y:p.cy-24*Math.min(1,K.t/K.tell),rot:(p.x<b.x?-1:1)*-.2};

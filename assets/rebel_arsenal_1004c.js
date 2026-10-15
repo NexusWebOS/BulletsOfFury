@@ -60,8 +60,34 @@ rg4Attack=function(q,R,G,forced){if(!G.arsenal1004c)return RA4_BASE.attack.apply
  G.releaseAt=G.age+(diffKey==='easy'?1.8:1.15);ra4Log(G,'specialStart',{pilot:q.key,kind});
 };
 function ra4DashSetup(q,A){const target=A.target.ref;
- A.tx=clamp(target.x,camLeftX()+30,camRightX()-30);A.ty=clamp(target.y,PLAY.y+80,VH-65);
+ // The warning commits its target before launch. The stage-3 caller has no
+ // warning snapshot, so it still receives its original target fallback.
+ A.tx=clamp(A.tx??target.x,camLeftX()+30,camRightX()-30);A.ty=clamp(A.ty??target.y,PLAY.y+80,VH-65);
  A.a=Math.atan2(A.ty-q.y,A.tx-q.x);A.ox=q.x;A.oy=q.y;A.distance=Math.min(620,Math.hypot(A.tx-q.x,A.ty-q.y)+125);A.travel=0;A.hit=new Set();q.rfHeading=A.a;
+ if(A.kind==='turbo'){
+  const dx=Math.cos(A.a),dy=Math.sin(A.a),edge=[];
+  if(Math.abs(dx)>.001)edge.push(((dx>0?camRightX()+110:camLeftX()-110)-q.x)/dx);
+  if(Math.abs(dy)>.001)edge.push(((dy>0?VH+110:PLAY.y-110)-q.y)/dy);
+  A.distance=Math.min(...edge.filter(d=>d>0));
+ }
+}
+function ra4TurboTrace(q,A,scale=1){const M=q.rg4;M.trace.push({x:q.x,y:q.y,a:q.rfHeading??A.a,t:0,scale});if(M.trace.length>9)M.trace.shift();}
+function ra4TurboReturn(q,A,G){
+ const top=PLAY.y-110,y=PLAY.y+83+(q.i%2)*46,lo=camLeftX()+54,hi=camRightX()-54;
+ const targets=ra4Targets(),candidates=[lo,hi,clamp(camLeftX()+viewW()/2+(q.i-2)*Math.min(82,(viewW()-112)/4),lo,hi)];
+ const clearance=x=>Math.min(...targets.map(t=>Math.hypot(x-t.ref.x,y-t.ref.y)));
+ const x=candidates.sort((a,b)=>clearance(b)-clearance(a))[0];
+ // Return above the arena while still outside it, then visibly descend. Never
+ // switch off the wake and drag the hull back across the player's position.
+ const edge=q.x<camLeftX()?camLeftX()-110:camRightX()+110;
+ A.returnPath=[{x:edge,y:q.y},{x:edge,y:top},{x,y:top},{x,y}];A.returnAt=0;A.phase='return';A.t=0;
+ G.releaseAt=Math.max(G.releaseAt,G.age+1.2);ra4Log(G,'turboReturn',{x,y});
+}
+function ra4TurboReturnTick(q,A,G,dt){
+ const P=A.returnPath[A.returnAt];if(!P){q.rfHeading=null;q.rg4.act=null;q.rg4.cd=7*(G.gang?.82:diffKey==='easy'?1.2:1);q.rg4.gunCd=Math.max(q.rg4.gunCd,1.0);ra4Log(G,'turboRecovered',{x:q.x,y:q.y});return;}
+ const dx=P.x-q.x,dy=P.y-q.y,d=Math.hypot(dx,dy),visible=A.returnAt===A.returnPath.length-1,speed=visible?240:780,step=Math.min(d,speed*dt);
+ if(d>.001){q.rfHeading=Math.atan2(dy,dx);q.x+=dx/d*step;q.y+=dy/d*step;ra4TurboTrace(q,A,visible?.65:1);}
+ if(d<=step+.001)A.returnAt++;
 }
 function ra4RamHit(q,A){for(const t of ra4Targets()){if(A.hit.has(t.ref)||Math.hypot(t.ref.x-q.x,t.ref.y-q.y)>35)continue;A.hit.add(t.ref);
  if(t.seat)withSeat(t.seat,()=>playerHit('rebel charge dash'));
@@ -91,11 +117,11 @@ rg4AttackTick=function(q,R,G,dt){const M=q.rg4,A=M.act;if(!G.arsenal1004c||!A||!
  if(A.phase==='fire'){
   if(kind==='turbo'||kind==='ram'){
    const speed=diffKey==='easy'?580:780,step=speed*dt;A.travel+=step;q.x=A.ox+Math.cos(A.a)*A.travel;q.y=A.oy+Math.sin(A.a)*A.travel;
-   M.trace.push({x:q.x,y:q.y,a:A.a,t:0});if(M.trace.length>9)M.trace.shift();ra4RamHit(q,A);
+   ra4TurboTrace(q,A);ra4RamHit(q,A);
    if(A.travel>=A.distance){A.cycle++;if(kind==='turbo'&&A.cycle<(G.gang?4:3)){
     const dir=A.cycle%2?1:-1;q.x=dir>0?camLeftX()-64:camRightX()+64;q.y=clamp(A.target.ref.y+(A.cycle%2?32:-32),PLAY.y+145,VH-80);
     A.tx=dir>0?camRightX()+80:camLeftX()-80;A.ty=q.y;A.a=dir>0?0:Math.PI;A.ox=q.x;A.oy=q.y;A.distance=viewW()+150;A.travel=0;A.phase='row';A.t=0;A.warm=diffKey==='easy'?1.3:1.0;A.hit=new Set();q.rfHeading=A.a;
-   }else{A.phase='recover';A.t=0;}}
+   }else if(kind==='turbo')ra4TurboReturn(q,A,G);else{A.phase='recover';A.t=0;}}
   }
   if(kind==='slug'){A.cd-=dt;if(A.cd<=0&&A.shot<(G.gang?20:14)){A.cd=G.gang?.10:.13;const side=A.shot++%2?1:-1,p={x:q.x+side*23,y:q.y+16};
    rg4Round(p,A.a+Math.sin(A.shot*.71)*.06,4.9,'s6tracer',{_ra4Slug:true,owner:q});q._rg4Muzzle=.11;Audio.SFX.enemyMachineGunHeavy?.();}}
@@ -105,6 +131,8 @@ rg4AttackTick=function(q,R,G,dt){const M=q.rg4,A=M.act;if(!G.arsenal1004c||!A||!
   const end=({slug:G.gang?2.25:2.0,rockets:G.gang?2.7:1.95,helix:1.4,cloak:G.gang?6.5:5.2})[kind];if(end&&A.t>=end){A.phase='recover';A.t=0;if(kind==='cloak'){q.frCloak=0;rg4FX(G,2,q.x,q.y,90,.55);av3Sound('teleport_in',.7);}}
  }else if(A.phase==='row'){
   combatWarningTick(q,'ra4-row-'+A.cycle,Math.min(A.t,A.warm-.001),A.warm);if(A.t>=A.warm){A.phase='fire';A.t=0;Audio.SFX.chargeDash?.();}
+ }else if(A.phase==='return'&&kind==='turbo'){
+  ra4TurboReturnTick(q,A,G,dt);
  }else if(A.phase==='recover'){
   q.frCloak=0;q.rfHeading=null;const x=camLeftX()+viewW()/2+(q.i-2)*Math.min(82,(viewW()-112)/4),y=PLAY.y+83+(q.i%2)*46;
   q.x+=clamp(x-q.x,-dt*330,dt*330);q.y+=clamp(y-q.y,-dt*330,dt*330);
@@ -134,7 +162,7 @@ rg4HealthBars=function(b){RA4.bars=[];for(const q of b._rebels.ships){const P=ra
  const im=ra4Image('icon_'+q.key);ra4Blit(im,P.x-P.w/2-9,P.y,16,16);
  ctx.save();ctx.fillStyle='#030810';ctx.fillRect(P.x-P.w/2-1,P.y-1,P.w+2,7);ctx.fillStyle='#34404d';ctx.fillRect(P.x-P.w/2,P.y,P.w,5);ctx.fillStyle=RA4_COLORS[q.key];ctx.fillRect(P.x-P.w/2,P.y,P.w*clamp(q.hp/q.max,0,1),5);ctx.restore();campText(q.key.toUpperCase(),P.x,P.y-7,7,'#edf6ff');
  }};
-function ra4LockWarning(A){if(!A.locked)return;const p=A.target.ref,f=Math.floor(A.t*11)%4,im=retinaTinted(A.t/A.warm>.8?'retB':'retA',f,'yuri');
+function ra4LockWarning(A,pilot='kaia'){if(!A.locked)return;const p=A.target.ref,f=Math.floor(A.t*11)%4,im=retinaTinted(A.t/A.warm>.8?'retB':'retA',f,pilot);
  ra4Blit(im,p.x,p.y,46,46);}
 rg4Warning=function(q,A){if(!['turbo','ram','slug','rockets','helix','cloak'].includes(A.kind))return RA4_BASE.warning.apply(this,arguments);
  if(!['charge','row'].includes(A.phase)||A.kind==='cloak')return;const p=clamp(A.t/A.warm,0,1);
@@ -143,15 +171,17 @@ rg4Warning=function(q,A){if(!['turbo','ram','slug','rockets','helix','cloak'].in
  combatWarningDraw(q,{x,y,ex,ey,len:row?Math.abs(ex-x):undefined,width:['turbo','ram'].includes(A.kind)?55:A.kind==='helix'?48:26,progress:p,fieldOnly:true});
  if(row)ctx.restore();
  const key='bmfx_alert_'+l23FovPhase(p)+'_impact_imminent';if(XART.rdy(key))ra4Blit(XART.get(key),row?camLeftX()+viewW()/2:q.x,row?y:q.y+40,30,30);
- if(A.kind==='rockets')ra4LockWarning(A);
+ if(A.kind==='rockets')ra4LockWarning(A,q.key);
 };
 fr27RebelDrawShip=function(q){const G=rg4State(),A=q.rg4?.act;if(!G?.arsenal1004c)return RA4_BASE.ship.apply(this,arguments);
  const cloak=q.frCloak>0;if(cloak){const key='rr_ship_'+REBEL_SHIPS[q.i],im=XART.rdy(key)?XART.get(key):null,w=SHIP_DRAW_H*1.5,h=im?w*im.height/im.width:80;
-  ra4Blit(im,q.x,q.y,w,h,0,.055+.035*Math.sin(G.age*9));rg4Cell(1,Math.floor(G.age*10)%6,q.x,q.y,w*.95,h,.12);
+  // The transition diamond is drawn by the charge controller. Once cloaked,
+  // keep only her faint hull trace; never loop the bright forming effect.
+  ra4Blit(im,q.x,q.y,w,h,0,.055+.035*Math.sin(G.age*9));
   if(q.flash>0)ra4Blit(xartTint(key,'#ffffff',1),q.x,q.y,w,h,0,Math.min(1,q.flash*9));
  }else RA4_BASE.ship.apply(this,arguments);
  if(q.dead)return;
- for(const t of q.rg4.trace)ra4Reel('dash',Math.floor(G.age*20)%6,t.x-Math.cos(t.a)*40,t.y-Math.sin(t.a)*40,115,34,t.a);
+ for(const t of q.rg4.trace){ctx.save();ctx.globalAlpha*=clamp(1-t.t/.2,0,1);const s=t.scale??1;ra4Reel('dash',Math.floor(G.age*20)%6,t.x-Math.cos(t.a)*40*s,t.y-Math.sin(t.a)*40*s,115*s,34*s,t.a);ctx.restore();}
  if(q.key==='kaia')for(const side of [-1,1]){const f=q.rg4.launchFlash>0&&q.rg4.launchSide===side?3:q.rg4.act?.phase==='charge'?1:0;
   ra4Reel('launcher',f,q.x+side*27,q.y+19,22,54);}
  if(A?.kind==='helix'&&A.phase==='charge'){

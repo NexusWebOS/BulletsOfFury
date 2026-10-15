@@ -1,0 +1,1386 @@
+{
+  "date": "2026-10-11",
+  "entry": "expansion/topdown/index.html",
+  "build": "overdrive1011-menu-r1",
+  "scope": "Native Chromium pixels, keyboard/pointer events, real Gamepad polling with simulated hardware, decoded media, protected combat and achievement completion fixtures. No unassisted campaign balance claim.",
+  "passed": 118,
+  "failed": 0,
+  "browserErrors": [],
+  "counts": {
+    "menu": 53,
+    "sound": 43,
+    "warrior": 22
+  },
+  "baseSuite": {
+    "passed": 8696,
+    "failed": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "previousChipBaselineFailures": 5,
+    "note": "Earlier five failures are absent in this current shared checkout. The standalone runtime is outside the base harness; original-game addon integration was also checked natively."
+  },
+  "verification": {
+    "menu": {
+      "checks": [
+        {
+          "name": "startup waits for input, with no absent voice request or stage picker",
+          "passed": true
+        },
+        {
+          "name": "Start enters the new Overdrive intro",
+          "passed": true
+        },
+        {
+          "name": "intro reaches the original-style title menu",
+          "passed": true
+        },
+        {
+          "name": "Title uses the decoded original BOF title track",
+          "passed": true
+        },
+        {
+          "name": "New Game goes to five new difficulty plates",
+          "passed": true
+        },
+        {
+          "name": "difficulty enters the actual twelve-pilot roster",
+          "passed": true
+        },
+        {
+          "name": "pilot selection plays the original PilotSelect music",
+          "passed": true
+        },
+        {
+          "name": "all authored UI, original portraits, ships, emblems and bitmap glyphs decode",
+          "passed": true
+        },
+        {
+          "name": "every new UI frame and boss canvas has even registered dimensions",
+          "passed": true
+        },
+        {
+          "name": "pilot confirmation opens the campaign briefing",
+          "passed": true
+        },
+        {
+          "name": "briefing starts the first authored campaign mission",
+          "passed": true
+        },
+        {
+          "name": "Start pauses into Resume, Options and Help",
+          "passed": true
+        },
+        {
+          "name": "pause opens the restored Options menu",
+          "passed": true
+        },
+        {
+          "name": "sound controls change actual music gain",
+          "passed": true
+        },
+        {
+          "name": "Options Cancel restores the exact previous sound mix",
+          "passed": true
+        },
+        {
+          "name": "B resumes paused gameplay",
+          "passed": true
+        },
+        {
+          "name": "Apply persists the changed music setting",
+          "passed": true
+        },
+        {
+          "name": "keyboard capture rebinds and persists movement",
+          "passed": true
+        },
+        {
+          "name": "the rebound key actually moves the tank through native input",
+          "passed": true
+        },
+        {
+          "name": "keyboard reset restores original controls",
+          "passed": true
+        },
+        {
+          "name": "typing accepts letters and Backspace deletes without navigating Back",
+          "passed": true
+        },
+        {
+          "name": "an Overdrive password restores pilot, difficulty, partner and campaign position",
+          "passed": true
+        },
+        {
+          "name": "all 540 campaign passwords round-trip; old and corrupt codes reject",
+          "passed": true
+        },
+        {
+          "name": "invalid passwords stay on the password menu with a chip error cue",
+          "passed": true
+        },
+        {
+          "name": "L cruises in the prior direction while D-pad turns the turret and X fires",
+          "passed": true
+        },
+        {
+          "name": "releasing the cruise shoulder brakes to a stop",
+          "passed": true
+        },
+        {
+          "name": "R shoulder acquires a real Retina target",
+          "passed": true
+        },
+        {
+          "name": "releasing the cannon with R held launches a locked tank missile",
+          "passed": true
+        },
+        {
+          "name": "standard controller preset exposes both shoulders, stick aim and boost",
+          "passed": true
+        },
+        {
+          "name": "standard pad moves, boosts, aims the right stick and fires independently",
+          "passed": true
+        },
+        {
+          "name": "six-button learn records all 14 controls with neutral separation",
+          "passed": true
+        },
+        {
+          "name": "standard learn records 13 controls and persists actual shoulder buttons",
+          "passed": true
+        },
+        {
+          "name": "Help includes the actual museum infantry controls",
+          "passed": true
+        },
+        {
+          "name": "the generated Cancel plate exits controller learning through native pointer input",
+          "passed": true
+        },
+        {
+          "name": "difficulty changes real damage and total lives to 5/3/2/1/1",
+          "passed": true
+        },
+        {
+          "name": "engine reduction and its separate slider reach the actual media gain",
+          "passed": true
+        },
+        {
+          "name": "moving boost earns Full Throttle through actual play",
+          "passed": true
+        },
+        {
+          "name": "destroying six real walls earns Concrete Carnage",
+          "passed": true
+        },
+        {
+          "name": "new Warrior enters a 480-square arena at 1:1 zoom",
+          "passed": true
+        },
+        {
+          "name": "armored hull damage reaches the authored damaged chassis while modules remain mounted",
+          "passed": true
+        },
+        {
+          "name": "actual Warrior defeat awards clear, no-death, pilot and a new password",
+          "passed": true
+        },
+        {
+          "name": "rogue squad, pilot, rescue and full campaign awards use mission completion hooks",
+          "passed": true
+        },
+        {
+          "name": "Furious completion requires all three campaign missions at that difficulty",
+          "passed": true
+        },
+        {
+          "name": "ground maximum weapons feed Combined Arms without repeated saves",
+          "passed": true
+        },
+        {
+          "name": "gallery includes sixteen Overdrive and four shared general awards",
+          "passed": true
+        },
+        {
+          "name": "earned-only filter works",
+          "passed": true
+        },
+        {
+          "name": "all four general awards integrate with original completion and weapon APIs",
+          "passed": true
+        },
+        {
+          "name": "repeat reporting of the same original clear does not double-count",
+          "passed": true
+        },
+        {
+          "name": "original achievement screen includes the new four award rows",
+          "passed": true
+        },
+        {
+          "name": "new general badges decode through original XART keys",
+          "passed": true
+        },
+        {
+          "name": "settings, achievements and campaign Continue survive a real reload",
+          "passed": true
+        },
+        {
+          "name": "menus fit a narrow browser pane without cropping",
+          "passed": true
+        },
+        {
+          "name": "no browser, asset, decode or playback errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "observations": {
+        "passwords": {
+          "ok": true,
+          "n": 540,
+          "legacy": null,
+          "bad": null
+        },
+        "cruise": {
+          "before": {
+            "x": 335.95057602567914,
+            "y": 2200,
+            "aim": -1.5707963267948966
+          },
+          "after": {
+            "dx": 511.45000000001045,
+            "dy": 2200,
+            "angle": -3.141592653589793,
+            "cruise": true,
+            "shots": 9,
+            "award": true
+          }
+        },
+        "retina": {
+          "r": true,
+          "state": {
+            "up": false,
+            "down": false,
+            "left": false,
+            "right": false,
+            "A": false,
+            "B": false,
+            "C": false,
+            "X": false,
+            "Y": false,
+            "retina": true,
+            "aimLeft": false,
+            "aimRight": false,
+            "back": false,
+            "help": false,
+            "setup": false,
+            "start": false,
+            "reload": false,
+            "boost": false,
+            "cruise": false,
+            "prone": false,
+            "tapWall": false,
+            "crash": false,
+            "exitVehicle": false,
+            "swap": false,
+            "wheel": 0,
+            "click": false,
+            "padActive": true
+          },
+          "cam": {
+            "x": 10,
+            "y": 1995.222352705711,
+            "shake": 0,
+            "zoom": 1,
+            "minY": 0,
+            "maxY": 1000000000,
+            "minX": 0,
+            "follow": null,
+            "kick": null
+          },
+          "p": {
+            "x": 250,
+            "y": 2200,
+            "aim": 3.141592653589793
+          },
+          "target": [
+            {
+              "x": 250,
+              "y": 2070,
+              "dead": false
+            }
+          ]
+        },
+        "difficulties": [
+          {
+            "d": "easy",
+            "damage": 1.3000000000000007,
+            "want": 1.3,
+            "lives": 5
+          },
+          {
+            "d": "normal",
+            "damage": 2,
+            "want": 2,
+            "lives": 3
+          },
+          {
+            "d": "hard",
+            "damage": 2.5,
+            "want": 2.5,
+            "lives": 2
+          },
+          {
+            "d": "furious",
+            "damage": 3,
+            "want": 3,
+            "lives": 1
+          },
+          {
+            "d": "insanity",
+            "damage": 3.5999999999999996,
+            "want": 3.6,
+            "lives": 1
+          }
+        ],
+        "quietEngineVolume": 0.008320000000000001,
+        "baseIntegration": {
+          "original": 75,
+          "n": 79,
+          "awards": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "dedup": true,
+          "points": 450,
+          "profile": 4
+        }
+      }
+    },
+    "sound": {
+      "checks": [
+        {
+          "name": "81 approved shipping MP3s match their source hashes",
+          "passed": true
+        },
+        {
+          "name": "43 unapproved sounds and all genre banks remain excluded",
+          "passed": true
+        },
+        {
+          "name": "all four score cues and every ground cue are imported",
+          "passed": true
+        },
+        {
+          "name": "boot waits for a real input before unlocking sound",
+          "passed": true
+        },
+        {
+          "name": "pilot/mission selection, equipment confirmation and launch use their chip cues",
+          "passed": true
+        },
+        {
+          "name": "all 81 approved sounds decode and advance in real Chromium",
+          "passed": true
+        },
+        {
+          "name": "registered loop flags and voice gains reach the actual media elements",
+          "passed": true
+        },
+        {
+          "name": "tank idle has one decoded engine loop and no tread/servo loop",
+          "passed": true
+        },
+        {
+          "name": "sideways movement and independent aim own separate playing tread/servo loops",
+          "passed": true
+        },
+        {
+          "name": "boost release starts one chargeDash cue and speeds up the moving loops",
+          "passed": true
+        },
+        {
+          "name": "release stops tread/servo voices while the engine returns to idle",
+          "passed": true
+        },
+        {
+          "name": "a tank pushing into solid cover does not keep a travelling tread loop",
+          "passed": true
+        },
+        {
+          "name": "a real uncharged cannon release uses the tank cannon sample",
+          "passed": true
+        },
+        {
+          "name": "charged armor-piercing release uses railCannon and retains physical recoil",
+          "passed": true
+        },
+        {
+          "name": "actual homing launch and contact use distinct launch/impact samples",
+          "passed": true
+        },
+        {
+          "name": "enemy destruction has its approved enemyDie cue",
+          "passed": true
+        },
+        {
+          "name": "rammed concrete, buildings and crates have distinct demolition cues",
+          "passed": true
+        },
+        {
+          "name": "weapon, ammunition, extra-life and score pickups use their individual cues",
+          "passed": true
+        },
+        {
+          "name": "native detection starts spotted/alert cues and an owner-controlled base alarm",
+          "passed": true
+        },
+        {
+          "name": "the alarm stops when detection changes from ALERT to EVASION",
+          "passed": true
+        },
+        {
+          "name": "Start/pause releases every effect loop immediately",
+          "passed": true
+        },
+        {
+          "name": "resuming restarts current movement loops without duplicate voices",
+          "passed": true
+        },
+        {
+          "name": "fatal damage uses playerDeath and stops live vehicle loops",
+          "passed": true
+        },
+        {
+          "name": "losing focus suspends effects and releases all loops",
+          "passed": true
+        },
+        {
+          "name": "focus restores the live engine without changing combat state",
+          "passed": true
+        },
+        {
+          "name": "The Warrior bullet volleys use quadFire",
+          "passed": true
+        },
+        {
+          "name": "The Warrior visor volley uses the approved heavy enemy laser",
+          "passed": true
+        },
+        {
+          "name": "The Warrior missile salvo uses missileLaunch",
+          "passed": true
+        },
+        {
+          "name": "boss destruction uses expBoss while the supplied Warrior music retains its owner",
+          "passed": true
+        },
+        {
+          "name": "Wren Bastion has a static loop and a heavy shield-impact cue",
+          "passed": true
+        },
+        {
+          "name": "breaking the Bastion module plays shieldBreak and stops its own static",
+          "passed": true
+        },
+        {
+          "name": "Museum foot movement alternates actual footstep A/B cues without a tank engine",
+          "passed": true
+        },
+        {
+          "name": "infantry cover and rifle fire use their ground cues",
+          "passed": true
+        },
+        {
+          "name": "empty magazine reports error and completed reload reports ammunition",
+          "passed": true
+        },
+        {
+          "name": "firewall hook uses a pitch-preserved stretched span at an audible media rate",
+          "passed": true
+        },
+        {
+          "name": "firewall duration finishes naturally and releases its owner",
+          "passed": true
+        },
+        {
+          "name": "firewall audio stops immediately when its bounds leave the screen",
+          "passed": true
+        },
+        {
+          "name": "firewall impact/death cancels a sustained voice",
+          "passed": true
+        },
+        {
+          "name": "pausing also cancels the firewall owner voice",
+          "passed": true
+        },
+        {
+          "name": "rapid impacts reuse at most four voices instead of stacking new media elements",
+          "passed": true
+        },
+        {
+          "name": "sound runtime reports no missing-file, decode or playback errors",
+          "passed": true
+        },
+        {
+          "name": "the portable file:// expansion actually plays its chip MP3s",
+          "passed": true
+        },
+        {
+          "name": "native pages have zero page, console and asset errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "observations": {
+        "media": [
+          {
+            "key": "error",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_error.mp3",
+            "duration": 0.454376,
+            "time": 0.015731,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "enemyDie",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_enemyDie.mp3",
+            "duration": 0.286667,
+            "time": 0.015738,
+            "loop": false,
+            "volume": 0.384
+          },
+          {
+            "key": "alert",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_alert.mp3",
+            "duration": 0.973016,
+            "time": 0.015735,
+            "loop": false,
+            "volume": 0.384
+          },
+          {
+            "key": "shieldBreak",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_shieldBreak.mp3",
+            "duration": 0.42,
+            "time": 0.015738,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "bombDrop",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_bombDrop.mp3",
+            "duration": 1.399977,
+            "time": 0.015735,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "forgeWeld",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_forgeWeld.mp3",
+            "duration": 1.054036,
+            "time": 0.015739,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "forgeComplete",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_forgeComplete.mp3",
+            "duration": 0.919637,
+            "time": 0.015738,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "weaponFound",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_weaponFound.mp3",
+            "duration": 1.1,
+            "time": 0.015739,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "loadoutSelect",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_loadoutSelect.mp3",
+            "duration": 0.09093,
+            "time": 0.0075,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "loadoutEquip",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_loadoutEquip.mp3",
+            "duration": 0.224104,
+            "time": 0.005455,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "loadoutLaunch",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_loadoutLaunch.mp3",
+            "duration": 0.771111,
+            "time": 0.00546,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "element_lightning_hit",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_element_lightning_hit.mp3",
+            "duration": 0.158957,
+            "time": 0.005459,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "geyserLightning",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_geyserLightning.mp3",
+            "duration": 0.603333,
+            "time": 0.005457,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "scoreBullet100",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_scoreBullet100.mp3",
+            "duration": 0.766667,
+            "time": 0.005459,
+            "loop": false,
+            "volume": 0.36000000000000004
+          },
+          {
+            "key": "scoreBullet250",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_scoreBullet250.mp3",
+            "duration": 0.8,
+            "time": 0.005458,
+            "loop": false,
+            "volume": 0.36000000000000004
+          },
+          {
+            "key": "scoreBullet500",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_scoreBullet500.mp3",
+            "duration": 0.883333,
+            "time": 0.005458,
+            "loop": false,
+            "volume": 0.36000000000000004
+          },
+          {
+            "key": "scoreBullet1000",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_scoreBullet1000.mp3",
+            "duration": 1.05,
+            "time": 0.014515,
+            "loop": false,
+            "volume": 0.36000000000000004
+          },
+          {
+            "key": "stylishDodge",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_stylishDodge.mp3",
+            "duration": 1,
+            "time": 0.014515,
+            "loop": false,
+            "volume": 0.36000000000000004
+          },
+          {
+            "key": "furiousCoin",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_furiousCoin.mp3",
+            "duration": 1,
+            "time": 0.014514,
+            "loop": false,
+            "volume": 0.36000000000000004
+          },
+          {
+            "key": "achievement",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_achievement.mp3",
+            "duration": 1.086395,
+            "time": 0.014519,
+            "loop": false,
+            "volume": 0.36000000000000004
+          },
+          {
+            "key": "timedBombBeep",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_timedBombBeep.mp3",
+            "duration": 0.160204,
+            "time": 0.014516,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "timedBombBlast",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_timedBombBlast.mp3",
+            "duration": 1.636667,
+            "time": 0.014515,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "chargeDash",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_chargeDash.mp3",
+            "duration": 0.638889,
+            "time": 0.014514,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "enemyLaser",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_enemyLaser.mp3",
+            "duration": 0.225556,
+            "time": 0.011616,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "missileLaunch",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_missileLaunch.mp3",
+            "duration": 0.438458,
+            "time": 0.007578,
+            "loop": false,
+            "volume": 0.4
+          },
+          {
+            "key": "nuclearLaunch",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_nuclearLaunch.mp3",
+            "duration": 1.514671,
+            "time": 0.004566,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "bossCannon",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_bossCannon.mp3",
+            "duration": 0.255102,
+            "time": 0.004569,
+            "loop": false,
+            "volume": 0.41600000000000004
+          },
+          {
+            "key": "railCannon",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_railCannon.mp3",
+            "duration": 0.291519,
+            "time": 0.004571,
+            "loop": false,
+            "volume": 0.496
+          },
+          {
+            "key": "impactMetal",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_impactMetal.mp3",
+            "duration": 0.20322,
+            "time": 0.004569,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "firewallLaunch",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_firewallLaunch.mp3",
+            "duration": 0.67,
+            "time": 0.004569,
+            "loop": false,
+            "volume": 0.4
+          },
+          {
+            "key": "missileHit",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_missileHit.mp3",
+            "duration": 0.386667,
+            "time": 0.004568,
+            "loop": false,
+            "volume": 0.4
+          },
+          {
+            "key": "bombDropLegacy",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_bombDropLegacy.mp3",
+            "duration": 0.986667,
+            "time": 0.001444,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "extraLife",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_extraLife.mp3",
+            "duration": 1.140431,
+            "time": 0.01449,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "playerDeath",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_playerDeath.mp3",
+            "duration": 1.153333,
+            "time": 0.01449,
+            "loop": false,
+            "volume": 0.52
+          },
+          {
+            "key": "decker_shell",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_decker_shell.mp3",
+            "duration": 0.17483,
+            "time": 0.014489,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "enemyHeavyLaser",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_enemyHeavyLaser.mp3",
+            "duration": 0.458186,
+            "time": 0.0143,
+            "loop": false,
+            "volume": 0.34400000000000003
+          },
+          {
+            "key": "quadFire",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_quadFire.mp3",
+            "duration": 0.22551,
+            "time": 0.014304,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "furnaceLaserBurst",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_furnaceLaserBurst.mp3",
+            "duration": 0.525601,
+            "time": 0.014303,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "hammerEradBlast",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_hammerEradBlast.mp3",
+            "duration": 0.836984,
+            "time": 0.014301,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "shieldHitLight",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_shieldHitLight.mp3",
+            "duration": 0.123333,
+            "time": 0.014303,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "laserBeamHit",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_laserBeamHit.mp3",
+            "duration": 0.125578,
+            "time": 0.004527,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "shieldImpact",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_shieldImpact.mp3",
+            "duration": 0.139025,
+            "time": 0.004526,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "shieldImpactHeavy",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_shieldImpactHeavy.mp3",
+            "duration": 0.203923,
+            "time": 0.004528,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "shieldDeflect",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_shieldDeflect.mp3",
+            "duration": 0.125669,
+            "time": 0.004525,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "blocked",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_blocked.mp3",
+            "duration": 0.254422,
+            "time": 0.004527,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "slice",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_slice.mp3",
+            "duration": 0.35619,
+            "time": 0.004528,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "douse",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_douse.mp3",
+            "duration": 0.553333,
+            "time": 0.001737,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "freeze",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_freeze.mp3",
+            "duration": 1.148821,
+            "time": 0.001726,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "lockon",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_lockon.mp3",
+            "duration": 0.191927,
+            "time": 0.014475,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "expBoss",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_expBoss.mp3",
+            "duration": 2.286667,
+            "time": 0.014473,
+            "loop": false,
+            "volume": 0.5599999999999999
+          },
+          {
+            "key": "expIce",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_expIce.mp3",
+            "duration": 1.5,
+            "time": 0.014475,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "enemyLightningChaingun",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_enemyLightningChaingun.mp3",
+            "duration": 0.541927,
+            "time": 0.014474,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gravityShoot",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gravityShoot.mp3",
+            "duration": 0.192358,
+            "time": 0.014476,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gravitySnap",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gravitySnap.mp3",
+            "duration": 0.139637,
+            "time": 0.013419,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gravityLock",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gravityLock.mp3",
+            "duration": 0.236213,
+            "time": 0.01342,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gravityScatter",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gravityScatter.mp3",
+            "duration": 0.192132,
+            "time": 0.01342,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gravityChargeBand",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gravityChargeBand.mp3",
+            "duration": 1.166735,
+            "time": 0.003988,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "shadowCharge",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_shadowCharge.mp3",
+            "duration": 1.320408,
+            "time": 0.003988,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "shadowRelease",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_shadowRelease.mp3",
+            "duration": 0.67,
+            "time": 0.003987,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "laserMistUnlock",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_laserMistUnlock.mp3",
+            "duration": 1.268345,
+            "time": 0.001916,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "furyPartArrival",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_furyPartArrival.mp3",
+            "duration": 0.174762,
+            "time": 0.001925,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "bossShieldTeleport",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_bossShieldTeleport.mp3",
+            "duration": 1.1,
+            "time": 0.001924,
+            "loop": false,
+            "volume": 0.24
+          },
+          {
+            "key": "bossShieldStatic",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_bossShieldStatic.mp3",
+            "duration": 1.066667,
+            "time": 0.001923,
+            "loop": true,
+            "volume": 0.144
+          },
+          {
+            "key": "gd_tankEngineLoop",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_tankEngineLoop.mp3",
+            "duration": 2.066667,
+            "time": 0.001935,
+            "loop": true,
+            "volume": 0.064
+          },
+          {
+            "key": "gd_tankTreadLoop",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_tankTreadLoop.mp3",
+            "duration": 2.041338,
+            "time": 0.014003,
+            "loop": true,
+            "volume": 0.16000000000000003
+          },
+          {
+            "key": "gd_turretTraverse",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_turretTraverse.mp3",
+            "duration": 1.066667,
+            "time": 0.014002,
+            "loop": true,
+            "volume": 0.136
+          },
+          {
+            "key": "gd_tankCannon",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_tankCannon.mp3",
+            "duration": 0.290181,
+            "time": 0.014001,
+            "loop": false,
+            "volume": 0.496
+          },
+          {
+            "key": "gd_shellImpact",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_shellImpact.mp3",
+            "duration": 0.603333,
+            "time": 0.01161,
+            "loop": false,
+            "volume": 0.4
+          },
+          {
+            "key": "gd_footstepA",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_footstepA.mp3",
+            "duration": 0.074921,
+            "time": 0.011929,
+            "loop": false,
+            "volume": 0.192
+          },
+          {
+            "key": "gd_footstepB",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_footstepB.mp3",
+            "duration": 0.072653,
+            "time": 0.01161,
+            "loop": false,
+            "volume": 0.192
+          },
+          {
+            "key": "gd_soldierRifle",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_soldierRifle.mp3",
+            "duration": 0.108367,
+            "time": 0.01161,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gd_soldierDown",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_soldierDown.mp3",
+            "duration": 1.133333,
+            "time": 0.01161,
+            "loop": false,
+            "volume": 0.336
+          },
+          {
+            "key": "gd_spotted",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_spotted.mp3",
+            "duration": 0.412268,
+            "time": 0.004502,
+            "loop": false,
+            "volume": 0.4
+          },
+          {
+            "key": "gd_alarmLoop",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_alarmLoop.mp3",
+            "duration": 1.7,
+            "time": 0.004492,
+            "loop": true,
+            "volume": 0.2
+          },
+          {
+            "key": "gd_coverEnter",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_coverEnter.mp3",
+            "duration": 0.103333,
+            "time": 0.004497,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gd_doorOpen",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_doorOpen.mp3",
+            "duration": 0.42,
+            "time": 0.004489,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gd_wallBreak",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_wallBreak.mp3",
+            "duration": 0.503333,
+            "time": 0.004486,
+            "loop": false,
+            "volume": 0.41600000000000004
+          },
+          {
+            "key": "gd_buildingCollapse",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_buildingCollapse.mp3",
+            "duration": 2.286667,
+            "time": 0.003769,
+            "loop": false,
+            "volume": 0.44000000000000006
+          },
+          {
+            "key": "gd_crateBreak",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_crateBreak.mp3",
+            "duration": 0.158277,
+            "time": 0.00377,
+            "loop": false,
+            "volume": 0.32000000000000006
+          },
+          {
+            "key": "gd_mineArm",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_mineArm.mp3",
+            "duration": 0.1578,
+            "time": 0.00377,
+            "loop": false,
+            "volume": 0.30400000000000005
+          },
+          {
+            "key": "gd_ammoPickup",
+            "src": "http://127.0.0.1:51496/expansion/topdown/audio/chip_1011/chip_gd_ammoPickup.mp3",
+            "duration": 0.310068,
+            "time": 0.01161,
+            "loop": false,
+            "volume": 0.30400000000000005
+          }
+        ],
+        "firewallElapsedAfterFirstAdvance": 3.299512199999299,
+        "runtimeFailures": []
+      },
+      "passed": 43,
+      "failed": 0,
+      "scope": "Native media playback and protected gameplay fixtures; firewall is a duration/owner hook, not an installed combat ability."
+    },
+    "warrior": {
+      "checks": [
+        {
+          "name": "all six rebuilt modules decode as fixed 512x512 or 640x512 canvases",
+          "passed": true
+        },
+        {
+          "name": "hull damage and wreck share the intact mounting pivot and scale",
+          "passed": true
+        },
+        {
+          "name": "holding R produces over 1.9x measured travel with authored track dust",
+          "passed": true
+        },
+        {
+          "name": "releasing movement brakes the boosted tank promptly",
+          "passed": true
+        },
+        {
+          "name": "boost spends no energy at rest, exhausts, requires release and refills",
+          "passed": true
+        },
+        {
+          "name": "boosting sideways retains independent turret rotation and gun fire",
+          "passed": true
+        },
+        {
+          "name": "full-speed boost cannot tunnel through a four-pixel concrete wall",
+          "passed": true
+        },
+        {
+          "name": "Mode+C boosts while D-pad strafes and X fires north without cannon charge",
+          "passed": true
+        },
+        {
+          "name": "unmodified controller C still charges and releases the cannon",
+          "passed": true
+        },
+        {
+          "name": "window blur releases boost and movement safely",
+          "passed": true
+        },
+        {
+          "name": "actual Warrior entry starts Mike's decoded stereo boss track",
+          "passed": true
+        },
+        {
+          "name": "supplied track loops through its end during the active fight",
+          "passed": true
+        },
+        {
+          "name": "Warrior spans over 400 world pixels with a larger 332-pixel chassis",
+          "passed": true
+        },
+        {
+          "name": "1:1 duel camera shows both the new boss and player in the arena",
+          "passed": true
+        },
+        {
+          "name": "larger Warrior still launches physical twin-arm homing volleys",
+          "passed": true
+        },
+        {
+          "name": "real boost escapes a committed Warrior ram with collision and damage enabled",
+          "passed": true
+        },
+        {
+          "name": "rebuilt arm detaches with exact mounted art, angle, pivot and scale",
+          "passed": true
+        },
+        {
+          "name": "large arm rotates, falls and settles as an unfaded authored wreck",
+          "passed": true
+        },
+        {
+          "name": "Warrior defeat stops boss music and transitions to clear music/results",
+          "passed": true
+        },
+        {
+          "name": "mission restart restores a full tank boost meter",
+          "passed": true
+        },
+        {
+          "name": "Help still opens and retains the gameplay return path",
+          "passed": true
+        },
+        {
+          "name": "zero page, console and missing-asset errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "observations": {
+        "speed": {
+          "normal": 153.45000060364498,
+          "boosted": 309.9600339294512,
+          "drive": 0.5555555555555549,
+          "speed": 5.534991517637182,
+          "boosting": true,
+          "dust": 20,
+          "stopped": 0.037813265684974624
+        },
+        "audio": {
+          "src": "http://127.0.0.1:59629/expansion/topdown/audio/BOF-O-BOSS1.mp3",
+          "duration": 122.76,
+          "loop": true,
+          "paused": false,
+          "time": 0.064251
+        },
+        "framing": {
+          "boss": {
+            "left": 178.39,
+            "top": 307.6,
+            "right": 616,
+            "bottom": 626.44
+          },
+          "width": 437.61,
+          "zoom": 1,
+          "player": {
+            "x": 242.80499999897674,
+            "y": 416.6502894964824
+          },
+          "camera": {
+            "x": 157.19500000102326,
+            "y": 255.34971050351757
+          },
+          "hullWidth": 332.8
+        }
+      }
+    }
+  },
+  "sha256": {
+    "expansion/topdown/index.html": "0e60b38c5e207b7b26bcd83ffb40c351a5fcd9319128e33328aa28a339e9dcbb",
+    "expansion/topdown/js/frontend_1011.js": "559051cf74188835b46a9fc23250b5864123afe57db1217b69bcbb83a1ea4b76",
+    "expansion/topdown/js/core.js": "741e33fba1070458ce934187967516e2929916ad3e962b798444a0fba8be758a",
+    "expansion/topdown/js/tank.js": "3dc0418de8378a6609715426a043cca957836476971de0ff8a6736e01882f933",
+    "expansion/topdown/js/main.js": "8a0a003c3cbaa50360716c814ac5738f12621e0b2d6fff7338060a050b380b14",
+    "expansion/topdown/js/art.js": "ccc0fbf7f1b6cba27d998f7ff530541699c086b5adefc062ead9883357715e44",
+    "expansion/topdown/js/audio_1011.js": "b17a2c020e5831c1904ac81ca83b0d7212f046a57027c12d359eb2dfc74a77eb",
+    "expansion/topdown/js/boss_warrior.js": "0d27add46ad4c2eeaceb80c2579ea4cd09e39fa8e91713e30c90ca49aacaae74",
+    "assets/general_achievements_1011.js": "558a59f2a1a8e52d660d97b0b45942464186a339f8c32410d0cdaffefca7b524",
+    "expansion/topdown/art/menu_1011/manifest.json": "b314798051828e2e3de16700e3a50deb783b3a23cd4926c9695233308ee4a7dc",
+    "expansion/topdown/art/menu_1011/original_pilot_data.js": "2c697f71100d8059f90930f07cfe4abe930fc95ea7969f7490cba41e50094cde",
+    "expansion/topdown/art/warrior_mk2_1011/manifest.json": "89d158fa3218c04e896a2668ef763b0faa5cc52ec812d41544048e6979362dfc",
+    "expansion/topdown/audio/chip_1011/manifest.json": "c15fe385ad12cecf25bedeaf8242a0287b4935ae516e8db0e0c8cd40079257fa",
+    "assets/game.js": "ddc581d78aaa348c568364b9f960228def38bbee6deb0e310ebdd4f658ff185e",
+    "_BUILD_SOURCE/test_fl.js": "d733bf3862ff9716bf5c8c6ada8698244dbe77b3adc35ea81c9e573438e9c73c"
+  },
+  "screenshots": [
+    "startup.png",
+    "title.png",
+    "title_continue.png",
+    "title_narrow.png",
+    "difficulty.png",
+    "pilot_cole.png",
+    "pilot_hotwire.png",
+    "pilot_phoenix.png",
+    "pilot_niel.png",
+    "pause.png",
+    "sound.png",
+    "keyboard.png",
+    "controller_options.png",
+    "controller_setup.png",
+    "controller_help.png",
+    "onfoot_help.png",
+    "password.png",
+    "achievements.png",
+    "achievements_general.png",
+    "original_achievements.png",
+    "warrior_front.png",
+    "warrior_damaged.png",
+    "warrior_arm_break.png",
+    "results.png"
+  ],
+  "voiceRecording": "Awaiting the user; null slot makes no absent-file request.",
+  "git": "Local, uncommitted, unpushed.",
+  "postVerificationCopyEdit": "Removed an inaccurate recording message from Credits. JavaScript syntax rechecked; gameplay and the verified screen flows are unchanged.",
+  "formatting": {
+    "expansionDiffCheckExit": 0,
+    "sharedRootIndexDiffCheckExit": 1,
+    "preservedExistingRootIndexCRLFWhitespaceLines": [
+      500,
+      533,
+      534
+    ],
+    "gameJsLF": true,
+    "testFlCRLF": true
+  }
+}

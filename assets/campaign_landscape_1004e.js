@@ -22,7 +22,7 @@ for(let n=1;n<=9;n++)for(const v of MAP4F_FLAG_STATES)
  XART._src['map4f_flag'+n+'_'+v]='assets/game/shared/campaign/campaign_landscape_1004f/flag_'+n+'_'+v+'.png';
 function map4eWarm(){XART.rdy('map4e_landscape');for(const k of MAP4E.keys)
  for(const v of ['','_lock','_shadow','_glow'])XART.rdy('map4e_region_'+k+v);XART.rdy('map4f_flagx');XART.rdy('map4f_flagx_lock');
- if(Rival24.mapAvailable)for(const key of ['gp4_ace_top',...REBEL_SHIPS.map(k=>'rr_ship_'+k)])XART.rdy(key);
+ if(Rival24.mapAvailable)for(const key of ['whv_closed',...REBEL_SHIPS.map(k=>'rr_ship_'+k)])XART.rdy(key);
  for(let n=1;n<=9;n++)for(const v of MAP4F_FLAG_STATES)XART.rdy('map4f_flag'+n+'_'+v);
 }
 const MAP4E_BASE={warm:cmap2Warm,reset:cmap2Reset,world:cmap2World};
@@ -51,7 +51,7 @@ cmap2Clamp=function(p,z){
 map30Overview=function(){return {x:MAP4E.w/2,y:1135,
  z:Math.min((campaignViewWidth()-150)/MAP4E.w,(CM2_BAND_BOT-CM2_BAND_TOP-16)/MAP4E.landH)};};
 cmap2Reset=function(opts){const r=MAP4E_BASE.reset.apply(this,arguments);
- MAP4E.last=sselCursor;MAP4E.focus=!!(opts?.unlock||opts?.bonusUnlock);MAP4E.readiness=false;MAP4E.xPreview=false;MAP4E.xMouse=false;
+ MAP4E.last=sselCursor;MAP4E.focus=!!(opts?.unlock||opts?.bonusUnlock);MAP4E.bootPending=!!opts?.boot;MAP4E.readiness=false;MAP4E.xPreview=false;MAP4E.xMouse=false;
  cmap2.clouds=null;const t=map30Overview();cmap2.cam={...t,z:t.z*(opts?.boot ? .72 : 1)};return r;};
 cmap2Frame=function(a,b){const p=cmap2World(a),q=cmap2World(b);if(!p||!q)return map30Overview();
  const margin=Math.max(cmap2Size(a),cmap2Size(b));
@@ -62,6 +62,7 @@ cmap2Frame=function(a,b){const p=cmap2World(a),q=cmap2World(b);if(!p||!q)return 
 cmap2CameraTick=function(dt,cine,selected){
  map4eWarm();const ready=XART.rdy('map4e_landscape')&&MAP4E.keys.every(k=>XART.rdy('map4e_region_'+k));
  MAP4E.readiness=ready;
+ if(MAP4E.bootPending&&sselBoot===0&&ready){MAP4E.bootPending=false;MAP4E.focus=true;}
  if(selected!==MAP4E.last&&sselBoot===0){MAP4E.focus=true;MAP4E.last=selected;}
  let t=map30Overview();
  if(sselBoot>0){const u=clamp((sselBootT-1.7)/3.2,0,1),e=u*u*(3-2*u);t.z*=lerp(.72,1,e);}
@@ -70,9 +71,9 @@ cmap2CameraTick=function(dt,cine,selected){
  else if(Rival24.mapFocused||MAP4E.xPreview){const p=cmap2World('hub');t={x:p.x,y:p.y-150,z:.31};}
  else if(Rival24.mapAvailable&&[6,7].includes(selected))t=cmap2Frame(selected,'hub');
  else if(cine||selected===9||MAP4E.focus){const p=cmap2World(cine?.stage||selected);
-  if(p)t={...p,z:Math.min(.33,(CM2_BAND_BOT-CM2_BAND_TOP-42)/(cmap2Size(cine?.stage||selected)*.85))};}
+  if(p)t={...p,z:Math.min(.40,(CM2_BAND_BOT-CM2_BAND_TOP-42)/(cmap2Size(cine?.stage||selected)*.85))};}
  if(cmap2.focus==='bar'&&!cine&&!s9MapCine&&!riftReturn)t=map30Overview();
- const ease=1-Math.exp(-Math.max(0,dt)*(sselBoot>0?4:2.6));
+ const ease=1-Math.exp(-Math.max(0,dt)*(sselBoot>0?1.6:MAP4E.focus?1.4:2.6));
  for(const k of ['x','y','z'])cmap2.cam[k]+=(t[k]-cmap2.cam[k])*ease;
 };
 function map4eBlit(key,x,y,s,alpha=1){if(!XART.rdy(key))return false;

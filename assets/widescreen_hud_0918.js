@@ -14,7 +14,7 @@ const theaterSlot=new Image(),theaterUnknown=new Image();
 theaterSlot.src='assets/game/shared/ui/ui/widescreen_0930/theater_slot.png';
 theaterUnknown.src='assets/game/shared/ui/ui/widescreen_0930/theater_unknown.png';
 function img(cache,key,path){if(!cache[key]){const im=new Image();im.src=path;cache[key]=im;}return cache[key];}
-function pilotPortraitPath(key){return 'assets/game/pilots_0922/portraits/'+key+'-idle.png';}
+function pilotPortraitPath(key){return 'assets/game/pilots/'+key+'/portraits/pilots_0922/portraits/'+key+'-idle.png';}
 function plate(g,source,x,y,w,h){if(atlas.complete&&atlas.naturalWidth)g.drawImage(atlas,...source,x,y,w,h);}
 /* Engine UI rule: permanent HUD, leaderboard and side-panel copy uses the authored
    wide Command Alloy face. Dialogue copy keeps Command Signal inside conversations. */
@@ -73,7 +73,9 @@ function leaderboard(g,w,h,v){
  scores.sort((a,b)=>b.score-a.score);scores=scores.slice(0,4);
  scores.forEach((e,i)=>{const yy=y+panelH*(.397+i*.095);
   txt(g,(i+1)+'. '+e.name,x+panelW*.18,yy,Math.max(10,Math.min(14,panelW*.037)),'#c4d3e2');
-  txt(g,String(e.score).padStart(8,'0'),x+panelW*.82,yy,Math.max(10,Math.min(14,panelW*.037)),'#f3cf86','right');});
+  const score=Number(e.score).toLocaleString('en-US'),size=Math.max(12,Math.min(20,panelW*.052));
+  const measured=bmfMeasure(uiFace(),score,size)||score.length*size*.7;
+  txt(g,score,x+panelW*.82,yy,Math.min(size,size*panelW*.40/Math.max(1,measured)),'#f3cf86','right');});
  txt(g,live?'COLEFORGE LIVE':'ON THIS DEVICE',w/2,y+panelH*.89,Math.max(10,Math.min(13,panelW*.036)),'#94a9b7','center');
 }
 function rightPanel(g,w,h,v,isMap){
@@ -87,7 +89,7 @@ function rightPanel(g,w,h,v,isMap){
  const rows=[['SCORE',v.score.toLocaleString()],['FURY PTS',v.points],['ACHIEVEMENT PTS',v.total],['LIVES / CONT',v.lives+' / '+v.continues],['DIFFICULTY',v.diff],['OBJECTIVE',v.objective]];
  rows.forEach((row,i)=>{const yy=y+panelH*(.396+i*.095),fs=Math.max(10,Math.min(15,panelW*.047));
   txt(g,row[0],x+panelW/2,yy-panelH*.013,fs*.8,'#8bbbcf','center');
-  const val=String(row[1]),f=val.length>20?Math.max(8,fs*.68):fs;
+  const val=String(row[1]),f=row[0]==='SCORE'?Math.min(23,fs*1.45):val.length>20?Math.max(8,fs*.68):fs;
   txt(g,val,x+panelW/2,yy+panelH*.016,f,'#f2f6fb','center');});
 }
 function menuPanel(g,w,h,st){
@@ -115,7 +117,7 @@ function clockPanel(g,w,h){plate(g,bgRect.clock,0,0,w,h);const now=new Date();
 let last=0,prev='';
 function tick(now){requestAnimationFrame(tick);if(now-last<180)return;last=now;
  const st=current(),map=st==='stagesel',playing=['play','paused','continue','stageclear','gameover'].includes(st);
- const wide=innerWidth>=1150&&(map||document.body.classList.contains('fs'))&&!document.body.classList.contains('cinematic-full');
+ const wide=innerWidth>=1150&&(map||document.body.classList.contains('fs'))&&!document.body.classList.contains('cinematic-full')&&!window.__bofSideHudOwnsLayout;
  document.body.classList.toggle('wide-map',wide&&map);
  document.body.classList.toggle('wide-playing',wide&&playing);
  const nativeMapW=innerHeight*480/512;
@@ -127,14 +129,17 @@ function tick(now){requestAnimationFrame(tick);if(now-last<180)return;last=now;
  for(const [c,sideName] of [[left,'left'],[right,'right']]){
   const width=map&&sideName==='left'?Math.min(720,Math.max(side,Math.floor(innerWidth*.39))):side;
   const x=sideName==='left'?(map?8:Math.max(8,Math.floor(frame.left-side-8))):Math.min(innerWidth-side-8,Math.ceil(frame.right+8));
-  c.style.left=x+'px';c.style.top=top+'px';c.style.width=width+'px';c.style.height=h+'px';
-  if(c.width!==width||c.height!==h){c.width=width;c.height=h;}
+  // Scale the entire authored 320x810 panel together, including its content.
+  // A wider rail adds margin; it cannot stretch the border away from its widgets.
+  const k=Math.min(width/320,h/810),dw=Math.round(320*k),dh=Math.round(810*k);
+  c.style.left=Math.round(x+(width-dw)/2)+'px';c.style.top=Math.round(top+(h-dh)/2)+'px';c.style.width=dw+'px';c.style.height=dh+'px';
+  if(c.width!==320||c.height!==810){c.width=320;c.height=810;}
  }
  if(map){mapTop.style.left=Math.round(frame.left)+'px';mapTop.style.top=Math.round(frame.top)+'px';mapTop.style.width=Math.round(frame.width)+'px';mapTop.style.height=Math.round(frame.width*68/480)+'px';
   const cw=Math.min(400,Math.floor(frame.width*.58)),ch=Math.floor(cw*130/826);clock.width=cw;clock.height=ch;
   clock.style.width=cw+'px';clock.style.height=ch+'px';clock.style.left=Math.round(frame.left+(frame.width-cw)/2)+'px';
   const barBottom=typeof CM2_BAR!=='undefined'?(cmap2BarY()+CM2_BAR.h):45;
-  clock.style.top=Math.round(frame.top+frame.width*(barBottom-5)/480)+'px';}
+  clock.style.top=Math.round(frame.top+frame.width*(barBottom-24)/480)+'px';}
  L.clearRect(0,0,left.width,left.height);R.clearRect(0,0,right.width,right.height);
  const v=values();
  if(map){rightPanel(R,right.width,right.height,v,true);T.clearRect(0,0,clock.width,clock.height);clockPanel(T,clock.width,clock.height);}

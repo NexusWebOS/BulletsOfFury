@@ -1,0 +1,49 @@
+{
+  "id": "s9prism",
+  "name": "Water Space Prism",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9prism"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_prism",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9prism_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_prism/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "5e935eade575969efc0a4dff98fb6aaf76c5e23183aef0f6866d30ebb838c55d"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9prism_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_prism/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "1f57465f08a7828bbd3594e42eb17a57510dfe2ee078aaaed08c7d3d7e176924"
+  },
+  "nativeRatios": {
+    "s9prism": 1.198019801980198
+  },
+  "sourceKeys": {
+    "s9prism": "s9atk_hyperspace_prism_0"
+  }
+}

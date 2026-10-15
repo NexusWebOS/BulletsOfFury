@@ -1,0 +1,49 @@
+{
+  "id": "horizon",
+  "name": "Horizon Drone",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "horizon"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/horizon_drone",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_horizon_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/horizon_drone/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "5d96d6c7b0fdd400a2727b763bab41c7bb73472846e39717b830fe4de1dc437f"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_horizon_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/horizon_drone/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "388908dae14cace9247998f3d9fe88b0857c28a3b614dd768cc203bf4d622b43"
+  },
+  "nativeRatios": {
+    "horizon": 0.9807692307692307
+  },
+  "sourceKeys": {
+    "horizon": "ns9x_horizon_0"
+  }
+}

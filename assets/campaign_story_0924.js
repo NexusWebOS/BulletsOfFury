@@ -19,8 +19,8 @@
       b('cinintro_team',p,'We made it home. I could see your ships, but every channel was dead. What happened out there?',{pilot:pk}),
       b('cinintro_command',tech.toUpperCase(),'The flight grid was hacked. The command arrived through our own satellites.'),
       b('cin_origin_blackhole_0924','FURY RECORDING','The last orbital frame shows a black hole opening beside the relay array.',{pan:.25,origin:true,duration:4.2}),
-      b('cin_origin_emerges_0924',tech.toUpperCase(),'Something came through it. Look at that shape moving toward our satellite.',{pan:.47,origin:true,duration:4.3}),
-      b('cin_origin_contact_0924','FURY RECORDING','First contact. Its tendrils reached the relay dish before the warning system could react.',{pan:.64,origin:true,duration:4.4}),
+      b('pt11_mystery_emergence',tech.toUpperCase(),'Something came through it. Look at that shape moving toward our satellite.',{pan:.47,origin:true,duration:4.3}),
+      b('pt11_mystery_contact','FURY RECORDING','First contact. Its tendrils reached the relay dish before the warning system could react.',{pan:.64,origin:true,duration:4.4}),
       b('cin_origin_arrival',tech.toUpperCase(),'The whole relay is being swallowed. The signal is no longer ours.',{pan:.66,origin:true,duration:4.2}),
       b('cin_origin_satellite',tech.toUpperCase(),'It filled the uplink with code I cannot read and sent the infection down to Earth.',{pan:.58,origin:true,duration:4.3}),
       b('cin_origin_land','FURY RECORDING','That signal reached aircraft, armor, ships, homes, and every connected system on Earth.'),
@@ -66,13 +66,16 @@
       b('cinend_deep_space','FURY FLIGHT','We did it! Fury flight, come back to Earth. We meet at the base.',{ship:true}),
       b('cinend_deep_space',p,'Copy. Set a course for home.',{ship:true,pilot:pk}),
       b('cinend_deep_space','SHIP SYSTEM','Federation hull disengaging. Manual controls restored.',{fx:'hull',ship:true,duration:5.2}),
-      b('cinbg_hq_aerial','SHIP SYSTEM','Atmospheric entry confirmed. Fury is returning to Earth.',{ship:true})
+      b('hq10_background_00',p,'Fury HQ in sight. Bringing the hull down. It is good to be home.',{pilot:pk,duration:7}),
+      b('hq10_background_01','COLE','Incoming fighters! They followed us home. Decker, keep the radar alive. Axel, cover the hangars!',{pilot:'cole',duration:7}),
+      b('hq10_background_02','DECKER','Red contacts everywhere! I have an alien signal underneath the interference. Fury flight, scramble!',{pilot:'decker',duration:15,interactive:'hq-radar'}),
+      b('hq10_background_03','COLE','Five ships airborne. Two pilots hold HQ. We will draw their attack away from the base!',{pilot:'cole',duration:7.5})
     ];
     if(stage===6)return [
-      b('cin_story_city_descent','SHIP SYSTEM','Descending toward the city. Surface radar has found a high-threat signature below the riverbank.',{ship:true,flight:'descent',duration:5.1}),
+      b('cin_story_city_descent','DECKER','That alien signature is back. It is underneath the city, below the riverbank. Take us down.',{ship:true,flight:'descent',duration:5.1}),
       b('cin_story_river_high','SHIP SYSTEM','Low-altitude flight confirmed. Follow the river channel toward the iron bridge.',{ship:true,flight:'riverHigh',duration:4.8}),
       b('cin_story_river_bridge',tech.toUpperCase(),'I have the bridge on radar. Stay low. The threat signal is ahead on the far bank.',{ship:true,flight:'bridgePass',duration:5.0}),
-      b('cin_story_riverbank_sewer',tech.toUpperCase(),'We never searched underground. The old riverbank tunnel is where that signal disappears.',{ship:true,flight:'approach',duration:5.1}),
+      b('cin_story_riverbank_sewer','DECKER','I traced the code to that sewer entrance. We never searched underground. This is where it is hiding.',{ship:true,flight:'approach',duration:5.1}),
       b('cin_story_riverbank_sewer',p,'That entrance is large enough to fly through. I am taking us inside.',{ship:true,pilot:pk,flight:'enter',duration:4.6}),
       b('cin_story_sewer_gate','SHIP SYSTEM','Entering underground. Exterior signal lost.',{ship:true,flight:'gate',duration:5.2}),
       b('cin_stage07_approach','SHIP SYSTEM','Underground threat confirmed. Radar contact is moving deeper into the sewer.',{ship:true,flight:'underground',duration:4.8}),

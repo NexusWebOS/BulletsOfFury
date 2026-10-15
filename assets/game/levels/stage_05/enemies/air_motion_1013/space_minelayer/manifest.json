@@ -1,0 +1,49 @@
+{
+  "id": "s5minelayer",
+  "name": "Space Minelayer",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5minelayer"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_minelayer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5minelayer_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_minelayer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "216d9e84fc5662078b211fd7bd897b7dd40edede4d4cd80e47976c7b241ee001"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5minelayer_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_minelayer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "09dd368f29695833401391f0c2410dcb95aacc2b997933af72c6b445720ded71"
+  },
+  "nativeRatios": {
+    "s5minelayer": 1.118811881188119
+  },
+  "sourceKeys": {
+    "s5minelayer": "s5atk_mine_layer_0"
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "tool": "built-in image_gen",
+  "master": "source/warrior_final.png",
+  "sha256": "38fce9f8411a3ee04988eed8fe7a30ab1ef98eabc6042975f5ff3402d3170308",
+  "frameFormat": "chassis 640x512; torso/arms 512x512; physical pivots stable per module bank",
+  "spawnYOffset": -28,
+  "assets": {
+    "warrior_hull": {
+      "file": "expansion/topdown/art/warrior_mk2_1011/warrior_hull.png",
+      "size": [
+        640,
+        512
+      ],
+      "anchor": [
+        320,
+        180
+      ],
+      "bounds": [
+        47,
+        57,
+        591,
+        477
+      ],
+      "sourceCrop": [
+        32,
+        72,
+        554,
+        440
+      ],
+      "sourceMount": [
+        309,
+        206
+      ],
+      "paddingOffset": [
+        43,
+        46
+      ]
+    },
+    "warrior_helmet": {
+      "file": "expansion/topdown/art/warrior_mk2_1011/warrior_helmet.png",
+      "size": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        432
+      ],
+      "bounds": [
+        31,
+        21,
+        460,
+        448
+      ],
+      "sourceCrop": [
+        590,
+        64,
+        456,
+        432
+      ],
+      "sourceMount": [
+        829,
+        480
+      ],
+      "paddingOffset": [
+        17,
+        16
+      ]
+    },
+    "warrior_arm_l": {
+      "file": "expansion/topdown/art/warrior_mk2_1011/warrior_arm_l.png",
+      "size": [
+        512,
+        512
+      ],
+      "anchor": [
+        450,
+        176
+      ],
+      "bounds": [
+        33,
+        47,
+        482,
+        409
+      ],
+      "sourceCrop": [
+        24,
+        570,
+        468,
+        390
+      ],
+      "sourceMount": [
+        446,
+        721
+      ],
+      "paddingOffset": [
+        28,
+        25
+      ]
+    },
+    "warrior_arm_r": {
+      "file": "expansion/topdown/art/warrior_mk2_1011/warrior_arm_r.png",
+      "size": [
+        512,
+        512
+      ],
+      "anchor": [
+        62,
+        176
+      ],
+      "bounds": [
+        17,
+        66,
+        462,
+        429
+      ],
+      "sourceCrop": [
+        1056,
+        104,
+        470,
+        378
+      ],
+      "sourceMount": [
+        1106,
+        220
+      ],
+      "paddingOffset": [
+        12,
+        60
+      ]
+    },
+    "warrior_damaged": {
+      "file": "expansion/topdown/art/warrior_mk2_1011/warrior_damaged.png",
+      "size": [
+        640,
+        512
+      ],
+      "anchor": [
+        320,
+        180
+      ],
+      "bounds": [
+        34,
+        60,
+        577,
+        465
+      ],
+      "sourceCrop": [
+        490,
+        544,
+        556,
+        432
+      ],
+      "sourceMount": [
+        780,
+        683
+      ],
+      "paddingOffset": [
+        30,
+        41
+      ]
+    },
+    "warrior_wreck": {
+      "file": "expansion/topdown/art/warrior_mk2_1011/warrior_wreck.png",
+      "size": [
+        640,
+        512
+      ],
+      "anchor": [
+        320,
+        180
+      ],
+      "bounds": [
+        78,
+        32,
+        549,
+        424
+      ],
+      "sourceCrop": [
+        1046,
+        548,
+        482,
+        442
+      ],
+      "sourceMount": [
+        1290,
+        718
+      ],
+      "paddingOffset": [
+        76,
+        10
+      ]
+    }
+  },
+  "rig": {
+    "hull": {
+      "key": "warrior_hull",
+      "x": 0,
+      "y": 0,
+      "hx": 0,
+      "hy": 0,
+      "r": 112,
+      "scale": 0.52,
+      "baseAngle": 0
+    },
+    "helmet": {
+      "key": "warrior_helmet",
+      "x": 0,
+      "y": 0,
+      "hx": 0,
+      "hy": -108,
+      "r": 52,
+      "scale": 0.4,
+      "mx": 0,
+      "my": -98
+    },
+    "armL": {
+      "key": "warrior_arm_l",
+      "x": -84,
+      "y": -82,
+      "hx": -187,
+      "hy": -27,
+      "r": 43,
+      "scale": 0.33,
+      "mx": -185,
+      "my": -13
+    },
+    "armR": {
+      "key": "warrior_arm_r",
+      "x": 84,
+      "y": -82,
+      "hx": 185,
+      "hy": -24,
+      "r": 43,
+      "scale": 0.33,
+      "mx": 186,
+      "my": -11
+    }
+  }
+}

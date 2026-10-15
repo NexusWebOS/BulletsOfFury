@@ -1,0 +1,46 @@
+{
+  "id": "flight_variant_4",
+  "name": "Airbase Maneuver Fighter",
+  "stage": 4,
+  "stages": [
+    4
+  ],
+  "aliases": [
+    "flight_variant_4"
+  ],
+  "folder": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_maneuver_fighter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s4_flight_variant_4_heading",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_maneuver_fighter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "dfbe2af4aa7ee50f1eaa8af50d1be19ea8be7f6dbaebaa9f544388df6cfbeb16"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s4_flight_variant_4_roll",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_maneuver_fighter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "7fe1e7a2bdb8e746668d86fce5a4ef5f677d34a2448606c4c03b42d664946b1d"
+  },
+  "referenceRatio": 0.59375,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

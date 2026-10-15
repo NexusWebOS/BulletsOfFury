@@ -1,0 +1,49 @@
+{
+  "id": "s5repair",
+  "name": "Space Repair",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5repair"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_repair",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5repair_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_repair/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "96e0cdfc066430a73c5bdc99cad2cdcdc7f96e8988d7f12098ddd8e81b1df176"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5repair_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_repair/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "a103c1999b232b90835f18aba37206ec67cf89af4f153955536bcb62afc2c991"
+  },
+  "nativeRatios": {
+    "s5repair": 1.2409638554216869
+  },
+  "sourceKeys": {
+    "s5repair": "overhaul_stage5_space_drone_01"
+  }
+}

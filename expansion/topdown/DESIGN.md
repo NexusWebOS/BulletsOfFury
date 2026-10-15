@@ -1,3 +1,9 @@
+> October 8 revision: current controls and mission flow are in [README.md](README.md).
+> Pilot selection now boots first with two rows of six. Boss fights retain normal
+> scale. Pickups replace the equipped gun; the former swap inventory is retired.
+> Six-button controllers use independent D-pad movement and directional face-button
+> fire, with C charge and Z Retina. The research notes below preserve earlier design history.
+
 # Overdrive Ground Operations: design notes
 
 ## October 9, 2026 — Level 5, Museum of Violence

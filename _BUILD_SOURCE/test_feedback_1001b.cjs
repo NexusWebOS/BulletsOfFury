@@ -31,7 +31,7 @@ module.exports=function(vm,ctxv,ok){
    run._gp4StageX='left';o.arenaWrap=stageXArenaActive();run.stage=5;o.arenaWrap=o.arenaWrap&&!stageXArenaActive();delete run._gp4StageX;run.stage=6;
    const sp=[];for(let t=0;t<=8;t+=.05)sp.push(s7pSpeed(t));
    o.noBrake=sp.every((v,i)=>i===0||v>=sp[i-1]-1e-9); o.fullSpeed=Math.abs(s7pSpeed(S7P.SD+S7P.ACC+.01)-S7P.VMAX)<1e-6;
-   o.pilotLine=fr27Exit.toString().indexOf('WHAT IS THIS?! WHAT IS HAPPENING TO ME?!')>=0;
+   o.pilotLine=fr27Exit.toString().indexOf("'NO!'")>=0;
    o.portalBeforeSwallow=S7P.OPEN<S7P.PULL&&S7P.PULL-S7P.SD<3;
    o.astKeys=S9AST_ROCK.concat(S9AST_WET).map(k=>XART._src[k+'_idle']);
    o.gateCloses=stage9PortalEscapeDraw.toString().indexOf('1-p*0.72')<0;
@@ -48,7 +48,7 @@ module.exports=function(vm,ctxv,ok){
  const a=png(out.arenaKey);
  ok(a[0]===680&&a[1]>=1024,'1001b: the arena plate is 680 wide and tall enough to circle the mountain ('+a.join('x')+')');
  ok(out.noBrake&&out.fullSpeed,'1001b: the stage 7 escape never decelerates once it reaches full speed');
- ok(out.pilotLine,'1001b: the pilot says "WHAT IS THIS?! WHAT IS HAPPENING TO ME?!" as the rift takes them');
+ ok(out.pilotLine,'1001b: the pilot cries NO as the rift takes them (October 10 direction)');
  ok(out.portalBeforeSwallow,'1001b: the rift opens mid-flight and the pull follows it without a hold');
  ok(Array.isArray(out.astKeys)&&out.astKeys.length===6&&out.astKeys.every(k=>k&&fs.existsSync(path.join(ROOT,k))),'1001b: six new stage-9 asteroid plates (three clean, three watery) are registered and on disk');
  const gsrc=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fury HQ — homecoming</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070b15;color:#f1eee5;font:15px/1.4 system-ui,sans-serif}header{padding:12px 18px;border-bottom:1px solid #675033;display:flex;flex-wrap:wrap;align-items:center;gap:9px}h1{font-size:18px;margin:0 12px 0 0}button,select{background:#142330;border:1px solid #58707d;color:#effbef;padding:8px 11px;border-radius:4px;cursor:pointer}button:hover,button:focus-visible{background:#294552;outline:2px solid #e4bc66}select{max-width:140px}.primary{border-color:#cfaa57}#controls{display:flex;align-items:center;gap:12px;padding:9px 18px}#time{flex:1;min-width:100px;accent-color:#d9b75a}#status{min-width:175px;color:#d5c7ac;font-variant-numeric:tabular-nums}iframe{display:block;border:0;width:100%;height:calc(100vh - 164px);min-height:450px;background:#000}footer{padding:10px 18px;font-size:13px;color:#afa8a3}a{color:#dfc278}@media(max-width:680px){header{padding:9px;gap:6px}button,select{padding:6px}#controls{padding:8px 10px;flex-wrap:wrap}iframe{height:65vh}#status{min-width:120px}}
+</style>
+<header><h1>Fury HQ · Homecoming</h1><select id="pilot" aria-label="Pilot"></select><button id="play" class="primary">Play with sound</button><button id="pause">Pause</button><button data-time="1.2">Portal exit</button><button data-time="4.2">Earth descent</button><button data-time="7.8">Approach</button><button data-time="9.4">Landing</button><button data-time="13.6">Disembark</button><button data-time="16.6">Walk to HQ</button><button data-time="22.5">Doorway</button><button data-time="26.4">Next scene</button><button data-time="28.3">Symbiote</button><button data-time="30.4">Infection</button><button data-time="32.6">Corruption</button><button data-time="36.4">Code takeover</button><button data-time="43.2">Fury Command</button></header>
+<div id="controls"><label for="time">Timeline</label><input type="range" id="time" min="0" max="43.5" step="0.05" value="11.2"><span id="status" role="status">Loading…</span></div>
+<iframe id="game" src="../../../index.html" title="Bullets of Fury homecoming cinematic" allow="autoplay; fullscreen"></iframe>
+<footer>Each pilot uses their original ship images as they leave the portal, descend toward Earth and land at Fury HQ. The surviving symbiote infects the satellite and spreads binary code across the screen. <a href="../../../_shots/static_ships_1010/recording/homecoming.mp4">Recorded sequence</a> · <a href="../../STATIC_PILOT_SHIPS_1010.md">Original pilot ships</a> · <a href="../../HOMECOMING_TAKEOVER_1010.md">Takeover art</a></footer>
+<script>
+const names=['cole','axel','freezer','yuri','maverick','falva','lizzie','decker','juggernaut'];
+const query=new URLSearchParams(location.search),initialTime=({survivor:32.6,virus:36.4,portal:1.2,earth:4.2})[query.get('scene')]??11.2;
+const frame=document.getElementById('game'),pilot=document.getElementById('pilot'),slider=document.getElementById('time'),status=document.getElementById('status');
+for(const key of names){const o=document.createElement('option');o.value=key;o.textContent=key.toUpperCase();pilot.append(o);}
+if(names.includes(query.get('pilot')))pilot.value=query.get('pilot');
+let ready=false,busy=false;
+const inside=code=>frame.contentWindow.eval(code);
+async function prepare(t,playing=false,sound=false){
+ if(!ready||busy)return;busy=true;status.textContent='Preparing '+pilot.value.toUpperCase()+'…';
+ try{
+  inside(`(()=>{BOFCinematicDirector.cancel();run.mode='campaign';run.pilot=${JSON.stringify(pilot.value)};story=null;fb2Talk=null;s6Opening=null;drawVictory._t=${Number(t)};drawVictory._ready=false;drawVictory._wait=0;drawVictory._waitF=0;drawVictory._sfx={};drawVictory._hl10=null;drawVictory._trueEnding=true;__hl10Review.playing=false;__hl10Review.time=${Number(t)};setState(GS.VICTORY);victoryEndingWarm();hl10Warm();${sound?'Audio.init();Audio.resume();':''}})()`);
+  for(let i=0;i<400;i++){if(inside('victoryEndingReady()&&hl10Warm()'))break;await new Promise(r=>setTimeout(r,25));}
+  if(!inside('victoryEndingReady()&&hl10Warm()'))throw new Error('Art is still loading. Try again.');
+  inside(`(()=>{drawVictory._ready=true;drawVictory._t=${Number(t)};__hl10Review.time=${Number(t)};__hl10Review.playing=${!!playing};})()`);
+  frame.focus();
+ }catch(e){status.textContent=e.message;}finally{busy=false;}
+}
+document.getElementById('play').onclick=()=>prepare(0,true,true);
+document.getElementById('pause').onclick=()=>{if(ready)inside('__hl10Review.playing=false');};
+for(const b of document.querySelectorAll('[data-time]'))b.onclick=()=>prepare(Number(b.dataset.time),true,true);
+pilot.onchange=()=>prepare(Number(slider.value),false);
+slider.oninput=()=>{if(ready&&!busy)inside(`(()=>{__hl10Review.playing=false;__hl10Review.time=${Number(slider.value)};drawVictory._t=__hl10Review.time;})()`);};
+frame.onload=()=>{const poll=setInterval(()=>{
+ try{if(!inside("typeof HL10!=='undefined'&&window.__bofFrames>4"))return;
+  clearInterval(poll);inside(`(()=>{window.__hl10Review={time:${initialTime},playing:false};const original=drawVictory;drawVictory=function(dt){const r=__hl10Review;if(!r.playing)drawVictory._t=r.time;original(r.playing?dt:0);r.time=drawVictory._t;if(r.time>=43.5){r.time=43.5;r.playing=false;} };Object.assign(drawVictory,original);})()`);ready=true;prepare(initialTime,false);
+ }catch(e){clearInterval(poll);status.textContent='Open from the local game server.';}
+},100);};
+setInterval(()=>{if(!ready||busy)return;try{const r=inside('({time:__hl10Review.time,playing:__hl10Review.playing,phase:__hl10Review.time>=VICTORY_WARNING_AT?"Fury Command":__hl10Review.time>=VICTORY_DISH_AT?SV10.last?.phase:HL10.last?.phase})');slider.value=r.time;status.textContent=(r.playing?'Playing · ':'Paused · ')+(r.phase||'')+' · '+Number(r.time).toFixed(1)+'s';}catch(e){}},100);
+</script>
+</html>

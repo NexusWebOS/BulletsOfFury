@@ -1,0 +1,49 @@
+{
+  "id": "s4rocket",
+  "name": "Airbase Rocket",
+  "stage": 4,
+  "stages": [
+    4
+  ],
+  "aliases": [
+    "s4rocket"
+  ],
+  "folder": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_rocket",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s4_s4rocket_heading",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_rocket/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "fd15255212f166b0b0c072c0c08e3044403e4f0b8ea569e6d29e6d1c2ccf05c8"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s4_s4rocket_roll",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_rocket/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "3029d6d31c6e519aec399028a977e2a1a460c85b7196987af1a42f1b38afd38e"
+  },
+  "nativeRatios": {
+    "s4rocket": 0.96
+  },
+  "sourceKeys": {
+    "s4rocket": "s4atk_rocket_plane_0"
+  }
+}

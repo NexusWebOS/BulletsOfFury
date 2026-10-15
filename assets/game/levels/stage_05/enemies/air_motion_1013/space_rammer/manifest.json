@@ -1,0 +1,49 @@
+{
+  "id": "s5rammer",
+  "name": "Space Rammer",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5rammer"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_rammer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5rammer_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_rammer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "201050ef1ac0d8662cac1a0a1777461540d73997070c2c9613d47291fe3765d7"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5rammer_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_rammer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "bf970db740ed3daa40dd515932b898f941979c43e1ff57c59c0c29b19e64fb77"
+  },
+  "nativeRatios": {
+    "s5rammer": 1.0957446808510638
+  },
+  "sourceKeys": {
+    "s5rammer": "sm10_orbital_rammer_0"
+  }
+}

@@ -1,0 +1,2478 @@
+{
+  "checks": [
+    {
+      "name": "stage1 easy formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 1,
+        "difficulty": "easy",
+        "start": {
+          "stage": 1,
+          "map": 182.66666666666669,
+          "src": 3517.3333333333335,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 4,
+          "formations": 3,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 262.66666666666725,
+          "src": 3437.3333333333326,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 4,
+          "formations": 3,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage1 normal formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 1,
+        "difficulty": "normal",
+        "start": {
+          "stage": 1,
+          "map": 181.33333333333326,
+          "src": 3518.666666666667,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 6,
+          "formations": 5,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 261.3333333333287,
+          "src": 3438.6666666666715,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 6,
+          "formations": 5,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage1 hard formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 1,
+        "difficulty": "hard",
+        "start": {
+          "stage": 1,
+          "map": 181.33333333333326,
+          "src": 3518.666666666667,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 8,
+          "formations": 7,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 261.3333333333287,
+          "src": 3438.6666666666715,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 8,
+          "formations": 7,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage1 furious formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 1,
+        "difficulty": "furious",
+        "start": {
+          "stage": 1,
+          "map": 181.33333333333326,
+          "src": 3518.666666666667,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 10,
+          "formations": 9,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 261.3333333333287,
+          "src": 3438.6666666666715,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 10,
+          "formations": 9,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage2 easy formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 2,
+        "difficulty": "easy",
+        "start": {
+          "stage": 2,
+          "map": 181.33333333333326,
+          "src": 3386.666666666667,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 2,
+          "map": 261.3333333333313,
+          "src": 3306.666666666669,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage2 normal formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 2,
+        "difficulty": "normal",
+        "start": {
+          "stage": 2,
+          "map": 181.33333333333343,
+          "src": 3386.6666666666665,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 2,
+          "map": 261.33333333333934,
+          "src": 3306.6666666666606,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage2 hard formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 2,
+        "difficulty": "hard",
+        "start": {
+          "stage": 2,
+          "map": 181.33333333333343,
+          "src": 3386.6666666666665,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 2,
+          "map": 261.33333333333934,
+          "src": 3306.6666666666606,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage2 furious formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 2,
+        "difficulty": "furious",
+        "start": {
+          "stage": 2,
+          "map": 181.33333333333343,
+          "src": 3386.6666666666665,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 2,
+          "map": 261.33333333333934,
+          "src": 3306.6666666666606,
+          "sky": 0,
+          "airbase": 0,
+          "hold": false,
+          "bossHold": 0,
+          "live": 1,
+          "formations": 0,
+          "ambushes": 1,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage4 easy formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 4,
+        "difficulty": "easy",
+        "start": {
+          "stage": 4,
+          "map": 181.33333333333343,
+          "src": -181.33333333333343,
+          "sky": 0,
+          "airbase": 181.33333333333343,
+          "hold": false,
+          "bossHold": 0,
+          "live": 3,
+          "formations": 3,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 4,
+          "map": 261.33333333333934,
+          "src": -261.33333333333934,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 3,
+          "formations": 3,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage4 normal formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 4,
+        "difficulty": "normal",
+        "start": {
+          "stage": 4,
+          "map": 181.33333333333343,
+          "src": -181.33333333333343,
+          "sky": 0,
+          "airbase": 181.33333333333343,
+          "hold": false,
+          "bossHold": 0,
+          "live": 5,
+          "formations": 5,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 4,
+          "map": 261.33333333333934,
+          "src": -261.33333333333934,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 5,
+          "formations": 5,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage4 hard formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 4,
+        "difficulty": "hard",
+        "start": {
+          "stage": 4,
+          "map": 181.33333333333343,
+          "src": -181.33333333333343,
+          "sky": 0,
+          "airbase": 181.33333333333343,
+          "hold": false,
+          "bossHold": 0,
+          "live": 7,
+          "formations": 7,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 4,
+          "map": 261.33333333333934,
+          "src": -261.33333333333934,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 7,
+          "formations": 7,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage4 furious formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 4,
+        "difficulty": "furious",
+        "start": {
+          "stage": 4,
+          "map": 181.33333333333343,
+          "src": -181.33333333333343,
+          "sky": 0,
+          "airbase": 181.33333333333343,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 9,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 4,
+          "map": 261.33333333333934,
+          "src": -261.33333333333934,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 9,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage6 easy formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 6,
+        "difficulty": "easy",
+        "start": {
+          "stage": 6,
+          "map": 181.33333333333343,
+          "src": 4306.666666666667,
+          "sky": 24.666666666668462,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 3,
+          "formations": 3,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 6,
+          "map": 261.33333333333627,
+          "src": 4226.666666666663,
+          "sky": 1504.666666666721,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 3,
+          "formations": 3,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage6 easy sky retains cruise",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "stage6 normal formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 6,
+        "difficulty": "normal",
+        "start": {
+          "stage": 6,
+          "map": 181.33333333333314,
+          "src": 4306.666666666667,
+          "sky": 24.666666666663076,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 5,
+          "formations": 5,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 6,
+          "map": 261.3333333333218,
+          "src": 4226.666666666678,
+          "sky": 1504.6666666664448,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 5,
+          "formations": 5,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage6 normal sky retains cruise",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "stage6 hard formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 6,
+        "difficulty": "hard",
+        "start": {
+          "stage": 6,
+          "map": 181.33333333333314,
+          "src": 4306.666666666667,
+          "sky": 24.666666666663076,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 7,
+          "formations": 7,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 6,
+          "map": 261.3333333333218,
+          "src": 4226.666666666678,
+          "sky": 1504.6666666664448,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 7,
+          "formations": 7,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage6 hard sky retains cruise",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "stage6 furious formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 6,
+        "difficulty": "furious",
+        "start": {
+          "stage": 6,
+          "map": 181.33333333333314,
+          "src": 4306.666666666667,
+          "sky": 24.666666666663076,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 9,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 6,
+          "map": 261.3333333333218,
+          "src": 4226.666666666678,
+          "sky": 1504.6666666664448,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 9,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage6 furious sky retains cruise",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "stage8 easy formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 8,
+        "difficulty": "easy",
+        "start": {
+          "stage": 8,
+          "map": 181.33333333333314,
+          "src": 842.6666666666669,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 3,
+          "formations": 3,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 8,
+          "map": 261.3333333333218,
+          "src": 762.6666666666782,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 3,
+          "formations": 3,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage8 normal formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 8,
+        "difficulty": "normal",
+        "start": {
+          "stage": 8,
+          "map": 181.33333333333314,
+          "src": 842.6666666666669,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 5,
+          "formations": 5,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 8,
+          "map": 261.3333333333218,
+          "src": 762.6666666666782,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 5,
+          "formations": 5,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage8 hard formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 8,
+        "difficulty": "hard",
+        "start": {
+          "stage": 8,
+          "map": 181.33333333333314,
+          "src": 842.6666666666669,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 7,
+          "formations": 7,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 8,
+          "map": 261.3333333333218,
+          "src": 762.6666666666782,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 7,
+          "formations": 7,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "stage8 furious formations and ambushes retain terrain travel",
+      "pass": true,
+      "details": {
+        "kind": "formations_scroll",
+        "stage": 8,
+        "difficulty": "furious",
+        "start": {
+          "stage": 8,
+          "map": 181.33333333333314,
+          "src": 842.6666666666669,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 9,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 8,
+          "map": 261.3333333333218,
+          "src": 762.6666666666782,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 9,
+          "ambushes": 0,
+          "waveIdx": 999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "easy density-blocked ground wave does not stop scroll",
+      "pass": true,
+      "details": {
+        "meta": {
+          "idx": 5,
+          "threshold": 8,
+          "pressure": 3,
+          "sourceBottom": 3312,
+          "landThreshold": 3352,
+          "live": 9
+        },
+        "start": {
+          "stage": 1,
+          "map": 900,
+          "src": 2800,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 3,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 959.9999999999864,
+          "src": 2740.0000000000136,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": true,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 3,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "easy ground wave waits for pressure clearance",
+      "pass": true,
+      "details": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 3,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "name": "easy queued ground wave dispatches after pressure clears",
+      "pass": true,
+      "details": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 4
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 4
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      }
+    },
+    {
+      "name": "normal density-blocked ground wave does not stop scroll",
+      "pass": true,
+      "details": {
+        "meta": {
+          "idx": 5,
+          "threshold": 8,
+          "pressure": 3,
+          "sourceBottom": 3312,
+          "landThreshold": 3352,
+          "live": 9
+        },
+        "start": {
+          "stage": 1,
+          "map": 900,
+          "src": 2800,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 5,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 959.9999999999864,
+          "src": 2740.0000000000136,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": true,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 5,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "normal ground wave waits for pressure clearance",
+      "pass": true,
+      "details": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 5,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "name": "normal queued ground wave dispatches after pressure clears",
+      "pass": true,
+      "details": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 6
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 6
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      }
+    },
+    {
+      "name": "hard density-blocked ground wave does not stop scroll",
+      "pass": true,
+      "details": {
+        "meta": {
+          "idx": 5,
+          "threshold": 8,
+          "pressure": 3,
+          "sourceBottom": 3312,
+          "landThreshold": 3352,
+          "live": 9
+        },
+        "start": {
+          "stage": 1,
+          "map": 900,
+          "src": 2800,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 7,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 959.9999999999864,
+          "src": 2740.0000000000136,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": true,
+          "bossHold": 0,
+          "live": 9,
+          "formations": 7,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "hard ground wave waits for pressure clearance",
+      "pass": true,
+      "details": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 7,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "name": "hard queued ground wave dispatches after pressure clears",
+      "pass": true,
+      "details": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 6
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 6
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      }
+    },
+    {
+      "name": "furious density-blocked ground wave does not stop scroll",
+      "pass": true,
+      "details": {
+        "meta": {
+          "idx": 5,
+          "threshold": 8,
+          "pressure": 3,
+          "sourceBottom": 3312,
+          "landThreshold": 3352,
+          "live": 10
+        },
+        "start": {
+          "stage": 1,
+          "map": 900,
+          "src": 2800,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 0,
+          "live": 10,
+          "formations": 9,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        },
+        "end": {
+          "stage": 1,
+          "map": 959.9999999999864,
+          "src": 2740.0000000000136,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": true,
+          "bossHold": 0,
+          "live": 10,
+          "formations": 9,
+          "ambushes": 1,
+          "waveIdx": 5,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": false
+        }
+      }
+    },
+    {
+      "name": "furious ground wave waits for pressure clearance",
+      "pass": true,
+      "details": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 10,
+        "formations": 9,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "name": "furious queued ground wave dispatches after pressure clears",
+      "pass": true,
+      "details": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 11
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 11
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      }
+    },
+    {
+      "name": "actual stage1 mini encounter still holds its terrain",
+      "pass": true,
+      "details": {
+        "before": {
+          "stage": 1,
+          "map": 1412.1688888888893,
+          "src": 2287.8311111111107,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 1,
+          "live": 0,
+          "formations": 0,
+          "ambushes": 0,
+          "waveIdx": 9999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": true
+        },
+        "after": {
+          "stage": 1,
+          "map": 1412.1688888888893,
+          "src": 2287.8311111111107,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 1,
+          "live": 0,
+          "formations": 0,
+          "ambushes": 0,
+          "waveIdx": 9999,
+          "state": "play",
+          "story": false,
+          "bossActive": false,
+          "subBossActive": true
+        }
+      }
+    },
+    {
+      "name": "actual stage1 boss encounter still holds its terrain",
+      "pass": true,
+      "details": {
+        "before": {
+          "stage": 1,
+          "map": 2493.168888888889,
+          "src": 1206.831111111111,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 1,
+          "live": 0,
+          "formations": 0,
+          "ambushes": 0,
+          "waveIdx": 9999,
+          "state": "play",
+          "story": false,
+          "bossActive": true,
+          "subBossActive": false
+        },
+        "after": {
+          "stage": 1,
+          "map": 2493.168888888889,
+          "src": 1206.831111111111,
+          "sky": 0,
+          "airbase": 261.33333333333934,
+          "hold": false,
+          "bossHold": 1,
+          "live": 0,
+          "formations": 0,
+          "ambushes": 0,
+          "waveIdx": 9999,
+          "state": "play",
+          "story": false,
+          "bossActive": true,
+          "subBossActive": false
+        }
+      }
+    }
+  ],
+  "passed": 38,
+  "failed": 0,
+  "rows": [
+    {
+      "kind": "formations_scroll",
+      "stage": 1,
+      "difficulty": "easy",
+      "start": {
+        "stage": 1,
+        "map": 182.66666666666669,
+        "src": 3517.3333333333335,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 4,
+        "formations": 3,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 1,
+        "map": 262.66666666666725,
+        "src": 3437.3333333333326,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 4,
+        "formations": 3,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 1,
+      "difficulty": "normal",
+      "start": {
+        "stage": 1,
+        "map": 181.33333333333326,
+        "src": 3518.666666666667,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 6,
+        "formations": 5,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 1,
+        "map": 261.3333333333287,
+        "src": 3438.6666666666715,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 6,
+        "formations": 5,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 1,
+      "difficulty": "hard",
+      "start": {
+        "stage": 1,
+        "map": 181.33333333333326,
+        "src": 3518.666666666667,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 8,
+        "formations": 7,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 1,
+        "map": 261.3333333333287,
+        "src": 3438.6666666666715,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 8,
+        "formations": 7,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 1,
+      "difficulty": "furious",
+      "start": {
+        "stage": 1,
+        "map": 181.33333333333326,
+        "src": 3518.666666666667,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 10,
+        "formations": 9,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 1,
+        "map": 261.3333333333287,
+        "src": 3438.6666666666715,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 10,
+        "formations": 9,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 2,
+      "difficulty": "easy",
+      "start": {
+        "stage": 2,
+        "map": 181.33333333333326,
+        "src": 3386.666666666667,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 2,
+        "map": 261.3333333333313,
+        "src": 3306.666666666669,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 2,
+      "difficulty": "normal",
+      "start": {
+        "stage": 2,
+        "map": 181.33333333333343,
+        "src": 3386.6666666666665,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 2,
+        "map": 261.33333333333934,
+        "src": 3306.6666666666606,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 2,
+      "difficulty": "hard",
+      "start": {
+        "stage": 2,
+        "map": 181.33333333333343,
+        "src": 3386.6666666666665,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 2,
+        "map": 261.33333333333934,
+        "src": 3306.6666666666606,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 2,
+      "difficulty": "furious",
+      "start": {
+        "stage": 2,
+        "map": 181.33333333333343,
+        "src": 3386.6666666666665,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 2,
+        "map": 261.33333333333934,
+        "src": 3306.6666666666606,
+        "sky": 0,
+        "airbase": 0,
+        "hold": false,
+        "bossHold": 0,
+        "live": 1,
+        "formations": 0,
+        "ambushes": 1,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 4,
+      "difficulty": "easy",
+      "start": {
+        "stage": 4,
+        "map": 181.33333333333343,
+        "src": -181.33333333333343,
+        "sky": 0,
+        "airbase": 181.33333333333343,
+        "hold": false,
+        "bossHold": 0,
+        "live": 3,
+        "formations": 3,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 4,
+        "map": 261.33333333333934,
+        "src": -261.33333333333934,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 3,
+        "formations": 3,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 4,
+      "difficulty": "normal",
+      "start": {
+        "stage": 4,
+        "map": 181.33333333333343,
+        "src": -181.33333333333343,
+        "sky": 0,
+        "airbase": 181.33333333333343,
+        "hold": false,
+        "bossHold": 0,
+        "live": 5,
+        "formations": 5,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 4,
+        "map": 261.33333333333934,
+        "src": -261.33333333333934,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 5,
+        "formations": 5,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 4,
+      "difficulty": "hard",
+      "start": {
+        "stage": 4,
+        "map": 181.33333333333343,
+        "src": -181.33333333333343,
+        "sky": 0,
+        "airbase": 181.33333333333343,
+        "hold": false,
+        "bossHold": 0,
+        "live": 7,
+        "formations": 7,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 4,
+        "map": 261.33333333333934,
+        "src": -261.33333333333934,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 7,
+        "formations": 7,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 4,
+      "difficulty": "furious",
+      "start": {
+        "stage": 4,
+        "map": 181.33333333333343,
+        "src": -181.33333333333343,
+        "sky": 0,
+        "airbase": 181.33333333333343,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 9,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 4,
+        "map": 261.33333333333934,
+        "src": -261.33333333333934,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 9,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 6,
+      "difficulty": "easy",
+      "start": {
+        "stage": 6,
+        "map": 181.33333333333343,
+        "src": 4306.666666666667,
+        "sky": 24.666666666668462,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 3,
+        "formations": 3,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 6,
+        "map": 261.33333333333627,
+        "src": 4226.666666666663,
+        "sky": 1504.666666666721,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 3,
+        "formations": 3,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 6,
+      "difficulty": "normal",
+      "start": {
+        "stage": 6,
+        "map": 181.33333333333314,
+        "src": 4306.666666666667,
+        "sky": 24.666666666663076,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 5,
+        "formations": 5,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 6,
+        "map": 261.3333333333218,
+        "src": 4226.666666666678,
+        "sky": 1504.6666666664448,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 5,
+        "formations": 5,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 6,
+      "difficulty": "hard",
+      "start": {
+        "stage": 6,
+        "map": 181.33333333333314,
+        "src": 4306.666666666667,
+        "sky": 24.666666666663076,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 7,
+        "formations": 7,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 6,
+        "map": 261.3333333333218,
+        "src": 4226.666666666678,
+        "sky": 1504.6666666664448,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 7,
+        "formations": 7,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 6,
+      "difficulty": "furious",
+      "start": {
+        "stage": 6,
+        "map": 181.33333333333314,
+        "src": 4306.666666666667,
+        "sky": 24.666666666663076,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 9,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 6,
+        "map": 261.3333333333218,
+        "src": 4226.666666666678,
+        "sky": 1504.6666666664448,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 9,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 8,
+      "difficulty": "easy",
+      "start": {
+        "stage": 8,
+        "map": 181.33333333333314,
+        "src": 842.6666666666669,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 3,
+        "formations": 3,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 8,
+        "map": 261.3333333333218,
+        "src": 762.6666666666782,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 3,
+        "formations": 3,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 8,
+      "difficulty": "normal",
+      "start": {
+        "stage": 8,
+        "map": 181.33333333333314,
+        "src": 842.6666666666669,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 5,
+        "formations": 5,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 8,
+        "map": 261.3333333333218,
+        "src": 762.6666666666782,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 5,
+        "formations": 5,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 8,
+      "difficulty": "hard",
+      "start": {
+        "stage": 8,
+        "map": 181.33333333333314,
+        "src": 842.6666666666669,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 7,
+        "formations": 7,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 8,
+        "map": 261.3333333333218,
+        "src": 762.6666666666782,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 7,
+        "formations": 7,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "formations_scroll",
+      "stage": 8,
+      "difficulty": "furious",
+      "start": {
+        "stage": 8,
+        "map": 181.33333333333314,
+        "src": 842.6666666666669,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 9,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 8,
+        "map": 261.3333333333218,
+        "src": 762.6666666666782,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 9,
+        "ambushes": 0,
+        "waveIdx": 999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      }
+    },
+    {
+      "kind": "ground_queue",
+      "difficulty": "easy",
+      "before": {
+        "stage": 1,
+        "map": 900,
+        "src": 2800,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 3,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "after": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 3,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "dispatch": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 4
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 4
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      },
+      "meta": {
+        "idx": 5,
+        "threshold": 8,
+        "pressure": 3,
+        "sourceBottom": 3312,
+        "landThreshold": 3352,
+        "live": 9
+      }
+    },
+    {
+      "kind": "ground_queue",
+      "difficulty": "normal",
+      "before": {
+        "stage": 1,
+        "map": 900,
+        "src": 2800,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 5,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "after": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 5,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "dispatch": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 6
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 6
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      },
+      "meta": {
+        "idx": 5,
+        "threshold": 8,
+        "pressure": 3,
+        "sourceBottom": 3312,
+        "landThreshold": 3352,
+        "live": 9
+      }
+    },
+    {
+      "kind": "ground_queue",
+      "difficulty": "hard",
+      "before": {
+        "stage": 1,
+        "map": 900,
+        "src": 2800,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 7,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "after": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 9,
+        "formations": 7,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "dispatch": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 6
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 6
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      },
+      "meta": {
+        "idx": 5,
+        "threshold": 8,
+        "pressure": 3,
+        "sourceBottom": 3312,
+        "landThreshold": 3352,
+        "live": 9
+      }
+    },
+    {
+      "kind": "ground_queue",
+      "difficulty": "furious",
+      "before": {
+        "stage": 1,
+        "map": 900,
+        "src": 2800,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 0,
+        "live": 10,
+        "formations": 9,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "after": {
+        "stage": 1,
+        "map": 959.9999999999864,
+        "src": 2740.0000000000136,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": true,
+        "bossHold": 0,
+        "live": 10,
+        "formations": 9,
+        "ambushes": 1,
+        "waveIdx": 5,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": false
+      },
+      "dispatch": {
+        "waveIdx": 6,
+        "ground": [
+          {
+            "type": "s1tanklight",
+            "x": 234.4,
+            "y": -106.66666666666697,
+            "hp": 11
+          },
+          {
+            "type": "s1tankapc",
+            "x": 453.59999999999997,
+            "y": -225.16666666666697,
+            "hp": 11
+          }
+        ],
+        "types": [
+          "s1tanklight",
+          "s1tankapc"
+        ],
+        "mapScroll": 961.3333333333194
+      },
+      "meta": {
+        "idx": 5,
+        "threshold": 8,
+        "pressure": 3,
+        "sourceBottom": 3312,
+        "landThreshold": 3352,
+        "live": 10
+      }
+    },
+    {
+      "kind": "encounter_hold",
+      "role": "mini",
+      "start": {
+        "stage": 1,
+        "map": 1412.1688888888893,
+        "src": 2287.8311111111107,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 1,
+        "live": 0,
+        "formations": 0,
+        "ambushes": 0,
+        "waveIdx": 9999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": true
+      },
+      "end": {
+        "stage": 1,
+        "map": 1412.1688888888893,
+        "src": 2287.8311111111107,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 1,
+        "live": 0,
+        "formations": 0,
+        "ambushes": 0,
+        "waveIdx": 9999,
+        "state": "play",
+        "story": false,
+        "bossActive": false,
+        "subBossActive": true
+      }
+    },
+    {
+      "kind": "encounter_hold",
+      "role": "boss",
+      "start": {
+        "stage": 1,
+        "map": 2493.168888888889,
+        "src": 1206.831111111111,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 1,
+        "live": 0,
+        "formations": 0,
+        "ambushes": 0,
+        "waveIdx": 9999,
+        "state": "play",
+        "story": false,
+        "bossActive": true,
+        "subBossActive": false
+      },
+      "end": {
+        "stage": 1,
+        "map": 2493.168888888889,
+        "src": 1206.831111111111,
+        "sky": 0,
+        "airbase": 261.33333333333934,
+        "hold": false,
+        "bossHold": 1,
+        "live": 0,
+        "formations": 0,
+        "ambushes": 0,
+        "waveIdx": 9999,
+        "state": "play",
+        "story": false,
+        "bossActive": true,
+        "subBossActive": false
+      }
+    }
+  ],
+  "errors": [],
+  "scope": "Native Edge render loop; controlled enemy/campaign fixtures; no claims about human survival or complete campaign clear."
+}

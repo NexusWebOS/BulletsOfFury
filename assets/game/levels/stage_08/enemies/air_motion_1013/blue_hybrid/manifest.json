@@ -1,0 +1,49 @@
+{
+  "id": "mm1003_bluehybrid",
+  "name": "Blue Hybrid",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "mm1003_bluehybrid"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/blue_hybrid",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_mm1003_bluehybrid_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/blue_hybrid/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "887feaec7bac2f88684457440f60d5f86012964e99ed53557c1732f9c797b740"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_mm1003_bluehybrid_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/blue_hybrid/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "a66750ae9df1dec3bb67589fcb81e6c41001c4c6e2ba757f7f03949def1467b7"
+  },
+  "nativeRatios": {
+    "mm1003_bluehybrid": 1.0
+  },
+  "sourceKeys": {
+    "mm1003_bluehybrid": "mm1003_bluehybrid"
+  }
+}

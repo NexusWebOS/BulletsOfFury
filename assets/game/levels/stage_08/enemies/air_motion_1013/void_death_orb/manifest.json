@@ -1,0 +1,52 @@
+{
+  "id": "s8deathorb",
+  "name": "Void Death Orb",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "s8deathorb",
+    "s8bomber"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/void_death_orb",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_s8deathorb_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_death_orb/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "5f6b1f2de7b06df73572384d33046849eb8bdddeda37a6d8e25138dd183a4731"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_s8deathorb_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_death_orb/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "c9878eb80ad805fa349b9f6e6e1f9f3544b52235a3d1e47282265ebcc98e9235"
+  },
+  "nativeRatios": {
+    "s8deathorb": 1.096,
+    "s8bomber": 1.086092715231788
+  },
+  "sourceKeys": {
+    "s8deathorb": "fr27_realm_fleet",
+    "s8bomber": "fr27_realm_fleet"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "tool": "built-in image_gen",
+  "definitions": [
+    {
+      "key": "buttons",
+      "refs": [
+        "assets/game/shared/ui/ui/title_0916/btn_newgame_lit.png",
+        "_shots/overdrive_menu_1011/original_title.png"
+      ],
+      "prompt": "FRAME FORMAT: master 1536 x 1024 pixels, exactly 3 columns by 4 rows of identical 512 x 256 cells. Every cell has a centered horizontal button plate, 480 x 88 pixels, centered at cell (256,128), same proportional scale. Leave the rest of each cell transparent and never cross cell borders. Game production sheet for BULLETS OF FURY: OVERDRIVE. Reference 1 is the actual original button. Match its hard pixel illustration, heavy riveted steel bevel, compact dark icon socket at left, patterned illustrated inset, thick black outlined readable uppercase arcade lettering, vertical colored lamps at both ends. Rebuild it with orange Overdrive heat seams and fiber-cable detailing while preserving original mechanical style and visual weight. No backgrounds or extra words. Exactly twelve buttons, row major: NEW GAME (green, tank icon, compound road inset); CONTINUE (teal, tank forward icon); PASSWORD (amber, padlock); OPTIONS (blue, sliders); HELP (magenta, question mark); ARMORY (gold, crossed tank shells); ACHIEVEMENTS (red/gold, medal); CREDITS (bronze, star); EXIT GAME (white, door arrow); RESUME (teal); APPLY (green check); CANCEL (red X). Full labels inside each button; no cropping. All source sprites distinct, fixed geometry, no screen mockup."
+    },
+    {
+      "key": "difficulty",
+      "refs": [
+        "assets/game/shared/ui/ui/diff_0916/diff_normal.png",
+        "expansion/pilot_avatars/hotwire-idle.png",
+        "expansion/pilot_avatars/phoenix-idle.png",
+        "expansion/windstorm_machinists/identity/niel_avatar_v2.png"
+      ],
+      "prompt": "FRAME FORMAT: master 1536 x 1024, exactly 2 columns by 4 rows of identical 768 x 256 transparent cells. Each horizontal difficulty plate is 720 x 168 pixels centered at (384,128), same proportional scale, safe transparent margins, never cross borders. Bullets of Fury OVERDRIVE pixel game UI. Match first reference's original riveted olive metal horizontal difficulty cabinet, framed portrait on left, blueprint dark grid on right, very large black-outlined block uppercase label, twin illuminated end strips. Use the three actual expansion identities in refs 2-4, matching their faces/hair/skin/gear precisely, inside the original square portrait socket. Exact row-major labels and portraits: EASY with Niel green, NORMAL with Hotwire cyan, HARD with Phoenix orange, FURIOUS with Hotwire red, INSANITY with Phoenix violet. Last three cells are same original cabinet but with mechanical icon instead of face and exact labels SOUND, CONTROLS, PASSWORDS. Overdrive orange fine heat seams, sharpened steel and crisp authored pixel illustration. No extra text, no gradients outside art, real alpha transparent background, uniform aligned frames."
+    },
+    {
+      "key": "achievements",
+      "refs": [
+        "assets/game/shared/ui/ui/awards_0916/ach_campaign_clear.png",
+        "_shots/overdrive_menu_1011/reference_art.png"
+      ],
+      "prompt": "FRAME FORMAT: master 1024 x 1024, exact 4 x 4 grid, sixteen fixed 256 x 256 transparent cells; one badge centered at (128,128), maximum art 208 x 208, common proportional scale and pivot, even gutters and padding. Sprite sheet of sixteen new Bullets of Fury OVERDRIVE achievement medals. Match original gold engraved military arcade badge in reference, hard outlined pixel clusters, bevelled steel/gold medal, orange copper Overdrive accent, colored narrow ribbon as appropriate. No words, no text, no background, no UI mockup. Row major distinct readable emblems: 1 first tank deployment with tread badge; 2 winged speed boost tank; 3 shoulder turret turning with two arrows; 4 homing missile locked on crosshair; 5 smashed concrete wall; 6 warrior helmet trophy; 7 unbroken shield with helmet; 8 rogue squad three tank silhouettes; 9 copper fiber cable whip lightning; 10 phoenix fire bird; 11 teal wind spiral; 12 on-foot combat boot and rifle; 13 rescued civilian hands; 14 silent eye with crossed alarm; 15 finished campaign three linked banners; 16 furious difficulty flaming gold skull. All sixteen equally substantial, vivid clean silhouettes, authored ColeForge pixel finish, real alpha."
+    },
+    {
+      "key": "controllers",
+      "refs": [
+        "_shots/overdrive_menu_1011/original_pilot.png",
+        "assets/game/shared/ui/ui/title_0916/btn_newgame_lit.png"
+      ],
+      "prompt": "FRAME FORMAT: master 1536 x 1024, two identical 768 x 1024 transparent cells, each controller centered at (384,420), proportional scale, margin 64 pixels, no art crossing the center gutter. Bullets of Fury OVERDRIVE controller scheme artwork, same crisply outlined pixel rendering and riveted gunmetal trim as original game graphics in references. LEFT cell: complete six-face-button arcade gamepad with a cross D-pad at left, two clear rows of three circular face buttons at right, START and MODE middle, two visible shoulder buttons on top labelled L and R. Six face buttons labelled exactly X Y Z across upper row and A B C across lower row. RIGHT cell: conventional four-face-button gamepad, directional cross, two sticks, START center, L and R shoulder buttons, four clearly labelled A B X Y face buttons. Menacing orange/cyan illuminated trim, sturdy charcoal casing, silver bolts, authentic compact control hardware. Reserve lower 300 pixels transparent for live game labels which we will add. Do not bake action descriptions, keyboard keys, connector wires or hands. Alpha background, no panel mockup."
+    },
+    {
+      "key": "warrior2",
+      "refs": [
+        "expansion/topdown/art/warrior_1011/source/warrior.png"
+      ],
+      "prompt": "FRAME FORMAT: exact 1536 x 1024 master, 3 columns by 2 rows of 512 x 512 transparent cells, identical cell resolution, common proportional scale per module, fixed physical mounts, reserve 32 pixels transparent margin and never cross borders. Production modular sprite pack for new THE WARRIOR boss in Bullets of Fury OVERDRIVE, evolved from the reference. Design an ENTIRELY NEW much more menacing super-heavy tracked combat machine, inspired by the broad mobile tracked lower base, raised torso and huge articulated gun arms of the HK tank arcade boss in Terminator 2, but distinctly original with its own armored warrior helmet, no hammerhead or recognizable movie robot geometry. Match Bullets of Fury's authored detailed arcade pixel style with strong dark outlines, readable steel highlights, olive and midnight blue armor panels, glowing amber vents and red visor. Boss faces SOUTH toward bottom of page, high overhead three-quarter view suitable for overhead tank combat. Row-major exact isolated components: 1 very broad low twin-track heavy chassis with thick independent tread pods, central raised octagonal torso socket, squared forward ram armor; 2 tall brutal warrior helmet and armored torso with red angular eye slit, ridged crest, wide pointed shoulder armor, no arms attached; 3 LEFT long cannon arm with shoulder mount on right side at x450,y170, massive elbow, chunky long forearm, a double-bore cannon and six rocket tubes, gun points down-left; 4 RIGHT matching long cannon arm mirrored with mount x60,y170, down-right; 5 same chassis damaged with exposed glowing reactor, same size/anchor as cell1; 6 same chassis shattered/burning wreck, same size/anchor as cell1. No assembled robot, no text, no framing, no scenery, no placeholder effects, real alpha background. Helmet torso mount bottom center at x256,y315; chassis pivot x256,y270. New geometry and formidable silhouette, keep modules separate and connected by authored circular mount collars. Weapons use compact controlled orange muzzle openings, no charge orb."
+    }
+  ],
+  "outputs": {
+    "buttons": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3fa-8ffb-7c42-aa6c-760e352498bc\\exec-cf793ed9-a0ea-44e3-b1ef-3f9eece0146f.png",
+    "difficulty": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3fa-8ffb-7c42-aa6c-760e352498bc\\exec-84c320d2-3f40-43e7-acbd-4e820e925941.png",
+    "achievements": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3fa-8ffb-7c42-aa6c-760e352498bc\\exec-b695a74f-8c9f-4277-9972-a08e4dcad849.png",
+    "controllers": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3fa-8ffb-7c42-aa6c-760e352498bc\\exec-d31cfe8b-37b5-44a5-a724-153857b643c9.png",
+    "warrior2": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3fa-8ffb-7c42-aa6c-760e352498bc\\exec-609c40e6-638d-48b0-ac15-3b4270b3ec6d.png"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "passed": 16,
+  "failed": 0,
+  "errors": [],
+  "checks": [
+    {
+      "name": "All five concepts load with native references and reduced-motion default",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept 1 selector updates its title and highlighted choice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept 2 selector updates its title and highlighted choice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept 3 selector updates its title and highlighted choice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept 4 selector updates its title and highlighted choice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept 5 selector updates its title and highlighted choice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gameplay displays a valid native reference inside the same full-height field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fly-in displays a valid native reference inside the same full-height field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "continue displays a valid native reference inside the same full-height field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Switching scene never resizes the visible preview or logical playfield",
+      "passed": true,
+      "detail": [
+        {
+          "x": 173,
+          "y": 429.09375,
+          "width": 1574,
+          "height": 885.375
+        },
+        {
+          "x": 173,
+          "y": 429.09375,
+          "width": 1574,
+          "height": 885.375
+        },
+        {
+          "x": 173,
+          "y": 429.09375,
+          "width": 1574,
+          "height": 885.375
+        }
+      ]
+    },
+    {
+      "name": "Empty stock state remains selectable and visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Radar sweep can animate independently of scene geometry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Fullscreen uses the complete 16:9 display without top or bottom HUD bands",
+      "passed": true,
+      "detail": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    {
+      "name": "Save mockup downloads the selected PNG",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile review fits without horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No browser or missing-asset errors",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

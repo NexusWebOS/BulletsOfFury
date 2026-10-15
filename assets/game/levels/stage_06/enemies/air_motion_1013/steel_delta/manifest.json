@@ -1,0 +1,49 @@
+{
+  "id": "l6v_s2",
+  "name": "Steel Delta",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_s2"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_delta",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_s2_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_delta/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "5d8da2ac2ffc736b977dd7c240c2afa8ba544372661b87baa58afe02eff0e769"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_s2_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_delta/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "33bfbea4f86b10b6b8c8458fef6610f6e576a746ce23010d0ca694a909185df4"
+  },
+  "nativeRatios": {
+    "l6v_s2": 2.1538461538461537
+  },
+  "sourceKeys": {
+    "l6v_s2": "n6v2_steel_intact_c"
+  }
+}

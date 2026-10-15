@@ -1,0 +1,860 @@
+{
+  "date": "2026-10-09",
+  "base_commit": "f84dfc28f571f5a8243e6c22f3a2991453b14910",
+  "scope": {
+    "source_sheets": 13,
+    "normalized_cells": 208,
+    "current_enemy_roster_slots": 24,
+    "pilot_neutral_flight_loops": 9,
+    "furyship_neutral_flight_loops": 1,
+    "furyship_pilot_palettes": 9
+  },
+  "syntax": [
+    "assets/game.js",
+    "assets/smooth_motion_1009.js",
+    "assets/smooth_motion_art_1009.js"
+  ],
+  "regression_suite": {
+    "passed": 7952,
+    "final_banner": true,
+    "exit_code": 0,
+    "log_sha256": "77520594282b1049779cb09fe82f0ea99901eabbb0f87f5f93c4cdb2db5ab1d3"
+  },
+  "native": {
+    "farewell_and_facing": {
+      "passed": 16,
+      "failed": [],
+      "errors": [],
+      "checks": [
+        {
+          "name": "Last words begin before death clock",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Portrait fades white, box out, lock, missile, then death",
+          "pass": true,
+          "data": {
+            "words": 0.0,
+            "portraitWhite": 5.6,
+            "windowOut": 6.866666666666666,
+            "lock": 7.6,
+            "missile": 8.466666666666667,
+            "death": 9.133333333333333
+          }
+        },
+        {
+          "name": "Farewell portrait visibly reaches white",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "One missile impact causes nine sequential electrical pops",
+          "pass": true,
+          "data": [
+            {
+              "event": "hammer-last-words"
+            },
+            {
+              "event": "hammer-portraitWhite"
+            },
+            {
+              "event": "hammer-windowOut"
+            },
+            {
+              "event": "hammer-lock"
+            },
+            {
+              "event": "hammer-missile"
+            },
+            {
+              "event": "hammer-core-impact",
+              "x": 357,
+              "y": 148.08
+            },
+            {
+              "event": "hammer-death"
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 0,
+              "at": 0.12
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 1,
+              "at": 0.5800000000000001
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 2,
+              "at": 1.04
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 3,
+              "at": 1.5
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 4,
+              "at": 1.96
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 5,
+              "at": 2.4200000000000004
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 6,
+              "at": 2.8800000000000003
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 7,
+              "at": 3.3400000000000003
+            },
+            {
+              "event": "hammer-electrical-pop",
+              "i": 8,
+              "at": 3.8000000000000003
+            }
+          ]
+        },
+        {
+          "name": "Cutaway follows completed eight-second in-game death",
+          "pass": true,
+          "data": "overhead"
+        },
+        {
+          "name": "disc eight native frames, hitbox/HP preserved",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "eye eight native frames, hitbox/HP preserved",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s3mine eight native frames, hitbox/HP preserved",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s3interceptor eight native frames, hitbox/HP preserved",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Strike facing south survives contrary transient spin",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Strike facing east survives contrary transient spin",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Strike facing west survives contrary transient spin",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Strike facing north survives contrary transient spin",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Blue fighter south uses correct native cell despite stale spin",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Blue fighter north uses correct native cell despite stale spin",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "No page, console or asset errors",
+          "pass": true,
+          "data": []
+        }
+      ]
+    },
+    "enemy_and_ship_motion": {
+      "passed": 71,
+      "failed": [],
+      "errors": [],
+      "checks": [
+        {
+          "name": "Stage queues include new enemy and all pilot cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "disc eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "disc visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9714746285393888
+          }
+        },
+        {
+          "name": "eye eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "eye visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9724314669565892
+          }
+        },
+        {
+          "name": "skim eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "skim visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.952084952084952
+          }
+        },
+        {
+          "name": "s3mine eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s3mine visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9409984871406959
+          }
+        },
+        {
+          "name": "s3interceptor eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s3interceptor visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9373845206323137
+          }
+        },
+        {
+          "name": "s4tractor eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s4tractor visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9768093930720252
+          }
+        },
+        {
+          "name": "s5frigate eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s5frigate visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9538780048307327
+          }
+        },
+        {
+          "name": "s5rammer eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s5rammer visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9674830425102263
+          }
+        },
+        {
+          "name": "s6lancer eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s6lancer visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9581183247329893
+          }
+        },
+        {
+          "name": "s6cyclone eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s6cyclone visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9566079607158033
+          }
+        },
+        {
+          "name": "s6skimmer eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s6skimmer visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9581183247329893
+          }
+        },
+        {
+          "name": "s6dart eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s6dart visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9619499841722063
+          }
+        },
+        {
+          "name": "s6thunder eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s6thunder visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9591512822654749
+          }
+        },
+        {
+          "name": "s7pipe eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s7pipe visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.94091546006539
+          }
+        },
+        {
+          "name": "s7walker eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s7walker visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9555315552216379
+          }
+        },
+        {
+          "name": "s8interceptor eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s8interceptor visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.947141738449491
+          }
+        },
+        {
+          "name": "s8parasite eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s8parasite visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9471838250464205
+          }
+        },
+        {
+          "name": "s8skull eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s8skull visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9466264431165516
+          }
+        },
+        {
+          "name": "s8symbiote eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s8symbiote visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9469538059944996
+          }
+        },
+        {
+          "name": "s8spread eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s8spread visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.947366778010177
+          }
+        },
+        {
+          "name": "s8crescent eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s8crescent visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9490018396129999
+          }
+        },
+        {
+          "name": "s8hunter eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s8hunter visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.915605285085109
+          }
+        },
+        {
+          "name": "s4airfield eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s4airfield visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9886603375527426
+          }
+        },
+        {
+          "name": "s4minitank eight rendered frames and unchanged hitbox/HP",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s4minitank visible white hit frame",
+          "pass": true,
+          "data": {
+            "neutral": 1.0,
+            "bright": 0.9886603375527426
+          }
+        },
+        {
+          "name": "Desert turret still aims independently of the moving hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "axel eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 190,
+            "h": 224,
+            "key": "ship_axel",
+            "thr": [
+              0.4973,
+              0.9041,
+              0.0012,
+              [
+                -0.1786,
+                0.1786
+              ]
+            ]
+          }
+        },
+        {
+          "name": "cole eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 193,
+            "h": 232,
+            "key": "ship_cole",
+            "thr": [
+              0.4954,
+              0.9041,
+              0.0016,
+              [
+                -0.1256,
+                0.1256
+              ]
+            ]
+          }
+        },
+        {
+          "name": "decker eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 200,
+            "h": 230,
+            "key": "ship_decker",
+            "thr": [
+              0.4973,
+              0.8949,
+              -0.0011,
+              [
+                -0.1232,
+                0.1232
+              ]
+            ]
+          }
+        },
+        {
+          "name": "falva eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 204,
+            "h": 238,
+            "key": "ship_falva",
+            "thr": [
+              0.4955,
+              0.8964,
+              0.0036,
+              [
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "name": "freezer eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 183,
+            "h": 194,
+            "key": "ship_freezer",
+            "thr": [
+              0.4961,
+              0.9077,
+              0.0053,
+              [
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "name": "juggernaut eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 200,
+            "h": 205,
+            "key": "ship_juggernaut",
+            "thr": [
+              0.4955,
+              0.8982,
+              0.0009,
+              [
+                -0.16,
+                0.16
+              ]
+            ]
+          }
+        },
+        {
+          "name": "lizzie eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 224,
+            "h": 243,
+            "key": "ship_lizzie",
+            "thr": [
+              0.5031,
+              0.8893,
+              -0.0253,
+              [
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "name": "maverick eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 200,
+            "h": 211,
+            "key": "ship_maverick",
+            "thr": [
+              0.4945,
+              0.9077,
+              0.0766,
+              [
+                -0.1647,
+                0.1647
+              ]
+            ]
+          }
+        },
+        {
+          "name": "yuri eight native ship frames retain original canvas/nozzle rig",
+          "pass": true,
+          "data": {
+            "w": 209,
+            "h": 229,
+            "key": "ship_yuri",
+            "thr": [
+              0.4981,
+              0.8339,
+              -0.0028,
+              [
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "name": "axel Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "cole Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "decker Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "falva Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "freezer Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "juggernaut Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "lizzie Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "maverick Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "yuri Furyship eight frames retain current 128px hull",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Furyship pilot hull palettes stay distinct",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Southbound Stage 6 hulls animate with stale north spin",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "No page, console or asset errors",
+          "pass": true,
+          "data": []
+        }
+      ]
+    },
+    "filmed_boss_regressions": {
+      "passed": 18,
+      "failed": [],
+      "errors": [],
+      "checks": [
+        {
+          "name": "64 authored cells load through XART",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Every affected boss stage queues its new frames before play",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Hammer acts and ruptures before cutaways",
+          "pass": true,
+          "data": [
+            {
+              "event": "hammer-authored-rupture",
+              "t": 4.866666666666655
+            }
+          ]
+        },
+        {
+          "name": "Spike preview and target stay at bottom",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Escaping upward triggers authored counter",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Dracodia physical pattern emits no replacement volleys",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Every Dracodia acting pose retains its attached head",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Below half of active form adds four warned strikes",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Broken Dracodia arm removed from physical rig",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Warden uses generated claw cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Destroyed Warden claw cancels its pending strike",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Warden landing uses new gravel reel",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Warden converges guns and alternates owned rounds",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "cryospear turret charge renders",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "frostcruiser turret charge renders",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "stormsovereign turret charge renders",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Ordinary pellets stay non-interceptable",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "No page, console or asset errors",
+          "pass": true,
+          "data": []
+        }
+      ],
+      "shots": [
+        "hammer-death-0.png",
+        "hammer-death-1.png",
+        "hammer-death-2.png",
+        "hammer-death-3.png",
+        "hammer-death-4.png",
+        "hammer-death-5.png",
+        "hammer-death-6.png",
+        "hammer-death-7.png"
+      ],
+      "videos": [
+        "hammer-death.mp4",
+        "hammer-counter.mp4",
+        "dracodia-claws.mp4",
+        "dracodia-enraged.mp4",
+        "warden-claws.mp4",
+        "warden-leap.mp4",
+        "warden-battery.mp4",
+        "turrets-cryospear.mp4",
+        "turrets-frostcruiser.mp4",
+        "turrets-stormsovereign.mp4"
+      ]
+    }
+  },
+  "limits": "Native controlled fixtures prove rendering, HP/hitbox preservation and integration. They do not establish a full campaign victory or final balance. Additional unique chassis and ship bank/roll in-betweens remain future motion work."
+}

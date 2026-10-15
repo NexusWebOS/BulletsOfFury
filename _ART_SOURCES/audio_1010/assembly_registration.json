@@ -1,0 +1,421 @@
+{
+  "raw_sha256": "ea8bba65108096614e71c8e580be6229ab15f035318daa559964a829cf283aed",
+  "bank": [
+    {
+      "key": "ap10_assembly_00",
+      "path": "assets/game/shared/combat/audio_1010/assembly_00.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        0,
+        0,
+        312,
+        316
+      ],
+      "source_pivot": [
+        149.59154929577466,
+        186.61569416498995
+      ],
+      "translation": [
+        26,
+        37
+      ],
+      "scale": 1,
+      "sha256": "8903867c33b63b3f3811eef1be3c0e20c812c2e607a087e53466fc528e2ae418"
+    },
+    {
+      "key": "ap10_assembly_01",
+      "path": "assets/game/shared/combat/audio_1010/assembly_01.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        312,
+        0,
+        623,
+        316
+      ],
+      "source_pivot": [
+        150.06633906633905,
+        189.2923832923833
+      ],
+      "translation": [
+        26,
+        35
+      ],
+      "scale": 1,
+      "sha256": "f2883f997510f8db6907aa0696ee8948dca196da35e778d7ce69913ae465ac4a"
+    },
+    {
+      "key": "ap10_assembly_02",
+      "path": "assets/game/shared/combat/audio_1010/assembly_02.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        623,
+        0,
+        934,
+        316
+      ],
+      "source_pivot": [
+        150.09944751381215,
+        189.04051565377532
+      ],
+      "translation": [
+        26,
+        35
+      ],
+      "scale": 1,
+      "sha256": "d516d34c0169deac709d9e51203c1c6ce235733d77ffea6449065755ea331999"
+    },
+    {
+      "key": "ap10_assembly_03",
+      "path": "assets/game/shared/combat/audio_1010/assembly_03.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        934,
+        0,
+        1246,
+        316
+      ],
+      "source_pivot": [
+        154.52855543113102,
+        185.45128779395296
+      ],
+      "translation": [
+        21,
+        39
+      ],
+      "scale": 1,
+      "sha256": "e6b9df826f6c51bf2276bec11ac17ef25af2df180dcedc50fa00c1848ab799b2"
+    },
+    {
+      "key": "ap10_assembly_04",
+      "path": "assets/game/shared/combat/audio_1010/assembly_04.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        0,
+        316,
+        312,
+        632
+      ],
+      "source_pivot": [
+        150.54631828978623,
+        177.00712589073635
+      ],
+      "translation": [
+        25,
+        47
+      ],
+      "scale": 1,
+      "sha256": "f034ece16af8c50566bae47ceeb88a5eee7070c98e4df5cf1c1d6bd810245272"
+    },
+    {
+      "key": "ap10_assembly_05",
+      "path": "assets/game/shared/combat/audio_1010/assembly_05.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        312,
+        316,
+        623,
+        632
+      ],
+      "source_pivot": [
+        150.19645494830132,
+        185.18316100443133
+      ],
+      "translation": [
+        26,
+        39
+      ],
+      "scale": 1,
+      "sha256": "35326d57650f8a2ebb34128ab43f83c42ca4c909f72ff4453e26da8b396fffc7"
+    },
+    {
+      "key": "ap10_assembly_06",
+      "path": "assets/game/shared/combat/audio_1010/assembly_06.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        623,
+        316,
+        934,
+        632
+      ],
+      "source_pivot": [
+        150.37443609022557,
+        181.89924812030074
+      ],
+      "translation": [
+        26,
+        42
+      ],
+      "scale": 1,
+      "sha256": "6f2e00b08d64c6500708a76265161d0a6e7d04c07041dd131ac1a19ca4bf55ab"
+    },
+    {
+      "key": "ap10_assembly_07",
+      "path": "assets/game/shared/combat/audio_1010/assembly_07.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        934,
+        316,
+        1246,
+        632
+      ],
+      "source_pivot": [
+        155.53548387096774,
+        178.73548387096776
+      ],
+      "translation": [
+        20,
+        45
+      ],
+      "scale": 1,
+      "sha256": "7cfa9381bb4c73a63fac5406dbe6220e1d8139ea6bbf470ab0d3cf8c4dfedd58"
+    },
+    {
+      "key": "ap10_assembly_08",
+      "path": "assets/game/shared/combat/audio_1010/assembly_08.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        0,
+        632,
+        312,
+        947
+      ],
+      "source_pivot": [
+        150.01694915254237,
+        187.45371577574969
+      ],
+      "translation": [
+        26,
+        37
+      ],
+      "scale": 1,
+      "sha256": "436eaab8cbf91bce1df3f6c31d478e5543bac3311dfd396c24b47f5ca226c830"
+    },
+    {
+      "key": "ap10_assembly_09",
+      "path": "assets/game/shared/combat/audio_1010/assembly_09.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        312,
+        632,
+        623,
+        947
+      ],
+      "source_pivot": [
+        151.48886827458256,
+        187.5556586270872
+      ],
+      "translation": [
+        25,
+        36
+      ],
+      "scale": 1,
+      "sha256": "8266a3ba5b7b3ab5831e385b7f58ec50d0c4605ea0d6156458b1a2c53988722f"
+    },
+    {
+      "key": "ap10_assembly_10",
+      "path": "assets/game/shared/combat/audio_1010/assembly_10.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        623,
+        632,
+        934,
+        947
+      ],
+      "source_pivot": [
+        150.1808346213292,
+        188.76197836166924
+      ],
+      "translation": [
+        26,
+        35
+      ],
+      "scale": 1,
+      "sha256": "22e0d1e7549ed36e01f82980a23d65822c3b6f846d65b5ea6dfc99970ece4b9f"
+    },
+    {
+      "key": "ap10_assembly_11",
+      "path": "assets/game/shared/combat/audio_1010/assembly_11.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        934,
+        632,
+        1246,
+        947
+      ],
+      "source_pivot": [
+        154.94073377234244,
+        185.13828786453433
+      ],
+      "translation": [
+        21,
+        39
+      ],
+      "scale": 1,
+      "sha256": "b2cbf59b13e0fa8fb4ddcf1df063e8362c9712df8539464f3e3867013a21d0e8"
+    },
+    {
+      "key": "ap10_assembly_12",
+      "path": "assets/game/shared/combat/audio_1010/assembly_12.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        0,
+        947,
+        312,
+        1263
+      ],
+      "source_pivot": [
+        148.83258928571428,
+        188.48214285714286
+      ],
+      "translation": [
+        27,
+        36
+      ],
+      "scale": 1,
+      "sha256": "86d18bced17d709990b95305a21ce1f6fa8698b09c180058a87bef8e040bb31b"
+    },
+    {
+      "key": "ap10_assembly_13",
+      "path": "assets/game/shared/combat/audio_1010/assembly_13.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        312,
+        947,
+        623,
+        1263
+      ],
+      "source_pivot": [
+        150.42936288088643,
+        181.7100646352724
+      ],
+      "translation": [
+        26,
+        42
+      ],
+      "scale": 1,
+      "sha256": "7824c171b68281d9d6ca5585a6100ccc01d1a349fad4a9781f633061d9994a7a"
+    },
+    {
+      "key": "ap10_assembly_14",
+      "path": "assets/game/shared/combat/audio_1010/assembly_14.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        623,
+        947,
+        934,
+        1263
+      ],
+      "source_pivot": [
+        150.00834202294055,
+        184.15745568300312
+      ],
+      "translation": [
+        26,
+        40
+      ],
+      "scale": 1,
+      "sha256": "f5dc990de0eb2bdda2e1d611ac2193650e31ba41e5b234de9a5f2463dd170ac5"
+    },
+    {
+      "key": "ap10_assembly_15",
+      "path": "assets/game/shared/combat/audio_1010/assembly_15.png",
+      "w": 352,
+      "h": 384,
+      "pivot": [
+        176,
+        224
+      ],
+      "source_rect": [
+        934,
+        947,
+        1246,
+        1263
+      ],
+      "source_pivot": [
+        154.39285714285714,
+        181.34459459459458
+      ],
+      "translation": [
+        22,
+        43
+      ],
+      "scale": 1,
+      "sha256": "f49f3742bf5d054414fab6f03639e9f706a35cd0e05e82fca90a381950474113"
+    }
+  ]
+}

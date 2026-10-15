@@ -1,0 +1,177 @@
+{
+  "id": "siege-console",
+  "name": "Siege Console",
+  "number": 4,
+  "note": "Vented armor with fewer illuminated seams and a heavier military finish.",
+  "size": [
+    1024,
+    1536
+  ],
+  "wells": {
+    "scores": [
+      97,
+      105,
+      325,
+      137
+    ],
+    "roll": [
+      87,
+      289,
+      144,
+      131
+    ],
+    "somer": [
+      289,
+      289,
+      147,
+      131
+    ],
+    "weapon": [
+      92,
+      509,
+      338,
+      331
+    ],
+    "pilot": [
+      94,
+      1085,
+      334,
+      214
+    ],
+    "radar": [
+      602,
+      105,
+      325,
+      322
+    ],
+    "special": [
+      602,
+      476,
+      325,
+      288
+    ],
+    "lives": [
+      589,
+      867,
+      145,
+      155
+    ],
+    "missiles": [
+      795,
+      867,
+      144,
+      156
+    ],
+    "lock": [
+      599,
+      1078,
+      330,
+      219
+    ],
+    "speed": [
+      86,
+      889,
+      348,
+      58
+    ],
+    "shield": [
+      86,
+      981,
+      348,
+      57
+    ],
+    "rollBar": [
+      95,
+      434,
+      130,
+      23
+    ],
+    "somerBar": [
+      298,
+      433,
+      127,
+      24
+    ],
+    "specialBar": [
+      617,
+      787,
+      296,
+      28
+    ]
+  },
+  "path": "assets/game/shared/ui/siege_console_1012/frame.png",
+  "sha256": "7ea0553e93f4beecdb84a412edd1181570d81a76c241bfc26f7adaaad93aa794",
+  "key": "hud_siege_console_1012",
+  "approved": "Mike, October 12: this looks good, continue (vented Siege Console attachment)",
+  "columns": [
+    [
+      0,
+      0,
+      512,
+      1536
+    ],
+    [
+      512,
+      0,
+      512,
+      1536
+    ]
+  ],
+  "compactHeight": 176,
+  "modules": {
+    "scores": [
+      28,
+      52,
+      468,
+      222
+    ],
+    "roll": [
+      28,
+      258,
+      238,
+      216
+    ],
+    "somer": [
+      266,
+      258,
+      230,
+      216
+    ],
+    "weapon": [
+      28,
+      474,
+      468,
+      400
+    ],
+    "radar": [
+      532,
+      52,
+      464,
+      410
+    ],
+    "special": [
+      532,
+      444,
+      464,
+      396
+    ],
+    "lives": [
+      534,
+      834,
+      230,
+      218
+    ],
+    "missiles": [
+      764,
+      834,
+      232,
+      218
+    ],
+    "lock": [
+      532,
+      1042,
+      464,
+      304
+    ]
+  }
+}

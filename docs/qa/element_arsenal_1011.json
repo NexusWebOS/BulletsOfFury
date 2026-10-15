@@ -1,0 +1,1291 @@
+{
+  "date": "2026-10-11",
+  "scope": "Nine normal player elemental families across nine Forge weapon slots",
+  "suite": {
+    "assertions": 8670,
+    "failures": 0,
+    "exit": 0,
+    "finalSummary": true,
+    "baselineAssertions": 8631,
+    "baselineFailures": 0
+  },
+  "syntax": [
+    "assets/game.js",
+    "assets/orbs_1010.js",
+    "assets/element_arsenal_1011.js",
+    "docs/previews/element_arsenal_1011/review.js"
+  ],
+  "art": {
+    "newBanks": 16,
+    "newPoses": 256,
+    "cellSize": [
+      128,
+      128
+    ],
+    "windExistingPoses": 144,
+    "allBankFramesDistinct": true,
+    "allFrameRectsEven": true,
+    "bankHashes": {
+      "fire_round": "4aca05e214fe719863b1c9a2dae89332ac2632e94728a43ce5fa99ee9556f4bd",
+      "fire_missile": "4a4e842e6d228da657d9035d83607d550c900535e56a96b1706e4d3d2ff33d7d",
+      "kinetic_round": "f47691d68e679b94ddaecd9bec3c45a8b8b290bb33fed94a73257cacd4a25a75",
+      "kinetic_missile": "c47d57a1842570ac4bcb12bed24584ba09fdfda4b6dde7d43b6dda9311c5a3e2",
+      "lightning_round": "6d24bcbe4c5fd927bcf70891759ff18c83de20c500b14f5ee08113a27d043275",
+      "lightning_missile": "e72213d63b3122fd3dc39891699c7526417dc28decc71edd8e86770af4689f57",
+      "water_round": "50a0f1ae3df05cfe75c8b2755dae3c99ee87c7216651c82dc5ed076036cda9c0",
+      "water_missile": "ddc1b354f4ad293f3bef7c50447143a8ef0ebf1bdc8436fb4e31da1ba61eec29",
+      "ice_round": "9e508b94a366aeec367c0208235ba95e693be2e74b9334e9d9d193e75d9e31af",
+      "ice_missile": "d87ec1e14e8fbb7460522ed0deb94050068dd1b0ace59ca78100f886050259e4",
+      "chrome_round": "c0bb18ea07b57f609cc08fa8dad4ae0f54ebf6d1f6ad925b7dd731bf55827f11",
+      "chrome_missile": "bdc7c170bfb8bcc7ab9e4a82bdd2a1724cc180ee4abea6a034781eff76f1383b",
+      "toxic_round": "2e43ece247e86fd0bb39787b38d05f61698f4416ffca088376d527321f5c8b5b",
+      "toxic_missile": "3e0431ca6d50087109498d3c7dcffe653cfef2f098d80b406aa8cadd0c057ead",
+      "dark_round": "56d26c66eda5960f52fb171031d9a8fe612073d74cc170e4f97cc3359ed28945",
+      "dark_missile": "df46fe3a33d2afce4c5ad00466381f147ecb2d188d912003b90fedb441c04813"
+    },
+    "builder": "_BUILD_SOURCE/build_element_arsenal_1011.py"
+  },
+  "native": {
+    "liveCases": 81,
+    "checks": [
+      {
+        "name": "fire: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 44
+          },
+          {
+            "slot": 1,
+            "hits": 75
+          },
+          {
+            "slot": 2,
+            "hits": 42
+          },
+          {
+            "slot": 3,
+            "hits": 27
+          },
+          {
+            "slot": 4,
+            "hits": 90
+          },
+          {
+            "slot": 5,
+            "hits": 25
+          },
+          {
+            "slot": 6,
+            "hits": 72
+          },
+          {
+            "slot": 7,
+            "hits": 54
+          },
+          {
+            "slot": 8,
+            "hits": 26
+          }
+        ]
+      },
+      {
+        "name": "fire: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "kinetic: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 38
+          },
+          {
+            "slot": 1,
+            "hits": 55
+          },
+          {
+            "slot": 2,
+            "hits": 30
+          },
+          {
+            "slot": 3,
+            "hits": 81
+          },
+          {
+            "slot": 4,
+            "hits": 72
+          },
+          {
+            "slot": 5,
+            "hits": 13
+          },
+          {
+            "slot": 6,
+            "hits": 54
+          },
+          {
+            "slot": 7,
+            "hits": 47
+          },
+          {
+            "slot": 8,
+            "hits": 20
+          }
+        ]
+      },
+      {
+        "name": "kinetic: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "kinetic: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "lightning: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 76
+          },
+          {
+            "slot": 1,
+            "hits": 110
+          },
+          {
+            "slot": 2,
+            "hits": 60
+          },
+          {
+            "slot": 3,
+            "hits": 36
+          },
+          {
+            "slot": 4,
+            "hits": 144
+          },
+          {
+            "slot": 5,
+            "hits": 42
+          },
+          {
+            "slot": 6,
+            "hits": 108
+          },
+          {
+            "slot": 7,
+            "hits": 96
+          },
+          {
+            "slot": 8,
+            "hits": 40
+          }
+        ]
+      },
+      {
+        "name": "lightning: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "lightning: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "water: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 38
+          },
+          {
+            "slot": 1,
+            "hits": 57
+          },
+          {
+            "slot": 2,
+            "hits": 30
+          },
+          {
+            "slot": 3,
+            "hits": 30
+          },
+          {
+            "slot": 4,
+            "hits": 72
+          },
+          {
+            "slot": 5,
+            "hits": 15
+          },
+          {
+            "slot": 6,
+            "hits": 54
+          },
+          {
+            "slot": 7,
+            "hits": 48
+          },
+          {
+            "slot": 8,
+            "hits": 20
+          }
+        ]
+      },
+      {
+        "name": "water: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "water: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ice: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 38
+          },
+          {
+            "slot": 1,
+            "hits": 57
+          },
+          {
+            "slot": 2,
+            "hits": 30
+          },
+          {
+            "slot": 3,
+            "hits": 30
+          },
+          {
+            "slot": 4,
+            "hits": 72
+          },
+          {
+            "slot": 5,
+            "hits": 40
+          },
+          {
+            "slot": 6,
+            "hits": 54
+          },
+          {
+            "slot": 7,
+            "hits": 48
+          },
+          {
+            "slot": 8,
+            "hits": 20
+          }
+        ]
+      },
+      {
+        "name": "ice: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ice: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 38
+          },
+          {
+            "slot": 1,
+            "hits": 192
+          },
+          {
+            "slot": 2,
+            "hits": 30
+          },
+          {
+            "slot": 3,
+            "hits": 30
+          },
+          {
+            "slot": 4,
+            "hits": 72
+          },
+          {
+            "slot": 5,
+            "hits": 18
+          },
+          {
+            "slot": 6,
+            "hits": 54
+          },
+          {
+            "slot": 7,
+            "hits": 48
+          },
+          {
+            "slot": 8,
+            "hits": 20
+          }
+        ]
+      },
+      {
+        "name": "chrome: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "toxic: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 43
+          },
+          {
+            "slot": 1,
+            "hits": 70
+          },
+          {
+            "slot": 2,
+            "hits": 41
+          },
+          {
+            "slot": 3,
+            "hits": 35
+          },
+          {
+            "slot": 4,
+            "hits": 87
+          },
+          {
+            "slot": 5,
+            "hits": 40
+          },
+          {
+            "slot": 6,
+            "hits": 69
+          },
+          {
+            "slot": 7,
+            "hits": 53
+          },
+          {
+            "slot": 8,
+            "hits": 25
+          }
+        ]
+      },
+      {
+        "name": "toxic: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "toxic: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "dark: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 38
+          },
+          {
+            "slot": 1,
+            "hits": 55
+          },
+          {
+            "slot": 2,
+            "hits": 30
+          },
+          {
+            "slot": 3,
+            "hits": 30
+          },
+          {
+            "slot": 4,
+            "hits": 72
+          },
+          {
+            "slot": 5,
+            "hits": 16
+          },
+          {
+            "slot": 6,
+            "hits": 54
+          },
+          {
+            "slot": 7,
+            "hits": 48
+          },
+          {
+            "slot": 8,
+            "hits": 20
+          }
+        ]
+      },
+      {
+        "name": "dark: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "dark: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "wind: all nine weapons damage native targets",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "hits": 38
+          },
+          {
+            "slot": 1,
+            "hits": 55
+          },
+          {
+            "slot": 2,
+            "hits": 30
+          },
+          {
+            "slot": 3,
+            "hits": 30
+          },
+          {
+            "slot": 4,
+            "hits": 72
+          },
+          {
+            "slot": 5,
+            "hits": 12
+          },
+          {
+            "slot": 6,
+            "hits": 54
+          },
+          {
+            "slot": 7,
+            "hits": 48
+          },
+          {
+            "slot": 8,
+            "hits": 20
+          }
+        ]
+      },
+      {
+        "name": "wind: successful direct hits retain their element",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "wind: forged spray does not secretly burn targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Switching mid-flight preserves both generations of water mist",
+        "passed": true,
+        "data": {
+          "parents": [
+            "water",
+            "water",
+            "water"
+          ],
+          "children": [
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            },
+            {
+              "inf": "water",
+              "seat": 1,
+              "lv": 1
+            }
+          ],
+          "all": [
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            },
+            {
+              "kind": "lasermist",
+              "inf": "water"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Automatic missiles use the missile recipe independently of the primary",
+        "passed": true,
+        "data": {
+          "infused": [
+            "ice",
+            "ice",
+            "ice"
+          ],
+          "bare": [
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      {
+        "name": "Unforging a held laser clears its previous water identity",
+        "passed": true,
+        "data": {
+          "inf": null,
+          "el": null,
+          "damage": null
+        }
+      },
+      {
+        "name": "Maverick homing lasers remain uninfused Level I at an upgraded laser slot",
+        "passed": true,
+        "data": [
+          {
+            "kind": "mavlaser",
+            "lv": 1,
+            "dmg": 0.62,
+            "inf": null
+          },
+          {
+            "kind": "mavlaser",
+            "lv": 1,
+            "dmg": 0.62,
+            "inf": null
+          },
+          {
+            "kind": "mavlaser",
+            "lv": 1,
+            "dmg": 0.62,
+            "inf": null
+          }
+        ]
+      },
+      {
+        "name": "Co-op beam: separate element, entity and pilot anchor",
+        "passed": true,
+        "data": [
+          {
+            "seat": 1,
+            "el": "water",
+            "x": 340,
+            "owner": 340
+          },
+          {
+            "seat": 2,
+            "el": "toxic",
+            "x": 420,
+            "owner": 420
+          }
+        ]
+      },
+      {
+        "name": "Co-op flame: separate element, entity and pilot anchor",
+        "passed": true,
+        "data": [
+          {
+            "seat": 1,
+            "el": "water",
+            "x": 340,
+            "owner": 340
+          },
+          {
+            "seat": 2,
+            "el": "toxic",
+            "x": 420,
+            "owner": 420
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "visualCases": 81,
+    "visualErrors": [],
+    "reviewChecks": [
+      {
+        "element": "fire",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "fire",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "kinetic",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "lightning",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "water",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "ice",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "chrome",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "toxic",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "dark",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 0,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 1,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 2,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 3,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 4,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 5,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 6,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 7,
+        "passed": true
+      },
+      {
+        "element": "wind",
+        "slot": 8,
+        "passed": true
+      },
+      {
+        "name": "Frame scrubbing and onion skin",
+        "passed": true
+      },
+      {
+        "name": "Mobile no horizontal overflow",
+        "passed": true
+      }
+    ],
+    "reviewErrors": []
+  },
+  "evidence": {
+    "collision": "_shots/element_arsenal_1011/live/",
+    "nativeViews": "_shots/element_arsenal_1011/final/",
+    "review": "_shots/element_arsenal_1011/review/",
+    "suite": "_shots/element_arsenal_1011/suite-final.log",
+    "reviewPage": "docs/previews/element_arsenal_1011/index.html"
+  },
+  "limits": [
+    "Protected stationary-target weapon fixtures, not human campaign clears or a balance benchmark.",
+    "Existing beam/cast/orb/impact reels retained; only the sixteen ammunition banks are new in this pass.",
+    "First failed native fixtures used Cole for the Yuri-only sphere and a forged beam for Maverick; corrected without loosening gameplay gates."
+  ],
+  "git": "Local only; no commit or push requested."
+}

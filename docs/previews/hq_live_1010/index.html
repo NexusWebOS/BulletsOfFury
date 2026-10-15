@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fury HQ — live cinematic</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#040b12;color:#d5f5f1;font:15px/1.4 system-ui,sans-serif}header{padding:16px 22px;border-bottom:1px solid #1f5160;display:flex;flex-wrap:wrap;align-items:center;gap:12px}h1{font-size:19px;margin:0 14px 0 0}button,select{background:#0a2431;border:1px solid #397c88;color:#e2ffec;padding:8px 12px;border-radius:4px;cursor:pointer}button:hover,button:focus-visible{background:#165060;outline:2px solid #75f3bc}select{max-width:150px}#status{padding:10px 22px;color:#95c4c6}iframe{display:block;border:0;width:100%;height:calc(100vh - 136px);min-height:480px;background:#000}footer{padding:12px 22px;font-size:13px;color:#97b9c2}a{color:#86f8c9}@media(max-width:650px){header{padding:10px;gap:7px}button,select{padding:7px}iframe{height:70vh}#status{padding:8px 10px}}
+</style>
+<header><h1>Fury HQ · Live cinematic</h1><select id="pilot" aria-label="Pilot"></select><button data-shot="all">Play sequence + sound</button><button data-shot="2">Live radar</button><button data-shot="0">Landing</button><button data-shot="1">Attack</button><button data-shot="3">Scramble</button></header>
+<div id="status" role="status">Loading the playable build…</div>
+<iframe id="game" src="../../../index.html" title="Actual Bullets of Fury cinematic and interactive radar" allow="autoplay; fullscreen"></iframe>
+<footer>Select a contact with the D-pad or mouse. A scans it; B returns to dialogue; Start skips. These are the actual game scenes and authored ships. <a href="../../HQ_LIVE_1010.md">Change and verification notes</a></footer>
+<script>
+const names=['cole','axel','freezer','yuri','maverick','falva','lizzie','decker','juggernaut'];
+const pilot=document.getElementById('pilot'),frame=document.getElementById('game'),status=document.getElementById('status');
+for(const key of names){const o=document.createElement('option');o.value=key;o.textContent=key.toUpperCase();pilot.append(o);}
+let ready=false,lastShot='2',busy=false;
+function run(shot,withSound=true){
+ if(!ready||busy)return;lastShot=shot;busy=true;status.textContent='Preparing the HQ sequence…';
+ try{
+  const params={shot,pilot:pilot.value,withSound};
+  frame.contentWindow.eval(`(()=>{const p=${JSON.stringify(params)};BOFCinematicDirector.cancel();run.mode='campaign';run.pilot=p.pilot;story=null;fb2Talk=null;s6Opening=null;hq10Warm();if(p.withSound)Audio.resume();const beats=BOFCinematicDirector.script(5).filter(b=>/^hq10_background_/.test(b.bg||''));const selected=p.shot==='all'?beats:[beats[Number(p.shot)]];if(p.shot!=='all')selected[0]={...selected[0],duration:120};BOFCinematicDirector.play('hq-review',selected,()=>setState(GS.TITLE));})()`);
+  status.textContent=shot==='2'?'Radar is live. Select and scan a contact inside the game.':'HQ sequence playing with your selected pilot’s actual ship.';
+  frame.focus();
+ }catch(error){status.textContent='Unable to start: '+error.message;}
+ busy=false;
+}
+for(const b of document.querySelectorAll('button[data-shot]'))b.onclick=()=>run(b.dataset.shot);
+pilot.onchange=()=>run(lastShot,false);
+frame.onload=()=>{
+ const poll=setInterval(()=>{
+  try{if(!frame.contentWindow.eval("typeof HQ10!=='undefined'&&window.__bofFrames>4"))return;
+   clearInterval(poll);ready=true;status.textContent='Ready. Use Play sequence + sound to enable audio.';run('2',false);
+  }catch(error){clearInterval(poll);status.textContent='Load this preview from the local game server.';}
+ },150);
+};
+</script>
+</html>

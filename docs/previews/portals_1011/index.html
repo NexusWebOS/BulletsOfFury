@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portals & the void · Bullets of Fury</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root{color-scheme:dark;--ink:#eaf1f7;--muted:#9eacbb;--line:#283641;--panel:#0f171e;--accent:#b39aff}
+    *{box-sizing:border-box}body{margin:0;background:#080d12;color:var(--ink);font:15px/1.5 system-ui,sans-serif}
+    main{max-width:1344px;margin:auto;padding:32px}header{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:24px}
+    .eyebrow{font:11px/1.4 ui-monospace,monospace;letter-spacing:.17em;color:var(--accent);text-transform:uppercase}h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:8px 0 12px;font-weight:650;letter-spacing:-.04em}
+    header p{margin:0;color:var(--muted);max-width:700px}.count{font:12px ui-monospace,monospace;white-space:nowrap;color:#c6d8c9;padding-bottom:6px}
+    .layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:24px}
+    .stage{position:relative;background:#030508;border:1px solid var(--line);border-radius:14px;overflow:hidden}#stage{width:100%;height:auto;display:block;image-rendering:pixelated}
+    .stage-label{position:absolute;top:16px;left:18px;font:11px ui-monospace,monospace;color:#9baebc;letter-spacing:.1em;pointer-events:none}
+    .stage-foot{position:absolute;bottom:14px;left:18px;right:18px;display:flex;justify-content:space-between;font:12px ui-monospace,monospace;color:#c7d6df;pointer-events:none}
+    .controls{padding:16px 0;display:grid;gap:14px}.transport{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    button,select{font:inherit;color:var(--ink);border:1px solid #3a4a59;background:#17232e;border-radius:7px;padding:9px 12px;cursor:pointer}button:hover,select:hover{background:#23333f}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    button[aria-pressed=true]{border-color:var(--accent);background:#272139}button:disabled{opacity:.5;cursor:wait}#play{min-width:84px;background:#c5a9fa;color:#170c26;border-color:#c5a9fa;font-weight:650}label{display:flex;gap:8px;align-items:center;font-size:13px;color:#c0cdd7}
+    input[type=range]{width:100%;accent-color:#bc98ff;min-width:0}input[type=checkbox]{accent-color:#bc98ff;width:16px;height:16px}.scrub{display:grid;grid-template-columns:auto minmax(0,1fr) 62px;gap:14px;align-items:center;font:12px ui-monospace,monospace}.scrub output{text-align:right}
+    .toggles{display:flex;flex-wrap:wrap;gap:10px 22px}.side{display:flex;flex-direction:column;gap:18px}.bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.bank{padding:0;overflow:hidden;text-align:left;background:#090f15}.bank canvas{width:100%;height:auto;display:block;image-rendering:pixelated}.bank span{display:block;padding:10px 12px;font-size:12px;line-height:1.3;font-weight:600}.bank small{font-size:10px;font-weight:400;color:#a9b9c5;margin-left:6px}
+    .bank:last-child{grid-column:1/-1;display:grid;grid-template-columns:112px 1fr;align-items:center}.bank:last-child canvas{width:112px}.detail{padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:12px}.detail h2{font-size:20px;line-height:1.25;margin:0 0 10px}.detail p{color:var(--muted);margin:0 0 16px;font-size:14px}.specs{display:flex;flex-wrap:wrap;gap:8px;font:11px ui-monospace,monospace;color:#c7d8e6;margin:12px 0 18px}.specs span{border:1px solid var(--line);padding:6px 8px;border-radius:4px}
+    a{color:#ccbcff;text-underline-offset:3px}.links{display:flex;gap:14px;flex-wrap:wrap;font-size:12px}.note{font-size:12px;color:var(--muted);margin:0}.error{color:#ffb6af}.alignment{border-top:1px solid var(--line);padding-top:16px;margin-top:12px;color:var(--muted);font-size:13px}.alignment strong{color:#cee7d1;font-weight:500}.reference{margin-top:28px;border-top:1px solid var(--line);padding-top:18px;display:flex;gap:20px;flex-wrap:wrap;align-items:center}.reference a{font-size:12px}
+    @media(max-width:760px){main{padding:20px 14px}header{display:block}.count{margin-top:14px}.layout{grid-template-columns:1fr}.side{gap:14px}.bank-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.bank span{font-size:10px;padding:8px 5px}.bank small{display:block;margin:3px 0 0}.detail{padding:16px}.reference{gap:14px}.stage-foot{font-size:10px}.stage-label{font-size:10px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div><div class="eyebrow">Bullets of Fury / Complete portal sequences</div><h1>Form. Open. Collapse.</h1><p>Five portals, each with a separate forming animation, open loop and closing animation.</p></div>
+    <div class="count">15 ANIMATIONS &nbsp; / &nbsp; 32 FRAMES EACH</div>
+  </header>
+  <div class="layout">
+    <section aria-label="Animation player">
+      <div class="stage"><canvas id="stage" width="768" height="768" aria-label="Animated portal preview"></canvas><div class="stage-label" id="stageLabel">LOADING PORTALS</div><div class="stage-foot"><span id="playState">Loading…</span><span id="pivotText">FIXED APERTURE</span></div></div>
+      <div class="controls">
+        <div class="transport"><label>Animation <select id="mode"><option value="sequence">Full sequence</option><option value="form">Forming</option><option value="loop">Open loop</option><option value="close">Closing</option></select></label><strong id="activePhase">FORMING</strong></div>
+        <div class="transport"><button id="play" disabled>Pause</button><button id="prev" aria-label="Previous frame">←</button><button id="next" aria-label="Next frame">→</button><label>Speed <select id="speed"><option value="0.25">¼ speed</option><option value="0.5">½ speed</option><option value="1" selected>Normal</option></select></label><label>Backdrop <select id="backdrop"><option value="dark">Dark</option><option value="checker">Checker</option><option value="arena">Alien void</option></select></label></div>
+        <label class="scrub" for="frame">Frame <input id="frame" type="range" min="0" max="31" value="0"><output id="frameNumber">01 / 32</output></label>
+        <div class="toggles"><label><input id="onion" type="checkbox">Onion skins</label><label><input id="anchor" type="checkbox">Center marker</label><label><input id="blend" type="checkbox" checked>Continuous playback</label><label><input id="seam" type="checkbox" disabled>Loop seam · 29–04</label></div>
+      </div>
+    </section>
+    <aside class="side">
+      <div class="bank-grid" id="banks" aria-label="Choose an effect"></div>
+      <div class="detail"><div class="eyebrow">Now viewing</div><h2 id="title">Preparing animations</h2><p id="description">Loading all 32 drawings in each loop.</p><div class="specs" id="specs"></div><div class="links"><a id="sheetLink" href="#" download>Sprite sheet</a><a id="loopLink" href="#" download>Animated WebP</a><a id="refLink" href="#" target="_blank" rel="noreferrer">Game style references</a></div><div class="alignment"><strong>Locked physical centers.</strong> The energy changes shape around a fixed aperture. The gate’s armored frame is one stationary piece.<p style="margin:12px 0 0">Onion skins compare the previous and next drawings at the same anchor. The seam control repeats the last four and first four frames.</p></div></div>
+      <p class="note" id="loadStatus" role="status">Loading authored frames…</p>
+      <p class="note">Forming portals make one smooth circular turn around their fixed centers. Opening and closing play once. Full sequence finishes closed; Replay starts it again. Stage 8 uses this playback for its void transition and homeward portal.</p>
+    </aside>
+  </div>
+  <footer class="reference"><span class="eyebrow">Asset package</span><a href="../../../assets/game/shared/fx/portal_lifecycle_1011/manifest.json">Frame manifest</a><a href="../../../assets/game/shared/fx/portals_bof_1011/gate-shell.png">Separate gate shell</a><a href="../../../assets/game/shared/fx/portal_lifecycle_1011/gate_energy_form-sheet.png">Forming membrane</a><a href="../../PORTAL_LIFECYCLE_1011.md">Build & alignment notes</a></footer>
+</main>
+<script src="../../../assets/portal_lifecycle_art_1011.js?v=3"></script>
+<script src="../../../assets/portal_lifecycle_1011.js?v=4-spin"></script>
+<script src="review.js?v=4-spin"></script>
+</body>
+</html>

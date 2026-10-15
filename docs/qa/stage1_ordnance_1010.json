@@ -1,0 +1,384 @@
+{
+  "checks": [
+    {
+      "name": "Furious rack retains its warned fourteen-missile sequence",
+      "pass": true,
+      "data": {
+        "locks": 1,
+        "launches": 14
+      }
+    },
+    {
+      "name": "Actual Retina launch emits a faster shootable missile",
+      "pass": true,
+      "data": {
+        "missiles": [
+          {
+            "spd": 4.743999999999997,
+            "shootable": true,
+            "proof": false,
+            "lock": true
+          },
+          {
+            "spd": 4.268,
+            "shootable": true,
+            "proof": false,
+            "lock": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rack missile launch speed is increased",
+      "pass": true,
+      "data": {
+        "x": 340,
+        "y": 250,
+        "speed": 4.2,
+        "old": 2.4243840000000008,
+        "ang": 1.5707963267948966
+      }
+    },
+    {
+      "name": "Rack missile moves faster in the native simulation",
+      "pass": true,
+      "data": {
+        "y": 395.82399999999996,
+        "speed": 7.8079999999999945,
+        "spd": 4.879999999999996,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    },
+    {
+      "name": "Rack missile preserves its launch lane",
+      "pass": true,
+      "data": {
+        "y": 395.82399999999996,
+        "speed": 7.8079999999999945,
+        "spd": 4.879999999999996,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    },
+    {
+      "name": "Regular missile acceleration is restored",
+      "pass": true,
+      "data": {
+        "y": 395.82399999999996,
+        "speed": 7.8079999999999945,
+        "spd": 4.879999999999996,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    },
+    {
+      "name": "Flurry missile launch speed is increased",
+      "pass": true,
+      "data": {
+        "x": 340,
+        "y": 250,
+        "speed": 5.2,
+        "old": 3.485052000000001,
+        "ang": 1.5707963267948966
+      }
+    },
+    {
+      "name": "Flurry missile moves faster in the native simulation",
+      "pass": true,
+      "data": {
+        "y": 416.39999999999986,
+        "speed": 8.32,
+        "spd": 5.2,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    },
+    {
+      "name": "Flurry missile preserves its launch lane",
+      "pass": true,
+      "data": {
+        "y": 416.39999999999986,
+        "speed": 8.32,
+        "spd": 5.2,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    },
+    {
+      "name": "Committed flurry retains its fixed speed",
+      "pass": true,
+      "data": {
+        "y": 416.39999999999986,
+        "speed": 8.32,
+        "spd": 5.2,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    },
+    {
+      "name": "mg really intercepts a Furious miniboss missile",
+      "pass": true,
+      "data": {
+        "dead": true,
+        "present": false,
+        "proof": false,
+        "fx": 1
+      }
+    },
+    {
+      "name": "spread really intercepts a Furious miniboss missile",
+      "pass": true,
+      "data": {
+        "dead": true,
+        "present": false,
+        "proof": false,
+        "fx": 1
+      }
+    },
+    {
+      "name": "missile really intercepts a Furious miniboss missile",
+      "pass": true,
+      "data": {
+        "dead": true,
+        "present": false,
+        "proof": false,
+        "fx": 1
+      }
+    },
+    {
+      "name": "beam really intercepts a Furious miniboss missile",
+      "pass": true,
+      "data": {
+        "dead": true,
+        "present": false,
+        "proof": false,
+        "fx": 1
+      }
+    },
+    {
+      "name": "sonic really intercepts a Furious miniboss missile",
+      "pass": true,
+      "data": {
+        "dead": true,
+        "present": false,
+        "proof": false,
+        "fx": 1
+      }
+    },
+    {
+      "name": "orb really intercepts a Furious miniboss missile",
+      "pass": true,
+      "data": {
+        "dead": true,
+        "present": false,
+        "proof": false,
+        "fx": 3
+      }
+    },
+    {
+      "name": "Interception visibly replaces the missile with an authored explosion",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Broad boss sonic wave survives mg",
+      "pass": true,
+      "data": {
+        "count": 1,
+        "alive": true
+      }
+    },
+    {
+      "name": "Broad boss sonic wave survives spread",
+      "pass": true,
+      "data": {
+        "count": 1,
+        "alive": true
+      }
+    },
+    {
+      "name": "Broad boss sonic wave survives missile",
+      "pass": true,
+      "data": {
+        "count": 1,
+        "alive": true
+      }
+    },
+    {
+      "name": "Broad boss sonic wave survives beam",
+      "pass": true,
+      "data": {
+        "count": 1,
+        "alive": true
+      }
+    },
+    {
+      "name": "Broad boss sonic wave survives sonic",
+      "pass": true,
+      "data": {
+        "count": 1,
+        "alive": true
+      }
+    },
+    {
+      "name": "Broad boss sonic wave survives orb",
+      "pass": true,
+      "data": {
+        "count": 1,
+        "alive": true
+      }
+    },
+    {
+      "name": "Narrow boss sonic wave survives mg",
+      "pass": true,
+      "data": {
+        "count": 3,
+        "alive": true
+      }
+    },
+    {
+      "name": "Narrow boss sonic wave survives spread",
+      "pass": true,
+      "data": {
+        "count": 3,
+        "alive": true
+      }
+    },
+    {
+      "name": "Narrow boss sonic wave survives missile",
+      "pass": true,
+      "data": {
+        "count": 3,
+        "alive": true
+      }
+    },
+    {
+      "name": "Narrow boss sonic wave survives beam",
+      "pass": true,
+      "data": {
+        "count": 3,
+        "alive": true
+      }
+    },
+    {
+      "name": "Narrow boss sonic wave survives sonic",
+      "pass": true,
+      "data": {
+        "count": 3,
+        "alive": true
+      }
+    },
+    {
+      "name": "Narrow boss sonic wave survives orb",
+      "pass": true,
+      "data": {
+        "count": 3,
+        "alive": true
+      }
+    },
+    {
+      "name": "Unshootable sonic wave still damages the pilot and continues traveling",
+      "pass": true,
+      "data": {
+        "playerDead": true,
+        "waveAlive": true
+      }
+    },
+    {
+      "name": "Juggernaut wrecking balls cannot destroy the boss sonic wave",
+      "pass": true,
+      "data": {
+        "alive": true,
+        "count": 2,
+        "pelletDead": true
+      }
+    },
+    {
+      "name": "Wrecking balls still destroy ordinary gunfire at that same position",
+      "pass": true,
+      "data": {
+        "alive": true,
+        "count": 2,
+        "pelletDead": true
+      }
+    },
+    {
+      "name": "Native Chromium has no page, console or asset errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "details": {
+    "rack": {
+      "missiles": [
+        {
+          "spd": 4.743999999999997,
+          "shootable": true,
+          "proof": false,
+          "lock": true
+        },
+        {
+          "spd": 4.268,
+          "shootable": true,
+          "proof": false,
+          "lock": true
+        }
+      ]
+    },
+    "regular": {
+      "before": {
+        "x": 340,
+        "y": 250,
+        "speed": 4.2,
+        "old": 2.4243840000000008,
+        "ang": 1.5707963267948966
+      },
+      "after": {
+        "y": 395.82399999999996,
+        "speed": 7.8079999999999945,
+        "spd": 4.879999999999996,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    },
+    "flurry": {
+      "before": {
+        "x": 340,
+        "y": 250,
+        "speed": 5.2,
+        "old": 3.485052000000001,
+        "ang": 1.5707963267948966
+      },
+      "after": {
+        "y": 416.39999999999986,
+        "speed": 8.32,
+        "spd": 5.2,
+        "ang": 1.5707963267948966,
+        "dead": false
+      }
+    }
+  },
+  "limits": "Protected isolated attacks; not a human campaign-clear or fairness claim.",
+  "regression": {
+    "passed": 8256,
+    "failed": 0,
+    "exit_code": 0,
+    "previous_passed": 8243,
+    "final_banner": true
+  },
+  "sources": {
+    "assets/game.js": "29dd0ef3170dbf513473934db31fcab20e49171aa0a33fc5f7eb23f32cf39b8d",
+    "assets/feedback_1009.js": "5c2e24002f59319970db78f2f01484547046ea5506a600781c574390b02144e3",
+    "_BUILD_SOURCE/test_stage1_ordnance_1010.cjs": "cbf77e71224f85275642dbb73315118cf0dcc2aed0e977c5a7f553899ab0e0da",
+    "_BUILD_SOURCE/probe_stage1_ordnance_1010.py": "e07d4ee1f75fbe613bb1547a347b20b45851c054323335f264dc258cffe1c7af"
+  },
+  "screenshots_reviewed": [
+    "furious-rack-launch.png",
+    "missile-before-hit.png",
+    "missile-intercept-explosion.png",
+    "overlord-sonic-wave.png"
+  ],
+  "local_server_note": "A cancelled media request at Chromium shutdown produced WinError 10053; no page, console or HTTP asset errors were recorded."
+}

@@ -1,0 +1,772 @@
+{
+  "date": "2026-10-13",
+  "scope": "Rebel soundtrack/effects continuity and Voss turbo motion; real native encounter fixtures, not human campaign playthroughs",
+  "browsers": {
+    "msedge": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "stage6-easy music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stage6-easy music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stage6-hard music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stage6-furious music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stageX-easy music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stageX-normal music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stageX-hard music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stageX-furious music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "cold Rebel transient loads without queuing delayed playback"
+        },
+        {
+          "ok": true,
+          "name": "decoded Rebel transient plays immediately"
+        },
+        {
+          "ok": true,
+          "name": "Rebel playback recovers a suspended real audio context"
+        },
+        {
+          "ok": true,
+          "name": "native music stream contains nonzero decoded audio samples"
+        },
+        {
+          "ok": true,
+          "name": "zero page or console errors"
+        }
+      ],
+      "errors": [],
+      "musicEnergy": {
+        "peak": 0.9125706553459167,
+        "rms": 0.24855718584240227
+      },
+      "fixtures": [
+        {
+          "name": "stage6-easy",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 2,
+          "music": {
+            "paused": false,
+            "time": 5.382891,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999999,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 411
+        },
+        {
+          "name": "stage6-normal",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 4,
+          "music": {
+            "paused": false,
+            "time": 3.970753,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        },
+        {
+          "name": "stage6-hard",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 6,
+          "music": {
+            "paused": false,
+            "time": 4.014574,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        },
+        {
+          "name": "stage6-furious",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 8,
+          "music": {
+            "paused": false,
+            "time": 4.053799,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        },
+        {
+          "name": "stageX-easy",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 10,
+          "music": {
+            "paused": false,
+            "time": 5.330986,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999999,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 411
+        },
+        {
+          "name": "stageX-normal",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 12,
+          "music": {
+            "paused": false,
+            "time": 6.593685,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        },
+        {
+          "name": "stageX-hard",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 14,
+          "music": {
+            "paused": false,
+            "time": 6.170916,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        },
+        {
+          "name": "stageX-furious",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 16,
+          "music": {
+            "paused": false,
+            "time": 8.688764,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        }
+      ]
+    },
+    "chrome": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "stage6-normal music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "cold Rebel transient loads without queuing delayed playback"
+        },
+        {
+          "ok": true,
+          "name": "decoded Rebel transient plays immediately"
+        },
+        {
+          "ok": true,
+          "name": "Rebel playback recovers a suspended real audio context"
+        },
+        {
+          "ok": true,
+          "name": "native music stream contains nonzero decoded audio samples"
+        },
+        {
+          "ok": true,
+          "name": "zero page or console errors"
+        }
+      ],
+      "errors": [],
+      "musicEnergy": {
+        "peak": 1,
+        "rms": 0.23968870898581168
+      },
+      "fixtures": [
+        {
+          "name": "stage6-normal",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 2,
+          "music": {
+            "paused": false,
+            "time": 6.069372,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        }
+      ]
+    },
+    "firefox": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "stage6-normal music starts and advances through native intro"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal paused soundtrack resumes without reset or volume edits"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal stopped transport recovers without restarting song"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal full turbo exhibition keeps wake attached to final native pose"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal exhibition has no teleport between visible poses"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal turbo launch respects locked warning direction"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal turbo completes all passes and returns physically"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return movement retains authored turbo wake"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return never crosses the lower player arena"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal return stays below 15 pixels per frame without teleporting"
+        },
+        {
+          "ok": true,
+          "name": "stage6-normal music remains active and sound decoders stay bounded"
+        },
+        {
+          "ok": true,
+          "name": "cold Rebel transient loads without queuing delayed playback"
+        },
+        {
+          "ok": true,
+          "name": "decoded Rebel transient plays immediately"
+        },
+        {
+          "ok": true,
+          "name": "Rebel playback recovers a suspended real audio context"
+        },
+        {
+          "ok": true,
+          "name": "native music stream contains nonzero decoded audio samples"
+        },
+        {
+          "ok": true,
+          "name": "zero page or console errors"
+        }
+      ],
+      "errors": [],
+      "musicEnergy": {
+        "peak": 0.9724417924880981,
+        "rms": 0.2530722438381037
+      },
+      "fixtures": [
+        {
+          "name": "stage6-normal",
+          "phases": [
+            "fire",
+            "row",
+            "return",
+            "done"
+          ],
+          "voices": 64,
+          "recovery": 2,
+          "music": {
+            "paused": false,
+            "time": 17.326666,
+            "ready": 4
+          },
+          "final": {
+            "x": 253.9999999999898,
+            "y": 129,
+            "py": 402
+          },
+          "maxReturnPixelsPerFrame": 13.0,
+          "sampleCount": 334
+        }
+      ]
+    }
+  },
+  "totalChecks": 125,
+  "failures": 0,
+  "audioLimit": "Native media transport and decoded output measured; no human listening or physical laptop speaker claim."
+}

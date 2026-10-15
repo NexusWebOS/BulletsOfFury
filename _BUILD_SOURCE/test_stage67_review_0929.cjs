@@ -19,8 +19,8 @@ module.exports=function(vm,ctxv,ok){
   l23FovDraw=function(){cones++;return false;};s67LaneBand=function(){bands++;};
   try{combatWarningDraw(e,{x:e.x,y:e.y,ex:e.x,ey:VH,progress:.5,width:30});combatWarningDraw({x:1,y:1,t:0},{x:1,y:1,ex:1,ey:VH,progress:.5,width:30});}catch(_e){}
   l23FovDraw=f;s67LaneBand=g;
-  o['an ordinary enemy warning is a straight band, never the cone']=bands===1;
-  o['a boss warning keeps the FOV cone']=cones===1;
+  o['ordinary enemy warnings no longer substitute rectangular lane bands']=bands===0;
+  o['ordinary enemies and bosses share the regular authored FOV']=cones===2;
   /* the escape distance is analytic, monotonic, fast, and ends where the portal waits */
   let prev=-1,mono=true,vmax=0;for(let t=0;t<14;t+=.05){const s=s67EscS(t);if(s<prev-1e-9)mono=false;prev=s;vmax=Math.max(vmax,s67EscV(t));}
   o['the escape flies fast (880 px/s) and never backs up']=mono&&vmax===S67E.VMAX&&S67E.VMAX>=800;

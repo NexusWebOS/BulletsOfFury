@@ -20,12 +20,24 @@ current Git state and runtime before relying on them.
 
 ## Creative constraints
 
+- Frame widths and heights must be even integers. Choose the resolution first;
+  keep a uniform canvas, stable pivot and one proportional scale per bank.
+  Use shared transparent padding for odd crops. Follow
+  `docs/FRAME_RESOLUTION_RULES.md` for generation headers and export checks.
+
 - Use the existing generated pad_* graphics for D-pad, action-button and Start prompts
   on game screens. B is the logical Back action; Backspace only deletes text. Show
   physical keyboard assignments in Help/Options, not competing navigation prompts.
 
 - Use authored art; do not add placeholder or procedural sprites. Render candidate
   art before trusting its name. Consult `assets/data/ART_TAXONOMY.json`.
+- For every newly generated ship-bearing cinematic, export and inspect the
+  current actual in-game aircraft or Furyship and supply it as an identity
+  reference. Preserve its design and palette; prefer the actual sprite for live
+  movement. Follow `docs/CINEMATIC_SHIP_REFERENCES_1010.md`.
+- Maverick's homing lasers are not upgradeable. Keep their combat stats fixed
+  and exclude them from Forge/elemental upgrades, including Wind. His separate
+  Laser Beam and charged Helix Beam special retain their own progression.
 - Preserve authored stage biomes. Palette changes must retain luminance, outlines,
   and the authored colors of ordnance.
 - Bosses remain whole authored plates. The approved Furnace Tyrant head phase is

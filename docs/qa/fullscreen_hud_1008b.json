@@ -1,0 +1,442 @@
+{
+  "passed": 51,
+  "failed": [],
+  "errors": [],
+  "checks": [
+    {
+      "name": "chromium F enters real fullscreen",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium F exits real fullscreen",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium rejected fullscreen uses full-browser fallback",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium 1920: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1080,
+        "left": 541,
+        "right": 1379,
+        "height": 1080,
+        "width": 838,
+        "ratio": 0.9363128491620112,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "chromium 1920: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium 1366: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 768,
+        "left": 385,
+        "right": 981,
+        "height": 768,
+        "width": 596,
+        "ratio": 0.9356357927786499,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "chromium 1366: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium 2560: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1440,
+        "left": 721,
+        "right": 1839,
+        "height": 1440,
+        "width": 1118,
+        "ratio": 0.9371332774518022,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "chromium 2560: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium 3440: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1440,
+        "left": 1161,
+        "right": 2279,
+        "height": 1440,
+        "width": 1118,
+        "ratio": 0.9371332774518022,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "chromium 3440: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium 390: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 171,
+        "bottom": 673,
+        "left": 0,
+        "right": 390,
+        "height": 502,
+        "width": 390,
+        "ratio": 0.9397590361445783,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "chromium 390: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium F exits CSS fallback",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium browser mode also fills available height",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium menu clears the full dense HUD backing",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium fullscreen menu retains its aspect without a hidden HUD reserve",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "chromium narrow browser mode uses the full available width",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox rejected fullscreen uses full-browser fallback",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox 1920: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1080,
+        "left": 541,
+        "right": 1379,
+        "height": 1080,
+        "width": 838,
+        "ratio": 0.9363128491620112,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "firefox 1920: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox 1366: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 768,
+        "left": 385,
+        "right": 981,
+        "height": 768,
+        "width": 596,
+        "ratio": 0.9356357927786499,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "firefox 1366: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox 2560: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1440,
+        "left": 721,
+        "right": 1839,
+        "height": 1440,
+        "width": 1118,
+        "ratio": 0.9371332774518022,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "firefox 2560: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox 3440: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1440,
+        "left": 1161,
+        "right": 2279,
+        "height": 1440,
+        "width": 1118,
+        "ratio": 0.9371332774518022,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "firefox 3440: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox 390: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 171,
+        "bottom": 673,
+        "left": 0,
+        "right": 390,
+        "height": 502,
+        "width": 390,
+        "ratio": 0.9397590361445783,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "firefox 390: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox F exits CSS fallback",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox browser mode also fills available height",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox menu clears the full dense HUD backing",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox fullscreen menu retains its aspect without a hidden HUD reserve",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "firefox narrow browser mode uses the full available width",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit rejected fullscreen uses full-browser fallback",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit 1920: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1080,
+        "left": 541,
+        "right": 1379,
+        "height": 1080,
+        "width": 838,
+        "ratio": 0.9363128491620112,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "webkit 1920: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit 1366: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 768,
+        "left": 385,
+        "right": 981,
+        "height": 768,
+        "width": 596,
+        "ratio": 0.9356357927786499,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "webkit 1366: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit 2560: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1440,
+        "left": 721,
+        "right": 1839,
+        "height": 1440,
+        "width": 1118,
+        "ratio": 0.9371332774518022,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "webkit 2560: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit 3440: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "bottom": 1440,
+        "left": 1161,
+        "right": 2279,
+        "height": 1440,
+        "width": 1118,
+        "ratio": 0.9371332774518022,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "webkit 3440: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit 390: largest aspect-preserving bay without clipping",
+      "pass": true,
+      "data": {
+        "top": 171,
+        "bottom": 673,
+        "left": 0,
+        "right": 390,
+        "height": 502,
+        "width": 390,
+        "ratio": 0.9397590361445783,
+        "backing": [
+          960,
+          208
+        ]
+      }
+    },
+    {
+      "name": "webkit 390: dense backing with stable HUD geometry",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit F exits CSS fallback",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit browser mode also fills available height",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit menu clears the full dense HUD backing",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit fullscreen menu retains its aspect without a hidden HUD reserve",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "webkit narrow browser mode uses the full available width",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "zero browser or missing-asset errors",
+      "pass": true,
+      "data": []
+    }
+  ]
+}

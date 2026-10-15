@@ -1,0 +1,49 @@
+{
+  "id": "l6v_r1",
+  "name": "Royal Blue Broadwing",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_r1"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_broadwing",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_r1_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_broadwing/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "263031268fbd3aa0352710a278f55c0ac95ad795171d30ca1948d21638322a67"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_r1_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_broadwing/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "74bf516618030d5688526f7835140b5f752f645657d4da6d9b8621afa13af33c"
+  },
+  "nativeRatios": {
+    "l6v_r1": 2.1714285714285713
+  },
+  "sourceKeys": {
+    "l6v_r1": "n6v1_royal_intact_c"
+  }
+}

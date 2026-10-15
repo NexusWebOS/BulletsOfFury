@@ -1,0 +1,1812 @@
+{
+  "version": "stage6-sequence-1013-r2",
+  "passed": 86,
+  "failed": 0,
+  "errors": [],
+  "allDifficulties": {
+    "checks": [
+      {
+        "name": "easy native right route selected",
+        "pass": true,
+        "details": "right"
+      },
+      {
+        "name": "easy native route spawns rebel boss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "easy outgoing wave and threats cleared immediately",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 75.16666666666666,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.09999999999999999,
+          "route": "right"
+        }
+      },
+      {
+        "name": "easy every intro frame free of enemies and live hostile shots",
+        "pass": true,
+        "details": {
+          "timer": 75.16666666666666,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "easy intro naturally completes",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 75.23333333333332,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 1,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        }
+      },
+      {
+        "name": "easy stage and formation clocks frozen during intro",
+        "pass": true,
+        "details": {
+          "timer": 75.16666666666666,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "easy player trigger latch released",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "easy native player fire resumes",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "easy rebel native combat attacks resume",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "easy miniboss removes wing and existing allied shots at spawn",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 1173,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "easy no helper fire or damage throughout miniboss",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 1173,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "easy no helper sprites rendered during miniboss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "easy solo fight uses neutral ally pressure",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "easy allies return after actual miniboss defeat",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25.183333333333323,
+          "waveIdx": 999,
+          "vpAge": 11.183333333333342,
+          "cpAge": 0,
+          "live": 4,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 1,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "normal native right route selected",
+        "pass": true,
+        "details": "right"
+      },
+      {
+        "name": "normal native route spawns rebel boss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "normal outgoing wave and threats cleared immediately",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 75.16666666666666,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.09999999999999999,
+          "route": "right"
+        }
+      },
+      {
+        "name": "normal every intro frame free of enemies and live hostile shots",
+        "pass": true,
+        "details": {
+          "timer": 75.16666666666666,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "normal intro naturally completes",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 75.23333333333332,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        }
+      },
+      {
+        "name": "normal stage and formation clocks frozen during intro",
+        "pass": true,
+        "details": {
+          "timer": 75.16666666666666,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "normal player trigger latch released",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "normal native player fire resumes",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "normal rebel native combat attacks resume",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "normal miniboss removes wing and existing allied shots at spawn",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 2255,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "normal no helper fire or damage throughout miniboss",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 2255,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "normal no helper sprites rendered during miniboss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "normal solo fight uses neutral ally pressure",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "normal allies return after actual miniboss defeat",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25.183333333333323,
+          "waveIdx": 999,
+          "vpAge": 11.183333333333342,
+          "cpAge": 0,
+          "live": 6,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 1,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "hard native right route selected",
+        "pass": true,
+        "details": "right"
+      },
+      {
+        "name": "hard native route spawns rebel boss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "hard outgoing wave and threats cleared immediately",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 77.9166666666665,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.09999999999999999,
+          "route": "right"
+        }
+      },
+      {
+        "name": "hard every intro frame free of enemies and live hostile shots",
+        "pass": true,
+        "details": {
+          "timer": 77.9166666666665,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "hard intro naturally completes",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 77.98333333333316,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 3,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        }
+      },
+      {
+        "name": "hard stage and formation clocks frozen during intro",
+        "pass": true,
+        "details": {
+          "timer": 77.9166666666665,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "hard player trigger latch released",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "hard native player fire resumes",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "hard rebel native combat attacks resume",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "hard miniboss removes wing and existing allied shots at spawn",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 2663,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "hard no helper fire or damage throughout miniboss",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 2663,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "hard no helper sprites rendered during miniboss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "hard solo fight uses neutral ally pressure",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "hard allies return after actual miniboss defeat",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25.183333333333323,
+          "waveIdx": 999,
+          "vpAge": 11.183333333333342,
+          "cpAge": 0,
+          "live": 8,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 1,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "furious native right route selected",
+        "pass": true,
+        "details": "right"
+      },
+      {
+        "name": "furious native route spawns rebel boss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "furious outgoing wave and threats cleared immediately",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 78.88333333333311,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.13333333333333333,
+          "route": "right"
+        }
+      },
+      {
+        "name": "furious every intro frame free of enemies and live hostile shots",
+        "pass": true,
+        "details": {
+          "timer": 78.88333333333311,
+          "vp": 19,
+          "frames": 2573,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "furious intro naturally completes",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 78.9833333333331,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 1,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        }
+      },
+      {
+        "name": "furious stage and formation clocks frozen during intro",
+        "pass": true,
+        "details": {
+          "timer": 78.88333333333311,
+          "vp": 19,
+          "frames": 2573,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        }
+      },
+      {
+        "name": "furious player trigger latch released",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "furious native player fire resumes",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "furious rebel native combat attacks resume",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "furious miniboss removes wing and existing allied shots at spawn",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 3048,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "furious no helper fire or damage throughout miniboss",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25,
+          "waveIdx": 999,
+          "vpAge": 11,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 1,
+          "allyShots": 0,
+          "wing": 0,
+          "held": true,
+          "release": false,
+          "sub": true,
+          "hp": 3048,
+          "forms": 0,
+          "introAge": 0,
+          "route": null
+        }
+      },
+      {
+        "name": "furious no helper sprites rendered during miniboss",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "furious solo fight uses neutral ally pressure",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "furious allies return after actual miniboss defeat",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "introDone": false,
+          "stageTimer": 25.183333333333323,
+          "waveIdx": 999,
+          "vpAge": 11.183333333333342,
+          "cpAge": 0,
+          "live": 10,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 1,
+          "introAge": 0,
+          "route": null
+        }
+      }
+    ],
+    "passed": 56,
+    "failed": 0,
+    "rows": [
+      {
+        "difficulty": "easy",
+        "introStart": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 75.16666666666666,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.09999999999999999,
+          "route": "right"
+        },
+        "introEnd": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 75.23333333333332,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 1,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        },
+        "audit": {
+          "timer": 75.16666666666666,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        },
+        "miniboss": {
+          "start": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 1173,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "middle": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 1173,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "end": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25.183333333333323,
+            "waveIdx": 999,
+            "vpAge": 11.183333333333342,
+            "cpAge": 0,
+            "live": 4,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 4,
+            "held": false,
+            "release": false,
+            "sub": false,
+            "hp": null,
+            "forms": 1,
+            "introAge": 0,
+            "route": null
+          }
+        }
+      },
+      {
+        "difficulty": "normal",
+        "introStart": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 75.16666666666666,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.09999999999999999,
+          "route": "right"
+        },
+        "introEnd": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 75.23333333333332,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        },
+        "audit": {
+          "timer": 75.16666666666666,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        },
+        "miniboss": {
+          "start": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 2255,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "middle": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 2255,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "end": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25.183333333333323,
+            "waveIdx": 999,
+            "vpAge": 11.183333333333342,
+            "cpAge": 0,
+            "live": 6,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 4,
+            "held": false,
+            "release": false,
+            "sub": false,
+            "hp": null,
+            "forms": 1,
+            "introAge": 0,
+            "route": null
+          }
+        }
+      },
+      {
+        "difficulty": "hard",
+        "introStart": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 77.9166666666665,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.09999999999999999,
+          "route": "right"
+        },
+        "introEnd": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 77.98333333333316,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 3,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        },
+        "audit": {
+          "timer": 77.9166666666665,
+          "vp": 19,
+          "frames": 2575,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        },
+        "miniboss": {
+          "start": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 2663,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "middle": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 2663,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "end": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25.183333333333323,
+            "waveIdx": 999,
+            "vpAge": 11.183333333333342,
+            "cpAge": 0,
+            "live": 8,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 4,
+            "held": false,
+            "release": false,
+            "sub": false,
+            "hp": null,
+            "forms": 1,
+            "introAge": 0,
+            "route": null
+          }
+        }
+      },
+      {
+        "difficulty": "furious",
+        "introStart": {
+          "scene": true,
+          "introDone": false,
+          "stageTimer": 78.88333333333311,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 0,
+          "wing": 4,
+          "held": false,
+          "release": true,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 0.13333333333333333,
+          "route": "right"
+        },
+        "introEnd": {
+          "scene": false,
+          "introDone": true,
+          "stageTimer": 78.9833333333331,
+          "waveIdx": 999,
+          "vpAge": 19,
+          "cpAge": 0,
+          "live": 0,
+          "shots": 0,
+          "allyShots": 1,
+          "wing": 4,
+          "held": false,
+          "release": false,
+          "sub": false,
+          "hp": null,
+          "forms": 0,
+          "introAge": 43.03333333333217,
+          "route": "right"
+        },
+        "audit": {
+          "timer": 78.88333333333311,
+          "vp": 19,
+          "frames": 2573,
+          "maxEnemies": 0,
+          "maxShots": 0,
+          "drift": 0
+        },
+        "miniboss": {
+          "start": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 3048,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "middle": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25,
+            "waveIdx": 999,
+            "vpAge": 11,
+            "cpAge": 0,
+            "live": 0,
+            "shots": 1,
+            "allyShots": 0,
+            "wing": 0,
+            "held": true,
+            "release": false,
+            "sub": true,
+            "hp": 3048,
+            "forms": 0,
+            "introAge": 0,
+            "route": null
+          },
+          "end": {
+            "scene": false,
+            "introDone": false,
+            "stageTimer": 25.183333333333323,
+            "waveIdx": 999,
+            "vpAge": 11.183333333333342,
+            "cpAge": 0,
+            "live": 10,
+            "shots": 0,
+            "allyShots": 0,
+            "wing": 4,
+            "held": false,
+            "release": false,
+            "sub": false,
+            "hp": null,
+            "forms": 1,
+            "introAge": 0,
+            "route": null
+          }
+        }
+      }
+    ],
+    "errors": [],
+    "scope": "Native Edge frame loop and authored renderer; actual Stage 6 keyboard route choice, complete rebel intro, actual miniboss spawn/hit/death. Controlled invulnerable observation fixtures, not human playthrough."
+  },
+  "cinematics": {
+    "checks": [
+      {
+        "name": "chrome outgoing actors and hazard queue removed",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 1,
+          "introAge": 2.9833333333333276,
+          "gangAge": null,
+          "clock": 2.9833333333333276
+        }
+      },
+      {
+        "name": "chrome no frozen outgoing combat FX",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 1,
+          "introAge": 2.9833333333333276,
+          "gangAge": null,
+          "clock": 2.9833333333333276
+        }
+      },
+      {
+        "name": "chrome hidden cinematic pickups remain preserved",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "chrome scene sound cue clock keeps advancing",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "chrome native noncolliding weapon demonstration remains animated",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "chrome live gang callout keeps combat enabled",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "enemies": 1,
+          "shots": 6,
+          "frames": 0,
+          "fx": 33,
+          "loot": 2,
+          "introAge": null,
+          "gangAge": 1.3333333333333335,
+          "clock": 5.816666666666651
+        }
+      },
+      {
+        "name": "chrome live gang combat continues",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "chrome rescue scene suppresses ordinary enemies and attacks",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 3,
+          "introAge": null,
+          "gangAge": 9.666666666666726,
+          "clock": 14.150000000000283
+        }
+      },
+      {
+        "name": "chrome pre-choice radio advances safely without background enemies",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 4,
+          "introAge": null,
+          "gangAge": null,
+          "clock": 20.150000000000137
+        }
+      },
+      {
+        "name": "chrome Cole charge and projectile reel clock advances throughout demo",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "name": "chrome native Cole fusion muzzle animates then expires",
+        "pass": true,
+        "details": [
+          {
+            "label": "charge",
+            "clock": 21.216666666666743,
+            "demo": true,
+            "demoTime": 1.0666666666666678,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "release",
+            "clock": 21.600000000000055,
+            "demo": true,
+            "demoTime": 1.4499999999999997,
+            "muzzle": {
+              "t": 0.09999999999999999,
+              "life": 0.18
+            },
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "expired-flash",
+            "clock": 22.000000000000032,
+            "demo": true,
+            "demoTime": 1.8499999999999983,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "laser",
+            "clock": 23.149999999999967,
+            "demo": true,
+            "demoTime": 2.9999999999999942,
+            "muzzle": null,
+            "releases": [
+              {
+                "age": 0.08333333333333333,
+                "life": 0.13
+              }
+            ],
+            "impact": false,
+            "shots": 54
+          },
+          {
+            "label": "after-volley",
+            "clock": 24.64999999999988,
+            "demo": true,
+            "demoTime": 4.499999999999989,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 108
+          },
+          {
+            "label": "next-caption",
+            "clock": 25.949999999999807,
+            "demo": false,
+            "demoTime": 4.9166666666666545,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          }
+        ]
+      },
+      {
+        "name": "chrome native weapon release reels advance then expire",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "name": "chrome authored Cole impact effect expires",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "chrome demo fires but no rounds leak into the next caption",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "name": "chrome demo never resumes normal input or hostile combat",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "name": "firefox outgoing actors and hazard queue removed",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 1,
+          "introAge": 2.9833333333333276,
+          "gangAge": null,
+          "clock": 2.9833333333333276
+        }
+      },
+      {
+        "name": "firefox no frozen outgoing combat FX",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 1,
+          "introAge": 2.9833333333333276,
+          "gangAge": null,
+          "clock": 2.9833333333333276
+        }
+      },
+      {
+        "name": "firefox hidden cinematic pickups remain preserved",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "firefox scene sound cue clock keeps advancing",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "firefox native noncolliding weapon demonstration remains animated",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "firefox live gang callout keeps combat enabled",
+        "pass": true,
+        "details": {
+          "scene": false,
+          "enemies": 1,
+          "shots": 6,
+          "frames": 0,
+          "fx": 31,
+          "loot": 2,
+          "introAge": null,
+          "gangAge": 1.3333333333333335,
+          "clock": 5.816666666666651
+        }
+      },
+      {
+        "name": "firefox live gang combat continues",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "firefox rescue scene suppresses ordinary enemies and attacks",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 3,
+          "introAge": null,
+          "gangAge": 9.666666666666726,
+          "clock": 14.150000000000283
+        }
+      },
+      {
+        "name": "firefox pre-choice radio advances safely without background enemies",
+        "pass": true,
+        "details": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 4,
+          "introAge": null,
+          "gangAge": null,
+          "clock": 20.150000000000137
+        }
+      },
+      {
+        "name": "firefox Cole charge and projectile reel clock advances throughout demo",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "name": "firefox native Cole fusion muzzle animates then expires",
+        "pass": true,
+        "details": [
+          {
+            "label": "charge",
+            "clock": 21.216666666666743,
+            "demo": true,
+            "demoTime": 1.0666666666666678,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "release",
+            "clock": 21.600000000000055,
+            "demo": true,
+            "demoTime": 1.4499999999999997,
+            "muzzle": {
+              "t": 0.09999999999999999,
+              "life": 0.18
+            },
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "expired-flash",
+            "clock": 22.000000000000032,
+            "demo": true,
+            "demoTime": 1.8499999999999983,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "laser",
+            "clock": 23.149999999999967,
+            "demo": true,
+            "demoTime": 2.9999999999999942,
+            "muzzle": null,
+            "releases": [
+              {
+                "age": 0.08333333333333333,
+                "life": 0.13
+              }
+            ],
+            "impact": false,
+            "shots": 54
+          },
+          {
+            "label": "after-volley",
+            "clock": 24.64999999999988,
+            "demo": true,
+            "demoTime": 4.499999999999989,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 108
+          },
+          {
+            "label": "next-caption",
+            "clock": 25.949999999999807,
+            "demo": false,
+            "demoTime": 4.9166666666666545,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          }
+        ]
+      },
+      {
+        "name": "firefox native weapon release reels advance then expire",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "name": "firefox authored Cole impact effect expires",
+        "pass": true,
+        "details": null
+      },
+      {
+        "name": "firefox demo fires but no rounds leak into the next caption",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "name": "firefox demo never resumes normal input or hostile combat",
+        "pass": true,
+        "details": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      }
+    ],
+    "passed": 30,
+    "failed": 0,
+    "errors": [],
+    "rows": [
+      {
+        "browser": "chrome",
+        "scene": "intro",
+        "state": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 1,
+          "introAge": 2.9833333333333276,
+          "gangAge": null,
+          "clock": 2.9833333333333276
+        }
+      },
+      {
+        "browser": "chrome",
+        "scene": "cole-demo",
+        "samples": [
+          {
+            "label": "charge",
+            "clock": 21.216666666666743,
+            "demo": true,
+            "demoTime": 1.0666666666666678,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "release",
+            "clock": 21.600000000000055,
+            "demo": true,
+            "demoTime": 1.4499999999999997,
+            "muzzle": {
+              "t": 0.09999999999999999,
+              "life": 0.18
+            },
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "expired-flash",
+            "clock": 22.000000000000032,
+            "demo": true,
+            "demoTime": 1.8499999999999983,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "laser",
+            "clock": 23.149999999999967,
+            "demo": true,
+            "demoTime": 2.9999999999999942,
+            "muzzle": null,
+            "releases": [
+              {
+                "age": 0.08333333333333333,
+                "life": 0.13
+              }
+            ],
+            "impact": false,
+            "shots": 54
+          },
+          {
+            "label": "after-volley",
+            "clock": 24.64999999999988,
+            "demo": true,
+            "demoTime": 4.499999999999989,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 108
+          },
+          {
+            "label": "next-caption",
+            "clock": 25.949999999999807,
+            "demo": false,
+            "demoTime": 4.9166666666666545,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          }
+        ],
+        "audit": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      },
+      {
+        "browser": "firefox",
+        "scene": "intro",
+        "state": {
+          "scene": true,
+          "enemies": 0,
+          "shots": 0,
+          "frames": 0,
+          "fx": 0,
+          "loot": 1,
+          "introAge": 2.9833333333333276,
+          "gangAge": null,
+          "clock": 2.9833333333333276
+        }
+      },
+      {
+        "browser": "firefox",
+        "scene": "cole-demo",
+        "samples": [
+          {
+            "label": "charge",
+            "clock": 21.216666666666743,
+            "demo": true,
+            "demoTime": 1.0666666666666678,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "release",
+            "clock": 21.600000000000055,
+            "demo": true,
+            "demoTime": 1.4499999999999997,
+            "muzzle": {
+              "t": 0.09999999999999999,
+              "life": 0.18
+            },
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "expired-flash",
+            "clock": 22.000000000000032,
+            "demo": true,
+            "demoTime": 1.8499999999999983,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          },
+          {
+            "label": "laser",
+            "clock": 23.149999999999967,
+            "demo": true,
+            "demoTime": 2.9999999999999942,
+            "muzzle": null,
+            "releases": [
+              {
+                "age": 0.08333333333333333,
+                "life": 0.13
+              }
+            ],
+            "impact": false,
+            "shots": 54
+          },
+          {
+            "label": "after-volley",
+            "clock": 24.64999999999988,
+            "demo": true,
+            "demoTime": 4.499999999999989,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 108
+          },
+          {
+            "label": "next-caption",
+            "clock": 25.949999999999807,
+            "demo": false,
+            "demoTime": 4.9166666666666545,
+            "muzzle": null,
+            "releases": [],
+            "impact": false,
+            "shots": 0
+          }
+        ],
+        "audit": {
+          "clock": 20.150000000000137,
+          "maxMuzzle": 0.16666666666666666,
+          "maxRelease": 0.11666666666666665,
+          "shots": 112,
+          "afterFrames": 54,
+          "stale": 0,
+          "enemies": 0,
+          "hostile": 0
+        }
+      }
+    ],
+    "scope": "Real Chrome/Firefox scene rendering and controller fixtures. Full natural intro/miniboss lifecycle is covered by the companion all-difficulty Edge probe."
+  }
+}

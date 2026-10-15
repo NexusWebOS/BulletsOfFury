@@ -1,0 +1,10 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "FRAME FORMAT: master 1024 x 1024, exactly 2 columns by 2 rows of fixed 512 x 512 transparent cells; one medal centered at (256,256), visible art no larger than 400 x 400, one common proportional scale and pivot, reserve 56 pixel transparent margin. FOUR new original Bullets of Fury achievement medals, matching the original reference's compact hard-outlined pixel gold engraved military wing/crest finish. Real alpha, no text, no labels, no scene backgrounds. Row major: 1 three different jet aircraft silhouettes flying in formation within a gold laurel medal (Ace Squadron); 2 a jet over ten linked gold stars within a gold laurel medal (Battle Hardened); 3 a pristine unbroken gold shield with a fighter jet and three ivory stars (Flawless Fury); 4 crossed cannon, laser and missile within a gold laurel medal (Combined Arms). Tiny copper orange Overdrive highlights, navy inner enamel, same outer military gold ring, crisp original arcade pixel clusters. Fixed canvas scale, no cropping, independently readable silhouettes.",
+  "source": "expansion/topdown/art/menu_1011/source/general.png",
+  "references": [
+    "expansion/topdown/art/menu_1011/source/achievements.png",
+    "assets/game/shared/ui/ui/awards_0916/ach_campaign_clear.png"
+  ],
+  "exportWorkflow": "expansion/topdown/_research/build_menu_art_1011.py"
+}

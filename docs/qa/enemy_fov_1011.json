@@ -1,0 +1,843 @@
+{
+  "date": "2026-10-11",
+  "scope": "Regular authored green/yellow/red FOV for all enemy warning routes",
+  "suite": {
+    "assertions": 8670,
+    "failures": 0,
+    "exit": 0,
+    "finalSummary": true,
+    "baselineAssertions": 8670,
+    "baselineFailures": 0
+  },
+  "native": {
+    "checks": [
+      {
+        "name": "Stage 1 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 1,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.3863765887778186,
+            "point": {
+              "x": 290,
+              "y": 141.56
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 1 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 1,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3863765887778186,
+            "point": {
+              "x": 290,
+              "y": 141.56
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 1,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3863765887778186,
+            "point": {
+              "x": 290,
+              "y": 141.56
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 1 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 1,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3863765887778186,
+            "point": {
+              "x": 290,
+              "y": 141.56
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 1,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3863765887778186,
+            "point": {
+              "x": 290,
+              "y": 141.56
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 2 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 2,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.3891329912174912,
+            "point": {
+              "x": 290,
+              "y": 137.4
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 2 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 2,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3891329912174912,
+            "point": {
+              "x": 290,
+              "y": 137.4
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 2,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3891329912174912,
+            "point": {
+              "x": 290,
+              "y": 137.4
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 2 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 2,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3891329912174912,
+            "point": {
+              "x": 290,
+              "y": 137.4
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 2,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3891329912174912,
+            "point": {
+              "x": 290,
+              "y": 137.4
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 3 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 3,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 3 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 3,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 3,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 3 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 3,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 3,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 4 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 4,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 4 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 4,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 4,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 4 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 4,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 4,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 5 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 5,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 5 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 5,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 5,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 5 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 5,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 5,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 6 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 6,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 6 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 6,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 6,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 6 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 6,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 6,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3852942880090213,
+            "point": {
+              "x": 290,
+              "y": 143.16
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 7 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 7,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 7 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 7,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 7,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 7 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 7,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 7,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.384638859230312,
+            "point": {
+              "x": 290,
+              "y": 144.12
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 8 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 8,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.3768776992680913,
+            "point": {
+              "x": 290,
+              "y": 155
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 8 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 8,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3768776992680913,
+            "point": {
+              "x": 290,
+              "y": 155
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 8,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3768776992680913,
+            "point": {
+              "x": 290,
+              "y": 155
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 8 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 8,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3768776992680913,
+            "point": {
+              "x": 290,
+              "y": 155
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 8,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3768776992680913,
+            "point": {
+              "x": 290,
+              "y": 155
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 9 green: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 9,
+            "progress": 0.18,
+            "len": null,
+            "angle": 1.3828684600126546,
+            "point": {
+              "x": 290,
+              "y": 146.68
+            },
+            "key": "bmfx_fov_green_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 9 yellow: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 9,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3828684600126546,
+            "point": {
+              "x": 290,
+              "y": 146.68
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          },
+          {
+            "stage": 9,
+            "progress": 0.5,
+            "len": null,
+            "angle": 1.3828684600126546,
+            "point": {
+              "x": 290,
+              "y": 146.68
+            },
+            "key": "bmfx_fov_yellow_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "Stage 9 red: full regular FOV plate",
+        "passed": true,
+        "data": [
+          {
+            "stage": 9,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3828684600126546,
+            "point": {
+              "x": 290,
+              "y": 146.68
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 9,
+            "progress": 0.88,
+            "len": null,
+            "angle": 1.3828684600126546,
+            "point": {
+              "x": 290,
+              "y": 146.68
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "line: intended field rendering",
+        "passed": true,
+        "data": [
+          {
+            "stage": 9,
+            "progress": 0.8,
+            "len": 215.40659228538019,
+            "angle": 1.1902899496825317,
+            "point": {
+              "x": 280,
+              "y": 100
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 9,
+            "progress": 0.8,
+            "len": 215.40659228538019,
+            "angle": 1.1902899496825317,
+            "point": {
+              "x": 280,
+              "y": 100
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "legacy-gate: intended field rendering",
+        "passed": true,
+        "data": [
+          {
+            "stage": 9,
+            "progress": 0.8,
+            "len": 215.40659228538019,
+            "angle": 1.1902899496825317,
+            "point": {
+              "x": 280,
+              "y": 100
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          },
+          {
+            "stage": 9,
+            "progress": 0.8,
+            "len": 215.40659228538019,
+            "angle": 1.1902899496825317,
+            "point": {
+              "x": 280,
+              "y": 100
+            },
+            "key": "bmfx_fov_red_tall",
+            "args": 5
+          }
+        ]
+      },
+      {
+        "name": "alert-only: intended field rendering",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "queued-fighter: real AI shows green, yellow and red full FOV",
+        "passed": true,
+        "data": [
+          "green",
+          "yellow",
+          "red"
+        ]
+      },
+      {
+        "name": "queued-fighter: gameplay recording encodes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "alien-orb: real AI shows green, yellow and red full FOV",
+        "passed": true,
+        "data": [
+          "green",
+          "yellow",
+          "red"
+        ]
+      },
+      {
+        "name": "alien-orb: gameplay recording encodes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No browser page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "captures": [
+      "stage-1-red.png",
+      "stage-2-red.png",
+      "stage-3-red.png",
+      "stage-4-red.png",
+      "stage-5-red.png",
+      "stage-6-red.png",
+      "stage-7-red.png",
+      "stage-8-red.png",
+      "stage-9-red.png",
+      "queued-fighter-green.png",
+      "queued-fighter-yellow.png",
+      "queued-fighter-red.png",
+      "alien-orb-green.png",
+      "alien-orb-yellow.png",
+      "alien-orb-red.png"
+    ]
+  },
+  "sourceHashes": {
+    "assets/engine_combat_1007.js": "18cc40eaa8db95abf17de2d4d7f1635d48740da95f7f0f6042ffda172e2bcaec",
+    "assets/stage67_review_0929.js": "1011234de397be78d8477823826592614e2ad7291cdca7068a8837e542c1919c",
+    "assets/stage8_1003.js": "d98e199cbed200a10c07af56a00b4bcc06f897418a43ff9aa902a55e2bc8f585",
+    "assets/enemy_behaviour_1011.js": "118218426ffe88a9a341024e95841c5e8c7287de892166e33b9277b9e0868205",
+    "_BUILD_SOURCE/test_stage67_review_0929.cjs": "fadef274b4214198ef592b870f13a014a51f81766a4178addaf378310280e4b5"
+  },
+  "review": "_shots/enemy_fov_1011/review.html",
+  "limits": "Nine biome fixtures isolate the shared warning painter. Two recorded native AI excerpts use a protected observer; not campaign clears."
+}

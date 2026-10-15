@@ -1,0 +1,546 @@
+{
+  "date": "2026-10-12",
+  "status": "concepts awaiting Mike selection",
+  "generator": "built-in image_gen",
+  "canvas": [
+    2048,
+    1152
+  ],
+  "playfield": [
+    484,
+    0,
+    1080,
+    1152
+  ],
+  "logicalPlayfield": [
+    480,
+    512
+  ],
+  "sourceColumn": [
+    512,
+    1536
+  ],
+  "layout": "Full-height proportional playfield; left and right HUD columns outside it in every preview state.",
+  "concepts": [
+    {
+      "id": "command-bastion",
+      "name": "Command Bastion",
+      "number": 1,
+      "note": "Closest to Armored Command. Heavy connected frames and bright amber indicators.",
+      "size": [
+        1024,
+        1536
+      ],
+      "wells": {
+        "scores": [
+          99,
+          83,
+          323,
+          153
+        ],
+        "roll": [
+          84,
+          307,
+          140,
+          136
+        ],
+        "somer": [
+          298,
+          307,
+          140,
+          136
+        ],
+        "weapon": [
+          95,
+          549,
+          333,
+          330
+        ],
+        "pilot": [
+          97,
+          1147,
+          326,
+          245
+        ],
+        "radar": [
+          601,
+          83,
+          323,
+          344
+        ],
+        "special": [
+          602,
+          503,
+          323,
+          310
+        ],
+        "lives": [
+          587,
+          926,
+          139,
+          143
+        ],
+        "missiles": [
+          800,
+          926,
+          140,
+          143
+        ],
+        "lock": [
+          598,
+          1169,
+          328,
+          223
+        ],
+        "speed": [
+          98,
+          954,
+          324,
+          54
+        ],
+        "shield": [
+          99,
+          1045,
+          323,
+          55
+        ],
+        "rollBar": [
+          91,
+          465,
+          123,
+          27
+        ],
+        "somerBar": [
+          306,
+          465,
+          124,
+          26
+        ],
+        "specialBar": [
+          613,
+          838,
+          300,
+          26
+        ]
+      },
+      "path": "../../../_ART_SOURCES/side_hud_1012/command-bastion.png",
+      "sha256": "a5583826cde19f63afe4492e7e06dd5f7809fc8ed736c535a7a6aadc1de22689"
+    },
+    {
+      "id": "split-batteries",
+      "name": "Split Batteries",
+      "number": 2,
+      "note": "Separate instrument pods, with the maneuvers and stock counters in their own sockets.",
+      "size": [
+        1024,
+        1536
+      ],
+      "wells": {
+        "scores": [
+          102,
+          116,
+          332,
+          154
+        ],
+        "roll": [
+          97,
+          346,
+          137,
+          117
+        ],
+        "somer": [
+          301,
+          346,
+          135,
+          117
+        ],
+        "weapon": [
+          104,
+          554,
+          331,
+          320
+        ],
+        "pilot": [
+          97,
+          1178,
+          339,
+          224
+        ],
+        "radar": [
+          597,
+          116,
+          327,
+          328
+        ],
+        "special": [
+          597,
+          543,
+          327,
+          270
+        ],
+        "lives": [
+          593,
+          938,
+          133,
+          152
+        ],
+        "missiles": [
+          794,
+          938,
+          134,
+          151
+        ],
+        "lock": [
+          593,
+          1176,
+          335,
+          217
+        ],
+        "speed": [
+          98,
+          948,
+          346,
+          55
+        ],
+        "shield": [
+          97,
+          1050,
+          347,
+          54
+        ],
+        "rollBar": [
+          110,
+          475,
+          111,
+          19
+        ],
+        "somerBar": [
+          313,
+          475,
+          111,
+          19
+        ],
+        "specialBar": [
+          609,
+          826,
+          306,
+          27
+        ]
+      },
+      "path": "../../../_ART_SOURCES/side_hud_1012/split-batteries.png",
+      "sha256": "985a2048cdf545a18a86e7b2d07e50b48a9ec95a9d4614d12cef1f679804e949"
+    },
+    {
+      "id": "tactical-rails",
+      "name": "Tactical Rails",
+      "number": 3,
+      "note": "Even rails, broad display wells and a restrained, uniform instrument layout.",
+      "size": [
+        1024,
+        1536
+      ],
+      "wells": {
+        "scores": [
+          94,
+          100,
+          339,
+          146
+        ],
+        "roll": [
+          84,
+          305,
+          153,
+          137
+        ],
+        "somer": [
+          293,
+          305,
+          151,
+          137
+        ],
+        "weapon": [
+          93,
+          544,
+          342,
+          340
+        ],
+        "pilot": [
+          92,
+          1141,
+          343,
+          246
+        ],
+        "radar": [
+          602,
+          101,
+          324,
+          327
+        ],
+        "special": [
+          595,
+          477,
+          337,
+          318
+        ],
+        "lives": [
+          589,
+          906,
+          147,
+          141
+        ],
+        "missiles": [
+          792,
+          906,
+          146,
+          140
+        ],
+        "lock": [
+          594,
+          1149,
+          340,
+          238
+        ],
+        "speed": [
+          91,
+          943,
+          344,
+          58
+        ],
+        "shield": [
+          92,
+          1036,
+          344,
+          54
+        ],
+        "rollBar": [
+          102,
+          459,
+          106,
+          22
+        ],
+        "somerBar": [
+          321,
+          459,
+          103,
+          22
+        ],
+        "specialBar": [
+          621,
+          811,
+          283,
+          32
+        ]
+      },
+      "path": "../../../_ART_SOURCES/side_hud_1012/tactical-rails.png",
+      "sha256": "a4971d8432838a9ad85df8ecf0bbd26701c05e7cadabd7962693971a63ffdfd7"
+    },
+    {
+      "id": "siege-console",
+      "name": "Siege Console",
+      "number": 4,
+      "note": "Vented armor with fewer illuminated seams and a heavier military finish.",
+      "size": [
+        1024,
+        1536
+      ],
+      "wells": {
+        "scores": [
+          97,
+          105,
+          325,
+          137
+        ],
+        "roll": [
+          87,
+          289,
+          144,
+          131
+        ],
+        "somer": [
+          289,
+          289,
+          147,
+          131
+        ],
+        "weapon": [
+          92,
+          509,
+          338,
+          331
+        ],
+        "pilot": [
+          94,
+          1085,
+          334,
+          214
+        ],
+        "radar": [
+          602,
+          105,
+          325,
+          322
+        ],
+        "special": [
+          602,
+          476,
+          325,
+          288
+        ],
+        "lives": [
+          589,
+          867,
+          145,
+          155
+        ],
+        "missiles": [
+          795,
+          867,
+          144,
+          156
+        ],
+        "lock": [
+          599,
+          1078,
+          330,
+          219
+        ],
+        "speed": [
+          86,
+          889,
+          348,
+          58
+        ],
+        "shield": [
+          86,
+          981,
+          348,
+          57
+        ],
+        "rollBar": [
+          95,
+          434,
+          130,
+          23
+        ],
+        "somerBar": [
+          298,
+          433,
+          127,
+          24
+        ],
+        "specialBar": [
+          617,
+          787,
+          296,
+          28
+        ]
+      },
+      "path": "../../../_ART_SOURCES/side_hud_1012/siege-console.png",
+      "sha256": "7ea0553e93f4beecdb84a412edd1181570d81a76c241bfc26f7adaaad93aa794"
+    },
+    {
+      "id": "command-glass",
+      "name": "Command Glass",
+      "number": 5,
+      "note": "Compact beveled housings with bright recessed meter strips.",
+      "size": [
+        1024,
+        1536
+      ],
+      "wells": {
+        "scores": [
+          91,
+          112,
+          331,
+          139
+        ],
+        "roll": [
+          78,
+          311,
+          154,
+          131
+        ],
+        "somer": [
+          282,
+          311,
+          154,
+          131
+        ],
+        "weapon": [
+          90,
+          536,
+          334,
+          325
+        ],
+        "pilot": [
+          90,
+          1109,
+          334,
+          229
+        ],
+        "radar": [
+          603,
+          112,
+          331,
+          309
+        ],
+        "special": [
+          603,
+          505,
+          331,
+          273
+        ],
+        "lives": [
+          589,
+          871,
+          153,
+          149
+        ],
+        "missiles": [
+          794,
+          871,
+          151,
+          147
+        ],
+        "lock": [
+          602,
+          1110,
+          333,
+          170
+        ],
+        "speed": [
+          90,
+          920,
+          335,
+          48
+        ],
+        "shield": [
+          91,
+          1006,
+          331,
+          48
+        ],
+        "rollBar": [
+          92,
+          455,
+          118,
+          21
+        ],
+        "somerBar": [
+          303,
+          455,
+          117,
+          21
+        ],
+        "specialBar": [
+          637,
+          798,
+          263,
+          21
+        ]
+      },
+      "path": "../../../_ART_SOURCES/side_hud_1012/command-glass.png",
+      "sha256": "65c7a831af68ee81b16ece1c7a1c1060d5581bb034507649d115ee73a4355114"
+    }
+  ]
+}

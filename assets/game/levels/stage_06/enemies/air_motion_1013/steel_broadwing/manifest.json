@@ -1,0 +1,49 @@
+{
+  "id": "l6v_s1",
+  "name": "Steel Broadwing",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_s1"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_broadwing",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_s1_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_broadwing/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "69f355ac27dfdae34a54a6003d721d428f720a67aeaac4bc5e93420f03d0decb"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_s1_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_broadwing/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "0668a3dea4cc4f209d0b817686570c780eb61e534d5ab6f9830cf90aec3dc89c"
+  },
+  "nativeRatios": {
+    "l6v_s1": 2.1714285714285713
+  },
+  "sourceKeys": {
+    "l6v_s1": "n6v1_steel_intact_c"
+  }
+}

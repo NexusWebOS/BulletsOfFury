@@ -1,0 +1,240 @@
+{
+  "date": "2026-10-10",
+  "scope": "Nine individual pilot-jet cinematics and physical satellite infection with full-screen code",
+  "tool": "built-in image_gen",
+  "pilots": [
+    "cole",
+    "axel",
+    "freezer",
+    "yuri",
+    "maverick",
+    "falva",
+    "lizzie",
+    "decker",
+    "juggernaut"
+  ],
+  "art": {
+    "shipping_pngs": 467,
+    "animation_cells": 464,
+    "flight_per_pilot": 32,
+    "landing_per_pilot": 16,
+    "infection_cells": 32,
+    "native_pixel_mismatches": 0,
+    "front_rear_cell": [
+      384,
+      384
+    ],
+    "landing_cell": [
+      448,
+      448
+    ],
+    "owning_builder": "_BUILD_SOURCE/build_homecoming_1010.py",
+    "manifest": "_ART_SOURCES/homecoming_1010/generation_manifest.json",
+    "prompts": [
+      "_ART_SOURCES/homecoming_1010/prompts.json",
+      "_ART_SOURCES/homecoming_1010/landing_prompts.json"
+    ]
+  },
+  "syntax": {
+    "commands": [
+      "node --check assets/game.js",
+      "node --check assets/homecoming_1010.js",
+      "node --check assets/survivor_1010.js",
+      "node --check assets/hq_landing_1010.js"
+    ],
+    "exit_code": 0
+  },
+  "full_suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "assertions": 8335,
+    "errors": 0,
+    "exit_code": 0,
+    "final_summary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "recorded_previous_assertions": 8269
+  },
+  "native": {
+    "command": "python _BUILD_SOURCE/probe_homecoming_takeover_1010.py",
+    "passed": 24,
+    "failed": 0,
+    "checks": [
+      "Ending loads all selected-jet and takeover dependencies before its clock advances",
+      "Nine individual forty-eight-pose jet packs, thirty-two infection frames and three plates are natively ready",
+      "Every visible pixel in all 464 sprite cells matches the native game composite",
+      "All flight, landing and infection reels contain distinct native rendered frames",
+      "Every delivered frame is even, fixed-size, fixed-pivot and keeps its complete silhouette",
+      "Native wing fixtures remain anchored while every canopy, gear and boarding step moves",
+      "All nine selected pilots render their own individually generated aircraft for every flight shot",
+      "Actual Earth shots travel down a constant centreline and shrink to the planet",
+      "Every pilot lands the same selected jet and disembarks into the existing physical HQ route",
+      "Fury spaceship flight renderer is never used in any of the new jet shots",
+      "Real portal exit uses every opening, swirling and closing frame from the gameplay gate",
+      "Front flight continuously plays all sixteen registered poses",
+      "Continuous takeover shows all thirty-two growing infection poses and sixteen contact effects",
+      "Infection, corruption and transmission each sound once, followed by live code beeps",
+      "Binary and code spread from zero lines to the whole cinematic",
+      "Requested binary sequence is visibly rendered, not just stored in dialogue",
+      "Live code preserves the authored font shapes with a readable green palette",
+      "Cached code glyphs keep the screen-wide takeover within a thirty-fps rendering budget",
+      "Fury Command follows the complete satellite takeover",
+      "Existing gear touchdown, camera push and doorway entry continue correctly",
+      "Narrow cinematic remains evenly proportioned",
+      "Ordinary campaign still skips the sequel stinger",
+      "Arcade keeps its direct score card",
+      "No page, console or asset errors"
+    ]
+  },
+  "landing_camera": {
+    "command": "python _BUILD_SOURCE/probe_hq_landing_1010.py",
+    "passed": 32,
+    "failed": 0,
+    "checks": [
+      "Cold homecoming acquires all selected-pilot art before advancing",
+      "Native door pillars, lintel and threshold are pixel-identical across all sixteen frames",
+      "Door panels reveal the fixed corridor continuously in every frame",
+      "The homecoming opening and closing use the same registered door frames",
+      "Native camera pushes from the wide landing to the doorway continuously",
+      "Every scene layer uses the same proportional camera transform",
+      "Captions stay fixed outside the camera transform",
+      "The moving pilot remains in the camera frame throughout the walk",
+      "Camera edges contain authored scene pixels instead of uncovered black gaps",
+      "Camera interpolation has no jumps at touchdown, disembark or walk cues",
+      "The camera never samples beyond the authored background",
+      "Grounded ship remains exactly stationary through exit, walk and entry",
+      "Landing struts touch down before the pilot exits",
+      "HQ door is fully open before the pilot reaches its threshold",
+      "Pilot enters the building instead of fading on the apron",
+      "Actual pilot pixels remain visible around the nose and into the open doorway",
+      "Bounded loading fallback never restores the retired parked planes",
+      "All new actor and ship cells include their entire visible silhouette",
+      "All nine selected pilots render their own landing, exit and walk pixels",
+      "Earth return uses Falva's individually generated rear jet on the straight descent",
+      "Landing sounds fire once at their physical events",
+      "Extra redraws cannot replay landing sounds",
+      "Homecoming fades only after the pilot enters and the door closes",
+      "The cut between HQ and the next scene is completely black on both sides",
+      "The survivor scene fades in and reaches full visibility",
+      "Camera and fade restore drawing state before subsequent scenes",
+      "True ending continues into the original survivor sequence after entering HQ",
+      "Ordinary ending reaches its final card only after the full homecoming",
+      "Arcade still opens directly on its score/end card",
+      "Narrow cinematic keeps aircraft, characters and doorway evenly proportioned",
+      "Narrow camera remains clipped to its cinematic viewport",
+      "No page, console or asset errors"
+    ]
+  },
+  "preview": {
+    "command": "python _BUILD_SOURCE/probe_hq_landing_preview_1010.py",
+    "passed": 14,
+    "failed": 0,
+    "checks": [
+      "Preview opens the grounded ship in the actual ending renderer",
+      "Pilot chooser displays all nine real body and aircraft banks",
+      "Pause freezes the actual landing clock",
+      "Timeline seeks to a visible doorway walk",
+      "Play restarts the full escape-to-HQ homecoming",
+      "Play resumes the actual native audio context at the configured effects volume",
+      "Next scene control plays the actual fade into the survivor continuation",
+      "Survivor wide-crawl control drives the actual animated ending",
+      "Survivor infection control drives the actual animated ending",
+      "Survivor corruption control drives the actual animated ending",
+      "Survivor virus control drives the actual animated ending",
+      "Review includes the full satellite takeover and stops at Fury Command",
+      "Narrow review keeps the selected ship evenly proportioned",
+      "Review has no page, console or asset errors"
+    ]
+  },
+  "browser_errors": [],
+  "timing": {
+    "homecoming_end": 26.4,
+    "satellite_duration": 16.4,
+    "fury_command": 42.8,
+    "ordinary_campaign_skip_preserved": true,
+    "arcade_score_card_preserved": true
+  },
+  "recording": {
+    "path": "_shots/homecoming_takeover_1010/recording/homecoming.mp4",
+    "seconds": 43.53369999998808,
+    "ending_time": 43.51249999999973,
+    "phases": [
+      "escape",
+      "earth",
+      "approach",
+      "landing",
+      "exit",
+      "walk",
+      "inside",
+      "survivor-wide-crawl",
+      "survivor-close-crawl",
+      "survivor-infection",
+      "survivor-corruption",
+      "survivor-virus",
+      "survivor-fade",
+      "command"
+    ],
+    "audio": {
+      "tracks": 1,
+      "sample_rate": 48000,
+      "channels": 2,
+      "peak": 0.42218017578125,
+      "rms": 0.03827609627734098,
+      "cue_windows": [
+        {
+          "begin": 6,
+          "end": 7.5,
+          "peak": 0.23724365234375,
+          "rms": 0.1266886256591996
+        },
+        {
+          "begin": 9.4,
+          "end": 13.8,
+          "peak": 0.115264892578125,
+          "rms": 0.004883115699188591
+        },
+        {
+          "begin": 20,
+          "end": 21.4,
+          "peak": 0.42218017578125,
+          "rms": 0.06068244646659627
+        },
+        {
+          "begin": 29.4,
+          "end": 30.5,
+          "peak": 0.230316162109375,
+          "rms": 0.05606548361871437
+        },
+        {
+          "begin": 32.2,
+          "end": 33.3,
+          "peak": 0.40447998046875,
+          "rms": 0.07490413177780605
+        },
+        {
+          "begin": 38.8,
+          "end": 40.0,
+          "peak": 0.30926513671875,
+          "rms": 0.045206698599007014
+        }
+      ]
+    },
+    "errors": [],
+    "method": "Real game canvas/clock and native HTML audio plus WebAudio outputs mixed only in the verification recorder; music disabled"
+  },
+  "preview_url": "http://127.0.0.1:8794/docs/previews/hq_landing_1010/index.html?scene=portal&pilot=cole&revision=1010d",
+  "git": {
+    "committed": false,
+    "pushed": false,
+    "existing_staged_work_preserved": true
+  },
+  "line_endings": {
+    "assets/game.js": {
+      "sha256": "5c500ab584b433a33f5b10b5630ba4dff7e5b2964e07f912983073ff0f6de6d6",
+      "crlf": 0,
+      "lf": 80249
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "a9f67d2fa38452c2b90c3a49821e7ca225e125288bf55bf2f1aa525884a21191",
+      "crlf": 15874,
+      "lf": 15874
+    }
+  }
+}

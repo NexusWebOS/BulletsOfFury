@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "enemy": "Locust",
+      "first": {
+        "painted": 5011,
+        "hash": 4064208424,
+        "visible": true,
+        "label": "Heading\n8 authored frames"
+      },
+      "second": {
+        "painted": 5541,
+        "hash": 2398944296,
+        "visible": true,
+        "label": "Heading\n8 authored frames"
+      }
+    },
+    {
+      "enemy": "Locust",
+      "first": {
+        "painted": 3183,
+        "hash": 3597257929,
+        "visible": true,
+        "label": "Roll\n16 authored frames"
+      },
+      "second": {
+        "painted": 6019,
+        "hash": 2357216985,
+        "visible": true,
+        "label": "Roll\n16 authored frames"
+      }
+    },
+    {
+      "enemy": "Carrier",
+      "first": {
+        "painted": 8794,
+        "hash": 2323961786,
+        "visible": true,
+        "label": "S6cargo13 Hull"
+      },
+      "second": {
+        "painted": 8794,
+        "hash": 703728141,
+        "visible": true,
+        "label": "S6cargo13 Hull"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:8767/assets/game/shared/audio/sounds/reviewed_flamethrower_loop.mp3",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8767/assets/game/levels/stage_06/audio/music/Level6.mp3",
+      "error": "net::ERR_ABORTED"
+    }
+  ]
+}

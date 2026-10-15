@@ -1,0 +1,92 @@
+[
+  {
+    "asset": "cole_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-259ad56c-23a2-4c5c-a1de-13cb01f3dea8.png",
+    "path": "_ART_SOURCES/homecoming_1010/cole_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "9b7d4258958509ff3af5976b4d0aec84657c01816b86f9cb62f43ce71a2b6ec1",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "axel_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-3f0e5fec-a657-4a6e-b3db-2cc1ccfe5f8e.png",
+    "path": "_ART_SOURCES/homecoming_1010/axel_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "389354a5018c5f34c65dc21e4e974cf2287caed62c18d292b41a15dfa692c51f",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "yuri_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-7a555476-dfb4-4d55-ad81-649247dd5275.png",
+    "path": "_ART_SOURCES/homecoming_1010/yuri_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "4390e330074e9a3ce7b94d24f5bee56aaa78c7bd54364d9efec8c4dc8f5fbdde",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "freezer_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-13fe1a2c-9b26-452c-ae77-81e86e4301b2.png",
+    "path": "_ART_SOURCES/homecoming_1010/freezer_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "4de9b277a917c89c6051004332f143216544cf3a473a3f05d57af85ce09e46b8",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "maverick_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-0876a07c-3af1-4195-bfca-e4c350fb892c.png",
+    "path": "_ART_SOURCES/homecoming_1010/maverick_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "a61e95bc0f4148d946936906baf4771b7cbc548aaa490809ec2d75d985e38ad8",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "falva_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-4bc10be8-9410-4bb7-970d-205579f8eb40.png",
+    "path": "_ART_SOURCES/homecoming_1010/falva_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "ce7de6b8d9d8b3b7829cc9807a2157ceb8a387fc5380c904755958d7de0873fb",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "decker_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-1f8b9427-deac-48d3-8cb4-7ca737e04c1d.png",
+    "path": "_ART_SOURCES/homecoming_1010/decker_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "f695f1b42ffb70a053c2995b6aa379b8eca284d2db450ee130f3e8b1954858a8",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "juggernaut_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-57bae3dd-62e7-42f3-8cac-ed57eab5c5fe.png",
+    "path": "_ART_SOURCES/homecoming_1010/juggernaut_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "b2c32409a46566174d48e94126ea6d79dbf2bb2d657cc3af882d4cbc1df48476",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  },
+  {
+    "asset": "lizzie_landing",
+    "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-87dd4299-02a1-4ffe-8700-0a6e704ae575.png",
+    "path": "_ART_SOURCES/homecoming_1010/lizzie_landing_raw.png",
+    "accepted": true,
+    "prompt_file": "landing_prompts.json",
+    "tool": "built-in image_gen",
+    "source_sha256": "26f514836a680efad59887c9edac8ee24f907efcbf322b8ab571a23534af4164",
+    "reason": "Accepted; all sixteen native frames retain complete silhouettes, distinct pixels and fixed rendered wing fixtures"
+  }
+]

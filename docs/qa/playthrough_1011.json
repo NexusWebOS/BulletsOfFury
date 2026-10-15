@@ -1,0 +1,1877 @@
+{
+  "date": "2026-10-11",
+  "summary": "8,700 regression assertions pass (exit 0). 97 recording-specific native checks and 154 copied-form native checks pass with no browser errors. The review is based on bounded encounters and rendering fixtures; a human campaign clear and the open ledger items remain.",
+  "source": {
+    "file": "2026-10-11 12-24-48.mp4",
+    "durationSeconds": 3954.367,
+    "sha256": "23bd7a46942a982c4f42ad4047fc187f4adce3f429b30c41e6dfa77e9bb49a1f",
+    "method": "Local full-audio transcription, targeted redecodes, 198 overview captures and targeted action captures."
+  },
+  "regression": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "assertions": 8700,
+    "failures": 0,
+    "exitCode": 0,
+    "finalSummary": true,
+    "baselineAssertions": 8670,
+    "baselineFailures": 0,
+    "log": "_shots/playthrough_1011/final-regression.log",
+    "testMaintenance": "Superseded Walker/buoy roster and renamed pilot special expectations updated; no gameplay failures excluded."
+  },
+  "native": {
+    "runtime": {
+      "passed": 19,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Approved Armored Command renders, with stocks above and no radar",
+          "passed": true,
+          "data": {
+            "key": "hud_armored_command_1011",
+            "radar": false,
+            "life": [
+              28.8,
+              166,
+              193.28,
+              26.240000000000002
+            ],
+            "weapon": [
+              216.96,
+              16.799999999999997,
+              46.08,
+              72.96000000000001
+            ],
+            "top": 92,
+            "row": 120,
+            "inside": true,
+            "state": [
+              {
+                "seat": 1,
+                "pilot": "maverick",
+                "roll": 1,
+                "rollAvailable": true,
+                "somer": 1,
+                "somerAvailable": true,
+                "name": "HELIX BEAM",
+                "resource": 0,
+                "detail": "NO SPECIAL",
+                "weapon": {
+                  "key": "micon_chaingun_1",
+                  "lv": 1,
+                  "label": ""
+                },
+                "lock": false,
+                "lives": 7,
+                "missiles": 18,
+                "speed": 0,
+                "shield": 0,
+                "dead": false,
+                "score": 123456,
+                "loans": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "All eleven wells stay within proportional authored bands",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "HUD uses actual pilot stocks and score",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "HUD and playfield fit 1920x1080",
+          "passed": true,
+          "data": [
+            {
+              "x": 614,
+              "y": 0,
+              "right": 1306,
+              "bottom": 133,
+              "w": 692
+            },
+            {
+              "x": 614,
+              "y": 136,
+              "right": 1306,
+              "bottom": 874,
+              "w": 692
+            },
+            {
+              "x": 614,
+              "y": 877,
+              "right": 1306,
+              "bottom": 1050,
+              "w": 692
+            }
+          ]
+        },
+        {
+          "name": "HUD and playfield fit 1280x720",
+          "passed": true,
+          "data": [
+            {
+              "x": 413,
+              "y": 0,
+              "right": 867,
+              "bottom": 87,
+              "w": 454
+            },
+            {
+              "x": 413,
+              "y": 89,
+              "right": 867,
+              "bottom": 574,
+              "w": 454
+            },
+            {
+              "x": 413,
+              "y": 576,
+              "right": 867,
+              "bottom": 690,
+              "w": 454
+            }
+          ]
+        },
+        {
+          "name": "HUD and playfield fit 820x900",
+          "passed": true,
+          "data": [
+            {
+              "x": 123.5,
+              "y": 0,
+              "right": 696.5,
+              "bottom": 110,
+              "w": 573
+            },
+            {
+              "x": 123.5,
+              "y": 112,
+              "right": 696.5,
+              "bottom": 725,
+              "w": 573
+            },
+            {
+              "x": 123.5,
+              "y": 727,
+              "right": 696.5,
+              "bottom": 870,
+              "w": 573
+            }
+          ]
+        },
+        {
+          "name": "HUD and playfield fit 480x900",
+          "passed": true,
+          "data": [
+            {
+              "x": 0,
+              "y": 71,
+              "right": 480,
+              "bottom": 163,
+              "w": 480
+            },
+            {
+              "x": 0,
+              "y": 165,
+              "right": 480,
+              "bottom": 677,
+              "w": 480
+            },
+            {
+              "x": 0,
+              "y": 679,
+              "right": 480,
+              "bottom": 799,
+              "w": 480
+            }
+          ]
+        },
+        {
+          "name": "HUD and playfield fit 360x800",
+          "passed": true,
+          "data": [
+            {
+              "x": 0,
+              "y": 112,
+              "right": 360,
+              "bottom": 181,
+              "w": 360
+            },
+            {
+              "x": 0,
+              "y": 183,
+              "right": 360,
+              "bottom": 566,
+              "w": 360
+            },
+            {
+              "x": 0,
+              "y": 568,
+              "right": 360,
+              "bottom": 658,
+              "w": 360
+            }
+          ]
+        },
+        {
+          "name": "Maverick pickup preserves fixed-tier lances while storing separate beam levels",
+          "passed": true,
+          "data": {
+            "held": "mavhoming",
+            "level": 2,
+            "kinds": [
+              "mavlaser",
+              "mavlaser",
+              "mavlaser"
+            ],
+            "fixed": true,
+            "forms": [
+              {
+                "kind": "variant",
+                "id": "mavhoming",
+                "name": "HOMING LANCES"
+              },
+              {
+                "kind": "variant",
+                "id": "laserbeam",
+                "name": "STRAIGHT LASER"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Fire Whip stays absent until actually forged",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Explicit beam selection is also preserved by pickups",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Preview runs the real lance launch and homing tick",
+          "passed": true,
+          "data": {
+            "err": null,
+            "fired": 9,
+            "visible": 15
+          }
+        },
+        {
+          "name": "Leaving a preview stops its sampled cues",
+          "passed": true,
+          "data": {
+            "seen": [
+              "av3_laser_charge",
+              "av3_laser_burn",
+              "av3_laser_release",
+              "av3_fusion_cannon",
+              "av3_cole_laser6",
+              "av3_cole_laser7",
+              "av3_target_acquire",
+              "av3_teleport_out",
+              "av3_teleport_in",
+              "av3_firewall_launch",
+              "av3_firewall_burn",
+              "av3_toxic_spit",
+              "av3_alien_orb",
+              "av3_claw_lunge",
+              "av3_impact_metal",
+              "av3_impact_energy",
+              "av3_impact_flesh",
+              "av3_code_shatter",
+              "av3_module_break",
+              "av3_gravity_pulse",
+              "laser",
+              "maverick"
+            ],
+            "left": 0
+          }
+        },
+        {
+          "name": "Fresh session hides Continue but retains explicit checkpoint Load",
+          "passed": true,
+          "data": {
+            "fresh": true,
+            "load": true,
+            "same": true
+          }
+        },
+        {
+          "name": "Stage 6 ordinary controller fields allies and advances",
+          "passed": true,
+          "data": {
+            "s": 4,
+            "t": 0.1
+          }
+        },
+        {
+          "name": "Ordinary spread travels at 336 px/sec with unchanged level-three damage and a stable plate",
+          "passed": true,
+          "data": [
+            {
+              "speed": 5.6,
+              "dmg": 3,
+              "frame": 0
+            },
+            {
+              "speed": 5.6,
+              "dmg": 3,
+              "frame": 0
+            },
+            {
+              "speed": 5.6,
+              "dmg": 3,
+              "frame": 0
+            },
+            {
+              "speed": 5.6,
+              "dmg": 3,
+              "frame": 0
+            },
+            {
+              "speed": 5.599999999999999,
+              "dmg": 3,
+              "frame": 0
+            }
+          ]
+        },
+        {
+          "name": "Repeated homing threats cannot flip the Stage 1 dodge side every frame",
+          "passed": true,
+          "data": {
+            "unique": 1,
+            "dodge": -0.016666666666666562,
+            "cool": 0.6500000000000018,
+            "y": 184.31886388662141
+          }
+        },
+        {
+          "name": "Ordinary enemy pellets remain unshootable",
+          "passed": true,
+          "data": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "name": "No page, console or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "ui": {
+      "passed": 28,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Authored button enters native fullscreen through its click gesture",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Fullscreen control remains inside the fullscreen element",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Same control exits fullscreen",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "wide cole has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "cole",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_cole_pv2",
+            "inside": true,
+            "special": "SONIC BOOM / NUCLEAR WARHEADS"
+          }
+        },
+        {
+          "name": "wide axel has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "axel",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_axel_pv2",
+            "inside": true,
+            "special": "MEGA SHIELD"
+          }
+        },
+        {
+          "name": "wide lizzie has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "lizzie",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_lizzie_pv2",
+            "inside": true,
+            "special": "ATOM BOMB + HEAVY TURRET"
+          }
+        },
+        {
+          "name": "wide decker has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "decker",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_decker_pv2",
+            "inside": true,
+            "special": "CLOAKING SYSTEM / INCENDIARY SHOTGUN"
+          }
+        },
+        {
+          "name": "wide freezer has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "freezer",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_freezer_pv2",
+            "inside": true,
+            "special": "TIME FREEZE + THERMOSHOCK"
+          }
+        },
+        {
+          "name": "wide juggernaut has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "juggernaut",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_juggernaut_pv2",
+            "inside": true,
+            "special": "WRECKING BALL / CHARGE DASH"
+          }
+        },
+        {
+          "name": "wide yuri has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "yuri",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_yuri_pv2",
+            "inside": true,
+            "special": "CHAIN LIGHTNING"
+          }
+        },
+        {
+          "name": "wide falva has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "falva",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_falva_pv2",
+            "inside": true,
+            "special": "ROLLER BALL"
+          }
+        },
+        {
+          "name": "wide maverick has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "maverick",
+            "body": [
+              28,
+              90,
+              220.36,
+              222
+            ],
+            "ship": [
+              260.36,
+              90,
+              228.23,
+              182.04
+            ],
+            "info": [
+              500.59000000000003,
+              90,
+              290.40999999999997,
+              222
+            ],
+            "key": "ship_maverick_pv2",
+            "inside": true,
+            "special": "HELIX BEAM"
+          }
+        },
+        {
+          "name": "narrow cole has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "cole",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_cole_pv2",
+            "inside": true,
+            "special": "SONIC BOOM / NUCLEAR WARHEADS"
+          }
+        },
+        {
+          "name": "narrow axel has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "axel",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_axel_pv2",
+            "inside": true,
+            "special": "MEGA SHIELD"
+          }
+        },
+        {
+          "name": "narrow lizzie has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "lizzie",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_lizzie_pv2",
+            "inside": true,
+            "special": "ATOM BOMB + HEAVY TURRET"
+          }
+        },
+        {
+          "name": "narrow decker has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "decker",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_decker_pv2",
+            "inside": true,
+            "special": "CLOAKING SYSTEM / INCENDIARY SHOTGUN"
+          }
+        },
+        {
+          "name": "narrow freezer has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "freezer",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_freezer_pv2",
+            "inside": true,
+            "special": "TIME FREEZE + THERMOSHOCK"
+          }
+        },
+        {
+          "name": "narrow juggernaut has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "juggernaut",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_juggernaut_pv2",
+            "inside": true,
+            "special": "WRECKING BALL / CHARGE DASH"
+          }
+        },
+        {
+          "name": "narrow yuri has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "yuri",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_yuri_pv2",
+            "inside": true,
+            "special": "CHAIN LIGHTNING"
+          }
+        },
+        {
+          "name": "narrow falva has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "falva",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_falva_pv2",
+            "inside": true,
+            "special": "ROLLER BALL"
+          }
+        },
+        {
+          "name": "narrow maverick has separate full pilot, large real ship and readable information areas",
+          "passed": true,
+          "data": {
+            "pilot": "maverick",
+            "body": [
+              28,
+              90,
+              170.24,
+              610
+            ],
+            "ship": [
+              210.24,
+              90,
+              253.76,
+              190
+            ],
+            "info": [
+              210.24,
+              290,
+              241.76,
+              410
+            ],
+            "key": "ship_maverick_pv2",
+            "inside": true,
+            "special": "HELIX BEAM"
+          }
+        },
+        {
+          "name": "Co-op shows each seat\u2019s actual independent stocks",
+          "passed": true,
+          "data": [
+            {
+              "seat": 1,
+              "pilot": "maverick",
+              "roll": 1,
+              "rollAvailable": true,
+              "somer": 1,
+              "somerAvailable": true,
+              "name": "HELIX BEAM",
+              "resource": 0,
+              "detail": "NO SPECIAL",
+              "weapon": {
+                "key": "micon_chaingun_1",
+                "lv": 1,
+                "label": ""
+              },
+              "lock": false,
+              "lives": 7,
+              "missiles": 18,
+              "speed": 0,
+              "shield": 0,
+              "dead": false,
+              "score": 0,
+              "loans": []
+            },
+            {
+              "seat": 2,
+              "pilot": "lizzie",
+              "roll": 1,
+              "rollAvailable": true,
+              "somer": 1,
+              "somerAvailable": true,
+              "name": "ATOM BOMB + HEAVY TURRET",
+              "resource": 0,
+              "detail": "NO SPECIAL",
+              "weapon": {
+                "key": "micon_mg_1",
+                "lv": 1,
+                "label": ""
+              },
+              "lock": false,
+              "lives": 2,
+              "missiles": 9,
+              "speed": 0,
+              "shield": 0,
+              "dead": false,
+              "score": 7654,
+              "loans": []
+            }
+          ]
+        },
+        {
+          "name": "Two-seat HUD fits 1280x720",
+          "passed": true,
+          "data": [
+            {
+              "x": 464,
+              "y": 0,
+              "right": 816,
+              "bottom": 135
+            },
+            {
+              "x": 464,
+              "y": 136,
+              "right": 816,
+              "bottom": 513
+            },
+            {
+              "x": 464,
+              "y": 514,
+              "right": 816,
+              "bottom": 690
+            }
+          ]
+        },
+        {
+          "name": "Two-seat HUD fits 480x900",
+          "passed": true,
+          "data": [
+            {
+              "x": 18,
+              "y": 0,
+              "right": 462,
+              "bottom": 170
+            },
+            {
+              "x": 18,
+              "y": 172,
+              "right": 462,
+              "bottom": 646
+            },
+            {
+              "x": 18,
+              "y": 648,
+              "right": 462,
+              "bottom": 870
+            }
+          ]
+        },
+        {
+          "name": "Ice jet reels load all 32 registered drawn poses",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Opening instruments animate and the title uses the actual logo and selected pilot",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All nine neutral hulls use identical pixels across the launch-to-play handoff",
+          "passed": true,
+          "data": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "name": "No native page, console or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "routes": {
+      "passed": 16,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Harrier cannon uses the generated sixteen-pose bank",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Harrier naturally uses warp, plasma, missiles and sequential lasers without the crossed rotor attack",
+          "passed": true,
+          "data": {
+            "states": [
+              "warpout",
+              "warpin",
+              "plasma",
+              "idle",
+              "missile",
+              "side",
+              "beam",
+              "salvo"
+            ],
+            "beams": 1,
+            "shots": 30
+          }
+        },
+        {
+          "name": "Broken Harrier cannon stops firing independently of the other module",
+          "passed": true,
+          "data": {
+            "left": true,
+            "right": true,
+            "shots": 0,
+            "targets": [
+              "Harrier cannon",
+              "Harrier core"
+            ]
+          }
+        },
+        {
+          "name": "Harrier clears the upper route and has no invisible rectangular corner collision",
+          "passed": true,
+          "data": {
+            "y": 81,
+            "top": 0,
+            "contact": false
+          }
+        },
+        {
+          "name": "Chaos Harrier stays alive below thirty percent HP",
+          "passed": true,
+          "data": {
+            "live": true,
+            "hp": 500,
+            "max": 1670
+          }
+        },
+        {
+          "name": "Original ice hull fights as a durable modular Stage 8 heavy without a miniboss slot",
+          "passed": true,
+          "data": {
+            "hp": 455,
+            "parts": 4,
+            "bar": false,
+            "enter": false,
+            "mode": "elite-ball1002",
+            "skin": "frost1002",
+            "draws": 321
+          }
+        },
+        {
+          "name": "Stage 8 heavy cannon damage follows the projectile contact",
+          "passed": true,
+          "data": {
+            "broken": true,
+            "other": true
+          }
+        },
+        {
+          "name": "Stage 8 heavy advances its native attack book",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Surviving heavy leaves without holding the stage route",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Removed yellow Storm Buoy cannot be spawned by legacy waves",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Bomb stays attached until the incoming warning finishes",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Bomb releases from the aircraft after its full warning",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Bomb impacts after its separate flight interval",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Hellram completes its warned charge, retreat and aimed six-round salvo",
+          "passed": true,
+          "data": {
+            "history": [
+              "rest",
+              "tell",
+              "dash",
+              "backstep",
+              "fire",
+              "recover",
+              "rest"
+            ],
+            "shots": 6,
+            "first": 5.6833333333333185,
+            "finite": true
+          }
+        },
+        {
+          "name": "Tank pressure salvo emits every round from a living physical cannon",
+          "passed": true,
+          "data": {
+            "count": 12,
+            "mounted": true,
+            "mode": "pressure-salvo"
+          }
+        },
+        {
+          "name": "No page or console errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "encounters": {
+      "passed": 11,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "New ice carrier draws four independent weapons on its new hull",
+          "passed": true,
+          "data": {
+            "parts": [
+              {
+                "id": "gunL",
+                "hp": 339,
+                "x": 266.35986862697484,
+                "y": 249.24,
+                "rot": 0,
+                "muzzle": {
+                  "x": 272.11986862697484,
+                  "y": 332.76
+                }
+              },
+              {
+                "id": "gunR",
+                "hp": 339,
+                "x": 412.83986862697486,
+                "y": 248.6,
+                "rot": 0,
+                "muzzle": {
+                  "x": 402.91986862697485,
+                  "y": 332.12
+                }
+              },
+              {
+                "id": "rocketL",
+                "hp": 209,
+                "x": 290.7598686269749,
+                "y": 154.68,
+                "rot": 0,
+                "muzzle": {
+                  "x": 289.83986862697486,
+                  "y": 188.26
+                }
+              },
+              {
+                "id": "rocketR",
+                "hp": 209,
+                "x": 387.21986862697486,
+                "y": 154.68,
+                "rot": 0,
+                "muzzle": {
+                  "x": 385.83986862697486,
+                  "y": 188.26
+                }
+              }
+            ],
+            "draws": 186,
+            "skin": "pt11_frost"
+          }
+        },
+        {
+          "name": "Destroying the actual left cannon disables that cannon alone",
+          "passed": true,
+          "data": {
+            "id": "gunL",
+            "dead": true,
+            "other": true,
+            "can": false,
+            "muzzle": {
+              "x": 402.91986862697485,
+              "y": 332.12
+            }
+          }
+        },
+        {
+          "name": "Storm cannon reaches the native lightning release and midair burst",
+          "passed": true,
+          "data": [
+            {
+              "event": "sovereign-fusion-charge",
+              "rank": 2
+            },
+            {
+              "event": "sovereign-fusion-release",
+              "x": 339.9999999996895,
+              "y": 210.2527404403479
+            },
+            {
+              "event": "sovereign-fusion-midburst",
+              "count": 9,
+              "speed": 5,
+              "y": 280.6
+            }
+          ]
+        },
+        {
+          "name": "Generator objectives stay stationary when the boss moves",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Final quarter exits south, pursues north and returns to a damageable fight",
+          "passed": true,
+          "data": {
+            "q": {
+              "t": 10.000000000000076,
+              "from": {
+                "x": 379.9999999999782,
+                "y": 201.99993951246893
+              },
+              "exit": {
+                "x": 379.9999999999782,
+                "y": 776
+              },
+              "shot": 1.2,
+              "wave": 14,
+              "done": true
+            },
+            "shield": false,
+            "rearm": false,
+            "nohit": false,
+            "mode": "p2-rockets",
+            "events": [
+              {
+                "event": "storm-final-pursuit"
+              },
+              {
+                "event": "storm-pursuit-complete"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Strengthened chaingun drops one recoverable part during combat",
+          "passed": true,
+          "data": {
+            "max": 230,
+            "part": true,
+            "voice": "Bring that back in one piece when you get home. Good luck."
+          }
+        },
+        {
+          "name": "Electrified recovery rejects damage without healing and returns on-screen",
+          "passed": true,
+          "data": {
+            "damage": 0,
+            "hp": true,
+            "state": "storm_rebuild",
+            "x": 122.56,
+            "ghost": true
+          }
+        },
+        {
+          "name": "Collected salvage unlocks the weapon without switching the space loadout",
+          "passed": true,
+          "data": {
+            "got": true,
+            "held": true
+          }
+        },
+        {
+          "name": "Upper-half counter slides at full scale instead of retreating into the background",
+          "passed": true,
+          "data": {
+            "scale": 1.0870537647627483,
+            "y": 216.11612942882448,
+            "ox": 190,
+            "land": 220,
+            "committed": true
+          }
+        },
+        {
+          "name": "Furnace head uses all sixteen authored frames",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No page, console or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "finale": {
+      "passed": 14,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Flame releases a travelling wave; the core beam remains continuous",
+          "passed": true,
+          "data": {
+            "wave": true,
+            "beams": [
+              "core"
+            ],
+            "hit": true,
+            "safe": true,
+            "proof": true
+          }
+        },
+        {
+          "name": "Only the visible crescent hits; the space below its muzzle is safe",
+          "passed": true,
+          "data": {
+            "wave": true,
+            "beams": [
+              "core"
+            ],
+            "hit": true,
+            "safe": true,
+            "proof": true
+          }
+        },
+        {
+          "name": "Takeover uses the new sixteen-pose whole drone",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Body phase gets enough health to show its attack book",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Raised-arm download is visible before the shield becomes active",
+          "passed": true,
+          "data": {
+            "shield": 0,
+            "pct": 49,
+            "arms": [
+              -2.35,
+              2.35
+            ]
+          }
+        },
+        {
+          "name": "Shield activates once the progress reaches 100 percent",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Host beams follow physical shoulder emitters with red energy",
+          "passed": true,
+          "data": {
+            "beams": [
+              {
+                "palette": "#e54258",
+                "gap": 0
+              },
+              {
+                "palette": "#e54258",
+                "gap": 0
+              }
+            ]
+          }
+        },
+        {
+          "name": "Claw hit respects shields, then grips and flings into the authored burning spin",
+          "passed": true,
+          "data": {
+            "protectedHit": true,
+            "grabbed": true,
+            "held": true,
+            "flung": true,
+            "turns": 707.2797571172829
+          }
+        },
+        {
+          "name": "First defeated body reforms as a heart without creating a portal",
+          "passed": true,
+          "data": {
+            "mode": "dr5Reform",
+            "heart": 191,
+            "portal": null
+          }
+        },
+        {
+          "name": "Heart transition naturally reaches the playable ghost",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "mode": "fight",
+            "hp": 10845
+          }
+        },
+        {
+          "name": "Ghost locks survive orbit depth changes with one identity per physical module",
+          "passed": true,
+          "data": {
+            "count": 8,
+            "stable": true,
+            "locked": 8,
+            "unique": 8
+          }
+        },
+        {
+          "name": "Ghost helper downloads a visible damageable spectral barrier",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Second portal carries its original clock and anchor into the arena transition",
+          "passed": true,
+          "data": {
+            "mode": "voidIntro1005",
+            "t": 1.266666666666667,
+            "portal": {
+              "x": 284.69300744479165,
+              "y": 211,
+              "t": 7.816666666666644,
+              "size": 340,
+              "startT": 6.549999999999982
+            }
+          }
+        },
+        {
+          "name": "No page, console or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "weapons": {
+      "passed": 9,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Both Forge fire previews run with separate base/forged identities",
+          "passed": true,
+          "data": {
+            "errors": [
+              null,
+              null,
+              null
+            ],
+            "draws": 1,
+            "base": [
+              null
+            ],
+            "fire": [
+              "fire"
+            ]
+          }
+        },
+        {
+          "name": "Sonic Forge spread draws the authored pressure waves",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Sixteen fire poses retain one nozzle and 22% extra visible reach",
+          "passed": true,
+          "data": {
+            "frames": 16,
+            "pivot": true,
+            "length": 1.22
+          }
+        },
+        {
+          "name": "Forged flame damages a real enemy inside its added reach",
+          "passed": true,
+          "data": [
+            {
+              "name": "extension",
+              "hp": 9913,
+              "burn": 2.6833333333333336
+            },
+            {
+              "name": "outside",
+              "hp": 10000,
+              "burn": null
+            },
+            {
+              "name": "behind",
+              "hp": 10000,
+              "burn": null
+            }
+          ]
+        },
+        {
+          "name": "Targets beside and behind the authored flame remain unharmed",
+          "passed": true,
+          "data": [
+            {
+              "name": "extension",
+              "hp": 9913,
+              "burn": 2.6833333333333336
+            },
+            {
+              "name": "outside",
+              "hp": 10000,
+              "burn": null
+            },
+            {
+              "name": "behind",
+              "hp": 10000,
+              "burn": null
+            }
+          ]
+        },
+        {
+          "name": "Unforging restores the ordinary reach; Ice keeps its own renderer",
+          "passed": true,
+          "data": {
+            "far": true,
+            "plain": null,
+            "normal": false,
+            "ice": null
+          }
+        },
+        {
+          "name": "Held flame follows its own element until the next trigger refresh",
+          "passed": true,
+          "data": {
+            "same": true,
+            "after": null,
+            "element": "water"
+          }
+        },
+        {
+          "name": "Sonic artwork cannot upgrade or infuse Maverick homing lances",
+          "passed": true,
+          "data": [
+            {
+              "kind": "mavlaser",
+              "lv": 1,
+              "inf": null
+            },
+            {
+              "kind": "mavlaser",
+              "lv": 1,
+              "inf": null
+            },
+            {
+              "kind": "mavlaser",
+              "lv": 1,
+              "inf": null
+            }
+          ]
+        },
+        {
+          "name": "No page, console or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    }
+  },
+  "copiedForms": {
+    "passed": 154,
+    "failed": 0,
+    "errors": [],
+    "report": "docs/qa/hardcorps_finale_patterns_1007.json"
+  },
+  "launch": {
+    "stage": 1,
+    "pilot": "maverick",
+    "firstPlayFrame": 1072,
+    "measuredFrames": 1600,
+    "minShipHeight": 60,
+    "maxShipHeight": 60,
+    "firstPlayHeight": 60,
+    "offScaleBlits": 0,
+    "errors": []
+  },
+  "generatedArt": {
+    "bankCounts": {
+      "ice_parts": 6,
+      "hammer_core": 16,
+      "furnace_head": 16,
+      "harrier_cannon": 16,
+      "ice_jet_a": 16,
+      "ice_jet_b": 16,
+      "black_heart": 16,
+      "fire_wave": 16,
+      "drone_raise": 16,
+      "fire_spray": 16,
+      "sonic_pulse": 16
+    },
+    "totalCells": 166,
+    "cinematicPlates": 2,
+    "build": "_BUILD_SOURCE/build_playthrough_art_1011.py",
+    "provenance": "_ART_SOURCES/playthrough_1011/"
+  },
+  "openItems": [
+    "The two small green shapes at 41:34-41:43 strongly match loose Maverick missile-ammo drops (msl_2_2), not an enemy owner. Mike is being asked whether to replace their pickup art or remove those loose Stage 6 ammo drops. Other aircraft remain.",
+    "The reported 09:58-10:12 firing/scroll interruption has not been reproduced in the current build; ordinary pellets remain unshootable.",
+    "Full human campaign balance/clear, including Stage 6 encounter progression and all final copied forms, remains."
+  ],
+  "hashes": {
+    "assets/game.js": "ddc581d78aaa348c568364b9f960228def38bbee6deb0e310ebdd4f658ff185e",
+    "assets/playthrough_1011.js": "6e6d9de9dbe8d9cd7003419ffc1cddb92f11baae36c56cfb9441d34fcc9ac68a",
+    "assets/playthrough_finale_1011.js": "fbf26e4b1d063a7e44581aa11d4ecebcbefd15fa6d2bfcaab4e1021ba5221605",
+    "assets/playthrough_ui_1011.js": "eccfbcfc62dd24a903a60b75c5e9756acdd09c35a540f859dd1ed20b2442e370",
+    "assets/armored_command_1011.js": "a44214c6df8066f457c6c29a0a88a8457fead973df92b2f4368c2ceed4e59f03",
+    "assets/part2_motion_1011.js": "6a72c615514f251d4dfe4a090406f706c845529476693ccd8369f3d77115f62f",
+    "assets/hardcorps_finale_patterns_1007.js": "97bcf3871a48ad32d895f57fcfa9f04b4e258dc054da436e8738f1c79cf50359",
+    "assets/game/shared/combat/playthrough_1011/manifest.json": "90a7aec1e575fc361fa8d24a84f1aa3c135e2135fbf831e66c8056a5de4c7b46"
+  },
+  "captures": [
+    "docs/previews/playthrough_1011/captures/armored-command-stage6.png",
+    "docs/previews/playthrough_1011/captures/armored-coop.png",
+    "docs/previews/playthrough_1011/captures/cockpit-live.png",
+    "docs/previews/playthrough_1011/captures/title-flight.png",
+    "docs/previews/playthrough_1011/captures/ice-carrier-modular.png",
+    "docs/previews/playthrough_1011/captures/hammer-new-reactor.png",
+    "docs/previews/playthrough_1011/captures/storm-northbound-pursuit.png",
+    "docs/previews/playthrough_1011/captures/chaos-harrier.png",
+    "docs/previews/playthrough_1011/captures/toxic-pressure-salvo.png",
+    "docs/previews/playthrough_1011/captures/host-shoulder-beam.png",
+    "docs/previews/playthrough_1011/captures/drone-raised-takeover.png",
+    "docs/previews/playthrough_1011/captures/heart-beating.png",
+    "docs/previews/playthrough_1011/captures/ghost-multilock.png",
+    "docs/previews/playthrough_1011/captures/fire-forge-comparison.png",
+    "docs/previews/playthrough_1011/captures/sonic-forge-preview.png",
+    "docs/previews/playthrough_1011/captures/fire-live-contact.png"
+  ],
+  "publication": "Local working tree only. No commit or push.",
+  "elementMatrix": {
+    "cases": 81,
+    "passed": 32,
+    "failed": 0,
+    "errors": [],
+    "report": "_shots/element_arsenal_1011/live/checks.json"
+  },
+  "reviewPage": {
+    "passed": 19,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "hammer_core loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "hammer_core",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "furnace_head loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "furnace_head",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "fire_wave loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "fire_wave",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "harrier_cannon loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "harrier_cannon",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "ice_jet_a loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "ice_jet_a",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "ice_jet_b loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "ice_jet_b",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "black_heart loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "black_heart",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "drone_raise loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "drone_raise",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "fire_spray loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "fire_spray",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "sonic_pulse loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "sonic_pulse",
+          "frame": 15,
+          "count": 16,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "ice_parts loads its complete authored bank",
+        "passed": true,
+        "data": {
+          "key": "ice_parts",
+          "frame": 5,
+          "count": 6,
+          "loaded": true,
+          "playing": false
+        }
+      },
+      {
+        "name": "Next frame preserves the physical anchor",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Previous frame returns to the selected drawing",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Playback advances real frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Capture opens at full resolution",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review fits 1440px without horizontal overflow",
+        "passed": true,
+        "data": {
+          "width": 1440,
+          "body": 1440
+        }
+      },
+      {
+        "name": "Review fits 820px without horizontal overflow",
+        "passed": true,
+        "data": {
+          "width": 820,
+          "body": 820
+        }
+      },
+      {
+        "name": "Review fits 390px without horizontal overflow",
+        "passed": true,
+        "data": {
+          "width": 390,
+          "body": 390
+        }
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

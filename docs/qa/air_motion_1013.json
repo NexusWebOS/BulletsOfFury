@@ -1,0 +1,1562 @@
+{
+  "designs": 87,
+  "frames": 2088,
+  "newSheets": 170,
+  "newRuntimeBytes": 18746544,
+  "expectedAirborneTypes": [
+    "ac10firejet",
+    "ac10icejet",
+    "ash",
+    "cbreak",
+    "dreadv",
+    "echof",
+    "gleech",
+    "hell",
+    "horizon",
+    "l6v_b0",
+    "l6v_b1",
+    "l6v_b2",
+    "l6v_r0",
+    "l6v_r1",
+    "l6v_r2",
+    "l6v_s0",
+    "l6v_s1",
+    "l6v_s2",
+    "mm1003_bluehybrid",
+    "mm1003_furnacemaw",
+    "mm1003_hellhugger",
+    "mm1003_hellram",
+    "mm1003_hexpyre",
+    "mm1003_impharrow",
+    "mm1003_riflelocust",
+    "pmine",
+    "pneedle",
+    "pt11frostcarrier",
+    "s1jetbomber",
+    "s1jetbomber_b",
+    "s1jetdelta",
+    "s1jetdelta_b",
+    "s4bomber",
+    "s4command",
+    "s4heavyjet",
+    "s4interceptor",
+    "s4rocket",
+    "s5frigate",
+    "s5gravity",
+    "s5interceptor",
+    "s5leech",
+    "s5minelayer",
+    "s5portalmine",
+    "s5rammer",
+    "s5repair",
+    "s5satellite",
+    "s5skimmer",
+    "s5station",
+    "s6cyclone",
+    "s6dart",
+    "s6lancer",
+    "s6mine",
+    "s6probe",
+    "s6skimmer",
+    "s6thunder",
+    "s6turbine",
+    "s7skimmer",
+    "s8bomber",
+    "s8carrier",
+    "s8crescent",
+    "s8deathorb",
+    "s8hunter",
+    "s8interceptor",
+    "s8leech",
+    "s8parasite",
+    "s8razor",
+    "s8skull",
+    "s8solar",
+    "s8spread",
+    "s8symbiote",
+    "s8tentacle",
+    "s9beacon",
+    "s9comet",
+    "s9gateturret",
+    "s9gunship",
+    "s9interceptor",
+    "s9prism",
+    "s9ring",
+    "s9singularity",
+    "tsplit",
+    "vmanta",
+    "wskim",
+    "xelite_glacierlance",
+    "xelite_hivewing",
+    "xelite_solarwarden",
+    "xelite_tempest",
+    "xelite_voidreaver"
+  ],
+  "aliases": 100,
+  "canvasEdgeFailures": 0,
+  "losslessPixelEquivalence": true,
+  "nativeBrowsers": [
+    {
+      "browser": "edge",
+      "raster": {
+        "frames": 2088,
+        "designs": 87
+      },
+      "live": [
+        {
+          "stage": 1,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 9,
+          "difficulty": "easy",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "normal",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "hard",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "furious",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        }
+      ],
+      "rebels": {
+        "frames": 120,
+        "tints": 0
+      },
+      "errors": []
+    },
+    {
+      "browser": "chrome",
+      "raster": {
+        "frames": 2088,
+        "designs": 87
+      },
+      "live": [
+        {
+          "stage": 1,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 9,
+          "difficulty": "easy",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "normal",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "hard",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "furious",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        }
+      ],
+      "rebels": {
+        "frames": 120,
+        "tints": 0
+      },
+      "errors": []
+    },
+    {
+      "browser": "firefox",
+      "raster": {
+        "frames": 2088,
+        "designs": 87
+      },
+      "live": [
+        {
+          "stage": 1,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 1,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading",
+            "air13_s1_flight_variant_1_roll",
+            "air13_s1_flight_variant_1_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 4,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading",
+            "air13_s4_flight_variant_4_roll",
+            "air13_s4_flight_variant_4_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 6,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading",
+            "air13_s6_flight_variant_6_roll",
+            "air13_s6_flight_variant_6_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "easy",
+          "count": 3,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "normal",
+          "count": 5,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "hard",
+          "count": 7,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 8,
+          "difficulty": "furious",
+          "count": 9,
+          "keys": [
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading",
+            "air13_s8_flight_variant_8_roll",
+            "air13_s8_flight_variant_8_heading"
+          ],
+          "frames": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ]
+        },
+        {
+          "stage": 9,
+          "difficulty": "easy",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "normal",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "hard",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        },
+        {
+          "stage": 9,
+          "difficulty": "furious",
+          "key": "air13_s9_wskim_roll",
+          "frame": 7
+        }
+      ],
+      "rebels": {
+        "frames": 120,
+        "tints": 0
+      },
+      "errors": []
+    }
+  ],
+  "rebelRegression": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "natural Rook supply cycle includes hook, slugs and ram"
+      },
+      {
+        "ok": true,
+        "name": "hook aim locks before its release and does not chase late dodges"
+      },
+      {
+        "ok": true,
+        "name": "moving out of the committed cast escapes without capture"
+      },
+      {
+        "ok": true,
+        "name": "stationary player is physically caught by the moving hook"
+      },
+      {
+        "ok": true,
+        "name": "hook performs reel, swing and edge throw then releases control"
+      },
+      {
+        "ok": true,
+        "name": "throw leaves player inside the playable screen"
+      },
+      {
+        "ok": true,
+        "name": "stationary positive control reaches the edge and takes real damage there"
+      },
+      {
+        "ok": true,
+        "name": "ordinary gunfire severs the flying hook"
+      },
+      {
+        "ok": true,
+        "name": "real barrel roll breaks an attached tether"
+      },
+      {
+        "ok": true,
+        "name": "Rook death removes attachment and captured-control state immediately"
+      },
+      {
+        "ok": true,
+        "name": "co-op hook selects and retains the second seat explicitly"
+      },
+      {
+        "ok": true,
+        "name": "reel moves only the selected co-op seat"
+      },
+      {
+        "ok": true,
+        "name": "encounter clear releases the second seat"
+      },
+      {
+        "ok": true,
+        "name": "authored eight-frame Nyx spiral draws both behind and over the cloaked hull"
+      },
+      {
+        "ok": true,
+        "name": "Nyx fires the new warned three-round ambush from her cloaked nozzle"
+      },
+      {
+        "ok": true,
+        "name": "spiral cloak preserves hidden missile acquisition"
+      },
+      {
+        "ok": true,
+        "name": "blind hits still damage cloaked Nyx and show white hull contact"
+      },
+      {
+        "ok": true,
+        "name": "Nyx introduction uses the same authored spiral and never draws the old diamond halo"
+      },
+      {
+        "ok": true,
+        "name": "defeated rebel retains an opaque authored spinning hull before impact"
+      },
+      {
+        "ok": true,
+        "name": "rebel death uses pilot spin/crash duration and 540\u2013900 degree limits"
+      },
+      {
+        "ok": true,
+        "name": "pilot-timed crash arrives at 1.25 seconds with burst and shock rings"
+      },
+      {
+        "ok": true,
+        "name": "easy slowest pilot sidesteps the committed hook using ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "normal slowest pilot sidesteps the committed hook using ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "hard slowest pilot sidesteps the committed hook using ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "furious slowest pilot sidesteps the committed hook using ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "blue ace settles before warning its fixed paired wing batteries"
+      },
+      {
+        "ok": true,
+        "name": "blue ace releases repeated authored wing-gun volleys"
+      },
+      {
+        "ok": true,
+        "name": "all wing rounds diverge outward, preserving the central movement corridor"
+      },
+      {
+        "ok": true,
+        "name": "blue ace gives an explicit recovery window after its motif"
+      },
+      {
+        "ok": true,
+        "name": "blue ace death during cross warning still draws its complete burning hull"
+      },
+      {
+        "ok": true,
+        "name": "blue ace reaches pilot-timed crash without a long death flash"
+      },
+      {
+        "ok": true,
+        "name": "all four separate winch/hook/chain modules render on the native canvas"
+      },
+      {
+        "ok": true,
+        "name": "zero native page/console/missing-asset errors"
+      }
+    ],
+    "errors": []
+  },
+  "fullGameHarness": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+  "scope": "all active airborne enemies and five rebel fighters; no ground/naval or standalone boss-hull regeneration",
+  "bodyOwnerFixtures": {
+    "checks": [
+      {
+        "owner": "s1jetdelta",
+        "frame": 0,
+        "key": "air13_s1_s1jetdelta_roll"
+      },
+      {
+        "owner": "s1jetdelta",
+        "frame": 4,
+        "key": "air13_s1_s1jetdelta_roll"
+      },
+      {
+        "owner": "s1jetdelta",
+        "frame": 8,
+        "key": "air13_s1_s1jetdelta_roll"
+      },
+      {
+        "owner": "s1jetdelta",
+        "frame": 12,
+        "key": "air13_s1_s1jetdelta_roll"
+      },
+      {
+        "owner": "s1jetdelta",
+        "frame": 15,
+        "key": "air13_s1_s1jetdelta_roll"
+      },
+      {
+        "owner": "s1jetbomber",
+        "frame": 0,
+        "key": "air13_s1_s1jetbomber_roll"
+      },
+      {
+        "owner": "s1jetbomber",
+        "frame": 4,
+        "key": "air13_s1_s1jetbomber_roll"
+      },
+      {
+        "owner": "s1jetbomber",
+        "frame": 8,
+        "key": "air13_s1_s1jetbomber_roll"
+      },
+      {
+        "owner": "s1jetbomber",
+        "frame": 12,
+        "key": "air13_s1_s1jetbomber_roll"
+      },
+      {
+        "owner": "s1jetbomber",
+        "frame": 15,
+        "key": "air13_s1_s1jetbomber_roll"
+      },
+      {
+        "owner": "s1jetdelta_b",
+        "frame": 0,
+        "key": "air13_s1_s1jetdelta_b_roll"
+      },
+      {
+        "owner": "s1jetdelta_b",
+        "frame": 4,
+        "key": "air13_s1_s1jetdelta_b_roll"
+      },
+      {
+        "owner": "s1jetdelta_b",
+        "frame": 8,
+        "key": "air13_s1_s1jetdelta_b_roll"
+      },
+      {
+        "owner": "s1jetdelta_b",
+        "frame": 12,
+        "key": "air13_s1_s1jetdelta_b_roll"
+      },
+      {
+        "owner": "s1jetdelta_b",
+        "frame": 15,
+        "key": "air13_s1_s1jetdelta_b_roll"
+      },
+      {
+        "owner": "s1jetbomber_b",
+        "frame": 0,
+        "key": "air13_s1_s1jetbomber_b_roll"
+      },
+      {
+        "owner": "s1jetbomber_b",
+        "frame": 4,
+        "key": "air13_s1_s1jetbomber_b_roll"
+      },
+      {
+        "owner": "s1jetbomber_b",
+        "frame": 8,
+        "key": "air13_s1_s1jetbomber_b_roll"
+      },
+      {
+        "owner": "s1jetbomber_b",
+        "frame": 12,
+        "key": "air13_s1_s1jetbomber_b_roll"
+      },
+      {
+        "owner": "s1jetbomber_b",
+        "frame": 15,
+        "key": "air13_s1_s1jetbomber_b_roll"
+      },
+      {
+        "owner": "blue",
+        "direction": "south",
+        "frame": 0,
+        "key": "air13_s6_s6dart_heading"
+      },
+      {
+        "owner": "blue",
+        "direction": "west",
+        "frame": 2,
+        "key": "air13_s6_s6dart_heading"
+      },
+      {
+        "owner": "blue",
+        "direction": "north",
+        "frame": 4,
+        "key": "air13_s6_s6dart_heading"
+      },
+      {
+        "owner": "blue",
+        "direction": "east",
+        "frame": 6,
+        "key": "air13_s6_s6dart_heading"
+      },
+      {
+        "owner": "red",
+        "direction": "south",
+        "frame": 0,
+        "key": "air13_s6_stealth_red_heading"
+      },
+      {
+        "owner": "red",
+        "direction": "west",
+        "frame": 2,
+        "key": "air13_s6_stealth_red_heading"
+      },
+      {
+        "owner": "red",
+        "direction": "north",
+        "frame": 4,
+        "key": "air13_s6_stealth_red_heading"
+      },
+      {
+        "owner": "red",
+        "direction": "east",
+        "frame": 6,
+        "key": "air13_s6_stealth_red_heading"
+      },
+      {
+        "owner": "green",
+        "direction": "south",
+        "frame": 0,
+        "key": "air13_s6_stealth_green_heading"
+      },
+      {
+        "owner": "green",
+        "direction": "west",
+        "frame": 2,
+        "key": "air13_s6_stealth_green_heading"
+      },
+      {
+        "owner": "green",
+        "direction": "north",
+        "frame": 4,
+        "key": "air13_s6_stealth_green_heading"
+      },
+      {
+        "owner": "green",
+        "direction": "east",
+        "frame": 6,
+        "key": "air13_s6_stealth_green_heading"
+      },
+      {
+        "owner": "orange",
+        "direction": "south",
+        "frame": 0,
+        "key": "air13_s6_stealth_orange_heading"
+      },
+      {
+        "owner": "orange",
+        "direction": "west",
+        "frame": 2,
+        "key": "air13_s6_stealth_orange_heading"
+      },
+      {
+        "owner": "orange",
+        "direction": "north",
+        "frame": 4,
+        "key": "air13_s6_stealth_orange_heading"
+      },
+      {
+        "owner": "orange",
+        "direction": "east",
+        "frame": 6,
+        "key": "air13_s6_stealth_orange_heading"
+      }
+    ],
+    "errors": []
+  }
+}

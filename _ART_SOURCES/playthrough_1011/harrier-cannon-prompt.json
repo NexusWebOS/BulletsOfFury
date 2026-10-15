@@ -1,0 +1,6 @@
+{
+  "tool": "image_gen",
+  "reference": "reference/ch2_gun_0.png",
+  "output": "returned/harrier-cannon-v1.png",
+  "prompt": "Animate this EXACT detachable science-fiction gun module, preserving its black graphite housing, small violet conduits, round cyan shoulder pivot at top, long mechanical barrel pointing straight DOWN, no whole ship, no new arms. Production HD Neo-Geo pixel sprite sheet, exactly 16 unique drawn frames in a STRICT 4 column x 4 row evenly spaced square grid. Frames 1-4 idle coil energy builds, 5-8 cyan and purple internal charge brightens with vent flaps opening, 9-12 mechanical barrel recoils upward inside housing and a SMALL muzzle flash at bottom, 13-16 barrel returns and vents close. ONE SAME fixed upper circular cyan pivot in the EXACT SAME relative place of every cell, fixed scale, camera and outline. Only the internal barrel, vents and light animate; no whole-object translation or rotation. Each entire gun including flash fits inside middle 55% of cell width and 70% of cell height. Generous transparent margins on every cell and entire sheet. No overlap, no cropping, no text, no labels, no border. Transparent background. Sharp detailed dark metal pixel clusters matching the provided actual in-game cannon."
+}

@@ -1,0 +1,34 @@
+"use strict";
+const root='../../../',cfg={
+ hammer_core:['Hammer · reactor and raise','Whole authored boss plates. Eight core-energy poses followed by eight hammer-raising poses.'],
+ furnace_head:['Furnace · living head','Sixteen distinct head poses registered to the forehead lens.'],
+ fire_wave:['Furnace · travelling fire wave','A moving crescent with a physical leading edge, separate from the sustained core beam.'],
+ harrier_cannon:['Harrier · independent cannon','Idle, charge, recoil and recovery. Each cannon has its own hinge, damage state and muzzle.'],
+ ice_jet_a:['Ice interceptor','The original cockpit anchor remains fixed while the authored engines animate.'],
+ ice_jet_b:['Ice assault ship','A distinct second hull with its own sixteen-pose engine loop.'],
+ black_heart:['Symbiote · black heart','Fragments assemble into a beating heart before the ghost emerges.'],
+ drone_raise:['Drone · possession','Exactly two attached arms raise while the eye and torso stay registered.'],
+ fire_spray:['Blast Furnace · forged fire spray','Sixteen authored fire poses, fixed nozzle and 22% more reach. Contact follows the drawn flame silhouette.'],
+ sonic_pulse:['Sonic · pressure-wave pellets','Sixteen propagating sound-wave drawings replace the gold cartridges on Sonic rounds, spread and heavy slugs.'],
+ ice_parts:['Cryogenic carrier · modular kit','Hull, two independent cannons, core and two missile magazines. These are separate mounting plates, not an animation strip.']};
+const $=id=>document.getElementById(id),canvas=$('screen'),g=canvas.getContext('2d'),cache=new Map();let manifest={},key='hammer_core',frame=0,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,elapsed=0,last=0;
+for(const [id,[title]]of Object.entries(cfg)){const o=document.createElement('option');o.value=id;o.textContent=title;$('bank').append(o);}
+function asset(a){if(!cache.has(a.path)){const i=new Image();i.src=root+a.path;cache.set(a.path,i);}return cache.get(a.path);}
+function render(){const bank=manifest[key];if(!bank)return;const a=bank[frame],im=asset(a),k=Math.min(2,540/Math.max(a.w,a.h)),anchorY=key==='fire_spray'?590:320,x=320-a.pivot[0]*k,y=anchorY-a.pivot[1]*k;
+ g.clearRect(0,0,640,640);g.imageSmoothingEnabled=false;
+ if($('onion').checked&&key!=='ice_parts')for(const d of [2,1]){const b=bank[(frame-d+bank.length)%bank.length],img=asset(b);if(img.complete&&img.naturalWidth){g.globalAlpha=d===2?.13:.25;g.drawImage(img,320-b.pivot[0]*k,anchorY-b.pivot[1]*k,b.w*k,b.h*k);}}g.globalAlpha=1;
+ if(im.complete&&im.naturalWidth)g.drawImage(im,x,y,a.w*k,a.h*k);
+ if($('pivot').checked){g.strokeStyle='#ffdc72';g.lineWidth=1;g.beginPath();g.moveTo(306,anchorY);g.lineTo(334,anchorY);g.moveTo(320,anchorY-14);g.lineTo(320,anchorY+14);g.stroke();}
+ $('frame').max=bank.length-1;$('frame').value=frame;$('name').textContent=cfg[key][0];$('description').textContent=cfg[key][1];$('number').textContent=(frame+1)+' / '+bank.length;$('dimensions').textContent=a.w+' × '+a.h;$('anchor').textContent=a.pivot.join(', ');$('source').textContent=a.source;$('raw').href=root+a.path;
+ window.reviewState={key,frame,count:bank.length,loaded:im.complete&&im.naturalWidth>0,playing};}
+function play(value){playing=value;$('play').textContent=value?'Pause':'Play';$('play').setAttribute('aria-pressed',String(value));}
+$('play').onclick=()=>play(!playing);$('bank').onchange=()=>{key=$('bank').value;frame=0;elapsed=0;render();};$('frame').oninput=()=>{play(false);frame=Number($('frame').value);render();};
+for(const [id,d]of [['previous',-1],['next',1]])$(id).onclick=()=>{play(false);frame=(frame+d+manifest[key].length)%manifest[key].length;render();};
+for(const id of ['onion','pivot'])$(id).onchange=render;
+function tick(now){const dt=Math.min(.08,(now-last)/1000||0);last=now;if(playing&&manifest[key]){elapsed+=dt;let f=Math.floor(elapsed*16),n=manifest[key].length;if(['hammer_core','drone_raise'].includes(key)){f%=n*2-2;frame=f<n?f:n*2-2-f;}else if(key==='black_heart')frame=f<8?f:8+(f-8)%8;else frame=f%n;}render();requestAnimationFrame(tick);}play(playing);
+fetch(root+'assets/game/shared/combat/playthrough_1011/manifest.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(m=>{manifest=m;Object.values(m).flat().forEach(asset);requestAnimationFrame(tick);}).catch(e=>$('description').textContent='Could not load artwork: '+e.message);
+const rows=[['ice-carrier-modular.png','Stage 3: new modular carrier and charged cannon.'],['chaos-harrier.png','Stage 5: independent animated Harrier cannons.'],['hammer-new-reactor.png','Hammer: reactor energy belongs to the whole boss plate.'],['host-shoulder-beam.png','Body form: charged shoulder beams follow their physical emitters.'],['drone-raised-takeover.png','The drone raises its arms before the symbiote consumes it.'],['heart-beating.png','First reformation: black heart, then ghost.'],['ghost-multilock.png','The ghost keeps independent, stable lock identities.'],['toxic-pressure-salvo.png','Stage 7: living cannons release a focused pressure salvo.'],['storm-northbound-pursuit.png','Storm Sovereign: final northbound pursuit.']];
+function gallery(id,rows){for(const [src,caption]of rows){const f=document.createElement('figure'),im=new Image(),c=document.createElement('figcaption');im.src=src;im.alt=caption;im.loading='lazy';im.tabIndex=0;c.textContent=caption;const open=()=>{$('lightbox').querySelector('img').src=im.src;$('lightbox').querySelector('img').alt=caption;$('lightbox').showModal();};im.onclick=open;im.onkeydown=e=>{if(e.key==='Enter')open();};f.append(im,c);$(id).append(f);}}
+gallery('weapons',[['captures/fire-forge-comparison.png','Standard fire and the new Blast Furnace: fixed nozzle, 16 poses, 22% extra reach.'],['captures/sonic-forge-preview.png','Sonic Shock Fan now uses propagating pressure waves.'],['captures/fire-live-contact.png','Native fire contact: added reach hits; targets beside and behind remain unharmed.']]);
+gallery('combat',rows.map(([file,c])=>['captures/'+file,c]));gallery('cinematics',[['captures/cockpit-live.png','Live authored radar in the cockpit, with the pilot’s hand on the controls.'],['captures/title-flight.png','Actual pilot ship, authored BOF logo and machine-gun title flight.'],[root+'assets/game/shared/cinematics/playthrough_1011/mystery-emergence.webp','The symbiote emerges as a faceless black void.'],[root+'assets/game/shared/cinematics/playthrough_1011/mystery-contact.webp','Black tendrils reach the satellite. Its true identity stays hidden.']]);$('close').onclick=()=>$('lightbox').close();
+fetch('../../qa/playthrough_1011.json').then(r=>r.json()).then(q=>{$('status').textContent=q.summary||'See the verification record for individual results.';}).catch(()=>$('status').textContent='The current run is being verified. See the timestamped ledger for scope and remaining work.');

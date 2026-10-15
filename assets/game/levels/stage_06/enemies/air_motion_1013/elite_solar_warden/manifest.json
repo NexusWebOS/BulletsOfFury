@@ -1,0 +1,49 @@
+{
+  "id": "xelite_solarwarden",
+  "name": "Elite Solar Warden",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "xelite_solarwarden"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_solar_warden",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_solarwarden_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_solar_warden/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "f5212c9d82562806c2ac03b4fe628b0445593142db0c9d888ab839c74d9b4906"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_solarwarden_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_solar_warden/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "6a94b0203fd1bb9cd018fc24f064af43bc8ba88b1abef6c308f52fec87c3d9ad"
+  },
+  "nativeRatios": {
+    "xelite_solarwarden": 0.8493150684931506
+  },
+  "sourceKeys": {
+    "xelite_solarwarden": "xelite_solarwarden_idle"
+  }
+}

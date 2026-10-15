@@ -1,0 +1,368 @@
+{
+  "date": "2026-10-11",
+  "localOnly": true,
+  "arena": {
+    "passed": 20,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "New environment and all sixteen code poses decode",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Even frame sizes and one common code pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Ghost phase does not use the Phase 3 void",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Existing intro naturally reaches a playable Phase 3",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Code illumination rises with the battle",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "left: opaque coverage and darkness across the entire arena",
+        "passed": true,
+        "data": {
+          "dark": 0.9876617431640625,
+          "edgeDark": 0.9772705078125,
+          "uncoveredPixels": 0
+        }
+      },
+      {
+        "name": "right: opaque coverage and darkness across the entire arena",
+        "passed": true,
+        "data": {
+          "dark": 0.9955190022786459,
+          "edgeDark": 0.990521240234375,
+          "uncoveredPixels": 0
+        }
+      },
+      {
+        "name": "fit: opaque coverage and darkness across the entire arena",
+        "passed": true,
+        "data": {
+          "dark": 0.9884775797526042,
+          "edgeDark": 0.9737762451171875,
+          "uncoveredPixels": 0
+        }
+      },
+      {
+        "name": "Native background draws no cathedral, ribs or old code mounts",
+        "passed": true,
+        "data": [
+          "av11_back_0",
+          "av11_code_0",
+          "av11_code_11",
+          "av11_code_13",
+          "av11_code_3",
+          "av11_code_5",
+          "av11_code_8"
+        ]
+      },
+      {
+        "name": "Native draw scales preserve every asset aspect ratio",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Code and atmosphere visibly animate in real game pixels",
+        "passed": true,
+        "data": {
+          "movingPixels": 14225
+        }
+      },
+      {
+        "name": "Draw-only calls freeze simulation clocks; code has three parallax depths",
+        "passed": true,
+        "data": {
+          "same": true,
+          "depths": 3
+        }
+      },
+      {
+        "name": "Actual Pause freezes the void animation",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Camera movement produces distinct depth shifts without advancing time",
+        "passed": true,
+        "data": {
+          "delta": 200,
+          "shifts": [
+            0.05,
+            0.05,
+            0.05,
+            0.115,
+            0.11500000000000028,
+            0.19
+          ],
+          "depths": [
+            0.1,
+            0.1,
+            0.1,
+            0.23,
+            0.23,
+            0.38
+          ],
+          "time": true
+        }
+      },
+      {
+        "name": "Copied forms and host return retain the same void and saved health",
+        "passed": true,
+        "data": {
+          "copy": true,
+          "host": true,
+          "hp": true
+        }
+      },
+      {
+        "name": "All sixteen drawn code poses stay within their fixed canvases",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Mobile canvas remains inside the viewport",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Portal home releases the void environment",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Void cannot leak into other stages",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "metrics": {
+      "left": {
+        "dark": 0.9876617431640625,
+        "edgeDark": 0.9772705078125,
+        "uncoveredPixels": 0
+      },
+      "right": {
+        "dark": 0.9955190022786459,
+        "edgeDark": 0.990521240234375,
+        "uncoveredPixels": 0
+      },
+      "fit": {
+        "dark": 0.9884775797526042,
+        "edgeDark": 0.9737762451171875,
+        "uncoveredPixels": 0
+      }
+    },
+    "screens": [
+      "01-engulfed.png",
+      "02-reveal.png",
+      "03-battle-begins.png",
+      "04-code-awake.png",
+      "05-void-left.png",
+      "06-void-right.png",
+      "07-void-fit.png",
+      "08-code-motion.png",
+      "09-active-attacks.png",
+      "10-code-16.png",
+      "11-mobile.png"
+    ],
+    "errors": []
+  },
+  "finale": {
+    "passed": 14,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Flame releases a travelling wave; the core beam remains continuous",
+        "passed": true,
+        "data": {
+          "wave": true,
+          "beams": [
+            "core"
+          ],
+          "hit": true,
+          "safe": true,
+          "proof": true
+        }
+      },
+      {
+        "name": "Only the visible crescent hits; the space below its muzzle is safe",
+        "passed": true,
+        "data": {
+          "wave": true,
+          "beams": [
+            "core"
+          ],
+          "hit": true,
+          "safe": true,
+          "proof": true
+        }
+      },
+      {
+        "name": "Takeover uses the new sixteen-pose whole drone",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Body phase gets enough health to show its attack book",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Raised-arm download is visible before the shield becomes active",
+        "passed": true,
+        "data": {
+          "shield": 0,
+          "pct": 49,
+          "arms": [
+            -2.35,
+            2.35
+          ]
+        }
+      },
+      {
+        "name": "Shield activates once the progress reaches 100 percent",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Host beams follow physical shoulder emitters with red energy",
+        "passed": true,
+        "data": {
+          "beams": [
+            {
+              "palette": "#e54258",
+              "gap": 0
+            },
+            {
+              "palette": "#e54258",
+              "gap": 0
+            }
+          ]
+        }
+      },
+      {
+        "name": "Claw hit respects shields, then grips and flings into the authored burning spin",
+        "passed": true,
+        "data": {
+          "protectedHit": true,
+          "grabbed": true,
+          "held": true,
+          "flung": true,
+          "turns": 552.6178380585158
+        }
+      },
+      {
+        "name": "First defeated body reforms as a heart without creating a portal",
+        "passed": true,
+        "data": {
+          "mode": "dr5Reform",
+          "heart": 191,
+          "portal": null
+        }
+      },
+      {
+        "name": "Heart transition naturally reaches the playable ghost",
+        "passed": true,
+        "data": {
+          "phase": 1,
+          "mode": "fight",
+          "hp": 10845
+        }
+      },
+      {
+        "name": "Ghost locks survive orbit depth changes with one identity per physical module",
+        "passed": true,
+        "data": {
+          "count": 8,
+          "stable": true,
+          "locked": 8,
+          "unique": 8
+        }
+      },
+      {
+        "name": "Ghost helper downloads a visible damageable spectral barrier",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Second portal carries its original clock and anchor into the arena transition",
+        "passed": true,
+        "data": {
+          "mode": "voidIntro1005",
+          "t": 1.266666666666667,
+          "portal": {
+            "x": 284.69300744479165,
+            "y": 211,
+            "t": 7.816666666666644,
+            "size": 340,
+            "startT": 6.549999999999982
+          }
+        }
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "regression": {
+    "passed": 8700,
+    "failed": 0,
+    "finalSummary": true,
+    "exitCode": 0
+  },
+  "files": {
+    "assets/void_arena_1011.js": "523f2258a7bbe898d5718a3c53ca53b2bfed2130574d4f4c188713036430e5c7",
+    "assets/void_arena_art_1011.js": "a57c855b2d5fa61dd4117c7a37f7e9913b11cad39de41fc13d11b0b1f1dcc169",
+    "index.html": "0618483150fe155460b628d4f3aa1b3b835ce5916c6a20e6dbc77650bc61591a",
+    "_ART_SOURCES/void_arena_1011/prompts.json": "6f661d60d1d1904b0f05b8f79cb6fe5503bfdfc348fcd6fbf563e309838fb999",
+    "assets/game/levels/stage_08/stage/void_arena_1011/manifest.json": "1e0fe11efe08008ef8ff334645062cf00f9afb92eaba7613bc8703f9a74d2a85"
+  },
+  "limits": "Protected bounded native encounters and camera fixtures, not a full campaign clear.",
+  "preview": {
+    "checks": [
+      {
+        "name": "images",
+        "passed": true
+      },
+      {
+        "name": "pause capture",
+        "passed": true
+      },
+      {
+        "name": "scrub and onion",
+        "passed": true
+      },
+      {
+        "name": "mobile width",
+        "passed": true
+      },
+      {
+        "name": "no browser errors",
+        "passed": true
+      }
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,86 @@
+"""Actual Chromium coverage of audio-directed choreography and weapon previews."""
+from pathlib import Path
+import sys,json
+from playwright.sync_api import sync_playwright
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'_BUILD_SOURCE'));import shoot
+OUT=ROOT/'_shots/audio_1010';OUT.mkdir(parents=True,exist_ok=True);checks=[];errors=[]
+def check(name,value,data=None):
+ checks.append(dict(name=name,passed=bool(value),data=data));print(('PASS ' if value else 'FAIL ')+name,flush=True)
+ if not value:print(json.dumps(data),flush=True)
+port,stop=shoot.serve(str(ROOT))
+try:
+ with sync_playwright() as pw:
+  br=pw.chromium.launch(args=['--autoplay-policy=no-user-gesture-required']);p=br.new_page(viewport=dict(width=1280,height=900));p.set_default_timeout(120000)
+  p.on('pageerror',lambda e:errors.append(str(e)))
+  p.on('console',lambda m:errors.append(m.text[:800]) if m.type=='error' or 'draw error' in m.text else None)
+  p.on('response',lambda r:errors.append('HTTP '+str(r.status)+': '+r.url) if r.status>=400 else None)
+  p.goto(f'http://127.0.0.1:{port}/index.html');p.wait_for_function('window.__bofFrames>4');p.evaluate(shoot.TRAP_RAF);p.mouse.click(650,450)
+  def frames(n):
+   for i in range(0,n,30):
+    e=p.evaluate(shoot.STEP,min(30,n-i))
+    if e:errors.append(e);break
+    p.wait_for_timeout(4)
+  def scene(n,pilot='cole'):
+   p.evaluate('()=>{run.mode="arcade";bossDefeated=false;delete run._gp4StageX;AP10_X.intro=null;}')
+   q=p.evaluate(shoot.SETUP,dict(state='PLAY',stage=n,pilot=pilot,invuln=True));assert q['ok'],q
+   p.wait_for_function('n=>{stageLoadTick();return stageLoadInfo(n).ready}',arg=n,polling=50)
+   p.evaluate("()=>{BOFCinematicDirector.cancel();story=null;fb2Talk=null;s6Opening=null;H3.release=false;H3.ending=null;stagePlan=[];enemies=[];pBullets=[];eBullets=[];special=null;boss=null;bossActive=false;subBoss=null;subBossActive=false;subBossDone=true;player.invuln=1e9;}")
+  def shot(name):
+   p.evaluate('()=>{ctx.setTransform(SS,0,0,SS,0,0);drawWorld(0);drawHUDStrip(hudctx);fb9HudSplit();}')
+   p.screenshot(path=str(OUT/(name+'.png')))
+  scene(3,'freezer');p.evaluate("()=>{spawnEnemy('s3interceptor',player.x,player.y-120,{});const e=enemies.at(-1);e.hp=e.maxhp=e._maxhp=300;e._ac10Ram={phase:'tell',t:0,x:player.x,y:player.y,angle:Math.PI/2};e._esw=null;startSpecial();run.bombs=10;run._spaceShadowCharge=0;player._fuse=0;player._chgOn=false;_frzOrb=null;window.ap10SlowTarget=e;window.ap10BeforeHp=e.hp;useBomb(e);}")
+  frames(100)
+  q=p.evaluate("()=>({hp:ap10SlowTarget.hp,before:ap10BeforeHp,time:timeScale,ammo:run.bombs})")
+  check('Freezer time-slow still launches and lands a guided missile',q['time']==.5 and q['hp']<q['before'] and q['ammo']==9,q)
+  scene(6,'yuri');p.evaluate("()=>{fb2Flights.length=0;const roles=['red','green','orange'];roles.forEach((role,i)=>{const plan=fb2FlightPlan('south',role);plan.x=120+i*120;fb2FlightSpawn(plan);});fb2Flights.length=0;s6Wing.line=null;fb2Talk=null;}")
+  frames(2);p.evaluate("()=>{enemies.forEach((e,i)=>{e.x=120+i*120;e.y=200;});s6Wing.line=null;}");shot('stealth-palette-detail')
+  scene(6,'decker');p.evaluate("spawnBoss('rebelsquad')");frames(150)
+  p.keyboard.down('ArrowLeft');q=p.evaluate('()=>({locked:h3RebelIntro(),held:Input.hold(1,"left"),x:player.x,t:efxClock,age:boss._rebels.h3Intro.age})');frames(30)
+  q['after']=p.evaluate('({x:player.x,t:efxClock,age:boss._rebels.h3Intro.age})');p.keyboard.up('ArrowLeft')
+  check('Rebel showcase locks movement while the world clock advances',q['locked'] and not q['held'] and abs(q['after']['x']-q['x'])<.01 and q['after']['t']>q['t'],q)
+  p.evaluate("()=>{const R=boss._rebels,I=R.h3Intro;I.rows=h3RebelLines(R);I.i=I.rows.findIndex(q=>q.demo==='helix');I.t=I.rows[I.i].text.length/32+.2;I.showcase=null;rs1004DemoTick(R,I,.016);}")
+  q=p.evaluate("boss._rebels.h3Intro.showcase.fx.filter(f=>f.kind==='ball').map(f=>({vx:f.vx,vy:f.vy,w:f.w}))")
+  check('Jace demonstrates a full-size fast southbound helix ball',len(q)==1 and q[0]['vx']==0 and q[0]['vy']==690 and q[0]['w']==104,q)
+  shot('rebel-helix-demonstration')
+  p.evaluate("()=>{const R=boss._rebels,I=R.h3Intro;I.i=I.rows.findIndex(q=>q.demo==='slug');I.t=1.2;I.showcase=null;rs1004DemoTick(R,I,.016);}")
+  q=p.evaluate("boss._rebels.h3Intro.showcase.fx.filter(f=>f.kind==='slug').map(f=>({vx:f.vx,vy:f.vy}))")
+  check('Rook demonstration slugs travel fast south without collision',len(q)>0 and all(f['vx']==0 and f['vy']==660 for f in q),q)
+  p.evaluate("()=>{const R=boss._rebels,I=R.h3Intro;I.i=I.rows.findIndex(q=>q.demo==='turbo');I.t=1;I.showcase=null;rs1004DemoTick(R,I,.016);}");shot('rebel-turbo-charge')
+  q=p.evaluate("()=>{const R=boss._rebels,I=R.h3Intro,warm=I.rows[I.i].text.length/32+.12;I.t=warm+.02;rs1004DemoTick(R,I,.016);const snaps=I.showcase.fx.filter(f=>f.kind==='ap10-turbo-snap').length;I.t=warm+1.35;rs1004DemoTick(R,I,.1);const q=I.showcase.current.q,a={x:q.x,y:q.y};I.t=warm+1.45;rs1004DemoTick(R,I,.1);return{distance:Math.hypot(q.x-a.x,q.y-a.y),snaps};}")
+  check('Voss maintains 1250px/s on his return and owns the generated snap',abs(q['distance']-125)<1 and q['snaps']==1,q)
+  scene(5,'cole');p.evaluate("()=>{run.gravityShipReady=false;setState(GS.LAUNCH);drawLaunch._furyIntro=null;drawLaunch._phase=undefined;}")
+  frames(1)
+  p.evaluate("()=>{drawLaunch._furyIntro.phase='assembly';Object.assign(gravityMode,{phase:'charge',t:GRAVITY_CHARGE_DUR*.65,age:5,partStartAge:0,dialogueDone:true,chargeBand:3,dialogueT:20});}")
+  frames(1);p.screenshot(path=str(OUT/'fury-assembly-live.png'))
+  q=p.evaluate('({phase:gravityMode.phase,launch:state===GS.LAUNCH,draws:AP10_EXTRA.draws.assembly||0})')
+  check('Cole assembly actually renders the generated docking plates during launch',q['launch'] and q['phase']=='charge' and q['draws']>0,q)
+  scene(6,'yuri');p.evaluate("()=>{run.weapon=7;run.wlevel=5;run.loadout=[7,1,3];run._earnedUnlocks={chaingun:true};run._forgeShown=true;loadoutStart();loadoutScr.row=2;loadoutScr.sel=0;loadoutScr.t=1;}")
+  frames(90);p.screenshot(path=str(OUT/'chaingun-loadout-preview.png'))
+  q=p.evaluate('({mounts:EC7.mountDraws,preview:loadoutScr?.preview?.err,w:loadoutScr?.preview?.w})')
+  check('Loadout preview draws the two real attached chainguns',q['mounts']>0 and q['preview'] is None and q['w']==7,q)
+  scene(6);p.evaluate("()=>{GP4.route='left';GP4.routeReady=true;GP4.stage6Only=false;gp4QuickEncounter();}");frames(130);shot('stagex-arrival')
+  q=p.evaluate('({intro:!!AP10_X.intro,ships:s6Wing.ships.length,stageX:run._gp4StageX})')
+  check('Stage X has its own protected titled five-ship arrival',q['intro'] and q['ships']==4 and q['stageX']=='left',q)
+  scene(8);p.evaluate("spawnBoss('vileexistence')");frames(30)
+  p.evaluate("()=>{boss.x=camLeftX()+viewW()/2;boss.y=205;boss._r30.mode='takeover';boss._r30.t=3.7;}");frames(1);shot('consumption-arms-raised')
+  check('Consumption raises the arms and triggers the authored shriek',p.evaluate('AP10_A.events.some(q=>q.event==="consumption-shriek")'))
+  p.evaluate("()=>{j3Encounter(boss,2);j3Mimic(boss,1);boss._r30.mode='fight';boss.enter=false;boss._noHit=false;boss.hp=1;boss._lastPart=boss.parts.find(p=>p.id==='core');hitBoss(100);}")
+  q=p.evaluate('()=>({broken:!!boss._r30.ap10CopyBroken,events:AP10_A.events.filter(q=>q.event==="copy-destroyed"),pools:j3State(boss).hp.slice()})')
+  check('A defeated copied form visibly ruptures before changing form',q['broken'] and len(q['events'])>0 and q['pools'][1]==0,q)
+  frames(95);shot('mimic-breakup-live')
+  q=p.evaluate('()=>({broken:!!boss._r30.ap10CopyBroken,hp:j3State(boss).hp[1],other:j3State(boss).hp[2]})')
+  check('The defeated pool remains zero after the breakup',not q['broken'] and q['hp']==0 and q['other']>0,q)
+  for i in range(4):
+   p.evaluate("i=>{ctx.setTransform(SS,0,0,SS,0,0);victoryRestoration(i*2.1+.1,VW,VH,'cole');}",i);p.screenshot(path=str(OUT/('homecoming-'+str(i)+'.png')))
+  check('All four authored homecoming plates render in the ending',p.evaluate('AP10_EXTRA.draws.ending||0')>=4)
+  scene(4);p.evaluate("()=>{run.mode='campaign';campaign.unlockedMax=8;campaign.rank={};campaign.bonusUnlocked=false;openStageSelect();}");frames(180);p.screenshot(path=str(OUT/'campaign-map-live.png'))
+  q=p.evaluate("()=>({left7:ap10MapNeighbor(7,-1,0),left8:ap10MapNeighbor(8,-1,0),menu:cmap2.focus,ready:stageLoadInfo(4).ready})")
+  check('Map navigation cannot wrap Stage 7 or 8 to uncleared Stage 1',q['left7']!=1 and q['left8']!=1,q)
+  scene(8);p.evaluate("()=>{run.mode='campaign';run._trueFinaleCleared=true;scLeaveStage({_cin30Done:false,_t9:0});}")
+  q=p.evaluate('({victory:state===GS.VICTORY,state,cinematic:BOFCinematicDirector.active})')
+  check('The final homecoming ends without another cinematic or upgrade menu',q['victory'] and not q['cinematic'],q)
+  check('No page, console or asset errors',not errors,errors);br.close()
+finally:stop()
+report=dict(passed=sum(q['passed'] for q in checks),failed=sum(not q['passed'] for q in checks),checks=checks,errors=errors)
+(OUT/'sequences-report.json').write_text(json.dumps(report,indent=2),encoding='utf-8');print(json.dumps(dict(passed=report['passed'],failed=report['failed'],errors=errors)),flush=True)
+sys.exit(1 if report['failed'] else 0)

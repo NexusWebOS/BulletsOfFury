@@ -1,0 +1,49 @@
+{
+  "id": "pt11frostcarrier",
+  "name": "Frost Carrier",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "pt11frostcarrier"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/frost_carrier",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_pt11frostcarrier_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/frost_carrier/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "e2fa07b57d7f118d4c2740cfbe1f3839fe1b333715e1a02cfce828ac01d532ac"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_pt11frostcarrier_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/frost_carrier/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "5b8fbf43f8ef31c5486b00f16869208ee76258fe5c8c2c8a5f71ad245b16190a"
+  },
+  "nativeRatios": {
+    "pt11frostcarrier": 0.7384615384615385
+  },
+  "sourceKeys": {
+    "pt11frostcarrier": "fb1002_frost_hull"
+  }
+}

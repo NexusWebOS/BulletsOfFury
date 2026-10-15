@@ -1,0 +1,49 @@
+{
+  "id": "cbreak",
+  "name": "Chromium Breaker",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "cbreak"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/chromium_breaker",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_cbreak_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/chromium_breaker/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "889dba5ad11ea39fc52ab3b89f4d0c60b0b86bc9009e8a0aaafeb6960950304a"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_cbreak_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/chromium_breaker/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7b7856645d6cd539361e223942d09b887ad0f8e066c9d752f3863d173d14cddc"
+  },
+  "nativeRatios": {
+    "cbreak": 1.8
+  },
+  "sourceKeys": {
+    "cbreak": "ns9e_cbreak_idle"
+  }
+}

@@ -1,0 +1,963 @@
+{
+  "assets": {
+    "od_btn_new_game": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_new_game.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        0,
+        64,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_continue": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_continue.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        768,
+        64,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_options": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_options.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        0,
+        216,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_password": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_password.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        768,
+        216,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_achievements": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_achievements.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        0,
+        368,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_help": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_help.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        768,
+        368,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_resume": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_resume.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        0,
+        520,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_armory": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_armory.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        768,
+        520,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_credits": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_credits.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        0,
+        672,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_exit_game": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_exit_game.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        768,
+        672,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_apply": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_apply.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        0,
+        824,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_cancel": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_cancel.png",
+      "size": [
+        768,
+        152
+      ],
+      "anchor": [
+        384,
+        76
+      ],
+      "source": "buttons_final.png",
+      "sourceCrop": [
+        768,
+        824,
+        768,
+        152
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_return_to_main_menu": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_return_to_main_menu.png",
+      "size": [
+        768,
+        192
+      ],
+      "anchor": [
+        384,
+        96
+      ],
+      "source": "missing_buttons_1011.png",
+      "sourceCrop": [
+        0,
+        204,
+        768,
+        192
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_fullscreen": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_fullscreen.png",
+      "size": [
+        768,
+        192
+      ],
+      "anchor": [
+        384,
+        96
+      ],
+      "source": "missing_buttons_1011.png",
+      "sourceCrop": [
+        768,
+        204,
+        768,
+        192
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_windowed": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_windowed.png",
+      "size": [
+        768,
+        192
+      ],
+      "anchor": [
+        384,
+        96
+      ],
+      "source": "missing_buttons_1011.png",
+      "sourceCrop": [
+        0,
+        620,
+        768,
+        192
+      ],
+      "uniformScale": 1
+    },
+    "od_btn_locked": {
+      "file": "expansion/topdown/art/menu_1011/od_btn_locked.png",
+      "size": [
+        768,
+        192
+      ],
+      "anchor": [
+        384,
+        96
+      ],
+      "source": "missing_buttons_1011.png",
+      "sourceCrop": [
+        768,
+        620,
+        768,
+        192
+      ],
+      "uniformScale": 1
+    },
+    "od_diff_easy": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_easy.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "difficulty.png",
+      "sourceCrop": [
+        0,
+        64,
+        768,
+        224
+      ],
+      "uniformScale": 1
+    },
+    "od_diff_normal": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_normal.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "difficulty.png",
+      "sourceCrop": [
+        768,
+        64,
+        768,
+        224
+      ],
+      "uniformScale": 1
+    },
+    "od_diff_hard": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_hard.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "difficulty.png",
+      "sourceCrop": [
+        0,
+        288,
+        768,
+        224
+      ],
+      "uniformScale": 1
+    },
+    "od_diff_furious": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_furious_melting_1011.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "furious_melting_1011.png",
+      "sourceCrop": [
+        8,
+        45,
+        2078,
+        588
+      ],
+      "sourcePadding": [
+        2078,
+        588
+      ],
+      "paddingOffset": [
+        16,
+        8
+      ],
+      "uniformScale": 0.35374149659863946
+    },
+    "od_diff_insanity": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_insanity_original_1011.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "insanity_original_0916.png",
+      "sourceCrop": [
+        0,
+        0,
+        199,
+        58
+      ],
+      "sourcePadding": [
+        200,
+        58
+      ],
+      "paddingOffset": [
+        25,
+        8
+      ],
+      "uniformScale": 3.586206896551724
+    },
+    "od_diff_sound": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_sound.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "difficulty.png",
+      "sourceCrop": [
+        768,
+        512,
+        768,
+        224
+      ],
+      "uniformScale": 1
+    },
+    "od_diff_controls": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_controls.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "difficulty.png",
+      "sourceCrop": [
+        0,
+        736,
+        768,
+        224
+      ],
+      "uniformScale": 1
+    },
+    "od_diff_passwords": {
+      "file": "expansion/topdown/art/menu_1011/od_diff_passwords.png",
+      "size": [
+        768,
+        224
+      ],
+      "anchor": [
+        384,
+        112
+      ],
+      "source": "difficulty.png",
+      "sourceCrop": [
+        768,
+        736,
+        768,
+        224
+      ],
+      "uniformScale": 1
+    },
+    "od_controller_six": {
+      "file": "expansion/topdown/art/menu_1011/od_controller_six.png",
+      "size": [
+        768,
+        640
+      ],
+      "anchor": [
+        384,
+        320
+      ],
+      "source": "controllers.png",
+      "sourceCrop": [
+        0,
+        64,
+        768,
+        640
+      ],
+      "uniformScale": 1
+    },
+    "od_controller_modern": {
+      "file": "expansion/topdown/art/menu_1011/od_controller_modern.png",
+      "size": [
+        768,
+        640
+      ],
+      "anchor": [
+        384,
+        320
+      ],
+      "source": "controllers.png",
+      "sourceCrop": [
+        768,
+        64,
+        768,
+        640
+      ],
+      "uniformScale": 1
+    },
+    "od_ach_0": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_1": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_2": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_3": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_4": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_4.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_5": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_5.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_6": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_6.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_7": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_7.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_8": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_8.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        0,
+        512,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_9": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_9.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        256,
+        512,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_10": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_10.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_11": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_11.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_12": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_12.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_13": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_13.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        256,
+        768,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_14": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_14.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        512,
+        768,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_ach_15": {
+      "file": "expansion/topdown/art/menu_1011/od_ach_15.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "achievements.png",
+      "sourceCrop": [
+        768,
+        768,
+        256,
+        256
+      ],
+      "uniformScale": 0.8165869218500797
+    },
+    "od_general_0": {
+      "file": "expansion/topdown/art/menu_1011/od_general_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "general.png",
+      "sourceCrop": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "uniformScale": 0.4082934609250399
+    },
+    "od_general_1": {
+      "file": "expansion/topdown/art/menu_1011/od_general_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "general.png",
+      "sourceCrop": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "uniformScale": 0.4082934609250399
+    },
+    "od_general_2": {
+      "file": "expansion/topdown/art/menu_1011/od_general_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "general.png",
+      "sourceCrop": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "uniformScale": 0.4082934609250399
+    },
+    "od_general_3": {
+      "file": "expansion/topdown/art/menu_1011/od_general_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "source": "general.png",
+      "sourceCrop": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "uniformScale": 0.4082934609250399
+    }
+  },
+  "sources": {
+    "buttons_final.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "107b1fc815d6d4797bde7f03709c5d5684b566774141f3b2dd56841f6472398b",
+      "uniformScale": 1
+    },
+    "missing_buttons_1011.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "da3eec141d8a10789b4b7213258d46ffc7957f7375b4f3550ca1db7d5009fc0d",
+      "uniformScale": 1
+    },
+    "difficulty.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "30dbe81aad295d829784780cc139d0252ff606d18d534ee38bb68c42732ac475",
+      "uniformScale": 1
+    },
+    "furious_melting_1011.png": {
+      "size": [
+        2170,
+        725
+      ],
+      "sha256": "900bc922bc6cb04b288080047a59682b652e57bf6a7176f67b262cec46cfc253",
+      "uniformScale": 0.35374149659863946,
+      "role": "built-in image_gen melting-skull edit"
+    },
+    "insanity_original_0916.png": {
+      "size": [
+        199,
+        58
+      ],
+      "sha256": "7911ce32183229893d478ef22894d802463a7e20031721bd5d4b74ce272148ef",
+      "uniformScale": 3.586206896551724,
+      "role": "original BOF plate"
+    },
+    "controllers.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "0063e1f3612fbeeb1e35425bd4644fc7d9654b720e456b861a7d6152685528c7",
+      "uniformScale": 1
+    },
+    "achievements.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "8a5f942a86bd84ec2989acf3cd84e3e7321cbf99e6421dbe5e9ecf0447cb50e5",
+      "uniformScale": 0.8165869218500797
+    },
+    "general.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "90e9c615dbde5442fa0ad56fa9a8d661f03de8a6b3cb03b14128cd8b2832c16e",
+      "uniformScale": 0.4082934609250399
+    }
+  },
+  "frameFormat": "even fixed canvases; one proportional scale and center pivot per bank"
+}

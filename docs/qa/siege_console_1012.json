@@ -1,0 +1,820 @@
+{
+  "passed": 51,
+  "failed": 0,
+  "errors": [],
+  "checks": [
+    {
+      "name": "Shipping plate is byte-identical to the approved 1024x1536 RGBA source",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Maneuver meters belong to their matching left/right maneuver boxes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Approved authored plate renders through the native HUD contexts and XART",
+      "passed": true,
+      "data": {
+        "mode": "sides",
+        "field": {
+          "x": 453.75,
+          "y": 0,
+          "w": 1012.5,
+          "h": 1080
+        },
+        "values": [
+          {
+            "seat": 1,
+            "pilot": "cole",
+            "roll": 0.5,
+            "rollAvailable": true,
+            "somer": 0.25,
+            "somerAvailable": true,
+            "name": "SONIC BOOM / NUCLEAR WARHEADS",
+            "resource": 0,
+            "detail": "NO SPECIAL",
+            "weapon": {
+              "key": "micon_mg_1",
+              "lv": 1,
+              "label": ""
+            },
+            "lock": false,
+            "lives": 7,
+            "missiles": 18,
+            "speed": 0,
+            "shield": 0,
+            "dead": false,
+            "score": 123456,
+            "loans": [],
+            "weaponName": "MACHINE GUN",
+            "weaponFixed": false
+          }
+        ],
+        "calls": 265,
+        "artReady": true
+      }
+    },
+    {
+      "name": "Live score, lives, missiles and cooldown fractions reach the side HUD",
+      "passed": true,
+      "data": [
+        {
+          "seat": 1,
+          "pilot": "cole",
+          "roll": 0.5,
+          "rollAvailable": true,
+          "somer": 0.25,
+          "somerAvailable": true,
+          "name": "SONIC BOOM / NUCLEAR WARHEADS",
+          "resource": 0,
+          "detail": "NO SPECIAL",
+          "weapon": {
+            "key": "micon_mg_1",
+            "lv": 1,
+            "label": ""
+          },
+          "lock": false,
+          "lives": 7,
+          "missiles": 18,
+          "speed": 0,
+          "shield": 0,
+          "dead": false,
+          "score": 123456,
+          "loans": [],
+          "weaponName": "MACHINE GUN",
+          "weaponFixed": false
+        }
+      ]
+    },
+    {
+      "name": "Active signature resource and remaining strikes update the special panel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Wide playfield fills the height at its native aspect",
+      "passed": true,
+      "data": {
+        "x": 453.75,
+        "y": 0,
+        "w": 1012.5,
+        "h": 1080
+      }
+    },
+    {
+      "name": "Old top/bottom HUD and credit rails consume no layout space",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Radar plots actual visible enemies and the player",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cloaked enemy does not leak into radar",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retina lock changes the native right panel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Low and empty stock values display without being clamped to a fake minimum",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "intro retains the full-height gameplay field and native backing",
+      "passed": true,
+      "data": {
+        "state": "intro",
+        "field": [
+          453.75,
+          0,
+          1012.5,
+          1080
+        ],
+        "backing": [
+          960,
+          1024
+        ],
+        "mode": "sides"
+      }
+    },
+    {
+      "name": "launch retains the full-height gameplay field and native backing",
+      "passed": true,
+      "data": {
+        "state": "launch",
+        "field": [
+          453.75,
+          0,
+          1012.5,
+          1080
+        ],
+        "backing": [
+          960,
+          1024
+        ],
+        "mode": "sides"
+      }
+    },
+    {
+      "name": "play retains the full-height gameplay field and native backing",
+      "passed": true,
+      "data": {
+        "state": "play",
+        "field": [
+          453.75,
+          0,
+          1012.5,
+          1080
+        ],
+        "backing": [
+          960,
+          1024
+        ],
+        "mode": "sides"
+      }
+    },
+    {
+      "name": "paused retains the full-height gameplay field and native backing",
+      "passed": true,
+      "data": {
+        "state": "paused",
+        "field": [
+          453.75,
+          0,
+          1012.5,
+          1080
+        ],
+        "backing": [
+          960,
+          1024
+        ],
+        "mode": "sides"
+      }
+    },
+    {
+      "name": "continue retains the full-height gameplay field and native backing",
+      "passed": true,
+      "data": {
+        "state": "continue",
+        "field": [
+          453.75,
+          0,
+          1012.5,
+          1080
+        ],
+        "backing": [
+          960,
+          1024
+        ],
+        "mode": "sides"
+      }
+    },
+    {
+      "name": "gameover retains the full-height gameplay field and native backing",
+      "passed": true,
+      "data": {
+        "state": "gameover",
+        "field": [
+          453.75,
+          0,
+          1012.5,
+          1080
+        ],
+        "backing": [
+          960,
+          1024
+        ],
+        "mode": "sides"
+      }
+    },
+    {
+      "name": "Fly-in, gameplay, pause, continue and gameover share identical screen geometry",
+      "passed": true,
+      "data": [
+        {
+          "state": "intro",
+          "field": [
+            453.75,
+            0,
+            1012.5,
+            1080
+          ],
+          "backing": [
+            960,
+            1024
+          ],
+          "mode": "sides"
+        },
+        {
+          "state": "launch",
+          "field": [
+            453.75,
+            0,
+            1012.5,
+            1080
+          ],
+          "backing": [
+            960,
+            1024
+          ],
+          "mode": "sides"
+        },
+        {
+          "state": "play",
+          "field": [
+            453.75,
+            0,
+            1012.5,
+            1080
+          ],
+          "backing": [
+            960,
+            1024
+          ],
+          "mode": "sides"
+        },
+        {
+          "state": "paused",
+          "field": [
+            453.75,
+            0,
+            1012.5,
+            1080
+          ],
+          "backing": [
+            960,
+            1024
+          ],
+          "mode": "sides"
+        },
+        {
+          "state": "continue",
+          "field": [
+            453.75,
+            0,
+            1012.5,
+            1080
+          ],
+          "backing": [
+            960,
+            1024
+          ],
+          "mode": "sides"
+        },
+        {
+          "state": "gameover",
+          "field": [
+            453.75,
+            0,
+            1012.5,
+            1080
+          ],
+          "backing": [
+            960,
+            1024
+          ],
+          "mode": "sides"
+        }
+      ]
+    },
+    {
+      "name": "Pause freezes the radar clock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native fullscreen has the same playfield size and hides old operations panels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Field and authored HUD stay inside 2560x1080",
+      "passed": true,
+      "data": {
+        "mode": "sides",
+        "boxes": [
+          [
+            773.75,
+            0,
+            1012.5,
+            1080
+          ],
+          [
+            405.75,
+            0,
+            360,
+            1080
+          ],
+          [
+            1794.25,
+            0,
+            360,
+            1080
+          ]
+        ],
+        "field": {
+          "x": 773.75,
+          "y": 0,
+          "w": 1012.5,
+          "h": 1080
+        }
+      }
+    },
+    {
+      "name": "Mouse input maps to the visible field at 2560x1080",
+      "passed": true,
+      "data": {
+        "x": 335.762962962963,
+        "y": 179.2
+      }
+    },
+    {
+      "name": "Field and authored HUD stay inside 1920x1080",
+      "passed": true,
+      "data": {
+        "mode": "sides",
+        "boxes": [
+          [
+            453.75,
+            0,
+            1012.5,
+            1080
+          ],
+          [
+            85.75,
+            0,
+            360,
+            1080
+          ],
+          [
+            1474.25,
+            0,
+            360,
+            1080
+          ]
+        ],
+        "field": {
+          "x": 453.75,
+          "y": 0,
+          "w": 1012.5,
+          "h": 1080
+        }
+      }
+    },
+    {
+      "name": "Mouse input maps to the visible field at 1920x1080",
+      "passed": true,
+      "data": {
+        "x": 335.762962962963,
+        "y": 179.2
+      }
+    },
+    {
+      "name": "Field and authored HUD stay inside 1280x720",
+      "passed": true,
+      "data": {
+        "mode": "sides",
+        "boxes": [
+          [
+            302.5,
+            0,
+            675,
+            720
+          ],
+          [
+            54.5,
+            0,
+            240,
+            720
+          ],
+          [
+            985.5,
+            0,
+            240,
+            720
+          ]
+        ],
+        "field": {
+          "x": 302.5,
+          "y": 0,
+          "w": 675,
+          "h": 720
+        }
+      }
+    },
+    {
+      "name": "Mouse input maps to the visible field at 1280x720",
+      "passed": true,
+      "data": {
+        "x": 336,
+        "y": 179.2
+      }
+    },
+    {
+      "name": "Field and authored HUD stay inside 1280x1000",
+      "passed": true,
+      "data": {
+        "mode": "sides",
+        "boxes": [
+          [
+            171.25,
+            0,
+            937.5,
+            1000
+          ],
+          [
+            8,
+            267.125,
+            155.25,
+            465.75
+          ],
+          [
+            1116.75,
+            267.125,
+            155.25,
+            465.75
+          ]
+        ],
+        "field": {
+          "x": 171.25,
+          "y": 0,
+          "w": 937.5,
+          "h": 1000
+        }
+      }
+    },
+    {
+      "name": "Mouse input maps to the visible field at 1280x1000",
+      "passed": true,
+      "data": {
+        "x": 335.744,
+        "y": 179.2
+      }
+    },
+    {
+      "name": "Field and authored HUD stay inside 820x900",
+      "passed": true,
+      "data": {
+        "mode": "compact",
+        "boxes": [
+          [
+            96.03125,
+            -0.0078125,
+            627.90625,
+            669.765625
+          ],
+          [
+            96.03125,
+            669.765625,
+            627.90625,
+            230.21875
+          ]
+        ],
+        "field": {
+          "x": 96.04651162790697,
+          "y": -5.684341886080802e-14,
+          "w": 627.9069767441861,
+          "h": 669.7674418604652
+        }
+      }
+    },
+    {
+      "name": "Mouse input maps to the visible field at 820x900",
+      "passed": true,
+      "data": {
+        "x": 335.56761061066044,
+        "y": 178.8864574827948
+      }
+    },
+    {
+      "name": "Field and authored HUD stay inside 480x900",
+      "passed": true,
+      "data": {
+        "mode": "compact",
+        "boxes": [
+          [
+            0,
+            106,
+            480,
+            512
+          ],
+          [
+            0,
+            618,
+            480,
+            176
+          ]
+        ],
+        "field": {
+          "x": 0,
+          "y": 106,
+          "w": 480,
+          "h": 512
+        }
+      }
+    },
+    {
+      "name": "Mouse input maps to the visible field at 480x900",
+      "passed": true,
+      "data": {
+        "x": 336,
+        "y": 179
+      }
+    },
+    {
+      "name": "Field and authored HUD stay inside 390x844",
+      "passed": true,
+      "data": {
+        "mode": "compact",
+        "boxes": [
+          [
+            0,
+            142.5,
+            390,
+            416
+          ],
+          [
+            0,
+            558.5,
+            390,
+            143
+          ]
+        ],
+        "field": {
+          "x": 0,
+          "y": 142.5,
+          "w": 390,
+          "h": 416
+        }
+      }
+    },
+    {
+      "name": "Mouse input maps to the visible field at 390x844",
+      "passed": true,
+      "data": {
+        "x": 336,
+        "y": 179.07692307692307
+      }
+    },
+    {
+      "name": "yuri exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer exposes its native weapon and signature special readouts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Maverick homing lances show fixed Level I without changing his beam bank",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Maverick separate Laser Beam retains its equipped upgrade level",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Co-op keeps independent stocks and scores in both side columns",
+      "passed": true,
+      "data": {
+        "values": [
+          {
+            "seat": 1,
+            "pilot": "cole",
+            "roll": 0.5033333333333333,
+            "rollAvailable": true,
+            "somer": 0.2523809523809524,
+            "somerAvailable": true,
+            "name": "SONIC BOOM / NUCLEAR WARHEADS",
+            "resource": 0,
+            "detail": "NO SPECIAL",
+            "weapon": {
+              "key": "micon_mg_1",
+              "lv": 1,
+              "label": ""
+            },
+            "lock": false,
+            "lives": 8,
+            "missiles": 19,
+            "speed": 0,
+            "shield": 0,
+            "dead": false,
+            "score": 765432,
+            "loans": [],
+            "weaponName": "MACHINE GUN",
+            "weaponFixed": false
+          },
+          {
+            "seat": 2,
+            "pilot": "maverick",
+            "roll": 0.30000000000000004,
+            "rollAvailable": true,
+            "somer": 1,
+            "somerAvailable": true,
+            "name": "HELIX BEAM",
+            "resource": 0,
+            "detail": "NO SPECIAL",
+            "weapon": {
+              "key": "micon_mg_1",
+              "lv": 1,
+              "label": ""
+            },
+            "lock": false,
+            "lives": 2,
+            "missiles": 5,
+            "speed": 0,
+            "shield": 0,
+            "dead": false,
+            "score": 98765,
+            "loans": [],
+            "weaponName": "MACHINE GUN",
+            "weaponFixed": false
+          }
+        ],
+        "field": {
+          "x": 453.75,
+          "y": 0,
+          "w": 1012.5,
+          "h": 1080
+        },
+        "seat": 1,
+        "pilot": "cole"
+      }
+    },
+    {
+      "name": "Drawing co-op HUD restores the active seat and keeps a full-height field",
+      "passed": true,
+      "data": {
+        "values": [
+          {
+            "seat": 1,
+            "pilot": "cole",
+            "roll": 0.5033333333333333,
+            "rollAvailable": true,
+            "somer": 0.2523809523809524,
+            "somerAvailable": true,
+            "name": "SONIC BOOM / NUCLEAR WARHEADS",
+            "resource": 0,
+            "detail": "NO SPECIAL",
+            "weapon": {
+              "key": "micon_mg_1",
+              "lv": 1,
+              "label": ""
+            },
+            "lock": false,
+            "lives": 8,
+            "missiles": 19,
+            "speed": 0,
+            "shield": 0,
+            "dead": false,
+            "score": 765432,
+            "loans": [],
+            "weaponName": "MACHINE GUN",
+            "weaponFixed": false
+          },
+          {
+            "seat": 2,
+            "pilot": "maverick",
+            "roll": 0.30000000000000004,
+            "rollAvailable": true,
+            "somer": 1,
+            "somerAvailable": true,
+            "name": "HELIX BEAM",
+            "resource": 0,
+            "detail": "NO SPECIAL",
+            "weapon": {
+              "key": "micon_mg_1",
+              "lv": 1,
+              "label": ""
+            },
+            "lock": false,
+            "lives": 2,
+            "missiles": 5,
+            "speed": 0,
+            "shield": 0,
+            "dead": false,
+            "score": 98765,
+            "loans": [],
+            "weaponName": "MACHINE GUN",
+            "weaponFixed": false
+          }
+        ],
+        "field": {
+          "x": 453.75,
+          "y": 0,
+          "w": 1012.5,
+          "h": 1080
+        },
+        "seat": 1,
+        "pilot": "cole"
+      }
+    },
+    {
+      "name": "Both co-op score panels share the highest live score",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Co-op compact HUD remains inside the narrow window",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Returning to menus releases side HUD layout ownership",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or missing-asset errors",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

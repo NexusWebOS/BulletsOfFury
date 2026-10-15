@@ -38,7 +38,7 @@ echo   Leave this window open while playing.
 echo   Close it or press Ctrl+C to stop the server.
 echo.
 
-start "" /min powershell -NoProfile -WindowStyle Hidden -Command "Start-Sleep -Milliseconds 900; Start-Process 'http://127.0.0.1:%PORT%/index.html'"
+start "" /min %PYEXE% %PYARGS% "_BUILD_SOURCE\launch_browser_1011.py" %PORT%
 %PYEXE% %PYARGS% -m http.server %PORT% --bind 127.0.0.1
 exit /b %errorlevel%
 

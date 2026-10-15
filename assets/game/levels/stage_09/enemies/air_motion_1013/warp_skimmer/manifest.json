@@ -1,0 +1,49 @@
+{
+  "id": "wskim",
+  "name": "Warp Skimmer",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "wskim"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/warp_skimmer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_wskim_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/warp_skimmer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "4cdc85f3cf88eee142f7f65fd75c7bd815484a37e161aac6bbd76a49d03083dc"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_wskim_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/warp_skimmer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "d741703017d15cb555a4cca02ce422a4c6319729e84e59820543c67a095cbf62"
+  },
+  "nativeRatios": {
+    "wskim": 1.8181818181818181
+  },
+  "sourceKeys": {
+    "wskim": "ns9e_wskim_idle"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "passed": 12,
+  "failed": [],
+  "errors": [],
+  "checks": [
+    {
+      "name": "cole live special status",
+      "pass": true,
+      "data": "NUKES 12"
+    },
+    {
+      "name": "cole glyphs stay in three padded non-playable lanes",
+      "pass": true,
+      "data": [
+        {
+          "row": 0,
+          "lane": 0,
+          "minX": 6.5,
+          "maxX": 95,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 0,
+          "lane": 1,
+          "minX": 47,
+          "maxX": 112.5,
+          "minY": 76,
+          "maxY": 99
+        },
+        {
+          "row": 0,
+          "lane": 2,
+          "minX": 49.5,
+          "maxX": 153,
+          "minY": 76,
+          "maxY": 100.5
+        }
+      ]
+    },
+    {
+      "name": "lizzie live special status",
+      "pass": true,
+      "data": "A-BOMBS 12"
+    },
+    {
+      "name": "lizzie glyphs stay in three padded non-playable lanes",
+      "pass": true,
+      "data": [
+        {
+          "row": 0,
+          "lane": 0,
+          "minX": 6.5,
+          "maxX": 95,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 0,
+          "lane": 1,
+          "minX": 39,
+          "maxX": 120,
+          "minY": 76,
+          "maxY": 99
+        },
+        {
+          "row": 0,
+          "lane": 2,
+          "minX": 49.5,
+          "maxX": 153,
+          "minY": 76,
+          "maxY": 100.5
+        }
+      ]
+    },
+    {
+      "name": "falva live special status",
+      "pass": true,
+      "data": "BALL 100%"
+    },
+    {
+      "name": "falva glyphs stay in three padded non-playable lanes",
+      "pass": true,
+      "data": [
+        {
+          "row": 0,
+          "lane": 0,
+          "minX": 6.5,
+          "maxX": 95,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 0,
+          "lane": 1,
+          "minX": 42,
+          "maxX": 117,
+          "minY": 76,
+          "maxY": 99
+        },
+        {
+          "row": 0,
+          "lane": 2,
+          "minX": 49.5,
+          "maxX": 153,
+          "minY": 76,
+          "maxY": 100.5
+        }
+      ]
+    },
+    {
+      "name": "juggernaut live special status",
+      "pass": true,
+      "data": "CHARGE 100%"
+    },
+    {
+      "name": "juggernaut glyphs stay in three padded non-playable lanes",
+      "pass": true,
+      "data": [
+        {
+          "row": 0,
+          "lane": 0,
+          "minX": 6.5,
+          "maxX": 95,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 0,
+          "lane": 1,
+          "minX": 33,
+          "maxX": 126.5,
+          "minY": 76,
+          "maxY": 99
+        },
+        {
+          "row": 0,
+          "lane": 2,
+          "minX": 49.5,
+          "maxX": 153,
+          "minY": 76,
+          "maxY": 100.5
+        }
+      ]
+    },
+    {
+      "name": "yuri live special status",
+      "pass": true,
+      "data": "8S"
+    },
+    {
+      "name": "yuri glyphs stay in three padded non-playable lanes",
+      "pass": true,
+      "data": [
+        {
+          "row": 0,
+          "lane": 0,
+          "minX": 6.5,
+          "maxX": 95,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 0,
+          "lane": 1,
+          "minX": 62,
+          "maxX": 97,
+          "minY": 76,
+          "maxY": 99
+        },
+        {
+          "row": 0,
+          "lane": 2,
+          "minX": 49.5,
+          "maxX": 153,
+          "minY": 76,
+          "maxY": 100.5
+        }
+      ]
+    },
+    {
+      "name": "Co-op has six complete padded footer lanes",
+      "pass": true,
+      "data": [
+        {
+          "row": 0,
+          "lane": 0,
+          "minX": 6.5,
+          "maxX": 95,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 0,
+          "lane": 1,
+          "minX": 37.5,
+          "maxX": 121.5,
+          "minY": 76,
+          "maxY": 99
+        },
+        {
+          "row": 0,
+          "lane": 2,
+          "minX": 49.5,
+          "maxX": 153,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 1,
+          "lane": 0,
+          "minX": 6.5,
+          "maxX": 95.5,
+          "minY": 76,
+          "maxY": 100.5
+        },
+        {
+          "row": 1,
+          "lane": 1,
+          "minX": 37.5,
+          "maxX": 121.5,
+          "minY": 76,
+          "maxY": 99
+        },
+        {
+          "row": 1,
+          "lane": 2,
+          "minX": 49.5,
+          "maxX": 153,
+          "minY": 76,
+          "maxY": 100.5
+        }
+      ]
+    },
+    {
+      "name": "zero browser and asset errors",
+      "pass": true,
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+[
+  {
+    "source_rect": [
+      0,
+      58,
+      222,
+      201
+    ],
+    "source_pivot": [
+      112.5,
+      137
+    ],
+    "scale": 1.5,
+    "translation": [
+      23,
+      274
+    ],
+    "opaque_bounds": [
+      46,
+      425,
+      334,
+      479
+    ]
+  },
+  {
+    "source_rect": [
+      222,
+      58,
+      444,
+      201
+    ],
+    "source_pivot": [
+      108.0,
+      139
+    ],
+    "scale": 1.5,
+    "translation": [
+      30,
+      272
+    ],
+    "opaque_bounds": [
+      50,
+      371,
+      345,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      444,
+      58,
+      665,
+      201
+    ],
+    "source_pivot": [
+      110.5,
+      139
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      272
+    ],
+    "opaque_bounds": [
+      46,
+      330,
+      338,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      665,
+      58,
+      887,
+      201
+    ],
+    "source_pivot": [
+      111.0,
+      139
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      272
+    ],
+    "opaque_bounds": [
+      46,
+      278,
+      341,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      0,
+      219,
+      222,
+      438
+    ],
+    "source_pivot": [
+      111.0,
+      215
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      158
+    ],
+    "opaque_bounds": [
+      53,
+      246,
+      332,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      222,
+      219,
+      444,
+      438
+    ],
+    "source_pivot": [
+      110.0,
+      215
+    ],
+    "scale": 1.5,
+    "translation": [
+      27,
+      158
+    ],
+    "opaque_bounds": [
+      54,
+      224,
+      332,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      444,
+      219,
+      665,
+      438
+    ],
+    "source_pivot": [
+      108.5,
+      215
+    ],
+    "scale": 1.5,
+    "translation": [
+      29,
+      158
+    ],
+    "opaque_bounds": [
+      53,
+      182,
+      331,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      665,
+      219,
+      887,
+      438
+    ],
+    "source_pivot": [
+      110.0,
+      215
+    ],
+    "scale": 1.5,
+    "translation": [
+      27,
+      158
+    ],
+    "opaque_bounds": [
+      50,
+      164,
+      335,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      0,
+      443,
+      222,
+      679
+    ],
+    "source_pivot": [
+      111.5,
+      231
+    ],
+    "scale": 1.5,
+    "translation": [
+      25,
+      134
+    ],
+    "opaque_bounds": [
+      48,
+      167,
+      337,
+      481
+    ]
+  },
+  {
+    "source_rect": [
+      222,
+      443,
+      444,
+      679
+    ],
+    "source_pivot": [
+      111.0,
+      232
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      132
+    ],
+    "opaque_bounds": [
+      44,
+      158,
+      341,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      444,
+      443,
+      665,
+      679
+    ],
+    "source_pivot": [
+      109.0,
+      231
+    ],
+    "scale": 1.5,
+    "translation": [
+      28,
+      134
+    ],
+    "opaque_bounds": [
+      40,
+      147,
+      351,
+      482
+    ]
+  },
+  {
+    "source_rect": [
+      665,
+      443,
+      887,
+      679
+    ],
+    "source_pivot": [
+      110.5,
+      231
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      134
+    ],
+    "opaque_bounds": [
+      36,
+      140,
+      349,
+      481
+    ]
+  },
+  {
+    "source_rect": [
+      0,
+      687,
+      222,
+      918
+    ],
+    "source_pivot": [
+      111.0,
+      226
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      141
+    ],
+    "opaque_bounds": [
+      39,
+      148,
+      349,
+      481
+    ]
+  },
+  {
+    "source_rect": [
+      222,
+      687,
+      444,
+      918
+    ],
+    "source_pivot": [
+      110.5,
+      227
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      140
+    ],
+    "opaque_bounds": [
+      33,
+      149,
+      352,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      444,
+      687,
+      665,
+      918
+    ],
+    "source_pivot": [
+      109.5,
+      226
+    ],
+    "scale": 1.5,
+    "translation": [
+      28,
+      141
+    ],
+    "opaque_bounds": [
+      33,
+      147,
+      357,
+      481
+    ]
+  },
+  {
+    "source_rect": [
+      665,
+      687,
+      887,
+      918
+    ],
+    "source_pivot": [
+      110.5,
+      226
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      141
+    ],
+    "opaque_bounds": [
+      32,
+      147,
+      350,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      0,
+      929,
+      222,
+      1163
+    ],
+    "source_pivot": [
+      111.0,
+      227
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      140
+    ],
+    "opaque_bounds": [
+      38,
+      147,
+      349,
+      481
+    ]
+  },
+  {
+    "source_rect": [
+      222,
+      929,
+      444,
+      1163
+    ],
+    "source_pivot": [
+      111.0,
+      229
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      136
+    ],
+    "opaque_bounds": [
+      33,
+      142,
+      350,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      444,
+      929,
+      665,
+      1163
+    ],
+    "source_pivot": [
+      109.5,
+      230
+    ],
+    "scale": 1.5,
+    "translation": [
+      28,
+      135
+    ],
+    "opaque_bounds": [
+      34,
+      142,
+      352,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      665,
+      929,
+      887,
+      1163
+    ],
+    "source_pivot": [
+      110.0,
+      229
+    ],
+    "scale": 1.5,
+    "translation": [
+      27,
+      136
+    ],
+    "opaque_bounds": [
+      36,
+      143,
+      348,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      0,
+      1186,
+      222,
+      1423
+    ],
+    "source_pivot": [
+      110.5,
+      233
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      130
+    ],
+    "opaque_bounds": [
+      44,
+      136,
+      344,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      222,
+      1186,
+      444,
+      1423
+    ],
+    "source_pivot": [
+      110.5,
+      233
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      130
+    ],
+    "opaque_bounds": [
+      47,
+      145,
+      343,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      444,
+      1186,
+      665,
+      1423
+    ],
+    "source_pivot": [
+      110.0,
+      233
+    ],
+    "scale": 1.5,
+    "translation": [
+      27,
+      130
+    ],
+    "opaque_bounds": [
+      48,
+      153,
+      345,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      665,
+      1186,
+      887,
+      1423
+    ],
+    "source_pivot": [
+      110.5,
+      233
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      130
+    ],
+    "opaque_bounds": [
+      52,
+      159,
+      340,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      0,
+      1473,
+      222,
+      1741
+    ],
+    "source_pivot": [
+      111.5,
+      264
+    ],
+    "scale": 1.5,
+    "translation": [
+      25,
+      84
+    ],
+    "opaque_bounds": [
+      51,
+      90,
+      339,
+      480
+    ]
+  },
+  {
+    "source_rect": [
+      222,
+      1473,
+      444,
+      1741
+    ],
+    "source_pivot": [
+      111.0,
+      263
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      86
+    ],
+    "opaque_bounds": [
+      50,
+      104,
+      338,
+      481
+    ]
+  },
+  {
+    "source_rect": [
+      444,
+      1473,
+      665,
+      1741
+    ],
+    "source_pivot": [
+      110.5,
+      263
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      86
+    ],
+    "opaque_bounds": [
+      49,
+      112,
+      328,
+      481
+    ]
+  },
+  {
+    "source_rect": [
+      665,
+      1473,
+      887,
+      1741
+    ],
+    "source_pivot": [
+      111.0,
+      264
+    ],
+    "scale": 1.5,
+    "translation": [
+      26,
+      84
+    ],
+    "opaque_bounds": [
+      50,
+      112,
+      326,
+      480
+    ]
+  }
+]

@@ -1,0 +1,3931 @@
+{
+  "tool": "built-in image_gen; measured registration; requested deterministic palette swaps",
+  "correction": "Raw atomic sheet28 poses in7 rows: retain28 and add4 drawn inbetweens; no duplicated/interpolated poses",
+  "gutter_alpha_cutoff": 20,
+  "banks": {
+    "atom": [
+      {
+        "key": "p2_atom_00",
+        "path": "assets/game/shared/combat/part2_1010/atom_00.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "d57743a44b070bbf6d65cd1ae5be412e73d4eb28709258a66be0b69dd748e37d",
+        "opaque_bounds": [
+          46,
+          425,
+          334,
+          479
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 0,
+        "source_rect": [
+          0,
+          58,
+          222,
+          201
+        ],
+        "source_pivot": [
+          112.5,
+          137
+        ],
+        "scale": 1.5,
+        "translation": [
+          23,
+          274
+        ]
+      },
+      {
+        "key": "p2_atom_01",
+        "path": "assets/game/shared/combat/part2_1010/atom_01.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "6d43db5a36d53d268c8e6135b3ab1a05de3f169667051c565e3789c0f20f4e02",
+        "opaque_bounds": [
+          50,
+          371,
+          345,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 1,
+        "source_rect": [
+          222,
+          58,
+          444,
+          201
+        ],
+        "source_pivot": [
+          108.0,
+          139
+        ],
+        "scale": 1.5,
+        "translation": [
+          30,
+          272
+        ]
+      },
+      {
+        "key": "p2_atom_02",
+        "path": "assets/game/shared/combat/part2_1010/atom_02.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "ffa8c1c4911405b0d4539cfc46098efe30bf143a2b5972c53297ed9d33a54cde",
+        "opaque_bounds": [
+          46,
+          330,
+          338,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 2,
+        "source_rect": [
+          444,
+          58,
+          665,
+          201
+        ],
+        "source_pivot": [
+          110.5,
+          139
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          272
+        ]
+      },
+      {
+        "key": "p2_atom_03",
+        "path": "assets/game/shared/combat/part2_1010/atom_03.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "3e1c7adc0b36e56f43b750d345eb666ccfa5009efc90cf283053ca6c1b74dad2",
+        "opaque_bounds": [
+          46,
+          278,
+          341,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 3,
+        "source_rect": [
+          665,
+          58,
+          887,
+          201
+        ],
+        "source_pivot": [
+          111.0,
+          139
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          272
+        ]
+      },
+      {
+        "key": "p2_atom_04",
+        "path": "assets/game/shared/combat/part2_1010/atom_04.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "a59d02d4c4bdd2c9505a691040cdeeba6ffe1d992cd1e3b2819da042391f262d",
+        "opaque_bounds": [
+          48,
+          255,
+          336,
+          480
+        ],
+        "source": "part2_1011/atom_inbetweens_raw.png",
+        "source_rect": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "source_pivot": [
+          332.5,
+          549
+        ],
+        "scale": 0.625,
+        "translation": [
+          -16,
+          137
+        ],
+        "parents": [
+          3,
+          4
+        ]
+      },
+      {
+        "key": "p2_atom_05",
+        "path": "assets/game/shared/combat/part2_1010/atom_05.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "cd46c1732fbf815a916eefe78e9c53a7ab3f4dc0379620557bc8dc360676b1e0",
+        "opaque_bounds": [
+          53,
+          246,
+          332,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 4,
+        "source_rect": [
+          0,
+          219,
+          222,
+          438
+        ],
+        "source_pivot": [
+          111.0,
+          215
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          158
+        ]
+      },
+      {
+        "key": "p2_atom_06",
+        "path": "assets/game/shared/combat/part2_1010/atom_06.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "20ddd7a64fbe9f02cd86870a5de2c40b8c4be7f431849c2ebb88268479186f42",
+        "opaque_bounds": [
+          54,
+          224,
+          332,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 5,
+        "source_rect": [
+          222,
+          219,
+          444,
+          438
+        ],
+        "source_pivot": [
+          110.0,
+          215
+        ],
+        "scale": 1.5,
+        "translation": [
+          27,
+          158
+        ]
+      },
+      {
+        "key": "p2_atom_07",
+        "path": "assets/game/shared/combat/part2_1010/atom_07.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "33d94bf9227feea93ff5388d5bcc09308e0e9f54ddb4b78de1623162c3523f37",
+        "opaque_bounds": [
+          53,
+          182,
+          331,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 6,
+        "source_rect": [
+          444,
+          219,
+          665,
+          438
+        ],
+        "source_pivot": [
+          108.5,
+          215
+        ],
+        "scale": 1.5,
+        "translation": [
+          29,
+          158
+        ]
+      },
+      {
+        "key": "p2_atom_08",
+        "path": "assets/game/shared/combat/part2_1010/atom_08.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "746f89acd90a81c27956dcd719edd00092359359a148ff603fbbc11c84437f4c",
+        "opaque_bounds": [
+          53,
+          205,
+          331,
+          480
+        ],
+        "source": "part2_1011/atom_inbetweens_raw.png",
+        "source_rect": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          296.0,
+          549
+        ],
+        "scale": 0.625,
+        "translation": [
+          7,
+          137
+        ],
+        "parents": [
+          6,
+          7
+        ]
+      },
+      {
+        "key": "p2_atom_09",
+        "path": "assets/game/shared/combat/part2_1010/atom_09.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "412f06163bfa82cf092e7eefdb087b8cd465f3d6553680467075349f1723c221",
+        "opaque_bounds": [
+          50,
+          164,
+          335,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 7,
+        "source_rect": [
+          665,
+          219,
+          887,
+          438
+        ],
+        "source_pivot": [
+          110.0,
+          215
+        ],
+        "scale": 1.5,
+        "translation": [
+          27,
+          158
+        ]
+      },
+      {
+        "key": "p2_atom_10",
+        "path": "assets/game/shared/combat/part2_1010/atom_10.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "7e9871cf091385a982b72d467862b4fac2d73df6bd94a126239c151fa1ccde1b",
+        "opaque_bounds": [
+          48,
+          167,
+          337,
+          481
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 8,
+        "source_rect": [
+          0,
+          443,
+          222,
+          679
+        ],
+        "source_pivot": [
+          111.5,
+          231
+        ],
+        "scale": 1.5,
+        "translation": [
+          25,
+          134
+        ]
+      },
+      {
+        "key": "p2_atom_11",
+        "path": "assets/game/shared/combat/part2_1010/atom_11.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "06edb433421d28ffbc2e225e9c82d7654b87c2b8499da88d693d181c4cf28570",
+        "opaque_bounds": [
+          44,
+          158,
+          341,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 9,
+        "source_rect": [
+          222,
+          443,
+          444,
+          679
+        ],
+        "source_pivot": [
+          111.0,
+          232
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          132
+        ]
+      },
+      {
+        "key": "p2_atom_12",
+        "path": "assets/game/shared/combat/part2_1010/atom_12.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "761bb4a4d8afcc261ee46b6e84de59c53090e81d7c6dbee07259bf64841be32b",
+        "opaque_bounds": [
+          40,
+          147,
+          351,
+          482
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 10,
+        "source_rect": [
+          444,
+          443,
+          665,
+          679
+        ],
+        "source_pivot": [
+          109.0,
+          231
+        ],
+        "scale": 1.5,
+        "translation": [
+          28,
+          134
+        ]
+      },
+      {
+        "key": "p2_atom_13",
+        "path": "assets/game/shared/combat/part2_1010/atom_13.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "886ec4594537977dd4ba03529fbaac7b81162d93c9b31c8b13b2dfc175337f94",
+        "opaque_bounds": [
+          36,
+          140,
+          349,
+          481
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 11,
+        "source_rect": [
+          665,
+          443,
+          887,
+          679
+        ],
+        "source_pivot": [
+          110.5,
+          231
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          134
+        ]
+      },
+      {
+        "key": "p2_atom_14",
+        "path": "assets/game/shared/combat/part2_1010/atom_14.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "7a9c49d31a02c95529f2a1971ed0b83d55c61f3271b29298792f10d7cf9dfe68",
+        "opaque_bounds": [
+          39,
+          148,
+          349,
+          481
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 12,
+        "source_rect": [
+          0,
+          687,
+          222,
+          918
+        ],
+        "source_pivot": [
+          111.0,
+          226
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          141
+        ]
+      },
+      {
+        "key": "p2_atom_15",
+        "path": "assets/game/shared/combat/part2_1010/atom_15.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "bf8c113e99c04b4a1c2e2946d38d8658e5bb806f9aac1abe77c53a4069797830",
+        "opaque_bounds": [
+          33,
+          149,
+          352,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 13,
+        "source_rect": [
+          222,
+          687,
+          444,
+          918
+        ],
+        "source_pivot": [
+          110.5,
+          227
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          140
+        ]
+      },
+      {
+        "key": "p2_atom_16",
+        "path": "assets/game/shared/combat/part2_1010/atom_16.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "0cbcfb1b5f50008211660014e7db0b8a1be322b63f5a3e4348b40591c5853caa",
+        "opaque_bounds": [
+          33,
+          147,
+          357,
+          481
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 14,
+        "source_rect": [
+          444,
+          687,
+          665,
+          918
+        ],
+        "source_pivot": [
+          109.5,
+          226
+        ],
+        "scale": 1.5,
+        "translation": [
+          28,
+          141
+        ]
+      },
+      {
+        "key": "p2_atom_17",
+        "path": "assets/game/shared/combat/part2_1010/atom_17.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "29e3e39ce53c1cdbfa3c3cba02ddaedb294d1528c000ccda811d82871d9e4b42",
+        "opaque_bounds": [
+          32,
+          147,
+          350,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 15,
+        "source_rect": [
+          665,
+          687,
+          887,
+          918
+        ],
+        "source_pivot": [
+          110.5,
+          226
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          141
+        ]
+      },
+      {
+        "key": "p2_atom_18",
+        "path": "assets/game/shared/combat/part2_1010/atom_18.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "9f5bb6013fc76ef1e4c36e71b74747adde537fbb7da7b30c4f5bc3b7f4bcc5d4",
+        "opaque_bounds": [
+          46,
+          174,
+          340,
+          480
+        ],
+        "source": "part2_1011/atom_inbetweens_raw.png",
+        "source_rect": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          333.0,
+          545
+        ],
+        "scale": 0.625,
+        "translation": [
+          -16,
+          139
+        ],
+        "parents": [
+          15,
+          16
+        ]
+      },
+      {
+        "key": "p2_atom_19",
+        "path": "assets/game/shared/combat/part2_1010/atom_19.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "3001df2d81efdf471c5e017c8ba62087324941e37782f752af7e3114f9082071",
+        "opaque_bounds": [
+          38,
+          147,
+          349,
+          481
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 16,
+        "source_rect": [
+          0,
+          929,
+          222,
+          1163
+        ],
+        "source_pivot": [
+          111.0,
+          227
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          140
+        ]
+      },
+      {
+        "key": "p2_atom_20",
+        "path": "assets/game/shared/combat/part2_1010/atom_20.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "c20f45af95f627fb61dd27facb8fa91f22bfa0a9a29cc75e3637eda29151866e",
+        "opaque_bounds": [
+          33,
+          142,
+          350,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 17,
+        "source_rect": [
+          222,
+          929,
+          444,
+          1163
+        ],
+        "source_pivot": [
+          111.0,
+          229
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          136
+        ]
+      },
+      {
+        "key": "p2_atom_21",
+        "path": "assets/game/shared/combat/part2_1010/atom_21.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "d56a656c9c2ca01b5353de314aa3faa2f470b445c94d12488977c6f252c44e00",
+        "opaque_bounds": [
+          34,
+          142,
+          352,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 18,
+        "source_rect": [
+          444,
+          929,
+          665,
+          1163
+        ],
+        "source_pivot": [
+          109.5,
+          230
+        ],
+        "scale": 1.5,
+        "translation": [
+          28,
+          135
+        ]
+      },
+      {
+        "key": "p2_atom_22",
+        "path": "assets/game/shared/combat/part2_1010/atom_22.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "bc4a2ca2d9541dd4d831730ebb1c92c21e8596d8c35025fa207f785cd2265b48",
+        "opaque_bounds": [
+          36,
+          143,
+          348,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 19,
+        "source_rect": [
+          665,
+          929,
+          887,
+          1163
+        ],
+        "source_pivot": [
+          110.0,
+          229
+        ],
+        "scale": 1.5,
+        "translation": [
+          27,
+          136
+        ]
+      },
+      {
+        "key": "p2_atom_23",
+        "path": "assets/game/shared/combat/part2_1010/atom_23.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "434d8d32e4b3922dee92fff3c0c74a3028d1fabc66c695f1b6c1bdce6784f43e",
+        "opaque_bounds": [
+          44,
+          136,
+          344,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 20,
+        "source_rect": [
+          0,
+          1186,
+          222,
+          1423
+        ],
+        "source_pivot": [
+          110.5,
+          233
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          130
+        ]
+      },
+      {
+        "key": "p2_atom_24",
+        "path": "assets/game/shared/combat/part2_1010/atom_24.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "f947ca6d75cd812ffd69a7f3e7ec8a7345495675ec0da43cfc2005faa2c35821",
+        "opaque_bounds": [
+          47,
+          145,
+          343,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 21,
+        "source_rect": [
+          222,
+          1186,
+          444,
+          1423
+        ],
+        "source_pivot": [
+          110.5,
+          233
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          130
+        ]
+      },
+      {
+        "key": "p2_atom_25",
+        "path": "assets/game/shared/combat/part2_1010/atom_25.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "550cfd8bae336b78a4fe49451418dd38c959cfea5ba6e121cb20fbcf9eeec99e",
+        "opaque_bounds": [
+          48,
+          153,
+          345,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 22,
+        "source_rect": [
+          444,
+          1186,
+          665,
+          1423
+        ],
+        "source_pivot": [
+          110.0,
+          233
+        ],
+        "scale": 1.5,
+        "translation": [
+          27,
+          130
+        ]
+      },
+      {
+        "key": "p2_atom_26",
+        "path": "assets/game/shared/combat/part2_1010/atom_26.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "cbf61bff6280b67918ec4b24014b4e590a11d33015d6a1fd7d553d193ce0bb77",
+        "opaque_bounds": [
+          52,
+          159,
+          340,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 23,
+        "source_rect": [
+          665,
+          1186,
+          887,
+          1423
+        ],
+        "source_pivot": [
+          110.5,
+          233
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          130
+        ]
+      },
+      {
+        "key": "p2_atom_27",
+        "path": "assets/game/shared/combat/part2_1010/atom_27.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "4d7d83ea6fc400eb8efb4d74e4cbee5890f6c0cd93f65535ef15234c223f85d7",
+        "opaque_bounds": [
+          52,
+          167,
+          329,
+          480
+        ],
+        "source": "part2_1011/atom_inbetweens_raw.png",
+        "source_rect": [
+          627,
+          627,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          310.0,
+          545
+        ],
+        "scale": 0.625,
+        "translation": [
+          -2,
+          139
+        ],
+        "parents": [
+          23,
+          24
+        ]
+      },
+      {
+        "key": "p2_atom_28",
+        "path": "assets/game/shared/combat/part2_1010/atom_28.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "6193d6b6f3003fd0b975f9324faa5d8cb215b8ebe24b4e40ffad155dcb02305f",
+        "opaque_bounds": [
+          51,
+          90,
+          339,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 24,
+        "source_rect": [
+          0,
+          1473,
+          222,
+          1741
+        ],
+        "source_pivot": [
+          111.5,
+          264
+        ],
+        "scale": 1.5,
+        "translation": [
+          25,
+          84
+        ]
+      },
+      {
+        "key": "p2_atom_29",
+        "path": "assets/game/shared/combat/part2_1010/atom_29.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "0afffc90917e5be70976e17d40cca3d5f3a3254bd8eed7fa9b5ce028c17364cb",
+        "opaque_bounds": [
+          50,
+          104,
+          338,
+          481
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 25,
+        "source_rect": [
+          222,
+          1473,
+          444,
+          1741
+        ],
+        "source_pivot": [
+          111.0,
+          263
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          86
+        ]
+      },
+      {
+        "key": "p2_atom_30",
+        "path": "assets/game/shared/combat/part2_1010/atom_30.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "347565e91965bcd92ec71955fe79922038b5eaad6bab9d7d2760bca9467945d5",
+        "opaque_bounds": [
+          49,
+          112,
+          328,
+          481
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 26,
+        "source_rect": [
+          444,
+          1473,
+          665,
+          1741
+        ],
+        "source_pivot": [
+          110.5,
+          263
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          86
+        ]
+      },
+      {
+        "key": "p2_atom_31",
+        "path": "assets/game/shared/combat/part2_1010/atom_31.png",
+        "w": 384,
+        "h": 576,
+        "pivot": [
+          192,
+          480
+        ],
+        "sha256": "807b708539dfd29dfab567e82c8a05c774038640c38c3ba440528c5c335e5925",
+        "opaque_bounds": [
+          50,
+          112,
+          326,
+          480
+        ],
+        "source": "part2_1010/atom_raw.png",
+        "source_index": 27,
+        "source_rect": [
+          665,
+          1473,
+          887,
+          1741
+        ],
+        "source_pivot": [
+          111.0,
+          264
+        ],
+        "scale": 1.5,
+        "translation": [
+          26,
+          84
+        ]
+      }
+    ],
+    "fire": [
+      {
+        "key": "p2_fire_00",
+        "path": "assets/game/shared/combat/part2_1010/fire_00.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "99930bf68d29584ab8fe94514709ac1a7405a1aa9f12172eef0ce5678dfce9fc",
+        "opaque_bounds": [
+          139,
+          129,
+          246,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          0,
+          222,
+          222
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_01",
+        "path": "assets/game/shared/combat/part2_1010/fire_01.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "505cb8423d32efb9540c4a22ddd8c48b61b1a8d61b226b960c8fda91254b784d",
+        "opaque_bounds": [
+          139,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          0,
+          444,
+          222
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_02",
+        "path": "assets/game/shared/combat/part2_1010/fire_02.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "894abd037d67550f6633440d3c7c014312c7e5fa3948289003c52ce4ec1a6488",
+        "opaque_bounds": [
+          139,
+          129,
+          246,
+          347
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          0,
+          665,
+          222
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_03",
+        "path": "assets/game/shared/combat/part2_1010/fire_03.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "872b0c7f36ec2da48aeaee9d6a747ed724150fc2dfd484778e393cee58ed34d3",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          0,
+          887,
+          222
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_04",
+        "path": "assets/game/shared/combat/part2_1010/fire_04.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "eae585017557969637bec7f82771da2b8304c6863667212187062d2992c55176",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          345
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          222,
+          222,
+          444
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            152
+          ],
+          "translation": [
+            82,
+            128
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_05",
+        "path": "assets/game/shared/combat/part2_1010/fire_05.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "3c03c7ab11fc18383b939945244c96c03de819786ee75b475aceb263e0192e96",
+        "opaque_bounds": [
+          140,
+          130,
+          247,
+          347
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          222,
+          444,
+          444
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_06",
+        "path": "assets/game/shared/combat/part2_1010/fire_06.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "183be5bd939a63ab34dcf1d95b3ea767c19c41a3b7426c2acfa7e4cbe584a503",
+        "opaque_bounds": [
+          140,
+          130,
+          247,
+          347
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          222,
+          665,
+          444
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_07",
+        "path": "assets/game/shared/combat/part2_1010/fire_07.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "d4cb16cb4c0764d1f1ae6a0242472d1500528e6f1b4f1f7fe4ab4c94e410e39c",
+        "opaque_bounds": [
+          140,
+          129,
+          246,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          222,
+          887,
+          444
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            152
+          ],
+          "translation": [
+            82,
+            128
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_08",
+        "path": "assets/game/shared/combat/part2_1010/fire_08.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "0045e5abf5a9a3923ffed56d29f57a6b1d882e4aa9f55cfcf0d4851d556eb693",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          444,
+          222,
+          665
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_09",
+        "path": "assets/game/shared/combat/part2_1010/fire_09.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "1949521e5287d90f6cfe0814a165069e71e2a9e79d4a13ea2b263c0d7a2f45f7",
+        "opaque_bounds": [
+          139,
+          129,
+          246,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          444,
+          444,
+          665
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            111.0,
+            151
+          ],
+          "translation": [
+            81,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_10",
+        "path": "assets/game/shared/combat/part2_1010/fire_10.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "5a7864916109117e15e7515fed46381caa2783957f40d9cf40de5bc44ba1194e",
+        "opaque_bounds": [
+          140,
+          129,
+          248,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          444,
+          665,
+          665
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_11",
+        "path": "assets/game/shared/combat/part2_1010/fire_11.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "df386baad8b1c05a0c10d68e12e7c5357babf672c12b2c83ecf2092f6880f7db",
+        "opaque_bounds": [
+          139,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          444,
+          887,
+          665
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_12",
+        "path": "assets/game/shared/combat/part2_1010/fire_12.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "3d1155a1ad3cac02945254d784d9fdafbfe7dbb1a7beee269b4a281cdc46d40c",
+        "opaque_bounds": [
+          140,
+          129,
+          246,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          665,
+          222,
+          887
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_13",
+        "path": "assets/game/shared/combat/part2_1010/fire_13.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "5fe31e8d73baf1be6e22fd83ec24cf70fb9bc60abcd25c0628df35110c3b4d00",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          665,
+          444,
+          887
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_14",
+        "path": "assets/game/shared/combat/part2_1010/fire_14.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "189f0c049466091edd904472085ed4165351ccd757da76957fc19997d3334c24",
+        "opaque_bounds": [
+          139,
+          128,
+          247,
+          345
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          665,
+          665,
+          887
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.5,
+            152
+          ],
+          "translation": [
+            82,
+            128
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_15",
+        "path": "assets/game/shared/combat/part2_1010/fire_15.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "3613eff260bb0ec1107b1afd96bf04449c0aa79efe08381dcf6286e960292ae1",
+        "opaque_bounds": [
+          140,
+          129,
+          248,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          665,
+          887,
+          887
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_16",
+        "path": "assets/game/shared/combat/part2_1010/fire_16.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "e612e5955e95eba22f2d242f5d7cb9cbadf3eb370196325864fc0c7c2dd539f5",
+        "opaque_bounds": [
+          139,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          887,
+          222,
+          1109
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_17",
+        "path": "assets/game/shared/combat/part2_1010/fire_17.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "1ac4bfdb45a752ab43b24ea057dc2310bf495ae293bfe5c81b367d9db63f37ed",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          345
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          887,
+          444,
+          1109
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_18",
+        "path": "assets/game/shared/combat/part2_1010/fire_18.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "330c1442cc6f025b9fdebcd7c7e36fed0670c7d37983f9db74d5f6c00e95367a",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          887,
+          665,
+          1109
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_19",
+        "path": "assets/game/shared/combat/part2_1010/fire_19.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "e231434e7ee09a946947c56cb7ed01b4c8a202d140615936ff2e2f0bc5ec44fe",
+        "opaque_bounds": [
+          139,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          887,
+          887,
+          1109
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_20",
+        "path": "assets/game/shared/combat/part2_1010/fire_20.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "e28c8cc7653262a59a0e867f63ebf35c8c419ad154c28b48c57a69736150becc",
+        "opaque_bounds": [
+          140,
+          130,
+          246,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          1109,
+          222,
+          1330
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            150
+          ],
+          "translation": [
+            82,
+            130
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_21",
+        "path": "assets/game/shared/combat/part2_1010/fire_21.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "4466525475ca3a69c90bb9819f1bc4d4f72b169d71055525239f8bc231b05053",
+        "opaque_bounds": [
+          140,
+          130,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          1109,
+          444,
+          1330
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            150
+          ],
+          "translation": [
+            82,
+            130
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_22",
+        "path": "assets/game/shared/combat/part2_1010/fire_22.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "dbe0afd1e2e75c7b1724bd0051f103ec618ed903d39bc20f51d52d14d1817461",
+        "opaque_bounds": [
+          139,
+          129,
+          246,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          1109,
+          665,
+          1330
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.5,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_23",
+        "path": "assets/game/shared/combat/part2_1010/fire_23.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "c6f0a71bab97bd1edfc9ee4c9e8f69cd7db6e67bf46fa83b95366b171cb6100f",
+        "opaque_bounds": [
+          140,
+          129,
+          246,
+          345
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          1109,
+          887,
+          1330
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_24",
+        "path": "assets/game/shared/combat/part2_1010/fire_24.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "cd052fbcf4dc3557a66d775187ed9bb5df06ea03a9451c818640952691bc38d8",
+        "opaque_bounds": [
+          141,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          1330,
+          222,
+          1552
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_25",
+        "path": "assets/game/shared/combat/part2_1010/fire_25.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "ce563386b39aa6c93cbd58d1a3e74a7fe4ceac8e5d1fff2697aa931f886afbe5",
+        "opaque_bounds": [
+          140,
+          129,
+          248,
+          345
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          1330,
+          444,
+          1552
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_26",
+        "path": "assets/game/shared/combat/part2_1010/fire_26.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "9193e527e8170f478927388fc8e4e77eec2a9648e2515a1a70092d94c527ad84",
+        "opaque_bounds": [
+          139,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          1330,
+          665,
+          1552
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_27",
+        "path": "assets/game/shared/combat/part2_1010/fire_27.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "292dc165cf1a7b576b8a25d7c3fd1880b4c5c21ec3d83ccf509b3c649339a3e9",
+        "opaque_bounds": [
+          140,
+          129,
+          248,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          1330,
+          887,
+          1552
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_28",
+        "path": "assets/game/shared/combat/part2_1010/fire_28.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "59b2505029b6bd4e16d66e0b8dd70ba7371b273a30921e35d49640faee4f3a12",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          0,
+          1552,
+          222,
+          1774
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_29",
+        "path": "assets/game/shared/combat/part2_1010/fire_29.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "209d7db048887c09b220096a515d347d0bdcc94b73fce1a8fbdeced4668cf91f",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          345
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          222,
+          1552,
+          444,
+          1774
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_30",
+        "path": "assets/game/shared/combat/part2_1010/fire_30.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "ce7a56f3609320dc729a00ca697948ca2a235628b5f1a9c3ea532017beb55cd5",
+        "opaque_bounds": [
+          140,
+          129,
+          247,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          444,
+          1552,
+          665,
+          1774
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            109.0,
+            151
+          ],
+          "translation": [
+            83,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      },
+      {
+        "key": "p2_fire_31",
+        "path": "assets/game/shared/combat/part2_1010/fire_31.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          280
+        ],
+        "sha256": "eb09f453f4220ecb45a25fea16e67f91e25a3d62978bdbec5888d49c5c4e5b05",
+        "opaque_bounds": [
+          139,
+          129,
+          246,
+          346
+        ],
+        "source": "part2_1010/fire_raw.png",
+        "source_rect": [
+          665,
+          1552,
+          887,
+          1774
+        ],
+        "scale": 1,
+        "normalization": {
+          "muzzle": [
+            110.0,
+            151
+          ],
+          "translation": [
+            82,
+            129
+          ]
+        },
+        "body_rect": [
+          142,
+          143,
+          100,
+          102
+        ],
+        "muzzle_rect": [
+          96,
+          218,
+          192,
+          148
+        ]
+      }
+    ],
+    "fire_root": [
+      {
+        "key": "p2_fire_root_00",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_00.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "d830a979dae01f8407d90f1a0a37ff10582f08e79e3909c33b3e415ef2669b28",
+        "opaque_bounds": [
+          111,
+          63,
+          279,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            180.0,
+            268
+          ],
+          "translation": [
+            12,
+            52
+          ]
+        },
+        "join_y": 66,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_01",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_01.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "9253171d08643d1dd0c3314b48bc6cc71f969f62882fb3cf692eec280eac8b54",
+        "opaque_bounds": [
+          97,
+          57,
+          282,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            164.0,
+            270
+          ],
+          "translation": [
+            28,
+            50
+          ]
+        },
+        "join_y": 64,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_02",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_02.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "c8a4f33c1a4838d99ae2cf35807ef816c2179ace1c9a8503dab1b1866afc1fbf",
+        "opaque_bounds": [
+          90,
+          59,
+          292,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            152.0,
+            268
+          ],
+          "translation": [
+            40,
+            52
+          ]
+        },
+        "join_y": 66,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_03",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_03.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "c4c837bb5dd71383de13347ff8c98a32d43b8cf456006f7199211d82e19814cd",
+        "opaque_bounds": [
+          88,
+          58,
+          304,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            148.0,
+            269
+          ],
+          "translation": [
+            44,
+            51
+          ]
+        },
+        "join_y": 65,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_04",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_04.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "9fc06caa14ed53be73d203d4eb783f9bd21f810f37a65264652eb0f3d7b09dbc",
+        "opaque_bounds": [
+          69,
+          53,
+          309,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            174.0,
+            270
+          ],
+          "translation": [
+            18,
+            50
+          ]
+        },
+        "join_y": 64,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_05",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_05.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "21c9f0217c6fa24fd48518612cb06e0aea9c3dd07d7839ff177ec77917a3b222",
+        "opaque_bounds": [
+          58,
+          55,
+          320,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            164.0,
+            270
+          ],
+          "translation": [
+            28,
+            50
+          ]
+        },
+        "join_y": 64,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_06",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_06.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "e7c08e55883384c7b35b87c9a816774799e202a1c83e0d08f3a84a67135db1c4",
+        "opaque_bounds": [
+          65,
+          52,
+          323,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            153.0,
+            269
+          ],
+          "translation": [
+            39,
+            51
+          ]
+        },
+        "join_y": 65,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_07",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_07.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "017b8c240e78970026e4ab43ce53285ddfd86d0f622ed660ddcda8551458c003",
+        "opaque_bounds": [
+          68,
+          52,
+          329,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            148.0,
+            270
+          ],
+          "translation": [
+            44,
+            50
+          ]
+        },
+        "join_y": 64,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_08",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_08.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "126e04ffde3a335f01a0bc0493ea7e489196573d1965263ddffb5722dcef0c1d",
+        "opaque_bounds": [
+          55,
+          53,
+          321,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            173.0,
+            268
+          ],
+          "translation": [
+            19,
+            52
+          ]
+        },
+        "join_y": 66,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_09",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_09.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "5bda833423df846755928e403c3aa2a9afc4f2278a6eb30e96aac21bfd1786d3",
+        "opaque_bounds": [
+          60,
+          57,
+          317,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            163.0,
+            267
+          ],
+          "translation": [
+            29,
+            53
+          ]
+        },
+        "join_y": 67,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_10",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_10.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "69c8f64cda62a6383a3a2310db2a987217ec3bd79b7cc715725ca91443240370",
+        "opaque_bounds": [
+          62,
+          53,
+          330,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            153.0,
+            268
+          ],
+          "translation": [
+            39,
+            52
+          ]
+        },
+        "join_y": 66,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_11",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_11.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "3d0e81547062e8a280f983da19feb50b84d15853d0e58a75950b0cf611fca60a",
+        "opaque_bounds": [
+          68,
+          56,
+          325,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            149.0,
+            267
+          ],
+          "translation": [
+            43,
+            53
+          ]
+        },
+        "join_y": 67,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_12",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_12.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "911d2a1f2d09959edd297d5399ad17b7ff290c50508359cdb37a31f14c8e1e86",
+        "opaque_bounds": [
+          80,
+          62,
+          306,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            173.0,
+            260
+          ],
+          "translation": [
+            19,
+            60
+          ]
+        },
+        "join_y": 74,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_13",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_13.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "62904e9669edd87ac2be2ca4a4343ca855e3594ff2f26f983a7c9d1447956cf2",
+        "opaque_bounds": [
+          76,
+          60,
+          311,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            163.0,
+            262
+          ],
+          "translation": [
+            29,
+            58
+          ]
+        },
+        "join_y": 72,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_14",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_14.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "9e13520961cd70d6e2d915df040b40b501b4af8f2550e8c0313d82bc7844e64b",
+        "opaque_bounds": [
+          83,
+          56,
+          298,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            153.0,
+            264
+          ],
+          "translation": [
+            39,
+            56
+          ]
+        },
+        "join_y": 70,
+        "join_width": 180
+      },
+      {
+        "key": "p2_fire_root_15",
+        "path": "assets/game/shared/combat/part2_1010/fire_root_15.png",
+        "w": 384,
+        "h": 384,
+        "pivot": [
+          192,
+          320
+        ],
+        "sha256": "96f0f142d1b382957485dbcdf1dd6aefa7e90f41309580cf687f0954c7d36bec",
+        "opaque_bounds": [
+          90,
+          58,
+          293,
+          353
+        ],
+        "source": "part2_1011/fire_root_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "scale": 1,
+        "normalization": {
+          "contact": [
+            148.0,
+            262
+          ],
+          "translation": [
+            44,
+            58
+          ]
+        },
+        "join_y": 72,
+        "join_width": 180
+      }
+    ],
+    "stealth": [
+      {
+        "key": "p2_stealth_blue_idle",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_idle.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "6150436df73e7def21b43b42f850b911eac4e1a3ae99756b187582f8eae2da24",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          227
+        ],
+        "role": "blue",
+        "pose": "idle",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_top.png",
+        "source_sha256": "c5644832b8fd581a5607578cf6ee2ddcb05891529699f9d49414adbfedcbb91f",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_damaged",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_damaged.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "2265525cc532fdd0d39b3db1f6dc88dede207c784cbc3f4c23a7eafe36a9e48c",
+        "opaque_bounds": [
+          40,
+          27,
+          216,
+          229
+        ],
+        "role": "blue",
+        "pose": "damaged",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_damaged.png",
+        "source_sha256": "090267555a6d597fc5786b2e04a4b382cce7423fbad8473aed2e3af09b906c4a",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br0",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br0.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "6150436df73e7def21b43b42f850b911eac4e1a3ae99756b187582f8eae2da24",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          227
+        ],
+        "role": "blue",
+        "pose": "br0",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br0.png",
+        "source_sha256": "c5644832b8fd581a5607578cf6ee2ddcb05891529699f9d49414adbfedcbb91f",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br1",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br1.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "e5d9e492e4407a50d4e9319bbd77a31000a6378b0b1bd9ade0de05f9204ac432",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          227
+        ],
+        "role": "blue",
+        "pose": "br1",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br1.png",
+        "source_sha256": "712432134a8e3c9ad11c5d06369bc407405a81da5e43f3c4dbc2154b6fce1623",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br2",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br2.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "93f4dfb8c1423f2e02eb7dc3099736ec2737167658c04ef1d903b73256f3f489",
+        "opaque_bounds": [
+          117,
+          39,
+          139,
+          211
+        ],
+        "role": "blue",
+        "pose": "br2",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br2.png",
+        "source_sha256": "eaf5e10c86946344f648717f67be384916c8060a54be55d6bafa9283fd30cd7b",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br3",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br3.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "1fb51e3c37ec0acc2fe67cd2076bc8571a41170a415878fd5fdeea9625dc786b",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          226
+        ],
+        "role": "blue",
+        "pose": "br3",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br3.png",
+        "source_sha256": "b587832de01938b48b6096620c2ce8267d5d27277ac087c6a8800e37e0a52d13",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br4",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br4.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "552003063d8a8f3281584fa2d35d611e3638972b528d828a560e239eca959390",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          226
+        ],
+        "role": "blue",
+        "pose": "br4",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br4.png",
+        "source_sha256": "6ce823fc56da093a56642f673b4484cfcaa4ca31e123d3301a0955273d9485fb",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br5",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br5.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "1fb51e3c37ec0acc2fe67cd2076bc8571a41170a415878fd5fdeea9625dc786b",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          226
+        ],
+        "role": "blue",
+        "pose": "br5",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br5.png",
+        "source_sha256": "b587832de01938b48b6096620c2ce8267d5d27277ac087c6a8800e37e0a52d13",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br6",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br6.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "0caa886e68c9f6c663b14dfe71584c664171ae524470d3e5999291483bfc02c0",
+        "opaque_bounds": [
+          117,
+          38,
+          139,
+          210
+        ],
+        "role": "blue",
+        "pose": "br6",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br6.png",
+        "source_sha256": "24423b6c4f542c91122a38976b5ff6653d49e410ed2cd321002edd1c0ff5b259",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_blue_br7",
+        "path": "assets/game/shared/combat/part2_1010/stealth_blue_br7.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "e5d9e492e4407a50d4e9319bbd77a31000a6378b0b1bd9ade0de05f9204ac432",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          227
+        ],
+        "role": "blue",
+        "pose": "br7",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br7.png",
+        "source_sha256": "712432134a8e3c9ad11c5d06369bc407405a81da5e43f3c4dbc2154b6fce1623",
+        "scale": 1,
+        "palette_pixels": 0,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_idle",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_idle.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "2a88906dfd449ea1ff5ad64f58f673bfc1c04c6327c5990f6b46ecaca58ffeda",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          227
+        ],
+        "role": "red",
+        "pose": "idle",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_top.png",
+        "source_sha256": "c5644832b8fd581a5607578cf6ee2ddcb05891529699f9d49414adbfedcbb91f",
+        "scale": 1,
+        "palette_pixels": 11544,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_damaged",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_damaged.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "480f91a9ffff2cc9a9feb55e337c7dd38d716ce414f1d9a5a696ad1b04936e43",
+        "opaque_bounds": [
+          40,
+          27,
+          216,
+          229
+        ],
+        "role": "red",
+        "pose": "damaged",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_damaged.png",
+        "source_sha256": "090267555a6d597fc5786b2e04a4b382cce7423fbad8473aed2e3af09b906c4a",
+        "scale": 1,
+        "palette_pixels": 10539,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br0",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br0.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "2a88906dfd449ea1ff5ad64f58f673bfc1c04c6327c5990f6b46ecaca58ffeda",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          227
+        ],
+        "role": "red",
+        "pose": "br0",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br0.png",
+        "source_sha256": "c5644832b8fd581a5607578cf6ee2ddcb05891529699f9d49414adbfedcbb91f",
+        "scale": 1,
+        "palette_pixels": 11544,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br1",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br1.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "d9e174a209ac6e3e691282561ae7f3942393de375bb62c6f1cddc2a67b0f6233",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          227
+        ],
+        "role": "red",
+        "pose": "br1",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br1.png",
+        "source_sha256": "712432134a8e3c9ad11c5d06369bc407405a81da5e43f3c4dbc2154b6fce1623",
+        "scale": 1,
+        "palette_pixels": 7624,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br2",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br2.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "c8a9155c50aae87703f5a68be4344c463ce96a099391842c2e5248356d76561d",
+        "opaque_bounds": [
+          117,
+          39,
+          139,
+          211
+        ],
+        "role": "red",
+        "pose": "br2",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br2.png",
+        "source_sha256": "eaf5e10c86946344f648717f67be384916c8060a54be55d6bafa9283fd30cd7b",
+        "scale": 1,
+        "palette_pixels": 944,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br3",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br3.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "94cfcbd74e4076a77265794329ef7c35e5b82ef2314a18af23e46c7b6758ec0c",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          226
+        ],
+        "role": "red",
+        "pose": "br3",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br3.png",
+        "source_sha256": "b587832de01938b48b6096620c2ce8267d5d27277ac087c6a8800e37e0a52d13",
+        "scale": 1,
+        "palette_pixels": 6851,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br4",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br4.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "5cbc945545468ed482e8fee35a2c6939d8f10f5578a0a31c0b245e64b1085aba",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          226
+        ],
+        "role": "red",
+        "pose": "br4",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br4.png",
+        "source_sha256": "6ce823fc56da093a56642f673b4484cfcaa4ca31e123d3301a0955273d9485fb",
+        "scale": 1,
+        "palette_pixels": 10561,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br5",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br5.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "94cfcbd74e4076a77265794329ef7c35e5b82ef2314a18af23e46c7b6758ec0c",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          226
+        ],
+        "role": "red",
+        "pose": "br5",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br5.png",
+        "source_sha256": "b587832de01938b48b6096620c2ce8267d5d27277ac087c6a8800e37e0a52d13",
+        "scale": 1,
+        "palette_pixels": 6851,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br6",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br6.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "f4a5e4ea3cdffda437584e57309105d399f5371554cfb10118862cefa40ae0f8",
+        "opaque_bounds": [
+          117,
+          38,
+          139,
+          210
+        ],
+        "role": "red",
+        "pose": "br6",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br6.png",
+        "source_sha256": "24423b6c4f542c91122a38976b5ff6653d49e410ed2cd321002edd1c0ff5b259",
+        "scale": 1,
+        "palette_pixels": 882,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_red_br7",
+        "path": "assets/game/shared/combat/part2_1010/stealth_red_br7.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "d9e174a209ac6e3e691282561ae7f3942393de375bb62c6f1cddc2a67b0f6233",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          227
+        ],
+        "role": "red",
+        "pose": "br7",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br7.png",
+        "source_sha256": "712432134a8e3c9ad11c5d06369bc407405a81da5e43f3c4dbc2154b6fce1623",
+        "scale": 1,
+        "palette_pixels": 7624,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_idle",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_idle.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "75f346c096a452e133cfae3bc8c492e1cd2e3fc7c8e73610141811f681105412",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          227
+        ],
+        "role": "green",
+        "pose": "idle",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_top.png",
+        "source_sha256": "c5644832b8fd581a5607578cf6ee2ddcb05891529699f9d49414adbfedcbb91f",
+        "scale": 1,
+        "palette_pixels": 11544,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_damaged",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_damaged.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "d338d1aa22e83ff3a21981f37332b0a5faa4d3fbda42c04b505116a1ae999395",
+        "opaque_bounds": [
+          40,
+          27,
+          216,
+          229
+        ],
+        "role": "green",
+        "pose": "damaged",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_damaged.png",
+        "source_sha256": "090267555a6d597fc5786b2e04a4b382cce7423fbad8473aed2e3af09b906c4a",
+        "scale": 1,
+        "palette_pixels": 10539,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br0",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br0.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "75f346c096a452e133cfae3bc8c492e1cd2e3fc7c8e73610141811f681105412",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          227
+        ],
+        "role": "green",
+        "pose": "br0",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br0.png",
+        "source_sha256": "c5644832b8fd581a5607578cf6ee2ddcb05891529699f9d49414adbfedcbb91f",
+        "scale": 1,
+        "palette_pixels": 11544,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br1",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br1.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "f50141bca300d8dc749ce6a34c5e9e750da62b00c3f0c99e913e8ddd63ccb288",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          227
+        ],
+        "role": "green",
+        "pose": "br1",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br1.png",
+        "source_sha256": "712432134a8e3c9ad11c5d06369bc407405a81da5e43f3c4dbc2154b6fce1623",
+        "scale": 1,
+        "palette_pixels": 7624,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br2",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br2.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "4527bdfdb14930e2d80eefe27e5e42c9050b6cb3f147456592280f6ef8ea6a7d",
+        "opaque_bounds": [
+          117,
+          39,
+          139,
+          211
+        ],
+        "role": "green",
+        "pose": "br2",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br2.png",
+        "source_sha256": "eaf5e10c86946344f648717f67be384916c8060a54be55d6bafa9283fd30cd7b",
+        "scale": 1,
+        "palette_pixels": 944,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br3",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br3.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "84ee3c0bd9c62253a9c1fad1d748edb327c41c412108bfadc50f8a76163ed05e",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          226
+        ],
+        "role": "green",
+        "pose": "br3",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br3.png",
+        "source_sha256": "b587832de01938b48b6096620c2ce8267d5d27277ac087c6a8800e37e0a52d13",
+        "scale": 1,
+        "palette_pixels": 6851,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br4",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br4.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "9d04d9bb837fb16d05c589d7a916a38d17aa7be52c4edeb7be562ea9ba9adcb5",
+        "opaque_bounds": [
+          40,
+          29,
+          216,
+          226
+        ],
+        "role": "green",
+        "pose": "br4",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br4.png",
+        "source_sha256": "6ce823fc56da093a56642f673b4484cfcaa4ca31e123d3301a0955273d9485fb",
+        "scale": 1,
+        "palette_pixels": 10561,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br5",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br5.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "84ee3c0bd9c62253a9c1fad1d748edb327c41c412108bfadc50f8a76163ed05e",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          226
+        ],
+        "role": "green",
+        "pose": "br5",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br5.png",
+        "source_sha256": "b587832de01938b48b6096620c2ce8267d5d27277ac087c6a8800e37e0a52d13",
+        "scale": 1,
+        "palette_pixels": 6851,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br6",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br6.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "0b9c6e6ef1dda0efd5c3e67f1744779f57a600971756748b32df0c1a2212050f",
+        "opaque_bounds": [
+          117,
+          38,
+          139,
+          210
+        ],
+        "role": "green",
+        "pose": "br6",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br6.png",
+        "source_sha256": "24423b6c4f542c91122a38976b5ff6653d49e410ed2cd321002edd1c0ff5b259",
+        "scale": 1,
+        "palette_pixels": 882,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      },
+      {
+        "key": "p2_stealth_green_br7",
+        "path": "assets/game/shared/combat/part2_1010/stealth_green_br7.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "sha256": "f50141bca300d8dc749ce6a34c5e9e750da62b00c3f0c99e913e8ddd63ccb288",
+        "opaque_bounds": [
+          65,
+          29,
+          190,
+          227
+        ],
+        "role": "green",
+        "pose": "br7",
+        "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br7.png",
+        "source_sha256": "712432134a8e3c9ad11c5d06369bc407405a81da5e43f3c4dbc2154b6fce1623",
+        "scale": 1,
+        "palette_pixels": 7624,
+        "palette": "blue paint only; RGB luminance preserved; alpha and all non-paint pixels unchanged"
+      }
+    ]
+  }
+}

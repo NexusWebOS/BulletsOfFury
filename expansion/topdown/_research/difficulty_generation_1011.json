@@ -1,0 +1,39 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-11",
+  "request": "Insanity remains the original Insanity artwork; Furious uses a chaotic melting skull.",
+  "editTarget": "expansion/topdown/art/menu_1011/od_diff_furious.png",
+  "prompt": "FRAME FORMAT: Deliver one 1536 × 448 pixel horizontal UI button, a doubled-resolution edit of the supplied 768 × 224 source. Identical proportions, one proportional scale, centered physical pivot at (768,224), preserve transparent padding around the entire button. Use case: precise-object-edit. Edit target: the supplied Bullets of Fury Overdrive FURIOUS difficulty plate. Replace only Hotwire's portrait in the dark square socket at the left with a chaotic melting skull. Primary request: a terrifying, unstable molten skull, ivory bone liquefying and running into several long hot drips from the jaw and cheekbones, distorted snarling teeth, uneven collapsed cheekbone, furious glowing scarlet eye sockets, branching fiery cracks and a few sharp sparks, orange-white heat concentrated in the melting bone. It must unmistakably read as an actual MELTING SKULL even as a small menu icon. Keep it centered inside the left socket and keep the socket frame visible. Hard crisp arcade pixel illustration matching Bullets of Fury; coarse readable pixel clusters, heavy dark outlines, compact strong silhouette, no soft painted or photoreal rendering. Preserve the entire olive riveted metal cabinet, orange heat seams, two vertical orange lamps, blue blueprint grid, red FURIOUS lettering with its thick black outline, and every part outside the portrait. Exact text (verbatim): FURIOUS. No other labels, no human face/hair, no extra buttons, no hands, no scenery. True alpha outside the cabinet, not a black canvas or checkerboard. Preserve the source button's proportions, full label, margins and straight geometry.",
+  "generatedMaster": "expansion/topdown/art/menu_1011/source/furious_melting_1011.png",
+  "actualMasterSize": [
+    2170,
+    725
+  ],
+  "outputFrame": [
+    768,
+    224
+  ],
+  "pivot": [
+    384,
+    112
+  ],
+  "sourceCrop": [
+    8,
+    45,
+    2078,
+    588
+  ],
+  "insanity": {
+    "original": "assets/game/shared/ui/ui/diff_0916/diff_insanity.png",
+    "preservedCopy": "expansion/topdown/art/menu_1011/source/insanity_original_0916.png",
+    "originalSize": [
+      199,
+      58
+    ],
+    "sourcePadding": [
+      200,
+      58
+    ]
+  },
+  "normalization": "Only crop, common proportional resampling and transparent padding; no drawn replacement sprites."
+}

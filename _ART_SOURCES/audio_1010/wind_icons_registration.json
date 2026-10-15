@@ -1,0 +1,203 @@
+{
+  "raw_sha256": "488581fcd6bad963933bcab2f52d27a38d90544705c528adc853feb97e53d553",
+  "bank": [
+    {
+      "key": "ap10_wind_icon_0",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_0.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "e06b53f4bd4a3ebb724aa2f5b47cc0818977e8905f9826676e8e90a0cba9ba78"
+    },
+    {
+      "key": "ap10_wind_icon_1",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_1.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        418,
+        0,
+        836,
+        418
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "c8599954e87f9c5b19135c55bab09bef7c313a4e5b2d62d69e775aff90f49515"
+    },
+    {
+      "key": "ap10_wind_icon_2",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_2.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        836,
+        0,
+        1254,
+        418
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "ec089a8fc016ef99901db8a7aa268edc9262a0b1c7144a6002c785fbdba756cb"
+    },
+    {
+      "key": "ap10_wind_icon_3",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_3.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        0,
+        418,
+        418,
+        836
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "9584b6478a3d97fa83b7e34ffad194f04c0c21ff0208c55270e6ff44f2f4394b"
+    },
+    {
+      "key": "ap10_wind_icon_4",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_4.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        418,
+        418,
+        836,
+        836
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "b51d8137f0063a0872f4daa367521f1c68ccf272a808f2ae86992117feb79f30"
+    },
+    {
+      "key": "ap10_wind_icon_5",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_5.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        836,
+        418,
+        1254,
+        836
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "5e555aa7123c63aa01109daf539dfded342434910375bd4bd20ccf535b1c67ad"
+    },
+    {
+      "key": "ap10_wind_icon_6",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_6.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        0,
+        836,
+        418,
+        1254
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "5f2c0df4bab825b310dc227bea3f55b6ed0e1a72aa0ba4f6cb7cf1522141fcca"
+    },
+    {
+      "key": "ap10_wind_icon_7",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_7.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        418,
+        836,
+        836,
+        1254
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "ec914026f29c378ac221b030334b53a5e399ea8d9f6d4fa7b6069956004d5c87"
+    },
+    {
+      "key": "ap10_wind_icon_8",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_8.png",
+      "w": 432,
+      "h": 432,
+      "pivot": [
+        216,
+        216
+      ],
+      "source_rect": [
+        836,
+        836,
+        1254,
+        1254
+      ],
+      "translation": [
+        7,
+        7
+      ],
+      "scale": 1,
+      "sha256": "3d6658761ed2769dfb0627d5ee31b7e2438dcf7afeb8dbc1bf97988eefdd153c"
+    }
+  ]
+}

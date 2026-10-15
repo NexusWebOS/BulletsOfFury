@@ -1,0 +1,421 @@
+{
+  "raw_sha256": "3a09a6cecb22bbb60d432652a97cd907e066cdc25b90b25733a38ab13606b723",
+  "bank": [
+    {
+      "key": "ap10_fusion_00",
+      "path": "assets/game/shared/combat/audio_1010/fusion_00.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        0,
+        0,
+        256,
+        344
+      ],
+      "source_pivot": [
+        128,
+        312
+      ],
+      "translation": [
+        8,
+        16
+      ],
+      "scale": 1,
+      "sha256": "0c065f8be1cd09f0c11eee7a1423fbcb752ac1c80d4b0b91407f158b4aeff2b1"
+    },
+    {
+      "key": "ap10_fusion_01",
+      "path": "assets/game/shared/combat/audio_1010/fusion_01.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        256,
+        0,
+        512,
+        344
+      ],
+      "source_pivot": [
+        128,
+        312
+      ],
+      "translation": [
+        8,
+        16
+      ],
+      "scale": 1,
+      "sha256": "22c1c7c22bfe41352c7bec1ca935548e5809654a7540ee8a2f1e43098a6b1c4d"
+    },
+    {
+      "key": "ap10_fusion_02",
+      "path": "assets/game/shared/combat/audio_1010/fusion_02.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        512,
+        0,
+        768,
+        344
+      ],
+      "source_pivot": [
+        128,
+        312
+      ],
+      "translation": [
+        8,
+        16
+      ],
+      "scale": 1,
+      "sha256": "ccdcb391559ec903b4faaa8e3b325e8250ebbd1fcc4bd4820c53cb28516ee9c2"
+    },
+    {
+      "key": "ap10_fusion_03",
+      "path": "assets/game/shared/combat/audio_1010/fusion_03.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        768,
+        0,
+        1024,
+        344
+      ],
+      "source_pivot": [
+        128,
+        312
+      ],
+      "translation": [
+        8,
+        16
+      ],
+      "scale": 1,
+      "sha256": "8f5013c9eaa0d6bc7a18e1b36390fdb14be97c820dd79760b4e70bb471650c15"
+    },
+    {
+      "key": "ap10_fusion_04",
+      "path": "assets/game/shared/combat/audio_1010/fusion_04.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        0,
+        344,
+        256,
+        736
+      ],
+      "source_pivot": [
+        128,
+        362
+      ],
+      "translation": [
+        8,
+        -34
+      ],
+      "scale": 1,
+      "sha256": "c32a1b4aecd7db35a5f048485346b28c9fd6265c6a19095e52fe75c0e54d1098"
+    },
+    {
+      "key": "ap10_fusion_05",
+      "path": "assets/game/shared/combat/audio_1010/fusion_05.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        256,
+        344,
+        512,
+        736
+      ],
+      "source_pivot": [
+        128,
+        362
+      ],
+      "translation": [
+        8,
+        -34
+      ],
+      "scale": 1,
+      "sha256": "5000486e0a677510830497ac83486abee2e20b7a474fcc10faf3956f3a2bff39"
+    },
+    {
+      "key": "ap10_fusion_06",
+      "path": "assets/game/shared/combat/audio_1010/fusion_06.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        512,
+        344,
+        768,
+        736
+      ],
+      "source_pivot": [
+        128,
+        362
+      ],
+      "translation": [
+        8,
+        -34
+      ],
+      "scale": 1,
+      "sha256": "8f614432d1b9210c22cb732fffe255860fce7ac239356c773d025dd44c8faebd"
+    },
+    {
+      "key": "ap10_fusion_07",
+      "path": "assets/game/shared/combat/audio_1010/fusion_07.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        768,
+        344,
+        1024,
+        736
+      ],
+      "source_pivot": [
+        128,
+        362
+      ],
+      "translation": [
+        8,
+        -34
+      ],
+      "scale": 1,
+      "sha256": "88951ae69223ef729f89a754ac724a7c5966e20cac7f189e269506b19cb782bd"
+    },
+    {
+      "key": "ap10_fusion_08",
+      "path": "assets/game/shared/combat/audio_1010/fusion_08.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        0,
+        736,
+        256,
+        1128
+      ],
+      "source_pivot": [
+        128,
+        364
+      ],
+      "translation": [
+        8,
+        -36
+      ],
+      "scale": 1,
+      "sha256": "47c3a4e97630295e6a9a72a427ed85f173e73c8aef5194ab9bbfd5c6296719b9"
+    },
+    {
+      "key": "ap10_fusion_09",
+      "path": "assets/game/shared/combat/audio_1010/fusion_09.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        256,
+        736,
+        512,
+        1128
+      ],
+      "source_pivot": [
+        128,
+        364
+      ],
+      "translation": [
+        8,
+        -36
+      ],
+      "scale": 1,
+      "sha256": "9cf68e89729a304b549a7abef62daf9cfef42c2139ac448eca55bf660b3190bc"
+    },
+    {
+      "key": "ap10_fusion_10",
+      "path": "assets/game/shared/combat/audio_1010/fusion_10.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        512,
+        736,
+        768,
+        1128
+      ],
+      "source_pivot": [
+        128,
+        364
+      ],
+      "translation": [
+        8,
+        -36
+      ],
+      "scale": 1,
+      "sha256": "428065bad39b65670f0c19256885a19b558b635a712e3bc631af6d713bc20195"
+    },
+    {
+      "key": "ap10_fusion_11",
+      "path": "assets/game/shared/combat/audio_1010/fusion_11.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        768,
+        736,
+        1024,
+        1128
+      ],
+      "source_pivot": [
+        128,
+        364
+      ],
+      "translation": [
+        8,
+        -36
+      ],
+      "scale": 1,
+      "sha256": "a96a1a3c297e74add11fe371a5b95a232ba9380882ab204fe32504e3f4049fd8"
+    },
+    {
+      "key": "ap10_fusion_12",
+      "path": "assets/game/shared/combat/audio_1010/fusion_12.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        0,
+        1128,
+        256,
+        1536
+      ],
+      "source_pivot": [
+        128,
+        359
+      ],
+      "translation": [
+        8,
+        -31
+      ],
+      "scale": 1,
+      "sha256": "a690e964f4ee99e5feae8765531d7175a8cdfc9025e9bb66835586ed476cb6fb"
+    },
+    {
+      "key": "ap10_fusion_13",
+      "path": "assets/game/shared/combat/audio_1010/fusion_13.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        256,
+        1128,
+        512,
+        1536
+      ],
+      "source_pivot": [
+        128,
+        359
+      ],
+      "translation": [
+        8,
+        -31
+      ],
+      "scale": 1,
+      "sha256": "54a76d2a55f02c0074e09b085839d9dbac721a6fd097178eeaf00bc270eb1eb6"
+    },
+    {
+      "key": "ap10_fusion_14",
+      "path": "assets/game/shared/combat/audio_1010/fusion_14.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        512,
+        1128,
+        768,
+        1536
+      ],
+      "source_pivot": [
+        128,
+        359
+      ],
+      "translation": [
+        8,
+        -31
+      ],
+      "scale": 1,
+      "sha256": "989d68a3ed0a64e73d8d688cc836a396b521ef21e63c3fe13e74bead735014b1"
+    },
+    {
+      "key": "ap10_fusion_15",
+      "path": "assets/game/shared/combat/audio_1010/fusion_15.png",
+      "w": 272,
+      "h": 400,
+      "pivot": [
+        136,
+        328
+      ],
+      "source_rect": [
+        768,
+        1128,
+        1024,
+        1536
+      ],
+      "source_pivot": [
+        128,
+        359
+      ],
+      "translation": [
+        8,
+        -31
+      ],
+      "scale": 1,
+      "sha256": "940d1cf10ec2f20632344d46d427f1e1d316752179db9e018d46f7e6475d30be"
+    }
+  ]
+}

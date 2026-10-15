@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-11",
+  "entry": "expansion/topdown/index.html",
+  "uiBuild": "overdrive1011-difficulty-r2",
+  "checks": [
+    {
+      "name": "Insanity source is the exact original authored purple skull plate",
+      "passed": true
+    },
+    {
+      "name": "both corrected exports have fixed even canvases and center pivots",
+      "passed": true
+    },
+    {
+      "name": "real Start, Back and New Game inputs reach difficulty selection",
+      "passed": true
+    },
+    {
+      "name": "decoded Furious pixels match the generated melting-skull export",
+      "passed": true
+    },
+    {
+      "name": "decoded Insanity pixels match the restored original-plate export",
+      "passed": true
+    },
+    {
+      "name": "the game context actually draws all five authored difficulty plates",
+      "passed": true
+    },
+    {
+      "name": "Furious artwork remains attached to the Furious selection",
+      "passed": true
+    },
+    {
+      "name": "Furious confirmation selects the actual Furious difficulty",
+      "passed": true
+    },
+    {
+      "name": "original Insanity artwork remains attached to the Insanity selection",
+      "passed": true
+    },
+    {
+      "name": "Insanity confirmation selects the actual Insanity difficulty",
+      "passed": true
+    },
+    {
+      "name": "corrected difficulty menu fits the narrow browser pane",
+      "passed": true
+    },
+    {
+      "name": "no page, console, HTTP or media errors",
+      "passed": true
+    }
+  ],
+  "observations": {
+    "decodedRasterHashes": {
+      "od_diff_easy": 2478742981,
+      "od_diff_normal": 2478742981,
+      "od_diff_hard": 2478742981,
+      "od_diff_furious": 2478742981,
+      "od_diff_insanity": 3750565387
+    },
+    "liveDrawImageCalls": [
+      "od_diff_easy",
+      "od_diff_normal",
+      "od_diff_hard",
+      "od_diff_furious",
+      "od_diff_easy",
+      "od_diff_normal",
+      "od_diff_hard",
+      "od_diff_furious",
+      "od_diff_easy",
+      "od_diff_normal",
+      "od_diff_hard",
+      "od_diff_furious",
+      "od_diff_easy",
+      "od_diff_normal",
+      "od_diff_hard",
+      "od_diff_furious",
+      "od_diff_insanity"
+    ]
+  },
+  "browserErrors": [],
+  "passed": 12,
+  "failed": 0,
+  "generationRecord": "expansion/topdown/_research/difficulty_generation_1011.json",
+  "sourceSha256": {
+    "assets/game/shared/ui/ui/diff_0916/diff_insanity.png": "7911ce32183229893d478ef22894d802463a7e20031721bd5d4b74ce272148ef",
+    "expansion/topdown/art/menu_1011/source/insanity_original_0916.png": "7911ce32183229893d478ef22894d802463a7e20031721bd5d4b74ce272148ef",
+    "expansion/topdown/art/menu_1011/source/furious_melting_1011.png": "900bc922bc6cb04b288080047a59682b652e57bf6a7176f67b262cec46cfc253"
+  },
+  "screenshots": [
+    "_shots/overdrive_difficulty_1011/furious_selected.png",
+    "_shots/overdrive_difficulty_1011/insanity_selected.png",
+    "_shots/overdrive_difficulty_1011/narrow_insanity.png"
+  ]
+}

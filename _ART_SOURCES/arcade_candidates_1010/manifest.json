@@ -1,0 +1,2596 @@
+{
+  "razorback_hull": [
+    {
+      "key": "ac10_razorback_hull_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        17,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        55,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        72,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_4",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        18
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_5",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        17,
+        18
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_6",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        55,
+        18
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_7",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        72,
+        18
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_8",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        0,
+        33
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_9",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        17,
+        33
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_10",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        55,
+        33
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_11",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        72,
+        33
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_12",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        1,
+        59
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_13",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        17,
+        59
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_14",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        55,
+        59
+      ]
+    },
+    {
+      "key": "ac10_razorback_hull_15",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_hull_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        72,
+        59
+      ]
+    }
+  ],
+  "furious_razorback_hull": [
+    {
+      "key": "ac10_furious_razorback_hull_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        18,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        62,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        79,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_4",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        5
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_5",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        18,
+        5
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_6",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        62,
+        5
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_7",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        79,
+        5
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_8",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        0,
+        12
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_9",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        18,
+        12
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_10",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        62,
+        12
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_11",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        79,
+        12
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_12",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        0,
+        22
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_13",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        18,
+        23
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_14",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        62,
+        22
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_hull_15",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_hull_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        79,
+        23
+      ]
+    }
+  ],
+  "overlord_hull": [
+    {
+      "key": "ac10_overlord_hull_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        -26,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        -26,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        -54,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_4",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        3
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_5",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        -26,
+        3
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_6",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        -27,
+        3
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_7",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        -54,
+        3
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_8",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        1,
+        7
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_9",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        -26,
+        8
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_10",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        -27,
+        7
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_11",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        -54,
+        8
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_12",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        0,
+        10
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_13",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        -26,
+        10
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_14",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        -26,
+        10
+      ]
+    },
+    {
+      "key": "ac10_overlord_hull_15",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_hull_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        -54,
+        10
+      ]
+    }
+  ],
+  "razorback_kit_0": [
+    {
+      "key": "ac10_razorback_kit_0_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_0_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_0_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_0_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_0_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_0_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_0_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_0_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        -1,
+        0
+      ]
+    }
+  ],
+  "razorback_kit_1": [
+    {
+      "key": "ac10_razorback_kit_1_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_1_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_1_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_1_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_1_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_1_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_1_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_1_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        -1,
+        0
+      ]
+    }
+  ],
+  "razorback_kit_2": [
+    {
+      "key": "ac10_razorback_kit_2_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_2_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_2_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_2_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_2_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_2_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_2_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_2_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "razorback_kit_3": [
+    {
+      "key": "ac10_razorback_kit_3_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_3_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_3_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_3_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_3_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_3_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_razorback_kit_3_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/razorback_kit_3_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        -1,
+        0
+      ]
+    }
+  ],
+  "furious_razorback_kit_0": [
+    {
+      "key": "ac10_furious_razorback_kit_0_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_0_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_0_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_0_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_0_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_0_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        0,
+        -5
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_0_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_0_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "furious_razorback_kit_1": [
+    {
+      "key": "ac10_furious_razorback_kit_1_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_1_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_1_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_1_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_1_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_1_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_1_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_1_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "furious_razorback_kit_2": [
+    {
+      "key": "ac10_furious_razorback_kit_2_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_2_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_2_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_2_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_2_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_2_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_2_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_2_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "furious_razorback_kit_3": [
+    {
+      "key": "ac10_furious_razorback_kit_3_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_3_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_3_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_3_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_3_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_3_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_furious_razorback_kit_3_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/furious_razorback_kit_3_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "overlord_kit_0": [
+    {
+      "key": "ac10_overlord_kit_0_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_0_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_0_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_0_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        4,
+        -2
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_0_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_0_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        6,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_0_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_0_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        7,
+        -1
+      ]
+    }
+  ],
+  "overlord_kit_1": [
+    {
+      "key": "ac10_overlord_kit_1_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_1_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_1_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_1_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        5,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_1_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_1_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_1_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_1_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        11,
+        0
+      ]
+    }
+  ],
+  "overlord_kit_2": [
+    {
+      "key": "ac10_overlord_kit_2_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_2_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_2_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_2_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        5,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_2_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_2_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_2_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_2_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        10,
+        1
+      ]
+    }
+  ],
+  "overlord_kit_3": [
+    {
+      "key": "ac10_overlord_kit_3_0",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_3_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_3_1",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_3_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        6,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_3_2",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_3_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        8,
+        0
+      ]
+    },
+    {
+      "key": "ac10_overlord_kit_3_3",
+      "path": "_ART_SOURCES/arcade_candidates_1010/normalized/overlord_kit_3_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        10,
+        0
+      ]
+    }
+  ],
+  "fire_jet": [
+    {
+      "key": "ac10_fire_jet_0",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_1",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_2",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_3",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_4",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_5",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_6",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_7",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_8",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_9",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_10",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_11",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_12",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_13",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_14",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_fire_jet_15",
+      "path": "assets/game/shared/combat/arcade_jets_1010/fire_jet_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "ice_jet": [
+    {
+      "key": "ac10_ice_jet_0",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_1",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_2",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_3",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_4",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_5",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "registration": [
+        1,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_6",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_7",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_8",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_9",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "registration": [
+        1,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_10",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_11",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_12",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_13",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_14",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "ac10_ice_jet_15",
+      "path": "assets/game/shared/combat/arcade_jets_1010/ice_jet_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ]
+}

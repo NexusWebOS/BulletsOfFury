@@ -1,0 +1,739 @@
+{
+  "passed": 60,
+  "failed": 0,
+  "checks": [
+    {
+      "passed": true,
+      "name": "Yuri retains earned Storm and chain tier across actual Stage 4 -> 5 entry",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Stage-5 HUD identifies the Storm upgrade",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Actual held fire/release invokes Storm in Stage 5",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Earned Storm also survives Stage 6 entry",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "An unearned fresh run does not inherit account or previous-run Storm",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Co-op Yuri retains his reward without granting Cole the ability",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "easy Frost miniboss remains ice without nuclear transformation",
+      "data": {
+        "same": "frostcruiser",
+        "form": "ice",
+        "nuclear": false,
+        "strike": false,
+        "atomic": 0,
+        "skin": "frost1002"
+      }
+    },
+    {
+      "passed": true,
+      "name": "easy ice miniboss retains its actor and authored modular health",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "easy Rime turrets release rapid non-interceptable machine slugs",
+      "data": {
+        "emitted": 11,
+        "remaining": 7
+      }
+    },
+    {
+      "passed": true,
+      "name": "easy Rime boss does not launch a laser",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "easy Rime missile volleys use shootable missile ordnance",
+      "data": 4
+    },
+    {
+      "passed": true,
+      "name": "easy charged ice salvos keep a real two-lane opening",
+      "data": [
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 1,
+          "gap": 2,
+          "angles": [
+            1.1357963267948965,
+            1.2807963267948965,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966
+          ],
+          "x": 340,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 2,
+          "gap": 3,
+          "angles": [
+            1.1357963267948965,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.8607963267948966,
+            2.0057963267948966
+          ],
+          "x": 360,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 3,
+          "gap": 4,
+          "angles": [
+            1.1357963267948965,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.5707963267948966,
+            2.0057963267948966
+          ],
+          "x": 380,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 4,
+          "gap": 2,
+          "angles": [
+            1.1357963267948965,
+            1.2807963267948965,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966
+          ],
+          "x": 400,
+          "y": 173
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "name": "easy Rime shifts right between ice volleys",
+      "data": [
+        340,
+        360,
+        380,
+        400
+      ]
+    },
+    {
+      "passed": true,
+      "name": "normal Frost miniboss remains ice without nuclear transformation",
+      "data": {
+        "same": "frostcruiser",
+        "form": "ice",
+        "nuclear": false,
+        "strike": false,
+        "atomic": 0,
+        "skin": "frost1002"
+      }
+    },
+    {
+      "passed": true,
+      "name": "normal ice miniboss retains its actor and authored modular health",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "normal Rime turrets release rapid non-interceptable machine slugs",
+      "data": {
+        "emitted": 16,
+        "remaining": 4
+      }
+    },
+    {
+      "passed": true,
+      "name": "normal Rime boss does not launch a laser",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "normal Rime missile volleys use shootable missile ordnance",
+      "data": 8
+    },
+    {
+      "passed": true,
+      "name": "normal charged ice salvos keep a real two-lane opening",
+      "data": [
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 1,
+          "gap": 2,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "x": 340,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 2,
+          "gap": 3,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.2807963267948965,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "x": 363,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 3,
+          "gap": 4,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "x": 386,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 4,
+          "gap": 2,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "x": 409,
+          "y": 173
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "name": "normal Rime shifts right between ice volleys",
+      "data": [
+        340,
+        363,
+        386,
+        409
+      ]
+    },
+    {
+      "passed": true,
+      "name": "hard Frost miniboss remains ice without nuclear transformation",
+      "data": {
+        "same": "frostcruiser",
+        "form": "ice",
+        "nuclear": false,
+        "strike": false,
+        "atomic": 0,
+        "skin": "frost1002"
+      }
+    },
+    {
+      "passed": true,
+      "name": "hard ice miniboss retains its actor and authored modular health",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "hard Rime turrets release rapid non-interceptable machine slugs",
+      "data": {
+        "emitted": 21,
+        "remaining": 5
+      }
+    },
+    {
+      "passed": true,
+      "name": "hard Rime boss does not launch a laser",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "hard Rime missile volleys use shootable missile ordnance",
+      "data": 8
+    },
+    {
+      "passed": true,
+      "name": "hard charged ice salvos keep a real two-lane opening",
+      "data": [
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 1,
+          "gap": 2,
+          "angles": [
+            0.8457963267948966,
+            0.9907963267948966,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "x": 340,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 2,
+          "gap": 3,
+          "angles": [
+            0.8457963267948966,
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "x": 366,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 3,
+          "gap": 4,
+          "angles": [
+            0.8457963267948966,
+            0.9907963267948966,
+            1.1357963267948965,
+            1.2807963267948965,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "x": 392,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 4,
+          "gap": 2,
+          "angles": [
+            0.8457963267948966,
+            0.9907963267948966,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "x": 418,
+          "y": 173
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "name": "hard Rime shifts right between ice volleys",
+      "data": [
+        340,
+        366,
+        392,
+        418
+      ]
+    },
+    {
+      "passed": true,
+      "name": "furious Frost miniboss remains ice without nuclear transformation",
+      "data": {
+        "same": "frostcruiser",
+        "form": "ice",
+        "nuclear": false,
+        "strike": false,
+        "atomic": 0,
+        "skin": "frost1002"
+      }
+    },
+    {
+      "passed": true,
+      "name": "furious ice miniboss retains its actor and authored modular health",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "furious Rime turrets release rapid non-interceptable machine slugs",
+      "data": {
+        "emitted": 27,
+        "remaining": 3
+      }
+    },
+    {
+      "passed": true,
+      "name": "furious Rime boss does not launch a laser",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "furious Rime missile volleys use shootable missile ordnance",
+      "data": 8
+    },
+    {
+      "passed": true,
+      "name": "furious charged ice salvos keep a real two-lane opening",
+      "data": [
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 1,
+          "gap": 2,
+          "angles": [
+            0.7007963267948967,
+            0.8457963267948966,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "x": 340,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 2,
+          "gap": 3,
+          "angles": [
+            0.7007963267948967,
+            0.8457963267948966,
+            0.9907963267948966,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "x": 369,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 3,
+          "gap": 4,
+          "angles": [
+            0.7007963267948967,
+            0.8457963267948966,
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "x": 398,
+          "y": 173
+        },
+        {
+          "event": "ice-volley",
+          "ship": "cryospear",
+          "wave": 4,
+          "gap": 2,
+          "angles": [
+            0.7007963267948967,
+            0.8457963267948966,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "x": 427,
+          "y": 173
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "name": "furious Rime shifts right between ice volleys",
+      "data": [
+        340,
+        369,
+        398,
+        427
+      ]
+    },
+    {
+      "passed": true,
+      "name": "Sovereign windup produces shake and the approved engine cue",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "All four generator graphics/targets translate with the charging hull",
+      "data": {
+        "x": 364.673561874769,
+        "y": 270.24563728317105,
+        "nodes": [
+          {
+            "x": 160.673561874769,
+            "y": 238.24563728317105
+          },
+          {
+            "x": 568.673561874769,
+            "y": 238.24563728317105
+          },
+          {
+            "x": 160.673561874769,
+            "y": 394.24563728317105
+          },
+          {
+            "x": 568.673561874769,
+            "y": 394.24563728317105
+          }
+        ],
+        "targets": [
+          {
+            "x": 160.673561874769,
+            "y": 238.24563728317105
+          },
+          {
+            "x": 568.673561874769,
+            "y": 238.24563728317105
+          },
+          {
+            "x": 160.673561874769,
+            "y": 394.24563728317105
+          },
+          {
+            "x": 568.673561874769,
+            "y": 394.24563728317105
+          }
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "name": "Native point damage still addresses every moving generator",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Crossing mid-screen starts orbiting Retina and repeated lock beeps",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Retreating south before lock cancels the missile trap",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Remaining north commits the lock and releases the missile volley",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "A real player MG bullet intercepts a locked volley missile",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Electrical volleys remain unshootable through the shared ordnance policy",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Actual ordinary MG fire cannot erase a lightning ball",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "South exit returns north above the player at a visibly enlarged safe depth",
+      "data": {
+        "depth": true,
+        "scale": 1.8658222222222263,
+        "angle": 3.141592653589793,
+        "safe": true,
+        "air": true
+      }
+    },
+    {
+      "passed": true,
+      "name": "Passing beneath the overhead hull cannot kill or damage the player",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Boss reaches the player plane flying vertically north and drops rear lightning balls",
+      "data": {
+        "angle": 3.141592653589793,
+        "depth": false,
+        "y": 176.05000000000013,
+        "balls": 7
+      }
+    },
+    {
+      "passed": true,
+      "name": "The chase hull keeps travelling north",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Warden is a rapid machine gunner with genuine south-origin helpers",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Helper entry scales down from an enlarged south fly-in",
+      "data": [
+        {
+          "y": 393.60208333333316,
+          "scale": 1.4848958333333329,
+          "hp": 10.080000000000002
+        },
+        {
+          "y": 393.60208333333316,
+          "scale": 1.4848958333333329,
+          "hp": 10.080000000000002
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "name": "Twisting helpers fire real MG projectiles after reaching the combat plane",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Warden does not fall back to a core laser",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Warden also releases missile-box volleys",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Helpers use the authored camo pose bank through native drawImage",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "bowling formation spawns through the normal family/health pipeline",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "bowling route has finite positions and actual authored aircraft frames",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "crisscross formation spawns through the normal family/health pipeline",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "crisscross route has finite positions and actual authored aircraft frames",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "peel-bomb formation spawns through the normal family/health pipeline",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "peel-bomb route has finite positions and actual authored aircraft frames",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Individual peel-offs release actual falling bombs",
+      "data": null
+    }
+  ],
+  "errors": [],
+  "scenes": [
+    "yuri-stage5-storm",
+    "rime-ice-charge",
+    "rime-moving-ice-salvos",
+    "frost-miniboss-furious",
+    "sovereign-charge-warning",
+    "sovereign-moving-cores",
+    "sovereign-retina-tracking",
+    "sovereign-locked-missiles",
+    "sovereign-lightning-charge",
+    "sovereign-overhead-return",
+    "sovereign-northbound-chase",
+    "warden-south-helpers",
+    "warden-hit-preserves-palette",
+    "formation-bowling",
+    "formation-crisscross",
+    "formation-peel-bomb"
+  ],
+  "scope": "Controlled native combat, progression and render fixtures; synthetic haptics capability, not full human campaign or hardware play."
+}

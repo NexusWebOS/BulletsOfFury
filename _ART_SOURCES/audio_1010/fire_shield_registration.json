@@ -1,0 +1,1029 @@
+{
+  "raw_sha256": "e6a8eef906c77210452eb143aec8913a6022cf59835164f29d917bc31e49b11c",
+  "bank": [
+    {
+      "key": "ap10_fire_shield_00",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_00.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        29,
+        33,
+        210,
+        213
+      ],
+      "source_rect": [
+        0,
+        0,
+        222,
+        222
+      ],
+      "source_pivot": [
+        119.5,
+        123.0
+      ],
+      "translation": [
+        8,
+        5
+      ],
+      "scale": 1,
+      "sha256": "ce1a46e2181cbed09f9d0ded4ebecb34362fbe06719b22406c1578867e355ba4"
+    },
+    {
+      "key": "ap10_fire_shield_01",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_01.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        33,
+        24,
+        207,
+        215
+      ],
+      "source_rect": [
+        222,
+        0,
+        444,
+        222
+      ],
+      "source_pivot": [
+        120.0,
+        119.5
+      ],
+      "translation": [
+        8,
+        8
+      ],
+      "scale": 1,
+      "sha256": "f89fddb8d425c7e31591b11caddbdf148f0c3e4df50c0ac0546bf3f2894ec054"
+    },
+    {
+      "key": "ap10_fire_shield_02",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_02.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        24,
+        24,
+        207,
+        218
+      ],
+      "source_rect": [
+        444,
+        0,
+        665,
+        222
+      ],
+      "source_pivot": [
+        115.5,
+        121.0
+      ],
+      "translation": [
+        12,
+        7
+      ],
+      "scale": 1,
+      "sha256": "5b1fc731923558ea8f3b0fa8a2e8e6ccffa2191688ad2360a311c9325bb5a27b"
+    },
+    {
+      "key": "ap10_fire_shield_03",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_03.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        22,
+        25,
+        205,
+        214
+      ],
+      "source_rect": [
+        665,
+        0,
+        887,
+        222
+      ],
+      "source_pivot": [
+        113.5,
+        119.5
+      ],
+      "translation": [
+        14,
+        8
+      ],
+      "scale": 1,
+      "sha256": "01836d105c14f4f90cfca0dd0543a8c8c2ef946daf0b13d2392c9d3b9cb525c8"
+    },
+    {
+      "key": "ap10_fire_shield_04",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_04.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        29,
+        201,
+        216
+      ],
+      "source_rect": [
+        887,
+        0,
+        1109,
+        222
+      ],
+      "source_pivot": [
+        108.5,
+        122.5
+      ],
+      "translation": [
+        20,
+        6
+      ],
+      "scale": 1,
+      "sha256": "4f37ea00865383971f3f2e0e10ced25af01d35264f79e9433682cbd0744fefb5"
+    },
+    {
+      "key": "ap10_fire_shield_05",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_05.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        18,
+        30,
+        202,
+        216
+      ],
+      "source_rect": [
+        1109,
+        0,
+        1330,
+        222
+      ],
+      "source_pivot": [
+        110.0,
+        123.0
+      ],
+      "translation": [
+        18,
+        5
+      ],
+      "scale": 1,
+      "sha256": "f89411880605ba595fe0ec11237b8812df19a9112cd8df502b7e6961240fcaee"
+    },
+    {
+      "key": "ap10_fire_shield_06",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_06.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        31,
+        203,
+        215
+      ],
+      "source_rect": [
+        1330,
+        0,
+        1552,
+        222
+      ],
+      "source_pivot": [
+        109.5,
+        123.0
+      ],
+      "translation": [
+        18,
+        5
+      ],
+      "scale": 1,
+      "sha256": "87d8b34196661d4641e986815e8e992c200103cb0b6094de8d15eeb62eac47e9"
+    },
+    {
+      "key": "ap10_fire_shield_07",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_07.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        17,
+        31,
+        203,
+        215
+      ],
+      "source_rect": [
+        1552,
+        0,
+        1774,
+        222
+      ],
+      "source_pivot": [
+        110.0,
+        123.0
+      ],
+      "translation": [
+        18,
+        5
+      ],
+      "scale": 1,
+      "sha256": "2bd0746d3f44bc2fba361537e56aa950a27de25896f53181e3081f9208c6a026"
+    },
+    {
+      "key": "ap10_fire_shield_08",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_08.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        19,
+        29,
+        209,
+        213
+      ],
+      "source_rect": [
+        0,
+        222,
+        222,
+        444
+      ],
+      "source_pivot": [
+        114.0,
+        121.0
+      ],
+      "translation": [
+        14,
+        7
+      ],
+      "scale": 1,
+      "sha256": "c3050438c8cc096b1e403f4d92ba6db2b1e73f8b65182d4cfd45702d885a275f"
+    },
+    {
+      "key": "ap10_fire_shield_09",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_09.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        17,
+        29,
+        205,
+        213
+      ],
+      "source_rect": [
+        222,
+        222,
+        444,
+        444
+      ],
+      "source_pivot": [
+        111.0,
+        121.0
+      ],
+      "translation": [
+        17,
+        7
+      ],
+      "scale": 1,
+      "sha256": "e2f3d45b471dfe57cba2bbd0bea02b38043137497cfacb70852fcfc983785d49"
+    },
+    {
+      "key": "ap10_fire_shield_10",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_10.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        17,
+        28,
+        205,
+        213
+      ],
+      "source_rect": [
+        444,
+        222,
+        665,
+        444
+      ],
+      "source_pivot": [
+        111.0,
+        120.5
+      ],
+      "translation": [
+        17,
+        8
+      ],
+      "scale": 1,
+      "sha256": "5a2135d0403773a48774839469614b0b5e6f99a94032a4a46ed40e582fd1527c"
+    },
+    {
+      "key": "ap10_fire_shield_11",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_11.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        28,
+        204,
+        213
+      ],
+      "source_rect": [
+        665,
+        222,
+        887,
+        444
+      ],
+      "source_pivot": [
+        110.0,
+        120.5
+      ],
+      "translation": [
+        18,
+        8
+      ],
+      "scale": 1,
+      "sha256": "60294938014c3b2cd967ca90506377f5547508bb9ab45fea78ddb8d85a8e49ab"
+    },
+    {
+      "key": "ap10_fire_shield_12",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_12.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        17,
+        29,
+        205,
+        213
+      ],
+      "source_rect": [
+        887,
+        222,
+        1109,
+        444
+      ],
+      "source_pivot": [
+        111.0,
+        121.0
+      ],
+      "translation": [
+        17,
+        7
+      ],
+      "scale": 1,
+      "sha256": "47caec630846f4edbc2820eb9a0beb69f7cc93b14c4589207e8e8e4104f82b2f"
+    },
+    {
+      "key": "ap10_fire_shield_13",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_13.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        18,
+        28,
+        204,
+        213
+      ],
+      "source_rect": [
+        1109,
+        222,
+        1330,
+        444
+      ],
+      "source_pivot": [
+        111.0,
+        120.5
+      ],
+      "translation": [
+        17,
+        8
+      ],
+      "scale": 1,
+      "sha256": "fa7a3e3419467633747f6a4010269ec331e44a12ef91799e0ce330cf4c75a0f1"
+    },
+    {
+      "key": "ap10_fire_shield_14",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_14.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        18,
+        27,
+        204,
+        213
+      ],
+      "source_rect": [
+        1330,
+        222,
+        1552,
+        444
+      ],
+      "source_pivot": [
+        111.0,
+        120.0
+      ],
+      "translation": [
+        17,
+        8
+      ],
+      "scale": 1,
+      "sha256": "f2097f53c29074e8f9940e79c63cbb89b3acaeb2b0ed0ed05f640da1fff40256"
+    },
+    {
+      "key": "ap10_fire_shield_15",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_15.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        28,
+        204,
+        214
+      ],
+      "source_rect": [
+        1552,
+        222,
+        1774,
+        444
+      ],
+      "source_pivot": [
+        110.0,
+        121.0
+      ],
+      "translation": [
+        18,
+        7
+      ],
+      "scale": 1,
+      "sha256": "17cb3db5f099120d717e80aa0fd2046375820449e2e557387f63a4df7acd880a"
+    },
+    {
+      "key": "ap10_fire_shield_16",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_16.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        18,
+        26,
+        207,
+        214
+      ],
+      "source_rect": [
+        0,
+        444,
+        222,
+        665
+      ],
+      "source_pivot": [
+        112.5,
+        120.0
+      ],
+      "translation": [
+        16,
+        8
+      ],
+      "scale": 1,
+      "sha256": "e2d2b897f91fb6736b75670accb3293608ce79950b2d5aaecafb4ba264742ea1"
+    },
+    {
+      "key": "ap10_fire_shield_17",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_17.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        17,
+        26,
+        204,
+        213
+      ],
+      "source_rect": [
+        222,
+        444,
+        444,
+        665
+      ],
+      "source_pivot": [
+        110.5,
+        119.5
+      ],
+      "translation": [
+        18,
+        8
+      ],
+      "scale": 1,
+      "sha256": "cc3addb28a2b836d3eebff4899163f095a4639cf9d794b2aafa2933803525003"
+    },
+    {
+      "key": "ap10_fire_shield_18",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_18.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        28,
+        206,
+        214
+      ],
+      "source_rect": [
+        444,
+        444,
+        665,
+        665
+      ],
+      "source_pivot": [
+        111.0,
+        121.0
+      ],
+      "translation": [
+        17,
+        7
+      ],
+      "scale": 1,
+      "sha256": "0715925ba3492e2ea587aa21c5ce0ab7a830f50c8d1ee82c701bb2aade52bf45"
+    },
+    {
+      "key": "ap10_fire_shield_19",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_19.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        15,
+        27,
+        205,
+        213
+      ],
+      "source_rect": [
+        665,
+        444,
+        887,
+        665
+      ],
+      "source_pivot": [
+        110.0,
+        120.0
+      ],
+      "translation": [
+        18,
+        8
+      ],
+      "scale": 1,
+      "sha256": "e6bc6c72a27a3aaac5cd78851a39418b920c42886868582358a996f6eaafd0d0"
+    },
+    {
+      "key": "ap10_fire_shield_20",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_20.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        27,
+        204,
+        213
+      ],
+      "source_rect": [
+        887,
+        444,
+        1109,
+        665
+      ],
+      "source_pivot": [
+        110.0,
+        120.0
+      ],
+      "translation": [
+        18,
+        8
+      ],
+      "scale": 1,
+      "sha256": "49927ccd6038719d90ce84582fc511abfb77ef4ba5fc4bec9c1c661fc2b4575a"
+    },
+    {
+      "key": "ap10_fire_shield_21",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_21.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        17,
+        28,
+        204,
+        213
+      ],
+      "source_rect": [
+        1109,
+        444,
+        1330,
+        665
+      ],
+      "source_pivot": [
+        110.5,
+        120.5
+      ],
+      "translation": [
+        18,
+        8
+      ],
+      "scale": 1,
+      "sha256": "22940cb96737d0eed19850dbd244711f270f37b4f2ebf1a8127351bbda6824bb"
+    },
+    {
+      "key": "ap10_fire_shield_22",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_22.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        27,
+        204,
+        213
+      ],
+      "source_rect": [
+        1330,
+        444,
+        1552,
+        665
+      ],
+      "source_pivot": [
+        110.0,
+        120.0
+      ],
+      "translation": [
+        18,
+        8
+      ],
+      "scale": 1,
+      "sha256": "c5e2cf09dcebdbd710842cb03ae4b71bc2bb31ce588dd5717b25edc11fd4ea32"
+    },
+    {
+      "key": "ap10_fire_shield_23",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_23.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        14,
+        27,
+        205,
+        214
+      ],
+      "source_rect": [
+        1552,
+        444,
+        1774,
+        665
+      ],
+      "source_pivot": [
+        109.5,
+        120.5
+      ],
+      "translation": [
+        18,
+        8
+      ],
+      "scale": 1,
+      "sha256": "4cff39fa3996701b99f03139eef33fdb7faab167894e1c77a4e9e361a1ea5d65"
+    },
+    {
+      "key": "ap10_fire_shield_24",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_24.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        16,
+        3,
+        217,
+        206
+      ],
+      "source_rect": [
+        0,
+        665,
+        222,
+        887
+      ],
+      "source_pivot": [
+        116.5,
+        104.5
+      ],
+      "translation": [
+        12,
+        24
+      ],
+      "scale": 1,
+      "sha256": "e3f5a2b23c39720169ddd3681c1676d641bcd31b019ab267d173c25356514c61"
+    },
+    {
+      "key": "ap10_fire_shield_25",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_25.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        8,
+        14,
+        215,
+        202
+      ],
+      "source_rect": [
+        222,
+        665,
+        444,
+        887
+      ],
+      "source_pivot": [
+        111.5,
+        108.0
+      ],
+      "translation": [
+        16,
+        20
+      ],
+      "scale": 1,
+      "sha256": "886354a557e4d0c7df151cae2b6f3d280af35e6d9d732209c185d9667c79d8f2"
+    },
+    {
+      "key": "ap10_fire_shield_26",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_26.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        7,
+        9,
+        212,
+        206
+      ],
+      "source_rect": [
+        444,
+        665,
+        665,
+        887
+      ],
+      "source_pivot": [
+        109.5,
+        107.5
+      ],
+      "translation": [
+        18,
+        20
+      ],
+      "scale": 1,
+      "sha256": "4ba2c49db896631c9225867d7176a1884262505fc8571c3053466ac78e72156d"
+    },
+    {
+      "key": "ap10_fire_shield_27",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_27.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        9,
+        15,
+        211,
+        206
+      ],
+      "source_rect": [
+        665,
+        665,
+        887,
+        887
+      ],
+      "source_pivot": [
+        110.0,
+        110.5
+      ],
+      "translation": [
+        18,
+        18
+      ],
+      "scale": 1,
+      "sha256": "619067b4609df52ecbee9a1b264d0a67a591fa90400067bee3784194b9c7ddda"
+    },
+    {
+      "key": "ap10_fire_shield_28",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_28.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        9,
+        11,
+        207,
+        200
+      ],
+      "source_rect": [
+        887,
+        665,
+        1109,
+        887
+      ],
+      "source_pivot": [
+        108.0,
+        105.5
+      ],
+      "translation": [
+        20,
+        22
+      ],
+      "scale": 1,
+      "sha256": "5834dd175355088533e8c7681e48931abdf9d20b3b974283d2fa8b2737163ce7"
+    },
+    {
+      "key": "ap10_fire_shield_29",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_29.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        12,
+        22,
+        201,
+        191
+      ],
+      "source_rect": [
+        1109,
+        665,
+        1330,
+        887
+      ],
+      "source_pivot": [
+        106.5,
+        106.5
+      ],
+      "translation": [
+        22,
+        22
+      ],
+      "scale": 1,
+      "sha256": "92a19fca420b050b1e613477b44e08f47a83e3cb329f4bfd962053db941733f6"
+    },
+    {
+      "key": "ap10_fire_shield_30",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_30.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        19,
+        30,
+        198,
+        192
+      ],
+      "source_rect": [
+        1330,
+        665,
+        1552,
+        887
+      ],
+      "source_pivot": [
+        108.5,
+        111.0
+      ],
+      "translation": [
+        20,
+        17
+      ],
+      "scale": 1,
+      "sha256": "d99d38fbc58d448d18688e8a12aa58e89052c14691f253c2f439b364714d2ad7"
+    },
+    {
+      "key": "ap10_fire_shield_31",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_31.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "ink": [
+        25,
+        27,
+        199,
+        187
+      ],
+      "source_rect": [
+        1552,
+        665,
+        1774,
+        887
+      ],
+      "source_pivot": [
+        112.0,
+        107.0
+      ],
+      "translation": [
+        16,
+        21
+      ],
+      "scale": 1,
+      "sha256": "03fc4d41bbe01e65732f6aa238211b23d94b3ccc0f63870b8823d26e37556653"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "repairs": [
+    {
+      "name": "razorback_hull",
+      "prompt": "Precise modular-asset correction of this16-frame tank sheet. Keep its exact green/chrome armor design, treads, lighting and detail and exact4x4 sixteen-frame layout. Remove EVERY central protruding cannon/barrel and its turret machinery from EACH tank. Remove side gun hardware and side missile pods: all weapons will be separate assets. The output is ONLY the armored base hull and two track assemblies with dark empty circular mounting sockets on top; front has a clean armored pointed prow, NO barrel, NO gun. Also remove all white/grey checkerboard pixels and background outside the tank. Real TRANSPARENT alpha, no painted transparency grid. Fixed center and scale in all16frames, transparent gutters."
+    },
+    {
+      "name": "furious_razorback_hull",
+      "prompt": "Precise modular-asset correction of this16-frame RED tank sheet. Preserve exact red/black/chrome hull design, tracks, lights and detail, and exact4x4 layout. Remove EVERY central long cannon barrel AND its central turret module from EVERY cell. Remove side machine gun hardware and detachable missile pods. Keep only armored red base hull and two track assemblies with empty dark mounting sockets for separate turret, two sideguns and pods. Front end has an armored short prow with NO protruding barrel or weapon. Fixed center/scale in all16frames, real transparent alpha and generous clear gutters. No grey checkerboard or background."
+    },
+    {
+      "name": "overlord_hull",
+      "file": "overlord_raw.png",
+      "prompt": "Precise modular-asset correction: preserve this exact16-frame forest-green Overlord helicopter fuselage, nose, cockpit, tail, palette and detail. REMOVE ALL rotor blades and rotor mast assembly from EVERY frame: these will be a separate rotor asset. Remove both detachable side weapon pods/cannons/missile racks, leave only the matching stub wing mounting sockets. Output ONLY the rigid armored helicopter hull, identical centered silhouette and scale across all16frames, with engine turbines and small chassis vent lights animating. Exact4x4 layout, real transparent alpha, no checkerboard, no labels, no weapons, NO rotor."
+    }
+  ],
+  "kits": [
+    {
+      "name": "razorback_kit",
+      "ref": "reference/razorback.png",
+      "prompt": "Production modular Bullets of Fury Neo Geo tank weapon kit matching this forest-green Razorback reference. True transparent alpha. Four columns by four rows,16equalcells, no captions. Row1: four successive smooth recoil frames of ONE long-barrel sonic turret, small circular armored base, forest-green inset armor, dark chrome barrel, muzzle aimed DOWN; row2: four successive firing/recoil frames of ONE south-facing heavy machine gun; row3: four frames of ONE south-facing compact rectangular missile pod opening its two missile tubes; row4: four successive frames of ONE small mechanical turbine/rotor disc rotating, face-on. Each row is its own FOUR-frame animation, identical center, scale and footprint. Isolated unattached modules only; NO tank hull, no feet, no scenery or assembly. Rich hand-pixeled chrome, bolts, dark outline, readable angular detail.12% empty transparent gutters. Detachable modules will be drawn independently on the tank in-game. No checkerboard or white patches. Preserve forest-green themed armor accents."
+    },
+    {
+      "name": "furious_razorback_kit",
+      "ref": "reference/furious_razorback.png",
+      "prompt": "Production modular Bullets of Fury Neo Geo tank weapon kit matching this scarlet-red Razorback reference. True transparent alpha. Four columns by four rows,16equalcells, no captions. Row1: four successive smooth recoil frames of ONE long-barrel sonic turret, small circular armored base, scarlet-red inset armor, dark chrome barrel, muzzle aimed DOWN; row2: four successive firing/recoil frames of ONE south-facing heavy machine gun; row3: four frames of ONE south-facing compact rectangular missile pod opening its two missile tubes; row4: four successive frames of ONE small mechanical turbine/rotor disc rotating, face-on. Each row is its own FOUR-frame animation, identical center, scale and footprint. Isolated unattached modules only; NO tank hull, no feet, no scenery or assembly. Rich hand-pixeled chrome, bolts, dark outline, readable angular detail.12% empty transparent gutters. Detachable modules will be drawn independently on the tank in-game. No checkerboard or white patches. Preserve scarlet-red themed armor accents."
+    },
+    {
+      "name": "overlord_kit",
+      "ref": "reference/stage1_boss.png",
+      "prompt": "Production modular Neo Geo Bullets of Fury forest-green Overlord helicopter attachment kit. True transparent alpha. Exactly4columns by4rows,16equalcells, no labels. Row1: four rotation/highlight frames of ONE complete FOUR-bladed main rotor, black chrome narrow blades with red tips, viewed straight top-down; compact hub centered, blades contained with12% gutter. Row2: four successive recoil/firing frames of ONE long south-facing forest-green/chrome cannon pod. Row3: four successive opening frames of ONE south-facing forest-green rectangular missile rack with orange ready lights and two missiles. Row4: four successive pulsing/spinning frames of ONE small circular turbine mount, forest-green casing, chrome fans. No helicopter hull in ANY cell. Separate isolated modules for independently aimed/targetable weapons, not assembled plane. Detailed crisp chrome pixel clusters, forest-green palette, fixed same center per module row, no scenery or painted background/checkerboard."
+    }
+  ]
+}

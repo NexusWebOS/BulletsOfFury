@@ -1,0 +1,64 @@
+{
+  "id": "s8interceptor",
+  "name": "Alien Fighter",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "s8interceptor",
+    "s8spread",
+    "s8parasite",
+    "s8crescent",
+    "s8skull",
+    "s8symbiote"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/alien_fighter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_s8interceptor_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/alien_fighter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "d3c5a98c280d2a23ce6c8e716920da290e067c54ddf26f20fc6435af39c899d8"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_s8interceptor_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/alien_fighter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "f66504615a9dabe6b1e555931949d5ef2195847692f337f4ab522416fe0775b3"
+  },
+  "nativeRatios": {
+    "s8interceptor": 0.9541284403669725,
+    "s8spread": 0.958904109589041,
+    "s8parasite": 0.9473684210526315,
+    "s8crescent": 0.95,
+    "s8skull": 0.9532710280373832,
+    "s8symbiote": 0.95
+  },
+  "sourceKeys": {
+    "s8interceptor": "sm10_alien_fighter_0",
+    "s8spread": "sm10_alien_fighter_0",
+    "s8parasite": "sm10_alien_fighter_0",
+    "s8crescent": "sm10_alien_fighter_0",
+    "s8skull": "sm10_alien_fighter_0",
+    "s8symbiote": "sm10_alien_fighter_0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "kaia",
+  "name": "Kaia / Signal Wraith",
+  "stage": 6,
+  "stages": [
+    6,
+    10
+  ],
+  "aliases": [
+    "kaia"
+  ],
+  "folder": "assets/game/levels/stage_06/boss/air_motion_1013/kaia",
+  "rebel": true,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_kaia_heading",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/kaia/headings.webp",
+    "frames": 8,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "94b5140f7e99cf836c15a4178f79ffb24f5e202bc7ced7293e10e146d0b65670"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_kaia_roll",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/kaia/roll.webp",
+    "frames": 16,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "128db595dc31c147bce87d57735031aa3eed1e4467fa6d3e10a8ffb1ec7fc821"
+  },
+  "referenceRatio": 0.9488636363636364,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

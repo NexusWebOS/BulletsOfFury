@@ -13,7 +13,7 @@
       'BUILDINGS AND ARENA COVER CAN BE DESTROYED.', 'ITS RAM SMASHES WALLS. KEEP A CLEAR ESCAPE.'],
     start: { x: 400, y: 3540, a: N },
     checkpoints: [[400, 3000], [400, 2230], [400, 1460], [400, 830]],
-    bossLine: 690, boss: { x: 400, y: 305 },
+    bossLine: 690, boss: { x: 400, y: 500 },
     structures: [
       ...[3380, 3035, 2670, 2200, 1845, 1450, 1060].flatMap((y, i) => [
         { kind: i % 3 === 1 ? 'relay' : 'warehouse', x: 245, y },

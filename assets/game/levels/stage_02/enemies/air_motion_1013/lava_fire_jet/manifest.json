@@ -1,0 +1,49 @@
+{
+  "id": "ac10firejet",
+  "name": "Lava Fire Jet",
+  "stage": 2,
+  "stages": [
+    2
+  ],
+  "aliases": [
+    "ac10firejet"
+  ],
+  "folder": "assets/game/levels/stage_02/enemies/air_motion_1013/lava_fire_jet",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s2_ac10firejet_heading",
+    "path": "assets/game/levels/stage_02/enemies/air_motion_1013/lava_fire_jet/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "a4c5fd39a053c659ef20cda8436d1ea84ed7bdac3716347abf9faeeff5ce39d9"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s2_ac10firejet_roll",
+    "path": "assets/game/levels/stage_02/enemies/air_motion_1013/lava_fire_jet/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "c6ac3768da6aa951ff20364cff804695cb75ac37d1c91bb7e00d3211103b8ee4"
+  },
+  "nativeRatios": {
+    "ac10firejet": 1.0340909090909092
+  },
+  "sourceKeys": {
+    "ac10firejet": "ac10_fire_jet_0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "s5interceptor",
+  "name": "Space Interceptor",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5interceptor"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_interceptor",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5interceptor_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_interceptor/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "03ab2cf62a548bbbd5d7b4cd8816e6789652d15c34476c9df4254d46a4371aba"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5interceptor_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_interceptor/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "fdec01bb1bdd8324b5952d49f7a756b58dee4d754f84b7f7a0b7cef5f1660000"
+  },
+  "nativeRatios": {
+    "s5interceptor": 1.1868131868131868
+  },
+  "sourceKeys": {
+    "s5interceptor": "s5atk_heavy_interceptor_0"
+  }
+}

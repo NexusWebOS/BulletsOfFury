@@ -1,0 +1,49 @@
+{
+  "id": "xelite_hivewing",
+  "name": "Elite Hivewing",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "xelite_hivewing"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_hivewing",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_hivewing_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_hivewing/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "ae7366726f2a2a3670f6df4b217981d1f6e39a615fa833bc6f463aec85b88542"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_hivewing_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_hivewing/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "193307913238319ae84b20fe4fe808d7ca7d7f45a4e5eb3bc478b17258a8b114"
+  },
+  "nativeRatios": {
+    "xelite_hivewing": 1.0246913580246915
+  },
+  "sourceKeys": {
+    "xelite_hivewing": "xelite_hivewing_idle"
+  }
+}

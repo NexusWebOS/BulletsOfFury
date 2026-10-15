@@ -1,0 +1,49 @@
+{
+  "id": "xelite_tempest",
+  "name": "Elite Tempest",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "xelite_tempest"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_tempest",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_tempest_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_tempest/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "87898fd9e71fa9b85c7bfa55265dfb0aa9a4166d0d18ce0d19a5e3e4cde4a26a"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_tempest_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_tempest/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "02f2ce7b9c9879092c63421e0aefd13be1daba6e09976a6f0d128e50131e5458"
+  },
+  "nativeRatios": {
+    "xelite_tempest": 0.8571428571428571
+  },
+  "sourceKeys": {
+    "xelite_tempest": "xelite_tempest_idle"
+  }
+}

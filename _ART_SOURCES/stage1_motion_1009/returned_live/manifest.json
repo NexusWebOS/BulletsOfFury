@@ -1,0 +1,62 @@
+{
+  "s1tankheavy": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1tanklight": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1tankapc": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1truckmissile": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1boatpatrol": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1boatgun": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1corvette": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1landingcraft": {
+    "idle": 8,
+    "fire": 0,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1jetdelta": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  },
+  "s1jetbomber": {
+    "idle": 8,
+    "fire": 4,
+    "design": "current live renderer",
+    "runtime": "independent parts, not flattened reel"
+  }
+}

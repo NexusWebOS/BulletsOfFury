@@ -1,0 +1,47 @@
+{
+  "id": "jace",
+  "name": "Jace / Razorjack",
+  "stage": 6,
+  "stages": [
+    6,
+    10
+  ],
+  "aliases": [
+    "jace"
+  ],
+  "folder": "assets/game/levels/stage_06/boss/air_motion_1013/jace",
+  "rebel": true,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_jace_heading",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/jace/headings.webp",
+    "frames": 8,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "96c12bc2648e55d197a72556000ca10b8ca05540d8804ce7cb89ef434a8798ca"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_jace_roll",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/jace/roll.webp",
+    "frames": 16,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "3497d925acd8c4f405f2b70b96d6a50e29452c857453966c3fd04b7b7af057e6"
+  },
+  "referenceRatio": 1.0113636363636365,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

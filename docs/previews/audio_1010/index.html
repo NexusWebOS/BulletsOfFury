@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury — October 10 audio pass</title>
+<style>
+:root{color-scheme:dark;--bg:#080c16;--panel:#121b2b;--line:#344862;--gold:#fcb441;--ice:#80d8ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#e5edf7;font:16px/1.5 system-ui,sans-serif}
+main{max-width:1240px;margin:auto;padding:32px 24px 70px}h1{font-size:clamp(26px,4vw,44px);line-height:1.1;margin:8px 0 20px}h2{font-size:25px;margin:38px 0 16px}h3{font-size:18px;margin:0}
+a{color:var(--ice)}p{max-width:850px}small,.muted{color:#a7b6ca}.eyebrow{letter-spacing:.18em;font-size:12px;color:var(--gold)}
+.toolbar{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:#101a29;border:1px solid var(--line);padding:14px 18px;margin:22px 0}
+button,select{font:inherit;color:#e5edf7;background:#192b42;border:1px solid #577494;padding:7px 12px;border-radius:4px;cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hud{width:100%;display:block;image-rendering:pixelated;background:#0d1522;border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.card{border:1px solid var(--line);background:var(--panel);padding:16px;overflow:hidden}
+.card header{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}.card select{width:100%;margin-bottom:12px}.stage{display:flex;align-items:center;justify-content:center;min-height:290px;background-color:#070b13;background-image:linear-gradient(45deg,#111a28 25%,transparent 25%),linear-gradient(-45deg,#111a28 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#111a28 75%),linear-gradient(-45deg,transparent 75%,#111a28 75%);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,-12px 0}
+canvas{display:block;max-width:100%;image-rendering:pixelated}.scrub{width:100%;margin:14px 0 0}.readout{font-variant-numeric:tabular-nums;font-size:13px;margin-top:5px;color:#adc1dc}
+.icons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.icon{background:#101928;border:1px solid var(--line);text-align:center;padding:12px}.icon img{height:110px;width:110px;object-fit:contain;image-rendering:pixelated}.icon span{display:block;font-size:13px}
+.plates{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}figure{margin:0;border:1px solid var(--line);background:#111927}figure img{display:block;width:100%;image-rendering:pixelated}figcaption{padding:12px 14px;font-size:14px}
+.proofs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.proofs img{height:310px;object-fit:contain;background:#070911}
+@media(max-width:650px){main{padding:24px 14px}.plates{grid-template-columns:1fr}.icons{gap:7px}.icon img{width:80px;height:80px}.icon{padding:8px}.toolbar{gap:12px}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">BULLETS OF FURY · OCTOBER 10</div>
+<h1>Audio playthrough update</h1>
+<p>New combat artwork and cinematic frames from the full 44:32 audio recording, now connected to the game. Use the controls to inspect each animation. Every clip retains its registered canvas, scale and physical anchor.</p>
+<p><a href="../../../index.html?build=audio-1010">Play the updated game</a> · <a href="../../feedback/PLAYTHROUGH_AUDIO_1010.md">Timestamped feedback</a> · <a href="../../AUDIO_PLAYTHROUGH_1010.md">Changes and verification</a></p>
+<h2>Bottom HUD</h2><img class="hud" src="../../../assets/game/shared/ui/audio_hud_1010.png" alt="Full-width authored chrome and amber HUD housing, with raised counter tabs and four large wells">
+<p class="muted">The game fills the empty housing with its own font, counters and meters. Radar and scores stay above the playfield.</p>
+<div class="toolbar"><button id="toggle" type="button">Pause animations</button><label>Speed <select id="speed"><option value=".5">½ speed</option><option value="1" selected>Normal</option><option value="2">2× speed</option></select></label><label><input id="anchors" type="checkbox"> Show anchors</label><span id="ready" aria-live="polite">Loading authored frames…</span></div>
+<h2>Combat and transformation frames</h2><div class="grid" id="reels"></div>
+<h2>Wind projectile badges</h2><p>The Stage 6 reward is a separate Wind symbol. These badges show the fired shots and effects in the existing weapon-icon style. <a href="../wind_icons_1011/index.html">Inspect all five levels and the live reward</a>.</p><label>Weapon level <select id="windLevel"><option value="1">I</option><option value="2">II</option><option value="3">III</option><option value="4">IV</option><option value="5">V</option></select></label><div class="icons" id="icons"></div><div id="windSymbol" class="icons"></div>
+<h2>HQ landing and scramble</h2><div class="plates" id="hq"></div>
+<h2>Return home</h2><div class="plates" id="ending"></div>
+<h2>In the actual game</h2><p class="muted">Captured in Chromium using the game’s rendering and encounter controllers. These local verification images are kept under the ignored _shots folder.</p><div class="proofs" id="proofs"></div>
+<p class="muted">The supplied video is black; its full audio supplied the directions. Two unnamed enemy groups still need identification before a specific redesign can be confirmed. Human difficulty balancing remains a playtest step.</p>
+</main>
+<script src="../../../assets/audio_fx_art_1010.js"></script><script src="../../../assets/audio_cinematic_art_1010.js"></script><script src="../../../assets/audio_fire_art_1010.js"></script><script src="../../../assets/audio_extra_art_1010.js"></script>
+<script>
+'use strict';
+const root='../../../',all={...AP10_FX_ART,...AP10_CIN_ART,...AP10_FIRE_ART,...AP10_EXTRA_ART},reels=[];
+const specifications=[
+ ['ice_laser','Ice laser', [['Charge',0,4,12],['Held beam',4,12,24],['Ice fracture',12,16,16]]],
+ ['fusion','Fusion cannon',[['Charge',0,4,12],['Helix beam',4,12,24],['Release',12,16,16]]],
+ ['wind','Wind effects',[['Charge',0,4,16],['Gust',4,8,20],['Tornado',8,12,20],['Impact',12,16,20]]],
+ ['fire_shield','Furnace fire shield',[['Formation',0,4,12],['Shield loop',4,24,24],['Shatter',24,32,24]]],
+ ['chain','Furnace chains',[['Chain energy',0,16,20]]],
+ ['void','Black void',[['Opening',0,8,12],['Held void',8,24,20],['Closing',24,32,16]]],
+ ['consumption','Drone consumed',[['Full sequence',0,16,16/4.5]]],
+ ['turbo','Voss turbo',[['Charge',0,12,12],['Launch snap',12,16,20]]],
+ ['assembly','Cole space assembly',[['Hardware arrives',0,4,8],['Charge',4,8,4/4.1],['Scatter',8,10,2/.82],['Snap',10,14,4/.64],['Fusion',14,16,2/.92]]]
+];
+const safeText=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;return e;};
+let playing=true,speed=1,showAnchors=false,loaded=0,total=0;
+function imageFor(a){const im=new Image();total++;im.onload=()=>{loaded++;document.querySelector('#ready').textContent=`${loaded} / ${total} frames ready`;};im.onerror=()=>{document.querySelector('#ready').textContent='A frame could not load.';};im.src=root+a.path+'?v='+a.sha256.slice(0,12);return im;}
+for(const [name,title,clips] of specifications){
+ const bank=all[name],card=document.createElement('article');card.className='card';const head=document.createElement('header');head.append(safeText('h3',title),safeText('small',`${bank.length} frames`));card.append(head);
+ const select=document.createElement('select');select.setAttribute('aria-label',`${title} clip`);for(const [i,c]of clips.entries()){const o=new Option(c[0],i);select.add(o);}card.append(select);
+ const stage=document.createElement('div');stage.className='stage';const canvas=document.createElement('canvas');canvas.width=bank[0].w;canvas.height=bank[0].h;canvas.style.width=Math.min(270,canvas.width)+'px';canvas.style.maxHeight='450px';canvas.style.objectFit='contain';stage.append(canvas);card.append(stage);
+ const scrub=document.createElement('input');scrub.type='range';scrub.className='scrub';scrub.min=0;scrub.max=clips[0][2]-clips[0][1]-1;scrub.value=0;scrub.setAttribute('aria-label',`${title} frame`);card.append(scrub);
+ const readout=safeText('div','');readout.className='readout';card.append(readout);document.querySelector('#reels').append(card);
+ const reel={bank,images:bank.map(imageFor),clips,clip:0,time:0,scrub,readout,canvas};reels.push(reel);
+ select.addEventListener('change',()=>{reel.clip=+select.value;reel.time=0;scrub.max=clips[reel.clip][2]-clips[reel.clip][1]-1;scrub.value=0;});
+ scrub.addEventListener('input',()=>{playing=false;document.querySelector('#toggle').textContent='Play animations';reel.time=+scrub.value/clips[reel.clip][3];});
+}
+const weaponNames=['Machine guns','Spread fire','Missiles','Laser','Gust breath','Tornado orb','Wind mist','Chainguns','Electric wind orb'];
+function windBadges(){document.querySelector('#icons').replaceChildren();for(const a of all.wind_icons.filter(q=>q.level===+document.querySelector('#windLevel').value)){const box=document.createElement('div');box.className='icon';const im=imageFor(a);im.alt=weaponNames[a.slot];box.append(im,safeText('span',weaponNames[a.slot]));document.querySelector('#icons').append(box);}}
+windBadges();document.querySelector('#windLevel').onchange=windBadges;
+{const box=document.createElement('div');box.className='icon';const im=imageFor(all.wind_symbol[0]);im.alt='Wind element';box.append(im,safeText('span','Stage 6 reward: Wind'));document.querySelector('#windSymbol').append(box);}
+function plates(name,labels,id){for(const [i,a]of all[name].entries()){const f=document.createElement('figure'),im=imageFor(a);im.alt=labels[i];f.append(im,safeText('figcaption',labels[i]));document.querySelector('#'+id).append(f);}}
+plates('hq_story',['HQ landing','Base under attack','Radar warning','Fury flight scrambles'],'hq');
+plates('ending',['Exit from the alien void','Earth in sight','Coastal approach','Welcome to Fury HQ'],'ending');
+for(const [file,label]of [['hud-desktop','Bottom HUD in play'],['ice-laser-live','Cryospear icy beam'],['storm-midburst','Stage 4 mid-screen lightning burst'],['stealth-palette-detail','Actual red, green and blue stealth fighters'],['stagex-arrival','Stage X arrival'],['rebel-turbo-charge','Voss charging turbo'],['alien-phase-2-live','Ghost encounter active'],['fury-assembly-live','Cole’s assembly during launch']]){
+ const f=document.createElement('figure'),a=document.createElement('a'),im=document.createElement('img');a.href=root+'_shots/audio_1010/'+file+'.png';im.src=a.href;im.alt=label;im.loading='lazy';a.append(im);f.append(a,safeText('figcaption',label));document.querySelector('#proofs').append(f);
+}
+document.querySelector('#toggle').onclick=()=>{playing=!playing;document.querySelector('#toggle').textContent=playing?'Pause animations':'Play animations';};
+document.querySelector('#speed').onchange=e=>{speed=+e.target.value;};document.querySelector('#anchors').onchange=e=>{showAnchors=e.target.checked;};
+let last=performance.now();function tick(now){const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;
+ for(const r of reels){const c=r.clips[r.clip],count=c[2]-c[1];if(playing)r.time+=dt*speed;const local=Math.floor(r.time*c[3])%count,i=c[1]+local,a=r.bank[i],im=r.images[i],g=r.canvas.getContext('2d');g.clearRect(0,0,a.w,a.h);g.imageSmoothingEnabled=false;if(im.complete&&im.naturalWidth)g.drawImage(im,0,0);
+  if(showAnchors){g.strokeStyle='#ffca6a';g.lineWidth=1;g.beginPath();g.moveTo(a.pivot[0]-9,a.pivot[1]);g.lineTo(a.pivot[0]+9,a.pivot[1]);g.moveTo(a.pivot[0],a.pivot[1]-9);g.lineTo(a.pivot[0],a.pivot[1]+9);g.stroke();}
+  r.scrub.value=local;r.readout.textContent=`${c[0]} · ${local+1}/${count} · ${a.w} × ${a.h}`;
+ }requestAnimationFrame(tick);
+}requestAnimationFrame(tick);
+</script>
+</body></html>

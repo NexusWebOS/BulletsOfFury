@@ -1,0 +1,49 @@
+{
+  "id": "s4bomber",
+  "name": "Airbase Bomber",
+  "stage": 4,
+  "stages": [
+    4
+  ],
+  "aliases": [
+    "s4bomber"
+  ],
+  "folder": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_bomber",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s4_s4bomber_heading",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_bomber/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "e6204fab66f1d496c22bfa37c0b367991aaea35b252b3810f3b5b07233c86206"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s4_s4bomber_roll",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_bomber/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "fd8052d9773451582fb6507278fc8223a2f32401b2c92fa0227ec3b887525b91"
+  },
+  "nativeRatios": {
+    "s4bomber": 1.036144578313253
+  },
+  "sourceKeys": {
+    "s4bomber": "overhaul_stage4_war_drone_01"
+  }
+}

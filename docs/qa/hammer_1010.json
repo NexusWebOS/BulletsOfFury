@@ -1,0 +1,901 @@
+{
+  "date": "2026-10-10",
+  "baseRevision": "7539951cf668e2ac38b8640cf7c98f8682fd0954",
+  "scope": "Hammer background dive, committed jump, absorptive Chromium and authored shield/core/side swing/spike frames",
+  "syntax": {
+    "assets/game.js": "pass",
+    "assets/hammer_1010.js": "pass",
+    "assets/furious_review_0927.js": "pass",
+    "assets/gameplay_repair_1004.js": "pass"
+  },
+  "regression": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "pass": 8132,
+    "fail": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "preHammerBaseline": 8079,
+    "addedAssertions": 53
+  },
+  "native": {
+    "command": "python _BUILD_SOURCE/probe_hammer_1010.py",
+    "pass": 129,
+    "fail": 0,
+    "exitCode": 0,
+    "errors": [],
+    "checks": [
+      {
+        "name": "All 96 generated cells decode through native XART",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "BOSS5 keyboard entry retains normal difficulty selection",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "BOSS5 loads the regular live encounter with all new assets ready",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "hm10_shield_form_0 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3679
+      },
+      {
+        "name": "hm10_shield_form_1 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3789
+      },
+      {
+        "name": "hm10_shield_form_2 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3894
+      },
+      {
+        "name": "hm10_shield_form_3 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4550
+      },
+      {
+        "name": "hm10_shield_form_4 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4469
+      },
+      {
+        "name": "hm10_shield_form_5 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5246
+      },
+      {
+        "name": "hm10_shield_form_6 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5825
+      },
+      {
+        "name": "hm10_shield_form_7 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 6452
+      },
+      {
+        "name": "hm10_shield_form_8 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 6208
+      },
+      {
+        "name": "hm10_shield_form_9 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 7392
+      },
+      {
+        "name": "hm10_shield_form_10 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 8293
+      },
+      {
+        "name": "hm10_shield_form_11 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 8156
+      },
+      {
+        "name": "hm10_shield_form_12 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 8449
+      },
+      {
+        "name": "hm10_shield_form_13 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 10047
+      },
+      {
+        "name": "hm10_shield_form_14 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9932
+      },
+      {
+        "name": "hm10_shield_form_15 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 7331
+      },
+      {
+        "name": "hm10_swing_right_0 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5119
+      },
+      {
+        "name": "hm10_swing_right_1 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5039
+      },
+      {
+        "name": "hm10_swing_right_2 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4966
+      },
+      {
+        "name": "hm10_swing_right_3 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4749
+      },
+      {
+        "name": "hm10_swing_right_4 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4725
+      },
+      {
+        "name": "hm10_swing_right_5 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4530
+      },
+      {
+        "name": "hm10_swing_right_6 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4736
+      },
+      {
+        "name": "hm10_swing_right_7 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5228
+      },
+      {
+        "name": "hm10_swing_right_8 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 8093
+      },
+      {
+        "name": "hm10_swing_right_9 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9116
+      },
+      {
+        "name": "hm10_swing_right_10 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 12592
+      },
+      {
+        "name": "hm10_swing_right_11 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 10960
+      },
+      {
+        "name": "hm10_swing_right_12 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9140
+      },
+      {
+        "name": "hm10_swing_right_13 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9352
+      },
+      {
+        "name": "hm10_swing_right_14 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5802
+      },
+      {
+        "name": "hm10_swing_right_15 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5393
+      },
+      {
+        "name": "hm10_swing_left_0 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3935
+      },
+      {
+        "name": "hm10_swing_left_1 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4151
+      },
+      {
+        "name": "hm10_swing_left_2 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3891
+      },
+      {
+        "name": "hm10_swing_left_3 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3809
+      },
+      {
+        "name": "hm10_swing_left_4 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4102
+      },
+      {
+        "name": "hm10_swing_left_5 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3774
+      },
+      {
+        "name": "hm10_swing_left_6 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3915
+      },
+      {
+        "name": "hm10_swing_left_7 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3981
+      },
+      {
+        "name": "hm10_swing_left_8 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 7928
+      },
+      {
+        "name": "hm10_swing_left_9 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 7314
+      },
+      {
+        "name": "hm10_swing_left_10 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 6800
+      },
+      {
+        "name": "hm10_swing_left_11 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 8530
+      },
+      {
+        "name": "hm10_swing_left_12 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 6303
+      },
+      {
+        "name": "hm10_swing_left_13 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4615
+      },
+      {
+        "name": "hm10_swing_left_14 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3958
+      },
+      {
+        "name": "hm10_swing_left_15 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4015
+      },
+      {
+        "name": "hm10_shield_wall_0 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 1057
+      },
+      {
+        "name": "hm10_shield_wall_1 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 2941
+      },
+      {
+        "name": "hm10_shield_wall_2 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 6495
+      },
+      {
+        "name": "hm10_shield_wall_3 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 8008
+      },
+      {
+        "name": "hm10_shield_wall_4 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 11567
+      },
+      {
+        "name": "hm10_shield_wall_5 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 16667
+      },
+      {
+        "name": "hm10_shield_wall_6 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 19459
+      },
+      {
+        "name": "hm10_shield_wall_7 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 19302
+      },
+      {
+        "name": "hm10_shield_wall_8 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 19647
+      },
+      {
+        "name": "hm10_shield_wall_9 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 19658
+      },
+      {
+        "name": "hm10_shield_wall_10 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 19416
+      },
+      {
+        "name": "hm10_shield_wall_11 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 19438
+      },
+      {
+        "name": "hm10_shield_wall_12 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 16905
+      },
+      {
+        "name": "hm10_shield_wall_13 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 16961
+      },
+      {
+        "name": "hm10_shield_wall_14 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 14326
+      },
+      {
+        "name": "hm10_shield_wall_15 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 11751
+      },
+      {
+        "name": "hm10_core_0 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 1412
+      },
+      {
+        "name": "hm10_core_1 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 2627
+      },
+      {
+        "name": "hm10_core_2 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3672
+      },
+      {
+        "name": "hm10_core_3 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4259
+      },
+      {
+        "name": "hm10_core_4 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5107
+      },
+      {
+        "name": "hm10_core_5 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 7208
+      },
+      {
+        "name": "hm10_core_6 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9531
+      },
+      {
+        "name": "hm10_core_7 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9928
+      },
+      {
+        "name": "hm10_core_8 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 10963
+      },
+      {
+        "name": "hm10_core_9 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 11574
+      },
+      {
+        "name": "hm10_core_10 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 12283
+      },
+      {
+        "name": "hm10_core_11 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 11799
+      },
+      {
+        "name": "hm10_core_12 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9254
+      },
+      {
+        "name": "hm10_core_13 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9756
+      },
+      {
+        "name": "hm10_core_14 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9941
+      },
+      {
+        "name": "hm10_core_15 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 10449
+      },
+      {
+        "name": "hm10_spike_0 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 379
+      },
+      {
+        "name": "hm10_spike_1 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 663
+      },
+      {
+        "name": "hm10_spike_2 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 990
+      },
+      {
+        "name": "hm10_spike_3 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 1549
+      },
+      {
+        "name": "hm10_spike_4 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 2589
+      },
+      {
+        "name": "hm10_spike_5 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 3356
+      },
+      {
+        "name": "hm10_spike_6 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4543
+      },
+      {
+        "name": "hm10_spike_7 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5561
+      },
+      {
+        "name": "hm10_spike_8 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5986
+      },
+      {
+        "name": "hm10_spike_9 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 6667
+      },
+      {
+        "name": "hm10_spike_10 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 7857
+      },
+      {
+        "name": "hm10_spike_11 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 9022
+      },
+      {
+        "name": "hm10_spike_12 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 8351
+      },
+      {
+        "name": "hm10_spike_13 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 7051
+      },
+      {
+        "name": "hm10_spike_14 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 5474
+      },
+      {
+        "name": "hm10_spike_15 paints authored pixels on native canvas",
+        "pass": true,
+        "data": 4021
+      },
+      {
+        "name": "giant_warn 0.4s real body contact matches visible plane",
+        "pass": true,
+        "data": {
+          "dead": false,
+          "scale": 0.25,
+          "targetable": true,
+          "state": "giant_warn"
+        }
+      },
+      {
+        "name": "giant_dive 0.1s real body contact matches visible plane",
+        "pass": true,
+        "data": {
+          "dead": false,
+          "scale": 0.5192307692307692,
+          "targetable": true,
+          "state": "giant_dive"
+        }
+      },
+      {
+        "name": "giant_dive 0.26s real body contact matches visible plane",
+        "pass": true,
+        "data": {
+          "dead": false,
+          "scale": 0.95,
+          "targetable": true,
+          "state": "giant_dive"
+        }
+      },
+      {
+        "name": "giant_dive 0.3s real body contact matches visible plane",
+        "pass": true,
+        "data": {
+          "dead": true,
+          "scale": 1.0576923076923075,
+          "targetable": true,
+          "state": "giant_dive"
+        }
+      },
+      {
+        "name": "giant_sweep 0.35s real body contact matches visible plane",
+        "pass": true,
+        "data": {
+          "dead": true,
+          "scale": 1.65,
+          "targetable": true,
+          "state": "giant_sweep"
+        }
+      },
+      {
+        "name": "easy mg damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "easy laser damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "easy gmiss damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "easy retinaMissile damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "normal mg damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "normal laser damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "normal gmiss damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "normal retinaMissile damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "hard mg damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "hard laser damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "hard gmiss damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "hard retinaMissile damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "furious mg damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "furious laser damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "furious gmiss damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "furious retinaMissile damages armor and preserves orbital strike",
+        "pass": true,
+        "data": {
+          "reflected": false,
+          "vy": -9,
+          "enemy": 0,
+          "committed": true,
+          "landed": true,
+          "armorDamage": 12
+        }
+      },
+      {
+        "name": "Chromium absorbs body fire without emitting hostile copies; hammer lane remains open",
+        "pass": true,
+        "data": {
+          "lane": true,
+          "body": true,
+          "enemy": 0,
+          "flash": 0.15,
+          "hits": 1
+        }
+      },
+      {
+        "name": "Weapon depletion waits for the actual jump impact before breaking",
+        "pass": true,
+        "data": {
+          "deferred": true,
+          "state": "hammer_exposed",
+          "destroyed": true,
+          "impact": true
+        }
+      },
+      {
+        "name": "8% emergency reserve follows the committed impact and still restores 38%",
+        "pass": true,
+        "data": {
+          "deferred": true,
+          "started": true,
+          "ratio": 0.38,
+          "state": "warn"
+        }
+      },
+      {
+        "name": "Wall expiration renders the authored shatter without retaining an invisible shield",
+        "pass": true,
+        "data": {
+          "broken": true,
+          "painted": [
+            {
+              "name": "core",
+              "f": 8
+            },
+            {
+              "name": "shield_wall",
+              "f": 12
+            }
+          ]
+        }
+      },
+      {
+        "name": "Generated reactor advances independently while the body is hit flashing",
+        "pass": true,
+        "data": {
+          "frames": [
+            8,
+            9
+          ],
+          "stillFlashing": true
+        }
+      },
+      {
+        "name": "Side -1 warning covers the complete generated hammer arc",
+        "pass": true,
+        "data": {
+          "width": 181.14114368136833,
+          "contains": true
+        }
+      },
+      {
+        "name": "Side 1 warning covers the complete generated hammer arc",
+        "pass": true,
+        "data": {
+          "width": 106.6045718315288,
+          "contains": true
+        }
+      },
+      {
+        "name": "Runtime painted formation/core/left/right/wall/spike banks",
+        "pass": true,
+        "data": {
+          "shield_form": 58,
+          "swing_right": 54,
+          "swing_left": 54,
+          "shield_wall": 69,
+          "core": 271,
+          "spike": 34
+        }
+      },
+      {
+        "name": "No page, console or asset errors",
+        "pass": true,
+        "data": []
+      }
+    ],
+    "screenshots": [
+      "native-shield_form.png",
+      "native-swing_right.png",
+      "native-swing_left.png",
+      "native-shield_wall.png",
+      "native-core.png",
+      "native-spike.png",
+      "depth-giant_warn-0-4.png",
+      "depth-giant_dive-0-1.png",
+      "depth-giant_dive-0-26.png",
+      "depth-giant_dive-0-3.png",
+      "depth-giant_sweep-0-35.png",
+      "chromium-wall-shatter.png",
+      "chromium-hit-core.png",
+      "swing-warning--1.png",
+      "swing-warning-1.png"
+    ],
+    "videos": [
+      "chromium-formation.mp4",
+      "swing-right.mp4",
+      "swing-left.mp4",
+      "orbital-strike.mp4",
+      "chromium-spikes.mp4"
+    ]
+  },
+  "art": {
+    "mode": "built-in image_gen edit",
+    "frames": 96,
+    "banks": 6,
+    "framesPerBank": 16,
+    "owner": "_BUILD_SOURCE/build_hammer_1010.py",
+    "prompts": "_ART_SOURCES/hammer_1010/prompts.json",
+    "provenance": "_ART_SOURCES/hammer_1010/generation_manifest.json",
+    "registration": "_ART_SOURCES/hammer_1010/registration.json",
+    "shippingManifest": "assets/game/levels/stage_05/boss/hammer_1010/manifest.json",
+    "evenFixedCanvases": true,
+    "atlasChanges": false
+  },
+  "review": "_shots/hammer_1010/review.html",
+  "visualReview": "All native contact sheets reviewed. Complete head/two arms, full feet/hammer, no neighboring poses in left cuts, corrected reactor pivots and common body scale. Formation, both releases, orbital depth and spikes inspected in timed native gameplay captures.",
+  "limitations": [
+    "Protected captures verify behavior and pixels, not a human campaign clear or difficulty balance."
+  ],
+  "publication": "Local working tree only; pre-existing staged guide changes preserved."
+}

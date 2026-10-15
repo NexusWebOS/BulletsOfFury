@@ -1,0 +1,49 @@
+{
+  "id": "s5station",
+  "name": "Space Station",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5station"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_station",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5station_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_station/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "42fabd19e8b5962fff68971a4408bbca6acb5774d95552b7ad5afc0d100176ff"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5station_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_station/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "ad4ca7bcb1de650cc870d6d4b39def9aa31266e8ea8287d1676f94e854f96699"
+  },
+  "nativeRatios": {
+    "s5station": 0.821917808219178
+  },
+  "sourceKeys": {
+    "s5station": "s5atk_twin_station_0"
+  }
+}

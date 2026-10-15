@@ -1,0 +1,47 @@
+{
+  "id": "nyx",
+  "name": "Nyx / Ghostknife",
+  "stage": 6,
+  "stages": [
+    6,
+    10
+  ],
+  "aliases": [
+    "nyx"
+  ],
+  "folder": "assets/game/levels/stage_06/boss/air_motion_1013/nyx",
+  "rebel": true,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_nyx_heading",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/nyx/headings.webp",
+    "frames": 8,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "915505cdcdf45ad4242281cfac9fd9afbb957aabe1c2884a1cb5506ab8855d45"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_nyx_roll",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/nyx/roll.webp",
+    "frames": 16,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "eaa5ffcb6a8d21fba0f11716c4da793f880a027edf30afbdf341b960334ba0a9"
+  },
+  "referenceRatio": 1.0170454545454546,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

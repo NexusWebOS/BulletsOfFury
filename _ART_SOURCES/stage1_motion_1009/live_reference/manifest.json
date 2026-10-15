@@ -1,0 +1,112 @@
+[
+  {
+    "type": "s1tankheavy",
+    "art": "nef_s1_jungle_tank_intact",
+    "nef": "nef_s1_jungle_tank",
+    "modTank": 1,
+    "fury": -1,
+    "w": 103,
+    "h": 103,
+    "drawW": 103,
+    "drawH": 103
+  },
+  {
+    "type": "s1tanklight",
+    "art": "nef_s1_jungle_mini_tank_intact",
+    "nef": "nef_s1_jungle_mini_tank",
+    "modTank": 1,
+    "fury": -1,
+    "w": 88,
+    "h": 88,
+    "drawW": 88,
+    "drawH": 88
+  },
+  {
+    "type": "s1tankapc",
+    "art": "nef_s1_jungle_apc_intact",
+    "nef": "nef_s1_jungle_apc",
+    "modTank": 1,
+    "fury": -1,
+    "w": 101,
+    "h": 101,
+    "drawW": 101,
+    "drawH": 101
+  },
+  {
+    "type": "s1truckmissile",
+    "art": "nef_s1_rocket_buggy_intact",
+    "nef": "nef_s1_rocket_buggy",
+    "modTank": null,
+    "fury": -1,
+    "w": 101,
+    "h": 101,
+    "drawW": 55,
+    "drawH": 81.9607843137255
+  },
+  {
+    "type": "s1boatpatrol",
+    "art": "nef_s1_river_patrol_boat_intact",
+    "nef": "nef_s1_river_patrol_boat",
+    "modTank": null,
+    "fury": -1,
+    "w": 52,
+    "h": 88,
+    "drawW": 96.80000000000001,
+    "drawH": 96.80000000000001
+  },
+  {
+    "type": "s1boatgun",
+    "art": "nef_s1_missile_gunboat_intact",
+    "nef": "nef_s1_missile_gunboat",
+    "modTank": null,
+    "fury": -1,
+    "w": 55,
+    "h": 83,
+    "drawW": 91.30000000000001,
+    "drawH": 91.30000000000001
+  },
+  {
+    "type": "s1corvette",
+    "art": "nef_s1_river_corvette_intact_blk",
+    "nef": "nef_s1_river_corvette",
+    "modTank": null,
+    "fury": -1,
+    "w": 62,
+    "h": 99,
+    "drawW": 62,
+    "drawH": 97.48965517241379
+  },
+  {
+    "type": "s1landingcraft",
+    "art": "nef_s1_landing_craft_intact_blk",
+    "nef": "nef_s1_landing_craft",
+    "modTank": null,
+    "fury": -1,
+    "w": 60,
+    "h": 94,
+    "drawW": 60,
+    "drawH": 94.3448275862069
+  },
+  {
+    "type": "s1jetdelta",
+    "art": "nef_s1_camo_attack_jet_intact",
+    "nef": "nef_s1_camo_attack_jet",
+    "modTank": null,
+    "fury": 0,
+    "w": 95,
+    "h": 105,
+    "drawW": 115.50000000000001,
+    "drawH": 115.50000000000001
+  },
+  {
+    "type": "s1jetbomber",
+    "art": "nef_s1_jungle_bomber_intact",
+    "nef": "nef_s1_jungle_bomber",
+    "modTank": null,
+    "fury": 1,
+    "w": 131,
+    "h": 116,
+    "drawW": 144.10000000000002,
+    "drawH": 144.10000000000002
+  }
+]

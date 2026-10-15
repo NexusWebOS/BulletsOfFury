@@ -1,0 +1,30 @@
+[
+  {
+    "stage": 1,
+    "kind": "s1jetDelta",
+    "art": "nef_s1_camo_attack_jet_intact",
+    "vault": null,
+    "biome": null
+  },
+  {
+    "stage": 4,
+    "kind": "s4interceptor",
+    "art": null,
+    "vault": null,
+    "biome": null
+  },
+  {
+    "stage": 6,
+    "kind": "s6dart",
+    "art": null,
+    "vault": null,
+    "biome": null
+  },
+  {
+    "stage": 8,
+    "kind": "s8interceptor",
+    "art": "tankA",
+    "vault": null,
+    "biome": "overhaul_stage8_alien_jet_01"
+  }
+]

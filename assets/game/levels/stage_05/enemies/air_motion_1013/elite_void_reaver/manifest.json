@@ -1,0 +1,49 @@
+{
+  "id": "xelite_voidreaver",
+  "name": "Elite Void Reaver",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "xelite_voidreaver"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/elite_void_reaver",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_xelite_voidreaver_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/elite_void_reaver/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "84ef75e47a7b36a47a32392d920886f7f65a1d123ac2f61061e9a52314f848ac"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_xelite_voidreaver_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/elite_void_reaver/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "3f7569dc3b23c9d172100390042d9e0cd86d8fb529aa19eef5062f8ad78b05e3"
+  },
+  "nativeRatios": {
+    "xelite_voidreaver": 0.8493150684931506
+  },
+  "sourceKeys": {
+    "xelite_voidreaver": "xelite_voidreaver_idle"
+  }
+}

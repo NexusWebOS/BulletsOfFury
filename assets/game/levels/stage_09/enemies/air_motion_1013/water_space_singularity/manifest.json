@@ -1,0 +1,49 @@
+{
+  "id": "s9singularity",
+  "name": "Water Space Singularity",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9singularity"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_singularity",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9singularity_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_singularity/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "71bcdff829356998e2a2842ccf9d521e78d0211de3e994d3c0b3647a2f5c4ceb"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9singularity_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_singularity/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7f6b7d2ad6fe2ae72945a5d4d6c408cc20258c3d9ba4f3140577aab3a019698c"
+  },
+  "nativeRatios": {
+    "s9singularity": 1.1758241758241759
+  },
+  "sourceKeys": {
+    "s9singularity": "s9atk_singularity_mine_0"
+  }
+}

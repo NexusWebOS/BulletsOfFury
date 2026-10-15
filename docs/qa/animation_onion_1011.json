@@ -1,0 +1,837 @@
+{
+  "date": "2026-10-11",
+  "feedback": "Atomic crop/anchor, Furnace origin and exact opening stealth fighter palette corrections",
+  "owners": [
+    "build_part2_art_1010.py",
+    "prepare_part2_onion_1011.py",
+    "repair_part2_art_1011.py",
+    "part2_combat_1010.js"
+  ],
+  "art": {
+    "shield": {
+      "cells": 9,
+      "unique_plates": 9,
+      "dimensions": [
+        432,
+        432
+      ],
+      "pivot": [
+        216,
+        216
+      ]
+    },
+    "jace": {
+      "cells": 32,
+      "unique_plates": 32,
+      "dimensions": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ]
+    },
+    "atom": {
+      "cells": 32,
+      "unique_plates": 32,
+      "dimensions": [
+        384,
+        576
+      ],
+      "pivot": [
+        192,
+        480
+      ]
+    },
+    "fire": {
+      "cells": 32,
+      "unique_plates": 32,
+      "dimensions": [
+        384,
+        384
+      ],
+      "pivot": [
+        192,
+        280
+      ]
+    },
+    "fire_root": {
+      "cells": 16,
+      "unique_plates": 16,
+      "dimensions": [
+        384,
+        384
+      ],
+      "pivot": [
+        192,
+        320
+      ]
+    },
+    "stealth": {
+      "cells": 30,
+      "unique_plates": 21,
+      "dimensions": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ]
+    }
+  },
+  "source_count": {
+    "atomic_original": 28,
+    "atomic_drawn_inbetweens": 4,
+    "fire_column": 32,
+    "fire_root": 16,
+    "stealth": "original whv_ace/skycarrier family, three palettes; original roll aliases retained"
+  },
+  "source_audit": {
+    "atom": {
+      "frames": 32,
+      "unique_hashes": 32,
+      "union_bounds": [
+        32,
+        90,
+        357,
+        482
+      ],
+      "padded_edges": true
+    },
+    "fire": {
+      "frames": 32,
+      "unique_hashes": 32,
+      "union_bounds": [
+        139,
+        128,
+        248,
+        347
+      ],
+      "padded_edges": true
+    },
+    "fire_root": {
+      "frames": 16,
+      "unique_hashes": 16,
+      "union_bounds": [
+        55,
+        52,
+        330,
+        353
+      ],
+      "padded_edges": true
+    }
+  },
+  "verification": {
+    "syntax": "node --check assets/game.js, part2_combat_1010.js, part2_art_1010.js: pass",
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "passing_assertions": 8394,
+    "exit_code": 0,
+    "initial_nonzero_run": "Stopped before final summary: test canvas lacked bezierCurveTo. Test-local canvas stub completed/restored; full suite rerun to final summary.",
+    "native_passed": 45,
+    "reports": {
+      "source_and_game": {
+        "passed": 8,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Live XART blue fighter pixels match the exact opening whv_ace",
+            "passed": true,
+            "data": {
+              "mismatch": 0,
+              "alpha": 0,
+              "paint": [
+                11544,
+                11544
+              ],
+              "other": 0,
+              "lum": 0.45819999999999084,
+              "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_top.png"
+            }
+          },
+          {
+            "name": "Red/green swaps preserve alpha, silhouettes, non-paint pixels and luminance",
+            "passed": true,
+            "data": {
+              "mismatch": 0,
+              "alpha": 0,
+              "paint": [
+                11544,
+                11544
+              ],
+              "other": 0,
+              "lum": 0.45819999999999084,
+              "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_top.png"
+            }
+          },
+          {
+            "name": "Real enemy draws use the correct fighter bank in south/east/west flight",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_green_idle",
+                "facing": "south",
+                "role": "green"
+              },
+              {
+                "key": "p2_stealth_red_idle",
+                "facing": "south",
+                "role": "red"
+              },
+              {
+                "key": "p2_stealth_green_idle",
+                "facing": "east",
+                "role": "green"
+              },
+              {
+                "key": "p2_stealth_red_idle",
+                "facing": "west",
+                "role": "red"
+              }
+            ]
+          },
+          {
+            "name": "Opening fly-past keeps its original authored pair",
+            "passed": true,
+            "data": {
+              "phase": "intercept",
+              "jets": 2
+            }
+          },
+          {
+            "name": "Native fire beam visibly expands from a narrow core into the large column",
+            "passed": true,
+            "data": {
+              "start": 32,
+              "mid": 86,
+              "full": 111,
+              "root": 1,
+              "profile": {
+                "root": 15.4,
+                "half": 105,
+                "depth": 99.60000000000001
+              }
+            }
+          },
+          {
+            "name": "Furnace actual core attack uses the new flared animated root",
+            "passed": true,
+            "data": {
+              "root": 9,
+              "beams": 1,
+              "width": 91.08037430711745,
+              "kind": "core"
+            }
+          },
+          {
+            "name": "Live atomic renderer plays all32 corrected keys with one fixed ground anchor and aspect",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_atom_00",
+                "args": [
+                  220,
+                  109.60000000000002,
+                  240,
+                  360
+                ]
+              }
+            ]
+          },
+          {
+            "name": "No page, console, renderer or missing-asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "onion_preview": {
+        "passed": 15,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "atom: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "atom: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.0204081632653061,
+              "cx": 213.44897959183675,
+              "cy": 413.9591836734694
+            }
+          },
+          {
+            "name": "jace: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "jace: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.5625,
+              "cx": 216,
+              "cy": 214.4375
+            }
+          },
+          {
+            "name": "fire: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "fire: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.82648401826484,
+              "cx": 213.26027397260273,
+              "cy": 293.6255707762557
+            }
+          },
+          {
+            "name": "fire_root: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "fire_root: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.3289036544850499,
+              "cx": 215.33554817275748,
+              "cy": 372.1461794019933
+            }
+          },
+          {
+            "name": "stealth: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "stealth: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.9801980198019802,
+              "cx": 216,
+              "cy": 216
+            }
+          },
+          {
+            "name": "shield: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "shield: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 0.9569377990430622,
+              "cx": 216,
+              "cy": 216
+            }
+          },
+          {
+            "name": "Onion control actually overlays neighboring registered poses",
+            "passed": true
+          },
+          {
+            "name": "Review includes all original captures and the corrected live art evidence",
+            "passed": true
+          },
+          {
+            "name": "No page, console or missing asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "presentation": {
+        "passed": 16,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "The firewall arrival calls its real decoded non-muted sample on wave birth",
+            "passed": true,
+            "data": {
+              "calls": [
+                "firewall-arrival"
+              ],
+              "media": [
+                {
+                  "src": "firewall_launch.mp3",
+                  "volume": 0.328,
+                  "ready": 0
+                }
+              ],
+              "pool": [
+                {
+                  "ready": 4,
+                  "volume": 0.328,
+                  "error": null,
+                  "paused": false,
+                  "duration": 1.2
+                },
+                {
+                  "ready": 4,
+                  "volume": 1,
+                  "error": null,
+                  "paused": true,
+                  "duration": 1.2
+                },
+                {
+                  "ready": 4,
+                  "volume": 1,
+                  "error": null,
+                  "paused": true,
+                  "duration": 1.2
+                }
+              ]
+            }
+          },
+          {
+            "name": "Fire Orb contact draws the opaque 32-pose impact at the actual hit point",
+            "passed": true,
+            "data": {
+              "draws": 13,
+              "event": {
+                "event": "orb-impact",
+                "element": "fire",
+                "x": 340,
+                "y": 279.36,
+                "radius": 104,
+                "reason": "impact"
+              }
+            }
+          },
+          {
+            "name": "The real Furnace beam draws the32-frame column and16-frame flared core connection",
+            "passed": true,
+            "data": {
+              "beam": 8,
+              "muzzle": 8,
+              "root": 8
+            }
+          },
+          {
+            "name": "The Ice Laser preview runs the real animated laser after a space stage and restores the live hull",
+            "passed": true,
+            "data": {
+              "err": null,
+              "beams": [
+                {
+                  "inf": "ice",
+                  "age": 0.7166666666666672
+                }
+              ],
+              "stage": 5,
+              "space": true,
+              "held": true
+            }
+          },
+          {
+            "name": "Stage Clear hides the gameplay HUD before laying out its menu",
+            "passed": true,
+            "data": {
+              "hud": "hidden",
+              "state": "stageclear",
+              "stageClear": true
+            }
+          },
+          {
+            "name": "Rebel pursuit has four allies plus the player, five opponents and no storm-platform briefing",
+            "passed": true,
+            "data": {
+              "friends": [
+                "axel",
+                "cole",
+                "decker",
+                "falva"
+              ],
+              "hostiles": [
+                "voss",
+                "nyx",
+                "rook",
+                "kaia",
+                "jace"
+              ],
+              "stormStory": false,
+              "card": [
+                "REBEL FURY SQUADRON",
+                "FIVE HOSTILE FIGHTERS. STOLEN FURY TECHNOLOGY."
+              ]
+            }
+          },
+          {
+            "name": "cloak: the authored demo actually forms and releases",
+            "passed": true,
+            "data": {
+              "demo": "cloak",
+              "released": true,
+              "cloak": 10,
+              "ball": null,
+              "turbo": null,
+              "fx": []
+            }
+          },
+          {
+            "name": "helix: the authored demo actually forms and releases",
+            "passed": true,
+            "data": {
+              "demo": "helix",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": null,
+              "fx": []
+            }
+          },
+          {
+            "name": "Jace displays the new centered 32-frame molten ball",
+            "passed": true,
+            "data": {
+              "demo": "helix",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": null,
+              "fx": []
+            }
+          },
+          {
+            "name": "turbo: the authored demo actually forms and releases",
+            "passed": true,
+            "data": {
+              "demo": "turbo",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": 136,
+              "fx": [
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                }
+              ]
+            }
+          },
+          {
+            "name": "Voss displays the onion-registered charge reel",
+            "passed": true,
+            "data": {
+              "demo": "turbo",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": 136,
+              "fx": [
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                }
+              ]
+            }
+          },
+          {
+            "name": "Decker casts a visible personal shield on the five-ship formation",
+            "passed": true,
+            "data": {
+              "scanner": "kaia",
+              "members": [
+                "decker",
+                "lizzie",
+                "cole",
+                "axel",
+                "falva"
+              ],
+              "draws": 175
+            }
+          },
+          {
+            "name": "Kaia scans the cloaked formation using her teal retinal art",
+            "passed": true,
+            "data": {
+              "scanner": "kaia",
+              "color": "#25d9bd",
+              "draws": 125
+            }
+          },
+          {
+            "name": "Harrier pursuit is solo and owns the weather briefing",
+            "passed": true,
+            "data": {
+              "allies": 0,
+              "briefing": "P2.S06.HARRIER",
+              "card": [
+                "HARRIER PURSUIT",
+                "DESTROY THE CANNON BANKS. WATCH FOR THE ELITE FIGHTER."
+              ]
+            }
+          },
+          {
+            "name": "Harrier remains live through native laser closures and elite warnings",
+            "passed": true,
+            "data": {
+              "frames": 3563,
+              "boss": "warhive",
+              "threats": 0,
+              "warningDraws": 296,
+              "errors": null
+            }
+          },
+          {
+            "name": "No page, console, renderer or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": [],
+        "shots": [
+          "firewall-arrival.png",
+          "fire-orb-impact.png",
+          "kinetic-orb-impact.png",
+          "furnace-boss.png",
+          "furnace-fire-laser.png",
+          "ice-preview-after-space.png",
+          "stage-clear-no-bottom-artifact.png",
+          "rebel-cloak-charge.png",
+          "rebel-cloak-release.png",
+          "rebel-helix-charge.png",
+          "rebel-helix-release.png",
+          "rebel-turbo-charge.png",
+          "rebel-turbo-release.png",
+          "decker-personal-shield-wave.png",
+          "kaia-teal-radar-scan.png",
+          "radio-nyx.png",
+          "radio-kaia.png",
+          "radio-jace.png",
+          "radio-rook.png",
+          "radio-decker.png",
+          "radio-voss.png",
+          "harrier-pursuit.png",
+          "harrier-elite-warnings.png"
+        ]
+      },
+      "finishing": {
+        "passed": 6,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Hammer crest reaches the arena top with the same uniformly scaled visible and lethal shaft",
+            "passed": true,
+            "data": {
+              "top": 0,
+              "viewTop": 0,
+              "scaleEqual": true,
+              "live": true,
+              "lanes": 8
+            }
+          },
+          {
+            "name": "Earth keeps its camera center while the actual pilot ship shrinks and flies toward it",
+            "passed": true,
+            "data": {
+              "earth": [
+                [
+                  187.2,
+                  49.60000000000001,
+                  105.6,
+                  105.6
+                ],
+                [
+                  182.4,
+                  44.80000000000001,
+                  115.19999999999999,
+                  115.19999999999999
+                ],
+                [
+                  177.61769999999999,
+                  40.0177,
+                  124.76460000000002,
+                  124.76460000000002
+                ]
+              ],
+              "flights": [
+                {
+                  "x": 240,
+                  "y": 348.16,
+                  "size": 72,
+                  "pilot": "lizzie"
+                },
+                {
+                  "x": 240,
+                  "y": 225.28000000000003,
+                  "size": 37.5,
+                  "pilot": "lizzie"
+                },
+                {
+                  "x": 240,
+                  "y": 102.85312000000002,
+                  "size": 3.1272187499999973,
+                  "pilot": "lizzie"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Stage Clear has no equipment row or reserved HUD gap",
+            "passed": true,
+            "data": {
+              "row": "hidden",
+              "bottom": "none",
+              "screen": 900,
+              "frame": 900
+            }
+          },
+          {
+            "name": "The campaign map remains interactive after the slower entry zoom",
+            "passed": true,
+            "data": {
+              "state": "stagesel",
+              "loading": true,
+              "zoom": 0.6192324214065645,
+              "errors": null
+            }
+          },
+          {
+            "name": "Real bomber actors draw palette variants of the actual opening stealth fighter facing south",
+            "passed": true,
+            "data": [
+              {
+                "palette": "green",
+                "key": "p2_stealth_green_idle",
+                "facing": "south",
+                "hp": 6,
+                "size": 104
+              },
+              {
+                "palette": "red",
+                "key": "p2_stealth_red_idle",
+                "facing": "south",
+                "hp": 6,
+                "size": 104
+              }
+            ]
+          },
+          {
+            "name": "No page, console, renderer or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": [],
+        "shots": [
+          "hammer-full-height-spike.png",
+          "earth-0.png",
+          "earth-4.png",
+          "earth-7-8.png",
+          "stage-clear-full-screen.png",
+          "campaign-zoom.png",
+          "red-green-stealth-bombers.png"
+        ]
+      }
+    }
+  },
+  "preview": "docs/previews/part2_1010/index.html?revision=20261011",
+  "limits": [
+    "Controlled invulnerable fixtures verify native art and encounter continuity, not a natural Furious campaign clear."
+  ],
+  "git": "No commit or push; preserve all earlier staged, unstaged and untracked work."
+}

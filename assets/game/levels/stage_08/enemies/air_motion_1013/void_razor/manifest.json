@@ -1,0 +1,49 @@
+{
+  "id": "s8razor",
+  "name": "Void Razor",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "s8razor"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/void_razor",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_s8razor_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_razor/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "ab1aad23c58d271ea238cfbdbab61e01c14207c07073f76ca24905b1c1d7f5b0"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_s8razor_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_razor/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "c7cf3ef6752c20486b33b9f3fec96757a02ad14d1844c18e6fcdb40141cac553"
+  },
+  "nativeRatios": {
+    "s8razor": 1.1666666666666667
+  },
+  "sourceKeys": {
+    "s8razor": "fr27_realm_fleet"
+  }
+}

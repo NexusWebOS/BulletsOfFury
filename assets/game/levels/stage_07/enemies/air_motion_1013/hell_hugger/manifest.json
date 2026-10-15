@@ -1,0 +1,49 @@
+{
+  "id": "mm1003_hellhugger",
+  "name": "Hell Hugger",
+  "stage": 7,
+  "stages": [
+    7
+  ],
+  "aliases": [
+    "mm1003_hellhugger"
+  ],
+  "folder": "assets/game/levels/stage_07/enemies/air_motion_1013/hell_hugger",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_hellhugger_heading",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/hell_hugger/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "fd86507e718b59408f4cd69a5ed79f2812d0cc90c1eaa0f3316016881e27b034"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_hellhugger_roll",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/hell_hugger/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "23c386cbbd66fa170cbe75c424e4dd9bd941a2b8cf97d0ea4021d7b725f88809"
+  },
+  "nativeRatios": {
+    "mm1003_hellhugger": 0.8586956521739131
+  },
+  "sourceKeys": {
+    "mm1003_hellhugger": "mm1003_hellhugger_parts"
+  }
+}

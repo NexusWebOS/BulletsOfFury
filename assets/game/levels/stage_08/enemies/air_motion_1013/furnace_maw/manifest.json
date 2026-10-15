@@ -1,0 +1,49 @@
+{
+  "id": "mm1003_furnacemaw",
+  "name": "Furnace Maw",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "mm1003_furnacemaw"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/furnace_maw",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_mm1003_furnacemaw_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/furnace_maw/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "aa077bfcd18c0265841ce5eab958fee711d45a4cebc47dd738701b767033417a"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_mm1003_furnacemaw_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/furnace_maw/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "3186d8db07d8af9dcf5d878b3606968e639a2d76c38ad07cf064776beace61be"
+  },
+  "nativeRatios": {
+    "mm1003_furnacemaw": 1.0
+  },
+  "sourceKeys": {
+    "mm1003_furnacemaw": "mm1003_furnacemaw"
+  }
+}

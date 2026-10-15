@@ -1,0 +1,1210 @@
+{
+  "ships": {
+    "frostcruiser": {
+      "key": "nsb_frost_cruiser",
+      "name": "FROST CRUISER",
+      "w": 168,
+      "h": 168,
+      "hp": 900,
+      "pat": "jungleburst",
+      "cd": 1.05,
+      "mini": true,
+      "proj": "warhawk",
+      "mounts": {
+        "L": [
+          -0.22,
+          0.29
+        ],
+        "C": [
+          0,
+          0.455
+        ],
+        "R": [
+          0.22,
+          0.29
+        ],
+        "SL": [
+          -0.17,
+          0.02
+        ],
+        "SR": [
+          0.17,
+          0.02
+        ]
+      },
+      "pats": [
+        "jungleburst",
+        "jungletempest"
+      ]
+    },
+    "rimewall": {
+      "key": "nsb_cryo_spear",
+      "name": "CRYO SPEAR",
+      "w": 195,
+      "h": 195,
+      "hp": 390,
+      "pat": "s3spearburst",
+      "cd": 0.88,
+      "mini": true,
+      "proj": "cryo",
+      "move": {
+        "ampX": 110,
+        "ampY": 5,
+        "period": 7.4
+      },
+      "mounts": {
+        "L": [
+          -0.245,
+          0.205
+        ],
+        "C": [
+          0,
+          0.435
+        ],
+        "R": [
+          0.245,
+          0.205
+        ],
+        "V1": [
+          -0.29,
+          0.02
+        ],
+        "V2": [
+          0.29,
+          0.02
+        ]
+      },
+      "pats": [
+        "s3spearburst",
+        "s3spearcross",
+        "s3spearcore"
+      ],
+      "dmg": [
+        "nsb_cryo_spear_damaged",
+        "nsb_cryo_spear_critical"
+      ]
+    },
+    "olivewarden": {
+      "key": "nsb_olivewarden_intact",
+      "name": "OLIVE WARDEN",
+      "w": 262,
+      "h": 270,
+      "hp": 1180,
+      "pat": "s4warburst",
+      "cd": 0.92,
+      "mini": true,
+      "proj": "legion",
+      "mounts": {
+        "L": [
+          -0.317,
+          0.234
+        ],
+        "C": [
+          0,
+          0.43
+        ],
+        "R": [
+          0.317,
+          0.234
+        ],
+        "CL": [
+          -0.054,
+          0.457
+        ],
+        "CR": [
+          0.054,
+          0.457
+        ],
+        "MG_L": [
+          -0.317,
+          0.234
+        ],
+        "MG_R": [
+          0.317,
+          0.234
+        ],
+        "ROCKET_L": [
+          -0.306,
+          -0.245
+        ],
+        "ROCKET_R": [
+          0.306,
+          -0.245
+        ]
+      },
+      "pats": [
+        "s4warburst",
+        "s4wargate",
+        "s4wardrones"
+      ],
+      "dmg": [
+        "nsb_olivewarden_damaged",
+        "nsb_olivewarden_critical"
+      ]
+    },
+    "stormsovereign": {
+      "key": "s4w_boss_idle",
+      "name": "STORM SOVEREIGN MK II",
+      "w": 286,
+      "h": 286,
+      "hp": 2500,
+      "pat": "s4warburst",
+      "cd": 0.78,
+      "proj": "storm",
+      "mounts": {
+        "MG_L": [
+          -0.116,
+          0.3
+        ],
+        "MG_R": [
+          0.116,
+          0.3
+        ],
+        "ROCKET_L": [
+          -0.183,
+          0.056
+        ],
+        "ROCKET_R": [
+          0.183,
+          0.056
+        ],
+        "ORB_L": [
+          -0.315,
+          -0.03
+        ],
+        "ORB_R": [
+          0.315,
+          -0.03
+        ],
+        "L": [
+          -0.116,
+          0.3
+        ],
+        "EL": [
+          -0.116,
+          0.3
+        ],
+        "C": [
+          0,
+          0.44
+        ],
+        "ER": [
+          0.116,
+          0.3
+        ],
+        "R": [
+          0.116,
+          0.3
+        ]
+      },
+      "pats": [
+        "s4warburst",
+        "s4orblift",
+        "s4lightning",
+        "s4waroverdrive"
+      ]
+    },
+    "infernoreaver": {
+      "key": "fzt_body_intact",
+      "name": "FURNACE TYRANT",
+      "w": 190,
+      "h": 200,
+      "hpMul": 1.3,
+      "pat": "magmaflame",
+      "cd": 1.12,
+      "proj": "magma",
+      "move": {
+        "ampX": 116,
+        "ampY": 4,
+        "period": 5.8
+      },
+      "mounts": {
+        "L": [
+          -0.39,
+          0.27
+        ],
+        "C": [
+          0,
+          0.42
+        ],
+        "R": [
+          0.39,
+          0.27
+        ]
+      },
+      "pats": [
+        "magmaflame",
+        "magmaflamelaser",
+        "magmafireball",
+        "magmafireshield"
+      ],
+      "dmg": [
+        "nsb_magmaward_damaged",
+        "nsb_magmaward_critical"
+      ]
+    }
+  },
+  "rigs": {
+    "chopper": [
+      {
+        "id": "core",
+        "art": "core",
+        "x": 0,
+        "y": 8,
+        "w": 143,
+        "h": 190,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.12,
+        "z": 1
+      },
+      {
+        "id": "tail",
+        "art": "tail",
+        "x": 0,
+        "y": -75,
+        "w": 98,
+        "h": 108,
+        "px": 0.5,
+        "py": 0.92,
+        "hp": 0.08,
+        "z": 0
+      },
+      {
+        "id": "left",
+        "art": "left",
+        "x": -55,
+        "y": -30,
+        "w": 55,
+        "h": 115,
+        "px": 0.59,
+        "py": 0.15,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "rotorMG",
+          "code"
+        ],
+        "emit": [
+          0.43,
+          0.81
+        ]
+      },
+      {
+        "id": "right",
+        "art": "right",
+        "x": 55,
+        "y": -30,
+        "w": 55,
+        "h": 115,
+        "px": 0.41,
+        "py": 0.15,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "rotorMG",
+          "code"
+        ],
+        "emit": [
+          0.57,
+          0.81
+        ]
+      },
+      {
+        "id": "rackL",
+        "art": "rackL",
+        "x": -88,
+        "y": -15,
+        "w": 53,
+        "h": 95,
+        "px": 0.5,
+        "py": 0.16,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "missiles",
+          "bombing"
+        ],
+        "emit": [
+          0.5,
+          0.8
+        ]
+      },
+      {
+        "id": "rackR",
+        "art": "rackR",
+        "x": 88,
+        "y": -15,
+        "w": 53,
+        "h": 95,
+        "px": 0.5,
+        "py": 0.16,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "missiles",
+          "bombing"
+        ],
+        "emit": [
+          0.5,
+          0.8
+        ]
+      },
+      {
+        "id": "rotor",
+        "art": "chopper_rotor",
+        "x": 0,
+        "y": -58,
+        "w": 232,
+        "h": 232,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.1,
+        "z": 4,
+        "legacy": true,
+        "hit": 0.3
+      }
+    ],
+    "furnace": [
+      {
+        "id": "core",
+        "art": "core",
+        "x": 0,
+        "y": -20,
+        "w": 150,
+        "h": 192,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.12,
+        "z": 1
+      },
+      {
+        "id": "legL",
+        "art": "legL",
+        "x": -33,
+        "y": 48,
+        "w": 64,
+        "h": 111,
+        "px": 0.5,
+        "py": 0.16,
+        "hp": 0.07,
+        "z": 0,
+        "role": "leg"
+      },
+      {
+        "id": "legR",
+        "art": "legR",
+        "x": 33,
+        "y": 48,
+        "w": 64,
+        "h": 111,
+        "px": 0.5,
+        "py": 0.16,
+        "hp": 0.07,
+        "z": 0,
+        "role": "leg"
+      },
+      {
+        "id": "left",
+        "art": "left",
+        "x": -61,
+        "y": -32,
+        "w": 85,
+        "h": 158,
+        "px": 0.71,
+        "py": 0.24,
+        "hp": 0.12,
+        "z": 2,
+        "role": "claw",
+        "tags": [
+          "magma",
+          "furnaceBeam"
+        ],
+        "emit": [
+          0.44,
+          0.58
+        ]
+      },
+      {
+        "id": "right",
+        "art": "right",
+        "x": 61,
+        "y": -32,
+        "w": 85,
+        "h": 158,
+        "px": 0.29,
+        "py": 0.24,
+        "hp": 0.12,
+        "z": 2,
+        "role": "claw",
+        "tags": [
+          "magma",
+          "furnaceBeam"
+        ],
+        "emit": [
+          0.56,
+          0.58
+        ]
+      },
+      {
+        "id": "reactor",
+        "art": "reactor",
+        "x": 0,
+        "y": 7,
+        "w": 48,
+        "h": 49,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.1,
+        "z": 3,
+        "tags": [
+          "furnaceBeam"
+        ],
+        "emit": [
+          0.5,
+          0.63
+        ]
+      }
+    ],
+    "cryo": [
+      {
+        "id": "core",
+        "art": "core",
+        "x": 0,
+        "y": 0,
+        "w": 144,
+        "h": 227,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.12,
+        "z": 1
+      },
+      {
+        "id": "rackL",
+        "art": "rackL",
+        "x": -48,
+        "y": -62,
+        "w": 67,
+        "h": 85,
+        "px": 0.76,
+        "py": 0.32,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "iceMG"
+        ],
+        "emit": [
+          0.5,
+          0.71
+        ]
+      },
+      {
+        "id": "gunL1",
+        "art": "left",
+        "x": -43,
+        "y": -15,
+        "w": 52,
+        "h": 109,
+        "px": 0.51,
+        "py": 0.14,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "iceMG",
+          "iceLance"
+        ],
+        "emit": [
+          0.65,
+          0.86
+        ]
+      },
+      {
+        "id": "gunL2",
+        "art": "left",
+        "x": -36,
+        "y": 39,
+        "w": 43,
+        "h": 87,
+        "px": 0.5,
+        "py": 0.14,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "iceMG",
+          "iceLance"
+        ],
+        "emit": [
+          0.65,
+          0.86
+        ]
+      },
+      {
+        "id": "rackR",
+        "art": "rackR",
+        "x": 48,
+        "y": -62,
+        "w": 67,
+        "h": 85,
+        "px": 0.24,
+        "py": 0.32,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "iceMG"
+        ],
+        "emit": [
+          0.5,
+          0.71
+        ]
+      },
+      {
+        "id": "gunR1",
+        "art": "right",
+        "x": 43,
+        "y": -15,
+        "w": 52,
+        "h": 109,
+        "px": 0.49,
+        "py": 0.14,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "iceMG",
+          "iceLance"
+        ],
+        "emit": [
+          0.35,
+          0.86
+        ]
+      },
+      {
+        "id": "gunR2",
+        "art": "right",
+        "x": 36,
+        "y": 39,
+        "w": 43,
+        "h": 87,
+        "px": 0.5,
+        "py": 0.14,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "iceMG",
+          "iceLance"
+        ],
+        "emit": [
+          0.35,
+          0.86
+        ]
+      }
+    ],
+    "storm": [
+      {
+        "id": "core",
+        "art": "core",
+        "x": 0,
+        "y": 0,
+        "w": 196,
+        "h": 226,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.12,
+        "z": 1,
+        "sheet": "storm_hull"
+      },
+      {
+        "id": "left",
+        "art": "left",
+        "x": -45,
+        "y": 27,
+        "w": 69,
+        "h": 112,
+        "px": 0.6,
+        "py": 0.18,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "code"
+        ],
+        "emit": [
+          0.67,
+          0.92
+        ]
+      },
+      {
+        "id": "right",
+        "art": "right",
+        "x": 45,
+        "y": 27,
+        "w": 69,
+        "h": 112,
+        "px": 0.4,
+        "py": 0.18,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "code"
+        ],
+        "emit": [
+          0.33,
+          0.92
+        ]
+      },
+      {
+        "id": "rackL",
+        "art": "rackL",
+        "x": -51,
+        "y": -44,
+        "w": 61,
+        "h": 117,
+        "px": 0.62,
+        "py": 0.2,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "missiles"
+        ],
+        "emit": [
+          0.56,
+          0.81
+        ]
+      },
+      {
+        "id": "rackR",
+        "art": "rackR",
+        "x": 51,
+        "y": -44,
+        "w": 61,
+        "h": 117,
+        "px": 0.38,
+        "py": 0.2,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "missiles"
+        ],
+        "emit": [
+          0.44,
+          0.81
+        ]
+      },
+      {
+        "id": "lightning",
+        "art": "lightning",
+        "x": 0,
+        "y": -65,
+        "w": 48,
+        "h": 186,
+        "px": 0.42,
+        "py": 0.09,
+        "hp": 0.18,
+        "z": 3,
+        "tags": [
+          "lightning"
+        ],
+        "emit": [
+          0.53,
+          0.82
+        ]
+      }
+    ],
+    "knight": [
+      {
+        "id": "core",
+        "art": "core",
+        "x": 0,
+        "y": 0,
+        "w": 126,
+        "h": 140,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.12,
+        "z": 1
+      },
+      {
+        "id": "legL",
+        "art": "legL",
+        "x": -35,
+        "y": 51,
+        "w": 55,
+        "h": 101,
+        "px": 0.4,
+        "py": 0.11,
+        "hp": 0.07,
+        "z": 0,
+        "role": "leg"
+      },
+      {
+        "id": "legR",
+        "art": "legR",
+        "x": 35,
+        "y": 51,
+        "w": 55,
+        "h": 101,
+        "px": 0.6,
+        "py": 0.11,
+        "hp": 0.07,
+        "z": 0,
+        "role": "leg"
+      },
+      {
+        "id": "head",
+        "art": "head",
+        "x": 0,
+        "y": -57,
+        "w": 91,
+        "h": 85,
+        "px": 0.5,
+        "py": 0.91,
+        "hp": 0.1,
+        "z": 4,
+        "sheet": "head"
+      },
+      {
+        "id": "swordArm",
+        "art": "swordArm",
+        "x": -53,
+        "y": -40,
+        "w": 62,
+        "h": 108,
+        "px": 0.29,
+        "py": 0.22,
+        "hp": 0.13,
+        "z": 2
+      },
+      {
+        "id": "shieldArm",
+        "art": "shieldArm",
+        "x": 53,
+        "y": -40,
+        "w": 62,
+        "h": 108,
+        "px": 0.78,
+        "py": 0.22,
+        "hp": 0.11,
+        "z": 2
+      },
+      {
+        "id": "sword",
+        "art": "sword",
+        "x": 7,
+        "y": 78,
+        "w": 51,
+        "h": 139,
+        "px": 0.51,
+        "py": 0.15,
+        "hp": 0.16,
+        "z": 4,
+        "parent": "swordArm"
+      },
+      {
+        "id": "shield",
+        "art": "shield",
+        "x": -18,
+        "y": 63,
+        "w": 78,
+        "h": 112,
+        "px": 0.5,
+        "py": 0.42,
+        "hp": 0.13,
+        "z": 5,
+        "parent": "shieldArm"
+      }
+    ],
+    "harrier": [
+      {
+        "id": "core",
+        "art": "core",
+        "x": 0,
+        "y": 0,
+        "w": 158,
+        "h": 218,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.12,
+        "z": 1
+      },
+      {
+        "id": "fanL",
+        "art": "fanL",
+        "x": -68,
+        "y": 3,
+        "w": 100,
+        "h": 104,
+        "px": 0.9,
+        "py": 0.45,
+        "hp": 0.13,
+        "z": 0,
+        "role": "fan"
+      },
+      {
+        "id": "fanR",
+        "art": "fanR",
+        "x": 68,
+        "y": 3,
+        "w": 100,
+        "h": 104,
+        "px": 0.1,
+        "py": 0.45,
+        "hp": 0.13,
+        "z": 0,
+        "role": "fan"
+      },
+      {
+        "id": "rackL",
+        "art": "rackL",
+        "x": -98,
+        "y": 52,
+        "w": 69,
+        "h": 81,
+        "px": 0.9,
+        "py": 0.4,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "missiles"
+        ],
+        "emit": [
+          0.42,
+          0.77
+        ]
+      },
+      {
+        "id": "rackR",
+        "art": "rackR",
+        "x": 98,
+        "y": 52,
+        "w": 69,
+        "h": 81,
+        "px": 0.1,
+        "py": 0.4,
+        "hp": 0.12,
+        "z": 2,
+        "tags": [
+          "missiles"
+        ],
+        "emit": [
+          0.58,
+          0.77
+        ]
+      },
+      {
+        "id": "beam",
+        "art": "beam",
+        "x": 0,
+        "y": 8,
+        "w": 48,
+        "h": 92,
+        "px": 0.5,
+        "py": 0.15,
+        "hp": 0.17,
+        "z": 3,
+        "tags": [
+          "carrierLance"
+        ],
+        "emit": [
+          0.5,
+          0.87
+        ]
+      }
+    ],
+    "warden": [
+      {
+        "id": "core",
+        "art": "core",
+        "x": 0,
+        "y": -25,
+        "w": 168,
+        "h": 190,
+        "px": 0.5,
+        "py": 0.5,
+        "hp": 0.12,
+        "z": 1
+      },
+      {
+        "id": "legL",
+        "art": "legL",
+        "x": -46,
+        "y": 42,
+        "w": 77,
+        "h": 116,
+        "px": 0.59,
+        "py": 0.13,
+        "hp": 0.09,
+        "z": 0,
+        "role": "leg"
+      },
+      {
+        "id": "legR",
+        "art": "legR",
+        "x": 46,
+        "y": 42,
+        "w": 77,
+        "h": 116,
+        "px": 0.41,
+        "py": 0.13,
+        "hp": 0.09,
+        "z": 0,
+        "role": "leg"
+      },
+      {
+        "id": "left",
+        "art": "left",
+        "x": -68,
+        "y": -50,
+        "w": 78,
+        "h": 128,
+        "px": 0.67,
+        "py": 0.28,
+        "hp": 0.12,
+        "z": 2,
+        "role": "claw",
+        "tags": [
+          "scissor"
+        ],
+        "emit": [
+          0.33,
+          0.81
+        ]
+      },
+      {
+        "id": "right",
+        "art": "right",
+        "x": 68,
+        "y": -50,
+        "w": 78,
+        "h": 128,
+        "px": 0.33,
+        "py": 0.28,
+        "hp": 0.12,
+        "z": 2,
+        "role": "claw",
+        "tags": [
+          "scissor"
+        ],
+        "emit": [
+          0.67,
+          0.81
+        ]
+      },
+      {
+        "id": "gunL",
+        "art": "gun",
+        "x": -50,
+        "y": -6,
+        "w": 69,
+        "h": 99,
+        "px": 0.5,
+        "py": 0.19,
+        "hp": 0.13,
+        "z": 3,
+        "tags": [
+          "wardenMG",
+          "code"
+        ],
+        "emit": [
+          0.5,
+          0.76
+        ]
+      },
+      {
+        "id": "gunR",
+        "art": "gun",
+        "x": 50,
+        "y": -6,
+        "w": 69,
+        "h": 99,
+        "px": 0.5,
+        "py": 0.19,
+        "hp": 0.13,
+        "z": 3,
+        "tags": [
+          "wardenMG",
+          "code"
+        ],
+        "emit": [
+          0.5,
+          0.76
+        ]
+      }
+    ]
+  },
+  "keys": [
+    "logo",
+    "btn_credits",
+    "cf_logo",
+    "nsx_mc_left_furnace_arm_critical",
+    "nsx_mc_left_furnace_arm_destroyed",
+    "nsx_mc_left_furnace_arm_intact",
+    "nsx_mc_right_furnace_arm_critical",
+    "nsx_mc_right_furnace_arm_destroyed",
+    "nsx_mc_right_furnace_arm_intact",
+    "nsx_odt_left_furnace_turret_critical",
+    "nsx_odt_left_furnace_turret_destroyed",
+    "nsx_odt_left_furnace_turret_intact",
+    "nsx_odt_right_furnace_turret_critical",
+    "nsx_odt_right_furnace_turret_destroyed",
+    "nsx_odt_right_furnace_turret_intact",
+    "nbl_logo",
+    "s6rebel_ghost",
+    "s6rebel_ghost_idle",
+    "s6rebel_ghost_bank_l",
+    "s6rebel_ghost_bank_r",
+    "s6rebel_ghost_roll_l",
+    "s6rebel_ghost_roll_r",
+    "s6rebel_ghost_belly",
+    "s6rebel_ghost_som_0",
+    "s6rebel_ghost_som_1",
+    "s6rebel_ghost_som_2",
+    "s6rebel_ghost_som_3",
+    "s6rebel_ghost_dash_0",
+    "s6rebel_ghost_dash_1",
+    "s6rebel_ghost_dash_2",
+    "s6rebel_ghost_dash_3",
+    "vile25_ghost_claw",
+    "vile25_ghost_wall_left",
+    "nbl_logo_0916",
+    "btn_credits_0916",
+    "rr_ship_nyx_ghostknife",
+    "rr_roll_nyx_ghostknife_0",
+    "rr_roll_nyx_ghostknife_1",
+    "rr_roll_nyx_ghostknife_2",
+    "rr_roll_nyx_ghostknife_3",
+    "rr_roll_nyx_ghostknife_4",
+    "rr_roll_nyx_ghostknife_5",
+    "rr_roll_nyx_ghostknife_6",
+    "rr_roll_nyx_ghostknife_7",
+    "repair30_chaingun_mount_axel_left",
+    "repair30_chaingun_mount_axel_right",
+    "repair30_chaingun_mount_decker_left",
+    "repair30_chaingun_mount_decker_right",
+    "repair30_chaingun_mount_maverick_left",
+    "repair30_chaingun_mount_maverick_right",
+    "repair30_chaingun_mount_freezer_left",
+    "repair30_chaingun_mount_freezer_right",
+    "repair30_chaingun_mount_juggernaut_left",
+    "repair30_chaingun_mount_juggernaut_right",
+    "repair30_chaingun_mount_yuri_left",
+    "repair30_chaingun_mount_yuri_right",
+    "repair30_chaingun_mount_lizzie_left",
+    "repair30_chaingun_mount_lizzie_right",
+    "repair30_chaingun_mount_falva_left",
+    "repair30_chaingun_mount_falva_right",
+    "repair30_chaingun_mount_cole_left",
+    "repair30_chaingun_mount_cole_right",
+    "repair30_chaingun_barrel_top",
+    "repair30_chaingun_barrel_bank",
+    "repair30_chaingun_barrel_underside",
+    "repair30_orb_fire",
+    "repair30_orb_ice",
+    "repair30_orb_lightning",
+    "repair30_orb_kinetic",
+    "repair30_orb_chrome",
+    "repair30_orb_dark",
+    "repair30_orb_toxic",
+    "repair30_orb_prism",
+    "repair30_orb_water",
+    "repair30_cast_fire",
+    "repair30_cast_ice",
+    "repair30_cast_lightning",
+    "repair30_cast_kinetic",
+    "repair30_cast_chrome",
+    "repair30_cast_dark",
+    "repair30_cast_toxic",
+    "repair30_cast_prism",
+    "repair30_cast_water",
+    "repair30_orb_hit_fire",
+    "repair30_orb_hit_ice",
+    "repair30_orb_hit_lightning",
+    "repair30_orb_hit_kinetic",
+    "repair30_orb_hit_chrome",
+    "repair30_orb_hit_dark",
+    "repair30_orb_hit_toxic",
+    "repair30_orb_hit_prism",
+    "repair30_orb_hit_water",
+    "repair30_chaingun_round",
+    "repair30_chaingun_muzzle",
+    "repair30_chaingun_impact",
+    "repair30_chaingun_round_fire",
+    "repair30_chaingun_round_ice",
+    "repair30_chaingun_round_lightning",
+    "repair30_chaingun_round_kinetic",
+    "repair30_chaingun_round_chrome",
+    "repair30_chaingun_round_dark",
+    "repair30_chaingun_round_toxic",
+    "repair30_chaingun_round_prism",
+    "repair30_chaingun_round_water",
+    "repair30_chromium_activation_hammer_only",
+    "repair30_shield",
+    "r30_possessed_armL",
+    "r30_possessed_body",
+    "r30_possessed_armR",
+    "r30_colossus_body",
+    "r30_colossus_armL",
+    "r30_colossus_armR",
+    "r30_furnace",
+    "r30_chopper_body",
+    "r30_chopper_rotor",
+    "r30_fx_0",
+    "r30_fx_1",
+    "r30_fx_2",
+    "r30_fx_3",
+    "r30_fx_4",
+    "r30_fx_5",
+    "r30_fx_6",
+    "r30_fx_7",
+    "r30_fx_8",
+    "r30_fx_9",
+    "r30_fx_10",
+    "r30_fx_11",
+    "r30_fx_12",
+    "r30_fx_13",
+    "r30_fx_14",
+    "r30_fx_15",
+    "r30_walls_0",
+    "r30_walls_1",
+    "r30_walls_2",
+    "r30_walls_3",
+    "r30_walls_4",
+    "r30_walls_5",
+    "mm1003_furnacemaw",
+    "finale1003b_furnace",
+    "fmc_furnace",
+    "av3_reaver_parts",
+    "av3_laser_beams",
+    "av3_laser_muzzles",
+    "aa5_ghost_0",
+    "aa5_ghost_1",
+    "aa5_ghost_2",
+    "aa5_ghost_3",
+    "aa5_ghost_4",
+    "aa5_ghost_5",
+    "aa5_ghost_6",
+    "aa5_ghost_7",
+    "aa5_ghost_8",
+    "sm10_furnace_pod_0",
+    "sm10_furnace_pod_1",
+    "sm10_furnace_pod_2",
+    "sm10_furnace_pod_3",
+    "sm10_furnace_pod_4",
+    "sm10_furnace_pod_5",
+    "sm10_furnace_pod_6",
+    "sm10_furnace_pod_7",
+    "pt11_furnace_head_0",
+    "pt11_furnace_head_1",
+    "pt11_furnace_head_2",
+    "pt11_furnace_head_3",
+    "pt11_furnace_head_4",
+    "pt11_furnace_head_5",
+    "pt11_furnace_head_6",
+    "pt11_furnace_head_7",
+    "pt11_furnace_head_8",
+    "pt11_furnace_head_9",
+    "pt11_furnace_head_10",
+    "pt11_furnace_head_11",
+    "pt11_furnace_head_12",
+    "pt11_furnace_head_13",
+    "pt11_furnace_head_14",
+    "pt11_furnace_head_15"
+  ]
+}

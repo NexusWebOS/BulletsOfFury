@@ -1,0 +1,7694 @@
+{
+  "generator": "built-in image_gen",
+  "revision": "bof-material-redesign",
+  "main": [
+    "amethyst_gate",
+    "black_void",
+    "blue_rift",
+    "red_rift",
+    "green_rift"
+  ],
+  "art": {
+    "blue_rift": {
+      "label": "Ion-blue rift",
+      "fps": 24,
+      "frames": [
+        {
+          "key": "pr11b_blue_rift_0",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "56a65508d51428876b1c806e4572c18fb7ceecade779e8797c62e775633021e3",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.96095,
+            119.10366
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.03905,
+            0.10366
+          ],
+          "measurement": {
+            "area": 2074,
+            "bounds": [
+              85,
+              92,
+              142,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_1",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "de57149ed5823f5357d1d48b524e69dd9a283982986e4fb935debc8a32df6862",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.73204,
+            118.70841
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.26796,
+            -0.29159
+          ],
+          "measurement": {
+            "area": 2116,
+            "bounds": [
+              82,
+              90,
+              141,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_2",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "26fa6da8085b66d516fd6f356e86be4bc75b4e91bd0b39573f830ab4eeea0766",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            0,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            109.78994,
+            118.44527
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.21006,
+            0.44527
+          ],
+          "measurement": {
+            "area": 2147,
+            "bounds": [
+              81,
+              90,
+              142,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_3",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "82df88d7a9fb67d04a3e6892eec979ec612af4e6509092914f615b44ea8dad8c",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.22259,
+            118.55294
+          ],
+          "translation": [
+            50,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.22259,
+            -0.44706
+          ],
+          "measurement": {
+            "area": 2125,
+            "bounds": [
+              82,
+              91,
+              140,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_4",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "03c4320b32669c0deb9c9106a7b1bf43cc06a40afb4627d7bd3a87b0b28aa99e",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.87847,
+            118.27819
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.12153,
+            0.27819
+          ],
+          "measurement": {
+            "area": 2164,
+            "bounds": [
+              83,
+              91,
+              140,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_5",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "09a63cdcb25ebf9e0800817425c90b44de3096900b9b5c6bab5827b8bd0a99b1",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.56556,
+            118.4212
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.43444,
+            0.4212
+          ],
+          "measurement": {
+            "area": 2189,
+            "bounds": [
+              81,
+              91,
+              140,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_6",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "08c42b647ebea788812a9f8f1d5c0c76021c019b35942644eccfa24da5c937c1",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            222,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.23207,
+            118.4952
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.23207,
+            0.4952
+          ],
+          "measurement": {
+            "area": 2189,
+            "bounds": [
+              80,
+              91,
+              142,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_blue_rift_7",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b8e84b5bc6ae9726f48a619c793ce154ae745fa7bc859aeffd092cbae33cd79c",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.93229,
+            118.75127
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.06771,
+            -0.24873
+          ],
+          "measurement": {
+            "area": 2171,
+            "bounds": [
+              83,
+              91,
+              142,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_blue_rift_8",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c93b7c66fe4272f910c831ca7d64400c86f02d3d50f104182d9912b672d5b9c5",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.43333,
+            118.10282
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.43333,
+            0.10282
+          ],
+          "measurement": {
+            "area": 2130,
+            "bounds": [
+              84,
+              90,
+              142,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_9",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "23f911840fbe3ab6196f27f20ae51645a737e6084ed0af9f446853f628d32687",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.02488,
+            117.95502
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.02488,
+            -0.04498
+          ],
+          "measurement": {
+            "area": 2090,
+            "bounds": [
+              83,
+              90,
+              144,
+              145
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_10",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "3311abb211be8e8d8aa9f2b358df22aee379f5af325f536b8b4eaafc76aef3cc",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            444,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            110.12575,
+            117.78779
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.12575,
+            -0.21221
+          ],
+          "measurement": {
+            "area": 2163,
+            "bounds": [
+              79,
+              90,
+              142,
+              145
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_blue_rift_11",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8512f7e0d302d9132b2d1c934b7ff8fee5988441b19a67cfddbca0a11b63f0f1",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.66379,
+            118.10647
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.33621,
+            0.10647
+          ],
+          "measurement": {
+            "area": 2085,
+            "bounds": [
+              84,
+              91,
+              140,
+              145
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_12",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ce4b23a2f006e36dd0a93c8a57eadbb9691d2b115ae18f28ab50029625559e56",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.55138,
+            119.23721
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.44862,
+            0.23721
+          ],
+          "measurement": {
+            "area": 2209,
+            "bounds": [
+              84,
+              88,
+              143,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_13",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "57d3065c9cd8663b2f451bde7c47b42fc1847a96b71bd51e40179569e952c389",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.68567,
+            119.33055
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.31433,
+            0.33055
+          ],
+          "measurement": {
+            "area": 2157,
+            "bounds": [
+              82,
+              90,
+              140,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_14",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "fe187fe0da391c6a6801d0b60794c2514c39127f71fd1ffcdee0d3eb68726031",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            665,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.41168,
+            119.0713
+          ],
+          "translation": [
+            50,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.41168,
+            0.0713
+          ],
+          "measurement": {
+            "area": 2174,
+            "bounds": [
+              82,
+              90,
+              141,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 5
+        },
+        {
+          "key": "pr11b_blue_rift_15",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "1d1f88ce9260c4a581cebba95451f05c8106b7ab0146eec9524b6543e1e2ff56",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.75841,
+            118.74689
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.24159,
+            -0.25311
+          ],
+          "measurement": {
+            "area": 2169,
+            "bounds": [
+              83,
+              88,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_blue_rift_16",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "1c377558614468bd8b29814e11ca12536fe63430349caa529b3afd01811da5f2",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.13364,
+            118.75888
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.13364,
+            -0.24112
+          ],
+          "measurement": {
+            "area": 2140,
+            "bounds": [
+              82,
+              90,
+              139,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_blue_rift_17",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7b02b92e779591adf13e082440f41541170217f3ee15490855704de0ab673adf",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.67357,
+            119.01473
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.32643,
+            0.01473
+          ],
+          "measurement": {
+            "area": 2172,
+            "bounds": [
+              82,
+              92,
+              140,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_18",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "480e827430349ad4f6a6969eb903af478c061182e5c48524b8c298bb45cc45c9",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            887,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.77068,
+            118.50514
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.22932,
+            -0.49486
+          ],
+          "measurement": {
+            "area": 2237,
+            "bounds": [
+              81,
+              86,
+              144,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_19",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f4ba3c36cccfc3624a3e14c33cc7e89259490e650a979d3b95c8dd2f1b39bc23",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.67156,
+            118.86514
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.32844,
+            -0.13486
+          ],
+          "measurement": {
+            "area": 2180,
+            "bounds": [
+              83,
+              91,
+              139,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_20",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6073504f93bfbfbea3b30ac6420e1c43b9cac79380f930ab185894ed956ffa85",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.10189,
+            118.59428
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.10189,
+            -0.40572
+          ],
+          "measurement": {
+            "area": 2169,
+            "bounds": [
+              82,
+              91,
+              139,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_blue_rift_21",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d37372ce7d2a7dc19d2bf01c3336e7b9c45c69d880661e74de4b023e24f4e128",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.86906,
+            118.42311
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.13094,
+            0.42311
+          ],
+          "measurement": {
+            "area": 2146,
+            "bounds": [
+              83,
+              90,
+              139,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_22",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0d491f13859af7df800916ea2240cad919508f2d1b56342491f0d579cd42c62e",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            1109,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            110.1196,
+            118.40427
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.1196,
+            0.40427
+          ],
+          "measurement": {
+            "area": 2199,
+            "bounds": [
+              80,
+              90,
+              142,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_23",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "607c097009876f8be2f8e3b40c33ff10e2e25e84bb1a9729755329db13acc014",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.1107,
+            118.79735
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.1107,
+            -0.20265
+          ],
+          "measurement": {
+            "area": 2186,
+            "bounds": [
+              84,
+              91,
+              141,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_24",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b439045ebe73a7e82b887117387408780bde6bc9f3faf15cd81926941cb342d1",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.10469,
+            118.95305
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.10469,
+            -0.04695
+          ],
+          "measurement": {
+            "area": 2130,
+            "bounds": [
+              83,
+              91,
+              141,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_25",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "dbc7e7fd095857cf6944efbed8926f1a0af0ce4070281b1247f216a01cb62707",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.25997,
+            118.15543
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.25997,
+            0.15543
+          ],
+          "measurement": {
+            "area": 2181,
+            "bounds": [
+              82,
+              90,
+              140,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_26",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e10a62a1d6f8b2b946eea2d57960e5f26c5e4b505cd1a0843064395eec843e7d",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            1330,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.13605,
+            118.56436
+          ],
+          "translation": [
+            50,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.13605,
+            -0.43564
+          ],
+          "measurement": {
+            "area": 2183,
+            "bounds": [
+              83,
+              91,
+              141,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_blue_rift_27",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e0640e48bf9f15601004b46e72ea7de8d4e67a57bee767564764b219b49ee684",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.52612,
+            118.42817
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.47388,
+            0.42817
+          ],
+          "measurement": {
+            "area": 2144,
+            "bounds": [
+              84,
+              90,
+              139,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_blue_rift_28",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e5db48b014939037f530d6688f66c11f4838963c7bd1a20f7b9d42600d869819",
+          "source": "blue.png",
+          "sourceRect": [
+            0,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.33754,
+            118.48714
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.33754,
+            0.48714
+          ],
+          "measurement": {
+            "area": 2139,
+            "bounds": [
+              85,
+              90,
+              142,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 5
+        },
+        {
+          "key": "pr11b_blue_rift_29",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9f78bab5072b8532809625cd80697a2a7989426139a2bec8708a3c4e2fd96e88",
+          "source": "blue.png",
+          "sourceRect": [
+            222,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.63486,
+            118.33692
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.36514,
+            0.33692
+          ],
+          "measurement": {
+            "area": 2232,
+            "bounds": [
+              80,
+              88,
+              141,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 11
+        },
+        {
+          "key": "pr11b_blue_rift_30",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ee6fe16ddc92e635509e65bb420f99beaee1355bbc7e2151970065d20c0e4487",
+          "source": "blue.png",
+          "sourceRect": [
+            444,
+            1552,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.30009,
+            117.91682
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.30009,
+            -0.08318
+          ],
+          "measurement": {
+            "area": 2236,
+            "bounds": [
+              81,
+              88,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 9
+        },
+        {
+          "key": "pr11b_blue_rift_31",
+          "path": "assets/game/shared/fx/portals_bof_1011/blue_rift_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a78e28c6b33cd783c1be1428b5d39d792132b6ae17a02458b0dfd2141d902416",
+          "source": "blue.png",
+          "sourceRect": [
+            665,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.27844,
+            117.64587
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.27844,
+            -0.35413
+          ],
+          "measurement": {
+            "area": 2180,
+            "bounds": [
+              84,
+              90,
+              142,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        }
+      ],
+      "role": "animation",
+      "sheet": {
+        "path": "assets/game/shared/fx/portals_bof_1011/blue_rift-sheet.png",
+        "columns": 4,
+        "rows": 8,
+        "cell": [
+          320,
+          320
+        ]
+      }
+    },
+    "red_rift": {
+      "label": "Crimson rift",
+      "fps": 24,
+      "frames": [
+        {
+          "key": "pr11b_red_rift_0",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e8c8b203382963deadc08e5da33ba92363cfa874440f82e97059737694b4a033",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.35983,
+            118.56195
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.35983,
+            -0.43805
+          ],
+          "measurement": {
+            "area": 2365,
+            "bounds": [
+              82,
+              90,
+              142,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 33
+        },
+        {
+          "key": "pr11b_red_rift_1",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "2917be018f068b88a0b1f1f16e299851a0d842d1354b0ea79727a5eff57c5264",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.49823,
+            118.54782
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.49823,
+            -0.45218
+          ],
+          "measurement": {
+            "area": 2541,
+            "bounds": [
+              81,
+              89,
+              145,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 24
+        },
+        {
+          "key": "pr11b_red_rift_2",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d72e0ce46d0e90c7ffa735c87fc1ae0d5672d808a18c7f4624947ee0dc037df4",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            0,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.51132,
+            117.90284
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.48868,
+            -0.09716
+          ],
+          "measurement": {
+            "area": 2429,
+            "bounds": [
+              79,
+              90,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 26
+        },
+        {
+          "key": "pr11b_red_rift_3",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d0c23a3efa945e2147d6cccf92656deeacf33febb056d8ef993501798df5f719",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.61036,
+            117.88039
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.38964,
+            -0.11961
+          ],
+          "measurement": {
+            "area": 2433,
+            "bounds": [
+              80,
+              86,
+              144,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 25
+        },
+        {
+          "key": "pr11b_red_rift_4",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e9fdc82a0bc0671c726c20a4fda16f490fb17bde3e8916d0c9d3e51380e96198",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.27056,
+            118.2129
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.27056,
+            0.2129
+          ],
+          "measurement": {
+            "area": 2480,
+            "bounds": [
+              81,
+              87,
+              143,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 29
+        },
+        {
+          "key": "pr11b_red_rift_5",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f3adb1e553077c37b17b168c474b28441c10285ee7d7d04ec4eeda09cda0466a",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.9,
+            118.3587
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.1,
+            0.3587
+          ],
+          "measurement": {
+            "area": 2470,
+            "bounds": [
+              81,
+              89,
+              146,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 20
+        },
+        {
+          "key": "pr11b_red_rift_6",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "393db5b58b48b2b518bb1f8a4ad2b89d927fcc0590aee7d7027c1d85e6e852a3",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            222,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.71042,
+            118.48646
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.28958,
+            0.48646
+          ],
+          "measurement": {
+            "area": 2438,
+            "bounds": [
+              80,
+              88,
+              143,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 20
+        },
+        {
+          "key": "pr11b_red_rift_7",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b3018d72bf3bcce65b99ed4bf771f04a40aca568200cbad4903fb39bbbfac257",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.83057,
+            119.08249
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.16943,
+            0.08249
+          ],
+          "measurement": {
+            "area": 2473,
+            "bounds": [
+              81,
+              90,
+              145,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 38
+        },
+        {
+          "key": "pr11b_red_rift_8",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f5d5f3e173484c894a27092684c1dc7297d2771b7c5f7b5c0c4f437dec5d42b7",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.93567,
+            118.50919
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.06433,
+            -0.49081
+          ],
+          "measurement": {
+            "area": 2394,
+            "bounds": [
+              82,
+              89,
+              145,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 20
+        },
+        {
+          "key": "pr11b_red_rift_9",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7565b24588686ad23794eb3218a975b9a40b0669f2e8bdc7c80053150b3ce405",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.98004,
+            117.84969
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.01996,
+            -0.15031
+          ],
+          "measurement": {
+            "area": 2455,
+            "bounds": [
+              80,
+              88,
+              146,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 36
+        },
+        {
+          "key": "pr11b_red_rift_10",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0ae86226a721e6c81081f11a78c2eb33247b671a38f81d55400e9abdc206babd",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            444,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            110.74958,
+            117.54271
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.25042,
+            -0.45729
+          ],
+          "measurement": {
+            "area": 2388,
+            "bounds": [
+              78,
+              85,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 22
+        },
+        {
+          "key": "pr11b_red_rift_11",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "fdb4e5d4e3da145c3a0f9b3dbcc48ecfa85a018d32b5ecc574b17f765799dc96",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.98786,
+            118.19213
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.01214,
+            0.19213
+          ],
+          "measurement": {
+            "area": 2389,
+            "bounds": [
+              80,
+              86,
+              145,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 32
+        },
+        {
+          "key": "pr11b_red_rift_12",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "cbefedcd61c0c10fd6ddd1bdc0672f2027261557ebf510467c29cb006b9abd5d",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.3383,
+            119.70973
+          ],
+          "translation": [
+            48,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.3383,
+            -0.29027
+          ],
+          "measurement": {
+            "area": 2415,
+            "bounds": [
+              82,
+              90,
+              145,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 38
+        },
+        {
+          "key": "pr11b_red_rift_13",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ceb2214a4f97d642f32ccc70d43a62ae24e9a39eb91e5bfe40892a60e6610175",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.92177,
+            119.31021
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.07823,
+            0.31021
+          ],
+          "measurement": {
+            "area": 2595,
+            "bounds": [
+              79,
+              89,
+              146,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 35
+        },
+        {
+          "key": "pr11b_red_rift_14",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "04f0c05b345bcb644349e50d8c1479ccd0824bd577c2aa350ca7a0ff41134414",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            665,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            111.50118,
+            119.41417
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.49882,
+            0.41417
+          ],
+          "measurement": {
+            "area": 2540,
+            "bounds": [
+              81,
+              90,
+              145,
+              150
+            ]
+          },
+          "sourceBorderAlphaMax": 21
+        },
+        {
+          "key": "pr11b_red_rift_15",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f777ce94fcd793691972f285bef6700117e551497585fd73e12c4eaf6051ba9b",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.79601,
+            119.5525
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.20399,
+            -0.4475
+          ],
+          "measurement": {
+            "area": 2505,
+            "bounds": [
+              80,
+              86,
+              143,
+              153
+            ]
+          },
+          "sourceBorderAlphaMax": 32
+        },
+        {
+          "key": "pr11b_red_rift_16",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "89736d0cb7d5ac1d213b5a71596917ceb459daff73031703eddcbc0e79253df1",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.57,
+            118.41545
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.43,
+            0.41545
+          ],
+          "measurement": {
+            "area": 2407,
+            "bounds": [
+              81,
+              90,
+              145,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 21
+        },
+        {
+          "key": "pr11b_red_rift_17",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "85fa92d621e4cdd12be87b4156e0796598e4dccffcf3118071b5194755385d21",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.86881,
+            118.62656
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.13119,
+            -0.37344
+          ],
+          "measurement": {
+            "area": 2485,
+            "bounds": [
+              81,
+              86,
+              147,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 27
+        },
+        {
+          "key": "pr11b_red_rift_18",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a7ea5f55e5059878f2217d3dd043519f90cf12494eac96e48f43b6526ca1d429",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            887,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            111.43633,
+            118.58359
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.43633,
+            -0.41641
+          ],
+          "measurement": {
+            "area": 2560,
+            "bounds": [
+              79,
+              89,
+              144,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 19
+        },
+        {
+          "key": "pr11b_red_rift_19",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bec7fd924019df44b8486642a3bbd9f1cb490e3f59ada2cba26799c99570adc3",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.91955,
+            118.65965
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.08045,
+            -0.34035
+          ],
+          "measurement": {
+            "area": 2374,
+            "bounds": [
+              81,
+              89,
+              141,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 38
+        },
+        {
+          "key": "pr11b_red_rift_20",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8de50a05999b1c4b98e4482e6a3fc843a9715229175e69489b3d28336c9a6bbc",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.92681,
+            118.19053
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.07319,
+            0.19053
+          ],
+          "measurement": {
+            "area": 2514,
+            "bounds": [
+              81,
+              88,
+              145,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 14
+        },
+        {
+          "key": "pr11b_red_rift_21",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4b7f56ddf207e7837a56bea56f26f1565afbbd362207def2d352905a7eca3de7",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.70072,
+            118.18423
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.29928,
+            0.18423
+          ],
+          "measurement": {
+            "area": 2486,
+            "bounds": [
+              81,
+              89,
+              145,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 25
+        },
+        {
+          "key": "pr11b_red_rift_22",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b6c9d2a4eac4fdf4ac9ab22da2192a9721afd344e6f3c9a39d6990cbf603bc89",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            1109,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            111.36914,
+            118.37237
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.36914,
+            0.37237
+          ],
+          "measurement": {
+            "area": 2476,
+            "bounds": [
+              81,
+              89,
+              144,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 27
+        },
+        {
+          "key": "pr11b_red_rift_23",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "dd1a1f776c3273ff7e5594c5def541f917704ef7a46dbf54574c4505abeb29e1",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.50884,
+            118.1755
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.49116,
+            0.1755
+          ],
+          "measurement": {
+            "area": 2490,
+            "bounds": [
+              81,
+              89,
+              146,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 38
+        },
+        {
+          "key": "pr11b_red_rift_24",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c6d2fde1d544054cf63bee15bd8b58d9271aa45747d30a9312cdfb7bd259b286",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.66234,
+            118.55817
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.33766,
+            -0.44183
+          ],
+          "measurement": {
+            "area": 2467,
+            "bounds": [
+              82,
+              89,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 12
+        },
+        {
+          "key": "pr11b_red_rift_25",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ad1681aa7a39bb6ae0cbcd706e50a88c610cb8a7756282a8189520be5a4dac07",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.04133,
+            118.08106
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.04133,
+            0.08106
+          ],
+          "measurement": {
+            "area": 2492,
+            "bounds": [
+              80,
+              85,
+              143,
+              150
+            ]
+          },
+          "sourceBorderAlphaMax": 19
+        },
+        {
+          "key": "pr11b_red_rift_26",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "94598a4e1851a0a59d1d160cff005799c2c8f1c6ed4f2785476d61543516f578",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            1330,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.75279,
+            118.3896
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.24721,
+            0.3896
+          ],
+          "measurement": {
+            "area": 2423,
+            "bounds": [
+              81,
+              86,
+              143,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 20
+        },
+        {
+          "key": "pr11b_red_rift_27",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "2e4728cc581e7ba4c0b69540f600280320f7fe1613c65959f840671b878cf106",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.14786,
+            118.66801
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.14786,
+            -0.33199
+          ],
+          "measurement": {
+            "area": 2482,
+            "bounds": [
+              80,
+              89,
+              145,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 31
+        },
+        {
+          "key": "pr11b_red_rift_28",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c407e023f4c3e6ef9a0a3cbeff69176fb0d86bcf4210e122a5364c32d90a76e1",
+          "source": "red.png",
+          "sourceRect": [
+            0,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.63067,
+            118.17137
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.36933,
+            0.17137
+          ],
+          "measurement": {
+            "area": 2445,
+            "bounds": [
+              82,
+              88,
+              145,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 31
+        },
+        {
+          "key": "pr11b_red_rift_29",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "824410afd0a5089a8c23fee420a6a2b87b0f0656112c1218ae249063b6e97371",
+          "source": "red.png",
+          "sourceRect": [
+            222,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.56811,
+            118.17628
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.43189,
+            0.17628
+          ],
+          "measurement": {
+            "area": 2496,
+            "bounds": [
+              80,
+              89,
+              145,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 21
+        },
+        {
+          "key": "pr11b_red_rift_30",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "88e59ffa6e31ceae4adbb16ab7c8afbe397573862298526c8d749ff421d731e4",
+          "source": "red.png",
+          "sourceRect": [
+            444,
+            1552,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.77937,
+            117.86151
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.22063,
+            -0.13849
+          ],
+          "measurement": {
+            "area": 2520,
+            "bounds": [
+              81,
+              86,
+              144,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 33
+        },
+        {
+          "key": "pr11b_red_rift_31",
+          "path": "assets/game/shared/fx/portals_bof_1011/red_rift_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e9f9d1cd5b1afbb298712fc0516daecc30993ea2badf13089ccaa344daf3beb1",
+          "source": "red.png",
+          "sourceRect": [
+            665,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            109.97949,
+            117.73422
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.02051,
+            -0.26578
+          ],
+          "measurement": {
+            "area": 2487,
+            "bounds": [
+              80,
+              86,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 28
+        }
+      ],
+      "role": "animation",
+      "sheet": {
+        "path": "assets/game/shared/fx/portals_bof_1011/red_rift-sheet.png",
+        "columns": 4,
+        "rows": 8,
+        "cell": [
+          320,
+          320
+        ]
+      }
+    },
+    "green_rift": {
+      "label": "Emerald rift",
+      "fps": 24,
+      "frames": [
+        {
+          "key": "pr11b_green_rift_0",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bcdb2f96ab587b7ccdf678071ea91a4f3e8a91fc6fd985a24e4aaabaa89397a5",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.36405,
+            118.56167
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.36405,
+            -0.43833
+          ],
+          "measurement": {
+            "area": 2181,
+            "bounds": [
+              82,
+              90,
+              141,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 21
+        },
+        {
+          "key": "pr11b_green_rift_1",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "798c4daf7dc3cd0c039f67f9b59be635564a57d36a42b6c5fe36b23f745c92cb",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.27281,
+            117.68361
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.27281,
+            -0.31639
+          ],
+          "measurement": {
+            "area": 2203,
+            "bounds": [
+              82,
+              90,
+              143,
+              145
+            ]
+          },
+          "sourceBorderAlphaMax": 34
+        },
+        {
+          "key": "pr11b_green_rift_2",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0ee2826cacda1c3eaaf354091bea385bcde1261b0ffa34678329fc733fafd9fb",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            0,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.40972,
+            117.75078
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.40972,
+            -0.24922
+          ],
+          "measurement": {
+            "area": 2243,
+            "bounds": [
+              81,
+              90,
+              142,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 22
+        },
+        {
+          "key": "pr11b_green_rift_3",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d92bebf10e85fd341c3f1bde1af357323e9b31cbadf543ace0e0012311a25c66",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.3818,
+            117.75914
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.3818,
+            -0.24086
+          ],
+          "measurement": {
+            "area": 2242,
+            "bounds": [
+              81,
+              90,
+              143,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 32
+        },
+        {
+          "key": "pr11b_green_rift_4",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b338fb3c45b058f1b13b6e46ac156879997bb0aa850aa46214b5a0fde9334fa6",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.61255,
+            117.84291
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.38745,
+            -0.15709
+          ],
+          "measurement": {
+            "area": 2279,
+            "bounds": [
+              81,
+              90,
+              142,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 22
+        },
+        {
+          "key": "pr11b_green_rift_5",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "35f2897070ac52b4bafff97a171fd842bbc900478c18873067073ddad0ef8360",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.33671,
+            117.9868
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.33671,
+            -0.0132
+          ],
+          "measurement": {
+            "area": 2272,
+            "bounds": [
+              82,
+              91,
+              143,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 25
+        },
+        {
+          "key": "pr11b_green_rift_6",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "59d31659415aeaf9ef573b24d2e6e2a0780618157ce567e9819032ea9addc7d5",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            222,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.3234,
+            117.7772
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.3234,
+            -0.2228
+          ],
+          "measurement": {
+            "area": 2316,
+            "bounds": [
+              80,
+              90,
+              143,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 13
+        },
+        {
+          "key": "pr11b_green_rift_7",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "122e75bf3e0ec4ec96da02ca95f7976ee950b17fdcbb9d0aa2762611eeb914e0",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.6243,
+            118.26971
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.3757,
+            0.26971
+          ],
+          "measurement": {
+            "area": 2321,
+            "bounds": [
+              82,
+              90,
+              144,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 11
+        },
+        {
+          "key": "pr11b_green_rift_8",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "35fc42b5a87764d9b792d6ee4f0d7a5ec93f2ba6ee0c1492f27ba08ccbcfdc53",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.86571,
+            118.34512
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.13429,
+            0.34512
+          ],
+          "measurement": {
+            "area": 2234,
+            "bounds": [
+              82,
+              91,
+              144,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 12
+        },
+        {
+          "key": "pr11b_green_rift_9",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a4238f1921d37808265ab93f93aa2cb2717c6d361d5ba3e80abc8edafbe26c44",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.68086,
+            117.9879
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.31914,
+            -0.0121
+          ],
+          "measurement": {
+            "area": 2231,
+            "bounds": [
+              81,
+              91,
+              145,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 28
+        },
+        {
+          "key": "pr11b_green_rift_10",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8867fe06b0ee13c838719100c19094eb9cef8dc29c0250492cddc1b889f9c698",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            444,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            110.04883,
+            117.95645
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.04883,
+            -0.04355
+          ],
+          "measurement": {
+            "area": 2273,
+            "bounds": [
+              78,
+              90,
+              142,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 7
+        },
+        {
+          "key": "pr11b_green_rift_11",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7252bf04e789fa7404116eea8034da4938402c4994c7006b1309b528af9b7f02",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.15416,
+            118.30563
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.15416,
+            0.30563
+          ],
+          "measurement": {
+            "area": 2238,
+            "bounds": [
+              80,
+              91,
+              144,
+              146
+            ]
+          },
+          "sourceBorderAlphaMax": 17
+        },
+        {
+          "key": "pr11b_green_rift_12",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6fe3f9ad5ed453a6c3de15fcd5e750332c178b27ee5d78340ccf7d179fa17e73",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.10608,
+            119.73221
+          ],
+          "translation": [
+            48,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.10608,
+            -0.26779
+          ],
+          "measurement": {
+            "area": 2319,
+            "bounds": [
+              82,
+              92,
+              145,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 77
+        },
+        {
+          "key": "pr11b_green_rift_13",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "dc059a4484f6335ae10bb80fa9f99c97a585496d129f1c1ccc7d9a5ab204d021",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.17434,
+            119.51614
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.17434,
+            -0.48386
+          ],
+          "measurement": {
+            "area": 2323,
+            "bounds": [
+              80,
+              91,
+              145,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 30
+        },
+        {
+          "key": "pr11b_green_rift_14",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6cc541c5d67d6a348a315282eb66e69833ca96c4b602572f67f1a32889b0bd59",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            665,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.44115,
+            119.58764
+          ],
+          "translation": [
+            50,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.44115,
+            -0.41236
+          ],
+          "measurement": {
+            "area": 2362,
+            "bounds": [
+              81,
+              92,
+              142,
+              150
+            ]
+          },
+          "sourceBorderAlphaMax": 29
+        },
+        {
+          "key": "pr11b_green_rift_15",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "5d3c710ef98462477bded9a375e2322588495236c6442616ddc6b707e8bd55ba",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.99784,
+            119.77226
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.00216,
+            -0.22774
+          ],
+          "measurement": {
+            "area": 2314,
+            "bounds": [
+              82,
+              90,
+              142,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 54
+        },
+        {
+          "key": "pr11b_green_rift_16",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "747f06abbd6ac734eb4641d8193fea2cc27bb6c1210576bc28fa0a5943f65af9",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.15808,
+            120.46499
+          ],
+          "translation": [
+            48,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.15808,
+            0.46499
+          ],
+          "measurement": {
+            "area": 2271,
+            "bounds": [
+              82,
+              92,
+              144,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 48
+        },
+        {
+          "key": "pr11b_green_rift_17",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "76321e45ed05c83c60cdc7601cfdc50d06b6a2a7a3a3d09036dccfd3fea80123",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.29154,
+            120.23287
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.29154,
+            0.23287
+          ],
+          "measurement": {
+            "area": 2233,
+            "bounds": [
+              83,
+              91,
+              141,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 37
+        },
+        {
+          "key": "pr11b_green_rift_18",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a3a2cbb5d15bb442ed8712cadd3e07411e3e8f86e746353af126f5c5be379396",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            887,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.87694,
+            120.47543
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.12306,
+            0.47543
+          ],
+          "measurement": {
+            "area": 2381,
+            "bounds": [
+              79,
+              92,
+              144,
+              150
+            ]
+          },
+          "sourceBorderAlphaMax": 24
+        },
+        {
+          "key": "pr11b_green_rift_19",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "57fc1b4d2554e645a7e9d8ee285555f2d41fa15bf2480972d7ca0305c5a567ba",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.89715,
+            120.28455
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.10285,
+            0.28455
+          ],
+          "measurement": {
+            "area": 2207,
+            "bounds": [
+              82,
+              92,
+              139,
+              149
+            ]
+          },
+          "sourceBorderAlphaMax": 33
+        },
+        {
+          "key": "pr11b_green_rift_20",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "48975a6725b5cb8c73fca29100d7462c64412803a6f9b9d73ddae2ccfecf41d7",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.64063,
+            119.53521
+          ],
+          "translation": [
+            48,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.35937,
+            -0.46479
+          ],
+          "measurement": {
+            "area": 2343,
+            "bounds": [
+              82,
+              91,
+              143,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 25
+        },
+        {
+          "key": "pr11b_green_rift_21",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "add470fa258848455334472d17513964c1b928ce2de6dec4fde7db2cbce79cfb",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.89644,
+            119.68044
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.10356,
+            -0.31956
+          ],
+          "measurement": {
+            "area": 2250,
+            "bounds": [
+              81,
+              91,
+              140,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 79
+        },
+        {
+          "key": "pr11b_green_rift_22",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bf46e7662461d3b722b346007dae2f8509902fdb27e9716f0c6e0d31b4b8f748",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            1109,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            110.39189,
+            119.65214
+          ],
+          "translation": [
+            50,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.39189,
+            -0.34786
+          ],
+          "measurement": {
+            "area": 2317,
+            "bounds": [
+              80,
+              92,
+              143,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 69
+        },
+        {
+          "key": "pr11b_green_rift_23",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "671a822ba30ee01706b2c6e33d48ddd2a13af662b7ddb7b80b1af268e22ae7ed",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.58113,
+            119.60839
+          ],
+          "translation": [
+            49,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.41887,
+            -0.39161
+          ],
+          "measurement": {
+            "area": 2311,
+            "bounds": [
+              82,
+              91,
+              140,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 57
+        },
+        {
+          "key": "pr11b_green_rift_24",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "fd3daa4c446431b68a86b5c4dd4577ae44b2acfdda0feaf7b52b78d735dcdb5f",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.07011,
+            119.34794
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            0.07011,
+            0.34794
+          ],
+          "measurement": {
+            "area": 2282,
+            "bounds": [
+              82,
+              91,
+              141,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 18
+        },
+        {
+          "key": "pr11b_green_rift_25",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ab37707f98256f5aac08596646c505558e20dda4e4e2812fe525201aa284b6db",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.68556,
+            119.04562
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.31444,
+            0.04562
+          ],
+          "measurement": {
+            "area": 2258,
+            "bounds": [
+              81,
+              90,
+              141,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 52
+        },
+        {
+          "key": "pr11b_green_rift_26",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c36c69b46c0a9302ba071bb47ace78cd9c65b86cfc97bef8faa7026d97dd69da",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            1330,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.13294,
+            119.62292
+          ],
+          "translation": [
+            50,
+            40
+          ],
+          "scale": 1,
+          "centerError": [
+            0.13294,
+            -0.37708
+          ],
+          "measurement": {
+            "area": 2347,
+            "bounds": [
+              81,
+              91,
+              142,
+              148
+            ]
+          },
+          "sourceBorderAlphaMax": 42
+        },
+        {
+          "key": "pr11b_green_rift_27",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "31e37e400d323a731887ed5319875269af114ede953dbb28616d935a50d4a6ba",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.99867,
+            119.29965
+          ],
+          "translation": [
+            49,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.00133,
+            0.29965
+          ],
+          "measurement": {
+            "area": 2256,
+            "bounds": [
+              82,
+              90,
+              144,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 44
+        },
+        {
+          "key": "pr11b_green_rift_28",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "eff14121d6c2dcda5f4610ef17034124b43eebff2d908f5b621584f37a45f22e",
+          "source": "green.png",
+          "sourceRect": [
+            0,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.66489,
+            118.49468
+          ],
+          "translation": [
+            48,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.33511,
+            0.49468
+          ],
+          "measurement": {
+            "area": 2256,
+            "bounds": [
+              82,
+              91,
+              144,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 48
+        },
+        {
+          "key": "pr11b_green_rift_29",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0db85cb6379840b1fcddfbde2d88ee0d12015d20d56c5d8ef6484256e86f28e1",
+          "source": "green.png",
+          "sourceRect": [
+            222,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.91803,
+            118.79379
+          ],
+          "translation": [
+            48,
+            41
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.08197,
+            -0.20621
+          ],
+          "measurement": {
+            "area": 2318,
+            "bounds": [
+              80,
+              92,
+              145,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 24
+        },
+        {
+          "key": "pr11b_green_rift_30",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6f35c66541d9213f95a57357dc1f80ccc3fa00a6858a4cb220504805c0b8fb13",
+          "source": "green.png",
+          "sourceRect": [
+            444,
+            1552,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.67279,
+            118.41307
+          ],
+          "translation": [
+            49,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.32721,
+            0.41307
+          ],
+          "measurement": {
+            "area": 2341,
+            "bounds": [
+              80,
+              90,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 14
+        },
+        {
+          "key": "pr11b_green_rift_31",
+          "path": "assets/game/shared/fx/portals_bof_1011/green_rift_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "32cadb41be4f58261f35462dabf0025de1236e32abf7e73c5b2336e7df0fb8ee",
+          "source": "green.png",
+          "sourceRect": [
+            665,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.3035,
+            118.38448
+          ],
+          "translation": [
+            50,
+            42
+          ],
+          "scale": 1,
+          "centerError": [
+            0.3035,
+            0.38448
+          ],
+          "measurement": {
+            "area": 2346,
+            "bounds": [
+              80,
+              90,
+              143,
+              147
+            ]
+          },
+          "sourceBorderAlphaMax": 51
+        }
+      ],
+      "role": "animation",
+      "sheet": {
+        "path": "assets/game/shared/fx/portals_bof_1011/green_rift-sheet.png",
+        "columns": 4,
+        "rows": 8,
+        "cell": [
+          320,
+          320
+        ]
+      }
+    },
+    "black_void": {
+      "label": "Chromium singularity",
+      "fps": 20,
+      "frames": [
+        {
+          "key": "pr11b_black_void_0",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "3568f8d3644a5c3094b89acb37098291851a422abab9f0d6446d272325c0e1a4",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.44706,
+            112.21319
+          ],
+          "translation": [
+            47,
+            48
+          ],
+          "scale": 1,
+          "centerError": [
+            0.44706,
+            0.21319
+          ],
+          "measurement": {
+            "area": 2805,
+            "bounds": [
+              84,
+              82,
+              145,
+              143
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        },
+        {
+          "key": "pr11b_black_void_1",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "eb8c29b20c1e97279447497cef3f3cf046250bfa2748169c1a3550329e51ddbc",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.05064,
+            112.21683
+          ],
+          "translation": [
+            47,
+            48
+          ],
+          "scale": 1,
+          "centerError": [
+            0.05064,
+            0.21683
+          ],
+          "measurement": {
+            "area": 2804,
+            "bounds": [
+              82,
+              83,
+              144,
+              143
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_2",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "682e6e154aac5ef51c559672ca227c32f6ae6c65eb51c0f70c2231a6adb3fabe",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            0,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            112.39541,
+            112.29841
+          ],
+          "translation": [
+            48,
+            48
+          ],
+          "scale": 1,
+          "centerError": [
+            0.39541,
+            0.29841
+          ],
+          "measurement": {
+            "area": 2835,
+            "bounds": [
+              82,
+              82,
+              144,
+              143
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_3",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d58786090729df55ab05de9b9906835fcd133aba0f1ee42e6a087da262de5a8a",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.76306,
+            112.11299
+          ],
+          "translation": [
+            47,
+            48
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.23694,
+            0.11299
+          ],
+          "measurement": {
+            "area": 2832,
+            "bounds": [
+              83,
+              82,
+              145,
+              142
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_4",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f9ffcb7eda7e96cd58fa50c9902e42eb60b0e7b429935272dab6a83a26239d19",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.77649,
+            110.58351
+          ],
+          "translation": [
+            46,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.22351,
+            -0.41649
+          ],
+          "measurement": {
+            "area": 2850,
+            "bounds": [
+              83,
+              80,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_5",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9aa3a82be341cd2ace967bb5e1be4c73633068a1baee317f693feba4b513b759",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.42198,
+            110.59352
+          ],
+          "translation": [
+            47,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            0.42198,
+            -0.40648
+          ],
+          "measurement": {
+            "area": 2839,
+            "bounds": [
+              83,
+              80,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_6",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c6427fa77076de28588cb3fa3601e2a2714120243d44decc4dcf1cb08e16ef9c",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            222,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            112.66059,
+            110.53471
+          ],
+          "translation": [
+            47,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.33941,
+            -0.46529
+          ],
+          "measurement": {
+            "area": 2852,
+            "bounds": [
+              82,
+              81,
+              144,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_7",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ce8bbe0008ed16064b2ff451015dbae55fc9729521fa842bbbf0833d2f710506",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.06592,
+            110.62086
+          ],
+          "translation": [
+            47,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            0.06592,
+            -0.37914
+          ],
+          "measurement": {
+            "area": 2867,
+            "bounds": [
+              83,
+              80,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_8",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4ca7b3dabe1daa6182ff3564978b0705c0401f8adad91946a9c6d552009ca8d9",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            113.49079,
+            109.9224
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.49079,
+            -0.0776
+          ],
+          "measurement": {
+            "area": 2822,
+            "bounds": [
+              83,
+              80,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_9",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "25df7bbfb6b1638ca2da4df386c79267d6de0e8064863cc60d246fe05f1e2b56",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            112.87906,
+            109.67525
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.12094,
+            -0.32475
+          ],
+          "measurement": {
+            "area": 2836,
+            "bounds": [
+              83,
+              80,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_10",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4824681f5b6a14c165d731cf64a93037e2a520e3580dc8c5aed0f5f5e0974317",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            444,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            112.29187,
+            109.72109
+          ],
+          "translation": [
+            48,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.29187,
+            -0.27891
+          ],
+          "measurement": {
+            "area": 2854,
+            "bounds": [
+              82,
+              80,
+              143,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_11",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "65f8e2d37ac08f8cca46024443a0bfcc58fddde4f498c1446c34bdb79ed06071",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            113.02373,
+            109.79791
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.02373,
+            -0.20209
+          ],
+          "measurement": {
+            "area": 2865,
+            "bounds": [
+              82,
+              80,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_12",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "aafe8a00afbe6aa0e7f39a18a1e86ed2b3991972cf41d11b16f85fb5ed04a9ca",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.742,
+            110.63255
+          ],
+          "translation": [
+            46,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.258,
+            -0.36745
+          ],
+          "measurement": {
+            "area": 2814,
+            "bounds": [
+              83,
+              81,
+              146,
+              142
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_13",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9539f8eca2be40e4c168fa7e6c340c8b7fbd8523e1812dca3e1fd0bdf1831436",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.09562,
+            110.68207
+          ],
+          "translation": [
+            47,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            0.09562,
+            -0.31793
+          ],
+          "measurement": {
+            "area": 2834,
+            "bounds": [
+              82,
+              80,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_14",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4d13ee50db7c81f64dd8639532d042427d3e563a5a067ca3c44722ae012c9511",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            665,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            112.51023,
+            110.58342
+          ],
+          "translation": [
+            47,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.48977,
+            -0.41658
+          ],
+          "measurement": {
+            "area": 2883,
+            "bounds": [
+              82,
+              80,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_15",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "fc9b081a5c59899166211ddb8d6786674bc1d40f79856c3622ebd2e7cfa9ccd0",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.75897,
+            110.63915
+          ],
+          "translation": [
+            47,
+            49
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.24103,
+            -0.36085
+          ],
+          "measurement": {
+            "area": 2871,
+            "bounds": [
+              82,
+              80,
+              145,
+              142
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_16",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b76be429007098433a10eeca4f064d75c8f4cfab8d116af81fe73231e4c8153a",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.64336,
+            110.23799
+          ],
+          "translation": [
+            46,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.35664,
+            0.23799
+          ],
+          "measurement": {
+            "area": 2832,
+            "bounds": [
+              83,
+              80,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_17",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d5a8d832308451924d64ca0320fdfa5f38dc22609c264ebe1a61c4b33f83cb8d",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.08145,
+            110.08806
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.08145,
+            0.08806
+          ],
+          "measurement": {
+            "area": 2873,
+            "bounds": [
+              82,
+              80,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_18",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c403a42787932e04b8c23d50c6728f59ce560b97b775558fb6546b11443a04b0",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            887,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            112.29481,
+            110.01522
+          ],
+          "translation": [
+            48,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.29481,
+            0.01522
+          ],
+          "measurement": {
+            "area": 2890,
+            "bounds": [
+              82,
+              80,
+              144,
+              142
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_19",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b2401683df2c0a139af00326ad5e578c03ea3f5566a51d0363c3acd9304171dd",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.98195,
+            110.05588
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.01805,
+            0.05588
+          ],
+          "measurement": {
+            "area": 2881,
+            "bounds": [
+              81,
+              80,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_20",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c8e4f90483338e9b750cfc145b318c73510a3ccd5a9bde3fb4e60d608810ade8",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            113.99649,
+            109.42376
+          ],
+          "translation": [
+            46,
+            51
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.00351,
+            0.42376
+          ],
+          "measurement": {
+            "area": 2853,
+            "bounds": [
+              84,
+              79,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_21",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "948f1d17c76f8524081bd85c5fbd6b1a2b0476b6475428579d1f5f6f431110a9",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            113.20246,
+            109.33673
+          ],
+          "translation": [
+            47,
+            51
+          ],
+          "scale": 1,
+          "centerError": [
+            0.20246,
+            0.33673
+          ],
+          "measurement": {
+            "area": 2845,
+            "bounds": [
+              83,
+              79,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_22",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "16adf37dc68122592a258c0866ac6ed9961ead71d0dba113aa764917dd3e41dc",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            1109,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            112.55381,
+            109.29769
+          ],
+          "translation": [
+            47,
+            51
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.44619,
+            0.29769
+          ],
+          "measurement": {
+            "area": 2862,
+            "bounds": [
+              82,
+              79,
+              144,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_23",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ec5ecf67c372a0fc5f2aab613b06bf45edaea977f3aeba9351f89de6e0838226",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            113.03036,
+            109.29972
+          ],
+          "translation": [
+            47,
+            51
+          ],
+          "scale": 1,
+          "centerError": [
+            0.03036,
+            0.29972
+          ],
+          "measurement": {
+            "area": 2866,
+            "bounds": [
+              83,
+              78,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_black_void_24",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "370bfa88b063eb4a834f0a4f90acfe651af666bce38f200112383f33e3cd6acd",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.57028,
+            109.67753
+          ],
+          "translation": [
+            46,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.42972,
+            -0.32247
+          ],
+          "measurement": {
+            "area": 2853,
+            "bounds": [
+              83,
+              80,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_25",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "1b6a8ac70ff3ecd70c15842feb0d52975fcb41c10fa6391e7842f28bc8b7e536",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.962,
+            109.60943
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.038,
+            -0.39057
+          ],
+          "measurement": {
+            "area": 2842,
+            "bounds": [
+              83,
+              80,
+              144,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_26",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bc7439bd259f72fe0f0f04db643272a33cc9e3bbf3ea9c20667269df6c8ea29e",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            1330,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            112.26364,
+            109.5965
+          ],
+          "translation": [
+            48,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.26364,
+            -0.4035
+          ],
+          "measurement": {
+            "area": 2860,
+            "bounds": [
+              82,
+              80,
+              144,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_black_void_27",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "44b86b67554fa130e039cf3f22eb7c2e05f72945c401904d26b495bb2960b0ba",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.0007,
+            109.64104
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.0007,
+            -0.35896
+          ],
+          "measurement": {
+            "area": 2875,
+            "bounds": [
+              82,
+              79,
+              145,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 4
+        },
+        {
+          "key": "pr11b_black_void_28",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bede8444e68c38ba03dd0a4059538a317b65c700de401682bc0066f656267543",
+          "source": "black-void.png",
+          "sourceRect": [
+            0,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            113.68423,
+            109.50966
+          ],
+          "translation": [
+            46,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.31577,
+            -0.49034
+          ],
+          "measurement": {
+            "area": 2847,
+            "bounds": [
+              83,
+              79,
+              147,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_29",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e5571a34da5c1a3eeaae98372966cab155fc35dfd64bd36017056c5eff32884d",
+          "source": "black-void.png",
+          "sourceRect": [
+            222,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.89707,
+            109.50476
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.10293,
+            -0.49524
+          ],
+          "measurement": {
+            "area": 2837,
+            "bounds": [
+              83,
+              78,
+              144,
+              140
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_30",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8949fd162376ae1ea18421709588091c49b79b090da4bb75c9a0065a7c27f14e",
+          "source": "black-void.png",
+          "sourceRect": [
+            444,
+            1552,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            112.22748,
+            109.55304
+          ],
+          "translation": [
+            48,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            0.22748,
+            -0.44696
+          ],
+          "measurement": {
+            "area": 2875,
+            "bounds": [
+              82,
+              79,
+              144,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_black_void_31",
+          "path": "assets/game/shared/fx/portals_bof_1011/black_void_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ac7f42b3ca1541d4c04bbb8666d73c0803f8c7cda1b0e8ef4ffa5a8afa1db1dc",
+          "source": "black-void.png",
+          "sourceRect": [
+            665,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            112.63272,
+            109.50122
+          ],
+          "translation": [
+            47,
+            50
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.36728,
+            -0.49878
+          ],
+          "measurement": {
+            "area": 2867,
+            "bounds": [
+              82,
+              79,
+              145,
+              141
+            ]
+          },
+          "sourceBorderAlphaMax": 3
+        }
+      ],
+      "role": "animation",
+      "sheet": {
+        "path": "assets/game/shared/fx/portals_bof_1011/black_void-sheet.png",
+        "columns": 4,
+        "rows": 8,
+        "cell": [
+          320,
+          320
+        ]
+      }
+    },
+    "gate_energy": {
+      "label": "Fury gate membrane",
+      "fps": 24,
+      "frames": [
+        {
+          "key": "pr11b_gate_energy_0",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "36e0ea8722957ba9e7adb0bdf610b7210a21a91b50de1ff85348edf9ea6a358f",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.9258,
+            114.16611
+          ],
+          "translation": [
+            49,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.0742,
+            0.16611
+          ],
+          "measurement": {
+            "area": 903,
+            "bounds": [
+              94,
+              97,
+              129,
+              132
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_1",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "51ceb4ee8e262a6159b44bcfe2729a93d26590b31c541d5aa374d2edf849c2a2",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.90892,
+            114.74573
+          ],
+          "translation": [
+            49,
+            45
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.09108,
+            -0.25427
+          ],
+          "measurement": {
+            "area": 1054,
+            "bounds": [
+              92,
+              97,
+              130,
+              134
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_2",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f3f12be91b9ff2e7fcb2fdb948050324092b2f3cf59ab18d952edf90fd4e6eb1",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            0,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.56057,
+            114.34483
+          ],
+          "translation": [
+            49,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.43943,
+            0.34483
+          ],
+          "measurement": {
+            "area": 1131,
+            "bounds": [
+              92,
+              96,
+              131,
+              134
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_3",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a437df96b6827421feeea71d8ee93596a049904216e8be216537affb88a903af",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            0,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.77467,
+            114.21048
+          ],
+          "translation": [
+            49,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.22533,
+            0.21048
+          ],
+          "measurement": {
+            "area": 1145,
+            "bounds": [
+              91,
+              94,
+              130,
+              135
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_4",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "5095fab25b9259a3fb82514bed2ebd43bbade04409fc40106208263bab7894ba",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.92851,
+            114.41447
+          ],
+          "translation": [
+            49,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.07149,
+            0.41447
+          ],
+          "measurement": {
+            "area": 1175,
+            "bounds": [
+              92,
+              95,
+              130,
+              135
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_5",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0a7cc189b8635d3346b652a90a451214e75de751e64a8e08dab060ec0adef9c2",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.47691,
+            114.38131
+          ],
+          "translation": [
+            50,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            0.47691,
+            0.38131
+          ],
+          "measurement": {
+            "area": 931,
+            "bounds": [
+              94,
+              98,
+              129,
+              132
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_6",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "11e3b538fa348e1929fe7cee4ceb98ba40e3a641f3e3d076a7182d6684be637b",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            222,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.45725,
+            114.29616
+          ],
+          "translation": [
+            50,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            0.45725,
+            0.29616
+          ],
+          "measurement": {
+            "area": 807,
+            "bounds": [
+              94,
+              98,
+              127,
+              131
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_7",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b0077ca2dda92828711bb4bcc9163dc6ef09d4c3460eea7147d54a0e10102479",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            222,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.13514,
+            114.12531
+          ],
+          "translation": [
+            49,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            0.13514,
+            0.12531
+          ],
+          "measurement": {
+            "area": 814,
+            "bounds": [
+              95,
+              98,
+              128,
+              131
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_8",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e77822cc67865eca734803f921295709f91101ee932eab94fe76f43ce051a2f8",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.25428,
+            112.09291
+          ],
+          "translation": [
+            49,
+            48
+          ],
+          "scale": 1,
+          "centerError": [
+            0.25428,
+            0.09291
+          ],
+          "measurement": {
+            "area": 818,
+            "bounds": [
+              95,
+              97,
+              128,
+              128
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_9",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0e941591c6a2d82fd50d2497758201486f3e74cb42412310d2ee34571d01c090",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.35861,
+            112.53728
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.35861,
+            -0.46272
+          ],
+          "measurement": {
+            "area": 778,
+            "bounds": [
+              95,
+              96,
+              127,
+              129
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_10",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6b7aed7f4d3ab53d33c9de28c8eae9567bd2cbcf0d45a948c032f21e550e6e91",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            444,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            110.36352,
+            111.92928
+          ],
+          "translation": [
+            50,
+            48
+          ],
+          "scale": 1,
+          "centerError": [
+            0.36352,
+            -0.07072
+          ],
+          "measurement": {
+            "area": 806,
+            "bounds": [
+              94,
+              96,
+              127,
+              129
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_11",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "29b5ea2105c89a795e82b81a28f437c68a3750d38491ea8a8064ec3f0b07ce78",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            444,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            111.96766,
+            112.33209
+          ],
+          "translation": [
+            48,
+            48
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.03234,
+            0.33209
+          ],
+          "measurement": {
+            "area": 804,
+            "bounds": [
+              95,
+              96,
+              129,
+              129
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_12",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a54fabb3093701d91702eeb020b26d979bb71d75eb5efe83307a56285bbe6adf",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.53718,
+            113.25128
+          ],
+          "translation": [
+            48,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.46282,
+            0.25128
+          ],
+          "measurement": {
+            "area": 780,
+            "bounds": [
+              96,
+              98,
+              129,
+              130
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_13",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "444d9e023536b328cdd565f6f66d91b7dcadd1f989cddb37332657fc0906642e",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.05815,
+            112.8622
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.05815,
+            -0.1378
+          ],
+          "measurement": {
+            "area": 791,
+            "bounds": [
+              95,
+              97,
+              128,
+              130
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_14",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "3fd0f0b7b0ed985adf738adeb0e543d9429ed7d42811f5d68340981778368115",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            665,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.74381,
+            113.08911
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.25619,
+            0.08911
+          ],
+          "measurement": {
+            "area": 808,
+            "bounds": [
+              94,
+              97,
+              128,
+              130
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_15",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d7179dc87adfd14aaded304603811d0887fac07660102e31c0711743cc485c95",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            665,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.88675,
+            113.05889
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.11325,
+            0.05889
+          ],
+          "measurement": {
+            "area": 883,
+            "bounds": [
+              94,
+              96,
+              129,
+              132
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_16",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a0d97a71e8c31522be9df7ddc366be3efc044c26dfcb3e94545aa42d8935ab05",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.3946,
+            112.78712
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.3946,
+            -0.21288
+          ],
+          "measurement": {
+            "area": 963,
+            "bounds": [
+              94,
+              95,
+              130,
+              131
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_17",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "39cca6b71a7940af8779addd7b372cf31f18091b02708b18fc3c78c3d0dec0d7",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.74627,
+            113.47854
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.25373,
+            0.47854
+          ],
+          "measurement": {
+            "area": 1072,
+            "bounds": [
+              92,
+              95,
+              130,
+              133
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_18",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "504bf778d3a9a3b6056ff72450878f6f8fe758c7422d61115b91a849d6860af7",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            887,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.30271,
+            113.61412
+          ],
+          "translation": [
+            50,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            0.30271,
+            -0.38588
+          ],
+          "measurement": {
+            "area": 1034,
+            "bounds": [
+              92,
+              95,
+              130,
+              133
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_19",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "3d871fa11628306fc7e763e9b97037e495bd6293eb662f6e8c4bcc195e7c25b5",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            887,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.58197,
+            113.51821
+          ],
+          "translation": [
+            49,
+            46
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.41803,
+            -0.48179
+          ],
+          "measurement": {
+            "area": 1098,
+            "bounds": [
+              92,
+              95,
+              130,
+              133
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        },
+        {
+          "key": "pr11b_gate_energy_20",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "82549637a98ef6bc6c37359ffb4e13bc1b331a0d6ef8942f950ea36cf4661dd6",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.88726,
+            112.95267
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.11274,
+            -0.04733
+          ],
+          "measurement": {
+            "area": 1162,
+            "bounds": [
+              92,
+              93,
+              130,
+              134
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_21",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d66f2b62ef6d6163b7b8d60d37364aedde2476e436c73c6bed98a47c2128eda9",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.93858,
+            112.95761
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.06142,
+            -0.04239
+          ],
+          "measurement": {
+            "area": 1156,
+            "bounds": [
+              91,
+              93,
+              131,
+              134
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_22",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "718772a5fd8e8b55329c5f710a2aadc610c69d45cec9ef2394db90709b806c1d",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            1109,
+            221,
+            221
+          ],
+          "sourceAnchor": [
+            110.38675,
+            112.71382
+          ],
+          "translation": [
+            50,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.38675,
+            -0.28618
+          ],
+          "measurement": {
+            "area": 1223,
+            "bounds": [
+              91,
+              93,
+              131,
+              134
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_23",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ea939773d6544a901631c1cf9e23dec767ca573e1ef64c2892ae9a8b8404541d",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            1109,
+            222,
+            221
+          ],
+          "sourceAnchor": [
+            110.78,
+            112.7728
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.22,
+            -0.2272
+          ],
+          "measurement": {
+            "area": 1250,
+            "bounds": [
+              91,
+              93,
+              132,
+              134
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_24",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b64f1258cf1deceaeb4184d5b5e709a384c0d2d2112b0ffad09a9e35f0ccf8e5",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.911,
+            112.88413
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.089,
+            -0.11587
+          ],
+          "measurement": {
+            "area": 1191,
+            "bounds": [
+              92,
+              93,
+              131,
+              133
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_25",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "47a03c9ae7bba4eed168a26a3e2fc6f398726485bdc3d425291e686e78026186",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.59496,
+            113.34418
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.40504,
+            0.34418
+          ],
+          "measurement": {
+            "area": 953,
+            "bounds": [
+              93,
+              97,
+              129,
+              131
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_26",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "410168cb47afcd9f66e2d943313faf14a5a7e40aa94a46003693c54d0b4ebde6",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            1330,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.22024,
+            113.13571
+          ],
+          "translation": [
+            50,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.22024,
+            0.13571
+          ],
+          "measurement": {
+            "area": 899,
+            "bounds": [
+              94,
+              97,
+              128,
+              131
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_27",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6f155c530d65960f2ff39bb650f575c0517bf6a5d11aa7b79f2df5879097e6a9",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            1330,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.26497,
+            113.03991
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.26497,
+            0.03991
+          ],
+          "measurement": {
+            "area": 902,
+            "bounds": [
+              95,
+              97,
+              129,
+              130
+            ]
+          },
+          "sourceBorderAlphaMax": 0
+        },
+        {
+          "key": "pr11b_gate_energy_28",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "2f51672bf616ee46891adf7a88aecdb88e5cb7f1f7dd8919f7630460d916005a",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            0,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.3035,
+            113.22016
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.3035,
+            0.22016
+          ],
+          "measurement": {
+            "area": 972,
+            "bounds": [
+              94,
+              96,
+              130,
+              131
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_gate_energy_29",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d229406fe4a877dc8d3a1fa6ca61681cecda6dd648f0ac7fae59a4a7d7102871",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            222,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            110.72941,
+            113.18039
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.27059,
+            0.18039
+          ],
+          "measurement": {
+            "area": 1020,
+            "bounds": [
+              92,
+              94,
+              130,
+              133
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_gate_energy_30",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b281c53c7c0fa8bb1844cbe026dd0dcc0ce847a579e6b69b3bbd5f722f5403f8",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            444,
+            1552,
+            221,
+            222
+          ],
+          "sourceAnchor": [
+            110.88479,
+            112.71141
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            -0.11521,
+            -0.28859
+          ],
+          "measurement": {
+            "area": 894,
+            "bounds": [
+              93,
+              96,
+              129,
+              131
+            ]
+          },
+          "sourceBorderAlphaMax": 2
+        },
+        {
+          "key": "pr11b_gate_energy_31",
+          "path": "assets/game/shared/fx/portals_bof_1011/gate_energy_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b28ea749348b2d82a8f5f755816fb6942db6adfe262e1af62e3ad59718021949",
+          "source": "gate-energy-opaque.png",
+          "sourceRect": [
+            665,
+            1552,
+            222,
+            222
+          ],
+          "sourceAnchor": [
+            111.1479,
+            112.64391
+          ],
+          "translation": [
+            49,
+            47
+          ],
+          "scale": 1,
+          "centerError": [
+            0.1479,
+            -0.35609
+          ],
+          "measurement": {
+            "area": 879,
+            "bounds": [
+              94,
+              96,
+              129,
+              130
+            ]
+          },
+          "sourceBorderAlphaMax": 1
+        }
+      ],
+      "role": "component",
+      "sheet": {
+        "path": "assets/game/shared/fx/portals_bof_1011/gate_energy-sheet.png",
+        "columns": 4,
+        "rows": 8,
+        "cell": [
+          320,
+          320
+        ]
+      }
+    },
+    "amethyst_gate": {
+      "label": "Fury breach gate",
+      "fps": 24,
+      "frames": [
+        {
+          "key": "pr11b_amethyst_gate_0",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_00.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "49589129a13cf2c338d084a244fd32ad9c732343bb39d061b2b77a6c5edb07b5",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            101
+          ],
+          "centerError": [
+            0.03676,
+            0.16544
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_1",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_01.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "ffdd558bb21b0b017cef00ffd50a299dc7cee34ade30828150d0d56afc3ca93b",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            100
+          ],
+          "centerError": [
+            -0.00038,
+            0.44061
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_2",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_02.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "9235eaf41b7f4a31f7114ee340e92502f6f45940fb27d261f35f86915d84e4fe",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            100
+          ],
+          "centerError": [
+            0.23325,
+            -0.44137
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_3",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_03.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "02db7e32e6a910d80875a5670d39219b31edbf55df14d80306ab1733d08a4940",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            101
+          ],
+          "centerError": [
+            -0.29573,
+            0.26306
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_4",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_04.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "0de8796a00a2cc927d6d3e0f1a6380102b21ab32ceaaba08b45bed9853ed64f1",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            100
+          ],
+          "centerError": [
+            0.04272,
+            -0.28817
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_5",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_05.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "ef79051604bca348748f2a4db8f2b921f7a6756fed301266073bb57eb4dae290",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            100
+          ],
+          "centerError": [
+            0.0492,
+            -0.36112
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_6",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_06.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "3b128d60b4e26a43fff802b4318106ad525b5e27987751e7fe30233e462fdd58",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            101
+          ],
+          "centerError": [
+            0.00595,
+            0.45155
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_7",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_07.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "50d98c9499f8754fb220eb986a9f1597ae0e24697c7345d8a2e01cdda9806e80",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            101
+          ],
+          "centerError": [
+            0.49731,
+            0.07568
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_8",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_08.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "415f8a8dbfd68e038a3b62bb2b097925b7e1ca24bd5fff996c030c73a1e36ce8",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            11,
+            105
+          ],
+          "centerError": [
+            -0.24058,
+            -0.3956
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_9",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_09.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "3a12ca6daec50783566edaeecb1d95d20da5297d042166d3cac998af87b136d1",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            11,
+            104
+          ],
+          "centerError": [
+            -0.01106,
+            -0.41798
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_10",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_10.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "8b4e48e4bb03f9b44c0c831e514e349fb842017d1c484d981c1fbcf934423ab0",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            106
+          ],
+          "centerError": [
+            -0.20026,
+            0.24442
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_11",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_11.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "c04dd5de4c5ee8d485f97241e82dc49423e9d01930b7c5176181c03fc04a8599",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            10,
+            105
+          ],
+          "centerError": [
+            0.32885,
+            0.1306
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_12",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_12.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "a69d48a7465791fcc0967b0662d5e272068a958ce0002c944e977fbe67dc5acc",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            11,
+            103
+          ],
+          "centerError": [
+            0.3818,
+            0.15282
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_13",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_13.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "b147f82ef75f1690651fd9e4dfe37ab6ce33387338faa15aee8a3536965aebe0",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            104
+          ],
+          "centerError": [
+            0.32793,
+            0.29684
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_14",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_14.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "64de7caaede67af0781a69ad0806cd7e75915e3757f616909ef35c9602933d2a",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            103
+          ],
+          "centerError": [
+            -0.36362,
+            -0.20396
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_15",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_15.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "d9d869d5713c312d34564a63aa420d4d81d0420a0ab2c42c56d2a37dfffa0074",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            103
+          ],
+          "centerError": [
+            -0.04915,
+            -0.27044
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_16",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_16.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "a9ebdd002a0c6097201bf01cd943f5774ab536a9168a4144caf9c38e0a809a22",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            11,
+            104
+          ],
+          "centerError": [
+            0.06812,
+            0.13166
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_17",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_17.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "5cf887807644ebe9146f617b9a356af53767fce6d99ac087b3378c63bd18dd9f",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            102
+          ],
+          "centerError": [
+            -0.35821,
+            -0.34721
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_18",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_18.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "5c7c5d383c44ded42f58918189e369fed8a882af12ecbf6f35e90f8f0fc04bfd",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            102
+          ],
+          "centerError": [
+            -0.33404,
+            -0.04894
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_19",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_19.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "911167e254ee9f04ddd9012d5f2398effca842b32b44333203c5d0b3964ca1ce",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            102
+          ],
+          "centerError": [
+            0.28033,
+            -0.25994
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_20",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_20.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "add19c037d6cdb369b70580f18e2f29d1417ccdafe47b01a58e898625f3f443c",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            104
+          ],
+          "centerError": [
+            -0.04803,
+            0.49587
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_21",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_21.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "4f22e0eab7b5ff1c5bc59d69be099d999c1ee6cbfee44c88a1e583c80b0ac928",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            103
+          ],
+          "centerError": [
+            0.06488,
+            -0.49326
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_22",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_22.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "1c67743433691ebba83f49e52a7e3e142593d94997d805f4d5bc34bc9535b79d",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            104
+          ],
+          "centerError": [
+            -0.14915,
+            -0.0296
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_23",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_23.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "e7476846ec2567a1f0950d51f186512b3c1826eabf0425226adda3e28858cded",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            104
+          ],
+          "centerError": [
+            -0.284,
+            0.10016
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_24",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_24.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "37900a1683d9918866a54e17c4bc784f6ea9978c9d7e0a631470bed88ad03f91",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            104
+          ],
+          "centerError": [
+            0.0042,
+            0.34509
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_25",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_25.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "8935c86aac2e92c78acd0b331083a0e59f195010e555b81ff0c9c2a45b53676d",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            13,
+            103
+          ],
+          "centerError": [
+            0.30891,
+            0.3572
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_26",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_26.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "80b8c6c2d77fa42d6b212ff08a2aad193d09528a908599c54b2d92d56f9cf457",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            14,
+            103
+          ],
+          "centerError": [
+            0.48453,
+            -0.10144
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_27",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_27.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "19beee7676a62dd3af0f7a498e69c271b1bc1f27ddf8b6e066f224d4a6d51a09",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            11,
+            103
+          ],
+          "centerError": [
+            -0.21707,
+            -0.3122
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_28",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_28.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "a189f825be59c9a629d888f9422b2c18bf58aa9d671fa5e373bc6d78d2f12363",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            11,
+            103
+          ],
+          "centerError": [
+            -0.1323,
+            0.08435
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_29",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_29.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "c3177bdb542bbbfba74a53a64cef387faea8a41502890e93bbd97688e08762a0",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            103
+          ],
+          "centerError": [
+            -0.3953,
+            -0.00314
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_30",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_30.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "9d6e967f6f62bdd3d5d4cc39b1f55122bf7b43a4be771b15da8facd6ebd9c7cc",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            12,
+            104
+          ],
+          "centerError": [
+            -0.05346,
+            -0.0349
+          ]
+        },
+        {
+          "key": "pr11b_amethyst_gate_31",
+          "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate_31.png",
+          "w": 512,
+          "h": 640,
+          "pivot": [
+            256,
+            352
+          ],
+          "sha256": "653c57686a8fd43993fb9deff24e195882c55d2b9c9ca1125ea39ed50e4d3dd1",
+          "source": "gate-shell.png + gate-energy-opaque.png",
+          "shellScale": 0.4,
+          "shellOffset": [
+            32,
+            27
+          ],
+          "shellAnchor": [
+            561.0,
+            813.5
+          ],
+          "energyScale": 2.2,
+          "energyOffset": [
+            11,
+            104
+          ],
+          "centerError": [
+            -0.47462,
+            -0.1834
+          ]
+        }
+      ],
+      "role": "animation",
+      "components": [
+        "gate-shell.png",
+        "gate-aperture-mask.png",
+        "gate_energy"
+      ],
+      "sheet": {
+        "path": "assets/game/shared/fx/portals_bof_1011/amethyst_gate-sheet.png",
+        "columns": 4,
+        "rows": 8,
+        "cell": [
+          512,
+          640
+        ]
+      }
+    }
+  },
+  "alignment": {
+    "blue_rift": {
+      "maxCenterError": 0.4952,
+      "sourceBorderAlphaMax": 11,
+      "seamChange": 3.2518,
+      "medianFrameChange": 2.4081,
+      "seamToMedian": 1.35
+    },
+    "red_rift": {
+      "maxCenterError": 0.49882,
+      "sourceBorderAlphaMax": 38,
+      "seamChange": 2.9141,
+      "medianFrameChange": 2.1213,
+      "seamToMedian": 1.374
+    },
+    "green_rift": {
+      "maxCenterError": 0.49468,
+      "sourceBorderAlphaMax": 79,
+      "seamChange": 3.1972,
+      "medianFrameChange": 2.2938,
+      "seamToMedian": 1.394
+    },
+    "black_void": {
+      "maxCenterError": 0.49878,
+      "sourceBorderAlphaMax": 4,
+      "seamChange": 3.3379,
+      "medianFrameChange": 2.4536,
+      "seamToMedian": 1.36
+    },
+    "gate_energy": {
+      "maxCenterError": 0.48179,
+      "sourceBorderAlphaMax": 2,
+      "seamChange": 2.7755,
+      "medianFrameChange": 3.5768,
+      "seamToMedian": 0.776
+    },
+    "amethyst_gate": {
+      "maxCenterError": 0.49731,
+      "shellFixed": true,
+      "seamChange": 1.9205,
+      "medianFrameChange": 2.9129,
+      "seamToMedian": 0.659
+    }
+  },
+  "sources": {
+    "black-void.png": "38ac92d10c1ca0e0c16540e663114fd43ee5ece4572129fb183b3a0cdc92dd40",
+    "blue-tight.png": "2938e62dad15d522e338f0db6e6bd6523f39fe285a835a501e3d4126fff81d7a",
+    "blue.png": "2938e62dad15d522e338f0db6e6bd6523f39fe285a835a501e3d4126fff81d7a",
+    "gate-energy-opaque.png": "2df2afdbcc9873e59ea798f7b63684d94e703b4dae956dabcd65a1633f58b685",
+    "gate-energy.png": "f5bce4ad56d12436d38730cc75889194d445bcad99bb7cef48032c4eeb66b17f",
+    "gate-shell.png": "4d5e9ba61fd2481e66584018bdabc3f9c8650688459450d0dead6ad328d43d9f",
+    "green.png": "7232099464e9012dcb7b77fe37dc5ead57de05f6401d3be1676c5fe8926862d6",
+    "red.png": "9352dd6b68e2050eb82e476b03babebf76c213638eb7802c38519a58b346dafc"
+  },
+  "prompts": "_ART_SOURCES/portals_bof_1011/prompts.json",
+  "repairPrompt": "_ART_SOURCES/portals_bof_1011/core-opacity-repair.json",
+  "styleReferences": "_ART_SOURCES/portals_bof_1011/reference/sources.json",
+  "rules": "Even fixed canvases, opaque aperture registration, integer translation, common scale. Native alpha preserved; authored static gate shell. No synthetic poses.",
+  "supersedes": "portals_1011 artwork; original reference-literal pack retained separately",
+  "status": "generated-review-pack"
+}

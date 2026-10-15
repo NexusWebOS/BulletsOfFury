@@ -1,0 +1,154 @@
+{
+  "passed": 13,
+  "failed": 0,
+  "checks": [
+    {
+      "passed": true,
+      "name": "Stage 3: actual background pixels darken during charge",
+      "data": {
+        "glow": 0.9,
+        "plain": 114.3470486111111,
+        "dim": 45.34638400607639,
+        "ratio": 0.39656803176702266,
+        "warnings": 7
+      }
+    },
+    {
+      "passed": true,
+      "name": "Stage 3: authored FOV excludes the two safe salvo lanes",
+      "data": {
+        "glow": 0.9,
+        "plain": 114.3470486111111,
+        "dim": 45.34638400607639,
+        "ratio": 0.39656803176702266,
+        "warnings": 7
+      }
+    },
+    {
+      "passed": true,
+      "name": "Stage 4: actual background pixels darken during charge",
+      "data": {
+        "glow": 0.9,
+        "plain": 90.68971489800347,
+        "dim": 36.99761962890625,
+        "ratio": 0.40795827476706237,
+        "warnings": 7
+      }
+    },
+    {
+      "passed": true,
+      "name": "Stage 4: authored FOV excludes the two safe salvo lanes",
+      "data": {
+        "glow": 0.9,
+        "plain": 90.68971489800347,
+        "dim": 36.99761962890625,
+        "ratio": 0.40795827476706237,
+        "warnings": 7
+      }
+    },
+    {
+      "passed": true,
+      "name": "Charge requests native dual-motor haptics when a controller supports them",
+      "data": [
+        {
+          "type": "dual-rumble",
+          "duration": 150,
+          "strongMagnitude": 0.42999999999999994,
+          "weakMagnitude": 0.25799999999999995
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "name": "Missile-box rumble moves the actual shared drawing/collision/muzzle geometry",
+      "data": 1.8791460137193086
+    },
+    {
+      "passed": true,
+      "name": "Destroyed left missile box stops firing; surviving right missiles leave its real muzzle",
+      "data": {
+        "count": 3,
+        "shots": [
+          {
+            "x": 399.31260982945133,
+            "y": 125.09400456853035
+          },
+          {
+            "x": 399.31260982945133,
+            "y": 125.09400456853035
+          },
+          {
+            "x": 399.31260982945133,
+            "y": 125.09400456853035
+          }
+        ],
+        "tip": {
+          "x": 399.31260982945133,
+          "y": 125.09400456853035
+        }
+      }
+    },
+    {
+      "passed": true,
+      "name": "Pause freezes targeting, motion and beep progression",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Over-player capture uses an enlarged north-facing authored plate",
+      "data": null
+    },
+    {
+      "passed": true,
+      "name": "Overhead transformation keeps every generator registered to the scaled hull",
+      "data": {
+        "depth": true,
+        "scale": 1.1640625000000058,
+        "t": 4.29999999999999,
+        "nodes": [
+          {
+            "x": 577.4687500000011,
+            "y": 298.71875000000296
+          },
+          {
+            "x": 102.53124999999883,
+            "y": 298.71875000000307
+          },
+          {
+            "x": 577.4687500000011,
+            "y": 117.12500000000207
+          },
+          {
+            "x": 102.53124999999882,
+            "y": 117.12500000000219
+          }
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "name": "Primary authored mini-aircraft hit draw preserves palette and damage timer",
+      "data": {
+        "recolors": 0,
+        "draws": 1,
+        "flash": 0.2
+      }
+    },
+    {
+      "passed": true,
+      "name": "Fallback authored mini-aircraft hit draw preserves palette and damage timer",
+      "data": {
+        "recolors": 0,
+        "draws": 1,
+        "flash": 0.2
+      }
+    },
+    {
+      "passed": true,
+      "name": "Reused late-stage hulls retain their existing encounter controllers",
+      "data": null
+    }
+  ],
+  "errors": [],
+  "scope": "Native pixels and controlled mechanics; haptics capability simulated, not hardware play."
+}

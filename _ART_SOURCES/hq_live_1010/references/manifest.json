@@ -1,0 +1,93 @@
+[
+  {
+    "key": "ship_cole",
+    "w": 193,
+    "h": 232,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_cole.png",
+    "sha256": "c75f3facd000002021b2397d2909ecb8df9730aa805c801835be4674f74af9a1"
+  },
+  {
+    "key": "ship_axel",
+    "w": 190,
+    "h": 224,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_axel.png",
+    "sha256": "9544901a7214068b4b4c915dd29b606e3fe6550305cc7d92e4990dff8314570b"
+  },
+  {
+    "key": "ship_freezer",
+    "w": 183,
+    "h": 194,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_freezer.png",
+    "sha256": "38a3e14c3d08ab8fd040271733ddcc54afed8a89f6c556101660652b1a88be43"
+  },
+  {
+    "key": "ship_yuri",
+    "w": 209,
+    "h": 229,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_yuri.png",
+    "sha256": "28b821b21b2bf852871d7b07c6deeae5dcd1a1afd90b6ea13d6b3ebc4b060058"
+  },
+  {
+    "key": "ship_maverick",
+    "w": 200,
+    "h": 211,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_maverick.png",
+    "sha256": "0bc214d1196bce57a839f17a8f56482a098949d7a96e5992e7d318e893715a8b"
+  },
+  {
+    "key": "ship_falva",
+    "w": 204,
+    "h": 238,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_falva.png",
+    "sha256": "609582c1cdeeb14a3d66efc489489d3e7100c5bc097c4b3f645413c714e67185"
+  },
+  {
+    "key": "ship_lizzie",
+    "w": 224,
+    "h": 243,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_lizzie.png",
+    "sha256": "6cf527ab3773914dc87d248c9fef842440ea908e4508c3e0a5eeb3f0efaebb5f"
+  },
+  {
+    "key": "ship_decker",
+    "w": 200,
+    "h": 230,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_decker.png",
+    "sha256": "d257ab2be65695b5785c082fd698abfc52ec2ec541dea191eb7f37c3afe32f02"
+  },
+  {
+    "key": "ship_juggernaut",
+    "w": 200,
+    "h": 205,
+    "path": "_ART_SOURCES/hq_live_1010/references/ship_juggernaut.png",
+    "sha256": "58458d72c11671a3a2de8b1baa8538c166a78fa7ea86c527e3f4fae69c0354de"
+  },
+  {
+    "key": "fb2_stealth_red",
+    "w": 512,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_live_1010/references/fb2_stealth_red.png",
+    "sha256": "a453e8bad07bfc022e9a630270e0fe8704ca751196d0cb9b7cc70ae35eac02b1"
+  },
+  {
+    "key": "fb2_stealth_green",
+    "w": 512,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_live_1010/references/fb2_stealth_green.png",
+    "sha256": "f3b804cac7e92d19834f8984ac66a01bc4a9f54ef857a047494de5828ea24430"
+  },
+  {
+    "key": "fb2_stealth_orange",
+    "w": 512,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_live_1010/references/fb2_stealth_orange.png",
+    "sha256": "272d7af80aca2243d71a117c47931e8e817101dc7e3cf4fe9577536fb18c5336"
+  },
+  {
+    "key": "hud_radar_bezel_0924",
+    "w": 1774,
+    "h": 887,
+    "path": "_ART_SOURCES/hq_live_1010/references/hud_radar_bezel_0924.png",
+    "sha256": "cc837fbb918f948959cb1e6eae188cf1eca9cd696ba6e140779c1db08f5ba560"
+  }
+]

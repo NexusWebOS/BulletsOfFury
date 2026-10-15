@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "key": "cinend_satellite_dish",
+      "w": 1672,
+      "h": 941,
+      "path": "_ART_SOURCES/survivor_1010/references/native-dish.png",
+      "sha256": "169c1499e1515e3dcebc37d3a96994eb370e12c2ac724eb4f6df5dfc5713104d",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "cinend_symbiote_survivor",
+      "w": 1536,
+      "h": 1024,
+      "path": "_ART_SOURCES/survivor_1010/references/native-survivor.png",
+      "sha256": "98125d942df40a3b00f76a42b4a5b11cffc2a97c478c7ef1e3d60ff9d2195b6f",
+      "route": "XART.get / game ctx.drawImage"
+    }
+  ],
+  "errors": []
+}

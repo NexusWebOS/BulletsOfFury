@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="extensions/bof-field-manual/art/icon512.png">
+<script>if(new URLSearchParams(location.search).get('enemyAtlas')==='1')document.write('<script src="assets/enemy_atlas_boot_1013.js"><\/script>');</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Bullets of Fury</title>
@@ -21,11 +23,13 @@
     display:flex;flex-direction:column;align-items:flex-start;}
   #hud-row{display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex:0 0 auto;}
   #hud-wrap{position:relative;flex:0 0 auto;background:#000;}
-  #hud-wrap canvas{display:block;width:100%;height:100%;}
+  #hud-wrap canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
   #equip-dom{position:relative;flex:0 0 auto;pointer-events:none;}
   #equip-dom{display:none;} /* compact equipped socket now lives in the three-part in-play HUD */
   #equip-dom canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
-  #hud-div{flex:0 0 auto;width:100%;height:3px;background:#2a2d33;box-shadow:0 1px 0 #15171b;}
+  #hud-div,#hud-div2{flex:0 0 auto;width:100%;height:3px;background:#2a2d33;box-shadow:0 1px 0 #15171b;}
+  #hud-bottom{position:relative;flex:0 0 auto;background:#000;}
+  #hud-bottom canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
   #screen-area{position:relative;flex:0 0 auto;width:100%;overflow:hidden;}
   /* The canvas is sized in JS by fitCanvas() (aspect-locked) and CENTRED here. It used to be
      forced to width:100%;height:100%, which stretched it to whatever shape #screen-area was and
@@ -45,7 +49,9 @@
     background:rgba(18,24,36,0.82);border:2px solid #4a90c0;border-radius:7px;
     color:#cfe2ff;box-shadow:0 4px 14px rgba(0,0,0,.5);transition:background .12s,border-color .12s;-webkit-user-select:none;user-select:none;}
   #fs-btn:hover{background:#243550;border-color:#8fd0ff;}
-  #fs-btn svg{width:20px;height:20px;pointer-events:none;fill:currentColor;}
+  #fs-btn{padding:0;background:transparent;border:0;border-radius:0;width:48px;height:48px;}
+  #fs-btn img{width:100%;height:100%;object-fit:contain;pointer-events:none;image-rendering:pixelated;}
+  #fs-btn:focus-visible{outline:2px solid #ffd65c;outline-offset:3px;}
 
   /* ---- FULLSCREEN mode: hide the cabinet art, blow the play window up to fill the screen ---- */
   body.fs #room{background:#000;}
@@ -56,18 +62,20 @@
   #wide-map-top{position:fixed;display:none;z-index:2;pointer-events:none;background:#0a1a2b url('assets/game/shared/campaign/campaign_map_v2/ocean.png') center/cover no-repeat;}
   body.wide-map #room{background:#04102a;}
   body.wide-map #game-frame{box-shadow:none;background:transparent;width:93.75vh !important;height:100vh !important;}
-  body.wide-map #hud-row,body.wide-map #hud-div{display:none !important;}
+  body.wide-map #hud-row,body.wide-map #hud-div,body.wide-map #hud-bottom,body.wide-map #hud-div2{display:none !important;}
   body.wide-map #screen-area,body.wide-map #screen{width:100% !important;height:100% !important;}
   body.campaign-full #room{display:block;background:#04102a;}
   body.campaign-full #marquee,body.campaign-full .side,body.campaign-full #credit-left,body.campaign-full #credit-right,
-  body.campaign-full #hud-row,body.campaign-full #hud-div,body.campaign-full #hint{display:none !important;}
+  body.campaign-full #hud-row,body.campaign-full #hud-div,body.campaign-full #hud-bottom,body.campaign-full #hud-div2,body.campaign-full #hint{display:none !important;}
   body.campaign-full #game-frame{position:fixed !important;inset:0 !important;width:100vw !important;height:100vh !important;box-shadow:none;}
   body.campaign-full #screen-area{position:fixed;inset:0;width:100vw !important;height:100vh !important;margin:0 !important;}
   body.campaign-full #screen{width:100vw !important;height:min(100vh,106.666667vw) !important;}
   /* Wide menus and the boot plate own the full middle bay; gameplay retains the top HUD. */
   @media(min-width:1150px){
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-row,
-    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-div{display:none !important;}
+    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-div,
+    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-bottom,
+    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-div2{display:none !important;}
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #screen-area,
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #screen{width:100% !important;height:100% !important;}
   }
@@ -83,7 +91,6 @@
      from the CABINET's box instead of the viewport — and since the cabinet is flex-centred inside
      #room, that offset pushed the whole game across. Clearing the filter (and collapsing the
      cabinet, which is invisible in fullscreen anyway) makes fixed mean fixed again. */
-  body.fs
   body.fs #stage{gap:0 !important;}
   body.fs #hint{display:none;}
   body.fs #fs-btn{opacity:0.25;}
@@ -103,6 +110,8 @@
   #credit-right{text-align:left;}
   #credit-left .yr{color:#c9a227;}
   #credit-right .nick{color:#c9a227;}
+  #credit-left img,#credit-right img{display:block;width:min(100%,260px);max-height:68vh;object-fit:contain;image-rendering:pixelated;}
+  #credit-left img{margin-left:auto;}
   @media (max-width:820px){ #credit-left,#credit-right{display:none;} }
   body.fs #credit-left, body.fs #credit-right{display:none;}
   body.cinematic-full #room{background:#000;display:block;}
@@ -110,6 +119,8 @@
   body.cinematic-full #credit-right,
   body.cinematic-full #hud-row,
   body.cinematic-full #hud-div,
+  body.cinematic-full #hud-bottom,
+  body.cinematic-full #hud-div2,
   body.cinematic-full #fs-btn,
   body.cinematic-full #hint{display:none !important;}
   body.cinematic-full #game-frame{position:fixed !important;inset:0 !important;width:100vw !important;
@@ -118,6 +129,7 @@
     margin:0 !important;overflow:hidden;}
   body.cinematic-full #screen{width:100vw !important;height:100vh !important;}
 </style>
+<link rel="stylesheet" href="assets/siege_console_1012.css?v=1012">
 </head>
 <body>
 <div id="room">
@@ -126,21 +138,23 @@
        every descendant), and a JS layout pass that repositioned #game-frame into a hard-coded
        window rect. Mike asked for it gone; it also removes a whole class of suspects for input
        that does not land where it looks like it should. -->
-  <div id="credit-left">COLEFORGE<br>PRODUCTIONS<br><span class="yr">2026</span></div>
+  <div id="credit-left"><img src="assets/game/shared/ui/playthrough_1011/brand-plaque.png" alt="COLEFORGE PRODUCTIONS 2026"></div>
   <div id="game-frame">
     <div id="hud-row">
-      <div id="hud-wrap"><canvas id="hud" width="480" height="80"></canvas></div>
+      <!-- 1009: the HUD draws to #hud off screen; feedback_1009.js copies its score strip to #hud-top
+           (above the playfield) and its five-panel housing to #hud-bot (below it). -->
+      <canvas id="hud" width="480" height="104" style="display:none"></canvas>
+      <div id="hud-wrap"><canvas id="hud-top" width="960" height="68"></canvas></div>
       <div id="equip-dom"><canvas id="equipcv" width="128" height="128"></canvas></div>
     </div>
     <div id="hud-div"></div>
     <div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+    <div id="hud-div2"></div>
+    <div id="hud-bottom"><canvas id="hud-bot" width="960" height="140"></canvas></div>
   </div>
-  <div id="credit-right">A GAME BY<br>MIKE<br><span class="nick">&ldquo;FORGEMASTER&rdquo;</span><br>COLE</div>
+  <div id="credit-right"><img src="assets/game/shared/ui/playthrough_1011/author-plaque.png" alt="A game by Mike FORGEMASTER Cole"></div>
 </div>
-<div id="fs-btn" title="Fullscreen (F)" aria-label="Toggle fullscreen">
-  <svg id="fs-icon-enter" viewBox="0 0 24 24"><path d="M4 9V4h5v2H6v3H4zm0 6h2v3h3v2H4v-5zm16 0v5h-5v-2h3v-3h2zM20 9h-2V6h-3V4h5v5z"/></svg>
-  <svg id="fs-icon-exit" viewBox="0 0 24 24" style="display:none"><path d="M9 4v5H4V7h3V4h2zm11 3v2h-5V4h2v3h3zM9 20H7v-3H4v-2h5v5zm11-5v2h-3v3h-2v-5h5z"/></svg>
-</div>
+<button id="fs-btn" type="button" title="Fullscreen (F)" aria-label="Enter fullscreen" aria-pressed="false"><img src="assets/game/shared/ui/playthrough_1011/fullscreen-button.png" alt=""></button>
 <div id="hint" aria-label="Game controls"></div>
 <script>
 (function(){
@@ -230,35 +244,56 @@
      (WIN_L/T/R/B as fractions of a 1448x1086 plate) and positioned #game-frame absolutely into it.
      That is gone. The room is now a plain flex row and the play window is simply sized to fit the
      viewport at the game's own aspect, so what you click is where it looks. */
-  var GW=480, GH=512, DIVH=6;
-  window.__bofHudHeight=80;
+  var GW=480, GH=512, DIVH=2;
+  window.__bofHudHeight=104;
   function fit(){
     var vw=innerWidth, vh=innerHeight;
+    if(window.BOFSideHUD&&window.BOFSideHUD.fit(vw,vh))return;
     function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
     if(document.body.classList.contains('cinematic-full')||document.body.classList.contains('campaign-full')){
       var gf0=document.getElementById('game-frame'),sa0=document.getElementById('screen-area'),scr0=document.getElementById('screen');
-      if(gf0){gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
+      if(gf0){gf0.style.marginBottom='0px';gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
       if(sa0){sa0.style.width=vw+'px';sa0.style.height=vh+'px';sa0.style.marginLeft='0px';}
       if(scr0){scr0.style.width=vw+'px';scr0.style.height=vh+'px';}
       return;
     }
-    var reserve = isFS() ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
+    var reserve = isFS() || vw<=820 ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
     var availW = Math.max(200, vw - reserve);
-    var availH = vh * (isFS()? 1.0 : 0.94);
-    var HUDH=window.__bofHudHeight||80;
-    var totalH = GH + HUDH + DIVH;
+    /* 1009: the five-panel HUD now sits at the bottom of the frame, where the fixed control-hint
+       strip (#hint, 22px at bottom:6px) would cover it. Keep that strip's height clear of the frame
+       whenever it can be on screen; fullscreen hides the strip and keeps every pixel. */
+    var hintEl=document.getElementById('hint'), hintH=(!isFS()&&hintEl&&getComputedStyle(hintEl).display!=='none')?30:0;
+    var availH = vh - hintH; // the browser bay uses every other vertical pixel
+    // Wide gameplay and menus have different HUD visibility. Read that
+    // actual visibility before fitting so a hidden row cannot squeeze menus.
+    if(isFS()&&vw>=1150){try{document.body.classList.toggle('wide-playing',['play','paused','continue','stageclear','gameover'].indexOf(state)>=0);}catch(e){}}
+    var hudStyle=getComputedStyle(document.getElementById('hud-row'));
+    var hudShown=hudStyle.display!=='none'&&hudStyle.visibility!=='hidden';
+    var HUDH=hudShown?(window.__bofHudHeight||104):0;
+    var totalH = GH + HUDH + (hudShown?2*DIVH:0);
     var sc = Math.min(availW/GW, availH/totalH);
-    var gw = Math.round(GW*sc), gh = Math.round(GH*sc);
-    var hh = Math.round(HUDH*sc), dh = Math.round(DIVH*sc);
+    var gw = Math.floor(GW*sc);
+    /* 1009: each 104px seat row is a 70px housing (now under the playfield) and a 34px score
+       strip (still on top). The total budget is unchanged; it is split, not grown. */
+    var seatH=window.__bofHudSeatHeight||104,houseH=window.__bofHudHouseHeight||70;
+    var rowsH = HUDH>0 ? HUDH/seatH : 0, topL = (seatH-houseH)*rowsH, botL = HUDH-topL;
+    var hh = Math.round(topL*sc), hb = Math.round(botL*sc), dh = hudShown?Math.max(1,Math.round(DIVH*sc)):0;
+    // Allocate the final screen from the shared budget: independent
+    // rounded heights could exceed the viewport and clip its first/last pixel.
+    var gh = Math.max(1,Math.floor(totalH*sc+1e-6)-hh-hb-2*dh);
     var gf=document.getElementById('game-frame');
-    if(gf){ gf.style.position='relative'; gf.style.left='0px'; gf.style.top='0px'; }
-    S('game-frame', gw, gh+hh+dh);
+    if(gf){ gf.style.position='relative'; gf.style.left='0px'; gf.style.top='0px'; gf.style.marginBottom=hintH+'px'; }
+    S('game-frame', gw, gh+hh+hb+2*dh);
     S('hud-row', gw, hh); S('hud-wrap', gw, hh);
-    S('hud-div', gw, dh);
+    S('hud-div', gw, dh); S('hud-div2', gw, dh); S('hud-bottom', gw, hb);
+    var hbRow=document.getElementById('hud-bottom'), hd2=document.getElementById('hud-div2');
+    if(hbRow) hbRow.style.display = hudShown ? '' : 'none';
+    if(hd2) hd2.style.display = hudShown ? '' : 'none';
     S('screen-area', gw, gh);
     var sa=document.getElementById('screen-area'); if(sa) sa.style.marginLeft='0px';
     var scr=document.getElementById('screen'); if(scr){ scr.style.width=gw+'px'; scr.style.height=gh+'px'; }
-    var hud=document.getElementById('hud');     if(hud){ hud.style.width=gw+'px';  hud.style.height=hh+'px'; }
+    var hud=document.getElementById('hud-top'); if(hud){ hud.style.width=gw+'px';  hud.style.height=hh+'px'; }
+    var hbot=document.getElementById('hud-bot'); if(hbot){ hbot.style.width=gw+'px'; hbot.style.height=hb+'px'; }
   }
   /* The old layout function was named L and the listeners still referenced it; my replacement is
      fit(). Aliasing keeps every existing call site working instead of hunting them all. */
@@ -269,7 +304,7 @@
 
   // ---- FULLSCREEN toggle ----
   var root=document.getElementById('room');
-  function fsElement(){ return document.getElementById('room'); }
+  function fsElement(){ return document.documentElement; }
   function inNativeFS(){ return !!(document.fullscreenElement||document.webkitFullscreenElement||document.mozFullScreenElement||document.msFullscreenElement); }
   function requestFS(el){
     if(el.requestFullscreen) return el.requestFullscreen();
@@ -285,13 +320,12 @@
   }
   function toggleFS(){
     if(inNativeFS()){ exitFS(); }
-    else { try{ var p=requestFS(fsElement()); if(p&&p.catch) p.catch(function(){ /* fallback: CSS-only fill */ document.body.classList.add('fs'); syncFSicon(); L(); }); }catch(e){ document.body.classList.add('fs'); } }
+    else if(document.body.classList.contains('fs')){document.body.classList.remove('fs');syncFSicon();L();}
+    else { try{ var p=requestFS(fsElement());if(!p&&!inNativeFS()){document.body.classList.add('fs');syncFSicon();L();} if(p&&p.catch) p.catch(function(){ /* fallback: CSS-only fill */ document.body.classList.add('fs'); syncFSicon(); L(); }); }catch(e){ document.body.classList.add('fs');syncFSicon();L(); } }
   }
   function syncFSicon(){
     var on=document.body.classList.contains('fs');
-    var a=document.getElementById('fs-icon-enter'), b=document.getElementById('fs-icon-exit');
-    if(a) a.style.display=on?'none':'block';
-    if(b) b.style.display=on?'block':'none';
+    var b=document.getElementById('fs-btn');if(b){b.setAttribute('aria-pressed',String(on));b.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');b.title=on?'Exit fullscreen (F)':'Fullscreen (F)';}
   }
   function onFSchange(){
     if(inNativeFS()) document.body.classList.add('fs'); else document.body.classList.remove('fs');
@@ -307,6 +341,7 @@
   window.addEventListener('keydown',function(e){
     if((e.key==='f'||e.key==='F') && !e.ctrlKey && !e.metaKey && !e.altKey){
       var st=(window.BOFGAME&&window.BOFGAME.state)||'';
+      if(st==='password')return;
       // don't hijack F if a text field is focused
       var ae=document.activeElement; if(ae&&(ae.tagName==='INPUT'||ae.tagName==='TEXTAREA')) return;
       e.preventDefault(); toggleFS();
@@ -332,7 +367,7 @@
 <script src="assets/game/shared/atlases/stage_runtime_atlases.js"></script>
 <script src="assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js"></script>
 <script src="assets/audio_feedback_0927.js"></script>
-<script src="assets/game.js"></script>
+<script src="assets/game.js?v=stage34-1014"></script>
 <script src="assets/campaign_story_0924.js"></script>
 <script src="assets/vile_finale_0924.js"></script>
 <script src="assets/rival_fight_0924.js"></script>
@@ -399,7 +434,7 @@
 <script src="assets/herald_art_1003f.js"></script>
 <script src="assets/herald_1003f.js"></script>
 <script src="assets/map_briefing_1003g.js"></script>
-<script src="assets/feedback_1003h.js"></script>
+<script src="assets/feedback_1003h.js?v=rebel-flight-audio-1013"></script>
 <script src="assets/combat_art_1003i.js"></script>
 <script src="assets/combat_1003i.js"></script>
 <script src="assets/finale_structure_1003j.js"></script>
@@ -409,7 +444,7 @@
 <script src="assets/finale_donors_1004.js"></script>
 <script src="assets/campaign_focus_1004b.js"></script>
 <script src="assets/rebel_arsenal_art_1004c.js"></script>
-<script src="assets/rebel_arsenal_1004c.js"></script>
+<script src="assets/rebel_arsenal_1004c.js?v=rebel-flight-audio-1013"></script>
 <script src="assets/stage3_combat_1004k.js"></script>
 <script src="assets/cole_fusion_art_1004l.js"></script>
 <script src="assets/cole_fusion_1004l.js"></script>
@@ -441,19 +476,100 @@
 <script src="assets/campaign_flags_art_1004f.js"></script>
 <script src="assets/campaign_landscape_1004e.js"></script>
 <script src="assets/campaign_controls_1004h.js"></script>
-<script src="assets/widescreen_hud_0918.js"></script>
+<script src="assets/campaign_follow_1009.js"></script>
+<script src="assets/boss_motion_art_1009.js"></script>
+<script src="assets/boss_motion_1009.js"></script>
+<script src="assets/stage1_motion_art_1009.js"></script>
+<script src="assets/stage1_motion_1009.js"></script>
+<script src="assets/smooth_motion_art_1009.js"></script>
+<script src="assets/arcade_finish_art_1010.js"></script>
+<script src="assets/smooth_motion_1009.js"></script>
+<script src="assets/arcade_jets_art_1010.js"></script>
+<script src="assets/arcade_combat_1010.js"></script>
+<script src="assets/widescreen_hud_0918.js?v=score-readable-1008c"></script>
 <script src="assets/online-config.js"></script>
 <script src="assets/online.js"></script>
-<script src="assets/asset_memory_1007.js"></script>
+<script src="assets/asset_memory_1007.js?v=performance-1012"></script>
 <script src="assets/maneuver_safety_1007.js"></script>
 <script src="assets/frame_pacing_1009.js"></script>
 <script src="assets/balance_recovery_1007b.js"></script>
 <script src="assets/enemy_hud_art_1007c.js"></script>
 <script src="assets/enemy_hud_1007c.js"></script>
 <script src="assets/player_hud_art_1008.js"></script>
-<script src="assets/player_hud_1008.js"></script>
+<script src="assets/player_hud_1008.js?v=lock-crosshair-1008e"></script>
 <script src="assets/boss_bars_1008.js"></script>
 <script src="assets/finale_forms_1008.js"></script>
+<script src="assets/feedback_1009.js?v=performance-1012"></script>
+<script src="assets/orbs_1010.js"></script>
+<script src="assets/siege_tanks_art_1010.js"></script>
+<script src="assets/siege_tanks_1010.js"></script>
+<script src="assets/hammer_art_1010.js"></script>
+<script src="assets/hammer_1010.js"></script>
+<script src="assets/audio_hud_art_1010.js"></script>
+<script src="assets/audio_hud_1010.js"></script>
+<script src="assets/audio_feedback_1010.js"></script>
+<script src="assets/audio_fx_art_1010.js"></script>
+<script src="assets/audio_fx_1010.js"></script>
+<script src="assets/audio_encounters_1010.js"></script>
+<script src="assets/audio_wind_1010.js"></script>
+<script src="assets/audio_stagex_1010.js"></script>
+<script src="assets/audio_cinematic_art_1010.js"></script>
+<script src="assets/audio_cinematics_1010.js"></script>
+<script src="assets/audio_alien_1010.js"></script>
+<script src="assets/audio_fleet_1010.js"></script>
+<script src="assets/audio_fire_art_1010.js"></script>
+<script src="assets/audio_fire_1010.js"></script>
+<script src="assets/audio_extra_art_1010.js"></script>
+<script src="assets/audio_extra_1010.js?v=rebel-flight-audio-1013"></script>
+<script src="assets/hq_live_art_1010.js"></script>
+<script src="assets/hq_live_1010.js"></script>
+<script src="assets/homecoming_art_1010.js"></script>
+<script src="assets/homecoming_1010.js"></script>
+<script src="assets/survivor_art_1010.js"></script>
+<script src="assets/survivor_1010.js"></script>
+<script src="assets/hq_landing_art_1010.js"></script>
+<script src="assets/hq_landing_1010.js"></script>
+<script src="assets/part2_art_1010.js"></script>
+<script src="assets/part2_fire_renderer_1011.js"></script>
+<script src="assets/part2_combat_1010.js"></script>
+<script src="assets/part2_encounters_1010.js"></script>
+<script src="assets/part2_modes_1010.js"></script>
+<script src="assets/part2_motion_1011.js"></script>
+<script src="assets/hammer_chromium_1011.js"></script>
+<script src="assets/enemy_behaviour_1011.js"></script>
+<script src="assets/signature_specials_1011.js"></script>
+<script src="assets/wind_projectile_painter_1011.js"></script>
+<script src="assets/wind_projectiles_1011.js"></script>
+<script src="assets/element_arsenal_art_1011.js"></script>
+<script src="assets/element_arsenal_1011.js"></script>
+<script src="assets/armored_command_art_1011.js"></script>
+<script src="assets/armored_command_1011.js"></script>
+<script src="assets/playthrough_art_1011.js"></script>
+<script src="assets/playthrough_1011.js"></script>
+<script src="assets/playthrough_finale_1011.js"></script>
+<script src="assets/playthrough_ui_1011.js"></script>
+<script src="assets/void_arena_art_1011.js"></script>
+<script src="assets/void_arena_1011.js"></script>
+<script src="assets/portal_lifecycle_art_1011.js"></script>
+<script src="assets/portal_lifecycle_1011.js?v=4-spin"></script>
+<script src="assets/portal_encounters_1011.js?v=4-spin"></script>
+<script src="assets/general_achievements_1011.js"></script>
+<script src="assets/game/shared/audio/chip_1011/manifest.js"></script>
+<script src="assets/chip_audio_1011.js"></script>
+<script src="assets/siege_console_art_1012.js?v=1012"></script>
+<script src="assets/siege_console_1012.js?v=performance-1012"></script>
+<script src="assets/combat_pressure_1012.js?v=flight-balance-1013"></script>
+<script src="assets/flight_variants_art_1012.js?v=1"></script>
+<script src="assets/flight_variants_1012.js?v=stage34-1014"></script>
+<script src="assets/air_motion_art_1013.js?v=1"></script>
+<script src="assets/air_motion_1013.js?v=1"></script>
+<script src="assets/formation_palettes_1013.js?v=1"></script>
+<script src="assets/enemy_patterns_1013.js?v=weapon-identity-2"></script>
+<script src="assets/stage6_carrier_1013.js?v=crimson-fx-2"></script>
+<script src="assets/s4_core_access_1013.js?v=1"></script>
+<script src="assets/stage6_sequence_1013.js?v=2"></script>
+<script src="assets/stage34_assault_1014.js?v=1"></script>
+<script>if(new URLSearchParams(location.search).get('enemyAtlas')==='1')document.write('<script src="assets/enemy_atlas_engine_1013.js"><\/script>');</script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
 
 <script>

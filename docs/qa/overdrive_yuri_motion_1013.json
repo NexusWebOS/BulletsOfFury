@@ -1,0 +1,305 @@
+{
+  "build": "overdrive1013-yuri-motion-r1",
+  "date": "2026-10-13",
+  "localOnly": true,
+  "motion": {
+    "checks": [
+      {
+        "name": "316 authored exports have even 320x320 canvases and one shared pivot",
+        "passed": true
+      },
+      {
+        "name": "every walk/run/crawl bank has at least twelve unique authored frames",
+        "passed": true
+      },
+      {
+        "name": "south walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "southwest walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "west walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "northwest walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "north walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "northeast walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "east walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "southeast walk advances authored poses through real directional input",
+        "passed": true
+      },
+      {
+        "name": "starting fire preserves walking phase and selects matching run-and-gun pose",
+        "passed": true
+      },
+      {
+        "name": "releasing fire returns to the walk loop without resetting stride",
+        "passed": true
+      },
+      {
+        "name": "crawl shows at least fourteen pose changes per second at unchanged 63 px/s",
+        "passed": true
+      },
+      {
+        "name": "crawl remains a low authored pose with no rotated standing billboard",
+        "passed": true
+      },
+      {
+        "name": "stopping a crawl settles into a planted prone frame",
+        "passed": true
+      },
+      {
+        "name": "pushing into a concrete barrier stops the feet after settling",
+        "passed": true
+      },
+      {
+        "name": "backpedaling reverses the gait while keeping independent east aim",
+        "passed": true
+      },
+      {
+        "name": "minor aim jitter near a facing boundary does not flicker the sprite",
+        "passed": true
+      },
+      {
+        "name": "deliberate aim change crosses the facing dead band immediately",
+        "passed": true
+      },
+      {
+        "name": "pause freezes movement and animation phase",
+        "passed": true
+      },
+      {
+        "name": "jump holds gait phase and still plays the original jump bank",
+        "passed": true
+      },
+      {
+        "name": "normal game render resolves the new Yuri movement art",
+        "passed": true
+      },
+      {
+        "name": "all 316 new frames draw successfully through native ART",
+        "passed": true
+      },
+      {
+        "name": "review lists every new crawl frame and exposes old/new comparison",
+        "passed": true
+      },
+      {
+        "name": "review dynamically supports sixteen-frame north cycle",
+        "passed": true
+      },
+      {
+        "name": "no page, console or missing asset errors",
+        "passed": true
+      }
+    ],
+    "measurements": {
+      "crawlTransitionsPerSecond": 15,
+      "crawlDistance": 63.00000000000068
+    },
+    "errors": []
+  },
+  "assault": {
+    "checks": [
+      {
+        "name": "all 518 authored exports resolve with even frame sizes",
+        "passed": true
+      },
+      {
+        "name": "fortress restored into normal campaign; no boss in pursuit",
+        "passed": true
+      },
+      {
+        "name": "new truck password round-trips across every pilot/difficulty/partner",
+        "passed": true
+      },
+      {
+        "name": "fortress uses close 640x480 playfield and three armor points",
+        "passed": true
+      },
+      {
+        "name": "walking advances feet with the north authored walk bank",
+        "passed": true
+      },
+      {
+        "name": "mouse aims and fires east while the body uses east artwork",
+        "passed": true
+      },
+      {
+        "name": "base rifle retains unlimited ammunition",
+        "passed": true
+      },
+      {
+        "name": "jump raises the authored jump sprite",
+        "passed": true
+      },
+      {
+        "name": "roll uses the drawn tumble sequence",
+        "passed": true
+      },
+      {
+        "name": "prone remains latched after release",
+        "passed": true
+      },
+      {
+        "name": "prone movement uses crawling artwork",
+        "passed": true
+      },
+      {
+        "name": "L shoulder crouches into real cover",
+        "passed": true
+      },
+      {
+        "name": "holding fire pops up and shoots beyond own cover",
+        "passed": true
+      },
+      {
+        "name": "releasing fire returns behind cover immediately",
+        "passed": true
+      },
+      {
+        "name": "cover absorbs enemy fire while crouched",
+        "passed": true
+      },
+      {
+        "name": "exposed peek can be hit by enemy rounds",
+        "passed": true
+      },
+      {
+        "name": "Retina can acquire the firing lane from a prone wall corner",
+        "passed": true
+      },
+      {
+        "name": "prone wall peek physically moves around the wall end",
+        "passed": true
+      },
+      {
+        "name": "releasing wall fire returns to the protected anchor",
+        "passed": true
+      },
+      {
+        "name": "destroyed concrete cover removes the collision slab and emits effects",
+        "passed": true
+      },
+      {
+        "name": "R shoulder acquires original BOF Retina on foot without missiles",
+        "passed": true
+      },
+      {
+        "name": "exhausted upgrade returns to unlimited assault rifle",
+        "passed": true
+      },
+      {
+        "name": "north doors trigger Gosfer entry and explosions",
+        "passed": true
+      },
+      {
+        "name": "Gosfer fires actual laser volleys",
+        "passed": true
+      },
+      {
+        "name": "Gosfer reflex dodge has a cooldown",
+        "passed": true
+      },
+      {
+        "name": "aimed rifle fire defeats the moving and dodging Gosfer",
+        "passed": true
+      },
+      {
+        "name": "defeating Gosfer advances to Machinists with a save password",
+        "passed": true
+      },
+      {
+        "name": "four new armor families occur in existing tank stages",
+        "passed": true
+      },
+      {
+        "name": "searchlight opening transitions into pursuit",
+        "passed": true
+      },
+      {
+        "name": "turret bullets intercept incoming rockets before hull impact",
+        "passed": true
+      },
+      {
+        "name": "hull zero explodes into a wreck",
+        "passed": true
+      },
+      {
+        "name": "hull loss restarts searchlight opening with full hull and zero combat time",
+        "passed": true
+      },
+      {
+        "name": "red hyper-elite robots spawn in the final stretch",
+        "passed": true
+      },
+      {
+        "name": "complete 150-second simulation reaches clear without a boss",
+        "passed": true
+      },
+      {
+        "name": "normal-hull pursuit is survivable using turret aim and fire",
+        "passed": true
+      },
+      {
+        "name": "searchlight pursuit does not award an undetected ghost clear",
+        "passed": true
+      },
+      {
+        "name": "every core pose renders through the game ART context",
+        "passed": true
+      },
+      {
+        "name": "no page, console or missing-file errors",
+        "passed": true
+      }
+    ],
+    "normalHullResult": {
+      "state": "clear",
+      "hull": 23,
+      "elapsed": 150.0000000000115,
+      "kills": 63,
+      "intercepts": 28,
+      "restarts": 0
+    },
+    "errors": []
+  },
+  "base": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "passes": 8700,
+    "errors": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "exitCode": 0
+  },
+  "visualReview": {
+    "nativeFramesInspected": 316,
+    "directions": 8,
+    "gameScreenshots": [
+      "crawl",
+      "run_fire",
+      "wall_stop",
+      "briefing"
+    ],
+    "review": "old/new crawl comparison"
+  },
+  "limitations": [
+    "Controller aim uses Gamepad API test input, not a physical controller.",
+    "New movement art is Yuri only."
+  ]
+}

@@ -78,7 +78,7 @@
   function breakExhibit(G, q) {
     const kind = q.kind.slice(3), E = EX[kind];
     FX.boom(q.x, q.y - 10, kind === 'statue' ? 90 : 55, kind.includes('case') ? 'gfx_impact_' : 'nxp_clus_', kind.includes('case') ? 6 : 8);
-    FX.debris(q.x, q.y - 6, 0.22); A.play(kind === 'statue' ? 'expB' : 'expS', 0.7);
+    FX.debris(q.x, q.y - 6, 0.22); A.play('gd_crateBreak', .85);
     S.noise(q.x, q.y, E.noise, 0.45, G.units);
     G.exhibits = (G.exhibits || 0) + 1; G.score += 250;
     if (q.drop) TD.dropPickup(G, q.x, q.y + 10, q.drop);
@@ -117,9 +117,10 @@
     Object.assign(t, { pilot: v.pilot, a: v.a, aim: v.a, hp: v.hp, max: v.max, inv: 30, smoke: 2, vehicle: true,
       weapons: [{ id: 'vulcan', lv: 2 }, { id: 'homing', lv: 1 }], wi: 0 });
     G.footSave = f; G.player = t; G.inVehicle = true; v.parked = false;
-    A.play('intro', 0.6); Cam.kick(4); G.say('FURY TANK MOUNTED', t); MX.log.push({ event: 'board', t: G.time });
+    A.play('loadoutEquip', .8); Cam.kick(4); G.say('FURY TANK MOUNTED', t); MX.log.push({ event: 'board', t: G.time });
   }
   function eject(G, destroyed) {
+    A.stopLoops();
     const t = G.player, f = G.footSave, v = G.vehicle;
     const [sx, sy] = M.fwd(t.a + PI / 2);
     Object.assign(f, { x: t.x + sx * 30, y: t.y + sy * 30, dead: false, inv: destroyed ? 120 : 40, stance: 'stand', roll: 0, action: null, reload: 0, reloadGun: null });
@@ -166,7 +167,7 @@
   function cqcKill(G, u) {
     const T = TD.ET[u.type];
     u.dead = true; u.hp = 0; G.kills++; G.score += T.score * 2; G.cqcKills = (G.cqcKills || 0) + 1;
-    FX.boom(u.x, u.y, 40, 'gfx_impact_', 6); A.play('hit', 0.8);
+    FX.boom(u.x, u.y, 40, 'gfx_impact_', 6); A.play('gd_soldierDown', .6);
     G.wrecks.push({ x: u.x, y: u.y, a: -PI, art: T.wreck || T.art, still: true, s: T.ds });
     G.say('CQC TAKEDOWN', u); MX.log.push({ event: 'cqc', t: G.time, type: u.type });
   }
@@ -196,7 +197,7 @@
     if (G.units.some(u => u.arena && !u.dead)) return;
     if (R.wave < P5.waves.length) { R.next = 1.1; return; }
     // cleared: the curtains drop, the room's alarm does not count against GHOST, the wings calm down
-    R.state = 'clear'; for (const q of R.rects) W.remove(q); R.rects = [];
+    R.state = 'clear'; A.play('gd_doorOpen'); for (const q of R.rects) W.remove(q); R.rects = [];
     S.alerts = R.alertsBefore; S.phase = 'CAUTION'; S.timer = 8;
     for (const u of G.units) if (!u.dead && !u.arena && u.mode !== 'patrol') { u.mode = 'patrol'; u.aware = 0.15; u.goal = null; u.heard = null; }   // the fight's noise does not linger
     G.score += 5000; G.routeT = 8; A.play('phase'); G.say('ROOM CLEAR +5000', { x: 400, y: 1000 }); MX.log.push({ event: 'clear', t: G.time });
@@ -236,7 +237,7 @@
     for (const h of G.hostages) {
       h.t += dt;
       if (h.state === 'bound' && p.onfoot && !p.dead && M.dist(p.x, p.y, h.x, h.y) < 20) {
-        h.state = 'freed'; h.t = 0; G.rescued++; G.score += 3000; A.play('pick');
+        h.state = 'freed'; h.t = 0; G.rescued++; G.score += 3000; A.play('achievement', .7);
         TD.footDrop(G, h.x + 14, h.y + 6, h.reward); G.say('RESCUED +3000', h); MX.log.push({ event: 'rescue', t: G.time });
       }
       if (h.state === 'freed' && h.t > 1.4) h.y += 1.1;

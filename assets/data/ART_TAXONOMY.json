@@ -1,4 +1,64 @@
 {
+  "pt11_": {
+    "role": "recorded_gameplay_boss_parts_and_weapon_corrections",
+    "sheet": null,
+    "note": "October 11 recording pass: 166 loose authored cells, ten 16-pose banks plus six independently mounted cryogenic carrier parts. Whole Hammer reactor/raise plates, Furnace head and travelling crescent, Harrier cannon, two ice fighters, black heart, two-arm drone raise, Blast Furnace spray and Sonic pressure pulses. Even fixed canvases with common proportional scale and physical pivots. Drone is padded 320x320; fire spray is160x320 pivot80,300 and Sonic128x128 pivot64,100. Fire contacts use authored per-frame opaque bands at the same uniform draw scale. Owning builder _BUILD_SOURCE/build_playthrough_art_1011.py updates loose pixels and assets/playthrough_art_1011.js together. Sources and prompts in _ART_SOURCES/playthrough_1011. Runtime playthrough_1011.js and playthrough_finale_1011.js. Review docs/previews/playthrough_1011, QA docs/qa/playthrough_1011.json. No enemy atlas repack."
+  },
+  "ap10_wind_icon_": {
+    "role": "wind_projectile_upgrade_menu_badges",
+    "sheet": null,
+    "note": "October11 Wind follow-up:45 drawn weapon badges I–V now use emerald borders with white Roman tags and silver projectile interiors. All128x128, pivot64,64. Original silver sheets and new built-in border edits retained in _ART_SOURCES/wind_icons_1011. Owning build_audio_fx_1010.py invokes wind_icon_art_1011.py and updates pixels plus audio_fx_art_1010.js together. Loose assets/game/shared/ui/wind_icons_1011. Native Forge, upgrade-menu and Stage6 reward checks pass. Separate gust reward symbol remains ap10_wind_symbol. See docs/feedback/WIND_PROJECTILES_1011.md."
+  },
+  "ap10_wind_symbol": {
+    "role": "wind_elemental_reward_and_selector_symbol",
+    "sheet": null,
+    "note": "October11: standalone emerald hexagonal Wind badge with three silver-white curled gust lines. One128x128 cell, pivot64,64. inf_wind and turn_inf_wind_0918 resolve to this authored symbol. Stage6 boss field drop, Powers Gained and Forge element rail use the symbol. This is distinct from the tornado-orb projectile icon. Owned by build_audio_fx_1010.py/wind_icon_art_1011.py and audio_wind_1010.js; source and prompt _ART_SOURCES/wind_icons_1011."
+  },
+  "p2_": {
+    "role": "authored_part_two_rigid_stealth_rotations_atomic_helix_and_complete_fire",
+    "sheet": null,
+    "note": "October 11 drawn-motion follow-up supersedes warped bank poses and the mixed-source atomic reel. Four stealth roles (blue, red, green, orange heavy) each have 16 rigid barrel-roll and 16 somersault views on 256x256 with pivot128,128. Actual side/belly/front/rear views come from drawn source plates; no affine warping. Orange has two gun pods; its intact/damage slots alias its new roll-zero plate. Blue/red/green idle and damage retain the exact opening whv_ace family, with paint-only palettes preserving alpha and luminance. New coherent atomic32 is 384x576, ground pivot192,480; fire32 and flared-root16 remain, with new organic crown16 on384x384. Jace32 and shield9 remain unchanged. Maverick half-charge and overdrive each reuse Jace's32 poses with alpha/luminance-preserving palettes, padded to288x288 pivot144,144. Six generated sheets supply112 new drawings;128 additional cells are derived palettes. Total337 registered cells,335 unique images. One common proportional scale per bank and fixed physical pivots; no per-frame fitting, interpolated duplicates or shared atlas edits. Owning build_part2_art_1010.py invokes part2_motion_art_1011.py after previous registration helpers and updates loose cells plus assets/part2_art_1010.js together. Sources, exact prompts, hashes and audit: _ART_SOURCES/part2_motion_1011. Runtime: part2_combat_1010.js, part2_motion_1011.js and shared part2_fire_renderer_1011.js. Preview docs/previews/part2_1010/index.html supports fixed views and Onion. Latest evidence: docs/feedback/DRAWN_MOTION_1011.md and docs/qa/drawn_motion_1011.json. Earlier source banks remain archived."
+  },
+  "hc10_": {
+    "role": "active_homecoming_environment_and_satellite_infection_with_archived_jet_candidates",
+    "sheet": null,
+    "note": "October 10 correction: Mike rejected generated Cole aircraft likenesses and allowed static ships. Active homecoming_1010.js/hq_landing_1010.js use original ship_<pilot>_so6 front and ship_<pilot>_so2 rear images from XART with BOFX.ships trim, for all nine pilots. No generated replacement aircraft are warmed or drawn; all 432 generated jet poses remain archived. Active HC10 art is 32 black/emerald anchored infection poses and three space/Earth/aligned infected-dish plates. Exact prompts, original sources, crops and hashes preserved in _ART_SOURCES/homecoming_1010; owning builder build_homecoming_1010.py unchanged. Actual AP10 gameplay portal32, original pilot exit/walk, registered doors, continuous camera, satellite takeover16.4s, animated green code and original sound cues remain active. No atlas/source sprite changes. Latest docs STATIC_PILOT_SHIPS_1010.md and qa/static_pilot_ships_1010.json; original candidate generation recorded in HOMECOMING_TAKEOVER_1010.md."
+  },
+  "sv10_": {
+    "role": "authored_satellite_survivor_ending_animation",
+    "sheet": null,
+    "note": "October 10: regenerated wide and close damaged-dish plates, 32 distinct slithering survivor poses, 16 coil/charge plus 16 upper-left launch poses, 16 native emerald contact/discharge effects. Existing black-liquid/metal-shard/emerald-core identity retained. Shipping cells are fixed 384x384 with common physical core pivot192,192; plates use even transparent padding and measured content_rect. Native crop/pad/integer translation only, no interpolation, rotation, per-frame fitting or procedural trails. Builder _BUILD_SOURCE/build_survivor_1010.py owns assets/survivor_art_1010.js and loose pixels together. Runtime survivor_1010.js is loaded before hq_landing_1010.js so the homecoming fade wraps the new scene. Source prompts, native references and accepted/rejected generations in _ART_SOURCES/survivor_1010. Old ending plates remain archived. Preview docs/previews/hq_landing_1010/index.html; QA docs/qa/survivor_1010.json. Superseding October 10 homecoming direction: crawl/contact remain active, charge/launch reels are archived; the symbiote now attaches and corrupts the satellite using hc10 infection32 and the aligned infected plate. Full16.4-second takeover and green binary/code replace escape from the dish. Owner assets/survivor_1010.js; latest QA docs/qa/homecoming_takeover_1010.json."
+  },
+  "ap10_": {
+    "role": "authored_audio_playthrough_hud_weapons_cinematics_and_void",
+    "sheet": null,
+    "note": "October10 built-in image_gen: 193 unique registered loose combat/icon/cinematic cells plus one bottom HUD. Ice16, fusion16, Wind16 + nine icons, fire shield32, real chains16, void32, consumption16, Voss turbo16, Cole assembly16, HQ4, return-home4. Even common canvases; physical pivots; native alpha; source scale1 with translation/padding only. Registration and exact prompts/hashes in _ART_SOURCES/audio_1010/generation_manifest.json. Builders _BUILD_SOURCE/build_audio_*_1010.py own loose cells and assets/audio_*_art_1010.js together. Runtime assets/audio_*_1010.js loaded after existing combat/preview passes. No atlas edits. Literal Cole assembly contains Cole only; other pilots retain original authored hardware. Combat rig remains separate from consumption cinematic. Preview docs/previews/audio_1010/index.html; QA docs/qa/audio_playthrough_1010.json."
+  },
+  "af10_": {
+    "role": "authored_32_frame_hammer_death_and_module_explosions",
+    "sheet": null,
+    "note": "October 10: 96 unique loose RGBA frames:32 electric corona rings,32 violet/orange plasma explosions,32 fire/smoke shock rings. Built-in imagegen extended the approved eight-frame designs. Accepted sources are electric_ring_32_clean.png,plasma_blast_32_padded.png,fire_ring_32_clean.png in _ART_SOURCES/arcade_finish_1010/returned; rejected opaque/clipped/count-mismatched alternatives remain archived and unregistered. Equal 4x8 cells, verified clear source borders, common scale, fixed centers, no duplicate interpolation or procedural sprite painting. Owner _BUILD_SOURCE/build_arcade_finish_1010.py updates assets/arcade_finish_art_1010.js and loose cells together. Runtime smooth_motion_1009.js owns Hammer engine death without legacy grey smoke discs/star bursts. The isolated Stage I preview also uses these reels for module breakup. QA docs/ARCADE_MOTION_1010.md."
+  },
+  "ac10_": {
+    "role": "authored_elemental_jets_and_preview_only_stage1_modular_candidates",
+    "sheet": null,
+    "note": "October 10: large south-facing fire/ice fighters each have16 authored fixed-chassis frames in assets/game/shared/combat/arcade_jets_1010. Shipping registry assets/arcade_jets_art_1010.js; runtime arcade_combat_1010.js. Shieldless small flyers use a warned locked kamikaze dive and native contact explosion. Mountain geysers launch inward from upper sides using the original authored fire column rotated90 degrees. Stage I green Razorback, red Furious Razorback and Overlord candidate hulls have16 frames each plus twelve independent four-frame module banks, including separate rotor. Preview candidates are loaded ONLY by docs/previews/neo_geo_stage1_1010/index.html; existing encounters are not replaced. Owning builder _BUILD_SOURCE/build_arcade_candidates_1010.py registers source/cell changes together. Exact imagegen prompts, original engine reference exports, fixed mount registrations and hashes in _ART_SOURCES/arcade_candidates_1010/. No shared atlas changes."
+  },
+  "sm10_": {
+    "role": "authored_enemy_ship_motion_and_hammer_electric_farewell",
+    "sheet": null,
+    "note": "October 9: thirteen accepted built-in imagegen RGBA sheets, 208 loose normalized cells. Four new volcanic/arctic small-enemy designs; eight-frame fixed-chassis loops for 24 current enemy roster slots across Stages 2-8, including independent original desert tank turret; eight neutral-flight frames for all nine pilot ships and Furyship with original nozzle/muzzle rigs, native canvas dimensions and pilot palettes. Hammer last words, portrait-to-white/window fade, original Retina reactor lock, player missile impact, nine successive authored electrical bursts/rings, then existing whole two-arm/head acted death and cutaways. Source frames/prompts/crops/registration and SHA256s in _ART_SOURCES/smooth_motion_1009/. Owning builder _BUILD_SOURCE/build_smooth_motion_1009.py writes cells and assets/smooth_motion_art_1009.js together. Runtime assets/smooth_motion_1009.js preserves attack controllers, HP, original damage effects and white hit flashes; direction selected from Stage 6 flight state, never transient spin. No shared atlas edits. Scope/QA docs/SMOOTH_MOTION_1009.md; further unique roster families and bank/roll in-betweens remain future motion work."
+  },
+  "bm9_": {
+    "role": "authored_boss_motion_and_charge_reels",
+    "sheet": null,
+    "note": "October 9: eight accepted built-in imagegen RGBA source reels, 64 native loose frames. Hammer intact two-arm/head death and directional counter; Dracodia attached-head torso acting and separate left/right physical claws; Warden forelimb slashes, rear-leg leap poses and gravel landing; gold/ice turret charges. Rejected duplicate-arm and forked-claw candidates are not shipped. Owner _BUILD_SOURCE/build_boss_motion_1009.py writes cells and assets/boss_motion_art_1009.js together. Exact prompts and measured source/pivot/tip registrations in _ART_SOURCES/boss_motion_1009/. Runtime boss_motion_1009.js preserves encounter HP, module owners and existing sound/warning art; queues stage dependencies before play. Direction and QA docs/feedback/BOSS_DIRECTION_1009.md. No shared atlas changes."
+  },
+  "s1m_": {
+    "role": "current_stage1_authored_vehicle_motion_and_muzzles",
+    "sheet": null,
+    "note": "October 9: seven accepted built-in imagegen RGBA source sheets, 48 loose moving-part cells. Current green modular tank hull/turret, current NEF missile buggy idle/fire, transparent boat wakes, aircraft tail exhaust, four kinetic and four rocket muzzle frames. Original Fury Fleet hulls, aiming/deployed/destroyed boat weapons, jet banks/rolls and ordnance are retained. Landing craft and static props keep their existing attack roles. Owner _BUILD_SOURCE/build_stage1_motion_1009.py writes cells and assets/stage1_motion_art_1009.js; exact edit prompts and measured shared pivots in _ART_SOURCES/stage1_motion_1009/live-prompts.json and live-manifest.json. Runtime stage1_motion_1009.js. Actual renderer exports 8-idle/4-fire composite reels for the ten current vehicles to returned_live; runtime parts remain independent. Older ZIP-design candidates are not wired. QA docs/STAGE1_MOTION_1009.md. No shared atlas changes."
+  },
   "ph8_": {
     "role": "authored_stage_player_hud",
     "sheet": null,
@@ -139,7 +199,7 @@
     "sheet": null,
     "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/shared/effects/fx_burn_0922/provenance.json."
   },
-  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u00e2\u20ac\u201d look it up here, and if it is not here, render it and ask.",
+  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again â€” look it up here, and if it is not here, render it and ask.",
   "?": {
     "role": "boot",
     "sheet": "boot",
@@ -249,7 +309,7 @@
     "role": "miniboss",
     "sheet": "miniboss_stage4"
   },
-  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set \u00e2\u20ac\u201d pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr \u00e2\u20ac\u201d blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
+  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set â€” pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr â€” blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
   "n6": {
     "role": "enemy",
     "sheet": "stage6roster"
@@ -265,7 +325,7 @@
   "nxp_": {
     "role": "explosions",
     "sheet": "explosions",
-    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail \u00e2\u20ac\u201d my sampler's fault, not his."
+    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail â€” my sampler's fault, not his."
   },
   "nbs_": {
     "role": "bossbarfill",
@@ -345,14 +405,14 @@
   "ndk_": {
     "role": "deckerweapon",
     "sheet": "playerprojectiles",
-    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker \u00e2\u20ac\u201d the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
+    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker â€” the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
   },
   "nthp_": {
     "role": "pilotthrusters",
     "sheet": "playerships",
-    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs \u00e2\u20ac\u201d he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
+    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs â€” he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
   },
-  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail \u00e2\u20ac\u201d the sampler took the first frame of each reel, which for an effect is a 4px spark.",
+  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail â€” the sampler took the first frame of each reel, which for an effect is a 4px spark.",
   "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index.",
   "rr_ship_": {
     "role": "enemyship_master",
@@ -582,7 +642,7 @@
   "map4f_": {
     "role": "campaign_marker",
     "sheet": null,
-    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated I\u00e2\u20ac\u201cIX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
+    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated Iâ€“IX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
   },
   "map4e_region_hub": {
     "role": "campaign_landmark",
@@ -628,5 +688,55 @@
     "role": "rebel_grapple_hardware_and_nyx_spiral",
     "sheet": "rebel_air_1007",
     "note": "October7 native-alpha modular Rook winch,open/closed grapple and chain link;8-frame cyan/indigo corkscrew for Nyx cloak,with above/below depth. Exact importer _BUILD_SOURCE/build_rebel_air_1007.py; gameplay assets/rebel_air_1007.js; QA docs/qa/rebel_air_1007.json."
+  },
+  "hq10_": {
+    "role": "live_hq_cinematic_environment_and_radar",
+    "sheet": null,
+    "note": "October10 built-in image_gen: four ship-free HQ environment plates and32 native-alpha radar acquisition/sweep cells. Exact actual pilot/stealth aircraft references supplied to both generation prompts; runtime draws those unchanged in-game sprites. Fixed even canvases and physical radar origins; crop/pad/translation at scale1. Original sources, identity exports, exact prompts and hashes:_ART_SOURCES/hq_live_1010. Owner:_BUILD_SOURCE/build_hq_live_1010.py; runtime:assets/hq_live_1010.js. Three live scanning instruments, moving interactive contacts, original sound cues and original authored waveform. No atlas edits."
+  },
+  "hl10_": {
+    "role": "homecoming_landing_and_selected_pilot",
+    "sheet": null,
+    "note": "October10 built-in image_gen: clean sunset coastal runway and Fury HQ plates, clean portal/Earth plates, sixteen level-aircraft landing/gear/shutdown/hatch poses and eight disembark/eight walk poses for each of nine actual pilot identities, sixteen HQ sliding-door and sixteen neutral downwash cells, four authored ground shadows. 328 registered even loose PNGs, native RGBA, common engine/waist/ground pivots, crop/pad/translation at scale1. Current Furyship and each accepted in-game pilot body are the identity references; no small parked aircraft in the homecoming. Axel's source row with nine bodies and Juggernaut's body-attached ladder were regenerated; only the corrected row from each edit is exported. Exact prompts, source hashes, measured cells and references:_ART_SOURCES/hq_landing_1010. Owner:_BUILD_SOURCE/build_hq_landing_1010.py, registration:assets/hq_landing_art_1010.js, renderer:assets/hq_landing_1010.js. No atlas edits."
+  },
+  "hm10_": {
+    "role": "whole_hammer_chromium_and_energy",
+    "sheet": null,
+    "note": "October10 built-in image_gen: six native-alpha banks of16 real authored frames (shield formation, right/left shoulder swing, absorptive chrome wall/shatter, reactor energy, chrome energy spike/shatter). All96 exports use even fixed canvases and common physical pivots, with complete heads and exactly two arms in intact poses. Original sources, exact prompts and registration:_ART_SOURCES/hammer_1010. Owner:_BUILD_SOURCE/build_hammer_1010.py, metadata:assets/hammer_art_1010.js, runtime:assets/hammer_1010.js. No atlas or synthetic tweening. Native XART/drawImage verification:docs/qa/hammer_1010.json. The boss remains a whole authored plate."
+  },
+  "wp11_": {
+    "role": "authored_wind_player_projectile_animation_reels",
+    "sheet": null,
+    "note": "October11:9 independent16-pose Wind banks:bullets,spread,missile,laser,gust,tornado,mist,heavy,electric. All256x256 at24fps,144 distinct drawings, fixed physical pivots and common proportional scales. Metal/core template registration corrects source drift by translation. Gust paints its pressure plume above the generated nozzle reference. Laser body/crown/root use uniform authored crops. Original built-in imagegen sources, exact prompts, references, hashes and registered sheets in _ART_SOURCES/wind_projectiles_1011. Loose shipping assets/game/shared/player_weapons/wind_1011. Owner build_audio_fx_1010.py invokes wind_projectile_art_1011.py and writes audio_fx_art_1010.js together. Shared wind_projectile_painter_1011.js and live wind_projectiles_1011.js select native per-round Wind carriers and preserve simulation. Review docs/previews/wind_projectiles_1011/index.html; QA docs/qa/wind_projectiles_1011.json."
+  },
+  "ea11_": {
+    "role": "elemental_player_round_and_missile_reels",
+    "sheet": null,
+    "note": "October11 built-in imagegen: sixteen accepted sixteen-pose round/missile banks for Fire, Sonic, Lightning, Water, Ice, Chromium, Toxic and Dark Matter. 256 distinct drawings, 128x128 fixed RGBA cells, physical nose/casing registration and common proportional scales; no pose interpolation. Source images, exact prompts and registration: _ART_SOURCES/element_arsenal_1011. Owner: _BUILD_SOURCE/build_element_arsenal_1011.py writes shipping atlases/manifest and assets/element_arsenal_art_1011.js together. Runtime assets/element_arsenal_1011.js retains native simulation and uses per-projectile launch identity. Existing Wind reels, beams, casts, orbs, impacts and special owners retained. Review docs/previews/element_arsenal_1011/index.html; QA docs/qa/element_arsenal_1011.json."
+  },
+  "av11_": {
+    "role": "stage8_phase3_boundless_alien_void_and_code_parallax",
+    "sheet": null,
+    "note": "October11: authored 1024x1536 black/crimson atmospheric void with no architecture; sixteen native-alpha emerald code poses padded to320x320 at pivot160,160, common scale1. Sources/prompts in _ART_SOURCES/void_arena_1011. Owner build_void_arena_1011.py registers loose pixels and void_arena_art_1011.js together. Runtime void_arena_1011.js replaces only Phase3 environment, with simulation-owned clocks, proportional background cover and depth-separated code; no old back/front ribs. All encounter controllers, geometry, phase transitions and other biomes retained."
+  },
+  "pr11_": {
+    "role": "portal_and_black_void_review_pack",
+    "sheet": null,
+    "note": "October11: four generated32-pose loops matching Mike's portal.gif,void-portal.gif,tp.gif,tp2.gif. Amethyst gate512x640/pivot256,352 with immutable authored shell; blue/red rifts and black tunnel320x320/pivot160,160. Separate32-pose gate membrane. Aperture registration by integer translation, common proportional scales; no synthetic rotated/tweened duplicates. Native alpha retained; black tunnel intentionally opaque. Original image_gen outputs/prompts _ART_SOURCES/portals_1011. Owner build_portals_1011.py registers all160 cells, sheets and portal_art_1011.js together. Review docs/previews/portals_1011/index.html, QA docs/qa/portals_1011.json. Review pack only, not assigned to live encounters."
+  },
+  "pr11b_": {
+    "role": "bof_plasma_chromium_and_armored_portal_review_pack",
+    "sheet": null,
+    "note": "October11 BOF-style redesign after Mike rejected GIF copies. Five32-frame loops: angular blue/red/emerald plasma rifts, black/chrome alien singularity with purple/green veins, and armored Fury breach gate with a static generated shell plus32 purple membrane poses. Main160 plus32 component frames. All320x320/pivot160,160 except gate512x640/pivot256,352. Native alpha, physical black-aperture registration, common proportional scale. Source prompts and actual BOF style references _ART_SOURCES/portals_bof_1011. Owner build_portals_bof_1011.py registers pixels, sheets, manifest and portal_bof_art_1011.js together. Supersedes only the portal review art; no live encounter assignment. Review docs/previews/portals_1011; QA docs/qa/portals_bof_1011.json."
+  },
+  "pl11_": {
+    "role": "portal_form_and_close",
+    "sheet": null,
+    "note": "32 forming and 32 separately generated closing cells for the approved BOF blue/red/green rifts, black chromium singularity and armored Fury gate. Stable pivots and common phase scale; fixed gate shell. Approved loop pixels remain pr11b_. Owner build_portal_lifecycle_1011.py. Runtime portal_lifecycle_1011.js shares continuous playback with preview and Stage 8."
+  },
+  "hud_siege_console_1012": {
+    "role": "player_side_hud",
+    "sheet": null,
+    "note": "Mike selected the vented Siege Console on October 12. Full paired authored plate, proportional columns and measured wells; compact modules share the same plate. Owner build_siege_console_1012.py; renderer siege_console_1012.js."
   }
 }

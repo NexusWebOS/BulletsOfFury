@@ -1,0 +1,49 @@
+{
+  "id": "s9comet",
+  "name": "Water Space Comet",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9comet"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_comet",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9comet_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_comet/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "north",
+    "startAngle": -1.5707963267948966,
+    "sha256": "50e639c605dfdea47cc04314f4f100e1b01eb406c82b2f8b889f434040558b07"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9comet_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_comet/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "north",
+    "startAngle": -1.5707963267948966,
+    "sha256": "4d2cb819997b9880a00af4dca7556f5a06d59d66236d62ba04d4dd4e274faf25"
+  },
+  "nativeRatios": {
+    "s9comet": 1.1428571428571428
+  },
+  "sourceKeys": {
+    "s9comet": "s9atk_comet_skimmer_0"
+  }
+}

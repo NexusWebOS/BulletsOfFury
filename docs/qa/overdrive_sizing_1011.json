@@ -1,0 +1,1048 @@
+{
+  "date": "2026-10-11",
+  "build": "overdrive1011-sizing",
+  "entry": "expansion/topdown/index.html",
+  "localOnly": true,
+  "summary": {
+    "sizing": {
+      "passed": 53,
+      "failed": 0
+    },
+    "warrior": {
+      "passed": 22,
+      "failed": 0
+    },
+    "frontend": {
+      "passed": 55,
+      "failed": 0
+    }
+  },
+  "nativePassed": 130,
+  "nativeFailed": 0,
+  "base": {
+    "passedAssertions": 8700,
+    "failedAssertions": 0,
+    "exitCode": 0,
+    "finalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "log": "_shots/overdrive_sizing_1011/base_suite.log"
+  },
+  "reportedReproduction": {
+    "approach": {
+      "w": 960,
+      "h": 720,
+      "view": [
+        480,
+        360
+      ]
+    },
+    "arena": {
+      "w": 480,
+      "h": 480,
+      "view": [
+        480,
+        480
+      ],
+      "boss": {
+        "left": 372.67459152693164,
+        "top": 263.4385924455373,
+        "right": 815.9529967935368,
+        "bottom": 613.96
+      },
+      "camera": {
+        "x": 34.00124174830395,
+        "y": 207.72056759093417
+      }
+    }
+  },
+  "sizing": {
+    "checks": [
+      {
+        "name": "1612x878: real northward driving enters the Warrior arena",
+        "passed": true
+      },
+      {
+        "name": "1612x878: boss entry keeps the same canvas size and tank scale",
+        "passed": true
+      },
+      {
+        "name": "1612x878: gameplay retains a proportional 4:3 field",
+        "passed": true
+      },
+      {
+        "name": "1612x878: the canvas uses the available height or width without cropping",
+        "passed": true
+      },
+      {
+        "name": "1612x878: complete front-facing boss and tank are visible",
+        "passed": true
+      },
+      {
+        "name": "1612x878: full sideways boss remains visible opposite the tank on the right",
+        "passed": true
+      },
+      {
+        "name": "1612x878: full sideways boss remains visible opposite the tank on the left",
+        "passed": true
+      },
+      {
+        "name": "1612x878: mouse turret aim maps to the resized world correctly",
+        "passed": true
+      },
+      {
+        "name": "1469x796: real northward driving enters the Warrior arena",
+        "passed": true
+      },
+      {
+        "name": "1469x796: boss entry keeps the same canvas size and tank scale",
+        "passed": true
+      },
+      {
+        "name": "1469x796: gameplay retains a proportional 4:3 field",
+        "passed": true
+      },
+      {
+        "name": "1469x796: the canvas uses the available height or width without cropping",
+        "passed": true
+      },
+      {
+        "name": "1469x796: complete front-facing boss and tank are visible",
+        "passed": true
+      },
+      {
+        "name": "1469x796: full sideways boss remains visible opposite the tank on the right",
+        "passed": true
+      },
+      {
+        "name": "1469x796: full sideways boss remains visible opposite the tank on the left",
+        "passed": true
+      },
+      {
+        "name": "1469x796: mouse turret aim maps to the resized world correctly",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: real northward driving enters the Warrior arena",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: boss entry keeps the same canvas size and tank scale",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: gameplay retains a proportional 4:3 field",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: the canvas uses the available height or width without cropping",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: complete front-facing boss and tank are visible",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: full sideways boss remains visible opposite the tank on the right",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: full sideways boss remains visible opposite the tank on the left",
+        "passed": true
+      },
+      {
+        "name": "1920x1080: mouse turret aim maps to the resized world correctly",
+        "passed": true
+      },
+      {
+        "name": "1100x850: real northward driving enters the Warrior arena",
+        "passed": true
+      },
+      {
+        "name": "1100x850: boss entry keeps the same canvas size and tank scale",
+        "passed": true
+      },
+      {
+        "name": "1100x850: gameplay retains a proportional 4:3 field",
+        "passed": true
+      },
+      {
+        "name": "1100x850: the canvas uses the available height or width without cropping",
+        "passed": true
+      },
+      {
+        "name": "1100x850: complete front-facing boss and tank are visible",
+        "passed": true
+      },
+      {
+        "name": "1100x850: full sideways boss remains visible opposite the tank on the right",
+        "passed": true
+      },
+      {
+        "name": "1100x850: full sideways boss remains visible opposite the tank on the left",
+        "passed": true
+      },
+      {
+        "name": "1100x850: mouse turret aim maps to the resized world correctly",
+        "passed": true
+      },
+      {
+        "name": "520x650: real northward driving enters the Warrior arena",
+        "passed": true
+      },
+      {
+        "name": "520x650: boss entry keeps the same canvas size and tank scale",
+        "passed": true
+      },
+      {
+        "name": "520x650: gameplay retains a proportional 4:3 field",
+        "passed": true
+      },
+      {
+        "name": "520x650: the canvas uses the available height or width without cropping",
+        "passed": true
+      },
+      {
+        "name": "520x650: complete front-facing boss and tank are visible",
+        "passed": true
+      },
+      {
+        "name": "520x650: full sideways boss remains visible opposite the tank on the right",
+        "passed": true
+      },
+      {
+        "name": "520x650: full sideways boss remains visible opposite the tank on the left",
+        "passed": true
+      },
+      {
+        "name": "520x650: mouse turret aim maps to the resized world correctly",
+        "passed": true
+      },
+      {
+        "name": "live broadside, lasers, missile volleys and ram all run",
+        "passed": true
+      },
+      {
+        "name": "every sampled live attack keeps the whole boss and tank on screen",
+        "passed": true
+      },
+      {
+        "name": "the game context actually draws all four mounted Warrior art keys",
+        "passed": true
+      },
+      {
+        "name": "Alt+Enter enters fullscreen without changing the active fight",
+        "passed": true
+      },
+      {
+        "name": "fullscreen exit preserves the fixed road and arena view",
+        "passed": true
+      },
+      {
+        "name": "pause retains its own menu viewport and four authored buttons",
+        "passed": true
+      },
+      {
+        "name": "the exact original Options panel retains 480x512 and four volume strips",
+        "passed": true
+      },
+      {
+        "name": "Options fits a narrow browser without changing its panel proportions",
+        "passed": true
+      },
+      {
+        "name": "resuming from Options restores the same large gameplay viewport",
+        "passed": true
+      },
+      {
+        "name": "the next tank mission retains its existing 480x360 world layout",
+        "passed": true
+      },
+      {
+        "name": "the on-foot museum and its authored alert-cone buffer retain their layout",
+        "passed": true
+      },
+      {
+        "name": "restarting Level 2 restores its wider view and centered briefing",
+        "passed": true
+      },
+      {
+        "name": "zero page, console or missing-asset errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "observations": {
+      "1612x878": {
+        "approach": {
+          "x": 223.328125,
+          "y": 2,
+          "w": 1165.328125,
+          "h": 874,
+          "window": [
+            1612,
+            878
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.4566666666666668
+          },
+          "zoom": 1
+        },
+        "arena": {
+          "x": 223.328125,
+          "y": 2,
+          "w": 1165.328125,
+          "h": 874,
+          "window": [
+            1612,
+            878
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.4566666666666668
+          },
+          "zoom": 1
+        },
+        "right": {
+          "boss": {
+            "left": 338.7215947333948,
+            "top": 263.4385924455373,
+            "right": 782,
+            "bottom": 613.96
+          },
+          "player": {
+            "x": 82,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 141.71966997797892
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        },
+        "left": {
+          "boss": {
+            "left": 18.000000000000025,
+            "top": 271.5245524236526,
+            "right": 466.8764116906167,
+            "bottom": 612.9200000000001
+          },
+          "player": {
+            "x": 718,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 145.76223546423563
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        }
+      },
+      "1469x796": {
+        "approach": {
+          "x": 206.5,
+          "y": 2,
+          "w": 1056,
+          "h": 792,
+          "window": [
+            1469,
+            796
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.32
+          },
+          "zoom": 1
+        },
+        "arena": {
+          "x": 206.5,
+          "y": 2,
+          "w": 1056,
+          "h": 792,
+          "window": [
+            1469,
+            796
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.32
+          },
+          "zoom": 1
+        },
+        "right": {
+          "boss": {
+            "left": 338.7215947333948,
+            "top": 263.4385924455373,
+            "right": 782,
+            "bottom": 613.96
+          },
+          "player": {
+            "x": 82,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 141.71966997797892
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        },
+        "left": {
+          "boss": {
+            "left": 18.000000000000025,
+            "top": 271.5245524236526,
+            "right": 466.8764116906167,
+            "bottom": 612.9200000000001
+          },
+          "player": {
+            "x": 718,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 145.76223546423563
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        }
+      },
+      "1920x1080": {
+        "approach": {
+          "x": 242.671875,
+          "y": 2,
+          "w": 1434.65625,
+          "h": 1076,
+          "window": [
+            1920,
+            1080
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.7933333333333332
+          },
+          "zoom": 1
+        },
+        "arena": {
+          "x": 242.671875,
+          "y": 2,
+          "w": 1434.65625,
+          "h": 1076,
+          "window": [
+            1920,
+            1080
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.7933333333333332
+          },
+          "zoom": 1
+        },
+        "right": {
+          "boss": {
+            "left": 338.7215947333948,
+            "top": 263.4385924455373,
+            "right": 782,
+            "bottom": 613.96
+          },
+          "player": {
+            "x": 82,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 141.71966997797892
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        },
+        "left": {
+          "boss": {
+            "left": 18.000000000000025,
+            "top": 271.5245524236526,
+            "right": 466.8764116906167,
+            "bottom": 612.9200000000001
+          },
+          "player": {
+            "x": 718,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 145.76223546423563
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        }
+      },
+      "1100x850": {
+        "approach": {
+          "x": 0,
+          "y": 12.5,
+          "w": 1100,
+          "h": 825,
+          "window": [
+            1100,
+            850
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.375
+          },
+          "zoom": 1
+        },
+        "arena": {
+          "x": 0,
+          "y": 12.5,
+          "w": 1100,
+          "h": 825,
+          "window": [
+            1100,
+            850
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 1.375
+          },
+          "zoom": 1
+        },
+        "right": {
+          "boss": {
+            "left": 338.7215947333948,
+            "top": 263.4385924455373,
+            "right": 782,
+            "bottom": 613.96
+          },
+          "player": {
+            "x": 82,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 141.71966997797892
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        },
+        "left": {
+          "boss": {
+            "left": 18.000000000000025,
+            "top": 271.5245524236526,
+            "right": 466.8764116906167,
+            "bottom": 612.9200000000001
+          },
+          "player": {
+            "x": 718,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 145.76223546423563
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        }
+      },
+      "520x650": {
+        "approach": {
+          "x": 0,
+          "y": 130,
+          "w": 520,
+          "h": 390,
+          "window": [
+            520,
+            650
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 0.65
+          },
+          "zoom": 1
+        },
+        "arena": {
+          "x": 0,
+          "y": 130,
+          "w": 520,
+          "h": 390,
+          "window": [
+            520,
+            650
+          ],
+          "world": [
+            800,
+            600
+          ],
+          "display": {
+            "w": 800,
+            "h": 600,
+            "scale": 0.65
+          },
+          "zoom": 1
+        },
+        "right": {
+          "boss": {
+            "left": 338.7215947333948,
+            "top": 263.4385924455373,
+            "right": 782,
+            "bottom": 613.96
+          },
+          "player": {
+            "x": 82,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 141.71966997797892
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        },
+        "left": {
+          "boss": {
+            "left": 18.000000000000025,
+            "top": 271.5245524236526,
+            "right": 466.8764116906167,
+            "bottom": 612.9200000000001
+          },
+          "player": {
+            "x": 718,
+            "y": 620
+          },
+          "camera": {
+            "x": 0,
+            "y": 145.76223546423563
+          },
+          "view": [
+            800,
+            600
+          ],
+          "visible": true,
+          "playerVisible": true
+        }
+      },
+      "liveCycle": {
+        "samples": 100,
+        "bossVisible": 100,
+        "tankVisible": 100,
+        "phases": [
+          "recover",
+          "broadside",
+          "recover",
+          "laser",
+          "recover",
+          "rack",
+          "recover",
+          "ram",
+          "recover",
+          "broadside",
+          "recover",
+          "laser",
+          "recover"
+        ]
+      }
+    }
+  },
+  "warriorChecks": [
+    {
+      "name": "all six rebuilt modules decode as fixed 512x512 or 640x512 canvases",
+      "passed": true
+    },
+    {
+      "name": "hull damage and wreck share the intact mounting pivot and scale",
+      "passed": true
+    },
+    {
+      "name": "holding R produces over 1.9x measured travel with authored track dust",
+      "passed": true
+    },
+    {
+      "name": "releasing movement brakes the boosted tank promptly",
+      "passed": true
+    },
+    {
+      "name": "boost spends no energy at rest, exhausts, requires release and refills",
+      "passed": true
+    },
+    {
+      "name": "boosting sideways retains independent turret rotation and gun fire",
+      "passed": true
+    },
+    {
+      "name": "full-speed boost cannot tunnel through a four-pixel concrete wall",
+      "passed": true
+    },
+    {
+      "name": "Mode+C boosts while D-pad strafes and X fires north without cannon charge",
+      "passed": true
+    },
+    {
+      "name": "unmodified controller C still charges and releases the cannon",
+      "passed": true
+    },
+    {
+      "name": "window blur releases boost and movement safely",
+      "passed": true
+    },
+    {
+      "name": "actual Warrior entry starts Mike's decoded stereo boss track",
+      "passed": true
+    },
+    {
+      "name": "supplied track loops through its end during the active fight",
+      "passed": true
+    },
+    {
+      "name": "Warrior spans over 400 world pixels with a larger 332-pixel chassis",
+      "passed": true
+    },
+    {
+      "name": "1:1 duel camera shows both the new boss and player in the arena",
+      "passed": true
+    },
+    {
+      "name": "larger Warrior still launches physical twin-arm homing volleys",
+      "passed": true
+    },
+    {
+      "name": "real boost escapes a committed Warrior ram with collision and damage enabled",
+      "passed": true
+    },
+    {
+      "name": "rebuilt arm detaches with exact mounted art, angle, pivot and scale",
+      "passed": true
+    },
+    {
+      "name": "large arm rotates, falls and settles as an unfaded authored wreck",
+      "passed": true
+    },
+    {
+      "name": "Warrior defeat stops boss music and transitions to clear music/results",
+      "passed": true
+    },
+    {
+      "name": "mission restart restores a full tank boost meter",
+      "passed": true
+    },
+    {
+      "name": "Help still opens and retains the gameplay return path",
+      "passed": true
+    },
+    {
+      "name": "zero page, console and missing-asset errors",
+      "passed": true
+    }
+  ],
+  "frontendChecks": [
+    {
+      "name": "Overdrive loudness matches the original call within 0.1 LUFS",
+      "passed": true
+    },
+    {
+      "name": "original BOF title call remains byte-identical to the measured reference",
+      "passed": true
+    },
+    {
+      "name": "Mike's dry Overdrive WAV is preserved exactly",
+      "passed": true
+    },
+    {
+      "name": "thirteen original renderer helpers are copied verbatim; Options adapts row/input data",
+      "passed": true
+    },
+    {
+      "name": "the first call is the actual original announce.mp3",
+      "passed": true
+    },
+    {
+      "name": "saved Voice and Master gains apply to the original call",
+      "passed": true
+    },
+    {
+      "name": "title music waits while the original call plays",
+      "passed": true
+    },
+    {
+      "name": "enhanced Overdrive starts after the BOF call ends",
+      "passed": true
+    },
+    {
+      "name": "Overdrive retains natural pitch, saved gain and its added echo tail",
+      "passed": true
+    },
+    {
+      "name": "title begins only after the final echo ends",
+      "passed": true
+    },
+    {
+      "name": "B skips and stops both current and queued calls",
+      "passed": true
+    },
+    {
+      "name": "fresh Insanity is visibly locked and cannot be confirmed",
+      "passed": true
+    },
+    {
+      "name": "an Insanity password cannot bypass the completion gate",
+      "passed": true
+    },
+    {
+      "name": "direct campaign launch also enforces the Insanity gate",
+      "passed": true
+    },
+    {
+      "name": "the pilot screen contains exactly two horizontal rows of six",
+      "passed": true
+    },
+    {
+      "name": "every avatar and ship remains inside the pilot viewport",
+      "passed": true
+    },
+    {
+      "name": "vertical pilot navigation moves exactly six slots",
+      "passed": true
+    },
+    {
+      "name": "up returns to the corresponding slot in the other row",
+      "passed": true
+    },
+    {
+      "name": "clicking a lower-row ship selects its matching pilot",
+      "passed": true
+    },
+    {
+      "name": "Options uses the original 480x512 panel viewport",
+      "passed": true
+    },
+    {
+      "name": "original four volume rows replace the custom tabs",
+      "passed": true
+    },
+    {
+      "name": "original segmented Master slider changes real media gain by 10%",
+      "passed": true
+    },
+    {
+      "name": "the original volume strip supports actual pointer adjustment",
+      "passed": true
+    },
+    {
+      "name": "original Cancel restores all four volumes and returns to title",
+      "passed": true
+    },
+    {
+      "name": "original Apply persists Voice volume and returns to title",
+      "passed": true
+    },
+    {
+      "name": "the original key cap arms keyboard capture",
+      "passed": true
+    },
+    {
+      "name": "keyboard capture updates the actual movement binding",
+      "passed": true
+    },
+    {
+      "name": "Cancel restores the actual prior keyboard binding",
+      "passed": true
+    },
+    {
+      "name": "Backspace is reserved for text and leaves binding capture alone",
+      "passed": true
+    },
+    {
+      "name": "Escape cancels capture without closing Options",
+      "passed": true
+    },
+    {
+      "name": "wheel scrolling moves the original options panel",
+      "passed": true
+    },
+    {
+      "name": "the original controller key cap captures a real polled shoulder assignment",
+      "passed": true
+    },
+    {
+      "name": "Retina can be assigned independently to the other shoulder",
+      "passed": true
+    },
+    {
+      "name": "Cancel restores the previous L/R physical assignments",
+      "passed": true
+    },
+    {
+      "name": "Apply persists controller assignments through the original menu",
+      "passed": true
+    },
+    {
+      "name": "the newly bound L button activates live cruise/free aim",
+      "passed": true
+    },
+    {
+      "name": "the newly bound R button activates live Retina",
+      "passed": true
+    },
+    {
+      "name": "pause draws the generated Return to Main Menu plate",
+      "passed": true
+    },
+    {
+      "name": "the original controller menu opens full physical-button learning",
+      "passed": true
+    },
+    {
+      "name": "returning from learning preserves the Options transaction",
+      "passed": true
+    },
+    {
+      "name": "original Reset Controls restores keyboard and physical pad defaults",
+      "passed": true
+    },
+    {
+      "name": "clearing mission 0 alone does not unlock Insanity",
+      "passed": true
+    },
+    {
+      "name": "clearing mission 2 alone does not unlock Insanity",
+      "passed": true
+    },
+    {
+      "name": "completing the campaign unlocks Insanity and saves that unlock",
+      "passed": true
+    },
+    {
+      "name": "campaign unlock and applied Voice volume survive a real reload",
+      "passed": true
+    },
+    {
+      "name": "completed-game Insanity can now enter the pilot screen",
+      "passed": true
+    },
+    {
+      "name": "the two-row pilot grid fits a narrow browser pane",
+      "passed": true
+    },
+    {
+      "name": "the original Options menu fits a narrow browser pane",
+      "passed": true
+    },
+    {
+      "name": "new button cells use even registered dimensions",
+      "passed": true
+    },
+    {
+      "name": "the default fullscreen launch enters native fullscreen on Start",
+      "passed": true
+    },
+    {
+      "name": "the generated Windowed button exits native fullscreen",
+      "passed": true
+    },
+    {
+      "name": "Alt+Enter also enters fullscreen",
+      "passed": true
+    },
+    {
+      "name": "the fullscreen chord does not act as Start or skip the intro",
+      "passed": true
+    },
+    {
+      "name": "Escape exits native fullscreen without trapping the player",
+      "passed": true
+    },
+    {
+      "name": "no page, console, asset, decode or playback errors",
+      "passed": true
+    }
+  ],
+  "sourceSHA256": {
+    "expansion/topdown/js/main.js": "fed231326d47bce041d7622e945ac8996234aadbf2057f279930585897717c0f",
+    "expansion/topdown/js/boss_warrior.js": "7df9f7d820ea5dc82b016ee2b07c5f5dabc4e60c374501defe6f7bc918deb547",
+    "expansion/topdown/index.html": "da8172e0d8a06ac0c39fddd5897eb0697636bbc2b84fb70e2489be09cd451f2d",
+    "expansion/topdown/_research/launch_overdrive_1011.py": "149ba41a7166a08074c60c2340b5c27f8a7be723c2de82efd33b2a00760e7ad1",
+    "expansion/topdown/_research/probe_sizing_1011.py": "6fa8496378393fc3f6f72df3516ba00569b0297c2aabe54e15504f78fd0f479d",
+    "expansion/topdown/_research/probe_warrior_1011.py": "bc8724617cf96384bf39969ff3b055f9e77b50f705ced18c726cc3c6e24afe1a"
+  },
+  "screenshots": "_shots/overdrive_sizing_1011/",
+  "limitations": "Protected encounter fixtures inspect art framing. Keyboard arena entry, native pointer/fullscreen controls, and the existing real-damage boost ram escape are checked separately. Synthetic Gamepad reports verify bindings; no physical controller or campaign balance sign-off."
+}

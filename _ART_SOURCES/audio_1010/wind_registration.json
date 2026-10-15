@@ -1,0 +1,437 @@
+{
+  "raw_sha256": "978f6dc4d458b15d99cbf8c3a5c149016a529ea7ed1297a41b2fa79e694bd53a",
+  "bank": [
+    {
+      "key": "ap10_wind_00",
+      "path": "assets/game/shared/combat/audio_1010/wind_00.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        0,
+        0,
+        310,
+        317
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "1f70dbfb6362fe5e25104fef629e5c8956da36f20c7719ac17b5694cd25466f2",
+      "clip": "charge"
+    },
+    {
+      "key": "ap10_wind_01",
+      "path": "assets/game/shared/combat/audio_1010/wind_01.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        310,
+        0,
+        620,
+        317
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "a192f6618788cacf0e578f56e2ae63fd2046b331f657810e789a9b94018fece9",
+      "clip": "charge"
+    },
+    {
+      "key": "ap10_wind_02",
+      "path": "assets/game/shared/combat/audio_1010/wind_02.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        620,
+        0,
+        930,
+        317
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "f715cba1b8aa0eab86252f1c3a8598aa9483cba09697d257c2615c4f0935dda1",
+      "clip": "charge"
+    },
+    {
+      "key": "ap10_wind_03",
+      "path": "assets/game/shared/combat/audio_1010/wind_03.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        930,
+        0,
+        1240,
+        317
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "b8e00386cd86d57eb0cae3d1b79cdb8d61127faf8e07ac469024bc7648a67c33",
+      "clip": "charge"
+    },
+    {
+      "key": "ap10_wind_04",
+      "path": "assets/game/shared/combat/audio_1010/wind_04.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        0,
+        317,
+        310,
+        634
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "b2ae981865a6f3450875464218c7b133e6e5a8e02d6d83649691f16e65def58a",
+      "clip": "gust"
+    },
+    {
+      "key": "ap10_wind_05",
+      "path": "assets/game/shared/combat/audio_1010/wind_05.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        310,
+        317,
+        620,
+        634
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "b8d50d28ca96abeb4bc57a1458be28408a8bc8afe0c1ff4d9461723a65f21504",
+      "clip": "gust"
+    },
+    {
+      "key": "ap10_wind_06",
+      "path": "assets/game/shared/combat/audio_1010/wind_06.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        620,
+        317,
+        930,
+        634
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "40398eb443f35d7f0f7b1a1508c7f20ac3d35fb5eefc7e86cb5a091721e96d14",
+      "clip": "gust"
+    },
+    {
+      "key": "ap10_wind_07",
+      "path": "assets/game/shared/combat/audio_1010/wind_07.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        320
+      ],
+      "source_rect": [
+        930,
+        317,
+        1240,
+        634
+      ],
+      "source_pivot": [
+        155,
+        304
+      ],
+      "translation": [
+        5,
+        16
+      ],
+      "scale": 1,
+      "sha256": "7e7afb1069aeef194daf743817708ce0e4739545fb0943568ebee0eb7849327e",
+      "clip": "gust"
+    },
+    {
+      "key": "ap10_wind_08",
+      "path": "assets/game/shared/combat/audio_1010/wind_08.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        0,
+        634,
+        310,
+        951
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "2113ebcb6a3b95e4e90d83beb97ed3d772adacde32cc576c9dc08232f33e7149",
+      "clip": "tornado"
+    },
+    {
+      "key": "ap10_wind_09",
+      "path": "assets/game/shared/combat/audio_1010/wind_09.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        310,
+        634,
+        620,
+        951
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "412d9f9f4615f0620dbb07236af68e508e75271327545d78c53478f1899424e8",
+      "clip": "tornado"
+    },
+    {
+      "key": "ap10_wind_10",
+      "path": "assets/game/shared/combat/audio_1010/wind_10.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        620,
+        634,
+        930,
+        951
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "97b20a7e5abf56eaefe2214088097e11823e3982b33c42dce3fc9db76ba7e100",
+      "clip": "tornado"
+    },
+    {
+      "key": "ap10_wind_11",
+      "path": "assets/game/shared/combat/audio_1010/wind_11.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        930,
+        634,
+        1240,
+        951
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "d87142ada21eef7429c0e68b769e8d7757c19a27162a5bbb5ef6f85403dcdd56",
+      "clip": "tornado"
+    },
+    {
+      "key": "ap10_wind_12",
+      "path": "assets/game/shared/combat/audio_1010/wind_12.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        0,
+        951,
+        310,
+        1268
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "643673178c165139e21638c70d22ad6cef302ba2bda2e8078193f8d9bb0dd9ca",
+      "clip": "impact"
+    },
+    {
+      "key": "ap10_wind_13",
+      "path": "assets/game/shared/combat/audio_1010/wind_13.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        310,
+        951,
+        620,
+        1268
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "59401047521395071215a0ea8115c932ef76d91ff155b1e8ccd7b46ac98e6a29",
+      "clip": "impact"
+    },
+    {
+      "key": "ap10_wind_14",
+      "path": "assets/game/shared/combat/audio_1010/wind_14.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        620,
+        951,
+        930,
+        1268
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "7adffa533357e2309144819e8e7d1de794bed5724a5dbb1749ec114041ab162a",
+      "clip": "impact"
+    },
+    {
+      "key": "ap10_wind_15",
+      "path": "assets/game/shared/combat/audio_1010/wind_15.png",
+      "w": 320,
+      "h": 336,
+      "pivot": [
+        160,
+        168
+      ],
+      "source_rect": [
+        930,
+        951,
+        1240,
+        1268
+      ],
+      "source_pivot": [
+        155,
+        158
+      ],
+      "translation": [
+        5,
+        10
+      ],
+      "scale": 1,
+      "sha256": "be08918fd761669347d825cfd20da80b34c58049a7bb99ff3b2c38b957c1a639",
+      "clip": "impact"
+    }
+  ]
+}

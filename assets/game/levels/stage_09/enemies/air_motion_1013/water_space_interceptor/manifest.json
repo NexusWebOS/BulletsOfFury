@@ -1,0 +1,49 @@
+{
+  "id": "s9interceptor",
+  "name": "Water Space Interceptor",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9interceptor"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_interceptor",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9interceptor_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_interceptor/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "66b10ab666c5bf35d1fb7103bd595d3ecbc99629156f8de25306c72f4d99bf49"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9interceptor_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_interceptor/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "6915afe5185724253094b61e512be61d1da0d035da17a1039bafbc8d475ee5ce"
+  },
+  "nativeRatios": {
+    "s9interceptor": 1.1818181818181819
+  },
+  "sourceKeys": {
+    "s9interceptor": "overhaul_stage9_water_jet_01"
+  }
+}

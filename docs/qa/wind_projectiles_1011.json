@@ -1,0 +1,927 @@
+{
+  "date": "2026-10-11",
+  "gameplay_suite": {
+    "passed": 8503,
+    "failed": 0,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "prior_baseline": 8468
+  },
+  "native_projectiles": {
+    "passed": 26,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "All144 registered Wind poses decode in the running game",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native canvas confirms clear outer borders on every pose",
+        "passed": true,
+        "data": {
+          "frames": 144
+        }
+      },
+      {
+        "name": "Every combat pose contains visible emerald Wind energy",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "bullets level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_bullets_10",
+            "wp11_bullets_08",
+            "wp11_bullets_05",
+            "wp11_bullets_02"
+          ],
+          "kinds": [
+            "mg"
+          ],
+          "draws": {
+            "bullets": 8
+          }
+        }
+      },
+      {
+        "name": "bullets level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_bullets_13",
+            "wp11_bullets_11",
+            "wp11_bullets_09",
+            "wp11_bullets_07",
+            "wp11_bullets_05",
+            "wp11_bullets_03",
+            "wp11_bullets_01"
+          ],
+          "kinds": [
+            "mg"
+          ],
+          "draws": {
+            "bullets": 22
+          }
+        }
+      },
+      {
+        "name": "spread level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_spread_00",
+            "wp11_spread_13",
+            "wp11_spread_10",
+            "wp11_spread_08",
+            "wp11_spread_05",
+            "wp11_spread_02"
+          ],
+          "kinds": [
+            "spread"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 17
+          }
+        }
+      },
+      {
+        "name": "spread level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_spread_03",
+            "wp11_spread_01",
+            "wp11_spread_15",
+            "wp11_spread_13",
+            "wp11_spread_11",
+            "wp11_spread_09",
+            "wp11_spread_07",
+            "wp11_spread_05"
+          ],
+          "kinds": [
+            "spread"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81
+          }
+        }
+      },
+      {
+        "name": "missile level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_missile_03",
+            "wp11_missile_14",
+            "wp11_missile_10",
+            "wp11_missile_05",
+            "wp11_missile_01"
+          ],
+          "kinds": [
+            "missile"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 10
+          }
+        }
+      },
+      {
+        "name": "missile level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_missile_03",
+            "wp11_missile_14",
+            "wp11_missile_10",
+            "wp11_missile_05",
+            "wp11_missile_01"
+          ],
+          "kinds": [
+            "missile"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30
+          }
+        }
+      },
+      {
+        "name": "laser level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_laser_08"
+          ],
+          "kinds": [
+            "beam"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 8
+          }
+        }
+      },
+      {
+        "name": "laser level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_laser_08"
+          ],
+          "kinds": [
+            "beam"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13
+          }
+        }
+      },
+      {
+        "name": "gust level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_gust_08"
+          ],
+          "kinds": [
+            "flame"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 4
+          }
+        }
+      },
+      {
+        "name": "gust level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_gust_08"
+          ],
+          "kinds": [
+            "flame"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8
+          }
+        }
+      },
+      {
+        "name": "tornado level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_tornado_03",
+            "wp11_mist_02",
+            "wp11_mist_14",
+            "wp11_mist_11",
+            "wp11_mist_08",
+            "wp11_mist_05"
+          ],
+          "kinds": [
+            "orb",
+            "shard"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 1,
+            "mist": 18
+          }
+        }
+      },
+      {
+        "name": "tornado level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_tornado_03",
+            "wp11_mist_02",
+            "wp11_mist_14",
+            "wp11_mist_11",
+            "wp11_mist_08",
+            "wp11_mist_05"
+          ],
+          "kinds": [
+            "orb",
+            "shard"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 2,
+            "mist": 64
+          }
+        }
+      },
+      {
+        "name": "mist level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_mist_04"
+          ],
+          "kinds": [
+            "lasermist"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 2,
+            "mist": 73
+          }
+        }
+      },
+      {
+        "name": "mist level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_mist_02"
+          ],
+          "kinds": [
+            "lasermist"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 2,
+            "mist": 82
+          }
+        }
+      },
+      {
+        "name": "heavy level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_heavy_08",
+            "wp11_heavy_05",
+            "wp11_heavy_02"
+          ],
+          "kinds": [
+            "mg"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 2,
+            "mist": 82,
+            "heavy": 3
+          }
+        }
+      },
+      {
+        "name": "heavy level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_heavy_05",
+            "wp11_heavy_03",
+            "wp11_heavy_01"
+          ],
+          "kinds": [
+            "mg"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 2,
+            "mist": 82,
+            "heavy": 9
+          }
+        }
+      },
+      {
+        "name": "electric level1: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_electric_03",
+            "wp11_electric_10",
+            "wp11_electric_06"
+          ],
+          "kinds": [
+            "yuriLightningOrb",
+            "yuriLightningBolt"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 2,
+            "mist": 82,
+            "heavy": 9,
+            "electric": 4
+          }
+        }
+      },
+      {
+        "name": "electric level5: real weapon preview draws its own Wind reel",
+        "passed": true,
+        "data": {
+          "error": null,
+          "keys": [
+            "wp11_electric_00",
+            "wp11_electric_10",
+            "wp11_electric_06"
+          ],
+          "kinds": [
+            "yuriLightningBolt",
+            "yuriLightningOrb"
+          ],
+          "draws": {
+            "bullets": 22,
+            "spread": 81,
+            "missile": 30,
+            "laser": 13,
+            "gust": 8,
+            "tornado": 2,
+            "mist": 82,
+            "heavy": 9,
+            "electric": 13
+          }
+        }
+      },
+      {
+        "name": "The Stage6 world renderer paints the actual equipped Wind laser",
+        "passed": true,
+        "data": {
+          "live": true,
+          "carriers": [
+            {
+              "kind": "beam",
+              "element": "wind"
+            }
+          ],
+          "state": "play"
+        }
+      },
+      {
+        "name": "Chromium sees16 distinct drawn poses in each family",
+        "passed": true,
+        "data": {
+          "bullets": 16,
+          "spread": 16,
+          "missile": 16,
+          "laser": 16,
+          "gust": 16,
+          "tornado": 16,
+          "mist": 16,
+          "heavy": 16,
+          "electric": 16
+        }
+      },
+      {
+        "name": "Animated review loads all9 reels and45 green tier badges",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind review fits a narrow viewport",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console, renderer or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "native_icons_and_reward": {
+    "passed": 10,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "All45 upgrade keys use their matching registered projectile badge and level",
+        "passed": true,
+        "data": [
+          {
+            "slot": 0,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0.png"
+          },
+          {
+            "slot": 0,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_2.png"
+          },
+          {
+            "slot": 0,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_3.png"
+          },
+          {
+            "slot": 0,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_4.png"
+          },
+          {
+            "slot": 0,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_5.png"
+          },
+          {
+            "slot": 1,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1.png"
+          },
+          {
+            "slot": 1,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_2.png"
+          },
+          {
+            "slot": 1,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_3.png"
+          },
+          {
+            "slot": 1,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_4.png"
+          },
+          {
+            "slot": 1,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_5.png"
+          },
+          {
+            "slot": 2,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2.png"
+          },
+          {
+            "slot": 2,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_2.png"
+          },
+          {
+            "slot": 2,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_3.png"
+          },
+          {
+            "slot": 2,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_4.png"
+          },
+          {
+            "slot": 2,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_5.png"
+          },
+          {
+            "slot": 3,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3.png"
+          },
+          {
+            "slot": 3,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_2.png"
+          },
+          {
+            "slot": 3,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_3.png"
+          },
+          {
+            "slot": 3,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_4.png"
+          },
+          {
+            "slot": 3,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_5.png"
+          },
+          {
+            "slot": 4,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4.png"
+          },
+          {
+            "slot": 4,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_2.png"
+          },
+          {
+            "slot": 4,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_3.png"
+          },
+          {
+            "slot": 4,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_4.png"
+          },
+          {
+            "slot": 4,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_5.png"
+          },
+          {
+            "slot": 5,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5.png"
+          },
+          {
+            "slot": 5,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_2.png"
+          },
+          {
+            "slot": 5,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_3.png"
+          },
+          {
+            "slot": 5,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_4.png"
+          },
+          {
+            "slot": 5,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_5.png"
+          },
+          {
+            "slot": 6,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6.png"
+          },
+          {
+            "slot": 6,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_2.png"
+          },
+          {
+            "slot": 6,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_3.png"
+          },
+          {
+            "slot": 6,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_4.png"
+          },
+          {
+            "slot": 6,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_5.png"
+          },
+          {
+            "slot": 7,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7.png"
+          },
+          {
+            "slot": 7,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_2.png"
+          },
+          {
+            "slot": 7,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_3.png"
+          },
+          {
+            "slot": 7,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_4.png"
+          },
+          {
+            "slot": 7,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_5.png"
+          },
+          {
+            "slot": 8,
+            "level": 1,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8.png"
+          },
+          {
+            "slot": 8,
+            "level": 2,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_2.png"
+          },
+          {
+            "slot": 8,
+            "level": 3,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_3.png"
+          },
+          {
+            "slot": 8,
+            "level": 4,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_4.png"
+          },
+          {
+            "slot": 8,
+            "level": 5,
+            "matching": true,
+            "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_5.png"
+          }
+        ]
+      },
+      {
+        "name": "Reward and element aliases use the separate Wind symbol, distinct from the tornado-orb weapon",
+        "passed": true,
+        "data": [
+          {
+            "key": "inf_wind",
+            "matching": true
+          },
+          {
+            "key": "turn_inf_wind_0918",
+            "matching": true
+          }
+        ]
+      },
+      {
+        "name": "Actual Forge renders the new Wind projectile badges and elemental selector",
+        "passed": true,
+        "data": [
+          "micon_forge_wind_7",
+          "micon_forge_wind_1",
+          "micon_forge_wind_2",
+          "micon_forge_wind_3",
+          "micon_forge_wind_4",
+          "micon_forge_wind_5",
+          "inf_wind"
+        ]
+      },
+      {
+        "name": "Actual upgrade menu renders a Wind projectile badge",
+        "passed": true,
+        "data": [
+          "micon_forge_wind_0",
+          "micon_forge_wind_1",
+          "micon_forge_wind_2",
+          "micon_forge_wind_3",
+          "micon_forge_wind_4",
+          "micon_forge_wind_5",
+          "micon_forge_wind_6",
+          "micon_forge_wind_7",
+          "micon_forge_wind_8"
+        ]
+      },
+      {
+        "name": "The real Stage6 boss reward handler creates a Wind elemental pickup",
+        "passed": true,
+        "data": [
+          {
+            "kind": "forgecombo",
+            "elem": "wind"
+          }
+        ]
+      },
+      {
+        "name": "The actual boss pickup draw uses the gust symbol",
+        "passed": true,
+        "data": [
+          "ap10_wind_symbol"
+        ]
+      },
+      {
+        "name": "Collecting the real drop displays Wind with the gust emblem on Powers Gained",
+        "passed": true,
+        "data": {
+          "keys": [
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind",
+            "inf_wind"
+          ],
+          "elems": [
+            "wind"
+          ]
+        }
+      },
+      {
+        "name": "The review loads all45 levels and the independent Wind symbol",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The badge review fits a narrow viewport",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console, renderer or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "total_browser_checks": 36,
+  "syntax_checks": [
+    "assets/game.js",
+    "assets/wind_projectile_painter_1011.js",
+    "assets/wind_projectiles_1011.js",
+    "docs/previews/wind_projectiles_1011/review.js"
+  ],
+  "assets": {
+    "families": 9,
+    "poses_per_family": 16,
+    "projectile_cells": 144,
+    "projectile_resolution": [
+      256,
+      256
+    ],
+    "icon_cells": 45,
+    "icon_resolution": [
+      128,
+      128
+    ],
+    "fps": 24
+  },
+  "captures_inspected": [
+    "laser-native.png",
+    "gust-native.png",
+    "bullets-native.png",
+    "electric-native.png",
+    "stage6-live-native.png",
+    "review.png"
+  ],
+  "notes": [
+    "Native context uses alpha:false; RGB ink verifies rendered padding, builder verifies source alpha margins.",
+    "Orb/mist registration locks the unchanged core texture; no frame-specific scale or warp.",
+    "Laser/gust joins corrected and retested.",
+    "No HUD concept applied; no commit or push."
+  ]
+}

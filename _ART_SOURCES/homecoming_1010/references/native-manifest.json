@@ -1,0 +1,125 @@
+{
+  "records": [
+    {
+      "key": "ship_cole",
+      "w": 193,
+      "h": 232,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_cole.png",
+      "sha256": "78afcfe805062d48f0f68fa70495398aaf7ee0fcb3e3993e97d88eaac2405755",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_axel",
+      "w": 190,
+      "h": 224,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_axel.png",
+      "sha256": "0a7293622bd9793f46245e275b84abf26f4dff01fe33f410ec4cac54b69e3658",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_freezer",
+      "w": 183,
+      "h": 194,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_freezer.png",
+      "sha256": "040dff2902b4f293e4bf6a9d44d9f341100fa375cf28ad5c90b88a10d851a6aa",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_yuri",
+      "w": 209,
+      "h": 229,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_yuri.png",
+      "sha256": "9af2bd23449dfbbe7f448285bde182f82ff4ef08f530450bec4d516ff2149ebb",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_maverick",
+      "w": 200,
+      "h": 211,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_maverick.png",
+      "sha256": "063000b7eb1bc7c39e120e0fba1a494ed038585bd62eb1bec2ecb1e38647ce1f",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_falva",
+      "w": 204,
+      "h": 238,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_falva.png",
+      "sha256": "0a0ae23923fa8330dc8925ce5c6b4d66d2c0a98f2d8129d5fd5ae528958246df",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_lizzie",
+      "w": 224,
+      "h": 243,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_lizzie.png",
+      "sha256": "1bd5d368a0f7d1c55d24f2aa6880999f4f7467b787ed559a0756f4193ed75586",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_decker",
+      "w": 200,
+      "h": 230,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_decker.png",
+      "sha256": "16ec4d03591d5f682a32e093c02c02bb995f55a0007565631c1812bdc9cce1f2",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ship_juggernaut",
+      "w": 200,
+      "h": 205,
+      "path": "_ART_SOURCES/homecoming_1010/references/ship_juggernaut.png",
+      "sha256": "82025f5aadec37424104bcca9fff1ed53ad91f3e50cd88befe8bf4c2977e9868",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ap10_void_00",
+      "w": 256,
+      "h": 256,
+      "path": "_ART_SOURCES/homecoming_1010/references/ap10_void_00.png",
+      "sha256": "f2d080cfc68749f40d46b30022fab519ce2345c3ae9fdf1ae483b16a821ee96f",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ap10_void_07",
+      "w": 256,
+      "h": 256,
+      "path": "_ART_SOURCES/homecoming_1010/references/ap10_void_07.png",
+      "sha256": "9dad68ad1ff9655c09df041ff92245c6b430850acc30ebdc59d2be77eca525df",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ap10_void_08",
+      "w": 256,
+      "h": 256,
+      "path": "_ART_SOURCES/homecoming_1010/references/ap10_void_08.png",
+      "sha256": "855aac8b90ec7897a5d612da7ead4adfb816f6d019ae85b0b156cbe180464711",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ap10_void_15",
+      "w": 256,
+      "h": 256,
+      "path": "_ART_SOURCES/homecoming_1010/references/ap10_void_15.png",
+      "sha256": "1c4f68481750b48a01cb3e0cf03cfd236a68e9c201e0315921240697df5fca3d",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ap10_void_23",
+      "w": 256,
+      "h": 256,
+      "path": "_ART_SOURCES/homecoming_1010/references/ap10_void_23.png",
+      "sha256": "5f1f56a6d94cf92c48c846bdec52f499792f41b5f8f6e107ee9fe4c72e4979ca",
+      "route": "XART.get / game ctx.drawImage"
+    },
+    {
+      "key": "ap10_void_31",
+      "w": 256,
+      "h": 256,
+      "path": "_ART_SOURCES/homecoming_1010/references/ap10_void_31.png",
+      "sha256": "61683388cdac2c34c7429ee9cb979b5df1555f1e6dffe80e32ce0392b9c487b2",
+      "route": "XART.get / game ctx.drawImage"
+    }
+  ],
+  "errors": []
+}

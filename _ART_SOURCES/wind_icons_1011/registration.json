@@ -1,0 +1,1621 @@
+{
+  "banks": {
+    "wind_icons": [
+      {
+        "key": "ap10_wind_icon_0",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0.png",
+        "slot": 0,
+        "level": 1,
+        "name": "Wind bullets",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          79,
+          117,
+          340,
+          405
+        ],
+        "content_rect": [
+          6,
+          6,
+          256,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "6332894150f46a32505cd2b7b98a6a5c7b3607b44e1b326db4e0d0f879bab0c2",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_0_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_2.png",
+        "slot": 0,
+        "level": 2,
+        "name": "Wind bullets",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          42,
+          202,
+          235
+        ],
+        "content_rect": [
+          6,
+          6,
+          174,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "b214677c9a73cd485fcc205f8515bf7a713593b6b4454c4feef8abd172afccef",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_0_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_3.png",
+        "slot": 0,
+        "level": 3,
+        "name": "Wind bullets",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          42,
+          406,
+          235
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "8f82184516e0358bb4bc2a0c11bcef3841a613d5aaaa9db213fb6741006ad305",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_0_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_4.png",
+        "slot": 0,
+        "level": 4,
+        "name": "Wind bullets",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          42,
+          609,
+          235
+        ],
+        "content_rect": [
+          6,
+          6,
+          176,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          13,
+          10
+        ],
+        "sha256": "973c087d6992ab676982505b4e3c040f662f98e010d9baeaec33870d85dfc356",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_0_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_0_5.png",
+        "slot": 0,
+        "level": 5,
+        "name": "Wind bullets",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          42,
+          811,
+          235
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "c869adb502c5fcbde2216dea9604519ba5c238d593a8604a7f445106e2f669b0",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_1",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1.png",
+        "slot": 1,
+        "level": 1,
+        "name": "Wind spread",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          496,
+          117,
+          759,
+          405
+        ],
+        "content_rect": [
+          6,
+          6,
+          257,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "f608f8813d5987a0101b800d2085a8fd786503a56bd7a2aa5d079ef77ef881d3",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_1_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_2.png",
+        "slot": 1,
+        "level": 2,
+        "name": "Wind spread",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          238,
+          202,
+          431
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "4bba2e45d60d9cf3146d08238c8675cba72f054b16437f9ff3e104ab0d39885a",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_1_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_3.png",
+        "slot": 1,
+        "level": 3,
+        "name": "Wind spread",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          238,
+          406,
+          431
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "32e92eebbf8454ffd988d647aec32eecd896ec85ea5e914ca472f223d84db554",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_1_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_4.png",
+        "slot": 1,
+        "level": 4,
+        "name": "Wind spread",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          238,
+          609,
+          431
+        ],
+        "content_rect": [
+          6,
+          6,
+          176,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          13,
+          10
+        ],
+        "sha256": "4463140df94cac9e43e28a78277adfebb110a820baa1c3df2c567283ed45e30f",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_1_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_1_5.png",
+        "slot": 1,
+        "level": 5,
+        "name": "Wind spread",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          238,
+          811,
+          431
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "8fd38d8a079f7a0e76ef6fa1b7e6dcce70bd2df37326a084c1c812517c8af2df",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2.png",
+        "slot": 2,
+        "level": 1,
+        "name": "Wind missile",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          915,
+          117,
+          1176,
+          405
+        ],
+        "content_rect": [
+          6,
+          6,
+          255,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "345dad776aeac2bb68b38be97ccd63e817f69ff9958ef6daedb3fb1972afcd6e",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_2_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_2.png",
+        "slot": 2,
+        "level": 2,
+        "name": "Wind missile",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          434,
+          202,
+          627
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "4789f79906d3c4a61661fbc45310039497210ef1b514b0bc879ad96e013b0ded",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_2_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_3.png",
+        "slot": 2,
+        "level": 3,
+        "name": "Wind missile",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          434,
+          406,
+          627
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "a333dda9cce1ba47fa9cac0cdc9337fbf3ba536ba4feb2cb980a8311b35af99b",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_2_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_4.png",
+        "slot": 2,
+        "level": 4,
+        "name": "Wind missile",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          434,
+          609,
+          627
+        ],
+        "content_rect": [
+          6,
+          6,
+          176,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          13,
+          10
+        ],
+        "sha256": "2fe60773ef195718a356582d58a06c522d9e9f7b3b7a3001e75fbab980f8eb29",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_2_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_2_5.png",
+        "slot": 2,
+        "level": 5,
+        "name": "Wind missile",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          434,
+          811,
+          627
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "563b9bb831df934643dfaa1119da601597884452283b3cae87fbdf20527ccef7",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3.png",
+        "slot": 3,
+        "level": 1,
+        "name": "Wind laser",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          79,
+          483,
+          340,
+          771
+        ],
+        "content_rect": [
+          6,
+          6,
+          255,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "5ab9a5cec25e39cea6bc12056bab3189919f2fc7b29a2ec6fd229ea00d45e227",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_3_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_2.png",
+        "slot": 3,
+        "level": 2,
+        "name": "Wind laser",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          631,
+          202,
+          823
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "82397468f803741f6fc583c121006487d4b4589545ed803059b7e1bf45d96932",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_3_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_3.png",
+        "slot": 3,
+        "level": 3,
+        "name": "Wind laser",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          631,
+          406,
+          823
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "df72230e0edf6952462e842fd3f8f728947afb3dad26a42ab4e7b27e0c2af181",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_3_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_4.png",
+        "slot": 3,
+        "level": 4,
+        "name": "Wind laser",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          631,
+          609,
+          823
+        ],
+        "content_rect": [
+          6,
+          5,
+          176,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          13,
+          10
+        ],
+        "sha256": "e5f7c58253993afadf12272700a744c0a150a268cc6b70e16f7b65c2bf08238b",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_3_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_3_5.png",
+        "slot": 3,
+        "level": 5,
+        "name": "Wind laser",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          631,
+          811,
+          823
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "e899cdb77e4fd19035864b3a6841cc81ea1f7d0de5e84ceb22df7bc5d9671a26",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4.png",
+        "slot": 4,
+        "level": 1,
+        "name": "Gust breath",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          496,
+          483,
+          759,
+          771
+        ],
+        "content_rect": [
+          6,
+          6,
+          257,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "3e10406bde596dadbfa6a975ee04b9aead7d1062c56d08437a714ca9991eeab5",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_4_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_2.png",
+        "slot": 4,
+        "level": 2,
+        "name": "Gust breath",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          827,
+          202,
+          1020
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "e4f4fe142fe35f3e3295a42f49225690f99d2b2544d74639a74f4917cf6b80ee",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_4_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_3.png",
+        "slot": 4,
+        "level": 3,
+        "name": "Gust breath",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          827,
+          406,
+          1020
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "dca0452d9f08ca04e7c7f3827e5192c06eba5b54b090e6a5841b0ebf0a961061",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_4_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_4.png",
+        "slot": 4,
+        "level": 4,
+        "name": "Gust breath",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          827,
+          609,
+          1020
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "461f3077da7bdc3cfb6cb593d5814a7f3e06293a478dc78ac56414a2f3c0a87b",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_4_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_4_5.png",
+        "slot": 4,
+        "level": 5,
+        "name": "Gust breath",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          827,
+          811,
+          1020
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          187
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "94a38be031a3fea95d007717d17e592b1e23f5ac418a75c24615962c797c88e2",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5.png",
+        "slot": 5,
+        "level": 1,
+        "name": "Tornado orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          915,
+          483,
+          1176,
+          771
+        ],
+        "content_rect": [
+          6,
+          6,
+          255,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "e433488f79e9de03781c3d90f74c0208c96d0c6324d20f123ae6caafac72e3db",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_5_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_2.png",
+        "slot": 5,
+        "level": 2,
+        "name": "Tornado orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          1023,
+          202,
+          1215
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "f752f0768f00219573a8acee20ccd95e65c24b0f8e9163a526f37dc1a937edd6",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_5_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_3.png",
+        "slot": 5,
+        "level": 3,
+        "name": "Tornado orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          1023,
+          406,
+          1215
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "6b9b4690383b29f1f0b1db970363bc28f9bfbdd379932ccc2bda049b45c12bd2",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_5_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_4.png",
+        "slot": 5,
+        "level": 4,
+        "name": "Tornado orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          1023,
+          609,
+          1215
+        ],
+        "content_rect": [
+          6,
+          6,
+          176,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          13,
+          10
+        ],
+        "sha256": "7f9db4ebc624121e0106de25f0321799c7cdbd522fdffd818f0e345dc8d9c30f",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_5_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_5_5.png",
+        "slot": 5,
+        "level": 5,
+        "name": "Tornado orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          1023,
+          811,
+          1215
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "d50c7c11a3967ce3431d8823f8f29069b5ab46f2cbe68c74da0f602592a1ca34",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_6",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6.png",
+        "slot": 6,
+        "level": 1,
+        "name": "Wind mist",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          79,
+          849,
+          340,
+          1137
+        ],
+        "content_rect": [
+          6,
+          6,
+          255,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "ad483a6e84a5a6484a7c1ab4a074f801e4c31828bd25f415367848a785583d85",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_6_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_2.png",
+        "slot": 6,
+        "level": 2,
+        "name": "Wind mist",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          1219,
+          202,
+          1411
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "3ad0094861ba27c47242d8b28b90c45a5f27fbc5286c30ddc58be3b6757ab76d",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_6_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_3.png",
+        "slot": 6,
+        "level": 3,
+        "name": "Wind mist",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          1219,
+          406,
+          1411
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "90f767194ead750346e1a91e9593e2eb5329d18f23bc0c02f523f9c2b33706b6",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_6_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_4.png",
+        "slot": 6,
+        "level": 4,
+        "name": "Wind mist",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          1219,
+          609,
+          1411
+        ],
+        "content_rect": [
+          6,
+          6,
+          176,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          13,
+          10
+        ],
+        "sha256": "63b717ce07440bbbdbd9fcff553410cdb818051f1b4be7fd5994de46089495bf",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_6_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_6_5.png",
+        "slot": 6,
+        "level": 5,
+        "name": "Wind mist",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          1219,
+          811,
+          1411
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          186
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "08eb6d41c82218b5d6725d1becaad12c1f72e71648959c6ea8e1322c1a2d8b00",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_7",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7.png",
+        "slot": 7,
+        "level": 1,
+        "name": "Heavy Wind slugs",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          496,
+          849,
+          759,
+          1137
+        ],
+        "content_rect": [
+          6,
+          6,
+          257,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "369952fa7ccb83e06d404d027b100eb8ebaf31d6e07a479f7daa089b110dac76",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_7_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_2.png",
+        "slot": 7,
+        "level": 2,
+        "name": "Heavy Wind slugs",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          1414,
+          202,
+          1608
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          188
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "5b44b1f5c020809dbc0f5be5bb14ec1926dadde1eac27594097cf0e39cead41e",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_7_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_3.png",
+        "slot": 7,
+        "level": 3,
+        "name": "Heavy Wind slugs",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          1414,
+          406,
+          1608
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          188
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "18da319cfbefe1223e7fd3e4e72dc73e1070895b188a4bb477c5919b1c39fa7e",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_7_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_4.png",
+        "slot": 7,
+        "level": 4,
+        "name": "Heavy Wind slugs",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          1414,
+          609,
+          1608
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          188
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "4dae66af351b64c30ef005f72b45cc9bb4c241578b91b52baab5720befada03d",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_7_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_7_5.png",
+        "slot": 7,
+        "level": 5,
+        "name": "Heavy Wind slugs",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          1414,
+          811,
+          1608
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          188
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          10
+        ],
+        "sha256": "1f7b6413cc7f86842250bd59ab7840238093f0da8b82c427a839daf0c8bcfdc6",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_8",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8.png",
+        "slot": 8,
+        "level": 1,
+        "name": "Electric Wind orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/base_green_raw.png",
+        "source_rect": [
+          915,
+          849,
+          1176,
+          1137
+        ],
+        "content_rect": [
+          6,
+          5,
+          255,
+          282
+        ],
+        "scale": 0.3971119133574007,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "20ba7e59430e25a61868174f2c4536ba8f778b051d229b0a6ac66d77f470bbe3",
+        "source_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+      },
+      {
+        "key": "ap10_wind_icon_8_2",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_2.png",
+        "slot": 8,
+        "level": 2,
+        "name": "Electric Wind orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          23,
+          1611,
+          202,
+          1808
+        ],
+        "content_rect": [
+          6,
+          6,
+          173,
+          191
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "86057d8e552803b43c210bc911f04569ae894985fdfb52684547ebc922d8f468",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_8_3",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_3.png",
+        "slot": 8,
+        "level": 3,
+        "name": "Electric Wind orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          225,
+          1611,
+          406,
+          1808
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          191
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "ed466d2eca0c2ba63cae66c27f06c04c264a2eb8763d8e1cbb77b47ec13d8a82",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_8_4",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_4.png",
+        "slot": 8,
+        "level": 4,
+        "name": "Electric Wind orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          427,
+          1611,
+          609,
+          1808
+        ],
+        "content_rect": [
+          6,
+          6,
+          176,
+          191
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          13,
+          9
+        ],
+        "sha256": "3b6b5233e196c05a93ebbbcfed0283bf2ef844df23af13ccf42b4fc3833dabc1",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      },
+      {
+        "key": "ap10_wind_icon_8_5",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_icon_8_5.png",
+        "slot": 8,
+        "level": 5,
+        "name": "Electric Wind orb",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/tiers_green_raw.png",
+        "source_rect": [
+          630,
+          1611,
+          811,
+          1808
+        ],
+        "content_rect": [
+          6,
+          6,
+          175,
+          191
+        ],
+        "scale": 0.5945945945945946,
+        "translation": [
+          14,
+          9
+        ],
+        "sha256": "d834df50245c5d7d59379c32be766bf9d48f9f8a44016e39a239b2675e3e0fc6",
+        "source_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+      }
+    ],
+    "wind_symbol": [
+      {
+        "key": "ap10_wind_symbol",
+        "path": "assets/game/shared/ui/wind_icons_1011/wind_symbol.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "source": "wind_icons_1011/symbol_raw.png",
+        "source_rect": [
+          253,
+          204,
+          1001,
+          1042
+        ],
+        "scale": 0.13126491646778043,
+        "translation": [
+          15,
+          9
+        ],
+        "sha256": "eabd88e17ec8daf6aa760d06d48811ebb11843caef1dca1ad29f867f51c9eca7",
+        "source_sha256": "75437eb7da7fcf3f10e47f7aa8b438e07f0a47764078a7156d3069c50246f4a2"
+      }
+    ]
+  },
+  "audit": {
+    "base_green_raw.png": {
+      "grid": [
+        3,
+        3
+      ],
+      "frames": 9,
+      "columns": [
+        [
+          87,
+          332
+        ],
+        [
+          504,
+          751
+        ],
+        [
+          923,
+          1168
+        ]
+      ],
+      "rows": [
+        [
+          125,
+          397
+        ],
+        [
+          491,
+          763
+        ],
+        [
+          857,
+          1129
+        ]
+      ],
+      "common_scale": 0.3971119133574007,
+      "raw_sha256": "208d3ea53585b92515208d1927a25576e337e6ed5a5ad846f0a3c6690f4ba509"
+    },
+    "tiers_green_raw.png": {
+      "grid": [
+        4,
+        9
+      ],
+      "frames": 36,
+      "columns": [
+        [
+          31,
+          194
+        ],
+        [
+          233,
+          398
+        ],
+        [
+          435,
+          601
+        ],
+        [
+          638,
+          803
+        ]
+      ],
+      "rows": [
+        [
+          50,
+          227
+        ],
+        [
+          246,
+          423
+        ],
+        [
+          442,
+          619
+        ],
+        [
+          639,
+          815
+        ],
+        [
+          835,
+          1012
+        ],
+        [
+          1031,
+          1207
+        ],
+        [
+          1227,
+          1403
+        ],
+        [
+          1422,
+          1600
+        ],
+        [
+          1619,
+          1800
+        ]
+      ],
+      "common_scale": 0.5945945945945946,
+      "raw_sha256": "42514be7a4f81926b88722dbd1f816586b2cd897de946204657c3866f14a6019"
+    }
+  }
+}

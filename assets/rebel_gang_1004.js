@@ -204,7 +204,7 @@ function rg4Friendly(m,G){const q=m.ref,key='ship_'+m.key;if(!XART.rdy(key))retu
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=1-(G.cloak||0)*.91;ctx.drawImage(im,q.x-w/2,q.y-h/2,w,h);ctx.restore();
  if(C?.castAt!=null&&C.revealAt==null)rg4Cell(1,Math.floor(G.age*12+m.pin.y)%6,q.x,q.y,68,76,G.cloak>.95?.16:.7);
  if(C?.revealAt!=null&&C.age-C.revealAt<1.5)rg4Cell(2,Math.floor((C.age-C.revealAt)/1.5*6),q.x,q.y,96,104,.85);
- if(C?.scanAt!=null&&C.revealAt==null){const p=clamp((C.age-C.scanAt-1)/3.5,0,1),f=Math.floor(G.age*10)%4,im=retinaTinted(p>=1?'retB':'retA',f,'falva');if(im){const x=q.x+Math.sin(G.age*2+m.pin.y)*(1-p)*100,y=q.y+Math.cos(G.age*1.7+m.pin.x)*(1-p)*90;ctx.save();ctx.globalAlpha=.85;ctx.drawImage(im,x-25,y-25,50,50);ctx.restore();RG4.draws.scan=(RG4.draws.scan||0)+1;}}
+ if(C?.scanAt!=null&&C.revealAt==null){const p=clamp((C.age-C.scanAt-1)/3.5,0,1),f=Math.floor(G.age*10)%4,im=retinaTinted(p>=1?'retB':'retA',f,G.scanner||'kaia');if(im){const x=q.x+Math.sin(G.age*2+m.pin.y)*(1-p)*100,y=q.y+Math.cos(G.age*1.7+m.pin.x)*(1-p)*90;ctx.save();ctx.globalAlpha=.85;ctx.drawImage(im,x-25,y-25,50,50);ctx.restore();RG4.draws.scan=(RG4.draws.scan||0)+1;}}
 }
 drawPlayer=function(){const G=rg4State(),C=G?.scene;if(C?.kind==='rescue'){const m=G.members.find(m=>m.ref===player);if(m)return rg4Friendly(m,G);}
  const r=RG4_BASE.playerDraw.apply(this,arguments);if(G?.shield>0&&!C)rg4Cell(1,Math.floor(G.age*12)%6,player.x,player.y,68,76,Math.min(.5,G.shield*.2));return r;

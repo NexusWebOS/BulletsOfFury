@@ -1,0 +1,49 @@
+{
+  "id": "s1jetbomber",
+  "name": "Jungle Bomber",
+  "stage": 1,
+  "stages": [
+    1
+  ],
+  "aliases": [
+    "s1jetbomber"
+  ],
+  "folder": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_bomber",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s1_s1jetbomber_heading",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_bomber/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "095ed3be0c07a6ce92a509169630d2b104b719bb76aa52f18d8d74d72abdde4a"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s1_s1jetbomber_roll",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_bomber/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7dacd5a5af0ee2ea3303c77c8ca76b14518f17a2b2aa1f24c1ab76b0d044b57a"
+  },
+  "nativeRatios": {
+    "s1jetbomber": 1.1908396946564885
+  },
+  "sourceKeys": {
+    "s1jetbomber": "furyjet_1_bank_0"
+  }
+}

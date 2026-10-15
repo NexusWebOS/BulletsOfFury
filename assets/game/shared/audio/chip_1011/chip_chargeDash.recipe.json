@@ -1,0 +1,370 @@
+{
+ "design": {
+  "name": "chip_chargeDash",
+  "frames": 34,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [
+   {
+    "on": true,
+    "hz": 80,
+    "sweepTo": 640,
+    "sweepFrames": 14,
+    "sweepCurve": 1.2,
+    "vibCents": 0,
+    "vibFrames": 6,
+    "arp": [],
+    "arpFrames": 2,
+    "retrig": 2,
+    "retrigCount": 7,
+    "gate": 3,
+    "levelDelay": 0,
+    "levelFade": 0,
+    "timbreSweep": 0,
+    "detuneCents": 0,
+    "delay": 0,
+    "patch": {
+     "alg": 0,
+     "fb": 6,
+     "pan": 3,
+     "ams": 0,
+     "pms": 2,
+     "ops": [
+      {
+       "dt": 0,
+       "mul": 1,
+       "tl": 22,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 0,
+       "sr": 0,
+       "sl": 0,
+       "rr": 8,
+       "ssg": 0
+      },
+      {
+       "dt": 0,
+       "mul": 1,
+       "tl": 30,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 0,
+       "sr": 0,
+       "sl": 0,
+       "rr": 8,
+       "ssg": 0
+      },
+      {
+       "dt": 0,
+       "mul": 2,
+       "tl": 26,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 0,
+       "sr": 0,
+       "sl": 0,
+       "rr": 8,
+       "ssg": 0
+      },
+      {
+       "dt": 0,
+       "mul": 1,
+       "tl": 6,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 0,
+       "sr": 0,
+       "sl": 0,
+       "rr": 8,
+       "ssg": 0
+      }
+     ]
+    }
+   }
+  ],
+  "noise": {
+   "on": false,
+   "white": true,
+   "rate": 2,
+   "toneHz": 1200,
+   "toneSweepTo": 1200,
+   "vol": 0,
+   "fade": 0.5,
+   "delay": 0,
+   "frames": 20
+  },
+  "tone": {
+   "on": false,
+   "hz": 880,
+   "sweepTo": 880,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 20,
+   "arp": [],
+   "arpFrames": 2
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "chip_chargeDash",
+  "frames": 34,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [
+   {
+    "ch": 0,
+    "patch": {
+     "r30": 1,
+     "r40": 22,
+     "r50": 31,
+     "r60": 0,
+     "r70": 0,
+     "r80": 8,
+     "r90": 0,
+     "r38": 1,
+     "r48": 30,
+     "r58": 31,
+     "r68": 0,
+     "r78": 0,
+     "r88": 8,
+     "r98": 0,
+     "r34": 2,
+     "r44": 26,
+     "r54": 31,
+     "r64": 0,
+     "r74": 0,
+     "r84": 8,
+     "r94": 0,
+     "r3c": 1,
+     "r4c": 6,
+     "r5c": 31,
+     "r6c": 0,
+     "r7c": 0,
+     "r8c": 8,
+     "r9c": 0,
+     "rb0": 48,
+     "rb4": 194
+    },
+    "track": [
+     {
+      "f": 0,
+      "fnum": 1575,
+      "block": 1,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 1,
+      "fnum": 1719,
+      "block": 1,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 2,
+      "fnum": 1926,
+      "block": 1,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 3,
+      "fnum": 1092,
+      "block": 2,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 4,
+      "fnum": 1250,
+      "block": 2,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 5,
+      "fnum": 1441,
+      "block": 2,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 6,
+      "fnum": 1671,
+      "block": 2,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 7,
+      "fnum": 1947,
+      "block": 2,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 8,
+      "fnum": 1139,
+      "block": 3,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 9,
+      "fnum": 1339,
+      "block": 3,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 10,
+      "fnum": 1579,
+      "block": 3,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 11,
+      "fnum": 1868,
+      "block": 3,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 12,
+      "fnum": 1108,
+      "block": 4,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 13,
+      "fnum": 1319,
+      "block": 4,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 14,
+      "fnum": 1575,
+      "block": 4,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 16,
+      "fnum": 1575,
+      "block": 4,
+      "tl": [
+       22,
+       30,
+       26,
+       6
+      ],
+      "key": 0,
+      "retrig": 0
+     }
+    ]
+   }
+  ],
+  "psg": [],
+  "dac": null
+ }
+}

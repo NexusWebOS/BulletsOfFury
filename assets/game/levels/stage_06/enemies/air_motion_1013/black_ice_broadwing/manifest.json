@@ -1,0 +1,49 @@
+{
+  "id": "l6v_b1",
+  "name": "Black Ice Broadwing",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_b1"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_broadwing",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_b1_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_broadwing/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "3e9bfe98115865563c8abfb2d8e526057c9b5a48aaef9d3497e9a5a274ca3670"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_b1_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_broadwing/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "2baab34889dd992604623456fca3244818752f61a0c6d78cb286734e96b1b320"
+  },
+  "nativeRatios": {
+    "l6v_b1": 2.1714285714285713
+  },
+  "sourceKeys": {
+    "l6v_b1": "n6v1_blackice_intact_c"
+  }
+}

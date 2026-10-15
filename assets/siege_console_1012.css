@@ -1,0 +1,12 @@
+/* Mike's approved side instruments. The battlefield owns its full height. */
+.siege-side,.siege-compact{position:fixed;display:none;pointer-events:none;z-index:6;image-rendering:pixelated;}
+body.siege-console #room{display:block;background:#05090e;gap:0;}
+body.siege-console #credit-left,body.siege-console #credit-right,
+body.siege-console #hud-row,body.siege-console #hud-div,body.siege-console #hud-div2,
+body.siege-console #hud-bottom,body.siege-console #hint,
+body.siege-console #wide-left,body.siege-console #wide-right,body.siege-console #wide-clock{display:none !important;}
+body.siege-console #game-frame{position:fixed !important;display:block;background:#000;box-shadow:none;overflow:hidden;}
+body.siege-console #screen-area{position:relative !important;inset:auto !important;margin:0 !important;overflow:hidden;}
+body.siege-console #screen{display:block;max-width:none;max-height:none;image-rendering:pixelated;}
+body.siege-console #fs-btn{opacity:.45;}
+body.siege-console #fs-btn:hover,body.siege-console #fs-btn:focus-visible{opacity:1;}

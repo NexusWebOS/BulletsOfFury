@@ -1,0 +1,49 @@
+{
+  "id": "s5skimmer",
+  "name": "Space Skimmer",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5skimmer"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_skimmer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5skimmer_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_skimmer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7aa86e3d21ade6ca0a98738b807a4573267ab6ef4945f09d0a73f1928b1b1ed6"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5skimmer_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_skimmer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "9926a9416fa96259f9e7ce209cf2abdb7ee25dbf645a6d7faa7b20ce9cc90225"
+  },
+  "nativeRatios": {
+    "s5skimmer": 1.0212765957446808
+  },
+  "sourceKeys": {
+    "s5skimmer": "s5atk_debris_skimmer_0"
+  }
+}

@@ -27,7 +27,9 @@ try:
         page.on('response', lambda r: errors.append(f'HTTP {r.status} {r.url}') if r.status >= 400 else None)
         page.route('**/favicon.ico', lambda route: route.fulfill(status=204, body=''))   # the browser's own favicon request is not the game's
         page.goto(f'http://127.0.0.1:{port}/expansion/topdown/index.html')
-        page.wait_for_function('window.TDGAME && TDGAME.G.state==="title"', timeout=90000)
+        # local build boots into pilot selection (1008 controls pass); the probe starts from the stage title
+        page.wait_for_function('window.TDGAME && (TDGAME.G.state==="pilot"||TDGAME.G.state==="title")', timeout=90000)
+        page.evaluate('TDGAME.freeze();TDGAME.G.state="title"')
         WARM = "TD.MUSEUM_WARM.concat(['rzb_hull_0','rzb_hull_3','rzb_turret','rzb_tread','rzb_rotor','rzb_missile_pod','rzb_machinegun','rzb_wreck','bmbar_frame_boss','bmbar_fill_red'])"
         page.evaluate('TDGAME.freeze();ART.warm(' + WARM + ')')
         page.wait_for_function('ART.progress(' + WARM + ')===1', timeout=90000)
@@ -37,7 +39,7 @@ try:
         check('museum plate, exhibits, hostages and exhibit tank art all decode', page.evaluate('ART.progress(' + WARM + ')===1'))
 
         # ---- title -> Level 5 card -> brief, with real keys
-        page.evaluate("for(let i=0;i<3;i++)tap('arrowright');")
+        page.evaluate("tap('arrowleft');")   # 1009: Level 3 is hidden, so Level 5 is one step left of Level 2
         snap('01_title')
         page.evaluate("tap('enter',50)")
         check('title shows a fourth card and deploys Level 5 briefing', page.evaluate('TDGAME.G.mission===5&&TDGAME.G.state==="brief"&&TD.MISSIONS.length===4'))

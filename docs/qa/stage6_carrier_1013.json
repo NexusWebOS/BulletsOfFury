@@ -1,0 +1,1783 @@
+{
+  "date": "2026-10-13",
+  "revision": "Dark red carrier weapons and sequenced front lights",
+  "scope": "Normal Stage 6 left-route warhive only; Stage X Harrier and rebels preserved",
+  "browsers": {
+    "msedge": {
+      "passed": 73,
+      "failed": 0,
+      "errors": [],
+      "checks": [
+        {
+          "name": "easy minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "easy slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "easy bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "normal minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "normal slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "normal bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "hard minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "hard slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "hard bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "furious minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "furious slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "furious bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "easy visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "normal visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "hard visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "furious visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "four distinct authored beam animation frames",
+          "pass": true
+        },
+        {
+          "name": "broad predominantly dark red beam pixels",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 0",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 1",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 2",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 3",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 4",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 5",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 0",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 1",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 2",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 3",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 4",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 5",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry fresh",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry current",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry flameFresh",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry flameCurrent",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry rapidRound",
+          "pass": true
+        },
+        {
+          "name": "damage shield",
+          "pass": true
+        },
+        {
+          "name": "damage removed",
+          "pass": true
+        },
+        {
+          "name": "damage exposed",
+          "pass": true
+        },
+        {
+          "name": "damage damage",
+          "pass": true
+        },
+        {
+          "name": "damage targetCount",
+          "pass": true
+        },
+        {
+          "name": "damage opaque",
+          "pass": true
+        },
+        {
+          "name": "death dead",
+          "pass": true
+        },
+        {
+          "name": "death defeated",
+          "pass": true
+        },
+        {
+          "name": "death score",
+          "pass": true
+        },
+        {
+          "name": "death noAce",
+          "pass": true
+        },
+        {
+          "name": "death clean",
+          "pass": true
+        },
+        {
+          "name": "death crashed",
+          "pass": true
+        },
+        {
+          "name": "native completion transition",
+          "pass": true
+        },
+        {
+          "name": "Stage X original Harrier preserved",
+          "pass": true
+        },
+        {
+          "name": "rebel branch preserved",
+          "pass": true
+        },
+        {
+          "name": "special and co-op noCoords",
+          "pass": true
+        },
+        {
+          "name": "special and co-op bomb",
+          "pass": true
+        },
+        {
+          "name": "special and co-op localBomb",
+          "pass": true
+        },
+        {
+          "name": "special and co-op exposedSpecial",
+          "pass": true
+        },
+        {
+          "name": "special and co-op scaled",
+          "pass": true
+        },
+        {
+          "name": "special and co-op firstHit",
+          "pass": true
+        },
+        {
+          "name": "special and co-op alias",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 0",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 1",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 2",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 3",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 4",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 5",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 6",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 7",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 8",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 9",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 10",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 11",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 12",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 13",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 14",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 15",
+          "pass": true
+        }
+      ],
+      "scheduleResults": [
+        {
+          "difficulty": "easy",
+          "minGap": 102.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "normal",
+          "minGap": 100.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "hard",
+          "minGap": 98.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "furious",
+          "minGap": 96.98593750000003,
+          "peak": 3,
+          "charged": 4,
+          "reverses": true
+        }
+      ],
+      "visual": {
+        "widths": [
+          {
+            "d": "easy",
+            "width": 32,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "normal",
+            "width": 34,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "hard",
+            "width": 36,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "furious",
+            "width": 38,
+            "inside": true,
+            "outside": true
+          }
+        ],
+        "frames": [
+          {
+            "red": 1543,
+            "dark": 889,
+            "hash": 3594891992
+          },
+          {
+            "red": 1544,
+            "dark": 940,
+            "hash": 3944671563
+          },
+          {
+            "red": 1505,
+            "dark": 968,
+            "hash": 3157754023
+          },
+          {
+            "red": 1520,
+            "dark": 900,
+            "hash": 3095587959
+          }
+        ],
+        "lights": [
+          {
+            "id": 0,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.7524443474146866,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 1,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.726474628613674,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 2,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.8232675204814499,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 3,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.9538320846180725,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 4,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.998127862885668,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 5,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.9154295210254568,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          }
+        ],
+        "muzzles": [
+          {
+            "id": 0,
+            "pixels": 5476
+          },
+          {
+            "id": 1,
+            "pixels": 5476
+          },
+          {
+            "id": 2,
+            "pixels": 5476
+          },
+          {
+            "id": 3,
+            "pixels": 5476
+          },
+          {
+            "id": 4,
+            "pixels": 5476
+          },
+          {
+            "id": 5,
+            "pixels": 5476
+          }
+        ]
+      },
+      "hero": "_shots\\stage6_carrier_1013\\fx-msedge\\native-stage6-hud.png"
+    },
+    "chrome": {
+      "passed": 73,
+      "failed": 0,
+      "errors": [],
+      "checks": [
+        {
+          "name": "easy minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "easy slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "easy bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "normal minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "normal slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "normal bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "hard minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "hard slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "hard bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "furious minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "furious slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "furious bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "easy visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "normal visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "hard visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "furious visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "four distinct authored beam animation frames",
+          "pass": true
+        },
+        {
+          "name": "broad predominantly dark red beam pixels",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 0",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 1",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 2",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 3",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 4",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 5",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 0",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 1",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 2",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 3",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 4",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 5",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry fresh",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry current",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry flameFresh",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry flameCurrent",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry rapidRound",
+          "pass": true
+        },
+        {
+          "name": "damage shield",
+          "pass": true
+        },
+        {
+          "name": "damage removed",
+          "pass": true
+        },
+        {
+          "name": "damage exposed",
+          "pass": true
+        },
+        {
+          "name": "damage damage",
+          "pass": true
+        },
+        {
+          "name": "damage targetCount",
+          "pass": true
+        },
+        {
+          "name": "damage opaque",
+          "pass": true
+        },
+        {
+          "name": "death dead",
+          "pass": true
+        },
+        {
+          "name": "death defeated",
+          "pass": true
+        },
+        {
+          "name": "death score",
+          "pass": true
+        },
+        {
+          "name": "death noAce",
+          "pass": true
+        },
+        {
+          "name": "death clean",
+          "pass": true
+        },
+        {
+          "name": "death crashed",
+          "pass": true
+        },
+        {
+          "name": "native completion transition",
+          "pass": true
+        },
+        {
+          "name": "Stage X original Harrier preserved",
+          "pass": true
+        },
+        {
+          "name": "rebel branch preserved",
+          "pass": true
+        },
+        {
+          "name": "special and co-op noCoords",
+          "pass": true
+        },
+        {
+          "name": "special and co-op bomb",
+          "pass": true
+        },
+        {
+          "name": "special and co-op localBomb",
+          "pass": true
+        },
+        {
+          "name": "special and co-op exposedSpecial",
+          "pass": true
+        },
+        {
+          "name": "special and co-op scaled",
+          "pass": true
+        },
+        {
+          "name": "special and co-op firstHit",
+          "pass": true
+        },
+        {
+          "name": "special and co-op alias",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 0",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 1",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 2",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 3",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 4",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 5",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 6",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 7",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 8",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 9",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 10",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 11",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 12",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 13",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 14",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 15",
+          "pass": true
+        }
+      ],
+      "scheduleResults": [
+        {
+          "difficulty": "easy",
+          "minGap": 102.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "normal",
+          "minGap": 100.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "hard",
+          "minGap": 98.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "furious",
+          "minGap": 96.98593750000003,
+          "peak": 3,
+          "charged": 4,
+          "reverses": true
+        }
+      ],
+      "visual": {
+        "widths": [
+          {
+            "d": "easy",
+            "width": 32,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "normal",
+            "width": 34,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "hard",
+            "width": 36,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "furious",
+            "width": 38,
+            "inside": true,
+            "outside": true
+          }
+        ],
+        "frames": [
+          {
+            "red": 1543,
+            "dark": 889,
+            "hash": 3594891992
+          },
+          {
+            "red": 1544,
+            "dark": 940,
+            "hash": 3944671563
+          },
+          {
+            "red": 1505,
+            "dark": 968,
+            "hash": 3157754023
+          },
+          {
+            "red": 1520,
+            "dark": 900,
+            "hash": 3095587959
+          }
+        ],
+        "lights": [
+          {
+            "id": 0,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.7524443474146866,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 1,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.726474628613674,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 2,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.8232675204814499,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 3,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.9538320846180725,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 4,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.998127862885668,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 5,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.9154295210254568,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          }
+        ],
+        "muzzles": [
+          {
+            "id": 0,
+            "pixels": 5476
+          },
+          {
+            "id": 1,
+            "pixels": 5476
+          },
+          {
+            "id": 2,
+            "pixels": 5476
+          },
+          {
+            "id": 3,
+            "pixels": 5476
+          },
+          {
+            "id": 4,
+            "pixels": 5476
+          },
+          {
+            "id": 5,
+            "pixels": 5476
+          }
+        ]
+      },
+      "hero": "_shots\\stage6_carrier_1013\\fx-chrome\\native-stage6-hud.png"
+    },
+    "firefox": {
+      "passed": 73,
+      "failed": 0,
+      "errors": [],
+      "checks": [
+        {
+          "name": "easy minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "easy slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "easy bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "normal minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "normal slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "normal bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "hard minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "hard slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "hard bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "furious minimum open interval at least 60px",
+          "pass": true
+        },
+        {
+          "name": "furious slow traverse reverses",
+          "pass": true
+        },
+        {
+          "name": "furious bounded simultaneous beams",
+          "pass": true
+        },
+        {
+          "name": "easy visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "normal visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "hard visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "furious visible red core and collision width",
+          "pass": true
+        },
+        {
+          "name": "four distinct authored beam animation frames",
+          "pass": true
+        },
+        {
+          "name": "broad predominantly dark red beam pixels",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 0",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 1",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 2",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 3",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 4",
+          "pass": true
+        },
+        {
+          "name": "visible muzzle flash on gun 5",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 0",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 1",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 2",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 3",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 4",
+          "pass": true
+        },
+        {
+          "name": "charge fire cool dark sequence gun 5",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry fresh",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry current",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry flameFresh",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry flameCurrent",
+          "pass": true
+        },
+        {
+          "name": "continuous geometry rapidRound",
+          "pass": true
+        },
+        {
+          "name": "damage shield",
+          "pass": true
+        },
+        {
+          "name": "damage removed",
+          "pass": true
+        },
+        {
+          "name": "damage exposed",
+          "pass": true
+        },
+        {
+          "name": "damage damage",
+          "pass": true
+        },
+        {
+          "name": "damage targetCount",
+          "pass": true
+        },
+        {
+          "name": "damage opaque",
+          "pass": true
+        },
+        {
+          "name": "death dead",
+          "pass": true
+        },
+        {
+          "name": "death defeated",
+          "pass": true
+        },
+        {
+          "name": "death score",
+          "pass": true
+        },
+        {
+          "name": "death noAce",
+          "pass": true
+        },
+        {
+          "name": "death clean",
+          "pass": true
+        },
+        {
+          "name": "death crashed",
+          "pass": true
+        },
+        {
+          "name": "native completion transition",
+          "pass": true
+        },
+        {
+          "name": "Stage X original Harrier preserved",
+          "pass": true
+        },
+        {
+          "name": "rebel branch preserved",
+          "pass": true
+        },
+        {
+          "name": "special and co-op noCoords",
+          "pass": true
+        },
+        {
+          "name": "special and co-op bomb",
+          "pass": true
+        },
+        {
+          "name": "special and co-op localBomb",
+          "pass": true
+        },
+        {
+          "name": "special and co-op exposedSpecial",
+          "pass": true
+        },
+        {
+          "name": "special and co-op scaled",
+          "pass": true
+        },
+        {
+          "name": "special and co-op firstHit",
+          "pass": true
+        },
+        {
+          "name": "special and co-op alias",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 0",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 1",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 2",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 3",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 4",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 5",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 6",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 7",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 8",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 9",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 10",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 11",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 12",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 13",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 14",
+          "pass": true
+        },
+        {
+          "name": "live frame batch 15",
+          "pass": true
+        }
+      ],
+      "scheduleResults": [
+        {
+          "difficulty": "easy",
+          "minGap": 102.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "normal",
+          "minGap": 100.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "hard",
+          "minGap": 98.98593749999998,
+          "peak": 3,
+          "charged": 3,
+          "reverses": true
+        },
+        {
+          "difficulty": "furious",
+          "minGap": 96.98593750000003,
+          "peak": 3,
+          "charged": 4,
+          "reverses": true
+        }
+      ],
+      "visual": {
+        "widths": [
+          {
+            "d": "easy",
+            "width": 32,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "normal",
+            "width": 34,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "hard",
+            "width": 36,
+            "inside": true,
+            "outside": true
+          },
+          {
+            "d": "furious",
+            "width": 38,
+            "inside": true,
+            "outside": true
+          }
+        ],
+        "frames": [
+          {
+            "red": 1510,
+            "dark": 886,
+            "hash": 3898336263
+          },
+          {
+            "red": 1549,
+            "dark": 956,
+            "hash": 1077338050
+          },
+          {
+            "red": 1518,
+            "dark": 988,
+            "hash": 3929536902
+          },
+          {
+            "red": 1511,
+            "dark": 894,
+            "hash": 2046027357
+          }
+        ],
+        "lights": [
+          {
+            "id": 0,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.7524443474146866,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 1,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.726474628613674,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 2,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.8232675204814499,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 3,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.9538320846180725,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 4,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.998127862885668,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          },
+          {
+            "id": 5,
+            "early": {
+              "phase": "charge",
+              "level": 0.47129452507276276,
+              "color": "#ff9824"
+            },
+            "charged": {
+              "phase": "charge",
+              "level": 0.8390693257349866,
+              "color": "#ff3040"
+            },
+            "fire": {
+              "phase": "fire",
+              "level": 0.9154295210254568,
+              "color": "#ff354d"
+            },
+            "cool": {
+              "phase": "cool",
+              "level": 0.48749999999999993,
+              "color": "#68ddff"
+            },
+            "off": {
+              "phase": "off",
+              "level": 0,
+              "color": "#1b2833"
+            }
+          }
+        ],
+        "muzzles": [
+          {
+            "id": 0,
+            "pixels": 5476
+          },
+          {
+            "id": 1,
+            "pixels": 5476
+          },
+          {
+            "id": 2,
+            "pixels": 5476
+          },
+          {
+            "id": 3,
+            "pixels": 5476
+          },
+          {
+            "id": 4,
+            "pixels": 5476
+          },
+          {
+            "id": 5,
+            "pixels": 5476
+          }
+        ]
+      },
+      "hero": "_shots\\stage6_carrier_1013\\fx-firefox\\native-stage6-hud.png"
+    }
+  },
+  "art": {
+    "front_lights.png": {
+      "dimensions": [
+        240,
+        12
+      ],
+      "bytes": 5124,
+      "sha256": "6ed472016ed3e827789c2be2588802d56fe951d0dc11af195c9e8891fdde50eb"
+    },
+    "hull.png": {
+      "dimensions": [
+        1024,
+        512
+      ],
+      "bytes": 496129,
+      "sha256": "9477d4bb033098c697bb8b6b36b0432dd24760fee5dd5261ed75d476e524f33a"
+    },
+    "muzzles.png": {
+      "dimensions": [
+        512,
+        128
+      ],
+      "bytes": 52138,
+      "sha256": "d74873e5345f47b7980ef9173f5fbd3a7ee2373d428e7433bdbe44325a8c957b"
+    },
+    "red_beams.png": {
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 304458,
+      "sha256": "ece8799db8849ad5d81f356102cfe6d03cb2dddbb6a26a7684c92efdc937b164"
+    },
+    "turrets.png": {
+      "dimensions": [
+        512,
+        160
+      ],
+      "bytes": 68598,
+      "sha256": "d4a43a51782a9e3975b8fa0ae4d2f520e63452fb485f807473b3db5d30d0a776"
+    }
+  },
+  "limitations": [
+    "Open-interval measurements are geometry tests, not human survival rates.",
+    "No real unplugged-laptop FPS measurement."
+  ],
+  "combinedRegression": "Parent integration task owns the final full-game regression result for this revision.",
+  "runtimeArtBytes": 926447
+}

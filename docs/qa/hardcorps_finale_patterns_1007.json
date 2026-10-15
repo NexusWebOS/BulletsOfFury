@@ -787,7 +787,7 @@
       },
       "history": [
         "recover",
-        "hc-relay1007",
+        "p2-battery",
         "recover"
       ],
       "donorState": "recover"
@@ -861,9 +861,6 @@
       },
       "history": [
         "recover",
-        "chase",
-        "swipeL",
-        "swipeR",
         "swipeX",
         "jump",
         "recover"

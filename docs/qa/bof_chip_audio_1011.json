@@ -1,0 +1,641 @@
+{
+  "date": "2026-10-11",
+  "approvedCues": 81,
+  "excludedCues": 43,
+  "sourceHashes": {
+    "assets/game.js": "21be107583b8407e97fece1413b9566c3fe6b304d521166ec3f4efcabc60f5f7",
+    "assets/chip_audio_1011.js": "77fd4616e63816b479b851034b85b69a1bcc1cfe2231d69a0ee3d7b11e0c2fa5",
+    "assets/game/shared/audio/chip_1011/manifest.json": "f985c6ea3c14c027825b718b8eec83952fa03d6e4414f7f6478cbfd18909b606",
+    "_BUILD_SOURCE/build_chip_audio_1011.py": "5b69fed9e72af433eff4d425913419df38c664db13295c320b55579bae0e218d",
+    "_BUILD_SOURCE/probe_chip_audio_1011.py": "204fb77af3df829a737fe50dd9919780ef970e7f89a80b0ec387337d6c84019c",
+    "expansion/topdown/js/audio_1011.js": "d0a90ab0faf0feac9bc83006461933c2fc24402fe2b54b6d5039755e1edaf1bc",
+    "expansion/topdown/_research/probe_chip_audio_1011.py": "305e7d00f93b796a887259a3d5f03debab9317c56be378098f025d58c4d97548",
+    "docs/previews/chip_audio_1011/index.html": "f04cb3de5b5b9c9612fda1e002fc9495c97dec2cdb65f7f21e720d13d7bb9801",
+    "docs/previews/chip_audio_1011/review.js": "8522aa6d4efb106a3dfa4045b329695417949b363c350cf01cc1807fc9af8a61"
+  },
+  "suite": {
+    "assertions": 8700,
+    "failures": 0,
+    "exitCode": 0,
+    "finalSummary": true
+  },
+  "bof": {
+    "passed": 46,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "81 approved MP3s preserve source hashes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All score and ground cues included; 43 unapproved cues and genre studies excluded",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "BOF and Overdrive use the same approved source recordings",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Main game boots with bounded lazy chip pools",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All 81 cues decode and advance through the actual BOF mixer",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Approved chip recordings bypass old tone filters",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Enemy laser aliases share one pool and one retrigger gate",
+        "passed": true,
+        "data": {
+          "n": 1,
+          "pools": true
+        }
+      },
+      {
+        "name": "Realm boss releases retain their four approved named recordings",
+        "passed": true,
+        "data": {
+          "furnaceLaserBurst": 1,
+          "hammerEradBlast": 1,
+          "quadFire": 1,
+          "enemyHeavyLaser": 1
+        }
+      },
+      {
+        "name": "Lightning geyser audio begins on eruption, after its warning",
+        "passed": true,
+        "data": {
+          "early": 0,
+          "erupted": 1
+        }
+      },
+      {
+        "name": "Combat and Rebel shield breaks share the approved break cue and gate",
+        "passed": true,
+        "data": 1
+      },
+      {
+        "name": "Unapproved enemy missiles, normal explosions, music and UI blips keep their files",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Chip sounds obey master and SFX levels",
+        "passed": true,
+        "data": {
+          "volume": 0.11599999999999999,
+          "want": 0.11599999999999999
+        }
+      },
+      {
+        "name": "Score pickups select their four denominations and timed bombs get beep/blast cues",
+        "passed": true,
+        "data": {
+          "scoreBullet100": 1,
+          "scoreBullet250": 1,
+          "scoreBullet500": 1,
+          "scoreBullet1000": 1,
+          "timedBombBeep": 1,
+          "timedBombBlast": 1
+        }
+      },
+      {
+        "name": "Welding owns one continuously playing loop",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Product reveal stops the weld and plays one completion cue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Loadout navigation dispatches the approved selection cue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Loadout launch dispatches its own cue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Weapons Gained dispatches weaponFound",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Firewall has a pitch-preserved sample stretched to the controller travel time",
+        "passed": true,
+        "data": {
+          "rate": 0.7807692307692308,
+          "pitch": true,
+          "span": 1.2807881773399015,
+          "volume": 0.256,
+          "duration": 1
+        }
+      },
+      {
+        "name": "The live wave retains the same sustained voice during travel",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Firewall responds to volume changes while travelling",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Pause releases the firewall voice",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Resume follows the remaining wave instead of starting another full attack",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wave departure stops its audio immediately",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "SONIC actual tank has a quiet, decoded engine bed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sonic retains its sonic pressure release",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "SONIC player death stops the tank bed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ORDOS actual tank has a quiet, decoded engine bed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ORDOS weapon release uses missileLaunch",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ORDOS detonation uses missileHit",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ORDOS player death stops the tank bed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HARK actual tank has a quiet, decoded engine bed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HARK weapon release uses gd_tankCannon",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HARK detonation uses gd_shellImpact",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HARK player death stops the tank bed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Focus loss clears every sustained chip voice",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Audio decoder budget remains bounded after every audition and encounter",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No chip decode or playback errors",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Portable file:// BOF actually plays the approved MP3",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Audition page lists every approved cue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Audition search retains only matching cues",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Audition engine button plays the actual looping chip MP3",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Audition Stop releases the loop",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Audition firewall uses the duration variant with pitch preservation",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Audition page fits a phone viewport without horizontal scrolling",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "playedCues": [
+      "error",
+      "enemyDie",
+      "alert",
+      "shieldBreak",
+      "bombDrop",
+      "forgeWeld",
+      "forgeComplete",
+      "weaponFound",
+      "loadoutSelect",
+      "loadoutEquip",
+      "loadoutLaunch",
+      "element_lightning_hit",
+      "geyserLightning",
+      "scoreBullet100",
+      "scoreBullet250",
+      "scoreBullet500",
+      "scoreBullet1000",
+      "stylishDodge",
+      "furiousCoin",
+      "achievement",
+      "timedBombBeep",
+      "timedBombBlast",
+      "chargeDash",
+      "enemyLaser",
+      "missileLaunch",
+      "nuclearLaunch",
+      "bossCannon",
+      "railCannon",
+      "impactMetal",
+      "firewallLaunch",
+      "missileHit",
+      "bombDropLegacy",
+      "extraLife",
+      "playerDeath",
+      "decker_shell",
+      "enemyHeavyLaser",
+      "quadFire",
+      "furnaceLaserBurst",
+      "hammerEradBlast",
+      "shieldHitLight",
+      "laserBeamHit",
+      "shieldImpact",
+      "shieldImpactHeavy",
+      "shieldDeflect",
+      "blocked",
+      "slice",
+      "douse",
+      "freeze",
+      "lockon",
+      "expBoss",
+      "expIce",
+      "enemyLightningChaingun",
+      "gravityShoot",
+      "gravitySnap",
+      "gravityLock",
+      "gravityScatter",
+      "gravityChargeBand",
+      "shadowCharge",
+      "shadowRelease",
+      "laserMistUnlock",
+      "furyPartArrival",
+      "bossShieldTeleport",
+      "bossShieldStatic",
+      "gd_tankEngineLoop",
+      "gd_tankTreadLoop",
+      "gd_turretTraverse",
+      "gd_tankCannon",
+      "gd_shellImpact",
+      "gd_footstepA",
+      "gd_footstepB",
+      "gd_soldierRifle",
+      "gd_soldierDown",
+      "gd_spotted",
+      "gd_alarmLoop",
+      "gd_coverEnter",
+      "gd_doorOpen",
+      "gd_wallBreak",
+      "gd_buildingCollapse",
+      "gd_crateBreak",
+      "gd_mineArm",
+      "gd_ammoPickup"
+    ]
+  },
+  "overdrive": {
+    "passed": 44,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "81 approved shipping MP3s match their source hashes",
+        "passed": true
+      },
+      {
+        "name": "43 unapproved sounds and all genre banks remain excluded",
+        "passed": true
+      },
+      {
+        "name": "all four score cues and every ground cue are imported",
+        "passed": true
+      },
+      {
+        "name": "boot waits for a real input before unlocking sound",
+        "passed": true
+      },
+      {
+        "name": "pilot/mission selection, equipment confirmation and launch use their chip cues",
+        "passed": true
+      },
+      {
+        "name": "all 81 approved sounds decode and advance in real Chromium",
+        "passed": true
+      },
+      {
+        "name": "registered loop flags and voice gains reach the actual media elements",
+        "passed": true
+      },
+      {
+        "name": "tank idle has one decoded engine loop and no tread/servo loop",
+        "passed": true
+      },
+      {
+        "name": "sideways movement and independent aim own separate playing tread/servo loops",
+        "passed": true
+      },
+      {
+        "name": "boost release starts one chargeDash cue and speeds up the moving loops",
+        "passed": true
+      },
+      {
+        "name": "release stops tread/servo voices while the engine returns to idle",
+        "passed": true
+      },
+      {
+        "name": "a tank pushing into solid cover does not keep a travelling tread loop",
+        "passed": true
+      },
+      {
+        "name": "a real uncharged cannon release uses the tank cannon sample",
+        "passed": true
+      },
+      {
+        "name": "charged armor-piercing release uses railCannon and retains physical recoil",
+        "passed": true
+      },
+      {
+        "name": "actual homing launch and contact use distinct launch/impact samples",
+        "passed": true
+      },
+      {
+        "name": "enemy destruction has its approved enemyDie cue",
+        "passed": true
+      },
+      {
+        "name": "rammed concrete, buildings and crates have distinct demolition cues",
+        "passed": true
+      },
+      {
+        "name": "weapon, ammunition, extra-life and score pickups use their individual cues",
+        "passed": true
+      },
+      {
+        "name": "native detection starts spotted/alert cues and an owner-controlled base alarm",
+        "passed": true
+      },
+      {
+        "name": "the alarm stops when detection changes from ALERT to EVASION",
+        "passed": true
+      },
+      {
+        "name": "Start/pause releases every effect loop immediately",
+        "passed": true
+      },
+      {
+        "name": "resuming restarts current movement loops without duplicate voices",
+        "passed": true
+      },
+      {
+        "name": "fatal damage uses playerDeath and stops live vehicle loops",
+        "passed": true
+      },
+      {
+        "name": "losing focus suspends effects and releases all loops",
+        "passed": true
+      },
+      {
+        "name": "focus restores the live engine without changing combat state",
+        "passed": true
+      },
+      {
+        "name": "The Warrior bullet volleys use quadFire",
+        "passed": true
+      },
+      {
+        "name": "The Warrior visor volley uses the approved heavy enemy laser",
+        "passed": true
+      },
+      {
+        "name": "The Warrior missile salvo uses missileLaunch",
+        "passed": true
+      },
+      {
+        "name": "boss destruction uses expBoss while the supplied Warrior music retains its owner",
+        "passed": true
+      },
+      {
+        "name": "Wren Bastion has a static loop and a heavy shield-impact cue",
+        "passed": true
+      },
+      {
+        "name": "breaking the Bastion module plays shieldBreak and stops its own static",
+        "passed": true
+      },
+      {
+        "name": "Museum foot movement alternates actual footstep A/B cues without a tank engine",
+        "passed": true
+      },
+      {
+        "name": "infantry cover and rifle fire use their ground cues",
+        "passed": true
+      },
+      {
+        "name": "empty magazine reports error and completed reload reports ammunition",
+        "passed": true
+      },
+      {
+        "name": "firewall hook uses a pitch-preserved stretched span at an audible media rate",
+        "passed": true
+      },
+      {
+        "name": "firewall hook follows the current Master and SFX sliders",
+        "passed": true
+      },
+      {
+        "name": "firewall duration finishes naturally and releases its owner",
+        "passed": true
+      },
+      {
+        "name": "firewall audio stops immediately when its bounds leave the screen",
+        "passed": true
+      },
+      {
+        "name": "firewall impact/death cancels a sustained voice",
+        "passed": true
+      },
+      {
+        "name": "pausing also cancels the firewall owner voice",
+        "passed": true
+      },
+      {
+        "name": "rapid impacts reuse at most four voices instead of stacking new media elements",
+        "passed": true
+      },
+      {
+        "name": "sound runtime reports no missing-file, decode or playback errors",
+        "passed": true
+      },
+      {
+        "name": "the portable file:// expansion actually plays its chip MP3s",
+        "passed": true
+      },
+      {
+        "name": "native pages have zero page, console and asset errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "playedCues": [
+      "error",
+      "enemyDie",
+      "alert",
+      "shieldBreak",
+      "bombDrop",
+      "forgeWeld",
+      "forgeComplete",
+      "weaponFound",
+      "loadoutSelect",
+      "loadoutEquip",
+      "loadoutLaunch",
+      "element_lightning_hit",
+      "geyserLightning",
+      "scoreBullet100",
+      "scoreBullet250",
+      "scoreBullet500",
+      "scoreBullet1000",
+      "stylishDodge",
+      "furiousCoin",
+      "achievement",
+      "timedBombBeep",
+      "timedBombBlast",
+      "chargeDash",
+      "enemyLaser",
+      "missileLaunch",
+      "nuclearLaunch",
+      "bossCannon",
+      "railCannon",
+      "impactMetal",
+      "firewallLaunch",
+      "missileHit",
+      "bombDropLegacy",
+      "extraLife",
+      "playerDeath",
+      "decker_shell",
+      "enemyHeavyLaser",
+      "quadFire",
+      "furnaceLaserBurst",
+      "hammerEradBlast",
+      "shieldHitLight",
+      "laserBeamHit",
+      "shieldImpact",
+      "shieldImpactHeavy",
+      "shieldDeflect",
+      "blocked",
+      "slice",
+      "douse",
+      "freeze",
+      "lockon",
+      "expBoss",
+      "expIce",
+      "enemyLightningChaingun",
+      "gravityShoot",
+      "gravitySnap",
+      "gravityLock",
+      "gravityScatter",
+      "gravityChargeBand",
+      "shadowCharge",
+      "shadowRelease",
+      "laserMistUnlock",
+      "furyPartArrival",
+      "bossShieldTeleport",
+      "bossShieldStatic",
+      "gd_tankEngineLoop",
+      "gd_tankTreadLoop",
+      "gd_turretTraverse",
+      "gd_tankCannon",
+      "gd_shellImpact",
+      "gd_footstepA",
+      "gd_footstepB",
+      "gd_soldierRifle",
+      "gd_soldierDown",
+      "gd_spotted",
+      "gd_alarmLoop",
+      "gd_coverEnter",
+      "gd_doorOpen",
+      "gd_wallBreak",
+      "gd_buildingCollapse",
+      "gd_crateBreak",
+      "gd_mineArm",
+      "gd_ammoPickup"
+    ]
+  },
+  "limits": [
+    "Protected native encounter fixtures; not an unassisted campaign clear.",
+    "Automated playback and lifecycle proof, not a human mix approval.",
+    "Overdrive has a tested firewall hook, not a current travelling-fire attack."
+  ],
+  "localOnly": true
+}

@@ -1,0 +1,49 @@
+{
+  "id": "s8solar",
+  "name": "Void Solar",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "s8solar"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/void_solar",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_s8solar_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_solar/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "a4cbccd9c759fcbddfafb2fa48a72b8edecef0aaa8a0c4403169389646dcd102"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_s8solar_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_solar/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "60e5af7b48b103926e0cd70f8239bbe44e674609b321e3d1b8642b929a2a2e62"
+  },
+  "nativeRatios": {
+    "s8solar": 1.0952380952380953
+  },
+  "sourceKeys": {
+    "s8solar": "s81003_prism"
+  }
+}

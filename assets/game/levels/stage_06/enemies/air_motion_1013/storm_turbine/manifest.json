@@ -1,0 +1,49 @@
+{
+  "id": "s6turbine",
+  "name": "Storm Turbine",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "s6turbine"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_turbine",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_s6turbine_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_turbine/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "e6d055fa1fccdf932bc51d4188fbf9de837cf99946f02383a0c81f3c0dcc79f4"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_s6turbine_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_turbine/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "841a687c48f7cf2663b2424f3ddede9a8454984793094158afda52c6ca884053"
+  },
+  "nativeRatios": {
+    "s6turbine": 1.1868131868131868
+  },
+  "sourceKeys": {
+    "s6turbine": "s6atk_turbine_drone_0"
+  }
+}

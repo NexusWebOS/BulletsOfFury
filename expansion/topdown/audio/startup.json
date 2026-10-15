@@ -1,0 +1,12 @@
+{
+  "durationSeconds": 2.891496598639456,
+  "sampleRate": 44100,
+  "channels": 2,
+  "sampleWidthBytes": 2,
+  "source": "source/overdrive.wav",
+  "runtime": "overdrive-startup.mp3",
+  "sourceSha256": "e1723586c20a23f5bd4ef8b1af7bca3f5e5631fd799b36c49cfccf555d0fe113",
+  "runtimeSha256": "2859558fab39719ec5faba64276d8b330da0a3fb40cdf8f48cc87c2cdfbeae9b",
+  "conversion": "MP3 at 256 kbps; original channels/rate, no gain, trim, fade or remix",
+  "owner": "Mike supplied overdrive.wav on October 11, 2026"
+}

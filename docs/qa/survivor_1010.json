@@ -1,0 +1,1915 @@
+{
+  "date": "2026-10-10",
+  "request": "Better generation and animation for the surviving symbiote satellite ending",
+  "owners": [
+    "_BUILD_SOURCE/build_survivor_1010.py",
+    "assets/survivor_art_1010.js",
+    "assets/survivor_1010.js"
+  ],
+  "source_manifest": "_ART_SOURCES/survivor_1010/generation_manifest.json",
+  "prompts": "_ART_SOURCES/survivor_1010/prompts.json",
+  "generations": "_ART_SOURCES/survivor_1010/accepted_generations.json",
+  "assets": {
+    "plates": 2,
+    "crawl": 32,
+    "charge": 16,
+    "launch": 16,
+    "contact_effects": 16,
+    "total": 82,
+    "cell_size": [
+      384,
+      384
+    ],
+    "pivot": [
+      192,
+      192
+    ],
+    "normalization": "Native crop, even transparent padding, integer translation to the luminous emerald core. No resampling or sprite repainting."
+  },
+  "timings": {
+    "homecoming_end": 26.4,
+    "survivor_end": 33.8,
+    "wide_seconds": 1.65,
+    "close_crawl_end": 4.0,
+    "charge_end": 5.2,
+    "launch_end": 6.3,
+    "fade_start": 6.75
+  },
+  "regression": {
+    "passed": 8269,
+    "failed": 0,
+    "exit_code": 0,
+    "baseline": 8256,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/survivor_1010/full-suite.log"
+  },
+  "native": {
+    "passed": 17,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Cold ending is ready before spending the survivor clock",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All eighty-two authored cells are genuinely ready through XART",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Legacy dish/still remain archived but are retired from ending warm keys",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native context matches every visible authored sprite pixel on black within one color step",
+        "passed": true,
+        "data": [
+          {
+            "bank": "crawl",
+            "frame": 0,
+            "bad": 0,
+            "visible": 8299
+          },
+          {
+            "bank": "crawl",
+            "frame": 1,
+            "bad": 0,
+            "visible": 8135
+          },
+          {
+            "bank": "crawl",
+            "frame": 2,
+            "bad": 0,
+            "visible": 8189
+          },
+          {
+            "bank": "crawl",
+            "frame": 3,
+            "bad": 0,
+            "visible": 8300
+          },
+          {
+            "bank": "crawl",
+            "frame": 4,
+            "bad": 0,
+            "visible": 8752
+          },
+          {
+            "bank": "crawl",
+            "frame": 5,
+            "bad": 0,
+            "visible": 8854
+          },
+          {
+            "bank": "crawl",
+            "frame": 6,
+            "bad": 0,
+            "visible": 8304
+          },
+          {
+            "bank": "crawl",
+            "frame": 7,
+            "bad": 0,
+            "visible": 8487
+          },
+          {
+            "bank": "crawl",
+            "frame": 8,
+            "bad": 0,
+            "visible": 8198
+          },
+          {
+            "bank": "crawl",
+            "frame": 9,
+            "bad": 0,
+            "visible": 8335
+          },
+          {
+            "bank": "crawl",
+            "frame": 10,
+            "bad": 0,
+            "visible": 8365
+          },
+          {
+            "bank": "crawl",
+            "frame": 11,
+            "bad": 0,
+            "visible": 8322
+          },
+          {
+            "bank": "crawl",
+            "frame": 12,
+            "bad": 0,
+            "visible": 8241
+          },
+          {
+            "bank": "crawl",
+            "frame": 13,
+            "bad": 0,
+            "visible": 8146
+          },
+          {
+            "bank": "crawl",
+            "frame": 14,
+            "bad": 0,
+            "visible": 8118
+          },
+          {
+            "bank": "crawl",
+            "frame": 15,
+            "bad": 0,
+            "visible": 7946
+          },
+          {
+            "bank": "crawl",
+            "frame": 16,
+            "bad": 0,
+            "visible": 7805
+          },
+          {
+            "bank": "crawl",
+            "frame": 17,
+            "bad": 0,
+            "visible": 8099
+          },
+          {
+            "bank": "crawl",
+            "frame": 18,
+            "bad": 0,
+            "visible": 8193
+          },
+          {
+            "bank": "crawl",
+            "frame": 19,
+            "bad": 0,
+            "visible": 8016
+          },
+          {
+            "bank": "crawl",
+            "frame": 20,
+            "bad": 0,
+            "visible": 8028
+          },
+          {
+            "bank": "crawl",
+            "frame": 21,
+            "bad": 0,
+            "visible": 8090
+          },
+          {
+            "bank": "crawl",
+            "frame": 22,
+            "bad": 0,
+            "visible": 8161
+          },
+          {
+            "bank": "crawl",
+            "frame": 23,
+            "bad": 0,
+            "visible": 8104
+          },
+          {
+            "bank": "crawl",
+            "frame": 24,
+            "bad": 0,
+            "visible": 8270
+          },
+          {
+            "bank": "crawl",
+            "frame": 25,
+            "bad": 0,
+            "visible": 8290
+          },
+          {
+            "bank": "crawl",
+            "frame": 26,
+            "bad": 0,
+            "visible": 8224
+          },
+          {
+            "bank": "crawl",
+            "frame": 27,
+            "bad": 0,
+            "visible": 8141
+          },
+          {
+            "bank": "crawl",
+            "frame": 28,
+            "bad": 0,
+            "visible": 8356
+          },
+          {
+            "bank": "crawl",
+            "frame": 29,
+            "bad": 0,
+            "visible": 8185
+          },
+          {
+            "bank": "crawl",
+            "frame": 30,
+            "bad": 0,
+            "visible": 8230
+          },
+          {
+            "bank": "crawl",
+            "frame": 31,
+            "bad": 0,
+            "visible": 8289
+          },
+          {
+            "bank": "burst",
+            "frame": 0,
+            "bad": 0,
+            "visible": 7253
+          },
+          {
+            "bank": "burst",
+            "frame": 1,
+            "bad": 0,
+            "visible": 8262
+          },
+          {
+            "bank": "burst",
+            "frame": 2,
+            "bad": 0,
+            "visible": 8240
+          },
+          {
+            "bank": "burst",
+            "frame": 3,
+            "bad": 0,
+            "visible": 8231
+          },
+          {
+            "bank": "burst",
+            "frame": 4,
+            "bad": 0,
+            "visible": 7630
+          },
+          {
+            "bank": "burst",
+            "frame": 5,
+            "bad": 0,
+            "visible": 7467
+          },
+          {
+            "bank": "burst",
+            "frame": 6,
+            "bad": 0,
+            "visible": 7511
+          },
+          {
+            "bank": "burst",
+            "frame": 7,
+            "bad": 0,
+            "visible": 7198
+          },
+          {
+            "bank": "burst",
+            "frame": 8,
+            "bad": 0,
+            "visible": 8199
+          },
+          {
+            "bank": "burst",
+            "frame": 9,
+            "bad": 0,
+            "visible": 8044
+          },
+          {
+            "bank": "burst",
+            "frame": 10,
+            "bad": 0,
+            "visible": 7755
+          },
+          {
+            "bank": "burst",
+            "frame": 11,
+            "bad": 0,
+            "visible": 7523
+          },
+          {
+            "bank": "burst",
+            "frame": 12,
+            "bad": 0,
+            "visible": 7233
+          },
+          {
+            "bank": "burst",
+            "frame": 13,
+            "bad": 0,
+            "visible": 7128
+          },
+          {
+            "bank": "burst",
+            "frame": 14,
+            "bad": 0,
+            "visible": 6920
+          },
+          {
+            "bank": "burst",
+            "frame": 15,
+            "bad": 0,
+            "visible": 6510
+          },
+          {
+            "bank": "burst",
+            "frame": 16,
+            "bad": 0,
+            "visible": 7318
+          },
+          {
+            "bank": "burst",
+            "frame": 17,
+            "bad": 0,
+            "visible": 7564
+          },
+          {
+            "bank": "burst",
+            "frame": 18,
+            "bad": 0,
+            "visible": 7668
+          },
+          {
+            "bank": "burst",
+            "frame": 19,
+            "bad": 0,
+            "visible": 7484
+          },
+          {
+            "bank": "burst",
+            "frame": 20,
+            "bad": 0,
+            "visible": 7258
+          },
+          {
+            "bank": "burst",
+            "frame": 21,
+            "bad": 0,
+            "visible": 7161
+          },
+          {
+            "bank": "burst",
+            "frame": 22,
+            "bad": 0,
+            "visible": 7081
+          },
+          {
+            "bank": "burst",
+            "frame": 23,
+            "bad": 0,
+            "visible": 7058
+          },
+          {
+            "bank": "burst",
+            "frame": 24,
+            "bad": 0,
+            "visible": 6797
+          },
+          {
+            "bank": "burst",
+            "frame": 25,
+            "bad": 0,
+            "visible": 6908
+          },
+          {
+            "bank": "burst",
+            "frame": 26,
+            "bad": 0,
+            "visible": 7104
+          },
+          {
+            "bank": "burst",
+            "frame": 27,
+            "bad": 0,
+            "visible": 6906
+          },
+          {
+            "bank": "burst",
+            "frame": 28,
+            "bad": 0,
+            "visible": 6996
+          },
+          {
+            "bank": "burst",
+            "frame": 29,
+            "bad": 0,
+            "visible": 6910
+          },
+          {
+            "bank": "burst",
+            "frame": 30,
+            "bad": 0,
+            "visible": 7149
+          },
+          {
+            "bank": "burst",
+            "frame": 31,
+            "bad": 0,
+            "visible": 7047
+          },
+          {
+            "bank": "contact",
+            "frame": 0,
+            "bad": 0,
+            "visible": 2534
+          },
+          {
+            "bank": "contact",
+            "frame": 1,
+            "bad": 0,
+            "visible": 4427
+          },
+          {
+            "bank": "contact",
+            "frame": 2,
+            "bad": 0,
+            "visible": 5875
+          },
+          {
+            "bank": "contact",
+            "frame": 3,
+            "bad": 0,
+            "visible": 7146
+          },
+          {
+            "bank": "contact",
+            "frame": 4,
+            "bad": 0,
+            "visible": 7438
+          },
+          {
+            "bank": "contact",
+            "frame": 5,
+            "bad": 0,
+            "visible": 8747
+          },
+          {
+            "bank": "contact",
+            "frame": 6,
+            "bad": 0,
+            "visible": 10244
+          },
+          {
+            "bank": "contact",
+            "frame": 7,
+            "bad": 0,
+            "visible": 11863
+          },
+          {
+            "bank": "contact",
+            "frame": 8,
+            "bad": 0,
+            "visible": 12657
+          },
+          {
+            "bank": "contact",
+            "frame": 9,
+            "bad": 0,
+            "visible": 13370
+          },
+          {
+            "bank": "contact",
+            "frame": 10,
+            "bad": 0,
+            "visible": 12678
+          },
+          {
+            "bank": "contact",
+            "frame": 11,
+            "bad": 0,
+            "visible": 10059
+          },
+          {
+            "bank": "contact",
+            "frame": 12,
+            "bad": 0,
+            "visible": 8056
+          },
+          {
+            "bank": "contact",
+            "frame": 13,
+            "bad": 0,
+            "visible": 6431
+          },
+          {
+            "bank": "contact",
+            "frame": 14,
+            "bad": 0,
+            "visible": 3820
+          },
+          {
+            "bank": "contact",
+            "frame": 15,
+            "bad": 0,
+            "visible": 1024
+          }
+        ]
+      },
+      {
+        "name": "Native reels contain thirty-two, thirty-two and sixteen distinct rendered poses",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The actual emerald core stays at its physical pivot within one pixel",
+        "passed": true,
+        "data": [
+          {
+            "bank": "crawl",
+            "frame": 0,
+            "pivot": [
+              192.18332484292748,
+              191.5296994396332
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 1,
+            "pivot": [
+              192.69223496040658,
+              192.287160698105
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 2,
+            "pivot": [
+              191.7993668813448,
+              191.7151693774333
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 3,
+            "pivot": [
+              192.09708919601903,
+              191.63214051726823
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 4,
+            "pivot": [
+              192.20102912683038,
+              192.24759393958647
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 5,
+            "pivot": [
+              191.91790595320825,
+              192.2880240908038
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 6,
+            "pivot": [
+              192.73020593934478,
+              191.67189401108558
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 7,
+            "pivot": [
+              191.9641167308314,
+              192.2972639374614
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 8,
+            "pivot": [
+              191.79642324888218,
+              191.94809452842236
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 9,
+            "pivot": [
+              191.75422903736154,
+              192.1740294511379
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 10,
+            "pivot": [
+              192.31183177636484,
+              191.64607679465774
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 11,
+            "pivot": [
+              192.40777150448358,
+              192.12421122550649
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 12,
+            "pivot": [
+              192.36824241231744,
+              192.25672684342564
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 13,
+            "pivot": [
+              192.40600422832978,
+              191.54291754756872
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 14,
+            "pivot": [
+              191.97332629851095,
+              192.1713565482472
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 15,
+            "pivot": [
+              192.41603355861102,
+              191.9311582381729
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 16,
+            "pivot": [
+              191.86897057842415,
+              192.89318833811458
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 17,
+            "pivot": [
+              191.70987895353375,
+              192.34888715345568
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 18,
+            "pivot": [
+              192.78297851891006,
+              191.80085539910613
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 19,
+            "pivot": [
+              191.92582296355133,
+              191.95494660665432
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 20,
+            "pivot": [
+              191.60552111863916,
+              192.496179904858
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 21,
+            "pivot": [
+              191.7705164090706,
+              191.51308263356458
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 22,
+            "pivot": [
+              192.04001339360457,
+              191.94648138847035
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 23,
+            "pivot": [
+              191.5119036372225,
+              191.58904109589042
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 24,
+            "pivot": [
+              192.35857502564582,
+              192.43061643196864
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 25,
+            "pivot": [
+              192.05029674479948,
+              191.65577603261195
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 26,
+            "pivot": [
+              192.08288555108945,
+              192.09536704040613
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 27,
+            "pivot": [
+              191.97870769230772,
+              191.64291282051283
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 28,
+            "pivot": [
+              192.13890310275855,
+              191.8520723821929
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 29,
+            "pivot": [
+              192.0117871723956,
+              192.3876596865534
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 30,
+            "pivot": [
+              191.78167128347184,
+              192.05337026777474
+            ]
+          },
+          {
+            "bank": "crawl",
+            "frame": 31,
+            "pivot": [
+              192.21179930159897,
+              192.29024076456537
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 0,
+            "pivot": [
+              191.92017543859654,
+              192.3518556005398
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 1,
+            "pivot": [
+              192.48359366649865,
+              192.4067762967034
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 2,
+            "pivot": [
+              192.1341920260769,
+              191.95241917828207
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 3,
+            "pivot": [
+              192.47880118088932,
+              191.57036647758002
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 4,
+            "pivot": [
+              191.73248779148895,
+              191.92677180663088
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 5,
+            "pivot": [
+              191.73734392735528,
+              192.52748670768864
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 6,
+            "pivot": [
+              191.5878020559833,
+              191.63239286191094
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 7,
+            "pivot": [
+              192.3472730255065,
+              192.11836299516116
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 8,
+            "pivot": [
+              192.1007879380313,
+              191.79744660683068
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 9,
+            "pivot": [
+              191.55238595402355,
+              191.9064715571364
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 10,
+            "pivot": [
+              191.84397851067007,
+              192.06209894045665
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 11,
+            "pivot": [
+              191.9882551167055,
+              192.407502849497
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 12,
+            "pivot": [
+              192.04779458904972,
+              192.1696211052698
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 13,
+            "pivot": [
+              192.03966887049287,
+              192.11175620867832
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 14,
+            "pivot": [
+              191.71941862475228,
+              191.97509341631093
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 15,
+            "pivot": [
+              192.0740007146074,
+              192.37024436469835
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 16,
+            "pivot": [
+              191.938968241511,
+              191.575472191702
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 17,
+            "pivot": [
+              192.4706424709777,
+              191.54153220736768
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 18,
+            "pivot": [
+              192.2819900435788,
+              192.14078565779064
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 19,
+            "pivot": [
+              192.49560239321633,
+              192.18129905160916
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 20,
+            "pivot": [
+              192.439610119532,
+              191.75419085336077
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 21,
+            "pivot": [
+              192.02724161839362,
+              191.94199414014446
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 22,
+            "pivot": [
+              191.5547093525911,
+              192.0036616996389
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 23,
+            "pivot": [
+              192.10085174816845,
+              192.18962415867534
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 24,
+            "pivot": [
+              192.13817663817662,
+              192.16112325802249
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 25,
+            "pivot": [
+              191.88675647305809,
+              191.53938068579424
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 26,
+            "pivot": [
+              192.1099842375974,
+              191.99224323875882
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 27,
+            "pivot": [
+              192.42866523481854,
+              192.14632211110958
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 28,
+            "pivot": [
+              191.77492780489032,
+              191.94474079118277
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 29,
+            "pivot": [
+              192.31586126266563,
+              192.11674646475896
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 30,
+            "pivot": [
+              191.64108869448737,
+              192.4510485119919
+            ]
+          },
+          {
+            "bank": "burst",
+            "frame": 31,
+            "pivot": [
+              192.22577625214532,
+              191.65115462630666
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Continuous real ending uses all eighty animation cells before the next scene",
+        "passed": true,
+        "data": {
+          "crawl": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "burst": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "contact": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      },
+      {
+        "name": "Charge and launch sound each trigger once per playthrough",
+        "passed": true,
+        "data": [
+          {
+            "cue": "charge",
+            "q": 4,
+            "available": true
+          },
+          {
+            "cue": "launch",
+            "q": 5.216666666666669,
+            "available": true
+          }
+        ]
+      },
+      {
+        "name": "Close shot makes the whole creature readable above the caption",
+        "passed": true,
+        "data": {
+          "q": 2.6999999999999993,
+          "phase": "close-crawl",
+          "background": "detail",
+          "bank": "crawl",
+          "frame": 21,
+          "rect": {
+            "x": -165.83174665249737,
+            "y": -10.240000000000009,
+            "w": 946.1281190223166,
+            "h": 532.48,
+            "scale": 0.56586609989373
+          },
+          "root": {
+            "x": 310.67726063356633,
+            "y": 270.035586688884,
+            "width": 450.56
+          },
+          "fade": 0
+        }
+      },
+      {
+        "name": "The coil becomes a forward-streaming launch then leaves the dish empty",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Survivor exits into the original black transition",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Original Fury Command scene follows at the unchanged clock",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Narrow cinematic remains uniformly proportioned",
+        "passed": true,
+        "data": {
+          "x": 1.7582417582417582,
+          "y": 1.7578125
+        }
+      },
+      {
+        "name": "Narrow close-up keeps all tentacles on screen and above the text",
+        "passed": true,
+        "data": {
+          "box": [
+            27.871154187230886,
+            168.77093327939542,
+            224.99115418723088,
+            291.9709332793954
+          ],
+          "W": 273,
+          "H": 512
+        }
+      },
+      {
+        "name": "Ordinary campaign still skips sequel scenes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Arcade retains the direct score card",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "states": [
+      {
+        "q": 0,
+        "phase": "wide-crawl",
+        "background": "background",
+        "bank": "crawl",
+        "frame": 0,
+        "rect": {
+          "x": -181.73857598299674,
+          "y": 0,
+          "w": 909.7385759829967,
+          "h": 511.99999999999994,
+          "scale": 0.5441020191285866
+        },
+        "root": {
+          "x": 441.43234856535605,
+          "y": 161.27999999999997,
+          "width": 204.8
+        },
+        "fade": 0
+      },
+      {
+        "q": 0.3999999999999986,
+        "phase": "wide-crawl",
+        "background": "background",
+        "bank": "crawl",
+        "frame": 7,
+        "rect": {
+          "x": -186.44510674646506,
+          "y": 0,
+          "w": 914.4451067464651,
+          "h": 514.6488310098227,
+          "scale": 0.5469169298722877
+        },
+        "root": {
+          "x": 441.6140814691421,
+          "y": 161.10567005931495,
+          "width": 204.8
+        },
+        "fade": 0
+      },
+      {
+        "q": 0.8000000000000007,
+        "phase": "wide-crawl",
+        "background": "background",
+        "bank": "crawl",
+        "frame": 16,
+        "rect": {
+          "x": -196.9355668819063,
+          "y": 0,
+          "w": 924.9355668819063,
+          "h": 520.5528519353312,
+          "scale": 0.5531911285178865
+        },
+        "root": {
+          "x": 442.8978608643213,
+          "y": 160.1845235975401,
+          "width": 204.8
+        },
+        "fade": 0
+      },
+      {
+        "q": 1.1999999999999993,
+        "phase": "wide-crawl",
+        "background": "background",
+        "bank": "crawl",
+        "frame": 23,
+        "rect": {
+          "x": -207.76625815687544,
+          "y": 0,
+          "w": 935.7662581568754,
+          "h": 526.648354620586,
+          "scale": 0.5596688146871265
+        },
+        "root": {
+          "x": 446.3717869451068,
+          "y": 157.93130858362136,
+          "width": 204.8
+        },
+        "fade": 0
+      },
+      {
+        "q": 1.6000000000000014,
+        "phase": "wide-crawl",
+        "background": "background",
+        "bank": "crawl",
+        "frame": 0,
+        "rect": {
+          "x": -213.49348233892715,
+          "y": 0,
+          "w": 941.4934823389272,
+          "h": 529.8716309096474,
+          "scale": 0.5630941880017507
+        },
+        "root": {
+          "x": 452.9709239391526,
+          "y": 153.85352675092517,
+          "width": 204.8
+        },
+        "fade": 0
+      },
+      {
+        "q": 2,
+        "phase": "close-crawl",
+        "background": "detail",
+        "bank": "crawl",
+        "frame": 8,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 283.3852330375852,
+          "y": 285.3955137031294,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 2.3999999999999986,
+        "phase": "close-crawl",
+        "background": "detail",
+        "bank": "crawl",
+        "frame": 15,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 297.05603391053734,
+          "y": 277.701600053938,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 2.8000000000000007,
+        "phase": "close-crawl",
+        "background": "detail",
+        "bank": "crawl",
+        "frame": 24,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 315.4859531761214,
+          "y": 267.32925912755366,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 3.1999999999999993,
+        "phase": "close-crawl",
+        "background": "detail",
+        "bank": "crawl",
+        "frame": 31,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 334.1958205824485,
+          "y": 256.79936365545205,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 3.6000000000000014,
+        "phase": "close-crawl",
+        "background": "detail",
+        "bank": "crawl",
+        "frame": 8,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 348.70646587762997,
+          "y": 248.63278636910894,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 4,
+        "phase": "charge",
+        "background": "detail",
+        "bank": "burst",
+        "frame": 0,
+        "effectFrame": 0,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 354.5387188097768,
+          "y": 245.35039999999998,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 4.399999999999999,
+        "phase": "charge",
+        "background": "detail",
+        "bank": "burst",
+        "frame": 5,
+        "effectFrame": 3,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 354.5387188097768,
+          "y": 245.35039999999998,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 4.800000000000001,
+        "phase": "charge",
+        "background": "detail",
+        "bank": "burst",
+        "frame": 10,
+        "effectFrame": 7,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 354.5387188097768,
+          "y": 245.35039999999998,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 5.199999999999999,
+        "phase": "charge",
+        "background": "detail",
+        "bank": "burst",
+        "frame": 15,
+        "effectFrame": 10,
+        "rect": {
+          "x": -165.83174665249737,
+          "y": -10.240000000000009,
+          "w": 946.1281190223166,
+          "h": 532.48,
+          "scale": 0.56586609989373
+        },
+        "root": {
+          "x": 354.5387188097768,
+          "y": 245.35039999999998,
+          "width": 450.56
+        },
+        "fade": 0
+      },
+      {
+        "q": 5.600000000000001,
+        "phase": "launch",
+        "background": "background",
+        "bank": "burst",
+        "frame": 21,
+        "effectFrame": 14,
+        "rect": {
+          "x": -213.57942614240153,
+          "y": 0,
+          "w": 941.5794261424015,
+          "h": 529.92,
+          "scale": 0.563145589798087
+        },
+        "root": {
+          "x": 409.8646286261313,
+          "y": 97.76819834710722,
+          "width": 163.83999999999986
+        },
+        "fade": 0
+      },
+      {
+        "q": 6,
+        "phase": "launch",
+        "background": "background",
+        "bank": "burst",
+        "frame": 27,
+        "rect": {
+          "x": -213.57942614240153,
+          "y": 0,
+          "w": 941.5794261424015,
+          "h": 529.92,
+          "scale": 0.563145589798087
+        },
+        "root": {
+          "x": 161.64308411132873,
+          "y": 1.5815933884297522,
+          "width": 122.88
+        },
+        "fade": 0
+      },
+      {
+        "q": 6.399999999999999,
+        "phase": "empty",
+        "background": "background",
+        "bank": null,
+        "frame": null,
+        "rect": {
+          "x": -213.57942614240153,
+          "y": 0,
+          "w": 941.5794261424015,
+          "h": 529.92,
+          "scale": 0.563145589798087
+        },
+        "root": null,
+        "fade": 0
+      },
+      {
+        "q": 6.799999999999997,
+        "phase": "empty",
+        "background": "background",
+        "bank": null,
+        "frame": null,
+        "rect": {
+          "x": -213.57942614240153,
+          "y": 0,
+          "w": 941.5794261424015,
+          "h": 529.92,
+          "scale": 0.563145589798087
+        },
+        "root": null,
+        "fade": 0.03914264118345326
+      },
+      {
+        "q": 7.200000000000003,
+        "phase": "empty",
+        "background": "background",
+        "bank": null,
+        "frame": null,
+        "rect": {
+          "x": -213.57942614240153,
+          "y": 0,
+          "w": 941.5794261424015,
+          "h": 529.92,
+          "scale": 0.563145589798087
+        },
+        "root": null,
+        "fade": 1
+      }
+    ]
+  },
+  "preview": {
+    "passed": 12,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Preview opens the grounded ship in the actual ending renderer",
+        "passed": true,
+        "data": {
+          "pilot": "cole",
+          "t": 11.2,
+          "phase": "landing",
+          "background": 1,
+          "shipFrame": 8,
+          "actorFrame": null,
+          "actorClip": null,
+          "grounded": true,
+          "entered": false,
+          "doorFrame": 0,
+          "ship": {
+            "x": 463,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          },
+          "actor": null,
+          "rect": {
+            "x": 134.9728813559322,
+            "y": 8,
+            "w": 656.0542372881356,
+            "h": 368.64
+          },
+          "camera": {
+            "zoom": 1.1591657650975287,
+            "x": 0.5000681833025227,
+            "y": 0.5686553079335193
+          },
+          "fade": 0
+        }
+      },
+      {
+        "name": "Pilot chooser displays all nine real body and aircraft banks",
+        "passed": true,
+        "data": [
+          "cole",
+          "axel",
+          "freezer",
+          "yuri",
+          "maverick",
+          "falva",
+          "lizzie",
+          "decker",
+          "juggernaut"
+        ]
+      },
+      {
+        "name": "Pause freezes the actual landing clock",
+        "passed": true,
+        "data": {
+          "before": 9.55,
+          "after": 9.55
+        }
+      },
+      {
+        "name": "Timeline seeks to a visible doorway walk",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Play restarts the full escape-to-HQ homecoming with working audio",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Next scene control plays the actual fade into the survivor continuation",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Survivor close-crawl control drives the actual animated ending",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Survivor charge control drives the actual animated ending",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Survivor launch control drives the actual animated ending",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review includes the full survivor launch and stops at Fury Command",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Narrow review keeps the selected ship evenly proportioned",
+        "passed": true,
+        "data": {
+          "x": 1.1428571428571428,
+          "y": 1.142578125
+        }
+      },
+      {
+        "name": "Review has no page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "recording": {
+    "samples": [
+      {
+        "time": 25.650000000000002,
+        "phase": "inside",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null,
+        "camera": {
+          "zoom": 3,
+          "x": 0.5,
+          "y": 0.49
+        }
+      },
+      {
+        "time": 26.401200000017848,
+        "phase": "survivor-wide-crawl",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null,
+        "camera": {
+          "zoom": 3,
+          "x": 0.5,
+          "y": 0.49
+        }
+      },
+      {
+        "time": 28.06560000002373,
+        "phase": "survivor-close-crawl",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null,
+        "camera": {
+          "zoom": 3,
+          "x": 0.5,
+          "y": 0.49
+        }
+      },
+      {
+        "time": 30.4158000000117,
+        "phase": "survivor-charge",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null,
+        "camera": {
+          "zoom": 3,
+          "x": 0.5,
+          "y": 0.49
+        }
+      },
+      {
+        "time": 31.614499999999715,
+        "phase": "survivor-launch",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null,
+        "camera": {
+          "zoom": 3,
+          "x": 0.5,
+          "y": 0.49
+        }
+      },
+      {
+        "time": 32.701600000023525,
+        "phase": "survivor-empty",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null,
+        "camera": {
+          "zoom": 3,
+          "x": 0.5,
+          "y": 0.49
+        }
+      },
+      {
+        "time": 33.8091000000235,
+        "phase": "command",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null,
+        "camera": {
+          "zoom": 3,
+          "x": 0.5,
+          "y": 0.49
+        }
+      }
+    ],
+    "seconds": 8.98690000000596,
+    "startingTime": 25.6,
+    "endingTime": 34.513600000023494,
+    "events": [],
+    "survivorEvents": [
+      {
+        "cue": "charge",
+        "q": 4.015800000011701,
+        "available": true
+      },
+      {
+        "cue": "launch",
+        "q": 5.214499999999717,
+        "available": true
+      }
+    ],
+    "audioTracks": 0,
+    "errors": [],
+    "note": "Actual engine canvas/clock. Silent recording; the interactive preview plays the original sound cues."
+  },
+  "pixel_review": [
+    "Native wide/close/charge/launch/narrow screenshots",
+    "All32 crawl poses,32 burst poses and16 effects via XART.get and the actual game context",
+    "36 timed recording frames across homecoming fade, crawl, coil, discharge, flight, empty dish and command"
+  ],
+  "media": {
+    "movie": "_shots/survivor_1010/recording/homecoming.mp4",
+    "silent": true,
+    "timed_film": "_shots/survivor_1010/film",
+    "preview": "docs/previews/hq_landing_1010/index.html?scene=survivor"
+  },
+  "preservation": {
+    "game_js_sha256": "29dd0ef3170dbf513473934db31fcab20e49171aa0a33fc5f7eb23f32cf39b8d",
+    "test_fl_sha256": "a9f67d2fa38452c2b90c3a49821e7ca225e125288bf55bf2f1aa525884a21191",
+    "hq_landing_art_sha256": "573d9eede3805efa9004cae49a178748545eb2a049ec3711e9197839819f4456",
+    "staged_notes": {
+      "CLAUDE.md": 7,
+      "HANDOFF_CODEX.md": 8
+    },
+    "git_commit": "7539951cf668e2ac38b8640cf7c98f8682fd0954",
+    "committed": false,
+    "pushed": false
+  },
+  "live_preview": {
+    "phase": "close-crawl",
+    "time": 28.3,
+    "playing": false,
+    "ready": true,
+    "errors": [],
+    "passed": true
+  }
+}

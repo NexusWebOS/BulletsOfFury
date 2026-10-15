@@ -1,0 +1,164 @@
+[
+  {
+    "pilot": "cole",
+    "role": "ship",
+    "key": "fury_base|cole",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/cole_ship.png",
+    "sha256": "ccd555518a66f92a30df41183256de0396693d2bca46927275bbec061c79824e"
+  },
+  {
+    "pilot": "cole",
+    "role": "body",
+    "key": "cole_body_0922",
+    "w": 512,
+    "h": 1024,
+    "path": "_ART_SOURCES/hq_landing_1010/references/cole_body.png",
+    "sha256": "1acf66719e0b6653158d920bdd20dc73b8350d361e05c796cd8196eddfa3c0e4"
+  },
+  {
+    "pilot": "axel",
+    "role": "ship",
+    "key": "fury_base|axel",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/axel_ship.png",
+    "sha256": "465a4caf8131c9726bbec225280ad53c3341d37b0b50c2488d48190e6431c13b"
+  },
+  {
+    "pilot": "axel",
+    "role": "body",
+    "key": "axel_body_0",
+    "w": 129,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/axel_body.png",
+    "sha256": "cf2f8e4ae4f23769bdd397745e8d51752b075847b971714ef1f959b188527ac5"
+  },
+  {
+    "pilot": "freezer",
+    "role": "ship",
+    "key": "fury_base|freezer",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/freezer_ship.png",
+    "sha256": "ed87748455f36288d5b6cf30b9b7de5a0060ea96b94e4671c62d637f517e9434"
+  },
+  {
+    "pilot": "freezer",
+    "role": "body",
+    "key": "freezer_body_0",
+    "w": 113,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/freezer_body.png",
+    "sha256": "8fee9fb19dbb97fd5205773cf32f3ce713c4565db3c94ad06b6041c3afd5a206"
+  },
+  {
+    "pilot": "yuri",
+    "role": "ship",
+    "key": "fury_base|yuri",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/yuri_ship.png",
+    "sha256": "81a22f0b6b1789b750a808b11ae00161f66df4e14dd2bdc1d05556ddb1942031"
+  },
+  {
+    "pilot": "yuri",
+    "role": "body",
+    "key": "yuri_body_0",
+    "w": 125,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/yuri_body.png",
+    "sha256": "a28044e2bab720d8a99300c74e9f58285c7d193cd5102f5941d4a6f941967560"
+  },
+  {
+    "pilot": "maverick",
+    "role": "ship",
+    "key": "fury_base|maverick",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/maverick_ship.png",
+    "sha256": "714917f2ef07904c97dbf0371357fcef1372f9daaf29c55961e1ec01db0dc7db"
+  },
+  {
+    "pilot": "maverick",
+    "role": "body",
+    "key": "maverick_body_0",
+    "w": 109,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/maverick_body.png",
+    "sha256": "a62f479d2c767fcfd18741ba70407ddf58b26a8c50caf9a73fcb2222759dd04f"
+  },
+  {
+    "pilot": "falva",
+    "role": "ship",
+    "key": "fury_base|falva",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/falva_ship.png",
+    "sha256": "fb2554f200e06ec35d1a6e3e5d999014eb2812863079b5977f04cd4157390873"
+  },
+  {
+    "pilot": "falva",
+    "role": "body",
+    "key": "falva_body_0",
+    "w": 105,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/falva_body.png",
+    "sha256": "c0d471dfc6bd8dbd7ad0cce260f1ba84a850c62b2f6f3ac5eeced68774ea1b47"
+  },
+  {
+    "pilot": "lizzie",
+    "role": "ship",
+    "key": "fury_base|lizzie",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/lizzie_ship.png",
+    "sha256": "06abad9b186d5d6a934e4a0b33a9949127aa23ae72a57ca3838413138d8684e0"
+  },
+  {
+    "pilot": "lizzie",
+    "role": "body",
+    "key": "lizzie_body_0",
+    "w": 102,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/lizzie_body.png",
+    "sha256": "5459a8e59a8f0ac74a0ea87b5c3f38fed6780924fff13465f4f3164715bbb9e7"
+  },
+  {
+    "pilot": "decker",
+    "role": "ship",
+    "key": "fury_base|decker",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/decker_ship.png",
+    "sha256": "1b54f198a52d168c6ea8c801acc2afe4d0f1f40f38a055a855c3b52e4ed6d1a6"
+  },
+  {
+    "pilot": "decker",
+    "role": "body",
+    "key": "decker_body_0",
+    "w": 111,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/decker_body.png",
+    "sha256": "35116594a481a3fa587dd1e39282b8bda917055ca73c2f48ee1704397a0a424d"
+  },
+  {
+    "pilot": "juggernaut",
+    "role": "ship",
+    "key": "fury_base|juggernaut",
+    "w": 128,
+    "h": 128,
+    "path": "_ART_SOURCES/hq_landing_1010/references/juggernaut_ship.png",
+    "sha256": "417d8f268f2eacff7515db401f44ac8e49788f1d3f5d28a82de62490bc0204cc"
+  },
+  {
+    "pilot": "juggernaut",
+    "role": "body",
+    "key": "juggernaut_body_0",
+    "w": 136,
+    "h": 273,
+    "path": "_ART_SOURCES/hq_landing_1010/references/juggernaut_body.png",
+    "sha256": "6017d1c39f7ab70538f7fc71e8d884e4271804cb57bbc61145fb3adc75f24a55"
+  }
+]

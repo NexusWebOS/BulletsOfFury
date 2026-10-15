@@ -29,7 +29,7 @@ try:
     p.evaluate("""()=>{window.R=B._rebels;rf28Init(B,R);R.frIntro={done:true};B.enter=false;B._noHit=false;window.G=rg4Init(B);H3.release=false;fb2Talk=null;s6Opening=null;s6Wing=null;rg4Warm();XART.rdy(RA7.sheet);}""")
     p.wait_for_function("()=>XART.rdy(RA7.sheet)&&REBEL_SHIPS.every(id=>XART.rdy('rr_ship_'+id)&&Array.from({length:8},(_,i)=>XART.rdy('rr_roll_'+id+'_'+i)).every(Boolean))",timeout=90000)
     p.evaluate(RESET)
-    ck(p.evaluate("()=>{Q.rg4.serial=0;return ['rookhook','slug','ram'].every(k=>ra4AttackKind(Q,G)===k);}"),'natural Rook supply cycle includes hook, slugs and ram')
+    ck(p.evaluate("()=>{Q.rg4.serial=0;if(Q.rg4._fs11First&&ra4AttackKind(Q,G)!==FS11_REBELS.rook.kind)return false;return ['rookhook','slug','ram'].every(k=>ra4AttackKind(Q,G)===k);}"),'natural Rook supply cycle includes hook, slugs and ram')
     p.evaluate("()=>{rg4Attack(Q,R,G,'rookhook');}");ticks(p,38);shot(p,'rookhook-warning')
     a=p.evaluate('()=>Q.rg4.act.a');p.evaluate('()=>player.x=camRightX()-30');ticks(p,28)
     ck(p.evaluate('(a)=>Q.rg4.act.a===a',a),'hook aim locks before its release and does not chase late dodges')

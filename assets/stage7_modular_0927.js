@@ -65,7 +65,7 @@ function s7mSet(b,mode){const M=b._s7mod;M.mode=mode;M.t=0;M.shot=0;M.shotCD=0;M
 function s7mNext(b){const M=b._s7mod,phase=s7mStage(M);let book;
   /* 0928 Furious: the tank vents at half its pool; the Warden's exposed core opens portal feedback */
   if(M.n===2&&!M.od&&(M.tank?b.hp<=b.maxhp*.5:phase==='core')){M.od=true;M.seq=0;s7mSet(b,'overdrive');return;}
-  if(M.tank)book=M.od?['tank-cross','sludge-wall','caustic-lob','tank-charge','tank-charge','tank-mortar','tank-orbits']:['tank-cross','caustic-lob','tank-mortar','tank-charge','tank-orbits'];
+  if(M.tank)book=M.od?['tank-cross','pressure-salvo','caustic-lob','tank-charge','tank-charge','tank-mortar','tank-orbits']:['tank-cross','caustic-lob','tank-mortar','tank-charge','tank-orbits'];
   else if(phase==='front')book=['chase','chain','mortar','spore-lob','orbs','bounce','jump'];
   else if(phase==='rear')book=['crawl','mortar','spore-lob','bounce','chain','orbs'];
   else if(phase==='shield')book=['orbs','spore-lob','mortar'];
@@ -250,13 +250,15 @@ function s7mWarnings(front){s7m28Warnings(front);for(const b of [boss,subBoss]){
   const mode=M.mode,p=clamp(M.t/M.warn,0,1);if(M.landing&&!M.landing.impact&&!M.landing.dead){if(front)combatWarningDraw(b,{x:M.landing.x,y:M.landing.y,ex:M.landing.x,ey:M.landing.y,progress:p,alertOnly:true,alertX:M.landing.x,alertY:M.landing.y-58});}
   if(M.counterTell){const q=M.counterTell,k=clamp(q.t/q.warn,0,1);for(let i=0;i<q.count;i++){const a=q.a+(i-(q.count-1)/2)*.13;combatWarningDraw(b,{x:b.x,y:b.y+55,ex:b.x+Math.cos(a)*600,ey:b.y+55+Math.sin(a)*600,progress:k,width:20,fieldOnly:!front,alertOnly:front});if(front)break;}}
   if(mode==='bounce'){const k=(M.t%.85)/.85;combatWarningDraw(b,{x:b.x,y:b.y+55,ex:b.x,ey:VH,progress:k,width:180,fieldOnly:!front,alertOnly:front});continue;}
-  if(M.t>=M.warn||!['chain','aim','laser','orbs','tank-orbits','swipeL','swipeR','swipeX','tank-cross','tank-charge'].includes(mode))continue;
+  if(M.t>=M.warn||!['chain','aim','laser','orbs','tank-orbits','swipeL','swipeR','swipeX','tank-cross','tank-charge','pressure-salvo'].includes(mode))continue;
   if(front)combatWarningDraw(b,{x:b.x,y:b.y,ex:player.x,ey:player.y,progress:p,alertOnly:true,alertX:b.x,alertY:Math.max(54,b.y-112)});
   else if(mode.startsWith('swipe'))combatWarningDraw(b,{x:b.x,y:b.y+40,ex:b.x+(mode==='swipeL'?-90:mode==='swipeR'?90:0),ey:b.y+178,progress:p,width:90,fieldOnly:true});
   else if(mode==='laser'){
     const q=s7mMuzzle(b,'emitter');
     // One authored cone covers the sweep envelope, rooted at the actual emitter.
     combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x,ey:VH,progress:p,width:Math.tan(.88)*Math.max(1,VH-q.y),alpha:.52,fieldOnly:true});
+  }else if(mode==='pressure-salvo'){
+    for(const gun of s7mLive(M,'gun')){const q=s7mMuzzle(b,gun.id);combatWarningDraw(b,{x:q.x,y:q.y,ex:M.target.x,ey:M.target.y,progress:p,width:Math.hypot(M.target.x-q.x,M.target.y-q.y)*.20,fieldOnly:true});}
   }else if(['chain','aim','tank-cross'].includes(mode)){
     for(const gun of s7mLive(M,'gun')){const q=s7mMuzzle(b,gun.id);combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(q.a)*600,ey:q.y+Math.sin(q.a)*600,progress:p,width:35,fieldOnly:true});}
   }else if(mode==='orbs'||mode==='tank-orbits'){const q={x:b.x,y:b.y+55},count=5+M.n*2;for(let i=0;i<count;i++)for(const turn of [-.12,.12]){const a=M.aim+(i-(count-1)/2)*.18+turn;combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(a)*600,ey:q.y+Math.sin(a)*600,progress:p,width:20,fieldOnly:true});}}
@@ -284,10 +286,21 @@ function s7m28Set(b,mode){
   else if(mode==='spore-lob'){M.warn=0;M.live=[1.1,.95,.85][n]*(diffKey==='easy'?1.3:1)+(3+n)*.3+1.6;M.cast=false;}
   else if(mode==='sludge-wall'){M.warn=0;M.live=5*.62+1.6;M.rows=[];M.row=0;}
   else if(mode==='portal-volley'){M.warn=0;M.live=4.6;M.portals=null;}
+  else if(mode==='pressure-salvo'){M.warn=[1.0,.88,.76][n];M.live=1.5;M.shot=0;}
 }
 function s7m28Shot(b){return (x,y,a,s)=>s7mShot(b,x,y,a,s,'acid');}
 function s7m28Tick(b,dt){
   const M=b._s7mod,mode=M.mode,n=M.n;
+  if(mode==='pressure-salvo'){
+    if(M.t<M.warn)combatWarningTick(b,'s7-pressure',M.t,M.warn);
+    else if(M.shot<3+n&&M.t>=M.warn+M.shot*.24){
+      const guns=s7mLive(M,'gun'),p=guns[M.shot%Math.max(1,guns.length)];M.shot++;
+      if(p){const q=s7mMuzzle(b,p.id),a=Math.atan2(M.target.y-q.y,M.target.x-q.x);
+        for(const off of [-.16,0,.16])s7mShot(b,q.x,q.y,a+off,3.2+n*.45,'acid');
+        navalFlash(null,q,.8,'weapon_muzzle_toxic',{n:4,hpx:36,life:.16,follow:()=>s7mMuzzle(b,p.id)});s7mSound('bossfireSludgeemperor');}
+    }
+    if(M.t>M.warn+M.live)s7mSet(b,'recover');return true;
+  }
   if(mode==='overdrive'){
     s7mMove(b,worldWidth()/2,M.tank?145:175,40,dt);
     if(!M.odFx&&M.t>=.3){M.odFx=true;shake=Math.max(shake,12);s7mFX(b.x,b.y,210,true);s7mFX(b.x,b.y+40,170,false);s7mSound('expBig');

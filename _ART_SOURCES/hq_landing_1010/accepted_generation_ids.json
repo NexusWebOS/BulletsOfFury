@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen",
+  "accepted_sources": {
+    "background": "exec-ec92266b-f2c3-4777-94dc-424b4fda110f",
+    "space": "exec-6f53ce75-ac34-4d4c-b3fc-5251591197b4",
+    "cole": "exec-9ee86706-4b01-4992-8073-72f4c211ac51",
+    "axel": "exec-fb913fec-c3bd-4166-8a03-ec86c866537d",
+    "falva": "exec-157ba858-da17-4b02-8101-13703053c412",
+    "maverick": "exec-80c5ea44-b6b3-4139-b918-2555e1b60c6f",
+    "decker": "exec-fd8e005b-b2cf-457e-8cf6-e17a16da3dcd",
+    "lizzie": "exec-b760d4d7-73dd-40dd-b104-6d9ad6dae5e6",
+    "juggernaut": "exec-5304128e-efc0-49e3-98d9-2c29b2152cd4",
+    "yuri": "exec-430d05f4-a3fe-456e-9ff1-75660fe5a43d",
+    "freezer": "exec-25aede48-04d8-498b-9e80-fc99a695015e",
+    "door": "exec-d9d72755-6f62-498a-9300-62b4d4d8f46e",
+    "fx": "exec-ffdf8553-feef-49b7-b232-8e1e582f2532",
+    "dust": "exec-ddd32e89-226d-4572-bb32-a2417da09c2d",
+    "axel_walk_fixed": "exec-7472f50e-dcd8-4c26-8a3d-77f02069e721",
+    "juggernaut_exit_fixed": "exec-b84dc39c-855a-4c4a-b5e5-1ad865c68d6a"
+  },
+  "inputs": {
+    "background": "User's two attached sunset HQ/runway screenshots; remove small aircraft and baked main ship",
+    "space": "Original homecoming space shots with current Furyship reference; remove baked ship",
+    "cole": "Actual cole_ship + cole_body identity export; approved sunset environment",
+    "other_pilots": "Own actual ship/body identity export plus approved Cole layout, preserve costume and hull identity",
+    "door": "Native entrance crop of approved new HQ",
+    "fx": "Approved grounded Cole craft silhouette",
+    "dust": "Original edit target is rejected downwash; neutral grey dust, native transparency"
+  },
+  "prompts": "final_prompts.json",
+  "correction_prompts": "correction_prompts.json"
+}

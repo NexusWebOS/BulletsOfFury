@@ -103,6 +103,7 @@ function h3RebelLines(R){
 }
 function h3RebelTick(b,dt){
  const R=b._rebels;if(!R.rf)rf28Init(b,R);
+ h3RebelMusic();
  if(!R.h3Intro){R.h3Intro={rows:h3RebelLines(R),i:0,t:-3,shown:0,age:0};R.frIntro={t:0,beat:0,done:false};h3ClearCombat();if(s6Wing)s6Wing.line=null;R.frRadio=null;h3RebelMusic();}
  const I=R.h3Intro;I.t+=dt;I.age+=dt;R.frIntro.t=I.age;b._noHit=true;
  const line=I.rows[I.i];if(line){const n=Math.min(line.text.length,Math.floor(Math.max(0,I.t)*32));dialogueLetterTicks?.(line.text,I.shown,n);I.shown=n;
@@ -120,7 +121,45 @@ function h3Radio(who,text,shown,y){
  dlgBox({who,portrait:rebel?false:key,portraitKey:rebel?'rr_portrait_'+key:undefined,full:text,shown:text.slice(0,shown),forceShown:true,fade:1,
   tint:dialogueNameColor(who,'#cfd6e6'),pw,ph,x:(VW-pw)/2,y:y??VH*.58});
 }
-function h3RebelMusic(){if(Audio._h3RebelMusic!==boss){Audio._h3RebelMusic=boss;Audio.startMusic('stagex');}}
+const H3_REBEL_AUDIO={owner:null,next:0,time:0,recoveries:0,warmed:false,coldSkipped:0};
+const H3_REBEL_SOUND=Snd.play;
+Snd.play=function(name,volume){
+ if(state===GS.PLAY&&boss?._rebels&&!boss.dead){
+  const p=Snd.pools[name];
+  if(p&&!p.slots.some(v=>v?.attached&&v.el.readyState>=3)){
+   const a=p.list[0];if(a.networkState!==2)try{a.preload='auto';a.load();}catch(_){}
+   // An attack transient belongs to this frame. Do not leave a cold media
+   // play promise waiting to burst out seconds after its attack has ended.
+   H3_REBEL_AUDIO.coldSkipped++;return false;
+  }
+ }
+ return H3_REBEL_SOUND.apply(this,arguments);
+};
+function h3RebelAudioWarm(){
+ if(typeof Snd==='undefined'||!Snd)return;
+ const m=Snd.music.stagex;
+ if(m){m.preload='auto';if(m.readyState<3&&m.networkState!==2)try{m.load();}catch(_){}}
+ // One ready voice per actual cue covers first use without allocating every
+ // overlapping clone. The shared sound system retains its 64-voice budget.
+ for(const name of ['av3_laser_charge','av3_laser_release','av3_fusion_cannon','av3_target_acquire','av3_teleport_out','av3_teleport_in','av3_impact_metal','av3_impact_energy','av3_gravity_pulse','chargeDash','enemyMachineGunHeavy','enemyShoot','missile','maverickHelixRelease','shieldUp','shieldBreak']){
+  const p=Snd.pools[name];if(!p)continue;const a=p.list[0];
+  if(a.readyState<3&&a.networkState!==2)try{a.preload='auto';a.load();}catch(_){}
+ }
+ H3_REBEL_AUDIO.warmed=true;
+}
+function h3RebelMusic(){
+ if(state!==GS.PLAY||!boss?._rebels||boss.dead||typeof Snd==='undefined'||!Snd)return;
+ const A=H3_REBEL_AUDIO,m=Snd.music.stagex,now=performance.now(),changed=A.owner!==boss;
+ if(changed){A.owner=boss;A.time=0;A.next=0;h3RebelAudioWarm();}
+ if(now<A.next||document.hidden)return;A.next=now+500;
+ if(Snd.cur===m&&!m.paused&&!m.error){A.time=m.currentTime;try{if(Snd._ctx&&Snd._ctx.state!=='running')Snd._ctx.resume()?.catch(()=>{});}catch(_){}return;}
+ // The old boss-identity latch swallowed a failed/aborted music start forever.
+ // Retry only a paused or interrupted transport, preserving its last position.
+ const restore=changed?0:A.time,interrupted=Snd.cur!==m;
+ if(interrupted&&restore>0&&m){Snd.stopMusic();Snd.cur=m;}
+ Audio._h3RebelMusic=boss;Audio.resume();Audio.startMusic('stagex');
+ if(!changed)A.recoveries++;
+}
 const H3_MUSIC=Audio.startMusic;
 Audio.startMusic=function(name){
  if(state===GS.PLAY&&boss&&!boss.dead&&boss._rebels&&/^(boss\d+(mus)?|stagex|rival)$/.test(name))name='stagex';
@@ -206,7 +245,7 @@ function h3EndingDraw(){
  }else{
   // Existing authored space background, then the generated Earth and CURRENT Furyship.
   ctx.save();ctx.translate(-camX,0);drawBG(0);ctx.restore();
-  const u=clamp(e.descent/8,0,1),smooth=u*u*(3-2*u),planetSize=VW*(.78+.08*smooth),py=VH*.60;
+  const u=clamp(e.descent/8,0,1),smooth=u*u*(3-2*u),planetSize=VW*.78,py=VH*.60;
   if(XART.rdy('h3_earth'))ctx.drawImage(XART.get('h3_earth'),VW/2-planetSize/2,py-planetSize/2,planetSize,planetSize);
   const size=lerp(SPACE_SHIP_SIZE*1.5,4,smooth),y=lerp(VH*.21,py+.025*VH,smooth);
   ctx.save();ctx.translate(VW/2,y);ctx.rotate(Math.PI);furyShipDrawFlight(0,0,size,_pilotKey(),{key:'base'},e.t);ctx.restore();
@@ -235,5 +274,5 @@ drawWorld=function(dt){
 const H3_DIALOGUE=dlgBox;
 dlgBox=function(o){return H3_DIALOGUE.call(this,fb2TalkActive()?Object.assign({},o,{forceShown:true}):o);};
 const H3_BEGIN=beginStage;
-beginStage=function(){H3.ending=null;H3.release=false;Audio._h3RebelMusic=null;h3Warm();return H3_BEGIN.apply(this,arguments);};
+beginStage=function(n){H3.ending=null;H3.release=false;Audio._h3RebelMusic=null;H3_REBEL_AUDIO.owner=null;h3Warm();if(n===6)h3RebelAudioWarm();return H3_BEGIN.apply(this,arguments);};
 h3Warm();

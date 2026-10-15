@@ -1,0 +1,253 @@
+{
+ "design": {
+  "name": "chip_gd_spotted",
+  "frames": 26,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [
+   {
+    "on": true,
+    "hz": 660,
+    "sweepTo": 1760,
+    "sweepFrames": 6,
+    "sweepCurve": 0.5,
+    "vibCents": 0,
+    "vibFrames": 6,
+    "arp": [],
+    "arpFrames": 2,
+    "retrig": 0,
+    "retrigCount": 0,
+    "gate": 6,
+    "levelDelay": 0,
+    "levelFade": 0,
+    "timbreSweep": 0,
+    "detuneCents": 0,
+    "delay": 0,
+    "patch": {
+     "alg": 4,
+     "fb": 5,
+     "pan": 3,
+     "ams": 0,
+     "pms": 0,
+     "ops": [
+      {
+       "dt": 0,
+       "mul": 1,
+       "tl": 24,
+       "rs": 0,
+       "ar": 22,
+       "am": 0,
+       "dr": 6,
+       "sr": 2,
+       "sl": 3,
+       "rr": 8,
+       "ssg": 0
+      },
+      {
+       "dt": 0,
+       "mul": 1,
+       "tl": 2,
+       "rs": 0,
+       "ar": 24,
+       "am": 0,
+       "dr": 4,
+       "sr": 1,
+       "sl": 2,
+       "rr": 8,
+       "ssg": 0
+      },
+      {
+       "dt": 3,
+       "mul": 1,
+       "tl": 26,
+       "rs": 0,
+       "ar": 20,
+       "am": 0,
+       "dr": 6,
+       "sr": 2,
+       "sl": 3,
+       "rr": 8,
+       "ssg": 0
+      },
+      {
+       "dt": 3,
+       "mul": 1,
+       "tl": 2,
+       "rs": 0,
+       "ar": 24,
+       "am": 0,
+       "dr": 4,
+       "sr": 1,
+       "sl": 2,
+       "rr": 8,
+       "ssg": 0
+      }
+     ]
+    }
+   }
+  ],
+  "noise": {
+   "on": false,
+   "white": true,
+   "rate": 2,
+   "toneHz": 1200,
+   "toneSweepTo": 1200,
+   "vol": 0,
+   "fade": 0.5,
+   "delay": 0,
+   "frames": 20
+  },
+  "tone": {
+   "on": false,
+   "hz": 880,
+   "sweepTo": 880,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 20,
+   "arp": [],
+   "arpFrames": 2
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "chip_gd_spotted",
+  "frames": 26,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [
+   {
+    "ch": 0,
+    "patch": {
+     "r30": 1,
+     "r40": 24,
+     "r50": 22,
+     "r60": 6,
+     "r70": 2,
+     "r80": 56,
+     "r90": 0,
+     "r38": 1,
+     "r48": 2,
+     "r58": 24,
+     "r68": 4,
+     "r78": 1,
+     "r88": 40,
+     "r98": 0,
+     "r34": 49,
+     "r44": 26,
+     "r54": 20,
+     "r64": 6,
+     "r74": 2,
+     "r84": 56,
+     "r94": 0,
+     "r3c": 49,
+     "r4c": 2,
+     "r5c": 24,
+     "r6c": 4,
+     "r7c": 1,
+     "r8c": 40,
+     "r9c": 0,
+     "rb0": 44,
+     "rb4": 192
+    },
+    "track": [
+     {
+      "f": 0,
+      "fnum": 1624,
+      "block": 4,
+      "tl": [
+       24,
+       2,
+       26,
+       2
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 1,
+      "fnum": 1212,
+      "block": 5,
+      "tl": [
+       24,
+       2,
+       26,
+       2
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 2,
+      "fnum": 1431,
+      "block": 5,
+      "tl": [
+       24,
+       2,
+       26,
+       2
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 3,
+      "fnum": 1625,
+      "block": 5,
+      "tl": [
+       24,
+       2,
+       26,
+       2
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 4,
+      "fnum": 1809,
+      "block": 5,
+      "tl": [
+       24,
+       2,
+       26,
+       2
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 5,
+      "fnum": 1988,
+      "block": 5,
+      "tl": [
+       24,
+       2,
+       26,
+       2
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 6,
+      "fnum": 1083,
+      "block": 6,
+      "tl": [
+       24,
+       2,
+       26,
+       2
+      ],
+      "key": 0,
+      "retrig": 0
+     }
+    ]
+   }
+  ],
+  "psg": [],
+  "dac": null
+ }
+}

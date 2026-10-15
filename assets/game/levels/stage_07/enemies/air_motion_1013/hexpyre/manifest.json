@@ -1,0 +1,50 @@
+{
+  "id": "mm1003_hexpyre",
+  "name": "Hexpyre",
+  "stage": 7,
+  "stages": [
+    7,
+    8
+  ],
+  "aliases": [
+    "mm1003_hexpyre"
+  ],
+  "folder": "assets/game/levels/stage_07/enemies/air_motion_1013/hexpyre",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_hexpyre_heading",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/hexpyre/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "5e4b9c68db36c47e648d274128af3da1c802b329536e4df0ce07367fba4d093e"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_hexpyre_roll",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/hexpyre/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "9bede841d098dc88f0298557233e1a1788352573d7cc461d7f69e82d989be876"
+  },
+  "nativeRatios": {
+    "mm1003_hexpyre": 1.1384615384615384
+  },
+  "sourceKeys": {
+    "mm1003_hexpyre": "mm1003_hexpyre_parts"
+  }
+}

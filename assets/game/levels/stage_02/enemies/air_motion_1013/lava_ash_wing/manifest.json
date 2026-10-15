@@ -1,0 +1,49 @@
+{
+  "id": "ash",
+  "name": "Lava Ash Wing",
+  "stage": 2,
+  "stages": [
+    2
+  ],
+  "aliases": [
+    "ash"
+  ],
+  "folder": "assets/game/levels/stage_02/enemies/air_motion_1013/lava_ash_wing",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s2_ash_heading",
+    "path": "assets/game/levels/stage_02/enemies/air_motion_1013/lava_ash_wing/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "245a02617128a015adc4edb4d8ee5c2848ef522f18dcf64d04aa3cfa935a275b"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s2_ash_roll",
+    "path": "assets/game/levels/stage_02/enemies/air_motion_1013/lava_ash_wing/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "d744145037724bb31af7337116c6ebb08a2208d0f880983f9bb4c9f5504baa89"
+  },
+  "nativeRatios": {
+    "ash": 1.3333333333333333
+  },
+  "sourceKeys": {
+    "ash": "overhaul_stage2_fire_jet_02"
+  }
+}

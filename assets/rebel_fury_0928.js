@@ -440,6 +440,7 @@ rebelSquadDamage=function(b,dmg){
   if(shielded&&q.shield>0)q.rfShieldHitT=.18;
 };
 fr27RebelDrawShip=function(q){
+  if(typeof air13DrawRebel==="function"&&air13DrawRebel(q))return;
   const f=q.evadeT>0?Math.min(7,Math.floor((1-q.evadeT/.38)*8)):0,key='rr_roll_'+REBEL_SHIPS[q.i]+'_'+f;
   const k=XART.rdy(key)?key:'rr_ship_'+REBEL_SHIPS[q.i];if(!XART.rdy(k))return;
   const pitch=q.frSomersault&&q.evadeT>0&&q.rfHeading==null&&XART.rdy('fr27_rebel_pitch');const im=XART.get(pitch?'fr27_rebel_pitch':k);

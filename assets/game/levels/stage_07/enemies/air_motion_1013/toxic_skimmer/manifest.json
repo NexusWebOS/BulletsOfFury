@@ -1,0 +1,49 @@
+{
+  "id": "s7skimmer",
+  "name": "Toxic Skimmer",
+  "stage": 7,
+  "stages": [
+    7
+  ],
+  "aliases": [
+    "s7skimmer"
+  ],
+  "folder": "assets/game/levels/stage_07/enemies/air_motion_1013/toxic_skimmer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s7_s7skimmer_heading",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/toxic_skimmer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "309b7910c30c1a92aaa8c15b4385737300767320769e6a883ade4693df36f353"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s7_s7skimmer_roll",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/toxic_skimmer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "9d8c36f61197c31e4fbadfed1e3db51b94b3aae535acf37a1e0f4effcf79f734"
+  },
+  "nativeRatios": {
+    "s7skimmer": 1.120879120879121
+  },
+  "sourceKeys": {
+    "s7skimmer": "overhaul_toxic_jet"
+  }
+}

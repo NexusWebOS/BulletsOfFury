@@ -54,7 +54,7 @@
       if (u.aware >= 0.3) { u.mode = 'suspect'; u.goal = { x: h.x, y: h.y }; u.suspectT = 4; }
     },
     raise(u, p, units) {
-      if (this.phase !== 'ALERT') { this.alerts++; TD.Audio.play('alert'); TD.game && TD.game.say('!', u); }
+      if (this.phase !== 'ALERT') { this.alerts++; TD.Audio.play('gd_spotted'); TD.Audio.play('alert', .65); TD.game && TD.game.say('!', u); }
       this.phase = 'ALERT'; this.timer = this.T.ALERT; this.lastKnown = { x: p.x, y: p.y };
       for (const o of units) if (!o.dead && o.vis && M.dist(o.x, o.y, p.x, p.y) < (o.radio || 700)) { o.mode = 'alert'; o.aware = 1; o.goal = { x: p.x, y: p.y }; }
     },
@@ -99,6 +99,14 @@
       const sy = v.range / P.len, sx = sy * Math.tan(v.half) / (P.hw / P.hd);
       const alpha = mode === 'patrol' ? 0.5 : mode === 'alert' ? 0.85 : 0.75;
       ART.draw(ctx, 'bmfx_fov_' + col + '_' + shape, u.x, u.y, { a: u.look, sx, sy, ax: P.ax, ay: P.ay, alpha });
+    },
+    drawGroundCones(ctx,units,t){
+      // Composite the whole group once so overlapping alerts cannot hide the map.
+      if(!this.coneCanvas){this.coneCanvas=document.createElement('canvas');this.coneCanvas.width=TD.VW;this.coneCanvas.height=TD.VH;}
+      const c=this.coneCanvas.getContext('2d');c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,TD.VW,TD.VH);c.imageSmoothingEnabled=false;
+      c.translate(-TD.Cam.x,-TD.Cam.y);
+      for(const u of units)this.drawCone(c,u,t);
+      ctx.save();ctx.globalAlpha*=.30;ctx.drawImage(this.coneCanvas,TD.Cam.x,TD.Cam.y);ctx.restore();
     },
     drawMark(ctx, u, t) {
       if (u.dead || !u.vis) return;

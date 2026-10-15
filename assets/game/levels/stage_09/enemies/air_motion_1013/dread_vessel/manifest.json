@@ -1,0 +1,49 @@
+{
+  "id": "dreadv",
+  "name": "Dread Vessel",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "dreadv"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/dread_vessel",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_dreadv_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/dread_vessel/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "43f95d2dbeb5fc5eaf755b43e9011e8f492215fa6be493527b79404e239ab836"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_dreadv_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/dread_vessel/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "ec94d88ae779b692a1fac287ab9a06c9133a4e285a475fe000e89cdb5510acdc"
+  },
+  "nativeRatios": {
+    "dreadv": 0.927536231884058
+  },
+  "sourceKeys": {
+    "dreadv": "ns9x_dreadv"
+  }
+}

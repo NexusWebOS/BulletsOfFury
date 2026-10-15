@@ -1,0 +1,19 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-11",
+  "assets": [
+    {
+      "name": "void-depth",
+      "intent": "edit",
+      "reference": "assets/game/levels/stage_08/stage/alien_arena_1005/back_0.png",
+      "transparent_background": false,
+      "prompt": "Use case: precise-object-edit. Remake this actual Bullets of Fury final boss arena background. FRAME FORMAT: 1024 x 1536 pixels, portrait, full bleed opaque backdrop. Primary request: an endless DARK ALIEN HELL VOID, blackness across the ENTIRE image including EVERY EDGE. REMOVE ALL existing architecture: no side walls, ribs, pillars, skulls, gates, floor, ceiling, horizon, frame or physical computer structures. Not an enclosed room, not a tunnel, not a circular portal or ring. About 85 percent of the whole image should read as inky black negative space, including the middle AND sides. Only extremely faint sprawling charcoal-black symbiote vapour, soft oily alien currents and tiny dim buried crimson ember fissures drift through the darkness at different depths. Sparse asymmetrical patches, not organized around a central hole; no bright borders or geometric boundaries. Black dominates; subdued deep burgundy hints suggest alien hell without lava, fireballs or a visible landscape. Premium detailed HD Neo-Geo arcade raster artwork with controlled pixel clusters and painterly depth, not photorealistic. It is the environment BEHIND bright combat sprites, so keep visual contrast low everywhere. Do not draw ships, bosses, enemies, projectiles, stars, text, green code, UI or logos: those are separate animated layers. Replace the old environment completely; retain only its sinister black/crimson material palette. The final result is a single seamless-feeling boundless atmospheric void plate, no presentation sheet."
+    },
+    {
+      "name": "code-loop",
+      "intent": "generate",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Production transparent sprite sheet for faint animated computer-code fragments floating inside a black alien void in an HD Neo-Geo arcade shooter. FRAME FORMAT: sixteen frames in a strict 4 columns by 4 rows grid, each cell 384 x 384 pixels, total 1536 x 1536. Fixed cell center pivot 192,192; one common scale. Each frame has generous transparent margins, outermost 40 pixels transparent, no borders/gutters visible. ALL 16 cells show successive states of ONE small disembodied bank of sparse emerald computer data, seamlessly looping after frame16. Three broken vertical streams of 0 and 1 binary glyphs plus tiny scattered angular circuit traces and brief thin green scan glints. Main left and right streams around x130 and x250, middle fragments at x192, very uneven interrupted lengths; never a filled rectangle or UI panel. Code moves downward a few pixels per frame with luminous heads and dim trails; one or two faint mint-green electrical pulses propagate down the thin broken circuit traces, the last transitions smoothly to first. Same exact layout of underlying circuit junctions in all cells; only bits and small scan lights animate. Alien ominous aesthetic; crisp clusters of pixels at detailed Neo-Geo quality. Sparse occupancy and low-density detail, bright little glyphs on genuine transparent alpha, NO colored backdrop or painted checkerboard. Preserve alpha, no fuzzy matte. NO physical objects, no metal ribs/rails/housing, no pillars, no ships, no portals, no floor, no walls, no frame labels or numbers, no explanatory text. Glyphs only 0 and 1 and small cryptic circuit strokes. This single complete 16-frame sprite sheet is a reusable animated parallax background fragment, never a projectile."
+    }
+  ]
+}

@@ -124,10 +124,13 @@ function fr27Reflect(b,A,dt){
  const lane=healing&&hammerWeaponTargetable(b)?hammerHeadPoint(b).x:null;
  for(const q of pBullets){if(q.dead||q.y<y-26||q.y>y+26||Math.abs(q.x-b.x)>half||q.vy>=0)continue;
   // 0928: while he heals, a missile passes the wall. 0929: so does any round aimed at the hammer - shooting the
-  // hammer is the counter Mike asked for; body shots beside it are still turned back.
+  // hammer is the counter Mike asked for; body shots beside it are absorbed.
   if(healing&&(hammerMissile(q)||(lane!=null&&Math.abs(q.x-lane)<FR27_HAMMER_LANE)))continue;
-  q.dead=true;if(A.reflectCD<=0){A.reflectCD=.09;const a=Math.PI/2+clamp((q.x-b.x)/half,-1,1)*.55;
-   const missile=/miss|rocket/.test(q.kind||''),z=eShootT(q.x,y+28,a,4.2,missile?'s4rocket':'eglaser',{w:missile?12:8,h:missile?28:18,silent:true});z._hammerLaser=!missile;}
+  // 1010: absorptive Chromium. No hostile copy of the player's shot is emitted.
+  q.dead=true;A.flash=Math.max(A.flash||0,.15);
+  if(A.reflectCD<=0){A.reflectCD=.09;
+   if(typeof hm10ShieldImpact==='function')hm10ShieldImpact(b,q.x,y);
+   (Audio.SFX.shieldHitCombat||Audio.SFX.hit||function(){})();}
  }
 }
 function fr27HammerAim(q,target){
@@ -203,7 +206,7 @@ hammerBossDamage=function(b,dmg){
 hammerBossTick=function(b,dt){
  const h=b._hammer;let A=fr27Armor(b);
  const passwordReady=!b._hammerTime||b._hammerTime.mode==='attack';
- if(!A&&h.balance0922&&!b._noHit&&passwordReady&&!['flyby','return','unfold'].includes(h.state))A=fr27BeginArmor(b);
+ if(!A&&h.balance0922&&!b._noHit&&passwordReady&&(!hammerStrikeCommitted(b)||h.state==='warn'&&h.t===0&&!h.openingJump1003)&&!['flyby','return','unfold'].includes(h.state))A=fr27BeginArmor(b);
  if(!A)return FR27_BASE.hammerTick(b,dt);
  A.t+=dt;A.flash=Math.max(0,(A.flash||0)-dt);fr27Reflect(b,A,dt);
  if(h.state==='fr_activation'){fr27ActivationTick(b,dt);return;}
