@@ -130,12 +130,15 @@ drawBoss=function(){return pxgWindow(typeof boss!=='undefined'?pxgUnitDrive(boss
    Charging (core convergence, eradication charge, spell, rage): the core climbs the ladder and beats
    faster, and the panels follow it - the light comes up from inside the armour instead of an effect
    cell being pasted on his chest. A hit drives both to the top step for the flash. */
-const PXG_HAMMER_CHARGE={core_orbit:2.15,mega_charge:1.65,spell:1.4,spell_blast:1.35,enrage:2.15,storm_charge:1.2,fr_activation:1.6};
+const PXG_HAMMER_CHARGE={core_orbit:2.15,mega_charge:1.65,spell:1.4,spell_blast:1.35,enrage:2.15,storm_charge:1.2,storm_raise:3.6,storm_rebuild:1.45,fr_activation:1.6};
 function pxgHammerDrive(b){const h=b&&b._hammer;if(!h)return null;
  const t=typeof stateT==='number'?stateT:0,dur=PXG_HAMMER_CHARGE[h.state];
  let core,lights;
  if(h.state==='mega_beam'){core=1;lights=.8;}
- else if(dur){const k=clamp((h.t||0)/dur,0,1),beat=.5+.5*Math.sin(t*(5+9*k));core=.45+.45*k+.10*beat;lights=.25+.45*k+.08*beat;}
+ else if(dur){const k=clamp((h.t||0)/dur,0,1),beat=.5+.5*Math.sin(t*(5+9*k));core=.45+.45*k+.10*beat;
+  // Charge the held weapon's own emissive pixels with the chest. storm_raise
+  // and storm_rebuild are the live authored hammer-charge reel, not idle poses.
+  lights=core;}
  else{const beat=.5+.5*Math.sin(t*2.6);core=.30+.22*beat;lights=.20+.06*beat;}
  if(b.flash>0){core=1;lights=Math.max(lights,.7);}
  if(b.dead){const f=clamp(1-(b.dying||0)/1.6,0,1);core*=f;lights*=f;}

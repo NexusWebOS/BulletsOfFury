@@ -2,7 +2,7 @@ module.exports=function(vm,c,ok,source='../assets/balance_recovery_1007b.js'){
  const fs=require('fs'),path=require('path');
  vm.runInContext(fs.readFileSync(path.resolve(__dirname,source),'utf8'),c,{filename:'balance_recovery_1007b.js'});
  const checks=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
-  const out={},save={diffKey,stage:run.stage,dropPowerup,playerDead:player.dead,er26Station,stage4ShieldTick,er26CoreTick,hc1007Cancel};
+  const out={},save={diffKey,coopOn,stage:run.stage,dropPowerup,playerDead:player.dead,er26Station,stage4ShieldTick,er26CoreTick,hc1007Cancel};
   const drops=[];
   try{
    for(const difficulty of ['easy','normal','hard','furious']){
@@ -39,13 +39,21 @@ module.exports=function(vm,c,ok,source='../assets/balance_recovery_1007b.js'){
    }finally{BALANCE_MILESTONE_BASE.tick=oldTick;}
 
    for(const difficulty of ['easy','normal','hard','furious'])for(const stage of [2,4,5]){
-    diffKey=difficulty;run.stage=stage;const f=BALANCE_HP_1007[stage][difficulty];
-    const target={hp:1000,maxhp:1000,...(stage===2?{_furnace:true,_fz:{hpSync:true,pools:{left:200,right:200,body:400,head:200},max:{left:200,right:200,body:400,head:200}},_mwBarrier:{hp:250,maxhp:250}}:stage===4?{_ship:'stormsovereign',_mr27:{parts:[{hp:100,max:100},{hp:200,maxhp:200}]}}:{_hammer:{frArmor:{hp:600,max:600}}})};
+    diffKey=difficulty;run.stage=stage;const initial=stage===5?5000:1000;
+    const f=stage===5?({easy:1100,normal:1700,hard:1950,furious:2200}[difficulty]/initial):BALANCE_HP_1007[stage][difficulty];
+    const target={hp:initial,maxhp:initial,...(stage===2?{_furnace:true,_fz:{hpSync:true,pools:{left:200,right:200,body:400,head:200},max:{left:200,right:200,body:400,head:200}},_mwBarrier:{hp:250,maxhp:250}}:stage===4?{_ship:'stormsovereign',_mr27:{parts:[{hp:100,max:100},{hp:200,maxhp:200}]}}:{_hammer:{frArmor:{hp:600,max:600}}})};
     balanceEncounterBudget(target);balanceEncounterBudget(target);
-    out[difficulty+' stage '+stage+' encounter budget applies only once']=target.hp===Math.round(1000*f)&&target.maxhp===Math.round(1000*f);
+    out[difficulty+' stage '+stage+' encounter budget applies only once']=target.hp===Math.round(initial*f)&&target.maxhp===Math.round(initial*f);
     if(stage===2)out[difficulty+' furnace pools and barrier agree with the hull budget']=target._fz.pools.body===Math.round(400*f)&&target._fz.max.body===Math.round(400*f)&&target._mwBarrier.maxhp===Math.round(250*f);
     if(stage===4)out[difficulty+' Sovereign weapon pools share its hull budget']=target._mr27.parts[0].max===Math.round(100*f)&&target._mr27.parts[1].maxhp===Math.round(200*f);
     if(stage===5)out[difficulty+' existing Chromium armor keeps the matching budget']=target._hammer.frArmor.max===Math.round(600*f);
+    if(stage===5){
+     const gentle={hp:500,maxhp:500,_hammer:{}};balanceEncounterBudget(gentle);
+     out[difficulty+' Hammer cap never raises a smaller existing budget']=gentle.hp===500&&gentle.maxhp===500;
+     coopOn=true;const pair={hp:5000,maxhp:5000,_hammer:{frArmor:{hp:3000,max:3000}}};balanceEncounterBudget(pair);coopOn=false;
+     const expected={easy:1650,normal:2550,hard:2925,furious:3300}[difficulty];
+     out[difficulty+' co-op Hammer retains its larger shared hull and armor budget']=pair.maxhp===expected&&pair._hammer.frArmor.max===Math.round(3000*expected/5000);
+    }
    }
    run.stage=8;diffKey='furious';const donor={_furnace:true,hp:1000,maxhp:1000};balanceEncounterBudget(donor);
    out['finale copies do not inherit mid-campaign health reductions']=donor.hp===1000&&donor._balanceHealth1007==null;
@@ -59,7 +67,7 @@ module.exports=function(vm,c,ok,source='../assets/balance_recovery_1007b.js'){
     out['Sovereign recovery cancels offense and maintains attachments']=calls===0&&attachments===2&&!ship._mr27.ram1002&&ship._er26.warnings.length===0;
     ship._mr27.stun=0;out['Sovereign resumes its normal attack director']=er26WarTick(ship,.1)==='normal'&&calls===1;
    }finally{BALANCE_RECOVERY_1007B.base.war=oldWar;}
-  }finally{diffKey=save.diffKey;run.stage=save.stage;dropPowerup=save.dropPowerup;player.dead=save.playerDead;er26Station=save.er26Station;stage4ShieldTick=save.stage4ShieldTick;er26CoreTick=save.er26CoreTick;hc1007Cancel=save.hc1007Cancel;}
+  }finally{diffKey=save.diffKey;coopOn=save.coopOn;run.stage=save.stage;dropPowerup=save.dropPowerup;player.dead=save.playerDead;er26Station=save.er26Station;stage4ShieldTick=save.stage4ShieldTick;er26CoreTick=save.er26CoreTick;hc1007Cancel=save.hc1007Cancel;}
   return out;
  })())`,c));
  for(const [name,value] of Object.entries(checks))ok(value,name);

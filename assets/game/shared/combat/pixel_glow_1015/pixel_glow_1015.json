@@ -4811,5 +4811,19 @@
   ],
   "step": 6,
   "emissive_px": 113
+ },
+ "arch_storm_charge_0926": {
+  "glow": "assets/game/shared/combat/pixel_glow_1015/arch_storm_charge_0926_glow.png",
+  "size": [
+   1536,
+   1024
+  ],
+  "n": 1,
+  "st": [
+   5
+  ],
+  "step": 3,
+  "emissive_px": 37437,
+  "core": "assets/game/shared/combat/pixel_glow_1015/arch_storm_charge_0926_core.png"
  }
 }

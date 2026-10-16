@@ -130,6 +130,7 @@ r30Tick=function(b){
 // Mid-campaign bosses must still finish after a weapon-loss recovery. Keep the
 // complete attack/phase book and budget hull, armor and barrier consistently.
 const BALANCE_HP_1007={2:{easy:1,normal:.68,hard:.68,furious:.72},4:{easy:1,normal:.76,hard:.76,furious:.80},5:{easy:1,normal:.76,hard:.72,furious:.70}};
+const BALANCE_HAMMER_HP_1016={easy:1100,normal:1700,hard:1950,furious:2200};
 function balanceScalePool(o,hp,max,mul){
  if(!o||!Number.isFinite(o[hp]))return;
  o[hp]=o[hp]>0?Math.max(1,Math.round(o[hp]*mul)):0;
@@ -139,7 +140,10 @@ function balanceEncounterBudget(b){
  if(!b||b._balanceHealth1007!=null||b._gp4Host||b._r30)return;
  const stage=b._furnace?2:b._ship==='stormsovereign'?4:b._hammer?5:0;
  if(!stage||run.stage!==stage)return;
- const mul=BALANCE_HP_1007[stage][diffKey]||1;b._balanceHealth1007=mul;
+ // Bound the campaign Hammer's complete hull/armor budget after spawn scaling.
+ // Repeated performance multipliers must not turn Easy into the longest fight.
+ const target=(BALANCE_HAMMER_HP_1016[diffKey]||2200)*(coopActive()?1.5:1);
+ const mul=stage===5?Math.min(1,target/Math.max(1,b.maxhp)):BALANCE_HP_1007[stage][diffKey]||1;b._balanceHealth1007=mul;
  if(mul===1)return;
  balanceScalePool(b,'hp','maxhp',mul);
  if(b._fz?.hpSync)for(const key of ['left','right','body','head']){

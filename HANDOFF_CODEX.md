@@ -1,3 +1,22 @@
+# 2026-10-16 — Stage 4 shields/ballistic ordnance and Hammer budget/charge
+
+Mike reported tracking fire rounds, an overlong Stage 5 fight and a Stage 4
+shield that dropped with two generators alive and could not finish. Stage 4
+enemy shots now retain their release vectors. Removed the campaign Sovereign's
+old 18-second shield bypass; live generators govern its field. SA14 restores
+the twelve authored field frames and reconstruction layer. Generator hit/draw
+priority prevents overlapping helpers from swallowing objective hits.
+Hammer hull HP caps: Easy1100/Normal1700/Hard1950/Furious2200, co-op x1.5;
+armor follows the same budget, lower existing budgets stay lower. Active raised
+charge/rebuild states light the hammer with its chest. The glow survey had
+misclassified that whole-body reel as an effect; its native core/head mounts
+now bake matching pixel companions through the owning pipeline. No replacement
+boss forms or source-plate changes. Existing hit flashes remain visible.
+Native53/53 plus existing Stage4 pressure50/50, browser errors0; fullsuite8714/0,
+final BUILD OK/exit0. Actual shield, charged-weapon and damaged pixels inspected.
+Details docs/BOSS_REPAIRS_1016.md; QA docs/qa/boss_repairs_1016.json. Cache keys
+boss-repairs-1016 / hammer-charge-1016. Preserve local tutorial work when publishing.
+
 # 2026-10-16 — Remove the legacy metal combat arrows
 
 Mike reported the arrow signs still appearing over the Stage 2 miniboss FOV.

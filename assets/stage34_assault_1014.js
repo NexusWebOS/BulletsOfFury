@@ -42,7 +42,8 @@ stageLoadBegin=function(n,keys){const extra=[];
  if(n===3||n===4){for(let i=0;i<16;i++)extra.push('s4w_lightning_ball_'+i);
   for(let i=0;i<4;i++)extra.push('retm_'+i,'retmb_'+i);
   extra.push('cfx_stage4_chain_lightning','mr27_corefx','efx_burst_lightning');
-  if(n===4)extra.push(AM13_ART.flight_variant_4.heading.key,AM13_ART.flight_variant_4.roll.key);
+  if(n===4){extra.push(AM13_ART.flight_variant_4.heading.key,AM13_ART.flight_variant_4.roll.key,S4REV1006_ART.key);
+   for(let i=0;i<12;i++)extra.push('s4w_lightning_shield_'+i);}
   Snd.prepare?.(['lockon','chargeDash','geyserLightning','missile','expIce','gd_tankEngineLoop',
    'enemyMachineGunHeavy','enemyMachineGunLight','tlvJetThrust','tlvJetReady','av3_target_acquire']);
  }return SA14.base.load.call(this,n,[...(keys||[]),...extra]);};
@@ -389,10 +390,19 @@ mr27Draw=function(b){if(!sa14Storm(b))return SA14.base.draw.apply(this,arguments
 };
 mr27Over=function(b){if(!sa14Storm(b)||!b._sa14)return SA14.base.over.apply(this,arguments);
  const H=b._s4war.shield,A=b._sa14;stage4ShieldSyncNodes(b);
+ if(H&&(H.active||H.rearming||H.breakT>0)){
+  const key='s4w_lightning_shield_'+Math.floor(b._mr27.clock*12)%12;
+  if(XART.rdy(key)){const size=b.w*1.34*A.scale;
+   ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=H.active?.40:H.rearming?.40*clamp(H.rearmT/1.08,0,1):Math.min(.40,H.breakT*.4);
+   ctx.drawImage(XART.get(key),b.x-size/2,(b._drawY??b.y)-size/2,size,size);ctx.restore();}
+ }
+ // Keep all four objective plates above the helpers that sit between them.
+ if(!A.depth)for(const d of b._s4war.coreTurrets)if(!d.dead&&d.materialize>.1)mr27HelperDraw(b,d);
  if(H&&(H.active||H.rearming)){for(const n of H.nodes)if(!n.dead){mr27Blit('storm',5,{x:n.x,y:n.y,w:54*A.scale,h:54*A.scale,rot:0},n.flash,null,b);
   mr27CoreDraw(b,{x:n.x,y:n.y,w:15*A.scale,h:34*A.scale,rot:(n.spin||0)/16*TAU});
   av3Beam(ctx,n.x,n.y,Math.atan2(b.y-n.y,b.x-n.x),Math.hypot(b.x-n.x,b.y-n.y),7,'lightning',b._mr27.clock,.65,false);
- }}if(!A.depth)for(const d of b._s4war.coreTurrets)if(!d.dead&&d.materialize>.1)mr27HelperDraw(b,d);
+ }}
+ s4RevivalDraw1006(b);
 };
 function sa14BlueArc(x,y,angle,length,clock,alpha){if(!XART.rdy('cfx_stage4_chain_lightning'))return;
  const im=XART.get('cfx_stage4_chain_lightning'),f=Math.floor(clock*18)%8,w=length*256/384;

@@ -1,0 +1,770 @@
+{
+  "passed": 53,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "fireorb keeps its launch heading while the player crosses",
+      "passed": true,
+      "data": {
+        "a": 1.5707963267948966,
+        "committed": true,
+        "homing": false,
+        "alive": true
+      }
+    },
+    {
+      "name": "groundup keeps its launch heading while the player crosses",
+      "passed": true,
+      "data": {
+        "a": 1.5707963267948966,
+        "committed": true,
+        "homing": false,
+        "alive": true
+      }
+    },
+    {
+      "name": "emissile keeps its launch heading while the player crosses",
+      "passed": true,
+      "data": {
+        "a": 1.5707963267948966,
+        "committed": true,
+        "homing": false,
+        "alive": true
+      }
+    },
+    {
+      "name": "normal cycle 0 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "normal cycle 0 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "normal threshold 0 starts generator reconstruction",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 2207.25,
+        "max": 2943,
+        "rearming": true,
+        "chase": false,
+        "index": 1
+      }
+    },
+    {
+      "name": "normal threshold 0 rebuilds all four objectives",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal cycle 1 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "normal cycle 1 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "normal threshold 1 starts generator reconstruction",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 1471.5,
+        "max": 2943,
+        "rearming": true,
+        "chase": false,
+        "index": 2
+      }
+    },
+    {
+      "name": "normal threshold 1 rebuilds all four objectives",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal cycle 2 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "normal cycle 2 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "normal final quarter enters pursuit without another shield lock",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 735.75,
+        "max": 2943,
+        "rearming": false,
+        "chase": true,
+        "index": 3
+      }
+    },
+    {
+      "name": "normal native damage can finish the entire encounter",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "hp": 0,
+        "hits": 1,
+        "noHit": true,
+        "mode": "recover"
+      }
+    },
+    {
+      "name": "hard cycle 0 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "hard cycle 0 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "hard threshold 0 starts generator reconstruction",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 2758.5,
+        "max": 3678,
+        "rearming": true,
+        "chase": false,
+        "index": 1
+      }
+    },
+    {
+      "name": "hard threshold 0 rebuilds all four objectives",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard cycle 1 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "hard cycle 1 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "hard threshold 1 starts generator reconstruction",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 1839,
+        "max": 3678,
+        "rearming": true,
+        "chase": false,
+        "index": 2
+      }
+    },
+    {
+      "name": "hard threshold 1 rebuilds all four objectives",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard cycle 2 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "hard cycle 2 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "hard final quarter enters pursuit without another shield lock",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 919.5,
+        "max": 3678,
+        "rearming": false,
+        "chase": true,
+        "index": 3
+      }
+    },
+    {
+      "name": "hard native damage can finish the entire encounter",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "hp": 0,
+        "hits": 1,
+        "noHit": true,
+        "mode": "recover"
+      }
+    },
+    {
+      "name": "furious cycle 0 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "furious cycle 0 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 2
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "furious threshold 0 starts generator reconstruction",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 3432,
+        "max": 4576,
+        "rearming": true,
+        "chase": false,
+        "index": 1
+      }
+    },
+    {
+      "name": "furious threshold 0 rebuilds all four objectives",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious cycle 1 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "furious cycle 1 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "furious threshold 1 starts generator reconstruction",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 2288,
+        "max": 4576,
+        "rearming": true,
+        "chase": false,
+        "index": 2
+      }
+    },
+    {
+      "name": "furious threshold 1 rebuilds all four objectives",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious cycle 2 two surviving cores keep shield up past 18 seconds",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": true,
+        "remaining": 2
+      }
+    },
+    {
+      "name": "furious cycle 2 all four real core kills release shield",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          },
+          {
+            "target": true,
+            "node": true,
+            "dead": true,
+            "hits": 1
+          }
+        ],
+        "active": false,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "furious final quarter enters pursuit without another shield lock",
+      "passed": true,
+      "data": {
+        "hits": 2,
+        "hp": 1144,
+        "max": 4576,
+        "rearming": false,
+        "chase": true,
+        "index": 3
+      }
+    },
+    {
+      "name": "furious native damage can finish the entire encounter",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "hp": 0,
+        "hits": 1,
+        "noHit": true,
+        "mode": "sa14-drive"
+      }
+    },
+    {
+      "name": "authored energy-shield frames animate and reconstruction renders",
+      "passed": true,
+      "data": {
+        "keys": [
+          "s4w_lightning_shield_0",
+          "s4w_lightning_shield_1",
+          "s4w_lightning_shield_2",
+          "s4w_lightning_shield_3",
+          "s4w_lightning_shield_4",
+          "s4w_lightning_shield_6",
+          "s4w_lightning_shield_7",
+          "s4w_lightning_shield_8",
+          "s4w_lightning_shield_9",
+          "s4w_lightning_shield_10"
+        ],
+        "rebuild": 9
+      }
+    },
+    {
+      "name": "Real generator damage visibly flashes the objective plate",
+      "passed": true,
+      "data": {
+        "pixels": 1248,
+        "flash": 0.16,
+        "hpLost": 1,
+        "expired": true
+      }
+    },
+    {
+      "name": "Generator hit flash expires naturally",
+      "passed": true,
+      "data": {
+        "pixels": 1248,
+        "flash": 0.16,
+        "hpLost": 1,
+        "expired": true
+      }
+    },
+    {
+      "name": "easy Hammer HP budget is shorter",
+      "passed": true,
+      "data": {
+        "hp": 1100,
+        "max": 1100
+      }
+    },
+    {
+      "name": "normal Hammer HP budget is shorter",
+      "passed": true,
+      "data": {
+        "hp": 1700,
+        "max": 1700
+      }
+    },
+    {
+      "name": "hard Hammer HP budget is shorter",
+      "passed": true,
+      "data": {
+        "hp": 1950,
+        "max": 1950
+      }
+    },
+    {
+      "name": "furious Hammer HP budget is shorter",
+      "passed": true,
+      "data": {
+        "hp": 2200,
+        "max": 2200
+      }
+    },
+    {
+      "name": "Hammer HP still increases with difficulty",
+      "passed": true,
+      "data": [
+        1100,
+        1700,
+        1950,
+        2200
+      ]
+    },
+    {
+      "name": "Real Hammer recovery enters its authored raised charge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Hammer emissive pixels charge on the same ladder as the core",
+      "passed": true,
+      "data": {
+        "early": {
+          "core": 0.50625,
+          "lights": 0.50625
+        },
+        "late": {
+          "core": 0.7562500000000001,
+          "lights": 0.7562500000000001
+        },
+        "head": {
+          "x": 341,
+          "y": 136.04
+        },
+        "keys": [
+          "pxg_mr27_storm_glow",
+          "pxg_fb1002_lightning_gun_glow"
+        ]
+      }
+    },
+    {
+      "name": "Actual hammer-region pixels brighten with the weapon charge",
+      "passed": true,
+      "data": {
+        "changed": 5424,
+        "light": 253281,
+        "head": {
+          "x": 341,
+          "y": 136.04
+        },
+        "drawn": [
+          "pxg_arch_storm_charge_0926_glow",
+          "pxg_arch_storm_charge_0926_core"
+        ]
+      }
+    },
+    {
+      "name": "Hammer native damage still flashes charging body pixels",
+      "passed": true,
+      "data": {
+        "pixels": 23840,
+        "flash": 0.16,
+        "hpLost": 1
+      }
+    },
+    {
+      "name": "Hammer charge hit flash expires naturally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or missing-asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "runtime_sha256": {
+    "assets/game.js": "b82ab42cbf2de8655f71e43c7765ec574b3af5a8107cb59bc7f5a696cff256bd",
+    "assets/stage34_assault_1014.js": "9782411c3846d6d87e56680a2c8f8943cfab953a98bd89c03cfc3b109f66223f",
+    "assets/gameplay_repair_1004.js": "12fc15b65b5118db122f7fddb70c9edf92ee31669b5b0f9d2cda5e1d920b6828",
+    "assets/balance_recovery_1007b.js": "5d71bf21ced760e46636e6a534c414c233b3e1da75bd89f4238b67657ddde4eb",
+    "assets/pixel_glow_1015.js": "cef983dd5236dc465f121e1024f82bfde366b21de79a51bf552d3b42fbaa6f8e",
+    "assets/pixel_glow_art_1015.js": "1323710636b2091d2e297c1d6bb78244a07f355b1c23f063e448cb071b9389e4"
+  },
+  "scope": "Native Chromium controlled fixtures, actual collision/damage and pixels; not a full human campaign balance playthrough.",
+  "suite": {
+    "passed": 8714,
+    "failed": 0,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "existing_stage4_probe": {
+    "passed": 50,
+    "failed": 0,
+    "errors": [],
+    "runtime_sha256": "9782411c3846d6d87e56680a2c8f8943cfab953a98bd89c03cfc3b109f66223f"
+  },
+  "source_art_sha256": "13493f153919356b4bebf1df1f95e512af2a0e06ed0770b0bf86a77cc80e2f44",
+  "earlier_runs": "An initial suite run caught the old 18-second shield assertion; the next caught six old Stage-5 multiplier assertions. Updated the specifications to four surviving generators and capped HP/armor. Final full suite passes."
+}

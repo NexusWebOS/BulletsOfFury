@@ -30,6 +30,7 @@ Nothing is read from pixels at runtime (file:// taints the canvas), and the sour
 Usage: python _BUILD_SOURCE/pixel_glow_1015.py --survey     aggregate the survey JSONs -> glow_usage_1015.json
        python _BUILD_SOURCE/export_glow_sources_1015.py      export the source pixels (real Chromium)
        python _BUILD_SOURCE/pixel_glow_1015.py [--check]     bake + registry (+ contact sheets)
+       python _BUILD_SOURCE/pixel_glow_1015.py --keys=KEY    refresh only measured keys, preserve other assets
 """
 import glob, json, re, shutil, sys
 from collections import Counter, defaultdict
@@ -50,7 +51,7 @@ FX = re.compile(r'(^bmfx_|^bmbar_|fov|alert|_dust|debris|_wake|exhaust|wreck|son
                 r'lightning_ball|chain_lightning|^nchg_orb|_beams?$|red_beams|_flash|^lz_bomb|^fzt_debris|^fzt_boss_expl|'
                 r'^arch_leap_shock|^hm10_shield|^pl11_black_void|^nbret_|thermal_jet|heat_disc|^fb1002_firejet|_spark|_ring$|'
                 r'^cfx_|^weapon_|^mwfx_|^fb2_stealth_.*_trail|^s6cargo13_front_lights|^d27_|^bof_player_|^nca_player_|_reticle|^nca_fx_|^nca_ui_|'
-                r'^retm|^nbret|^arch_hammer_lightning|^arch_spiked_ball|^hm10_core_|^nca_misc$|^arch_storm_charge|_projectile|_bolt|_missile_?\d*$|^nca_)')
+                r'^retm|^nbret|^arch_hammer_lightning|^arch_spiked_ball|^hm10_core_|^nca_misc$|_projectile|_bolt|_missile_?\d*$|^nca_)')
 # Hammer sheets whose chest core gets its own companion (the convergence/charge driver pushes it harder).
 CORE_KEYS = re.compile(r'^(arch_|pt11_hammer_core_)')
 RING_A = (0.58, 0.34, 0.16)        # alpha of the 1st/2nd/3rd hard ring
@@ -58,6 +59,7 @@ CORE_RING_A = (0.70, 0.46, 0.26, 0.12)
 
 
 def survey():
+    previous = json.loads(USAGE.read_text())['keys'] if USAGE.exists() else {}
     agg = defaultdict(lambda: {'n': 0, 'st': set(), 'scope': set(), 'rects': Counter(), 'sc': 0.0, 'tints': Counter()})
     seen = []
     for f in sorted(glob.glob(str(ROOT / '_shots/glow_usage_1015/s*_*.json'))):
@@ -76,6 +78,8 @@ def survey():
             continue
         keys[k] = {'n': a['n'], 'st': sorted(a['st']), 'scope': sorted(a['scope']), 'rects': rects,
                    'scale': a['sc'] / max(1, a['n']), 'tints': dict(a['tints'])}
+        if previous.get(k, {}).get('emitters'):
+            keys[k]['emitters'] = previous[k]['emitters']
     USAGE.write_text(json.dumps({'runs': seen, 'keys': keys, 'dropped_fx': dropped}, indent=0))
     print('survey runs', len(seen), '| unit keys', len(keys), '| fx dropped', len(dropped))
 
@@ -175,6 +179,28 @@ def chest_core(src, m, rects):
     return core
 
 
+def anchored_emitters(src, used, emitters, core_only=False):
+    """Authored charge glass is a large lamp, not blue paint. Use native reel mounts.
+
+    The ordinary cluster-size filter rejects the Hammer head and chest chamber.
+    Their measured mounts select only their existing blue/cyan light and the
+    white lightning pixels touching it, never steel or an invented overlay.
+    """
+    v, s = hsv(src)
+    rgb = src[..., :3].astype(np.float32)
+    blue = (src[..., 3] > 200) & (rgb[..., 2] > rgb[..., 0] * 1.25) & (v > .55) & (s > .40)
+    hot = (src[..., 3] > 200) & (v > .94) & (s < .30) & ndimage.binary_dilation(blue, iterations=3)
+    yy, xx = np.ogrid[:src.shape[0], :src.shape[1]]
+    out = np.zeros(src.shape[:2], bool)
+    for e in emitters:
+        if core_only and e['kind'] != 'core':
+            continue
+        x, y = e['center']; rx, ry = e['radius']
+        area = ((xx-x)/rx)**2 + ((yy-y)/ry)**2 <= 1
+        out |= area & used & (blue | hot)
+    return out
+
+
 def bake(key, info):
     p = SRCD / (key + '.png')
     if not p.exists():
@@ -185,6 +211,8 @@ def bake(key, info):
     step = int(np.clip(round(2.0 / scale), 1, 8))          # source px per ring (1 game pixel = 2 canvas px)
     used = used_mask(H, W, info['rects'])
     m = emissive(src, used, step)
+    if info.get('emitters'):
+        m |= anchored_emitters(src, used, info['emitters'])
     if m.sum() < max(6, 2 * step * step):
         return None, 'no lights'
     rgb = src[..., :3].astype(np.float32)
@@ -204,14 +232,14 @@ def bake(key, info):
     n = max(1, int(1.0 / (scale * 1.25)))
     gp = OUTD / (key + '_glow.png')
     save_reduced(glow, n, gp)
-    rec = {'glow': str(gp.relative_to(ROOT)), 'size': [W, H], 'n': n, 'st': info['st'], 'step': step, 'emissive_px': int(m.sum())}
+    rec = {'glow': gp.relative_to(ROOT).as_posix(), 'size': [W, H], 'n': n, 'st': info['st'], 'step': step, 'emissive_px': int(m.sum())}
     if CORE_KEYS.search(key):
-        cm = chest_core(src, m, used.rects)
+        cm = anchored_emitters(src, used, info['emitters'], True) if info.get('emitters') else chest_core(src, m, used.rects)
         if cm.sum() >= 12:
             core = rings(cm, rgb, CORE_RING_A, step, 0.42)
             cp = OUTD / (key + '_core.png')
             save_reduced(core, n, cp)
-            rec['core'] = str(cp.relative_to(ROOT))
+            rec['core'] = cp.relative_to(ROOT).as_posix()
     return rec, 'ok'
 
 
@@ -262,19 +290,27 @@ if __name__ == '__main__':
     if '--survey' in sys.argv:
         survey(); sys.exit(0)
     keys = json.loads(USAGE.read_text())['keys']
-    if OUTD.exists():
+    # A focused refresh preserves other shipped companions when their original
+    # survey exports are not present on this machine. Still uses measured usage.
+    selected = next((a.split('=', 1)[1].split(',') for a in sys.argv if a.startswith('--keys=')), None)
+    if selected:
+        keys = {k: keys[k] for k in selected}
+    elif OUTD.exists():
         shutil.rmtree(OUTD)
-    res, skipped = {}, Counter()
+    res = json.loads((OUTD / 'pixel_glow_1015.json').read_text()) if selected else {}
+    skipped = Counter()
     for k, info in sorted(keys.items()):
         r, why = bake(k, info)
         if r:
             res[k] = r
         else:
+            if selected:
+                raise RuntimeError(f'{k}: {why}; focused refresh stopped')
             skipped[why] += 1
-    (OUTD / 'pixel_glow_1015.json').write_text(json.dumps(res, indent=1))
+    (OUTD / 'pixel_glow_1015.json').write_bytes(json.dumps(res, indent=1).encode())
     js = 'const PXG_SHEETS=' + json.dumps({k: {kk: r[kk] for kk in ('glow', 'core', 'size', 'n', 'st') if kk in r} for k, r in res.items()}, separators=(',', ':')) + ';\n'
-    (ROOT / 'assets/pixel_glow_art_1015.js').write_text('"use strict";\n/* generated by _BUILD_SOURCE/pixel_glow_1015.py from the stage 1-9 usage survey - do not hand-edit */\n' + js)
+    (ROOT / 'assets/pixel_glow_art_1015.js').write_bytes(('"use strict";\n/* generated by _BUILD_SOURCE/pixel_glow_1015.py from the stage 1-9 usage survey - do not hand-edit */\n' + js).encode())
     tot = sum((OUTD / Path(r['glow']).name).stat().st_size + ((OUTD / Path(r['core']).name).stat().st_size if 'core' in r else 0) for r in res.values())
     print('baked', len(res), 'keys,', sum('core' in r for r in res.values()), 'with core;', dict(skipped), f'{tot / 1e6:.1f} MB')
     if '--check' in sys.argv:
-        check(res)
+        check({k: res[k] for k in selected} if selected else res)

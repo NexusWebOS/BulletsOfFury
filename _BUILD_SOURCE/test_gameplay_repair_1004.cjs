@@ -7,9 +7,9 @@ module.exports=function(vm,ctxv,ok){
  const setup=(stage,kind)=>{beginStage(stage);setState(GS.PLAY);BOFCinematicDirector.cancel();story=null;fb2Talk=null;s6Opening=null;stagePlan=[];enemies=[];pBullets=[];eBullets=[];spawnBoss(kind);const b=boss;b._be=null;b.enter=false;b._noHit=false;b.x=worldWidth()/2;b.y=200;return b;};
  let b=setup(4,'stormsovereign'),H=b._s4war.shield;H.rearming=false;H.active=true;
  for(let t=0;t<18.1;t+=.05)stage4ShieldTick(b,.05);
- out['Stage 4 shield opens after sustained duty even with living generators']=!H.active&&H.exposedFor>7&&H.nodes.some(n=>!n.dead);
+ out['Stage 4 shield stays powered while generators survive beyond 18 seconds']=H.active&&!H.exposedFor&&H.nodes.some(n=>!n.dead);
  for(let t=0;t<8.1;t+=.05)stage4ShieldTick(b,.05);
- out['generator overload has a finite exposed window and rearms']=H.active&&!H.exposedFor;
+ out['Stage 4 generator shield never starts a timed overload window']=H.active&&!H.exposedFor;
  b=setup(5,'chromehammer');b._hammer.balance0922=true;b._hammer.restorationSeen=true;b.hp=b.maxhp*.081;
  b.hp-=hammerBossDamage(b,1e8);out['overkill cannot skip Hammer final reserve']=Math.abs(b.hp/b.maxhp-.08)<1e-8;
  for(let i=0;i<190;i++)hammerBossTick(b,1/60);

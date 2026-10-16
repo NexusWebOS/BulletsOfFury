@@ -78,9 +78,14 @@ drawEnemy=function(e){
  return GP4_BASE.enemy.apply(this,arguments);
 };
 
-// Generators remain the quickest way through the field. Sustained shielding has
-// a finite duty cycle so close-range weapons cannot leave the encounter sealed.
+// The Sovereign field follows its four generators. Older donor designs retain
+// their separate duty cycle; the campaign field must not contradict its cores.
 stage4ShieldTick=function(b,dt){GP4_BASE.shield.apply(this,arguments);const H=b?._s4war?.shield;if(!H||b.dead||b.enter)return;
+ // The Sovereign field is powered by all four generators. A timer must not
+ // expose its hull while surviving cores still own an active shield cycle.
+ if(run.stage===4&&b._ship==='stormsovereign'){
+  if(H.exposedFor>0&&!H.rearming&&H.nodes.some(n=>!n.dead))H.active=true;
+  H.overloadAge=0;H.exposedFor=0;return;}
  if(H.rearming){H.overloadAge=0;H.exposedFor=0;return;}
  if(H.exposedFor>0){H.exposedFor=Math.max(0,H.exposedFor-dt);if(!H.exposedFor&&H.nodes.some(n=>!n.dead)){H.active=true;H.overloadAge=0;stage4WarfareSound('shieldUp','bossPhase');}return;}
  if(!H.active){H.overloadAge=0;return;}H.overloadAge=(H.overloadAge||0)+dt;

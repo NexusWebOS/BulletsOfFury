@@ -36876,6 +36876,9 @@ function updatePlay(dt){
   for(const seat of seatList())withSeat(seat,()=>{player._megaGrace=Math.max(0,(player._megaGrace||0)-dt);player._megaFlash=Math.max(0,(player._megaFlash||0)-dt);});
   for(const b of eBullets){
     if(b.dead)continue;
+    // Stage 4 ordnance keeps its release vector; neither generic fireballs,
+    // ground rounds nor a later Retina lock may acquire the player in flight.
+    if(run.stage===4){b._committed=true;b.homing=false;}
     if(typeof s3kOrdnanceRules==='function')s3kOrdnanceRules(b);
     if(b._megaReflected){b._visualAge=projectileVisualAge(b)+dt;shooterSet(b._megaSeat);try{axelMegaReturnTick(b,dt);}finally{shooterSet(1);}continue;}
     let reflected=false;for(const seat of seatList())withSeat(seat,()=>{if(!reflected)reflected=axelMegaReflect(b);});
@@ -37115,7 +37118,7 @@ function updatePlay(dt){
       b.t=(b.t||0)+dt;
       // scale up as it climbs toward the player -> sells the ground-to-air perspective
       b._gscale=Math.min(1.5, (b._gscale||0.4) + dt*1.1);
-      if(!b.mg){ const ta=Math.atan2(targetShip(b.x,b.y).y-b.y,targetShip(b.x,b.y).x-b.x); let ang=Math.atan2(b.vy,b.vx);
+      if(!b.mg&&!b._committed){ const ta=Math.atan2(targetShip(b.x,b.y).y-b.y,targetShip(b.x,b.y).x-b.x); let ang=Math.atan2(b.vy,b.vx);
         let da=((ta-ang+Math.PI*3)%(Math.PI*2))-Math.PI; ang+=clamp(da,-0.03,0.03);
         const spd=Math.hypot(b.vx,b.vy); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; }
       for(const pb of pBullets){ if(pb.dead||b._weaponProof||typeof enemyOrdnanceCanIntercept==='function'&&!enemyOrdnanceCanIntercept(b)) continue;
@@ -37842,6 +37845,11 @@ function bossHitTest(x,y){
   if(boss._furnace && typeof furnaceHitTest==='function') return furnaceHitTest(boss,x,y);
   if(boss._s7warden&&boss._s7warden.noHit)return false;
   if(boss._ship==='stormsovereign'&&boss._s4war){
+    // A helper overlaps the gap between generator rows. Live generator
+    // objectives take priority at their visible centres, never the helper.
+    boss._s4CoreHit=null;
+    boss._s4ShieldHit=!boss._noHit?stage4ShieldNodeAt(boss,x,y,2):null;
+    if(boss._s4ShieldHit)return true;
     boss._s4CoreHit=stage4CoreTurretAt(boss,x,y,2);
     if(boss._s4CoreHit)return true;
     if(boss._noHit)return false;
