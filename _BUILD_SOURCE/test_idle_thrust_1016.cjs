@@ -2,7 +2,7 @@ module.exports=function(vm,ctxv,ok){
  /* 1016 - Mike: "can you make our thrusters animate when were idle on all pilots?" The plume (pilot_feedback_0927.js)
     drew only above 2.5% throttle; idle now holds a breathing burn floor. Behaviour only. Real-Chromium proof with a
     busted arm: _BUILD_SOURCE/probe_idle_thrust_1016.py (pilot_feedback_0927.js is already loaded by section 0927). */
- console.log('=== 381. Idle thrusters: every pilot keeps a breathing burn at rest ===');
+ console.log('=== 382. Idle thrusters: every pilot keeps a breathing burn at rest ===');
  const r=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const o={},save=efxClock;player.dead=player.out=false;player._thrustPower=0;window.PF16_IDLE=undefined;
   const vals=[];for(let i=0;i<120;i++){efxClock=i/60;vals.push(pf27ThrustPower());}

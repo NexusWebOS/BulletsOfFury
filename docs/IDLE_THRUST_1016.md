@@ -22,4 +22,4 @@ so a tainted `file://` canvas refuses the plume instead of throwing in the hull 
 All nine pilots: plume drawn 48/48 idle frames, cycling 6 distinct reel frames, length breathing ~1.2-2.2 px
 (e.g. Cole 9.6..11.4, Juggernaut 11.7..13.9); busted arm draws 0; full throttle still 2.3x longer (Cole 26.9).
 0 page/console errors. Visual: `docs/proofs/idle_thrust_1016/idle_on_off.png` (per pilot: off row, then on row,
-8 consecutive frames). Suite section 381 (`test_idle_thrust_1016.cjs`).
+8 consecutive frames). Suite section 382 (`test_idle_thrust_1016.cjs`).
