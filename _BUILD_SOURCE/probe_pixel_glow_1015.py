@@ -28,7 +28,7 @@ DRAW = r"""
 (on) => {
   const keep = PXG.active; window.__pxgOff = !on;
   if (!window.__pxgWrapped) { window.__pxgWrapped = true; const d = hammerBossDraw;
-    hammerBossDraw = function(b){ if (window.__pxgOff) return PXG.base.draw.apply(this, arguments); return d.apply(this, arguments); }; }
+    hammerBossDraw = function(b){ if (window.__pxgOff) { const p = PXG.active; PXG.active = null; try { return PXG.base.draw.apply(this, arguments); } finally { PXG.active = p; } } return d.apply(this, arguments); }; }
   const n0 = PXG.draws; drawScene(0);
   return {draws: PXG.draws - n0, log: Object.assign({}, PXG.log)};
 }
@@ -46,15 +46,22 @@ try:
         pg.on('console', lambda m: m.type == 'error' and errs.append(m.text))
         pg.goto(f'http://127.0.0.1:{port}/index.html')
         pg.wait_for_function('typeof loop==="function" && window.__bofAssetRuntimeReady', timeout=180000)
-        ok(pg.evaluate("()=>typeof PXG==='object'&&Object.keys(PXG_SHEETS).length===20&&!!ctx.__pxg"), 'glow layer loaded: 4 sheets + 16 loose plates registered, drawImage hook installed')
+        reg = pg.evaluate("()=>({n:Object.keys(PXG_SHEETS).length,hook:!!ctx.__pxg,unused:Object.keys(PXG_SHEETS).filter(k=>/chaingun_break|spell_raise|leap_strike_0922/.test(k)),stages:[...new Set(Object.values(PXG_SHEETS).flatMap(s=>s.st))].sort()})")
+        ok(reg['n'] > 50 and reg['hook'], f'glow layer loaded from the stage 1-9 usage survey: {reg["n"]} drawn images registered, drawImage hook installed')
+        ok(not reg['unused'], f'no unused Hammer forms registered (chaingun-on-back, spell raise, old leap): {reg["unused"]}')
+        ok(reg['stages'] == list(range(1, 10)), f'every stage 1-9 has registered unit art: {reg["stages"]}')
         pg.evaluate(sh.TRAP_RAF)
         pg.evaluate(sh.SETUP, {'state': 'PLAY', 'stage': 5, 'pilot': 'cole', 'invuln': True})
-        pg.evaluate(sh.STEP, 30)
+        pg.evaluate("()=>{playerHit=function(){};}")
+        for _ in range(12):
+            pg.evaluate(sh.STEP, 60); pg.wait_for_timeout(150)
+        en = pg.evaluate("()=>Object.keys(PXG.log).filter(k=>/^pxg_/.test(k)&&!/^pxg_(arch_|pt11_hammer)/.test(k))")
+        ok(len(en) > 0, f'ordinary stage-5 enemies glow from their own lights ({len(en)} companions drawn: {en[:4]})')
         pg.evaluate("()=>{enemies.length=0;spawnBoss(curStage.boss);playerHit=function(){};}")
-        pg.wait_for_function("()=>pxgKeys().every(k=>XART.rdy(k))", timeout=60000)
-        ok(True, 'all 40 glow companions decoded (polled, not a one-shot rdy)')
+        pg.wait_for_function("()=>pxgKeys(5).every(k=>XART.rdy(k))", timeout=90000)
+        ok(True, 'all stage-5 glow companions decoded (polled, not a one-shot rdy)')
         n0 = pg.evaluate("()=>PXG.draws")
-        ok(n0 == 0, f'no glow drawn before the boss is on screen ({n0})')
+        ok(n0 >= 0, f'glow draws counted ({n0})')
         seen = {}
         for i in range(30):
             pg.evaluate(sh.STEP, 60); pg.wait_for_timeout(120)

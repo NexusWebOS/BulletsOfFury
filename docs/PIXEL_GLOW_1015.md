@@ -1,4 +1,4 @@
-# Pixel glow pass, part 1: the Stage 5 Chrome Hammer core (October 15)
+# Pixel glow pass: the Stage 5 Chrome Hammer core, then every unit actually drawn on levels 1-9 (October 15-16)
 
 Mike: *"pixel glow should occur instead of overlayed graphics like our stage 5 boss's middle core. I know the
 game needs this enhancement in alot of places."*
@@ -51,9 +51,8 @@ Brightness walks a fixed six-step ladder (`PXG_STEPS`: 0, .16, .32, .52, .74, .9
 
   The `core_orbit` chest paste is suppressed. The converging motes around him still draw.
 
-Registered so far: `arch_orbital_sweep_0926` (his main strike/idle sheet), `arch_chaingun_break_enrage`,
-`arch_leap_strike_0922`, `arch_spell_raise`, and the 16 `pt11_hammer_core_*` plates. That is 1.2 MB of
-companions.
+**Superseded by part 1b below**: the hand-picked Hammer sheets (`arch_chaingun_break_enrage`, `arch_spell_raise`,
+`arch_leap_strike_0922`) are gone. They were forms the fight never draws.
 
 ## Verified
 
@@ -76,6 +75,80 @@ Full suite: **8,700 passes, 0 errors**, final `FALVA/LIZZIE BUILD OK` banner, ex
 
 Captures are in `_shots/pixel_glow_1015/` (ignored). This is a visual pass on protected fixtures, not a
 balance change. Damage, timing and collision are untouched.
+
+
+## Part 1b: only the units and frames the game actually draws, levels 1-9 (October 16)
+
+Mike: *"I dont know why your using these frames with the chaingun on his back or forms we havent used. but only
+do this for enemies and frames were actually using please. Do a pass for levels 1-9."*
+
+**Survey first.** `_BUILD_SOURCE/probe_glow_usage_1015.py STAGE DIFF` plays each stage in real Chromium. It runs
+60 s of the stage's own waves, then its miniboss, then its boss, on Normal and on Furious. The player fires real
+rounds under the target, so the fights advance through their damage states and phases. Every image drawn while
+`drawEnemy`, `drawSubBoss` or `drawBoss` runs is recorded by the XART key it came from and the exact key-space
+rectangle shown. That covers 18 runs, all nine bosses, with zero page errors.
+
+The survey recorded 1,097 keys:
+- **474 are effects** drawn in those windows (warning cones, alerts, gauges, explosions, debris, wakes, exhausts,
+  shields, muzzles, projectiles, the Hammer's lightning and spiked ball). The `FX` pattern in the baker drops them
+  by name; they are already light.
+- **623 are unit art.** `export_glow_sources_1015.py` saves each one's exact pixels.
+- After baking, **368 carry lights**: per stage 21 / 98 / 74 / 10 / 34 / 22 / 29 / 51 / 29.
+- The other 255 get nothing: 244 have no lamp at all, and 11 are already mostly light (ice-crystal jets, water
+  swirls, toxic canisters), where an extra wash would be a halo sticker.
+
+On a sheet, light is only baked inside the rectangles the survey saw drawn. Unused frames on the same sheet stay
+dark.
+
+**Most units are drawn from derived canvases**, so the runtime follows them:
+- crops cut into a module's own cache (`mr27Cell` for the Rime Wall, Iron Warden, Storm Sovereign and
+  space carrier; `hammerArchFrame`);
+- `xartPalette` recolours.
+
+Every image XART hands out is tagged with its key, and an atlas cell is tagged with its own key rather than its
+sheet's. Drawing a tagged image into another canvas tags that canvas with the key and source rectangle it came
+from, through a `CanvasRenderingContext2D.prototype` wrap; offscreen contexts use the prototype, while the main
+`ctx` has its own `drawImage`. A `'color'`/`'source-in'` fill over a tagged canvas records the tint. So a Storm
+Sovereign part cut from `mr27_storm` and tinted blue lights the right part of the right frame, in blue. A white
+hit-flash copy or a black camo pass takes no light.
+
+**What counts as a light (baker).**
+- Bright (v > .72) and saturated (s > .50), and at least .16 brighter than the mean of its surroundings.
+- **Not the unit's own paint.** Hue bins holding more than 12% of its coloured pixels are armour, and a lamp in that
+  hue must be far brighter. The first cut lit the tan desert buggies and the green camo tanks wholesale; the check
+  sheet caught it.
+- A white-hot pixel counts only as the centre of a coloured light, never as a glint on armour.
+- Each cluster must be smaller than 2.5% of the frame, or it is a painted panel.
+
+**Rings and storage scale with the draw size.**
+- Each ring is one game pixel wide at the size the key is really drawn, measured by the survey.
+- Each companion is stored pre-reduced to its draw size (`n`, box-reduced with premultiplied alpha). Full-size
+  companions smooth-downscaled at runtime cost up to 7 ms a frame on the stage-2/7/8 boss sheets. Pre-reduced, the
+  measured overhead is under 1 ms on every stage, and all companions total 3.0 MB.
+
+**Drivers.**
+- Ordinary units, minibosses and bosses: the lights hold a low step and breathe slowly, each unit on its own phase,
+  so a formation never pulses in lockstep.
+- A hit takes them to the top step, and a dying unit's light goes out with it.
+- The Hammer keeps his own charge driver and chest-core companions.
+
+**Verified.**
+- `probe_pixel_glow_1015.py`: **23/23**. No unused Hammer form is registered, every stage 1-9 has registered art,
+  ordinary stage-5 enemies glow, and every Hammer state brightens only (never darkens) and stays on the boss.
+- `probe_glow_live_1015.py` renders the same live frame with the drivers on and off for stages 1-4 and 6-9:
+  - Lights brighten 4,000-11,000 px a frame on stages that have units on screen. The stage 4 and stage 6 frames
+    had no lit units on screen, so they drew no glow.
+  - Darker pixels appear only where the stage animates on its own clock (stage 1's water band, stage 3). A second
+    glow-off render shows the same differences.
+- Per-stage contact sheets (source | source + glow, one tile per drawn frame) were inspected:
+  `_shots/glow_usage_1015/check_stage1..9.png`.
+- Full suite: see CLAUDE.md.
+
+To refresh after art changes:
+1. Run the survey for every stage, Normal and Furious.
+2. `pixel_glow_1015.py --survey`
+3. `export_glow_sources_1015.py`
+4. `pixel_glow_1015.py --check`
 
 ## Next places for this pass (measured, not yet converted)
 
