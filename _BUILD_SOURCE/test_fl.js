@@ -15877,6 +15877,7 @@ require('./test_hammer_chromium_1011.cjs')(vm,ctxv,ok);
 require('./test_enemy_behaviour_1011.cjs')(vm,ctxv,ok);
 require('./test_element_arsenal_1011.cjs')(vm,ctxv,ok);
 require('./test_playthrough_1011.cjs')(vm,ctxv,ok);
+require('./test_idle_thrust_1016.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

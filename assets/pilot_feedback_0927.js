@@ -33,7 +33,17 @@ function pf27ThrustTick(p,dt,mvx,mvy,rolling){
   if(p._thrustPower<.005)p._thrustPower=0;
   p._thrustFrame=((p._thrustFrame||0)+Math.max(0,dt)*1000/(55-clamp(p._thrustPower,0,1)*23))%6;
 }
-function pf27ThrustPower(){return clamp(player?._thrustPower||0,0,1);}
+/* IDLE BURN (1016). Mike: "make our thrusters animate when were idle on all pilots". The plume used to draw only
+   above 2.5% throttle, so a ship holding still showed a static baked flame. Idle now keeps a low burn that
+   breathes (two incommensurate sines, game clock - never the wall clock) so the authored 6-frame plume reel
+   keeps cycling at rest. A floor, not a target: real throttle still rises above it with its own easing. */
+const PF16_IDLE_BASE=.14,PF16_IDLE_SWING=.06;
+function pf16IdleBurn(p){
+  if(!p||p.dead||p.out||typeof window!=='undefined'&&window.PF16_IDLE===0)return 0;
+  const t=typeof efxClock==='number'?efxClock:0,ph=(p===player?0:1.3);
+  return PF16_IDLE_BASE+PF16_IDLE_SWING*(.62*Math.sin(t*10.7+ph)+.38*Math.sin(t*4.1+ph*2));
+}
+function pf27ThrustPower(){return clamp(Math.max(player?._thrustPower||0,pf16IdleBurn(player)),0,1);}
 function pf27TailParts(key){
   const base=String(key).replace(/_g[12]$/,''),frames=d27ShipFrames(base);if(!frames)return null;
   const id=base+':'+(typeof lizzieSkinOn!=='undefined'&&lizzieSkinOn?1:0);if(PF27_TAILS.has(id))return PF27_TAILS.get(id);
@@ -46,7 +56,7 @@ function pf27TailParts(key){
 }
 function pf27PlaneThrustDraw(g,key,x,y,w,h,power){
   const p=clamp(power==null?pf27ThrustPower():power,0,1);if(p<.025)return false;
-  const t=pf27TailParts(key);if(!t)return false;const frame=d27ShipFrame(t.base,Math.floor(player._thrustFrame??(efxClock*1000/55)));
+  let t=null;try{t=pf27TailParts(key);}catch(e){t=null;}if(!t)return false;   // a tainted file:// read refuses the plume, never the frameconst frame=d27ShipFrame(t.base,Math.floor(player._thrustFrame??(efxClock*1000/55)));
   g.save();g.imageSmoothingEnabled=false;g.globalCompositeOperation='source-over';g.globalAlpha=1;
   for(const r of t.parts){const dw=r.w*w/t.w*(1+.20*p),dh=r.h*h/t.h*(1+3.2*p),px=x-w/2+(r.x+r.w/2)*w/t.w,py=y-h/2+r.y*h/t.h;
     g.drawImage(frame,r.x,r.y,r.w,r.h,px-dw/2,py,dw,dh);
@@ -58,8 +68,8 @@ function pf27SpacePlumeDraw(g,im,x,y,w,h,power){
   const p=clamp(power==null?pf27ThrustPower():power,0,1);
   if(p<.025){g.drawImage(im,x,y,w,h);return;}
   let top=PF27_SPACE_ROOTS.get(im);
-  if(top==null){const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const cx=c.getContext('2d');cx.drawImage(im,0,0);const a=cx.getImageData(0,0,c.width,c.height).data;
-    top=0;find:for(let yy=0;yy<c.height;yy++)for(let xx=0;xx<c.width;xx++)if(a[(yy*c.width+xx)*4+3]>32){top=yy;break find;}PF27_SPACE_ROOTS.set(im,top);}
+  if(top==null){top=0;try{const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const cx=c.getContext('2d');cx.drawImage(im,0,0);const a=cx.getImageData(0,0,c.width,c.height).data;
+    find:for(let yy=0;yy<c.height;yy++)for(let xx=0;xx<c.width;xx++)if(a[(yy*c.width+xx)*4+3]>32){top=yy;break find;}}catch(e){/* file:// taints the canvas; the plume stretches from the plate top instead (1016 idle burn now reaches here every frame) */}PF27_SPACE_ROOTS.set(im,top);}
   const dh=(im.height-top)*h/im.height*(1+1.45*p),dy=y+top*h/im.height;
   g.save();g.drawImage(im,0,top,im.width,im.height-top,x,dy,w,dh);g.globalAlpha*=.2*p;g.drawImage(im,0,top,im.width,im.height-top,x,dy,w,dh);g.restore();
 }

@@ -1,0 +1,241 @@
+{
+ "ok": 46,
+ "fail": 0,
+ "pilots": {
+  "axel": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 6.27,
+    "hMax": 7.45,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 17.52,
+    "hMax": 17.52,
+    "power": 0.8898817709880238
+   }
+  },
+  "cole": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 9.61,
+    "hMax": 11.42,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 26.87,
+    "hMax": 26.87,
+    "power": 0.8898817709880238
+   }
+  },
+  "decker": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 9.7,
+    "hMax": 11.52,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 27.1,
+    "hMax": 27.1,
+    "power": 0.8898817709880238
+   }
+  },
+  "falva": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 9.72,
+    "hMax": 11.54,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 27.16,
+    "hMax": 27.16,
+    "power": 0.8898817709880238
+   }
+  },
+  "freezer": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 8.94,
+    "hMax": 10.62,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 24.99,
+    "hMax": 24.99,
+    "power": 0.8898817709880238
+   }
+  },
+  "juggernaut": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 11.69,
+    "hMax": 13.88,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 32.66,
+    "hMax": 32.66,
+    "power": 0.8898817709880238
+   }
+  },
+  "lizzie": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 9.18,
+    "hMax": 10.9,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 25.65,
+    "hMax": 25.65,
+    "power": 0.8898817709880238
+   }
+  },
+  "maverick": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 9.01,
+    "hMax": 10.69,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 25.16,
+    "hMax": 25.16,
+    "power": 0.8898817709880238
+   }
+  },
+  "yuri": {
+   "idle": {
+    "drawn": 48,
+    "of": 48,
+    "reelFrames": 6,
+    "hMin": 9.38,
+    "hMax": 11.14,
+    "power": 0
+   },
+   "busted": {
+    "drawn": 0,
+    "of": 24,
+    "reelFrames": 0,
+    "hMin": 0,
+    "hMax": 0,
+    "power": 0
+   },
+   "moving": {
+    "drawn": 12,
+    "of": 12,
+    "reelFrames": 6,
+    "hMin": 26.21,
+    "hMax": 26.21,
+    "power": 0.8898817709880238
+   }
+  }
+ },
+ "errors": []
+}
