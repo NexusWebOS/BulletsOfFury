@@ -56,7 +56,8 @@ function pf27TailParts(key){
 }
 function pf27PlaneThrustDraw(g,key,x,y,w,h,power){
   const p=clamp(power==null?pf27ThrustPower():power,0,1);if(p<.025)return false;
-  let t=null;try{t=pf27TailParts(key);}catch(e){t=null;}if(!t)return false;   // a tainted file:// read refuses the plume, never the frameconst frame=d27ShipFrame(t.base,Math.floor(player._thrustFrame??(efxClock*1000/55)));
+  let t=null;try{t=pf27TailParts(key);}catch(e){t=null;}if(!t)return false;   /* a tainted file:// read refuses the plume, never the frame */
+  const frame=d27ShipFrame(t.base,Math.floor(player._thrustFrame??(efxClock*1000/55)));
   g.save();g.imageSmoothingEnabled=false;g.globalCompositeOperation='source-over';g.globalAlpha=1;
   for(const r of t.parts){const dw=r.w*w/t.w*(1+.20*p),dh=r.h*h/t.h*(1+3.2*p),px=x-w/2+(r.x+r.w/2)*w/t.w,py=y-h/2+r.y*h/t.h;
     g.drawImage(frame,r.x,r.y,r.w,r.h,px-dw/2,py,dw,dh);
