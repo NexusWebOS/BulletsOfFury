@@ -10,6 +10,32 @@ Mike: only the enemies and frames we actually use, all nine stages (the Hammer's
 
 Mike: pixel glow instead of overlaid graphics, starting with the Stage 5 boss's middle core. The `core_orbit` phase pasted effect cell 6 over his chest; it is suppressed and the chest ring now lights from its own pixels. `_BUILD_SOURCE/pixel_glow_1015.py` bakes same-size `_glow`/`_core` companions (added light + hard 1-4 px rings, no blur); `assets/pixel_glow_1015.js` redraws them under 'lighter' with the SAME rects whenever a registered sheet is blitted inside a driver window (sheet by unique size, loose plate by XART.get key tag, tinted frame by hammerArchFrame tag). Six fixed brightness steps on the game clock. Probe 20/20, zero errors. Read [docs/PIXEL_GLOW_1015.md](docs/PIXEL_GLOW_1015.md) - it lists the next sites (230 shadowBlur halos, 23 radial discs). Never push the companion toward white: it flattens the core into a sticker.
 
+# 2026-10-15 — RELEASE: Warden warnings, larger helpers and hit feedback
+
+Mike requested publishing the completed Warden repair. Native hit flashes are
+restored for hull, modules, helpers and formation aircraft, with the standing
+rule recorded in AGENTS. Warden/helper turns have longer warnings, committed
+aims, bounded bursts and recovery; helpers are50%larger, capped1Easy/2otherwise,
+and use regular-familyHP. Enemy gun, missile, entry and warning audio is wired.
+Native55/55 all4difficulties, existing Stage34 probes60+13, fullsuite8700/0 with
+finalBUILDOK/exit0. Module hash still matches the passing evidence. Incoming
+FURYBOT/trailer commits were reviewed and fast-forwarded before publication.
+Separate local Overdrive work remains unpublished. Details:
+docs/GITHUB_WARDEN_RELEASE_1015.md and docs/WARDEN_READABILITY_1014.md.
+
+# 2026-10-14 - FURYBOT (Furious autopilot) and trailer v11
+
+Mike asked for a strong Furious bot that wins without cheating, and a Steam trailer on the gasline track
+ending on STOP! HAMMERTIME?!. Bot: _BUILD_SOURCE/bot/furybot.js + furybot.py, docs/FURYBOT_1014.md. It
+only presses keys (Input.keys / injectTap) and never writes lives, i-frames, weapons or state. Results:
+stages 1-7 cleared with 0 deaths on two full runs; the final boss beat it until its Warhive-copy rounds,
+chromium rift (core, pull, forked lanes) and same-frame hull contact were added; then a full Stage-1
+run reached VICTORY with 0 deaths (and one of two fresh Stage-8 runs did). Trailer: _BUILD_SOURCE/trailer_v11/README.md; takes are
+flown by the bot with the real playerHit. Outputs in _shots/trailer_v11 (gitignored).
+Traps: bossHitTest writes hit-routing notes (_s4CoreHit, _lastPart...) - save/restore around any probe of
+it (FB.playSafe). Canvas2D cost lands on whichever call flushes; a hazard the game owns in its own list
+(W.shots, hc7Rift) is invisible to a bot that only reads eBullets - read the stack of each fatal playerHit.
+
 # 2026-10-14 — Stage 3/4 playthrough and Yuri Storm pass
 
 Yuri retains his earned Stage-4 Storm through Stage 5 and subsequent entries,

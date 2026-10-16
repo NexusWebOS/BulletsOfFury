@@ -48,6 +48,13 @@ current Git state and runtime before relying on them.
 - Read `docs/ATLAS_REPACK_0903.md` before editing an atlas. Register sheet and cell
   changes together; generated manifests require their owning build workflow.
 
+## Hit feedback
+
+- Every added or updated enemy, boss, helper and modular piece must visibly flash
+  when hit, through the existing markHit and owner/part flash paths. Never zero
+  or suppress flash timers to preserve a palette; retain the authored palette
+  between hits and verify actual damaged pixels and expiry in the native renderer.
+
 ## Verification
 
 For gameplay edits, run `node --check assets/game.js` and

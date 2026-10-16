@@ -641,28 +641,30 @@
     },
     {
       "passed": true,
-      "name": "Warden is a rapid machine gunner with genuine south-origin helpers",
+      "name": "Warden fires and independently deploys genuine south-origin helpers",
       "data": null
     },
     {
       "passed": true,
-      "name": "Helper entry scales down from an enlarged south fly-in",
+      "name": "Larger helper entry scales down from an enlarged south fly-in",
       "data": [
         {
-          "y": 393.60208333333316,
-          "scale": 1.4848958333333329,
-          "hp": 10.080000000000002
+          "y": 577,
+          "scale": 1.7,
+          "hp": 10.080000000000002,
+          "w": 96
         },
         {
-          "y": 393.60208333333316,
-          "scale": 1.4848958333333329,
-          "hp": 10.080000000000002
+          "y": 577,
+          "scale": 1.7,
+          "hp": 10.080000000000002,
+          "w": 96
         }
       ]
     },
     {
       "passed": true,
-      "name": "Twisting helpers fire real MG projectiles after reaching the combat plane",
+      "name": "Warned helpers fire real MG projectiles after reaching the combat plane",
       "data": null
     },
     {
@@ -672,12 +674,12 @@
     },
     {
       "passed": true,
-      "name": "Warden also releases missile-box volleys",
+      "name": "Helpers retain the authored camo pose bank and native hit feedback",
       "data": null
     },
     {
       "passed": true,
-      "name": "Helpers use the authored camo pose bank through native drawImage",
+      "name": "Warden also releases its warned missile-box volley",
       "data": null
     },
     {
@@ -730,7 +732,7 @@
     "sovereign-overhead-return",
     "sovereign-northbound-chase",
     "warden-south-helpers",
-    "warden-hit-preserves-palette",
+    "warden-hit-feedback",
     "formation-bowling",
     "formation-crisscross",
     "formation-peel-bomb"

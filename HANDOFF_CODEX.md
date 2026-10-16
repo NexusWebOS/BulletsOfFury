@@ -1,3 +1,53 @@
+# 2026-10-15 — Stage 4 simultaneous pressure and active Sovereign helpers
+
+Mike requested immediate restoration of overlapping miniboss/jet attacks and
+faster firing fly-ins. Warden no longer pauses/resets its main attack clock for
+helpers. Faster tiered gun/missile bursts, shorter entry/turns, moving jet fire
+and visible south-side attack paths replace the prior separate-turn tuning.
+Sovereign generators translate/scale but remain upright when the hull turns.
+Its helpers now own real independent warning/fire/cooling clocks, barrel shots,
+muzzle art and enemy audio; destroyed modules and hidden/depth entries remain
+properly gated, and return requires a fresh tell. Native hit feedback retained.
+Native50/50, existing Stage34 gameplay60/60 + visuals13/13; no browser errors.
+Final fullsuite8,700/0, BUILD OK/exit0. Captures inspected.
+Details and verification: docs/STAGE4_PRESSURE_1015.md and its linked QA records.
+Owner assets/stage34_assault_1014.js; cache version stage4-pressure-1015.
+This supersedes the October 14 separate-turn behavior below. Preserve unrelated
+local Training Flight/tutorial and project files when publishing this repair.
+
+# 2026-10-15 — RELEASE: Warden warnings, larger helpers and hit feedback
+
+Mike requested publishing the completed Warden repair. Native hit flashes are
+restored for hull, modules, helpers and formation aircraft, with the standing
+rule recorded in AGENTS. Warden/helper turns have longer warnings, committed
+aims, bounded bursts and recovery; helpers are50%larger, capped1Easy/2otherwise,
+and use regular-familyHP. Enemy gun, missile, entry and warning audio is wired.
+Native55/55 all4difficulties, existing Stage34 probes60+13, fullsuite8700/0 with
+finalBUILDOK/exit0. Module hash still matches the passing evidence. Incoming
+FURYBOT/trailer commits were reviewed and fast-forwarded before publication.
+Separate local Overdrive work remains unpublished. Details:
+docs/GITHUB_WARDEN_RELEASE_1015.md and docs/WARDEN_READABILITY_1014.md.
+
+# 2026-10-14 — LOCAL: Warden hit feedback, readable turns and enemy sounds
+
+Restored SA14's suppressed hull/part/helper/VP12 hit flashes; markHit and native
+flash timers own feedback. Explicit future enemy/boss/module rule added AGENTS.
+Warden now uses2.4/2.15/1.95/1.8s tells, fixed aims,4/6/8/10MG rounds and1/1/2/2
+rocket waves with recovery. Helpers and Warden release in separate turns.
+Helpers96px (was64), regular-familyHP,1Easy/2otherwise,1.8s south entry warning,
+harmless2.2s depth entry, staged committed bursts, smooth heading frames and safe
+camera-hidden exits. Enemy-specific gun cues bypass Cole's player-MG suppression;
+nonexistent missileLaunch call replaced by approved missile chip cue. Existing
+muzzle/entry/warning art and sound banks reused, no generation/atlas edits.
+
+Focused native55/55 all4difficulties; actual damage pixel/expiry and nonzero gun+
+missile audio verified. Twelve30s real-keyboard/no-shield steering samples have
+survivors on eachdifficulty, not human-clear proof. Existing Stage34 gameplay60/60
+and visuals13/13 pass. Final fullsuite8700/0, BUILDOK/exit0; syntax/whitespace clean.
+Details docs/WARDEN_READABILITY_1014.md; QA docs/qa/warden_readability_1014.json;
+owner assets/stage34_assault_1014.js; probe _BUILD_SOURCE/probe_warden_readability_1014.py.
+Local only, no commit/push. Preserve concurrent Overdrive work and project notes.
+
 # 2026-10-14 — Stage 3/4 playthrough and Yuri Storm pass
 
 Yuri retains his earned Stage-4 Storm through Stage 5 and subsequent entries,

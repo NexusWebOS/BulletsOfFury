@@ -107,38 +107,38 @@
         "t": 4.29999999999999,
         "nodes": [
           {
+            "x": 102.53124999999883,
+            "y": 224.21875000000267
+          },
+          {
             "x": 577.4687500000011,
-            "y": 298.71875000000296
+            "y": 224.21875000000267
           },
           {
             "x": 102.53124999999883,
-            "y": 298.71875000000307
+            "y": 405.8125000000035
           },
           {
             "x": 577.4687500000011,
-            "y": 117.12500000000207
-          },
-          {
-            "x": 102.53124999999882,
-            "y": 117.12500000000219
+            "y": 405.8125000000035
           }
         ]
       }
     },
     {
       "passed": true,
-      "name": "Primary authored mini-aircraft hit draw preserves palette and damage timer",
+      "name": "Primary aircraft visibly flashes without consuming its damage timer",
       "data": {
-        "recolors": 0,
+        "recolors": 1,
         "draws": 1,
         "flash": 0.2
       }
     },
     {
       "passed": true,
-      "name": "Fallback authored mini-aircraft hit draw preserves palette and damage timer",
+      "name": "Fallback aircraft visibly flashes without consuming its damage timer",
       "data": {
-        "recolors": 0,
+        "recolors": 1,
         "draws": 1,
         "flash": 0.2
       }
