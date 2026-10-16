@@ -1,3 +1,16 @@
+# 2026-10-16 — Remove the legacy metal combat arrows
+
+Mike reported the arrow signs still appearing over the Stage 2 miniboss FOV.
+polishCombatDraw was adding its old green/yellow/red metal arrow plate after
+combatWarningDraw. Removed that extra draw for all lane owners and stages;
+the regular FOV, alert triangles, targeting and attack timing remain active.
+The removed sign is no longer requested when a lane starts. Shipping module
+cache version: no-warning-arrows-1016. Native before/after captures inspected;
+30 focused checks cover all three phases across Stages 1–9 plus a former-renderer
+control and real projectile release. Browser errors0. Fullsuite8,706/0, final
+BUILD OK/exit0. Evidence: _shots/no_combat_arrows_1016 (ignored). No atlas edits.
+Preserve unrelated local tutorial notes and loader when publishing this repair.
+
 # 2026-10-15 — Stage 4 simultaneous pressure and active Sovereign helpers
 
 Mike requested immediate restoration of overlapping miniboss/jet attacks and

@@ -113,7 +113,7 @@ function polishEncounterAttack(b,dt){
   return true;
 }
 function polishLane(owner,x,y,angle,opt={}){const q={owner,x,y,angle,t:0,warn:opt.warn||1.25,speed:opt.speed||5,width:opt.width||34,fire:opt.fire,mount:opt.mount,
-  offset:owner&&Number.isFinite(owner.x+owner.y)?{x:x-owner.x,y:y-owner.y}:null};polishLanes.push(q);XART.rdy('polish_warning');return q;}
+  offset:owner&&Number.isFinite(owner.x+owner.y)?{x:x-owner.x,y:y-owner.y}:null};polishLanes.push(q);return q;}
 function polishLaneOrigin(q){
   // The direction is committed, but the physical launcher travels with its hull.
   // Use this in both update and draw so the last warning matches the release.
@@ -138,8 +138,9 @@ function polishCombatDraw(){
   // This hook is after world restore; warnings convert world positions explicitly.
   ctx.save();ctx.translate(-camLeftX(),0);
   for(const q of groundTargetingFx)if(q._polishBomb&&!q.owner?._bomber&&q.t>0&&q.t<q.warn&&XART.rdy('lz_bomb')){const p=clamp(q.t/q.warn,0,1),im=XART.get('lz_bomb');ctx.save();ctx.translate(lerp(q._polishBomb.x,q.x,p),lerp(q._polishBomb.y,q.y,p));ctx.rotate(Math.PI);ctx.drawImage(im,-7,-17,14,34);ctx.restore();}
-  for(const q of polishLanes){polishLaneOrigin(q);const p=clamp(q.t/q.warn,0,1);combatWarningDraw(q,{x:q.x,y:q.y,ex:q.x+Math.cos(q.angle)*VH,ey:q.y+Math.sin(q.angle)*VH,progress:p,width:q.width});
-    const im=(enemyWarningOwner(q)||run.stage===6||(run.stage===5&&q.owner===subBoss))?null:polishCell('warning',p<L23_FOV_YEL?0:p<L23_FOV_RED?1:2);if(im){ctx.save();ctx.translate(q.x,q.y+30);ctx.rotate(q.angle-Math.PI/2);ctx.globalAlpha=.62+.38*Math.abs(Math.sin(q.t*18));ctx.drawImage(im,-12,-26,24,52);ctx.restore();}}
+  // The shared FOV and alert own every lane. Legacy metal arrow signs must
+  // never be drawn over them, including boss-owned lanes.
+  for(const q of polishLanes){polishLaneOrigin(q);const p=clamp(q.t/q.warn,0,1);combatWarningDraw(q,{x:q.x,y:q.y,ex:q.x+Math.cos(q.angle)*VH,ey:q.y+Math.sin(q.angle)*VH,progress:p,width:q.width});}
   const b=subBoss;if(b?._bomber&&!b.dead){const B=b._bomber;if(B.mode==='charge'||B.mode==='beam'){ctx.restore();ctx.save();ctx.fillStyle='rgba(0,0,12,'+(B.mode==='beam'?.56:clamp(B.t/B.dur,0,1)*.62)+')';ctx.fillRect(0,0,VW,VH);ctx.translate(-camLeftX(),0);siegeBomberBeamDraw(b);}}
   ctx.restore();
 }
