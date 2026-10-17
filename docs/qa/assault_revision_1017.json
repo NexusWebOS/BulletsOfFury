@@ -1,0 +1,3014 @@
+{
+  "working_native": {
+    "passed": 88,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "normal lightning fan uses regular native FOV lanes",
+        "passed": true,
+        "data": {
+          "count": 7,
+          "progress": 0.65,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "draws": 1
+        }
+      },
+      {
+        "name": "normal lightning balls cannot be intercepted",
+        "passed": true,
+        "data": {
+          "count": 7,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "proof": true,
+          "lanes": [
+            {
+              "x": 340,
+              "y": 210.2338258081209,
+              "angle": 0.9907963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2338258081209,
+              "angle": 1.1357963267948965,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2338258081209,
+              "angle": 1.2807963267948965,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2338258081209,
+              "angle": 1.7157963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2338258081209,
+              "angle": 1.8607963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2338258081209,
+              "angle": 2.0057963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2338258081209,
+              "angle": 2.1507963267948966,
+              "progress": 0.65,
+              "width": 22
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal actual mg collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual spread collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual beam collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual orb collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual gmiss collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal first overhead-return volley has a warning window",
+        "passed": true,
+        "data": {
+          "initial": 0.78,
+          "warning": 7,
+          "wave": 0
+        }
+      },
+      {
+        "name": "normal lightning guards use authored aircraft at twice Warden-helper size",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "tell",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 3,
+          "art": 464
+        }
+      },
+      {
+        "name": "normal guards finish entry and fire independently",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "tell",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 3,
+          "art": 464
+        }
+      },
+      {
+        "name": "hard lightning fan uses regular native FOV lanes",
+        "passed": true,
+        "data": {
+          "count": 9,
+          "progress": 0.65,
+          "angles": [
+            0.8457963267948966,
+            0.9907963267948966,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "draws": 2
+        }
+      },
+      {
+        "name": "hard lightning balls cannot be intercepted",
+        "passed": true,
+        "data": {
+          "count": 9,
+          "angles": [
+            0.8457963267948967,
+            0.9907963267948967,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "proof": true,
+          "lanes": [
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.8457963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.9907963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.1357963267948965,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.5707963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.7157963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.8607963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.0057963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.1507963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.2957963267948966,
+              "progress": 0.65,
+              "width": 22
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard actual mg collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual spread collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual beam collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual orb collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual gmiss collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard first overhead-return volley has a warning window",
+        "passed": true,
+        "data": {
+          "initial": 0.78,
+          "warning": 9,
+          "wave": 0
+        }
+      },
+      {
+        "name": "hard lightning guards use authored aircraft at twice Warden-helper size",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 12,
+          "art": 464
+        }
+      },
+      {
+        "name": "hard guards finish entry and fire independently",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 12,
+          "art": 464
+        }
+      },
+      {
+        "name": "Large lightning guard damage changes native pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 19397,
+          "flash": 0.15,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "furious lightning fan uses regular native FOV lanes",
+        "passed": true,
+        "data": {
+          "count": 11,
+          "progress": 0.6500000000000001,
+          "angles": [
+            0.7007963267948967,
+            0.8457963267948966,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "draws": 3
+        }
+      },
+      {
+        "name": "furious lightning balls cannot be intercepted",
+        "passed": true,
+        "data": {
+          "count": 11,
+          "angles": [
+            0.7007963267948966,
+            0.8457963267948965,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "proof": true,
+          "lanes": [
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.7007963267948967,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.8457963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.9907963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.4257963267948965,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.5707963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.7157963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.8607963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.0057963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.1507963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.2957963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.4407963267948967,
+              "progress": 0.6500000000000001,
+              "width": 22
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious actual mg collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual spread collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual beam collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual orb collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual gmiss collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious first overhead-return volley has a warning window",
+        "passed": true,
+        "data": {
+          "initial": 0.78,
+          "warning": 11,
+          "wave": 0
+        }
+      },
+      {
+        "name": "furious lightning guards use authored aircraft at twice Warden-helper size",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 27,
+          "art": 464
+        }
+      },
+      {
+        "name": "furious guards finish entry and fire independently",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 27,
+          "art": 464
+        }
+      },
+      {
+        "name": "normal charge stays up against bullets and lasts for a missile volley",
+        "passed": true,
+        "data": {
+          "required": 3,
+          "hits": 0,
+          "charging": true,
+          "duration": 7.5,
+          "state": "storm_raise",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "normal multiple unique missile impacts are required; one missile cannot double count",
+        "passed": true,
+        "data": {
+          "counts": [
+            1,
+            2
+          ],
+          "hits": 2,
+          "required": 3,
+          "status": "charging",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "normal final missile interrupts the heal and opens a punish window",
+        "passed": true,
+        "data": {
+          "status": "cancelled",
+          "state": "fr_stun",
+          "hits": 3,
+          "required": 3
+        }
+      },
+      {
+        "name": "normal Hammer actual hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard charge stays up against bullets and lasts for a missile volley",
+        "passed": true,
+        "data": {
+          "required": 4,
+          "hits": 0,
+          "charging": true,
+          "duration": 8,
+          "state": "storm_raise",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "hard multiple unique missile impacts are required; one missile cannot double count",
+        "passed": true,
+        "data": {
+          "counts": [
+            1,
+            2,
+            3
+          ],
+          "hits": 3,
+          "required": 4,
+          "status": "charging",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "hard final missile interrupts the heal and opens a punish window",
+        "passed": true,
+        "data": {
+          "status": "cancelled",
+          "state": "fr_stun",
+          "hits": 4,
+          "required": 4
+        }
+      },
+      {
+        "name": "hard Hammer actual hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "furious charge stays up against bullets and lasts for a missile volley",
+        "passed": true,
+        "data": {
+          "required": 5,
+          "hits": 0,
+          "charging": true,
+          "duration": 8.5,
+          "state": "storm_raise",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "furious multiple unique missile impacts are required; one missile cannot double count",
+        "passed": true,
+        "data": {
+          "counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "hits": 4,
+          "required": 5,
+          "status": "charging",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "furious final missile interrupts the heal and opens a punish window",
+        "passed": true,
+        "data": {
+          "status": "cancelled",
+          "state": "fr_stun",
+          "hits": 5,
+          "required": 5
+        }
+      },
+      {
+        "name": "furious Hammer actual hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage5 now fields the Earth Siege Bomber with its modular weapons",
+        "passed": true,
+        "data": {
+          "kind": "siegebomber",
+          "space": false,
+          "name": "ECLIPSE SIEGE BOMBER",
+          "parts": 4
+        }
+      },
+      {
+        "name": "Stage6 new fortress is a true miniboss with six batteries",
+        "passed": true,
+        "data": {
+          "kind": "siegefortress17",
+          "cargo": true,
+          "mini": true,
+          "boss": false,
+          "hp": 1650,
+          "guns": 6
+        }
+      },
+      {
+        "name": "Fortress reactor stays locked through five broken batteries and opens on sixth",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "opened": true,
+          "dead": true,
+          "bossDefeated": false,
+          "active": true
+        }
+      },
+      {
+        "name": "Defeating fortress does not finish Stage6",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "opened": true,
+          "dead": true,
+          "bossDefeated": false,
+          "active": true
+        }
+      },
+      {
+        "name": "Fortress death releases the native miniboss progression",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal original flyover Harrier has fan, laser and missile targets",
+        "passed": true,
+        "data": {
+          "old": true,
+          "cargo": false,
+          "parts": [
+            {
+              "id": "L",
+              "kind": "fan"
+            },
+            {
+              "id": "R",
+              "kind": "fan"
+            },
+            {
+              "id": "laser0",
+              "kind": "laser"
+            },
+            {
+              "id": "laser1",
+              "kind": "laser"
+            },
+            {
+              "id": "laser2",
+              "kind": "laser"
+            },
+            {
+              "id": "laser3",
+              "kind": "laser"
+            },
+            {
+              "id": "rackL",
+              "kind": "missile"
+            },
+            {
+              "id": "rackR",
+              "kind": "missile"
+            }
+          ],
+          "ready": true,
+          "targets": 8
+        }
+      },
+      {
+        "name": "normal lasers alone do not expose reactor while fans or racks survive",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "lasersGone": true,
+          "stillLocked": true,
+          "open": false
+        }
+      },
+      {
+        "name": "normal all modules open a short final reactor phase and native boss defeat",
+        "passed": true,
+        "data": {
+          "open": true,
+          "targets": [
+            "reactor"
+          ],
+          "quick": true,
+          "damaged": true,
+          "dead": true,
+          "defeated": true
+        }
+      },
+      {
+        "name": "hard original flyover Harrier has fan, laser and missile targets",
+        "passed": true,
+        "data": {
+          "old": true,
+          "cargo": false,
+          "parts": [
+            {
+              "id": "L",
+              "kind": "fan"
+            },
+            {
+              "id": "R",
+              "kind": "fan"
+            },
+            {
+              "id": "laser0",
+              "kind": "laser"
+            },
+            {
+              "id": "laser1",
+              "kind": "laser"
+            },
+            {
+              "id": "laser2",
+              "kind": "laser"
+            },
+            {
+              "id": "laser3",
+              "kind": "laser"
+            },
+            {
+              "id": "rackL",
+              "kind": "missile"
+            },
+            {
+              "id": "rackR",
+              "kind": "missile"
+            }
+          ],
+          "ready": true,
+          "targets": 8
+        }
+      },
+      {
+        "name": "Harrier L hit changes actual module pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 1530,
+          "flash": 0.16,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "Harrier laser0 hit changes actual module pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 641,
+          "flash": 0.16,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "Harrier rackL hit changes actual module pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 737,
+          "flash": 0.16,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "hard lasers alone do not expose reactor while fans or racks survive",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "lasersGone": true,
+          "stillLocked": true,
+          "open": false
+        }
+      },
+      {
+        "name": "hard all modules open a short final reactor phase and native boss defeat",
+        "passed": true,
+        "data": {
+          "open": true,
+          "targets": [
+            "reactor"
+          ],
+          "quick": true,
+          "damaged": true,
+          "dead": true,
+          "defeated": true
+        }
+      },
+      {
+        "name": "furious original flyover Harrier has fan, laser and missile targets",
+        "passed": true,
+        "data": {
+          "old": true,
+          "cargo": false,
+          "parts": [
+            {
+              "id": "L",
+              "kind": "fan"
+            },
+            {
+              "id": "R",
+              "kind": "fan"
+            },
+            {
+              "id": "laser0",
+              "kind": "laser"
+            },
+            {
+              "id": "laser1",
+              "kind": "laser"
+            },
+            {
+              "id": "laser2",
+              "kind": "laser"
+            },
+            {
+              "id": "laser3",
+              "kind": "laser"
+            },
+            {
+              "id": "rackL",
+              "kind": "missile"
+            },
+            {
+              "id": "rackR",
+              "kind": "missile"
+            }
+          ],
+          "ready": true,
+          "targets": 8
+        }
+      },
+      {
+        "name": "furious lasers alone do not expose reactor while fans or racks survive",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "lasersGone": true,
+          "stillLocked": true,
+          "open": false
+        }
+      },
+      {
+        "name": "furious all modules open a short final reactor phase and native boss defeat",
+        "passed": true,
+        "data": {
+          "open": true,
+          "targets": [
+            "reactor"
+          ],
+          "quick": true,
+          "damaged": true,
+          "dead": true,
+          "defeated": true
+        }
+      },
+      {
+        "name": "Harrier overhead pass cannot cause contact death",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "contact": false
+        }
+      },
+      {
+        "name": "Cole radio keeps flight, map, existing enemies and rounds running",
+        "passed": true,
+        "data": {
+          "moving": 210.59999999999945,
+          "scroll": 39.99999999999999,
+          "enemyMoved": -20.454887289804077,
+          "roundMoved": 178.43951116799985,
+          "roundAlive": true,
+          "stageTimer": 0,
+          "saved": 0,
+          "plan": true,
+          "active": true,
+          "hold": 60,
+          "spawn": true
+        }
+      },
+      {
+        "name": "Radio holds new spawns and preserves scheduled wave queue",
+        "passed": true,
+        "data": {
+          "moving": 210.59999999999945,
+          "scroll": 39.99999999999999,
+          "enemyMoved": -20.454887289804077,
+          "roundMoved": 178.43951116799985,
+          "roundAlive": true,
+          "stageTimer": 0,
+          "saved": 0,
+          "plan": true,
+          "active": true,
+          "hold": 60,
+          "spawn": true
+        }
+      },
+      {
+        "name": "Route selection continues the spawn hold",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Choosing a route releases enemy spawning",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage4 tanks are larger, modular and stronger than Stage1 armor",
+        "passed": true,
+        "data": {
+          "size": [
+            88,
+            104
+          ],
+          "mod": true,
+          "parts": 3,
+          "hp": 100,
+          "paved": true
+        }
+      },
+      {
+        "name": "Heavy tanks release real cannon shells and authored modular art",
+        "passed": true,
+        "data": {
+          "shots": 3,
+          "shells": [],
+          "art": {
+            "hull": 211,
+            "turret": 211,
+            "shell": 97
+          }
+        }
+      },
+      {
+        "name": "Heavy cannon plays all sixteen authored recoil/reload poses",
+        "passed": true,
+        "data": [
+          12,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "name": "Metal shells originate at actual cannon tips and incoming fire hits that module",
+        "passed": true,
+        "data": {
+          "damage": 1,
+          "hull": true,
+          "mount": 60.70666362790868
+        }
+      },
+      {
+        "name": "Tank rack damage stays on its own pool and visibly flashes native pixels",
+        "passed": true,
+        "data": {
+          "part": true,
+          "hull": true,
+          "flash": 0.16,
+          "pixels": 2469,
+          "dead": false,
+          "y": 204.99999999999721
+        }
+      },
+      {
+        "name": "Tank racks and cannon support separate native Retina missile locks",
+        "passed": true,
+        "data": {
+          "count": 4,
+          "hit": true,
+          "damage": 2
+        }
+      },
+      {
+        "name": "mg wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "mg",
+          "n": 1,
+          "w": 7,
+          "h": 14
+        }
+      },
+      {
+        "name": "spread wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "spread",
+          "n": 1,
+          "w": 6,
+          "h": 11
+        }
+      },
+      {
+        "name": "heavy wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "heavy",
+          "n": 1,
+          "w": 10,
+          "h": 18
+        }
+      },
+      {
+        "name": "beam wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "beam",
+          "n": 1,
+          "w": 38,
+          "h": 323
+        }
+      },
+      {
+        "name": "Maverick homing lasers remain excluded from Wind",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal Stage7 tanks spawn inside the middle floor strip",
+        "passed": true,
+        "data": [
+          {
+            "x": 272.45000000000005,
+            "l": 272.45000000000005,
+            "r": 407.55
+          },
+          {
+            "x": 407.55,
+            "l": 272.45000000000005,
+            "r": 407.55
+          }
+        ]
+      },
+      {
+        "name": "normal Stage7 has active attacks and sustained complementary waves",
+        "passed": true,
+        "data": {
+          "spawns": 4,
+          "shots": 27,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 5,
+          "profile": {
+            "rate": 1.15,
+            "cooldown": 0.9,
+            "tell": 0.62,
+            "recovery": 0.34,
+            "slots": 2,
+            "spacing": 0.18400000000000002,
+            "cycles": 3
+          }
+        }
+      },
+      {
+        "name": "normal Stage7 tanks remain central after motion and separation",
+        "passed": true,
+        "data": {
+          "spawns": 4,
+          "shots": 27,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 5,
+          "profile": {
+            "rate": 1.15,
+            "cooldown": 0.9,
+            "tell": 0.62,
+            "recovery": 0.34,
+            "slots": 2,
+            "spacing": 0.18400000000000002,
+            "cycles": 3
+          }
+        }
+      },
+      {
+        "name": "hard Stage7 tanks spawn inside the middle floor strip",
+        "passed": true,
+        "data": [
+          {
+            "x": 272.45000000000005,
+            "l": 272.45000000000005,
+            "r": 407.55
+          },
+          {
+            "x": 407.55,
+            "l": 272.45000000000005,
+            "r": 407.55
+          }
+        ]
+      },
+      {
+        "name": "hard Stage7 has active attacks and sustained complementary waves",
+        "passed": true,
+        "data": {
+          "spawns": 8,
+          "shots": 34,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 3,
+          "profile": {
+            "rate": 1.375,
+            "cooldown": 0.7200000000000001,
+            "tell": 0.54,
+            "recovery": 0.3,
+            "slots": 3,
+            "spacing": 0.144,
+            "cycles": 4
+          }
+        }
+      },
+      {
+        "name": "hard Stage7 tanks remain central after motion and separation",
+        "passed": true,
+        "data": {
+          "spawns": 8,
+          "shots": 34,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 3,
+          "profile": {
+            "rate": 1.375,
+            "cooldown": 0.7200000000000001,
+            "tell": 0.54,
+            "recovery": 0.3,
+            "slots": 3,
+            "spacing": 0.144,
+            "cycles": 4
+          }
+        }
+      },
+      {
+        "name": "furious Stage7 tanks spawn inside the middle floor strip",
+        "passed": true,
+        "data": [
+          {
+            "x": 272.45000000000005,
+            "l": 272.45000000000005,
+            "r": 407.55
+          },
+          {
+            "x": 407.55,
+            "l": 272.45000000000005,
+            "r": 407.55
+          }
+        ]
+      },
+      {
+        "name": "furious Stage7 has active attacks and sustained complementary waves",
+        "passed": true,
+        "data": {
+          "spawns": 10,
+          "shots": 48,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 10,
+          "profile": {
+            "rate": 1.8744,
+            "cooldown": 0.48999999999999994,
+            "tell": 0.46,
+            "recovery": 0.26,
+            "slots": 4,
+            "spacing": 0.096,
+            "cycles": 6
+          }
+        }
+      },
+      {
+        "name": "furious Stage7 tanks remain central after motion and separation",
+        "passed": true,
+        "data": {
+          "spawns": 10,
+          "shots": 48,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 10,
+          "profile": {
+            "rate": 1.8744,
+            "cooldown": 0.48999999999999994,
+            "tell": 0.46,
+            "recovery": 0.26,
+            "slots": 4,
+            "spacing": 0.096,
+            "cycles": 6
+          }
+        }
+      },
+      {
+        "name": "Stage7 reinforcement pressure increases Normal -> Hard -> Furious",
+        "passed": true,
+        "data": [
+          4,
+          8,
+          10
+        ]
+      },
+      {
+        "name": "Extra Stage7 pressure releases the authored boss approach instead of refilling its crowd gate",
+        "passed": true,
+        "data": {
+          "before": 10,
+          "after": 10
+        }
+      },
+      {
+        "name": "No page, console or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "scope": "Actual Chromium/index.html, native actors, update/collision paths and authored-pixel screenshots. Controlled fixtures; not a full human campaign balance certification."
+  },
+  "publishing_candidate_native": {
+    "passed": 88,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "normal lightning fan uses regular native FOV lanes",
+        "passed": true,
+        "data": {
+          "count": 7,
+          "progress": 0.65,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "draws": 1
+        }
+      },
+      {
+        "name": "normal lightning balls cannot be intercepted",
+        "passed": true,
+        "data": {
+          "count": 7,
+          "angles": [
+            0.9907963267948966,
+            1.1357963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966
+          ],
+          "proof": true,
+          "lanes": [
+            {
+              "x": 340,
+              "y": 210.24860774712414,
+              "angle": 0.9907963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.24860774712414,
+              "angle": 1.1357963267948965,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.24860774712414,
+              "angle": 1.2807963267948965,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.24860774712414,
+              "angle": 1.7157963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.24860774712414,
+              "angle": 1.8607963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.24860774712414,
+              "angle": 2.0057963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.24860774712414,
+              "angle": 2.1507963267948966,
+              "progress": 0.65,
+              "width": 22
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal actual mg collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual spread collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual beam collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual orb collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal actual gmiss collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "normal first overhead-return volley has a warning window",
+        "passed": true,
+        "data": {
+          "initial": 0.78,
+          "warning": 7,
+          "wave": 0
+        }
+      },
+      {
+        "name": "normal lightning guards use authored aircraft at twice Warden-helper size",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "tell",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 3,
+          "art": 464
+        }
+      },
+      {
+        "name": "normal guards finish entry and fire independently",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "tell",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 3,
+          "art": 464
+        }
+      },
+      {
+        "name": "hard lightning fan uses regular native FOV lanes",
+        "passed": true,
+        "data": {
+          "count": 9,
+          "progress": 0.65,
+          "angles": [
+            0.8457963267948966,
+            0.9907963267948966,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "draws": 2
+        }
+      },
+      {
+        "name": "hard lightning balls cannot be intercepted",
+        "passed": true,
+        "data": {
+          "count": 9,
+          "angles": [
+            0.8457963267948967,
+            0.9907963267948967,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966
+          ],
+          "proof": true,
+          "lanes": [
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.8457963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.9907963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.1357963267948965,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.5707963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.7157963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.8607963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.0057963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.1507963267948966,
+              "progress": 0.65,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.2957963267948966,
+              "progress": 0.65,
+              "width": 22
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard actual mg collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual spread collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual beam collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual orb collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard actual gmiss collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "hard first overhead-return volley has a warning window",
+        "passed": true,
+        "data": {
+          "initial": 0.78,
+          "warning": 9,
+          "wave": 0
+        }
+      },
+      {
+        "name": "hard lightning guards use authored aircraft at twice Warden-helper size",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 12,
+          "art": 464
+        }
+      },
+      {
+        "name": "hard guards finish entry and fire independently",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 12,
+          "art": 464
+        }
+      },
+      {
+        "name": "Large lightning guard damage changes native pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 19397,
+          "flash": 0.15,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "furious lightning fan uses regular native FOV lanes",
+        "passed": true,
+        "data": {
+          "count": 11,
+          "progress": 0.6500000000000001,
+          "angles": [
+            0.7007963267948967,
+            0.8457963267948966,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "draws": 3
+        }
+      },
+      {
+        "name": "furious lightning balls cannot be intercepted",
+        "passed": true,
+        "data": {
+          "count": 11,
+          "angles": [
+            0.7007963267948966,
+            0.8457963267948965,
+            1.2807963267948965,
+            1.4257963267948965,
+            1.5707963267948966,
+            1.7157963267948966,
+            1.8607963267948966,
+            2.0057963267948966,
+            2.1507963267948966,
+            2.2957963267948966,
+            2.4407963267948967
+          ],
+          "proof": true,
+          "lanes": [
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.7007963267948967,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.8457963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 0.9907963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.4257963267948965,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.5707963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.7157963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 1.8607963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.0057963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.1507963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.2957963267948966,
+              "progress": 0.6500000000000001,
+              "width": 22
+            },
+            {
+              "x": 340,
+              "y": 210.2536,
+              "angle": 2.4407963267948967,
+              "progress": 0.6500000000000001,
+              "width": 22
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious actual mg collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual spread collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual beam collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual orb collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious actual gmiss collision leaves lightning intact",
+        "passed": true,
+        "data": {
+          "alive": true,
+          "proof": true,
+          "shootable": false,
+          "intercepted": false
+        }
+      },
+      {
+        "name": "furious first overhead-return volley has a warning window",
+        "passed": true,
+        "data": {
+          "initial": 0.78,
+          "warning": 11,
+          "wave": 0
+        }
+      },
+      {
+        "name": "furious lightning guards use authored aircraft at twice Warden-helper size",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 27,
+          "art": 464
+        }
+      },
+      {
+        "name": "furious guards finish entry and fire independently",
+        "passed": true,
+        "data": {
+          "jets": [
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            },
+            {
+              "size": 192,
+              "entry": false,
+              "phase": "fire",
+              "age": 3.9999999999999907
+            }
+          ],
+          "shots": 27,
+          "art": 464
+        }
+      },
+      {
+        "name": "normal charge stays up against bullets and lasts for a missile volley",
+        "passed": true,
+        "data": {
+          "required": 3,
+          "hits": 0,
+          "charging": true,
+          "duration": 7.5,
+          "state": "storm_raise",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "normal multiple unique missile impacts are required; one missile cannot double count",
+        "passed": true,
+        "data": {
+          "counts": [
+            1,
+            2
+          ],
+          "hits": 2,
+          "required": 3,
+          "status": "charging",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "normal final missile interrupts the heal and opens a punish window",
+        "passed": true,
+        "data": {
+          "status": "cancelled",
+          "state": "fr_stun",
+          "hits": 3,
+          "required": 3
+        }
+      },
+      {
+        "name": "normal Hammer actual hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard charge stays up against bullets and lasts for a missile volley",
+        "passed": true,
+        "data": {
+          "required": 4,
+          "hits": 0,
+          "charging": true,
+          "duration": 8,
+          "state": "storm_raise",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "hard multiple unique missile impacts are required; one missile cannot double count",
+        "passed": true,
+        "data": {
+          "counts": [
+            1,
+            2,
+            3
+          ],
+          "hits": 3,
+          "required": 4,
+          "status": "charging",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "hard final missile interrupts the heal and opens a punish window",
+        "passed": true,
+        "data": {
+          "status": "cancelled",
+          "state": "fr_stun",
+          "hits": 4,
+          "required": 4
+        }
+      },
+      {
+        "name": "hard Hammer actual hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "furious charge stays up against bullets and lasts for a missile volley",
+        "passed": true,
+        "data": {
+          "required": 5,
+          "hits": 0,
+          "charging": true,
+          "duration": 8.5,
+          "state": "storm_raise",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "furious multiple unique missile impacts are required; one missile cannot double count",
+        "passed": true,
+        "data": {
+          "counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "hits": 4,
+          "required": 5,
+          "status": "charging",
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "furious final missile interrupts the heal and opens a punish window",
+        "passed": true,
+        "data": {
+          "status": "cancelled",
+          "state": "fr_stun",
+          "hits": 5,
+          "required": 5
+        }
+      },
+      {
+        "name": "furious Hammer actual hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage5 now fields the Earth Siege Bomber with its modular weapons",
+        "passed": true,
+        "data": {
+          "kind": "siegebomber",
+          "space": false,
+          "name": "ECLIPSE SIEGE BOMBER",
+          "parts": 4
+        }
+      },
+      {
+        "name": "Stage6 new fortress is a true miniboss with six batteries",
+        "passed": true,
+        "data": {
+          "kind": "siegefortress17",
+          "cargo": true,
+          "mini": true,
+          "boss": false,
+          "hp": 1650,
+          "guns": 6
+        }
+      },
+      {
+        "name": "Fortress reactor stays locked through five broken batteries and opens on sixth",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "opened": true,
+          "dead": true,
+          "bossDefeated": false,
+          "active": true
+        }
+      },
+      {
+        "name": "Defeating fortress does not finish Stage6",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "opened": true,
+          "dead": true,
+          "bossDefeated": false,
+          "active": true
+        }
+      },
+      {
+        "name": "Fortress death releases the native miniboss progression",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal original flyover Harrier has fan, laser and missile targets",
+        "passed": true,
+        "data": {
+          "old": true,
+          "cargo": false,
+          "parts": [
+            {
+              "id": "L",
+              "kind": "fan"
+            },
+            {
+              "id": "R",
+              "kind": "fan"
+            },
+            {
+              "id": "laser0",
+              "kind": "laser"
+            },
+            {
+              "id": "laser1",
+              "kind": "laser"
+            },
+            {
+              "id": "laser2",
+              "kind": "laser"
+            },
+            {
+              "id": "laser3",
+              "kind": "laser"
+            },
+            {
+              "id": "rackL",
+              "kind": "missile"
+            },
+            {
+              "id": "rackR",
+              "kind": "missile"
+            }
+          ],
+          "ready": true,
+          "targets": 8
+        }
+      },
+      {
+        "name": "normal lasers alone do not expose reactor while fans or racks survive",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "lasersGone": true,
+          "stillLocked": true,
+          "open": false
+        }
+      },
+      {
+        "name": "normal all modules open a short final reactor phase and native boss defeat",
+        "passed": true,
+        "data": {
+          "open": true,
+          "targets": [
+            "reactor"
+          ],
+          "quick": true,
+          "damaged": true,
+          "dead": true,
+          "defeated": true
+        }
+      },
+      {
+        "name": "hard original flyover Harrier has fan, laser and missile targets",
+        "passed": true,
+        "data": {
+          "old": true,
+          "cargo": false,
+          "parts": [
+            {
+              "id": "L",
+              "kind": "fan"
+            },
+            {
+              "id": "R",
+              "kind": "fan"
+            },
+            {
+              "id": "laser0",
+              "kind": "laser"
+            },
+            {
+              "id": "laser1",
+              "kind": "laser"
+            },
+            {
+              "id": "laser2",
+              "kind": "laser"
+            },
+            {
+              "id": "laser3",
+              "kind": "laser"
+            },
+            {
+              "id": "rackL",
+              "kind": "missile"
+            },
+            {
+              "id": "rackR",
+              "kind": "missile"
+            }
+          ],
+          "ready": true,
+          "targets": 8
+        }
+      },
+      {
+        "name": "Harrier L hit changes actual module pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 1530,
+          "flash": 0.16,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "Harrier laser0 hit changes actual module pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 641,
+          "flash": 0.16,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "Harrier rackL hit changes actual module pixels and expires",
+        "passed": true,
+        "data": {
+          "pixels": 737,
+          "flash": 0.16,
+          "damage": 1,
+          "expired": true
+        }
+      },
+      {
+        "name": "hard lasers alone do not expose reactor while fans or racks survive",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "lasersGone": true,
+          "stillLocked": true,
+          "open": false
+        }
+      },
+      {
+        "name": "hard all modules open a short final reactor phase and native boss defeat",
+        "passed": true,
+        "data": {
+          "open": true,
+          "targets": [
+            "reactor"
+          ],
+          "quick": true,
+          "damaged": true,
+          "dead": true,
+          "defeated": true
+        }
+      },
+      {
+        "name": "furious original flyover Harrier has fan, laser and missile targets",
+        "passed": true,
+        "data": {
+          "old": true,
+          "cargo": false,
+          "parts": [
+            {
+              "id": "L",
+              "kind": "fan"
+            },
+            {
+              "id": "R",
+              "kind": "fan"
+            },
+            {
+              "id": "laser0",
+              "kind": "laser"
+            },
+            {
+              "id": "laser1",
+              "kind": "laser"
+            },
+            {
+              "id": "laser2",
+              "kind": "laser"
+            },
+            {
+              "id": "laser3",
+              "kind": "laser"
+            },
+            {
+              "id": "rackL",
+              "kind": "missile"
+            },
+            {
+              "id": "rackR",
+              "kind": "missile"
+            }
+          ],
+          "ready": true,
+          "targets": 8
+        }
+      },
+      {
+        "name": "furious lasers alone do not expose reactor while fans or racks survive",
+        "passed": true,
+        "data": {
+          "locked": true,
+          "lasersGone": true,
+          "stillLocked": true,
+          "open": false
+        }
+      },
+      {
+        "name": "furious all modules open a short final reactor phase and native boss defeat",
+        "passed": true,
+        "data": {
+          "open": true,
+          "targets": [
+            "reactor"
+          ],
+          "quick": true,
+          "damaged": true,
+          "dead": true,
+          "defeated": true
+        }
+      },
+      {
+        "name": "Harrier overhead pass cannot cause contact death",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "contact": false
+        }
+      },
+      {
+        "name": "Cole radio keeps flight, map, existing enemies and rounds running",
+        "passed": true,
+        "data": {
+          "moving": 210.59999999999945,
+          "scroll": 39.99999999999999,
+          "enemyMoved": -20.454887289804077,
+          "roundMoved": 178.43951116799985,
+          "roundAlive": true,
+          "stageTimer": 0,
+          "saved": 0,
+          "plan": true,
+          "active": true,
+          "hold": 60,
+          "spawn": true
+        }
+      },
+      {
+        "name": "Radio holds new spawns and preserves scheduled wave queue",
+        "passed": true,
+        "data": {
+          "moving": 210.59999999999945,
+          "scroll": 39.99999999999999,
+          "enemyMoved": -20.454887289804077,
+          "roundMoved": 178.43951116799985,
+          "roundAlive": true,
+          "stageTimer": 0,
+          "saved": 0,
+          "plan": true,
+          "active": true,
+          "hold": 60,
+          "spawn": true
+        }
+      },
+      {
+        "name": "Route selection continues the spawn hold",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Choosing a route releases enemy spawning",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage4 tanks are larger, modular and stronger than Stage1 armor",
+        "passed": true,
+        "data": {
+          "size": [
+            88,
+            104
+          ],
+          "mod": true,
+          "parts": 3,
+          "hp": 100,
+          "paved": true
+        }
+      },
+      {
+        "name": "Heavy tanks release real cannon shells and authored modular art",
+        "passed": true,
+        "data": {
+          "shots": 3,
+          "shells": [],
+          "art": {
+            "hull": 211,
+            "turret": 211,
+            "shell": 97
+          }
+        }
+      },
+      {
+        "name": "Heavy cannon plays all sixteen authored recoil/reload poses",
+        "passed": true,
+        "data": [
+          12,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "name": "Metal shells originate at actual cannon tips and incoming fire hits that module",
+        "passed": true,
+        "data": {
+          "damage": 1,
+          "hull": true,
+          "mount": 60.70952340012197
+        }
+      },
+      {
+        "name": "Tank rack damage stays on its own pool and visibly flashes native pixels",
+        "passed": true,
+        "data": {
+          "part": true,
+          "hull": true,
+          "flash": 0.16,
+          "pixels": 2410,
+          "dead": false,
+          "y": 246.29999999999654
+        }
+      },
+      {
+        "name": "Tank racks and cannon support separate native Retina missile locks",
+        "passed": true,
+        "data": {
+          "count": 4,
+          "hit": true,
+          "damage": 2
+        }
+      },
+      {
+        "name": "mg wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "mg",
+          "n": 1,
+          "w": 7,
+          "h": 14
+        }
+      },
+      {
+        "name": "spread wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "spread",
+          "n": 1,
+          "w": 6,
+          "h": 11
+        }
+      },
+      {
+        "name": "heavy wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "heavy",
+          "n": 1,
+          "w": 10,
+          "h": 18
+        }
+      },
+      {
+        "name": "beam wind draws a compact authored projectile or single continuous laser",
+        "passed": true,
+        "data": {
+          "kind": "beam",
+          "n": 1,
+          "w": 38,
+          "h": 323
+        }
+      },
+      {
+        "name": "Maverick homing lasers remain excluded from Wind",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal Stage7 tanks spawn inside the middle floor strip",
+        "passed": true,
+        "data": [
+          {
+            "x": 272.45000000000005,
+            "l": 272.45000000000005,
+            "r": 407.55
+          },
+          {
+            "x": 407.55,
+            "l": 272.45000000000005,
+            "r": 407.55
+          }
+        ]
+      },
+      {
+        "name": "normal Stage7 has active attacks and sustained complementary waves",
+        "passed": true,
+        "data": {
+          "spawns": 4,
+          "shots": 28,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 10,
+          "profile": {
+            "rate": 1.15,
+            "cooldown": 0.9,
+            "tell": 0.62,
+            "recovery": 0.34,
+            "slots": 2,
+            "spacing": 0.18400000000000002,
+            "cycles": 3
+          }
+        }
+      },
+      {
+        "name": "normal Stage7 tanks remain central after motion and separation",
+        "passed": true,
+        "data": {
+          "spawns": 4,
+          "shots": 28,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 10,
+          "profile": {
+            "rate": 1.15,
+            "cooldown": 0.9,
+            "tell": 0.62,
+            "recovery": 0.34,
+            "slots": 2,
+            "spacing": 0.18400000000000002,
+            "cycles": 3
+          }
+        }
+      },
+      {
+        "name": "hard Stage7 tanks spawn inside the middle floor strip",
+        "passed": true,
+        "data": [
+          {
+            "x": 272.45000000000005,
+            "l": 272.45000000000005,
+            "r": 407.55
+          },
+          {
+            "x": 407.55,
+            "l": 272.45000000000005,
+            "r": 407.55
+          }
+        ]
+      },
+      {
+        "name": "hard Stage7 has active attacks and sustained complementary waves",
+        "passed": true,
+        "data": {
+          "spawns": 8,
+          "shots": 33,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 4,
+          "profile": {
+            "rate": 1.375,
+            "cooldown": 0.7200000000000001,
+            "tell": 0.54,
+            "recovery": 0.3,
+            "slots": 3,
+            "spacing": 0.144,
+            "cycles": 4
+          }
+        }
+      },
+      {
+        "name": "hard Stage7 tanks remain central after motion and separation",
+        "passed": true,
+        "data": {
+          "spawns": 8,
+          "shots": 33,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 4,
+          "profile": {
+            "rate": 1.375,
+            "cooldown": 0.7200000000000001,
+            "tell": 0.54,
+            "recovery": 0.3,
+            "slots": 3,
+            "spacing": 0.144,
+            "cycles": 4
+          }
+        }
+      },
+      {
+        "name": "furious Stage7 tanks spawn inside the middle floor strip",
+        "passed": true,
+        "data": [
+          {
+            "x": 272.45000000000005,
+            "l": 272.45000000000005,
+            "r": 407.55
+          },
+          {
+            "x": 407.55,
+            "l": 272.45000000000005,
+            "r": 407.55
+          }
+        ]
+      },
+      {
+        "name": "furious Stage7 has active attacks and sustained complementary waves",
+        "passed": true,
+        "data": {
+          "spawns": 10,
+          "shots": 49,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 13,
+          "profile": {
+            "rate": 1.8744,
+            "cooldown": 0.48999999999999994,
+            "tell": 0.46,
+            "recovery": 0.26,
+            "slots": 4,
+            "spacing": 0.096,
+            "cycles": 6
+          }
+        }
+      },
+      {
+        "name": "furious Stage7 tanks remain central after motion and separation",
+        "passed": true,
+        "data": {
+          "spawns": 10,
+          "shots": 49,
+          "tanks": [
+            {
+              "x": 272.45000000000005,
+              "l": 272.45000000000005,
+              "r": 407.55
+            },
+            {
+              "x": 407.55,
+              "l": 272.45000000000005,
+              "r": 407.55
+            }
+          ],
+          "rounds": 13,
+          "profile": {
+            "rate": 1.8744,
+            "cooldown": 0.48999999999999994,
+            "tell": 0.46,
+            "recovery": 0.26,
+            "slots": 4,
+            "spacing": 0.096,
+            "cycles": 6
+          }
+        }
+      },
+      {
+        "name": "Stage7 reinforcement pressure increases Normal -> Hard -> Furious",
+        "passed": true,
+        "data": [
+          4,
+          8,
+          10
+        ]
+      },
+      {
+        "name": "Extra Stage7 pressure releases the authored boss approach instead of refilling its crowd gate",
+        "passed": true,
+        "data": {
+          "before": 10,
+          "after": 10
+        }
+      },
+      {
+        "name": "No page, console or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "scope": "Actual Chromium/index.html, native actors, update/collision paths and authored-pixel screenshots. Controlled fixtures; not a full human campaign balance certification."
+  },
+  "working_runtime_sha256": {
+    "assets/assault_art_1017.js": "edc3cdcd7dd34db8fe477091bdfb2d22ae5f3f8a1c0c5f004e8ed75b1e13d159",
+    "assets/assault_sprites_1017.js": "1df9f8a487d500b31bb69a2baf1f5f958eb136a20dc28482db738e79b3d8d618",
+    "assets/storm_guard_1017.js": "b1f9e8ae974fd6d6173102d05a5c6304d2a3cff4a8ec2a4a26225ac3c426c826",
+    "assets/hammer_counter_1017.js": "10ee5802f4c82bfb0ab725bb2d0eb577facb614f7b4cf0d426e9b9d829dafece",
+    "assets/stage6_roster_1017.js": "cc9658981bfefad9ceeb75c238b1c60cbef4520dca500fede8b2675369b51dfc",
+    "assets/stage6_radio_1017.js": "920aa411818630549d16203981f63126b3f0e8a4f468a0c129dee682a747e868",
+    "assets/highway_armor_1017.js": "a4155b1b154e53106f3fbf31ddaa0469855ee6c0e25fcf9cbe709d3b67c7d5de",
+    "assets/sewer_assault_1017.js": "03153c186e89ae7557cf6d0b91b73dd6539f41c7e3244a18ec99d4944e64900a",
+    "assets/wind_refit_1017.js": "4dc851187a478f9e1fc868b309523c5678182b9ee5bfbfa5e148f88804f478bc",
+    "index.html": "4b8eee7f9920a88a4f2a6227ff030fe56ad2128886f2049573dacdbe6274a848",
+    "assets/game.js": "16e651b35f69e355e2ee8449e50224a013dee015a6a47e7b0a8d721583c79209",
+    "assets/modular_roster_0927.js": "692141e8fea3a55ca8992648c3ad3e35042e628221175c26edb090ade98f94a9",
+    "assets/orbs_1010.js": "00726ac6d3e51b2f3f8099959665576df731313137e67d2c7aec0f5fdda2597f",
+    "assets/spread_1001.js": "3c74190ce8f99baf967311fbdc614f1faf5a759c1ad3e639098b81035a8de2f2"
+  },
+  "candidate_runtime_sha256": {
+    "assets/assault_art_1017.js": "edc3cdcd7dd34db8fe477091bdfb2d22ae5f3f8a1c0c5f004e8ed75b1e13d159",
+    "assets/assault_sprites_1017.js": "1df9f8a487d500b31bb69a2baf1f5f958eb136a20dc28482db738e79b3d8d618",
+    "assets/storm_guard_1017.js": "b1f9e8ae974fd6d6173102d05a5c6304d2a3cff4a8ec2a4a26225ac3c426c826",
+    "assets/hammer_counter_1017.js": "10ee5802f4c82bfb0ab725bb2d0eb577facb614f7b4cf0d426e9b9d829dafece",
+    "assets/stage6_roster_1017.js": "cc9658981bfefad9ceeb75c238b1c60cbef4520dca500fede8b2675369b51dfc",
+    "assets/stage6_radio_1017.js": "920aa411818630549d16203981f63126b3f0e8a4f468a0c129dee682a747e868",
+    "assets/highway_armor_1017.js": "a4155b1b154e53106f3fbf31ddaa0469855ee6c0e25fcf9cbe709d3b67c7d5de",
+    "assets/sewer_assault_1017.js": "03153c186e89ae7557cf6d0b91b73dd6539f41c7e3244a18ec99d4944e64900a",
+    "assets/wind_refit_1017.js": "4dc851187a478f9e1fc868b309523c5678182b9ee5bfbfa5e148f88804f478bc",
+    "index.html": "c03ca683942d5e65e20adf6f9a3109e5706c73fd58e810fb063338a54637cdc0",
+    "assets/game.js": "2af6eb84e45569e73089dd75f8b328a15836c97fae995c257a27e8cd3240d31d",
+    "assets/modular_roster_0927.js": "faaf7bffb845bc895d86e877c6c17c3d6a96cfb0cfa505df3c8ea4e4ac231b62",
+    "assets/orbs_1010.js": "b04d57d350b6a904fd8c55a24f0c31f7ac6991552636d45d192febe71f1f98c0",
+    "assets/spread_1001.js": "16349d4057040beaeac586950e97dedb52221dcf562243ae07c66b5c3efcc586"
+  },
+  "required_suite": {
+    "passing": 8742,
+    "failed": 0,
+    "exit": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "warden_entry_regression": {
+    "passing": 43,
+    "failed": 0,
+    "browser_errors": 0
+  },
+  "targeting_regression": {
+    "passing": 96,
+    "failed": 0,
+    "browser_errors": 0
+  },
+  "art_sha256": {
+    "assets/game/shared/combat/assault_1017/stormJet.png": "d1e2a5adf31b816d545f81cbf367996fe9943e8a1c8ce1a73d07b0a05075b1cd",
+    "assets/game/shared/combat/assault_1017/tankHull.png": "164e9b9e50cc66ee114314f199aef6088cfbf77f6ea3d9dc546125ebd886c2f3",
+    "assets/game/shared/combat/assault_1017/tankShell.png": "d6e6cbc0b833554d3fedebd5e7ddeb2294b06e05d10df284bd842a0e0044fe30",
+    "assets/game/shared/combat/assault_1017/tankTurret.png": "0547cf09e57bcec316db956c51d6b56dd4eb6d2d3c7c2c73c30b1d28e5d4a802",
+    "assets/game/shared/combat/assault_1017/windBullets.png": "5fc80cd29761081817da29005264e6fa3376ffeca5058be9b2cd5ed20a649af9",
+    "assets/game/shared/combat/assault_1017/windHeavy.png": "1b364ebb60e183fe18857bd2a864dfbcbea4ddd4edfd86832d77b6ee2bc4e319",
+    "assets/game/shared/combat/assault_1017/windLaser.png": "d04fd4a1fd2898126bcda1e1760f21864694212c340a2ec6d25e8b769ee09d54",
+    "assets/game/shared/combat/assault_1017/windSpread.png": "5516ae089bd1053e574e1f7b6727bc01204ac1b1da9e1bd939fdf43a660168b6"
+  },
+  "art_provider": "built-in image generator for jets/tanks/Wind; PixelLab void/portal/arenas explicitly pending",
+  "incoming_review": {
+    "HEAD": "db490e3a80c7f159b903b9fca6b0a00088497588",
+    "origin_main": "db490e3a80c7f159b903b9fca6b0a00088497588"
+  },
+  "scope": "Controlled native Chromium fixtures and actual pixels, not a full human campaign difficulty certification."
+}

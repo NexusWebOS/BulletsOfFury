@@ -1,3 +1,19 @@
+# 2026-10-17 — Gameplay assault revision; PixelLab art pending
+
+Mike requested Sovereign lightning FOV/proof, large lightning jets, a multi-missile
+Hammer counter, Stage5/6 roster changes, live Stage6 radio, compact Wind rounds,
+larger modular highway tanks and stronger central-lane Stage7 pressure. Nine
+owning runtime/art modules implement this without another game.js mutation.
+Harrier reactor waits for 2 fans + 4 lasers + 2 racks; cargo fortress is now a
+true miniboss. New jets/tanks/Wind use 128 authored poses with even frame sizes,
+shared pivots/scales and onion inspection. Native 88/88 live and exact scoped
+publishing candidate, browser/asset errors0; actual damaged pixels verified.
+Required fullsuite8742/0, final BUILD OK/exit0; Warden entry43/43 and targeting96/96.
+See docs/ASSAULT_REVISION_1017.md and docs/qa/assault_revision_1017.json.
+Mike explicitly chose WAIT FOR PIXELLAB for Stage7–8 void/portal/arena art.
+Keep existing art loaded; unused generator drafts are not production assets.
+Separate local modular/spread/tutorial work must remain unpublished/preserved.
+
 # 2026-10-17 — Fixed Sovereign core contact, highway armor and modular locks
 
 Mike requested more paved-highway tanks on Hard/Furious, fixed generator stations
