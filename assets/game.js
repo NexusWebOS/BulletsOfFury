@@ -37215,7 +37215,7 @@ function updatePlay(dt){
         else { playerHit(); break; }
       }
     }
-    if(boss && bossActive && !boss.dead && (!boss._hammer||hammerOnPlayerPlane(boss)) && !(boss._vile&&typeof vile25PatternOwnsContact==='function'&&vile25PatternOwnsContact(boss)) && bossHitTest(player.x,player.y-6)){
+    if(boss && bossActive && !boss.dead && (!boss._hammer||hammerOnPlayerPlane(boss)) && !(boss._vile&&typeof vile25PatternOwnsContact==='function'&&vile25PatternOwnsContact(boss)) && (typeof target17BossContact==='function'?target17BossContact(boss,player.x,player.y-6):bossHitTest(player.x,player.y-6))){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitBoss(6); player._ramT=0.2; juggernautRamImpact(player.x,player.y-10); shake=Math.max(shake,6); } }
       else playerHit();
     }

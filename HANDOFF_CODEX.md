@@ -1,3 +1,22 @@
+# 2026-10-17 — Fixed Sovereign core contact, highway armor and modular locks
+
+Mike requested more paved-highway tanks on Hard/Furious, fixed generator stations
+during Sovereign charges, and interactive targeted attacks on earlier/later bosses.
+targeting_1017.js preserves the native actors/attacks and resolves surviving gun
+sockets. Razorback gains a large shootable sonic missile with 1.35s bounded guidance;
+Magmaward sustains fire bullets; Frostcruiser uses ice guns and rack missiles.
+Stage 7/8/9 ranged weapons share the orbiting reticle, final 0.40s committed aim,
+lock beeps and bounded salvo. Knight melee stays native. Sovereign generators
+stay behind and their lightning extends; physical hull contact is separate from
+shootable objective routing. Hard/Furious add 11/16 native tanks in 40s on pavement.
+Native 96/96 current and exact scoped GitHub candidate, no browser/asset errors.
+Existing boss-completion regression 53/53 and Warden entry 43/43 remain passing.
+Current required fullsuite 8742/0, final BUILD OK/exit0; node syntax checks pass.
+Actual captures/damaged pixels inspected. See docs/WEAPON_TARGETING_1017.md and
+docs/qa/weapon_targeting_1017.json. Ignored evidence _shots/targeting_1017.
+Only one contact hook plus owner/loader/probe/docs publish; separate local modular,
+spread, tutorial and launcher changes are preserved. Cache targeting-1017.
+
 # 2026-10-17 — Warden orbit helpers stay harmless through depth entry
 
 Mike reported helper jets killing him as they shrank in from the south/sides.

@@ -1,0 +1,1492 @@
+{
+  "date": "2026-10-17",
+  "base_revision": "530bfb24074b278d4b67c2de2ee86fcbe6723151",
+  "working_native": {
+    "passed": 96,
+    "failed": 0,
+    "errors": [],
+    "runtime_sha256": {
+      "index.html": "a441e308490399d78095a125a3ac065ce627d031ce041a5d8dd005eb3e09ba10",
+      "assets/game.js": "16e651b35f69e355e2ee8449e50224a013dee015a6a47e7b0a8d721583c79209",
+      "assets/targeting_1017.js": "9b43c09b48bccf99587ad2189e92a062751d447bb44489ec36ce862ee1264fa7"
+    },
+    "scope": "Native controlled encounter, highway and unshielded-contact fixtures, actual art and sound calls. Not a full human campaign clear.",
+    "checks": [
+      {
+        "name": "normal charge moves the hull and leaves every generator at its station",
+        "passed": true
+      },
+      {
+        "name": "normal lightning tether extends and generators remain shootable",
+        "passed": true
+      },
+      {
+        "name": "normal detached cores do not cause hull contact damage",
+        "passed": true
+      },
+      {
+        "name": "normal native player survives at the detached generator",
+        "passed": true
+      },
+      {
+        "name": "normal legacy contact control reproduces the generator death",
+        "passed": true
+      },
+      {
+        "name": "normal the physical charging hull still causes contact damage",
+        "passed": true
+      },
+      {
+        "name": "hard charge moves the hull and leaves every generator at its station",
+        "passed": true
+      },
+      {
+        "name": "hard lightning tether extends and generators remain shootable",
+        "passed": true
+      },
+      {
+        "name": "hard detached cores do not cause hull contact damage",
+        "passed": true
+      },
+      {
+        "name": "hard native player survives at the detached generator",
+        "passed": true
+      },
+      {
+        "name": "hard legacy contact control reproduces the generator death",
+        "passed": true
+      },
+      {
+        "name": "hard the physical charging hull still causes contact damage",
+        "passed": true
+      },
+      {
+        "name": "furious charge moves the hull and leaves every generator at its station",
+        "passed": true
+      },
+      {
+        "name": "furious lightning tether extends and generators remain shootable",
+        "passed": true
+      },
+      {
+        "name": "furious detached cores do not cause hull contact damage",
+        "passed": true
+      },
+      {
+        "name": "furious native player survives at the detached generator",
+        "passed": true
+      },
+      {
+        "name": "furious legacy contact control reproduces the generator death",
+        "passed": true
+      },
+      {
+        "name": "furious the physical charging hull still causes contact damage",
+        "passed": true
+      },
+      {
+        "name": "Normal retains its existing highway density",
+        "passed": true
+      },
+      {
+        "name": "hard sustains extra highway tanks",
+        "passed": true
+      },
+      {
+        "name": "hard tank spawns use the scrolling paved central highway",
+        "passed": true
+      },
+      {
+        "name": "hard reinforcement art uses native modular desert tanks",
+        "passed": true
+      },
+      {
+        "name": "furious sustains extra highway tanks",
+        "passed": true
+      },
+      {
+        "name": "furious tank spawns use the scrolling paved central highway",
+        "passed": true
+      },
+      {
+        "name": "furious reinforcement art uses native modular desert tanks",
+        "passed": true
+      },
+      {
+        "name": "1 normal tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "1 normal native renderer draws authored sonic projectile frames",
+        "passed": true
+      },
+      {
+        "name": "1 hard tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "1 hard native renderer draws authored sonic projectile frames",
+        "passed": true
+      },
+      {
+        "name": "1 furious tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "1 furious native renderer draws authored sonic projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 normal tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "2 normal native renderer draws authored fire projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 normal gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "2 hard tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "2 hard native renderer draws authored fire projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 hard gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "2 furious tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "2 furious native renderer draws authored fire projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 furious gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "3 normal tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "3 normal native renderer draws authored ice projectile frames",
+        "passed": true
+      },
+      {
+        "name": "3 normal gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "normal ice miniboss fires gun bullets and rack missiles",
+        "passed": true
+      },
+      {
+        "name": "3 hard tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "3 hard native renderer draws authored ice projectile frames",
+        "passed": true
+      },
+      {
+        "name": "3 hard gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "hard ice miniboss fires gun bullets and rack missiles",
+        "passed": true
+      },
+      {
+        "name": "3 furious tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "3 furious native renderer draws authored ice projectile frames",
+        "passed": true
+      },
+      {
+        "name": "3 furious gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "furious ice miniboss fires gun bullets and rack missiles",
+        "passed": true
+      },
+      {
+        "name": "magmaward never fires its destroyed left turret but keeps the right active",
+        "passed": true
+      },
+      {
+        "name": "frostcruiser never fires its destroyed left turret but keeps the right active",
+        "passed": true
+      },
+      {
+        "name": "dualscoopdredger uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "sludgeemperor uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "heralddeath uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "vileexistence uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "voidhorizon uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "tidalfusion uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "Final warning commits its aim before launch",
+        "passed": true
+      },
+      {
+        "name": "Sonic missile visibly turns during its bounded homing window",
+        "passed": true
+      },
+      {
+        "name": "Sonic guidance expires and cannot reacquire after a dodge",
+        "passed": true
+      },
+      {
+        "name": "Ordinary gunfire intercepts the sonic missile with sonic impact feedback",
+        "passed": true
+      },
+      {
+        "name": "Finale chopper targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale furnace targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale cryo targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale storm targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale knight retains its native melee targeting",
+        "passed": true
+      },
+      {
+        "name": "Finale harrier targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale warden targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale transformation cancels the extra targeting channel",
+        "passed": true
+      },
+      {
+        "name": "Merged Tidal Sovereign uses its authored water-cannon tips",
+        "passed": true
+      },
+      {
+        "name": "razorback native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "razorback damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "magmaward native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "magmaward damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "frostcruiser native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "frostcruiser damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "dualscoopdredger native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "dualscoopdredger damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "sludgeemperor native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "sludgeemperor damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "heralddeath native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "heralddeath damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "vileexistence native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "vileexistence damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "voidhorizon native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "voidhorizon damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "tidalfusion native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "tidalfusion damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "tidalsovereign native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "tidalsovereign damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "Additional highway tank visibly flashes on real damage",
+        "passed": true
+      },
+      {
+        "name": "Highway tank flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "No page, console or missing-asset errors",
+        "passed": true
+      }
+    ]
+  },
+  "publishing_candidate_native": {
+    "passed": 96,
+    "failed": 0,
+    "errors": [],
+    "runtime_sha256": {
+      "index.html": "47c862dbc4b78e37a5c96bf01c51b0a5f8c4c4107e9116ff0d28d38096dacc73",
+      "assets/game.js": "2af6eb84e45569e73089dd75f8b328a15836c97fae995c257a27e8cd3240d31d",
+      "assets/targeting_1017.js": "9b43c09b48bccf99587ad2189e92a062751d447bb44489ec36ce862ee1264fa7"
+    },
+    "scope": "Native controlled encounter, highway and unshielded-contact fixtures, actual art and sound calls. Not a full human campaign clear.",
+    "checks": [
+      {
+        "name": "normal charge moves the hull and leaves every generator at its station",
+        "passed": true
+      },
+      {
+        "name": "normal lightning tether extends and generators remain shootable",
+        "passed": true
+      },
+      {
+        "name": "normal detached cores do not cause hull contact damage",
+        "passed": true
+      },
+      {
+        "name": "normal native player survives at the detached generator",
+        "passed": true
+      },
+      {
+        "name": "normal legacy contact control reproduces the generator death",
+        "passed": true
+      },
+      {
+        "name": "normal the physical charging hull still causes contact damage",
+        "passed": true
+      },
+      {
+        "name": "hard charge moves the hull and leaves every generator at its station",
+        "passed": true
+      },
+      {
+        "name": "hard lightning tether extends and generators remain shootable",
+        "passed": true
+      },
+      {
+        "name": "hard detached cores do not cause hull contact damage",
+        "passed": true
+      },
+      {
+        "name": "hard native player survives at the detached generator",
+        "passed": true
+      },
+      {
+        "name": "hard legacy contact control reproduces the generator death",
+        "passed": true
+      },
+      {
+        "name": "hard the physical charging hull still causes contact damage",
+        "passed": true
+      },
+      {
+        "name": "furious charge moves the hull and leaves every generator at its station",
+        "passed": true
+      },
+      {
+        "name": "furious lightning tether extends and generators remain shootable",
+        "passed": true
+      },
+      {
+        "name": "furious detached cores do not cause hull contact damage",
+        "passed": true
+      },
+      {
+        "name": "furious native player survives at the detached generator",
+        "passed": true
+      },
+      {
+        "name": "furious legacy contact control reproduces the generator death",
+        "passed": true
+      },
+      {
+        "name": "furious the physical charging hull still causes contact damage",
+        "passed": true
+      },
+      {
+        "name": "Normal retains its existing highway density",
+        "passed": true
+      },
+      {
+        "name": "hard sustains extra highway tanks",
+        "passed": true
+      },
+      {
+        "name": "hard tank spawns use the scrolling paved central highway",
+        "passed": true
+      },
+      {
+        "name": "hard reinforcement art uses native modular desert tanks",
+        "passed": true
+      },
+      {
+        "name": "furious sustains extra highway tanks",
+        "passed": true
+      },
+      {
+        "name": "furious tank spawns use the scrolling paved central highway",
+        "passed": true
+      },
+      {
+        "name": "furious reinforcement art uses native modular desert tanks",
+        "passed": true
+      },
+      {
+        "name": "1 normal tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "1 normal native renderer draws authored sonic projectile frames",
+        "passed": true
+      },
+      {
+        "name": "1 hard tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "1 hard native renderer draws authored sonic projectile frames",
+        "passed": true
+      },
+      {
+        "name": "1 furious tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "1 furious native renderer draws authored sonic projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 normal tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "2 normal native renderer draws authored fire projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 normal gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "2 hard tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "2 hard native renderer draws authored fire projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 hard gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "2 furious tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "2 furious native renderer draws authored fire projectile frames",
+        "passed": true
+      },
+      {
+        "name": "2 furious gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "3 normal tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "3 normal native renderer draws authored ice projectile frames",
+        "passed": true
+      },
+      {
+        "name": "3 normal gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "normal ice miniboss fires gun bullets and rack missiles",
+        "passed": true
+      },
+      {
+        "name": "3 hard tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "3 hard native renderer draws authored ice projectile frames",
+        "passed": true
+      },
+      {
+        "name": "3 hard gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "hard ice miniboss fires gun bullets and rack missiles",
+        "passed": true
+      },
+      {
+        "name": "3 furious tracks, beeps and releases from its weapon mounts",
+        "passed": true
+      },
+      {
+        "name": "3 furious native renderer draws authored ice projectile frames",
+        "passed": true
+      },
+      {
+        "name": "3 furious gun bullets retain native interception rules",
+        "passed": true
+      },
+      {
+        "name": "furious ice miniboss fires gun bullets and rack missiles",
+        "passed": true
+      },
+      {
+        "name": "magmaward never fires its destroyed left turret but keeps the right active",
+        "passed": true
+      },
+      {
+        "name": "frostcruiser never fires its destroyed left turret but keeps the right active",
+        "passed": true
+      },
+      {
+        "name": "dualscoopdredger uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "sludgeemperor uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "heralddeath uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "vileexistence uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "voidhorizon uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "tidalfusion uses tracking locks and releases from live existing weapons",
+        "passed": true
+      },
+      {
+        "name": "Final warning commits its aim before launch",
+        "passed": true
+      },
+      {
+        "name": "Sonic missile visibly turns during its bounded homing window",
+        "passed": true
+      },
+      {
+        "name": "Sonic guidance expires and cannot reacquire after a dodge",
+        "passed": true
+      },
+      {
+        "name": "Ordinary gunfire intercepts the sonic missile with sonic impact feedback",
+        "passed": true
+      },
+      {
+        "name": "Finale chopper targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale furnace targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale cryo targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale storm targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale knight retains its native melee targeting",
+        "passed": true
+      },
+      {
+        "name": "Finale harrier targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale warden targets from the current modular rig",
+        "passed": true
+      },
+      {
+        "name": "Finale transformation cancels the extra targeting channel",
+        "passed": true
+      },
+      {
+        "name": "Merged Tidal Sovereign uses its authored water-cannon tips",
+        "passed": true
+      },
+      {
+        "name": "razorback native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "razorback damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "magmaward native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "magmaward damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "frostcruiser native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "frostcruiser damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "dualscoopdredger native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "dualscoopdredger damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "sludgeemperor native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "sludgeemperor damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "heralddeath native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "heralddeath damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "vileexistence native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "vileexistence damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "voidhorizon native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "voidhorizon damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "tidalfusion native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "tidalfusion damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "tidalsovereign native damage still flashes its authored pixels",
+        "passed": true
+      },
+      {
+        "name": "tidalsovereign damage flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "Additional highway tank visibly flashes on real damage",
+        "passed": true
+      },
+      {
+        "name": "Highway tank flash expires normally",
+        "passed": true
+      },
+      {
+        "name": "No page, console or missing-asset errors",
+        "passed": true
+      }
+    ]
+  },
+  "sovereign_completion_and_hammer_regression": {
+    "passed": 53,
+    "failed": 0,
+    "errors": [],
+    "runtime_sha256": {
+      "assets/game.js": "16e651b35f69e355e2ee8449e50224a013dee015a6a47e7b0a8d721583c79209",
+      "assets/stage34_assault_1014.js": "9782411c3846d6d87e56680a2c8f8943cfab953a98bd89c03cfc3b109f66223f",
+      "assets/gameplay_repair_1004.js": "12fc15b65b5118db122f7fddb70c9edf92ee31669b5b0f9d2cda5e1d920b6828",
+      "assets/balance_recovery_1007b.js": "5d71bf21ced760e46636e6a534c414c233b3e1da75bd89f4238b67657ddde4eb",
+      "assets/pixel_glow_1015.js": "cef983dd5236dc465f121e1024f82bfde366b21de79a51bf552d3b42fbaa6f8e",
+      "assets/pixel_glow_art_1015.js": "1323710636b2091d2e297c1d6bb78244a07f355b1c23f063e448cb071b9389e4"
+    },
+    "scope": "Native Chromium controlled fixtures, actual collision/damage and pixels; not a full human campaign balance playthrough.",
+    "checks": [
+      {
+        "name": "fireorb keeps its launch heading while the player crosses",
+        "passed": true
+      },
+      {
+        "name": "groundup keeps its launch heading while the player crosses",
+        "passed": true
+      },
+      {
+        "name": "emissile keeps its launch heading while the player crosses",
+        "passed": true
+      },
+      {
+        "name": "normal cycle 0 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "normal cycle 0 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "normal threshold 0 starts generator reconstruction",
+        "passed": true
+      },
+      {
+        "name": "normal threshold 0 rebuilds all four objectives",
+        "passed": true
+      },
+      {
+        "name": "normal cycle 1 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "normal cycle 1 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "normal threshold 1 starts generator reconstruction",
+        "passed": true
+      },
+      {
+        "name": "normal threshold 1 rebuilds all four objectives",
+        "passed": true
+      },
+      {
+        "name": "normal cycle 2 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "normal cycle 2 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "normal final quarter enters pursuit without another shield lock",
+        "passed": true
+      },
+      {
+        "name": "normal native damage can finish the entire encounter",
+        "passed": true
+      },
+      {
+        "name": "hard cycle 0 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "hard cycle 0 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "hard threshold 0 starts generator reconstruction",
+        "passed": true
+      },
+      {
+        "name": "hard threshold 0 rebuilds all four objectives",
+        "passed": true
+      },
+      {
+        "name": "hard cycle 1 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "hard cycle 1 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "hard threshold 1 starts generator reconstruction",
+        "passed": true
+      },
+      {
+        "name": "hard threshold 1 rebuilds all four objectives",
+        "passed": true
+      },
+      {
+        "name": "hard cycle 2 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "hard cycle 2 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "hard final quarter enters pursuit without another shield lock",
+        "passed": true
+      },
+      {
+        "name": "hard native damage can finish the entire encounter",
+        "passed": true
+      },
+      {
+        "name": "furious cycle 0 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "furious cycle 0 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "furious threshold 0 starts generator reconstruction",
+        "passed": true
+      },
+      {
+        "name": "furious threshold 0 rebuilds all four objectives",
+        "passed": true
+      },
+      {
+        "name": "furious cycle 1 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "furious cycle 1 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "furious threshold 1 starts generator reconstruction",
+        "passed": true
+      },
+      {
+        "name": "furious threshold 1 rebuilds all four objectives",
+        "passed": true
+      },
+      {
+        "name": "furious cycle 2 two surviving cores keep shield up past 18 seconds",
+        "passed": true
+      },
+      {
+        "name": "furious cycle 2 all four real core kills release shield",
+        "passed": true
+      },
+      {
+        "name": "furious final quarter enters pursuit without another shield lock",
+        "passed": true
+      },
+      {
+        "name": "furious native damage can finish the entire encounter",
+        "passed": true
+      },
+      {
+        "name": "authored energy-shield frames animate and reconstruction renders",
+        "passed": true
+      },
+      {
+        "name": "Real generator damage visibly flashes the objective plate",
+        "passed": true
+      },
+      {
+        "name": "Generator hit flash expires naturally",
+        "passed": true
+      },
+      {
+        "name": "easy Hammer HP budget is shorter",
+        "passed": true
+      },
+      {
+        "name": "normal Hammer HP budget is shorter",
+        "passed": true
+      },
+      {
+        "name": "hard Hammer HP budget is shorter",
+        "passed": true
+      },
+      {
+        "name": "furious Hammer HP budget is shorter",
+        "passed": true
+      },
+      {
+        "name": "Hammer HP still increases with difficulty",
+        "passed": true
+      },
+      {
+        "name": "Real Hammer recovery enters its authored raised charge",
+        "passed": true
+      },
+      {
+        "name": "Hammer emissive pixels charge on the same ladder as the core",
+        "passed": true
+      },
+      {
+        "name": "Actual hammer-region pixels brighten with the weapon charge",
+        "passed": true
+      },
+      {
+        "name": "Hammer native damage still flashes charging body pixels",
+        "passed": true
+      },
+      {
+        "name": "Hammer charge hit flash expires naturally",
+        "passed": true
+      },
+      {
+        "name": "No page, console or missing-asset errors",
+        "passed": true
+      }
+    ]
+  },
+  "warden_entry_regression": {
+    "passed": 43,
+    "failed": 0,
+    "errors": [],
+    "runtime_sha256": "11cd3a9ce2e0e4be15c8fec36834ce5c80a1a82d8b29eed8685f5dc54d468444",
+    "scope": "Native fixture isolates the miniboss hull via _s4MiniSafe, retaining real helper contact, playerHit, damage and renderer. Not a full human clear.",
+    "checks": [
+      {
+        "name": "hard S spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "hard S real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "hard S contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "hard S five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "hard N spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "hard N real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "hard N contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "hard N five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "furious S spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "furious S real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "furious S contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "furious S five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "furious N spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "furious N real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "furious N contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "furious N five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "furious E spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "furious E real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "furious E contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "furious E five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "furious W spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "furious W real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "furious W contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "furious W five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "insanity S spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "insanity S real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "insanity S contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "insanity S five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "insanity N spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "insanity N real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "insanity N contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "insanity N five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "insanity E spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "insanity E real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "insanity E contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "insanity E five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "insanity W spawn and entire scaling entry are non-collidable",
+        "passed": true
+      },
+      {
+        "name": "insanity W real player survives overlapping the incoming jet",
+        "passed": true
+      },
+      {
+        "name": "insanity W contact activates on the combat plane",
+        "passed": true
+      },
+      {
+        "name": "insanity W five-second replacement uses the same safe entry",
+        "passed": true
+      },
+      {
+        "name": "Entry releases no shots; settled wing still warns and fires",
+        "passed": true
+      },
+      {
+        "name": "On-plane wing takes damage, visibly flashes and expires normally",
+        "passed": true
+      },
+      {
+        "name": "No browser or missing-asset errors",
+        "passed": true
+      }
+    ]
+  },
+  "required_suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "passed": 8742,
+    "failed": 0,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "scope": "Current working build, including separate pre-existing local module/spread tests. Exact scoped publishing runtime independently checked in real Chromium."
+  },
+  "syntax": {
+    "assets/game.js": 0,
+    "assets/targeting_1017.js": 0,
+    "candidate/assets/game.js": 0
+  },
+  "highway_40_seconds": {
+    "hard": {
+      "count": 11,
+      "spawns": [
+        {
+          "type": "highway-tank",
+          "time": 0.016666666666666666,
+          "x": 340,
+          "y": -48,
+          "sourceY": -48
+        },
+        {
+          "type": "highway-tank",
+          "time": 3.8333333333333246,
+          "x": 285.59999999999997,
+          "y": -48,
+          "sourceY": -200.66666666666666
+        },
+        {
+          "type": "highway-tank",
+          "time": 7.649999999999978,
+          "x": 394.4,
+          "y": -48,
+          "sourceY": -353.33333333333326
+        },
+        {
+          "type": "highway-tank",
+          "time": 11.466666666666816,
+          "x": 340,
+          "y": -48,
+          "sourceY": -506.00000000000426
+        },
+        {
+          "type": "highway-tank",
+          "time": 15.283333333333672,
+          "x": 340,
+          "y": -48,
+          "sourceY": -658.6666666666669
+        },
+        {
+          "type": "highway-tank",
+          "time": 19.100000000000197,
+          "x": 340,
+          "y": -48,
+          "sourceY": -811.3333333333248
+        },
+        {
+          "type": "highway-tank",
+          "time": 22.916666666666647,
+          "x": 285.59999999999997,
+          "y": -48,
+          "sourceY": -963.9999999999828
+        },
+        {
+          "type": "highway-tank",
+          "time": 26.733333333333096,
+          "x": 394.4,
+          "y": -48,
+          "sourceY": -1116.6666666666483
+        },
+        {
+          "type": "highway-tank",
+          "time": 30.549999999999546,
+          "x": 340,
+          "y": -48,
+          "sourceY": -1269.3333333333323
+        },
+        {
+          "type": "highway-tank",
+          "time": 34.366666666666,
+          "x": 340,
+          "y": -48,
+          "sourceY": -1422.0000000000164
+        },
+        {
+          "type": "highway-tank",
+          "time": 38.18333333333245,
+          "x": 340,
+          "y": -48,
+          "sourceY": -1574.6666666667004
+        }
+      ],
+      "visible": [
+        {
+          "x": 335.4984559001803,
+          "y": 491.98333333333585,
+          "mod": 4
+        },
+        {
+          "x": 335.3890563737608,
+          "y": 146.19999999999965,
+          "mod": 4
+        },
+        {
+          "x": 335.0734910081126,
+          "y": 8.799999999999818,
+          "mod": 4
+        }
+      ],
+      "paved": true,
+      "scroll": 1600.000000000042,
+      "mini": false
+    },
+    "furious": {
+      "count": 16,
+      "spawns": [
+        {
+          "type": "highway-tank",
+          "time": 0.016666666666666666,
+          "x": 340,
+          "y": -48,
+          "sourceY": -48
+        },
+        {
+          "type": "highway-tank",
+          "time": 2.633333333333329,
+          "x": 285.59999999999997,
+          "y": -48,
+          "sourceY": -152.66666666666686
+        },
+        {
+          "type": "highway-tank",
+          "time": 5.249999999999987,
+          "x": 394.4,
+          "y": -48,
+          "sourceY": -257.3333333333325
+        },
+        {
+          "type": "highway-tank",
+          "time": 7.866666666666644,
+          "x": 340,
+          "y": -48,
+          "sourceY": -362.00000000000017
+        },
+        {
+          "type": "highway-tank",
+          "time": 10.483333333333434,
+          "x": 340,
+          "y": -48,
+          "sourceY": -466.6666666666698
+        },
+        {
+          "type": "highway-tank",
+          "time": 13.10000000000023,
+          "x": 340,
+          "y": -48,
+          "sourceY": -571.3333333333385
+        },
+        {
+          "type": "highway-tank",
+          "time": 15.716666666667027,
+          "x": 285.59999999999997,
+          "y": -48,
+          "sourceY": -675.9999999999992
+        },
+        {
+          "type": "highway-tank",
+          "time": 18.333333333333574,
+          "x": 394.4,
+          "y": -48,
+          "sourceY": -780.6666666666599
+        },
+        {
+          "type": "highway-tank",
+          "time": 20.95000000000009,
+          "x": 340,
+          "y": -48,
+          "sourceY": -885.3333333333206
+        },
+        {
+          "type": "highway-tank",
+          "time": 23.56666666666661,
+          "x": 340,
+          "y": -48,
+          "sourceY": -989.9999999999814
+        },
+        {
+          "type": "highway-tank",
+          "time": 26.183333333333128,
+          "x": 340,
+          "y": -48,
+          "sourceY": -1094.6666666666458
+        },
+        {
+          "type": "highway-tank",
+          "time": 28.799999999999645,
+          "x": 285.59999999999997,
+          "y": -48,
+          "sourceY": -1199.3333333333244
+        },
+        {
+          "type": "highway-tank",
+          "time": 31.416666666666163,
+          "x": 394.4,
+          "y": -48,
+          "sourceY": -1304.000000000003
+        },
+        {
+          "type": "highway-tank",
+          "time": 34.033333333332685,
+          "x": 340,
+          "y": -48,
+          "sourceY": -1408.6666666666815
+        },
+        {
+          "type": "highway-tank",
+          "time": 36.6499999999992,
+          "x": 340,
+          "y": -48,
+          "sourceY": -1513.33333333336
+        },
+        {
+          "type": "highway-tank",
+          "time": 39.26666666666572,
+          "x": 340,
+          "y": -48,
+          "sourceY": -1618.0000000000387
+        }
+      ],
+      "visible": [
+        {
+          "x": 290.35644191569736,
+          "y": 567.0833333333336,
+          "mod": 4
+        },
+        {
+          "x": 389.4815440628383,
+          "y": 339.90000000000225,
+          "mod": 4
+        },
+        {
+          "x": 335.1040226862137,
+          "y": 317.8000000000013,
+          "mod": 4
+        },
+        {
+          "x": 335.5015647916811,
+          "y": 63.99999999999957,
+          "mod": 4
+        },
+        {
+          "x": 335.46450240692803,
+          "y": -10.600000000000115,
+          "mod": 4
+        }
+      ],
+      "paved": true,
+      "scroll": 1600.000000000042,
+      "mini": false
+    }
+  },
+  "screenshots_inspected": [
+    "sovereign-charging-cores-stay-behind",
+    "highway-hard-reinforcements",
+    "highway-furious-reinforcements",
+    "sonic-tracking-and-projectiles",
+    "sonic-shot-down",
+    "fire-tracking-and-projectiles",
+    "ice-tracking-and-projectiles",
+    "heralddeath-targeting",
+    "vileexistence-targeting",
+    "tidalfusion-targeting",
+    "merged-tidal-targeting"
+  ],
+  "notes": [
+    "All body-contact controls reproduce the old generator death and retain real hull danger.",
+    "Initial short highway fixture and non-rendered Razorback owner-timer checks were corrected; final focused checks pass.",
+    "An initial candidate run refused a loose audio request at the local HTTP accept queue; the final real static-server run uses backlog128 and reports no errors.",
+    "The elemental-orb adapter initially classified new gun bullets as orbs; custom classification now preserves native gun and later-ordnance interception rules, verified on all Normal/Hard/Furious early minibosses.",
+    "No full human campaign clear or hardware audio/haptics claim.",
+    "Separate local modular routing, spread, tutorial and launcher work remains unstaged and preserved."
+  ]
+}
