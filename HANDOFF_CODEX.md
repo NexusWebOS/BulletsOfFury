@@ -1,3 +1,18 @@
+# 2026-10-17 — Warden orbit helpers stay harmless through depth entry
+
+Mike reported helper jets killing him as they shrank in from the south/sides.
+The new wing cleared _noHit at 25% of its 1.25s entry. Spawn now sets the flag
+immediately and the entire scaling pass retains it; the scale-one orbit branch
+restores contact. All edges and five-second replacements share that path.
+Warned on-plane fire, orbit, destruction and native hit feedback remain active.
+Owner warden_last_stand_1017.js; cache warden-entry-safe-1017. Native43/43 both
+current and exact publishing candidate, existing orbit-wing41/41, browser errors0.
+Broken-source control detects30 entry failures/real deaths. Current local suite
+8742/0, final BUILD OK/exit0; includes separate local work, so published candidate
+was also verified directly. Captures inspected. See docs/WARDEN_ENTRY_SAFETY_1017.md
+and docs/qa/warden_entry_safety_1017.json. Publish the owning Warden module/loader
+with this repair; retain unrelated modular, spread, tutorial and launcher work.
+
 # 2026-10-16 — Stage 4 shields/ballistic ordnance and Hammer budget/charge
 
 Mike reported tracking fire rounds, an overlong Stage 5 fight and a Stage 4

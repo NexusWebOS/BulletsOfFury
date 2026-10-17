@@ -1,0 +1,2306 @@
+{
+  "current_native": {
+    "passed": 43,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "hard S spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard S real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 411.58694399999996,
+            "y": 348.2791879341836
+          },
+          "jet": {
+            "x": 411.58694399999996,
+            "y": 348.2791879341836
+          }
+        }
+      },
+      {
+        "name": "hard S contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 538,
+            "y": 189.74839624208252
+          },
+          "jet": {
+            "x": 538,
+            "y": 189.74839624208252
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "hard S five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 183.0409558109081,
+              "y": 320.2394185545868
+            },
+            "jet": {
+              "x": 183.0409558109081,
+              "y": 320.2394185545868
+            }
+          }
+        }
+      },
+      {
+        "name": "hard N spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard N real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 178.118016,
+            "y": 83.98156799999998
+          },
+          "jet": {
+            "x": 178.118016,
+            "y": 83.98156799999998
+          }
+        }
+      },
+      {
+        "name": "hard N contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 142,
+            "y": 187.00000000000003
+          },
+          "jet": {
+            "x": 142,
+            "y": 187.00000000000003
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "hard N five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 407.704181221957,
+              "y": 108.88612889505148
+            },
+            "jet": {
+              "x": 407.704181221957,
+              "y": 108.88612889505148
+            }
+          }
+        }
+      },
+      {
+        "name": "furious S spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious S real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          },
+          "jet": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          }
+        }
+      },
+      {
+        "name": "furious S contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 545,
+            "y": 187
+          },
+          "jet": {
+            "x": 545,
+            "y": 187
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious S five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 226.2733054908883,
+              "y": 289.3729194211898
+            },
+            "jet": {
+              "x": 226.2733054908883,
+              "y": 289.3729194211898
+            }
+          }
+        }
+      },
+      {
+        "name": "furious N spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious N real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 234.42176000000003,
+            "y": 144.23011010048927
+          },
+          "jet": {
+            "x": 234.42176000000003,
+            "y": 144.23011010048927
+          }
+        }
+      },
+      {
+        "name": "furious N contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 237.50000000000006,
+            "y": 289.1909976465638
+          },
+          "jet": {
+            "x": 237.50000000000006,
+            "y": 289.1909976465638
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious N five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 411.58694399999996,
+              "y": 78.43791638275178
+            },
+            "jet": {
+              "x": 411.58694399999996,
+              "y": 78.43791638275178
+            }
+          }
+        }
+      },
+      {
+        "name": "furious E spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious E real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 404.340608,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 404.340608,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "furious E contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 237.49999999999991,
+            "y": 86
+          },
+          "jet": {
+            "x": 237.49999999999991,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious E five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 416.0422899013504,
+              "y": 266.24606019605847
+            },
+            "jet": {
+              "x": 416.0422899013504,
+              "y": 266.24606019605847
+            }
+          }
+        }
+      },
+      {
+        "name": "furious W spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious W real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 275.6593919999999,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 275.6593919999999,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "furious W contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 442.5,
+            "y": 86
+          },
+          "jet": {
+            "x": 442.5,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious W five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 98.49420799999999,
+              "y": 208.96093161724806
+            },
+            "jet": {
+              "x": 98.49420799999999,
+              "y": 208.96093161724806
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity S spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity S real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          },
+          "jet": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          }
+        }
+      },
+      {
+        "name": "insanity S contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 538,
+            "y": 187
+          },
+          "jet": {
+            "x": 538,
+            "y": 187
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity S five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 281.91174387649664,
+              "y": 287.1116800000001
+            },
+            "jet": {
+              "x": 281.91174387649664,
+              "y": 287.1116800000001
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity N spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity N real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 231.47392000000002,
+            "y": 147.29359529203958
+          },
+          "jet": {
+            "x": 231.47392000000002,
+            "y": 147.29359529203958
+          }
+        }
+      },
+      {
+        "name": "insanity N contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 232.50000000000006,
+            "y": 294.38715006927043
+          },
+          "jet": {
+            "x": 232.50000000000006,
+            "y": 294.38715006927043
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity N five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 410.524169548523,
+              "y": 113.88022083755138
+            },
+            "jet": {
+              "x": 410.524169548523,
+              "y": 113.88022083755138
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity E spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity E real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 401.392768,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 401.392768,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "insanity E contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 232.4999999999999,
+            "y": 86
+          },
+          "jet": {
+            "x": 232.4999999999999,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity E five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 362.04037457498043,
+              "y": 246.24308420593732
+            },
+            "jet": {
+              "x": 362.04037457498043,
+              "y": 246.24308420593732
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity W spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity W real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 278.60723199999995,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 278.60723199999995,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "insanity W contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 447.5,
+            "y": 86
+          },
+          "jet": {
+            "x": 447.5,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity W five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 99.55698245147698,
+              "y": 173.51862716244858
+            },
+            "jet": {
+              "x": 99.55698245147698,
+              "y": 173.51862716244858
+            }
+          }
+        }
+      },
+      {
+        "name": "Entry releases no shots; settled wing still warns and fires",
+        "passed": true,
+        "data": {
+          "early": false,
+          "warn": true,
+          "shots": 5
+        }
+      },
+      {
+        "name": "On-plane wing takes damage, visibly flashes and expires normally",
+        "passed": true,
+        "data": {
+          "pixels": 1937,
+          "hpLost": 1,
+          "flash": 0.12,
+          "expired": true
+        }
+      },
+      {
+        "name": "No browser or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "runtime_sha256": "11cd3a9ce2e0e4be15c8fec36834ce5c80a1a82d8b29eed8685f5dc54d468444",
+    "scope": "Native protected fixture setup with real playerHit, collision, damage and renderer; not a full human clear."
+  },
+  "release_candidate_native": {
+    "passed": 43,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "hard S spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard S real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 411.58694399999996,
+            "y": 347.46921611462375
+          },
+          "jet": {
+            "x": 411.58694399999996,
+            "y": 347.46921611462375
+          }
+        }
+      },
+      {
+        "name": "hard S contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 538,
+            "y": 188.37553059147248
+          },
+          "jet": {
+            "x": 538,
+            "y": 188.37553059147248
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "hard S five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 182.51322207058368,
+              "y": 320.99604815748717
+            },
+            "jet": {
+              "x": 182.51322207058368,
+              "y": 320.99604815748717
+            }
+          }
+        }
+      },
+      {
+        "name": "hard N spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard N real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 178.118016,
+            "y": 83.98156799999998
+          },
+          "jet": {
+            "x": 178.118016,
+            "y": 83.98156799999998
+          }
+        }
+      },
+      {
+        "name": "hard N contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 142,
+            "y": 187.00000000000003
+          },
+          "jet": {
+            "x": 142,
+            "y": 187.00000000000003
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "hard N five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 407.704181221957,
+              "y": 108.88612889505148
+            },
+            "jet": {
+              "x": 407.704181221957,
+              "y": 108.88612889505148
+            }
+          }
+        }
+      },
+      {
+        "name": "furious S spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious S real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          },
+          "jet": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          }
+        }
+      },
+      {
+        "name": "furious S contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 545,
+            "y": 187
+          },
+          "jet": {
+            "x": 545,
+            "y": 187
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious S five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 226.2733054908883,
+              "y": 289.3729194211898
+            },
+            "jet": {
+              "x": 226.2733054908883,
+              "y": 289.3729194211898
+            }
+          }
+        }
+      },
+      {
+        "name": "furious N spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious N real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 234.42176000000003,
+            "y": 144.23011010048927
+          },
+          "jet": {
+            "x": 234.42176000000003,
+            "y": 144.23011010048927
+          }
+        }
+      },
+      {
+        "name": "furious N contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 237.50000000000006,
+            "y": 289.1909976465638
+          },
+          "jet": {
+            "x": 237.50000000000006,
+            "y": 289.1909976465638
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious N five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 411.58694399999996,
+              "y": 78.43791638275178
+            },
+            "jet": {
+              "x": 411.58694399999996,
+              "y": 78.43791638275178
+            }
+          }
+        }
+      },
+      {
+        "name": "furious E spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious E real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 404.340608,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 404.340608,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "furious E contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 237.49999999999991,
+            "y": 86
+          },
+          "jet": {
+            "x": 237.49999999999991,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious E five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 416.0422899013504,
+              "y": 266.24606019605847
+            },
+            "jet": {
+              "x": 416.0422899013504,
+              "y": 266.24606019605847
+            }
+          }
+        }
+      },
+      {
+        "name": "furious W spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious W real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 275.6593919999999,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 275.6593919999999,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "furious W contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 442.5,
+            "y": 86
+          },
+          "jet": {
+            "x": 442.5,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "furious W five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 98.49420799999999,
+              "y": 208.96093161724806
+            },
+            "jet": {
+              "x": 98.49420799999999,
+              "y": 208.96093161724806
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity S spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity S real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          },
+          "jet": {
+            "x": 411.58694399999996,
+            "y": 346.65804800000006
+          }
+        }
+      },
+      {
+        "name": "insanity S contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 538,
+            "y": 187
+          },
+          "jet": {
+            "x": 538,
+            "y": 187
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity S five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 281.91174387649664,
+              "y": 287.1116800000001
+            },
+            "jet": {
+              "x": 281.91174387649664,
+              "y": 287.1116800000001
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity N spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity N real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 231.47392000000002,
+            "y": 147.29359529203958
+          },
+          "jet": {
+            "x": 231.47392000000002,
+            "y": 147.29359529203958
+          }
+        }
+      },
+      {
+        "name": "insanity N contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 232.50000000000006,
+            "y": 294.38715006927043
+          },
+          "jet": {
+            "x": 232.50000000000006,
+            "y": 294.38715006927043
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity N five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 410.524169548523,
+              "y": 113.88022083755138
+            },
+            "jet": {
+              "x": 410.524169548523,
+              "y": 113.88022083755138
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity E spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity E real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 401.392768,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 401.392768,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "insanity E contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 232.4999999999999,
+            "y": 86
+          },
+          "jet": {
+            "x": 232.4999999999999,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity E five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 362.04037457498043,
+              "y": 246.24308420593732
+            },
+            "jet": {
+              "x": 362.04037457498043,
+              "y": 246.24308420593732
+            }
+          }
+        }
+      },
+      {
+        "name": "insanity W spawn and entire scaling entry are non-collidable",
+        "passed": true,
+        "data": {
+          "born": true,
+          "rows": [
+            {
+              "age": 0,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.12,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.32,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.6,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 0.9,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.2,
+              "safe": true,
+              "phase": "enter"
+            },
+            {
+              "age": 1.249,
+              "safe": true,
+              "phase": "enter"
+            }
+          ]
+        }
+      },
+      {
+        "name": "insanity W real player survives overlapping the incoming jet",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "calls": 0,
+          "shield": 0,
+          "noHit": true,
+          "phase": "enter",
+          "t": 0.7,
+          "player": {
+            "x": 278.60723199999995,
+            "y": 143.87091200000003
+          },
+          "jet": {
+            "x": 278.60723199999995,
+            "y": 143.87091200000003
+          }
+        }
+      },
+      {
+        "name": "insanity W contact activates on the combat plane",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "calls": 1,
+          "shield": 0,
+          "noHit": false,
+          "phase": "orbit",
+          "t": 1.25,
+          "player": {
+            "x": 447.5,
+            "y": 86
+          },
+          "jet": {
+            "x": 447.5,
+            "y": 86
+          },
+          "scale": 1
+        }
+      },
+      {
+        "name": "insanity W five-second replacement uses the same safe entry",
+        "passed": true,
+        "data": {
+          "held": 4.999,
+          "early": true,
+          "same": true,
+          "born": true,
+          "contact": {
+            "dead": false,
+            "calls": 0,
+            "shield": 0,
+            "noHit": true,
+            "phase": "enter",
+            "t": 0.7,
+            "player": {
+              "x": 99.55698245147698,
+              "y": 173.51862716244858
+            },
+            "jet": {
+              "x": 99.55698245147698,
+              "y": 173.51862716244858
+            }
+          }
+        }
+      },
+      {
+        "name": "Entry releases no shots; settled wing still warns and fires",
+        "passed": true,
+        "data": {
+          "early": false,
+          "warn": true,
+          "shots": 5
+        }
+      },
+      {
+        "name": "On-plane wing takes damage, visibly flashes and expires normally",
+        "passed": true,
+        "data": {
+          "pixels": 1937,
+          "hpLost": 1,
+          "flash": 0.12,
+          "expired": true
+        }
+      },
+      {
+        "name": "No browser or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "runtime_sha256": "11cd3a9ce2e0e4be15c8fec36834ce5c80a1a82d8b29eed8685f5dc54d468444",
+    "scope": "Native fixture isolates the miniboss hull via _s4MiniSafe, retaining real helper contact, playerHit, damage and renderer. Not a full human clear."
+  },
+  "broken_control": {
+    "passed": 13,
+    "failed": 30,
+    "errors": [],
+    "runtime_sha256": "ec2f4026cc5f99ebe9d9c98be5f7e23bd73195fafee138771175e19502c6795f"
+  },
+  "existing_wing_native": {
+    "passed": 41,
+    "failed": 0,
+    "errors": []
+  },
+  "local_full_suite": {
+    "passed": 8742,
+    "failed": 0,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "publishing_scope": "Existing GitHub runtime plus the previously authored Warden orbit/last-stand owning module and this entry repair. Unrelated local game, modular-hit, weapon, tutorial and launcher edits are not included."
+}
