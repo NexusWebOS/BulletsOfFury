@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Combat revision</title><link rel="icon" href="data:,">
+<style>body{margin:0;background:#080d14;color:#dce9f4;font:14px system-ui}nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px}strong{color:#ffcf83}button,select{background:#192b3e;color:#fff4db;border:1px solid #75879b;border-radius:4px;padding:8px}iframe{width:100%;height:calc(100vh - 108px);min-height:540px;display:block;border:0;background:#000}p{margin:8px 12px;color:#b0c3d8}button:disabled{opacity:.5}</style>
+<nav><strong>Combat revision</strong><label>Scene <select id="scene"><option value="hammer">Stage 5 · Hammer fight</option><option value="finish">Hammer · Exploding armor</option><option value="guard">Stage 4 · Lightning guards</option><option value="small">Stage 1 · Small fighters</option><option value="fire">Stage 2 · Fire fighters</option><option value="ice">Stage 3 · Ice fighters</option><option value="camo">Stage 4 · Camo fighters</option><option value="intro">Stage 7 · Restored intro</option></select></label>
+<label>Difficulty <select id="difficulty"><option value="normal">Normal</option><option value="hard">Hard</option><option value="furious">Furious</option></select></label>
+<label>Space weapons <select id="gear"><option value="1">Level 1</option><option value="5" selected>Level 5</option></select></label><button id="replay" disabled>Replay</button><span id="status">Loading the actual game…</span></nav>
+<iframe id="game" title="Native combat with the regular playfield and side HUD" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p>Invulnerable review flight. Click the game to use your normal controls. Missile counters require deliberate missile shots. Review saves are separate from your campaign.</p>
+<script>
+const game=document.querySelector('#game'),scene=document.querySelector('#scene'),difficulty=document.querySelector('#difficulty'),gear=document.querySelector('#gear'),status=document.querySelector('#status');let ready=false,busy=false;
+const delay=n=>new Promise(r=>setTimeout(r,n));
+async function begin(){if(!ready||busy)return;busy=true;status.textContent='Preparing…';
+ const which=scene.value,n={hammer:5,finish:5,guard:4,small:1,fire:2,ice:3,camo:4,intro:7}[which];
+ game.contentWindow.eval(`(()=>{ht27Stop();BOFCinematicDirector.cancel();coopOn=false;debugFight=null;run.mode='campaign';run.pilot='cole';pilotIndex=PILOTS.findIndex(p=>p.key==='cole');diffKey=${JSON.stringify(difficulty.value)};DIFF=DIFFS[diffKey];startRun(${n});run.mode='campaign';beginStage(${n});setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=fb2Talk=fb2Intro=s6Opening=null;AP10_X.intro=null;P2M.active=null;H3.ending=null;H3.release=false;boss=null;subBoss=null;bossActive=subBossActive=bossDefeated=false;subBossTriggered=aminiTriggered=true;warnT=0;warnKind=null;stagePlan=[];enemies=[];eBullets=[];pBullets=[];powerups=[];l5Rocks=[];l5RockT=99999;VP12.next=CP12.next=EP13.next=HM17.next=TARGET17.nextTank=99999;groundTargetingReset();run.lives=3;run.bombs=15;run.shield=0;run.weapon=0;run.wlevels[0]=run.wlevel=2;player.x=worldWidth()/2;player.y=VH-80;player.invuln=999999;player.dead=player.out=false;camX=clamp(player.x-VW/2,0,worldWidth()-VW);run.spaceMode=${n===5};run.gravityShipReady=true;furyLegacyShip=false;run.spaceWeapon=0;run.spaceLevels=[${Number(gear.value)},${Number(gear.value)},${Number(gear.value)}];})()`);
+ for(let i=0;i<600;i++){if(game.contentWindow.eval(`(()=>{stageLoadTick();return stageLoadReady(${n})})()`))break;await delay(100);}
+ const code={
+ hammer:"spawnBoss('chromehammer');bossActive=true;boss._be=null;boss._cin30Spoke=boss._fb2IntroSeen=true;boss._hammer.intro1002=true;boss._hammer.mode='hammer';boss.enter=boss._noHit=false;boss.x=worldWidth()/2;boss.y=180;hammerState(boss,'hammer');",
+ finish:"spawnBoss('chromehammer');bossActive=true;boss._be=null;boss.enter=boss._noHit=false;boss.x=worldWidth()/2;boss.y=VH*.31;boss.hp=0;boss.dead=true;boss.dying=0;h3EndingStart(boss);",
+ guard:"spawnBoss('stormsovereign');bossActive=true;boss._be=null;boss.enter=boss._noHit=false;boss.x=worldWidth()/2;boss.y=180;boss._er26.engaged=false;er26Tick(boss,0);er26Set(boss,'recover');boss._er26.dur=999;boss._s4war.shield.active=boss._s4war.shield.rearming=false;stage4CoreTurretSpawnMissing(boss,.5);",
+ small:"vp12Spawn('orbit');",
+ fire:"spawnEnemy('ac10firejet',worldWidth()/2-100,145,{});spawnEnemy('firejet1002',worldWidth()/2+100,145,{});",
+ ice:"spawnEnemy('ac10icejet',worldWidth()/2-100,145,{});spawnEnemy('s3interceptor',worldWidth()/2+100,145,{});",
+ camo:"spawnEnemy('s4interceptor',camLeftX()+50,150,{});spawnEnemy('s4rocket',worldWidth()/2+80,180,{});vp12Spawn('crisscross');",
+ intro:"run._sewerBriefed17=false;setState(GS.LAUNCH);"
+ }[which];game.contentWindow.eval('(()=>{'+code+'SC12.refresh();__bofFit();})()');busy=false;status.textContent=scene.selectedOptions[0].textContent;game.contentWindow.focus();
+}
+scene.onchange=difficulty.onchange=gear.onchange=begin;document.querySelector('#replay').onclick=begin;
+game.onload=async()=>{for(let i=0;i<600;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof CR17!=="undefined"')){ready=true;document.querySelector('#replay').disabled=false;await begin();return;}await delay(100);}status.textContent='Reload to retry loading.';};
+(async()=>{const r=await fetch(new URL('../../../index.html?revision=combat-revision-1017',location.href));if(!r.ok)throw Error('Game load failed: '+r.status);let html=await r.text();
+ function isolate(){const prefix='BOF_COMBAT_REVIEW_1017_',get=Storage.prototype.getItem,set=Storage.prototype.setItem,remove=Storage.prototype.removeItem,key=Storage.prototype.key;Storage.prototype.getItem=function(k){return get.call(this,prefix+k);};Storage.prototype.setItem=function(k,v){return set.call(this,prefix+k,v);};Storage.prototype.removeItem=function(k){return remove.call(this,prefix+k);};Storage.prototype.clear=function(){const keys=[];for(let i=0;i<this.length;i++){const k=key.call(this,i);if(k?.startsWith(prefix))keys.push(k);}for(const k of keys)remove.call(this,k);};window.__combatReviewStorage=true;}
+ html=html.replace('<head>','<head><base href="'+new URL('../../../',location.href).href+'"><script>('+isolate.toString()+')();</scr'+'ipt>');game.srcdoc=html;
+})().catch(e=>{status.textContent=e.message;console.error(e);});
+</script></html>

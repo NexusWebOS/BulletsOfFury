@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-18",
+  "destination": "PixelLab",
+  "explicit_user_approval": true,
+  "local_reference_uploads": [
+    "bz0_inta.png",
+    "bz4_inta.png",
+    "codex-clipboard-08e44916-3654-4e46-8637-6e0970fce420.png"
+  ],
+  "existing_credit_cap_usd": 7.68,
+  "top_up_authorized": false,
+  "starting_credits_usd": 7.68,
+  "ending_credits_usd": 5.03,
+  "used_usd": 2.65,
+  "additional_private_references_uploaded": false
+}

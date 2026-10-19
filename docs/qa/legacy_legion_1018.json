@@ -1,0 +1,6034 @@
+{
+  "date": "2026-10-18",
+  "head": "4b64163d",
+  "scope": "Restored field veterans and existing Stage 7\u20138 attack-gate fixes; invulnerable fixtures and wave observations, not full campaign completion or human balance proof",
+  "sourceSha256": {
+    "assets/game.js": "ae206b3d6ec874412cc76f5a65e6bfd4722a21f35e907a1ba0e90934e9009265",
+    "_BUILD_SOURCE/test_fl.js": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+    "assets/legacy_legion_1018.js": "5be3021d301c6ecb76901507d3c91703358aee22f2dc879e54840c7a89950263",
+    "index.html": "6f74ea08ed738535d2aac91169a0bf38c59f0d491cc89f4e4ceebdea741d6826",
+    "_BUILD_SOURCE/probe_legacy_legion_1018.py": "97153f1e9a80d751010c023925de1c47392019da7cf7dcd2f103c98fc9f41805",
+    "_BUILD_SOURCE/probe_legacy_review_1018.py": "09c00d81a0ab37b83b5150b633314743766ce2e0a07c2587b359ed5eb1ac85e2",
+    "docs/previews/legacy_legion_1018/index.html": "96580b7747b5ac190105c1aca4a18dbc3533bfe8484c1bf1acfdf190caa861a1"
+  },
+  "coreSuite": {
+    "passed": 8791,
+    "failed": 0,
+    "exitCode": 0,
+    "baselinePassed": 8791,
+    "baselineFailed": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "syntax": {
+    "game": true,
+    "newRuntime": true
+  },
+  "native": {
+    "passed": 196,
+    "failed": 0,
+    "combat": {
+      "passed": 177,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "normal ll18raptor has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "normal",
+            "kind": "ll18raptor",
+            "phase": "tell",
+            "shots": 3,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.7666666666666617,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 6.416666666666649,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.23,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 219,
+                    "y": 106.88,
+                    "ex": 362.02927450487755,
+                    "ey": 763.4823352338982,
+                    "width": 12
+                  },
+                  {
+                    "x": 307,
+                    "y": 106.88,
+                    "ex": 464.87912497833133,
+                    "ey": 760.0707699103505,
+                    "width": 12
+                  }
+                ]
+              },
+              {
+                "event": "tell",
+                "time": 10.000000000000076,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.816666666666658,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 2.1833333333333305
+              },
+              {
+                "event": "release",
+                "time": 7.649999999999978,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "special",
+                "reaction": 6.016666666666651
+              }
+            ],
+            "artillery": [],
+            "launch": 0,
+            "draws": 660,
+            "warns": 396,
+            "hp": 141,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 176,
+              "h": 176,
+              "x": 206,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "normal ll18raptor stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 176,
+            "h": 176,
+            "x": 206,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "normal ll18raptor attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 2,
+            "cycles": 2,
+            "shots": 3
+          }
+        },
+        {
+          "name": "normal warned beam lanes are actually rendered",
+          "passed": true,
+          "data": 396
+        },
+        {
+          "name": "normal ll18raptor actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 99,
+            "kind": "s8slug",
+            "realm": 0,
+            "toxic": false,
+            "ice": null,
+            "herald": null
+          }
+        },
+        {
+          "name": "normal ll18raptor native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 9924,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "normal ll18raptor flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "ll18raptor actual centred J gun damages the veteran",
+          "passed": true,
+          "data": {
+            "before": 140,
+            "hp": 107.6
+          }
+        },
+        {
+          "name": "normal ll18raptor dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 3800,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "normal ll18spear has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "normal",
+            "kind": "ll18spear",
+            "phase": "tell",
+            "shots": 10,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.7666666666666617,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 6.26666666666665,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.23,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.466666666666766,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.816666666666658,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 2.1333333333333306
+              },
+              {
+                "event": "release",
+                "time": 7.499999999999979,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.816666666666651
+              }
+            ],
+            "artillery": [
+              {
+                "event": "ice-artillery",
+                "time": 7.499999999999979,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "points": [
+                  {
+                    "x": 305,
+                    "y": 442
+                  },
+                  {
+                    "x": 375,
+                    "y": 442
+                  }
+                ],
+                "warning": 1.2
+              }
+            ],
+            "launch": 0,
+            "draws": 660,
+            "warns": 192,
+            "hp": 168,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 218,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "normal ll18spear stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 200,
+            "h": 200,
+            "x": 218,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "normal ll18spear attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 2,
+            "cycles": 2,
+            "shots": 10
+          }
+        },
+        {
+          "name": "normal ice fan and committed glacial targets both fire",
+          "passed": true,
+          "data": {
+            "diff": "normal",
+            "kind": "ll18spear",
+            "phase": "tell",
+            "shots": 10,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.7666666666666617,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 6.26666666666665,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.23,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.466666666666766,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.816666666666658,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 2.1333333333333306
+              },
+              {
+                "event": "release",
+                "time": 7.499999999999979,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.816666666666651
+              }
+            ],
+            "artillery": [
+              {
+                "event": "ice-artillery",
+                "time": 7.499999999999979,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "points": [
+                  {
+                    "x": 305,
+                    "y": 442
+                  },
+                  {
+                    "x": 375,
+                    "y": 442
+                  }
+                ],
+                "warning": 1.2
+              }
+            ],
+            "launch": 0,
+            "draws": 660,
+            "warns": 192,
+            "hp": 168,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 218,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "normal ll18spear actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 121,
+            "kind": "ice",
+            "realm": null,
+            "toxic": false,
+            "ice": "cryo_ball",
+            "herald": null
+          }
+        },
+        {
+          "name": "normal ll18spear native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 12893,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "normal ll18spear flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "ll18spear actual centred J gun damages the veteran",
+          "passed": true,
+          "data": {
+            "before": 167,
+            "hp": 134.5999999999999
+          }
+        },
+        {
+          "name": "normal ll18spear dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 5375,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "normal ll18herald has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "normal",
+            "kind": "ll18herald",
+            "phase": "tell",
+            "shots": 10,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.7666666666666617,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 151.075,
+                    "y": 178.4,
+                    "ex": 467.90233047259017,
+                    "ey": 771.0250439068636,
+                    "width": 12
+                  },
+                  {
+                    "x": 242.425,
+                    "y": 178.4,
+                    "ex": 567.2933501767586,
+                    "ey": 766.6555185065678,
+                    "width": 12
+                  }
+                ]
+              },
+              {
+                "event": "tell",
+                "time": 6.16666666666665,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.23,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.366666666666761,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 151.075,
+                    "y": 178.4,
+                    "ex": 467.90233047259017,
+                    "ey": 771.0250439068636,
+                    "width": 12
+                  },
+                  {
+                    "x": 242.425,
+                    "y": 178.4,
+                    "ex": 567.2933501767586,
+                    "ey": 766.6555185065678,
+                    "width": 12
+                  }
+                ]
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.816666666666658,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 2.0999999999999974
+              },
+              {
+                "event": "release",
+                "time": 7.399999999999979,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.6833333333333185
+              }
+            ],
+            "artillery": [],
+            "launch": 0,
+            "draws": 660,
+            "warns": 204,
+            "hp": 185,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 157.5,
+              "h": 210,
+              "x": 196.75,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "normal ll18herald stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 157.5,
+            "h": 210,
+            "x": 196.75,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "normal ll18herald attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 2,
+            "cycles": 2,
+            "shots": 10
+          }
+        },
+        {
+          "name": "normal warned beam lanes are actually rendered",
+          "passed": true,
+          "data": 204
+        },
+        {
+          "name": "normal ll18herald actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 283,
+            "kind": "s8pair",
+            "realm": null,
+            "toxic": false,
+            "ice": null,
+            "herald": "primary"
+          }
+        },
+        {
+          "name": "normal ll18herald native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 12579,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "normal ll18herald flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "ll18herald actual centred J gun damages the veteran",
+          "passed": true,
+          "data": {
+            "before": 184,
+            "hp": 151.5999999999999
+          }
+        },
+        {
+          "name": "normal ll18herald dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 7800,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "normal ll18brood has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "normal",
+            "kind": "ll18brood",
+            "phase": "tell",
+            "shots": 3,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.7666666666666617,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 6.416666666666649,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.23,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.616666666666774,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.816666666666658,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 2.1333333333333306
+              },
+              {
+                "event": "release",
+                "time": 7.649999999999978,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.966666666666651
+              }
+            ],
+            "artillery": [],
+            "launch": 1,
+            "draws": 660,
+            "warns": 322,
+            "hp": 159,
+            "seedControllers": [],
+            "escortAttacks": 6,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 218,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "normal ll18brood stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 200,
+            "h": 200,
+            "x": 218,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "normal ll18brood attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 2,
+            "cycles": 2,
+            "shots": 3
+          }
+        },
+        {
+          "name": "normal carrier launches real fighters which attack",
+          "passed": true,
+          "data": {
+            "diff": "normal",
+            "kind": "ll18brood",
+            "phase": "tell",
+            "shots": 3,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.7666666666666617,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 6.416666666666649,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.23,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.616666666666774,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 1.05,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.816666666666658,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 2.1333333333333306
+              },
+              {
+                "event": "release",
+                "time": 7.649999999999978,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.966666666666651
+              }
+            ],
+            "artillery": [],
+            "launch": 1,
+            "draws": 660,
+            "warns": 322,
+            "hp": 159,
+            "seedControllers": [],
+            "escortAttacks": 6,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 218,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "normal launched scout visibly flashes when damaged",
+          "passed": true,
+          "data": {
+            "pixels": 7326,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "normal launched scout flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal ll18brood actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 359,
+            "kind": "s7acid",
+            "realm": null,
+            "toxic": false,
+            "ice": null,
+            "herald": null
+          }
+        },
+        {
+          "name": "normal ll18brood native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 18294,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "normal ll18brood flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "ll18brood actual centred J gun damages the veteran",
+          "passed": true,
+          "data": {
+            "before": 158,
+            "hp": 125.59999999999992
+          }
+        },
+        {
+          "name": "normal ll18brood dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 8050,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "hard ll18raptor has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "hard",
+            "kind": "ll18raptor",
+            "phase": "recover",
+            "shots": 10,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.6833333333333287,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.949999999999984,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.06,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 219,
+                    "y": 106.88,
+                    "ex": 362.02927450487755,
+                    "ey": 763.4823352338982,
+                    "width": 12
+                  },
+                  {
+                    "x": 307,
+                    "y": 106.88,
+                    "ex": 464.87912497833133,
+                    "ey": 760.0707699103505,
+                    "width": 12
+                  }
+                ]
+              },
+              {
+                "event": "tell",
+                "time": 8.883333333333354,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.566666666666659,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.9333333333333313
+              },
+              {
+                "event": "release",
+                "time": 7.016666666666647,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.3833333333333195
+              },
+              {
+                "event": "release",
+                "time": 9.766666666666731,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 8.133333333333317
+              }
+            ],
+            "artillery": [],
+            "launch": 0,
+            "draws": 660,
+            "warns": 340,
+            "hp": 176,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 176,
+              "h": 176,
+              "x": 213.0833333333333,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "hard ll18raptor stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 176,
+            "h": 176,
+            "x": 213.0833333333333,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "hard ll18raptor attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 3,
+            "cycles": 3,
+            "shots": 10
+          }
+        },
+        {
+          "name": "hard warned beam lanes are actually rendered",
+          "passed": true,
+          "data": 340
+        },
+        {
+          "name": "hard ll18raptor actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 97,
+            "kind": "s8slug",
+            "realm": 0,
+            "toxic": false,
+            "ice": null,
+            "herald": null
+          }
+        },
+        {
+          "name": "hard ll18raptor native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 9911,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "hard ll18raptor flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ll18raptor dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 3800,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "hard ll18spear has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "hard",
+            "kind": "ll18spear",
+            "phase": "recover",
+            "shots": 28,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.6833333333333287,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.533333333333319,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.06,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 9.083333333333364,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.566666666666659,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.8833333333333315
+              },
+              {
+                "event": "release",
+                "time": 6.599999999999982,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.9166666666666545
+              },
+              {
+                "event": "release",
+                "time": 9.966666666666741,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 8.283333333333324
+              }
+            ],
+            "artillery": [
+              {
+                "event": "ice-artillery",
+                "time": 6.599999999999982,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "points": [
+                  {
+                    "x": 270,
+                    "y": 442
+                  },
+                  {
+                    "x": 340,
+                    "y": 442
+                  },
+                  {
+                    "x": 410,
+                    "y": 442
+                  }
+                ],
+                "warning": 1.2
+              }
+            ],
+            "launch": 0,
+            "draws": 660,
+            "warns": 212,
+            "hp": 210,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 243.49999999999983,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "hard ll18spear stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 200,
+            "h": 200,
+            "x": 243.49999999999983,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "hard ll18spear attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 3,
+            "cycles": 3,
+            "shots": 28
+          }
+        },
+        {
+          "name": "hard ice fan and committed glacial targets both fire",
+          "passed": true,
+          "data": {
+            "diff": "hard",
+            "kind": "ll18spear",
+            "phase": "recover",
+            "shots": 28,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.6833333333333287,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.533333333333319,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.06,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 9.083333333333364,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.566666666666659,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.8833333333333315
+              },
+              {
+                "event": "release",
+                "time": 6.599999999999982,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.9166666666666545
+              },
+              {
+                "event": "release",
+                "time": 9.966666666666741,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 8.283333333333324
+              }
+            ],
+            "artillery": [
+              {
+                "event": "ice-artillery",
+                "time": 6.599999999999982,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "points": [
+                  {
+                    "x": 270,
+                    "y": 442
+                  },
+                  {
+                    "x": 340,
+                    "y": 442
+                  },
+                  {
+                    "x": 410,
+                    "y": 442
+                  }
+                ],
+                "warning": 1.2
+              }
+            ],
+            "launch": 0,
+            "draws": 660,
+            "warns": 212,
+            "hp": 210,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 243.49999999999983,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "hard ll18spear actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 121,
+            "kind": "ice",
+            "realm": null,
+            "toxic": false,
+            "ice": "cryo_ball",
+            "herald": null
+          }
+        },
+        {
+          "name": "hard ll18spear native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 13007,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "hard ll18spear flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ll18spear dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 5375,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "hard ll18herald has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "hard",
+            "kind": "ll18herald",
+            "phase": "recover",
+            "shots": 13,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.6833333333333287,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 151.075,
+                    "y": 178.4,
+                    "ex": 467.90233047259017,
+                    "ey": 771.0250439068636,
+                    "width": 12
+                  },
+                  {
+                    "x": 242.425,
+                    "y": 178.4,
+                    "ex": 567.2933501767586,
+                    "ey": 766.6555185065678,
+                    "width": 12
+                  }
+                ]
+              },
+              {
+                "event": "tell",
+                "time": 5.433333333333319,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.06,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 8.98333333333336,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 151.075,
+                    "y": 178.4,
+                    "ex": 467.90233047259017,
+                    "ey": 771.0250439068636,
+                    "width": 12
+                  },
+                  {
+                    "x": 242.425,
+                    "y": 178.4,
+                    "ex": 567.2933501767586,
+                    "ey": 766.6555185065678,
+                    "width": 12
+                  }
+                ]
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.566666666666659,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.8499999999999983
+              },
+              {
+                "event": "release",
+                "time": 6.499999999999982,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.783333333333322
+              },
+              {
+                "event": "release",
+                "time": 9.866666666666736,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 8.149999999999984
+              }
+            ],
+            "artillery": [],
+            "launch": 0,
+            "draws": 660,
+            "warns": 212,
+            "hp": 232,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 157.5,
+              "h": 210,
+              "x": 239.24999999999972,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "hard ll18herald stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 157.5,
+            "h": 210,
+            "x": 239.24999999999972,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "hard ll18herald attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 3,
+            "cycles": 3,
+            "shots": 13
+          }
+        },
+        {
+          "name": "hard warned beam lanes are actually rendered",
+          "passed": true,
+          "data": 212
+        },
+        {
+          "name": "hard ll18herald actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 293,
+            "kind": "s8pair",
+            "realm": null,
+            "toxic": false,
+            "ice": null,
+            "herald": "primary"
+          }
+        },
+        {
+          "name": "hard ll18herald native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 12579,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "hard ll18herald flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ll18herald dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 7800,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "hard ll18brood has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "hard",
+            "kind": "ll18brood",
+            "phase": "fire",
+            "shots": 9,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.6833333333333287,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.949999999999984,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.06,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 9.500000000000052,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.566666666666659,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.8833333333333315
+              },
+              {
+                "event": "release",
+                "time": 7.016666666666647,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.33333333333332
+              },
+              {
+                "event": "release",
+                "time": 10.383333333333429,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 8.700000000000012
+              }
+            ],
+            "artillery": [],
+            "launch": 2,
+            "draws": 660,
+            "warns": 340,
+            "hp": 199,
+            "seedControllers": [],
+            "escortAttacks": 16,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 218,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "hard ll18brood stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 200,
+            "h": 200,
+            "x": 218,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "hard ll18brood attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 3,
+            "cycles": 2,
+            "shots": 9
+          }
+        },
+        {
+          "name": "hard carrier launches real fighters which attack",
+          "passed": true,
+          "data": {
+            "diff": "hard",
+            "kind": "ll18brood",
+            "phase": "fire",
+            "shots": 9,
+            "cycles": 2,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.6833333333333287,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.949999999999984,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "warning": 1.06,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 9.500000000000052,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.88,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.566666666666659,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.8833333333333315
+              },
+              {
+                "event": "release",
+                "time": 7.016666666666647,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "reaction": 5.33333333333332
+              },
+              {
+                "event": "release",
+                "time": 10.383333333333429,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 8.700000000000012
+              }
+            ],
+            "artillery": [],
+            "launch": 2,
+            "draws": 660,
+            "warns": 340,
+            "hp": 199,
+            "seedControllers": [],
+            "escortAttacks": 16,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 218,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "hard launched scout visibly flashes when damaged",
+          "passed": true,
+          "data": {
+            "pixels": 7354,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "hard launched scout flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ll18brood actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 359,
+            "kind": "s7acid",
+            "realm": null,
+            "toxic": false,
+            "ice": null,
+            "herald": null
+          }
+        },
+        {
+          "name": "hard ll18brood native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 18295,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "hard ll18brood flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ll18brood dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 8050,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "furious ll18raptor has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "furious",
+            "kind": "ll18raptor",
+            "phase": "tell",
+            "shots": 14,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.5999999999999956,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.533333333333319,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 219,
+                    "y": 106.88,
+                    "ex": 362.02927450487755,
+                    "ey": 763.4823352338982,
+                    "width": 12
+                  },
+                  {
+                    "x": 307,
+                    "y": 106.88,
+                    "ex": 464.87912497833133,
+                    "ey": 760.0707699103505,
+                    "width": 12
+                  }
+                ]
+              },
+              {
+                "event": "tell",
+                "time": 7.9333333333333105,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.866666666666786,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 219,
+                    "y": 106.88,
+                    "ex": 362.02927450487755,
+                    "ey": 763.4823352338982,
+                    "width": 12
+                  },
+                  {
+                    "x": 307,
+                    "y": 106.88,
+                    "ex": 464.87912497833133,
+                    "ey": 760.0707699103505,
+                    "width": 12
+                  }
+                ]
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.349999999999993,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.7166666666666655
+              },
+              {
+                "event": "release",
+                "time": 6.466666666666649,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.8333333333333215
+              },
+              {
+                "event": "release",
+                "time": 8.683333333333344,
+                "stage": 8,
+                "type": "ll18raptor",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 7.04999999999998
+              }
+            ],
+            "artillery": [],
+            "launch": 0,
+            "draws": 660,
+            "warns": 310,
+            "hp": 208,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 176,
+              "h": 176,
+              "x": 263,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "furious ll18raptor stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 176,
+            "h": 176,
+            "x": 263,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "furious ll18raptor attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 3,
+            "cycles": 3,
+            "shots": 14
+          }
+        },
+        {
+          "name": "furious warned beam lanes are actually rendered",
+          "passed": true,
+          "data": 310
+        },
+        {
+          "name": "furious ll18raptor actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 97,
+            "kind": "s8slug",
+            "realm": 0,
+            "toxic": false,
+            "ice": null,
+            "herald": null
+          }
+        },
+        {
+          "name": "furious ll18raptor native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 9927,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "furious ll18raptor flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ll18raptor dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 3800,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "furious ll18spear has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "furious",
+            "kind": "ll18spear",
+            "phase": "tell",
+            "shots": 36,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.5999999999999956,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 4.9166666666666545,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 7.9333333333333105,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.250000000000089,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.349999999999993,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.6666666666666656
+              },
+              {
+                "event": "release",
+                "time": 5.8499999999999845,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.166666666666657
+              },
+              {
+                "event": "release",
+                "time": 8.683333333333344,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 6.9999999999999805
+              }
+            ],
+            "artillery": [
+              {
+                "event": "ice-artillery",
+                "time": 5.8499999999999845,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "points": [
+                  {
+                    "x": 270,
+                    "y": 442
+                  },
+                  {
+                    "x": 340,
+                    "y": 442
+                  },
+                  {
+                    "x": 410,
+                    "y": 442
+                  }
+                ],
+                "warning": 1.2
+              }
+            ],
+            "launch": 0,
+            "draws": 660,
+            "warns": 180,
+            "hp": 247,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 275,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "furious ll18spear stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 200,
+            "h": 200,
+            "x": 275,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "furious ll18spear attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 3,
+            "cycles": 3,
+            "shots": 36
+          }
+        },
+        {
+          "name": "furious ice fan and committed glacial targets both fire",
+          "passed": true,
+          "data": {
+            "diff": "furious",
+            "kind": "ll18spear",
+            "phase": "tell",
+            "shots": 36,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.5999999999999956,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 4.9166666666666545,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 7.9333333333333105,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 10.250000000000089,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.349999999999993,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.6666666666666656
+              },
+              {
+                "event": "release",
+                "time": 5.8499999999999845,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.166666666666657
+              },
+              {
+                "event": "release",
+                "time": 8.683333333333344,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 6.9999999999999805
+              }
+            ],
+            "artillery": [
+              {
+                "event": "ice-artillery",
+                "time": 5.8499999999999845,
+                "stage": 8,
+                "type": "ll18spear",
+                "id": 1,
+                "points": [
+                  {
+                    "x": 270,
+                    "y": 442
+                  },
+                  {
+                    "x": 340,
+                    "y": 442
+                  },
+                  {
+                    "x": 410,
+                    "y": 442
+                  }
+                ],
+                "warning": 1.2
+              }
+            ],
+            "launch": 0,
+            "draws": 660,
+            "warns": 180,
+            "hp": 247,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 275,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "furious ll18spear actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 121,
+            "kind": "ice",
+            "realm": null,
+            "toxic": false,
+            "ice": "cryo_ball",
+            "herald": null
+          }
+        },
+        {
+          "name": "furious ll18spear native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 12893,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "furious ll18spear flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ll18spear dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 5375,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "furious ll18herald has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "furious",
+            "kind": "ll18herald",
+            "phase": "fire",
+            "shots": 34,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.5999999999999956,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 151.075,
+                    "y": 178.4,
+                    "ex": 467.90233047259017,
+                    "ey": 771.0250439068636,
+                    "width": 12
+                  },
+                  {
+                    "x": 242.425,
+                    "y": 178.4,
+                    "ex": 567.2933501767586,
+                    "ey": 766.6555185065678,
+                    "width": 12
+                  }
+                ]
+              },
+              {
+                "event": "tell",
+                "time": 4.816666666666655,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 7.833333333333311,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": [
+                  {
+                    "x": 151.075,
+                    "y": 178.4,
+                    "ex": 467.90233047259017,
+                    "ey": 771.0250439068636,
+                    "width": 12
+                  },
+                  {
+                    "x": 242.425,
+                    "y": 178.4,
+                    "ex": 567.2933501767586,
+                    "ey": 766.6555185065678,
+                    "width": 12
+                  }
+                ]
+              },
+              {
+                "event": "tell",
+                "time": 10.050000000000079,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.349999999999993,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.6333333333333324
+              },
+              {
+                "event": "release",
+                "time": 5.749999999999985,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.033333333333324
+              },
+              {
+                "event": "release",
+                "time": 8.58333333333334,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 6.866666666666648
+              },
+              {
+                "event": "release",
+                "time": 10.983333333333459,
+                "stage": 8,
+                "type": "ll18herald",
+                "id": 1,
+                "attack": "special",
+                "reaction": 9.266666666666707
+              }
+            ],
+            "artillery": [],
+            "launch": 0,
+            "draws": 660,
+            "warns": 180,
+            "hp": 273,
+            "seedControllers": [],
+            "escortAttacks": 0,
+            "body": {
+              "w": 157.5,
+              "h": 210,
+              "x": 253.75,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "furious ll18herald stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 157.5,
+            "h": 210,
+            "x": 253.75,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "furious ll18herald attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 4,
+            "cycles": 3,
+            "shots": 34
+          }
+        },
+        {
+          "name": "furious warned beam lanes are actually rendered",
+          "passed": true,
+          "data": 180
+        },
+        {
+          "name": "furious ll18herald actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 289,
+            "kind": "s8pair",
+            "realm": null,
+            "toxic": false,
+            "ice": null,
+            "herald": "primary"
+          }
+        },
+        {
+          "name": "furious ll18herald native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 12579,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "furious ll18herald flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ll18herald dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 7800,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "furious ll18brood has one owner and native pixels",
+          "passed": true,
+          "data": {
+            "diff": "furious",
+            "kind": "ll18brood",
+            "phase": "recover",
+            "shots": 14,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.5999999999999956,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.533333333333319,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 8.550000000000004,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.349999999999993,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.6666666666666656
+              },
+              {
+                "event": "release",
+                "time": 6.466666666666649,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.783333333333322
+              },
+              {
+                "event": "release",
+                "time": 9.300000000000042,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 7.616666666666645
+              }
+            ],
+            "artillery": [],
+            "launch": 2,
+            "draws": 660,
+            "warns": 292,
+            "hp": 234,
+            "seedControllers": [],
+            "escortAttacks": 16,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 247.7499999999998,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "furious ll18brood stays in its firing pocket",
+          "passed": true,
+          "data": {
+            "w": 200,
+            "h": 200,
+            "x": 247.7499999999998,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          }
+        },
+        {
+          "name": "furious ll18brood attacks repeatedly after warnings",
+          "passed": true,
+          "data": {
+            "release": 3,
+            "cycles": 3,
+            "shots": 14
+          }
+        },
+        {
+          "name": "furious carrier launches real fighters which attack",
+          "passed": true,
+          "data": {
+            "diff": "furious",
+            "kind": "ll18brood",
+            "phase": "recover",
+            "shots": 14,
+            "cycles": 3,
+            "tell": [
+              {
+                "event": "tell",
+                "time": 2.5999999999999956,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 5.533333333333319,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "warning": 0.9199999999999999,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              },
+              {
+                "event": "tell",
+                "time": 8.550000000000004,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "warning": 0.74,
+                "target": {
+                  "x": 340,
+                  "y": 442
+                },
+                "lanes": []
+              }
+            ],
+            "release": [
+              {
+                "event": "release",
+                "time": 3.349999999999993,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 1.6666666666666656
+              },
+              {
+                "event": "release",
+                "time": 6.466666666666649,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "special",
+                "reaction": 4.783333333333322
+              },
+              {
+                "event": "release",
+                "time": 9.300000000000042,
+                "stage": 8,
+                "type": "ll18brood",
+                "id": 1,
+                "attack": "primary",
+                "reaction": 7.616666666666645
+              }
+            ],
+            "artillery": [],
+            "launch": 2,
+            "draws": 660,
+            "warns": 292,
+            "hp": 234,
+            "seedControllers": [],
+            "escortAttacks": 16,
+            "body": {
+              "w": 200,
+              "h": 200,
+              "x": 247.7499999999998,
+              "y": 128,
+              "home": 128,
+              "viewTop": 0,
+              "viewH": 512
+            },
+            "boss": false,
+            "retina": true
+          }
+        },
+        {
+          "name": "furious launched scout visibly flashes when damaged",
+          "passed": true,
+          "data": {
+            "pixels": 7304,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "furious launched scout flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ll18brood actual emitted projectile has native authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 359,
+            "kind": "s7acid",
+            "realm": null,
+            "toxic": false,
+            "ice": null,
+            "herald": null
+          }
+        },
+        {
+          "name": "furious ll18brood native damage visibly flashes authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 18302,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "furious ll18brood flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ll18brood dies once as an ordinary enemy without stage clear",
+          "passed": true,
+          "data": {
+            "gone": true,
+            "score": 8050,
+            "kills": 1,
+            "clear": false,
+            "boss": false,
+            "continueReward": false,
+            "beams": 0,
+            "targets": 0
+          }
+        },
+        {
+          "name": "ll18raptor health and first reaction escalate Normal / Hard / Furious",
+          "passed": true,
+          "data": [
+            {
+              "hp": 141,
+              "reaction": 2.1833333333333305
+            },
+            {
+              "hp": 176,
+              "reaction": 1.9333333333333313
+            },
+            {
+              "hp": 208,
+              "reaction": 1.7166666666666655
+            }
+          ]
+        },
+        {
+          "name": "ll18spear health and first reaction escalate Normal / Hard / Furious",
+          "passed": true,
+          "data": [
+            {
+              "hp": 168,
+              "reaction": 2.1333333333333306
+            },
+            {
+              "hp": 210,
+              "reaction": 1.8833333333333315
+            },
+            {
+              "hp": 247,
+              "reaction": 1.6666666666666656
+            }
+          ]
+        },
+        {
+          "name": "ll18herald health and first reaction escalate Normal / Hard / Furious",
+          "passed": true,
+          "data": [
+            {
+              "hp": 185,
+              "reaction": 2.0999999999999974
+            },
+            {
+              "hp": 232,
+              "reaction": 1.8499999999999983
+            },
+            {
+              "hp": 273,
+              "reaction": 1.6333333333333324
+            }
+          ]
+        },
+        {
+          "name": "ll18brood health and first reaction escalate Normal / Hard / Furious",
+          "passed": true,
+          "data": [
+            {
+              "hp": 159,
+              "reaction": 2.1333333333333306
+            },
+            {
+              "hp": 199,
+              "reaction": 1.8833333333333315
+            },
+            {
+              "hp": 234,
+              "reaction": 1.6666666666666656
+            }
+          ]
+        },
+        {
+          "name": "normal original delayed Stage 8 scout consumes stagger and fires",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "sequence": 2,
+            "shots": 16
+          }
+        },
+        {
+          "name": "hard original delayed Stage 8 scout consumes stagger and fires",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "sequence": 2,
+            "shots": 16
+          }
+        },
+        {
+          "name": "furious original delayed Stage 8 scout consumes stagger and fires",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "sequence": 2,
+            "shots": 18
+          }
+        },
+        {
+          "name": "7 normal delayed mm1003_riflelocust unlocks its advanced native attacks",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "cycles": 2,
+            "releases": 1,
+            "attacks": 8
+          }
+        },
+        {
+          "name": "7 hard delayed mm1003_riflelocust unlocks its advanced native attacks",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "cycles": 1,
+            "releases": 1,
+            "attacks": 10
+          }
+        },
+        {
+          "name": "7 furious delayed mm1003_riflelocust unlocks its advanced native attacks",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "cycles": 2,
+            "releases": 2,
+            "attacks": 24
+          }
+        },
+        {
+          "name": "8 normal delayed mm1003_hexpyre unlocks its advanced native attacks",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "cycles": 1,
+            "releases": 1,
+            "attacks": 2
+          }
+        },
+        {
+          "name": "8 hard delayed mm1003_hexpyre unlocks its advanced native attacks",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "cycles": 1,
+            "releases": 1,
+            "attacks": 2
+          }
+        },
+        {
+          "name": "8 furious delayed mm1003_hexpyre unlocks its advanced native attacks",
+          "passed": true,
+          "data": {
+            "stagger": 0,
+            "cycles": 1,
+            "releases": 1,
+            "attacks": 3
+          }
+        },
+        {
+          "name": "s8leech delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8leech",
+            "pixels": 6248,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8leech hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8interceptor delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8interceptor",
+            "pixels": 4410,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8interceptor hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8manta delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "mm1003_bluehybrid",
+            "pixels": 6985,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8manta hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8hunter delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8hunter",
+            "pixels": 6353,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8hunter hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8deathorb delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8deathorb",
+            "pixels": 9895,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8deathorb hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8parasite delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8parasite",
+            "pixels": 4812,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8parasite hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8razor delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8razor",
+            "pixels": 2165,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8razor hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8skull delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8skull",
+            "pixels": 4258,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8skull hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8carrier delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8carrier",
+            "pixels": 14955,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8carrier hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8symbiote delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8symbiote",
+            "pixels": 5356,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8symbiote hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8tentacle delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8tentacle",
+            "pixels": 10107,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8tentacle hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8bomber delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8bomber",
+            "pixels": 14377,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8bomber hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8gunship delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "mm1003_furnacemaw",
+            "pixels": 6874,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8gunship hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8needlejet delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "mm1003_impharrow",
+            "pixels": 3963,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8needlejet hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8scout delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "mm1003_hexpyre",
+            "pixels": 4883,
+            "flash": 0.1,
+            "part": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8scout hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8solar delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8solar",
+            "pixels": 2931,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8solar hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8spread delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8spread",
+            "pixels": 8024,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8spread hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "s8crescent delayed roster slot visibly flashes on native damage",
+          "passed": true,
+          "data": {
+            "type": "s8crescent",
+            "pixels": 7321,
+            "flash": 0.12,
+            "part": null,
+            "damage": 1
+          }
+        },
+        {
+          "name": "s8crescent hurt flash expires with its native owner",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage 7 normal carrier brings firing Stage 8 scouts",
+          "passed": true,
+          "data": {
+            "launch": 1,
+            "shots": 6,
+            "cycles": 3,
+            "escortShots": 8,
+            "escorts": [
+              {
+                "type": "s8crescent",
+                "sequence": 1
+              }
+            ]
+          }
+        },
+        {
+          "name": "Stage 7 normal approach cancels attacks and withdraws veterans",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage 7 hard carrier brings firing Stage 8 scouts",
+          "passed": true,
+          "data": {
+            "launch": 2,
+            "shots": 10,
+            "cycles": 3,
+            "escortShots": 24,
+            "escorts": [
+              {
+                "type": "s8crescent",
+                "sequence": 1
+              },
+              {
+                "type": "s8crescent",
+                "sequence": 1
+              }
+            ]
+          }
+        },
+        {
+          "name": "Stage 7 hard approach cancels attacks and withdraws veterans",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage 7 furious carrier brings firing Stage 8 scouts",
+          "passed": true,
+          "data": {
+            "launch": 2,
+            "shots": 14,
+            "cycles": 3,
+            "escortShots": 32,
+            "escorts": [
+              {
+                "type": "s8crescent",
+                "sequence": 2
+              },
+              {
+                "type": "s8crescent",
+                "sequence": 2
+              }
+            ]
+          }
+        },
+        {
+          "name": "Stage 7 furious approach cancels attacks and withdraws veterans",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "7 normal real plan reaches restored field veterans",
+          "passed": true,
+          "data": {
+            "seen": [
+              "ll18brood",
+              "ll18raptor"
+            ],
+            "max": 1,
+            "cap": 2,
+            "timer": 58.99999999999793
+          }
+        },
+        {
+          "name": "normal sewer tanks stay on centre floor during mixed waves",
+          "passed": true,
+          "data": {
+            "samples": 1223,
+            "outside": 0
+          }
+        },
+        {
+          "name": "7 hard real plan reaches restored field veterans",
+          "passed": true,
+          "data": {
+            "seen": [
+              "ll18brood",
+              "ll18raptor"
+            ],
+            "max": 1,
+            "cap": 2,
+            "timer": 58.99999999999793
+          }
+        },
+        {
+          "name": "hard sewer tanks stay on centre floor during mixed waves",
+          "passed": true,
+          "data": {
+            "samples": 1233,
+            "outside": 0
+          }
+        },
+        {
+          "name": "7 furious real plan reaches restored field veterans",
+          "passed": true,
+          "data": {
+            "seen": [
+              "ll18brood",
+              "ll18raptor"
+            ],
+            "max": 1,
+            "cap": 2,
+            "timer": 58.99999999999793
+          }
+        },
+        {
+          "name": "furious sewer tanks stay on centre floor during mixed waves",
+          "passed": true,
+          "data": {
+            "samples": 1233,
+            "outside": 0
+          }
+        },
+        {
+          "name": "8 normal real plan reaches restored field veterans",
+          "passed": true,
+          "data": {
+            "seen": [
+              "ll18raptor",
+              "ll18herald",
+              "ll18spear",
+              "ll18brood"
+            ],
+            "max": 1,
+            "cap": 2,
+            "timer": 58.99999999999793
+          }
+        },
+        {
+          "name": "normal Blue Hybrid, Furnace Maw and Tentacle Cannon stay in the stage",
+          "passed": true,
+          "data": [
+            "s8interceptor",
+            "mm1003_impharrow",
+            "s8leech",
+            "mm1003_hexpyre",
+            "s8razor",
+            "ll18raptor",
+            "s8spread",
+            "ll18herald",
+            "modturret",
+            "s8parasite",
+            "s8crescent",
+            "s8hunter",
+            "s8skull",
+            "s8solar",
+            "ll18spear",
+            "s8symbiote",
+            "pt11frostcarrier",
+            "s8carrier",
+            "ll18brood",
+            "s8deathorb",
+            "mm1003_bluehybrid",
+            "mm1003_furnacemaw",
+            "s8bomber",
+            "s8tentacle"
+          ]
+        },
+        {
+          "name": "normal Stage8 director reserves room for the complete late fleet",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "8 hard real plan reaches restored field veterans",
+          "passed": true,
+          "data": {
+            "seen": [
+              "ll18raptor",
+              "ll18herald",
+              "ll18spear",
+              "ll18brood"
+            ],
+            "max": 1,
+            "cap": 2,
+            "timer": 58.99999999999793
+          }
+        },
+        {
+          "name": "hard Blue Hybrid, Furnace Maw and Tentacle Cannon stay in the stage",
+          "passed": true,
+          "data": [
+            "s8interceptor",
+            "mm1003_impharrow",
+            "s8leech",
+            "mm1003_hexpyre",
+            "s8razor",
+            "ll18raptor",
+            "s8spread",
+            "modturret",
+            "ll18herald",
+            "s8parasite",
+            "s8crescent",
+            "s8hunter",
+            "s8skull",
+            "s8solar",
+            "ll18spear",
+            "s8symbiote",
+            "pt11frostcarrier",
+            "s8carrier",
+            "ll18brood",
+            "s8deathorb",
+            "mm1003_bluehybrid",
+            "mm1003_furnacemaw",
+            "s8bomber",
+            "s8tentacle"
+          ]
+        },
+        {
+          "name": "hard Stage8 director reserves room for the complete late fleet",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "8 furious real plan reaches restored field veterans",
+          "passed": true,
+          "data": {
+            "seen": [
+              "ll18raptor",
+              "ll18herald",
+              "ll18spear",
+              "ll18brood"
+            ],
+            "max": 2,
+            "cap": 2,
+            "timer": 58.99999999999793
+          }
+        },
+        {
+          "name": "furious Blue Hybrid, Furnace Maw and Tentacle Cannon stay in the stage",
+          "passed": true,
+          "data": [
+            "s8interceptor",
+            "mm1003_impharrow",
+            "s8leech",
+            "mm1003_hexpyre",
+            "s8razor",
+            "ll18raptor",
+            "modturret",
+            "s8spread",
+            "ll18herald",
+            "s8parasite",
+            "s8crescent",
+            "s8hunter",
+            "s8skull",
+            "s8solar",
+            "ll18spear",
+            "s8symbiote",
+            "pt11frostcarrier",
+            "s8carrier",
+            "ll18brood",
+            "s8deathorb",
+            "mm1003_bluehybrid",
+            "mm1003_furnacemaw",
+            "s8bomber",
+            "s8tentacle"
+          ]
+        },
+        {
+          "name": "furious Stage8 director reserves room for the complete late fleet",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "native game page, console and asset responses are clean",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "rows": [
+        {
+          "diff": "normal",
+          "kind": "ll18raptor",
+          "phase": "tell",
+          "shots": 3,
+          "cycles": 2,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.7666666666666617,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 6.416666666666649,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.23,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 219,
+                  "y": 106.88,
+                  "ex": 362.02927450487755,
+                  "ey": 763.4823352338982,
+                  "width": 12
+                },
+                {
+                  "x": 307,
+                  "y": 106.88,
+                  "ex": 464.87912497833133,
+                  "ey": 760.0707699103505,
+                  "width": 12
+                }
+              ]
+            },
+            {
+              "event": "tell",
+              "time": 10.000000000000076,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.816666666666658,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 2.1833333333333305
+            },
+            {
+              "event": "release",
+              "time": 7.649999999999978,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "special",
+              "reaction": 6.016666666666651
+            }
+          ],
+          "artillery": [],
+          "launch": 0,
+          "draws": 660,
+          "warns": 396,
+          "hp": 141,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 176,
+            "h": 176,
+            "x": 206,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "normal",
+          "kind": "ll18spear",
+          "phase": "tell",
+          "shots": 10,
+          "cycles": 2,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.7666666666666617,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 6.26666666666665,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.23,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 10.466666666666766,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.816666666666658,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 2.1333333333333306
+            },
+            {
+              "event": "release",
+              "time": 7.499999999999979,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "special",
+              "reaction": 5.816666666666651
+            }
+          ],
+          "artillery": [
+            {
+              "event": "ice-artillery",
+              "time": 7.499999999999979,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "points": [
+                {
+                  "x": 305,
+                  "y": 442
+                },
+                {
+                  "x": 375,
+                  "y": 442
+                }
+              ],
+              "warning": 1.2
+            }
+          ],
+          "launch": 0,
+          "draws": 660,
+          "warns": 192,
+          "hp": 168,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 200,
+            "h": 200,
+            "x": 218,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "normal",
+          "kind": "ll18herald",
+          "phase": "tell",
+          "shots": 10,
+          "cycles": 2,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.7666666666666617,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 151.075,
+                  "y": 178.4,
+                  "ex": 467.90233047259017,
+                  "ey": 771.0250439068636,
+                  "width": 12
+                },
+                {
+                  "x": 242.425,
+                  "y": 178.4,
+                  "ex": 567.2933501767586,
+                  "ey": 766.6555185065678,
+                  "width": 12
+                }
+              ]
+            },
+            {
+              "event": "tell",
+              "time": 6.16666666666665,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.23,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 10.366666666666761,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 151.075,
+                  "y": 178.4,
+                  "ex": 467.90233047259017,
+                  "ey": 771.0250439068636,
+                  "width": 12
+                },
+                {
+                  "x": 242.425,
+                  "y": 178.4,
+                  "ex": 567.2933501767586,
+                  "ey": 766.6555185065678,
+                  "width": 12
+                }
+              ]
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.816666666666658,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 2.0999999999999974
+            },
+            {
+              "event": "release",
+              "time": 7.399999999999979,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "reaction": 5.6833333333333185
+            }
+          ],
+          "artillery": [],
+          "launch": 0,
+          "draws": 660,
+          "warns": 204,
+          "hp": 185,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 157.5,
+            "h": 210,
+            "x": 196.75,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "normal",
+          "kind": "ll18brood",
+          "phase": "tell",
+          "shots": 3,
+          "cycles": 2,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.7666666666666617,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 6.416666666666649,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.23,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 10.616666666666774,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "warning": 1.05,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.816666666666658,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 2.1333333333333306
+            },
+            {
+              "event": "release",
+              "time": 7.649999999999978,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "special",
+              "reaction": 5.966666666666651
+            }
+          ],
+          "artillery": [],
+          "launch": 1,
+          "draws": 660,
+          "warns": 322,
+          "hp": 159,
+          "seedControllers": [],
+          "escortAttacks": 6,
+          "body": {
+            "w": 200,
+            "h": 200,
+            "x": 218,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "hard",
+          "kind": "ll18raptor",
+          "phase": "recover",
+          "shots": 10,
+          "cycles": 3,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.6833333333333287,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 5.949999999999984,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.06,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 219,
+                  "y": 106.88,
+                  "ex": 362.02927450487755,
+                  "ey": 763.4823352338982,
+                  "width": 12
+                },
+                {
+                  "x": 307,
+                  "y": 106.88,
+                  "ex": 464.87912497833133,
+                  "ey": 760.0707699103505,
+                  "width": 12
+                }
+              ]
+            },
+            {
+              "event": "tell",
+              "time": 8.883333333333354,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.566666666666659,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.9333333333333313
+            },
+            {
+              "event": "release",
+              "time": 7.016666666666647,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "special",
+              "reaction": 5.3833333333333195
+            },
+            {
+              "event": "release",
+              "time": 9.766666666666731,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 8.133333333333317
+            }
+          ],
+          "artillery": [],
+          "launch": 0,
+          "draws": 660,
+          "warns": 340,
+          "hp": 176,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 176,
+            "h": 176,
+            "x": 213.0833333333333,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "hard",
+          "kind": "ll18spear",
+          "phase": "recover",
+          "shots": 28,
+          "cycles": 3,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.6833333333333287,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 5.533333333333319,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.06,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 9.083333333333364,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.566666666666659,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.8833333333333315
+            },
+            {
+              "event": "release",
+              "time": 6.599999999999982,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "special",
+              "reaction": 4.9166666666666545
+            },
+            {
+              "event": "release",
+              "time": 9.966666666666741,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 8.283333333333324
+            }
+          ],
+          "artillery": [
+            {
+              "event": "ice-artillery",
+              "time": 6.599999999999982,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "points": [
+                {
+                  "x": 270,
+                  "y": 442
+                },
+                {
+                  "x": 340,
+                  "y": 442
+                },
+                {
+                  "x": 410,
+                  "y": 442
+                }
+              ],
+              "warning": 1.2
+            }
+          ],
+          "launch": 0,
+          "draws": 660,
+          "warns": 212,
+          "hp": 210,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 200,
+            "h": 200,
+            "x": 243.49999999999983,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "hard",
+          "kind": "ll18herald",
+          "phase": "recover",
+          "shots": 13,
+          "cycles": 3,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.6833333333333287,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 151.075,
+                  "y": 178.4,
+                  "ex": 467.90233047259017,
+                  "ey": 771.0250439068636,
+                  "width": 12
+                },
+                {
+                  "x": 242.425,
+                  "y": 178.4,
+                  "ex": 567.2933501767586,
+                  "ey": 766.6555185065678,
+                  "width": 12
+                }
+              ]
+            },
+            {
+              "event": "tell",
+              "time": 5.433333333333319,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.06,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 8.98333333333336,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 151.075,
+                  "y": 178.4,
+                  "ex": 467.90233047259017,
+                  "ey": 771.0250439068636,
+                  "width": 12
+                },
+                {
+                  "x": 242.425,
+                  "y": 178.4,
+                  "ex": 567.2933501767586,
+                  "ey": 766.6555185065678,
+                  "width": 12
+                }
+              ]
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.566666666666659,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.8499999999999983
+            },
+            {
+              "event": "release",
+              "time": 6.499999999999982,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "reaction": 4.783333333333322
+            },
+            {
+              "event": "release",
+              "time": 9.866666666666736,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 8.149999999999984
+            }
+          ],
+          "artillery": [],
+          "launch": 0,
+          "draws": 660,
+          "warns": 212,
+          "hp": 232,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 157.5,
+            "h": 210,
+            "x": 239.24999999999972,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "hard",
+          "kind": "ll18brood",
+          "phase": "fire",
+          "shots": 9,
+          "cycles": 2,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.6833333333333287,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 5.949999999999984,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "special",
+              "warning": 1.06,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 9.500000000000052,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.88,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.566666666666659,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.8833333333333315
+            },
+            {
+              "event": "release",
+              "time": 7.016666666666647,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "special",
+              "reaction": 5.33333333333332
+            },
+            {
+              "event": "release",
+              "time": 10.383333333333429,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 8.700000000000012
+            }
+          ],
+          "artillery": [],
+          "launch": 2,
+          "draws": 660,
+          "warns": 340,
+          "hp": 199,
+          "seedControllers": [],
+          "escortAttacks": 16,
+          "body": {
+            "w": 200,
+            "h": 200,
+            "x": 218,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "furious",
+          "kind": "ll18raptor",
+          "phase": "tell",
+          "shots": 14,
+          "cycles": 3,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.5999999999999956,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 5.533333333333319,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "special",
+              "warning": 0.9199999999999999,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 219,
+                  "y": 106.88,
+                  "ex": 362.02927450487755,
+                  "ey": 763.4823352338982,
+                  "width": 12
+                },
+                {
+                  "x": 307,
+                  "y": 106.88,
+                  "ex": 464.87912497833133,
+                  "ey": 760.0707699103505,
+                  "width": 12
+                }
+              ]
+            },
+            {
+              "event": "tell",
+              "time": 7.9333333333333105,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 10.866666666666786,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "special",
+              "warning": 0.9199999999999999,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 219,
+                  "y": 106.88,
+                  "ex": 362.02927450487755,
+                  "ey": 763.4823352338982,
+                  "width": 12
+                },
+                {
+                  "x": 307,
+                  "y": 106.88,
+                  "ex": 464.87912497833133,
+                  "ey": 760.0707699103505,
+                  "width": 12
+                }
+              ]
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.349999999999993,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.7166666666666655
+            },
+            {
+              "event": "release",
+              "time": 6.466666666666649,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "special",
+              "reaction": 4.8333333333333215
+            },
+            {
+              "event": "release",
+              "time": 8.683333333333344,
+              "stage": 8,
+              "type": "ll18raptor",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 7.04999999999998
+            }
+          ],
+          "artillery": [],
+          "launch": 0,
+          "draws": 660,
+          "warns": 310,
+          "hp": 208,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 176,
+            "h": 176,
+            "x": 263,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "furious",
+          "kind": "ll18spear",
+          "phase": "tell",
+          "shots": 36,
+          "cycles": 3,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.5999999999999956,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 4.9166666666666545,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "special",
+              "warning": 0.9199999999999999,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 7.9333333333333105,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 10.250000000000089,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "special",
+              "warning": 0.9199999999999999,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.349999999999993,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.6666666666666656
+            },
+            {
+              "event": "release",
+              "time": 5.8499999999999845,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "special",
+              "reaction": 4.166666666666657
+            },
+            {
+              "event": "release",
+              "time": 8.683333333333344,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 6.9999999999999805
+            }
+          ],
+          "artillery": [
+            {
+              "event": "ice-artillery",
+              "time": 5.8499999999999845,
+              "stage": 8,
+              "type": "ll18spear",
+              "id": 1,
+              "points": [
+                {
+                  "x": 270,
+                  "y": 442
+                },
+                {
+                  "x": 340,
+                  "y": 442
+                },
+                {
+                  "x": 410,
+                  "y": 442
+                }
+              ],
+              "warning": 1.2
+            }
+          ],
+          "launch": 0,
+          "draws": 660,
+          "warns": 180,
+          "hp": 247,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 200,
+            "h": 200,
+            "x": 275,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "furious",
+          "kind": "ll18herald",
+          "phase": "fire",
+          "shots": 34,
+          "cycles": 3,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.5999999999999956,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 151.075,
+                  "y": 178.4,
+                  "ex": 467.90233047259017,
+                  "ey": 771.0250439068636,
+                  "width": 12
+                },
+                {
+                  "x": 242.425,
+                  "y": 178.4,
+                  "ex": 567.2933501767586,
+                  "ey": 766.6555185065678,
+                  "width": 12
+                }
+              ]
+            },
+            {
+              "event": "tell",
+              "time": 4.816666666666655,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "warning": 0.9199999999999999,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 7.833333333333311,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": [
+                {
+                  "x": 151.075,
+                  "y": 178.4,
+                  "ex": 467.90233047259017,
+                  "ey": 771.0250439068636,
+                  "width": 12
+                },
+                {
+                  "x": 242.425,
+                  "y": 178.4,
+                  "ex": 567.2933501767586,
+                  "ey": 766.6555185065678,
+                  "width": 12
+                }
+              ]
+            },
+            {
+              "event": "tell",
+              "time": 10.050000000000079,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "warning": 0.9199999999999999,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.349999999999993,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.6333333333333324
+            },
+            {
+              "event": "release",
+              "time": 5.749999999999985,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "reaction": 4.033333333333324
+            },
+            {
+              "event": "release",
+              "time": 8.58333333333334,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 6.866666666666648
+            },
+            {
+              "event": "release",
+              "time": 10.983333333333459,
+              "stage": 8,
+              "type": "ll18herald",
+              "id": 1,
+              "attack": "special",
+              "reaction": 9.266666666666707
+            }
+          ],
+          "artillery": [],
+          "launch": 0,
+          "draws": 660,
+          "warns": 180,
+          "hp": 273,
+          "seedControllers": [],
+          "escortAttacks": 0,
+          "body": {
+            "w": 157.5,
+            "h": 210,
+            "x": 253.75,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        },
+        {
+          "diff": "furious",
+          "kind": "ll18brood",
+          "phase": "recover",
+          "shots": 14,
+          "cycles": 3,
+          "tell": [
+            {
+              "event": "tell",
+              "time": 2.5999999999999956,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 5.533333333333319,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "special",
+              "warning": 0.9199999999999999,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            },
+            {
+              "event": "tell",
+              "time": 8.550000000000004,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "warning": 0.74,
+              "target": {
+                "x": 340,
+                "y": 442
+              },
+              "lanes": []
+            }
+          ],
+          "release": [
+            {
+              "event": "release",
+              "time": 3.349999999999993,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 1.6666666666666656
+            },
+            {
+              "event": "release",
+              "time": 6.466666666666649,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "special",
+              "reaction": 4.783333333333322
+            },
+            {
+              "event": "release",
+              "time": 9.300000000000042,
+              "stage": 8,
+              "type": "ll18brood",
+              "id": 1,
+              "attack": "primary",
+              "reaction": 7.616666666666645
+            }
+          ],
+          "artillery": [],
+          "launch": 2,
+          "draws": 660,
+          "warns": 292,
+          "hp": 234,
+          "seedControllers": [],
+          "escortAttacks": 16,
+          "body": {
+            "w": 200,
+            "h": 200,
+            "x": 247.7499999999998,
+            "y": 128,
+            "home": 128,
+            "viewTop": 0,
+            "viewH": 512
+          },
+          "boss": false,
+          "retina": true
+        }
+      ],
+      "errors": []
+    },
+    "review": {
+      "passed": 19,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Fresh Stage7 loads fighter rounds and toxic bullets before combat",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Fresh Stage7 carrier fighters attack without a prior Stage8 visit",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Review uses the full native playfield, side HUD and isolated saves",
+          "passed": true,
+          "data": {
+            "isolated": true,
+            "mode": "sides",
+            "field": {
+              "x": 384.6875,
+              "y": 0,
+              "w": 830.625,
+              "h": 886
+            },
+            "bg": "space"
+          }
+        },
+        {
+          "name": "Raptor reaches a genuine ion-lance warning",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "FOV lanes originate on the current physical wing emitters",
+          "passed": true,
+          "data": {
+            "count": 2,
+            "origins": true
+          }
+        },
+        {
+          "name": "Raptor releases its warned ion lances",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Released beams use the exact committed FOV and can be evaded",
+          "passed": true,
+          "data": {
+            "same": true,
+            "clear": true,
+            "hp": 208
+          }
+        },
+        {
+          "name": "Cryo Spear prepares its artillery",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Ice artillery has spaced, fixed Retina targets and a full warning",
+          "passed": true,
+          "data": [
+            {
+              "x": 270,
+              "y": 442,
+              "track": false,
+              "warn": 1.2
+            },
+            {
+              "x": 340,
+              "y": 442,
+              "track": false,
+              "warn": 1.2
+            },
+            {
+              "x": 410,
+              "y": 442,
+              "track": false,
+              "warn": 1.2
+            }
+          ]
+        },
+        {
+          "name": "Actual glacial strike graphics activate",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Herald releases its actual native beams",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Herald also releases the safe-sector projectile ring",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage7 carrier launches actual Crescent fighters",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage7 retains the authored sewer biome",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Review bot control enables native primary fire",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Turning the bot off releases its input",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Wave review actually dispatches the restored Raptor beat",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All reused hull frames retain their even source resolutions",
+          "passed": true,
+          "data": [
+            {
+              "key": "nsb_cryo_spear",
+              "w": 256,
+              "h": 256
+            },
+            {
+              "key": "nsb_cryo_spear_damaged",
+              "w": 256,
+              "h": 256
+            },
+            {
+              "key": "nsb_cryo_spear_critical",
+              "w": 256,
+              "h": 256
+            },
+            {
+              "key": "nsb_rap_intact",
+              "w": 512,
+              "h": 512
+            },
+            {
+              "key": "nsb_rap_crit",
+              "w": 512,
+              "h": 512
+            },
+            {
+              "key": "nsb_spawncarrier_intact_v2",
+              "w": 512,
+              "h": 512
+            },
+            {
+              "key": "nsb_spawncarrier_damaged_v2",
+              "w": 512,
+              "h": 512
+            },
+            {
+              "key": "nsb_spawncarrier_critical_v2",
+              "w": 512,
+              "h": 512
+            },
+            {
+              "key": "nhd_idle_0",
+              "w": 192,
+              "h": 256
+            },
+            {
+              "key": "nhd_idle_1",
+              "w": 192,
+              "h": 256
+            },
+            {
+              "key": "nhd_idle_2",
+              "w": 192,
+              "h": 256
+            },
+            {
+              "key": "nhd_idle_3",
+              "w": 192,
+              "h": 256
+            },
+            {
+              "key": "nhd_idle_4",
+              "w": 192,
+              "h": 256
+            },
+            {
+              "key": "nhd_idle_5",
+              "w": 192,
+              "h": 256
+            }
+          ]
+        },
+        {
+          "name": "Review page, console and assets are clean",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    }
+  },
+  "waves": [
+    {
+      "stage": 7,
+      "diff": "furious",
+      "seen": [
+        "ll18brood",
+        "ll18raptor"
+      ],
+      "families": [
+        "mm1003_riflelocust",
+        "s7pipe",
+        "s7skimmer",
+        "s7tank",
+        "modturret",
+        "ll18brood",
+        "mm1003_hellram",
+        "mm1003_impharrow",
+        "ll18raptor",
+        "mm1003_hexpyre",
+        "s7barge",
+        "mm1003_hellhugger"
+      ],
+      "max": 1,
+      "cap": 2,
+      "tanks": 1233,
+      "badTanks": 0,
+      "timer": 58.99999999999793,
+      "boss": false,
+      "mini": false,
+      "events": [
+        {
+          "event": "spawn",
+          "time": 12.5000000000002,
+          "stage": 7,
+          "type": "ll18brood",
+          "id": 1,
+          "hp": 183
+        },
+        {
+          "event": "spawn",
+          "time": 28.54999999999966,
+          "stage": 7,
+          "type": "ll18raptor",
+          "id": 2,
+          "hp": 163
+        },
+        {
+          "event": "release",
+          "time": 31.883333333332804,
+          "stage": 7,
+          "type": "ll18raptor",
+          "id": 2,
+          "attack": "primary",
+          "reaction": 1.7166666666666655
+        },
+        {
+          "event": "spawn",
+          "time": 44.01666666666545,
+          "stage": 7,
+          "type": "ll18brood",
+          "id": 3,
+          "hp": 183
+        }
+      ]
+    },
+    {
+      "stage": 7,
+      "diff": "hard",
+      "seen": [
+        "ll18brood",
+        "ll18raptor"
+      ],
+      "families": [
+        "mm1003_riflelocust",
+        "s7pipe",
+        "s7skimmer",
+        "s7tank",
+        "modturret",
+        "ll18brood",
+        "mm1003_hellram",
+        "mm1003_impharrow",
+        "ll18raptor",
+        "mm1003_hexpyre",
+        "s7barge",
+        "mm1003_hellhugger"
+      ],
+      "max": 1,
+      "cap": 2,
+      "tanks": 1233,
+      "badTanks": 0,
+      "timer": 58.99999999999793,
+      "boss": false,
+      "mini": false,
+      "events": [
+        {
+          "event": "spawn",
+          "time": 12.5000000000002,
+          "stage": 7,
+          "type": "ll18brood",
+          "id": 1,
+          "hp": 155
+        },
+        {
+          "event": "spawn",
+          "time": 28.016666666666357,
+          "stage": 7,
+          "type": "ll18raptor",
+          "id": 2,
+          "hp": 138
+        },
+        {
+          "event": "release",
+          "time": 31.566666666666155,
+          "stage": 7,
+          "type": "ll18raptor",
+          "id": 2,
+          "attack": "primary",
+          "reaction": 1.9333333333333313
+        },
+        {
+          "event": "spawn",
+          "time": 44.01666666666545,
+          "stage": 7,
+          "type": "ll18brood",
+          "id": 3,
+          "hp": 155
+        }
+      ]
+    },
+    {
+      "stage": 7,
+      "diff": "normal",
+      "seen": [
+        "ll18brood",
+        "ll18raptor"
+      ],
+      "families": [
+        "mm1003_riflelocust",
+        "s7pipe",
+        "s7skimmer",
+        "s7tank",
+        "ll18brood",
+        "modturret",
+        "mm1003_hellram",
+        "mm1003_impharrow",
+        "ll18raptor",
+        "mm1003_hexpyre",
+        "s7barge",
+        "mm1003_hellhugger"
+      ],
+      "max": 1,
+      "cap": 2,
+      "tanks": 1223,
+      "badTanks": 0,
+      "timer": 58.99999999999793,
+      "boss": false,
+      "mini": false,
+      "events": [
+        {
+          "event": "spawn",
+          "time": 12.5000000000002,
+          "stage": 7,
+          "type": "ll18brood",
+          "id": 1,
+          "hp": 124
+        },
+        {
+          "event": "spawn",
+          "time": 28.016666666666357,
+          "stage": 7,
+          "type": "ll18raptor",
+          "id": 2,
+          "hp": 110
+        },
+        {
+          "event": "release",
+          "time": 31.81666666666614,
+          "stage": 7,
+          "type": "ll18raptor",
+          "id": 2,
+          "attack": "primary",
+          "reaction": 2.1833333333333305
+        },
+        {
+          "event": "spawn",
+          "time": 44.01666666666545,
+          "stage": 7,
+          "type": "ll18brood",
+          "id": 3,
+          "hp": 124
+        }
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "furious",
+      "seen": [
+        "ll18raptor",
+        "ll18herald",
+        "ll18spear",
+        "ll18brood"
+      ],
+      "families": [
+        "s8interceptor",
+        "mm1003_impharrow",
+        "s8leech",
+        "mm1003_hexpyre",
+        "s8razor",
+        "ll18raptor",
+        "modturret",
+        "s8spread",
+        "ll18herald",
+        "s8parasite",
+        "s8crescent",
+        "s8hunter",
+        "s8skull",
+        "s8solar",
+        "ll18spear",
+        "s8symbiote",
+        "pt11frostcarrier",
+        "s8carrier",
+        "ll18brood",
+        "s8deathorb",
+        "mm1003_bluehybrid",
+        "mm1003_furnacemaw",
+        "s8bomber",
+        "s8tentacle"
+      ],
+      "max": 2,
+      "cap": 2,
+      "tanks": 0,
+      "badTanks": 0,
+      "timer": 58.99999999999793,
+      "boss": false,
+      "mini": false,
+      "events": [
+        {
+          "event": "spawn",
+          "time": 10.000000000000076,
+          "stage": 8,
+          "type": "ll18raptor",
+          "id": 1,
+          "hp": 208
+        },
+        {
+          "event": "spawn",
+          "time": 13.000000000000226,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "hp": 273
+        },
+        {
+          "event": "release",
+          "time": 13.333333333333576,
+          "stage": 8,
+          "type": "ll18raptor",
+          "id": 1,
+          "attack": "primary",
+          "reaction": 1.7166666666666655
+        },
+        {
+          "event": "release",
+          "time": 16.333333333333687,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "attack": "primary",
+          "reaction": 1.6333333333333324
+        },
+        {
+          "event": "release",
+          "time": 18.73333333333355,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "attack": "special",
+          "reaction": 4.033333333333324
+        },
+        {
+          "event": "release",
+          "time": 21.566666666666723,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "attack": "primary",
+          "reaction": 6.866666666666648
+        },
+        {
+          "event": "release",
+          "time": 23.966666666666587,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "attack": "special",
+          "reaction": 9.266666666666707
+        },
+        {
+          "event": "spawn",
+          "time": 27.016666666666413,
+          "stage": 8,
+          "type": "ll18spear",
+          "id": 3,
+          "hp": 247
+        },
+        {
+          "event": "release",
+          "time": 30.349999999999557,
+          "stage": 8,
+          "type": "ll18spear",
+          "id": 3,
+          "attack": "primary",
+          "reaction": 1.6666666666666656
+        },
+        {
+          "event": "spawn",
+          "time": 41.01666666666562,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "hp": 234
+        },
+        {
+          "event": "release",
+          "time": 45.14999999999872,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "attack": "primary",
+          "reaction": 1.649999999999999
+        },
+        {
+          "event": "release",
+          "time": 48.26666666666521,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "attack": "special",
+          "reaction": 4.766666666666655
+        },
+        {
+          "event": "release",
+          "time": 51.09999999999838,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "attack": "primary",
+          "reaction": 7.599999999999978
+        },
+        {
+          "event": "release",
+          "time": 54.21666666666487,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "attack": "special",
+          "reaction": 9.366666666666712
+        }
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "hard",
+      "seen": [
+        "ll18raptor",
+        "ll18herald",
+        "ll18spear",
+        "ll18brood"
+      ],
+      "families": [
+        "s8interceptor",
+        "mm1003_impharrow",
+        "s8leech",
+        "mm1003_hexpyre",
+        "s8razor",
+        "ll18raptor",
+        "s8spread",
+        "modturret",
+        "ll18herald",
+        "s8parasite",
+        "s8crescent",
+        "s8hunter",
+        "s8skull",
+        "s8solar",
+        "ll18spear",
+        "s8symbiote",
+        "pt11frostcarrier",
+        "s8carrier",
+        "ll18brood",
+        "s8deathorb",
+        "mm1003_bluehybrid",
+        "mm1003_furnacemaw",
+        "s8bomber",
+        "s8tentacle"
+      ],
+      "max": 1,
+      "cap": 2,
+      "tanks": 0,
+      "badTanks": 0,
+      "timer": 58.99999999999793,
+      "boss": false,
+      "mini": false,
+      "events": [
+        {
+          "event": "spawn",
+          "time": 10.000000000000076,
+          "stage": 8,
+          "type": "ll18raptor",
+          "id": 1,
+          "hp": 176
+        },
+        {
+          "event": "spawn",
+          "time": 13.200000000000236,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "hp": 232
+        },
+        {
+          "event": "release",
+          "time": 16.75000000000033,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "attack": "primary",
+          "reaction": 1.8499999999999983
+        },
+        {
+          "event": "spawn",
+          "time": 27.016666666666413,
+          "stage": 8,
+          "type": "ll18spear",
+          "id": 3,
+          "hp": 210
+        },
+        {
+          "event": "spawn",
+          "time": 41.01666666666562,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "hp": 199
+        },
+        {
+          "event": "release",
+          "time": 45.283333333332045,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "attack": "primary",
+          "reaction": 1.7833333333333319
+        },
+        {
+          "event": "release",
+          "time": 48.73333333333185,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "attack": "special",
+          "reaction": 5.23333333333332
+        }
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "normal",
+      "seen": [
+        "ll18raptor",
+        "ll18herald",
+        "ll18spear",
+        "ll18brood"
+      ],
+      "families": [
+        "s8interceptor",
+        "mm1003_impharrow",
+        "s8leech",
+        "mm1003_hexpyre",
+        "s8razor",
+        "ll18raptor",
+        "s8spread",
+        "ll18herald",
+        "modturret",
+        "s8parasite",
+        "s8crescent",
+        "s8hunter",
+        "s8skull",
+        "s8solar",
+        "ll18spear",
+        "s8symbiote",
+        "pt11frostcarrier",
+        "s8carrier",
+        "ll18brood",
+        "s8deathorb",
+        "mm1003_bluehybrid",
+        "mm1003_furnacemaw",
+        "s8bomber",
+        "s8tentacle"
+      ],
+      "max": 1,
+      "cap": 2,
+      "tanks": 0,
+      "badTanks": 0,
+      "timer": 58.99999999999793,
+      "boss": false,
+      "mini": false,
+      "events": [
+        {
+          "event": "spawn",
+          "time": 10.000000000000076,
+          "stage": 8,
+          "type": "ll18raptor",
+          "id": 1,
+          "hp": 141
+        },
+        {
+          "event": "spawn",
+          "time": 13.000000000000226,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "hp": 185
+        },
+        {
+          "event": "release",
+          "time": 16.800000000000328,
+          "stage": 8,
+          "type": "ll18herald",
+          "id": 2,
+          "attack": "primary",
+          "reaction": 2.0999999999999974
+        },
+        {
+          "event": "spawn",
+          "time": 27.566666666666382,
+          "stage": 8,
+          "type": "ll18spear",
+          "id": 3,
+          "hp": 168
+        },
+        {
+          "event": "spawn",
+          "time": 41.01666666666562,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "hp": 159
+        },
+        {
+          "event": "release",
+          "time": 45.4499999999987,
+          "stage": 8,
+          "type": "ll18brood",
+          "id": 4,
+          "attack": "primary",
+          "reaction": 1.949999999999998
+        }
+      ]
+    }
+  ],
+  "timings": [
+    {
+      "difficulty": "normal",
+      "type": "ll18raptor",
+      "hp": 141,
+      "firstVisibleToReleaseSeconds": 2.1833333333333305,
+      "shotsDuringFirst11Seconds": 3,
+      "completedCyclesDuringFirst11Seconds": 2
+    },
+    {
+      "difficulty": "normal",
+      "type": "ll18spear",
+      "hp": 168,
+      "firstVisibleToReleaseSeconds": 2.1333333333333306,
+      "shotsDuringFirst11Seconds": 10,
+      "completedCyclesDuringFirst11Seconds": 2
+    },
+    {
+      "difficulty": "normal",
+      "type": "ll18herald",
+      "hp": 185,
+      "firstVisibleToReleaseSeconds": 2.0999999999999974,
+      "shotsDuringFirst11Seconds": 10,
+      "completedCyclesDuringFirst11Seconds": 2
+    },
+    {
+      "difficulty": "normal",
+      "type": "ll18brood",
+      "hp": 159,
+      "firstVisibleToReleaseSeconds": 2.1333333333333306,
+      "shotsDuringFirst11Seconds": 3,
+      "completedCyclesDuringFirst11Seconds": 2
+    },
+    {
+      "difficulty": "hard",
+      "type": "ll18raptor",
+      "hp": 176,
+      "firstVisibleToReleaseSeconds": 1.9333333333333313,
+      "shotsDuringFirst11Seconds": 10,
+      "completedCyclesDuringFirst11Seconds": 3
+    },
+    {
+      "difficulty": "hard",
+      "type": "ll18spear",
+      "hp": 210,
+      "firstVisibleToReleaseSeconds": 1.8833333333333315,
+      "shotsDuringFirst11Seconds": 28,
+      "completedCyclesDuringFirst11Seconds": 3
+    },
+    {
+      "difficulty": "hard",
+      "type": "ll18herald",
+      "hp": 232,
+      "firstVisibleToReleaseSeconds": 1.8499999999999983,
+      "shotsDuringFirst11Seconds": 13,
+      "completedCyclesDuringFirst11Seconds": 3
+    },
+    {
+      "difficulty": "hard",
+      "type": "ll18brood",
+      "hp": 199,
+      "firstVisibleToReleaseSeconds": 1.8833333333333315,
+      "shotsDuringFirst11Seconds": 9,
+      "completedCyclesDuringFirst11Seconds": 2
+    },
+    {
+      "difficulty": "furious",
+      "type": "ll18raptor",
+      "hp": 208,
+      "firstVisibleToReleaseSeconds": 1.7166666666666655,
+      "shotsDuringFirst11Seconds": 14,
+      "completedCyclesDuringFirst11Seconds": 3
+    },
+    {
+      "difficulty": "furious",
+      "type": "ll18spear",
+      "hp": 247,
+      "firstVisibleToReleaseSeconds": 1.6666666666666656,
+      "shotsDuringFirst11Seconds": 36,
+      "completedCyclesDuringFirst11Seconds": 3
+    },
+    {
+      "difficulty": "furious",
+      "type": "ll18herald",
+      "hp": 273,
+      "firstVisibleToReleaseSeconds": 1.6333333333333324,
+      "shotsDuringFirst11Seconds": 34,
+      "completedCyclesDuringFirst11Seconds": 3
+    },
+    {
+      "difficulty": "furious",
+      "type": "ll18brood",
+      "hp": 234,
+      "firstVisibleToReleaseSeconds": 1.6666666666666656,
+      "shotsDuringFirst11Seconds": 14,
+      "completedCyclesDuringFirst11Seconds": 3
+    }
+  ],
+  "review": "http://127.0.0.1:8794/docs/previews/legacy_legion_1018/index.html?scene=ll18raptor&difficulty=furious&revision=legacy-legion-1018",
+  "screenshots": "_shots/late_legends_1018/native/",
+  "art": "Existing whole authored hulls and projectile banks only; no atlas/raster/manifest edits",
+  "preserved": {
+    "gameSourceUnchangedForThisRequest": true,
+    "testSourceUnchangedForThisRequest": true,
+    "gameLineEndings": "LF",
+    "testLineEndings": "CRLF",
+    "existingWorkspaceChanges": true
+  },
+  "commitOrPush": false
+}

@@ -39,7 +39,7 @@ echo   Close it or press Ctrl+C to stop the server.
 echo.
 
 start "" /min %PYEXE% %PYARGS% "_BUILD_SOURCE\launch_browser_1011.py" %PORT%
-%PYEXE% %PYARGS% -m http.server %PORT% --bind 127.0.0.1
+%PYEXE% %PYARGS% "_BUILD_SOURCE\serve_nocache_1017.py" %PORT%
 exit /b %errorlevel%
 
 :nofiles

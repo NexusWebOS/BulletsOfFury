@@ -1,0 +1,204 @@
+{
+ "design": {
+  "name": "GRENADE THROW",
+  "frames": 24,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [],
+  "noise": {
+   "on": true,
+   "white": true,
+   "rate": 3,
+   "toneHz": 800,
+   "toneSweepTo": 1600,
+   "vol": 2,
+   "fade": 0.9285714285714286,
+   "delay": 0,
+   "frames": 14
+  },
+  "tone": {
+   "on": false,
+   "hz": 880,
+   "sweepTo": 880,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 20,
+   "arp": [],
+   "arpFrames": 2
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "GRENADE THROW",
+  "frames": 24,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [],
+  "psg": [
+   {
+    "ch": 2,
+    "track": [
+     {
+      "f": 0,
+      "period": 140,
+      "vol": 15
+     },
+     {
+      "f": 1,
+      "period": 133,
+      "vol": 15
+     },
+     {
+      "f": 2,
+      "period": 127,
+      "vol": 15
+     },
+     {
+      "f": 3,
+      "period": 121,
+      "vol": 15
+     },
+     {
+      "f": 4,
+      "period": 115,
+      "vol": 15
+     },
+     {
+      "f": 5,
+      "period": 109,
+      "vol": 15
+     },
+     {
+      "f": 6,
+      "period": 104,
+      "vol": 15
+     },
+     {
+      "f": 7,
+      "period": 99,
+      "vol": 15
+     },
+     {
+      "f": 8,
+      "period": 94,
+      "vol": 15
+     },
+     {
+      "f": 9,
+      "period": 90,
+      "vol": 15
+     },
+     {
+      "f": 10,
+      "period": 85,
+      "vol": 15
+     },
+     {
+      "f": 11,
+      "period": 81,
+      "vol": 15
+     },
+     {
+      "f": 12,
+      "period": 77,
+      "vol": 15
+     },
+     {
+      "f": 13,
+      "period": 73,
+      "vol": 15
+     },
+     {
+      "f": 14,
+      "period": 70,
+      "vol": 15
+     }
+    ]
+   },
+   {
+    "ch": 3,
+    "track": [
+     {
+      "f": 0,
+      "period": 7,
+      "vol": 2
+     },
+     {
+      "f": 1,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 2,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 3,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 4,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 5,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 6,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 7,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 8,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 9,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 10,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 11,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 12,
+      "period": 7,
+      "vol": 13
+     },
+     {
+      "f": 13,
+      "period": 7,
+      "vol": 14
+     },
+     {
+      "f": 14,
+      "period": 7,
+      "vol": 15
+     }
+    ]
+   }
+  ],
+  "dac": null
+ }
+}

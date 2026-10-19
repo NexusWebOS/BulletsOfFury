@@ -1,4 +1,4 @@
-"""Native opening deliveries, all five enemy signatures and earned Mk II."""
+"""Native starts without automatic supplies, normal pickups, enemy signatures and earned Mk II."""
 from pathlib import Path
 import sys,json
 from playwright.sync_api import sync_playwright
@@ -48,14 +48,18 @@ try:
    frames(150)
    before=p.evaluate('()=>({boxes:FS11.boxes.map(q=>({pilot:q.pilot,y:q.y,open:q.open})),special:special?.pilot,draws:FS11.draws.opening||0})')
    capture(pk+'-incoming')
-   check(pk+': an authored unopened box visibly descends before activation',len(before['boxes'])==1 and before['boxes'][0]['pilot']==pk and not before['boxes'][0]['open'] and before['boxes'][0]['y']>0 and not before.get('special') and before['draws']>0,before)
+   check(pk+': no automatic box or ability appears at the start',not before['boxes'] and not before.get('special') and before['draws']==0,before)
    frames(390)
+   check(pk+': no delayed opening supply is queued',p.evaluate('FS11.pending===null&&FS11.boxes.length===0&&!special'))
+   p.evaluate("dropPowerup(player.x,player.y,'specialicon')");frames(3)
    q=p.evaluate('()=>({pilot:special?.pilot,dur:special?.dur,level:special?._fs11Level,boxes:FS11.boxes.length,grants:FS11.events.filter(a=>a.event==="opening-special-collected"&&a.pilot===run.pilot).length,name:ph8Values().name})')
-   check(pk+': actual arrival and collection activates its own base special',q.get('pilot')==pk and q.get('dur')==15 and q.get('level')==1 and q['boxes']==0,q)
+   check(pk+': collecting a normal icon activates its own base special',q.get('pilot')==pk and q.get('dur')==15 and q.get('level')==1 and q['boxes']==0,q)
    exercise(pk,1);capture(pk+'-base')
   clear();first('cole',True);frames(540)
+  check('Co-op receives no automatic opening supplies',p.evaluate('FS11.pending===null&&FS11.boxes.length===0&&!special&&!FS11.seat2.special'))
+  p.evaluate("()=>{for(const seat of seatList())withSeat(seat,()=>applyPowerup({kind:'specialicon',x:player.x,y:player.y}));}")
   q=p.evaluate('()=>({p1:special?.pilot,p2:FS11.seat2.special?.pilot,t1:special?.t,t2:FS11.seat2.special?.t,boxes:FS11.boxes.length})')
-  check('Co-op independently collects Cole and Lizzie supplies without replacing either ability',q.get('p1')=='cole' and q.get('p2')=='lizzie' and q['boxes']==0,q)
+  check('Normal co-op special pickups keep Cole and Lizzie abilities independent',q.get('p1')=='cole' and q.get('p2')=='lizzie' and q['boxes']==0,q)
   capture('coop-start')
   clear();p.evaluate(shoot.SETUP,dict(state='PLAY',stage=6,pilot='cole',invuln=True))
   p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(6)}',polling=50)

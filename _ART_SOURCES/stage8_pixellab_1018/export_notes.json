@@ -1,0 +1,50 @@
+{
+  "frame_canvas": [
+    320,
+    320
+  ],
+  "pivot": [
+    160,
+    160
+  ],
+  "scale": 1,
+  "source_canvas": [
+    256,
+    256
+  ],
+  "volcano_idle_source_canvas": [
+    176,
+    176
+  ],
+  "volcano_common_resize": [
+    256,
+    256
+  ],
+  "modules": [
+    "core",
+    "left",
+    "right"
+  ],
+  "whole_frame_reconstruction": "RGBA-identical",
+  "generated_candidate_rejected": {
+    "bank": "volcano",
+    "job": "410785dc-f7cf-4335-b50a-f413cdb65bcc",
+    "frames": [
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "reason": "opaque nearly uniform gray blanks; entire bank unregistered"
+  },
+  "normalization": "Fixed canvas padding and integer stationary skull/mast registration only; no per-pose scaling or alpha-bounds fitting.",
+  "export_owner": "_BUILD_SOURCE/build_stage8_pixellab_1018.py",
+  "live_forms": [
+    0,
+    8,
+    1,
+    6,
+    2
+  ]
+}

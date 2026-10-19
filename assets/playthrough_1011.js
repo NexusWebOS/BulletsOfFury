@@ -1,6 +1,6 @@
 "use strict";
 /* October 11 recording. Physical parts own drawing, damage and muzzles together. */
-const PT11={events:[],draws:{},base:{load:stageLoadBegin,init:er26Init,cell:mr27Cell,shape:mr27Shape,mount:mr27Mount,
+const PT11={events:[],draws:{},base:{load:stageLoadBegin,init:er26Init,cell:mr27Cell,shape:mr27Shape,mount:mr27Mount,hullAt:mr27HullAt,
  blit:mr27Blit,roster:mr27Draw,head:fztHeadDraw,rearm:stage4ShieldBeginRearm,nodes:stage4ShieldSyncNodes,
  target:stage4CoreTurretTarget,war:er26WarTick,over:mr27Over,escort:er26EscortTick,
  hammerInit:hammerBossInit,hammerTick:hammerBossTick,hammerDamage:hammerBossDamage,hammerDraw:hammerBossDraw,
@@ -107,6 +107,18 @@ function pt11Part(b,id){
   pivotX:x,pivotY:y,scale:k,muzzle:{x:x+mx*c-my*s,y:y+mx*s+my*c}};
 }
 mr27Shape=function(b,id){return pt11Frost(b)?pt11Part(b,id):PT11.base.shape.apply(this,arguments);};
+/* The new carrier has no MR27_ART entry. Ordinary rounds must use its actual
+   drawn hull/core pixels, not the retired skin lookup that always missed it.
+   The offline mask includes the seated reactor; guns retain mr27At priority. */
+mr27HullAt=function(b,x,y){
+ if(!pt11Frost(b))return PT11.base.hullAt.apply(this,arguments);
+ const G=typeof MR27_HULL_MASK!=='undefined'?MR27_HULL_MASK:null,a=PT11_ART.ice_parts[0];
+ if(!G?.rows.pt11_frost||!a)return false;
+ const k=300/806,u=((x-b.x)/k+a.pivot[0])/a.w,v=((y-(b._drawY??b.y))/k+a.pivot[1])/a.h;
+ if(!(u>=0&&u<1&&v>=0&&v<1))return false;
+ G.num??={};const rows=G.num.pt11_frost??=(G.rows.pt11_frost.map(h=>parseInt(h,16))),n=G.n;
+ return Math.floor(rows[Math.floor(v*n)]/Math.pow(2,n-1-Math.floor(u*n)))%2===1;
+};
 mr27Mount=function(b,slot){if(!pt11Frost(b))return PT11.base.mount.apply(this,arguments);
  const id=/ROCKET/.test(slot)?(slot.endsWith('L')?'rocketL':'rocketR'):['L','L0','L1','LW','CL','gunL'].includes(slot)?'gunL':['R','R0','R1','RW','CR','gunR'].includes(slot)?'gunR':'core';
  return pt11Part(b,id).muzzle;

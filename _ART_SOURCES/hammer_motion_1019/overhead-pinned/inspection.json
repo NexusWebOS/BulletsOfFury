@@ -1,0 +1,186 @@
+{
+  "job": "057c7ac6-c501-42e3-af22-836d863b31ab",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "scale": 1,
+  "records": [
+    {
+      "index": 0,
+      "bounds": [
+        52,
+        69,
+        238,
+        194
+      ],
+      "hash": "76938a3abc3d1a19566b01aa315abe0920b6801c20d2c5888e63214f122f37c7"
+    },
+    {
+      "index": 1,
+      "bounds": [
+        52,
+        72,
+        234,
+        194
+      ],
+      "hash": "52bcdebbaa1193118379ea318fc587c180450c15fc14cdf3bc148cea54e3eedd"
+    },
+    {
+      "index": 2,
+      "bounds": [
+        52,
+        72,
+        230,
+        194
+      ],
+      "hash": "2a6d3c7a6b2c0c01841613c12dc64f17745f9d800f989e1775b5b5adbe06485c"
+    },
+    {
+      "index": 3,
+      "bounds": [
+        51,
+        32,
+        192,
+        194
+      ],
+      "hash": "ff90216c4d0db8cc54a0a1ca0bcb1866b7f50b7f6a1ca13d16147952a66fb851"
+    },
+    {
+      "index": 4,
+      "bounds": [
+        43,
+        47,
+        192,
+        194
+      ],
+      "hash": "4b14a8932f7ffd10f0e69980ba9f1924d422fc450ce49dccaa7606471b7b06ba"
+    },
+    {
+      "index": 5,
+      "bounds": [
+        31,
+        59,
+        192,
+        194
+      ],
+      "hash": "7c59357ced029fe82f9f38c463771ceb9d6544952f9638b02213c84d2ce00df7"
+    },
+    {
+      "index": 6,
+      "bounds": [
+        27,
+        61,
+        192,
+        194
+      ],
+      "hash": "ac5865cd3e6060cdc6110c27b9a7af7ad51b28622b20f36cc69c89061540a20a"
+    },
+    {
+      "index": 7,
+      "bounds": [
+        25,
+        61,
+        192,
+        194
+      ],
+      "hash": "dd9eeee6f87a9f00b1bdc820b24245db8b8367a0f59bf7ceff76447688e1d98b"
+    },
+    {
+      "index": 8,
+      "bounds": [
+        25,
+        62,
+        192,
+        194
+      ],
+      "hash": "877ee5ad294de56ca74dd0463ae088bb7b48ec939a4ba6438414042cb22b0657"
+    },
+    {
+      "index": 9,
+      "bounds": [
+        25,
+        61,
+        192,
+        194
+      ],
+      "hash": "c71572878def6c6db0bb0484d6abd11940b851a56ef0c9c2f26b7a8619d55597"
+    },
+    {
+      "index": 10,
+      "bounds": [
+        24,
+        60,
+        192,
+        194
+      ],
+      "hash": "d66d2196a60080981c813c7e1babc3c96427e246f311c42448872861b54b2e12"
+    },
+    {
+      "index": 11,
+      "bounds": [
+        23,
+        62,
+        192,
+        194
+      ],
+      "hash": "d72a5571750f7d86716d7d3c567c46f96ed3c54350573de7c10717cef302b490"
+    },
+    {
+      "index": 12,
+      "bounds": [
+        25,
+        62,
+        192,
+        194
+      ],
+      "hash": "892ed5349a2bf7467824d81c7a99f3af5ff54c6e3f8436611df99e3d586dd3e6"
+    },
+    {
+      "index": 13,
+      "bounds": [
+        46,
+        60,
+        194,
+        194
+      ],
+      "hash": "106f581d06f9a2b541036ef44a3d57e3a902d544c29cf60256d62655117892da"
+    },
+    {
+      "index": 14,
+      "bounds": [
+        56,
+        27,
+        226,
+        194
+      ],
+      "hash": "79a91b63ba611999236ed9d1abded6a559fccc2607314e98c8836178f2ad7dd1"
+    },
+    {
+      "index": 15,
+      "bounds": [
+        53,
+        24,
+        202,
+        194
+      ],
+      "hash": "35007b4b8d3f3eb831aa5af6ab4080daf7e7493b2c582c50186e1e93e8db193d"
+    },
+    {
+      "index": 16,
+      "bounds": [
+        52,
+        23,
+        200,
+        194
+      ],
+      "hash": "73c5d56c80e64410793799c56bb7860b3c60a4063a00040cfd742b8c7864d3af"
+    }
+  ],
+  "status": "REJECTED: correct start/end but middle frames swing the hammer across the helmet and left side, then hold before jumping to the endpoint. Interpolation is not a continuous image-right overhead lift. No shipping integration.",
+  "charged_usd": 0.0364
+}

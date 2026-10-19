@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Lost boss veterans</title><link rel="icon" href="data:,">
+<style>body{margin:0;background:#080d14;color:#dce9f4;font:14px system-ui}nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px}strong{color:#9bf0be}button,select{background:#192b3e;color:#fff4db;border:1px solid #75879b;border-radius:4px;padding:7px}iframe{width:100%;height:calc(100vh - 114px);min-height:520px;display:block;border:0;background:#000}p{margin:6px 12px;color:#b0c3d8}button:disabled{opacity:.5}</style>
+<nav><strong>Lost boss veterans</strong><label>Stage <select id="stage"><option value="8">8 · Furious Death</option><option value="7">7 · Toxic sewer</option></select></label>
+<label>Encounter <select id="scene"><option value="ll18brood">Brood Sentinel / scout launches</option><option value="ll18raptor">Blacksteel Hunter / guns and ion lances</option><option value="ll18spear">Cryo Spear / ice artillery</option><option value="ll18herald">Hellwing Executioner / beams and rings</option><option value="waves">Actual stage wave plan</option></select></label>
+<label>Difficulty <select id="difficulty"><option value="normal">Normal</option><option value="hard">Hard</option><option value="furious" selected>Furious</option></select></label>
+<label>Bot <select id="bot"><option value="off">Off</option><option value="on">Fly and fire</option></select></label><button id="replay" disabled>Replay</button><span id="status">Loading…</span></nav>
+<iframe id="game" title="Full native playfield and side HUD" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p>Invulnerable enemy review using the game’s normal controls. Wave mode skips minibosses. Review saves are separate from your campaign.</p>
+<script>
+const game=document.querySelector('#game'),stage=document.querySelector('#stage'),scene=document.querySelector('#scene'),difficulty=document.querySelector('#difficulty'),bot=document.querySelector('#bot'),status=document.querySelector('#status');let ready=false,busy=false;
+const params=new URLSearchParams(location.search);for(const el of [stage,scene,difficulty,bot])if([...el.options].some(q=>q.value===params.get(el.id)))el.value=params.get(el.id);
+const delay=n=>new Promise(r=>setTimeout(r,n));
+async function begin(){if(!ready||busy)return;busy=true;status.textContent='Preparing…';document.querySelector('#replay').disabled=true;
+ try{
+  const n=Number(stage.value);if(n===7&&['ll18spear','ll18herald'].includes(scene.value))scene.value='ll18brood';
+  for(const o of scene.options)o.disabled=n===7&&['ll18spear','ll18herald'].includes(o.value);
+  game.contentWindow.eval(`(()=>{ht27Stop();BOFCinematicDirector.cancel();coopOn=false;debugFight=null;run.pilot='cole';pilotIndex=PILOTS.findIndex(p=>p.key==='cole');diffKey=${JSON.stringify(difficulty.value)};DIFF=DIFFS[diffKey];startRun(${n});beginStage(${n});setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=fb2Talk=fb2Intro=s6Opening=null;AP10_X.intro=null;P2M.active=null;H3.ending=null;H3.release=false;boss=null;subBoss=null;bossActive=subBossActive=bossDefeated=bossWarned=false;subBossDone=subBossTriggered=aminiTriggered=true;warnT=0;warnKind=null;stagePlan=[];enemies=[];eBullets=[];pBullets=[];powerups=[];VP12.next=CP12.next=EP13.next=SEWER17.next=TARGET17.nextTank=99999;groundTargetingReset();tb28Reset();polishLanes=[];run.lives=5;run.bombs=30;run.shield=0;run.weapon=0;run.wvars[0]=null;run.forge={};run.forgeForms={};run.infusion=null;run.wlevels[0]=run.wlevel=1;chaingunUnlocked=false;run._earnedUnlocks.chaingun=false;player.x=worldWidth()/2;player.y=VH-70;player.invuln=0;player.dead=player.out=false;camX=clamp(player.x-VW/2,0,worldWidth()-VW);run.spaceMode=false;for(const k of ['j','k','y','a','d','w','s'])Input.keys[k]=false;})()`);
+  let loaded=false;for(let i=0;i<600;i++){if(game.contentWindow.eval(`(()=>{stageLoadTick();return stageLoadReady(${n})&&ll18Keys(${n}).every(k=>XART.rdy(k))&&bmfReady('game')})()`)){loaded=true;break;}await delay(100);}if(!loaded)throw Error('Assets are still loading. Replay to retry.');
+  game.contentWindow.eval('(()=>{stageTimer=0;mapScroll=0;LL18.clock=0;'+(scene.value==='waves'?"stagePlan=buildStagePlan(run.stage);waveIdx=0;spawnClock=0;":"spawnEnemy("+JSON.stringify(scene.value)+",worldWidth()/2,viewTopY()-150,{});")+"window.legacyReviewBot="+(bot.value==='on')+";SC12.invalidate();SC12.refresh();__bofFit();})()");
+  history.replaceState(null,'','?'+new URLSearchParams({stage:stage.value,scene:scene.value,difficulty:difficulty.value,bot:bot.value,revision:'legacy-legion-1018'}));
+  status.textContent=scene.selectedOptions[0].textContent;game.contentWindow.focus();
+ }catch(e){status.textContent=e.message;console.error(e);}finally{busy=false;document.querySelector('#replay').disabled=false;}
+}
+for(const el of [stage,scene,difficulty])el.onchange=begin;bot.onchange=()=>{if(ready)game.contentWindow.eval('window.legacyReviewBot='+(bot.value==='on')+';Input.keys.j=false;');};document.querySelector('#replay').onclick=begin;
+game.onload=async()=>{for(let i=0;i<600;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof LL18!=="undefined"')){
+ ready=true;game.contentWindow.eval(`(()=>{playerHit=function(){};window.legacyReviewBot=false;const tick=updatePlay;updatePlay=function(dt){if(window.legacyReviewBot&&state===GS.PLAY){player.x=worldWidth()/2+Math.sin(LL18.clock*.8)*VW*.32;player.y=VH-65;Input.keys.j=true;}return tick.apply(this,arguments);};})()`);
+ await begin();return;}await delay(100);}status.textContent='Reload to retry loading.';};
+(async()=>{const r=await fetch(new URL('../../../index.html?revision=legacy-legion-1018',location.href));if(!r.ok)throw Error('Game load failed: '+r.status);let html=await r.text();
+ function isolate(){const prefix='BOF_LEGACY_REVIEW_1018_',get=Storage.prototype.getItem,set=Storage.prototype.setItem,remove=Storage.prototype.removeItem,key=Storage.prototype.key;Storage.prototype.getItem=function(k){return get.call(this,prefix+k);};Storage.prototype.setItem=function(k,v){return set.call(this,prefix+k,v);};Storage.prototype.removeItem=function(k){return remove.call(this,prefix+k);};Storage.prototype.clear=function(){const keys=[];for(let i=0;i<this.length;i++){const k=key.call(this,i);if(k?.startsWith(prefix))keys.push(k);}for(const k of keys)remove.call(this,k);};window.__legacyReviewStorage=true;}
+ html=html.replace('<head>','<head><base href="'+new URL('../../../',location.href).href+'"><script>('+isolate.toString()+')();</scr'+'ipt>');game.srcdoc=html;
+})().catch(e=>{status.textContent=e.message;console.error(e);});
+</script></html>

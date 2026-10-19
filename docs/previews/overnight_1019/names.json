@@ -1,0 +1,126 @@
+{
+  "razorback": {
+    "name": "RAZORBACK",
+    "kind": "razorback",
+    "stage": 1,
+    "role": "miniboss"
+  },
+  "damkeeper": {
+    "name": "JUNGLE OVERLORD-X",
+    "kind": "damkeeper",
+    "stage": 1,
+    "role": "boss"
+  },
+  "magmaward": {
+    "name": "INFERNO REAVER",
+    "kind": "magmaward",
+    "ship": "magmaward",
+    "stage": 2,
+    "role": "miniboss"
+  },
+  "infernoreaver": {
+    "name": "FURNACE TYRANT",
+    "kind": "infernoreaver",
+    "ship": "infernoreaver",
+    "stage": 2,
+    "role": "boss"
+  },
+  "frostcruiser": {
+    "name": "CRYOGENIC SIEGE CARRIER",
+    "kind": "frostcruiser",
+    "ship": "frostcruiser",
+    "stage": 3,
+    "role": "miniboss"
+  },
+  "cryospear": {
+    "name": "RIME WALL - MODULAR BASTION",
+    "kind": "cryospear",
+    "ship": "cryospear",
+    "stage": 3,
+    "role": "boss"
+  },
+  "olivewarden": {
+    "name": "IRON WARDEN",
+    "kind": "olivewarden",
+    "ship": "olivewarden",
+    "stage": 4,
+    "role": "miniboss"
+  },
+  "stormsovereign": {
+    "name": "STORM SOVEREIGN MK II",
+    "kind": "stormsovereign",
+    "ship": "stormsovereign",
+    "stage": 4,
+    "role": "boss"
+  },
+  "siegebomber": {
+    "name": "ECLIPSE SIEGE BOMBER",
+    "kind": "siegebomber",
+    "ship": null,
+    "stage": 5,
+    "role": "miniboss"
+  },
+  "chromehammer": {
+    "name": "CHROME HAMMER ARCHMAGE",
+    "kind": "chromehammer",
+    "stage": 5,
+    "role": "boss"
+  },
+  "siegefortress17": {
+    "name": "WARHIVE SIEGE FORTRESS",
+    "kind": "siegefortress17",
+    "stage": 6,
+    "role": "miniboss"
+  },
+  "warhive": {
+    "name": "WARHIVE HARRIER",
+    "kind": "warhive",
+    "stage": 6,
+    "role": "boss"
+  },
+  "rebelsquad": {
+    "name": "REBEL SQUAD",
+    "kind": "rebelsquad",
+    "stage": 6,
+    "role": "boss"
+  },
+  "dualscoopdredger": {
+    "name": "DUAL SCOOP DREDGER",
+    "kind": "dualscoopdredger",
+    "ship": "dualscoopdredger",
+    "stage": 7,
+    "role": "miniboss"
+  },
+  "sludgeemperor": {
+    "name": "TOXIC PORTAL WARDEN",
+    "kind": "sludgeemperor",
+    "ship": "sludgeemperor",
+    "stage": 7,
+    "role": "boss"
+  },
+  "heralddeath": {
+    "name": "HERALD OF DEATH",
+    "kind": "heralddeath",
+    "ship": "heralddeath",
+    "stage": 8,
+    "role": "miniboss"
+  },
+  "vileexistence": {
+    "name": "THE INFUSED ORBITAL HOST",
+    "kind": "vileexistence",
+    "stage": 8,
+    "role": "boss"
+  },
+  "voidhorizon": {
+    "name": "EVENT HORIZON",
+    "kind": "voidhorizon",
+    "stage": 9,
+    "role": "miniboss"
+  },
+  "tidalfusion": {
+    "name": "WARP SENTINELS",
+    "kind": "tidalfusion",
+    "stage": 9,
+    "role": "boss"
+  }
+}

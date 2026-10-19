@@ -1,0 +1,783 @@
+{
+  "date": "2026-10-18",
+  "nativePassed": 91,
+  "nativeFailed": 0,
+  "browserErrors": 0,
+  "corePassed": 8791,
+  "coreFailed": 0,
+  "coreExit": 0,
+  "coreFinalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+  "baseline": {
+    "passed": 8791,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "normal truck warns, fires both racks and reloads",
+      "passed": true
+    },
+    {
+      "name": "normal truck draws moving wheels and generated launcher poses",
+      "passed": true
+    },
+    {
+      "name": "normal missiles are counterable and do not home",
+      "passed": true
+    },
+    {
+      "name": "hard truck warns, fires both racks and reloads",
+      "passed": true
+    },
+    {
+      "name": "hard truck draws moving wheels and generated launcher poses",
+      "passed": true
+    },
+    {
+      "name": "hard missiles are counterable and do not home",
+      "passed": true
+    },
+    {
+      "name": "furious truck warns, fires both racks and reloads",
+      "passed": true
+    },
+    {
+      "name": "furious truck draws moving wheels and generated launcher poses",
+      "passed": true
+    },
+    {
+      "name": "furious missiles are counterable and do not home",
+      "passed": true
+    },
+    {
+      "name": "Actual J gunfire shoots down a live truck missile",
+      "passed": true
+    },
+    {
+      "name": "Native hull and launcher pixels visibly flash on a real hit",
+      "passed": true
+    },
+    {
+      "name": "Truck owner and module flash timers expire normally",
+      "passed": true
+    },
+    {
+      "name": "Retina exposes both launcher racks and the cab hull",
+      "passed": true
+    },
+    {
+      "name": "Destroying one rack removes it while the surviving rack keeps firing",
+      "passed": true
+    },
+    {
+      "name": "Destroyed racks leave the live Retina targets",
+      "passed": true
+    },
+    {
+      "name": "Both destroyed racks stop firing without an invulnerable hull",
+      "passed": true
+    },
+    {
+      "name": "The exposed hull dies through the native enemy reward owner",
+      "passed": true
+    },
+    {
+      "name": "The black truck uses the same working modular bank",
+      "passed": true
+    },
+    {
+      "name": "Real machinegun projectiles can damage the modular truck",
+      "passed": true
+    },
+    {
+      "name": "Real missile projectiles can damage the modular truck",
+      "passed": true
+    },
+    {
+      "name": "Real laser projectiles can damage the modular truck",
+      "passed": true
+    },
+    {
+      "name": "Real iceorb projectiles can damage the modular truck",
+      "passed": true
+    },
+    {
+      "name": "normal Furnace uses travelling fire walls, never hostile red zone beams",
+      "passed": true
+    },
+    {
+      "name": "normal side geysers warn with authored asterisks and arrows",
+      "passed": true
+    },
+    {
+      "name": "normal walls and side vents are sequenced rather than simultaneous tells",
+      "passed": true
+    },
+    {
+      "name": "hard Furnace uses travelling fire walls, never hostile red zone beams",
+      "passed": true
+    },
+    {
+      "name": "hard side geysers warn with authored asterisks and arrows",
+      "passed": true
+    },
+    {
+      "name": "hard walls and side vents are sequenced rather than simultaneous tells",
+      "passed": true
+    },
+    {
+      "name": "furious Furnace uses travelling fire walls, never hostile red zone beams",
+      "passed": true
+    },
+    {
+      "name": "furious side geysers warn with authored asterisks and arrows",
+      "passed": true
+    },
+    {
+      "name": "furious walls and side vents are sequenced rather than simultaneous tells",
+      "passed": true
+    },
+    {
+      "name": "Hard and Furious sweeps are faster, with Normal unchanged",
+      "passed": true
+    },
+    {
+      "name": "No native page, console or asset errors",
+      "passed": true
+    },
+    {
+      "name": "Head charge, rumble, laser release and flame cues have native sound owners",
+      "passed": true
+    },
+    {
+      "name": "easy restores actual continuous flamethrower frames",
+      "passed": true
+    },
+    {
+      "name": "easy cannon retains magma balls and also releases fire waves",
+      "passed": true
+    },
+    {
+      "name": "easy remains in its native armor phase",
+      "passed": true
+    },
+    {
+      "name": "easy warns and rumbles before the laser sweep",
+      "passed": true
+    },
+    {
+      "name": "easy twin eye lasers are active together",
+      "passed": true
+    },
+    {
+      "name": "easy completes a committed 360-degree turn",
+      "passed": true
+    },
+    {
+      "name": "easy eye-laser roots remain mounted to their visible sockets",
+      "passed": true
+    },
+    {
+      "name": "easy has a beam-free recovery and a shootable head",
+      "passed": true
+    },
+    {
+      "name": "easy draws the actual generated rotation bank",
+      "passed": true
+    },
+    {
+      "name": "normal restores actual continuous flamethrower frames",
+      "passed": true
+    },
+    {
+      "name": "normal cannon retains magma balls and also releases fire waves",
+      "passed": true
+    },
+    {
+      "name": "normal remains in its native armor phase",
+      "passed": true
+    },
+    {
+      "name": "normal warns and rumbles before the laser sweep",
+      "passed": true
+    },
+    {
+      "name": "normal twin eye lasers are active together",
+      "passed": true
+    },
+    {
+      "name": "normal completes a committed 360-degree turn",
+      "passed": true
+    },
+    {
+      "name": "normal eye-laser roots remain mounted to their visible sockets",
+      "passed": true
+    },
+    {
+      "name": "normal has a beam-free recovery and a shootable head",
+      "passed": true
+    },
+    {
+      "name": "normal draws the actual generated rotation bank",
+      "passed": true
+    },
+    {
+      "name": "hard restores actual continuous flamethrower frames",
+      "passed": true
+    },
+    {
+      "name": "hard cannon retains magma balls and also releases fire waves",
+      "passed": true
+    },
+    {
+      "name": "hard remains in its native armor phase",
+      "passed": true
+    },
+    {
+      "name": "hard warns and rumbles before the laser sweep",
+      "passed": true
+    },
+    {
+      "name": "hard twin eye lasers are active together",
+      "passed": true
+    },
+    {
+      "name": "hard completes a committed 360-degree turn",
+      "passed": true
+    },
+    {
+      "name": "hard eye-laser roots remain mounted to their visible sockets",
+      "passed": true
+    },
+    {
+      "name": "hard has a beam-free recovery and a shootable head",
+      "passed": true
+    },
+    {
+      "name": "hard draws the actual generated rotation bank",
+      "passed": true
+    },
+    {
+      "name": "furious restores actual continuous flamethrower frames",
+      "passed": true
+    },
+    {
+      "name": "furious cannon retains magma balls and also releases fire waves",
+      "passed": true
+    },
+    {
+      "name": "furious remains in its native armor phase",
+      "passed": true
+    },
+    {
+      "name": "furious warns and rumbles before the laser sweep",
+      "passed": true
+    },
+    {
+      "name": "furious twin eye lasers are active together",
+      "passed": true
+    },
+    {
+      "name": "furious completes a committed 360-degree turn",
+      "passed": true
+    },
+    {
+      "name": "furious eye-laser roots remain mounted to their visible sockets",
+      "passed": true
+    },
+    {
+      "name": "furious has a beam-free recovery and a shootable head",
+      "passed": true
+    },
+    {
+      "name": "furious draws the actual generated rotation bank",
+      "passed": true
+    },
+    {
+      "name": "The actual damaged head pixels visibly flash in the native renderer",
+      "passed": true
+    },
+    {
+      "name": "Precision rounds, missiles, ice orb and beam all damage the head and flash",
+      "passed": true
+    },
+    {
+      "name": "Ice orb keeps the authored fire-boss damage advantage",
+      "passed": true
+    },
+    {
+      "name": "Native owner and head hit-flash timers expire normally",
+      "passed": true
+    },
+    {
+      "name": "Real precision projectiles can hit the rotating head",
+      "passed": true
+    },
+    {
+      "name": "precision damage does not cancel or shoot down the eye lasers",
+      "passed": true
+    },
+    {
+      "name": "Real missile projectiles can hit the rotating head",
+      "passed": true
+    },
+    {
+      "name": "missile damage does not cancel or shoot down the eye lasers",
+      "passed": true
+    },
+    {
+      "name": "Real ice-orb projectiles can hit the rotating head",
+      "passed": true
+    },
+    {
+      "name": "ice-orb damage does not cancel or shoot down the eye lasers",
+      "passed": true
+    },
+    {
+      "name": "Eye-laser windup is a warning, not a damaging beam",
+      "passed": true
+    },
+    {
+      "name": "The actual continuous eye beam reaches native player collision",
+      "passed": true
+    },
+    {
+      "name": "PixelLab spin, charge and laser banks are installed",
+      "passed": true
+    },
+    {
+      "name": "Native charge, rumble and release sound cues actually fire",
+      "passed": true
+    },
+    {
+      "name": "Review opens the actual head encounter at the regular field of view",
+      "passed": true
+    },
+    {
+      "name": "Review can restart the actual flamethrower and cannon encounter",
+      "passed": true
+    },
+    {
+      "name": "No page, console or asset errors",
+      "passed": true
+    },
+    {
+      "name": "Preview opens actual modular truck at regular FOV",
+      "passed": true
+    },
+    {
+      "name": "Preview rack control destroys one actual launcher",
+      "passed": true
+    },
+    {
+      "name": "Preview selects actual Furious twin-laser sweep",
+      "passed": true
+    },
+    {
+      "name": "Preview has no page, console or asset errors",
+      "passed": true
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_00.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 71478
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_01.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 69598
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_02.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70172
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_03.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70831
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_04.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 71305
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_05.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70318
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_06.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70600
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_black_07.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70866
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_00.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70777
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_01.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 68779
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_02.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 69202
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_03.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70136
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_04.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70471
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_05.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 69716
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_06.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 69776
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_hull_olive_07.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 70202
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_00.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 53320
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_01.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 53571
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_02.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 56440
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_03.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 53505
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_04.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 53958
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_05.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 55979
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_06.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 56082
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_07.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 53358
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_08.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 53993
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_09.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 58999
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_10.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 60948
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_11.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 61736
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_12.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52206
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_13.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52154
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_14.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 56251
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_black_15.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 50749
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_00.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52143
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_01.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52304
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_02.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 55167
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_03.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52254
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_04.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52757
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_05.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 54684
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_06.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 54750
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_07.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52009
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_08.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 52671
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_09.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 57381
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_10.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 59655
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_11.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 60214
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_12.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 51034
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_13.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 50965
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_14.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 54822
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/missile_truck_1018/mt18_launcher_olive_15.png",
+      "size": [
+        192,
+        256
+      ],
+      "bytes": 49586
+    }
+  ],
+  "hashes": {
+    "assets/game.js": "31f8ea0f8bc4c75efb3c5cdf4f20562e729e634111ca2355dec63b677ea3358d",
+    "assets/missile_truck_1018.js": "774990fc32c58b593326cd5c67aebed34387b9d2ef25ca7b58655d22d1ffeb04",
+    "assets/missile_truck_art_1018.js": "89463bc6842b3b7a995f05e035af965fec244b5165ba03b89ac0ca329674544f",
+    "assets/furnace_assault_1017.js": "910baac780ab08629175ff20e31bd2320ffc6f42091689a0116c063f12b5cad7",
+    "index.html": "5a220673d4022d72d07d237455f39c83c0f050112ece605442d4ed1c5987e11a",
+    "_BUILD_SOURCE/test_fl.js": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+    "docs/previews/truck_furnace_1018/index.html": "033fe7f1d5748c914b409b52f4e50582cfec4a824903c7010ca55b3dc98c4af4"
+  },
+  "review": "http://127.0.0.1:8794/docs/previews/truck_furnace_1018/index.html",
+  "notes": [
+    "Connected physical controller was isolated in native test pages only; production and review controls retain hardware support.",
+    "Initial fixture failures came from map-jump scroll, physical controller movement, assuming immediate native death, and requiring all emitted missiles to survive to the QA sampler. The final checks use actual emitted totals and native interception, plus delayed reward/removal checks.",
+    "Both animation bank onions and native full-field screenshots inspected.",
+    "No commit or push requested or performed.",
+    "The main game loader now uses truck-furnace-1018; the fresh-URL review was rechecked4/0 after this cache-only change."
+  ]
+}

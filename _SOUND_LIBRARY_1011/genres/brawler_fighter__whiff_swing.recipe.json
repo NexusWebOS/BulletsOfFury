@@ -1,0 +1,184 @@
+{
+ "design": {
+  "name": "WHIFF / SWING",
+  "frames": 22,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [],
+  "noise": {
+   "on": true,
+   "white": true,
+   "rate": 3,
+   "toneHz": 600,
+   "toneSweepTo": 3200,
+   "vol": 2,
+   "fade": 1.0833333333333333,
+   "delay": 0,
+   "frames": 12
+  },
+  "tone": {
+   "on": false,
+   "hz": 880,
+   "sweepTo": 880,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 20,
+   "arp": [],
+   "arpFrames": 2
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "WHIFF / SWING",
+  "frames": 22,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [],
+  "psg": [
+   {
+    "ch": 2,
+    "track": [
+     {
+      "f": 0,
+      "period": 186,
+      "vol": 15
+     },
+     {
+      "f": 1,
+      "period": 162,
+      "vol": 15
+     },
+     {
+      "f": 2,
+      "period": 141,
+      "vol": 15
+     },
+     {
+      "f": 3,
+      "period": 123,
+      "vol": 15
+     },
+     {
+      "f": 4,
+      "period": 107,
+      "vol": 15
+     },
+     {
+      "f": 5,
+      "period": 93,
+      "vol": 15
+     },
+     {
+      "f": 6,
+      "period": 81,
+      "vol": 15
+     },
+     {
+      "f": 7,
+      "period": 70,
+      "vol": 15
+     },
+     {
+      "f": 8,
+      "period": 61,
+      "vol": 15
+     },
+     {
+      "f": 9,
+      "period": 53,
+      "vol": 15
+     },
+     {
+      "f": 10,
+      "period": 46,
+      "vol": 15
+     },
+     {
+      "f": 11,
+      "period": 40,
+      "vol": 15
+     },
+     {
+      "f": 12,
+      "period": 35,
+      "vol": 15
+     }
+    ]
+   },
+   {
+    "ch": 3,
+    "track": [
+     {
+      "f": 0,
+      "period": 7,
+      "vol": 2
+     },
+     {
+      "f": 1,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 2,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 3,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 4,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 5,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 6,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 7,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 8,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 9,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 10,
+      "period": 7,
+      "vol": 13
+     },
+     {
+      "f": 11,
+      "period": 7,
+      "vol": 14
+     },
+     {
+      "f": 12,
+      "period": 7,
+      "vol": 15
+     }
+    ]
+   }
+  ],
+  "dac": null
+ }
+}

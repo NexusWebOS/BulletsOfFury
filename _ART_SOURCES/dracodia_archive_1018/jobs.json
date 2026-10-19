@@ -1,0 +1,82 @@
+{
+  "bastion": {
+    "id": "2d46c6c6-fece-4b53-924c-b5ef2f0a72ef",
+    "count": 1,
+    "tool": "create_image_pro"
+  },
+  "camo": {
+    "id": "4e48d5b7-e0f2-48cf-b2f1-8a5f50ca5580",
+    "count": 1,
+    "tool": "create_image_pro"
+  },
+  "halberd": {
+    "id": "fa7324bd-dbc2-419f-8ffc-80d4a5ca3268",
+    "count": 1,
+    "tool": "create_image_pro"
+  },
+  "bomb": {
+    "id": "38d77856-4877-441b-86c5-d08e7c639e03",
+    "count": 1,
+    "tool": "create_image_pro"
+  },
+  "lightning": {
+    "id": "32788fe6-6875-4f13-a673-c5f7379a0b31",
+    "count": 1,
+    "tool": "create_image_pro"
+  },
+  "storm": {
+    "id": "e659d5ec-0406-482f-b63e-9ff1789f190d",
+    "count": 1,
+    "tool": "create_image_pro"
+  },
+  "bastion_download": {
+    "id": "6a77d690-fe11-4ac0-84f8-b2937945ce81",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "lightning_loop": {
+    "id": "84af235f-74fe-4005-ba14-2eaedfaae8da",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "storm_loop": {
+    "id": "9e7b059e-e688-4dcb-a6bf-2d0f8c2195c6",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "camo_download": {
+    "id": "55bf8058-223c-4170-81d3-6da89c806dfe",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "halberd_download": {
+    "id": "2ec5e56b-da20-464e-b675-e6404ffbd0ae",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "bomb_charge": {
+    "id": "70c08471-e3a7-48ed-86c3-96747e0ca006",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "bomb_burst": {
+    "id": "75a1975f-f70c-4ef6-a630-cc8a2e3d0e9a",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "transfer": {
+    "id": "0174e6a8-60c5-43ff-b1a5-789419a8d29a",
+    "count": 1,
+    "tool": "create_image_pro"
+  },
+  "bomb_burst_v2": {
+    "id": "4a9242c5-2d68-4bdc-abd6-f97fe7e0f19b",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  },
+  "transfer_loop": {
+    "id": "8bc20975-1e31-491f-b3ad-3c336285d99b",
+    "count": 32,
+    "tool": "animate_image_pixminimax"
+  }
+}

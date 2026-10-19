@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-17",
+  "request": "Hammer breakup/burst safeguard; early aircraft; camo palette; smaller lightning guards; restored Stage7 approach",
+  "runtime_sha256": {
+    "assets/combat_revision_1017.js": "a25b1c9fb71f08fe862b2e30c7b72d09f68830209bef7960cbf57d88d0d8cfcf",
+    "assets/hammer_finale_1017.js": "f6ae4003d536e0533bd2c0ee95842e35b30a6e9dc4d20a8a8c31ad39d60869b8",
+    "assets/hammer_counter_1017.js": "e051028ed574e669e29a6b01d37f1ca910c4773625dcc6011947be1819e6fd45",
+    "assets/storm_guard_1017.js": "e7c17fe0f17eea078a471037ee422bf3ed9cd8d4516db22dd45df4d6bfa89c05",
+    "assets/air_motion_1013.js": "79810f599b100ee5d497ab2eb2956729621131b25211b7a8060dcf3daf03560e",
+    "index.html": "a8de0f92538998065232eeb3daea5883a43b92777b608fb85c49cb4a376e43e6",
+    "docs/previews/combat_revision_1017/index.html": "eee268a5f491c52b203fa046ebc0a2e7c0ac0da8a6ac4fe73243d705b1dddf1f"
+  },
+  "verification": {
+    "node_check": [
+      "assets/game.js",
+      "assets/combat_revision_1017.js",
+      "assets/hammer_finale_1017.js",
+      "assets/hammer_counter_1017.js",
+      "assets/storm_guard_1017.js"
+    ],
+    "fullsuite": {
+      "passed": 8754,
+      "errors": 0,
+      "exit_code": 0,
+      "final_banner": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+      "log": "_shots/combat_revision_1017/fullsuite-final.log"
+    },
+    "native": [
+      {
+        "name": "combat_air_intro",
+        "passed": 82,
+        "failed": 0,
+        "errors": [],
+        "exit_code": 0,
+        "evidence": "_shots/combat_revision_1017/native/verification.json"
+      },
+      {
+        "name": "hammer_finale",
+        "passed": 36,
+        "failed": 0,
+        "errors": [],
+        "exit_code": 0,
+        "evidence": "_shots/hammer_finish_1017/native/verification.json"
+      },
+      {
+        "name": "existing_assault",
+        "passed": 88,
+        "failed": 0,
+        "errors": [],
+        "exit_code": 0,
+        "evidence": "_shots/assault_revision_1017/native/verification.json"
+      },
+      {
+        "name": "interactive_review",
+        "passed": 11,
+        "failed": 0,
+        "errors": [],
+        "exit_code": 0,
+        "evidence": "_shots/combat_revision_1017/review/verification.json"
+      },
+      {
+        "name": "normal_sewer_continuation",
+        "passed": 6,
+        "failed": 0,
+        "errors": [],
+        "exit_code": 0,
+        "evidence": "_shots/combat_revision_1017/arrival/verification.json"
+      }
+    ]
+  },
+  "preserved": {
+    "assets/game.js": true,
+    "_BUILD_SOURCE/test_fl.js": true,
+    "assets/flight_variants_1012.js": true,
+    "assets/campaign_story_0924.js": true
+  },
+  "screenshots_inspected": [
+    "_shots/combat_revision_1017/native/lightning-guards-hard.png",
+    "_shots/combat_revision_1017/native/camo-damage-palette.png",
+    "_shots/combat_revision_1017/native/stage3-ac10icejet.png",
+    "_shots/hammer_finish_1017/native/burst-fragments.png",
+    "_shots/combat_revision_1017/review/hammer.png",
+    "_shots/combat_revision_1017/review/intro.png"
+  ],
+  "observations": {
+    "armor_bursts": 56,
+    "armor_explosion_draws": 1904,
+    "armor_alpha": 1,
+    "helper_size_before": 192,
+    "helper_size_after": 116,
+    "formation_rounds_normal_hard_furious": {
+      "stage1": [
+        34,
+        43,
+        84
+      ],
+      "stage4": [
+        34,
+        43,
+        84
+      ]
+    },
+    "camo_native_green_pixels_full_half_low": [
+      11,
+      11,
+      11
+    ]
+  },
+  "scope": "Controlled native Chromium encounters, actual collision/drawImage/pixels and keyboard input; not a full human campaign completion or timing claim.",
+  "publishing": "No commit or push; separate local work preserved."
+}

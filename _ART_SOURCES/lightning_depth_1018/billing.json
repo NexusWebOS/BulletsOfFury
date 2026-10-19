@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-18",
+  "starting_account_credits": 3.82,
+  "final_observed_account_credits": 1.06,
+  "observed_account_change": 2.76,
+  "account_delta_note": "Account-wide observation, not a sum of job charges; other account activity may contribute.",
+  "top_up": false,
+  "reference_uploads": [],
+  "job_frame_zero_receipts": [
+    {
+      "name": "wrap",
+      "job_id": "c69d711a-3f9d-46b2-8b4c-e60a0706cfe7",
+      "charged": "charged: $0.0800 in credits",
+      "asset_id": "30a9f365-ca92-5eda-923d-50cae4fa2b8e",
+      "completed": true
+    },
+    {
+      "name": "bolt",
+      "job_id": "b13760f4-f104-499e-b014-436db54c320a",
+      "charged": "charged: $0.0800 in credits",
+      "asset_id": "66574d58-ba5a-54ac-aa61-946bb739da0b",
+      "completed": true
+    },
+    {
+      "name": "orb",
+      "job_id": "0e240895-59a0-4473-bc25-eaee1838ffa2",
+      "charged": "charged: $0.0800 in credits",
+      "asset_id": "944d4b99-d77b-5d29-b838-bab4a6e442e5",
+      "completed": true
+    },
+    {
+      "name": "tether",
+      "job_id": "08bf4689-dfe5-4371-beb1-1826081e5543",
+      "charged": "charged: $0.0800 in credits",
+      "asset_id": "e8f63492-98be-51ce-95ab-2fa86b9d6321",
+      "completed": true
+    },
+    {
+      "name": "bolt_loop",
+      "job_id": "0f2e0cbf-44f8-4fd3-b859-55e9dbdfdc14",
+      "charged": "charged: $0.0574 in credits",
+      "asset_id": "71c87c53-b638-56dc-a7f6-46ef5a71fb54",
+      "completed": true
+    },
+    {
+      "name": "orb_loop",
+      "job_id": "9a491b45-cc31-4d22-87ec-c1dcf1127ad3",
+      "charged": "charged: $0.0392 in credits",
+      "asset_id": "f428bbd0-4842-5ae2-b811-9b02f1f584c5",
+      "completed": true
+    },
+    {
+      "name": "tether_v2",
+      "job_id": "27681a1e-ca6a-4786-a3b1-9974ce96fb5d",
+      "charged": "charged: $0.0800 in credits",
+      "asset_id": "358ec65b-36e9-5037-8dcb-960f1fa13042",
+      "completed": true
+    },
+    {
+      "name": "tether_loop",
+      "job_id": "2e0852cc-8aa1-4cbc-bb17-02b5e12b1903",
+      "charged": "charged: $0.0332 in credits",
+      "asset_id": "06f4d5cf-2a39-58b5-b961-b074a11b8de9",
+      "completed": true
+    },
+    {
+      "name": "wrap_loop",
+      "job_id": "1d9695ab-3290-4013-bf8d-6fa3b354551b",
+      "charged": "charged: $0.0624 in credits",
+      "asset_id": "76cbc59c-b909-5018-8362-03d8963283d2",
+      "completed": true
+    }
+  ],
+  "receipt_note": "Charges are exactly the provider's get_image(index=0) receipt text; these are not asserted to be whole-clip totals."
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 4a9242c5-2d68-4bdc-abd6-f97fe7e0f19b\njob_id: 4a9242c5-2d68-4bdc-abd6-f97fe7e0f19b\ndescription: A SINGLE explosive detonation: the casing shatters immediately into many irregular chrome fragments, a dense emerald-white PLASMA CLOUD balloons outward, violet-black curling turbulent smoke, organic green fire tendrils and tiny binary pixel embers. The initial flash is brief, then actual rolling energy volume and scattered fragments expand and fade to empty transparent air. No star shapes, straight pointed rays, geometric icons, circular glyph grids, reset, surviving bomb or camera movement. All fragments stay inside the canvas.\nframes: 32\nsize: 128x128px\ntransparent: True\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"4a9242c5-2d68-4bdc-abd6-f97fe7e0f19b\")\nasset_id: c44ab281-8cbd-5a07-9062-a94db3ab9997\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,6415 @@
+{
+  "date": "2026-10-18",
+  "scope": "Stage4 Storm Sovereign encounter fixtures and native review; not full-campaign completion",
+  "browser": "Real Chromium, Microsoft Edge channel, hardware gamepad isolated only in automated pages",
+  "sourceSha256": {
+    "assets/game.js": "ae206b3d6ec874412cc76f5a65e6bfd4722a21f35e907a1ba0e90934e9009265",
+    "assets/storm_assault_1018.js": "a7afd7a01d3e3b666bc3950afa7b8a2fd88bf64d90996b793adc24ea688ff444",
+    "assets/stage4_panic_1017.js": "14c7489710789fa2b9a2cf36f948d6de5f1748ae9cdc12579a480347523aebd1",
+    "assets/stage34_assault_1014.js": "3a3c39a126b92733802f2adf31b373035ac3c7921596a18b0bfb29d61cfb2b41",
+    "assets/storm_guard_1017.js": "facc5ebdb24bbf704968ef7344ae4f0c387fea1f865f352da94aa484ed9663a1",
+    "assets/storm_assault_art_1018.js": "a9b0ceaa4c801db18251ad09f731eba5cd5da524ef4570ba47f897def0e9d779",
+    "index.html": "facec6eac1600f52ebfc8c571d0b165e580ac39e0194bf40d261670c2e076bb9"
+  },
+  "coreSuite": {
+    "passed": 8791,
+    "failed": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "baselinePassed": 8791,
+    "baselineFailures": []
+  },
+  "syntax": {
+    "game": true,
+    "newRuntime": true,
+    "changedExtensions": true
+  },
+  "native": {
+    "passed": 177,
+    "failed": 0,
+    "runs": {
+      "assault": {
+        "passed": 50,
+        "failed": 0,
+        "errors": []
+      },
+      "panic_regression": {
+        "passed": 113,
+        "failed": 0,
+        "errors": []
+      },
+      "review": {
+        "passed": 14,
+        "failed": 0,
+        "errors": []
+      }
+    }
+  },
+  "art": {
+    "frames": 32,
+    "bytes": 1116932,
+    "bomb": {
+      "frames": 16,
+      "canvas": [
+        128,
+        192
+      ],
+      "pivot": [
+        64,
+        96
+      ],
+      "scale": 0.45
+    },
+    "impact": {
+      "frames": 16,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "scale": 0.72
+    },
+    "allFramesNativeRendered": true,
+    "contactAndOnionInspected": true,
+    "registration": "_ART_SOURCES/storm_assault_1018/registration.json"
+  },
+  "audio": {
+    "approvedMediaDecoded": true,
+    "ownedRevLoopStartedWithPositiveGain": true,
+    "automationBrowserMuted": true,
+    "humanListeningAssessment": false
+  },
+  "screenshots": [
+    "_shots/storm_assault_1018/native/generated-lightning-impact.png",
+    "_shots/storm_assault_1018/native/lightning-bomb-impact.png",
+    "_shots/storm_assault_1018/native/lightning-crossing-bomb-retinas.png",
+    "_shots/storm_assault_1018/native/multi-retina-four-generators.png",
+    "_shots/storm_assault_1018/native/northbound-chase-radio-fov.png",
+    "_shots/storm_assault_1018/native/overhead-return-scaled.png",
+    "_shots/storm_assault_1018/native/overload-whole-hull-lightning.png",
+    "_shots/storm_assault_1018/native/review-compact.png",
+    "_shots/storm_assault_1018/native/review-coop-axel-comms.png",
+    "_shots/storm_assault_1018/native/review-decker-cole-comms.png",
+    "_shots/storm_assault_1018/native/review-overload.png",
+    "_shots/storm_assault_1018/native/review-shield.png",
+    "_shots/storm_assault_1018/native/shield-generators-radio.png",
+    "_shots/storm_assault_1018/native/south-entry-harmless-depth.png"
+  ],
+  "review": "docs/previews/storm_assault_1018/index.html",
+  "fixtureCorrections": [
+    "Moved initial-radio log reset before the setup engagement so it does not erase the event being asserted.",
+    "Generator removal uses two actual hits for fresh pools, preserving the existing first-lethal-impact safeguard."
+  ],
+  "checks": [
+    {
+      "name": "Shield engagement explains four generators and multi-Retina",
+      "passed": true,
+      "data": {
+        "said": [
+          {
+            "event": "radio",
+            "id": "generators",
+            "who": "decker",
+            "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+          }
+        ],
+        "active": true,
+        "spins": [
+          0.395,
+          4.425000000000001,
+          8.441666666666666,
+          12.471666666666668
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "All four outer generator plates rotate in the actual renderer",
+      "passed": true,
+      "data": {
+        "draws": [
+          {
+            "x": 136,
+            "y": 144.7465122721143,
+            "w": 54,
+            "h": 54,
+            "rot": 1.5511613727099598
+          },
+          {
+            "x": 544,
+            "y": 144.7465122721143,
+            "w": 54,
+            "h": 54,
+            "rot": 3.239767424014477
+          },
+          {
+            "x": 136,
+            "y": 300.7465122721143,
+            "w": 54,
+            "h": 54,
+            "rot": 4.876013597759157
+          },
+          {
+            "x": 544,
+            "y": 300.7465122721143,
+            "w": 54,
+            "h": 54,
+            "rot": 0.2814343418840879
+          }
+        ],
+        "pixels": 143566,
+        "spins": [
+          3.9499999999999984,
+          8.250000000000007,
+          12.416666666666664,
+          0.7166666666666724
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "Real multi-Retina acquires all four spinning generator targets",
+      "passed": true,
+      "data": {
+        "nodes": 4,
+        "marks": 4,
+        "cap": 128,
+        "locked": 4,
+        "alive": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "Multi-Retina launches actual missile salvo at the generators",
+      "passed": true,
+      "data": {
+        "used": 4,
+        "missiles": 4
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal helpers visibly enter from south scaled above the combat plane",
+      "passed": true,
+      "data": {
+        "first": [
+          {
+            "x": 229.6,
+            "y": 702,
+            "scale": 2.25,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          },
+          {
+            "x": 450.4,
+            "y": 702,
+            "scale": 2.25,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          }
+        ],
+        "last": [
+          {
+            "x": 291.3724532096636,
+            "y": 550.6033739504976,
+            "scale": 1.8330955657748988,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          },
+          {
+            "x": 422.462338706023,
+            "y": 610.5794391960256,
+            "scale": 2.061447752676983,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          }
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal south entry has no gun shots or Retina targets",
+      "passed": true,
+      "data": 0,
+      "run": "assault"
+    },
+    {
+      "name": "normal radio detects the incoming lightning wing",
+      "passed": true,
+      "data": null,
+      "run": "assault"
+    },
+    {
+      "name": "normal same helpers become shootable after landing on the combat plane",
+      "passed": true,
+      "data": {
+        "on": true,
+        "same": true,
+        "targets": 4,
+        "moves": [
+          "orbit",
+          "orbit"
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal helpers orbit, scatter, cross and rejoin without respawning",
+      "passed": true,
+      "data": {
+        "shots": 55,
+        "missiles": 8,
+        "bullets": 47,
+        "bombs": [
+          {
+            "x": 320,
+            "y": 419,
+            "track": false,
+            "warn": 1.65,
+            "from": {
+              "x": 211.12727272727273,
+              "y": 188.42867305067494
+            }
+          },
+          {
+            "x": 360,
+            "y": 419,
+            "track": false,
+            "warn": 1.65,
+            "from": {
+              "x": 468.8727272727273,
+              "y": 200.73927911128095
+            }
+          },
+          {
+            "x": 290,
+            "y": 475,
+            "track": false,
+            "warn": 1.65,
+            "from": {
+              "x": 339.12727272727284,
+              "y": 217.43283666072045
+            }
+          },
+          {
+            "x": 390,
+            "y": 475,
+            "track": false,
+            "warn": 1.65,
+            "from": {
+              "x": 340.87272727272716,
+              "y": 251.4101093879932
+            }
+          }
+        ],
+        "cross": [
+          {
+            "event": "helper-cross",
+            "side": -1,
+            "raid": 1,
+            "from": {
+              "x": 138.4,
+              "y": 186
+            },
+            "to": {
+              "x": 522.4,
+              "y": 332
+            }
+          },
+          {
+            "event": "helper-cross",
+            "side": 1,
+            "raid": 1,
+            "from": {
+              "x": 541.6,
+              "y": 186
+            },
+            "to": {
+              "x": 157.6,
+              "y": 397
+            }
+          }
+        ],
+        "orbit": [
+          {
+            "event": "helper-orbit",
+            "side": -1,
+            "raid": 1
+          },
+          {
+            "event": "helper-orbit",
+            "side": 1,
+            "raid": 1
+          }
+        ],
+        "draws": {
+          "bomb": 400,
+          "impact": 192,
+          "glow": 0,
+          "radio": 372
+        },
+        "same": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal wing independently fires lightning bullets and counterable missiles",
+      "passed": true,
+      "data": 55,
+      "run": "assault"
+    },
+    {
+      "name": "normal crossing wing drops fixed lightning bombs with a full warning",
+      "passed": true,
+      "data": [
+        {
+          "x": 320,
+          "y": 419,
+          "track": false,
+          "warn": 1.65,
+          "from": {
+            "x": 211.12727272727273,
+            "y": 188.42867305067494
+          }
+        },
+        {
+          "x": 360,
+          "y": 419,
+          "track": false,
+          "warn": 1.65,
+          "from": {
+            "x": 468.8727272727273,
+            "y": 200.73927911128095
+          }
+        },
+        {
+          "x": 290,
+          "y": 475,
+          "track": false,
+          "warn": 1.65,
+          "from": {
+            "x": 339.12727272727284,
+            "y": 217.43283666072045
+          }
+        },
+        {
+          "x": 390,
+          "y": 475,
+          "track": false,
+          "warn": 1.65,
+          "from": {
+            "x": 340.87272727272716,
+            "y": 251.4101093879932
+          }
+        }
+      ],
+      "run": "assault"
+    },
+    {
+      "name": "hard helpers visibly enter from south scaled above the combat plane",
+      "passed": true,
+      "data": {
+        "first": [
+          {
+            "x": 229.6,
+            "y": 702,
+            "scale": 2.25,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          },
+          {
+            "x": 450.4,
+            "y": 702,
+            "scale": 2.25,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          }
+        ],
+        "last": [
+          {
+            "x": 291.3724532096636,
+            "y": 550.6033739504976,
+            "scale": 1.8330955657748988,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          },
+          {
+            "x": 422.462338706023,
+            "y": 610.5794391960256,
+            "scale": 2.061447752676983,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          }
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard south entry has no gun shots or Retina targets",
+      "passed": true,
+      "data": 0,
+      "run": "assault"
+    },
+    {
+      "name": "hard radio detects the incoming lightning wing",
+      "passed": true,
+      "data": null,
+      "run": "assault"
+    },
+    {
+      "name": "hard same helpers become shootable after landing on the combat plane",
+      "passed": true,
+      "data": {
+        "on": true,
+        "same": true,
+        "targets": 4,
+        "moves": [
+          "orbit",
+          "orbit"
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard helpers orbit, scatter, cross and rejoin without respawning",
+      "passed": true,
+      "data": {
+        "shots": 75,
+        "missiles": 15,
+        "bullets": 60,
+        "bombs": [
+          {
+            "x": 320,
+            "y": 419,
+            "track": false,
+            "warn": 1.45,
+            "from": {
+              "x": 211.12727272727273,
+              "y": 188.42867305067494
+            }
+          },
+          {
+            "x": 360,
+            "y": 419,
+            "track": false,
+            "warn": 1.45,
+            "from": {
+              "x": 468.8727272727273,
+              "y": 200.73927911128095
+            }
+          },
+          {
+            "x": 290,
+            "y": 475,
+            "track": false,
+            "warn": 1.45,
+            "from": {
+              "x": 339.12727272727284,
+              "y": 217.43283666072045
+            }
+          },
+          {
+            "x": 390,
+            "y": 475,
+            "track": false,
+            "warn": 1.45,
+            "from": {
+              "x": 340.87272727272716,
+              "y": 251.4101093879932
+            }
+          }
+        ],
+        "cross": [
+          {
+            "event": "helper-cross",
+            "side": -1,
+            "raid": 1,
+            "from": {
+              "x": 138.4,
+              "y": 186
+            },
+            "to": {
+              "x": 522.4,
+              "y": 332
+            }
+          },
+          {
+            "event": "helper-cross",
+            "side": 1,
+            "raid": 1,
+            "from": {
+              "x": 541.6,
+              "y": 186
+            },
+            "to": {
+              "x": 157.6,
+              "y": 397
+            }
+          }
+        ],
+        "orbit": [
+          {
+            "event": "helper-orbit",
+            "side": -1,
+            "raid": 1
+          },
+          {
+            "event": "helper-orbit",
+            "side": 1,
+            "raid": 1
+          }
+        ],
+        "draws": {
+          "bomb": 752,
+          "impact": 384,
+          "glow": 0,
+          "radio": 687
+        },
+        "same": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard wing independently fires lightning bullets and counterable missiles",
+      "passed": true,
+      "data": 75,
+      "run": "assault"
+    },
+    {
+      "name": "On-plane helpers keep firing during the hull overhead/rearm state",
+      "passed": true,
+      "data": {
+        "shots": 2
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard crossing wing drops fixed lightning bombs with a full warning",
+      "passed": true,
+      "data": [
+        {
+          "x": 320,
+          "y": 419,
+          "track": false,
+          "warn": 1.45,
+          "from": {
+            "x": 211.12727272727273,
+            "y": 188.42867305067494
+          }
+        },
+        {
+          "x": 360,
+          "y": 419,
+          "track": false,
+          "warn": 1.45,
+          "from": {
+            "x": 468.8727272727273,
+            "y": 200.73927911128095
+          }
+        },
+        {
+          "x": 290,
+          "y": 475,
+          "track": false,
+          "warn": 1.45,
+          "from": {
+            "x": 339.12727272727284,
+            "y": 217.43283666072045
+          }
+        },
+        {
+          "x": 390,
+          "y": 475,
+          "track": false,
+          "warn": 1.45,
+          "from": {
+            "x": 340.87272727272716,
+            "y": 251.4101093879932
+          }
+        }
+      ],
+      "run": "assault"
+    },
+    {
+      "name": "Updated helper hit/deflect feedback changes actual authored pixels",
+      "passed": true,
+      "data": {
+        "pixels": 6849,
+        "flash": 0,
+        "gunFlash": 0,
+        "hp": 0,
+        "deflect": 0.13
+      },
+      "run": "assault"
+    },
+    {
+      "name": "Helper flash expires",
+      "passed": true,
+      "data": null,
+      "run": "assault"
+    },
+    {
+      "name": "furious helpers visibly enter from south scaled above the combat plane",
+      "passed": true,
+      "data": {
+        "first": [
+          {
+            "x": 229.6,
+            "y": 702,
+            "scale": 2.25,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          },
+          {
+            "x": 450.4,
+            "y": 702,
+            "scale": 2.25,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          }
+        ],
+        "last": [
+          {
+            "x": 291.3724532096636,
+            "y": 550.6033739504976,
+            "scale": 1.8330955657748988,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          },
+          {
+            "x": 422.462338706023,
+            "y": 610.5794391960256,
+            "scale": 2.061447752676983,
+            "safe": true,
+            "mat": 0,
+            "move": "entry",
+            "phase": "recover"
+          }
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "furious south entry has no gun shots or Retina targets",
+      "passed": true,
+      "data": 0,
+      "run": "assault"
+    },
+    {
+      "name": "furious radio detects the incoming lightning wing",
+      "passed": true,
+      "data": null,
+      "run": "assault"
+    },
+    {
+      "name": "furious same helpers become shootable after landing on the combat plane",
+      "passed": true,
+      "data": {
+        "on": true,
+        "same": true,
+        "targets": 4,
+        "moves": [
+          "orbit",
+          "orbit"
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "furious helpers orbit, scatter, cross and rejoin without respawning",
+      "passed": true,
+      "data": {
+        "shots": 97,
+        "missiles": 24,
+        "bullets": 73,
+        "bombs": [
+          {
+            "x": 320,
+            "y": 419,
+            "track": false,
+            "warn": 1.3,
+            "from": {
+              "x": 211.1272727272727,
+              "y": 188.42867305067494
+            }
+          },
+          {
+            "x": 360,
+            "y": 419,
+            "track": false,
+            "warn": 1.3,
+            "from": {
+              "x": 468.8727272727273,
+              "y": 200.73927911128095
+            }
+          },
+          {
+            "x": 290,
+            "y": 475,
+            "track": false,
+            "warn": 1.3,
+            "from": {
+              "x": 339.12727272727284,
+              "y": 217.43283666072045
+            }
+          },
+          {
+            "x": 390,
+            "y": 475,
+            "track": false,
+            "warn": 1.3,
+            "from": {
+              "x": 340.87272727272716,
+              "y": 251.4101093879932
+            }
+          }
+        ],
+        "cross": [
+          {
+            "event": "helper-cross",
+            "side": -1,
+            "raid": 1,
+            "from": {
+              "x": 138.39999999999998,
+              "y": 186
+            },
+            "to": {
+              "x": 522.4,
+              "y": 332
+            }
+          },
+          {
+            "event": "helper-cross",
+            "side": 1,
+            "raid": 1,
+            "from": {
+              "x": 541.6,
+              "y": 186
+            },
+            "to": {
+              "x": 157.6,
+              "y": 397
+            }
+          },
+          {
+            "event": "helper-cross",
+            "side": -1,
+            "raid": 2,
+            "from": {
+              "x": 138.4,
+              "y": 146
+            },
+            "to": {
+              "x": 522.4,
+              "y": 332
+            }
+          }
+        ],
+        "orbit": [
+          {
+            "event": "helper-orbit",
+            "side": -1,
+            "raid": 1
+          },
+          {
+            "event": "helper-orbit",
+            "side": 1,
+            "raid": 1
+          }
+        ],
+        "draws": {
+          "bomb": 1222,
+          "impact": 590,
+          "glow": 0,
+          "radio": 1001
+        },
+        "same": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "furious wing independently fires lightning bullets and counterable missiles",
+      "passed": true,
+      "data": 97,
+      "run": "assault"
+    },
+    {
+      "name": "furious crossing wing drops fixed lightning bombs with a full warning",
+      "passed": true,
+      "data": [
+        {
+          "x": 320,
+          "y": 419,
+          "track": false,
+          "warn": 1.3,
+          "from": {
+            "x": 211.1272727272727,
+            "y": 188.42867305067494
+          }
+        },
+        {
+          "x": 360,
+          "y": 419,
+          "track": false,
+          "warn": 1.3,
+          "from": {
+            "x": 468.8727272727273,
+            "y": 200.73927911128095
+          }
+        },
+        {
+          "x": 290,
+          "y": 475,
+          "track": false,
+          "warn": 1.3,
+          "from": {
+            "x": 339.12727272727284,
+            "y": 217.43283666072045
+          }
+        },
+        {
+          "x": 390,
+          "y": 475,
+          "track": false,
+          "warn": 1.3,
+          "from": {
+            "x": 340.87272727272716,
+            "y": 251.4101093879932
+          }
+        }
+      ],
+      "run": "assault"
+    },
+    {
+      "name": "Lightning bomb site stays fixed after the pilot dodges",
+      "passed": true,
+      "data": {
+        "fixed": true,
+        "impact": false,
+        "t": 0.7500000000000007,
+        "warn": 1.45
+      },
+      "run": "assault"
+    },
+    {
+      "name": "Lightning bomb cannot hurt before its warning ends and hits at impact",
+      "passed": true,
+      "data": {
+        "before": 0,
+        "hits": 1,
+        "impact": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal quarter-HP handoff lights the whole hull and announces the ram",
+      "passed": true,
+      "data": {
+        "phase": "panic",
+        "glow": 0.7550387596899226,
+        "shake": 3.0503875968992267,
+        "road": 705.3353993015996,
+        "radio": {
+          "id": "overload",
+          "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!",
+          "who": "decker",
+          "t": 0.8166666666666675,
+          "duration": 5.2
+        },
+        "draws": 50
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal committed south ram visibly accelerates the road",
+      "passed": true,
+      "data": {
+        "ramFrames": 49,
+        "maxY": 810,
+        "speed": 1169.6949079414746
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal enlarged return flies overhead northward without body damage",
+      "passed": true,
+      "data": {
+        "phase": "overhead",
+        "depth": true,
+        "scale": 2.0879316037732485,
+        "safe": true,
+        "contact": false,
+        "north": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal chase remains fast, north-facing, with warned unshootable lightning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "speed": 960.001367388157,
+        "north": true,
+        "shots": 9,
+        "proof": true,
+        "warnings": 2,
+        "said": [
+          {
+            "event": "radio",
+            "id": "generators",
+            "who": "decker",
+            "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+          },
+          {
+            "event": "radio",
+            "id": "overload",
+            "who": "decker",
+            "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+          },
+          {
+            "event": "radio",
+            "id": "chase",
+            "who": "decker",
+            "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+          }
+        ],
+        "audio": [
+          "bossShieldStatic",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "chargeDash",
+          "bossCannon",
+          "chargeDash",
+          "geyserLightning",
+          "element_lightning_hit",
+          "enemyLightningChaingun"
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "normal lightning, rev and attack cues cover the whole transition",
+      "passed": true,
+      "data": [
+        "bossShieldStatic",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "chargeDash",
+        "bossCannon",
+        "chargeDash",
+        "geyserLightning",
+        "element_lightning_hit",
+        "enemyLightningChaingun"
+      ],
+      "run": "assault"
+    },
+    {
+      "name": "hard quarter-HP handoff lights the whole hull and announces the ram",
+      "passed": true,
+      "data": {
+        "phase": "panic",
+        "glow": 0.7709401709401711,
+        "shake": 3.2094017094017113,
+        "road": 705.3353993015996,
+        "radio": {
+          "id": "overload",
+          "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!",
+          "who": "decker",
+          "t": 0.8166666666666675,
+          "duration": 5.2
+        },
+        "draws": 245
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard committed south ram visibly accelerates the road",
+      "passed": true,
+      "data": {
+        "ramFrames": 49,
+        "maxY": 810,
+        "speed": 1169.6945730597477
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard enlarged return flies overhead northward without body damage",
+      "passed": true,
+      "data": {
+        "phase": "overhead",
+        "depth": true,
+        "scale": 2.0879316037732485,
+        "safe": true,
+        "contact": false,
+        "north": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard chase remains fast, north-facing, with warned unshootable lightning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "speed": 960.0013673881567,
+        "north": true,
+        "shots": 11,
+        "proof": true,
+        "warnings": 3,
+        "said": [
+          {
+            "event": "radio",
+            "id": "generators",
+            "who": "decker",
+            "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+          },
+          {
+            "event": "radio",
+            "id": "overload",
+            "who": "decker",
+            "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+          },
+          {
+            "event": "radio",
+            "id": "chase",
+            "who": "decker",
+            "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+          }
+        ],
+        "audio": [
+          "bossShieldStatic",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "geyserLightning",
+          "chargeDash",
+          "bossCannon",
+          "chargeDash",
+          "geyserLightning",
+          "element_lightning_hit",
+          "enemyLightningChaingun"
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "hard lightning, rev and attack cues cover the whole transition",
+      "passed": true,
+      "data": [
+        "bossShieldStatic",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "geyserLightning",
+        "chargeDash",
+        "bossCannon",
+        "chargeDash",
+        "geyserLightning",
+        "element_lightning_hit",
+        "enemyLightningChaingun"
+      ],
+      "run": "assault"
+    },
+    {
+      "name": "furious quarter-HP handoff lights the whole hull and announces the ram",
+      "passed": true,
+      "data": {
+        "phase": "panic",
+        "glow": 0.7904761904761907,
+        "shake": 3.404761904761907,
+        "road": 705.3353993015996,
+        "radio": {
+          "id": "overload",
+          "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!",
+          "who": "decker",
+          "t": 0.8166666666666675,
+          "duration": 5.2
+        },
+        "draws": 429
+      },
+      "run": "assault"
+    },
+    {
+      "name": "furious committed south ram visibly accelerates the road",
+      "passed": true,
+      "data": {
+        "ramFrames": 49,
+        "maxY": 810,
+        "speed": 1169.6937195850353
+      },
+      "run": "assault"
+    },
+    {
+      "name": "furious enlarged return flies overhead northward without body damage",
+      "passed": true,
+      "data": {
+        "phase": "overhead",
+        "depth": true,
+        "scale": 2.0879316037732476,
+        "safe": true,
+        "contact": false,
+        "north": true
+      },
+      "run": "assault"
+    },
+    {
+      "name": "furious chase remains fast, north-facing, with warned unshootable lightning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "speed": 960.001367388156,
+        "north": true,
+        "shots": 13,
+        "proof": true,
+        "warnings": 3,
+        "said": [
+          {
+            "event": "radio",
+            "id": "generators",
+            "who": "decker",
+            "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+          },
+          {
+            "event": "radio",
+            "id": "overload",
+            "who": "decker",
+            "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+          },
+          {
+            "event": "radio",
+            "id": "chase",
+            "who": "decker",
+            "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+          }
+        ],
+        "audio": [
+          "bossShieldStatic",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "element_lightning_hit",
+          "geyserLightning",
+          "element_lightning_hit",
+          "chargeDash",
+          "bossCannon",
+          "chargeDash",
+          "geyserLightning",
+          "element_lightning_hit",
+          "enemyLightningChaingun"
+        ]
+      },
+      "run": "assault"
+    },
+    {
+      "name": "furious lightning, rev and attack cues cover the whole transition",
+      "passed": true,
+      "data": [
+        "bossShieldStatic",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "element_lightning_hit",
+        "geyserLightning",
+        "element_lightning_hit",
+        "chargeDash",
+        "bossCannon",
+        "chargeDash",
+        "geyserLightning",
+        "element_lightning_hit",
+        "enemyLightningChaingun"
+      ],
+      "run": "assault"
+    },
+    {
+      "name": "Decker or Cole briefs the pilot; Axel briefs their co-op pair",
+      "passed": true,
+      "data": {
+        "cole": "decker",
+        "decker": "cole",
+        "both": "axel",
+        "reverse": "axel"
+      },
+      "run": "assault"
+    },
+    {
+      "name": "Approved lightning/attack MP3 voices decode in native Chromium",
+      "passed": true,
+      "data": {
+        "loaded": [
+          {
+            "key": "geyserLightning",
+            "slots": [
+              {
+                "ready": 4,
+                "duration": 0.603333,
+                "used": 1440,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.603333,
+                "used": 1441,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.603333,
+                "used": 1420,
+                "paused": true
+              }
+            ]
+          },
+          {
+            "key": "enemyLightningChaingun",
+            "slots": [
+              {
+                "ready": 4,
+                "duration": 0.541927,
+                "used": 1445,
+                "paused": true
+              },
+              {
+                "ready": 0,
+                "duration": NaN,
+                "used": 1305,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.541927,
+                "used": 1446,
+                "paused": true
+              }
+            ]
+          },
+          {
+            "key": "chargeDash",
+            "slots": [
+              {
+                "ready": 4,
+                "duration": 0.638889,
+                "used": 1447,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.638889,
+                "used": 1432,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.638889,
+                "used": 1448,
+                "paused": true
+              }
+            ]
+          },
+          {
+            "key": "missileLaunch",
+            "slots": [
+              {
+                "ready": 4,
+                "duration": 0.438458,
+                "used": 1449,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.438458,
+                "used": 1444,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.438458,
+                "used": 1450,
+                "paused": true
+              }
+            ]
+          },
+          {
+            "key": "bombDrop",
+            "slots": [
+              {
+                "ready": 0,
+                "duration": NaN,
+                "used": 1017,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 1.399977,
+                "used": 1451,
+                "paused": false
+              },
+              {
+                "ready": 0,
+                "duration": NaN,
+                "used": 863,
+                "paused": true
+              }
+            ]
+          },
+          {
+            "key": "element_lightning_hit",
+            "slots": [
+              {
+                "ready": 4,
+                "duration": 0.158957,
+                "used": 1436,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.158957,
+                "used": 1452,
+                "paused": true
+              },
+              {
+                "ready": 4,
+                "duration": 0.158957,
+                "used": 1425,
+                "paused": true
+              }
+            ]
+          }
+        ],
+        "owned": [
+          {
+            "ready": 4,
+            "started": true,
+            "paused": false,
+            "volume": 0.15200000000000002,
+            "rate": 1
+          }
+        ],
+        "failures": []
+      },
+      "run": "assault"
+    },
+    {
+      "name": "Revving loop actually starts and has audible mix gain",
+      "passed": true,
+      "data": [
+        {
+          "ready": 4,
+          "started": true,
+          "paused": false,
+          "volume": 0.15200000000000002,
+          "rate": 1
+        }
+      ],
+      "run": "assault"
+    },
+    {
+      "name": "Boss death stops its owned engine loop and clears comms",
+      "passed": true,
+      "data": null,
+      "run": "assault"
+    },
+    {
+      "name": "No native page, console, draw or asset errors",
+      "passed": true,
+      "data": [],
+      "run": "assault"
+    },
+    {
+      "name": "easy Warden roster reaches live orbit",
+      "passed": true,
+      "data": {
+        "live": 1,
+        "enter": false,
+        "shots": 8,
+        "keys": [
+          "air13_s4_flight_variant_4_heading"
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy all living jets spiral out together without culling",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 2,
+        "bombingJets": 1,
+        "bombArt": 34,
+        "reticle": 386,
+        "jets": [
+          {
+            "hp": 7.840000000000001,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy every surviving jet drops authored bombs with committed warning markers",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 2,
+        "bombingJets": 1,
+        "bombArt": 34,
+        "reticle": 386,
+        "jets": [
+          {
+            "hp": 7.840000000000001,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy survivors leave the field alive with actual turning frames",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy bomb targets never follow the dodge",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy same actors and HP return through the harmless depth entry",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 5
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy Warden continues his independent attacks during the raid",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 5
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy returned jets resume orbit and combat contact",
+      "passed": true,
+      "data": [
+        {
+          "phase": "warn",
+          "t": 1.9166666666666647
+        }
+      ],
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal Warden roster reaches live orbit",
+      "passed": true,
+      "data": {
+        "live": 2,
+        "enter": false,
+        "shots": 12,
+        "keys": [
+          "air13_s4_flight_variant_4_heading"
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal all living jets spiral out together without culling",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 4,
+        "bombingJets": 2,
+        "bombArt": 82,
+        "reticle": 382,
+        "jets": [
+          {
+            "hp": 10.080000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 10.080000000000002,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal every surviving jet drops authored bombs with committed warning markers",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 4,
+        "bombingJets": 2,
+        "bombArt": 82,
+        "reticle": 382,
+        "jets": [
+          {
+            "hp": 10.080000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 10.080000000000002,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal survivors leave the field alive with actual turning frames",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal bomb targets never follow the dodge",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal same actors and HP return through the harmless depth entry",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 7
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal Warden continues his independent attacks during the raid",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 7
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal returned jets resume orbit and combat contact",
+      "passed": true,
+      "data": [
+        {
+          "phase": "warn",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        }
+      ],
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard Warden roster reaches live orbit",
+      "passed": true,
+      "data": {
+        "live": 4,
+        "enter": false,
+        "shots": 16,
+        "keys": [
+          "air13_s4_flight_variant_4_heading"
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard all living jets spiral out together without culling",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 7,
+        "bombingJets": 4,
+        "bombArt": 155,
+        "reticle": 419,
+        "jets": [
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard every surviving jet drops authored bombs with committed warning markers",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 7,
+        "bombingJets": 4,
+        "bombArt": 155,
+        "reticle": 419,
+        "jets": [
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 12.32,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard survivors leave the field alive with actual turning frames",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard bomb targets never follow the dodge",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard same actors and HP return through the harmless depth entry",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 14
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard Warden continues his independent attacks during the raid",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 14
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard returned jets resume orbit and combat contact",
+      "passed": true,
+      "data": [
+        {
+          "phase": "warn",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        }
+      ],
+      "run": "panic_regression"
+    },
+    {
+      "name": "Warden jet real damage changes native pixels",
+      "passed": true,
+      "data": {
+        "pixels": 1375,
+        "flash": 0.12,
+        "damage": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "Warden jet native hit flash expires",
+      "passed": true,
+      "data": null,
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious Warden roster reaches live orbit",
+      "passed": true,
+      "data": {
+        "live": 6,
+        "enter": false,
+        "shots": 20,
+        "keys": [
+          "air13_s4_flight_variant_4_heading"
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious all living jets spiral out together without culling",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 10,
+        "bombingJets": 6,
+        "bombArt": 228,
+        "reticle": 510,
+        "jets": [
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious every surviving jet drops authored bombs with committed warning markers",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 10,
+        "bombingJets": 6,
+        "bombArt": 228,
+        "reticle": 510,
+        "jets": [
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 14.560000000000002,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious survivors leave the field alive with actual turning frames",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious bomb targets never follow the dodge",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious same actors and HP return through the harmless depth entry",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 20
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious Warden continues his independent attacks during the raid",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 20
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "Native body collisions do not kill the player during a jet depth return",
+      "passed": true,
+      "data": {
+        "hits": 0,
+        "safe": true,
+        "phase": "enter",
+        "alive": true
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious returned jets resume orbit and combat contact",
+      "passed": true,
+      "data": [
+        {
+          "phase": "warn",
+          "t": 2.0166666666666644
+        },
+        {
+          "phase": "warn",
+          "t": 2.0166666666666644
+        },
+        {
+          "phase": "orbit",
+          "t": 2.0166666666666644
+        },
+        {
+          "phase": "orbit",
+          "t": 2.0166666666666644
+        },
+        {
+          "phase": "orbit",
+          "t": 2.0166666666666644
+        },
+        {
+          "phase": "orbit",
+          "t": 2.0166666666666644
+        }
+      ],
+      "run": "panic_regression"
+    },
+    {
+      "name": "Destroyed jet is excluded from the next coordinated raid",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "dying": 0.03333333333333333,
+        "hp": 0,
+        "raid": {
+          "event": "wing-spiral",
+          "id": 5,
+          "jets": 5
+        }
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "Destroyed jet is not resurrected during return",
+      "passed": true,
+      "data": null,
+      "run": "panic_regression"
+    },
+    {
+      "name": "Destroyed slot spawns a distinct replacement after five seconds",
+      "passed": true,
+      "data": null,
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity Warden roster reaches live orbit",
+      "passed": true,
+      "data": {
+        "live": 6,
+        "enter": false,
+        "shots": 20,
+        "keys": [
+          "air13_s4_flight_variant_4_heading"
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity all living jets spiral out together without culling",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 11,
+        "bombingJets": 6,
+        "bombArt": 203,
+        "reticle": 485,
+        "jets": [
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity every surviving jet drops authored bombs with committed warning markers",
+      "passed": true,
+      "data": {
+        "spiral": true,
+        "moving": true,
+        "bombs": 11,
+        "bombingJets": 6,
+        "bombArt": 203,
+        "reticle": 485,
+        "jets": [
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          },
+          {
+            "hp": 17.92,
+            "dead": false,
+            "phase": "spiral"
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity survivors leave the field alive with actual turning frames",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity bomb targets never follow the dodge",
+      "passed": true,
+      "data": {
+        "away": true,
+        "off": true,
+        "alive": true,
+        "fixed": true,
+        "poses": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity same actors and HP return through the harmless depth entry",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 20
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity Warden continues his independent attacks during the raid",
+      "passed": true,
+      "data": {
+        "enter": true,
+        "safe": true,
+        "same": true,
+        "shots": 20
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "insanity returned jets resume orbit and combat contact",
+      "passed": true,
+      "data": [
+        {
+          "phase": "warn",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        },
+        {
+          "phase": "orbit",
+          "t": 1.9166666666666647
+        }
+      ],
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy forward lightning is a complete row including the centre",
+      "passed": true,
+      "data": {
+        "count": 7,
+        "want": 7,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 7
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy full FOV warnings match every unshootable ball",
+      "passed": true,
+      "data": {
+        "count": 7,
+        "want": 7,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 7
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy regular overflight feeds the native hull renderer real FOV lanes",
+      "passed": true,
+      "data": {
+        "warnings": 7,
+        "warm": 1.35,
+        "fields": 7
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy actual core damage triggers the final-quarter panic",
+      "passed": true,
+      "data": {
+        "hp": 528,
+        "max": 2112,
+        "phase": "panic",
+        "mode": "sa14-final"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy burst damage cannot cancel the committed ram",
+      "passed": true,
+      "data": {
+        "floor": 84.48000000000002,
+        "min": 84.48
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy panic performs one actual southbound ram",
+      "passed": true,
+      "data": {
+        "ram": 49,
+        "furthest": 810,
+        "releases": 1,
+        "phase": "away"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy enlarged northbound return stays harmless above the combat plane",
+      "passed": true,
+      "data": {
+        "phase": "overhead",
+        "depth": true,
+        "scale": 1.5943539706251295,
+        "north": true,
+        "overhead": [
+          {
+            "phase": "overhead",
+            "y": 809.9938812325839,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.7810489408329,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.2685331818308,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 808.4618529881237,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 807.3665273922577,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 805.9880754267788,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 804.3320161242332,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 802.4038685171668,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 800.2091516381256,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 797.7533845196559,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 795.0420861943037,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 792.080775694615,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 788.8749720531357,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 785.4301943024121,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 781.7519614749903,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 777.8457926034162,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 773.7172067202358,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 769.3717228579953,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 764.8148600492407,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 760.052137326518,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 755.0890737223735,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 749.931188269353,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 744.5840000000028,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 739.0530279468686,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 733.3437911424968,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 727.4618086194333,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 721.4125994102242,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 715.2016825474155,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 708.8345770635534,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 702.3168019911839,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 695.6538763628529,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 688.8513192111067,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 681.914649568491,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 674.8493864675522,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 667.6610489408365,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 660.3551560208896,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 652.9372267402578,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 645.4127801314869,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 637.7873352271231,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 630.0664110597126,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 622.2555266618012,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 614.3602010659351,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 606.3859533046605,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 598.338302410523,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 590.2227674160692,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 582.0448673538449,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 573.8101212563961,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 565.5240481562691,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 557.1921670860097,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 548.8199970781641,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 540.4130571652782,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 531.9768663798983,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 523.5169437545703,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 515.0388083218403,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 506.54797911425436,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 498.0499751643586,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 489.550315504699,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 481.05451916782147,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 472.56810518627253,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 464.09659259259774,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 455.6455004193434,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 447.22034769905554,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 438.8266534642803,
+            "angle": 3.141592653589793,
+            "safe": true
+          }
+        ],
+        "noShots": true
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy pursuit stays north-facing and releases warned rear lightning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "angle": 3.141592653589793,
+        "safe": false,
+        "depth": false,
+        "hp": 528,
+        "shots": 7,
+        "warnings": 2
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy exposed hull loses HP quickly and real damage angers it",
+      "passed": true,
+      "data": {
+        "loss": 50.68799999999999,
+        "base": 25.344,
+        "mult": 2,
+        "anger": 1.9999999999999993,
+        "flash": 0.16,
+        "pixels": 39280
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy actual northbound hull hit changes native pixels",
+      "passed": true,
+      "data": {
+        "loss": 50.68799999999999,
+        "base": 25.344,
+        "mult": 2,
+        "anger": 1.9999999999999993,
+        "flash": 0.16,
+        "pixels": 39280
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy retaliation has a real warning window before releasing",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy northbound hull flash expires",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy damage retaliation releases authored lightning after its warning",
+      "passed": true,
+      "data": {
+        "shots": 2,
+        "proof": true,
+        "hp": 477.312,
+        "damage": 50.68799999999999
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy after thirty seconds pursuit never resets or turns around",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 477.312,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 1,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 3,
+            "kind": "anger",
+            "count": 2,
+            "warned": 1.1500000000000008
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 4,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 5,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 6,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 7,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 8,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 9,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 10,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 11,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 12,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 13,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 15,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 16,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 17,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy every final lightning release had its own warning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 477.312,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 1,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 3,
+            "kind": "anger",
+            "count": 2,
+            "warned": 1.1500000000000008
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 4,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 5,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 6,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 7,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 8,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 9,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 10,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 11,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 12,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 13,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 15,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 16,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.3333333333333335
+          },
+          {
+            "event": "final-release",
+            "id": 7,
+            "attack": 17,
+            "kind": "balls",
+            "count": 7,
+            "warned": 1.35
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "easy exposed pursuit finishes through native boss death",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "hp": -1999999619.84,
+        "more": 0
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal forward lightning is a complete row including the centre",
+      "passed": true,
+      "data": {
+        "count": 9,
+        "want": 9,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 9
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal full FOV warnings match every unshootable ball",
+      "passed": true,
+      "data": {
+        "count": 9,
+        "want": 9,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 9
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal regular overflight feeds the native hull renderer real FOV lanes",
+      "passed": true,
+      "data": {
+        "warnings": 9,
+        "warm": 1.2,
+        "fields": 9
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal actual core damage triggers the final-quarter panic",
+      "passed": true,
+      "data": {
+        "hp": 735.75,
+        "max": 2943,
+        "phase": "panic",
+        "mode": "sa14-final"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal burst damage cannot cancel the committed ram",
+      "passed": true,
+      "data": {
+        "floor": 117.72000000000003,
+        "min": 117.72
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal panic performs one actual southbound ram",
+      "passed": true,
+      "data": {
+        "ram": 49,
+        "furthest": 810,
+        "releases": 1,
+        "phase": "away"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal enlarged northbound return stays harmless above the combat plane",
+      "passed": true,
+      "data": {
+        "phase": "overhead",
+        "depth": true,
+        "scale": 1.5943539706251282,
+        "north": true,
+        "overhead": [
+          {
+            "phase": "overhead",
+            "y": 809.9938812325839,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.7810489408329,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.2685331818308,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 808.4618529881236,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 807.3665273922576,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 805.9880754267787,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 804.3320161242331,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 802.4038685171666,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 800.2091516381255,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 797.7533845196558,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 795.0420861943036,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 792.0807756946148,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 788.8749720531356,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 785.430194302412,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 781.7519614749901,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 777.8457926034159,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 773.7172067202356,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 769.371722857995,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 764.8148600492405,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 760.0521373265178,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 755.0890737223732,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 749.9311882693528,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 744.5840000000024,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 739.0530279468683,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 733.3437911424965,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 727.461808619433,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 721.4125994102238,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 715.2016825474152,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 708.8345770635531,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 702.3168019911834,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 695.6538763628525,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 688.8513192111063,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 681.9146495684909,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 674.8493864675521,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 667.6610489408363,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 660.3551560208894,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 652.9372267402575,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 645.4127801314867,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 637.7873352271229,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 630.0664110597123,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 622.255526661801,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 614.3602010659348,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 606.3859533046601,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 598.3383024105228,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 590.222767416069,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 582.0448673538447,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 573.810121256396,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 565.5240481562687,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 557.1921670860092,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 548.8199970781636,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 540.4130571652777,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 531.9768663798978,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 523.5169437545699,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 515.0388083218398,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 506.5479791142539,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 498.04997516435816,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 489.5503155046986,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 481.0545191678211,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 472.56810518627196,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 464.0965925925973,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 455.64550041934297,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 447.22034769905514,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 438.8266534642798,
+            "angle": 3.141592653589793,
+            "safe": true
+          }
+        ],
+        "noShots": true
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal pursuit stays north-facing and releases warned rear lightning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "angle": 3.141592653589793,
+        "safe": false,
+        "depth": false,
+        "hp": 735.75,
+        "shots": 9,
+        "warnings": 2
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal exposed hull loses HP quickly and real damage angers it",
+      "passed": true,
+      "data": {
+        "loss": 74.16359999999997,
+        "base": 35.316,
+        "mult": 2.1,
+        "anger": 2,
+        "flash": 0.16,
+        "pixels": 39279
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal actual northbound hull hit changes native pixels",
+      "passed": true,
+      "data": {
+        "loss": 74.16359999999997,
+        "base": 35.316,
+        "mult": 2.1,
+        "anger": 2,
+        "flash": 0.16,
+        "pixels": 39279
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal retaliation has a real warning window before releasing",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal northbound hull flash expires",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal damage retaliation releases authored lightning after its warning",
+      "passed": true,
+      "data": {
+        "shots": 6,
+        "proof": true,
+        "hp": 661.5864,
+        "damage": 74.16359999999997
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal after thirty seconds pursuit never resets or turns around",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 661.5864,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 1,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 3,
+            "kind": "anger",
+            "count": 3,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 4,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 5,
+            "kind": "anger",
+            "count": 3,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 6,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 7,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 8,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 9,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 10,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 11,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 12,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 13,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 15,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 16,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 17,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 18,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 19,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 20,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal every final lightning release had its own warning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 661.5864,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 1,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 3,
+            "kind": "anger",
+            "count": 3,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 4,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 5,
+            "kind": "anger",
+            "count": 3,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 6,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 7,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 8,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 9,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 10,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 11,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 12,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 13,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 15,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 16,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 17,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 18,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 19,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.2333333333333338
+          },
+          {
+            "event": "final-release",
+            "id": 8,
+            "attack": 20,
+            "kind": "balls",
+            "count": 9,
+            "warned": 1.2000000000000006
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "normal exposed pursuit finishes through native boss death",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "hp": -2099999470.39,
+        "more": 0
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard forward lightning is a complete row including the centre",
+      "passed": true,
+      "data": {
+        "count": 11,
+        "want": 11,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 11
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard full FOV warnings match every unshootable ball",
+      "passed": true,
+      "data": {
+        "count": 11,
+        "want": 11,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 11
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard regular overflight feeds the native hull renderer real FOV lanes",
+      "passed": true,
+      "data": {
+        "warnings": 11,
+        "warm": 1.05,
+        "fields": 11
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard actual core damage triggers the final-quarter panic",
+      "passed": true,
+      "data": {
+        "hp": 919.5,
+        "max": 3678,
+        "phase": "panic",
+        "mode": "sa14-final"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard burst damage cannot cancel the committed ram",
+      "passed": true,
+      "data": {
+        "floor": 147.12,
+        "min": 147.12
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard panic performs one actual southbound ram",
+      "passed": true,
+      "data": {
+        "ram": 49,
+        "furthest": 810,
+        "releases": 1,
+        "phase": "away"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard enlarged northbound return stays harmless above the combat plane",
+      "passed": true,
+      "data": {
+        "phase": "overhead",
+        "depth": true,
+        "scale": 1.5943539706251282,
+        "north": true,
+        "overhead": [
+          {
+            "phase": "overhead",
+            "y": 809.9938812325839,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.7810489408329,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.2685331818308,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 808.4618529881236,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 807.3665273922576,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 805.9880754267787,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 804.3320161242331,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 802.4038685171666,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 800.2091516381255,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 797.7533845196558,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 795.0420861943036,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 792.0807756946148,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 788.8749720531356,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 785.430194302412,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 781.7519614749901,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 777.8457926034159,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 773.7172067202356,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 769.371722857995,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 764.8148600492405,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 760.0521373265178,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 755.0890737223732,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 749.9311882693528,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 744.5840000000024,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 739.0530279468683,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 733.3437911424965,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 727.461808619433,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 721.4125994102238,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 715.2016825474152,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 708.8345770635531,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 702.3168019911834,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 695.6538763628525,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 688.8513192111063,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 681.9146495684909,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 674.8493864675521,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 667.6610489408363,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 660.3551560208894,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 652.9372267402575,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 645.4127801314867,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 637.7873352271229,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 630.0664110597123,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 622.255526661801,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 614.3602010659348,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 606.3859533046601,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 598.3383024105228,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 590.222767416069,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 582.0448673538447,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 573.810121256396,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 565.5240481562688,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 557.1921670860095,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 548.8199970781639,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 540.4130571652779,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 531.9768663798982,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 523.5169437545701,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 515.0388083218401,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 506.54797911425425,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 498.04997516435833,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 489.5503155046988,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 481.05451916782135,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 472.5681051862723,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 464.0965925925973,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 455.64550041934297,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 447.22034769905514,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 438.8266534642798,
+            "angle": 3.141592653589793,
+            "safe": true
+          }
+        ],
+        "noShots": true
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "Native body collisions ignore the enlarged overhead boss",
+      "passed": true,
+      "data": {
+        "hits": 0,
+        "safe": true,
+        "depth": true,
+        "contact": false,
+        "alive": true
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard pursuit stays north-facing and releases warned rear lightning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "angle": 3.141592653589793,
+        "safe": false,
+        "depth": false,
+        "hp": 919.5,
+        "shots": 11,
+        "warnings": 2
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard exposed hull loses HP quickly and real damage angers it",
+      "passed": true,
+      "data": {
+        "loss": 97.0992,
+        "base": 44.136,
+        "mult": 2.2,
+        "anger": 2,
+        "flash": 0.16,
+        "pixels": 39230
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard actual northbound hull hit changes native pixels",
+      "passed": true,
+      "data": {
+        "loss": 97.0992,
+        "base": 44.136,
+        "mult": 2.2,
+        "anger": 2,
+        "flash": 0.16,
+        "pixels": 39230
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard retaliation has a real warning window before releasing",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard northbound hull flash expires",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard damage retaliation releases authored lightning after its warning",
+      "passed": true,
+      "data": {
+        "shots": 8,
+        "proof": true,
+        "hp": 822.4008,
+        "damage": 97.0992
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard after thirty seconds pursuit never resets or turns around",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 822.4008,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 1,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 3,
+            "kind": "anger",
+            "count": 4,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 4,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 5,
+            "kind": "anger",
+            "count": 4,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 6,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 7,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 8,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 9,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 10,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 11,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 12,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 13,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 15,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 16,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 17,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 18,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 19,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 20,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 21,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 22,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 23,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard every final lightning release had its own warning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 822.4008,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 1,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 3,
+            "kind": "anger",
+            "count": 4,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 4,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 5,
+            "kind": "anger",
+            "count": 4,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 6,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 7,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 8,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 9,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 10,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 11,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 12,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 13,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 15,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 16,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 17,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 18,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 19,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 20,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 21,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 22,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.1333333333333342
+          },
+          {
+            "event": "final-release",
+            "id": 9,
+            "attack": 23,
+            "kind": "balls",
+            "count": 11,
+            "warned": 1.0500000000000012
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "hard exposed pursuit finishes through native boss death",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "hp": -2199999337.94,
+        "more": 0
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious forward lightning is a complete row including the centre",
+      "passed": true,
+      "data": {
+        "count": 13,
+        "want": 13,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 13
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious full FOV warnings match every unshootable ball",
+      "passed": true,
+      "data": {
+        "count": 13,
+        "want": 13,
+        "centre": true,
+        "match": true,
+        "proof": true,
+        "fov": 13
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious regular overflight feeds the native hull renderer real FOV lanes",
+      "passed": true,
+      "data": {
+        "warnings": 13,
+        "warm": 0.95,
+        "fields": 13
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious actual core damage triggers the final-quarter panic",
+      "passed": true,
+      "data": {
+        "hp": 1144,
+        "max": 4576,
+        "phase": "panic",
+        "mode": "sa14-final"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious burst damage cannot cancel the committed ram",
+      "passed": true,
+      "data": {
+        "floor": 183.03999999999996,
+        "min": 183.04
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious panic performs one actual southbound ram",
+      "passed": true,
+      "data": {
+        "ram": 49,
+        "furthest": 810,
+        "releases": 1,
+        "phase": "away"
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious enlarged northbound return stays harmless above the combat plane",
+      "passed": true,
+      "data": {
+        "phase": "overhead",
+        "depth": true,
+        "scale": 1.594353970625128,
+        "north": true,
+        "overhead": [
+          {
+            "phase": "overhead",
+            "y": 809.9938812325839,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.7810489408329,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 809.2685331818307,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 808.4618529881236,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 807.3665273922576,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 805.9880754267787,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 804.332016124233,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 802.4038685171665,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 800.2091516381254,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 797.7533845196557,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 795.0420861943034,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 792.0807756946147,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 788.8749720531354,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 785.4301943024118,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 781.7519614749899,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 777.8457926034157,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 773.7172067202354,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 769.3717228579948,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 764.8148600492402,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 760.0521373265176,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 755.089073722373,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 749.9311882693524,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 744.5840000000021,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 739.053027946868,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 733.3437911424962,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 727.4618086194326,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 721.4125994102235,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 715.2016825474149,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 708.8345770635527,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 702.3168019911832,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 695.6538763628522,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 688.851319211106,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 681.9146495684904,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 674.8493864675518,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 667.6610489408358,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 660.355156020889,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 652.9372267402571,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 645.4127801314862,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 637.7873352271225,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 630.066411059712,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 622.2555266618006,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 614.3602010659345,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 606.3859533046598,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 598.3383024105225,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 590.2227674160686,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 582.0448673538442,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 573.8101212563955,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 565.5240481562683,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 557.192167086009,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 548.8199970781634,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 540.4130571652776,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 531.9768663798976,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 523.5169437545696,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 515.0388083218397,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 506.54797911425374,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 498.04997516435793,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 489.55031550469823,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 481.0545191678209,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 472.56810518627174,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 464.09659259259706,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 455.64550041934274,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 447.2203476990549,
+            "angle": 3.141592653589793,
+            "safe": true
+          },
+          {
+            "phase": "overhead",
+            "y": 438.8266534642796,
+            "angle": 3.141592653589793,
+            "safe": true
+          }
+        ],
+        "noShots": true
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious pursuit stays north-facing and releases warned rear lightning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "angle": 3.141592653589793,
+        "safe": false,
+        "depth": false,
+        "hp": 1144,
+        "shots": 13,
+        "warnings": 3
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious exposed hull loses HP quickly and real damage angers it",
+      "passed": true,
+      "data": {
+        "loss": 126.29759999999999,
+        "base": 54.912,
+        "mult": 2.3,
+        "anger": 2,
+        "flash": 0.16,
+        "pixels": 39226
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious actual northbound hull hit changes native pixels",
+      "passed": true,
+      "data": {
+        "loss": 126.29759999999999,
+        "base": 54.912,
+        "mult": 2.3,
+        "anger": 2,
+        "flash": 0.16,
+        "pixels": 39226
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious retaliation has a real warning window before releasing",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious northbound hull flash expires",
+      "passed": true,
+      "data": {
+        "angerWarnings": 1,
+        "early": 0,
+        "flash": -0.0033333333333333028,
+        "pending": 1
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious damage retaliation releases authored lightning after its warning",
+      "passed": true,
+      "data": {
+        "shots": 10,
+        "proof": true,
+        "hp": 1017.7024,
+        "damage": 126.29759999999999
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious after thirty seconds pursuit never resets or turns around",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 1017.7024,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 1,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 3,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 4,
+            "kind": "anger",
+            "count": 5,
+            "warned": 0.8833333333333344
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 5,
+            "kind": "anger",
+            "count": 5,
+            "warned": 0.8833333333333344
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 6,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 7,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 8,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 9,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 10,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 11,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 12,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 13,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 15,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 16,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 17,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 18,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 19,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 20,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 21,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 22,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 23,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 25,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 24,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 26,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious every final lightning release had its own warning",
+      "passed": true,
+      "data": {
+        "phase": "rear",
+        "mode": "sa14-final",
+        "angle": 3.141592653589793,
+        "scale": 1,
+        "y": 142,
+        "depth": false,
+        "playerAlive": true,
+        "nodes": 0,
+        "hp": 1017.7024,
+        "events": [
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 1,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 2,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 3,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 4,
+            "kind": "anger",
+            "count": 5,
+            "warned": 0.8833333333333344
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 5,
+            "kind": "anger",
+            "count": 5,
+            "warned": 0.8833333333333344
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 6,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 7,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 8,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 9,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 10,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 11,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 12,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 13,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 14,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 15,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 16,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 17,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 18,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 19,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 20,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 21,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 22,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 23,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 25,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 24,
+            "kind": "bolts",
+            "count": 2,
+            "warned": 1.0666666666666678
+          },
+          {
+            "event": "final-release",
+            "id": 10,
+            "attack": 26,
+            "kind": "balls",
+            "count": 13,
+            "warned": 0.9500000000000013
+          }
+        ]
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "furious exposed pursuit finishes through native boss death",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "hp": -2299999176.48,
+        "more": 0
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "Stage 3 retains its authored moving ice gap",
+      "passed": true,
+      "data": {
+        "count": 9,
+        "want": 9,
+        "final": false
+      },
+      "run": "panic_regression"
+    },
+    {
+      "name": "No native page, console, draw or asset errors",
+      "passed": true,
+      "data": [],
+      "run": "panic_regression"
+    },
+    {
+      "name": "Live review uses full native playfield, current housing and isolated saves",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Spinning generator takes real primary damage with visible hit pixels",
+      "passed": true,
+      "data": {
+        "pixels": 925,
+        "flash": 0.16,
+        "hp": 1
+      },
+      "run": "review"
+    },
+    {
+      "name": "Generator hit flash expires",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "All 32 registered generated poses render through native XART and game drawImage",
+      "passed": true,
+      "data": [
+        {
+          "name": "bomb",
+          "i": 0,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 1,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 2,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 3,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 4,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 5,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 6,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 7,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 8,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 9,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 10,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 11,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 12,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 13,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 14,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "bomb",
+          "i": 15,
+          "w": 128,
+          "h": 192,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 0,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 1,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 2,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 3,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 4,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 5,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 6,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 7,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 8,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 9,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 10,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 11,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 12,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 13,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 14,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        },
+        {
+          "name": "impact",
+          "i": 15,
+          "w": 256,
+          "h": 256,
+          "ink": 245760,
+          "even": true
+        }
+      ],
+      "run": "review"
+    },
+    {
+      "name": "Rotating generators remain at their station when the hull charges",
+      "passed": true,
+      "data": {
+        "fixed": true
+      },
+      "run": "review"
+    },
+    {
+      "name": "Two surviving generators still keep the shield up",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Destroying all four generators immediately gives exposed-core guidance",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Review helper scene reaches native south-entry wing",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Playing Decker produces live Cole radio guidance",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Actual Cole/Decker co-op uses Axel comms and both side-HUD rows",
+      "passed": true,
+      "data": {
+        "seats": 2,
+        "pilots": [
+          "cole",
+          "decker"
+        ],
+        "speaker": "axel",
+        "rows": 2,
+        "field": {
+          "x": 381.875,
+          "y": 0,
+          "w": 836.25,
+          "h": 892
+        }
+      },
+      "run": "review"
+    },
+    {
+      "name": "Review overload scene starts real glow and non-pausing comms",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Review naturally completes ram and overhead return into pursuit",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Narrow review switches to its existing compact HUD while keeping radio",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Review has no native page, console, draw or asset errors",
+      "passed": true,
+      "data": [],
+      "run": "review"
+    }
+  ]
+}

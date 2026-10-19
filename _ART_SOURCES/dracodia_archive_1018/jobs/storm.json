@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: e659d5ec-0406-482f-b63e-9ff1789f190d\njob_id: e659d5ec-0406-482f-b63e-9ff1789f190d\nmodel: pro\ndescription: RESOLUTION FIRST: one 256x256 RGBA sprite, fixed canvas and center pivot 128,128, even dimensions. Center all physical mass with 24px transparent padding. Bullets of Fury Neo-Geo arcade pixel art, sharp clusters, mechanical volume, dark outlines and bright readable details. No text, labels, UI, scenery or checkerboard. A subtle background void-storm effect plate: dark violet-black turbulent symbiote vapor curling around scattered green circuit sparks and faint floating code shards. Mostly empty transparent center for readable bullets, wispy dim outer turbulence, no frame, walls, tunnel or hard sides. This will be a low-opacity parallax layer behind a space boss, no ships, characters or scenery. Transparent background.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nasset_id: 39b46c0a-6dbe-57f5-979d-fd4a0e727235\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"e659d5ec-0406-482f-b63e-9ff1789f190d\")"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: fa7324bd-dbc2-419f-8ffc-80d4a5ca3268\njob_id: fa7324bd-dbc2-419f-8ffc-80d4a5ca3268\nmodel: pro\ndescription: RESOLUTION FIRST: one 256x256 RGBA sprite, fixed canvas and center pivot 128,128, even dimensions. Center all physical mass with 24px transparent padding. Bullets of Fury Neo-Geo arcade pixel art, sharp clusters, mechanical volume, dark outlines and bright readable details. No text, labels, UI, scenery or checkerboard. Regenerate the supplied BLUE ARCHIVE GUNSHIP, an old wide fortress gunship. Preserve its very broad rectangular blue-gray armor wings, paired small bottom gun barrels and enormous central downward cannon with a bright muzzle, rivets and vents. Straight top-down, enemy guns aimed toward bottom of image. Keep it broad, not a triangular jet. Ignore all checkerboard, blue strip and screenshot margins. Two clearly separated side weapon assemblies attached to core. Transparent background.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 2c5a5d7c-a6d0-55cd-9113-2f6bbe45e723\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"fa7324bd-dbc2-419f-8ffc-80d4a5ca3268\")"
+    }
+  ],
+  "isError": false
+}

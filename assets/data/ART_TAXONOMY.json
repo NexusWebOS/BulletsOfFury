@@ -1,4 +1,59 @@
 {
+  "rd19_": {
+    "role": "stage3_icy_reactor_swirl_charge_and_shoulder_laser_mortar",
+    "sheet": null,
+    "note": "PixelLab:32 real frost swirl,32 reactor charge and32 laser mortar poses. Fixed192x192/pivot96,96 frost banks;96x288/pivot48,232 mortar bank, measured at the actual lower flare rather than the drifting tail. Shared16px transparent padding, constant source scale1, no per-frame fitting or generated duplicate padding. Includes measured48x48 seated-core occupancy; whole authored boss plate preserved. Owner build_rime_effects_1019.py; runtime rime_defense_1019.js."
+  },
+  "wc18_": {
+    "role": "stage4_iron_warden_modular_centre_rotary_cannon",
+    "sheet": null,
+    "note": "16 generated gun poses256x256/pivot128,104:4 idle,4 charge,4 fire,4 cooldown. Actual Iron Warden armor reference; one0.70 proportional source scale and shared transparent padding. Own build_warden_center_1018.py registers pixels, muzzles and mask. Runtime warden_center_1018.js owns a damageable, flashing gunC; authored whole boss hull remains intact. No atlas edits."
+  },
+  "l21_": {
+    "role": "boss_lightning_effects",
+    "sheet": null,
+    "note": "PixelLab-generated branching lightning:32 paired exact-recomposing front/back wrap poses,32 forked bolt poses,24 selected crackling storm-orb poses and32 core-tether poses. Plain filled-circle orb returns excluded. Even fixed canvases/common pivots and proportional bank scale. Owner build_lightning_depth_1018.py; runtime lightning_depth_1018.js. Replaces crescent chains for Dracodia and upgrades Storm Sovereign electrical effects."
+  },
+  "d20_": {
+    "role": "dracodia_spiral_lightning_code_bombs_and_half_health_archive_downloads",
+    "sheet": null,
+    "note": "October18: PixelLab regeneration of the explicitly approved BZ0 Iron Bastion, BZ4 Camo Colossus and blue gunship screenshot. Three whole hulls split into nine exact source-pixel core/weapon plates, independent damage and Retina targets.18/18/22 selected download poses320x320/pivot160,160;16 charge and22 detonation poses160x160/pivot80,80;18 lightning poses128x128/pivot64,64;32 storm and32 transfer poses320x320/pivot160,160. Uniform source scale and shared padding per bank, no per-frame fitting or duplicated pose padding. The flat star burst and faulty/blank download tails are archived and excluded. Transfer VFX grey segmentation matte removed.190 shipping PNGs,2.94MiB; no shared atlas edit. Owner build_dracodia_archive_1018.py and dracodia_archive_art_1018.js; runtime dracodia_archive_1018.js loads after stage8_identity_1018.js. Old Cryo Spear/Brood escorts retain their real XART sprites. Existing main plus exactly four copied forms and their native swipes/defeats remain authoritative. Review docs/previews/dracodia_archive_1018; QA docs/qa/dracodia_archive_1018.json."
+  },
+  "v19_": {
+    "role": "stage8_native_donor_combat_dracodia_avatar_actions_and_defeats",
+    "sheet": null,
+    "note": "October18 correction: new Dracodia dialogue avatar and16 talking poses,24 arm-raising roar and24 scythe poses,24 host-collapse and24 spectral-implosion poses,20 selected detailed Colossus death poses. PixelLab sources256x256 are padded to320x320/pivot160,160 with one common scale. Reject the flat clover blast tail; native authored explosions and opaque80x80 armor fragments own breakup. Volcano master is split into six render plates sharing the native Furnace four-pool arms/body/head sequence; full head rotation and visible eye sockets. Hammer uses the existing two-arm HK5 poses plus32 actual Stage5 side-swing poses with a preserved-luminance symbiote palette. Old modular Harrier is explicitly approved. Owner build_stage8_identity_1018.py; stage8_identity_1018.js loads after stage8_pixellab_1018.js. No shared atlas mutation. Review docs/previews/stage8_pixellab_1018; QA docs/qa/stage8_identity_1018.json."
+  },
+  "v18_": {
+    "role": "stage8_pixellab_takeover_and_three_modular_boss_encounters",
+    "sheet": null,
+    "note": "Mike October18 explicitly authorizes modular Stage8 replacements. PixelLab Pro uses the exported current drone, Ghost, Colossus, Hammer, helicopter, Harrier and Furnace identities. Seven sixteen-pose model banks split into21 real damageable core/weapon assemblies and336 RGBA layers.32 takeover frames,24 Ghost emergence,24 Colossus emergence and four16-pose morphs add144 full-frame cells. All480 boss/effect cells320x320/pivot160,160, common proportional scale and stationary skull/mast registration; one256x256 actual drone cell. Exact module reconstruction, no per-pose fitting or manufactured warp frames. The corrupted gray MiniMax volcano idle is archived and unregistered; its clean standard-model176x176 source uses one common proportional normalization. Owner build_stage8_pixellab_1018.py writes pixels, manifest and registration audit together; no shared atlas edits. Runtime stage8_pixellab_1018.js owns only Stage8 encounters, real primary/Retina damage, module flashes and weapon removal, full-black arena swaps and five persistent final pools: main, Hammer, helicopter, Harrier, volcano. Existing Dracodia dialogue, final death, red return portal and reunion reward survive. Source selection and prompts _ART_SOURCES/stage8_pixellab_1018; native full-FOV review docs/previews/stage8_pixellab_1018."
+  },
+  "st18_": {
+    "role": "stage4_helper_lightning_bomb_and_electric_detonation",
+    "sheet": null,
+    "note": "October18 built-in generation uses native lz_bomb and the actual Storm generator casing as design/palette references.16 charge-loop bomb poses128x192/pivot64,96 and16 separately authored detonation poses256x256/pivot128,128. Common proportional scales0.45 and0.72, integer nose/centre registration, transparent padding; no per-frame fitting or shared atlas edits. Build owner build_storm_assault_1018.py registers all32 loose PNGs and storm_assault_art_1018.js together. Runtime storm_assault_1018.js assigns the bombs to the Sovereign helpers' crossing passes with committed circular ground Retinas. Raw sources and registration audit _ART_SOURCES/storm_assault_1018; native full-FOV review docs/previews/storm_assault_1018."
+  },
+  "mt18_": {
+    "role": "stage1_modular_missile_truck_chassis_and_launchers",
+    "sheet": null,
+    "note": "October18 built-in generation uses the exported actual nef_s1_rocket_buggy_intact as identity reference. Eight generated chassis poses and sixteen launch/reload poses; olive and paint-only black variants preserve red/white ordnance and lamps. Every loose frame192x256, pivot96,128, common source scale0.625 and integer registration against the lower physical fixture. Two independently destructible/targetable launcher mounts, native ground motion, committed counterable missile bursts and owner/part hit flashes. Build owner build_missile_truck_1018.py registers pixels and missile_truck_art_1018.js together.48 PNGs; no shared atlas changes. Raw sources and registration audit in _ART_SOURCES/missile_truck_1018; full-FOV preview docs/previews/truck_furnace_1018."
+  },
+  "hm17_": {
+    "role": "stage4_highway_shoulder_ballistic_atomic_emplacement",
+    "sheet": null,
+    "note": "PixelLab October17: empty military launch pad128x128/pivot64,80; upright missile64x192/pivot32,96; lamp companion uses only source amber pixels. One proportional scale per plate. Loaded/ascent enemies use native hitEnemy/markHit/Retina. Escaped missile commits one warned atomic return using approved32-pose cloud. Owner build_highway_missiles_1017.py and highway_missiles_1017.js. No atlas changes."
+  },
+  "hf17_": {
+    "role": "stage5_hammer_fixed_stun_energy_finish_and_armor_breakup",
+    "sheet": null,
+    "note": "PixelLab October17: four32-pose energy banks, fixed320x320/pivot160,160, common source scale1 and padding32,32. Actual arch_stun_0920 pose1 is immutable256x256/pivot128,128; unlit and source-pixel core glow companions share its geometry.18 exact authored armor cuts96x96/pivot48,48 scatter only after the final core impact; reassembly is RGBA-identical.149 shipping PNGs. Generated armor and oversized reactor halo are excluded, no per-frame fitting or atlas edits. Own build_hammer_finale_1017.py and hammer_finale_art_1017.js. Runtime hammer_finale_1017.js preserves existing defeat/reward owners and fixes the separate anchored Earth approach. See docs/HAMMER_FINALE_1017.md and docs/qa/hammer_finale_1017.json."
+  },
+  "f17_": {
+    "role": "stage2_furnace_tyrant_eye_roll_charge_and_lasers",
+    "sheet": null,
+    "note": "PixelLab October17:30 accepted generated front-facing roll poses,16 generated eye-charge poses plus the original neutral reference, and16 laser poses split into proportional body/root/tip modules. Fixed320x320 head pivot160,160 and64px-wide laser modules; one common source scale1, integer registration/padding.47 source-pixel eye/lens glow companions share exact head rectangles.142 registered PNGs,2.19MiB. Two faulty quarter-turn poses and the original yawing bank remain archived and unregistered. Owner build_furnace_head_1017.py and furnace_head_art_1017.js; Stage2-only behavior furnace_assault_1017.js restores the native flamethrower and alternates cannon magma/fire waves. Native pools, ice advantage, shields, flashes and continuous collision remain authoritative. No shared atlas changes. See docs/FURNACE_ASSAULT_1017.md and docs/qa/furnace_assault_1017.json."
+  },
   "pt11_": {
     "role": "recorded_gameplay_boss_parts_and_weapon_corrections",
     "sheet": null,
@@ -738,5 +793,35 @@
     "role": "player_side_hud",
     "sheet": null,
     "note": "Mike selected the vented Siege Console on October 12. Full paired authored plate, proportional columns and measured wells; compact modules share the same plate. Owner build_siege_console_1012.py; renderer siege_console_1012.js."
+  },
+  "pxv17_": {
+    "role": "pixellab_stage7_stage8_portal_lifecycles_three_void_arenas_and_compact_wind_rounds",
+    "sheet": null,
+    "note": "Four separate16–32-pose form/loop/close portal families, three512x512 open dark arenas,16 authored code-parallax poses and three16-pose compact Wind round families. Actual PixelLab frames on even320x320,256x256 and64x64 canvases, fixed center pivots, one common proportional scale per animation. Runtime pixellab_void_1017; owning exporter build_pixellab_void_1017.py. No reversed closure, per-frame stretching or combat changes."
+  },
+  "sk19_": {
+    "role": "optical_stealth_refraction_form_loop_dissipate",
+    "sheet": null,
+    "note": "PixelLab32 source poses each for form/loop/dissipate; only identical generated holds removed, exact delivered counts in manifest.160x192/pivot80,96, common16px pad and source scale1. No aircraft generated or uploaded. Runtime stealth_1019.js; owner build_stealth_1019.py."
+  },
+  "sg19_": {
+    "role": "rime_permanent_shoulder_cavity_pixel_charge",
+    "sheet": null,
+    "note": "32 existing PixelLab frost-charge poses clipped to each measured authored Rime cavity.80x80/pivot40,40, fixed0.4 proportional source scale. Low idle light and stepped charge; no extra hull/rim. Owner build_shoulder_glow_1019.py; runtime shoulder_glow_1019.js."
+  },
+  "hm19_": {
+    "role": "stage8_native_hammer_rolling_and_turning",
+    "sheet": null,
+    "note": "31 inspected real PixelLab rolling poses and eight proper directional views.256x256/pivot128,128. Actual live Hammer reference; no generated interpolation, per-frame fitting, extra arm or flat rotation over the rolling bank. Runtime hammer_motion_1019.js; owner build_hammer_motion_1019.py."
+  },
+  "hf19_": {
+    "role": "stage8_harrier_native_turbine_interior",
+    "sheet": null,
+    "note": "16 PixelLab exact-workbench rotor frames from the actual authored Harrier fan.64x64/pivot32,32, shared annular mask. Native housing/hub retained; no AI flame candidate shipped. Owner build_harrier_fan_1019.py; runtime harrier_fan_1019.js."
+  },
+  "vh19_": {
+    "role": "stage8_volcano_detached_head_animation",
+    "sheet": null,
+    "note": "32 genuine PixelLab quarter-turn poses,16 lamp-only charge frames.128x128/pivot64,64,scale1, measured per-frame eyes and angles. Owner build_volcano_head_1019.py; native volcano_head_1019.js."
   }
 }

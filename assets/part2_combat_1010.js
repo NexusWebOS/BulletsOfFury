@@ -146,11 +146,8 @@ dialogueFrameDraw=function(who,tint,x,y,w,h){
  }
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,x,y,w,h);ctx.restore();return true;
 };
-// Allies accompany the approach and Rebel fight. Only the Harrier is solo.
-// Keep the approach controller running: it owns the route choice and progress.
-s6WingTick=function(dt){if(run.stage===6&&boss?._whv&&!AP10_X.intro){if(s6Wing){s6Wing.ships=[];s6Wing.line=null;}return;}
- return P2.base.wing.apply(this,arguments);};
-gp4QuickEncounter=function(){const r=P2.base.quick.apply(this,arguments);if(boss?._whv&&s6Wing)s6Wing.ships=[];return r;};
+// The same allied wing accompanies both pursuits, including the Harrier and
+// Nightwing. Its native controller owns targeting, weapons and genuine retreats.
 // The old campaign card described a storm platform for both pursuit branches.
 // Rebel dialogue belongs to its own stolen-tech intro; weather chatter belongs
 // to the Harrier pursuit and must not announce imaginary control anchors.

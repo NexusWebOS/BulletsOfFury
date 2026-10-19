@@ -1,0 +1,57 @@
+{
+  "provider": "PixelLab MCP",
+  "referencePermission": "Mike explicitly approved sending the centered Furnace Tyrant head reference on2026-10-17.",
+  "rejectedJobs": {
+    "head-spin": "The first model yawed and hid the eyes; archived, not registered."
+  },
+  "jobs": {
+    "head-spin": {
+      "id": "1a30a8c0-6cbd-4457-b489-57f38133b7c5",
+      "tool": "animate_image_pixminimax",
+      "prompt": "FRAME FORMAT:256x256 RGBA, identical canvas in every frame, fixed physical skull center128,128, transparent20px safety margin, one constant proportional scale. Exactly ONE complete clockwise360-degree roll around the axis perpendicular to the screen, returning to the original upright pose. The skull always faces the camera; this is a wheel-like roll, NOT a yaw turn, not looking away or showing the back. Start upright, then roll smoothly through right-sideways90, upside-down180, left-sideways270, fully upright360. Mechanical bronze skull and two eye emitters remain rigidly connected around the same center. Eyes burn yellow-orange throughout. Preserve the exact forehead lens, two horns, eye sockets, bronze armor panels, vertical grill teeth and crisp Neo Geo pixel clusters. Subtle changing metallic light gives physical depth. NO face morphing, breathing size, zoom, translating, body, lasers or background. Fixed camera. End at the same exact upright pose for continuous rotation.",
+      "status": "complete"
+    },
+    "head-charge": {
+      "id": "6988cd0f-0492-4a84-ad5b-5d7279465950",
+      "tool": "animate_image_pixminimax",
+      "prompt": "FRAME FORMAT:256x256 RGBA, identical canvas in every frame, fixed physical skull center128,128, transparent20px safety margin, one constant proportional scale. The identical rigid skull stays upright and stationary. Only its TWO eye bulbs and forehead lens gradually energize: dim orange, brighter red-orange, intense hot yellow with compact white cores at the end. Tiny short sparks crawl inside the eye sockets. Bronze armor and teeth retain their original dark colors and exact shape. The mouth stays shut, no mouth fire or large added flares. No turning, translation, squash, zoom, body or background. Build smoothly to full laser-ready brightness by the last frame.",
+      "status": "complete"
+    },
+    "eye-laser-seed": {
+      "id": "8a91a93a-a05f-467a-a3c1-baaed14df541",
+      "tool": "create_image_pro_flash",
+      "prompt": "FRAME FORMAT:64x256 RGBA. Fixed eye muzzle at32,232. One straight thin infernal EYE LASER points NORTH from the muzzle toward the top. Intense4px wide yellow-white core from y228 to30,8px wide orange-red plasma jacket with a sharp pointed ending near y16. A compact ignition flare wraps the origin at32,232, no more than18px across. Transparent margins all around. Bullets of Fury detailed Neo Geo arcade pixel clusters with dark red edge pixels. Uniform thin beam, energetic internal flow, muzzle and tip included in this one complete graphic. No head, weapon, character, scenery, lettering, smoke, rectangular caps, fog or repeating segments.",
+      "status": "complete"
+    },
+    "eye-laser": {
+      "id": "f74448d5-7780-4f33-bd48-52281f52c679",
+      "tool": "animate_image",
+      "prompt": "FRAME FORMAT:16 generated64x256 RGBA frames. Fixed eye muzzle32,232. The exact thin laser column remains stationary pointing NORTH. Hot yellow-white energy streams from the bottom muzzle to the pointed top, orange-red plasma filaments flicker around the core, tiny muzzle sparks pulse. Keep the same overall length, narrow width and centered axis in every frame. No translating, swelling, bending, giant flare, camera movement, background or tiled sections. Seamless loop ends at the same state as it begins.",
+      "status": "complete"
+    },
+    "head-turn-0": {
+      "id": "6b3e3497-76b6-4d72-b0a3-ef58c74d4804",
+      "tool": "animate_image",
+      "prompt": "FRAME FORMAT:8 generated256x256 RGBA frames, common scale and fixed center128,128. Rotate the ENTIRE FRONT-FACING skull CLOCKWISE by exactly90 degrees within the FLAT2D IMAGE PLANE, from the provided first pose to the provided final pose. Like turning a flat wheel or clock hand. This is only one quarter of a complete roll. The face always points directly toward the viewer: both eyes, nose and teeth remain fully visible through every intermediate tilt. The nose NEVER turns sideways away from us. NO yaw, side profile, back of skull, perspective turn or camera orbit. Preserve rigid face proportions, horns, two eyes and forehead lens. Tiny eye fire and changing highlights may animate within their exact fixed sockets. No size changes, translating, lasers or mouth flame. Smooth evenly spaced angular progress; transparent background.",
+      "status": "complete"
+    },
+    "head-turn-1": {
+      "id": "fa2f27cd-238e-4b8b-a52f-030f4a8c4433",
+      "tool": "animate_image",
+      "prompt": "FRAME FORMAT:8 generated256x256 RGBA frames, common scale and fixed center128,128. Rotate the ENTIRE FRONT-FACING skull CLOCKWISE by exactly90 degrees within the FLAT2D IMAGE PLANE, from the provided first pose to the provided final pose. Like turning a flat wheel or clock hand. This is only one quarter of a complete roll. The face always points directly toward the viewer: both eyes, nose and teeth remain fully visible through every intermediate tilt. The nose NEVER turns sideways away from us. NO yaw, side profile, back of skull, perspective turn or camera orbit. Preserve rigid face proportions, horns, two eyes and forehead lens. Tiny eye fire and changing highlights may animate within their exact fixed sockets. No size changes, translating, lasers or mouth flame. Smooth evenly spaced angular progress; transparent background.",
+      "status": "complete"
+    },
+    "head-turn-2": {
+      "id": "434a99a2-69f1-437a-bed7-0e15d17f71ba",
+      "tool": "animate_image",
+      "prompt": "FRAME FORMAT:8 generated256x256 RGBA frames, common scale and fixed center128,128. Rotate the ENTIRE FRONT-FACING skull CLOCKWISE by exactly90 degrees within the FLAT2D IMAGE PLANE, from the provided first pose to the provided final pose. Like turning a flat wheel or clock hand. This is only one quarter of a complete roll. The face always points directly toward the viewer: both eyes, nose and teeth remain fully visible through every intermediate tilt. The nose NEVER turns sideways away from us. NO yaw, side profile, back of skull, perspective turn or camera orbit. Preserve rigid face proportions, horns, two eyes and forehead lens. Tiny eye fire and changing highlights may animate within their exact fixed sockets. No size changes, translating, lasers or mouth flame. Smooth evenly spaced angular progress; transparent background.",
+      "status": "complete"
+    },
+    "head-turn-3": {
+      "id": "64548999-cd85-49de-b5b5-d35c2ac1b048",
+      "tool": "animate_image",
+      "prompt": "FRAME FORMAT:8 generated256x256 RGBA frames, common scale and fixed center128,128. Rotate the ENTIRE FRONT-FACING skull CLOCKWISE by exactly90 degrees within the FLAT2D IMAGE PLANE, from the provided first pose to the provided final pose. Like turning a flat wheel or clock hand. This is only one quarter of a complete roll. The face always points directly toward the viewer: both eyes, nose and teeth remain fully visible through every intermediate tilt. The nose NEVER turns sideways away from us. NO yaw, side profile, back of skull, perspective turn or camera orbit. Preserve rigid face proportions, horns, two eyes and forehead lens. Tiny eye fire and changing highlights may animate within their exact fixed sockets. No size changes, translating, lasers or mouth flame. Smooth evenly spaced angular progress; transparent background.",
+      "status": "complete"
+    }
+  }
+}

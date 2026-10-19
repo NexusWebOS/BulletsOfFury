@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-18",
+  "scope": "Native controlled Stage 4 encounters, regular full playfield and side HUD; actual pixel, collision, damage, ordnance and input verification. Not a human campaign balance certification.",
+  "checks": {
+    "syntax_game_js": true,
+    "syntax_stage4_panic_js": true,
+    "suite": {
+      "passed": 8754,
+      "failed": 0,
+      "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+      "exit": 0
+    },
+    "stage4_native": {
+      "passed": 113,
+      "failed": 0,
+      "exit": 0,
+      "fixture_restores_invulnerability_after_contact_test": true
+    },
+    "stage4_review": {
+      "passed": 11,
+      "failed": 0,
+      "exit": 0
+    },
+    "existing_assault": {
+      "passed": 88,
+      "failed": 0,
+      "exit": 0
+    },
+    "existing_targeting": {
+      "passed": 96,
+      "failed": 0,
+      "exit": 0
+    },
+    "native_total": 308
+  },
+  "errors": {
+    "page": 0,
+    "console": 0,
+    "draw": 0,
+    "missing_assets": 0
+  },
+  "inspected_screenshots": [
+    "native/warden-six-jet-spiral-bombs.png",
+    "native/warden-six-jet-safe-return.png",
+    "native/sovereign-full-row-warning.png",
+    "native/sovereign-panic-ram-warning.png",
+    "native/sovereign-northbound-overhead-return.png",
+    "native/sovereign-retaliation-fov.png",
+    "native/sovereign-long-northbound-pursuit.png",
+    "review/warden-automatic-spiral.png",
+    "review/panic.png",
+    "review/pursuit.png",
+    "review/row.png"
+  ],
+  "output_root": "_shots/stage4_panic_1017",
+  "runtime_sha256": {
+    "assets/game.js": "51c0d10174833ad935f9b094addda9e616ea517928b24b0c1750e1667c20f482",
+    "assets/stage4_panic_1017.js": "ffa6ff9fb8cd89ee6a00bc8d45cb1a397ce09ec33474940c8ccfee4a036d0067",
+    "index.html": "5567248fd067702f5d8a776d8e660014ec23941a8aad78b0c717615684481b72",
+    "_BUILD_SOURCE/test_fl.js": "682c8dcd950df753b660f8529f7d405e6c965a92e184372d44454bc8462f9dbe",
+    "assets/warden_last_stand_1017.js": "11cd3a9ce2e0e4be15c8fec36834ce5c80a1a82d8b29eed8685f5dc54d468444",
+    "assets/stage34_assault_1014.js": "9782411c3846d6d87e56680a2c8f8943cfab953a98bd89c03cfc3b109f66223f",
+    "assets/storm_guard_1017.js": "e7c17fe0f17eea078a471037ee422bf3ed9cd8d4516db22dd45df4d6bfa89c05",
+    "assets/combat_revision_1017.js": "a25b1c9fb71f08fe862b2e30c7b72d09f68830209bef7960cbf57d88d0d8cfcf",
+    "assets/targeting_1017.js": "9b43c09b48bccf99587ad2189e92a062751d447bb44489ec36ce862ee1264fa7",
+    "assets/playthrough_1011.js": "cf438011d430a75b02bed907ee5f4f005f437ecd5b9132bf32aec277acbd3e7c"
+  },
+  "preservation": {
+    "game_js_only_documented_owned_flight_guard": true,
+    "game_js_lf": true,
+    "test_fl_starting_bytes_and_crlf": true,
+    "prior_owner_starting_hashes_unchanged": true,
+    "commit": false,
+    "push": false
+  },
+  "review": "http://127.0.0.1:8794/docs/previews/stage4_panic_1017/index.html?scene=warden&difficulty=furious&revision=stage4-panic-1017",
+  "details": "Bombs from each surviving jet, same HP/actors on return, native harmless depth contact, destroyed-jet replacement, Warden attacks during raid, whole lightning row and actual live FOVs, natural quarter-HP transition, faster exposed damage, bounded warned hit retaliation, thirty-second north-facing pursuit, native hit pixels/expiry and final boss death. Latest review also checks zero-HP owned-flight death."
+}

@@ -1,0 +1,29 @@
+{
+  "permission": "Mike explicitly approved sending only arch_stun_0920 pose1, exported centered256x256, to PixelLab on2026-10-17.",
+  "jobs": {
+    "drain": {
+      "id": "66542724-a05b-4f41-aa33-21f0a8748020",
+      "prompt": "FRAME FORMAT:32 generated256x256 RGBA frames. Fixed identical canvas, fixed chest core128,145 and fixed kneeling body, one constant proportional scale, transparent margins. Crisp detailed Neo Geo Bullets of Fury arcade pixel art. The defeated chromium armored giant stays EXACTLY in the same kneeling stunned position, left palm planted, head slumped, feet fixed. No breathing, movement, turn, camera, zoom, weapon or pose changes. ONLY blue-violet chromium energy animates: thin broken electrical filaments detach from shoulder panels, chest and knee light, rise outward into space and dissipate as tiny silver-blue sparks. Armor gradually loses stored energy, increasingly intermittent flickers. This is a restrained damaged-machine discharge, not an explosion. Leave plenty of transparent space around the entire effect. Return the rigid silhouette to the exact reference. No ground or shadow.",
+      "tool": "animate_image_pixminimax",
+      "status": "complete"
+    },
+    "pulse": {
+      "id": "cc9da1b7-bcfe-4c22-a437-edeac597386e",
+      "prompt": "FRAME FORMAT:32 generated256x256 RGBA frames. Fixed identical canvas, fixed chest core128,145 and fixed kneeling body, one constant proportional scale, transparent margins. Crisp detailed Neo Geo Bullets of Fury arcade pixel art. The same defeated giant remains locked in EXACTLY the reference kneeling stun pose, without moving any limb, head, shoulder or outline. ONLY its round chest reactor pulses in short increasingly strong blue-violet then silver-white rings WITHIN the existing reactor socket. Small narrow luminous seams flicker along the armor panels, tiny static sparks. Brightness rises and falls twice smoothly then ends on a charged core. Do not add a new disk or large aura over the chest. Maintain the exact gunmetal armor and rigid silhouette. No rotation, breathing, perspective or camera movement. No ground, shadow, projectile or explosion.",
+      "tool": "animate_image_pixminimax",
+      "status": "complete"
+    },
+    "engulf": {
+      "id": "7043df4b-c4b5-4cdd-80ea-88eb7a712ee3",
+      "prompt": "FRAME FORMAT:32 generated256x256 RGBA frames. Fixed identical canvas, fixed chest core128,145 and fixed kneeling body, one constant proportional scale, transparent margins. Crisp detailed Neo Geo Bullets of Fury arcade pixel art. The identical stationary kneeling armored giant has just been struck in its circular chest reactor. Fire first ignites inside the existing core128,145, then orange-red flame tongues and silver-violet chromium plasma spread continuously along its armor seams, shoulders, arms and boots. The intact kneeling body remains perfectly stationary and proportioned throughout while the flames grow to engulf it. Keep the burning armor recognizable until the final frames. Do NOT stand up, roll, grow, turn, morph, lunge or swing a weapon. This is a build toward an explosion, NOT the actual explosion yet. Center all energy on the same fixed core. No floor, smoke wall, backdrop or captions.",
+      "tool": "animate_image_pixminimax",
+      "status": "complete"
+    },
+    "rupture": {
+      "id": "dbe33c91-c010-4e12-8963-7529cb4b8782",
+      "prompt": "FRAME FORMAT:32 generated256x256 RGBA frames. Fixed identical canvas, fixed chest core128,145 and fixed kneeling body, one constant proportional scale, transparent margins. Crisp detailed Neo Geo Bullets of Fury arcade pixel art. One explosive destruction from the exact kneeling pose. Chest reactor128,145 erupts in compact silver-white and orange fire. Gunmetal armor shatters OUTWARD radially into distinct jagged silver plates with purple-blue seams: shoulder, helmet, gauntlet and leg fragments. Pieces tumble away weightlessly while the central fireball expands then cools into scattered embers. The intact robot disappears permanently by the middle. No re-forming, second body, waving, standing or weapon swing. End on isolated flying fragments, empty transparent center and dying embers. Use the transparent margin. No floor, mushroom cloud, smoke wall, backdrop or captions.",
+      "tool": "animate_image_pixminimax",
+      "status": "complete"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 70c08471-e3a7-48ed-86c3-96747e0ca006\njob_id: 70c08471-e3a7-48ed-86c3-96747e0ca006\ndescription: The same compact code bomb charges and pulsates in a seamless loop: green reactor flickers brighter, purple shell seams surge, small binary code sparks orbit close to the casing. Physical casing stays centered at exactly the same scale and pose, no translation, spin, extra bombs or background.\nframes: 32\nsize: 128x128px\ntransparent: True\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"70c08471-e3a7-48ed-86c3-96747e0ca006\")\nasset_id: e92c847b-9b51-594c-a4bc-4d0d61e1bf5e\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

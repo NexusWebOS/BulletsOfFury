@@ -1,0 +1,19 @@
+{
+  "job_id": "787eefbd-a239-4e55-8339-0248468b28aa",
+  "asset_id": "7bcee5ea-dddf-5144-acda-ae01e12f06f2",
+  "source_object": "fc7f0c8a-cce4-4831-ae88-3115a77a49c6",
+  "source_direction": "south",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "frames": 1,
+  "prompt": "FRAME FORMAT: retain the exact 256x256 transparent canvas, physical pivot128,128, source scale, planted feet and pelvis. Edit only the weapon arm and hammer into a real overhead wind-up pose. The original weapon arm remains on the IMAGE RIGHT: keep its shoulder at about164,110, bend the elbow upward near181,97, put the gripping wrist near186,68. Raise the SAME red/chromium hammer vertically, its head near196,38, clearly above and RIGHT of the helmet. Keep the free hand empty on image LEFT. Preserve head, chest core, armor identity, legs, black/chromium/red palette and pixel shading. Do not mirror or swap the weapon hand. Do not rest the hammer across the neck/shoulders, add limbs, rotate the camera, repaint the body or change foot positions. One complete anatomical pixel pose, with the hammer fully inside transparent margins.",
+  "status": "completed; correct weapon side/overhead silhouette; root registration pending",
+  "estimated_cost_generations": 10,
+  "charged_usd": 0.08
+}

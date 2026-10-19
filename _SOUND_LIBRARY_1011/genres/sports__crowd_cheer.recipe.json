@@ -1,0 +1,1164 @@
+{
+ "design": {
+  "name": "CROWD CHEER",
+  "frames": 120,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [],
+  "noise": {
+   "on": true,
+   "white": true,
+   "rate": 3,
+   "toneHz": 1100,
+   "toneSweepTo": 1600,
+   "vol": 3,
+   "fade": 0.08,
+   "delay": 0,
+   "frames": 110
+  },
+  "tone": {
+   "on": false,
+   "hz": 880,
+   "sweepTo": 880,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 20,
+   "arp": [],
+   "arpFrames": 2
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "CROWD CHEER",
+  "frames": 120,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [],
+  "psg": [
+   {
+    "ch": 2,
+    "track": [
+     {
+      "f": 0,
+      "period": 102,
+      "vol": 15
+     },
+     {
+      "f": 1,
+      "period": 101,
+      "vol": 15
+     },
+     {
+      "f": 2,
+      "period": 101,
+      "vol": 15
+     },
+     {
+      "f": 3,
+      "period": 101,
+      "vol": 15
+     },
+     {
+      "f": 4,
+      "period": 100,
+      "vol": 15
+     },
+     {
+      "f": 5,
+      "period": 100,
+      "vol": 15
+     },
+     {
+      "f": 6,
+      "period": 100,
+      "vol": 15
+     },
+     {
+      "f": 7,
+      "period": 99,
+      "vol": 15
+     },
+     {
+      "f": 8,
+      "period": 99,
+      "vol": 15
+     },
+     {
+      "f": 9,
+      "period": 99,
+      "vol": 15
+     },
+     {
+      "f": 10,
+      "period": 98,
+      "vol": 15
+     },
+     {
+      "f": 11,
+      "period": 98,
+      "vol": 15
+     },
+     {
+      "f": 12,
+      "period": 98,
+      "vol": 15
+     },
+     {
+      "f": 13,
+      "period": 97,
+      "vol": 15
+     },
+     {
+      "f": 14,
+      "period": 97,
+      "vol": 15
+     },
+     {
+      "f": 15,
+      "period": 97,
+      "vol": 15
+     },
+     {
+      "f": 16,
+      "period": 96,
+      "vol": 15
+     },
+     {
+      "f": 17,
+      "period": 96,
+      "vol": 15
+     },
+     {
+      "f": 18,
+      "period": 96,
+      "vol": 15
+     },
+     {
+      "f": 19,
+      "period": 95,
+      "vol": 15
+     },
+     {
+      "f": 20,
+      "period": 95,
+      "vol": 15
+     },
+     {
+      "f": 21,
+      "period": 95,
+      "vol": 15
+     },
+     {
+      "f": 22,
+      "period": 94,
+      "vol": 15
+     },
+     {
+      "f": 23,
+      "period": 94,
+      "vol": 15
+     },
+     {
+      "f": 24,
+      "period": 94,
+      "vol": 15
+     },
+     {
+      "f": 25,
+      "period": 93,
+      "vol": 15
+     },
+     {
+      "f": 26,
+      "period": 93,
+      "vol": 15
+     },
+     {
+      "f": 27,
+      "period": 93,
+      "vol": 15
+     },
+     {
+      "f": 28,
+      "period": 92,
+      "vol": 15
+     },
+     {
+      "f": 29,
+      "period": 92,
+      "vol": 15
+     },
+     {
+      "f": 30,
+      "period": 92,
+      "vol": 15
+     },
+     {
+      "f": 31,
+      "period": 92,
+      "vol": 15
+     },
+     {
+      "f": 32,
+      "period": 91,
+      "vol": 15
+     },
+     {
+      "f": 33,
+      "period": 91,
+      "vol": 15
+     },
+     {
+      "f": 34,
+      "period": 91,
+      "vol": 15
+     },
+     {
+      "f": 35,
+      "period": 90,
+      "vol": 15
+     },
+     {
+      "f": 36,
+      "period": 90,
+      "vol": 15
+     },
+     {
+      "f": 37,
+      "period": 90,
+      "vol": 15
+     },
+     {
+      "f": 38,
+      "period": 89,
+      "vol": 15
+     },
+     {
+      "f": 39,
+      "period": 89,
+      "vol": 15
+     },
+     {
+      "f": 40,
+      "period": 89,
+      "vol": 15
+     },
+     {
+      "f": 41,
+      "period": 88,
+      "vol": 15
+     },
+     {
+      "f": 42,
+      "period": 88,
+      "vol": 15
+     },
+     {
+      "f": 43,
+      "period": 88,
+      "vol": 15
+     },
+     {
+      "f": 44,
+      "period": 88,
+      "vol": 15
+     },
+     {
+      "f": 45,
+      "period": 87,
+      "vol": 15
+     },
+     {
+      "f": 46,
+      "period": 87,
+      "vol": 15
+     },
+     {
+      "f": 47,
+      "period": 87,
+      "vol": 15
+     },
+     {
+      "f": 48,
+      "period": 86,
+      "vol": 15
+     },
+     {
+      "f": 49,
+      "period": 86,
+      "vol": 15
+     },
+     {
+      "f": 50,
+      "period": 86,
+      "vol": 15
+     },
+     {
+      "f": 51,
+      "period": 85,
+      "vol": 15
+     },
+     {
+      "f": 52,
+      "period": 85,
+      "vol": 15
+     },
+     {
+      "f": 53,
+      "period": 85,
+      "vol": 15
+     },
+     {
+      "f": 54,
+      "period": 85,
+      "vol": 15
+     },
+     {
+      "f": 55,
+      "period": 84,
+      "vol": 15
+     },
+     {
+      "f": 56,
+      "period": 84,
+      "vol": 15
+     },
+     {
+      "f": 57,
+      "period": 84,
+      "vol": 15
+     },
+     {
+      "f": 58,
+      "period": 83,
+      "vol": 15
+     },
+     {
+      "f": 59,
+      "period": 83,
+      "vol": 15
+     },
+     {
+      "f": 60,
+      "period": 83,
+      "vol": 15
+     },
+     {
+      "f": 61,
+      "period": 83,
+      "vol": 15
+     },
+     {
+      "f": 62,
+      "period": 82,
+      "vol": 15
+     },
+     {
+      "f": 63,
+      "period": 82,
+      "vol": 15
+     },
+     {
+      "f": 64,
+      "period": 82,
+      "vol": 15
+     },
+     {
+      "f": 65,
+      "period": 81,
+      "vol": 15
+     },
+     {
+      "f": 66,
+      "period": 81,
+      "vol": 15
+     },
+     {
+      "f": 67,
+      "period": 81,
+      "vol": 15
+     },
+     {
+      "f": 68,
+      "period": 81,
+      "vol": 15
+     },
+     {
+      "f": 69,
+      "period": 80,
+      "vol": 15
+     },
+     {
+      "f": 70,
+      "period": 80,
+      "vol": 15
+     },
+     {
+      "f": 71,
+      "period": 80,
+      "vol": 15
+     },
+     {
+      "f": 72,
+      "period": 80,
+      "vol": 15
+     },
+     {
+      "f": 73,
+      "period": 79,
+      "vol": 15
+     },
+     {
+      "f": 74,
+      "period": 79,
+      "vol": 15
+     },
+     {
+      "f": 75,
+      "period": 79,
+      "vol": 15
+     },
+     {
+      "f": 76,
+      "period": 78,
+      "vol": 15
+     },
+     {
+      "f": 77,
+      "period": 78,
+      "vol": 15
+     },
+     {
+      "f": 78,
+      "period": 78,
+      "vol": 15
+     },
+     {
+      "f": 79,
+      "period": 78,
+      "vol": 15
+     },
+     {
+      "f": 80,
+      "period": 77,
+      "vol": 15
+     },
+     {
+      "f": 81,
+      "period": 77,
+      "vol": 15
+     },
+     {
+      "f": 82,
+      "period": 77,
+      "vol": 15
+     },
+     {
+      "f": 83,
+      "period": 77,
+      "vol": 15
+     },
+     {
+      "f": 84,
+      "period": 76,
+      "vol": 15
+     },
+     {
+      "f": 85,
+      "period": 76,
+      "vol": 15
+     },
+     {
+      "f": 86,
+      "period": 76,
+      "vol": 15
+     },
+     {
+      "f": 87,
+      "period": 76,
+      "vol": 15
+     },
+     {
+      "f": 88,
+      "period": 75,
+      "vol": 15
+     },
+     {
+      "f": 89,
+      "period": 75,
+      "vol": 15
+     },
+     {
+      "f": 90,
+      "period": 75,
+      "vol": 15
+     },
+     {
+      "f": 91,
+      "period": 75,
+      "vol": 15
+     },
+     {
+      "f": 92,
+      "period": 74,
+      "vol": 15
+     },
+     {
+      "f": 93,
+      "period": 74,
+      "vol": 15
+     },
+     {
+      "f": 94,
+      "period": 74,
+      "vol": 15
+     },
+     {
+      "f": 95,
+      "period": 74,
+      "vol": 15
+     },
+     {
+      "f": 96,
+      "period": 73,
+      "vol": 15
+     },
+     {
+      "f": 97,
+      "period": 73,
+      "vol": 15
+     },
+     {
+      "f": 98,
+      "period": 73,
+      "vol": 15
+     },
+     {
+      "f": 99,
+      "period": 73,
+      "vol": 15
+     },
+     {
+      "f": 100,
+      "period": 72,
+      "vol": 15
+     },
+     {
+      "f": 101,
+      "period": 72,
+      "vol": 15
+     },
+     {
+      "f": 102,
+      "period": 72,
+      "vol": 15
+     },
+     {
+      "f": 103,
+      "period": 72,
+      "vol": 15
+     },
+     {
+      "f": 104,
+      "period": 71,
+      "vol": 15
+     },
+     {
+      "f": 105,
+      "period": 71,
+      "vol": 15
+     },
+     {
+      "f": 106,
+      "period": 71,
+      "vol": 15
+     },
+     {
+      "f": 107,
+      "period": 71,
+      "vol": 15
+     },
+     {
+      "f": 108,
+      "period": 70,
+      "vol": 15
+     },
+     {
+      "f": 109,
+      "period": 70,
+      "vol": 15
+     },
+     {
+      "f": 110,
+      "period": 70,
+      "vol": 15
+     }
+    ]
+   },
+   {
+    "ch": 3,
+    "track": [
+     {
+      "f": 0,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 1,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 2,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 3,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 4,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 5,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 6,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 7,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 8,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 9,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 10,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 11,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 12,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 13,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 14,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 15,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 16,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 17,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 18,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 19,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 20,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 21,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 22,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 23,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 24,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 25,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 26,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 27,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 28,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 29,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 30,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 31,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 32,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 33,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 34,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 35,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 36,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 37,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 38,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 39,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 40,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 41,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 42,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 43,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 44,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 45,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 46,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 47,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 48,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 49,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 50,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 51,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 52,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 53,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 54,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 55,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 56,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 57,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 58,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 59,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 60,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 61,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 62,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 63,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 64,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 65,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 66,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 67,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 68,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 69,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 70,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 71,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 72,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 73,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 74,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 75,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 76,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 77,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 78,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 79,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 80,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 81,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 82,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 83,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 84,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 85,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 86,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 87,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 88,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 89,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 90,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 91,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 92,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 93,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 94,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 95,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 96,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 97,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 98,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 99,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 100,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 101,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 102,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 103,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 104,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 105,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 106,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 107,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 108,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 109,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 110,
+      "period": 7,
+      "vol": 15
+     }
+    ]
+   }
+  ],
+  "dac": null
+ }
+}

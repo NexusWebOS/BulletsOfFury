@@ -1,0 +1,2283 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Stage1 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 1,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 239.99999999999963,
+            "y": 193.70022704988577
+          },
+          "ship": {
+            "x": 239.99999999999963,
+            "y": 191.25912353334525
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag1_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage1"
+        }
+      },
+      {
+        "name": "Stage1 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 1,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 239.99999999999963,
+            "y": 193.70022704988577
+          },
+          "ship": {
+            "x": 239.99999999999963,
+            "y": 191.25912353334525
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag1_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage1"
+        }
+      },
+      {
+        "name": "Stage1 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 1,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 239.99999999999963,
+            "y": 193.70022704988577
+          },
+          "ship": {
+            "x": 239.99999999999963,
+            "y": 191.25912353334525
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag1_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage1"
+        }
+      },
+      {
+        "name": "Stage1 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag1_hi0",
+          "height": 56.0000014690102,
+          "size": 56.0000014690102,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage1 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862182442936,
+          "size": 52.000001364080894,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage2 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 2,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 239.99999999999926,
+            "y": 188.08636113114972
+          },
+          "ship": {
+            "x": 239.99999999999926,
+            "y": 190.7006944092392
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag2_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage2"
+        }
+      },
+      {
+        "name": "Stage2 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 2,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 239.99999999999926,
+            "y": 188.08636113114972
+          },
+          "ship": {
+            "x": 239.99999999999926,
+            "y": 190.7006944092392
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag2_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage2"
+        }
+      },
+      {
+        "name": "Stage2 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 2,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 239.99999999999926,
+            "y": 188.08636113114972
+          },
+          "ship": {
+            "x": 239.99999999999926,
+            "y": 190.7006944092392
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag2_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage2"
+        }
+      },
+      {
+        "name": "Stage2 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag2_hi1",
+          "height": 56.00000025506896,
+          "size": 56.00000025506896,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage2 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862088668966,
+          "size": 52.00000023684975,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage3 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 3,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 240.00000000000148,
+            "y": 193.54354972399065
+          },
+          "ship": {
+            "x": 240.00000000000148,
+            "y": 191.26257574175716
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag3_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage3"
+        }
+      },
+      {
+        "name": "Stage3 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 3,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 240.00000000000148,
+            "y": 193.54354972399065
+          },
+          "ship": {
+            "x": 240.00000000000148,
+            "y": 191.26257574175716
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag3_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage3"
+        }
+      },
+      {
+        "name": "Stage3 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 3,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 240.00000000000148,
+            "y": 193.54354972399065
+          },
+          "ship": {
+            "x": 240.00000000000148,
+            "y": 191.26257574175716
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag3_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage3"
+        }
+      },
+      {
+        "name": "Stage3 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag3_hi1",
+          "height": 56.00000025506896,
+          "size": 56.00000025506896,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage3 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862088668966,
+          "size": 52.00000023684975,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage4 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 4,
+          "z": 1.0769230720271017,
+          "flag": {
+            "x": 240.00000000000148,
+            "y": 188.46531848201988
+          },
+          "ship": {
+            "x": 240.00000000000148,
+            "y": 190.72039553538607
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag4_hi0",
+              "height": 55.99999691673059,
+              "size": 55.99999691673059,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25861830790549,
+              "size": 51.99999713696412,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage4"
+        }
+      },
+      {
+        "name": "Stage4 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 4,
+          "z": 1.0769230720271017,
+          "flag": {
+            "x": 240.00000000000148,
+            "y": 188.46531848201988
+          },
+          "ship": {
+            "x": 240.00000000000148,
+            "y": 190.72039553538607
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag4_hi0",
+              "height": 55.99999691673059,
+              "size": 55.99999691673059,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25861830790549,
+              "size": 51.99999713696412,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage4"
+        }
+      },
+      {
+        "name": "Stage4 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 4,
+          "z": 1.0769230720271017,
+          "flag": {
+            "x": 240.00000000000148,
+            "y": 188.46531848201988
+          },
+          "ship": {
+            "x": 240.00000000000148,
+            "y": 190.72039553538607
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag4_hi0",
+              "height": 55.99999691673059,
+              "size": 55.99999691673059,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25861830790549,
+              "size": 51.99999713696412,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage4"
+        }
+      },
+      {
+        "name": "Stage4 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag4_hi0",
+          "height": 55.99999691673059,
+          "size": 55.99999691673059,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage4 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25861830790549,
+          "size": 51.99999713696412,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage5 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 5,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 240.0000000000015,
+            "y": 193.0903744792364
+          },
+          "ship": {
+            "x": 240.0000000000015,
+            "y": 191.23490876886498
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag5_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage5"
+        }
+      },
+      {
+        "name": "Stage5 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 5,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 240.0000000000015,
+            "y": 193.0903744792364
+          },
+          "ship": {
+            "x": 240.0000000000015,
+            "y": 191.23490876886498
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag5_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage5"
+        }
+      },
+      {
+        "name": "Stage5 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 5,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 240.0000000000015,
+            "y": 193.0903744792364
+          },
+          "ship": {
+            "x": 240.0000000000015,
+            "y": 191.23490876886498
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag5_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage5"
+        }
+      },
+      {
+        "name": "Stage5 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag5_hi0",
+          "height": 56.0000014690102,
+          "size": 56.0000014690102,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage5 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862182442936,
+          "size": 52.000001364080894,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage6 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 6,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 240.00000000000074,
+            "y": 189.0533513576026
+          },
+          "ship": {
+            "x": 240.00000000000074,
+            "y": 190.7626152809789
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag6_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage6"
+        }
+      },
+      {
+        "name": "Stage6 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 6,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 240.00000000000074,
+            "y": 189.0533513576026
+          },
+          "ship": {
+            "x": 240.00000000000074,
+            "y": 190.7626152809789
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag6_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage6"
+        }
+      },
+      {
+        "name": "Stage6 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 6,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 240.00000000000074,
+            "y": 189.0533513576026
+          },
+          "ship": {
+            "x": 240.00000000000074,
+            "y": 190.7626152809789
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag6_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage6"
+        }
+      },
+      {
+        "name": "Stage6 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag6_hi0",
+          "height": 56.0000014690102,
+          "size": 56.0000014690102,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage6 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862182442936,
+          "size": 52.000001364080894,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage7 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 7,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 239.99999999999963,
+            "y": 192.35584974564875
+          },
+          "ship": {
+            "x": 239.99999999999963,
+            "y": 191.1753546874382
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag7_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage7"
+        }
+      },
+      {
+        "name": "Stage7 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 7,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 239.99999999999963,
+            "y": 192.35584974564875
+          },
+          "ship": {
+            "x": 239.99999999999963,
+            "y": 191.1753546874382
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag7_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage7"
+        }
+      },
+      {
+        "name": "Stage7 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 7,
+          "z": 1.0999999949863006,
+          "flag": {
+            "x": 239.99999999999963,
+            "y": 192.35584974564875
+          },
+          "ship": {
+            "x": 239.99999999999963,
+            "y": 191.1753546874382
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag7_hi0",
+              "height": 56.0000014690102,
+              "size": 56.0000014690102,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862182442936,
+              "size": 52.000001364080894,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage7"
+        }
+      },
+      {
+        "name": "Stage7 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag7_hi0",
+          "height": 56.0000014690102,
+          "size": 56.0000014690102,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage7 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862182442936,
+          "size": 52.000001364080894,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage8 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 8,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 239.9999999999998,
+            "y": 189.92670909392666
+          },
+          "ship": {
+            "x": 239.9999999999998,
+            "y": 190.83886699413017
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag8_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage8"
+        }
+      },
+      {
+        "name": "Stage8 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 8,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 239.9999999999998,
+            "y": 189.92670909392666
+          },
+          "ship": {
+            "x": 239.9999999999998,
+            "y": 190.83886699413017
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag8_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage8"
+        }
+      },
+      {
+        "name": "Stage8 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 8,
+          "z": 1.0937499950181844,
+          "flag": {
+            "x": 239.9999999999998,
+            "y": 189.92670909392666
+          },
+          "ship": {
+            "x": 239.9999999999998,
+            "y": 190.83886699413017
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag8_hi1",
+              "height": 56.00000025506896,
+              "size": 56.00000025506896,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862088668966,
+              "size": 52.00000023684975,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage8"
+        }
+      },
+      {
+        "name": "Stage8 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag8_hi1",
+          "height": 56.00000025506896,
+          "size": 56.00000025506896,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage8 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862088668966,
+          "size": 52.00000023684975,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage9 holds the closer camera",
+        "passed": true,
+        "data": {
+          "stage": 9,
+          "z": 1.0999999964290346,
+          "flag": {
+            "x": 243.99999998701304,
+            "y": 191.44571045975704
+          },
+          "ship": {
+            "x": 243.99999998701304,
+            "y": 191.0928431725303
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag9_hi1",
+              "height": 56.000001395561924,
+              "size": 56.000001395561924,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862176769238,
+              "size": 52.000001295878924,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage9"
+        }
+      },
+      {
+        "name": "Stage9 has a larger readable flag and ship",
+        "passed": true,
+        "data": {
+          "stage": 9,
+          "z": 1.0999999964290346,
+          "flag": {
+            "x": 243.99999998701304,
+            "y": 191.44571045975704
+          },
+          "ship": {
+            "x": 243.99999998701304,
+            "y": 191.0928431725303
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag9_hi1",
+              "height": 56.000001395561924,
+              "size": 56.000001395561924,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862176769238,
+              "size": 52.000001295878924,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage9"
+        }
+      },
+      {
+        "name": "Stage9 keeps both markers inside the map band",
+        "passed": true,
+        "data": {
+          "stage": 9,
+          "z": 1.0999999964290346,
+          "flag": {
+            "x": 243.99999998701304,
+            "y": 191.44571045975704
+          },
+          "ship": {
+            "x": 243.99999998701304,
+            "y": 191.0928431725303
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag9_hi1",
+              "height": 56.000001395561924,
+              "size": 56.000001395561924,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25862176769238,
+              "size": 52.000001295878924,
+              "smoothing": false
+            }
+          },
+          "name": "selected-stage9"
+        }
+      },
+      {
+        "name": "Stage9 actually draws the authored flag at56px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "map4f_flag9_hi1",
+          "height": 56.000001395561924,
+          "size": 56.000001395561924,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Stage9 actually draws the pilot hull at52px without smoothing",
+        "passed": true,
+        "data": {
+          "key": "ship_cole",
+          "height": 43.25862176769238,
+          "size": 52.000001295878924,
+          "smoothing": false
+        }
+      },
+      {
+        "name": "Real right input selects Stage2",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "1 to2 stays close and keeps the ship in view",
+        "passed": true,
+        "data": {
+          "trace": [
+            {
+              "z": 1.099236622937035,
+              "s": {
+                "x": 239.99965623073325,
+                "y": 190.74725759659862
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0957684157799952,
+              "s": {
+                "x": 297.8787641820999,
+                "y": 188.63644992521566
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0944925336691966,
+              "s": {
+                "x": 247.86189777657415,
+                "y": 190.1202965947824
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.094023162871275,
+              "s": {
+                "x": 242.06852894424344,
+                "y": 190.76044064091644
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.093850491004433,
+              "s": {
+                "x": 240.66762086574596,
+                "y": 190.9932960935987
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0937869685745536,
+              "s": {
+                "x": 240.22334443644968,
+                "y": 191.05505435588145
+              },
+              "left": -215,
+              "right": 695
+            }
+          ],
+          "minY": 187.83563802242926,
+          "maxY": 191.10252354780647
+        }
+      },
+      {
+        "name": "Real down input selects Stage5",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "4 to5 stays close and keeps the ship in view",
+        "passed": true,
+        "data": {
+          "trace": [
+            {
+              "z": 1.0761776243307113,
+              "s": {
+                "x": 240.0004503008182,
+                "y": 190.72826996888944
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0912362377514044,
+              "s": {
+                "x": 239.4845607935738,
+                "y": 229.0835680008919
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0967759920414266,
+              "s": {
+                "x": 239.80565878442468,
+                "y": 196.37141981797942
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0988139537538677,
+              "s": {
+                "x": 239.93345038814456,
+                "y": 192.46917111564218
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0995636779697693,
+              "s": {
+                "x": 239.97752791897858,
+                "y": 191.53432028628336
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.099839486095348,
+              "s": {
+                "x": 239.99242926892393,
+                "y": 191.23556520553907
+              },
+              "left": -215,
+              "right": 695
+            }
+          ],
+          "minY": 190.72826996888944,
+          "maxY": 274.1095565205349
+        }
+      },
+      {
+        "name": "Real up input selects Stage8",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "7 to8 stays close and keeps the ship in view",
+        "passed": true,
+        "data": {
+          "trace": [
+            {
+              "z": 1.099236622937035,
+              "s": {
+                "x": 239.99970244923517,
+                "y": 190.86732035726982
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0957684157799952,
+              "s": {
+                "x": 236.35758933898484,
+                "y": 158.94140763780763
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0944925336691966,
+              "s": {
+                "x": 238.63525192811835,
+                "y": 185.92826531973415
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.094023162871275,
+              "s": {
+                "x": 239.53372929227606,
+                "y": 189.60149026771754
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.093850491004433,
+              "s": {
+                "x": 239.8426847693859,
+                "y": 190.60524463352868
+              },
+              "left": -215,
+              "right": 695
+            },
+            {
+              "z": 1.0937869685745536,
+              "s": {
+                "x": 239.8823868084633,
+                "y": 190.89654402442258
+              },
+              "left": -215,
+              "right": 695
+            }
+          ],
+          "minY": 118.80762021598514,
+          "maxY": 191.11122999039816
+        }
+      },
+      {
+        "name": "The top-menu overview remains available",
+        "passed": true,
+        "data": {
+          "stage": 8,
+          "z": 0.12079874879350536,
+          "flag": {
+            "x": 104.00202523372405,
+            "y": 177.859738965324
+          },
+          "ship": {
+            "x": 104.0020252339931,
+            "y": 178.09206133407727
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 28.00000000105704,
+          "shipSize": 40.000000000453014,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag8_hi0",
+              "height": 28.000000677500477,
+              "size": 28.000000677500477,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 19.327800274114157,
+              "size": 19.327800274114157,
+              "smoothing": false
+            }
+          },
+          "name": "overview"
+        }
+      },
+      {
+        "name": "Selected Stage6 stays close after the rebel flight",
+        "passed": true,
+        "data": {
+          "stage": 6,
+          "z": 1.0999999999984051,
+          "flag": {
+            "x": 240.00000000000074,
+            "y": 193.7067599133334
+          },
+          "ship": {
+            "x": 240.00000000000074,
+            "y": 191.23893991366182
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag6_hi1",
+              "height": 56.0000012138485,
+              "size": 56.0000012138485,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.258621627323244,
+              "size": 52.00000112714504,
+              "smoothing": false
+            }
+          },
+          "name": "stage6-with-rebels"
+        }
+      },
+      {
+        "name": "Stage X keeps its dedicated encounter camera and controls",
+        "passed": true,
+        "data": {
+          "stage": 6,
+          "z": 0.3100251063689701,
+          "flag": {
+            "x": 244.65022880557177,
+            "y": 470.6221054023225
+          },
+          "ship": {
+            "x": 244.65022880557177,
+            "y": 471.1877499603104
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 28.000000001168207,
+          "shipSize": 40.00000000050066,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag6_hi1",
+              "height": 27.999999059240142,
+              "size": 27.999999059240142,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 33.27586094997243,
+              "size": 39.99999865488913,
+              "smoothing": false
+            }
+          },
+          "name": "stagex-framing"
+        }
+      },
+      {
+        "name": "The unlock cinematic finishes close to the newly available level",
+        "passed": true,
+        "data": {
+          "stage": 2,
+          "z": 1.0937499999999882,
+          "flag": {
+            "x": 240.00000000000074,
+            "y": 193.6663023421805
+          },
+          "ship": {
+            "x": 240.00000000000074,
+            "y": 191.2982868165939
+          },
+          "left": -215,
+          "right": 695,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag2_hi0",
+              "height": 56.000000000000604,
+              "size": 56.000000000000604,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.258620689655636,
+              "size": 52.00000000000056,
+              "smoothing": false
+            }
+          },
+          "name": "post-clear"
+        }
+      },
+      {
+        "name": "Compact viewport keeps enlarged markers clear of the briefing",
+        "passed": true,
+        "data": {
+          "stage": 4,
+          "z": 1.0769230720271017,
+          "flag": {
+            "x": 240.00000000000148,
+            "y": 188.95599838907194
+          },
+          "ship": {
+            "x": 240.00000000000148,
+            "y": 190.76271588222755
+          },
+          "left": -44.5,
+          "right": 524.5,
+          "top": 46,
+          "bottom": 312,
+          "detail": 56,
+          "shipSize": 52,
+          "pixels": {
+            "flag": {
+              "key": "map4f_flag4_hi0",
+              "height": 55.99999691673059,
+              "size": 55.99999691673059,
+              "smoothing": false
+            },
+            "ship": {
+              "key": "ship_cole",
+              "height": 43.25861830790549,
+              "size": 51.99999713696412,
+              "smoothing": false
+            }
+          },
+          "name": "compact-stage4"
+        }
+      },
+      {
+        "name": "No native page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "rows": [
+      {
+        "stage": 1,
+        "z": 1.090345531097402,
+        "flag": {
+          "x": 308.47137936014116,
+          "y": 279.4967238357729
+        },
+        "ship": {
+          "x": 222.87788037819635,
+          "y": 169.12491074893225
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag1_hi1",
+            "height": 55.99999850041094,
+            "size": 55.99999850041094,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.258619531259555,
+            "size": 51.99999860752444,
+            "smoothing": false
+          }
+        },
+        "name": "approach-stage1"
+      },
+      {
+        "stage": 1,
+        "z": 1.0999999919720318,
+        "flag": {
+          "x": 240.00061778689627,
+          "y": 188.68889409755678
+        },
+        "ship": {
+          "x": 240.00010071819847,
+          "y": 190.7844582456228
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag1_hi0",
+            "height": 56.000001622463884,
+            "size": 56.000001622463884,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862194296856,
+            "size": 52.000001506573604,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage1"
+      },
+      {
+        "stage": 1,
+        "z": 1.0999999949863006,
+        "flag": {
+          "x": 239.99999999999963,
+          "y": 193.70022704988577
+        },
+        "ship": {
+          "x": 239.99999999999963,
+          "y": 191.25912353334525
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag1_hi0",
+            "height": 56.0000014690102,
+            "size": 56.0000014690102,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862182442936,
+            "size": 52.000001364080894,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage1"
+      },
+      {
+        "stage": 2,
+        "z": 1.0937499950181844,
+        "flag": {
+          "x": 239.99999999999926,
+          "y": 188.08636113114972
+        },
+        "ship": {
+          "x": 239.99999999999926,
+          "y": 190.7006944092392
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag2_hi1",
+            "height": 56.00000025506896,
+            "size": 56.00000025506896,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862088668966,
+            "size": 52.00000023684975,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage2"
+      },
+      {
+        "stage": 3,
+        "z": 1.0937499950181844,
+        "flag": {
+          "x": 240.00000000000148,
+          "y": 193.54354972399065
+        },
+        "ship": {
+          "x": 240.00000000000148,
+          "y": 191.26257574175716
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag3_hi1",
+            "height": 56.00000025506896,
+            "size": 56.00000025506896,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862088668966,
+            "size": 52.00000023684975,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage3"
+      },
+      {
+        "stage": 4,
+        "z": 1.0769230720271017,
+        "flag": {
+          "x": 240.00000000000148,
+          "y": 188.46531848201988
+        },
+        "ship": {
+          "x": 240.00000000000148,
+          "y": 190.72039553538607
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag4_hi0",
+            "height": 55.99999691673059,
+            "size": 55.99999691673059,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25861830790549,
+            "size": 51.99999713696412,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage4"
+      },
+      {
+        "stage": 5,
+        "z": 1.0999999949863006,
+        "flag": {
+          "x": 240.0000000000015,
+          "y": 193.0903744792364
+        },
+        "ship": {
+          "x": 240.0000000000015,
+          "y": 191.23490876886498
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag5_hi0",
+            "height": 56.0000014690102,
+            "size": 56.0000014690102,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862182442936,
+            "size": 52.000001364080894,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage5"
+      },
+      {
+        "stage": 6,
+        "z": 1.0999999949863006,
+        "flag": {
+          "x": 240.00000000000074,
+          "y": 189.0533513576026
+        },
+        "ship": {
+          "x": 240.00000000000074,
+          "y": 190.7626152809789
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag6_hi0",
+            "height": 56.0000014690102,
+            "size": 56.0000014690102,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862182442936,
+            "size": 52.000001364080894,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage6"
+      },
+      {
+        "stage": 7,
+        "z": 1.0999999949863006,
+        "flag": {
+          "x": 239.99999999999963,
+          "y": 192.35584974564875
+        },
+        "ship": {
+          "x": 239.99999999999963,
+          "y": 191.1753546874382
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag7_hi0",
+            "height": 56.0000014690102,
+            "size": 56.0000014690102,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862182442936,
+            "size": 52.000001364080894,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage7"
+      },
+      {
+        "stage": 8,
+        "z": 1.0937499950181844,
+        "flag": {
+          "x": 239.9999999999998,
+          "y": 189.92670909392666
+        },
+        "ship": {
+          "x": 239.9999999999998,
+          "y": 190.83886699413017
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag8_hi1",
+            "height": 56.00000025506896,
+            "size": 56.00000025506896,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862088668966,
+            "size": 52.00000023684975,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage8"
+      },
+      {
+        "stage": 9,
+        "z": 1.0999999964290346,
+        "flag": {
+          "x": 243.99999998701304,
+          "y": 191.44571045975704
+        },
+        "ship": {
+          "x": 243.99999998701304,
+          "y": 191.0928431725303
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag9_hi1",
+            "height": 56.000001395561924,
+            "size": 56.000001395561924,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862176769238,
+            "size": 52.000001295878924,
+            "smoothing": false
+          }
+        },
+        "name": "selected-stage9"
+      },
+      {
+        "stage": 2,
+        "z": 1.0937645375489071,
+        "flag": {
+          "x": 241.55806121353268,
+          "y": 191.86038663966895
+        },
+        "ship": {
+          "x": 240.18719129488386,
+          "y": 191.09928382962363
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag2_hi0",
+            "height": 56.000000306398135,
+            "size": 56.000000306398135,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25862092634018,
+            "size": 52.00000028451255,
+            "smoothing": false
+          }
+        },
+        "name": "travel-1-2"
+      },
+      {
+        "stage": 5,
+        "z": 1.0999368793964255,
+        "flag": {
+          "x": 239.94835815288664,
+          "y": 193.4932726168856
+        },
+        "ship": {
+          "x": 239.99488610619815,
+          "y": 191.22739618645718
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag5_hi0",
+            "height": 55.999998142830115,
+            "size": 55.999998142830115,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 51.999998275485105,
+            "size": 51.999998275485105,
+            "smoothing": false
+          }
+        },
+        "name": "travel-4-5"
+      },
+      {
+        "stage": 8,
+        "z": 1.0937645375489071,
+        "flag": {
+          "x": 239.61657997447807,
+          "y": 192.52261780290056
+        },
+        "ship": {
+          "x": 239.9421615801572,
+          "y": 191.11122999039816
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag8_hi0",
+            "height": 56.000000306398135,
+            "size": 56.000000306398135,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 52.00000028451255,
+            "size": 52.00000028451255,
+            "smoothing": false
+          }
+        },
+        "name": "travel-7-8"
+      },
+      {
+        "stage": 8,
+        "z": 0.12079874879350536,
+        "flag": {
+          "x": 104.00202523372405,
+          "y": 177.859738965324
+        },
+        "ship": {
+          "x": 104.0020252339931,
+          "y": 178.09206133407727
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 28.00000000105704,
+        "shipSize": 40.000000000453014,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag8_hi0",
+            "height": 28.000000677500477,
+            "size": 28.000000677500477,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 19.327800274114157,
+            "size": 19.327800274114157,
+            "smoothing": false
+          }
+        },
+        "name": "overview"
+      },
+      {
+        "stage": 6,
+        "z": 1.0999999999984051,
+        "flag": {
+          "x": 240.00000000000074,
+          "y": 193.7067599133334
+        },
+        "ship": {
+          "x": 240.00000000000074,
+          "y": 191.23893991366182
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag6_hi1",
+            "height": 56.0000012138485,
+            "size": 56.0000012138485,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.258621627323244,
+            "size": 52.00000112714504,
+            "smoothing": false
+          }
+        },
+        "name": "stage6-with-rebels"
+      },
+      {
+        "stage": 6,
+        "z": 0.3100251063689701,
+        "flag": {
+          "x": 244.65022880557177,
+          "y": 470.6221054023225
+        },
+        "ship": {
+          "x": 244.65022880557177,
+          "y": 471.1877499603104
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 28.000000001168207,
+        "shipSize": 40.00000000050066,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag6_hi1",
+            "height": 27.999999059240142,
+            "size": 27.999999059240142,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 33.27586094997243,
+            "size": 39.99999865488913,
+            "smoothing": false
+          }
+        },
+        "name": "stagex-framing"
+      },
+      {
+        "stage": 2,
+        "z": 1.0937499999999882,
+        "flag": {
+          "x": 240.00000000000074,
+          "y": 193.6663023421805
+        },
+        "ship": {
+          "x": 240.00000000000074,
+          "y": 191.2982868165939
+        },
+        "left": -215,
+        "right": 695,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag2_hi0",
+            "height": 56.000000000000604,
+            "size": 56.000000000000604,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.258620689655636,
+            "size": 52.00000000000056,
+            "smoothing": false
+          }
+        },
+        "name": "post-clear"
+      },
+      {
+        "stage": 4,
+        "z": 1.0769230720271017,
+        "flag": {
+          "x": 240.00000000000148,
+          "y": 188.95599838907194
+        },
+        "ship": {
+          "x": 240.00000000000148,
+          "y": 190.76271588222755
+        },
+        "left": -44.5,
+        "right": 524.5,
+        "top": 46,
+        "bottom": 312,
+        "detail": 56,
+        "shipSize": 52,
+        "pixels": {
+          "flag": {
+            "key": "map4f_flag4_hi0",
+            "height": 55.99999691673059,
+            "size": 55.99999691673059,
+            "smoothing": false
+          },
+          "ship": {
+            "key": "ship_cole",
+            "height": 43.25861830790549,
+            "size": 51.99999713696412,
+            "smoothing": false
+          }
+        },
+        "name": "compact-stage4"
+      }
+    ],
+    "errors": [],
+    "passed": 57,
+    "failed": 0
+  },
+  "review": {
+    "checks": [
+      {
+        "name": "Review loads the live close camera with separate save storage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review can select another actual campaign level",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review save writes leave real campaign slots intact",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review storage clear leaves real campaign slots intact",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HQ approach replays using the native ship and camera",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review overview button reaches the live map menu",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "rows": [],
+    "errors": [],
+    "passed": 7,
+    "failed": 0
+  },
+  "existingMapProbe": {
+    "passed": 7,
+    "failed": 0,
+    "log": "_shots/campaign_close_1017/legacy-map.log"
+  },
+  "suite": {
+    "passed": 8754,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/campaign_close_1017/full-suite-final.log"
+  },
+  "preservedStartingHashes": {
+    "assets/game.js": true,
+    "_BUILD_SOURCE/test_fl.js": true,
+    "CLAUDE.md": true,
+    "assets/modular_roster_0927.js": true,
+    "assets/orbs_1010.js": true,
+    "assets/spread_1001.js": true
+  },
+  "ownerHashes": {
+    "assets/audio_feedback_1010.js": "2e17ff056fe019cc5e9d6ea14c7ece3d1e0e258c4d721fb7c22475fd13234bea",
+    "assets/campaign_follow_1009.js": "467ac28645c6a45edb7633525fe9382f0d9e5ee457a81f2b0517e56b9d57e6fc",
+    "index.html": "c3f6af8aba8c14ca06eb702781e7d1919319d86c23e0bdecc2c3a5251226282a",
+    "assets/campaign_landscape_1004e.js": "d66a43ec5978edb2254c653ae75c604d1f7b10fc8651b7cefb3d334da04c6a97"
+  }
+}

@@ -1,3 +1,661 @@
+# 2026-10-19 - Completed overnight combat pass, final verified checkpoint
+
+Mike asked for continuous overnight analysis/fixes until he returns. Read
+docs/OVERNIGHT_COMBAT_1019.md and docs/OVERNIGHT_COMBAT_FINDINGS_1019.md.
+Final verified checkpoint — Mike returned on October 19 and authorized finishing
+this pass and uploading the game. The overnight heartbeat is now PAUSED.
+GitHub destination: https://github.com/NexusWebOS/BulletsOfFury, main. Preserve
+unrelated local projects and the independent Claude helper.
+
+Current verified runtime: core-stealth-mount-final.log8785 printed checks, BUILD OK,
+0errors, exit0; game.js LF/test_fl.js CRLF. Focused native1007/0, current review
+native UI25/0. Thirty campaign cases all complete0errors (9 stages + both6
+paths xN/H/F), default gear/finite missiles/native damage/protected visible bot.
+Whole shipping-final30 includes side cull/late pools/rocket commitment; later
+drone-final3 covers Stage3; stealth-mount-final3 covers the last Stage6
+paint repair. These are not human win-rate measurements.
+Equal60s boss/mini census57/57 complete0errors; password15/15 clean.
+
+Current matrix is VERSION7: enemy_matrix/shipping-final-factory/report.json,
+497/497 cases,27 rosters,complete true,0errors. It retains399 verified unaffected
+rows from shipping-final-ai(v6) and replaces Stage6 with98 clean factory cases.
+Owning merge_enemy_matrix_1019.py; per-row sourceFolder keeps capture provenance.
+Stage6 now includes30 actual stealth passes (10 authored role/direction variants
+xN/H/F), all active, all with first-release full-field captures. Red2missiles;
+green fixed bomb marks warn1.75/1.60/1.45s and1/1/2marks; orange3-6/6-9/3-9 rounds
+depending on direction/window. All use their real fb2FlightSpawn factory.
+Pre-flight plan warnings precede this actor clock. Ground mark timing is cue
+creation, not impact; warning duration is shown in Details.
+
+Fixture correction: collect had left15 fb2Flights queued; they spawned into the
+first isolated dart case. Collection now materializes/dedups flight roles and
+clears pending plans per wave/case. No production director changed. Guarded
+pre-spawn draw/warning observers no longer reference undefined E. Earlier
+scope/wave-error reports/nonzero merge exits remain retained. Current98 cases
+have no collector, page, console, draw or asset errors and no unrelated actors.
+Do not use old467/v6 Stage6 totals for balance. Review/data/QA regenerated and
+native UI25/0 includes role/capture/warning checks. Browser review queued at
+http://127.0.0.1:8794/docs/previews/overnight_1019/index.html.
+
+Latest runtime addition assets/drone_commit_1019.js: only diagonal Sharddart
+holds its lateral line/slow descent through its first native tell, then resumes;
+3s bound, tells .55/.467/.40. Native15/0 plus all3 Stage3 campaigns pass.
+Restored Stage5/7/8/9 pools apply native party factor1.25 once. Native co-op226/0
+across75 cases verifies real Player2 damage/white pixels/expiry. Integer EHP
+normalization makes higher-difficulty party/solo ratios vary; corrected party
+pool is within1HP of disabled-repair pool*1.25. Solo/Claude helper unchanged.
+
+ART: eight accepted banks remain shipping (31 Hammer ball,8 whirl, stealth
+32+29+29,16 Harrier rotors,32 volcano turns+16 charge). Optional new overhead
+wind-up attempts were REJECTED after all-frame/onion inspection: MiniMax
+ef9017f2 and pinned057c7ac6, then v3a13ea444. Uneven/left-crossing/near-static
+middle poses and terminal snaps are unsuitable. No overhead bank installed.
+All sources and rejection notes preserved. A correct static endpoint787eefbd
+is retained as REFERENCE ONLY, losslessly translated y-46 in PixelLab workbench
+3e3e56ff-4c61-455c-a341-f054692049cb before interpolation; local
+_ART_SOURCES/hammer_motion_1019/overhead-end-registered.png. No per-frame fitting.
+No PixelLab jobs pending; latest confirmed balance$8.47. New experiments billed
+$.0434 + $.0800 + $.0364 + $.0366. Existing credits only. Extended Hammer books
+end at natural morph43.48/43.48/47.48s (120s ceiling),0errors; warn/nova1 body
+pose, roll31, whirl8. Current review includes this measured animation gap.
+
+The final native audit covers all nine selectable friendly hulls and a naturally
+docked Lizzie mount: 23/23 checks, zero browser errors. It found a real 50.04px
+mount drift during rescue formation movement while the attachment clock paused.
+stealth_1019.js now translates only its drawing to the actual pilot and applies
+the hull's cloak opacity; no loan timer, cadence or gameplay position changes.
+Actual before/after images are in stealth-pilots/. All three final Stage6 Rebel
+route campaigns (stealth-mount-final) complete with zero errors; the original
+14-check cloak/reveal probe also passes again. Review native UI25/25 passes.
+No further overnight batches are scheduled; follow Mike's next human steering.
+
+# Earlier overnight checkpoints (superseded)
+
+Current native evidence:30/30 campaign cases,all final Stage9 and final Rebel/
+Stage8 difficulty reruns,440 live enemy specifications,57 equal-window boss/mini
+cases. Focused Rime64,stealth14,Herald escape29,Hammer25,ally pixels12,Lizzie
+Spread13,Stage5hulls101,Stage9hulls74,Harrierfans19,Volcano head28,Warden31
+all pass:410 checks. Latest core8785/0 reaches final BUILD OK,exit0.
+
+Codex layers follow the independent Claude helper. game.js changes are limited
+to the friendly projectile drawing scope; keep one writer and LF. Real pixel
+tests found elemental/Wind painters bypassed the original dimmer; their actual
+owners now share the bounded scope. Never suppress owner/part flash timers.
+
+Stage5 helper fixes are retained. Codex fixed the same authored-HP cap in
+Stage9, added the requested Lizzie Spread travel tuning,PixelLab stealth,Rime
+inside-aperture glow,Herald attacks,and31 real rolling+8 directional Hammer poses.
+Review docs/previews/overnight_1019/index.html uses native full-field captures.
+No commit/push. Preserve all existing dirty work and Claude's layer.
+
+Harrier fan gap fixed with16 exact authored rotor positions from PixelLab's
+workbench; native housing/hub preserved. AI rotor candidate was rejected for
+flames/pod drift.19 native checks pass. Final six Stage7/8 campaign cases include
+this rotor,volcano head and Warden timing,all complete/error-free. Complete
+Colossus book confirms arm lasers about44-49s.
+Volcano head now has32 genuine quarter-turn drawings and16 lamp-only charges;
+native28/0 verifies actual eyes/laser roots/alpha masks and damage feedback.
+Warden timing31/0 restores later-code-overwritten difficulty tells and Furious
+.46s stomp claw. Final production Rebel major-special gun slots1 on N/H/F;
+ordinary gun slots2/3/3. Three-seed mean contacts before/current29/16.5,
+30/20.5,32.33/24.17; maximum Furious nearby peak5 vs prior candidate8.
+Final production-default repeat and full6R Furious route complete/error-free.
+All4 allies stay;27 signature/locked-missile controls error-free. Not human wins.
+Password startup resolved as harness cleanup: final-shipping15 cases0 active/
+teardown errors,max music drift.030s. Diagnostic recovery guard EXCLUDED from
+index; preserve historical failed reports. Review native UI passes after table
+overflow repair. Current work ordinary-fire audit of other late heavy hulls.
+No global HP change. Read checkpoint. Heartbeat active until actual Mike returns.
+
+# 2026-10-19 - Claude Code assist beside Codex's overnight pass (items 7, 8, 6, 4)
+
+Late layer assets/claude_assist_1019.js (after rime_defense_1019.js; window.CA19_OFF=1 disables). No game.js/test_fl.js
+edits. Lizzie's docked heavy MG ran 9 rounds/s in space (space cadence returned before the mount check) -> 24/s.
+Spread/nose muzzle was 2 px right on all nine ships (wm26PlayerNose's flat +2) -> <=0.4 px. Stage 5 "doesn't shoot":
+space rounds killed units above the screen (no visibility gate) and every S5SPACE hull was EHP-capped to 12 hp ->
+centre-on-screen hit gate for ordinary enemies, authored hp restored with EHP's difficulty ratio. Stage-8 Hammer
+whirl poses now ride the real whirl.reel clock (wind-up/acceleration). Lizzie "Spread too fast" not reproduced.
+Probes *_1019.py (lizzie_space_mg, spread_muzzle, stage5_fire, hammer_whirl, hammer_ball, hammer_compare), each with
+a busted arm. Read docs/CLAUDE_ASSIST_1019.md. Trap: a probe that switches pilot mid-run keeps the first pilot's
+PILOTMOD (set once in startRun). No commit/push.
+
+# 2026-10-19 - Rime Wall icy final defense (corrected native rerun pending)
+
+Mike requested Stage3 ice bullets/lasers, permanent shoulder laser mortars,
+icy core charge, ordinary-primary access to the disarmed core and a desperate
+final pattern. Added rime_defense_1019.js after existing owners. Four native
+weapon modules and the whole authored hull remain. Fixed cold-bullet rendering
+to explicitly register the existing authored ice projectile. Normal/Hard/Furious
+reaction windows shorten; shoulder landing points commit and cancel on owner
+death. All-weapons-down changes to warned rams and strafing mortar salvos.
+Measured seated-core occupancy and an open projectile conduit allow primary
+hits; physical ramming hull stays solid. Core3x, other exposed hull1.5x, native
+HP/markHit/death and elemental resistance preserved. Core Retina, beam and orb
+routes work. Frost Cruiser retains its encounter and shares cold charge art.
+
+PixelLab generated32 poses each for frost swirl, reactor charge and laser
+mortar (96 poses, about1MiB). Fixed192x192/pivot96,96 frost and96x288/pivot48,232
+mortar banks; common scale1 and16px padding. The mortar pivot measures the real
+lower impact flare, not the tail. All poses/contact sheets/onions inspected.
+About$0.46 used from9.98 to9.52; no top-up. Wrong gear/icon/asteroid seeds excluded.
+Owning build:build_rime_effects_1019.py; sources:_ART_SOURCES/rime_effects_1019.
+
+Syntax passes. Core suite exits0 at final BUILD OK:8,785 printed ok lines/0
+errors, matching baseline.51 focused mocked-renderer state/routing checks pass.
+Initial Chromium run:38 passed,6 failed, zero page/console/draw/asset errors.
+All96 PNGs actually blit; native primary hits core on N/H/F. Six failures were
+verification fixtures: three expected the old beam art key despite active
+av3_laser_beams; three compared only part flash while native owner also flashed.
+Fixtures corrected; do NOT report a final native pass yet. Subsequent launches
+were rejected by automatic approval review capacity/deadline failures. Mike
+said Continue code; test afterward. Final corrected native + delivered-UI run
+is pending approval availability. Run probe_rime_defense_1019.py to resume.
+
+Review:docs/previews/rime_defense_1019 (six full-FOV scenes, isolated saves,
+frame/onion page). Details:docs/RIME_DEFENSE_1019.md; honest QA status:
+docs/qa/rime_defense_1019.json; evidence:_shots/rime_defense_1019.
+Game.js/test_fl.js and earlier encounter owners byte-identical to task start.
+Index task delta is two new script registrations. No commit/push.
+
+# 2026-10-18 - Warden center gun, shared tank clearance and more nuclear pads
+
+Mike requested unshootable Stage4 miniboss bullets, tanks that never stack,
+more standing shoulder missiles and an actual modular center gun. Implemented
+warden_center_1018.js and ground_traffic_1018.js, loaded after existing owners.
+Current and legacy Warden bullets resist player shots; actual missiles remain
+counterable. Generated16 gun poses256x256/pivot128,104 from actual Warden armor,
+common0.70 scale. Fifth gunC uses native independent damage, markHit, Retina,
+rupture and real barrel sockets; all-five-part core-fan/ram last stand survives.
+Native gunfire caught the original placement behind the nose; the final mount
+is forward at40% hull height and is reachable by ordinary primary fire.
+
+Shared tank footprints reserve spawn and movement space across stages, including
+_noSep highway armor. Crowding queues upstream; terrain/lane anchors follow and
+native weapons continue. Reinforcements prefer free highway lanes. Engine rule
+persisted in AGENTS.md. More alternating roadside pads: gaps300/230/180px and
+caps3/4/4 on N/H/F, first eligibility100px. Native warnings, interception and
+atomic returns stay intact;45s sample counts5/7/8 pads.
+
+150 Chromium checks pass:46 focused,61 roadside regression,33 last stand and
+10 delivered UI/art checks. Zero game page/console/draw/asset errors. Core suite
+exits0 at final BUILD OK,8,785 printed ok checks/0 errors, matching baseline.
+Actual screenshots and all16 poses inspected, including native XART/ctx draws,
+onions, gun and tank part flashes and expiry. Controlled fixtures, not a full
+campaign. Game.js task delta is only the shared tank-pair dispatch (LF retained);
+test_fl.js byte-identical, CRLF retained. Existing Storm, Stage6 and Warden AI
+owner files are unchanged. No commit/push. PixelLab had no credits; built-in
+generation used for the new turret, no top-up or atlas edit.
+
+Details:docs/STAGE4_ENGINE_1018.md; QA:docs/qa/stage4_engine_1018.json. Full-FOV
+review:docs/previews/stage4_engine_1018/?scene=warden&revision=stage4-engine-1018;
+scene=highway and scene=return also available, frames.html supports onions.
+Evidence and initial file hashes:_shots/stage4_engine_1018/.
+
+# 2026-10-18 - Main Harrier has no core; larger carrier and live allied wing
+
+Mike corrected the main Stage6 Harrier: remove its energy core; enlarge it for
+its blue-jet launch; retain allies during encounters. Fortress miniboss alone
+keeps its six-battery reactor. This supersedes the earlier main-core/solo notes.
+
+Carrier art, eight modules, hitboxes, Retina, weapons, bay and attached fan FX
+share a1.45 uniform hull scale (668.16x375.84), regular480x512 FOV. Last module
+starts native breakup; Nightwing emerges at2.4s and its defeat alone clears the
+stage. Actual bay-local emergence starts at48% combat size, then approaches.
+Part hit-flash clocks age through departures and breakup, with native markHit.
+
+Removed two explicit allied-wing suppressors: Stage6 sequence's miniboss park,
+shot clear and AI/draw skips; Part2's per-Harrier-frame/quick-launch wing clear.
+Scheduled25s withdrawals wait through combat/warnings; genuine retreats remain.
+Reinforcement selection now excludes ineligible pilots before native launch,
+avoiding empty approach reinforcements. Existing team/support-pressure rules
+remain. Actual allies visibly fire and damage modules through both encounters,
+and persist through carrier breakup into the blue-ace fight.
+
+225 native checks pass (106 encounters,N/H/F;15 delivered UI/co-op/compact;
+56 route/Rebel intro;42 previous Levels4-6 regressions;6 gun/lock/beam routing).
+Zero game page/console/draw/asset errors. Full core suite exits0, final BUILD OK,
+8,785 printed ok lines/0 errors, matching the current baseline. An initial gun
+fixture miss retained Sonic Boom10.15s; explicitly choose MG through the native
+loadout and isolate temporary primary replacements. Restored allied impacts
+must be isolated for a quiet flash-expiry window. No runtime flash suppression.
+
+Game.js task delta is only the timed-departure guard; LF preserved. test_fl.js
+is byte-identical with CRLF. Stage4/Stage8/Hammer work preserved. No commit/push
+or new art. Review:docs/previews/stage6_repair_1018/?scene=harrier, revision
+harrier-wing-1018. Old scene=reactor redirects to Harrier. Current specification:
+docs/STAGE6_HARRIER_WING_1018.md; QA:docs/qa/stage6_harrier_wing_1018.json.
+Evidence/logs:_shots/harrier_wing_1018/. Controlled fixtures, not a full campaign.
+
+# 2026-10-18 - Mike's recorded Levels4-6 bug review
+
+Reviewed the17:48 recording 2026-10-18 19-34-17.mp4. Actual footage covers
+Storm Sovereign, Stage5 and Stage6's Harrier route. No reliable spoken transcript;
+no guessed commentary was treated as a request. Timestamped findings and scope:
+docs/PLAYTHROUGH_REVIEW_1018.md; evidence:_shots/review_levels456_1018/.
+
+Fixed Fortress/Harrier exposed-core white rectangles (12:31,15:20): their old
+closed-hull hit flash still painted behind the new sliding aperture. That owner
+now flashes the actual core silhouette, capped to keep blue energy readable.
+markHit, owner/part timers, damage and expiry remain native. Stage4's embedded
+helper jets now get separate radar contacts once on the combat plane, with
+identity deduplication and death/entry exclusions. Visible hull bounds keep an
+edge-clipped Nightwing on radar until the whole plate leaves the field.
+
+Live Stage6 dialogue already retains movement, shooting and scroll while
+parking new waves; native reproduction confirms this. Hammer healing requires
+3/4/5 distinct manual missile hits on N/H/F; normal/automatic fire does not
+interrupt it and duplicate impact routing counts once. These controllers and
+balance values were retained. The recording's older lightning art was already
+superseded by the preceding PixelLab lightning/depth pass.
+
+147 native Chromium checks pass:51 focused,82 Stage6 encounter,14 delivered
+review/co-op/compact HUD; zero game page/console/draw/asset errors. Core suite
+exits0, final BUILD OK,8,785 printed ok lines/0 errors, matching the baseline.
+Native pictures inspected. A first focused test's trapped-RAF lazy-load wait
+was corrected with explicit polling; complete final run passes.
+
+game.js,test_fl.js,Hammer counter/ending and lightning renderer starting hashes
+hold; LF/CRLF preserved. Runtime owners:Siege Console,stage6_carrier,stage6_roster,
+stage6_reactor. Loader revision:playthrough-fixes-1018. QA:
+docs/qa/playthrough_review_1018.json. No new art, commit or push.
+
+# 2026-10-18 - PixelLab branching lightning and rear/front boss depth
+
+Mike rejected the repeated crescent spiral. New PixelLab art supplies actual
+branching wrap, bolts, orbs and generator tethers for Dracodia and Storm Sovereign.
+Five uniform banks register152 PNGs:32 bolts,24 selected crackling orbs,32 tethers,
+and32 matched rear/front wraps each. Eight flat-circle orb returns and a clipped
+tether seed are excluded and preserved. Text-only seeds; no local uploads or top-up.
+The account was checked at $1.06 remaining (shared account observation).
+
+assets/lightning_depth_1018.js renders the same wrap pose/pivot behind the actual
+boss body and over it. Dracodia's outgoing actors now draw real animated forks;
+core/arm charging uses crackling orbs. Stage4 charging, panic/ram/rear effects,
+four generator links and live unshootable balls use the new banks. The native
+early tb28BallDraw route needed its own scoped hook; a generic projectile hook
+alone never reached the real volleys. Warnings, sounds, combat clocks, damage,
+owner/part hit flashes, existing phases, four copies and ending remain native.
+
+219 Chromium checks pass (48 focused,71 archive,50 Storm,50 delivered UI),
+zero page/console/draw/asset errors. Full suite exits0, final BUILD OK,
+8,785 printed ok lines/0 errors, matching the latest measured baseline.
+game.js,test_fl.js,stage8_identity_1018.js,storm_assault_1018.js starting hashes
+are unchanged; game.js LF and test_fl.js CRLF hold. No commit/push.
+
+Source and QA:docs/LIGHTNING_DEPTH_1018.md and docs/qa/lightning_depth_1018.json.
+Reviews:dracodia_archive_1018 scene=spiralLightning;storm_assault_1018 scene=charge;
+revision=lightning-depth-1018. Both repeat the real attack with full FOV and
+isolated saves. frames.html?bank=wrap provides32-pose scrubbing/onions; all five
+new banks are listed. Actual gameplay GIFs and native evidence are under
+_shots/lightning_depth_1018/. Native checks, not a new campaign balance claim.
+
+# 2026-10-18 - Dracodia moving hover, core missiles and charged arms
+
+Mike now approves main-form arm lasers. D20 moves the main form laterally
+through standard combat and the existing background bomb volley, retaining
+planted physical swipes. Actual transformed core/palm sockets own emission:
+shootable straight core-missile fans, core bomb throws and independently
+charged shoulder-mounted arm beams with committed aim/FOV and native sounds.
+Broken arms stop their beams/locks; both broken substitutes a core turn.
+The shared ordnance classifier must see missile kind emissile, even though
+its authored picture is the code warhead, or it silently removes shootability.
+Native clocks, flashes, four copies, fades/deaths and one portal clear remain.
+
+284 native Chromium checks pass (52 focused,71 archive,89 swipes,32 endings,
+40 delivered controls), zero page/console/draw/asset errors. Full suite exits0,
+final BUILD OK,8,785 printed ok lines/0 errors; incoming note was8,784.
+game.js,stage8_identity_1018.js,test_fl.js starting hashes preserved; LF/CRLF
+hold. Source/evidence:docs/DRACODIA_HOVER_1018.md and docs/qa/dracodia_hover_1018.json.
+Review has hover,armLasers,coreMissiles and repeating earlier scenes. Actual
+arm-break button works. Entry script cache revision refreshed. Existing local
+work retained; no commit/push.
+
+# 2026-10-18 - Dracodia code storms and half-health archive downloads
+
+assets/dracodia_archive_1018.js now extends only final main Colossus combat:
+spiraling lightning, uniform background retreat/code-bomb volleys, and finite
+one/two/three-actor download formations across Normal/Hard/Furious. Regenerated
+BZ0 Bastion, BZ4 Camo and the blue gunship use independent core/battery pools,
+actual muzzle pixels and Retina targets, at half the source max after scaling.
+Cryo Spear/Brood escort sprites remain authored XART. The existing native boss
+clock, physical swipes, exactly four copies, fades, avatar and single red-portal
+ending remain authoritative. One generic game.js collision flag stops shootable
+code bombs from body-killing before their marked blast; all other game.js bytes
+match this turn's starting hash. Hit flashes and expiry are preserved.
+
+PixelLab approval covered exactly three supplied references and existing
+credits only: $2.65 used, $5.03 remain, no top-up. Owner builder registers190
+PNGs/2.94MiB:18/18/22 download poses,16 charge,22 burst,18 lightning,32 storm
+and32 transfer, all even uniform canvases/fixed pivots. Blank/broken/flat-star
+returns are excluded; grey transfer matte removed. No shared atlas edit.
+Main index core-script cache revision refreshed after IAB reused older code.
+
+Verification:248 native Chromium checks passed (71 combat,22 art,32 phase/
+ending,89 physical swipes,34 delivered controls/loops/onions), no errors. Core
+8784/0, exit0, final BUILD OK, matching the measured baseline. game.js LF and
+unchanged test_fl.js CRLF preserved. Docs/QA:docs/DRACODIA_ARCHIVE_1018.md and
+docs/qa/dracodia_archive_1018.json. Review:docs/previews/dracodia_archive_1018/
+index.html and frames.html. Review attacks repeat, natural book remains a
+separate choice, saves are isolated. Existing work retained; no commit/push.
+
+# 2026-10-18 - Stage8 physical arm swipes
+
+The Infused host, Ghost and Colossus now swipe both physical limbs through
+133-degree shoulder arcs, with a committed curved FOV, harmless windup and
+recovery, actual distal alpha swept contact and independent warnings for
+each side. Normal/Hard use two alternating swings; Furious adds a third.
+Volcano adds the same physical arm mechanic between its native Furnace
+attacks. Hammer keeps its real Stage5 strike banks/controller. No new art
+or atlas changes. Fixed320x320 cells, measured sockets and common scale.
+Modules retain markHit/part flash paths; broken arms stop their attacks.
+The native preview has four swipe selectors and actual shoulder-arc onions.
+
+Verification:145 Chromium checks passed (89 swipe checks across N/H/F,32
+phase/death/controller checks,24 delivered-preview checks), zero errors.
+Core8784/0, exit0, final BUILD OK; matches this turn's measured baseline.
+Native pictures caught a starburst warning and a Furnace return snap; both
+fixed and rechecked. Details:docs/STAGE8_SWIPES_1018.md and
+docs/qa/stage8_swipes_1018.json. Current game.js/test_fl.js hashes and line
+endings preserved; existing uncommitted work retained. No commit or push.
+
+# 2026-10-18 - LOCAL: player shield is the ship's own outline (supersedes both shell passes below)
+
+Mike: "why are the shields so big. I mainly wanted just a specific outline of each pilot's ship that pixel glows and lets you know they are protected internally with a shield that glows over them too." `assets/player_shield_1018.js` no longer draws the crystal-shell reel. drawShield only flags the seat; pf27PlaneThrustDraw (called right before the hull blit with the exact key and rect) is recorded, and a drawPlayer wrapper draws, over the hull: a bright 1 px ring and a dimmer 1 px ring outside the silhouette plus a tinted sheen over it, in PILOTS[].tint, stepped ladder + a nose-to-tail light band on efxClock. Rolls/somersaults trace somerFrameKey/rollFrameKey at h=64; a blinked-off hull draws no shield. Masks are built per frame key by compositing (no getImageData). Space keeps its bubble. Shell reels stay on disk, unused. LEVELS (Mike: "indication that its become a level 2..5 shield"): one 1 px ring per level (lv5 = five, fading outward), brightness/sheen climb, lv5 adds a gold edge and a double-speed band; a level-up flashes white and snaps outward one ring per hard step (0.32 s), a level-down throws pixel shards (0.45 s). Level change is detected in the drawPlayer wrapper per seat (PS18.lastLv). Probe 74/0 incl. reach growing 1..5 on all nine and the flare/shards; levels sheet _shots/shield_1018/levels_sheet.png. Trap: `grep -c` with zero matches exits 1 and silently stops an `&&` chain - a stale suite log looked like a new failure. `probe_player_shield_checks_1018.py` 56/0 (reach past the hull <= 0 px on all nine; busted arm = old shell, 13 px); suite section 385; full suite 8,785 ok / 0 errors. No commit/push.
+
+# 2026-10-18 - Stage8 native identities, Dracodia avatar and new defeats
+
+Mike rejected the generic Stage8 attack books and the Hammer's extra arm.
+The latest owner is assets/stage8_identity_1018.js, loaded after V18 and its
+new art registry. Hammer uses native Stage5 combat and two-arm HK5 poses,
+plus the real16-pose left/right swings and depth/plane rules. Volcano uses
+the real Furnace arms/body/head pools, independent arm poses, continuous
+flamethrower, magma/firewave cannon and full360-degree eye-laser head phase.
+The explicitly approved old six-part Harrier uses its actual controller.
+Dracodia/host/Ghost use organic limbs, core spores and purple-black wells;
+no generic arm missiles or arm gun lasers. Main Colossus has24 real roar
+and24 scythe poses, a new avatar plus16 speech poses. New host/Ghost deaths
+precede full-black arena swaps; final death uses20 selected detailed poses,
+opaque80x80 armor fragments, repeated explosions and a last-copy reform.
+The established red portal/reunion still awards one campaign clear.
+
+315 loose PNGs/8.94MiB; fixed320x320/pivot160,160, common proportional scale.
+Owner build_stage8_identity_1018.py; exact refs/prompts/jobs and selections
+under _ART_SOURCES/stage8_identity_1018. No shared atlas edit. Native full-
+FOV review remains docs/previews/stage8_pixellab_1018/index.html; it now has
+avatar, roar, final death, detached-head and correct native onion controls.
+
+QA:121 native Chromium checks passed across Normal/Hard/Furious, sequences
+and delivered preview; zero page/console/draw/asset errors. Core8791/0,
+exit0 and final BUILD OK banner. The initial Harrier lookup and Furnace
+rounding failures were fixed and retested. Detailed evidence:
+docs/STAGE8_IDENTITIES_1018.md and docs/qa/stage8_identity_1018.json.
+game.js and test_fl.js match their pre-correction hashes, preserving all
+earlier local changes and their line endings. No commit or push in this pass.
+
+# 2026-10-18 - Stage8 PixelLab takeover and five-form modular finale
+
+Mike explicitly requested modular replacements for Stage8 phases1–3. This is
+a named Stage8 exception to the whole-plate rule, recorded in AGENTS.md and
+the standing creative rules below. Phase3 has exactly main Colossus + Hammer,
+helicopter, Harrier and volcano. No knight, cryo, Storm or Warden transformation
+can enter this encounter. Their old art stays on disk for other authored uses.
+
+PixelLab uses inspected native identity exports. Seven16-pose model banks have
+three disjoint anatomical layers each: core / left weapon / right weapon.
+32 actual drone-takeover poses,24 Ghost emergence,24 Colossus emergence and
+four16-pose morphs complete256 poses.481 shipping PNGs total8.70MiB;
+boss/effect cells320x320/pivot160,160 and actual drone256x256. No per-pose fitting
+or warped duplicate frames. The gray-blank volcano idle was rejected wholesale;
+the clean176x176 standard-model replacement has one proportional normalization.
+Own build_stage8_pixellab_1018.py; selection/prompts/source registrations in
+_ART_SOURCES/stage8_pixellab_1018. No shared atlas repack.
+
+stage8_pixellab_1018.js is loaded last after its generated manifest. Render,
+alpha hit testing, Retina, gun ports, flashes and breakups share the same
+animated module rig. Primary fire damages cores. Broken weapons lose pixels,
+locks, shots and their own active beams. Five finite final pools and module
+damage persist across visits; dead forms never heal or re-enter. Normal/Hard/
+Furious tells1.10/.96/.82s, recovery1.15/.85/.60s and increasing gun/fan pressure.
+The actual approved fire-column root/body/tip renders the volcano flamethrower.
+
+The old arena fades fully to black before the next plate swaps, then the new
+generated emergence plays into its proper biome. Full-height FOV and side HUD
+remain consistent. Existing PixelLab arenas/code parallax and Stage8 red portals
+remain; Dracodia's monologue, final death, portal, reunion and one clear reward
+are preserved. Cinematic180-second protection is capped to.5s when combat resumes
+and then expires normally. Review bot invulnerability is test/preview-only.
+
+Verification: core8791/0, exit0 and final BUILD OK; native257/0
+(232 combat/animation/five-pool checks,
+13 focused transition/protection/ending checks,
+12 delivered review checks). No page, console, draw or
+asset errors. All PNG hashes and uniform canvases verified. game.js and test_fl.js
+bytes and LF/CRLF remain unchanged from the start of this task. The broad combat
+pass precedes the final protection-only fix; the focused transition pass tests
+that fix. These invulnerable observations do not certify human balance.
+
+Review: docs/previews/stage8_pixellab_1018/index.html (actual game iframe,
+isolated saves, scene/difficulty selectors, onion overlay and native weapon/
+form destruction). Report docs/STAGE8_PIXEL_LAB_1018.md; QA
+docs/qa/stage8_pixellab_1018.json; captures/logs _shots/stage8_pixellab_1018.
+No commit or push. Existing work preserved.
+
+# 2026-10-18 - Stored boss veterans and Stage7/8 attack gates
+
+Mike requested the retired-ice-carrier approach across Stage8 and stronger
+Stage7 threats. legacy_legion_1018.js adds ordinary field actors from whole
+stored Cryo Spear, Blacksteel Raptor, Herald and spawn-carrier plates. Their
+field names are Cryo Spear Veteran / Blacksteel Hunter / Hellwing Executioner /
+Brood Sentinel. Stage8 uses all four; Stage7 introduces Raptor/carrier plus actual
+Crescent fighters. The existing Frost Siege Veteran stays at34.5s. Blue Hybrid,
+Tentacle Cannon and Furnace Maw remain in Stage8; the last moves to the51s wave.
+Heavy cap2, finite engagement/withdrawal, native primary/Retina damage, normal
+score/death only: no boss gate, clear reward or continue drop. Normal/Hard/Furious
+have3/5/7-round bursts,1.05/.88/.74s tells and1.70/1.22/.82s recovery. Stage8
+director caps5/7/9 retain room for its complete late fleet. Stage7 tank floor
+constraints and stage biomes/portals remain intact.
+
+Root faults: the fixed-facing native Stage8 and mutator movers never consumed
+_stagger, leaving delayed partners unable to enter shared attack gates; timers
+now expire in their correct owner paths. Veterans bypass the old generic exit
+push so hulls/muzzles stay on their committed FOV. EHP is fodder shot-count
+scaling, so veteran pools scale absolute HP once. s8scout aliases to Hexpyre in
+Stage8; carrier bay aircraft therefore use s8crescent. Reused aircraft ordnance
+is explicitly preloaded for fresh Stage7 entry; toxic rounds use the existing
+even256px atlas cells. No new raster/atlas/manifest edits or bulk art copies.
+
+Verification:196 native checks(177 combat/roster +19 full-field review), all pass;
+zero page/console/draw/asset errors. Core suite8791/0, BUILD OK, exit0, matching
+baseline. All18 native Stage8 slots plus new hulls/escorts have measured damaged
+pixels and normal flash expiry. Six wave observations are invulnerable with
+minibosses skipped: this is not a new full campaign-clear or human-balance claim.
+See docs/LEGACY_LEGION_1018.md and docs/qa/legacy_legion_1018.json. Full native
+review: docs/previews/legacy_legion_1018/index.html. game.js/test_fl.js unchanged
+for this request, LF/CRLF preserved; all existing work retained. No commit/push.
+
+# 2026-10-18 - Stage6 live captions, reactors, bay launches and Nightwing
+
+Fortress radio clock stayed0 while its wing was parked: talking portrait and
+empty frame. Core exposure was only logical, with closed armour still drawn.
+The modular Harrier bypassed bay launches and the carrier-to-ace lifecycle.
+stage6_reactor_1018.js now owns live side/compact-HUD captions independently of
+wing actors, including co-op, without pausing flight/attacks. Fortress's six
+batteries trigger a0.85s protected opening at the actual vent(source512,251).
+Original leaves slide over authored mr27_corefx energy frames; hit/beam/Retina
+geometry is shared. Harrier retains all eight module objectives; its separate
+0.65s bay doors launch original elite hivewings, then close. Existing Normal4,
+Hard/Furious5 cap remains; replacements reuse vacant slots without healing.
+Original departure/scaled return stays. Broken fans have local animated bursts
+and smoke, bounded spring drift/tremor, and all art/hitboxes follow the hull.
+
+All modules then open the Harrier reactor over0.85s. Core destruction enters
+native carrier fall on the same boss, with no early clear/reward/unlock. Original
+giant blue Nightwing emerges at2.4s and takes over at4.4s; only its defeat clears
+Stage6. StageX and Rebel controllers remain separate. No new pixel/atlas assets.
+Miniboss battery/core markHit paths and visible flash expiry are now explicit.
+
+Core suite8791/0 BUILD OK exit0, matching baseline; syntax passed. Native repair
+82/0(Normal/Hard/Furious), review14/0, existing modular MG/Retina/laser regression
+6/0. Real J/core damage, protected opening, live escort fire, fan/core/battery/ace
+hit pixels and expiry, anchored effects, replacement HP/cap, co-op/compact radio
+and carrier->ace->clear checked. Zero game page/console/draw/asset errors. Local
+server cancellations at browser close are logged. Older modular fixture pinned
+b.x while the hull followed the camera: corrected actual-target tracking and
+base-MG/pickup/gamepad isolation; misses/errors now return nonzero. Not a new
+nine-stage campaign run. Before/after full views inspected.
+
+Review docs/previews/stage6_repair_1018; details docs/STAGE6_REPAIR_1018.md;
+QA docs/qa/stage6_repair_1018.json; scratch _shots/stage6_repair_1018. game.js and
+test_fl.js unchanged by this repair, LF/CRLF intact. Prior work preserved.
+No commit or push requested.
+
+# 2026-10-18 - Storm Sovereign overload, lightning wing and comms
+
+Mike's Stage4 boss now visibly overcharges with whole-hull lightning glow,
+crackle/rev cues and rumble, commits to a0.82s south ram, returns overhead
+scale2.45 to1 over1.85s harmlessly, then stays northbound. Road renderer now
+reads the final controller's eased speed:480 base,710 windup,1180 ram,
+1080 overhead,960 pursuit. This does not advance stage progression/spawns.
+All existing quarter-HP damage, warning, immutable lightning and defeat paths
+remain. Whole detached generator plates now spin while their station anchors
+stay put. Cached Retina `dead` getters are filtered, never assigned.
+
+New storm_assault_1018.js keeps the same two helper actors/HP. Warned safe
+south entry scales2.25 to1, then orbit/scatter/crisscross bombing passes and
+return to orbit. Their lightning gun/missile clocks also continue while the
+hull is airborne/rearming. Bombs commit circular ground Retinas on release;
+16-pose generated bomb loop128x192/pivot64,96 and16-pose impact256x256/pivot128,128.
+Even fixed canvases, shared scales, stable registration, onion inspected.
+Owner build_storm_assault_1018.py registers all32 frames + manifest together.
+Live non-pausing comms use approved HUD wells: Decker, Cole if Decker plays,
+Axel if both play co-op. Explain generators, multi-Retina salvo, weakspots,
+incoming wing, overload and chase. Shield-break guidance interrupts old tips.
+
+Required core suite8791/0 BUILD OK exit0, matching baseline; syntax passed.
+Native Chromium177/0 checks: assault50, existing panic/spiral regression113,
+review/art/co-op14. No page/console/draw/asset errors. Actual hit pixels and
+expiry retained for generators/helpers/hull; real four-target missile launch,
+two surviving generators keep shield up, all32 art poses rendered, MP3 decode
+and owned positive-gain engine playback checked. Automation audio was muted;
+not a human listening/mix assessment. Review docs/previews/storm_assault_1018;
+details docs/STORM_ASSAULT_1018.md; QA docs/qa/storm_assault_1018.json.
+Scratch _shots/storm_assault_1018. Existing work preserved, game.js LF and
+test_fl.js CRLF intact. No commit or push requested.
+
+# 2026-10-18 - Modular missile truck and Furnace hazard/speed revision
+
+Mike's Level1 truck now uses generated chassis8 and launcher16 pose banks,
+fixed192x256/pivot96,128,48 loose PNGs across olive/black variants. Actual types
+s1truckmissile and s1truckmissile_b have two destructible/Retina-targetable racks,
+warned committed three-missile bursts, reloads, primary/missile/laser/orb damage,
+native ground motion and death/reward ownership. markHit owner/part flashes were
+verified as actual changed pixels and normal expiry. Native J fire intercepts
+its missiles. Owner missile_truck_1018.js; build_missile_truck_1018.py registers
+pixels + manifest together; raw sources/audit in _ART_SOURCES/missile_truck_1018.
+
+Stage2 boss red quarter-screen columns replaced by authored travelling fire
+walls; alternating mountain-side geysers have1.25s tells, actual horizontal
+arrows and impact asterisks inside the FOV. Their warnings queue between walls.
+Final head owns its sweep lanes. Arms' flamethrower/magma/fire waves and native
+pools/shield/hit paths remain. Full head turn Normal5.8s unchanged, Hard4.0s,
+Furious3.0s; charge/recovery intact. Stage8 copied Furnace is separate.
+
+Required suite8791/0, BUILD OK exit0, matching baseline; syntax passed. Native
+Chromium91/0 checks (truck/hazards33, Furnace54, review4), zero browser errors.
+Connected controller input is isolated only inside automated pages; a scroll
+jump and immediate-death assumptions in the first fixture were corrected.
+Onions, native hit pixels, full1600x900 views and review controls inspected.
+Details docs/TRUCK_FURNACE_1018.md; QA docs/qa/truck_furnace_1018.json; live review
+docs/previews/truck_furnace_1018. game.js remains LF, test_fl.js CRLF preserved.
+Existing local work preserved. No commit or push.
+
+# 2026-10-18 - Removed automatic opening special supply
+
+Mike no longer wants the special box delivered at level start. Removed the
+signature_specials_1011 queue, flying-box update, renderer and its hit wrapper;
+fresh runs, transitions and campaign restores clear the old delivery fields.
+Normal scheduled special crates, collected abilities, co-op ownership and earned
+Stage X Mk II rewards remain. Loader tag: no-opening-supply-1018. Existing
+signature tests/probe now expect no opening supply and grant normal pickups.
+Native probe_no_opening_special_1018.py: 59/0, all nine stage starts, all nine
+pilots and co-op; actual scheduled mid-level crate still appears, breaks under
+J gunfire, and its dropped icon activates Axel's ability. Before/after screenshots
+inspected at full1600x900; no page/console/draw/asset errors. Full suite 8791/0,
+BUILD OK, exit0 (baseline8783/0); syntax passed. Logs and captures in
+_shots/no_opening_special_1018/. game.js hash and test_fl.js CRLF unchanged.
+Previous machine-gun/charge/shield work preserved. No art, commit or push.
+
+# 2026-10-18 - Machine gun: centered nose fire and +1 projectile per level
+
+Mike reported MG upgrades firing like the split chaingun. Native reproduction
+confirmed L2-5 were truncated to the two outermost rounds by audio_feedback_1010's
+pShoot wrapper. Removed that obsolete cap. The native gun now emits a tight,
+symmetric row at wm26PlayerNose, with its muzzle following the same actual nose:
+L0/1/2/3/4/5 = 1/2/3/4/5/6 projectiles. Chaingun wing pods retain their own count;
+Cole's 6/7 laser rows and homing arches remain, as do elements and per-round stats.
+Updated the three script cache tags. No generated art, commit or push.
+
+_BUILD_SOURCE/probe_machinegun_1018.py: 233/0 native Chromium checks using real J
+input across all nine pilots and levels, all nine elements, chaingun tiers and
+Cole's 6/7 tiers. Zero page/console/draw errors. Before/after full-view captures:
+_shots/machinegun_1018/review.html (35 images verified at1600x900, no errors).
+Full suite baseline8763/0; final8783/0, BUILD OK, exit0. Syntax passed. Intermediate
+exit1 runs caught obsolete wide-spacing assertions, a mistaken Forge bonus test,
+and an early test calling the not-yet-loaded muzzle helper; test expectations and
+initialization corrected. Full details/logs: _shots/machinegun_1018/verification.json.
+New regression section387; prior charge/shield and other local work preserved.
+game.js LF and test_fl.js CRLF retained.
+
+# 2026-10-18 - LOCAL: Falva / Maverick / Jace charge and release animations
+
+Mike: "fix the animations when falva or maverick or jace charge and release their attacks". Filmed first (`_BUILD_SOURCE/probe_charge_film_1018.py`, `_shots/charge_1018/before_*` vs `after_*`). Faults: (1) releaseRoller/releaseHelix called explode() on the ship's OWN nose - the orange nx_small fireball units die in - which sat burning where the nose was for ~1 s; (2) Maverick's fchgc_ ring cells are byte-identical to Falva's pink fchg_, and drawMavCoilUnder drew a blurred pale sphere under his hull - together a white haze swallowing the ship; (3) Falva's ring was drawn UNDER her hull twice (drawFalvaAura + drawFalvaCharge) and sized off the 24x30 HITBOX, so pink-on-pink it vanished; (4) Jace drew two charge balls, the molten one grew round a point inside his hull, and on release rg4OrdnanceDraw swapped it for a green nhxsb sprite. `assets/charge_fx_1018.js` (last layer): ring in the pilot's colour (Maverick via xartPalette), traced round the hull's drawn ink box (ps18HullInk), stepped/flickering frames on efxClock, drawn once over the hull; release = that ring snapping out in four hard steps riding the ship, no fireball; Jace's single molten ball seated ahead of his nose and the same ball (and nova fragments) after release. Suite section 386; full suite 8,763 ok / 0 errors. No commit/push.
+
+# 2026-10-18 — Levels 1-9 Normal/Hard/Furious invulnerable playtest
+
+Mike requested every level on all three difficulties and both Stage 6 paths.
+30/30 planned native Chromium runs completed; Stage 7 continues naturally into
+Stage 8, so those runs also followed the connected final fight. Native starting
+gear, finite missiles, no forced enemy HP/kills/phases/waves. Visible test-only
+playerHit guard prevents bot deaths without pinning the damage-blink timer.
+Found and fixed the unconfirmed Stage 6 pursuit prompt pausing movement/effects:
+stage6_radio_1017 polls the existing route input once, masks the older pause
+flag only during the live native update, then restores it. Enemy arrivals and
+stage/wave clocks remain held. Native menu and pursuit cinematic retained.
+All six complete Stage 6 route/difficulty rechecks passed after the fix;
+14 focused native checks passed, including real A/fire -> pursuit cinematic ->
+route commit. An early assertion expected immediate commit and was corrected
+to wait for that authored cinematic. Full suite 8755/0, BUILD OK, exit0; syntax
+passed. Zero page/console/draw/missing-asset errors across all37 full runs.
+game.js/test_fl hashes and line endings preserved. Existing pixel-shield work
+and unrelated changes retained. Only gameplay file change stage6_radio_1017.js
+plus its live-choice-1018 loader cache tag. No art, commit or push.
+Report docs/PLAYTEST_FULL_1018.md; QA docs/qa/playtest_full_1018.json;
+full-FOV screenshot browser _shots/playtest_full_1018/review.html.
+
+# 2026-10-18 — LOCAL: Stage4 wing bombing spiral and Sovereign final-quarter pursuit
+
+The Warden's surviving jets now spiral out together, drop fixed native ground-reticle bombs and return as the same HP/actors through the harmless scaled entry, then orbit again. Easy1/Normal2/Hard4/Furious6/Insanity6; destroyed slots still replace after5s. His own guns and missiles continue. New late owner `stage4_panic_1017.js`; the small `game.js` movement guard retains native flash expiry and zero-HP death while bypassing a competing generic mover/pin/cull. Sovereign at25% commits to a warned panic ram, returns north-facing overhead harmless, then remains north-facing until death. Exposed damage2.0–2.3x; real HP loss queues bounded, fully warned rear lightning. Complete electric rows include the centre, no alternating gaps; all electric balls unshootable. Also fixed regular overflight warnings reaching `sa14Draw` in the actual hull renderer (SG17 preview fan alone was insufficient). Stage3 ice gap and earlier stationary-generator mechanics remain. Native113 + review11 + existing assault88 + targeting96 =308/0; core8754/0, BUILD OK/exit0; actual hit pixels, flash expiry and depth contact verified. Read `docs/STAGE4_PANIC_1017.md`; replay `docs/previews/stage4_panic_1017/`. No commit/push; prior local work and owner hashes preserved.
+
+# 2026-10-18 - LOCAL: player shields are PIXEL-animated with pixel glow (supersedes the blurred halo below)
+
+Mike: "the shields arent very pixel animated and I meant make it pixel glow. not a rotating glow around body." The blur halo, circling shimmer sector and breathing scale are gone. `_BUILD_SOURCE/shield_pixel_1018.py` bakes each pilot a 12-frame reel AT ITS EXACT DRAW SIZE (same fit as the runtime: hole encloses hull x1.16, uniform) - a palette cycle stepping each crystal tone, a two-band light wave flowing nose to tail, 1-px sparkles - plus a pixel-glow companion (emissive pixels + two hard Chebyshev rings on a six-step ladder, the PIXEL_GLOW_1015 method). `player_shield_1018.js` draws frame and glow 1:1 at whole pixels on efxClock; space keeps its authored bubble. `probe_player_shield_checks_1018.py` 57/0 (716-1,467 px change per frame vs 0 on the old shield). Probe traps: brightening a saturated colour toward white barely moves its MAX channel - measure change in any channel; sample times must not alias an 8-frame reel.
+
+# 2026-10-18 - LOCAL: player shields glow, animate and sit centred on the hull
+
+Mike: "all player shields need to be glowing an animated and properly centered with them." The live draw (part2_combat_1010's drawShield) blitted each pilot's crystal shell as one static plate scaled 1.85x1.65 about the PLATE centre; the shell's ship-shaped hole sits up to 22 plate px off that centre, and on six of nine pilots the hole came out SMALLER than the hull (Cole 35px around a 38px jet), so the rim sat on the ship. `_BUILD_SOURCE/shield_fit_1018.py` measures every hole offline (`assets/shield_fit_1018.js`); `assets/player_shield_1018.js` fits the hole uniformly around the hull's ink box from its BOFX.ships row (no getImageData - the old p2Hull pixel read throws on file://), adds the shell's own blurred halo (blur is in PLATE px: 44 there is ~8 on screen), a shimmer sector circling the rim and a breathe, all on efxClock; the space bubble gains the same breathing light. `probe_player_shield_checks_1018.py` 48/0 (centre error 0 px, glow on/off +2,950..4,970 lit px, busted arm 0 px of motion); suite section 385; full suite 8,754 ok / 0 errors. NOTE: Codex is committing in this tree too (HANDOFF_CODEX.md; 530bfb24 fixed my orbit-wing entry hitting the player) - check git log before editing shared files. No commit/push.
+
+# 2026-10-17 - LOCAL: the Warden's orbit wing, his own sounds, no lightning, module-only flashes
+
+Mike: module hits "just making his entire frame flash white"; Hard gets 4 jets (2 south, 2 north) that circle the Warden until destroyed and respawn ~5 s later, Insanity 6 (+east, +west); sounds for all his attacks; "no lightning. Hes a pure war machine of bullets and missiles and charging/ramming". Measured: bullets DID break modules (MG lv2 killed gunL in 6 s on Normal, 8 on Hard) but every module hit also flashed the whole hull - TWO writes in `hitSubBoss` (`markHit(b)` and a later literal `b.flash=0.18`), both now skipped when `mr27At` names a part; module flash cap 0.30 -> 0.65. The lightning was the borrowed Storm `A.glow` (sa14BlueArc + lightning ball) my last stand set; removed. `warden_last_stand_1017.js` now owns the ORBIT WING (WING17_LAYOUT/CFG; Mike corrected: Furious gets the 6 too, ring centred on his station so rams don't drag it), his own sounds (wardenGun/Rocket/RackCharge, bossWeaponCharge, razorbackCharge/Ram, tlvJetThrust/Brake). `PLAY_BULLETS_OF_FURY.bat` serves through `_BUILD_SOURCE/serve_nocache_1017.py` (no-store), since `http.server` let browsers keep stale scripts. Probes: `probe_warden_wing_1017.py` 29/0, `probe_warden_laststand_1017.py` 33/0; suite 8,742 ok / 0 errors. Traps: an inline `//` inside a one-line `if(){` swallowed the rest of the line (again); `sed -i` in Git Bash rewrote index.html's CRLF to LF - edit CRLF files with Python bytes only. No commit/push.
+
+# 2026-10-17 - LOCAL: spread fire flies the gun's rounds and stops racing at higher levels
+
+Mike: spread "should no longer be the large slugs ... our actual bullet graphics, but spread style. and the speed is too fast by level 2/3." `spreadDraw1001` (spread_1001.js) now draws the machine gun's own `mgcf_<level>_` plate turned along each pellet's line; infused pellets already wore the element round (element_arsenal_1011). Measured first: pellet TRAVEL is a flat 5.6 px/frame at every level - what grew was the stream (~10 volleys/s shared with the MG, 5% quicker per level, a pellet more per volley: 33 -> 50 -> 84 pellets/s). `SPREAD_LV_SLOW` (0.15) slows spread volleys per level, level 1 untouched: 29 / 34 / 38 / 41 / 43 pellets/s. That is a DPS cut at levels 3-5, one constant to tune. `probe_spread_rounds_1017.py` 16/0 with a busted arm; suite section 384; full suite 8,737 ok / 0 errors. No commit/push.
+
+# 2026-10-17 - LOCAL: every weapon finds its modular piece; the Olive Warden fights on
+
+Mike: bullets and missiles must target modular pieces individually, lasers pierce every piece in their column, orbs hit each piece (ice orbs through all of them), and the Stage 4 miniboss "does nothing when all his modular pieces are destroyed". Measured first: machine-gun rounds took 0 off the Warden's gun turret because `subBossSolidAt` had no `_mr27` branch (rounds stopped at the broad box under the turrets) and `mr27At`'s core box reached 40px below them. Now: an offline hull mask (`mr27_hull_mask_1017.js`, built by `_BUILD_SOURCE/mr27_hull_mask_1017.py`), an `_mr27` pellet box, unguided missiles and body contact on the silhouette, `beamPiercePieces` and `fb10StrikePieces` striking every live piece through `retinaMissileDamage`, and `warden_last_stand_1017.js` (warned core fan with a committed gap + a locked-lane hull ram, sooner escorts). `probe_modular_1017.py` hits the aimed piece on every modular encounter x six weapons; `probe_warden_laststand_1017.py` 33/0 with a busted arm; suite section 383; full suite 8,732 ok / 0 errors. Read [docs/MODULAR_HITS_1017.md](docs/MODULAR_HITS_1017.md). Probe traps: Stage 6's opening locks every weapon (null `s6Opening`); `retinaPiece` has no `_retinaId`; pin a moving encounter when measuring routing. No commit/push.
+
 # 2026-10-16 — idle thrusters animate on all pilots
 
 Mike: thrusters should animate when idle. The plume (`pf27PlaneThrustDraw`, pilot_feedback_0927.js) drew only above 2.5% throttle, and idle eased throttle to 0, so a still ship showed a static baked flame. `pf16IdleBurn` is now a breathing FLOOR under `pf27ThrustPower()` (0.14 +/- 0.06, game clock, none when dead/out); real throttle still eases above it, and the space plume idles too. Both plume pixel reads are guarded for file://. `window.PF16_IDLE=0` is the busted arm. Probe `probe_idle_thrust_1016.py` 46/0 (all nine: 48/48 frames drawn, 6 reel frames, length breathing; busted 0); suite section 382. Read [docs/IDLE_THRUST_1016.md](docs/IDLE_THRUST_1016.md). ⚠ The first push of the file:// guard ended in a `//` comment that swallowed `const frame=` on the same line, so every plume draw threw (swallowed per frame, 1,633 draw errors in the probe). Fixed in the merge with main; a probe's ERROR count, not its pass count, caught it.
@@ -9,6 +667,18 @@ Mike: only the enemies and frames we actually use, all nine stages (the Hammer's
 # 2026-10-15 — pixel glow pass, part 1: the Stage 5 Chrome Hammer core
 
 Mike: pixel glow instead of overlaid graphics, starting with the Stage 5 boss's middle core. The `core_orbit` phase pasted effect cell 6 over his chest; it is suppressed and the chest ring now lights from its own pixels. `_BUILD_SOURCE/pixel_glow_1015.py` bakes same-size `_glow`/`_core` companions (added light + hard 1-4 px rings, no blur); `assets/pixel_glow_1015.js` redraws them under 'lighter' with the SAME rects whenever a registered sheet is blitted inside a driver window (sheet by unique size, loose plate by XART.get key tag, tinted frame by hammerArchFrame tag). Six fixed brightness steps on the game clock. Probe 20/20, zero errors. Read [docs/PIXEL_GLOW_1015.md](docs/PIXEL_GLOW_1015.md) - it lists the next sites (230 shadowBlur halos, 23 radial discs). Never push the companion toward white: it flattens the core into a sticker.
+
+# 2026-10-15 - LOCAL: the Training Flight (tutorial)
+
+Mike asked for an in-game tutorial offered before the game starts, strongly recommended. A new game that
+would open on Stage 1 off pilot select or the co-op roster now stops on GS.TUTASK (YES default, NO starts
+as before, BACK returns). YES flies 13 lessons over the real Stage-1 field: move, fire, crates, roll,
+somersault, missiles, Retina, the green/yellow/red lane warning, ground strikes, the pilot special, two
+info cards (elements/Forge, shields/score), and a final drill. It hands back to the same startRun(1),
+with mode and co-op restored. Pause shows SKIP TUTORIAL. Runtime assets/tutorial_1015.js (wraps, no
+game.js edits); doc docs/TUTORIAL_1015.md; probe _BUILD_SOURCE/probe_tutorial_1015.py 42/0 for cole,
+juggernaut, lizzie and decker. Full suite 8,700/0, exit 0. No commit/push.
+Trap: dlgBox types on performance.now(); pass `shown` from a game-clock counter.
 
 # 2026-10-15 — RELEASE: Warden warnings, larger helpers and hit feedback
 
@@ -1264,6 +1934,10 @@ two tank-*shaped* units. **When a draw helper declines a frame, check what picks
   approved").** The stage-2 Furnace encounter he approved detaches its head for a final phase that
   flies alone. That is his authored design for THAT boss only - it is not a licence for any other
   boss to come apart, and the rule above stands everywhere else.
+  ⚠ **ADDITIONAL NAMED EXCEPTION, MIKE OCTOBER18:** PixelLab modular replacements
+  for Stage8 phases1–3 are explicitly requested. Phase3 has its main form plus
+  exactly Hammerboss, helicopter, Harrier and volcano transformations. The
+  exception applies to that Stage8 encounter, not other campaign bosses.
 - **THE PLAYER DEATH IS A SPIN-OUT, AND THIS IS A HEADER RULE THAT NEVER CHANGES.**
   Mike, 2026-09-07, giving it that status in the same breath as the spec:
   *"when we get hit, we spin while explosions anchor and fire anchor on us and animate as we spin

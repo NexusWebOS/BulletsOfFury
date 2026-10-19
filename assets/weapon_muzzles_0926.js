@@ -102,14 +102,15 @@ function wm26PlayerShots(first){
       q.kind==='venomx'?'#77ee35':family==='ice'?'#67dfff':family==='lightning'?'#ffe448':
       family==='orb'?'#67dfff':wlvGlow(clamp(q.colorLv||q.lv||run.wlevel||1,1,8));
     // A fan is emitted by one nose, not by one barrel for every projectile lane.
-    let p=family==='spread'||family==='shotgun'?wm26PlayerNose():{x:player.x,y:player.y-18},emitter='nose';
+    const nose=family==='spread'||family==='shotgun'||q.kind==='mg'&&!q._chaingun;
+    let p=nose?wm26PlayerNose():{x:player.x,y:player.y-18},emitter='nose';
     if(space){const hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE),ports=[...hp.laser,hp.nose];
       if(q.kind==='shadowOrb'){p=hp.nose;emitter='space-nose';}
       else {let best=0;for(let j=1;j<ports.length;j++)if(Math.hypot(ports[j].x-q.x,ports[j].y-q.y)<Math.hypot(ports[best].x-q.x,ports[best].y-q.y))best=j;
         p=ports[best];emitter='space-'+best;}}
     if(used.has(emitter))continue;used.add(emitter);
     wm26Emit(player,p.x,p.y,-Math.PI/2,family,color,{player:true,emitter,size:family==='mg'?20:undefined,
-      follow:!space&&(family==='spread'||family==='shotgun')?()=>({...wm26PlayerNose(),angle:-Math.PI/2}):null});
+      follow:!space&&nose?()=>({...wm26PlayerNose(),angle:-Math.PI/2}):null});
   }
 }
 function wm26EnemyShot(x,y,angle,kind,owner){

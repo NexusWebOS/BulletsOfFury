@@ -1,6 +1,6 @@
 "use strict";
-/* Mike, October 11: the opening box carries the pilot's real special; the
-   five enemy Rebels lead with their own signatures; Stage X earns Mk II. */
+/* Enemy Rebels lead with their own signatures; Stage X earns Mk II.
+   October 18: no automatic opening supply. Specials come from normal pickups. */
 const FS11_KEY='bof_signature_mk2_v1';
 const FS11_UPGRADES={
  axel:{name:'MEGA SHIELD MK II',bonus:'50% STRONGER REFLECTED SHOTS'},
@@ -20,7 +20,7 @@ const FS11_REBELS={
 };
 const FS11={receipt:null,pending:null,boxes:[],proof:null,reward:null,events:[],draws:{},seatStash:null,
  seat2:{special:null,falva:[],wreck:[],storm:null},base:{
- start:startRun,begin:beginStage,play:updatePlay,world:drawWorld,hit:playerHit,
+ start:startRun,begin:beginStage,
  special:startSpecial,end:endSpecial,reflect:axelMegaReflect,helix:releaseHelix,
  roller:releaseRoller,wreck:wreckTick,spawnBoss,leave:scLeaveStage,reward:ap10StageXReward,
  snapshot:campSnapshot,apply:campApply,card:pcSpecial,hud:ph8Values,hudIcon:ph8Icon,brief:mapgBriefingDraw,
@@ -72,73 +72,14 @@ for(const name of ['drawFalvaAura','drawFalvaCharge','drawFalvaOrbs','drawFalvaB
 }
 startRun=function(from=1){
  FS11.boxes=[];FS11.proof=null;FS11.reward=null;FS11.seat2={special:null,falva:[],wreck:[],storm:null};
- FS11.pending={stage:from,ready:false,seats:seatList().map(seat=>({seat,delivered:false}))};
+ FS11.pending=null;
  for(const seat of seatList())withSeat(seat,()=>fs11Warm(_pilotKey()));
  return FS11.base.start.apply(this,arguments);
 };
-beginStage=function(n){FS11.boxes=[];FS11.proof=null;FS11.seat2={special:null,falva:[],wreck:[],storm:null};
+beginStage=function(n){FS11.pending=null;FS11.boxes=[];FS11.proof=null;FS11.seat2={special:null,falva:[],wreck:[],storm:null};
  const r=FS11.base.begin.apply(this,arguments);
- if(FS11.pending?.stage===n)FS11.pending.ready=true;
  return r;
 };
-function fs11OpeningLocked(){return state!==GS.PLAY||player.dead||!!story||!!fb2Talk||
- !!BOFCinematicDirector.live||s6OpeningActive()||h3Locked()||!stageLoadReady(run.stage);}
-function fs11OpeningTick(dt){
- const P=FS11.pending;
- if(P?.ready&&stageTimer>=1.1&&!fs11OpeningLocked()){
-  for(const s of P.seats){if(s.delivered)continue;withSeat(s.seat,()=>{
-   if(player.dead||player.out)return;const pk=_pilotKey();if(!fs11ArtReady(pk))return;
-   FS11.boxes.push({seat:s.seat,pilot:pk,x:clamp(player.x,camLeftX()+32,camRightX()-32),
-    y:PLAY.y-40,t:0,hp:4,open:false,openT:0,flash:0});s.delivered=true;
-   if(typeof stageStats.pickupsSeen==='number')stageStats.pickupsSeen++;
-   fs11Log('opening-box-arrived',{seat:s.seat,pilot:pk});
-  });}
-  if(P.seats.every(s=>s.delivered))FS11.pending=null;
- }
- if(fs11OpeningLocked())return;
- for(const q of FS11.boxes){if(q.dead)continue;withSeat(q.seat,()=>{
-  if(player.dead||player.out||_pilotKey()!==q.pilot){q.dead=true;return;}
-  q.t+=dt;q.flash=Math.max(0,q.flash-dt);
-  const dx=player.x-q.x,dy=player.y-q.y,d=Math.hypot(dx,dy)||1;
-  if(q.open){q.openT+=dt;const step=Math.min(d,(q.openT<.28?70:320)*dt);
-   q.x+=dx/d*step;q.y+=dy/d*step;
-   if(q.openT>=.28&&d<22){q.dead=true;applyPowerup({kind:'specialicon',x:q.x,y:q.y});
-    fs11Log('opening-special-collected',{seat:q.seat,pilot:q.pilot,level:special?._fs11Level||1});}
-  }else{
-   // A visible descent first, then the box flies toward its own pilot.
-   if(q.t<2.4){q.y+=150*dt;q.x+=clamp(dx,-30*dt,30*dt);}
-   else{const step=Math.min(d,210*dt);q.x+=dx/d*step;q.y+=dy/d*step;}
-   for(const b of pBullets){if(b.dead||b.ally)continue;
-    const beam=b.kind==='beam'?playerBeamRange(b):null;
-    const hit=beam?q.y+26>=beam.top&&q.y-26<=beam.bot&&Math.abs(q.x-beam.x)<26+beam.half:
-     Math.abs(q.x-b.x)<26+(b.w||4)/2&&Math.abs(q.y-b.y)<26+(b.h||8)/2;
-    if(!hit)continue;if(beam&&q.beamCd>0)continue;
-    if(beam)q.beamCd=.12;q.hp-=b.dmg||1;q.flash=.14;
-    if(!beam&&!b.pierce)b.dead=true;if(q.hp<=0)break;
-   }
-   q.beamCd=Math.max(0,(q.beamCd||0)-dt);
-   if(q.hp<=0||d<32){q.open=true;q.openT=0;crateBreak(q.x,q.y,_pilotTint());
-    Audio.SFX.expSmall?.();fs11Log('opening-box-opened',{seat:q.seat,pilot:q.pilot});}
-  }
- });}
- FS11.boxes=FS11.boxes.filter(q=>!q.dead);
-}
-function fs11OpeningDraw(){
- for(const q of FS11.boxes){if(q.dead)continue;
-  const key=q.open?fs11IconKey(q.pilot):'special_'+q.pilot;
-  ctx.save();ctx.imageSmoothingEnabled=false;
-  if(q.open){iconBlit(ctx,key,q.x,q.y,30,true);}
-  else if(XART.rdy(key)){const im=XART.get(key),scale=52/Math.max(im.width,im.height);
-   ctx.drawImage(im,q.x-im.width*scale/2,q.y-im.height*scale/2,im.width*scale,im.height*scale);}
-  ctx.restore();
-  if(!q.open)msgText('SPECIAL SUPPLY',q.x,q.y+34,6,'#fff2ab','center');
-  FS11.draws.opening=(FS11.draws.opening||0)+1;
- }
-}
-updatePlay=function(dt){const r=FS11.base.play.apply(this,arguments);
- if(state===GS.PLAY)fs11OpeningTick(Math.max(0,Math.min(.05,dt)));return r;};
-drawWorld=function(dt){const r=FS11.base.world.apply(this,arguments);if(state===GS.PLAY)fs11OpeningDraw();return r;};
-playerHit=function(){const r=FS11.base.hit.apply(this,arguments);if(player.dead)FS11.boxes=FS11.boxes.filter(q=>q.seat!==_seat);return r;};
 setState=function(next){if(next===GS.TITLE||next===GS.PASSWORD){FS11.pending=null;FS11.boxes=[];FS11.proof=null;FS11.seat2={special:null,falva:[],wreck:[],storm:null};}return FS11.base.state.apply(this,arguments);};
 
 startSpecial=function(){

@@ -1,0 +1,41 @@
+{
+  "core": {
+    "baseline_passed": 8784,
+    "passed": 8784,
+    "failed": 0,
+    "exit": 0,
+    "final_summary": true
+  },
+  "native_passed": 145,
+  "native_failed": 0,
+  "reports": {
+    "swipes": {
+      "passed": 89,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage8_swipes_1018/results.json"
+    },
+    "sequences": {
+      "passed": 32,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage8_identity_1018/sequences/results.json"
+    },
+    "review": {
+      "passed": 24,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage8_swipes_1018/review/results.json"
+    }
+  },
+  "source_sha256": {
+    "assets/game.js": "ae206b3d6ec874412cc76f5a65e6bfd4722a21f35e907a1ba0e90934e9009265",
+    "_BUILD_SOURCE/test_fl.js": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+    "assets/stage8_identity_1018.js": "d56582f82f92198733719f643676e32970ace99025907c34528d6df0a91bd732"
+  },
+  "runtime_changes": [
+    "assets/stage8_identity_1018.js",
+    "index.html"
+  ],
+  "art_changes": false
+}

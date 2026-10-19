@@ -1,0 +1,1936 @@
+{
+  "blue_rift-seed": {
+    "id": "44e532c5-34ff-409e-ab2d-84c4c75197e4",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT: one 256 x 256 RGBA frame, fixed aperture center (128,128), proportional silhouette, 36px transparent safety margin. A fully open circular electric blue dimensional rift for Bullets of Fury, Neo Geo arcade pixel art. Black opaque central aperture, segmented gunmetal chrome rim, cyan-white traveling energy filaments and small electric sparks. Thick readable pixel clusters, restrained highlights, no fog or smooth bloom. Front-on perfect circle, equal height and width, stable mechanical rim. Use the dark chrome arcade material language and draw original intricate hardware and energy.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/blue_rift-seed/frame_000.png",
+        "sha256": "cf32c4a1731637028ba4bc7294c5fe3b32f824a2f03c7f348dd43303e9f121af"
+      }
+    ]
+  },
+  "green_rift-seed": {
+    "id": "d2212cf8-dab1-4693-864b-c13c9b7e6403",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT: one 256 x 256 RGBA frame, fixed aperture center (128,128), proportional silhouette, 36px transparent safety margin. A fully open circular emerald green toxic dimensional rift for Bullets of Fury, Neo Geo arcade pixel art. Black opaque central aperture, segmented dark gunmetal chrome rim, green-white traveling energy filaments and small sparks. Front-on circle. Same chunky detailed arcade hardware family of Bullets of Fury, luminous emerald energy, no blue light. Compact symmetrical ring, no scenery, text or floor.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/green_rift-seed/frame_000.png",
+        "sha256": "2cd006e518dcc749cb49a9acd84532bfdd1cff6e3ebb709ecd8509d066f3137c"
+      }
+    ]
+  },
+  "red_rift-seed": {
+    "id": "ae57f60e-1d15-416e-82a8-0a4061258fda",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT: one 256 x 256 RGBA frame, fixed aperture center (128,128), proportional silhouette, 36px transparent safety margin. A fully open circular crimson hostile dimensional rift for Bullets of Fury, Neo Geo arcade pixel art. Black opaque central aperture, segmented dark gunmetal chrome rim, red-hot white traveling energy filaments and small sparks. Front-on circle. Same chunky detailed arcade hardware family of Bullets of Fury, crimson energy. Compact symmetrical ring, no scenery, text or floor.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/red_rift-seed/frame_000.png",
+        "sha256": "51a56c9ab84394c75bc449ecb45f5bfee8362cda310554685560fb956e649a28"
+      }
+    ]
+  },
+  "black_void-seed": {
+    "id": "8cc9e4d9-f9e6-49b8-b14c-351022cc65d0",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT: one 256 x 256 RGBA frame, fixed aperture center (128,128), proportional silhouette, 36px transparent safety margin. A fully open circular black alien singularity for Bullets of Fury, Neo Geo arcade pixel art. Pitch black opaque central hole; eight curved obsidian biomechanical claws spiral around it, chrome edges, violet currents, tiny green computer circuit lights. Detailed crisp pixel clusters, front-on ring centered exactly, dark mass with readable bevels. Broad spiral silhouette, no floor, scenery or text. Use dark obsidian, sharp chrome highlights and alien circuitry, draw an original design.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/black_void-seed/frame_000.png",
+        "sha256": "59d50d769ff8889962c00f6c38659b5257fda5cca5a99afb679fbb2578967a48"
+      }
+    ]
+  },
+  "arena0-seed": {
+    "id": "c6f21bfc-f69d-4f05-82a9-6cff7201c685",
+    "tool": "create_image_pro",
+    "prompt": "FRAME FORMAT: one opaque 512 x 512 pixel-art backdrop. Fixed camera. Bullets of Fury Neo Geo arcade pixel clusters, dark palette to keep incoming bullets readable, crisp authored details. Mutated drone battlefield: a boundless, very dark alien hell void, drifting torn dark-red organic membranes and distant ember motes floating at unrelated depths in black nothingness, tiny green circuit veins, barely suggested corrupt data filaments. An open formless abyss, no floor, ceiling, landscape, pillars, walls, corridor or symmetrical side framing. No ships, bosses, HUD, letters or foreground objects. Not a poster.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/arena0-seed/frame_000.png",
+        "sha256": "d40334a97ed15aadf5f2bbd1ddcc3113cf71c48ae3ec53bdbb67e5f4c22d9ce9"
+      }
+    ]
+  },
+  "arena1-seed": {
+    "id": "a923a8e2-f25d-46a2-ae4d-6f7ec33d8528",
+    "tool": "create_image_pro",
+    "prompt": "FRAME FORMAT: one opaque 512 x 512 pixel-art backdrop. Fixed camera. Bullets of Fury Neo Geo arcade pixel clusters, dark palette to keep incoming bullets readable, crisp authored details. Ghost in the code battlefield: an endless pitch-black digital alien abyss, a sparse constellation of fragmented violet data currents, broken glyph shards and distant green code glimmers at different depths, subtle purple filaments in deep black space. No monitors, walls, pillars, sides, landscape, floor or central portal ring. No ships, bosses, HUD, letters or foreground objects. Not a poster.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/arena1-seed/frame_000.png",
+        "sha256": "8941479a4f68cea4eb6f629c0c0e09eb37e38f800968bd45044de639390d9918"
+      }
+    ]
+  },
+  "arena2-seed": {
+    "id": "28b8cadc-ffde-4f85-9a3e-541fe142f668",
+    "tool": "create_image_pro",
+    "prompt": "FRAME FORMAT: one opaque 512 x 512 pixel-art backdrop. Fixed camera. Bullets of Fury Neo Geo arcade pixel clusters, dark palette to keep incoming bullets readable, crisp authored details. Vile Colossus final battlefield: oppressive boundless black alien hell void, distant crimson organic nebula wisps and tiny dying red embers dispersed across depth. Almost black center and dark periphery, no side framing, no architecture, no floor, no walls, no cave, no pillars. A few subtle emerald infected circuit glimmers suspended in black space. No ships, bosses, HUD, letters or foreground objects. Not a poster.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/arena2-seed/frame_000.png",
+        "sha256": "3d014fd96cea28c7f0268ca85d22b9f4e1e6ad371c568c21820cfb74567ae066"
+      }
+    ]
+  },
+  "code-seed": {
+    "id": "ad3a7771-9719-47d1-86a4-ec3096be64c6",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT: 192 x 192 RGBA, fixed pivot96,96, 20px clear margin. Bullets of Fury Neo Geo pixel art VFX overlay. A sparse floating cluster of broken emerald computer code strips, tiny binary 10001001000 symbols, jagged infected circuit traces and a few violet glitch shards. Transparent gaps between delicate small fragments. Bright green accents with dark-green undersides, crisp readable hard pixel clusters. No frame, panel, monitor, border, scenery or characters. Centered floating corrupted-data fragments.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/code-seed/frame_000.png",
+        "sha256": "e8df56b17164fb0d5c5cbd1b555e83f5adb5eed90af8530461b0628cdd0df371"
+      }
+    ]
+  },
+  "blue_rift-loop": {
+    "id": "6490c7b0-b03c-49b3-9565-ab83ccb1f699",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: exactly32 generated256x256 frames, fixed pivot128,128. A seamless complete repeating idle cycle. The mechanical ring stays rigid and stationary. Energy streams flow clockwise continuously around the black throat and small sparks flicker along the rim. Constant size, stationary aperture center. Fixed camera, no zoom, no translation, no morphing hardware. Return to the identical beginning pose naturally at the end.",
+    "status": "cancelled",
+    "returnedFrames": []
+  },
+  "blue_rift-closed-seed": {
+    "id": "39fb6dab-fbdc-424e-bbfa-94d8c87448fe",
+    "tool": "edit_image_pro_flash",
+    "prompt": "Keep the256x256 transparent canvas and exact center128,128. Collapse this dimensional portal into a tiny6-pixel wide central ignition spark: every metal rim piece and energy arc has vanished into the pinpoint. Only a tiny central blue white-hot spark remains. Transparent everywhere else. This is the same portal completely closed before opening, not a new object.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/blue_rift-closed-seed/frame_000.png",
+        "sha256": "3900b03caa3c0af6961fc033153c6272918347a472497359cd2d9559a6195e29"
+      }
+    ]
+  },
+  "green_rift-loop": {
+    "id": "f067245d-e820-438c-9975-660ff6f4f803",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: exactly32 generated256x256 frames, fixed pivot128,128. A seamless complete repeating idle cycle. The mechanical ring stays rigid and stationary. Energy streams flow clockwise continuously around the black throat and small sparks flicker along the rim. Constant size, stationary aperture center. Fixed camera, no zoom, no translation, no morphing hardware. Return to the identical beginning pose naturally at the end.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/green_rift-loop/frame_000.png",
+        "sha256": "2cd006e518dcc749cb49a9acd84532bfdd1cff6e3ebb709ecd8509d066f3137c"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_001.png",
+        "sha256": "cf1d4d815238fb000a35a7aed54a866462d832858f59f76c5242b7160fe15a03"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_002.png",
+        "sha256": "e82be81cf46c3359e005e6c7211d8c43911f44484ed5a0c7a6d63ac6312a1ffe"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_003.png",
+        "sha256": "ae5e682dc1a9f438f323b2391304cc66db167d59222fe5dcbf21ef6b2595a136"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_004.png",
+        "sha256": "aec2f2ab3bddb35142d74feadcc3f62bf8dc8e64d9d760e5eccf7a447bba3fd5"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_005.png",
+        "sha256": "8486e1b40f96622fe4d52bf6cd37e6bcb2b1abbc0c192d795d784a2a82a402c8"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_006.png",
+        "sha256": "99e5933e69f270b715d38bd945510f4300201ce9e8695ef26f01d10e47bbeb43"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_007.png",
+        "sha256": "db16c3845da1d2c3d4d831935363f4e3cdac5f5b2d45c97bd1c8e91b9926295b"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_008.png",
+        "sha256": "5bde717b72f629aebc7b87754dc290f5647d79e29c43af9a222dc14fb170bca8"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_009.png",
+        "sha256": "b334a3e60dd3bd061dc9ada62e5f249aab1675ed4d26dd7709b4e75ccdca6de4"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_010.png",
+        "sha256": "37d404c21b43225d01e7e736093ba677b8f833cca5595f7b0928ee72dc88990a"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_011.png",
+        "sha256": "9bfcc7e41b624171c835c92d98e225921b5b8a075943c613de17fae941f25551"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_012.png",
+        "sha256": "fda8a325059cdce6815009cca6b09f1a891ae2db1a2d6680760f4b3356b0a97d"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_013.png",
+        "sha256": "a0413ef2b7358b389bec7b4d2ac2a90edeafae7c72ed634eaa33d9b4435039ed"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_014.png",
+        "sha256": "7b5e2d2b5395c796156dd1a1365df9339e053196dea81221cb0d7f36f4b4a782"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_015.png",
+        "sha256": "fa17382af1fd5154e6ce573e13d770d2c65d16b155ddafb22e722f71b09c4019"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_016.png",
+        "sha256": "ff3be106bd88bb6f77dd578af1bf54e5225a053d8a5fc185e29cef078b783363"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_017.png",
+        "sha256": "e67eb642853b63cbe52dfe243418071d3219fdce7bac6ad369dae119971d0688"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_018.png",
+        "sha256": "b55b72afceca0533650da8d05062263b2bbef14788135c0ee0dc8ef4eb06931a"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_019.png",
+        "sha256": "e850fcbcb0f2ebb112758da9c0c376d22ab1e2ec88ccc94e92de124b64962232"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_020.png",
+        "sha256": "f98bfb1b4e7a5d702c61acc50a0e0f1a127e7606f9a4f41b16ceb7a0fce31852"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_021.png",
+        "sha256": "3b266ba310577441ed5c332a5ee785cd2f875897d34ac057ba1155d8e75210a4"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_022.png",
+        "sha256": "506b96e12755169b6b40cf173c6d519c0552ce50e1410efed661f7ce258ce1a9"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_023.png",
+        "sha256": "0aa7acb58bd0c1b930d9af223f2b81e969150ffd1dc2974c5ca1e2094f1df8e2"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_024.png",
+        "sha256": "3267803286bb05be01edd1ec906bcf8686f29a114d620e1db9d52993ef071292"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_025.png",
+        "sha256": "a2209f45feb3d3bef23c20d0a1d01a41a638afaa36cf2366833df42441ad0152"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_026.png",
+        "sha256": "18e290c1b2b1f17a58419ea181013b0d15a4d4d4336828fa0414b803a9102695"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_027.png",
+        "sha256": "9d9af4c15323aca5f01b72dd5c93f4a54e70db1fd9704a38b566d7d770d4691c"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_028.png",
+        "sha256": "34268c11e772deb9da786b6c4abc70f2f40bcc1ff8c66aee1aa6b1b50eb9b93d"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_029.png",
+        "sha256": "08898526b6f93be219ed123ff60ac1ddc380ae4f504a9b18366411f46afec344"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_030.png",
+        "sha256": "b82853303e03232f7234410be8f1b2e460099ebaa870829d761cc5471c09eed6"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_031.png",
+        "sha256": "41e5d6ebe46ba27b6fe6c1ceed39669d8f368f86a4269f897d7cdf92474f1841"
+      },
+      {
+        "file": "returned/green_rift-loop/frame_032.png",
+        "sha256": "51534e19f336dacc52a8d47c769e4bd6f276f074bec507115122af124d46916a"
+      }
+    ]
+  },
+  "green_rift-closed-seed": {
+    "id": "e618ff5d-8bf0-4786-875a-56cec8adfcaa",
+    "tool": "edit_image_pro_flash",
+    "prompt": "Keep the256x256 transparent canvas and exact center128,128. Collapse this dimensional portal into a tiny6-pixel wide central ignition spark: every metal rim piece and energy arc has vanished into the pinpoint. Only a tiny central green white-hot spark remains. Transparent everywhere else. This is the same portal completely closed before opening, not a new object.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/green_rift-closed-seed/frame_000.png",
+        "sha256": "07b566217326ee65e6672d1c10332ec421ba7009e97c7e6d44f0c4522c6851fe"
+      }
+    ]
+  },
+  "red_rift-loop": {
+    "id": "31b8ea20-4c28-4a0f-adc2-18fb03bcaf5f",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: exactly32 generated256x256 frames, fixed pivot128,128. A seamless complete repeating idle cycle. The mechanical ring stays rigid and stationary. Energy streams flow clockwise continuously around the black throat and small sparks flicker along the rim. Constant size, stationary aperture center. Fixed camera, no zoom, no translation, no morphing hardware. Return to the identical beginning pose naturally at the end.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/red_rift-loop/frame_000.png",
+        "sha256": "51a56c9ab84394c75bc449ecb45f5bfee8362cda310554685560fb956e649a28"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_001.png",
+        "sha256": "caf4a3b3565df40ce53b7cc2a3dfa09cd36f301feacf7e0a7729dbd119d5db14"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_002.png",
+        "sha256": "ee38abdddd6c7872aa5bad19ff983881503723a149d79dcd733c8f5463859712"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_003.png",
+        "sha256": "a948b4df457f69b486051b23af65cf497d15a915519670155da4f96cd0cfd9b1"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_004.png",
+        "sha256": "9b43f8453c08b5f5fa32d7190c5faa7784d0f287edb1bcbb1568c3c16cd8ce36"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_005.png",
+        "sha256": "40b28d301f73caf1c3913415a82475e212a9f08abbf207b9d57e327f547e6c97"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_006.png",
+        "sha256": "db496e65985221e3dd08356690630bf032d3dcfd4f8fbe1f7faad4a5c52eb015"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_007.png",
+        "sha256": "bf726af48e60aee33c2eab0566ea8ae5ea8bcde8ecb78037d393ed0c3f130bd0"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_008.png",
+        "sha256": "fab4fe54e53765c8b986d5b0c1cc32ccfe2bbf4de2a8eb730377e807ede79545"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_009.png",
+        "sha256": "39756197431ecdc21cfcce2c95e70620083224fdeaca60f5e52f39020add0a80"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_010.png",
+        "sha256": "3b9b4d69f60a46f5eabe90e6a2a49b7e03fdac1f9336899d9a483415250770da"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_011.png",
+        "sha256": "e503e5ea974aa97867f6be7fd25d740b55667082ffa90aaba8ed9d42ad0357fb"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_012.png",
+        "sha256": "23a9db852698a73e56d5dab2bf97c2436b30cbcff9324322b70e0db5558b5b60"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_013.png",
+        "sha256": "50249cf2c21781c905cc62c36b0d29ce61dc07791dafa932922c6bfe98a5891a"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_014.png",
+        "sha256": "13664fd2e52bd096ef0080a04694e498051c1ab91c4a386c4c80096d653232ea"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_015.png",
+        "sha256": "b25b1869a006ea75c89bcc3220fa0e21692f3be0074aa2480b818ab98e91282e"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_016.png",
+        "sha256": "7a691b47c76d9d0edebf0f17de7e4e84908f80849cb274ba47a83ccb33adae46"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_017.png",
+        "sha256": "14d35aa59b9c092df93bcd29e155d49685beacde93de41b5d40a4355a5e2eb70"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_018.png",
+        "sha256": "ec91d0af354dbae9203ba724863d3a64ec1b5eab36067329b870f58276f85509"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_019.png",
+        "sha256": "7178b6626f0f53c5c8cbf4b13731862151e77baa02f1be14c1b77bb7f75a329e"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_020.png",
+        "sha256": "644fa8c43c081c381d909be9abd44c671609eb1b59da64254f7cedf0dcc77bea"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_021.png",
+        "sha256": "e9874ecc164de643e535fe919b3acfddfb58342b99f7f4a85713aa9eb8163aab"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_022.png",
+        "sha256": "f893769a9f1ed1d6dc508ce2dbbdb43c4c861db0321f9e0b4de3ce9f35632782"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_023.png",
+        "sha256": "d9b6d1a2a4294cd9b9965abc29fcdb08a603e3dcf8629bb02664bff788110116"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_024.png",
+        "sha256": "1059b8c106f9dee91cad1429a7adbddc265cd4ce0fc2da3bae4b820b9bc419cf"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_025.png",
+        "sha256": "91ab4effa7532a4ca9a7c6c5179861b20e8f2c73134182ebf34b1fa746edf09d"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_026.png",
+        "sha256": "e8cc2e20b9b56c88ba80333b37084982e1078a315bb1c5f62353d7d7a82f6f2c"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_027.png",
+        "sha256": "8d52cf8eccc4425c4de47e99d339e44ebfedc4f8ef8b89724254499a294552f6"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_028.png",
+        "sha256": "ada302e482f2f96fbdeb9a5c7ef819df88668f64d89eb30c7803b45740a44bd1"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_029.png",
+        "sha256": "3b51247f1d49d59a35377961ea615e0804aecc930a1330af44c90182c18c6986"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_030.png",
+        "sha256": "4c8eabdd7fed4e2ba5fcf92ece47e9e0b5be1e435a8be59e96686c1c3d19ff6f"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_031.png",
+        "sha256": "58946e87d231405ef2fbdefe64567404e3dc83d1a7296fc13c31c38941cd5893"
+      },
+      {
+        "file": "returned/red_rift-loop/frame_032.png",
+        "sha256": "53c96ae5afd225301fee65f8a9db7667028d17b3fe325f441314b9c44d2c2521"
+      }
+    ]
+  },
+  "red_rift-closed-seed": {
+    "id": "12fdd369-adbd-44e2-834e-19f52cb04b4e",
+    "tool": "edit_image_pro_flash",
+    "prompt": "Keep the256x256 transparent canvas and exact center128,128. Collapse this dimensional portal into a tiny6-pixel wide central ignition spark: every metal rim piece and energy arc has vanished into the pinpoint. Only a tiny central red white-hot spark remains. Transparent everywhere else. This is the same portal completely closed before opening, not a new object.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/red_rift-closed-seed/frame_000.png",
+        "sha256": "f60f982d73da585f054ab531791e63334fe1239e6284dc725a43b2dbed9ac81d"
+      }
+    ]
+  },
+  "black_void-closed-seed": {
+    "id": "776c81ad-44f9-4295-8b2b-d1d5c2b7c5df",
+    "tool": "recovered",
+    "prompt": "Keep the256x256 transparent canvas and exact center128,128. Collapse this dimensional portal into a tiny6-pixel wide central ignition spark: every metal rim piece and energy arc has vanished into the pinpoint. Only a tiny central violet white-hot spark remains. Transparent everywhere else. This is the same portal completely closed before opening, not a new object.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/black_void-closed-seed/frame_000.png",
+        "sha256": "1040668dacf9d4b07fece442c3dee603726fa1afccc1bb268abeb1e87f34175e"
+      }
+    ]
+  },
+  "blue_rift-form": {
+    "id": "be3e28cf-f457-4de7-bd84-476db93b7063",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: 32 generated256x256 frames, aperture anchored128,128, clear transparent margins. A tiny centered spark unwinds in a clockwise spiral. The aperture opens progressively, plasma curls and metal segments materialize around it, resolving into the exact full circular open portal at the end. Remain perfectly centered. Fixed camera, no zoom or position drift, circular rotation around the same physical pivot. Preserve the exact palette, design and proportions.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/blue_rift-form/frame_000.png",
+        "sha256": "3900b03caa3c0af6961fc033153c6272918347a472497359cd2d9559a6195e29"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_001.png",
+        "sha256": "266ee9f7b9d2cca18412b158079366e49ac3099fd8924bf9dd7527b0040dc3f8"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_002.png",
+        "sha256": "bc1b2d70a711f9d4e665dbd450da777c1bdd661d2eec8289f324b3a50dbac398"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_003.png",
+        "sha256": "9d4068e07de8473821b780ce66e6060a47e3b5a33c84abb90c6cf47dccb54442"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_004.png",
+        "sha256": "443561ad11aa2f98440bb321882a8b9a05c7401673da81e9c557550ded0a8abd"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_005.png",
+        "sha256": "e3ea0f4ebcbee1250dcc253172ec6ac6bb7840fb57d02ed8effe6393717e9375"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_006.png",
+        "sha256": "8d94766f1ca1789142fc5fe9b8ea521212a6b9a5f6246ad5afff5cae6f0f408b"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_007.png",
+        "sha256": "4a278de1d4941312e13aba468e16b8fba2213e09cd8047e0975c6e127adacb04"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_008.png",
+        "sha256": "56628d2b788b047fae90d3efbac4e26ffca3874a659ca50fd5f3bb3cd4ff5fe4"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_009.png",
+        "sha256": "41495057427f9725d710cc979f57b4a0f07ea78dcdb09ec1847458203338c64d"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_010.png",
+        "sha256": "f91760ce0a88bdfffa9ebefb3eac71c224327c14d37c64bf664565f6b0ba7b4c"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_011.png",
+        "sha256": "d107f9ed6bb7f9a4900c5d3429812fa7990287cc621fd8591081936e7b75eecd"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_012.png",
+        "sha256": "dbe8aec396a4121d4ca08cbc65f34a0755fc06e916b84a35b302fe55d427d201"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_013.png",
+        "sha256": "8dc1d86eb5fa28b1d7d8f79d1438b42be512dc5b8001e81c152c0881e43f58f0"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_014.png",
+        "sha256": "df218df5c140423b64e3f1294143e7c95594b06327c526353fcead8883265c9d"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_015.png",
+        "sha256": "2462d8d023ce9eae2097a84db8e79fa1093677e7d44b69ed2ee3cabde9dbb495"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_016.png",
+        "sha256": "4ca742250c1b69ca3c81eb44d9721e7e203a3bed22e5e693b86f77a7e98a2c91"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_017.png",
+        "sha256": "1c3147617f1072a4889d25549e00e19674149e98924e022791b945b78563de0b"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_018.png",
+        "sha256": "b512a075a6ce20594fa051f99d28ae68fe1256cc1509e0fc215c2066e9eba677"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_019.png",
+        "sha256": "18ff95018770491aedce533056aa453c00061087aff5b0db22a16e680e5af0b0"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_020.png",
+        "sha256": "746e920fecebc60c64a1c89ed60e3901a67e17d01c5dd151ebea63d153d7ab3f"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_021.png",
+        "sha256": "900b63df79f8b5fd54471fd9ae8bdbde4e0605334658915eaa3e3f3f404b6784"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_022.png",
+        "sha256": "72b1b69de69cdc5f7198f54001f6b693865156e1b3a8fd528bfd9407583b7674"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_023.png",
+        "sha256": "932ab1a494c06c0f6066c9512e4aafd39ba343d35de670e7896e9aea630a4b6e"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_024.png",
+        "sha256": "0ef282b18155fde85a4221a2a1231e6c997980abeedfa4bd0fdd4bc6672d9168"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_025.png",
+        "sha256": "1806ac74df7ce162a6262be42950069e3166fd7663be3f04bd32aa1ca7b34969"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_026.png",
+        "sha256": "a68e50a436da257b210d68eafc66e7f4bbe0df05d6d5938fc1440df9072563be"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_027.png",
+        "sha256": "3416fa3c9cb11caaef046420be63641824fae68b02163dbf1eebccc29ad7e9c4"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_028.png",
+        "sha256": "e6a6ac2b8d13585497c8398b60b2846059bc3d5932fee30c8aa84cda84e4eed9"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_029.png",
+        "sha256": "fbc4fc83378729cfbb3df9c1d457507f2f4b17cccf00bff99cecd2f2ad7db29b"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_030.png",
+        "sha256": "ae6e49546fffc5305a219ba43638ac5da541c1d3cb8cd0aba48cc7bed2daa0ee"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_031.png",
+        "sha256": "92d8e88240b6d60d1154719e0dea3b36c57847847d5a88f348278a555d82e5d4"
+      },
+      {
+        "file": "returned/blue_rift-form/frame_032.png",
+        "sha256": "ba332c93a7cfbcc06b9b50649e049afd79a11fede98f5783117b2fb4ae823d69"
+      }
+    ]
+  },
+  "blue_rift-close": {
+    "id": "af03a950-cd72-4b17-b1d4-9e7df3e86b5c",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: 32 generated256x256 frames, aperture anchored128,128, clear transparent margins. The open circular aperture collapses progressively inward. Chrome rim segments fold and are consumed in a clockwise spiral, energy draws inward, the black throat pinches shut into the exact tiny central spark. This is a distinct implosion, not opening played backwards. Remain perfectly centered. Fixed camera, no zoom or position drift, circular rotation around the same physical pivot. Preserve the exact palette, design and proportions.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/blue_rift-close/frame_000.png",
+        "sha256": "cf32c4a1731637028ba4bc7294c5fe3b32f824a2f03c7f348dd43303e9f121af"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_001.png",
+        "sha256": "283ebf25a0da9315b26a278e13d13834149c917d3758bf32a014e7482184b19b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_002.png",
+        "sha256": "1271255d5fee1aee51e5fe4565ee9db9751605bff1f1ee6b9b772eaee434b8e6"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_003.png",
+        "sha256": "a68987c864a239c9286f37f7d61718535a46cdda7ad04ed41804c4df1368e08a"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_004.png",
+        "sha256": "16bf6b4035f8cf6b5bc2f3096e9430d7dd994125726083920bd425a727d4efaf"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_005.png",
+        "sha256": "a8376b1607c5c80c5c6b0530aa8fb2f48a471aafd3754c4a5af4bdd32546bf77"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_006.png",
+        "sha256": "602cdd0ebbff1936be3922feb40ad7ef000886e7f01067be987fb813f509541f"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_007.png",
+        "sha256": "249241f45a66087e546114783c3df7fa4a34022d91f9ae0d0dec4671091b2e16"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_008.png",
+        "sha256": "bd2123003f4ce6f639c7d72e03715aa9711c3d99690ee95cc63354235237be6c"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_009.png",
+        "sha256": "0aa5026d741c31d45ac41f874e0159b7abeb985cd7c9c854421ddb1371aabb20"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_010.png",
+        "sha256": "0b286727e16ab76c0d8af44f460cb7b7b3e9d966a2e154d8154e29f2b809a501"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_011.png",
+        "sha256": "4dfc41b72cebf52a9577a6eec0569bf61a949e96fb80f5f726fe9561085d085d"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_012.png",
+        "sha256": "a080e56187ab5f82c9aadb810169665845b49f2ba99fc3552326452fabe2b5fc"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_013.png",
+        "sha256": "d74f47244a45b94ffb69ab9f4f559e9ff335e50318455a8ceb3bcdc7c61fbed3"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_014.png",
+        "sha256": "0839fd2891adaf963e016cf58aecebd09431bdf00d2f8f847e55081a839ab381"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_015.png",
+        "sha256": "22e2f352db96bbf64b1ecfe0e5a47c6cdb98331d6ac84c302b93754d88c2b62d"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_016.png",
+        "sha256": "7bc27cacdd22c39bffae9b6bbcef385098687898f391ec9f1b6cbe37a6058eb6"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_017.png",
+        "sha256": "3adbe047d158b97ba3320b99c688ad332187ad03ee2d52d6ea61bdea1ce1f6bc"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_018.png",
+        "sha256": "348ac5ad93311f4514cfe7f38d50fa6f65cd80024a1bcc532e24fb28007aa702"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_019.png",
+        "sha256": "a9e1a089bd1626b43532dbd05759ed55f73c450544f6d1ea292d9d7c01efd36e"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_020.png",
+        "sha256": "a7f0c90225466a07ba64ae1452c424926d3c85e5000338dd9314471908f30994"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_021.png",
+        "sha256": "f2644c7601668575ebbc7ac4142db4c5ff7fda73d2aff8d98a4de53c94c670a3"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_022.png",
+        "sha256": "c6664f4548470de3810b032bb1af0cebacb933c2099c79aea99a08f3812dbd15"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_023.png",
+        "sha256": "a0294beb24d96329d88212b38061213b359ae4b248a6a273db0fb157a750bed8"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_024.png",
+        "sha256": "023e99eac49991b6a5c902ff1e112e293ebc76eee8e5b827e467b4cf9d757b10"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_025.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_026.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_027.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_028.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_029.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_030.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_031.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      },
+      {
+        "file": "returned/blue_rift-close/frame_032.png",
+        "sha256": "91990fc081458bc57594a055fd6831fd303e0603f3b047ea21da54850ceac52b"
+      }
+    ]
+  },
+  "green_rift-form": {
+    "id": "1865c798-d792-4fca-a0ac-635b7fb594b6",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: 32 generated256x256 frames, aperture anchored128,128, clear transparent margins. A tiny centered spark unwinds in a clockwise spiral. The aperture opens progressively, plasma curls and metal segments materialize around it, resolving into the exact full circular open portal at the end. Remain perfectly centered. Fixed camera, no zoom or position drift, circular rotation around the same physical pivot. Preserve the exact palette, design and proportions.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/green_rift-form/frame_000.png",
+        "sha256": "07b566217326ee65e6672d1c10332ec421ba7009e97c7e6d44f0c4522c6851fe"
+      },
+      {
+        "file": "returned/green_rift-form/frame_001.png",
+        "sha256": "1cbf8b9dfd89727bb0c90b8116f4f44018b66b30106d51b064cce8d995a90cdd"
+      },
+      {
+        "file": "returned/green_rift-form/frame_002.png",
+        "sha256": "96335d74da89af94e6e27ef5b490909a2ca56fe196c96f87b44effc44a6ea023"
+      },
+      {
+        "file": "returned/green_rift-form/frame_003.png",
+        "sha256": "85c259684362ba95909f8b7ee9795402fae81ca7b53f0edb962480075b5c7e84"
+      },
+      {
+        "file": "returned/green_rift-form/frame_004.png",
+        "sha256": "66880e307e456456329058b31c97e207924849efef435b03e2afceb52399ef7c"
+      },
+      {
+        "file": "returned/green_rift-form/frame_005.png",
+        "sha256": "60fb099b16be8bc49c5fc7ceb74f52daa0ec3c7c00999c261abee3f931c4d331"
+      },
+      {
+        "file": "returned/green_rift-form/frame_006.png",
+        "sha256": "ec9afd45a1308dc9a672fea1da7676b25e7e58699125870a7b4412be1eb28fde"
+      },
+      {
+        "file": "returned/green_rift-form/frame_007.png",
+        "sha256": "ec1c8b6e4c64cb4a5a484c9a1ecd678f37069e058c9179653059f2d92f6c4af2"
+      },
+      {
+        "file": "returned/green_rift-form/frame_008.png",
+        "sha256": "092ad3fbb143fd25dc385390b395de7aed34f4c60a2b6b2c6d09e32e056ec2ae"
+      },
+      {
+        "file": "returned/green_rift-form/frame_009.png",
+        "sha256": "f069a1f80d775aa728c64bc8b2356678066fd56e34692b44b3ab68f791621831"
+      },
+      {
+        "file": "returned/green_rift-form/frame_010.png",
+        "sha256": "a43bf5d044b05d72c29434574a2ff4c48887021a5988dbb8d3a2f2be324d5bc9"
+      },
+      {
+        "file": "returned/green_rift-form/frame_011.png",
+        "sha256": "9c721ceadfcfc92e56f89b785748c002db6891e93c1dfcc2e09b2e9c8438b8b0"
+      },
+      {
+        "file": "returned/green_rift-form/frame_012.png",
+        "sha256": "813e9b8d6b2089ddaf8494feba840487c4785f119b39e2fb4792790fd2c866ac"
+      },
+      {
+        "file": "returned/green_rift-form/frame_013.png",
+        "sha256": "a2474c68f1d717ef7a5ddef4629dd374bca2e09e879b936b9982a60ee98ec1e2"
+      },
+      {
+        "file": "returned/green_rift-form/frame_014.png",
+        "sha256": "9874c652e410692ef5e5ea5c272d7c3d3331a452b82097b9a9c1caff9a56aabc"
+      },
+      {
+        "file": "returned/green_rift-form/frame_015.png",
+        "sha256": "f9fef0bdbe5bf59c2f3ed88f0ab6f4becf61e1db5f9e7fd8eaadc8fea7af419c"
+      },
+      {
+        "file": "returned/green_rift-form/frame_016.png",
+        "sha256": "e196b0fa7d7a835a6495b3dc3cfcb6df7e305b9e74a37c38a26f38e839fe0e0e"
+      },
+      {
+        "file": "returned/green_rift-form/frame_017.png",
+        "sha256": "dedf6bb41678da2948a52c6a210633a6347e170a53fbbc39b94734680fb00e2e"
+      },
+      {
+        "file": "returned/green_rift-form/frame_018.png",
+        "sha256": "547eb3bc60481dc851148551d4718cfd8d5e5f065c7fd1ae030c617312083766"
+      },
+      {
+        "file": "returned/green_rift-form/frame_019.png",
+        "sha256": "04abc7b80adf0eb8d2b1e36406c5ae5b0b62a2ae648cf44d9bb5a4844a8db557"
+      },
+      {
+        "file": "returned/green_rift-form/frame_020.png",
+        "sha256": "df7f2d023b401214103c6ce7f2a0d30f640eebb1b3623db615c3578c6329ea45"
+      },
+      {
+        "file": "returned/green_rift-form/frame_021.png",
+        "sha256": "114fdf83daafa0273ce2fee1e33f1bb352b5f47377849f022c81e4d95b5760f1"
+      },
+      {
+        "file": "returned/green_rift-form/frame_022.png",
+        "sha256": "5ed2d9e8fda0b9cce28f92405eeb4acc37846ef03a02f82d993deb20c8f23e58"
+      },
+      {
+        "file": "returned/green_rift-form/frame_023.png",
+        "sha256": "73842f39c53eb20b91c76b7f04c954fdf4ddbd1b0154591e0e50384c132acd4b"
+      },
+      {
+        "file": "returned/green_rift-form/frame_024.png",
+        "sha256": "9e8cb564bed46c54202232c7253f4bb0298e45998c6925b6602d6a221efd1589"
+      },
+      {
+        "file": "returned/green_rift-form/frame_025.png",
+        "sha256": "6c41a68d597fca35c77f676ec9c2d700b23710409b167da3bf5344e0928ac985"
+      },
+      {
+        "file": "returned/green_rift-form/frame_026.png",
+        "sha256": "3235a0cdd4e1d749d553797884cb42e9a8061ce6906070d99bc198d037e356e1"
+      },
+      {
+        "file": "returned/green_rift-form/frame_027.png",
+        "sha256": "874894faa39a4b8fba9d331a35987fd316476aeccfc08e2cf408c3ed7d78614b"
+      },
+      {
+        "file": "returned/green_rift-form/frame_028.png",
+        "sha256": "edd1b2a6ba0d6a2cd0c9ca27e95577339154996eb4de0878996c05d76b3432a7"
+      },
+      {
+        "file": "returned/green_rift-form/frame_029.png",
+        "sha256": "df9c22114b846264a874524756b6a32f6de440fc44320528d3f992b563b2754f"
+      },
+      {
+        "file": "returned/green_rift-form/frame_030.png",
+        "sha256": "06b546ca76da27b106daeec0ec2b9dd28891a7837af831d2f54f377ddd9e4258"
+      },
+      {
+        "file": "returned/green_rift-form/frame_031.png",
+        "sha256": "cae8595a6cb1302b11f2ed08dee9db70a5b8e9ef153163ed5d22d5a9e618021e"
+      },
+      {
+        "file": "returned/green_rift-form/frame_032.png",
+        "sha256": "1e5194949f9deca4c041a69e1354e66e9daccbd10eedfb31ea4727da6086e799"
+      }
+    ]
+  },
+  "green_rift-close": {
+    "id": "b45958f7-d309-4a7b-945d-00e7ea18308a",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: 32 generated256x256 frames, aperture anchored128,128, clear transparent margins. The open circular aperture collapses progressively inward. Chrome rim segments fold and are consumed in a clockwise spiral, energy draws inward, the black throat pinches shut into the exact tiny central spark. This is a distinct implosion, not opening played backwards. Remain perfectly centered. Fixed camera, no zoom or position drift, circular rotation around the same physical pivot. Preserve the exact palette, design and proportions.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/green_rift-close/frame_000.png",
+        "sha256": "2cd006e518dcc749cb49a9acd84532bfdd1cff6e3ebb709ecd8509d066f3137c"
+      },
+      {
+        "file": "returned/green_rift-close/frame_001.png",
+        "sha256": "4799a67993ee8d049e16f5037c59b52c0e6692236cd74e56e0de7dc74f81f16f"
+      },
+      {
+        "file": "returned/green_rift-close/frame_002.png",
+        "sha256": "34b57294e2dba545474acd16d360be239b533842ab1699650ca2471f69c39154"
+      },
+      {
+        "file": "returned/green_rift-close/frame_003.png",
+        "sha256": "19c5a69fae0121acabaa7d433988e52e1b9520f8a9d4337dad9ab5ba3cf8f81f"
+      },
+      {
+        "file": "returned/green_rift-close/frame_004.png",
+        "sha256": "00d2ad7f771d79f92ed0b98b0560b1680700f33e55ab35cec1600742075ab74b"
+      },
+      {
+        "file": "returned/green_rift-close/frame_005.png",
+        "sha256": "16585c873098e41a4e7aea02b89a418e2318bf6a58690db556c797a17f31632a"
+      },
+      {
+        "file": "returned/green_rift-close/frame_006.png",
+        "sha256": "81fe3249d6710efa94e3aa13867939423f70e0a3af9a1b3fc21c759f5ca0e27b"
+      },
+      {
+        "file": "returned/green_rift-close/frame_007.png",
+        "sha256": "bbaf763b1af459f7cb91e7fa6da9c996d8e096388273e7b9106c328e319f515f"
+      },
+      {
+        "file": "returned/green_rift-close/frame_008.png",
+        "sha256": "d0b0a77bb1131a84bbc458c510d5c975a7897c095d6f919481d5b808eb4e196e"
+      },
+      {
+        "file": "returned/green_rift-close/frame_009.png",
+        "sha256": "fe656bb8e73df7b89f20a5dbcde58e11b6a5321c0f2e0cb22875acb02893d6fd"
+      },
+      {
+        "file": "returned/green_rift-close/frame_010.png",
+        "sha256": "2e8c00788027c89776bb922e42c0920b86651fa8fa39dcfe309e030023b48d63"
+      },
+      {
+        "file": "returned/green_rift-close/frame_011.png",
+        "sha256": "7adabd61219163b90920f13a58f9dd079cd51c511d75caa4b6303ad923fc925b"
+      },
+      {
+        "file": "returned/green_rift-close/frame_012.png",
+        "sha256": "a2ae7c3ebe9a2a0d183d9ac09e89484dbecfe3a4dfac7fdc5242e9d1bef3ce65"
+      },
+      {
+        "file": "returned/green_rift-close/frame_013.png",
+        "sha256": "834b7169a60d69bcd8ef68e97c45f84027d3fdb559e2f174009db4ff6e906146"
+      },
+      {
+        "file": "returned/green_rift-close/frame_014.png",
+        "sha256": "407f5c934899d4c417b4da5c525f27f9d8cf6b31585ef2b0ebc5ae74aa5ace68"
+      },
+      {
+        "file": "returned/green_rift-close/frame_015.png",
+        "sha256": "ae2d888d1599e013286cdb3c9bee6e9ff916988e5056ecb5bbfac9de2d50d5b0"
+      },
+      {
+        "file": "returned/green_rift-close/frame_016.png",
+        "sha256": "31b27af60ae8f63956f2a02a6e7900415c348eeef58ffcbfda24be764d113cf6"
+      },
+      {
+        "file": "returned/green_rift-close/frame_017.png",
+        "sha256": "2bb7174ab671596e0a46bc231baed025952d5e2c74158d8642af602b6b7f0521"
+      },
+      {
+        "file": "returned/green_rift-close/frame_018.png",
+        "sha256": "c74cdd0eda441b9cd0203a8df6c653c16bac1d1ec2fca15450e141659e8b163e"
+      },
+      {
+        "file": "returned/green_rift-close/frame_019.png",
+        "sha256": "de292a1353e9299dda28c4b97d055638ac815d8de7dae1c44705b710b98c389d"
+      },
+      {
+        "file": "returned/green_rift-close/frame_020.png",
+        "sha256": "cbbfb3f14797a335e894298af86a26ed73db682944d3f034a0ca711bcd11a664"
+      },
+      {
+        "file": "returned/green_rift-close/frame_021.png",
+        "sha256": "58603bb5d7b381e2ca91a522a41d252a88a5bdbc0b15ae4d7ced118f1720c18e"
+      },
+      {
+        "file": "returned/green_rift-close/frame_022.png",
+        "sha256": "3a0497f94f51dec9e2c5ddfac2d6c60c865d917cdc6d551cf99abe7d2fb94747"
+      },
+      {
+        "file": "returned/green_rift-close/frame_023.png",
+        "sha256": "4c3fb9043375ba149af147566f34413c5ef65fc425a335b01be366eeaf70ec66"
+      },
+      {
+        "file": "returned/green_rift-close/frame_024.png",
+        "sha256": "d1fe41c8a81ae6c40c5059b9ef97ec2318c91b4093763eff4281b5abc19a53a3"
+      },
+      {
+        "file": "returned/green_rift-close/frame_025.png",
+        "sha256": "6e99244e9188315ee8a5d45b9cfb1782a62c5adaa68209f3ae094eb7f4810a70"
+      },
+      {
+        "file": "returned/green_rift-close/frame_026.png",
+        "sha256": "75ea63036bc87905dccac9e5b4112466f3d5a156c73fe159db4160a05ea28ed8"
+      },
+      {
+        "file": "returned/green_rift-close/frame_027.png",
+        "sha256": "dc553b2a0bce9c3d4a9fbbcd150d57f1a9b0ae439482856de635c23399fbcba5"
+      },
+      {
+        "file": "returned/green_rift-close/frame_028.png",
+        "sha256": "33742a3448d09da10e517058434df11f34d132e8df21d161e3146c929479dec7"
+      },
+      {
+        "file": "returned/green_rift-close/frame_029.png",
+        "sha256": "2715e857a0790e81b6a8c40c7aa3104607ee396641bd162944e0ce779b41c00b"
+      },
+      {
+        "file": "returned/green_rift-close/frame_030.png",
+        "sha256": "2715e857a0790e81b6a8c40c7aa3104607ee396641bd162944e0ce779b41c00b"
+      },
+      {
+        "file": "returned/green_rift-close/frame_031.png",
+        "sha256": "2715e857a0790e81b6a8c40c7aa3104607ee396641bd162944e0ce779b41c00b"
+      },
+      {
+        "file": "returned/green_rift-close/frame_032.png",
+        "sha256": "2715e857a0790e81b6a8c40c7aa3104607ee396641bd162944e0ce779b41c00b"
+      }
+    ]
+  },
+  "black_void-form": {
+    "id": "61a0c3ee-4b34-4850-9ff0-354c35fcd497",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: 32 generated256x256 frames, aperture anchored128,128, clear transparent margins. A tiny centered spark unwinds in a clockwise spiral. The aperture opens progressively, plasma curls and metal segments materialize around it, resolving into the exact full circular open portal at the end. Remain perfectly centered. Fixed camera, no zoom or position drift, circular rotation around the same physical pivot. Preserve the exact palette, design and proportions.",
+    "status": "cancelled",
+    "returnedFrames": []
+  },
+  "black_void-close": {
+    "id": "2ce6583c-dbde-485e-878f-d3665a97879e",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: 32 generated256x256 frames, aperture anchored128,128, clear transparent margins. The open circular aperture collapses progressively inward. Chrome rim segments fold and are consumed in a clockwise spiral, energy draws inward, the black throat pinches shut into the exact tiny central spark. This is a distinct implosion, not opening played backwards. Remain perfectly centered. Fixed camera, no zoom or position drift, circular rotation around the same physical pivot. Preserve the exact palette, design and proportions.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/black_void-close/frame_000.png",
+        "sha256": "59d50d769ff8889962c00f6c38659b5257fda5cca5a99afb679fbb2578967a48"
+      },
+      {
+        "file": "returned/black_void-close/frame_001.png",
+        "sha256": "d0417548d58ef2f0e8424c6c5179450d12e14627f54f69aa62d159e5d046ab66"
+      },
+      {
+        "file": "returned/black_void-close/frame_002.png",
+        "sha256": "a2439a80f26b1b330c360cadb8a2c42f675658a2064a77510aa834d39df0010d"
+      },
+      {
+        "file": "returned/black_void-close/frame_003.png",
+        "sha256": "bc8e62e44fe7b3fcd47ebb9a8e06f3e74e52803a8efcb9263edeff6fcdd7e976"
+      },
+      {
+        "file": "returned/black_void-close/frame_004.png",
+        "sha256": "86043faadf6e7a3ae2437d9c1650a291f6bf711926760e0783a2d3ba57d7cd62"
+      },
+      {
+        "file": "returned/black_void-close/frame_005.png",
+        "sha256": "795dc8b10418b798ef153d9c46cd78023194ae573f6120829894009321cb066f"
+      },
+      {
+        "file": "returned/black_void-close/frame_006.png",
+        "sha256": "c8563d051377e0b193c69c58e3d48d0ded88ebb1f28709495c9d2c2be1e10d1b"
+      },
+      {
+        "file": "returned/black_void-close/frame_007.png",
+        "sha256": "dbf1edc455d490d9f877d8f8371a1cef6997fc133c28bf48a2db6c7859327380"
+      },
+      {
+        "file": "returned/black_void-close/frame_008.png",
+        "sha256": "68f62a647da99382dd92fd94bf330124ca98c1b82fb0701a898675ddea856787"
+      },
+      {
+        "file": "returned/black_void-close/frame_009.png",
+        "sha256": "7b39f91136842b2e8c0c6ac58118e893245638c59337d0538f32dffd26d6365d"
+      },
+      {
+        "file": "returned/black_void-close/frame_010.png",
+        "sha256": "d96380d6941475ff0e0bb8e54161be4b1aa9e20da149cde5b7d1f8fc6f38be33"
+      },
+      {
+        "file": "returned/black_void-close/frame_011.png",
+        "sha256": "2b0c55d705b249cbee7130cb0307f44c0fd469e1a0db897862b01513a25c51ac"
+      },
+      {
+        "file": "returned/black_void-close/frame_012.png",
+        "sha256": "564f2dd44515b3a2175315fee37e1f70760921d4dc267ebe9be633856e9a3134"
+      },
+      {
+        "file": "returned/black_void-close/frame_013.png",
+        "sha256": "bc8aaccc082aa51b98da2f021968a33e29840a8acf5b3caa1bd9ec6a9c03941f"
+      },
+      {
+        "file": "returned/black_void-close/frame_014.png",
+        "sha256": "ba01f2a375242aa77cc1325dde4299b526a70c7f65c0c177b4cc54b8b2fb2215"
+      },
+      {
+        "file": "returned/black_void-close/frame_015.png",
+        "sha256": "839e7553862faf58ec6828092edfc04b5be9a5762b0d15556c1385ef855df49c"
+      },
+      {
+        "file": "returned/black_void-close/frame_016.png",
+        "sha256": "14e7615dc7c1483b07d542db85c53c4843ed72ca43c48e6b0e91230ef3a09907"
+      },
+      {
+        "file": "returned/black_void-close/frame_017.png",
+        "sha256": "a56ea1b92973b1898dfb90fa8c09082cebda1f0ab918b7eaf5d7aec1d5fa1820"
+      },
+      {
+        "file": "returned/black_void-close/frame_018.png",
+        "sha256": "88f65349fa3903877b07d076e57affd9022a18507d947f81575a634e5439a4a5"
+      },
+      {
+        "file": "returned/black_void-close/frame_019.png",
+        "sha256": "2b5b12486f1d584e2aabbb2c7430749d99fe115577c78a69dc8a8437bebbb7bf"
+      },
+      {
+        "file": "returned/black_void-close/frame_020.png",
+        "sha256": "f612af464d75940b9d83ff6121e4ede5afe07f60ec64224913e76264b5c6e6d2"
+      },
+      {
+        "file": "returned/black_void-close/frame_021.png",
+        "sha256": "dc225b55731bcd2e0fb5213bc0b2aa28088861e9e1f3bef4978028f3f8542880"
+      },
+      {
+        "file": "returned/black_void-close/frame_022.png",
+        "sha256": "f243d4d912260673fa6e318923bf868ec595af04d0a2e5fab1ca65bdca61fdc9"
+      },
+      {
+        "file": "returned/black_void-close/frame_023.png",
+        "sha256": "e22f309d5340ec69d0468550cd25481c5b50107e63cad7a882e24e5f80038597"
+      },
+      {
+        "file": "returned/black_void-close/frame_024.png",
+        "sha256": "a44265b91230792e1a543cd25ffb29e67425b28af60546e9ef7f29b0c92df844"
+      },
+      {
+        "file": "returned/black_void-close/frame_025.png",
+        "sha256": "81e9e3b4bb48678e4259392cea5307d3b246e4ed8a8fa49d7edf3220daa44686"
+      },
+      {
+        "file": "returned/black_void-close/frame_026.png",
+        "sha256": "511fb5d087d1284b33c2259ffeb46dc27fec949984db48a33aed6ac362652c66"
+      },
+      {
+        "file": "returned/black_void-close/frame_027.png",
+        "sha256": "f6e554fe63df9a13ac31a7c664c16df9dc376623b7d6c33089a94690c7fcf440"
+      },
+      {
+        "file": "returned/black_void-close/frame_028.png",
+        "sha256": "b72d336f645c998666c76f6d8b3d64eafa69366fb2a43e48850be0f2d6053144"
+      },
+      {
+        "file": "returned/black_void-close/frame_029.png",
+        "sha256": "715f99f77a212bb5be7a6e5c2dd91660ae25836ad351fdfaa4b24c5a5d3c02f2"
+      },
+      {
+        "file": "returned/black_void-close/frame_030.png",
+        "sha256": "c3a75c045d81be4b930a6f622cb88f551a2eb3fe367587b6b17ee1955c0bd28d"
+      },
+      {
+        "file": "returned/black_void-close/frame_031.png",
+        "sha256": "3fa80b85d89b4a58c73ee768f01bdda2d9f7217d3dbcb054eb3929301e28c6c7"
+      },
+      {
+        "file": "returned/black_void-close/frame_032.png",
+        "sha256": "884c4872953f4797fa80ae4a31226eb23a5acd30b8ea4ca1ef3718d02a9afdf0"
+      }
+    ]
+  },
+  "windBullets-seed": {
+    "id": "4590ae18-5ff7-40d2-95d1-6a08a2852f60",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT:64x64 RGBA frame, fixed pivot32,32. One compact projectile occupies only the middle24x30 pixels, pointing straight NORTH, transparent safety margins. Bullets of Fury Neo Geo hard pixel clusters, emerald green, mint-white tip, dark green outline. a small aerodynamic green-white Wind energy round, narrow bright pointed core with one short curled emerald air ribbon behind it. Not metal, no casing, no missile fins, no large slug. Single ammunition sprite, no letters, HUD, scenery or weapon. Short trail.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/windBullets-seed/frame_000.png",
+        "sha256": "df98a1a00b2f3a43d38294ea02bd8e538642b7a28810f31dfe578a7e219fd0fd"
+      }
+    ]
+  },
+  "black_void-loop": {
+    "id": "aefe5718-bfda-48e9-b3f0-59c45787ee5c",
+    "tool": "animate_image_pixminimax",
+    "prompt": "FRAME FORMAT: exactly32 generated256x256 frames, fixed pivot128,128. A seamless complete repeating idle cycle. The eight obsidian blades spiral slowly clockwise about the pitch-black hole, purple currents run around the ring and small green circuits blink. Constant size, stationary aperture center. Fixed camera, no zoom, no translation, no morphing hardware. Return to the identical beginning pose naturally at the end.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/black_void-loop/frame_000.png",
+        "sha256": "59d50d769ff8889962c00f6c38659b5257fda5cca5a99afb679fbb2578967a48"
+      },
+      {
+        "file": "returned/black_void-loop/frame_001.png",
+        "sha256": "8db44141fcb8daac1f66e716ba990e15e0dc0703c6af8d4f0590cbfdd0f5e6d8"
+      },
+      {
+        "file": "returned/black_void-loop/frame_002.png",
+        "sha256": "cbdb0c4a0933a68c58ca74a7f366ad1ed4a2c54ec488125a58020b1b22ee7fee"
+      },
+      {
+        "file": "returned/black_void-loop/frame_003.png",
+        "sha256": "6b83ef9336fa6685bd4c27dc6089658bd1c0a3a647b285a09feb66d32853f54b"
+      },
+      {
+        "file": "returned/black_void-loop/frame_004.png",
+        "sha256": "86bd2f25fdd0e571546dce806f7a138eceaf7c3c4f6390af731182e141ee21fd"
+      },
+      {
+        "file": "returned/black_void-loop/frame_005.png",
+        "sha256": "0f09dbce2c65ff1900b9fac47f0d190382ec80cbb57de54faff81b462458b9a8"
+      },
+      {
+        "file": "returned/black_void-loop/frame_006.png",
+        "sha256": "625ac191656e615d61a21e5b06ba29e3c098d502da3909bc10ac48c26c0a3872"
+      },
+      {
+        "file": "returned/black_void-loop/frame_007.png",
+        "sha256": "d3e1d3db149b0b2f528548af75ddd5c1b49725cea2ac8835116bdb74e41a0153"
+      },
+      {
+        "file": "returned/black_void-loop/frame_008.png",
+        "sha256": "7b3d83407b0ee0babeaa42fc99e8bd03d1f1fa3e430dccba3e1c7e0a746830b6"
+      },
+      {
+        "file": "returned/black_void-loop/frame_009.png",
+        "sha256": "3d342b1c867b1f811063bec8f02b1241d8a020eb751d9d38353598752a42511e"
+      },
+      {
+        "file": "returned/black_void-loop/frame_010.png",
+        "sha256": "95bd0d406550b029b49da052bd1a23e356092e9fc57bbc1baf2a2cdde7dd166f"
+      },
+      {
+        "file": "returned/black_void-loop/frame_011.png",
+        "sha256": "b7fe943f6b8b663e36c1d7a9612a385af8a235a38676965f7fbf37e03df77cef"
+      },
+      {
+        "file": "returned/black_void-loop/frame_012.png",
+        "sha256": "2c2326a724f5b904af4d4b1f97ac056034e29c4bdaf561c134d858171a8f8f81"
+      },
+      {
+        "file": "returned/black_void-loop/frame_013.png",
+        "sha256": "c0388531e4a81352bd3cb078938f9f964bcce0a494cf45fbbfebfeec465bf748"
+      },
+      {
+        "file": "returned/black_void-loop/frame_014.png",
+        "sha256": "c331fbb5597039e9105ac0c6b85f6a8d35b9c9b3a5bf3fb0dfca52be998b2ccb"
+      },
+      {
+        "file": "returned/black_void-loop/frame_015.png",
+        "sha256": "5e97a70fc74ec426a7e3710f8ba22541767b464d9a69fb3000160b61d235f9a3"
+      },
+      {
+        "file": "returned/black_void-loop/frame_016.png",
+        "sha256": "fb3ce6056cacf05ee2087175ae0c0ad410b0a54aedb0df26ef25a9614e51b395"
+      },
+      {
+        "file": "returned/black_void-loop/frame_017.png",
+        "sha256": "2b148318c73f37b6fed11ad045047f7d943ec3c5c12dcd3edfa409eb7490560f"
+      },
+      {
+        "file": "returned/black_void-loop/frame_018.png",
+        "sha256": "7ab2ad227f1eec49510fbced114e1783f749c7bb67b8bcfc4bf89c7b217a3774"
+      },
+      {
+        "file": "returned/black_void-loop/frame_019.png",
+        "sha256": "f95110df8270b05f25c3a819a08cd738ea36e025013ee34cb8f325f08869e122"
+      },
+      {
+        "file": "returned/black_void-loop/frame_020.png",
+        "sha256": "8defd08d27066eed552303c3377c4a67ce0b8926933f9cfb5f2589a488077917"
+      },
+      {
+        "file": "returned/black_void-loop/frame_021.png",
+        "sha256": "f8eb75f7269f6bf49ddd065513b52ce0da899e1e740bc6f491fc7d01da531e37"
+      },
+      {
+        "file": "returned/black_void-loop/frame_022.png",
+        "sha256": "df726d9bbd26c4cf1b139f7c8f9c1fca6f11edfb75de8bb822178a4a611b2d56"
+      },
+      {
+        "file": "returned/black_void-loop/frame_023.png",
+        "sha256": "b41a5ed61cbf8fad208ec5172d2aa1b2ebe1934612d07067409eecd58582b9c9"
+      },
+      {
+        "file": "returned/black_void-loop/frame_024.png",
+        "sha256": "f101abb4ed256ca93f40ff97c46cb3a8e8e1a31f9065e1b12853888d0a32f62a"
+      },
+      {
+        "file": "returned/black_void-loop/frame_025.png",
+        "sha256": "b4454bfe02e7898a4b6c709f5073dc63262804bfa42961abc145782374c6eaf1"
+      },
+      {
+        "file": "returned/black_void-loop/frame_026.png",
+        "sha256": "0d5986ba6d21dc56343ab8435a5690d7766ff7fb01e984267d7e9506963c436a"
+      },
+      {
+        "file": "returned/black_void-loop/frame_027.png",
+        "sha256": "21d0b098651beeb696a46d65536f7082bf05bff4b29b8cbcfe2f9becf920b900"
+      },
+      {
+        "file": "returned/black_void-loop/frame_028.png",
+        "sha256": "bb6be23b17099f63c036fdb325d26d771502bb13707af8437f940c8738d2889f"
+      },
+      {
+        "file": "returned/black_void-loop/frame_029.png",
+        "sha256": "fecfd92e86f4e81ad5993e20d1d23e8ca8a1e6199ddfbd2078b92f807dbf4c00"
+      },
+      {
+        "file": "returned/black_void-loop/frame_030.png",
+        "sha256": "4f75630fb10973945022f24daba4a4b9b2a1b20a4999b0c36e4b9e5acad1fe6f"
+      },
+      {
+        "file": "returned/black_void-loop/frame_031.png",
+        "sha256": "8be7359370ec53de829d3c4c7d8d1e703df77b81e4599f36265cf4005d6bfb50"
+      },
+      {
+        "file": "returned/black_void-loop/frame_032.png",
+        "sha256": "ea4cb9fd8fc8527fafddec6c4d4be82636453722b62613b510877b1560312d1e"
+      }
+    ]
+  },
+  "blue_rift-standard-loop": {
+    "id": "1e5c949c-5952-4364-8ec3-142e5469151e",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 genuine176x176 RGBA frames, fixed physical center88,88. Seamless idle cycle. The mechanical ring stays rigid and stationary; only electric-blue filaments stream clockwise and small sparks flicker along the rim. Fixed camera, no zoom, no translation, no morphing or growth. The black aperture stays centered and opaque. Return exactly to the first pose at the end.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/blue_rift-standard-loop/frame_000.png",
+        "sha256": "0f9433ce2c2c6918d41792cc7f04196d8974cbb34ce456f14157ab2534a7bbdf"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_001.png",
+        "sha256": "84a1dcf1e578e247f2a2f28c40f8933b209cf9a3fb935e1bd5850ac10568d9be"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_002.png",
+        "sha256": "a27c99267397de6fddc871c264b97973ce0fc6de8ba89cc0bebcd970154781d8"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_003.png",
+        "sha256": "8567f0b38c4baddd5ef75aac2f1350ca4f0b6445333bb1bdfdd4cbfcebef5a83"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_004.png",
+        "sha256": "47ef2e54ae21d403217dda812d4550b108d138376e9ec2788f1b360277ea7115"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_005.png",
+        "sha256": "de9b40a58252c8bd3235d3f502f1bb626c5e37bcf483e72333564a31bebf802d"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_006.png",
+        "sha256": "5e4267c0d898cbb301b83404d6a202a5b57c7949109c17f617187e36a086cbca"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_007.png",
+        "sha256": "eb690b9afd6b89098fa1822b8ce37c183050a97da9ae2419fc31ea1b03e96b2d"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_008.png",
+        "sha256": "bbee3982a116efa3b7f0e0c13f55bf527b27fb06ffbfb48c3dad30155425bbe5"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_009.png",
+        "sha256": "4a27a5adab48b3345145814cbe4ae1104455a356dd009e8e593c158e1d596c24"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_010.png",
+        "sha256": "0f0d766e02607df7d2a2914c53b0e7fd7794f75bf6c26e98c9698d02ccd48928"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_011.png",
+        "sha256": "0da646d4ff9b50fddee0902cdbdf34ffe5a28acce1f54d10661ee0a6d7a80df7"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_012.png",
+        "sha256": "b508ff55e0f064b6b7f6589b57cfea999e6decab579169741dcb5350d861b169"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_013.png",
+        "sha256": "ee0b2c91ae6bf7a1a72e87ab694936c5a7fd7efe72118b5a4df473d0a5f5d0ba"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_014.png",
+        "sha256": "a079dc4f1f01aa681b56ca13d653fdc928ac36ba0bbadfc8bf08eaa2968f294a"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_015.png",
+        "sha256": "d2bc9651ea4a2f297b63382a0b5415d08d2307388eaf6e18c1b7b9270c29c82a"
+      },
+      {
+        "file": "returned/blue_rift-standard-loop/frame_016.png",
+        "sha256": "0d58ca1e2e47a44dd5708ea89473d67a82d418d6c0b323c0e86cf582b48f7b29"
+      }
+    ]
+  },
+  "arena2-open-seed": {
+    "id": "015ac41b-3bfd-46f0-9e01-c66592180f83",
+    "tool": "create_image_pixflux",
+    "prompt": "FRAME FORMAT: one opaque400x400 background. A nearly empty, boundless starless black alien hell void for a Neo Geo pixel-art shoot-em-up final battle. Uniform dark black space extends in every direction. Very faint distant dark-red gaseous dust clouds, a few tiny red embers and sparse small green infected-data glints dispersed randomly throughout the middle and depth. Empty black negative space dominates. No foreground matter. No tendrils, trees, membranes, limbs, arches, walls, floor, pillars, borders, side framing, horizon, scenery, portal ring, characters, ships or interface. An endless alien abyss of darkness and distant mist. Hard pixel-art clusters and subtle dark shading, no smooth digital painting.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/arena2-open-seed/frame_000.png",
+        "sha256": "2876e7fb2abe334e5164360d447ef6f3244e5bc68d47e3a4e252d443d4170737"
+      }
+    ]
+  },
+  "code-standard-loop": {
+    "id": "dcdc59c1-0654-46b9-8f09-46f036c2fab5",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 genuine128x128 RGBA frames. Fixed central pivot64,64. A seamless code-corruption loop: tiny green binary strings fill and erase, thin circuits light in traveling pulses, small violet pixel fragments flicker in place. Keep the same centered layout and sparse transparent gaps. No camera movement, scaling, zoom, solid rectangular background or large flashing patch.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/code-standard-loop/frame_000.png",
+        "sha256": "c2dc68d41f4886f54326fd67595c2db9d06863af94ffd467463fc442cc888474"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_001.png",
+        "sha256": "152225681500ff7643a3ae2dfd405e3ed4a277d2431efe70cc8eb6364bfbfe01"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_002.png",
+        "sha256": "bb9eb3bb15fbf9e1940c6b9a0ba1a803c14a836d99e86351e4468e3b826ce2c7"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_003.png",
+        "sha256": "9d4a183542c49263ae442ae922978ee62d93d6a06c1eda104d373e0c22fb558e"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_004.png",
+        "sha256": "bcdedeb4b57f8010216f908f4e5452eb98995e57edd67f1c3367c026e6de0dda"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_005.png",
+        "sha256": "c8d53893722eb691a2527028440dff7ccc205785ec3e530c4c237f307cbfe44c"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_006.png",
+        "sha256": "59be9582f7a1a7404d07f163823bf12c11a201cae32bfe17b00d65fa974baff6"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_007.png",
+        "sha256": "9747419a60420119c2007be8833a8c93cb210626e0bd6efc5def104185137892"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_008.png",
+        "sha256": "88edd6e3230f3fcd8763f1ce107d307412d846c1386999f83ba19d8c6406f982"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_009.png",
+        "sha256": "abc59e397afd413d71a5c6071aa65120d30ad35026ee39f0e9cf83fb78f69111"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_010.png",
+        "sha256": "3e4170304d77f6ce647ec90733c43fd04ce490e9c37c2870d8a8b6d11eea09c9"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_011.png",
+        "sha256": "665829ee87a4a233a57a1f8ec849c8394d600ece025730e7d67f5db4f787262d"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_012.png",
+        "sha256": "8db4c00e88809ad45891b3d7f2c5057685c6740ad1edda6296986d6795c57cf9"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_013.png",
+        "sha256": "882ff50a6019d4aa6a15f34905a761ac6e90301198c850019af4ff572e2d6aef"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_014.png",
+        "sha256": "628371a560c7bc54591e5872dd7c0b91ef055b8c29641d20d124ccbf3f50285c"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_015.png",
+        "sha256": "56beb0b54f8f4841f6c4bf4506caae9d46589d2f2701859dd3d1da7e0dbbf72c"
+      },
+      {
+        "file": "returned/code-standard-loop/frame_016.png",
+        "sha256": "4c761d405e98e8e046a169bb0bbcdfe1a9e79641d5316bd9dc7484b148524f34"
+      }
+    ]
+  },
+  "red_rift-standard-form": {
+    "id": "34b8dd50-5331-4e0c-860e-77beb418bc83",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 genuine176x176 RGBA frames, fixed physical center88,88 and clear transparent margins. A tiny centered ignition point grows in a clockwise spiral; the black aperture expands and the chrome rim materializes progressively into the exact fully open portal. Remain perfectly centered, maintain palette and proportions. Fixed camera, no panning or zoom, no sideways drift.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/red_rift-standard-form/frame_000.png",
+        "sha256": "114cf38aca163d98d9c9839b9448a580f5eaac43cc04c2a2d8457d1955a0cfe9"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_001.png",
+        "sha256": "c32e41b6f7a8d32c29523c524ea5e7aa5da9fe3b2dd50bd87482b0a3ad26f90d"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_002.png",
+        "sha256": "feb203f8b5fe39f6a776aabe7f27473bae986ed5e4c9a2d0f52f3f712b05a32f"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_003.png",
+        "sha256": "4af08e04df78f63d36759d1435555c0b54b9e17329582acf1955818119f24642"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_004.png",
+        "sha256": "1b07592ff4780b8465140721dc5cf19ca9f5c336a9fb6c7d72d95cb9237a5a6f"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_005.png",
+        "sha256": "12b0d803c89a8575cab3f41d5b9cf84a9021d619931a656306b79cd1e1cd54fe"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_006.png",
+        "sha256": "9b12168a75cfa1bb8aefa4b9065c9778b4d00f160c2de5c4dca0ae93a87d77ed"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_007.png",
+        "sha256": "78914e614ae38ee89e3fe5ec8821e9120f6dd88a568d6dba8ac26bbdc38d4870"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_008.png",
+        "sha256": "c016dc6587c3f5d67a96332ea112f5f408687b54e80f9deeb3a87d5f5471bdab"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_009.png",
+        "sha256": "15a5c52beb984a381abc655fa34bf5ea3c7aa5d8360429b805750472784a0e9a"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_010.png",
+        "sha256": "2515b379dbab30a2b88407349c8eb7c00aaff656c76737a13d950f53803f9486"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_011.png",
+        "sha256": "fccf2228362d233dd5483d330524286b11651eeb4cf2463d6c7843bdc1db692d"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_012.png",
+        "sha256": "75a8c6e0c0add354d77eec8f26c1caac97f8c9f4cd17eb478efc47d7ead62d94"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_013.png",
+        "sha256": "89eabd501b16841f9f2b21ccb7439d63c5bd12180136d5eba4ad96ddee1b7532"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_014.png",
+        "sha256": "ddfb83ad84d5be7fa19881576cd6580ea41234a08b5b9e0ac4a92ac7e0ce236e"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_015.png",
+        "sha256": "47d4992b7ddb0bebb3675c7ab04e8bf4cb215e808dc23540fc4842c50b36ea98"
+      },
+      {
+        "file": "returned/red_rift-standard-form/frame_016.png",
+        "sha256": "c385793827724934cf4a9802c0f8056551249c16960579a4294030cc25e9ea44"
+      }
+    ]
+  },
+  "red_rift-standard-close": {
+    "id": "2fd91b9d-872f-4b62-a1b4-40e4638850df",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 genuine176x176 RGBA frames, fixed physical center88,88 and clear transparent margins. The open circular aperture collapses progressively inward; the chrome rim is consumed in a clockwise implosion and every energy filament folds into the tiny central spark. A separately drawn collapse, not reversed opening. Remain perfectly centered, maintain palette and proportions. Fixed camera, no panning or zoom, no sideways drift.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/red_rift-standard-close/frame_000.png",
+        "sha256": "02cc375b0626bb4c0a3f4f2420a75789688e955ad1c635cb609474f56379ae85"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_001.png",
+        "sha256": "60598d4f86b79ebf6caf62c10d5fb0556d802e837c1935768e9542ab527b061b"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_002.png",
+        "sha256": "fa6186e5dc95e84e80a0106db3c792235c677699a612c94c7d29d57e9049ae37"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_003.png",
+        "sha256": "e709da97f9697236a152a8bb2bd58de776410d6cd2900682dd974684fa39a0bf"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_004.png",
+        "sha256": "829451368f80b9cf517405952d7e5e664819b05cdd0a9499907edfbb0a15fb3e"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_005.png",
+        "sha256": "aabe6e5c6988925013b7be47d34f0af57e4942667b5d21a98812604da91f2dad"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_006.png",
+        "sha256": "abf4391a34a2272ee23f7be28687e24c898f9eeac7b06250f5bf5e1ef39eb5bc"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_007.png",
+        "sha256": "8ca476ec06a1a4fde08d6dfe19bf204e801f38bd3613ad296dd9cbb84d860075"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_008.png",
+        "sha256": "07097a8dfd002f58b01ba2343d38380d6edf580b4cb15bcc93a1f77c67af46e7"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_009.png",
+        "sha256": "17d7426e80e330fae08b84a8d0a831811e6a79b48816c445ee5ab56fb56ada63"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_010.png",
+        "sha256": "f90f6da0fd33f37536a10403326f591faf0d359358c649a24ef539af1eae7582"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_011.png",
+        "sha256": "dd4b7050ff7b4fc73affdb4df274c239bc7958142df4a1528cc6e90b8a303536"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_012.png",
+        "sha256": "49db53514d674e22dabff0e304a802614498691ddfe0009722e069ea57b09fc3"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_013.png",
+        "sha256": "464a5617add2471c2555da8a3dfd994d72c5acb5653713e51282bc1f2c924334"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_014.png",
+        "sha256": "dc26db55a4ebaa562cb74ed5a801b89934e75a4c9ea62f6343e8740e9376b233"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_015.png",
+        "sha256": "4b5bcba3804b47ada9d7365357758b6e74eb7baea3306289effc2386b1e9f859"
+      },
+      {
+        "file": "returned/red_rift-standard-close/frame_016.png",
+        "sha256": "114cf38aca163d98d9c9839b9448a580f5eaac43cc04c2a2d8457d1955a0cfe9"
+      }
+    ]
+  },
+  "black_void-standard-form": {
+    "id": "086922c0-2dc2-45db-aa81-63ab66aea57f",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 genuine176x176 RGBA frames, fixed physical center88,88 and clear transparent margins. A tiny centered ignition point grows in a clockwise spiral; the black aperture expands and the chrome rim materializes progressively into the exact fully open portal. Remain perfectly centered, maintain palette and proportions. Fixed camera, no panning or zoom, no sideways drift.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/black_void-standard-form/frame_000.png",
+        "sha256": "6b82ad468bd437f43694cc6823ef483997998c24b8448f4a7c56377aa204bdac"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_001.png",
+        "sha256": "10e5b4daf573ef5d44eeff6754efbae42889614dcfccf7ea852aca1055495427"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_002.png",
+        "sha256": "77464c7bc51bdaed0dd1ea679456bd17eee46cf998e2867669948620d7338b61"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_003.png",
+        "sha256": "712b8973b632164d09964c89324b88f734b64bc68e948d7c198e5c2f739284fa"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_004.png",
+        "sha256": "fd851e7b1cc9c45022f3f803fe944a165e2222e44e220cf59b6b8843066c8987"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_005.png",
+        "sha256": "e330349d5a0c5915c2b07fd590912103050964544af0f77b952610e73ae005d3"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_006.png",
+        "sha256": "732362f988326e0757e2f793d6b86b7bd90e83d561bb8080e41cd25bf3d2d549"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_007.png",
+        "sha256": "834a60915212d1012869adc0aaed73d906b8ca2b4a8710f4ca997f7770d386b8"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_008.png",
+        "sha256": "94c2f65d9a3bdf0227cef268d02b304c40afb3e66373592474d1be727e393f28"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_009.png",
+        "sha256": "a78bff87f296f51c719eb9ab8ad5c38da4ed83104e8dc1f5816758b3cae8ad82"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_010.png",
+        "sha256": "c12cf0771c4fd351a02c1e6928e5cb902842e63c3b78974f29a336a218a4e629"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_011.png",
+        "sha256": "a3bdb0f0e26d0129114a6a053112b3335702fe6bbdad9c6dac11549357c2c54c"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_012.png",
+        "sha256": "2f4b9dbf6bf068ab09a677040fbb22ddac32f4fa09aaced60e5dfecd87cd3529"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_013.png",
+        "sha256": "9dc88ca55c60017303557512f37f42abdbd7544f9e55cefbdc95b574704595d0"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_014.png",
+        "sha256": "19112e8edb6f3794e405b43401932e03d4a0a130c8408be9bac0854d37e4657d"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_015.png",
+        "sha256": "5b5d0afddbc15bd79b711b63f970d9682ddb1e21fbf25e46a269d8f6dc7b8e84"
+      },
+      {
+        "file": "returned/black_void-standard-form/frame_016.png",
+        "sha256": "a541793fca749ea8e4ef94481cccc9125a443666891ec6f176c9e14ea37de33b"
+      }
+    ]
+  },
+  "windSpread-seed": {
+    "id": "7744c306-efcc-4bad-b734-15a96907d21f",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT:64x64 RGBA frame, fixed pivot32,32. One compact projectile occupies only the middle24x30 pixels, pointing straight NORTH, transparent safety margins. Bullets of Fury Neo Geo hard pixel clusters, emerald green, mint-white tip, dark green outline. one small round wind-infused green-white pellet, tiny bright compressed-air bead with a short trailing emerald comma of air. Not a shotgun shell, no casing, no metal, no big slug. Single ammunition sprite, no letters, HUD, scenery or weapon. Short trail.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/windSpread-seed/frame_000.png",
+        "sha256": "d629b4ad101f234a76022d65816959d54ca112637158dfde7249790355759997"
+      }
+    ]
+  },
+  "windHeavy-seed": {
+    "id": "d41cc82c-db2d-4017-ab3b-f1957cb472e4",
+    "tool": "create_image_pro_flash",
+    "prompt": "FRAME FORMAT:64x64 RGBA frame, fixed pivot32,32. One compact projectile occupies only the middle24x30 pixels, pointing straight NORTH, transparent safety margins. Bullets of Fury Neo Geo hard pixel clusters, emerald green, mint-white tip, dark green outline. a compact green-white chaingun Wind energy round, two tiny curling emerald air streamlets around a bright narrow core. No metal body, no casing, no fins, no big slug. Single ammunition sprite, no letters, HUD, scenery or weapon. Short trail.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/windHeavy-seed/frame_000.png",
+        "sha256": "c6fae184a4fc90d1b0d23d11e4d82b01e66af2301c2852c9e0a1e87f2c2b4841"
+      }
+    ]
+  },
+  "windBullets-loop": {
+    "id": "0ad67c6e-8e79-4907-b096-806ea15f5931",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 distinct64x64 RGBA frames, fixed physical pivot32,32. The compact round stays stationary and points NORTH. Tiny emerald wind ribbons flow around its bright core, curl briefly behind it and cycle smoothly. No object translation, growth, camera movement or rotation. Keep total short-trail silhouette within24x30px and retain crisp pixel clusters. A seamless cycle, not a long flame or laser.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/windBullets-loop/frame_000.png",
+        "sha256": "67abbf952f6759bb545e1a7e2e0ff3e2bd6e27413ce7b9425554f7279e035584"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_001.png",
+        "sha256": "c223985fbcc7a95e49d869df6691f86860a27422246a7c31664dad46f7a7a151"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_002.png",
+        "sha256": "0bba83cf2e57a08f64ca9aa454182625e041fe5c30e0c220c79bb1cc93c4f4cc"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_003.png",
+        "sha256": "d68a8399934fca7bb3e6b9a169cc987efc7fd87f52e99c3d7dd3b94500c29c87"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_004.png",
+        "sha256": "9685267807bef409ffc1fa4a6424d5bc160232e66544003547f38c8f424e0b0c"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_005.png",
+        "sha256": "f20f5ba455cfb6e1c3146922099856ee4a96ad249f3d56e4cb32c2c87dfd01e9"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_006.png",
+        "sha256": "02853335bb7db3ed787e10cb8742328b50bb766b8b4a3e7f2c413f6247b9813f"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_007.png",
+        "sha256": "081584c2dbdda9ad5cd357369ad090f4a48e49389051cc4fd3402a2ad04ef6b3"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_008.png",
+        "sha256": "a4b535ceb2915de902c4c66e57abc51812a9e2d26fc53bb3fb89ed8a421ef17f"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_009.png",
+        "sha256": "119f1c5953754d0f80da2fbb8cf353ec827131cb88086c1c198daacd99163a2d"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_010.png",
+        "sha256": "5cfae191cee0e0df465136a174292193204ca8b1454e97e0c6fb35b425df7bc9"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_011.png",
+        "sha256": "7510a3e1b315e7169181329d19843b518a4c74e40c5370a9e069e2c8476fce84"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_012.png",
+        "sha256": "b6886ef060f6a878a62c2a8b84f5b4a7620d2e3101c30d4d908cd278493b860f"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_013.png",
+        "sha256": "1472cb2150416f55db7de13b8a9a65fe545d540209aa52341237b986f2de153b"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_014.png",
+        "sha256": "e4412775852a662769903b15d3c8b8175775ee559ff69b1783cb87dbfeea324a"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_015.png",
+        "sha256": "85bc856c11a43ba478a99f2007e6b21975df0f21d57df1e741a622cb0c45fb57"
+      },
+      {
+        "file": "returned/windBullets-loop/frame_016.png",
+        "sha256": "72b6d36a99a1f2dcdb32bc6c25b0d08bd77dd8be34a8e6f2e6ba7ee2a00eecc5"
+      }
+    ]
+  },
+  "windHeavy-loop": {
+    "id": "33bd76c0-3d02-4929-88a5-1f25dd0ad992",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 distinct64x64 RGBA frames, fixed physical pivot32,32. The compact round stays stationary and points NORTH. Tiny emerald wind ribbons flow around its bright core, curl briefly behind it and cycle smoothly. No object translation, growth, camera movement or rotation. Keep total short-trail silhouette within24x30px and retain crisp pixel clusters. A seamless cycle, not a long flame or laser.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/windHeavy-loop/frame_000.png",
+        "sha256": "ea9159beb2d57e3ee52b94000f68f15e00c9aa13f3e13acb801cbd2bb81e9e19"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_001.png",
+        "sha256": "aaa89164e9290c01ec042ee50b05f2d3551bc57354eae060b5cb2ea4b44f6a58"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_002.png",
+        "sha256": "6e69e706f968577c66fd7fa3fefcabe929f5929dc6e058399f5e26ad188be29c"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_003.png",
+        "sha256": "029fe89c58bef6897e87139e1b0c4f8b29febf58fa4446f1d1647a9ccf3dcb04"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_004.png",
+        "sha256": "95d0a34151756c991973c9f522d577a6941df587f94d8db29d12fc01cade41f3"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_005.png",
+        "sha256": "7e576a91115ce41e5eba2e8cd3080d76bae82b82914c47510256f6ac6bb5073c"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_006.png",
+        "sha256": "318555b406921cde7b819b3a32e8deb1acbd7a7098534bfbc095ab0f0b840659"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_007.png",
+        "sha256": "2ff66e46b3ff0cfe4f36106e89638135fe296c0d91f832e34eacc616a3a0a346"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_008.png",
+        "sha256": "ac1bcc1115fdd31d16c7dacf0cfd6284709a16c0941f2ebb7529ac9c1cce66a9"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_009.png",
+        "sha256": "b80c6d7bf95fc1c17b608be93c4a3d42bb0de2128305ab414cf921caf1412a19"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_010.png",
+        "sha256": "9771f3b1e1aeb7762a0896e389906ae602e04acc8385e3cf2ddb70d8e8104cb2"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_011.png",
+        "sha256": "613adfb9616917a24102c2d7bfb3c5b1136be040135ad9fc5dfa46e1f7744681"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_012.png",
+        "sha256": "e651605db66903a49d625a71ce1139399029467fb97819383f5529f725ad4483"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_013.png",
+        "sha256": "606fca4f367c5d50fd901f9913aafb1b3b1e2cf33b628fe30a14f307ce57178d"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_014.png",
+        "sha256": "e59a75db96ab90c0b80a8a6c6d33ce137a5cbae7a4d98b8e074b8c6fa119c119"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_015.png",
+        "sha256": "a753723a21edd351b31655916719100eb9b46ae9580f5e814942425def02bae5"
+      },
+      {
+        "file": "returned/windHeavy-loop/frame_016.png",
+        "sha256": "3c95e928a6381e074ea1bab43fbf33ac9bd2a6f3fb94a042091a3dc7e6a95f82"
+      }
+    ]
+  },
+  "windSpread-loop": {
+    "id": "4d8f0600-681c-46ec-ac15-3ebad8187816",
+    "tool": "animate_image",
+    "prompt": "FRAME FORMAT:16 distinct64x64 RGBA frames, fixed physical pivot32,32. The compact round stays stationary and points NORTH. Tiny emerald wind ribbons flow around its bright core, curl briefly behind it and cycle smoothly. No object translation, growth, camera movement or rotation. Keep total short-trail silhouette within24x30px and retain crisp pixel clusters. A seamless cycle, not a long flame or laser.",
+    "status": "complete",
+    "returnedFrames": [
+      {
+        "file": "returned/windSpread-loop/frame_000.png",
+        "sha256": "2ff831e95bf6017289c9ca7ee7af0c8e4d8635bcb779a6f69086672ee7e9aec7"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_001.png",
+        "sha256": "9243b512de377dd7c87d58e4d23d92de6af674af2c656d09fef69f8ef9227b3f"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_002.png",
+        "sha256": "72dcf054deb633866f6c811f3ffc9a5bb0bba4e7035c4f37c6da625ea816086a"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_003.png",
+        "sha256": "e9524d95b3c64aaf14988c7f0b6bcedb6c52131fcdd95420bc9ee32a6ca1298d"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_004.png",
+        "sha256": "bdf05505e23a47ca18d7b88cccdf9bce7a8f2a77b5f05e1d9d8d10f5c4a7cd56"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_005.png",
+        "sha256": "319d796c4bcd2a79cb3e9c935c997261b7c41bc069611a9bb2ef3be83aab1ebe"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_006.png",
+        "sha256": "f6facfc67626eb3dce84fc8c7caac2c38c2c28868da44f53e44f90231dda240a"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_007.png",
+        "sha256": "b510887f7a571a834bea023ea422f3a4bd310a0fd91f98576f0d131d5f73427f"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_008.png",
+        "sha256": "485e2c9f238dc6f21fa852aa2bdff1eceec283e7924019d5b732792fac62ce68"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_009.png",
+        "sha256": "a61111569419a3f857e3569e2cc420fb6ff1534c339b3e448291f794fe505c5a"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_010.png",
+        "sha256": "0a68a6c7b2bf844b7ff184c658ee7b79d4c20e4de744b88c24cd659878935e05"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_011.png",
+        "sha256": "43845f299472957a168811ed09d8e07fd12610ddbc3995bfe77c4fae7d97714a"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_012.png",
+        "sha256": "60c2bd177440aa7136f7e61c3871e1461ecdab0f0fed083b5c787a37bfcbe871"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_013.png",
+        "sha256": "dbb8d8b05fb00a80297e9f543cfba1517c50bc66ad580ccaafe9b65428289247"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_014.png",
+        "sha256": "68cbc8e0cf03257e2c394899d430b56e4cad2c37fa912bf4a9b825de773447fb"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_015.png",
+        "sha256": "1fd95f8ac8f2c51b6e083abc7618276be781b742ddcc0050a717441b0408f8f3"
+      },
+      {
+        "file": "returned/windSpread-loop/frame_016.png",
+        "sha256": "57aef118eb90d9021ebba45fb315bf08605dca21fb55491e9cd19f9a98c78af3"
+      }
+    ]
+  }
+}

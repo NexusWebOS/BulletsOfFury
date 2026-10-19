@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-19",
+  "scope": "Stage 3 Rime Wall ice weapons, permanent shoulder mortars, exposed critical core and Frost Cruiser frost effects",
+  "review": "docs/previews/rime_defense_1019/index.html",
+  "status": "Native verified:64 pass,0 fail,zero page/console/draw/asset errors",
+  "syntax": {
+    "assets/game.js": "passed",
+    "assets/rime_defense_1019.js": "passed",
+    "assets/rime_effects_art_1019.js": "passed",
+    "probeAndBuilderPython": "passed",
+    "reviewInlineScripts": "passed"
+  },
+  "coreSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exitCode": 0,
+    "printedOk": 8785,
+    "finalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "baselinePrintedOk": 8785,
+    "newFailures": []
+  },
+  "focusedState": {
+    "passed": 51,
+    "failed": 0,
+    "timing": [
+      {
+        "diff": "normal",
+        "laser": 1.4,
+        "mortar": 1.65,
+        "fall": 1.35,
+        "ram": 1.25
+      },
+      {
+        "diff": "hard",
+        "laser": 1.18,
+        "mortar": 1.4,
+        "fall": 1.2,
+        "ram": 1.08
+      },
+      {
+        "diff": "furious",
+        "laser": 1.02,
+        "mortar": 1.2,
+        "fall": 1.1,
+        "ram": 0.96
+      }
+    ],
+    "other": {
+      "miniBook": true,
+      "miniIce": true,
+      "wardenBook": true,
+      "wardenParts": 5
+    },
+    "scope": "Mocked-renderer encounter state and native damage routing, not pixel verification"
+  },
+  "native": {
+    "initial": {
+      "passed": 38,
+      "failed": 6,
+      "pageConsoleDrawAssetErrors": [],
+      "report": "_shots/rime_defense_1019/native-report.json"
+    },
+    "verifiedInitial": [
+      "All 96 actual generated PNG poses reached the game context drawImage",
+      "Native authored cold MG projectile rendered",
+      "Regular FOV and frost charge rendered",
+      "Shoulder mortar descent and impact rendered",
+      "Ordinary keyboard primary fire reached exposed core on Normal, Hard and Furious",
+      "Dynamic critical-core Retina target",
+      "Native desperate ram release",
+      "Frost Cruiser retained ice identity"
+    ],
+    "initialFailedChecks": [
+      "One live-beam asset-key check on each difficulty expected the older l23fx bank; active renderer uses av3_laser_beams",
+      "One flash-pixel comparison on each difficulty cleared only the part while native hitBoss simultaneously flashed its owner"
+    ],
+    "fixtureCorrections": [
+      "Live-beam check now accepts the actual active registered ice-beam bank",
+      "Flash comparison snapshots and restores both real owner and part flash timers",
+      "Removed entry thaw narration only in controlled fixtures/review scenes"
+    ],
+    "pending": [],
+    "blocker": null,
+    "final": {
+      "passed": 64,
+      "failed": 0,
+      "errors": [],
+      "exitCode": 0,
+      "report": "_shots/rime_defense_1019/native-report.json",
+      "scope": "N/H/F attack,actual drawImage,pixel containment,hit-flash,core damage and delivered review UI"
+    }
+  },
+  "art": {
+    "service": "PixelLab",
+    "banks": {
+      "swirl": {
+        "job": "b7523103-745f-45f6-a289-99de8baddc1c",
+        "canvas": [
+          192,
+          192
+        ],
+        "pivot": [
+          96,
+          96
+        ],
+        "proportionalScale": 1,
+        "frames": 32,
+        "unique": 32,
+        "loopSeamDelta": 23.204
+      },
+      "charge": {
+        "job": "c689aa94-a23a-45ba-92e0-3b54a6b50428",
+        "canvas": [
+          192,
+          192
+        ],
+        "pivot": [
+          96,
+          96
+        ],
+        "proportionalScale": 1,
+        "frames": 32,
+        "unique": 32,
+        "loopSeamDelta": 17.809
+      },
+      "mortar": {
+        "job": "1c7580f8-cd7b-4af2-86e9-e512ba117448",
+        "canvas": [
+          96,
+          288
+        ],
+        "pivot": [
+          48,
+          232
+        ],
+        "proportionalScale": 1,
+        "frames": 32,
+        "unique": 32,
+        "loopSeamDelta": 9.847
+      }
+    },
+    "generatedFrames": 96,
+    "shippingPNGBytes": 982130,
+    "contactSheetsAndOnionsInspected": true,
+    "initialBalanceUSD": 9.98,
+    "finalBalanceUSD": 9.52,
+    "approximateCreditsUsedUSD": 0.46,
+    "noTopUpPerformed": true,
+    "rejectedSeeds": [
+      {
+        "job": "6a1ef56e-0725-42ce-aba6-46e47654f126",
+        "reason": "mechanical gear instead of organic frost"
+      },
+      {
+        "job": "7879775e-f826-4d3b-af4e-3624a7054ada",
+        "reason": "framed snowflake icon"
+      },
+      {
+        "job": "6f639120-efed-472d-ae73-460c2c0bc5eb",
+        "reason": "solid asteroid instead of cold vapor"
+      }
+    ]
+  },
+  "preservedStartingFiles": {
+    "assets/game.js": {
+      "unchanged": true,
+      "lf": 80351,
+      "crlf": 0
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "unchanged": true,
+      "lf": 15889,
+      "crlf": 15889
+    },
+    "assets/stage34_assault_1014.js": {
+      "unchanged": true,
+      "lf": 445,
+      "crlf": 0
+    },
+    "assets/modular_roster_0927.js": {
+      "unchanged": true,
+      "lf": 183,
+      "crlf": 0
+    },
+    "assets/feedback_1002.js": {
+      "unchanged": true,
+      "lf": 446,
+      "crlf": 0
+    },
+    "assets/charge_fx_1018.js": {
+      "unchanged": true,
+      "lf": 97,
+      "crlf": 0
+    },
+    "assets/stage3_combat_1004k.js": {
+      "unchanged": true,
+      "lf": 142,
+      "crlf": 0
+    },
+    "assets/warden_center_1018.js": {
+      "unchanged": true,
+      "lf": 93,
+      "crlf": 0
+    },
+    "assets/ground_traffic_1018.js": {
+      "unchanged": true,
+      "lf": 63,
+      "crlf": 0
+    },
+    "assets/stage6_roster_1017.js": {
+      "unchanged": true,
+      "lf": 194,
+      "crlf": 0
+    },
+    "assets/stage6_reactor_1018.js": {
+      "unchanged": true,
+      "lf": 182,
+      "crlf": 0
+    },
+    "AGENTS.md": {
+      "unchanged": true,
+      "lf": 80,
+      "crlf": 7
+    }
+  },
+  "git": "No commit or push during this task"
+}

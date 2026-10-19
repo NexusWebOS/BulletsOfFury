@@ -1,0 +1,2913 @@
+{
+  "passed": 43,
+  "failed": [],
+  "errors": [],
+  "cases": [
+    {
+      "hp": 1254,
+      "damage": 126,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.09866666666666664,
+      "diff": "easy",
+      "weapon": "machine-gun",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 1179,
+      "damage": 201,
+      "hits": 67,
+      "seen": [
+        "spread",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.1313333333333333,
+      "diff": "easy",
+      "weapon": "spread",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 1299,
+      "damage": 81,
+      "hits": 27,
+      "seen": [
+        "beam",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "easy",
+      "weapon": "laser",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 1164,
+      "damage": 216,
+      "hits": 22,
+      "seen": [
+        "flame",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.03333333333333331,
+      "diff": "easy",
+      "weapon": "flamethrower",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 1310.339999999995,
+      "damage": 69.66000000000508,
+      "hits": 81,
+      "seen": [
+        "orb",
+        "missile",
+        "shard"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "easy",
+      "weapon": "ice-orb",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 626.5499999999997,
+      "damage": 753.4500000000003,
+      "hits": 41,
+      "seen": [
+        "orb",
+        "shard",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "easy",
+      "weapon": "fire-orb",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 1185.9999999999982,
+      "damage": 194.00000000000182,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "easy",
+      "weapon": "chaingun",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 1356,
+      "damage": 24,
+      "hits": 1,
+      "seen": [
+        "gmiss"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "easy",
+      "weapon": "missile",
+      "before": {
+        "hp": 1380,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2418,
+      "damage": 126,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "normal",
+      "weapon": "machine-gun",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2343,
+      "damage": 201,
+      "hits": 67,
+      "seen": [
+        "spread",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.1313333333333333,
+      "diff": "normal",
+      "weapon": "spread",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2463,
+      "damage": 81,
+      "hits": 27,
+      "seen": [
+        "beam",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "normal",
+      "weapon": "laser",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2328,
+      "damage": 216,
+      "hits": 22,
+      "seen": [
+        "flame",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.03333333333333331,
+      "diff": "normal",
+      "weapon": "flamethrower",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2474.340000000011,
+      "damage": 69.65999999998894,
+      "hits": 81,
+      "seen": [
+        "orb",
+        "missile",
+        "shard"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "normal",
+      "weapon": "ice-orb",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 1809,
+      "damage": 735,
+      "hits": 39,
+      "seen": [
+        "orb",
+        "shard",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "normal",
+      "weapon": "fire-orb",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2350.0000000000073,
+      "damage": 193.99999999999272,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "normal",
+      "weapon": "chaingun",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2520,
+      "damage": 24,
+      "hits": 1,
+      "seen": [
+        "gmiss"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "normal",
+      "weapon": "missile",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3054,
+      "damage": 126,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "hard",
+      "weapon": "machine-gun",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2979,
+      "damage": 201,
+      "hits": 67,
+      "seen": [
+        "spread",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.1313333333333333,
+      "diff": "hard",
+      "weapon": "spread",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3099,
+      "damage": 81,
+      "hits": 27,
+      "seen": [
+        "beam",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "hard",
+      "weapon": "laser",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2964,
+      "damage": 216,
+      "hits": 22,
+      "seen": [
+        "flame",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.03333333333333331,
+      "diff": "hard",
+      "weapon": "flamethrower",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3110.340000000011,
+      "damage": 69.65999999998894,
+      "hits": 81,
+      "seen": [
+        "orb",
+        "missile",
+        "shard"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "hard",
+      "weapon": "ice-orb",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2436,
+      "damage": 744,
+      "hits": 41,
+      "seen": [
+        "orb",
+        "shard",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "hard",
+      "weapon": "fire-orb",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 2986.0000000000073,
+      "damage": 193.99999999999272,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "hard",
+      "weapon": "chaingun",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3156,
+      "damage": 24,
+      "hits": 1,
+      "seen": [
+        "gmiss"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "hard",
+      "weapon": "missile",
+      "before": {
+        "hp": 3180,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3632,
+      "damage": 126,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "furious",
+      "weapon": "machine-gun",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3557,
+      "damage": 201,
+      "hits": 67,
+      "seen": [
+        "spread",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.1313333333333333,
+      "diff": "furious",
+      "weapon": "spread",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3677,
+      "damage": 81,
+      "hits": 27,
+      "seen": [
+        "beam",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "furious",
+      "weapon": "laser",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3542,
+      "damage": 216,
+      "hits": 22,
+      "seen": [
+        "flame",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.03333333333333331,
+      "diff": "furious",
+      "weapon": "flamethrower",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3688.340000000011,
+      "damage": 69.65999999998894,
+      "hits": 81,
+      "seen": [
+        "orb",
+        "missile",
+        "shard"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "furious",
+      "weapon": "ice-orb",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3014,
+      "damage": 744,
+      "hits": 41,
+      "seen": [
+        "orb",
+        "shard",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "furious",
+      "weapon": "fire-orb",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3564.0000000000073,
+      "damage": 193.99999999999272,
+      "hits": 42,
+      "seen": [
+        "mg",
+        "missile"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "furious",
+      "weapon": "chaingun",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    },
+    {
+      "hp": 3734,
+      "damage": 24,
+      "hits": 1,
+      "seen": [
+        "gmiss"
+      ],
+      "at": "core",
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "furious",
+      "weapon": "missile",
+      "before": {
+        "hp": 3758,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": "core",
+        "solid": true
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "easy core takes real machine-gun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1254,
+        "damage": 126,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.09866666666666664,
+        "diff": "easy",
+        "weapon": "machine-gun",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy core takes real spread projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1179,
+        "damage": 201,
+        "hits": 67,
+        "seen": [
+          "spread",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.1313333333333333,
+        "diff": "easy",
+        "weapon": "spread",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy core takes real laser projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1299,
+        "damage": 81,
+        "hits": 27,
+        "seen": [
+          "beam",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "easy",
+        "weapon": "laser",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy core takes real flamethrower projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1164,
+        "damage": 216,
+        "hits": 22,
+        "seen": [
+          "flame",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.03333333333333331,
+        "diff": "easy",
+        "weapon": "flamethrower",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy core takes real ice-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1310.339999999995,
+        "damage": 69.66000000000508,
+        "hits": 81,
+        "seen": [
+          "orb",
+          "missile",
+          "shard"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "easy",
+        "weapon": "ice-orb",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy core takes real fire-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 626.5499999999997,
+        "damage": 753.4500000000003,
+        "hits": 41,
+        "seen": [
+          "orb",
+          "shard",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "easy",
+        "weapon": "fire-orb",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy core takes real chaingun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1185.9999999999982,
+        "damage": 194.00000000000182,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "easy",
+        "weapon": "chaingun",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy core takes real missile projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1356,
+        "damage": 24,
+        "hits": 1,
+        "seen": [
+          "gmiss"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "easy",
+        "weapon": "missile",
+        "before": {
+          "hp": 1380,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "easy remains an ice encounter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal core takes real machine-gun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2418,
+        "damage": 126,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "normal",
+        "weapon": "machine-gun",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal core takes real spread projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2343,
+        "damage": 201,
+        "hits": 67,
+        "seen": [
+          "spread",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.1313333333333333,
+        "diff": "normal",
+        "weapon": "spread",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal core takes real laser projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2463,
+        "damage": 81,
+        "hits": 27,
+        "seen": [
+          "beam",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "normal",
+        "weapon": "laser",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal core takes real flamethrower projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2328,
+        "damage": 216,
+        "hits": 22,
+        "seen": [
+          "flame",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.03333333333333331,
+        "diff": "normal",
+        "weapon": "flamethrower",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal core takes real ice-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2474.340000000011,
+        "damage": 69.65999999998894,
+        "hits": 81,
+        "seen": [
+          "orb",
+          "missile",
+          "shard"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "normal",
+        "weapon": "ice-orb",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal core takes real fire-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 1809,
+        "damage": 735,
+        "hits": 39,
+        "seen": [
+          "orb",
+          "shard",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "normal",
+        "weapon": "fire-orb",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal core takes real chaingun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2350.0000000000073,
+        "damage": 193.99999999999272,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "normal",
+        "weapon": "chaingun",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal core takes real missile projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2520,
+        "damage": 24,
+        "hits": 1,
+        "seen": [
+          "gmiss"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "normal",
+        "weapon": "missile",
+        "before": {
+          "hp": 2544,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "normal remains an ice encounter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard core takes real machine-gun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3054,
+        "damage": 126,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "hard",
+        "weapon": "machine-gun",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard core takes real spread projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2979,
+        "damage": 201,
+        "hits": 67,
+        "seen": [
+          "spread",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.1313333333333333,
+        "diff": "hard",
+        "weapon": "spread",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard core takes real laser projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3099,
+        "damage": 81,
+        "hits": 27,
+        "seen": [
+          "beam",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "hard",
+        "weapon": "laser",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard core takes real flamethrower projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2964,
+        "damage": 216,
+        "hits": 22,
+        "seen": [
+          "flame",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.03333333333333331,
+        "diff": "hard",
+        "weapon": "flamethrower",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard core takes real ice-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3110.340000000011,
+        "damage": 69.65999999998894,
+        "hits": 81,
+        "seen": [
+          "orb",
+          "missile",
+          "shard"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "hard",
+        "weapon": "ice-orb",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard core takes real fire-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2436,
+        "damage": 744,
+        "hits": 41,
+        "seen": [
+          "orb",
+          "shard",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "hard",
+        "weapon": "fire-orb",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard core takes real chaingun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 2986.0000000000073,
+        "damage": 193.99999999999272,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "hard",
+        "weapon": "chaingun",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard core takes real missile projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3156,
+        "damage": 24,
+        "hits": 1,
+        "seen": [
+          "gmiss"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "hard",
+        "weapon": "missile",
+        "before": {
+          "hp": 3180,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "hard remains an ice encounter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious core takes real machine-gun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3632,
+        "damage": 126,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "furious",
+        "weapon": "machine-gun",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious core takes real spread projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3557,
+        "damage": 201,
+        "hits": 67,
+        "seen": [
+          "spread",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.1313333333333333,
+        "diff": "furious",
+        "weapon": "spread",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious core takes real laser projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3677,
+        "damage": 81,
+        "hits": 27,
+        "seen": [
+          "beam",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "furious",
+        "weapon": "laser",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious core takes real flamethrower projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3542,
+        "damage": 216,
+        "hits": 22,
+        "seen": [
+          "flame",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.03333333333333331,
+        "diff": "furious",
+        "weapon": "flamethrower",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious core takes real ice-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3688.340000000011,
+        "damage": 69.65999999998894,
+        "hits": 81,
+        "seen": [
+          "orb",
+          "missile",
+          "shard"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "furious",
+        "weapon": "ice-orb",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious core takes real fire-orb projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3014,
+        "damage": 744,
+        "hits": 41,
+        "seen": [
+          "orb",
+          "shard",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "furious",
+        "weapon": "fire-orb",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious core takes real chaingun projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3564.0000000000073,
+        "damage": 193.99999999999272,
+        "hits": 42,
+        "seen": [
+          "mg",
+          "missile"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": 0.06599999999999998,
+        "diff": "furious",
+        "weapon": "chaingun",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious core takes real missile projectiles after all modules break",
+      "passed": true,
+      "data": {
+        "hp": 3734,
+        "damage": 24,
+        "hits": 1,
+        "seen": [
+          "gmiss"
+        ],
+        "at": "core",
+        "form": "ice",
+        "skin": "pt11_frost",
+        "flash": -0.01600000000000002,
+        "diff": "furious",
+        "weapon": "missile",
+        "before": {
+          "hp": 3758,
+          "skin": "pt11_frost",
+          "core": {
+            "id": "core",
+            "cell": 3,
+            "x": 340.58,
+            "y": 190.725,
+            "w": 48.13999999999999,
+            "h": 49.589999999999996,
+            "rot": 0,
+            "pivotX": 340,
+            "pivotY": 190,
+            "scale": 0.145,
+            "muzzle": {
+              "x": 340,
+              "y": 192.9
+            }
+          },
+          "at": "core",
+          "solid": true
+        }
+      }
+    },
+    {
+      "name": "furious remains an ice encounter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The core is reachable while intact modular weapons keep their own routing",
+      "passed": true,
+      "data": {
+        "at": "core",
+        "solid": true,
+        "guns": [
+          {
+            "id": "gunL",
+            "actual": "gunL"
+          },
+          {
+            "id": "gunR",
+            "actual": "gunR"
+          },
+          {
+            "id": "rocketL",
+            "actual": "rocketL"
+          },
+          {
+            "id": "rocketR",
+            "actual": "rocketR"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A real core impact visibly flashes the native damaged pixels",
+      "passed": true,
+      "data": {
+        "changedOpaquePixels": 37762
+      }
+    },
+    {
+      "name": "Core and module hit-flash timers expire normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The painted core follows its actual draw position while bare air stays clear",
+      "passed": true,
+      "data": {
+        "at": "core",
+        "moved": "core",
+        "air": null,
+        "entry": null,
+        "noHit": null,
+        "dead": null
+      }
+    },
+    {
+      "name": "Entry, invulnerability and dead-body collision gates remain intact",
+      "passed": true,
+      "data": {
+        "at": "core",
+        "moved": "core",
+        "air": null,
+        "entry": null,
+        "noHit": null,
+        "dead": null
+      }
+    },
+    {
+      "name": "Ordinary machine-gun rounds can deliver the final core kill without missiles",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or missing asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "baseline": [
+    {
+      "hp": 2544,
+      "damage": 0,
+      "hits": 0,
+      "seen": [],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0,
+      "diff": "normal",
+      "weapon": "machine-gun",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    },
+    {
+      "hp": 2544,
+      "damage": 0,
+      "hits": 0,
+      "seen": [],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0,
+      "diff": "normal",
+      "weapon": "spread",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    },
+    {
+      "hp": 2469,
+      "damage": 75,
+      "hits": 25,
+      "seen": [
+        "beam"
+      ],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.06599999999999998,
+      "diff": "normal",
+      "weapon": "laser",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    },
+    {
+      "hp": 2334,
+      "damage": 210,
+      "hits": 20,
+      "seen": [
+        "flame"
+      ],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0.03333333333333331,
+      "diff": "normal",
+      "weapon": "flamethrower",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    },
+    {
+      "hp": 2544,
+      "damage": 0,
+      "hits": 0,
+      "seen": [],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0,
+      "diff": "normal",
+      "weapon": "ice-orb",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    },
+    {
+      "hp": 2544,
+      "damage": 0,
+      "hits": 0,
+      "seen": [],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0,
+      "diff": "normal",
+      "weapon": "fire-orb",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    },
+    {
+      "hp": 2544,
+      "damage": 0,
+      "hits": 0,
+      "seen": [],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": 0,
+      "diff": "normal",
+      "weapon": "chaingun",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    },
+    {
+      "hp": 2520,
+      "damage": 24,
+      "hits": 1,
+      "seen": [
+        "gmiss"
+      ],
+      "at": null,
+      "form": "ice",
+      "skin": "pt11_frost",
+      "flash": -0.01600000000000002,
+      "diff": "normal",
+      "weapon": "missile",
+      "before": {
+        "hp": 2544,
+        "skin": "pt11_frost",
+        "core": {
+          "id": "core",
+          "cell": 3,
+          "x": 340.58,
+          "y": 190.725,
+          "w": 48.13999999999999,
+          "h": 49.589999999999996,
+          "rot": 0,
+          "pivotX": 340,
+          "pivotY": 190,
+          "scale": 0.145,
+          "muzzle": {
+            "x": 340,
+            "y": 192.9
+          }
+        },
+        "at": null,
+        "solid": false
+      }
+    }
+  ],
+  "coreSuite": {
+    "passes": 8754,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+  },
+  "preservedSourceHashes": {
+    "assets/game.js": {
+      "sha256": "16e651b35f69e355e2ee8449e50224a013dee015a6a47e7b0a8d721583c79209",
+      "unchanged": true
+    },
+    "assets/modular_roster_0927.js": {
+      "sha256": "692141e8fea3a55ca8992648c3ad3e35042e628221175c26edb090ade98f94a9",
+      "unchanged": true
+    },
+    "assets/orbs_1010.js": {
+      "sha256": "00726ac6d3e51b2f3f8099959665576df731313137e67d2c7aec0f5fdda2597f",
+      "unchanged": true
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "682c8dcd950df753b660f8529f7d405e6c965a92e184372d44454bc8462f9dbe",
+      "unchanged": true
+    }
+  },
+  "existingMasksUnchanged": true,
+  "cacheVersion": "frost-core-1017",
+  "commitOrPush": false,
+  "date": "2026-10-17"
+}

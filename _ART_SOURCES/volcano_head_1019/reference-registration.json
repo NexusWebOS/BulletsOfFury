@@ -1,0 +1,31 @@
+{
+  "source": "assets/game/levels/stage_08/boss/identity_1018/v19_volcano_head.png",
+  "sha256": "311f6b26d7157674a8729a065e53b3c3cfebb978705e9e9e48c767d406929edc",
+  "sourceCanvas": [
+    320,
+    320
+  ],
+  "sourceMount": [
+    160,
+    112
+  ],
+  "frame": [
+    128,
+    128
+  ],
+  "pivot": [
+    64,
+    64
+  ],
+  "proportionalScale": 1,
+  "bounds": [
+    34,
+    33,
+    95,
+    98
+  ],
+  "translation": [
+    -96,
+    -48
+  ]
+}

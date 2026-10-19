@@ -1,0 +1,527 @@
+{
+ "design": {
+  "name": "chip_enemyMachineGun",
+  "frames": 38,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [
+   {
+    "on": true,
+    "hz": 150,
+    "sweepTo": 120,
+    "sweepFrames": 4,
+    "sweepCurve": 1,
+    "vibCents": 0,
+    "vibFrames": 6,
+    "arp": [],
+    "arpFrames": 2,
+    "retrig": 4,
+    "retrigCount": 6,
+    "gate": 2,
+    "levelDelay": 0,
+    "levelFade": 0.25,
+    "timbreSweep": 0,
+    "detuneCents": 0,
+    "delay": 0,
+    "patch": {
+     "alg": 4,
+     "fb": 6,
+     "pan": 3,
+     "ams": 0,
+     "pms": 0,
+     "ops": [
+      {
+       "dt": 3,
+       "mul": 15,
+       "tl": 29,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 19,
+       "sr": 4,
+       "sl": 5,
+       "rr": 5,
+       "ssg": 0
+      },
+      {
+       "dt": 3,
+       "mul": 1,
+       "tl": 20,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 17,
+       "sr": 8,
+       "sl": 0,
+       "rr": 5,
+       "ssg": 0
+      },
+      {
+       "dt": 6,
+       "mul": 5,
+       "tl": 32,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 14,
+       "sr": 5,
+       "sl": 6,
+       "rr": 2,
+       "ssg": 0
+      },
+      {
+       "dt": 6,
+       "mul": 1,
+       "tl": 20,
+       "rs": 0,
+       "ar": 31,
+       "am": 0,
+       "dr": 17,
+       "sr": 8,
+       "sl": 0,
+       "rr": 5,
+       "ssg": 0
+      }
+     ]
+    }
+   }
+  ],
+  "noise": {
+   "on": true,
+   "white": true,
+   "rate": 2,
+   "toneHz": 1200,
+   "toneSweepTo": 1200,
+   "vol": 2,
+   "fade": 0.25,
+   "delay": 0,
+   "frames": 24
+  },
+  "tone": {
+   "on": false,
+   "hz": 880,
+   "sweepTo": 880,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 20,
+   "arp": [],
+   "arpFrames": 2
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "chip_enemyMachineGun",
+  "frames": 38,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [
+   {
+    "ch": 0,
+    "patch": {
+     "r30": 63,
+     "r40": 29,
+     "r50": 31,
+     "r60": 19,
+     "r70": 4,
+     "r80": 85,
+     "r90": 0,
+     "r38": 49,
+     "r48": 20,
+     "r58": 31,
+     "r68": 17,
+     "r78": 8,
+     "r88": 5,
+     "r98": 0,
+     "r34": 101,
+     "r44": 32,
+     "r54": 31,
+     "r64": 14,
+     "r74": 5,
+     "r84": 98,
+     "r94": 0,
+     "r3c": 97,
+     "r4c": 20,
+     "r5c": 31,
+     "r6c": 17,
+     "r7c": 8,
+     "r8c": 5,
+     "r9c": 0,
+     "rb0": 52,
+     "rb4": 192
+    },
+    "track": [
+     {
+      "f": 0,
+      "fnum": 1476,
+      "block": 2,
+      "tl": [
+       29,
+       20,
+       32,
+       20
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 1,
+      "fnum": 1396,
+      "block": 2,
+      "tl": [
+       29,
+       20,
+       32,
+       20
+      ],
+      "key": 15,
+      "retrig": 0
+     },
+     {
+      "f": 2,
+      "fnum": 1321,
+      "block": 2,
+      "tl": [
+       29,
+       21,
+       32,
+       21
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 3,
+      "fnum": 1249,
+      "block": 2,
+      "tl": [
+       29,
+       21,
+       32,
+       21
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 4,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       21,
+       32,
+       21
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 6,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       22,
+       32,
+       22
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 8,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       22,
+       32,
+       22
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 10,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       23,
+       32,
+       23
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 12,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       23,
+       32,
+       23
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 14,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       24,
+       32,
+       24
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 16,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       24,
+       32,
+       24
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 18,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       25,
+       32,
+       25
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 20,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       25,
+       32,
+       25
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 22,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       26,
+       32,
+       26
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 24,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       26,
+       32,
+       26
+      ],
+      "key": 15,
+      "retrig": 1
+     },
+     {
+      "f": 26,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       27,
+       32,
+       27
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 30,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       28,
+       32,
+       28
+      ],
+      "key": 0,
+      "retrig": 0
+     },
+     {
+      "f": 34,
+      "fnum": 1181,
+      "block": 2,
+      "tl": [
+       29,
+       29,
+       32,
+       29
+      ],
+      "key": 0,
+      "retrig": 0
+     }
+    ]
+   }
+  ],
+  "psg": [
+   {
+    "ch": 3,
+    "track": [
+     {
+      "f": 0,
+      "period": 6,
+      "vol": 2
+     },
+     {
+      "f": 1,
+      "period": 6,
+      "vol": 2
+     },
+     {
+      "f": 2,
+      "period": 6,
+      "vol": 3
+     },
+     {
+      "f": 3,
+      "period": 6,
+      "vol": 3
+     },
+     {
+      "f": 4,
+      "period": 6,
+      "vol": 3
+     },
+     {
+      "f": 5,
+      "period": 6,
+      "vol": 3
+     },
+     {
+      "f": 6,
+      "period": 6,
+      "vol": 4
+     },
+     {
+      "f": 7,
+      "period": 6,
+      "vol": 4
+     },
+     {
+      "f": 8,
+      "period": 6,
+      "vol": 4
+     },
+     {
+      "f": 9,
+      "period": 6,
+      "vol": 4
+     },
+     {
+      "f": 10,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 11,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 12,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 13,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 14,
+      "period": 6,
+      "vol": 6
+     },
+     {
+      "f": 15,
+      "period": 6,
+      "vol": 6
+     },
+     {
+      "f": 16,
+      "period": 6,
+      "vol": 6
+     },
+     {
+      "f": 17,
+      "period": 6,
+      "vol": 6
+     },
+     {
+      "f": 18,
+      "period": 6,
+      "vol": 7
+     },
+     {
+      "f": 19,
+      "period": 6,
+      "vol": 7
+     },
+     {
+      "f": 20,
+      "period": 6,
+      "vol": 7
+     },
+     {
+      "f": 21,
+      "period": 6,
+      "vol": 7
+     },
+     {
+      "f": 22,
+      "period": 6,
+      "vol": 8
+     },
+     {
+      "f": 23,
+      "period": 6,
+      "vol": 8
+     },
+     {
+      "f": 24,
+      "period": 6,
+      "vol": 15
+     }
+    ]
+   }
+  ],
+  "dac": null
+ }
+}

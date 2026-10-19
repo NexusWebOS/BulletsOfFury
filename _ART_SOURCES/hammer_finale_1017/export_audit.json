@@ -1,0 +1,1313 @@
+{
+  "fragments": {
+    "count": 18,
+    "reassemblesExactRGBA": true,
+    "addedPixels": 0,
+    "purpose": "One-time post-impact armor breakup only; not a combat rig."
+  },
+  "drain": [
+    {
+      "source": "frame_001.png",
+      "sourceSHA256": "d84f15b3bb6d9bdc683235e885276c5fe22b0fec1d3ae3e17b0951f7488d2784",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1530
+    },
+    {
+      "source": "frame_002.png",
+      "sourceSHA256": "e0adf9c861c43acd461f262bb9858b802938724a222a9590c1826dad5e4ea52b",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1596
+    },
+    {
+      "source": "frame_003.png",
+      "sourceSHA256": "63003415cef411365af8508b6897b654c106d5a1585a21a6e7fc5e1fc93c4c9a",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2201
+    },
+    {
+      "source": "frame_004.png",
+      "sourceSHA256": "e61e6787fd84f8457dd1b7da394e05bc08a771c025d61d7ddb64a4d41736a690",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2085
+    },
+    {
+      "source": "frame_005.png",
+      "sourceSHA256": "d0311f1b2bf26891eaf33348371b9a28f8d170f474ca691f6bce627077e2e284",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1734
+    },
+    {
+      "source": "frame_006.png",
+      "sourceSHA256": "a0d73006585a26343adb298fc1c53a4c11b066fe8d557d7a3c3c0595aef80492",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1844
+    },
+    {
+      "source": "frame_007.png",
+      "sourceSHA256": "d4f4b315bc1758eb19c688dbdac54f8e855041affc6e10d06780bbf370c9d3ad",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2118
+    },
+    {
+      "source": "frame_008.png",
+      "sourceSHA256": "ff378c30aa99d29e3fbfb8e88c641a9b5db68aa20abf943267c8b9a2793f389d",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1746
+    },
+    {
+      "source": "frame_009.png",
+      "sourceSHA256": "085ed9c32c99b20a94691a8cda8d3ad921e85a75f1b2ec2d9110fa05d915b4d4",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1573
+    },
+    {
+      "source": "frame_010.png",
+      "sourceSHA256": "be66ee4197f863ede7ff16f3ae9fb79efe343bcc630d231cbe89ba1b855e0c94",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2086
+    },
+    {
+      "source": "frame_011.png",
+      "sourceSHA256": "e85cc6cc8c49b26d5989c8cbdaf40289ebfdc15b5179826ea386869416818219",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1698
+    },
+    {
+      "source": "frame_012.png",
+      "sourceSHA256": "5e97d4190d6de5e3335a66af68d770e80bcdc05e7b9edbeb6b41c8d05e5ed245",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2079
+    },
+    {
+      "source": "frame_013.png",
+      "sourceSHA256": "a0fc779649e64cf35c218a6f730ef3ded07e177da6bb36d7ad6ad22b8d71b55e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1959
+    },
+    {
+      "source": "frame_014.png",
+      "sourceSHA256": "7fc2264e4d44d2ff26e76b366a08f745f4f8c299bb814e2b1ec442ca1bfe9160",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1552
+    },
+    {
+      "source": "frame_015.png",
+      "sourceSHA256": "74ae4eebd683d21fd9a6a40b80eeac0da7be684a83c0ef68fa7c664e05e4682f",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1573
+    },
+    {
+      "source": "frame_016.png",
+      "sourceSHA256": "3addac2f0e3c48d00cb824f51eb39fdc9dfcad5eea8147ee8c7120a0648fb3c6",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2126
+    },
+    {
+      "source": "frame_017.png",
+      "sourceSHA256": "232e01ae55c9aa7cdfd491ffacabdaf6bbee95132ba75b692b745a559eb220ab",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1964
+    },
+    {
+      "source": "frame_018.png",
+      "sourceSHA256": "5e9bcbca59cc65874c5fd5662565f4ece1ebd3577d6ebd715e603f472967f3d6",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1656
+    },
+    {
+      "source": "frame_019.png",
+      "sourceSHA256": "8a9e0722d9e2fabfea6f42842f269ed2c924a72e57fb8740a616727651435faa",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1638
+    },
+    {
+      "source": "frame_020.png",
+      "sourceSHA256": "e490f4b451a04dcdaa74ed41f7eafe5e63ffc0e5dc5b76881b28566d02b311e2",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2022
+    },
+    {
+      "source": "frame_021.png",
+      "sourceSHA256": "27bba0f91798700d99168267c034592507c85e5726687c3dd99c66b1b243b583",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1525
+    },
+    {
+      "source": "frame_022.png",
+      "sourceSHA256": "85fbe5d1af4a0ceaab776774106ff15c219e50923cd6de9d418301d1acdc7cf3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1494
+    },
+    {
+      "source": "frame_023.png",
+      "sourceSHA256": "d36cbb623597546f047d3a17db4c7e273e3d564820b4a197ee53030718e3b880",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1915
+    },
+    {
+      "source": "frame_024.png",
+      "sourceSHA256": "c59cc16802d67e5cdb5e2791fc2975fc1d35aea91ca63cc44fef57b123f6d06c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2136
+    },
+    {
+      "source": "frame_025.png",
+      "sourceSHA256": "c96601f35e18e8278163d06646e7ed06aa67b1b3a37228948e16d582015f3a4d",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1574
+    },
+    {
+      "source": "frame_026.png",
+      "sourceSHA256": "d5ea40e3741b41e3c60548ca0ec9626fb5eeaeacabc719fc2133c11eb64a785c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1602
+    },
+    {
+      "source": "frame_027.png",
+      "sourceSHA256": "3b837705f0aae68a31109bf05baf4dc61cc0e74d0534e52aa85f79727fe068b3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1581
+    },
+    {
+      "source": "frame_028.png",
+      "sourceSHA256": "a1528568e9554b92a19590046b14ddaa2db0681661d918831522a7eaa5353881",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2231
+    },
+    {
+      "source": "frame_029.png",
+      "sourceSHA256": "5c8ea6e95bed8c094e5d4e14dc03232b02d8ca89f7f63d5c6bd02e770c353aac",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1744
+    },
+    {
+      "source": "frame_030.png",
+      "sourceSHA256": "45536463db62b91402701c6e5031d3c8e6f0f9581e3aa47ade5fbc9291e588a5",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1996
+    },
+    {
+      "source": "frame_031.png",
+      "sourceSHA256": "05ed7699d0418448385d85789db68b56f13a6bd09f1fdd0dcd837c6e86ba50e1",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1500
+    },
+    {
+      "source": "frame_032.png",
+      "sourceSHA256": "ee7ad1c3d4480217efb46091da7f602d9fa5c2f14a002fe83347a4039805fcf6",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1439
+    }
+  ],
+  "pulse": [
+    {
+      "source": "frame_001.png",
+      "sourceSHA256": "c8949f3d5b4914a6169f98f02e693be56cd9544dd39c3b8e1a9f0a06a17a3921",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1753
+    },
+    {
+      "source": "frame_002.png",
+      "sourceSHA256": "b52c0245b78b6beb7bbfd4606a0c5123096ed2638a9ba014432f047ce982f882",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1851
+    },
+    {
+      "source": "frame_003.png",
+      "sourceSHA256": "97f994a1f9c4b16287c3382346fe203f11077f80dac6fa35cde4cdc824c78919",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1898
+    },
+    {
+      "source": "frame_004.png",
+      "sourceSHA256": "97acfa8f03f0bf28a30a539a05c0a8365237a32cc0e4afe5580003b2fb480e6d",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2031
+    },
+    {
+      "source": "frame_005.png",
+      "sourceSHA256": "0da397ff918fc0e01477332bc53cfe2651dc01e9c9d3d8cd57332c7363ff0958",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2489
+    },
+    {
+      "source": "frame_006.png",
+      "sourceSHA256": "ac6ef24d2ac2b6bfa50bef556a27ad7a491851529f17b5a5ea34f8c050f2cde3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2803
+    },
+    {
+      "source": "frame_007.png",
+      "sourceSHA256": "ea1143d5d2d4a41d05a686943bdcbc6f6fe5906dd38b554b8420de442b50c522",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2258
+    },
+    {
+      "source": "frame_008.png",
+      "sourceSHA256": "60df758fa3348428c2e0f6c824d4dbe35fcf6406c7dbb35719f30e5e9f7a5f02",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2076
+    },
+    {
+      "source": "frame_009.png",
+      "sourceSHA256": "b6f7bf8c926a1aeef47bf9205fa072922c022bd40c432f0c6e4692740dbbbc28",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2003
+    },
+    {
+      "source": "frame_010.png",
+      "sourceSHA256": "479061d3df9e1716ef06077be50e240022dd01d7aa9aeeacc666d0c23522e58b",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1884
+    },
+    {
+      "source": "frame_011.png",
+      "sourceSHA256": "06a502edd4e0c14f135b26cafb29c182da2a2fe344272b33e31527400a2fc43e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1878
+    },
+    {
+      "source": "frame_012.png",
+      "sourceSHA256": "310c2d0978ac238cad270a26690b28742e8744a99ed46b1f5db330730b996f44",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1862
+    },
+    {
+      "source": "frame_013.png",
+      "sourceSHA256": "bafe78abc2ddffce4a306ae1ea5f77fc23b45f0951f7627150b7c38412e47ad0",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1830
+    },
+    {
+      "source": "frame_014.png",
+      "sourceSHA256": "753dd622ded40be02f3a8a95cc4b59ca17d59b30edb871fea037359a2f47c9af",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1883
+    },
+    {
+      "source": "frame_015.png",
+      "sourceSHA256": "a1b290401aa70a4d2d24b6fb31f2a02093c011550713ee9b166c7c756fe37449",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1950
+    },
+    {
+      "source": "frame_016.png",
+      "sourceSHA256": "d2d2a7d38308a05f71d59bfd9ad9731952e84b5fbec45874c05c36324a93e9e2",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1880
+    },
+    {
+      "source": "frame_017.png",
+      "sourceSHA256": "26d2c7c5f9046a224ff5db52a92c0af58a1e5fa8d9eb7b9113cafac497fd6bf8",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1772
+    },
+    {
+      "source": "frame_018.png",
+      "sourceSHA256": "e539d3a91d22efe134afc316444fc79b3781d8339be581025979efff1acfe26e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2477
+    },
+    {
+      "source": "frame_019.png",
+      "sourceSHA256": "26f19a2b0c51df6257fbcf12f0b8be0e5a49f725a58a5d251830ba9b309f475c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2507
+    },
+    {
+      "source": "frame_020.png",
+      "sourceSHA256": "4e28b9e5444fd7ea4a20fa58699d612460e7c2fda93a6814640599c916a3d13b",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1998
+    },
+    {
+      "source": "frame_021.png",
+      "sourceSHA256": "b29ed53cf44cedd3b2cdd3c4137e865dccec578f6aa959951d59df02f02390da",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2110
+    },
+    {
+      "source": "frame_022.png",
+      "sourceSHA256": "7ed1f47d9c15fc1a0a3d9a3c031c5ca1ae9087a187e8717bd2355a13e5286cec",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2567
+    },
+    {
+      "source": "frame_023.png",
+      "sourceSHA256": "770a6a3b150307aa25585e2ef953c1ebb6f559eeb58c94eb38f7f936ffdbd4a1",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 3106
+    },
+    {
+      "source": "frame_024.png",
+      "sourceSHA256": "a624940f736e276e13b99ed47a1fa8f9fba5267e4042f089938cec5b68252839",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2523
+    },
+    {
+      "source": "frame_025.png",
+      "sourceSHA256": "67d42f3deb7edf3eab9b52004e9dae2ef5523839e3da47ec6050b4ef10217c6e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2444
+    },
+    {
+      "source": "frame_026.png",
+      "sourceSHA256": "a86cc71a71e1974ab13e3ae84de2b5be8a4781144dc11b9041b970df263d18c6",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2201
+    },
+    {
+      "source": "frame_027.png",
+      "sourceSHA256": "a6da552e9370d2c39531fc34c49ab7391ca22484dd1c0dd832d2d10b65a15490",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1998
+    },
+    {
+      "source": "frame_028.png",
+      "sourceSHA256": "be1b0a602a599aeaa23af679a05948a3c6aec931b817b6e93bcbdef15a3fffd1",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2010
+    },
+    {
+      "source": "frame_029.png",
+      "sourceSHA256": "10149f848e0c856f167cd47b044df861c85ad08e7a1a5b9394599fc890350fb7",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1904
+    },
+    {
+      "source": "frame_030.png",
+      "sourceSHA256": "7e5ba4afd6c3a63f0a74ece307f6064f88431d86df0e83cc51ea3a1e13922b85",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1877
+    },
+    {
+      "source": "frame_031.png",
+      "sourceSHA256": "51d9ae05910eee6b34a4334c4e1cb574b966bc27784332ef63a08907715c0b85",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1959
+    },
+    {
+      "source": "frame_032.png",
+      "sourceSHA256": "fc32f1b932c62d89ba0d17784d3e274c60fe6e39b67489526f7ffa842263e1ab",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1990
+    }
+  ],
+  "engulf": [
+    {
+      "source": "frame_001.png",
+      "sourceSHA256": "79c329c804d54efd31b2c29b8dc940d86278ab6371638caf2412d0924deae834",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1585
+    },
+    {
+      "source": "frame_002.png",
+      "sourceSHA256": "3d26ece02e47c08e5a413d4c3c7d9f5a558b3d4f0468f597acbffa84f851fcac",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1551
+    },
+    {
+      "source": "frame_003.png",
+      "sourceSHA256": "41f7fb78e7165fb325a88e384135611e57ca468bb20c4f9f5bd7139a434fa9cb",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1595
+    },
+    {
+      "source": "frame_004.png",
+      "sourceSHA256": "2d4fecd1c91d0d12720d6479c1ba739e02a23355c6bede760feab5842256bb63",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1607
+    },
+    {
+      "source": "frame_005.png",
+      "sourceSHA256": "cb1a038499dfede304b14e93d6e3a6279d4c3e38e9e25ac503b7a6b88a3f636c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1612
+    },
+    {
+      "source": "frame_006.png",
+      "sourceSHA256": "75db352faf1d787db877b2c9d08ec6be10d0bf284a27896221aedde7246e2841",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1614
+    },
+    {
+      "source": "frame_007.png",
+      "sourceSHA256": "94cd60a66cb425640b2121405e3220d5d847363fc91a2031a84d80f16a6cc5b4",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1742
+    },
+    {
+      "source": "frame_008.png",
+      "sourceSHA256": "b09d4fa55e54356bde41c8430ec8087bad8c913a62b85dc93876f766a73ee8bc",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 5775
+    },
+    {
+      "source": "frame_009.png",
+      "sourceSHA256": "d58f72c9b7f98ef53878e218f53037f1b1a86745df61a4b41b1c6773717c86f3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 5430
+    },
+    {
+      "source": "frame_010.png",
+      "sourceSHA256": "a336c76717d9d3099a06d0b5b48aed02a153cb843559369604e2e97e98c5138e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 5615
+    },
+    {
+      "source": "frame_011.png",
+      "sourceSHA256": "4db1fbdf89a36cb5b0abff9414eaf81edfceb45ce8b6860e7a9b4c86798223f9",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 5833
+    },
+    {
+      "source": "frame_012.png",
+      "sourceSHA256": "aecf27f51d3bc24179b57b6b1470bdb88dba47b29c994d91f556a13684edcb86",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 5997
+    },
+    {
+      "source": "frame_013.png",
+      "sourceSHA256": "9e9f10b18ab74d2daccb422d38865d153e6e8075563ba7c661122b2da799ee78",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 6324
+    },
+    {
+      "source": "frame_014.png",
+      "sourceSHA256": "8b7ce4db22b20bdf7d83da6304d5f3ac8612ef4ed767542d6f2af127a95bca27",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 6592
+    },
+    {
+      "source": "frame_015.png",
+      "sourceSHA256": "d19e06e30c42acba85c810c737f87a7d4de1bd7084573483b2de3f127f8cc137",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 7141
+    },
+    {
+      "source": "frame_016.png",
+      "sourceSHA256": "2b2c1d5376214e47d200d862f090c07489150fed6bdc44f9d37ee45e54f723d0",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 7656
+    },
+    {
+      "source": "frame_017.png",
+      "sourceSHA256": "da0123a58f54adab971cb17d45259cf6ed63fcd7a1d6bd3a80831630facf4b7e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 8428
+    },
+    {
+      "source": "frame_018.png",
+      "sourceSHA256": "b6c9b5e2635fbd2c87bcd61e3b448916186c87fea04848490c2205becaf5bfd1",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 9029
+    },
+    {
+      "source": "frame_019.png",
+      "sourceSHA256": "16924b99357ffd9fb20b4f4b51f0dcb5f713f74ded7325230a4afb6cee2a117e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 9541
+    },
+    {
+      "source": "frame_020.png",
+      "sourceSHA256": "0e7c22cdc679bc793acd584b25d1694702bd86b0e69b9a94c117c0fe034ee3e6",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 10078
+    },
+    {
+      "source": "frame_021.png",
+      "sourceSHA256": "dd119e68f6d421d6507b160c2251bbc940c4c919bb02003de57fe2c5ea0f6afc",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 10433
+    },
+    {
+      "source": "frame_022.png",
+      "sourceSHA256": "e02a702424f51184ce3068dcde60ad18b5b7a2ff16ad4d1d7d36ceca24a33372",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 10828
+    },
+    {
+      "source": "frame_023.png",
+      "sourceSHA256": "127de5c11c7f9f3b8851e6bcbdd62b0caa500b465efdb3a00ebcd4b1c1983c9e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11197
+    },
+    {
+      "source": "frame_024.png",
+      "sourceSHA256": "6dd35fd743afd7ace0e4e03710268817e7ac8462c8b67868ea983cd9e6955595",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11215
+    },
+    {
+      "source": "frame_025.png",
+      "sourceSHA256": "903f15568d58baf5bc70097e6176ba8eb123325938702264d47d01a9d8b8dc51",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11341
+    },
+    {
+      "source": "frame_026.png",
+      "sourceSHA256": "b22f268de8815cf9f3e8ebfe9e25e210ad1ac58943e46213f18e14752d95c217",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11337
+    },
+    {
+      "source": "frame_027.png",
+      "sourceSHA256": "33ff7add34954fc26dbde3c732b2541a8d6ddf8e72f4efc1c7f855c5ba1cf652",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11451
+    },
+    {
+      "source": "frame_028.png",
+      "sourceSHA256": "3ec51b225eb074b1284e00133167e769ebebeb16a7fccb82d5b29ad5dc6627d2",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11550
+    },
+    {
+      "source": "frame_029.png",
+      "sourceSHA256": "3b4a52e356a3f95ebb76628d799137d9fce44cc8b408e891156b358ef3d654e9",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11582
+    },
+    {
+      "source": "frame_030.png",
+      "sourceSHA256": "59be3057f9c07167e1c29714d75896aab22383519687457bdaad17bf4b357b97",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11646
+    },
+    {
+      "source": "frame_031.png",
+      "sourceSHA256": "d78cf00e88765f33790c54e91097919e84fede951aed38cadaa0ae04b1d80222",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11704
+    },
+    {
+      "source": "frame_032.png",
+      "sourceSHA256": "db9f1e1fadd8f68b7a4a477196a4acc03009e0de97cfc97e47437bbec0bf5775",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11773
+    }
+  ],
+  "rupture": [
+    {
+      "source": "frame_001.png",
+      "sourceSHA256": "8516b69b5f4e14a1717bd6be6ee55b3acc47305476b312c20fcc6f86fdf1984b",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1611
+    },
+    {
+      "source": "frame_002.png",
+      "sourceSHA256": "7c7c7df62255403254654ddec1711c7a4c8a4b4b15c7f832383eb76bf569438c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1610
+    },
+    {
+      "source": "frame_003.png",
+      "sourceSHA256": "e7e88813fadcfffe6aed3a1c27f39b55fcee56a10e6c63b3736ccddc3a9b8932",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1609
+    },
+    {
+      "source": "frame_004.png",
+      "sourceSHA256": "d9cfdac9a3c2d2c576f9be9f35573bc28ee1e1e3c3f140a6adaa63b3d4535368",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1610
+    },
+    {
+      "source": "frame_005.png",
+      "sourceSHA256": "66bc810c9355dd7270ccfadb61a417d902508b93af3cdd92eb640adfdb47e680",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1610
+    },
+    {
+      "source": "frame_006.png",
+      "sourceSHA256": "640c5185418bf6bccc7ffcb70677e6d9ed40fc420089c0fdf22cd7e834ed2aa8",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1609
+    },
+    {
+      "source": "frame_007.png",
+      "sourceSHA256": "747d12419c3d710d99fd7be87feb3de415e20cb1d7ca37f1e258423e2bb53e7e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1605
+    },
+    {
+      "source": "frame_008.png",
+      "sourceSHA256": "dec88895adcde3c89ea8590673319d4a3e4760962ee5fdedbab2a4ae0af67675",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1222
+    },
+    {
+      "source": "frame_009.png",
+      "sourceSHA256": "6ce674c715feb37fba0a3580ae6a116f5747e33bd42f1e9f1e3fde65165c209c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2141
+    },
+    {
+      "source": "frame_010.png",
+      "sourceSHA256": "f13d1b5ed6e1ec5ca68c8a683471a681ab262bfa494beb2b2137a297f808ddbb",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1843
+    },
+    {
+      "source": "frame_011.png",
+      "sourceSHA256": "23d6fdcaa17619fc724f9c057deb74fea10176cd7b446cfb1f890e38da012006",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2499
+    },
+    {
+      "source": "frame_012.png",
+      "sourceSHA256": "d445491ff0d96e8c3295a5fd548fb587c59d0350c621ee342c5cad8b637738f3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 2847
+    },
+    {
+      "source": "frame_013.png",
+      "sourceSHA256": "d7743e2a54d487a7caf9f796fbc956fce743d813681b189ecc03122fde82203c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 4721
+    },
+    {
+      "source": "frame_014.png",
+      "sourceSHA256": "bb5fdb8db9fd9ff2e6a102243dfdc12e1d24df0342d001d36654e45b932451b3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 6079
+    },
+    {
+      "source": "frame_015.png",
+      "sourceSHA256": "d0cd8a68e36cada1655f39b79f006c2511c4d3ebfc064f3959f6ae8a729204f3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 7990
+    },
+    {
+      "source": "frame_016.png",
+      "sourceSHA256": "a57d25b51e7a5c512db650c6a0417c97f95ba69e78917fd759bf4e3673f43d3a",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 8721
+    },
+    {
+      "source": "frame_017.png",
+      "sourceSHA256": "c4cd45d04e76b0c2468c6f3780d8f0deb71d5fbfa401b5a01784347e5db1fb17",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 11458
+    },
+    {
+      "source": "frame_018.png",
+      "sourceSHA256": "a3c74f354eae68ce49c3613988e80f19487a335a368469b59d2d8b38e50593e3",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 12936
+    },
+    {
+      "source": "frame_019.png",
+      "sourceSHA256": "335da874944c46dbad629e383186b0674f11e330f58089b11d58c5609c7b7f4e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 14073
+    },
+    {
+      "source": "frame_020.png",
+      "sourceSHA256": "f0d2f157f44adeff9fada3fae37871c1f628b3f1c4ea63e18d4e4fb2bbb07131",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 14893
+    },
+    {
+      "source": "frame_021.png",
+      "sourceSHA256": "c737a69a314ead60d09c86a8d4e4b0b7fee4d67c4c36f88dd073b4f436151a0f",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 12963
+    },
+    {
+      "source": "frame_022.png",
+      "sourceSHA256": "1a6063c1a81b80d62a302adb92b40cbc92b02fa9c19349d181657478946495d9",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 10034
+    },
+    {
+      "source": "frame_023.png",
+      "sourceSHA256": "8cb95b4e28eecd3057d016707022e0e56afb8b7b77c537fcb1dfd01a05a9b100",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 6614
+    },
+    {
+      "source": "frame_024.png",
+      "sourceSHA256": "10efa498635d4025f3e78e24d87a82fd67caa8b73ae4a93bfe0df79539bf9bbc",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 3689
+    },
+    {
+      "source": "frame_025.png",
+      "sourceSHA256": "2c2f50d7fca98ecbc2a81fecc8cf59293d7703b6ec497aece3d91aa7b4a9d47e",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1922
+    },
+    {
+      "source": "frame_026.png",
+      "sourceSHA256": "ae5d69e718a19eb69dd9cab583ee387589557e70d8b72fc902a9e48e67f6513d",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 1021
+    },
+    {
+      "source": "frame_027.png",
+      "sourceSHA256": "7cb1c0ed97b2148843f23d29f075e39c0344aa3d5fd2aab516e0ef96c50c5d15",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 771
+    },
+    {
+      "source": "frame_028.png",
+      "sourceSHA256": "85c8138c60df1b0c20574a6a265ca2d8999ce9cfc0368f0cdd05a54acdc69808",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 605
+    },
+    {
+      "source": "frame_029.png",
+      "sourceSHA256": "3893b599c2e043d161c497483e7fae7720170bd1cb5511f8010cfcef99fde94c",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 420
+    },
+    {
+      "source": "frame_030.png",
+      "sourceSHA256": "a93730ad7d30f6204b9008e9b75d87c2d62232e7231db4383df09688ee05ac05",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 683
+    },
+    {
+      "source": "frame_031.png",
+      "sourceSHA256": "64c35c1f6e007665b9a442a2e8a10965b5d863815c9b920b3013856aa7f69fb7",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 399
+    },
+    {
+      "source": "frame_032.png",
+      "sourceSHA256": "110a901e9dba24103d1ac553421e986fcbefb830b4ea8f1095c9f4a7821db769",
+      "translation": [
+        32,
+        32
+      ],
+      "scale": 1,
+      "energyPixels": 160
+    }
+  ],
+  "geometry": {
+    "reference": [
+      256,
+      256
+    ],
+    "energy": [
+      320,
+      320
+    ],
+    "energyPivot": [
+      160,
+      160
+    ],
+    "energyScale": 1,
+    "frameCount": 32,
+    "bodyImmutable": true
+  }
+}

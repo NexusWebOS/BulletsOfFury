@@ -1,0 +1,643 @@
+{
+  "passed": 33,
+  "failed": [],
+  "errors": [],
+  "checks": [
+    {
+      "name": "Native boss defeat enters the new stationary ending",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All four PixelLab banks have32 even frames and fixed pivots",
+      "passed": true,
+      "data": {
+        "stunned": {
+          "count": 1,
+          "dimensions": [
+            "256x256"
+          ],
+          "pivots": [
+            "128,128"
+          ],
+          "even": true
+        },
+        "unlit": {
+          "count": 1,
+          "dimensions": [
+            "256x256"
+          ],
+          "pivots": [
+            "128,128"
+          ],
+          "even": true
+        },
+        "coreGlow": {
+          "count": 1,
+          "dimensions": [
+            "256x256"
+          ],
+          "pivots": [
+            "128,128"
+          ],
+          "even": true
+        },
+        "fragments": {
+          "count": 18,
+          "dimensions": [
+            "96x96"
+          ],
+          "pivots": [
+            "48,48"
+          ],
+          "even": true
+        },
+        "drain": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        },
+        "pulse": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        },
+        "engulf": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        },
+        "rupture": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        }
+      }
+    },
+    {
+      "name": "The exact authored stun and18 armor cuts are loaded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The actual authored stunned armor visibly flashes on impact",
+      "passed": true,
+      "data": {
+        "changedOpaquePixels": 13430
+      }
+    },
+    {
+      "name": "Drain, core pulse, lock, missile, engulf, burst and aftermath occur in order",
+      "passed": true,
+      "data": [
+        "drain",
+        "pulse",
+        "lock",
+        "missile",
+        "engulf",
+        "burst",
+        "after"
+      ]
+    },
+    {
+      "name": "Exactly one committed missile impact triggers destruction",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No combat pose renderer runs after defeat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Armor root remains fixed through every drawn intact frame",
+      "passed": true,
+      "data": {
+        "intactDraws": 682,
+        "anchor": {
+          "x": 340,
+          "y": 158.72
+        }
+      }
+    },
+    {
+      "name": "No engulf or rupture pixels render before the core impact",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retina draws the real pilot reticle at the measured core",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Charge, lock beeps, missile and chromium crackle all fire",
+      "passed": true,
+      "data": {
+        "bossShieldStatic": 5,
+        "bossWeaponCharge": 1,
+        "retinaCharge": 1,
+        "retinaLockBeep": 6,
+        "missile": 1,
+        "expBig": 2
+      }
+    },
+    {
+      "name": "The real impact flash expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every authored armor fragment leaves once the reactor ruptures",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Armor fragments continue tumbling after the generated blast ends",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rewards and score are not applied again by the cinematic",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Earth keeps one center despite map, sky and horizontal camera scroll",
+      "passed": true,
+      "data": [
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 144,
+          "ship": {
+            "x": 240,
+            "y": 399.36,
+            "size": 72
+          },
+          "u": 0,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 183,
+          "ship": {
+            "x": 240,
+            "y": 364.96000000000004,
+            "size": 61.21875
+          },
+          "u": 0.25,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 268.8,
+          "ship": {
+            "x": 240,
+            "y": 289.28,
+            "size": 37.5
+          },
+          "u": 0.5,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 354.6,
+          "ship": {
+            "x": 240,
+            "y": 213.6,
+            "size": 13.78125
+          },
+          "u": 0.75,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 393.483975,
+          "ship": {
+            "x": 240,
+            "y": 179.30234,
+            "size": 3.0320742187499974
+          },
+          "u": 0.9875,
+          "fade": 0
+        }
+      ]
+    },
+    {
+      "name": "We close on Earth: planet grows while the northbound ship recedes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The flight reaches Earth with a smooth scene fade",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The end of the Earth approach visibly fades out",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut retains the actual native Furyship during reentry",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native ending reaches Stage Clear once",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review boots the actual finale and normal playfield",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review isolates saves before the game boots",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review can replay the native anchored Earth approach",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "measurements": [
+    {
+      "geometry": {
+        "stunned": {
+          "count": 1,
+          "dimensions": [
+            "256x256"
+          ],
+          "pivots": [
+            "128,128"
+          ],
+          "even": true
+        },
+        "unlit": {
+          "count": 1,
+          "dimensions": [
+            "256x256"
+          ],
+          "pivots": [
+            "128,128"
+          ],
+          "even": true
+        },
+        "coreGlow": {
+          "count": 1,
+          "dimensions": [
+            "256x256"
+          ],
+          "pivots": [
+            "128,128"
+          ],
+          "even": true
+        },
+        "fragments": {
+          "count": 18,
+          "dimensions": [
+            "96x96"
+          ],
+          "pivots": [
+            "48,48"
+          ],
+          "even": true
+        },
+        "drain": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        },
+        "pulse": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        },
+        "engulf": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        },
+        "rupture": {
+          "count": 32,
+          "dimensions": [
+            "320x320"
+          ],
+          "pivots": [
+            "160,160"
+          ],
+          "even": true
+        }
+      }
+    },
+    {
+      "finale": {
+        "events": [
+          {
+            "event": "stunned",
+            "x": 340,
+            "y": 158.72,
+            "core": {
+              "x": 338.84615384615387,
+              "y": 178.3353846153846
+            }
+          },
+          {
+            "event": "pulse",
+            "age": 5.616666666666652
+          },
+          {
+            "event": "lock",
+            "age": 7.733333333333311
+          },
+          {
+            "event": "missile",
+            "age": 8.883333333333354
+          },
+          {
+            "event": "shot-fired",
+            "from": {
+              "x": 340,
+              "y": 367.2975
+            },
+            "to": {
+              "x": 338.84615384615387,
+              "y": 178.3353846153846
+            }
+          },
+          {
+            "event": "engulf",
+            "age": 9.350000000000044
+          },
+          {
+            "event": "core-impact",
+            "count": 1,
+            "x": 338.84615384615387,
+            "y": 178.3353846153846
+          },
+          {
+            "event": "burst",
+            "age": 11.366666666666811
+          },
+          {
+            "event": "armor-release"
+          },
+          {
+            "event": "cutaway"
+          }
+        ],
+        "sound": {
+          "bossShieldStatic": 5,
+          "bossWeaponCharge": 1,
+          "retinaCharge": 1,
+          "retinaLockBeep": 6,
+          "missile": 1,
+          "expBig": 2
+        },
+        "seen": [
+          "drain",
+          "pulse",
+          "lock",
+          "missile",
+          "engulf",
+          "burst",
+          "after"
+        ]
+      }
+    },
+    {
+      "earth": [
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 144,
+          "ship": {
+            "x": 240,
+            "y": 399.36,
+            "size": 72
+          },
+          "u": 0,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 183,
+          "ship": {
+            "x": 240,
+            "y": 364.96000000000004,
+            "size": 61.21875
+          },
+          "u": 0.25,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 268.8,
+          "ship": {
+            "x": 240,
+            "y": 289.28,
+            "size": 37.5
+          },
+          "u": 0.5,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 354.6,
+          "ship": {
+            "x": 240,
+            "y": 213.6,
+            "size": 13.78125
+          },
+          "u": 0.75,
+          "fade": 0
+        },
+        {
+          "phase": "descent",
+          "center": {
+            "x": 240,
+            "y": 179.2
+          },
+          "size": 393.483975,
+          "ship": {
+            "x": 240,
+            "y": 179.30234,
+            "size": 3.0320742187499974
+          },
+          "u": 0.9875,
+          "fade": 0
+        }
+      ]
+    }
+  ],
+  "date": "2026-10-17",
+  "coreSuite": {
+    "passes": 8754,
+    "errors": 0,
+    "finalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "exitCode": 0,
+    "scope": "Existing core owners; native Chromium verifies the new ending layer."
+  },
+  "preservedSourceHashes": {
+    "assets/smooth_motion_1009.js": {
+      "sha256": "4021a82c1bf896df2f769e7ca5cb8a934db7d4d91927be45603950ec601b4034",
+      "unchanged": true
+    },
+    "assets/gameplay_repair_1004.js": {
+      "sha256": "12fc15b65b5118db122f7fddb70c9edf92ee31669b5b0f9d2cda5e1d920b6828",
+      "unchanged": true
+    },
+    "assets/game.js": {
+      "sha256": "16e651b35f69e355e2ee8449e50224a013dee015a6a47e7b0a8d721583c79209",
+      "unchanged": true
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "682c8dcd950df753b660f8529f7d405e6c965a92e184372d44454bc8462f9dbe",
+      "unchanged": true
+    }
+  },
+  "art": {
+    "count": 149,
+    "bytes": 1457077,
+    "banks": {
+      "stunned": 1,
+      "unlit": 1,
+      "coreGlow": 1,
+      "fragments": 18,
+      "drain": 32,
+      "pulse": 32,
+      "engulf": 32,
+      "rupture": 32
+    },
+    "rawInputFramesExcluded": 4,
+    "onionsInspected": [
+      "drain",
+      "pulse",
+      "engulf",
+      "rupture"
+    ],
+    "sourceScale": 1,
+    "armorCutReassembly": "Exact RGBA identity, no added pixels."
+  },
+  "review": "docs/previews/hammer_finale_1017/index.html",
+  "commitOrPush": false
+}

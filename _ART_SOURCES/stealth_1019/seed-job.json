@@ -1,0 +1,36 @@
+{
+  "args": {
+    "width": 128,
+    "height": 160,
+    "no_background": true,
+    "max_colors": 24,
+    "palette_name": "Bullets of Fury optical stealth - cobalt, teal, ice-white and smoked violet",
+    "palette": [
+      "#070c1d",
+      "#11192e",
+      "#1b2543",
+      "#313c5c",
+      "#4b5977",
+      "#697b94",
+      "#263d70",
+      "#265a8b",
+      "#2784ad",
+      "#42b6ca",
+      "#8ed9e8",
+      "#c6f2f5",
+      "#ffffff",
+      "#322e57",
+      "#5a4d80"
+    ],
+    "description": "FRAME FORMAT: 128 x 160 transparent pixels, physical pivot64,80, one proportional scale and identical fixed canvas. Reserve12px transparent margins. One isolated OPTICAL STEALTH CLOAK visual-effect seed for a detailed 1990s Bullets of Fury arcade jet viewed from directly above. A pair of ragged curved refraction bands sweep diagonally around a tall EMPTY central silhouette, made of irregular shimmering cobalt and teal pixel fragments, thin bright white-blue glints, broken horizontal interference slices and tiny refracted diamond shards. It should look like a technological camouflage field bending light around an absent aircraft, not a protective shield. Keep the middle at least70% transparent so an existing real jet can be shown underneath. Sparse asymmetric refractive distortion, crisp shaded clusters, cold dark outlines, energy glints. No aircraft or character drawn, no literal diamond in the middle, no crystal ball, closed ring, portal, cyclone, snowflake icon, border, HUD, text, circle frame or scenery. This is translucent phase camouflage, not an explosion."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: cbf783f7-7ea3-4a17-8823-6575287bec94\njob_id: cbf783f7-7ea3-4a17-8823-6575287bec94\nmodel: pro\ndescription: FRAME FORMAT: 128 x 160 transparent pixels, physical pivot64,80, one proportional scale and identical fixed canvas. Reserve12px transparent margins. One isolated OPTICAL STEALTH CLOAK visual-effect seed for a detailed 1990s Bullets of Fury arcade jet viewed from directly above. A pair of ragged curved refraction bands sweep diagonally around a tall EMPTY central silhouette, made of irregular shimmering cobalt and teal pixel fragments, thin bright white-blue glints, broken horizontal interference slices and tiny refracted diamond shards. It should look like a technological camouflage field bending light around an absent aircraft, not a protective shield. Keep the middle at least70% transparent so an existing real jet can be shown underneath. Sparse asymmetric refractive distortion, crisp shaded clusters, cold dark outlines, energy glints. No aircraft or character drawn, no literal diamond in the middle, no crystal ball, closed ring, portal, cyclone, snowflake icon, border, HUD, text, circle frame or scenery. This is translucent phase camouflage, not an explosion.\nsize: 128x160px\ntransparent: True\ncandidates: 4\npalette: 15 colours (Bullets of Fury optical stealth - cobalt, teal, ice-white and smoked violet)\nmax colours: 24 per image\nasset_id: 694fde0f-b429-513e-9df0-1fb6e931ffaf\nasset_status: pending (saved when generation completes)\ncost: 15 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"cbf783f7-7ea3-4a17-8823-6575287bec94\")"
+      }
+    ],
+    "isError": false
+  }
+}

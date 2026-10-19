@@ -111,12 +111,24 @@ function fb10StrikeBoss(b,dmg,p){
  if(t4){boss._s4CoreHit=t4;_lastHitX=t4.x;_lastHitY=t4.y;}else if(n4){boss._s4ShieldHit=n4;_lastHitX=n4.x;_lastHitY=n4.y;}
  fb10As(b,()=>hitBoss(dmg));
 }
+/* 1017 - Mike: "orbs should hit each piece individually and as it travels through them if ice orb
+   before impact, still hits all modular pieces it would strike". An orb's body strikes the encounter's
+   live PIECES it overlaps (the engine-wide list, livePieces) through the Retina missile damage route, so
+   each encounter routes the hit to its own part: a piercing orb strikes every piece it is passing
+   through, a contact orb the one it touched, and a blast or cloud every piece inside its radius.
+   0 means no piece was in reach and the caller keeps its old solid-point strike (the bare hull). */
+function fb10StrikePieces(b,owner,x,y,R,dmg,all){
+ if(!owner||typeof piecesInCircle!=='function'||typeof retinaMissileDamage!=='function')return 0;
+ const L=piecesInCircle(owner,x,y,R);if(!L.length)return 0;
+ let n=0;fb10As(b,()=>{for(const t of (all?L:[L[0]]))if(retinaMissileDamage(t,dmg,b))n++;});
+ return n;
+}
 function fb10HitEncounter(b,dmg,x,y,radius){
  if(subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter&&!subBoss._noHit){
-  const p=fb10FindSolid(x,y,radius,fb10SubBossAt);if(p)fb10StrikeSubBoss(b,dmg,p);
+  if(!fb10StrikePieces(b,subBoss,x,y,radius,dmg,true)){const p=fb10FindSolid(x,y,radius,fb10SubBossAt);if(p)fb10StrikeSubBoss(b,dmg,p);}
  }
  if(boss&&bossActive&&!boss.dead&&!boss.enter&&!boss._noHit){
-  const p=fb10FindSolid(x,y,radius,fb10BossAt);if(p)fb10StrikeBoss(b,dmg,p);
+  if(!fb10StrikePieces(b,boss,x,y,radius,dmg,true)){const p=fb10FindSolid(x,y,radius,fb10BossAt);if(p)fb10StrikeBoss(b,dmg,p);}
  }
 }
 function fb10Blast(b,x,y,why){
@@ -241,9 +253,11 @@ playerOrbTick=function(b,dt){
  // encounters: anywhere inside the orb's radius that is a live, solid part counts as contact
  const reach=Math.max(b.w,b.h)*.5;
  if(subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){b._sbt-=dt;
-  if(b._sbt<=0){const p=fb10FindSolid(b.x,b.y,reach,fb10SubBossAt);if(p){b._sbt=.16;fb10StrikeSubBoss(b,b.dmg,p);if(!S.pierce)b._impact=true;}}}
+  if(b._sbt<=0){if(fb10StrikePieces(b,subBoss,b.x,b.y,reach,b.dmg,S.pierce)){b._sbt=.16;if(!S.pierce)b._impact=true;}
+   else{const p=fb10FindSolid(b.x,b.y,reach,fb10SubBossAt);if(p){b._sbt=.16;fb10StrikeSubBoss(b,b.dmg,p);if(!S.pierce)b._impact=true;}}}}
  if(boss&&bossActive&&!boss.dead&&!boss.enter){b._bt-=dt;
-  if(b._bt<=0){const p=fb10FindSolid(b.x,b.y,reach,fb10BossAt);if(p){b._bt=.16;fb10StrikeBoss(b,b.dmg,p);if(!S.pierce)b._impact=true;}}}
+  if(b._bt<=0){if(fb10StrikePieces(b,boss,b.x,b.y,reach,b.dmg,S.pierce)){b._bt=.16;if(!S.pierce)b._impact=true;}
+   else{const p=fb10FindSolid(b.x,b.y,reach,fb10BossAt);if(p){b._bt=.16;fb10StrikeBoss(b,b.dmg,p);if(!S.pierce)b._impact=true;}}}}
  // every ending detonates, on screen; one that leaves off the top just goes
  if(b._impact||b.life<=0||b.y<-40){
   if(b.y>=-40)fb10Blast(b,b.x,b.y,b._impact?'impact':'expire');else b._fb10Ended='offscreen';

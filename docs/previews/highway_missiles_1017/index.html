@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Highway missile pads</title>
+<link rel="icon" href="data:,">
+<style>
+body{margin:0;background:#080d13;color:#dce8ed;font:15px system-ui}nav{display:flex;align-items:center;gap:12px;padding:12px 16px;flex-wrap:wrap}strong{color:#ffcb78}button,select{background:#1a2938;border:1px solid #697f8b;border-radius:4px;color:#fff1cd;padding:8px}iframe{display:block;width:100%;height:calc(100vh - 104px);min-height:540px;border:0;background:#000}p{margin:8px 16px;color:#b3cbd6;font-size:13px}button:disabled{opacity:.45}
+</style>
+<nav><strong>Stage 4 · Highway missile pads</strong><label>Difficulty <select id="difficulty"><option value="easy">Easy</option><option selected value="normal">Normal</option><option value="hard">Hard</option><option value="furious">Furious</option></select></label><button id="replay" disabled>Replay launch</button><button id="intercept" disabled>Fire at rocket</button><button id="highway" disabled>Play highway</button><span id="status">Loading the actual game…</span></nav>
+<iframe id="game" title="Actual Stage 4 with shootable roadside missile pads" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p>Shoot the standing missile or intercept its ascent. An escaped missile returns to the marked circle. Click the game to fly and shoot. Separate review storage protects your campaign saves.</p>
+<script>
+const game=document.querySelector('#game'),difficulty=document.querySelector('#difficulty'),status=document.querySelector('#status');
+const delay=n=>new Promise(r=>setTimeout(r,n));let ready=false,busy=false,burst=null;
+function fire(up=false){game.contentWindow.dispatchEvent(new game.contentWindow.KeyboardEvent(up?'keyup':'keydown',{key:'j',code:'KeyJ',bubbles:true}));}
+async function start(highway=false){if(!ready||busy)return;busy=true;if(burst)clearTimeout(burst);fire(true);
+ game.contentWindow.eval(`(()=>{ht27Stop();debugFight=null;coopOn=false;run.mode='campaign';run.pilot='cole';pilotIndex=PILOTS.findIndex(p=>p.key==='cole');diffKey=${JSON.stringify(difficulty.value)};DIFF=DIFFS[diffKey];startRun(4);beginStage(4);setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=fb2Talk=fb2Intro=null;special=null;boss=null;bossActive=false;subBoss=null;subBossActive=false;bossDefeated=false;warnT=0;warnKind=null;enemies=[];eBullets=[];pBullets=[];powerups=[];groundTargetingReset();s67Nukes=[];atomBooms=[];player.x=worldWidth()/2;player.y=VH-100;camX=clamp(player.x-VW/2,0,worldWidth()-VW);player.invuln=999999;run.lives=3;run.bombs=12;run.weapon=0;run.wlevel=1;run.wlevels[0]=1;run.shield=0;
+ ${highway?'':"stagePlan=[];subBossTriggered=true;aminiTriggered=true;HM17.next=1e9;VP12.next=CP12.next=EP13.next=9999;TARGET17.nextTank=9999;"}hm17Warm();})()`);
+ for(let i=0;i<600;i++){if(game.contentWindow.eval('(()=>{stageLoadTick();return stageLoadReady(4)&&hm17Warm()})()'))break;await delay(100);}
+ if(!highway)game.contentWindow.eval("(()=>{hm17Spawn(-1,230);const right=hm17Spawn(1,260);if(right)right._hm17.warm+=2;})()");
+ game.contentWindow.eval('SC12.refresh();__bofFit()');busy=false;game.contentWindow.focus();
+}
+document.querySelector('#replay').onclick=()=>start();document.querySelector('#highway').onclick=()=>start(true);difficulty.onchange=()=>start();
+document.querySelector('#intercept').onclick=()=>{if(!ready||busy)return;
+ const found=game.contentWindow.eval("(()=>{const e=enemies.find(e=>e._hm17&&!e.dead);if(!e)return false;player.x=e.x;player.y=Math.min(VH-55,e.y+130);run.weapon=0;run.wlevel=3;run.wlevels[0]=3;player.fireCd=0;return true;})()");
+ if(found){fire();if(burst)clearTimeout(burst);burst=setTimeout(()=>fire(true),1800);game.contentWindow.focus();}
+};
+setInterval(()=>{if(!ready||busy)return;try{status.textContent=game.contentWindow.eval("(()=>{const e=enemies.find(e=>e._hm17&&!e.dead),q=groundTargetingFx.find(q=>q._hm17Return&&!q.dead);return q?(q.impact?'Atomic impact':'Return locked · '+Math.max(0,q.warn-q.t).toFixed(1)+'s'):e?(e._hm17.phase==='boost'?'Missile ascending · still shootable':'Launch in '+Math.max(0,e._hm17.warm-e._hm17.t).toFixed(1)+'s'):'Highway active';})()");}catch(e){}},100);
+game.onload=async()=>{for(let i=0;i<600;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof HM17!=="undefined"')){ready=true;for(const b of document.querySelectorAll('button'))b.disabled=false;await start();return;}await delay(100);}status.textContent='Reload to retry loading the game.';};
+(async()=>{
+ const response=await fetch(new URL('../../../index.html?revision=highway-missiles-1017',location.href));if(!response.ok)throw Error('Game load failed: '+response.status);let html=await response.text();
+ function isolateStorage(){const prefix='BOF_HIGHWAY_MISSILE_REVIEW_1017_',get=Storage.prototype.getItem,set=Storage.prototype.setItem,remove=Storage.prototype.removeItem,key=Storage.prototype.key;Storage.prototype.getItem=function(k){return get.call(this,prefix+k);};Storage.prototype.setItem=function(k,v){return set.call(this,prefix+k,v);};Storage.prototype.removeItem=function(k){return remove.call(this,prefix+k);};Storage.prototype.clear=function(){const keys=[];for(let i=0;i<this.length;i++){const k=key.call(this,i);if(k?.startsWith(prefix))keys.push(k);}for(const k of keys)remove.call(this,k);};window.__highwayMissileReviewStorage=true;}
+ const boot='<script>('+isolateStorage.toString()+')();</scr'+'ipt>';html=html.replace('<head>','<head><base href="'+new URL('../../../',location.href).href+'">'+boot);game.srcdoc=html;
+})().catch(e=>{status.textContent=e.message;console.error(e);});
+</script>
+</html>

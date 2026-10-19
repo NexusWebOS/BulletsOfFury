@@ -1,0 +1,2569 @@
+{
+  "date": "2026-10-17",
+  "request": "Stage4 shootable upright roadside missile launch pads with atomic returns for escaped rockets",
+  "native": {
+    "passed": 61,
+    "failed": [],
+    "errors": [],
+    "checks": [
+      {
+        "name": "Both highway shoulders carry tall authored rockets at the regular game FOV",
+        "passed": true,
+        "data": {
+          "plates": {
+            "hm17_pad-get": 142,
+            "hm17_pad": 142,
+            "hm17_missile-get": 142,
+            "hm17_missile": 142,
+            "hm17_lamps-get": 140,
+            "hm17_lamps": 140
+          },
+          "positions": [
+            {
+              "x": 187.796875,
+              "ground": true,
+              "leftEdge": 154.796875,
+              "rightEdge": 220.796875,
+              "phase": "loaded"
+            },
+            {
+              "x": 492.203125,
+              "ground": true,
+              "leftEdge": 459.203125,
+              "rightEdge": 525.203125,
+              "phase": "loaded"
+            }
+          ],
+          "size": [
+            480,
+            512,
+            680,
+            480
+          ],
+          "keys": [
+            {
+              "key": "hm17_pad",
+              "w": 128,
+              "h": 128,
+              "pivot": [
+                64,
+                80
+              ],
+              "loaded": true
+            },
+            {
+              "key": "hm17_lamps",
+              "w": 128,
+              "h": 128,
+              "pivot": [
+                64,
+                80
+              ],
+              "loaded": true
+            },
+            {
+              "key": "hm17_missile",
+              "w": 64,
+              "h": 192,
+              "pivot": [
+                32,
+                96
+              ],
+              "loaded": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "All three authored plates have even dimensions, ready native keys and fixed pivots",
+        "passed": true,
+        "data": [
+          {
+            "key": "hm17_pad",
+            "w": 128,
+            "h": 128,
+            "pivot": [
+              64,
+              80
+            ],
+            "loaded": true
+          },
+          {
+            "key": "hm17_lamps",
+            "w": 128,
+            "h": 128,
+            "pivot": [
+              64,
+              80
+            ],
+            "loaded": true
+          },
+          {
+            "key": "hm17_missile",
+            "w": 64,
+            "h": 192,
+            "pivot": [
+              32,
+              96
+            ],
+            "loaded": true
+          }
+        ]
+      },
+      {
+        "name": "Real pad damage flashes the actual rocket and pad pixels",
+        "passed": true,
+        "data": {
+          "pixels": 3572,
+          "damage": 1,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Native hit flashes expire normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy standing rocket takes actual machine gun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.89906674056493,
+              "y": 193.99999999999963
+            }
+          ],
+          "diff": "easy",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "easy ordinary gunfire stops the launch with no atomic return",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.89906674056493,
+              "y": 193.99999999999963
+            }
+          ],
+          "diff": "easy",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "easy standing rocket takes actual spread damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.91650634487928,
+              "y": 196.00000000000088
+            }
+          ],
+          "diff": "easy",
+          "weapon": "spread"
+        }
+      },
+      {
+        "name": "easy standing rocket takes actual laser damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.90496826695266,
+              "y": 194.66666666666745
+            }
+          ],
+          "diff": "easy",
+          "weapon": "laser"
+        }
+      },
+      {
+        "name": "easy standing rocket takes actual flamethrower damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.83635088144896,
+              "y": 187.33333333333357
+            }
+          ],
+          "diff": "easy",
+          "weapon": "flamethrower"
+        }
+      },
+      {
+        "name": "easy standing rocket takes actual ice orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.88702239562446,
+              "y": 192.6666666666673
+            }
+          ],
+          "diff": "easy",
+          "weapon": "ice orb"
+        }
+      },
+      {
+        "name": "easy standing rocket takes actual fire orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.88088924535734,
+              "y": 192.00000000000057
+            }
+          ],
+          "diff": "easy",
+          "weapon": "fire orb"
+        }
+      },
+      {
+        "name": "easy standing rocket takes actual chaingun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 14,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.8557322620147,
+              "y": 189.3333333333337
+            }
+          ],
+          "diff": "easy",
+          "weapon": "chaingun"
+        }
+      },
+      {
+        "name": "easy standing rocket takes actual Retina missile damage",
+        "passed": true,
+        "data": {
+          "hp": 1,
+          "max": 14,
+          "dead": false,
+          "phase": "loaded",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 14
+            }
+          ],
+          "diff": "easy",
+          "weapon": "Retina missile"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual machine gun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.89906674056493,
+              "y": 194.00000000000074
+            }
+          ],
+          "diff": "normal",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "normal ordinary gunfire stops the launch with no atomic return",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.89906674056493,
+              "y": 194.00000000000074
+            }
+          ],
+          "diff": "normal",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual spread damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.91650634487928,
+              "y": 196.00000000000088
+            }
+          ],
+          "diff": "normal",
+          "weapon": "spread"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual laser damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.92766037604972,
+              "y": 197.3333333333343
+            }
+          ],
+          "diff": "normal",
+          "weapon": "laser"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual flamethrower damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.8684256014143,
+              "y": 190.6666666666657
+            }
+          ],
+          "diff": "normal",
+          "weapon": "flamethrower"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual ice orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.8930831824068,
+              "y": 193.33333333333198
+            }
+          ],
+          "diff": "normal",
+          "weapon": "ice orb"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual fire orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.88088924535734,
+              "y": 191.99999999999883
+            }
+          ],
+          "diff": "normal",
+          "weapon": "fire orb"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual chaingun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 18,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.8557322620147,
+              "y": 189.33333333333255
+            }
+          ],
+          "diff": "normal",
+          "weapon": "chaingun"
+        }
+      },
+      {
+        "name": "normal standing rocket takes actual Retina missile damage",
+        "passed": true,
+        "data": {
+          "hp": 1,
+          "max": 18,
+          "dead": false,
+          "phase": "loaded",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            }
+          ],
+          "diff": "normal",
+          "weapon": "Retina missile"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual machine gun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.92766037604972,
+              "y": 197.3333333333314
+            }
+          ],
+          "diff": "hard",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "hard ordinary gunfire stops the launch with no atomic return",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.92766037604972,
+              "y": 197.3333333333314
+            }
+          ],
+          "diff": "hard",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual spread damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.95363360859952,
+              "y": 200.66666666666424
+            }
+          ],
+          "diff": "hard",
+          "weapon": "spread"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual laser damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.96774076478204,
+              "y": 202.66666666666396
+            }
+          ],
+          "diff": "hard",
+          "weapon": "laser"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual flamethrower damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.8684256014143,
+              "y": 190.6666666666657
+            }
+          ],
+          "diff": "hard",
+          "weapon": "flamethrower"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual ice orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.8930831824068,
+              "y": 193.33333333333198
+            }
+          ],
+          "diff": "hard",
+          "weapon": "ice orb"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual fire orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.88088924535734,
+              "y": 191.99999999999883
+            }
+          ],
+          "diff": "hard",
+          "weapon": "fire orb"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual chaingun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 22,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.88702239562446,
+              "y": 192.6666666666654
+            }
+          ],
+          "diff": "hard",
+          "weapon": "chaingun"
+        }
+      },
+      {
+        "name": "hard standing rocket takes actual Retina missile damage",
+        "passed": true,
+        "data": {
+          "hp": 1,
+          "max": 22,
+          "dead": false,
+          "phase": "loaded",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 22
+            }
+          ],
+          "diff": "hard",
+          "weapon": "Retina missile"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual machine gun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.95363360859952,
+              "y": 200.66666666666424
+            }
+          ],
+          "diff": "furious",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "furious ordinary gunfire stops the launch with no atomic return",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.95363360859952,
+              "y": 200.66666666666424
+            }
+          ],
+          "diff": "furious",
+          "weapon": "machine gun"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual spread damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.95363360859952,
+              "y": 200.66666666666424
+            }
+          ],
+          "diff": "furious",
+          "weapon": "spread"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual laser damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.98461478489278,
+              "y": 205.33333333333022
+            }
+          ],
+          "diff": "furious",
+          "weapon": "laser"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual flamethrower damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.89906674056493,
+              "y": 193.99999999999855
+            }
+          ],
+          "diff": "furious",
+          "weapon": "flamethrower"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual ice orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.90496826695266,
+              "y": 194.66666666666512
+            }
+          ],
+          "diff": "furious",
+          "weapon": "ice orb"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual fire orb damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.88088924535734,
+              "y": 191.99999999999883
+            }
+          ],
+          "diff": "furious",
+          "weapon": "fire orb"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual chaingun damage",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "max": 26,
+          "dead": true,
+          "phase": "destroyed",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "loaded",
+              "x": 187.88702239562446,
+              "y": 192.6666666666654
+            }
+          ],
+          "diff": "furious",
+          "weapon": "chaingun"
+        }
+      },
+      {
+        "name": "furious standing rocket takes actual Retina missile damage",
+        "passed": true,
+        "data": {
+          "hp": 2,
+          "max": 26,
+          "dead": false,
+          "phase": "loaded",
+          "returns": 0,
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 26
+            }
+          ],
+          "diff": "furious",
+          "weapon": "Retina missile"
+        }
+      },
+      {
+        "name": "Launch leaves its empty pad on the ground and keeps the rising rocket lockable",
+        "passed": true,
+        "data": {
+          "phase": "boost",
+          "y": 320.9416666667104,
+          "shootable": true,
+          "empty": 1,
+          "launch": 1
+        }
+      },
+      {
+        "name": "Actual gunfire destroys a launched missile before it escapes",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "phase": "destroyed",
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "launch",
+              "id": 1,
+              "x": 187.796875,
+              "y": 328.00000000004377,
+              "hp": 18
+            },
+            {
+              "event": "intercepted",
+              "id": 1,
+              "phase": "boost",
+              "x": 192.50351471113976,
+              "y": 293.9333333333771
+            }
+          ],
+          "returns": 0
+        }
+      },
+      {
+        "name": "A destroyed ascent cannot schedule a delayed return",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Retina keeps a lock when only the ascending missile tail is visible",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Ordinary gunfire can still hit that visible tail above the centre boundary",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Only a fully offscreen missile commits exactly one atomic return",
+        "passed": true,
+        "data": {
+          "phase": "escaped",
+          "y": -72.64166666662273,
+          "top": 0,
+          "q": {
+            "x": 340,
+            "y": 412,
+            "warn": 3.2,
+            "r": 58,
+            "track": false,
+            "owner": null,
+            "t": 0
+          },
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "launch",
+              "id": 1,
+              "x": 187.796875,
+              "y": 328.00000000004377,
+              "hp": 18
+            },
+            {
+              "event": "escaped-return-locked",
+              "id": 1,
+              "x": 340,
+              "y": 412,
+              "warn": 3.2,
+              "radius": 58
+            }
+          ]
+        }
+      },
+      {
+        "name": "Native warning pixels mark the complete circular blast radius",
+        "passed": true,
+        "data": {
+          "w": 116,
+          "h": 112,
+          "diameter": 116,
+          "draws": 2
+        }
+      },
+      {
+        "name": "The atomic landing point stays committed after the player moves",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Return uses actual atomic cloud frames, impact sound and one detonation",
+        "passed": true,
+        "data": {
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "launch",
+              "id": 1,
+              "x": 187.796875,
+              "y": 328.00000000004377,
+              "hp": 18
+            },
+            {
+              "event": "escaped-return-locked",
+              "id": 1,
+              "x": 340,
+              "y": 412,
+              "warn": 3.2,
+              "radius": 58
+            },
+            {
+              "event": "atomic-impact",
+              "id": 1,
+              "x": 340,
+              "y": 412,
+              "radius": 58
+            }
+          ],
+          "sounds": {
+            "nuclearLaunch": 1,
+            "alertDanger": 1,
+            "atomicDetonate": 1
+          },
+          "atomDraws": 34,
+          "dead": false,
+          "nukes": 1
+        }
+      },
+      {
+        "name": "Moving outside the committed blast remains safe",
+        "passed": true,
+        "data": {
+          "events": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": 230,
+              "scroll": 0,
+              "hp": 18
+            },
+            {
+              "event": "launch",
+              "id": 1,
+              "x": 187.796875,
+              "y": 328.00000000004377,
+              "hp": 18
+            },
+            {
+              "event": "escaped-return-locked",
+              "id": 1,
+              "x": 340,
+              "y": 412,
+              "warn": 3.2,
+              "radius": 58
+            },
+            {
+              "event": "atomic-impact",
+              "id": 1,
+              "x": 340,
+              "y": 412,
+              "radius": 58
+            }
+          ],
+          "sounds": {
+            "nuclearLaunch": 1,
+            "alertDanger": 1,
+            "atomicDetonate": 1
+          },
+          "atomDraws": 34,
+          "dead": false,
+          "nukes": 1
+        }
+      },
+      {
+        "name": "Atomic impact hits a pilot who stays on its target",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "impact": true,
+          "x": 340.86424163383725,
+          "y": 416.2007673287577,
+          "origin": [
+            340,
+            412
+          ],
+          "radius": 58
+        }
+      },
+      {
+        "name": "Atomic impact spares a pilot outside its marked radius",
+        "passed": true,
+        "data": {
+          "dead": false,
+          "impact": true,
+          "x": 418,
+          "y": 412,
+          "origin": [
+            340,
+            412
+          ],
+          "radius": 58
+        }
+      },
+      {
+        "name": "Pad stays bolted to terrain through the reflected highway tile seam",
+        "passed": true,
+        "data": {
+          "anchor": -740,
+          "expected": -740,
+          "scroll": 1070.0000000000364,
+          "alive": true
+        }
+      },
+      {
+        "name": "Pause stops the missile clock and terrain together",
+        "passed": true,
+        "data": {
+          "before": [
+            2.499999999999996,
+            1070.0000000000364
+          ],
+          "after": [
+            2.499999999999996,
+            1070.0000000000364
+          ]
+        }
+      },
+      {
+        "name": "normal actual director alternates roadside pads with bounded simultaneous pressure",
+        "passed": true,
+        "data": {
+          "spawns": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": -36,
+              "scroll": 180.0000000000517,
+              "hp": 18
+            },
+            {
+              "event": "pad-spawn",
+              "id": 2,
+              "side": 1,
+              "x": 492.203125,
+              "y": -36,
+              "scroll": 720.0000000002052,
+              "hp": 18
+            },
+            {
+              "event": "pad-spawn",
+              "id": 3,
+              "side": -1,
+              "x": 187.796875,
+              "y": -36,
+              "scroll": 1260.000000000399,
+              "hp": 18
+            }
+          ],
+          "config": {
+            "gap": 540,
+            "warm": 3.8,
+            "hp": 18,
+            "return": 3.2,
+            "radius": 58
+          },
+          "living": 0,
+          "returns": 1
+        }
+      },
+      {
+        "name": "hard actual director alternates roadside pads with bounded simultaneous pressure",
+        "passed": true,
+        "data": {
+          "spawns": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": -36,
+              "scroll": 180.66666666656178,
+              "hp": 22
+            },
+            {
+              "event": "pad-spawn",
+              "id": 2,
+              "side": 1,
+              "x": 492.203125,
+              "y": -36,
+              "scroll": 601.3333333329892,
+              "hp": 22
+            },
+            {
+              "event": "pad-spawn",
+              "id": 3,
+              "side": -1,
+              "x": 187.796875,
+              "y": -36,
+              "scroll": 1021.9999999994168,
+              "hp": 22
+            },
+            {
+              "event": "pad-spawn",
+              "id": 4,
+              "side": 1,
+              "x": 492.203125,
+              "y": -36,
+              "scroll": 1442.6666666658443,
+              "hp": 22
+            }
+          ],
+          "config": {
+            "gap": 420,
+            "warm": 3.3,
+            "hp": 22,
+            "return": 3,
+            "radius": 64
+          },
+          "living": 1,
+          "returns": 0
+        }
+      },
+      {
+        "name": "furious actual director alternates roadside pads with bounded simultaneous pressure",
+        "passed": true,
+        "data": {
+          "spawns": [
+            {
+              "event": "pad-spawn",
+              "id": 1,
+              "side": -1,
+              "x": 187.796875,
+              "y": -36,
+              "scroll": 180.66666666656178,
+              "hp": 26
+            },
+            {
+              "event": "pad-spawn",
+              "id": 2,
+              "side": 1,
+              "x": 492.203125,
+              "y": -36,
+              "scroll": 481.3333333330575,
+              "hp": 26
+            },
+            {
+              "event": "pad-spawn",
+              "id": 3,
+              "side": -1,
+              "x": 187.796875,
+              "y": -36,
+              "scroll": 781.9999999995532,
+              "hp": 26
+            },
+            {
+              "event": "pad-spawn",
+              "id": 4,
+              "side": 1,
+              "x": 492.203125,
+              "y": -36,
+              "scroll": 1082.666666666049,
+              "hp": 26
+            },
+            {
+              "event": "pad-spawn",
+              "id": 5,
+              "side": -1,
+              "x": 187.796875,
+              "y": -36,
+              "scroll": 1383.3333333325447,
+              "hp": 26
+            }
+          ],
+          "config": {
+            "gap": 300,
+            "warm": 2.9,
+            "hp": 26,
+            "return": 2.8,
+            "radius": 70
+          },
+          "living": 0,
+          "returns": 1
+        }
+      },
+      {
+        "name": "Roadside pressure increases Normal to Hard to Furious",
+        "passed": true,
+        "data": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "name": "Additional pads stop before the final boss approach",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage reset removes pads and returns; other stages never spawn them",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console, drawing or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "weapons": [
+      {
+        "hp": 0,
+        "max": 14,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.89906674056493,
+            "y": 193.99999999999963
+          }
+        ],
+        "diff": "easy",
+        "weapon": "machine gun"
+      },
+      {
+        "hp": 0,
+        "max": 14,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.91650634487928,
+            "y": 196.00000000000088
+          }
+        ],
+        "diff": "easy",
+        "weapon": "spread"
+      },
+      {
+        "hp": 0,
+        "max": 14,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.90496826695266,
+            "y": 194.66666666666745
+          }
+        ],
+        "diff": "easy",
+        "weapon": "laser"
+      },
+      {
+        "hp": 0,
+        "max": 14,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.83635088144896,
+            "y": 187.33333333333357
+          }
+        ],
+        "diff": "easy",
+        "weapon": "flamethrower"
+      },
+      {
+        "hp": 0,
+        "max": 14,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.88702239562446,
+            "y": 192.6666666666673
+          }
+        ],
+        "diff": "easy",
+        "weapon": "ice orb"
+      },
+      {
+        "hp": 0,
+        "max": 14,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.88088924535734,
+            "y": 192.00000000000057
+          }
+        ],
+        "diff": "easy",
+        "weapon": "fire orb"
+      },
+      {
+        "hp": 0,
+        "max": 14,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.8557322620147,
+            "y": 189.3333333333337
+          }
+        ],
+        "diff": "easy",
+        "weapon": "chaingun"
+      },
+      {
+        "hp": 1,
+        "max": 14,
+        "dead": false,
+        "phase": "loaded",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 14
+          }
+        ],
+        "diff": "easy",
+        "weapon": "Retina missile"
+      },
+      {
+        "hp": 0,
+        "max": 18,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.89906674056493,
+            "y": 194.00000000000074
+          }
+        ],
+        "diff": "normal",
+        "weapon": "machine gun"
+      },
+      {
+        "hp": 0,
+        "max": 18,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.91650634487928,
+            "y": 196.00000000000088
+          }
+        ],
+        "diff": "normal",
+        "weapon": "spread"
+      },
+      {
+        "hp": 0,
+        "max": 18,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.92766037604972,
+            "y": 197.3333333333343
+          }
+        ],
+        "diff": "normal",
+        "weapon": "laser"
+      },
+      {
+        "hp": 0,
+        "max": 18,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.8684256014143,
+            "y": 190.6666666666657
+          }
+        ],
+        "diff": "normal",
+        "weapon": "flamethrower"
+      },
+      {
+        "hp": 0,
+        "max": 18,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.8930831824068,
+            "y": 193.33333333333198
+          }
+        ],
+        "diff": "normal",
+        "weapon": "ice orb"
+      },
+      {
+        "hp": 0,
+        "max": 18,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.88088924535734,
+            "y": 191.99999999999883
+          }
+        ],
+        "diff": "normal",
+        "weapon": "fire orb"
+      },
+      {
+        "hp": 0,
+        "max": 18,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.8557322620147,
+            "y": 189.33333333333255
+          }
+        ],
+        "diff": "normal",
+        "weapon": "chaingun"
+      },
+      {
+        "hp": 1,
+        "max": 18,
+        "dead": false,
+        "phase": "loaded",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 18
+          }
+        ],
+        "diff": "normal",
+        "weapon": "Retina missile"
+      },
+      {
+        "hp": 0,
+        "max": 22,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.92766037604972,
+            "y": 197.3333333333314
+          }
+        ],
+        "diff": "hard",
+        "weapon": "machine gun"
+      },
+      {
+        "hp": 0,
+        "max": 22,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.95363360859952,
+            "y": 200.66666666666424
+          }
+        ],
+        "diff": "hard",
+        "weapon": "spread"
+      },
+      {
+        "hp": 0,
+        "max": 22,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.96774076478204,
+            "y": 202.66666666666396
+          }
+        ],
+        "diff": "hard",
+        "weapon": "laser"
+      },
+      {
+        "hp": 0,
+        "max": 22,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.8684256014143,
+            "y": 190.6666666666657
+          }
+        ],
+        "diff": "hard",
+        "weapon": "flamethrower"
+      },
+      {
+        "hp": 0,
+        "max": 22,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.8930831824068,
+            "y": 193.33333333333198
+          }
+        ],
+        "diff": "hard",
+        "weapon": "ice orb"
+      },
+      {
+        "hp": 0,
+        "max": 22,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.88088924535734,
+            "y": 191.99999999999883
+          }
+        ],
+        "diff": "hard",
+        "weapon": "fire orb"
+      },
+      {
+        "hp": 0,
+        "max": 22,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.88702239562446,
+            "y": 192.6666666666654
+          }
+        ],
+        "diff": "hard",
+        "weapon": "chaingun"
+      },
+      {
+        "hp": 1,
+        "max": 22,
+        "dead": false,
+        "phase": "loaded",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 22
+          }
+        ],
+        "diff": "hard",
+        "weapon": "Retina missile"
+      },
+      {
+        "hp": 0,
+        "max": 26,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.95363360859952,
+            "y": 200.66666666666424
+          }
+        ],
+        "diff": "furious",
+        "weapon": "machine gun"
+      },
+      {
+        "hp": 0,
+        "max": 26,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.95363360859952,
+            "y": 200.66666666666424
+          }
+        ],
+        "diff": "furious",
+        "weapon": "spread"
+      },
+      {
+        "hp": 0,
+        "max": 26,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.98461478489278,
+            "y": 205.33333333333022
+          }
+        ],
+        "diff": "furious",
+        "weapon": "laser"
+      },
+      {
+        "hp": 0,
+        "max": 26,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.89906674056493,
+            "y": 193.99999999999855
+          }
+        ],
+        "diff": "furious",
+        "weapon": "flamethrower"
+      },
+      {
+        "hp": 0,
+        "max": 26,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.90496826695266,
+            "y": 194.66666666666512
+          }
+        ],
+        "diff": "furious",
+        "weapon": "ice orb"
+      },
+      {
+        "hp": 0,
+        "max": 26,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.88088924535734,
+            "y": 191.99999999999883
+          }
+        ],
+        "diff": "furious",
+        "weapon": "fire orb"
+      },
+      {
+        "hp": 0,
+        "max": 26,
+        "dead": true,
+        "phase": "destroyed",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          },
+          {
+            "event": "intercepted",
+            "id": 1,
+            "phase": "loaded",
+            "x": 187.88702239562446,
+            "y": 192.6666666666654
+          }
+        ],
+        "diff": "furious",
+        "weapon": "chaingun"
+      },
+      {
+        "hp": 2,
+        "max": 26,
+        "dead": false,
+        "phase": "loaded",
+        "returns": 0,
+        "events": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 187.796875,
+            "y": 230,
+            "scroll": 0,
+            "hp": 26
+          }
+        ],
+        "diff": "furious",
+        "weapon": "Retina missile"
+      }
+    ]
+  },
+  "review": {
+    "passed": 6,
+    "failed": [],
+    "errors": [],
+    "checks": [
+      {
+        "name": "Review boots two actual native shoulder missiles with the regular HUD",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review fire button uses native gunfire to intercept the real rocket",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Replay runs the actual launch and atomic-return owners",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review storage is namespaced before the game boots",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Play-highway mode retains the authored Stage4 plan and the installed director",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review has no page, console, drawing or missing-asset errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "existingProbe": {
+    "path": "_BUILD_SOURCE/probe_targeting_1017.py",
+    "passed": 96,
+    "failed": 0,
+    "errors": [],
+    "runtime_sha256": {
+      "index.html": "4be5ecc9b5b235720f829deba73789a222672adb6cbf1c6d48e5de3c24dccefa",
+      "assets/game.js": "16e651b35f69e355e2ee8449e50224a013dee015a6a47e7b0a8d721583c79209",
+      "assets/targeting_1017.js": "9b43c09b48bccf99587ad2189e92a062751d447bb44489ec36ce862ee1264fa7"
+    },
+    "scope": "Native controlled encounter, highway and unshielded-contact fixtures, actual art and sound calls. Not a full human campaign clear.",
+    "exit": 0
+  },
+  "core": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "passed": 8754,
+    "exit": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "scope": "Existing core harness does not load this new late layer; native Chromium verifies its actual behavior."
+  },
+  "sourceHashes": {
+    "assets/highway_missiles_1017.js": "19118ba1086e5db141c1c4e313a17e10a89a3a720cb7fe4dd18d244798e53d46",
+    "assets/highway_missile_art_1017.js": "1096d6f9f3bfb35544a10a8351f6c0dbe2feaae9f40fe99ae288fb3aeba92020",
+    "_BUILD_SOURCE/build_highway_missiles_1017.py": "5c353e261bdb5e80d96aee040101a1133c2409ff0a225fd27bd3ae00646f75bc",
+    "index.html": "4be5ecc9b5b235720f829deba73789a222672adb6cbf1c6d48e5de3c24dccefa"
+  },
+  "scope": "Controlled native combat, real keyboard primary fire, missile locks, actual drawn pixels and hit-flash expiry. No full human campaign completion claim."
+}

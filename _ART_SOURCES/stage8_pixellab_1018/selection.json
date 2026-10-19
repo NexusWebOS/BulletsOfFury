@@ -1,0 +1,20 @@
+{
+  "models": {
+    "infused": "infused",
+    "ghost": "ghost",
+    "colossus": "colossus",
+    "hammer": "hammer",
+    "helicopter": "helicopter",
+    "harrier": "harrier",
+    "volcano": "volcano-standard"
+  },
+  "clips": ["conversion", "ghost_emerge", "colossus_emerge", "morph_hammer", "morph_helicopter", "morph_harrier", "morph_volcano"],
+  "rejected": {
+    "volcano": "Gray opaque blank frames8 through12. Entire MiniMax idle bank excluded.",
+    "morph_volcano-standard": "Unneeded completed fallback. The inspected256x256 MiniMax transformation is selected; fallback is not downloaded or registered."
+  },
+  "live_final_forms": ["colossus", "hammer", "helicopter", "harrier", "volcano"],
+  "module_reconstruction": "RGBA-exact, disjoint core/left/right anatomical masks",
+  "export_canvas": [320, 320],
+  "export_pivot": [160, 160]
+}

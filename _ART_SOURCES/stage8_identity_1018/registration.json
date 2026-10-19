@@ -1,0 +1,21 @@
+{
+  "frame": [
+    320,
+    320
+  ],
+  "pivot": [
+    160,
+    160
+  ],
+  "scale": 1,
+  "volcanoReconstructsMaster": true,
+  "clips": {
+    "avatar": 1,
+    "colossus_roar": 24,
+    "colossus_death": 20,
+    "colossus_scythe": 24,
+    "infused_death": 24,
+    "avatar_speech": 16,
+    "ghost_death": 24
+  }
+}

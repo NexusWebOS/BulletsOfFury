@@ -1,0 +1,21 @@
+{
+  "job_id": "ef9017f2-aef2-4f32-8a9e-6c57255b0878",
+  "asset_id": "db1cabbf-9fda-5657-9929-ff7f91c7bce2",
+  "source_object": "fc7f0c8a-cce4-4831-ae88-3115a77a49c6",
+  "source_direction": "south",
+  "source_local": "_ART_SOURCES/hammer_motion_1019/south.png",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "frame_count": 16,
+  "seed": 10192026,
+  "prompt": "FRAME FORMAT: 256x256 pixels per frame, uniform canvas, pivot128,128, one proportional scale, transparent margins. Fixed frontal camera. Keep feet/pelvis planted and registered; animate joints. Preserve this exact black/chromium armor, red lamps, one head and one hammer in its original hand. Sixteen distinct pixel poses: starting with the hammer horizontal across the chest toward viewer-right, the weapon arm draws outward, bends at shoulder/elbow, and lifts the heavy hammer in a broad overhead arc. Empty free hand braces forward. Torso leans back slightly and knees flex without moving the feet. End with the same hammer held high above the helmet, poised for a later slam. Smooth heavy mechanical lift with a clearly changing arm/shaft/head silhouette. No walking, spinning, camera turn, extra limb/weapon, hand swap, stretchy warping, particles or new aura. Keep the entire weapon inside the frame.",
+  "status": "completed; rejected after all-frame/onion inspection",
+  "cost_generations": 2,
+  "charged_usd": 0.0434
+}

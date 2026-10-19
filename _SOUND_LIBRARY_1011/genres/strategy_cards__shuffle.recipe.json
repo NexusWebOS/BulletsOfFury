@@ -1,0 +1,254 @@
+{
+ "design": {
+  "name": "SHUFFLE",
+  "frames": 46,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [],
+  "noise": {
+   "on": true,
+   "white": true,
+   "rate": 2,
+   "toneHz": 1200,
+   "toneSweepTo": 1200,
+   "vol": 5,
+   "fade": 0,
+   "delay": 0,
+   "frames": 40
+  },
+  "tone": {
+   "on": false,
+   "white": true,
+   "rate": 2,
+   "toneHz": 1200,
+   "toneSweepTo": 1200,
+   "vol": 0,
+   "fade": 0.5,
+   "delay": 0,
+   "frames": 20
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "SHUFFLE",
+  "frames": 46,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [],
+  "psg": [
+   {
+    "ch": 3,
+    "track": [
+     {
+      "f": 0,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 1,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 2,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 3,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 4,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 5,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 6,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 7,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 8,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 9,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 10,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 11,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 12,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 13,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 14,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 15,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 16,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 17,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 18,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 19,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 20,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 21,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 22,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 23,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 24,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 25,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 26,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 27,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 28,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 29,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 30,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 31,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 32,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 33,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 34,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 35,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 36,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 37,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 38,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 39,
+      "period": 6,
+      "vol": 5
+     },
+     {
+      "f": 40,
+      "period": 6,
+      "vol": 15
+     }
+    ]
+   }
+  ],
+  "dac": null
+ }
+}

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BOF Chip Sound Library</title>
+<style>
+:root{--bg:#0b0610;--panel:#160b1f;--panel2:#1f1029;--line:#3a1f4a;--ink:#f2e9ff;--muted:#a593b8;--amber:#ffb238;--cyan:#38e1ff;--green:#62f08a;--red:#ff4f6d;--pink:#ff7ad9;--violet:#a98bff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-monospace,"Cascadia Mono",Consolas,monospace}
+header{padding:22px 16px 10px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#22102e,#0b0610)}
+h1{margin:0;font-size:22px;letter-spacing:.06em;color:var(--amber)}
+h1 small{display:block;font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:4px;font-weight:400}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.stat{background:var(--panel);border:1px solid var(--line);padding:6px 10px}.stat b{color:var(--cyan);font-size:16px;margin-right:6px}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:4px;padding:8px 16px;background:#0b0610ee;border-bottom:1px solid var(--line);overflow-x:auto}
+nav button{font:inherit;background:var(--panel);color:var(--muted);border:1px solid var(--line);padding:6px 12px;cursor:pointer;white-space:nowrap}
+nav button.on{background:var(--amber);color:#1a0d00;border-color:var(--amber)}
+main{max-width:1280px;margin:0 auto;padding:16px}
+section{display:none}section.on{display:block}
+.note{background:var(--panel);border-left:3px solid var(--cyan);padding:10px 12px;margin:0 0 14px;color:var(--muted)}
+.note b{color:var(--ink)}
+.bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px}
+.chip{font:inherit;font-size:12px;background:var(--panel);color:var(--muted);border:1px solid var(--line);padding:4px 9px;cursor:pointer}
+.chip.on{color:var(--ink);border-color:var(--cyan);background:#0f2530}
+input[type=search]{font:inherit;background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:6px 10px;min-width:220px;flex:1;max-width:360px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.card.playing{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber)}
+.top{display:flex;align-items:center;gap:8px}
+.key{font-weight:700;color:var(--ink);word-break:break-all;flex:1}
+.badge{font-size:10px;padding:2px 6px;border:1px solid currentColor;letter-spacing:.05em;white-space:nowrap}
+.MISSING{color:var(--red)}.SILENT{color:var(--pink)}.BORROWED{color:var(--amber)}.WEAK{color:#ffd166}.SYNTH{color:var(--violet)}.GROUND{color:var(--green)}.DESIGNED{color:var(--violet)}.MEASURED{color:var(--cyan)}
+.target{color:var(--cyan);font-size:12px}
+.why{color:var(--muted);font-size:12px}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.play{font:inherit;font-size:12px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink);padding:5px 10px}
+.play.new{background:#123a1f;border-color:var(--green);color:var(--green);font-weight:700}
+.play.cur{background:#2a1a08;border-color:var(--amber);color:var(--amber)}
+.play:hover{filter:brightness(1.25)}
+.dl{font-size:11px;color:var(--muted)}.dl a{color:var(--muted);margin-right:8px}.dl a:hover{color:var(--cyan)}
+.meta{font-size:11px;color:var(--muted)}.meta span{margin-right:10px}.meta .bad{color:var(--red)}.meta .good{color:var(--green)}
+details{font-size:11px;color:var(--muted)}details summary{cursor:pointer;color:var(--violet)}details pre{white-space:pre-wrap;margin:6px 0 0;color:#cfc0e3}
+h2{color:var(--amber);font-size:16px;letter-spacing:.05em;margin:22px 0 10px}
+h3{color:var(--cyan);font-size:14px;margin:16px 0 8px}
+table{border-collapse:collapse;width:100%;font-size:12px;background:var(--panel)}
+th,td{border:1px solid var(--line);padding:5px 7px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--amber);font-weight:400}
+.tablewrap{overflow-x:auto}
+.issue{background:var(--panel);border:1px solid var(--line);padding:10px 12px;margin:0 0 10px}
+.issue h3{margin:0 0 6px}
+.issue ul{margin:0;padding-left:18px;color:var(--muted);font-size:12px;columns:2;column-gap:24px}
+@media (max-width:700px){.issue ul{columns:1}.grid{grid-template-columns:1fr}}
+.genrehead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:inherit;font-size:12px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink);padding:4px 9px}
+.pill.playing{border-color:var(--amber);color:var(--amber)}
+#now{position:fixed;right:12px;bottom:12px;background:var(--panel2);border:1px solid var(--amber);padding:8px 12px;display:none;gap:10px;align-items:center;z-index:9}
+#now.on{display:flex}#now button{font:inherit;background:var(--red);border:0;color:#fff;padding:4px 10px;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+  <h1>BULLETS OF FURY — GENESIS CHIP SOUND LIBRARY<small>ColeForge 7 · YM2612 + SN76489 · rendered 2026-10-11 · preview only: nothing in the game was replaced or wired</small></h1>
+  <div class="stats" id="stats"></div>
+</header>
+<nav id="tabs">
+  <button data-s="lib" class="on">LIBRARY</button>
+  <button data-s="audit">GAME AUDIT</button>
+  <button data-s="genre">GENRE STUDY</button>
+  <button data-s="use">HOW TO USE</button>
+</nav>
+<main>
+<section id="lib" class="on">
+  <p class="note"><b>A/B:</b> the green button plays the new chip sound; amber buttons play what the game uses for that job today (missing and silent ones have nothing to compare). Every new key starts with <b>chip_</b>, so none of them collides with an existing sound.</p>
+  <div class="bar" id="groupbar"></div>
+  <div class="bar" id="statusbar"><input id="q" type="search" placeholder="search key, target, reason…"></div>
+  <div class="grid" id="libgrid"></div>
+</section>
+<section id="audit">
+  <p class="note" id="auditnote"></p>
+  <div id="auditbody"></div>
+</section>
+<section id="genre">
+  <p class="note"><b>What the cartridges taught:</b> these numbers come from logging every sound effect in the Genesis games you own through the SegaScope emulator (register writes only; no game audio is stored or bundled). They set the house style of each genre bank. <b>Sports, racing, strategy/cards and horror/stealth</b> have no cartridge in your collection, so those banks are designed from chip technique alone. Add those ROMs and they can be measured the same way.</p>
+  <h2>GENRE HOUSE STYLE (MEASURED)</h2>
+  <div class="tablewrap"><table id="genretable"></table></div>
+  <h2>TECHNIQUE ARCHETYPES</h2>
+  <div class="tablewrap"><table id="archtable"></table></div>
+  <h2>GENRE BANKS — PLAY</h2>
+  <div id="genrebanks"></div>
+</section>
+<section id="use">
+  <h2>WHAT IS IN THIS FOLDER</h2>
+  <p class="note"><b>bof/</b> — one sound per game need, as <b>.wav</b> (44.1 kHz stereo, −1 dBFS peak), <b>.mp3</b> (112k, the game's format), <b>.vgm</b> (plays on real hardware / any VGM player) and <b>.recipe.json</b> (open it in ColeForge 7 → GENESIS CHIP → IMPORT to edit).<br><b>genres/</b> — the genre banks rendered the same way.<br><b>library.json</b> — every file with its measurements and QA result.</p>
+  <h2>IN COLEFORGE 7</h2>
+  <p class="note">Open the generator, switch to <b>GENESIS CHIP</b>. The library panel now has genre tabs — <b>BULLETS OF FURY</b> is selected by default and holds every sound on this page as a one-click preset, labelled with its status and reason. Click one to load and hear it, tweak it in the chip editor, then EXPORT WAV / VGM.</p>
+  <h2>WIRING ONE INTO THE GAME (WHEN YOU CHOOSE)</h2>
+  <p class="note">Nothing is wired. To use a sound: copy its .mp3 into <b>assets/game/shared/audio/sounds/</b>, register the key in the code-owned BOFA.sfx block in game.js (not manifest.js — it is generated), give it a <b>Snd.TAME</b> row with a <b>min</b> retrigger gate, and point the call site at it. For a MISSING key, registering it under the exact name the code already calls (e.g. <b>error</b>, <b>enemyDie</b>) makes it audible with no call-site change.</p>
+  <h2>LIMITS</h2>
+  <p class="note">The YM2612 cannot speak: voice lines, announcer calls and taunts are not in this library. The DAC channel can play a sampled voice, but that needs a recording, not a synth patch.</p>
+</section>
+</main>
+<div id="now"><span id="nowtxt"></span><button id="stop" type="button">STOP</button></div>
+<script src="data.js"></script>
+<script>
+(function(){
+const LIB=window.LIB||[],BOF=LIB.filter(r=>r.kind==='bof'),GEN=LIB.filter(r=>r.kind==='genre');
+const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let audio=null,playingEl=null;
+function stop(){if(audio){audio.pause();audio=null}if(playingEl)playingEl.classList.remove('playing');playingEl=null;$('#now').classList.remove('on')}
+function play(src,label,el,loop){stop();audio=new Audio(src);audio.loop=!!loop;audio.play().catch(e=>{$('#nowtxt').textContent='could not play: '+e.message});audio.onended=()=>{if(!audio||!audio.loop)stop()};
+  playingEl=el||null;if(el)el.classList.add('playing');$('#nowtxt').textContent='▶ '+label+(loop?' (loop)':'');$('#now').classList.add('on')}
+$('#stop').onclick=stop;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')stop()});
+// tabs
+for(const b of document.querySelectorAll('#tabs button'))b.onclick=()=>{for(const x of document.querySelectorAll('#tabs button'))x.classList.toggle('on',x===b);for(const s of document.querySelectorAll('section'))s.classList.toggle('on',s.id===b.dataset.s)};
+// stats
+const st=s=>BOF.filter(r=>r.status===s).length,qaPass=LIB.filter(r=>!r.qa||!r.qa.length).length;
+$('#stats').innerHTML=[[BOF.length,'new game sounds'],[0,'files replaced'],[st('MISSING'),'missing keys filled'],[st('SILENT')+st('BORROWED'),'new systems voiced'],[st('WEAK')+st('SYNTH'),'weak/synth alternates'],[st('GROUND'),'Overdrive ground'],[GEN.length,'genre presets'],[qaPass+'/'+LIB.length,'pass QA']].map(([n,t])=>`<div class="stat"><b>${n}</b>${t}</div>`).join('');
+// library filters
+const groups=['ALL',...new Set(BOF.map(r=>r.group))],stats=['ANY',...new Set(BOF.map(r=>r.status))];let G='ALL',ST='ANY';
+function bar(id,list,cur,set){const b=$(id);b.querySelectorAll('.chip').forEach(x=>x.remove());const q=b.querySelector('input');
+  for(const g of list){const c=document.createElement('button');c.type='button';c.className='chip'+(g===cur()?' on':'');c.textContent=g+(g==='ALL'||g==='ANY'?'':' '+BOF.filter(r=>r.group===g||r.status===g).length);c.onclick=()=>{set(g);draw()};q?b.insertBefore(c,q):b.appendChild(c)}}
+function fmtMeta(r){const bits=[`<span>${r.audible.toFixed(2)}s</span>`,`<span>peak @ ${Math.round(r.peak_at_ms)} ms</span>`,`<span>hf ${(r.hf*100).toFixed(1)}%</span>`,`<span>${r.clip?'<b class=bad>clips</b>':'no clip'}</span>`];
+  bits.push(r.qa&&r.qa.length?`<span class="bad">QA: ${esc(r.qa.join(', '))}</span>`:'<span class="good">QA pass</span>');if(r.loop)bits.push('<span>loop</span>');return bits.join('')}
+function files(r){const b=r.dir+'/'+r.file;return `<span class="dl"><a href="${b}.wav" download>wav</a><a href="${b}.mp3" download>mp3</a><a href="${b}.vgm" download>vgm</a><a href="${b}.recipe.json" download>recipe</a></span>`}
+function draw(){bar('#groupbar',groups,()=>G,g=>G=g);bar('#statusbar',stats,()=>ST,s=>ST=s);
+  const q=($('#q').value||'').toLowerCase(),grid=$('#libgrid');grid.innerHTML='';
+  for(const r of BOF){if(G!=='ALL'&&r.group!==G)continue;if(ST!=='ANY'&&r.status!==ST)continue;if(q&&!(r.key+' '+r.target+' '+r.why+' '+r.group).toLowerCase().includes(q))continue;
+    const c=document.createElement('div');c.className='card';
+    c.innerHTML=`<div class="top"><span class="key">${esc(r.key)}</span><span class="badge ${r.status}">${r.status}</span></div>
+      <div class="target">${esc(r.group)} · ${esc(r.target)}</div>${r.why?`<div class="why">${esc(r.why)}</div>`:''}
+      <div class="row"><button class="play new" type="button">▶ NEW CHIP</button>${(r.current||[]).map((x,i)=>`<button class="play cur" type="button" data-i="${i}">▶ NOW: ${esc(x.key)}</button>`).join('')}</div>
+      <div class="meta">${fmtMeta(r)}</div><div>${files(r)}</div>
+      <details><summary>how it is built</summary><pre>${esc(r.describe)}</pre></details>`;
+    c.querySelector('.new').onclick=()=>play(r.dir+'/'+r.file+'.mp3',r.key+' (new)',c,r.loop);
+    c.querySelectorAll('.cur').forEach(b=>b.onclick=()=>{const x=r.current[+b.dataset.i];play(x.file,x.key+' (current game file)',c)});
+    grid.appendChild(c)}
+  if(!grid.children.length)grid.innerHTML='<p class="note">Nothing matches this filter.</p>'}
+$('#q').addEventListener('input',draw);draw();
+// audit
+const A=window.AUDIT||{summary:{},issues:{}};
+$('#auditnote').innerHTML=`<b>Library pass on the game's own files:</b> ${A.summary.files} sound files serving ${A.summary.keys} keys, each decoded and measured (lead silence, where the loudest moment lands, energy above 2 kHz, clipping, level after the game's own gain table). The chip library above answers each finding with a new file; the originals are untouched.`;
+const ISSUE_TXT={'clipped (>40 samples at full scale)':'Clipped — distortion at full scale','late transient (peak >120 ms in, the "delayed" complaint)':'Late transient — the hit lands after you pull the trigger','muffled (under 2% energy above 2 kHz)':'Muffled — no crack, reads as a thud','quiet in game (effective RMS under -32 dBFS after TAME gain)':'Too quiet in game','dead air before the sound (>60 ms)':'Dead air before the sound','too long for a one-shot (>2.5 s audible)':'Too long for a one-shot','one file standing in for different jobs':'One file doing several different jobs'};
+let ab='';
+ab+=`<div class="issue"><h3>Keys the code calls that do not exist (silent at runtime)</h3><ul>${BOF.filter(r=>r.status==='MISSING').map(r=>`<li>${esc(r.target)}</li>`).join('')}</ul></div>`;
+ab+=`<div class="issue"><h3>New systems with no sound, or borrowing another sound</h3><ul>${[...new Set(BOF.filter(r=>r.status==='SILENT'||r.status==='BORROWED').map(r=>r.target.replace(/ - .*$/,'')))].map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>`;
+ab+=`<div class="issue"><h3>Keys that exist only as a thin code-synth fallback (${BOF.filter(r=>r.status==='SYNTH').length})</h3><ul>${BOF.filter(r=>r.status==='SYNTH').map(r=>`<li>${esc(r.target)}</li>`).join('')}</ul></div>`;
+for(const [k,rows] of Object.entries(A.issues)){const label=ISSUE_TXT[k]||k;
+  ab+=`<div class="issue"><h3>${esc(label)} (${rows.length})</h3><ul>${rows.map(r=>`<li>${esc(r.key)} — ${esc(r.file)}${r.peak_at_ms!=null&&/late/.test(k)?' · peak '+Math.round(r.peak_at_ms)+' ms':''}${/muffled/.test(k)?' · hf '+(r.hf*100).toFixed(1)+'%':''}${/clipped/.test(k)?' · '+r.clip+' samples':''}</li>`).join('')}</ul></div>`}
+ab+=`<div class="issue"><h3>Overdrive ground expansion</h3><ul><li>expansion/topdown/js/core.js plays 18 sounds, all borrowed from the shooter (mg, cannon, eshot, hit, expS, expB, pick, blip, alert, warn, laser, missile, lock, charge, intro, phase, whiteout) and its engine loop at gain 0.</li><li>No tank treads, engine, turret, cannon, footsteps, rifle, soldier death, stealth "spotted" alert, alarm, door, wall/building break, crate or mine sounds.</li></ul></div>`;
+$('#auditbody').innerHTML=ab;
+// genre study
+const GS=window.GENRES||{};
+const cols=[['sounds','sounds'],['lengthFrames','median length (frames)'],['fmShare','FM %'],['noiseShare','PSG noise %'],['dacShare','DAC %'],['layered','layered %'],['fb7Share','feedback 7 %'],['topAlgs','top algorithms'],['retrigShare','re-strike %'],['dropShare','pitch drop %'],['riseShare','pitch rise %'],['lfoShare','LFO %']];
+$('#genretable').innerHTML='<tr><th>genre</th><th>games logged</th>'+cols.map(c=>`<th>${c[1]}</th>`).join('')+'</tr>'+Object.entries(GS).map(([g,s])=>`<tr><td>${esc(g)}</td><td>${esc((s.games||[]).join(', '))}</td>`+cols.map(([k])=>`<td>${k==='topAlgs'?(s.topAlgs||[]).map(a=>a.alg+' ('+a.share+'%)').join(', '):esc(s[k])}</td>`).join('')+'</tr>').join('');
+const AR=window.ARCH||{};
+$('#archtable').innerHTML='<tr><th>archetype</th><th>sounds</th><th>median length</th><th>top alg</th><th>feedback</th><th>pitch sweep (oct)</th><th>re-strikes</th><th>noise</th><th>measured mostly in</th></tr>'+Object.entries(AR).map(([k,a])=>{const v=x=>x==null?'—':x;return `<tr><td>${esc(k)}</td><td>${v(a.count)}</td><td>${v(a.frames)} f</td><td>${v(a.topAlg)}</td><td>${v(a.fb)}</td><td>${v(a.sweepOct)}</td><td>${v(a.retrigs)}</td><td>${Math.round((a.noiseShare||0)*100)}%</td><td>${esc((a.games||[]).slice(0,3).map(g=>g[0]).join(', '))}</td></tr>`}).join('');
+const byG={};for(const r of GEN)(byG[r.genre]=byG[r.genre]||[]).push(r);
+$('#genrebanks').innerHTML='';
+for(const [g,rs] of Object.entries(byG)){const d=document.createElement('div');const designed=rs[0].basis==='designed';
+  d.innerHTML=`<div class="genrehead"><h3>${esc(g)}</h3><span class="badge ${designed?'DESIGNED':'MEASURED'}">${designed?'DESIGNED FROM CHIP TECHNIQUE':'MEASURED HOUSE STYLE'}</span></div><div class="pills"></div>`;
+  const p=d.querySelector('.pills');for(const r of rs){const b=document.createElement('button');b.type='button';b.className='pill';b.title=(r.cat||'')+' · '+(r.tags||'')+(r.qa&&r.qa.length?' · QA: '+r.qa.join(', '):'');b.textContent=r.name;b.onclick=()=>play(r.dir+'/'+r.file+'.mp3',g+' · '+r.name,b,r.loop);p.appendChild(b)}
+  $('#genrebanks').appendChild(d)}
+})();
+</script>
+</body>
+</html>

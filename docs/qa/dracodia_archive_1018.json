@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-18",
+  "core": {
+    "baseline_passed": 8784,
+    "passed": 8784,
+    "failed": 0,
+    "exit": 0,
+    "final_summary": true,
+    "evidence": "_shots/dracodia_archive_1018/core-final.log"
+  },
+  "native_passed": 248,
+  "native_failed": 0,
+  "reports": {
+    "combat": {
+      "passed": 71,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/dracodia_archive_1018/native/results.json"
+    },
+    "art": {
+      "passed": 22,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/dracodia_archive_1018/art/results.json"
+    },
+    "sequences": {
+      "passed": 32,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/dracodia_archive_1018/sequences/results.json"
+    },
+    "swipes": {
+      "passed": 89,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/dracodia_archive_1018/swipes/results.json"
+    },
+    "review": {
+      "passed": 34,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/dracodia_archive_1018/review/results.json"
+    }
+  },
+  "source_sha256": {
+    "assets/game.js": "d9f1e3fdf71a1205c65795dd45034cb81967912f1a9c8a49a50e2c10dc874be9",
+    "_BUILD_SOURCE/test_fl.js": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+    "assets/stage8_identity_1018.js": "d56582f82f92198733719f643676e32970ace99025907c34528d6df0a91bd732",
+    "assets/stage8_pixellab_1018.js": "063340978db2785ff03ff3c93a94d8b01ccbddfa7bc1de5f1dc1c9ee29cc0cc5",
+    "assets/dracodia_archive_1018.js": "2e46f1afaad69aa6b9de83932118150ad82cb44e193455cea6adf2023c1862ef",
+    "assets/dracodia_archive_art_1018.js": "c2a29bfbbde3110e77d1b6c0a3847ca7b1d583de9242badb57d2e61b881c537f",
+    "index.html": "a33e8dcb2a0111c4d20f00913f99e6342a1c5373551d60a41e26cfcb822789fd",
+    "assets/data/ART_TAXONOMY.json": "0fa2a03ed41c79f312a22bea59c568e4bb98a069a552a8182409db9044f1b4ca",
+    "_BUILD_SOURCE/build_dracodia_archive_1018.py": "6b60e2173e0e887f566215ad99f27ab2d282daa5180240e925c9d868b11967b9",
+    "_BUILD_SOURCE/generate_dracodia_archive_1018.py": "86ca5178e6b7cb327c63afac25c7517169603cde8d38bde16b0cd418d1c78dec",
+    "docs/previews/dracodia_archive_1018/index.html": "2a1732eadd267f92a8022c21b3877d24b3d4334c86c7e0c6168d30bde3f07bd1",
+    "docs/previews/dracodia_archive_1018/frames.html": "3051ba3a0aafdc003799aa067a83611d789e13315c9f505e72e9497ae6d342c1",
+    "docs/previews/stage8_pixellab_1018/index.html": "97ff8c0fcdaa87b721e005645621ec96c494c02c52c7bf02b49a9fdeaa272e6c"
+  },
+  "preservation": {
+    "game_js_only_one_collision_flag_line_added": true,
+    "game_js_without_new_line_sha256": "ae206b3d6ec874412cc76f5a65e6bfd4722a21f35e907a1ba0e90934e9009265",
+    "game_js_lf": true,
+    "test_fl_crlf": true,
+    "test_fl_sha256_unchanged": true,
+    "existing_stage8_identity_and_pixellab_runtimes_unchanged": true
+  },
+  "art": {
+    "pngs": 190,
+    "bytes": 3082452,
+    "downloads": {
+      "bastion": 18,
+      "camo": 18,
+      "halberd": 22
+    },
+    "fx": {
+      "bomb_charge": {
+        "poses": 16,
+        "canvas": [
+          160,
+          160
+        ],
+        "pivot": [
+          80,
+          80
+        ]
+      },
+      "bomb_burst": {
+        "poses": 22,
+        "canvas": [
+          160,
+          160
+        ],
+        "pivot": [
+          80,
+          80
+        ]
+      },
+      "lightning_loop": {
+        "poses": 18,
+        "canvas": [
+          128,
+          128
+        ],
+        "pivot": [
+          64,
+          64
+        ]
+      },
+      "storm_loop": {
+        "poses": 32,
+        "canvas": [
+          320,
+          320
+        ],
+        "pivot": [
+          160,
+          160
+        ]
+      },
+      "transfer_loop": {
+        "poses": 32,
+        "canvas": [
+          320,
+          320
+        ],
+        "pivot": [
+          160,
+          160
+        ]
+      }
+    },
+    "fixture": false,
+    "shared_atlas_changes": false
+  },
+  "pixellab": {
+    "starting_credit_usd": 7.68,
+    "ending_credit_usd": 5.03,
+    "used_usd": 2.65,
+    "cap_usd": 7.68,
+    "top_up": false,
+    "private_references_uploaded": [
+      "bz0_inta.png",
+      "bz4_inta.png",
+      "blue gunship screenshot"
+    ],
+    "authorization": "_ART_SOURCES/dracodia_archive_1018/authorization.json"
+  },
+  "runtime_scope": "Stage8 final main form and its owned archive actors; five finite form pools preserved",
+  "native_damage": "Actual centered machine-gun and Retina damage, native player deaths, protection and no early bomb body impact; every cached Retina target retires immediately on hull death",
+  "preview": "docs/previews/dracodia_archive_1018/index.html",
+  "frames": "docs/previews/dracodia_archive_1018/frames.html",
+  "limits": "Controlled invulnerable encounter scenarios plus native unprotected damage checks; not a new human-balance or complete nine-stage campaign pass.",
+  "committed": false,
+  "pushed": false
+}

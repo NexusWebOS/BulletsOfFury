@@ -1,0 +1,54 @@
+{
+  "ball": {
+    "source": "assets/game/levels/stage_08/boss/finale_motion_1006/hammer_motion_2.png",
+    "sourceSize": [
+      227,
+      222
+    ],
+    "sourcePivot": [
+      117,
+      127
+    ],
+    "proportionalScale": 0.85,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "ink": [
+      39,
+      31,
+      210,
+      198
+    ]
+  },
+  "twirl": {
+    "source": "assets/game/levels/stage_08/boss/finale_motion_1006/hammer_motion_8.png",
+    "sourceSize": [
+      362,
+      253
+    ],
+    "sourcePivot": [
+      150,
+      120
+    ],
+    "proportionalScale": 0.55,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "ink": [
+      52,
+      69,
+      238,
+      194
+    ]
+  }
+}

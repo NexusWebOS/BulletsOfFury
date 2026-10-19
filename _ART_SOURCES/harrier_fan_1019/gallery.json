@@ -1,0 +1,10 @@
+{
+  "gallery": "f359d97a-d6a9-44ab-b991-5355c49c563c",
+  "workbench": "7995aab4-ca2d-4951-8b8a-674edf4af50d",
+  "frames": 16,
+  "canvas": [160, 192],
+  "source": "Actual current fmc_harrier fanL, exported by export_harrier_fan_ref_1019.py",
+  "method": "PixelLab exact animation workbench; authored palette, housing and hub preserved. Only the native turbine rotor turns around its axle.",
+  "rejected_ai_job": "374fdcfa-03f1-4d57-ad83-0250a7fbe0da",
+  "rejected_ai_cost_credits": 0.0373
+}

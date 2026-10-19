@@ -1,0 +1,30 @@
+{
+  "avatar": {
+    "id": "2c6da4b5-7391-43f9-94cb-ff679dc5e6f7",
+    "count": 1
+  },
+  "colossus_roar": {
+    "id": "ac4bf9eb-b3b2-49f7-8932-ee733db9995f",
+    "count": 24
+  },
+  "colossus_death": {
+    "id": "9f755bc5-1860-4962-a490-4a719f51099b",
+    "count": 32
+  },
+  "colossus_scythe": {
+    "id": "ea6f375e-e1ac-4956-97bc-69139e508983",
+    "count": 24
+  },
+  "infused_death": {
+    "id": "64a6eca0-af3d-48ba-bff4-ab9a2b1291d8",
+    "count": 24
+  },
+  "avatar_speech": {
+    "id": "f4edb6fe-7a4a-4318-994b-de36a8adafc0",
+    "count": 16
+  },
+  "ghost_death": {
+    "id": "430c9e5a-7705-416e-a8a4-dcef090e8b78",
+    "count": 24
+  }
+}

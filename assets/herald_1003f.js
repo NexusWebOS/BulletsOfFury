@@ -67,10 +67,10 @@ function hd1003Hit(b,dmg,x,y,id){
  if(b!==subBoss||b.dead||b.enter||!Number.isFinite(dmg)||dmg<=0)return;
  const partId=id||(Number.isFinite(x+y)?hd1003At(b,x,y):'core');if(!partId)return;
  const p=hd1003Part(b,partId);if(!p||!hd1003Live(b,p))return;
- const before=b.hp,flash=b.flash;
+ const before=b.hp;
  // Native damage keeps elemental reactions, stats, achievements and defeat rewards.
  HD1003_BASE.hit.call(this,dmg*(partId==='head'?1.2:1),x,y);
- const dealt=Math.max(0,before-b.hp);b.flash=flash;p.flash=.18;
+ const dealt=Math.max(0,before-b.hp);markHit(p,.18);
  if(partId!=='core'&&partId!=='head'){p.hp=Math.max(0,p.hp-dealt);if(p.hp<=0)hd1003Break(b,p);}
  if(b.dead){b._hd1003.mode='dead';b._hd1003.lanes=[];b._hd1003.flashes=[];b._hd1003.fx.push({name:'breach',x:b.x,y:b.y+20,t:0,size:190});S81003.beams=S81003.beams.filter(q=>q.owner!==b);eBullets=eBullets.filter(q=>q._heraldOwner1003!==b);groundTargetingCancel(b);}
 }

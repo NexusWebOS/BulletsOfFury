@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Campaign close view</title>
+<link rel="icon" href="data:,">
+<style>
+body{margin:0;background:#080d13;color:#dce8ed;font:15px system-ui}nav{display:flex;align-items:center;gap:12px;padding:12px 16px;flex-wrap:wrap}strong{color:#ffcb78}button,select{background:#1a2938;border:1px solid #697f8b;border-radius:4px;color:#fff1cd;padding:8px}iframe{display:block;width:100%;height:calc(100vh - 100px);min-height:540px;border:0;background:#000}p{margin:8px 16px;color:#a6bfcb;font-size:13px}
+</style>
+<nav><strong>Campaign close view</strong><label>Level <select id="level"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></label><button id="approach">Replay HQ approach</button><button id="overview">Map overview</button><span id="status">Loading the actual game…</span></nav>
+<iframe id="game" title="Actual campaign map and live camera" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p>Actual map, pilot aircraft, flags and controls. This review uses separate storage so your campaign saves stay intact.</p>
+<script>
+const game=document.querySelector('#game'),level=document.querySelector('#level'),status=document.querySelector('#status');let ready=false;
+const delay=n=>new Promise(r=>setTimeout(r,n));
+function select(stage,fresh=false){
+ if(!ready)return;
+ game.contentWindow.eval(`(()=>{ht27Stop();BOFCinematicDirector.cancel();Rival24.reset();debugFight=null;coopOn=false;run.mode='campaign';run.pilot='cole';pilotIndex=PILOTS.findIndex(p=>p.key==='cole');campaign.unlockedMax=8;campaign.bonusUnlocked=${stage===9};campaign.rank=${fresh?'{}':"{1:'S'}"};campaign.rivalScattered=false;campaign.stageX1004=null;CF4.focus=false;campPause=null;_selFlash=null;s9MapCine=null;riftReturn=null;openStageSelect(${stage},{});sselBoot=0;sselUnlockCine=null;Input.clearTaps();Input.mouse.active=false;Input.mouse.moved=false;${fresh?"Object.assign(cmap2.cam,{...cmap2World('hq'),z:CF9.zoom()});":''}})()`);
+ status.textContent=fresh?'HQ → Stage 1':'Stage '+stage+' · close view';game.contentWindow.focus();
+}
+level.onchange=()=>select(Number(level.value));document.querySelector('#approach').onclick=()=>{level.value='1';select(1,true);};
+document.querySelector('#overview').onclick=()=>{if(ready){game.contentWindow.eval("cmap2.focus='bar'");status.textContent='Overview · use the game controls to return';game.contentWindow.focus();}};
+game.onload=async()=>{for(let i=0;i<300;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof CF9!=="undefined"')){ready=true;select(Number(level.value));return;}await delay(100);}status.textContent='The game did not finish loading. Reload to retry.';};
+(async()=>{
+ const url=new URL('../../../index.html?revision=campaign-close-1017',location.href),response=await fetch(url);if(!response.ok)throw Error('Game load failed: '+response.status);let html=await response.text();
+ function isolateStorage(){const prefix='BOF_CAMPAIGN_CLOSE_REVIEW_1017_',get=Storage.prototype.getItem,set=Storage.prototype.setItem,remove=Storage.prototype.removeItem;Storage.prototype.getItem=function(k){return get.call(this,prefix+k);};Storage.prototype.setItem=function(k,v){return set.call(this,prefix+k,v);};Storage.prototype.removeItem=function(k){return remove.call(this,prefix+k);};const key=Storage.prototype.key;Storage.prototype.clear=function(){const keys=[];for(let i=0;i<this.length;i++){const k=key.call(this,i);if(k?.startsWith(prefix))keys.push(k);}for(const k of keys)remove.call(this,k);};window.__campaignCloseReviewStorage=true;}
+ const boot='<script>('+isolateStorage.toString()+')();</scr'+'ipt>';
+ html=html.replace('<head>','<head><base href="'+new URL('../../../',location.href).href+'">'+boot);game.srcdoc=html;
+})().catch(e=>{status.textContent=e.message;console.error(e);});
+</script>
+</html>

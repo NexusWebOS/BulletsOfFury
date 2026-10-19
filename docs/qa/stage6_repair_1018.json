@@ -1,0 +1,2131 @@
+{
+  "date": "2026-10-18",
+  "scope": "Actual Stage6 miniboss/Harrier/Nightwing fixtures plus UI and branch-controller compatibility; not full campaign completion",
+  "sourceSha256": {
+    "assets/game.js": "ae206b3d6ec874412cc76f5a65e6bfd4722a21f35e907a1ba0e90934e9009265",
+    "assets/stage6_carrier_1013.js": "79a75e603d6657991b11501f8b50fdd848a0624fc4fb36adfa4be68d08f67938",
+    "assets/stage6_roster_1017.js": "d7bfa3c18b2590bb193d9023a328651875ee682f0f76e191b96621ea7a502622",
+    "assets/stage6_reactor_1018.js": "1bf0108ae21afbea3d2e87fed414a36892ddd8c1841d9bd0b3ed9087a64f4377",
+    "index.html": "bca3b4a67375f9ad3668331f0e7052282c439debb43aeb276ddd4391f0615993"
+  },
+  "coreSuite": {
+    "passed": 8791,
+    "failed": 0,
+    "exitCode": 0,
+    "baselinePassed": 8791,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "syntax": {
+    "game": true,
+    "changedRuntimeFiles": true
+  },
+  "native": {
+    "passed": 102,
+    "failed": 0,
+    "repair": {
+      "passed": 82,
+      "failed": 0,
+      "errors": []
+    },
+    "review": {
+      "passed": 14,
+      "failed": 0,
+      "errors": []
+    },
+    "existingModular": {
+      "cases": 6,
+      "failed": 0,
+      "exitCode": 0,
+      "weapons": [
+        "mg",
+        "lock",
+        "laser"
+      ],
+      "report": "_shots/modular_1017/stage6_repair_1018.json"
+    }
+  },
+  "before": {
+    "errors": [],
+    "mini": {
+      "line": {
+        "who": "DECKER",
+        "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+        "t": 0
+      },
+      "cargo": "recover",
+      "radio": true
+    },
+    "miniOpen": {
+      "open": true,
+      "core": 762,
+      "targets": [
+        "reactor"
+      ],
+      "line": {
+        "who": "DECKER",
+        "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+        "t": 0
+      }
+    },
+    "harrier": {
+      "door": false,
+      "jets": 0,
+      "phase": "fight"
+    },
+    "defeat": {
+      "dead": true,
+      "defeated": true,
+      "ace": false,
+      "mode": "carrier"
+    },
+    "coreArt": {
+      "path": "assets/game/shared/combat/modular_roster_0927/corefx.png",
+      "source": "exec-7398e934-6240-465d-95d4-616cb183eee5.png",
+      "cells": [
+        [
+          122,
+          4,
+          201,
+          434
+        ],
+        [
+          566,
+          4,
+          201,
+          434
+        ],
+        [
+          1010,
+          4,
+          201,
+          434
+        ],
+        [
+          1454,
+          4,
+          201,
+          434
+        ],
+        [
+          122,
+          448,
+          201,
+          434
+        ],
+        [
+          566,
+          448,
+          201,
+          434
+        ],
+        [
+          1010,
+          448,
+          201,
+          434
+        ],
+        [
+          1454,
+          448,
+          201,
+          434
+        ]
+      ]
+    },
+    "reactorKeys": [
+      "ns9_gatecore_0",
+      "ns9_gatecore_1",
+      "ns9_gatecore_2",
+      "ns9_gatecore_3",
+      "nsx_cb_core_torso_critical",
+      "nsx_cb_core_torso_destroyed",
+      "nsx_cb_core_torso_intact",
+      "nsx_mc_core_torso_critical",
+      "nsx_mc_core_torso_destroyed",
+      "nsx_mc_core_torso_intact",
+      "nsx_grf_core_hull_critical",
+      "nsx_grf_core_hull_destroyed",
+      "nsx_grf_core_hull_intact",
+      "nsx_odt_core_hull_critical",
+      "nsx_odt_core_hull_destroyed",
+      "nsx_odt_core_hull_intact",
+      "mbv_f1_front_core_clean",
+      "mbv_f1_front_core_ruin",
+      "mbv_f1_central_core_clean",
+      "mbv_f1_central_core_ruin",
+      "mbv_f1_rear_core_clean",
+      "mbv_f1_rear_core_ruin",
+      "mbv_f2_front_core_clean",
+      "mbv_f2_front_core_ruin",
+      "mbv_f2_central_core_clean",
+      "mbv_f2_central_core_ruin",
+      "mbv_f2_rear_core_clean",
+      "mbv_f2_rear_core_ruin",
+      "mbv_f3_front_core_clean",
+      "mbv_f3_front_core_ruin",
+      "mbv_f3_central_core_clean",
+      "mbv_f3_central_core_ruin",
+      "mbv_f3_rear_core_clean",
+      "mbv_f3_rear_core_ruin",
+      "mbv_f4_front_core_clean",
+      "mbv_f4_front_core_ruin",
+      "mbv_f4_central_core_clean",
+      "mbv_f4_central_core_ruin",
+      "mbv_f4_rear_core_clean",
+      "mbv_f4_rear_core_ruin",
+      "mbp_ub_front_core_clean",
+      "mbp_ub_front_core_ruin",
+      "mbp_ub_central_core_clean",
+      "mbp_ub_central_core_ruin",
+      "mbp_ub_rear_core_clean",
+      "mbp_ub_rear_core_ruin",
+      "mbp_ft_front_core_clean",
+      "mbp_ft_front_core_ruin",
+      "mbp_ft_central_core_clean",
+      "mbp_ft_central_core_ruin",
+      "mbp_ft_rear_core_clean",
+      "mbp_ft_rear_core_ruin",
+      "mbp_bw_front_core_clean",
+      "mbp_bw_front_core_ruin",
+      "mbp_bw_central_core_clean",
+      "mbp_bw_central_core_ruin",
+      "mbp_bw_rear_core_clean",
+      "mbp_bw_rear_core_ruin",
+      "cut_freezer_recovery_bay",
+      "nhb_boss02_lava_torso_core_empty_01",
+      "nhb_boss02_lava_torso_core_full_preview_01",
+      "nhb_boss03_ice_torso_core_empty_01",
+      "nhb_boss03_ice_torso_core_full_preview_01",
+      "nmrv_attachment_turret_core",
+      "nslc_reactor_turret_destroyed",
+      "nslc_reactor_turret_critical",
+      "nslc_reactor_turret_damaged",
+      "nslc_reactor_turret_intact",
+      "nobd_attachment_turret_core",
+      "nglr_attachment_turret_core",
+      "nlgt_attachment_turret_core",
+      "nrmp_command_core_damaged",
+      "ntxl_head_core_critical",
+      "ntxl_head_core_damaged",
+      "ntxl_head_core_destroyed",
+      "ntxl_head_core_intact",
+      "nrmp_command_core_destroyed",
+      "nrmp_command_core_critical",
+      "nrmp_command_core_intact",
+      "ncyc_command_core_destroyed",
+      "ncyc_command_core_damaged",
+      "ncyc_command_core_critical",
+      "ncyc_command_core_intact",
+      "nlgt_turret_core_destroyed",
+      "nglr_turret_core_critical",
+      "nobd_turret_core_critical",
+      "nmrv_turret_core_critical",
+      "nglr_turret_core_destroyed",
+      "nmrv_turret_core_damaged",
+      "nmrv_turret_core_destroyed",
+      "nmrv_turret_core_intact",
+      "nglr_turret_core_damaged",
+      "nglr_turret_core_intact",
+      "nobd_turret_core_damaged",
+      "nobd_turret_core_destroyed",
+      "nobd_turret_core_intact",
+      "nlgt_turret_core_critical",
+      "nlgt_turret_core_damaged",
+      "nlgt_turret_core_intact",
+      "nslc_attachment_reactor_turret"
+    ]
+  },
+  "newPixelAssets": false,
+  "artReuse": [
+    "s6cargo13_hull actual vent leaves",
+    "whv_closed_w/whv_open_w authored bay",
+    "mr27_corefx animated energy cylinder",
+    "nsd_chim smoke",
+    "nxp_upward fire",
+    "efx_burst_fire local attached bursts",
+    "existing blue Nightwing full pose family"
+  ],
+  "fixtureCorrections": [
+    "Allow the viewport-following carriers to own their live position rather than overwriting only b.x while its hull follows the camera.",
+    "Isolate base MG from earned chaingun/Forge/pickups; gamepad isolated only in automated pages.",
+    "Allow enough simulation time to observe both departure and scaled return.",
+    "Use native hivewing eShootT emissions instead of unrelated enemy-behaviour stats to measure escort attacks."
+  ],
+  "serverNote": "Some static-file requests were cancelled on browser close (WinError10053); no game page/console/draw/missing-asset error was recorded.",
+  "screenshots": [
+    "_shots/stage6_repair_1018/native/giant-blue-ace-emerges.png",
+    "_shots/stage6_repair_1018/native/giant-blue-ace-fight.png",
+    "_shots/stage6_repair_1018/native/harrier-bay-launched-jets.png",
+    "_shots/stage6_repair_1018/native/harrier-fan-anchored-smoke-bursts.png",
+    "_shots/stage6_repair_1018/native/harrier-reactor-exposed.png",
+    "_shots/stage6_repair_1018/native/mini-energy-core-exposed.png",
+    "_shots/stage6_repair_1018/native/mini-hatch-opening.png",
+    "_shots/stage6_repair_1018/native/mini-live-dialogue.png",
+    "_shots/stage6_repair_1018/native/review-bays.png",
+    "_shots/stage6_repair_1018/native/review-blue-ace.png",
+    "_shots/stage6_repair_1018/native/review-broken-fan.png",
+    "_shots/stage6_repair_1018/native/review-compact-radio.png",
+    "_shots/stage6_repair_1018/native/review-coop-mini.png",
+    "_shots/stage6_repair_1018/native/review-harrier-core.png",
+    "_shots/stage6_repair_1018/native/review-mini-core.png",
+    "_shots/stage6_repair_1018/native/review-mini-dialogue.png"
+  ],
+  "review": "docs/previews/stage6_repair_1018/index.html",
+  "checks": [
+    {
+      "name": "normal miniboss combat captions draw and age while allies are parked",
+      "passed": true,
+      "data": {
+        "kind": "siegefortress17",
+        "gunCount": 6,
+        "line": {
+          "who": "DECKER",
+          "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+          "t": 0.8833333333333344
+        },
+        "t": 0.8833333333333344,
+        "held": true,
+        "radio": 54,
+        "paused": false,
+        "mode": "recover"
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal actual J machine gun damages a miniboss battery",
+      "passed": true,
+      "data": {
+        "hp": 69.65000000000002,
+        "before": 98
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal battery damage visibly flashes native pixels through markHit",
+      "passed": true,
+      "data": {
+        "pixels": 736,
+        "flash": 0.16,
+        "fl": 0.12,
+        "damage": 1
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal battery flash expires normally",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "normal reactor remains protected with one of six batteries alive",
+      "passed": true,
+      "data": {
+        "core": 762,
+        "expected": 762,
+        "closed": true,
+        "targets": [
+          "laser battery"
+        ]
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal reactor hatch visibly opens before it accepts core damage",
+      "passed": true,
+      "data": {
+        "open": 0.4705882352941174,
+        "protected": true,
+        "retina": []
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal full opening exposes an animated energy core and Retina target",
+      "passed": true,
+      "data": {
+        "open": true,
+        "progress": 1,
+        "targets": [
+          "reactor"
+        ],
+        "line": {
+          "who": "DECKER",
+          "full": "ENERGY CORE EXPOSED! PUT EVERYTHING INTO IT!",
+          "t": 0.18333333333333332
+        },
+        "draws": {
+          "reactor": 63,
+          "shutter": 366,
+          "smoke": 0,
+          "burst": 0,
+          "radio": 208
+        },
+        "core": {
+          "x": 262.4983611285267,
+          "y": 74.11459612787611
+        }
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal actual J machine gun damages the exposed energy core",
+      "passed": true,
+      "data": {
+        "hp": 729.6000000000004,
+        "before": 762
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal normal Retina missile damage reaches the miniboss core",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "damage": 3
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal miniboss defeat advances the stage without awarding boss clear",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "hard miniboss combat captions draw and age while allies are parked",
+      "passed": true,
+      "data": {
+        "kind": "siegefortress17",
+        "gunCount": 6,
+        "line": {
+          "who": "DECKER",
+          "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+          "t": 0.8833333333333344
+        },
+        "t": 0.8833333333333344,
+        "held": true,
+        "radio": 508,
+        "paused": false,
+        "mode": "recover"
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard actual J machine gun damages a miniboss battery",
+      "passed": true,
+      "data": {
+        "hp": 91.65000000000002,
+        "before": 120
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard battery damage visibly flashes native pixels through markHit",
+      "passed": true,
+      "data": {
+        "pixels": 739,
+        "flash": 0.16,
+        "fl": 0.12,
+        "damage": 1
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard battery flash expires normally",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "hard reactor remains protected with one of six batteries alive",
+      "passed": true,
+      "data": {
+        "core": 930,
+        "expected": 930,
+        "closed": true,
+        "targets": [
+          "laser battery"
+        ]
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard reactor hatch visibly opens before it accepts core damage",
+      "passed": true,
+      "data": {
+        "open": 0.4705882352941174,
+        "protected": true,
+        "retina": []
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard full opening exposes an animated energy core and Retina target",
+      "passed": true,
+      "data": {
+        "open": true,
+        "progress": 1,
+        "targets": [
+          "reactor"
+        ],
+        "line": {
+          "who": "DECKER",
+          "full": "ENERGY CORE EXPOSED! PUT EVERYTHING INTO IT!",
+          "t": 0.18333333333333332
+        },
+        "draws": {
+          "reactor": 186,
+          "shutter": 791,
+          "smoke": 0,
+          "burst": 0,
+          "radio": 660
+        },
+        "core": {
+          "x": 257.94657251775004,
+          "y": 74.11459612787611
+        }
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard actual J machine gun damages the exposed energy core",
+      "passed": true,
+      "data": {
+        "hp": 897.6000000000004,
+        "before": 930
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard normal Retina missile damage reaches the miniboss core",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "damage": 3
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard miniboss defeat advances the stage without awarding boss clear",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "furious miniboss combat captions draw and age while allies are parked",
+      "passed": true,
+      "data": {
+        "kind": "siegefortress17",
+        "gunCount": 6,
+        "line": {
+          "who": "DECKER",
+          "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+          "t": 0.8833333333333344
+        },
+        "t": 0.8833333333333344,
+        "held": true,
+        "radio": 959,
+        "paused": false,
+        "mode": "recover"
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious actual J machine gun damages a miniboss battery",
+      "passed": true,
+      "data": {
+        "hp": 112.64999999999998,
+        "before": 141
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious battery damage visibly flashes native pixels through markHit",
+      "passed": true,
+      "data": {
+        "pixels": 730,
+        "flash": 0.16,
+        "fl": 0.12,
+        "damage": 1
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious battery flash expires normally",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "furious reactor remains protected with one of six batteries alive",
+      "passed": true,
+      "data": {
+        "core": 1104,
+        "expected": 1104,
+        "closed": true,
+        "targets": [
+          "laser battery"
+        ]
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious reactor hatch visibly opens before it accepts core damage",
+      "passed": true,
+      "data": {
+        "open": 0.4705882352941174,
+        "protected": true,
+        "retina": []
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious full opening exposes an animated energy core and Retina target",
+      "passed": true,
+      "data": {
+        "open": true,
+        "progress": 1,
+        "targets": [
+          "reactor"
+        ],
+        "line": {
+          "who": "DECKER",
+          "full": "ENERGY CORE EXPOSED! PUT EVERYTHING INTO IT!",
+          "t": 0.18333333333333332
+        },
+        "draws": {
+          "reactor": 308,
+          "shutter": 1215,
+          "smoke": 0,
+          "burst": 0,
+          "radio": 1111
+        },
+        "core": {
+          "x": 255.06787991230604,
+          "y": 74.11459612787611
+        }
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious actual J machine gun damages the exposed energy core",
+      "passed": true,
+      "data": {
+        "hp": 1071.6000000000004,
+        "before": 1104
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious normal Retina missile damage reaches the miniboss core",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "damage": 3
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious miniboss defeat advances the stage without awarding boss clear",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "normal physical bay opens and launches real elite fighter actors",
+      "passed": true,
+      "data": {
+        "phase": "fight",
+        "bay": {
+          "mode": "hold",
+          "t": 0.8833333333333344,
+          "open": 1,
+          "launched": 4,
+          "next": 0.55
+        },
+        "open": true,
+        "jets": 4,
+        "live": 4,
+        "art": [
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing"
+        ],
+        "events": [
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 3.9166666666666576,
+            "count": 1,
+            "alive": 1
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 4.483333333333323,
+            "count": 2,
+            "alive": 2
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 5.049999999999987,
+            "count": 3,
+            "alive": 3
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 5.616666666666652,
+            "count": 4,
+            "alive": 4
+          }
+        ]
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal bay closes and carrier retains its south departure and scaled return",
+      "passed": true,
+      "data": {
+        "poses": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "phases": [
+          "fight",
+          "leave",
+          "flyover"
+        ],
+        "cap": 4,
+        "alive": 4,
+        "jets": 4,
+        "shots": 152,
+        "moving": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal deployed fighter actors move and remain bounded by the wing cap",
+      "passed": true,
+      "data": {
+        "poses": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "phases": [
+          "fight",
+          "leave",
+          "flyover"
+        ],
+        "cap": 4,
+        "alive": 4,
+        "jets": 4,
+        "shots": 152,
+        "moving": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal launched elite fighters independently fire native attacks",
+      "passed": true,
+      "data": 152,
+      "run": "repair"
+    },
+    {
+      "name": "normal intact fan visibly flashes on actual damage",
+      "passed": true,
+      "data": {
+        "pixels": 1526,
+        "flash": 0.16,
+        "damage": 1
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal broken fan smokes, repeatedly explodes and causes bounded momentum",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "other": true,
+        "smoke": 225,
+        "burst": 285,
+        "drift": 2.701856831293867,
+        "velocity": 3.6025214167814394
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal fire and smoke follow the actual fan after hull translation",
+      "passed": true,
+      "data": {
+        "count": 4,
+        "attached": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal reactor stays protected while a fan or missile rack survives",
+      "passed": true,
+      "data": {
+        "protected": true,
+        "parts": [
+          "R",
+          "rackL",
+          "rackR"
+        ],
+        "target": false
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal final reactor hatch has its own protected opening animation",
+      "passed": true,
+      "data": {
+        "protected": true,
+        "open": 0.4705882352941174,
+        "targets": []
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal completed final hatch exposes the animated core target",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "normal actual J gun damages the Harrier core",
+      "passed": true,
+      "data": {
+        "hp": 303.5499999999999,
+        "before": 340
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal reactor destruction starts carrier fall without ending the stage",
+      "passed": true,
+      "data": {
+        "same": true,
+        "dead": false,
+        "stageClear": false,
+        "fall": true,
+        "mode": "death",
+        "hp": 1,
+        "core": 303.5499999999999
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal original giant blue Nightwing emerges from the falling carrier",
+      "passed": true,
+      "data": {
+        "ace": true,
+        "name": "NIGHTWING ACE",
+        "stageClear": false,
+        "mode": "death",
+        "hp": 4469.615024000001,
+        "max": 4469.615024000001,
+        "size": [
+          148,
+          152
+        ],
+        "pool": 4469.615024000001,
+        "dead": false
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal ace takes over the same live boss encounter",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "normal giant ace retains real damage and native hit feedback",
+      "passed": true,
+      "data": {
+        "damage": 1,
+        "flash": 0.16,
+        "pixels": 11989
+      },
+      "run": "repair"
+    },
+    {
+      "name": "normal ace flash expires normally",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "normal only the ace defeat awards the native Stage6 boss clear",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "hard physical bay opens and launches real elite fighter actors",
+      "passed": true,
+      "data": {
+        "phase": "fight",
+        "bay": {
+          "mode": "hold",
+          "t": 0.5166666666666666,
+          "open": 1,
+          "launched": 5,
+          "next": 0.5
+        },
+        "open": true,
+        "jets": 5,
+        "live": 5,
+        "art": [
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing"
+        ],
+        "events": [
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 3.9166666666666576,
+            "count": 1,
+            "alive": 1
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 4.433333333333323,
+            "count": 2,
+            "alive": 2
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 4.949999999999988,
+            "count": 3,
+            "alive": 3
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 5.466666666666653,
+            "count": 4,
+            "alive": 4
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 5.983333333333317,
+            "count": 5,
+            "alive": 5
+          }
+        ]
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard bay closes and carrier retains its south departure and scaled return",
+      "passed": true,
+      "data": {
+        "poses": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "phases": [
+          "fight",
+          "leave",
+          "flyover"
+        ],
+        "cap": 5,
+        "alive": 5,
+        "jets": 5,
+        "shots": 248,
+        "moving": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard deployed fighter actors move and remain bounded by the wing cap",
+      "passed": true,
+      "data": {
+        "poses": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "phases": [
+          "fight",
+          "leave",
+          "flyover"
+        ],
+        "cap": 5,
+        "alive": 5,
+        "jets": 5,
+        "shots": 248,
+        "moving": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard launched elite fighters independently fire native attacks",
+      "passed": true,
+      "data": 248,
+      "run": "repair"
+    },
+    {
+      "name": "hard intact fan visibly flashes on actual damage",
+      "passed": true,
+      "data": {
+        "pixels": 1526,
+        "flash": 0.16,
+        "damage": 1
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard broken fan smokes, repeatedly explodes and causes bounded momentum",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "other": true,
+        "smoke": 2799,
+        "burst": 1687,
+        "drift": 2.701856831293867,
+        "velocity": 3.6025214167814394
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard fire and smoke follow the actual fan after hull translation",
+      "passed": true,
+      "data": {
+        "count": 4,
+        "attached": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard reactor stays protected while a fan or missile rack survives",
+      "passed": true,
+      "data": {
+        "protected": true,
+        "parts": [
+          "R",
+          "rackL",
+          "rackR"
+        ],
+        "target": false
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard final reactor hatch has its own protected opening animation",
+      "passed": true,
+      "data": {
+        "protected": true,
+        "open": 0.4705882352941174,
+        "targets": []
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard completed final hatch exposes the animated core target",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "hard actual J gun damages the Harrier core",
+      "passed": true,
+      "data": {
+        "hp": 383.5499999999999,
+        "before": 420
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard reactor destruction starts carrier fall without ending the stage",
+      "passed": true,
+      "data": {
+        "same": true,
+        "dead": false,
+        "stageClear": false,
+        "fall": true,
+        "mode": "death",
+        "hp": 1,
+        "core": 383.5499999999999
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard original giant blue Nightwing emerges from the falling carrier",
+      "passed": true,
+      "data": {
+        "ace": true,
+        "name": "NIGHTWING ACE",
+        "stageClear": false,
+        "mode": "death",
+        "hp": 4916.576526400001,
+        "max": 4916.576526400001,
+        "size": [
+          148,
+          152
+        ],
+        "pool": 4916.576526400001,
+        "dead": false
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard ace takes over the same live boss encounter",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "hard giant ace retains real damage and native hit feedback",
+      "passed": true,
+      "data": {
+        "damage": 1,
+        "flash": 0.16,
+        "pixels": 11988
+      },
+      "run": "repair"
+    },
+    {
+      "name": "hard ace flash expires normally",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "hard only the ace defeat awards the native Stage6 boss clear",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "furious physical bay opens and launches real elite fighter actors",
+      "passed": true,
+      "data": {
+        "phase": "fight",
+        "bay": {
+          "mode": "hold",
+          "t": 0.5166666666666666,
+          "open": 1,
+          "launched": 5,
+          "next": 0.5
+        },
+        "open": true,
+        "jets": 5,
+        "live": 5,
+        "art": [
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing",
+          "xelite_hivewing"
+        ],
+        "events": [
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 3.9166666666666576,
+            "count": 1,
+            "alive": 1
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 4.433333333333323,
+            "count": 2,
+            "alive": 2
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 4.949999999999988,
+            "count": 3,
+            "alive": 3
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 5.466666666666653,
+            "count": 4,
+            "alive": 4
+          },
+          {
+            "event": "jet-launch",
+            "mini": false,
+            "t": 5.983333333333317,
+            "count": 5,
+            "alive": 5
+          }
+        ]
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious bay closes and carrier retains its south departure and scaled return",
+      "passed": true,
+      "data": {
+        "poses": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "phases": [
+          "fight",
+          "leave",
+          "flyover"
+        ],
+        "cap": 5,
+        "alive": 5,
+        "jets": 5,
+        "shots": 271,
+        "moving": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious deployed fighter actors move and remain bounded by the wing cap",
+      "passed": true,
+      "data": {
+        "poses": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "phases": [
+          "fight",
+          "leave",
+          "flyover"
+        ],
+        "cap": 5,
+        "alive": 5,
+        "jets": 5,
+        "shots": 271,
+        "moving": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious launched elite fighters independently fire native attacks",
+      "passed": true,
+      "data": 271,
+      "run": "repair"
+    },
+    {
+      "name": "furious intact fan visibly flashes on actual damage",
+      "passed": true,
+      "data": {
+        "pixels": 1526,
+        "flash": 0.16,
+        "damage": 1
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious broken fan smokes, repeatedly explodes and causes bounded momentum",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "other": true,
+        "smoke": 5358,
+        "burst": 3080,
+        "drift": 2.701856831293867,
+        "velocity": 3.6025214167814394
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious fire and smoke follow the actual fan after hull translation",
+      "passed": true,
+      "data": {
+        "count": 4,
+        "attached": true
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious reactor stays protected while a fan or missile rack survives",
+      "passed": true,
+      "data": {
+        "protected": true,
+        "parts": [
+          "R",
+          "rackL",
+          "rackR"
+        ],
+        "target": false
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious final reactor hatch has its own protected opening animation",
+      "passed": true,
+      "data": {
+        "protected": true,
+        "open": 0.4705882352941174,
+        "targets": []
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious completed final hatch exposes the animated core target",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "furious actual J gun damages the Harrier core",
+      "passed": true,
+      "data": {
+        "hp": 463.5499999999999,
+        "before": 500
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious reactor destruction starts carrier fall without ending the stage",
+      "passed": true,
+      "data": {
+        "same": true,
+        "dead": false,
+        "stageClear": false,
+        "fall": true,
+        "mode": "death",
+        "hp": 1,
+        "core": 463.5499999999999
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious original giant blue Nightwing emerges from the falling carrier",
+      "passed": true,
+      "data": {
+        "ace": true,
+        "name": "NIGHTWING ACE",
+        "stageClear": false,
+        "mode": "death",
+        "hp": 5810.4995312,
+        "max": 5810.4995312,
+        "size": [
+          148,
+          152
+        ],
+        "pool": 5810.4995312,
+        "dead": false
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious ace takes over the same live boss encounter",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "furious giant ace retains real damage and native hit feedback",
+      "passed": true,
+      "data": {
+        "damage": 1,
+        "flash": 0.16,
+        "pixels": 11991
+      },
+      "run": "repair"
+    },
+    {
+      "name": "furious ace flash expires normally",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "furious only the ace defeat awards the native Stage6 boss clear",
+      "passed": true,
+      "data": null,
+      "run": "repair"
+    },
+    {
+      "name": "No native page, console, draw or missing-asset errors",
+      "passed": true,
+      "data": [],
+      "run": "repair"
+    },
+    {
+      "name": "Review uses the actual Stage6 miniboss, full playfield and isolated saves",
+      "passed": true,
+      "data": {
+        "native": true,
+        "radio": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+        "age": 0.9500000000000013,
+        "draws": 58,
+        "field": {
+          "x": 386.5625,
+          "y": 0,
+          "w": 826.875,
+          "h": 882
+        },
+        "mode": "sides",
+        "isolated": true
+      },
+      "run": "review"
+    },
+    {
+      "name": "Miniboss dialogue is visible in the actual side HUD and advances",
+      "passed": true,
+      "data": {
+        "native": true,
+        "radio": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+        "age": 0.9500000000000013,
+        "draws": 58,
+        "field": {
+          "x": 386.5625,
+          "y": 0,
+          "w": 826.875,
+          "h": 882
+        },
+        "mode": "sides",
+        "isolated": true
+      },
+      "run": "review"
+    },
+    {
+      "name": "Combat continues while the miniboss caption is displayed",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Miniboss energy core takes damage and flashes actual pixels",
+      "passed": true,
+      "data": {
+        "hp": 1,
+        "flash": 0.16,
+        "pixels": 9625,
+        "open": true
+      },
+      "run": "review"
+    },
+    {
+      "name": "Miniboss reactor hit flash expires",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Fan review produces attached smoke, explosions and momentum",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Replacement jets reuse a vacant slot without healing survivors or exceeding cap",
+      "passed": true,
+      "data": {
+        "slot": 1,
+        "expected": 1,
+        "count": 4,
+        "cap": 4,
+        "unique": 4,
+        "same": true
+      },
+      "run": "review"
+    },
+    {
+      "name": "Harrier energy core takes damage and flashes actual pixels",
+      "passed": true,
+      "data": {
+        "damage": 1,
+        "flash": 0.16,
+        "pixels": 6958,
+        "open": 1
+      },
+      "run": "review"
+    },
+    {
+      "name": "Harrier reactor hit flash expires",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Ace review follows the real falling-carrier transition",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "Co-op miniboss retains live captions for both native HUD rows",
+      "passed": true,
+      "data": {
+        "seats": 2,
+        "pilots": [
+          "cole",
+          "decker"
+        ],
+        "rows": 2,
+        "line": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+        "t": 0.8833333333333344
+      },
+      "run": "review"
+    },
+    {
+      "name": "Compact HUD also displays live Stage6 radio",
+      "passed": true,
+      "data": null,
+      "run": "review"
+    },
+    {
+      "name": "StageX legacy Harrier and the alternate Rebel branch keep their own controllers",
+      "passed": true,
+      "data": {
+        "stageX": true,
+        "rebel": true
+      },
+      "run": "review"
+    },
+    {
+      "name": "Review has no native page, console, draw or missing-asset errors",
+      "passed": true,
+      "data": [],
+      "run": "review"
+    }
+  ],
+  "modular": [
+    {
+      "stage": 6,
+      "role": "s",
+      "kind": "siegefortress17",
+      "weapon": "mg",
+      "ready": {
+        "ready": true,
+        "hp": 1350,
+        "maxhp": 1350,
+        "pieces": [
+          {
+            "id": "fortress gun 0",
+            "kind": "laser battery",
+            "x": 195,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 1",
+            "kind": "laser battery",
+            "x": 242,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 2",
+            "kind": "laser battery",
+            "x": 290,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 3",
+            "kind": "laser battery",
+            "x": 395,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 4",
+            "kind": "laser battery",
+            "x": 443,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 5",
+            "kind": "laser battery",
+            "x": 491,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": "fortress gun 0",
+          "lost": {
+            "fortress gun 0": 64.8,
+            "fortress gun 1": 8.1,
+            "fortress gun 2": 0,
+            "fortress gun 3": 0,
+            "fortress gun 4": 0,
+            "fortress gun 5": 0
+          },
+          "hull": 72.9,
+          "kinds": {
+            "mg": 20
+          },
+          "err": null
+        }
+      ],
+      "errs": []
+    },
+    {
+      "stage": 6,
+      "role": "s",
+      "kind": "siegefortress17",
+      "weapon": "lock",
+      "ready": {
+        "ready": true,
+        "hp": 1350,
+        "maxhp": 1350,
+        "pieces": [
+          {
+            "id": "fortress gun 0",
+            "kind": "laser battery",
+            "x": 195,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 1",
+            "kind": "laser battery",
+            "x": 242,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 2",
+            "kind": "laser battery",
+            "x": 290,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 3",
+            "kind": "laser battery",
+            "x": 395,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 4",
+            "kind": "laser battery",
+            "x": 443,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 5",
+            "kind": "laser battery",
+            "x": 491,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": "fortress gun 0",
+          "lost": {
+            "fortress gun 0": 24,
+            "fortress gun 1": 10,
+            "fortress gun 2": 10,
+            "fortress gun 3": 0,
+            "fortress gun 4": 0,
+            "fortress gun 5": 0
+          },
+          "hull": 44,
+          "kinds": {
+            "gmiss": 1
+          },
+          "err": null
+        }
+      ],
+      "errs": []
+    },
+    {
+      "stage": 6,
+      "role": "s",
+      "kind": "siegefortress17",
+      "weapon": "laser",
+      "ready": {
+        "ready": true,
+        "hp": 1350,
+        "maxhp": 1350,
+        "pieces": [
+          {
+            "id": "fortress gun 0",
+            "kind": "laser battery",
+            "x": 195,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 1",
+            "kind": "laser battery",
+            "x": 242,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 2",
+            "kind": "laser battery",
+            "x": 290,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 3",
+            "kind": "laser battery",
+            "x": 395,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 4",
+            "kind": "laser battery",
+            "x": 443,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          },
+          {
+            "id": "fortress gun 5",
+            "kind": "laser battery",
+            "x": 491,
+            "y": 147,
+            "w": 38,
+            "h": 56,
+            "hp": 98
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": "fortress gun 0",
+          "lost": {
+            "fortress gun 0": 69,
+            "fortress gun 1": 0,
+            "fortress gun 2": 0,
+            "fortress gun 3": 0,
+            "fortress gun 4": 0,
+            "fortress gun 5": 0
+          },
+          "hull": 69,
+          "kinds": {
+            "beam": 1
+          },
+          "err": null
+        }
+      ],
+      "errs": []
+    },
+    {
+      "stage": 6,
+      "role": "b",
+      "kind": "warhive",
+      "weapon": "mg",
+      "ready": {
+        "ready": true,
+        "hp": 1454,
+        "maxhp": 1454,
+        "pieces": [
+          {
+            "id": "harrier L",
+            "kind": "fan",
+            "x": 210,
+            "y": 143,
+            "w": 66,
+            "h": 66,
+            "hp": 162
+          },
+          {
+            "id": "harrier R",
+            "kind": "fan",
+            "x": 515,
+            "y": 143,
+            "w": 66,
+            "h": 66,
+            "hp": 162
+          },
+          {
+            "id": "harrier laser0",
+            "kind": "laser",
+            "x": 269,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser1",
+            "kind": "laser",
+            "x": 326,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser2",
+            "kind": "laser",
+            "x": 398,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser3",
+            "kind": "laser",
+            "x": 456,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier rackL",
+            "kind": "missile",
+            "x": 265,
+            "y": 121,
+            "w": 35,
+            "h": 60,
+            "hp": 145
+          },
+          {
+            "id": "harrier rackR",
+            "kind": "missile",
+            "x": 459,
+            "y": 121,
+            "w": 35,
+            "h": 60,
+            "hp": 145
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": "harrier L",
+          "lost": {
+            "harrier L": 72.9,
+            "harrier R": 0,
+            "harrier laser0": 4,
+            "harrier laser1": 0,
+            "harrier laser2": 0,
+            "harrier laser3": 0,
+            "harrier rackL": 0,
+            "harrier rackR": 0
+          },
+          "hull": 77,
+          "kinds": {
+            "mg": 20
+          },
+          "err": null
+        }
+      ],
+      "errs": []
+    },
+    {
+      "stage": 6,
+      "role": "b",
+      "kind": "warhive",
+      "weapon": "lock",
+      "ready": {
+        "ready": true,
+        "hp": 1454,
+        "maxhp": 1454,
+        "pieces": [
+          {
+            "id": "harrier L",
+            "kind": "fan",
+            "x": 210,
+            "y": 143,
+            "w": 66,
+            "h": 66,
+            "hp": 162
+          },
+          {
+            "id": "harrier R",
+            "kind": "fan",
+            "x": 515,
+            "y": 143,
+            "w": 66,
+            "h": 66,
+            "hp": 162
+          },
+          {
+            "id": "harrier laser0",
+            "kind": "laser",
+            "x": 269,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser1",
+            "kind": "laser",
+            "x": 326,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser2",
+            "kind": "laser",
+            "x": 398,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser3",
+            "kind": "laser",
+            "x": 456,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier rackL",
+            "kind": "missile",
+            "x": 265,
+            "y": 121,
+            "w": 35,
+            "h": 60,
+            "hp": 145
+          },
+          {
+            "id": "harrier rackR",
+            "kind": "missile",
+            "x": 459,
+            "y": 121,
+            "w": 35,
+            "h": 60,
+            "hp": 145
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": "harrier L",
+          "lost": {
+            "harrier L": 24,
+            "harrier R": 0,
+            "harrier laser0": 10,
+            "harrier laser1": 0,
+            "harrier laser2": 0,
+            "harrier laser3": 0,
+            "harrier rackL": 10,
+            "harrier rackR": 0
+          },
+          "hull": 44,
+          "kinds": {
+            "gmiss": 1
+          },
+          "err": null
+        }
+      ],
+      "errs": []
+    },
+    {
+      "stage": 6,
+      "role": "b",
+      "kind": "warhive",
+      "weapon": "laser",
+      "ready": {
+        "ready": true,
+        "hp": 1454,
+        "maxhp": 1454,
+        "pieces": [
+          {
+            "id": "harrier L",
+            "kind": "fan",
+            "x": 210,
+            "y": 143,
+            "w": 66,
+            "h": 66,
+            "hp": 162
+          },
+          {
+            "id": "harrier R",
+            "kind": "fan",
+            "x": 515,
+            "y": 143,
+            "w": 66,
+            "h": 66,
+            "hp": 162
+          },
+          {
+            "id": "harrier laser0",
+            "kind": "laser",
+            "x": 269,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser1",
+            "kind": "laser",
+            "x": 326,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser2",
+            "kind": "laser",
+            "x": 398,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier laser3",
+            "kind": "laser",
+            "x": 456,
+            "y": 210,
+            "w": 38,
+            "h": 54,
+            "hp": 125
+          },
+          {
+            "id": "harrier rackL",
+            "kind": "missile",
+            "x": 265,
+            "y": 121,
+            "w": 35,
+            "h": 60,
+            "hp": 145
+          },
+          {
+            "id": "harrier rackR",
+            "kind": "missile",
+            "x": 459,
+            "y": 121,
+            "w": 35,
+            "h": 60,
+            "hp": 145
+          }
+        ]
+      },
+      "tests": [
+        {
+          "id": "harrier L",
+          "lost": {
+            "harrier L": 69,
+            "harrier R": 0,
+            "harrier laser0": 0,
+            "harrier laser1": 0,
+            "harrier laser2": 0,
+            "harrier laser3": 0,
+            "harrier rackL": 0,
+            "harrier rackR": 0
+          },
+          "hull": 69,
+          "kinds": {
+            "beam": 1
+          },
+          "err": null
+        }
+      ],
+      "errs": []
+    }
+  ]
+}

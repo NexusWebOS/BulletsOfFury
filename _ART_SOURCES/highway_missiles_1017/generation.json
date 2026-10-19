@@ -1,0 +1,20 @@
+{
+  "service": "PixelLab Pixen",
+  "date": "2026-10-17",
+  "jobs": {
+    "pad": "281b17a5-654a-4c71-aefb-5e7d2b3cb548",
+    "missile": "d943d051-f15a-47ee-979f-16a0f29df1e7"
+  },
+  "referencesUploaded": false,
+  "frames": {
+    "pad": [
+      128,
+      128
+    ],
+    "missile": [
+      64,
+      192
+    ]
+  },
+  "export": "Exact generated pixels, no rescaling/cropping/warping. Lamp companion contains only existing amber pixels. Runtime uses one proportional scale per plate. No atlas edits."
+}

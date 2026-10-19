@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 55bf8058-223c-4170-81d3-6da89c806dfe\njob_id: 55bf8058-223c-4170-81d3-6da89c806dfe\ndescription: The intact ship digitally DISASSEMBLES: green scan bars pass over it, individual thorn armor plates and red batteries fragment into luminous binary blocks and stream upward, leaving sparse green and red code pixels. Fixed camera and immutable centered ship, no rotation, flight or zoom. Preserve its physical identity.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"55bf8058-223c-4170-81d3-6da89c806dfe\")\nasset_id: 90d7d1df-8117-5aca-a89e-2950491d0670\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

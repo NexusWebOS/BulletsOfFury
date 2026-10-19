@@ -1,0 +1,106 @@
+{
+  "job": "a13ea444-1892-41fd-ac78-c685673ec42f",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "scale": 1,
+  "records": [
+    {
+      "index": 0,
+      "bounds": [
+        54,
+        71,
+        236,
+        193
+      ],
+      "hash": "68f2c52d200442fc8517ef065585f7830f4c5d6e4cb3bf23199133a60669b50a"
+    },
+    {
+      "index": 1,
+      "bounds": [
+        54,
+        70,
+        212,
+        193
+      ],
+      "hash": "f0ff7fe1337cb5b7fd3026ae2175011dfdfb199f154f3d7dc68c976106229758"
+    },
+    {
+      "index": 2,
+      "bounds": [
+        53,
+        66,
+        195,
+        193
+      ],
+      "hash": "ff8b866d0714b9f0e47421c500f5bb7d4f4d50d9eb9910a093f09f8d04f2bd8a"
+    },
+    {
+      "index": 3,
+      "bounds": [
+        46,
+        60,
+        194,
+        193
+      ],
+      "hash": "6fc5a1c90fa9ecb2351c275f39221eae599917622eba28dabcb3e8824c7e1fa3"
+    },
+    {
+      "index": 4,
+      "bounds": [
+        23,
+        71,
+        193,
+        193
+      ],
+      "hash": "019307c5c59684cacaae1a976c96210da08d22fbaec9fa67a3d9ec124f08b6e3"
+    },
+    {
+      "index": 5,
+      "bounds": [
+        22,
+        70,
+        193,
+        193
+      ],
+      "hash": "91c7dde80022d5362d6a9a311689949ab1f1b77977c4764ae367d056e86e0de4"
+    },
+    {
+      "index": 6,
+      "bounds": [
+        41,
+        61,
+        193,
+        193
+      ],
+      "hash": "044f8000aec35701cc0d0e968f2279f09cb38c8b1a307fc798078333fd14f9dd"
+    },
+    {
+      "index": 7,
+      "bounds": [
+        52,
+        29,
+        195,
+        193
+      ],
+      "hash": "3a3bb92646b897c73ef6f2107bfe54c4931fac532152ccf342c1d2c58efb5c21"
+    },
+    {
+      "index": 8,
+      "bounds": [
+        52,
+        23,
+        200,
+        194
+      ],
+      "hash": "6f56840446276eae738a6ca4fca2deccf1b106643a1e41dd7694042a9cf0deaf"
+    }
+  ],
+  "status": "REJECTED: uneven overhead trajectory crosses to image-left, pauses, then changes abruptly to the registered endpoint. Stable canvas alone is insufficient.",
+  "charged_usd": 0.0366
+}

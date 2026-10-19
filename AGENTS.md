@@ -40,9 +40,11 @@ current Git state and runtime before relying on them.
   Laser Beam and charged Helix Beam special retain their own progression.
 - Preserve authored stage biomes. Palette changes must retain luminance, outlines,
   and the authored colors of ordnance.
-- Bosses remain whole authored plates. The approved Furnace Tyrant head phase is
-  a named exception. Approved miniboss aperture mechanics and the two independent
-  Tempest ships are separate encounter designs.
+- Bosses remain whole authored plates. The approved Furnace Tyrant head phase
+  and Mike's October18 PixelLab Stage8 phase1–3 modular redesign are named
+  exceptions. Stage8 phase3 has its main body plus exactly Hammerboss, helicopter,
+  Harrier and volcano forms. Approved miniboss aperture mechanics and the two
+  independent Tempest ships are separate encounter designs.
 - Player death remains hit, anchored burning spin through 540–900 degrees, crash,
   then shock ring and explosions. Space deaths use the spaceship.
 - Read `docs/ATLAS_REPACK_0903.md` before editing an atlas. Register sheet and cell
@@ -54,6 +56,15 @@ current Git state and runtime before relying on them.
   when hit, through the existing markHit and owner/part flash paths. Never zero
   or suppress flash timers to preserve a palette; retain the authored palette
   between hits and verify actual damaged pixels and expiry in the native renderer.
+
+## Ground traffic clearance
+
+- Tanks and moving ground vehicles must never overlap or stack. Reserve their
+  full visible authored hulls at spawn and maintain clearance during movement,
+  including queued entry rows and highway reinforcements. Use the shared
+  `ground_traffic_1018.js` owner; do not bypass it with per-wave spacing hacks.
+  Keep crowded tanks upstream on valid terrain while their native attacks
+  continue. Props and fixed missile pads are separate ground fixtures.
 
 ## Verification
 

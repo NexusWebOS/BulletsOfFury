@@ -1,0 +1,34 @@
+{
+  "job_id": "057c7ac6-c501-42e3-af22-836d863b31ab",
+  "asset_id": "fc84c498-34f9-53c0-a8d8-dc24e6ca94dc",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "generated_frames": 16,
+  "source_object": "fc7f0c8a-cce4-4831-ae88-3115a77a49c6",
+  "source_direction": "south",
+  "end_job": "787eefbd-a239-4e55-8339-0248468b28aa",
+  "end_registration": {
+    "workbench_image": "3e3e56ff-4c61-455c-a341-f054692049cb",
+    "translate": [
+      0,
+      -46
+    ],
+    "canvas": [
+      256,
+      256
+    ],
+    "scale": 1,
+    "note": "Single endpoint only, before generation. All source pixels retained; no per-frame fitting."
+  },
+  "prompt": "FRAME FORMAT:256x256 transparent frames, fixed canvas and physical pivot128,128, one proportional scale, no fitting. Interpolate the first pose to the supplied last pose across ALL16 frames. The same weapon arm stays on IMAGE RIGHT the whole time. Raise its single hammer continuously upward/outward in a smooth overhead arc, bending the actual shoulder/elbow/wrist until the final supplied overhead pose. Free hand stays empty on image LEFT. Keep feet and pelvis at the identical screen positions of both references; allow a small torso lean. Preserve black/chromium armor and red lamps. Spread the lifting action across the whole clip; no long idle holds. Finish exactly at the supplied last pose. No hammer passing to the opposite hand or across the neck, no body turn, camera move, extra limbs, scaling, warping, particles, new colors or weapon duplication.",
+  "seed": 10192028,
+  "status": "completed; rejected after all-frame/onion inspection",
+  "cost_generations": 2,
+  "charged_usd": 0.0364
+}

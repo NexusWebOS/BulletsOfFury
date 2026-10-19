@@ -1,8 +1,7 @@
 "use strict";
 /* Stage 6 story beats own their frame. The stage's extension wave controllers
    must not run behind an introduction that has disabled the player's trigger. */
-const S6Q13={scene:null,held:null,events:[],base:{play:updatePlay,begin:beginStage,
- wing:s6WingTick,draw:s6WingDraw,world:drawWorld,mini:spawnSubBoss,arsenal:s6WingArsenal,pressure:s6PressureMultiplier}};
+const S6Q13={scene:null,events:[],base:{play:updatePlay,begin:beginStage,world:drawWorld}};
 function s6q13Log(event){S6Q13.events.push({event,stage:run.stage,time:stageTimer});if(S6Q13.events.length>60)S6Q13.events.shift();}
 function s6q13Scene(){
  if(state!==GS.PLAY||run.stage!==6)return null;
@@ -38,39 +37,12 @@ function s6q13VisualTick(dt){
   p._mgMuzT=Math.max(0,(p._mgMuzT||0)-dt);p._spaceMuzzle=Math.max(0,(p._spaceMuzzle||0)-dt);
  }
 }
-function s6q13Mini(){return run.stage===6&&!run._gp4StageX&&!subBossDone&&
- (subBossActive||subBossTriggered&&warnT>0);}
-function s6q13ClearWingShots(){
- for(let i=pBullets.length-1;i>=0;i--)if(pBullets[i].ally||pBullets[i]._wingKey)pBullets.splice(i,1);
-}
-function s6q13HoldWing(){
- if(!s6Wing)return;
- if(!S6Q13.held||S6Q13.held.wing!==s6Wing){
-  S6Q13.held={wing:s6Wing,ships:s6Wing.ships.slice()};s6Wing.ships=[];s6Wing.line=null;s6q13Log('miniboss-solo');
- }
- s6q13ClearWingShots();
-}
-function s6q13ResumeWing(){
- const held=S6Q13.held;if(!held)return;S6Q13.held=null;
- if(run.stage!==6||held.wing!==s6Wing)return;
- for(const q of held.ships){if(q.hp<=0||q.phase==='leave')continue;
-  q.phase='arrive';q.t=0;q.y=VH+60+q.slot*22;q.target=null;q.think=0;
-  q.fcd=Math.max(q.fcd||0,.8);q.missileCd=Math.max(q.missileCd||0,2);q.specialCd=Math.max(q.specialCd||0,4);
-  q.specialT=0;q._s6qReturn=true;s6Wing.ships.push(q);
- }
- s6q13Log('wing-return');
-}
-spawnSubBoss=function(){const r=S6Q13.base.mini.apply(this,arguments);if(s6q13Mini())s6q13HoldWing();return r;};
-s6WingArsenal=function(){if(s6q13Mini())return;return S6Q13.base.arsenal.apply(this,arguments);};
-s6PressureMultiplier=function(){return s6q13Mini()?1:S6Q13.base.pressure.apply(this,arguments);};
-s6WingTick=function(dt){if(s6q13Mini()){s6q13HoldWing();return;}
- s6q13ResumeWing();return S6Q13.base.wing.apply(this,arguments);};
-s6WingDraw=function(){if(s6q13Mini())return;return S6Q13.base.draw.apply(this,arguments);};
+// The allied wing remains under its native AI through warnings, minibosses,
+// the carrier and the ace. A cinematic owner must not park it for combat.
 drawWorld=function(){if(!s6q13Scene())return S6Q13.base.world.apply(this,arguments);
  const loot=powerups;powerups=[];try{return S6Q13.base.world.apply(this,arguments);}finally{powerups=loot;}};
-beginStage=function(){S6Q13.scene=null;S6Q13.held=null;return S6Q13.base.begin.apply(this,arguments);};
+beginStage=function(){S6Q13.scene=null;return S6Q13.base.begin.apply(this,arguments);};
 updatePlay=function(dt){
- if(s6q13Mini())s6q13HoldWing();
  const scene=s6q13Scene();
  if(scene){
   s6q13Enter(scene);
@@ -93,8 +65,7 @@ updatePlay=function(dt){
  S6Q13.scene=null;
  const r=S6Q13.base.play.apply(this,arguments),entered=s6q13Scene();
  if(entered)s6q13Enter(entered);
- if(s6q13Mini())s6q13HoldWing();
  return r;
 };
-window.BOF_STAGE6_SEQUENCE={snapshot:()=>({scene:!!s6q13Scene(),held:!!S6Q13.held,
- savedWing:S6Q13.held?.ships.length||0,events:S6Q13.events.slice()})};
+window.BOF_STAGE6_SEQUENCE={snapshot:()=>({scene:!!s6q13Scene(),held:false,
+ savedWing:0,events:S6Q13.events.slice()})};

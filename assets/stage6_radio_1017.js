@@ -22,11 +22,18 @@ spawnEnemy=function(){if(RADIO17.hold||radio17Live())return null;return RADIO17.
 updatePlay=function(dt){
  if(!radio17Live())return RADIO17.base.play.apply(this,arguments);
  const plan=stagePlan,time=stageTimer,wave=waveIdx,spawn=spawnClock,active=fb2TalkActive,tick=fb2TalkTick;
+ const wing=s6Wing,choosing=!!(wing?.choice&&!wing.route);
+ // The older pursuit owner returns before flight updates while this flag is
+ // set. Poll its real menu once, then let an unconfirmed choice fly normally.
+ // RADIO17.hold still blocks arrivals and the wave clock below stays parked.
+ if(choosing&&!wing.autoRoute)fr27RouteInput(wing);
+ if(choosing&&!wing.autoRoute)wing.choice=false;
  if(fb2Talk&&!fb2Talk.done)tick(dt);
  RADIO17.hold=true;RADIO17.frames++;stagePlan=[];
  fb2TalkActive=()=>false;fb2TalkTick=()=>{};
  try{return RADIO17.base.play.apply(this,arguments);}finally{
   fb2TalkActive=active;fb2TalkTick=tick;stagePlan=plan;stageTimer=time;waveIdx=wave;spawnClock=spawn;RADIO17.hold=false;
+  if(choosing)wing.choice=true;
  }
 };
 window.BOF_LIVE_RADIO={state:RADIO17,active:radio17Live};

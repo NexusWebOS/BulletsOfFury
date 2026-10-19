@@ -1,0 +1,202 @@
+[
+  {
+    "from": "south",
+    "to": "south-east",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/south.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/south-east.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from south, hammer extended",
+      "view": "side",
+      "direction": "south",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 7042ce2b-ecb5-4bc2-99f5-d157948e6da5\njob_id: 7042ce2b-ecb5-4bc2-99f5-d157948e6da5\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7042ce2b-ecb5-4bc2-99f5-d157948e6da5\")\nasset_id: 99122853-aacc-5a39-a61d-45ee139eb3cf\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "from": "south-east",
+    "to": "east",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/south-east.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/east.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from south-east, hammer extended",
+      "view": "side",
+      "direction": "south-east",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: e4a88531-63eb-4555-ab34-d77af77a8fe8\njob_id: e4a88531-63eb-4555-ab34-d77af77a8fe8\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e4a88531-63eb-4555-ab34-d77af77a8fe8\")\nasset_id: 8c6d791f-6106-5a53-82b8-062777293bce\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "from": "east",
+    "to": "north-east",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/east.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/north-east.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from east, hammer extended",
+      "view": "side",
+      "direction": "east",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 29415d40-2851-425e-8356-9e63fd5fbc6a\njob_id: 29415d40-2851-425e-8356-9e63fd5fbc6a\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"29415d40-2851-425e-8356-9e63fd5fbc6a\")\nasset_id: 21a769e1-682f-5a94-874c-24527551150d\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "from": "north-east",
+    "to": "north",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/north-east.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/north.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from north-east, hammer extended",
+      "view": "side",
+      "direction": "north-east",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 7d822f3e-6157-42ed-ab19-bd821ac58be9\njob_id: 7d822f3e-6157-42ed-ab19-bd821ac58be9\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7d822f3e-6157-42ed-ab19-bd821ac58be9\")\nasset_id: 17adcc54-2a0c-569f-8807-7854b92cb04d\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "from": "north",
+    "to": "north-west",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/north.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/north-west.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from north, hammer extended",
+      "view": "side",
+      "direction": "north",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 8048d8b5-8493-43cc-b77c-9e790a38b939\njob_id: 8048d8b5-8493-43cc-b77c-9e790a38b939\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8048d8b5-8493-43cc-b77c-9e790a38b939\")\nasset_id: 2092f757-e228-5413-a183-1d0b266c4caf\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "from": "north-west",
+    "to": "west",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/north-west.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/west.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from north-west, hammer extended",
+      "view": "side",
+      "direction": "north-west",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 091b4653-125e-4b72-9c07-c2fe28c68d17\njob_id: 091b4653-125e-4b72-9c07-c2fe28c68d17\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"091b4653-125e-4b72-9c07-c2fe28c68d17\")\nasset_id: 24d348f1-e86c-5f55-9718-3e479a52de6d\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "from": "west",
+    "to": "south-west",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/west.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/south-west.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from west, hammer extended",
+      "view": "side",
+      "direction": "west",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 79d6d129-b180-49b2-ae92-0ed8f0af4407\njob_id: 79d6d129-b180-49b2-ae92-0ed8f0af4407\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"79d6d129-b180-49b2-ae92-0ed8f0af4407\")\nasset_id: 6f63a0a4-5e6a-5883-91d7-ad198651dd69\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "from": "south-west",
+    "to": "south",
+    "args": {
+      "first_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/south-west.png",
+      "last_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/6543012f-fe20-47e7-bc62-6b59a2035da9/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/rotations/south.png",
+      "frame_count": 4,
+      "description": "Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.",
+      "subject_description": "the exact symbiote chromium hammer knight with one extended right-hand cylindrical hammer",
+      "initial_pose": "upright battle stance viewed from south-west, hammer extended",
+      "view": "side",
+      "direction": "south-west",
+      "no_background": true,
+      "enhance_prompt": false
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 8106cddd-5185-4b9f-91fe-d3a57b01ebf4\njob_id: 8106cddd-5185-4b9f-91fe-d3a57b01ebf4\ndescription: Fixed256x256 transparent frame, same constant body pivot128,128, same scale and at least10px clear margins. Turn this exact hammer knight smoothly by45 degrees around his upright body axis from the supplied first viewing orientation to the supplied last viewing orientation. Four successive newly drawn intermediate orientations. The ONE extended right-hand cylindrical hammer goes around with its arm, with correct foreground/background occlusion. Body stays anchored and keeps its actual design. No flat rotation, morph into another creature, idle pulse, translation, zoom, added limbs/weapons or effects. Clearly change the viewing angle evenly through the four poses.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8106cddd-5185-4b9f-91fe-d3a57b01ebf4\")\nasset_id: 7eb013da-ff02-54e8-b3db-336b8fdd0e6b\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

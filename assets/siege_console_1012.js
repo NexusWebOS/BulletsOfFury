@@ -62,11 +62,20 @@ const SC12 = (() => {
   return best;
  }
  function contacts(){
-  const list=[],left=camLeftX(),right=camRightX(),top=viewTopY(),height=viewH();
-  const add=(p,color,size,kind)=>{if(!p||p.dead||!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<left||p.x>right||p.y<top||p.y>top+height)return;list.push({x:(p.x-left)/Math.max(1,right-left),y:(p.y-top)/height,color,size,kind});};
+  const list=[],seen=new Set(),left=camLeftX(),right=camRightX(),top=viewTopY(),height=viewH();
+  const add=(p,color,size,kind)=>{if(!p||p.dead||seen.has(p)||!Number.isFinite(p.x)||!Number.isFinite(p.y))return;
+   // A visible hull remains a contact when its centre crosses the field edge.
+   // The ace's render plate is larger than its deliberately smaller hitbox.
+   const ace=p._whv?.mode==='ace',w=ace?200*WHV_ACE_S:(p._drawW||p.w||0),h=ace?204*WHV_ACE_S:(p._drawH||p.h||0);
+   if(p.x+w/2<left||p.x-w/2>right||p.y+h/2<top||p.y-h/2>top+height)return;
+   seen.add(p);list.push({x:clamp((p.x-left)/Math.max(1,right-left),0,1),y:clamp((p.y-top)/height,0,1),color,size,kind});};
   for(const e of enemies)if(e&&!e.frCloak)add(e,'#ff7653',5,'enemy');
   if(subBossActive)add(subBoss,'#ffb369',7,'mini');
   if(bossActive&&boss&&!boss.dead){if(boss._rebels){for(const q of boss._rebels.ships)if(q.hp>0&&!q.frCloak)add(q,'#ff5c5c',7,'boss');}else add(boss,'#ff5c5c',8,'boss');}
+  // Sovereign's independent jets are embedded encounter actors, not entries
+  // in enemies. Their harmless scaling pass is not yet a combat contact.
+  if(bossActive&&boss&&!boss.dead)for(const q of boss._s4war?.coreTurrets||[])
+   if(q.hp>0&&!q._noHit&&(q.materialize??1)>=.999)add(q,'#ffb369',6,'helper');
   for(const seat of seatList())add(seatShip(seat),seat===1?'#bcff98':'#80dfff',7,'player');
   return list;
  }

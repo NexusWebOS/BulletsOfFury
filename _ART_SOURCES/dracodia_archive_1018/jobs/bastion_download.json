@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 6a77d690-fe11-4ac0-84f8-b2937945ce81\njob_id: 6a77d690-fe11-4ac0-84f8-b2937945ce81\ndescription: The intact ship digitally DISASSEMBLES: green scan bars pass over it, individual armor plates fragment into glowing binary blocks and stream upward, leaving scattered tiny green and purple code pixels, then only sparse isolated pixels. Camera and ship center stay completely fixed, no flight, rotation, zoom or extra objects. Body identity remains recognizable until dissolved.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"6a77d690-fe11-4ac0-84f8-b2937945ce81\")\nasset_id: e24efb83-d8b5-5040-a865-d1a7abb55a19\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

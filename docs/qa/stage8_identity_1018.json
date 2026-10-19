@@ -1,0 +1,54 @@
+{
+  "core": {
+    "passed": 8791,
+    "failed": 0,
+    "exit": 0,
+    "banner": true
+  },
+  "native_total": 121,
+  "reports": {
+    "native": {
+      "passed": 73,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage8_identity_1018/native/results.json"
+    },
+    "sequences": {
+      "passed": 32,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage8_identity_1018/sequences/results.json"
+    },
+    "review": {
+      "passed": 16,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage8_identity_1018/review/results.json"
+    }
+  },
+  "art": {
+    "frame": [
+      320,
+      320
+    ],
+    "pivot": [
+      160,
+      160
+    ],
+    "scale": 1,
+    "volcanoReconstructsMaster": true,
+    "clips": {
+      "avatar": 1,
+      "colossus_roar": 24,
+      "colossus_death": 20,
+      "colossus_scythe": 24,
+      "infused_death": 24,
+      "avatar_speech": 16,
+      "ghost_death": 24
+    }
+  },
+  "preserved_preexisting_source_sha256": {
+    "assets/game.js": "ae206b3d6ec874412cc76f5a65e6bfd4722a21f35e907a1ba0e90934e9009265",
+    "_BUILD_SOURCE/test_fl.js": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b"
+  }
+}

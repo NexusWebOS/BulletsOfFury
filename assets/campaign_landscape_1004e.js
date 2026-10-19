@@ -226,7 +226,7 @@ function map4fFlagDraw(st,dt,cine){
  if(cine?.stage===st&&cine.phase==='ding'&&((cine.t*12)|0)%2)v='white';
  const key='map4f_flag'+st+'_'+v;if(!XART.rdy(key))return false;
  const p=sselFlagXY(st);if(!p)return false;const im=XART.get(key),z=cmap2On()?Math.max(.05,cmap2.cam.z):1;
- const h=28/z,w=h*im.width/im.height;
+ const h=(typeof cf9FlagHeight==='function'?cf9FlagHeight(st):28)/z,w=h*im.width/im.height;
  let drop=0;if(sselBoot>0){const age=sselBootT-(4.05+(st-1)*.2);if(age>=0&&age<.18)drop=-(1-age/.18)*14/z;}
  const anchor=typeof MAP4F_FLAGS!=='undefined'?MAP4F_FLAGS[st].anchor:[.5,1];
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,p.x-w*anchor[0],p.y-h*anchor[1]+drop,w,h);ctx.restore();

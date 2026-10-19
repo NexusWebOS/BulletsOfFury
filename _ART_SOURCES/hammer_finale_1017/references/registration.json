@@ -1,0 +1,16 @@
+{
+  "key": "arch_stun_0920",
+  "source": "assets/game/levels/stage_05/boss/stage5_archmage_0916/stun_0920.png",
+  "rect": [
+    724,
+    0,
+    724,
+    724
+  ],
+  "scale": 0.287292817679558,
+  "offset": [
+    24,
+    24
+  ],
+  "nativeHeight": 240
+}

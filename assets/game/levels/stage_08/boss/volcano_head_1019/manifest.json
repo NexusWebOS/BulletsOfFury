@@ -1,0 +1,1313 @@
+{
+  "canvas": [
+    128,
+    128
+  ],
+  "pivot": [
+    64,
+    64
+  ],
+  "scale": 1,
+  "banks": {
+    "spin": [
+      {
+        "key": "vh19_spin_00",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_00.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          31,
+          30,
+          96,
+          99
+        ],
+        "eyes": [
+          [
+            52.96,
+            67.468
+          ],
+          [
+            66.206,
+            69.927
+          ]
+        ],
+        "angle": 0.2296701325066084
+      },
+      {
+        "key": "vh19_spin_01",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_01.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          29,
+          28,
+          99,
+          99
+        ],
+        "eyes": [
+          [
+            52.63,
+            65.461
+          ],
+          [
+            64.726,
+            70.321
+          ]
+        ],
+        "angle": 0.4281802590280789
+      },
+      {
+        "key": "vh19_spin_02",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_02.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          30,
+          29,
+          102,
+          100
+        ],
+        "eyes": [
+          [
+            52.789,
+            64.491
+          ],
+          [
+            64.322,
+            70.963
+          ]
+        ],
+        "angle": 0.5575207633997314
+      },
+      {
+        "key": "vh19_spin_03",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_03.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          29,
+          29,
+          101,
+          101
+        ],
+        "eyes": [
+          [
+            52.607,
+            62.168
+          ],
+          [
+            62.034,
+            70.871
+          ]
+        ],
+        "angle": 0.7915545932568817
+      },
+      {
+        "key": "vh19_spin_04",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_04.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          28,
+          29,
+          102,
+          101
+        ],
+        "eyes": [
+          [
+            53.641,
+            59.163
+          ],
+          [
+            61.74,
+            69.866
+          ]
+        ],
+        "angle": 0.9691313448099536
+      },
+      {
+        "key": "vh19_spin_05",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_05.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          28,
+          31,
+          100,
+          100
+        ],
+        "eyes": [
+          [
+            54.659,
+            57.48
+          ],
+          [
+            60.28,
+            69.037
+          ]
+        ],
+        "angle": 1.1642121071612581
+      },
+      {
+        "key": "vh19_spin_06",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_06.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          29,
+          33,
+          99,
+          98
+        ],
+        "eyes": [
+          [
+            56.122,
+            55.502
+          ],
+          [
+            59.574,
+            68.468
+          ]
+        ],
+        "angle": 1.3567361892863874
+      },
+      {
+        "key": "vh19_spin_07",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_07.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          31,
+          34,
+          96,
+          95
+        ],
+        "eyes": [
+          [
+            58.236,
+            53.793
+          ],
+          [
+            58.609,
+            67.332
+          ]
+        ],
+        "angle": 1.5893760273507023
+      },
+      {
+        "key": "vh19_spin_08",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_08.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          30,
+          32,
+          96,
+          95
+        ],
+        "eyes": [
+          [
+            59.318,
+            53.438
+          ],
+          [
+            57.299,
+            66.769
+          ]
+        ],
+        "angle": 1.7672230985029855
+      },
+      {
+        "key": "vh19_spin_09",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_09.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          30,
+          29,
+          96,
+          96
+        ],
+        "eyes": [
+          [
+            61.862,
+            52.325
+          ],
+          [
+            57.234,
+            64.759
+          ]
+        ],
+        "angle": 1.9732546092886745
+      },
+      {
+        "key": "vh19_spin_10",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_10.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          30,
+          28,
+          96,
+          96
+        ],
+        "eyes": [
+          [
+            63.221,
+            52.134
+          ],
+          [
+            56.933,
+            63.385
+          ]
+        ],
+        "angle": 2.126537757512539
+      },
+      {
+        "key": "vh19_spin_11",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_11.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          31,
+          29,
+          97,
+          96
+        ],
+        "eyes": [
+          [
+            67.274,
+            52.395
+          ],
+          [
+            57.811,
+            61.784
+          ]
+        ],
+        "angle": 2.4062221234477645
+      },
+      {
+        "key": "vh19_spin_12",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_12.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          31,
+          28,
+          97,
+          97
+        ],
+        "eyes": [
+          [
+            69.547,
+            53.221
+          ],
+          [
+            58.482,
+            60.351
+          ]
+        ],
+        "angle": 2.6153025505358327
+      },
+      {
+        "key": "vh19_spin_13",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_13.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          31,
+          28,
+          97,
+          98
+        ],
+        "eyes": [
+          [
+            70.887,
+            54.861
+          ],
+          [
+            58.889,
+            59.932
+          ]
+        ],
+        "angle": 2.7878572624915234
+      },
+      {
+        "key": "vh19_spin_14",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_14.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          31,
+          29,
+          97,
+          97
+        ],
+        "eyes": [
+          [
+            73.001,
+            56.229
+          ],
+          [
+            60.094,
+            58.796
+          ]
+        ],
+        "angle": 2.991362852163063
+      },
+      {
+        "key": "vh19_spin_15",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_15.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          31,
+          95,
+          96
+        ],
+        "eyes": [
+          [
+            74.56,
+            58.341
+          ],
+          [
+            60.959,
+            58.491
+          ]
+        ],
+        "angle": 3.176687877367563
+      },
+      {
+        "key": "vh19_spin_16",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_16.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          30,
+          98,
+          99
+        ],
+        "eyes": [
+          [
+            74.622,
+            59.63
+          ],
+          [
+            61.468,
+            58.23
+          ]
+        ],
+        "angle": 3.2937492041647034
+      },
+      {
+        "key": "vh19_spin_17",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_17.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          30,
+          30,
+          100,
+          101
+        ],
+        "eyes": [
+          [
+            74.447,
+            61.343
+          ],
+          [
+            63.141,
+            58.022
+          ]
+        ],
+        "angle": 3.47346183305101
+      },
+      {
+        "key": "vh19_spin_18",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_18.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          27,
+          30,
+          101,
+          100
+        ],
+        "eyes": [
+          [
+            75.309,
+            64.377
+          ],
+          [
+            64.449,
+            57.228
+          ]
+        ],
+        "angle": 3.7698702918811584
+      },
+      {
+        "key": "vh19_spin_19",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_19.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          25,
+          29,
+          101,
+          100
+        ],
+        "eyes": [
+          [
+            75.475,
+            66.342
+          ],
+          [
+            66.333,
+            57.425
+          ]
+        ],
+        "angle": 3.9606364067091246
+      },
+      {
+        "key": "vh19_spin_20",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_20.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          26,
+          29,
+          102,
+          98
+        ],
+        "eyes": [
+          [
+            74.538,
+            68.724
+          ],
+          [
+            67.605,
+            58.455
+          ]
+        ],
+        "angle": 4.164668826053555
+      },
+      {
+        "key": "vh19_spin_21",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_21.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          28,
+          30,
+          101,
+          97
+        ],
+        "eyes": [
+          [
+            73.496,
+            70.985
+          ],
+          [
+            68.34,
+            58.769
+          ]
+        ],
+        "angle": 4.359071916856879
+      },
+      {
+        "key": "vh19_spin_22",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_22.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          29,
+          31,
+          98,
+          94
+        ],
+        "eyes": [
+          [
+            71.557,
+            71.965
+          ],
+          [
+            68.587,
+            59.253
+          ]
+        ],
+        "angle": 4.528971438791258
+      },
+      {
+        "key": "vh19_spin_23",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_23.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          33,
+          33,
+          98,
+          94
+        ],
+        "eyes": [
+          [
+            70.495,
+            73.465
+          ],
+          [
+            69.872,
+            60.067
+          ]
+        ],
+        "angle": 4.7120607808281605
+      },
+      {
+        "key": "vh19_spin_24",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_24.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          30,
+          35,
+          99,
+          96
+        ],
+        "eyes": [
+          [
+            68.615,
+            74.183
+          ],
+          [
+            70.508,
+            61.122
+          ]
+        ],
+        "angle": 4.9024128317920646
+      },
+      {
+        "key": "vh19_spin_25",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_25.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          27,
+          32,
+          100,
+          98
+        ],
+        "eyes": [
+          [
+            66.372,
+            74.949
+          ],
+          [
+            70.402,
+            62.15
+          ]
+        ],
+        "angle": 5.063524747071897
+      },
+      {
+        "key": "vh19_spin_26",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_26.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          24,
+          28,
+          100,
+          101
+        ],
+        "eyes": [
+          [
+            63.624,
+            76.152
+          ],
+          [
+            70.64,
+            64.51
+          ]
+        ],
+        "angle": 5.3008720544309496
+      },
+      {
+        "key": "vh19_spin_27",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_27.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          23,
+          24,
+          99,
+          100
+        ],
+        "eyes": [
+          [
+            61.34,
+            75.293
+          ],
+          [
+            70.526,
+            64.921
+          ]
+        ],
+        "angle": 5.483298173517528
+      },
+      {
+        "key": "vh19_spin_28",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_28.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          24,
+          25,
+          100,
+          101
+        ],
+        "eyes": [
+          [
+            59.512,
+            73.985
+          ],
+          [
+            69.969,
+            66.544
+          ]
+        ],
+        "angle": 5.710839970410132
+      },
+      {
+        "key": "vh19_spin_29",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_29.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          28,
+          26,
+          100,
+          102
+        ],
+        "eyes": [
+          [
+            57.231,
+            73.816
+          ],
+          [
+            69.571,
+            67.891
+          ]
+        ],
+        "angle": 5.881668413255684
+      },
+      {
+        "key": "vh19_spin_30",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_30.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          31,
+          29,
+          98,
+          101
+        ],
+        "eyes": [
+          [
+            55.985,
+            71.789
+          ],
+          [
+            68.13,
+            68.681
+          ]
+        ],
+        "angle": 6.078746295865199
+      },
+      {
+        "key": "vh19_spin_31",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_spin_31.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.919,
+            70.557
+          ],
+          [
+            67.214,
+            69.781
+          ]
+        ],
+        "angle": 6.270999371038369
+      }
+    ],
+    "charge": [
+      {
+        "key": "vh19_charge_00",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_00.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_01",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_01.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_02",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_02.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_03",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_03.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_04",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_04.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_05",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_05.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_06",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_06.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_07",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_07.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_08",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_08.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_09",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_09.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_10",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_10.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_11",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_11.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_12",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_12.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_13",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_13.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_14",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_14.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      },
+      {
+        "key": "vh19_charge_15",
+        "path": "assets/game/levels/stage_08/boss/volcano_head_1019/head_charge_15.png",
+        "w": 128,
+        "h": 128,
+        "pivot": [
+          64,
+          64
+        ],
+        "bounds": [
+          34,
+          33,
+          95,
+          98
+        ],
+        "eyes": [
+          [
+            53.90518462979236,
+            70.31894994670371
+          ],
+          [
+            67.97075904579836,
+            69.66990316417234
+          ]
+        ],
+        "angle": 0
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 module.exports=function(vm,ctxv,ok){
  const fs=require('fs'),path=require('path');
- for(const file of ['modular_roster_art_0927.js','modular_roster_0927.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets',file),'utf8'),ctxv,{filename:file});
+ for(const file of ['modular_roster_art_0927.js','mr27_hull_mask_1017.js','modular_roster_0927.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets',file),'utf8'),ctxv,{filename:file});
  console.log('=== Corrected modular roster and difficulty routes, September 27 ===');
  const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const o={};

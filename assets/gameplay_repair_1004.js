@@ -99,9 +99,15 @@ markHit=function(t,f){
 };
 
 s6WingLaunch=function(n,all){
- const r=GP4_BASE.wing.apply(this,arguments),W=s6Wing;if(!W)return r;
- const allowed=gp4Allies();W.ships=W.ships.filter(q=>allowed.includes(q.key));
- W.ships.forEach((q,i)=>q.slot=i);return r;
+ const W=s6Wing;if(!W)return GP4_BASE.wing.apply(this,arguments);
+ const allowed=gp4Allies(),used=W.used;let r;
+ // Select approach reinforcements from the actual four-pilot wing. Filtering
+ // two random pilots after launching could discard both and leave no allies.
+ W.used=[...new Set([...used,...S6_PILOTS.filter(k=>!allowed.includes(k))])];
+ try{r=GP4_BASE.wing.apply(this,arguments);}finally{
+  W.used=[...new Set([...used,...W.used.filter(k=>allowed.includes(k))])];
+ }
+ W.ships=W.ships.filter(q=>allowed.includes(q.key));W.ships.forEach((q,i)=>q.slot=i);return r;
 };
 
 PASSWORDS.RIFT9=9;PASSWORDS.XHARR=6;PASSWORDS.XREBEL=6;PASSWORDS.HARR6=6;PASSWORDS.REBEL6=6;

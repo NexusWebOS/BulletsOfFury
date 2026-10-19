@@ -4,7 +4,7 @@
 const ROSTER17={buildingMini:false,base:{init:warhiveInit,tick:warhiveTick,draw:warhiveDraw,
  damage:warhiveDamage,hit:warhiveHitTest,targets:warhiveRetinaTargets,spawn:spawnSubBoss__inner,
  miniTick:updateSubBoss,miniDraw:drawSubBoss,miniHit:hitSubBoss,solid:subBossSolidAt,
- part:subBossHitPart,retina:retinaBossTargets,die:bossDie,open:sc13Open,begin:beginStage}};
+ part:subBossHitPart,retina:retinaBossTargets,die:bossDie,open:sc13Open,begin:beginStage,partPos:whvPartPos}};
 SUBBOSS[5]={...SUBBOSS[5],kind:'siegebomber'};
 SUBBOSS[6]={...SUBBOSS[6],kind:'siegefortress17'};
 const ROSTER17_BOMBER=mr27BomberSetup;mr27BomberSetup=function(b){const r=ROSTER17_BOMBER.apply(this,arguments);
@@ -16,82 +16,83 @@ const ROSTER17_SAY=s6WingSay;s6WingSay=function(who,line){
  return ROSTER17_SAY.call(this,who,line);
 };
 function roster17Active(b){return !!b?._carrier17;}
+function roster17HullScale(b){return (b?._carrier17||b?._s6CarrierFall)?.hullScale||1;}
+function roster17Home(b){return Math.max(WHV_HOME_Y,WHV_PLATE.h*WHV_S*roster17HullScale(b)/2+18);}
 function roster17Sync(b){const C=b._carrier17,W=b._whv;
- b.hp=Math.max(0,C.reactor)+C.parts.reduce((s,p)=>s+Math.max(0,p.hp),0);
- W.core=C.reactor;W.coreMax=C.maxReactor;W.cx=b.x;W.cy=b.y;W.doorOpen=C.parts.every(p=>p.dead);W.parts.door.hp=C.reactor;
+ b.hp=C.parts.reduce((s,p)=>s+Math.max(0,p.hp),0);
+ W.core=W.coreMax=0;W.cx=b.x;W.cy=b.y;W.doorOpen=!!C.bayOpen;
  b._drawY=b.y;
 }
 function roster17Budget(b){const C=b._carrier17;if(C.budgetFinalized)return;C.budgetFinalized=true;
  // The legacy stage floor knows only the two fans and door. Reconcile our
  // complete eight-module budget after spawnBoss has finished its modifiers.
  for(const p of C.parts){p.hp=p.maxhp;if(p.kind==='fan')p.max=p.maxhp;}
- C.reactor=C.maxReactor;b._whv.parts.door.hp=b._whv.parts.door.max=C.maxReactor;
- b.maxhp=C.maxReactor+C.parts.reduce((s,p)=>s+p.maxhp,0);roster17Sync(b);
+ b.maxhp=C.parts.reduce((s,p)=>s+p.maxhp,0);roster17Sync(b);
 }
-function roster17Mount(b,p){return{x:b.x+p.dx*WHV_S,y:b.y+p.dy*WHV_S};}
+function roster17Mount(b,p){const k=WHV_S*roster17HullScale(b);return{x:b.x+p.dx*k,y:b.y+p.dy*k};}
+whvPartPos=function(b,id){if(!b?._carrier17&&!b?._s6CarrierFall)return ROSTER17.base.partPos.apply(this,arguments);
+ const W=b._whv,p=id==='door'?WHV_DOOR:WHV_NAC[id],k=WHV_S*roster17HullScale(b);
+ // Native launch/death callers add W.dy themselves; keep this point hull-local.
+ return{x:W.cx+p.x*k,y:W.cy+p.y*k};};
 warhiveInit=function(b){
  if(ROSTER17.buildingMini||run.stage!==6||run._gp4StageX)return ROSTER17.base.init.apply(this,arguments);
  SC13.base.init(b);delete b._cargo13;
- const rank=target17Rank(),mul=coopActive()?1.5:1,core=Math.round([260,340,420,500,560][rank]*mul),parts=[];
+ const rank=target17Rank(),mul=coopActive()?1.5:1,parts=[];
  const add=(id,kind,dx,dy,hp,w,h)=>parts.push({id,kind,dx,dy,hp:Math.ceil(hp*mul),maxhp:Math.ceil(hp*mul),w,h,dead:false,flash:0,t:0,phase:'rest',cool:1.1+parts.length*.25,serial:0});
  add('L','fan',-169.5,-10,140+rank*22,66,66);add('R','fan',169.5,-10,140+rank*22,66,66);
  for(const [i,x] of [-104,-40,40,104].entries())add('laser'+i,'laser',x,65,105+rank*20,38,54);
  add('rackL','missile',-108,-34,125+rank*20,35,60);add('rackR','missile',108,-34,125+rank*20,35,60);
- b._carrier17={parts,reactor:core,maxReactor:core,age:0,phase:'arrive',t:0,scale:1.8,depth:true,cycles:0,flight:13,hit:null,shots:0};
+ b._carrier17={parts,hullScale:1.45,age:0,phase:'arrive',t:0,scale:1.8,depth:true,cycles:0,flight:13,hit:null,shots:0};
  for(const id of ['L','R']){const p=parts.find(p=>p.id===id);b._whv.parts[id]=p;p.fl=0;p.max=p.maxhp;}
- b._whv.parts.door={hp:core,max:core,dead:false,fl:0};b._whv.mode='carrier';b._whv.st='hold';b._whv.jets=[];b._whv.beam=null;
+ b._whv.parts.door={hp:0,max:0,dead:false,fl:0};b._whv.mode='carrier';b._whv.st='hold';b._whv.jets=[];b._whv.beam=null;
  b.name='WARHIVE HARRIER';b.enter=false;b._noHit=true;b.y=VH+210;b.x=camLeftX()+viewW()/2;
- b.w=WHV_PLATE.w*WHV_S;b.h=WHV_PLATE.h*WHV_S;
- b.maxhp=core+parts.reduce((s,p)=>s+p.hp,0);roster17Sync(b);sc13Warm();enc30Warm(4);whvWarm();
+ b.w=WHV_PLATE.w*WHV_S*roster17HullScale(b);b.h=WHV_PLATE.h*WHV_S*roster17HullScale(b);
+ b.maxhp=parts.reduce((s,p)=>s+p.hp,0);roster17Sync(b);sc13Warm();enc30Warm(4);whvWarm();
 };
 function roster17Ready(b){const C=b?._carrier17;return !!C&&!b.dead&&!C.depth&&C.phase==='fight';}
-function roster17At(b,x,y){if(!roster17Ready(b))return null;const C=b._carrier17;
- for(const p of C.parts)if(!p.dead){const m=roster17Mount(b,p);if(Math.abs(x-m.x)<p.w/2&&Math.abs(y-m.y)<p.h/2)return p.id;}
- const q=whvPartPos(b,'door');if(Math.abs(x-q.x)<38&&Math.abs(y-q.y)<40)return C.parts.every(p=>p.dead)?'reactor':'armor';
+function roster17At(b,x,y){if(!roster17Ready(b))return null;const C=b._carrier17,k=roster17HullScale(b);
+ for(const p of C.parts)if(!p.dead){const m=roster17Mount(b,p);if(Math.abs(x-m.x)<p.w*k/2&&Math.abs(y-m.y)<p.h*k/2)return p.id;}
+ const q=whvPartPos(b,'door');if(Math.abs(x-q.x)<38*k&&Math.abs(y-q.y)<40*k)return 'armor';
  return null;
 }
 warhiveHitTest=function(b,x,y){if(!roster17Active(b))return ROSTER17.base.hit.apply(this,arguments);
  b._carrier17.hit=roster17At(b,x,y);return b._carrier17.hit!==null;};
 function roster17Damage(b,dmg){const C=b._carrier17;if(!roster17Ready(b)||!(dmg>0))return 0;
  roster17Budget(b);
- const shot=_dmgBullet;let id=C.direct??C.hit;C.direct=null;C.hit=null;
+ const shot=_dmgBullet,k=roster17HullScale(b);let id=C.direct??C.hit;C.direct=null;C.hit=null;
  if(id==null&&Number.isFinite(_lastHitX))id=roster17At(b,_lastHitX,_lastHitY);
  if(id==null&&shot&&Number.isFinite(shot.x)){
   if(shot.kind==='beam'||shot.kind==='flame'){
-   const live=C.parts.filter(p=>!p.dead).map(p=>({p,m:roster17Mount(b,p)})).filter(q=>shot.kind==='flame'?flameHit(shot,q.m.x,q.m.y,q.p.w,q.p.h):
-    Math.abs(shot.x-q.m.x)<(shot.w||1)/2+q.p.w/2&&q.m.y+q.p.h/2>shot.top&&q.m.y-q.p.h/2<shot.bot);
+   const live=C.parts.filter(p=>!p.dead).map(p=>({p,m:roster17Mount(b,p)})).filter(q=>shot.kind==='flame'?flameHit(shot,q.m.x,q.m.y,q.p.w*k,q.p.h*k):
+    Math.abs(shot.x-q.m.x)<(shot.w||1)/2+q.p.w*k/2&&q.m.y+q.p.h*k/2>shot.top&&q.m.y-q.p.h*k/2<shot.bot);
    live.sort((a,c)=>c.m.y-a.m.y);id=live[0]?.p.id;
-   if(id==null&&C.parts.every(p=>p.dead)&&Math.abs(shot.x-b.x)<38+(shot.w||0)/2)id='reactor';
   }else id=roster17At(b,shot.x,shot.y);
  }
- if(id==null&&!shot)id=C.parts.find(p=>!p.dead)?.id||'reactor';
- if(id==='reactor'&&C.parts.every(p=>p.dead)){C.reactor=Math.max(0,C.reactor-dmg);markHit(b);b._whv.parts.door.fl=.18;}
- else{const p=C.parts.find(p=>p.id===id);if(!p||p.dead)return 0;
+ if(id==null&&!shot)id=C.parts.find(p=>!p.dead)?.id;
+ {const p=C.parts.find(p=>p.id===id);if(!p||p.dead)return 0;
   p.hp=Math.max(0,p.hp-dmg);markHit(p);p.fl=.18;
-  if(p.hp<=0){p.dead=true;p.phase='dead';const q=roster17Mount(b,p);unitDeathFX({...q,w:p.w,h:p.h},'turret','blue');Audio.SFX.expBig?.();
-   if(C.parts.every(p=>p.dead)){C.phase='fight';C.flight=999;showCallout('shoot',1.6);s6WingSay('COLE','ALL MODULES DOWN. THE REACTOR IS OPEN!');}}
+  if(p.hp<=0){p.dead=true;p.phase='dead';const q=roster17Mount(b,p);unitDeathFX({...q,w:p.w*k,h:p.h*k},'turret','blue');Audio.SFX.expBig?.();}
  }
  weaponHitSfx('normal');if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;roster17Sync(b);
- if(C.reactor<=0){b.hp=0;bossDie();}return 0;
+ if(C.parts.every(p=>p.dead)){b.hp=0;bossDie();}return 0;
 }
 warhiveDamage=function(b,dmg){return roster17Active(b)?roster17Damage(b,dmg):ROSTER17.base.damage.apply(this,arguments);};
 warhiveRetinaTargets=function(b,out){if(!roster17Active(b))return ROSTER17.base.targets.apply(this,arguments);
  roster17Budget(b);
  if(!roster17Ready(b))return;const C=b._carrier17;
  for(const p of C.parts)if(!p.dead)out.push(retinaDynamicPiece(b,'harrier '+p.id,p.kind,
-  ()=>({...roster17Mount(b,p),hp:p.hp,dead:p.dead||!roster17Ready(b)}),d=>{C.direct=p.id;hitBoss(d);},p.w,p.h));
- if(C.parts.every(p=>p.dead))out.push(retinaDynamicPiece(b,'harrier reactor','reactor',
-  ()=>({...whvPartPos(b,'door'),hp:C.reactor,dead:b.dead||!roster17Ready(b)}),d=>{C.direct='reactor';hitBoss(d);},74,78));
+  ()=>({...roster17Mount(b,p),hp:p.hp,dead:p.dead||!roster17Ready(b)}),d=>{C.direct=p.id;hitBoss(d);},p.w*roster17HullScale(b),p.h*roster17HullScale(b)));
 };
-function roster17Weapon(b,p,dt){const C=b._carrier17,rank=target17Rank();p.flash=Math.max(0,p.flash-dt);p.fl=Math.max(0,(p.fl||0)-dt);
+function roster17FlashTick(C,dt){for(const p of C.parts){p.flash=Math.max(0,(p.flash||0)-dt);p.fl=Math.max(0,(p.fl||0)-dt);}}
+function roster17Weapon(b,p,dt){const C=b._carrier17,rank=target17Rank();
  if(p.dead)return;p.cool-=dt;p.t+=dt;
  const warm=p.kind==='laser'?1.12:1.15;
  if(p.phase==='rest'&&p.cool<=0){const m=roster17Mount(b,p),t=targetShip(m.x,m.y);p.aim={x:t.x,y:t.y};p.angle=Math.atan2(t.y-m.y,t.x-m.x);p.phase='tell';p.t=0;p.serial++;p.round=0;p.shot=0;Audio.SFX.bossWeaponCharge?.();}
  if(p.phase==='tell'){combatWarningTick(p,'harrier-'+p.serial,p.t,warm);if(p.t>=warm){p.phase='fire';p.t=0;Audio.SFX.enemyHeavyLaser?.();}}
  else if(p.phase==='fire'){
-  const m=roster17Mount(b,p);m.y+=p.h*.35;
+  const m=roster17Mount(b,p),k=roster17HullScale(b);m.y+=p.h*k*.35;
   if(p.kind==='laser'){
-   const width=14+rank*2,open=Math.min(1,p.t/.1,(.62-p.t)/.12);
+   const width=(14+rank*2)*k,open=Math.min(1,p.t/.1,(.62-p.t)/.12);
    if(open>.25)for(const s of seatList())withSeat(s,()=>{const dx=player.x-m.x,dy=player.y-m.y,along=dx*Math.cos(p.angle)+dy*Math.sin(p.angle),cross=Math.abs(-dx*Math.sin(p.angle)+dy*Math.cos(p.angle));
     if(!player.dead&&along>10&&along<900&&cross<width*open/2+6)playerHit({kind:'harrierLaser',owner:b});});
   }else{p.shot-=dt;const n=p.kind==='missile'?2+rank:3+rank;
@@ -105,20 +106,20 @@ function roster17Weapon(b,p,dt){const C=b._carrier17,rank=target17Rank();p.flash
 }
 warhiveTick=function(b,dt){if(!roster17Active(b))return ROSTER17.base.tick.apply(this,arguments);
  roster17Budget(b);
- const C=b._carrier17,W=b._whv;dt=clamp(dt,0,.05);b.t+=dt;b.flash=Math.max(0,b.flash-dt);C.age+=dt;C.t+=dt;
+ const C=b._carrier17,W=b._whv;dt=clamp(dt,0,.05);b.t+=dt;b.flash=Math.max(0,b.flash-dt);C.age+=dt;C.t+=dt;roster17FlashTick(C,dt);
  if(b.dead){b.dying+=dt;W.dy=(W.dy||0)+dt*(18+b.dying*12);C.scale=1;
   C.boom=(C.boom||0)-dt;if(C.boom<=0&&b.dying<2.5){C.boom=.18;explode(b.x+rnd(-150,150),b.y+W.dy+rnd(-70,70),68,'red',null,'nxp_barrage');}
   if(b.dying>2.5&&!C.crashed){C.crashed=true;unitDeathFX(b,'boss','red');}return;}
  const cx=camLeftX()+viewW()/2;
  if(C.phase==='arrive'||C.phase==='flyover'){
   const u=clamp(C.t/2.6,0,1),k=u*u*(3-2*u);C.depth=true;b._noHit=true;C.scale=lerp(1.8,1,k);
-  b.x=cx;b.y=lerp(VH+210,WHV_HOME_Y,k);W.fanA+=dt*20;
+  b.x=cx;b.y=lerp(VH+210,roster17Home(b),k);W.fanA+=dt*20;
   if(u>=1){C.depth=false;b._noHit=false;C.scale=1;C.phase='fight';C.t=0;for(const p of C.parts)if(!p.dead){p.phase='rest';p.cool=.8+Math.abs(p.dx)/180;}Audio.SFX.bossRoar?.();}
  }else if(C.phase==='leave'){
   C.depth=true;b._noHit=true;b.y+=dt*250;W.fanA+=dt*18;
   if(C.t>2.3){C.phase='flyover';C.t=0;C.cycles++;C.flight=13;}
  }else{
-  b._noHit=false;C.depth=false;b.x=cx+Math.sin(C.age*.36)*25;b.y=WHV_HOME_Y+Math.sin(C.age*.55)*10;
+  b._noHit=false;C.depth=false;b.x=cx+Math.sin(C.age*.36)*8;b.y=roster17Home(b)+Math.sin(C.age*.55)*10;
   W.fanA+=dt*10;for(const p of C.parts)roster17Weapon(b,p,dt);
   C.flight-=dt;if(C.flight<=0&&C.parts.some(p=>!p.dead)&&C.parts.every(p=>p.phase!=='fire')){
    if(C.flight>-.9)combatWarningTick(b,'harrier-flight-'+C.cycles,-C.flight,.9);
@@ -127,29 +128,32 @@ warhiveTick=function(b,dt){if(!roster17Active(b))return ROSTER17.base.tick.apply
  }
  W.parts.door.fl=Math.max(0,W.parts.door.fl-dt);roster17Sync(b);
 };
-function roster17Draw(b){const C=b._carrier17,W=b._whv;if(C.crashed)return;
- const k=C.scale||1,cx=W.cx,cy=W.cy+(W.dy||0);ctx.save();ctx.translate(cx,cy);ctx.scale(k,k);ctx.translate(-cx,-cy);
+function roster17Draw(b,C=b._carrier17){const W=b._whv;if(C.crashed)return;
+ const k=(C.scale||1)*roster17HullScale(b),cx=W.cx,cy=W.cy+(W.dy||0);ctx.save();ctx.translate(cx,cy);ctx.scale(k,k);ctx.translate(-cx,-cy);
  ctx.imageSmoothingEnabled=false;
- if(C.depth){ctx.save();ctx.globalAlpha=.20;ctx.translate(0,42);const key='whv_closed_w';if(XART.rdy(key)){const im=xartTint(key,'#000000',1);ctx.drawImage(im,cx-b.w/2,cy-b.h/2,b.w,b.h);}ctx.restore();}
+ const hullW=WHV_PLATE.w*WHV_S,hullH=WHV_PLATE.h*WHV_S;
+ if(C.depth){ctx.save();ctx.globalAlpha=.20;ctx.translate(0,42);const key='whv_closed_w';if(XART.rdy(key)){const im=xartTint(key,'#000000',1);ctx.drawImage(im,cx-hullW/2,cy-hullH/2,hullW,hullH);}ctx.restore();}
  const key=W.doorOpen?'whv_open_w':'whv_closed_w';
- for(const p of C.parts.filter(p=>p.kind==='fan')){const q=roster17Mount(b,p);q.y+=W.dy||0;
-  whvSprite(p.dead?'whv_twreck':'whv_fan',q.x,q.y,p.dead?70:54,p.dead?70:54,p.dead?0:W.fanA*(p.id==='L'?1:-1),1);
+ const mount=p=>({x:cx+p.dx*WHV_S,y:cy+p.dy*WHV_S});
+ for(const p of C.parts.filter(p=>p.kind==='fan')){const q=mount(p);
+  whvSprite(p.dead?'whv_twreck':'whv_fan',q.x,q.y,p.dead?70:54,p.dead?70:54,p.dead?0:W.fanA*(p.id==='L'?1:-1),ctx.globalAlpha);
   if(!p.dead&&p.flash>0){const im=xartTint('whv_fan','#ffffff',1);if(im){ctx.save();ctx.globalAlpha=Math.min(1,p.flash*9);ctx.translate(q.x,q.y);ctx.rotate(W.fanA*(p.id==='L'?1:-1));ctx.drawImage(im,-27,-27,54,54);ctx.restore();}}
  }
- if(XART.rdy(key))ctx.drawImage(XART.get(key),cx-b.w/2,cy-b.h/2,b.w,b.h);
- for(const p of C.parts.filter(p=>p.kind!=='fan')){const q=roster17Mount(b,p);q.y+=W.dy||0;
+ if(XART.rdy(key))ctx.drawImage(XART.get(key),cx-hullW/2,cy-hullH/2,hullW,hullH);
+ for(const p of C.parts.filter(p=>p.kind!=='fan')){const q=mount(p);
   if(p.kind==='laser'){const pose=p.dead?3:p.phase==='fire'?2:p.phase==='tell'?1:0,im=p.flash>0?xartTint('s6cargo13_turrets','#ffffff',1):XART.get('s6cargo13_turrets');
    if(im)ctx.drawImage(im,pose*128,0,128,160,q.x-19,q.y-22,38,47.5);
   }else if(!p.dead)enc30Cell(p.id==='rackL'?'tank_pod_l':'tank_pod_r',0,q.x,q.y,30,54,p.flash>0?'#ffffff':null);
   else whvPartFx(b,q,0,true,.5,p.dx);
-  if(!p.dead&&roster17Ready(b)){
-   const m={x:q.x,y:q.y+p.h*.35},ex=m.x+Math.cos(p.angle||Math.PI/2)*900,ey=m.y+Math.sin(p.angle||Math.PI/2)*900;
-   if(p.phase==='tell')combatWarningDraw(p,{x:m.x,y:m.y,ex,ey,progress:p.t/(p.kind==='laser'?1.12:1.15),width:p.kind==='laser'?26:20});
-   if(p.kind==='laser'&&p.phase==='fire'){const open=clamp(Math.min(p.t/.1,(.62-p.t)/.12),0,1);if(open>0)av3Beam(ctx,m.x,m.y,p.angle,900,(14+target17Rank()*2)*open,'ice',b.t);}
-  }
  }
- if(b.flash>0&&XART.rdy(key)){const im=xartTint(key,'#ffffff',1);ctx.save();ctx.beginPath();ctx.rect(cx-38,cy+1,76,82);ctx.clip();ctx.globalAlpha=Math.min(1,b.flash*9);ctx.drawImage(im,cx-b.w/2,cy-b.h/2,b.w,b.h);ctx.restore();}
  ctx.restore();
+ // Draw warnings on the combat plane, from the same enlarged world sockets
+ // used by damage. Scaling the whole ray with the hull displaced its endpoint.
+ if(roster17Ready(b))for(const p of C.parts)if(!p.dead){const unit=roster17HullScale(b),m=roster17Mount(b,p);m.y+=p.h*unit*.35;
+  const angle=p.angle??Math.PI/2,ex=m.x+Math.cos(angle)*900,ey=m.y+Math.sin(angle)*900;
+  if(p.phase==='tell')combatWarningDraw(p,{x:m.x,y:m.y,ex,ey,progress:p.t/(p.kind==='laser'?1.12:1.15),width:(p.kind==='laser'?26:20)*unit});
+  if(p.kind==='laser'&&p.phase==='fire'){const open=clamp(Math.min(p.t/.1,(.62-p.t)/.12),0,1);if(open>0)av3Beam(ctx,m.x,m.y,p.angle,900,(14+target17Rank()*2)*unit*open,'ice',b.t);}
+ }
 }
 warhiveDraw=function(b){if(roster17Active(b))return roster17Draw(b);return ROSTER17.base.draw.apply(this,arguments);};
 

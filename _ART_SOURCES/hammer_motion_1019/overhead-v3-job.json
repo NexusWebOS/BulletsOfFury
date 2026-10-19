@@ -1,0 +1,19 @@
+{
+  "job_id": "a13ea444-1892-41fd-ac78-c685673ec42f",
+  "asset_id": "7fbcbc57-7a94-5b82-b9bc-b27ee55881e6",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "generated_frames": 8,
+  "engine": "animate_image v3",
+  "start_object": "fc7f0c8a-cce4-4831-ae88-3115a77a49c6",
+  "end_registered": "3e3e56ff-4c61-455c-a341-f054692049cb",
+  "prompt": "FRAME FORMAT:256x256 transparent frames, identical scale/canvas/pivot128,128. Animate only the heavy overhead lift between these exact endpoints. Keep the same weapon in the IMAGE-RIGHT hand throughout. The hammer head rises continuously on the RIGHT of the helmet (approximately210,115 toward200,85 then185,55 then180,40); the shoulder, elbow and wrist bend anatomically. Never swing across to image-left or pass behind the neck. Keep the free image-left hand empty and the feet/pelvis planted at the registered coordinates. Fixed frontal camera, same black/chromium/red pixel armor, no extra limbs/weapons, turn, particles, stretching, scaling or idle hold. Every frame advances the lift and the last reaches the supplied raised pose.",
+  "status": "completed, rejected after all-frame/onion inspection",
+  "charged_usd": 0.0366
+}

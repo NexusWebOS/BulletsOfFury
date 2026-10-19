@@ -1,0 +1,1609 @@
+{
+  "checks": [
+    {
+      "name": "Head charge, rumble, laser release and flame cues have native sound owners",
+      "passed": true,
+      "data": [
+        {
+          "name": "furnaceLaserCharge",
+          "registered": true
+        },
+        {
+          "name": "furnaceReactorHum",
+          "registered": true
+        },
+        {
+          "name": "furnaceLaserBurst",
+          "registered": true
+        },
+        {
+          "name": "furnaceFlameRelease",
+          "registered": true
+        }
+      ]
+    },
+    {
+      "name": "easy restores actual continuous flamethrower frames",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 124,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 124,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "easy cannon retains magma balls and also releases fire waves",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 124,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 124,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "easy remains in its native armor phase",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 124,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 124,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "easy warns and rumbles before the laser sweep",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "easy twin eye lasers are active together",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "easy completes a committed 360-degree turn",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 383,
+          "both": 383,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "easy"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 6.4
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 257
+      }
+    },
+    {
+      "name": "easy eye-laser roots remain mounted to their visible sockets",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 383,
+          "both": 383,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "easy"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 6.4
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 257
+      }
+    },
+    {
+      "name": "easy has a beam-free recovery and a shootable head",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 383,
+          "both": 383,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "easy"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 6.4
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 257
+      }
+    },
+    {
+      "name": "easy draws the actual generated rotation bank",
+      "passed": true,
+      "data": {
+        "uniqueHeadKeys": 30
+      }
+    },
+    {
+      "name": "normal restores actual continuous flamethrower frames",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 143,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 267,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "normal cannon retains magma balls and also releases fire waves",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 143,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 267,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "normal remains in its native armor phase",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 143,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 267,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "normal warns and rumbles before the laser sweep",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal twin eye lasers are active together",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal completes a committed 360-degree turn",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 347,
+          "both": 347,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "normal"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.8
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 366
+      }
+    },
+    {
+      "name": "normal eye-laser roots remain mounted to their visible sockets",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 347,
+          "both": 347,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "normal"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.8
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 366
+      }
+    },
+    {
+      "name": "normal has a beam-free recovery and a shootable head",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 347,
+          "both": 347,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "normal"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.8
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 366
+      }
+    },
+    {
+      "name": "normal draws the actual generated rotation bank",
+      "passed": true,
+      "data": {
+        "uniqueHeadKeys": 30
+      }
+    },
+    {
+      "name": "hard restores actual continuous flamethrower frames",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 154,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 421,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "hard cannon retains magma balls and also releases fire waves",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 154,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 421,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "hard remains in its native armor phase",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 154,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 421,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "hard warns and rumbles before the laser sweep",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard twin eye lasers are active together",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard completes a committed 360-degree turn",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 305,
+          "both": 305,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "hard"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.1
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 458
+      }
+    },
+    {
+      "name": "hard eye-laser roots remain mounted to their visible sockets",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 305,
+          "both": 305,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "hard"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.1
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 458
+      }
+    },
+    {
+      "name": "hard has a beam-free recovery and a shootable head",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 305,
+          "both": 305,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "hard"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.1
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 458
+      }
+    },
+    {
+      "name": "hard draws the actual generated rotation bank",
+      "passed": true,
+      "data": {
+        "uniqueHeadKeys": 30
+      }
+    },
+    {
+      "name": "furious restores actual continuous flamethrower frames",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 166,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 587,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "furious cannon retains magma balls and also releases fire waves",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 166,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 587,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "furious remains in its native armor phase",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 166,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 587,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "name": "furious warns and rumbles before the laser sweep",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious twin eye lasers are active together",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious completes a committed 360-degree turn",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 269,
+          "both": 269,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 2.7999999999999994,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "furious"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 4.5
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 504
+      }
+    },
+    {
+      "name": "furious eye-laser roots remain mounted to their visible sockets",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 269,
+          "both": 269,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 2.7999999999999994,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "furious"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 4.5
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 504
+      }
+    },
+    {
+      "name": "furious has a beam-free recovery and a shootable head",
+      "passed": true,
+      "data": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 269,
+          "both": 269,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 2.7999999999999994,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "furious"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 4.5
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 504
+      }
+    },
+    {
+      "name": "furious draws the actual generated rotation bank",
+      "passed": true,
+      "data": {
+        "uniqueHeadKeys": 30
+      }
+    },
+    {
+      "name": "The actual damaged head pixels visibly flash in the native renderer",
+      "passed": true,
+      "data": {
+        "changedOpaquePixels": 7096
+      }
+    },
+    {
+      "name": "Precision rounds, missiles, ice orb and beam all damage the head and flash",
+      "passed": true,
+      "data": [
+        {
+          "kind": "bullet",
+          "damage": 5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        },
+        {
+          "kind": "missile",
+          "damage": 5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        },
+        {
+          "kind": "iceorb",
+          "damage": 7.5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        },
+        {
+          "kind": "beam",
+          "damage": 5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        }
+      ]
+    },
+    {
+      "name": "Ice orb keeps the authored fire-boss damage advantage",
+      "passed": true,
+      "data": [
+        {
+          "kind": "bullet",
+          "damage": 5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        },
+        {
+          "kind": "missile",
+          "damage": 5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        },
+        {
+          "kind": "iceorb",
+          "damage": 7.5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        },
+        {
+          "kind": "beam",
+          "damage": 5,
+          "flash": 0.16,
+          "partFlash": 0.12
+        }
+      ]
+    },
+    {
+      "name": "Native owner and head hit-flash timers expire normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real precision projectiles can hit the rotating head",
+      "passed": true,
+      "data": {
+        "before": 366,
+        "after": {
+          "pool": 258,
+          "dead": false,
+          "kind": 0,
+          "projectiles": 4,
+          "beams": 2
+        }
+      }
+    },
+    {
+      "name": "precision damage does not cancel or shoot down the eye lasers",
+      "passed": true,
+      "data": {
+        "pool": 258,
+        "dead": false,
+        "kind": 0,
+        "projectiles": 4,
+        "beams": 2
+      }
+    },
+    {
+      "name": "Real missile projectiles can hit the rotating head",
+      "passed": true,
+      "data": {
+        "before": 384,
+        "after": {
+          "pool": 360,
+          "dead": false,
+          "kind": 0,
+          "projectiles": 0,
+          "beams": 2
+        }
+      }
+    },
+    {
+      "name": "missile damage does not cancel or shoot down the eye lasers",
+      "passed": true,
+      "data": {
+        "pool": 360,
+        "dead": false,
+        "kind": 0,
+        "projectiles": 0,
+        "beams": 2
+      }
+    },
+    {
+      "name": "Real ice-orb projectiles can hit the rotating head",
+      "passed": true,
+      "data": {
+        "before": 384,
+        "after": {
+          "pool": 167.55000000000035,
+          "dead": false,
+          "kind": 5,
+          "projectiles": 44,
+          "beams": 2
+        }
+      }
+    },
+    {
+      "name": "ice-orb damage does not cancel or shoot down the eye lasers",
+      "passed": true,
+      "data": {
+        "pool": 167.55000000000035,
+        "dead": false,
+        "kind": 5,
+        "projectiles": 44,
+        "beams": 2
+      }
+    },
+    {
+      "name": "Eye-laser windup is a warning, not a damaging beam",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The actual continuous eye beam reaches native player collision",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "PixelLab spin, charge and laser banks are installed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native charge, rumble and release sound cues actually fire",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review opens the actual head encounter at the regular field of view",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review can restart the actual flamethrower and cannon encounter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "measurements": [
+    {
+      "difficulty": "easy",
+      "arms": {
+        "stats": {
+          "flameFrames": 124,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 124,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "difficulty": "easy",
+      "head": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 383,
+          "both": 383,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "easy"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 6.4
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 257
+      }
+    },
+    {
+      "difficulty": "normal",
+      "arms": {
+        "stats": {
+          "flameFrames": 143,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 267,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "difficulty": "normal",
+      "head": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 347,
+          "both": 347,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "normal"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.8
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 366
+      }
+    },
+    {
+      "difficulty": "hard",
+      "arms": {
+        "stats": {
+          "flameFrames": 154,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 421,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "difficulty": "hard",
+      "head": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 305,
+          "both": 305,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 8.5,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "hard"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 5.1
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 458
+      }
+    },
+    {
+      "difficulty": "furious",
+      "arms": {
+        "stats": {
+          "flameFrames": 166,
+          "laserFrames": 0,
+          "both": 0,
+          "originError": 0,
+          "fullTurn": 0,
+          "shake": 8.5,
+          "headKeys": []
+        },
+        "flameDraws": 587,
+        "magma": 3,
+        "waves": 3,
+        "arms": "arms"
+      }
+    },
+    {
+      "difficulty": "furious",
+      "head": {
+        "stats": {
+          "flameFrames": 0,
+          "laserFrames": 269,
+          "both": 269,
+          "originError": 0,
+          "fullTurn": 6.283185307179586,
+          "shake": 2.7999999999999994,
+          "headKeys": [
+            "f17_spin_29",
+            "f17_spin_28",
+            "f17_spin_27",
+            "f17_spin_26",
+            "f17_spin_25",
+            "f17_spin_24",
+            "f17_spin_23",
+            "f17_spin_22",
+            "f17_spin_21",
+            "f17_spin_20",
+            "f17_spin_19",
+            "f17_spin_18",
+            "f17_spin_17",
+            "f17_spin_16",
+            "f17_spin_15",
+            "f17_spin_14",
+            "f17_spin_13",
+            "f17_spin_12",
+            "f17_spin_11",
+            "f17_spin_10",
+            "f17_spin_09",
+            "f17_spin_08",
+            "f17_spin_07",
+            "f17_spin_06",
+            "f17_spin_05",
+            "f17_spin_04",
+            "f17_spin_03",
+            "f17_spin_02",
+            "f17_spin_01",
+            "f17_spin_00"
+          ]
+        },
+        "events": [
+          {
+            "event": "head-windup",
+            "serial": 1,
+            "difficulty": "furious"
+          },
+          {
+            "event": "head-lasers",
+            "serial": 1,
+            "seconds": 4.5
+          }
+        ],
+        "beams": 0,
+        "headPhase": "head",
+        "pool": 504
+      }
+    }
+  ],
+  "logicOnly": false,
+  "passed": 54,
+  "failed": 0,
+  "review": {
+    "checks": [
+      {
+        "name": "Cole and his actual equipment are selected together",
+        "passed": true
+      },
+      {
+        "name": "Live review shows the restored continuous flame",
+        "passed": true
+      },
+      {
+        "name": "Live review releases a cannon-arm fire wave",
+        "passed": true
+      },
+      {
+        "name": "Full encounter button starts the actual authored intro",
+        "passed": true
+      },
+      {
+        "name": "No review page or console errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "passed": 5,
+    "failed": 0
+  },
+  "art": {
+    "registeredPngs": 142,
+    "sizeMiB": 2.19,
+    "spinPoses": 30,
+    "chargeIncludingNeutral": 17,
+    "laserPoses": 16,
+    "maxAngularGapDegrees": 26.24,
+    "maxLampFitErrorPixels": 2.228
+  },
+  "regression": {
+    "passed": 8754,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/furnace_pixellab_1017/full-suite-final.log",
+    "installedBuild": true
+  },
+  "preservedStartingHashes": {
+    "assets/game.js": true,
+    "_BUILD_SOURCE/test_fl.js": true,
+    "CLAUDE.md": true,
+    "assets/modular_roster_0927.js": true,
+    "assets/orbs_1010.js": true,
+    "assets/spread_1001.js": true,
+    "PLAY_BULLETS_OF_FURY.bat": true,
+    "_BUILD_SOURCE/test_modular_roster_0927.cjs": true,
+    "assets/playthrough_1011.js": true
+  }
+}

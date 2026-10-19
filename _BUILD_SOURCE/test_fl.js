@@ -1563,7 +1563,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      buys bullet COUNT and not speed. Pinned to the table, which is what makes that true. */
   ok(vm.runInContext("run.weapon=0; run.wlevels=[0,0,0,0,0,0]; _weaponCadence()===WEAPON_CADENCE[0]", ctxv), 'default MG cadence follows the balance table');
   vm.runInContext("run.wlevels[0]=2; run.wlevel=2; pBullets.length=0; pShoot();", ctxv);
-  ok(vm.runInContext("pShoot.toString().indexOf('spread===2?7:')>0", ctxv), 'the L1 pair sits tight (7px); wider tiers keep their own row spacing (11px to four rows, 9px at five and six - 0903e)');
+  ok(vm.runInContext("(function(){var r=pBullets.filter(function(b){return b.kind==='mg';}),x=r.map(function(b){return b.x;});return r.length===3&&Math.max.apply(null,x)-Math.min.apply(null,x)===8&&Math.abs(x.reduce(function(a,b){return a+b;},0)/3-player.x)<1e-8;})()", ctxv), 'L2 fires three tightly grouped projectiles centered on the nose');
   vm.runInContext("run.stage=1;", ctxv);
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++){ if(_jungleTank()==='tk0') return false; } return true;})()", ctxv), 'no red tk0 hulls on stage 1');
   vm.runInContext("run.stage=4;", ctxv);
@@ -3239,8 +3239,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_l1[0].lv===_l0[0].lv, 'and is the same colour tier — the pair reads as the default gun doubled');
   var _dps0=_l0.length*_l0[0].dmg, _dps1=_l1.length*_l1[0].dmg;
   ok(_dps1===2*_dps0, 'so L1 lands double the per-volley damage of the default');
-  ok(_l2.length>=2 && _l2[0].lv>=2, 'L2 moves up a colour tier as before (lv '+_l2[0].lv+')');
-  ok(Math.abs(_l1[0].x-_l1[1].x)===7, 'the L1 pair sits tight at 7px apart, not a wide row');
+  ok(_l2.length===3 && _l2[0].lv>=2, 'L2 adds a third projectile and moves up a colour tier (lv '+_l2[0].lv+')');
+  ok(Math.abs(_l1[0].x-_l1[1].x)===4, 'the L1 pair leaves the centre gun only 4px apart');
   // --- HELIX pierces all the way through
   vm.runInContext("run.stage=1; enemies.length=0; pBullets.length=0; helixFlurrySpawn(240,300,3);", ctxv);
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='mavlaser';}).every(function(b){return b.pierce===true && b._pierceAll===true;})", ctxv), 'every charged-ball volley pierces all the way through');
@@ -15878,6 +15878,11 @@ require('./test_enemy_behaviour_1011.cjs')(vm,ctxv,ok);
 require('./test_element_arsenal_1011.cjs')(vm,ctxv,ok);
 require('./test_playthrough_1011.cjs')(vm,ctxv,ok);
 require('./test_idle_thrust_1016.cjs')(vm,ctxv,ok);
+require('./test_modular_hits_1017.cjs')(vm,ctxv,ok);
+require('./test_spread_rounds_1017.cjs')(vm,ctxv,ok);
+require('./test_player_shield_1018.cjs')(vm,ctxv,ok);
+require('./test_charge_fx_1018.cjs')(vm,ctxv,ok);
+require('./test_machinegun_1018.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

@@ -1,0 +1,851 @@
+{
+  "checks": [
+    {
+      "name": "Every new portal, arena and code asset decodes through native XART",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift uses three 16\u201332-pose even banks with one fixed pivot",
+      "passed": true,
+      "data": {
+        "count": 80,
+        "geometry": true,
+        "stages": [
+          32,
+          16,
+          32
+        ]
+      }
+    },
+    {
+      "name": "blue_rift/form draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/loop draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/close draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift has a continuous rendered loop boundary",
+      "passed": true,
+      "data": {
+        "boundary": 0.0,
+        "hardSwitch": 4.575306532118056
+      }
+    },
+    {
+      "name": "blue_rift formation, loop and closure share the exact open pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift black aperture remains opaque throughout its loop",
+      "passed": true,
+      "data": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "blue_rift opens circularly and one-shots clamp after completion",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift uses three 16\u201332-pose even banks with one fixed pivot",
+      "passed": true,
+      "data": {
+        "count": 64,
+        "geometry": true,
+        "stages": [
+          16,
+          32,
+          16
+        ]
+      }
+    },
+    {
+      "name": "red_rift/form draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/loop draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/close draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift has a continuous rendered loop boundary",
+      "passed": true,
+      "data": {
+        "boundary": 0.019002278645833332,
+        "hardSwitch": 3.9500637478298612
+      }
+    },
+    {
+      "name": "red_rift formation, loop and closure share the exact open pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift black aperture remains opaque throughout its loop",
+      "passed": true,
+      "data": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "red_rift opens circularly and one-shots clamp after completion",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift uses three 16\u201332-pose even banks with one fixed pivot",
+      "passed": true,
+      "data": {
+        "count": 96,
+        "geometry": true,
+        "stages": [
+          32,
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "name": "green_rift/form draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/loop draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/close draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift has a continuous rendered loop boundary",
+      "passed": true,
+      "data": {
+        "boundary": 0.014341905381944445,
+        "hardSwitch": 2.345263671875
+      }
+    },
+    {
+      "name": "green_rift formation, loop and closure share the exact open pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift black aperture remains opaque throughout its loop",
+      "passed": true,
+      "data": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "green_rift opens circularly and one-shots clamp after completion",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void uses three 16\u201332-pose even banks with one fixed pivot",
+      "passed": true,
+      "data": {
+        "count": 80,
+        "geometry": true,
+        "stages": [
+          32,
+          16,
+          32
+        ]
+      }
+    },
+    {
+      "name": "black_void/form draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/loop draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/close draws at least sixteen distinct native poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void has a continuous rendered loop boundary",
+      "passed": true,
+      "data": {
+        "boundary": 0.0,
+        "hardSwitch": 5.159068467881944
+      }
+    },
+    {
+      "name": "black_void formation, loop and closure share the exact open pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void black aperture remains opaque throughout its loop",
+      "passed": true,
+      "data": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "black_void opens circularly and one-shots clamp after completion",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The real renderer consumes every generated portal key",
+      "passed": true,
+      "data": {
+        "keys": 320,
+        "expected": 320
+      }
+    },
+    {
+      "name": "Stage 7 native entrance reaches all three authored lifecycle phases",
+      "passed": true,
+      "data": [
+        "close",
+        "form",
+        "loop"
+      ]
+    },
+    {
+      "name": "Stage 7 boss entrance uses green portals exclusively",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 7 attack portals use the new green bank",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 7 native escape uses all three authored lifecycle phases",
+      "passed": true,
+      "data": [
+        "close",
+        "form",
+        "loop"
+      ]
+    },
+    {
+      "name": "The portal the pilot flies into on Stage 7 is green",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 7 escape retains one canvas size instead of shrinking its idle picture",
+      "passed": true,
+      "data": [
+        205.32
+      ]
+    },
+    {
+      "name": "Stage 8 native arrival uses all three authored lifecycle phases",
+      "passed": true,
+      "data": [
+        "close",
+        "form",
+        "loop"
+      ]
+    },
+    {
+      "name": "Stage 8 arrival is red throughout formation, idle and closure",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 8 arrival retains one canvas size while the authored aperture closes",
+      "passed": true,
+      "data": [
+        263.5
+      ]
+    },
+    {
+      "name": "Arena 1 renders its own plate and draw calls do not advance time",
+      "passed": true,
+      "data": {
+        "phase": 0,
+        "paused": true,
+        "code": 81
+      }
+    },
+    {
+      "name": "Arena 1 code illuminates during native combat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Arena 1 has three distinct parallax depths",
+      "passed": true,
+      "data": {
+        "points": [
+          0.08,
+          0.18,
+          0.34,
+          0.08,
+          0.18,
+          0.34,
+          0.08,
+          0.18,
+          0.34
+        ],
+        "center": 339.99999999999994
+      }
+    },
+    {
+      "name": "Arena 1 covers the visible field at False fit",
+      "passed": true,
+      "data": {
+        "uncovered": 0
+      }
+    },
+    {
+      "name": "Arena 1 covers the visible field at True fit",
+      "passed": true,
+      "data": {
+        "uncovered": 0
+      }
+    },
+    {
+      "name": "Arena 2 renders its own plate and draw calls do not advance time",
+      "passed": true,
+      "data": {
+        "phase": 1,
+        "paused": true,
+        "code": 2439
+      }
+    },
+    {
+      "name": "Arena 2 code illuminates during native combat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Arena 2 has three distinct parallax depths",
+      "passed": true,
+      "data": {
+        "points": [
+          0.08,
+          0.18,
+          0.34,
+          0.08,
+          0.18,
+          0.34,
+          0.08,
+          0.18,
+          0.34
+        ],
+        "center": 340
+      }
+    },
+    {
+      "name": "Arena 2 covers the visible field at False fit",
+      "passed": true,
+      "data": {
+        "uncovered": 0
+      }
+    },
+    {
+      "name": "Arena 2 covers the visible field at True fit",
+      "passed": true,
+      "data": {
+        "uncovered": 0
+      }
+    },
+    {
+      "name": "Arena 3 renders its own plate and draw calls do not advance time",
+      "passed": true,
+      "data": {
+        "phase": 2,
+        "paused": true,
+        "code": 4797
+      }
+    },
+    {
+      "name": "Arena 3 code illuminates during native combat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Arena 3 has three distinct parallax depths",
+      "passed": true,
+      "data": {
+        "points": [
+          0.08,
+          0.18,
+          0.34,
+          0.08,
+          0.18,
+          0.34,
+          0.08,
+          0.18,
+          0.34
+        ],
+        "center": 340
+      }
+    },
+    {
+      "name": "Arena 3 covers the visible field at False fit",
+      "passed": true,
+      "data": {
+        "uncovered": 0
+      }
+    },
+    {
+      "name": "Arena 3 covers the visible field at True fit",
+      "passed": true,
+      "data": {
+        "uncovered": 0
+      }
+    },
+    {
+      "name": "Escape/continue scenes retain their existing environment",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 8 dr5Portal form uses its red native portal",
+      "passed": true,
+      "data": {
+        "bank": "red_rift",
+        "phase": "form",
+        "from": 7,
+        "x": 340,
+        "y": 196,
+        "size": 325.3553390593274
+      }
+    },
+    {
+      "name": "Stage 8 dr5Portal loop uses its red native portal",
+      "passed": true,
+      "data": {
+        "bank": "red_rift",
+        "phase": "loop",
+        "from": 22,
+        "x": 340,
+        "y": 196,
+        "size": 340
+      }
+    },
+    {
+      "name": "Stage 8 dr5Portal close uses its red native portal",
+      "passed": true,
+      "data": {
+        "bank": "red_rift",
+        "phase": "close",
+        "from": 8,
+        "x": 340,
+        "y": 196,
+        "size": 340
+      }
+    },
+    {
+      "name": "Stage 8 reunion loop uses its red native portal",
+      "passed": true,
+      "data": {
+        "bank": "red_rift",
+        "phase": "loop",
+        "from": 16,
+        "x": 340,
+        "y": 112,
+        "size": 260
+      }
+    },
+    {
+      "name": "Stage 8 reunion close uses its red native portal",
+      "passed": true,
+      "data": {
+        "bank": "red_rift",
+        "phase": "close",
+        "from": 5,
+        "x": 340,
+        "y": 112,
+        "size": 260
+      }
+    },
+    {
+      "name": "All ordinary Stage 8 rift routes resolve red without resetting loop phase",
+      "passed": true,
+      "data": [
+        {
+          "bank": "red_rift",
+          "phase": "loop",
+          "progress": 0.5,
+          "original": 0.5
+        },
+        {
+          "bank": "red_rift",
+          "phase": "loop",
+          "progress": 0.5,
+          "original": 0.5
+        },
+        {
+          "bank": "red_rift",
+          "phase": "loop",
+          "progress": 0.5,
+          "original": 0.5
+        }
+      ]
+    },
+    {
+      "name": "Stage 8 reformation uses the replacement purple-black rift",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Chromium spell uses separate authored form, loop and closing reels",
+      "passed": true,
+      "data": [
+        {
+          "pose": {
+            "bank": "black_void",
+            "phase": "form",
+            "from": 15,
+            "x": 340,
+            "y": 358.8,
+            "size": 436
+          },
+          "size": 436
+        },
+        {
+          "pose": {
+            "bank": "black_void",
+            "phase": "loop",
+            "from": 6,
+            "x": 340,
+            "y": 358.8,
+            "size": 436
+          },
+          "size": 436
+        },
+        {
+          "pose": {
+            "bank": "black_void",
+            "phase": "close",
+            "from": 12,
+            "x": 340,
+            "y": 358.8,
+            "size": 436
+          },
+          "size": 436
+        }
+      ]
+    },
+    {
+      "name": "Chromium spell retains a fixed physical draw canvas during formation and closure",
+      "passed": true,
+      "data": [
+        {
+          "pose": {
+            "bank": "black_void",
+            "phase": "form",
+            "from": 15,
+            "x": 340,
+            "y": 358.8,
+            "size": 436
+          },
+          "size": 436
+        },
+        {
+          "pose": {
+            "bank": "black_void",
+            "phase": "loop",
+            "from": 6,
+            "x": 340,
+            "y": 358.8,
+            "size": 436
+          },
+          "size": 436
+        },
+        {
+          "pose": {
+            "bank": "black_void",
+            "phase": "close",
+            "from": 12,
+            "x": 340,
+            "y": 358.8,
+            "size": 436
+          },
+          "size": 436
+        }
+      ]
+    },
+    {
+      "name": "Existing cast module remains targetable and takes real damage",
+      "passed": true,
+      "data": {
+        "targetable": true,
+        "damage": 1,
+        "alive": true
+      }
+    },
+    {
+      "name": "bullets Wind rounds use all16 PixelLab frames and stay small at max level",
+      "passed": true,
+      "data": {
+        "family": "bullets",
+        "keys": 16,
+        "widest": 6,
+        "tallest": 14
+      }
+    },
+    {
+      "name": "spread Wind rounds use all16 PixelLab frames and stay small at max level",
+      "passed": true,
+      "data": {
+        "family": "spread",
+        "keys": 16,
+        "widest": 6,
+        "tallest": 13
+      }
+    },
+    {
+      "name": "heavy Wind rounds use all16 PixelLab frames and stay small at max level",
+      "passed": true,
+      "data": {
+        "family": "heavy",
+        "keys": 16,
+        "widest": 8,
+        "tallest": 21
+      }
+    },
+    {
+      "name": "Maverick homing lasers still cannot receive Wind",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "passed": 74,
+  "failed": 0,
+  "date": "2026-10-17",
+  "runtime": "assets/pixellab_void_1017.js",
+  "exporter": "_BUILD_SOURCE/build_pixellab_void_1017.py",
+  "artProvider": "PixelLab",
+  "assets": {
+    "portalFrames": 320,
+    "codeFrames": 16,
+    "windFrames": 48,
+    "arenaPlates": 3,
+    "totalPNGs": 387,
+    "bytes": 6705430
+  },
+  "fullSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "passingAssertions": 8754,
+    "errors": 0,
+    "exitCode": 0,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "syntax": {
+    "assets/game.js": true,
+    "assets/pixellab_void_1017.js": true,
+    "assets/pixellab_void_art_1017.js": true
+  },
+  "loader": {
+    "nativeCandidateContentInstalled": true,
+    "installedBuildBootPassed": true,
+    "originalLineEndingsPreserved": true,
+    "newScripts": 2
+  },
+  "preservation": {
+    "unchanged": {
+      "assets/game.js": true,
+      "_BUILD_SOURCE/test_fl.js": true,
+      "CLAUDE.md": true,
+      "assets/modular_roster_0927.js": true,
+      "assets/orbs_1010.js": true,
+      "assets/spread_1001.js": true,
+      "PLAY_BULLETS_OF_FURY.bat": true,
+      "_BUILD_SOURCE/test_modular_roster_0927.cjs": true
+    },
+    "indexOnlyTwoOwnedCacheRevisions": true
+  },
+  "evidence": "_shots/pixellab_portal_routing_1017/native",
+  "scope": "Art/environment and lifecycle render hooks only; collision, targeting, projectile stats and encounter controllers retain existing owners.",
+  "reviewPage": {
+    "checks": [
+      {
+        "name": "Installed game boots with PixelLab runtime",
+        "passed": true
+      },
+      {
+        "name": "blue_rift review renders",
+        "passed": true,
+        "status": "loop \u00b7 frame 13 \u00b7 4.50s"
+      },
+      {
+        "name": "green_rift review renders",
+        "passed": true,
+        "status": "loop \u00b7 frame 26 \u00b7 4.50s"
+      },
+      {
+        "name": "red_rift review renders",
+        "passed": true,
+        "status": "loop \u00b7 frame 26 \u00b7 4.50s"
+      },
+      {
+        "name": "black_void review renders",
+        "passed": true,
+        "status": "loop \u00b7 frame 13 \u00b7 4.50s"
+      },
+      {
+        "name": "arena0 review renders",
+        "passed": true,
+        "status": "Phase 1 \u00b7 4.50s"
+      },
+      {
+        "name": "arena1 review renders",
+        "passed": true,
+        "status": "Phase 2 \u00b7 4.50s"
+      },
+      {
+        "name": "arena2 review renders",
+        "passed": true,
+        "status": "Phase 3 \u00b7 4.50s"
+      },
+      {
+        "name": "wind-bullets review renders",
+        "passed": true,
+        "status": "Frame 8 / 16 \u00b7 4.50s"
+      },
+      {
+        "name": "wind-spread review renders",
+        "passed": true,
+        "status": "Frame 8 / 16 \u00b7 4.50s"
+      },
+      {
+        "name": "wind-heavy review renders",
+        "passed": true,
+        "status": "Frame 8 / 16 \u00b7 4.50s"
+      },
+      {
+        "name": "Replay advances, pause and scrub stop timeline",
+        "passed": true
+      },
+      {
+        "name": "Onion and manual scrub remain available",
+        "passed": true
+      },
+      {
+        "name": "No boot or preview browser errors",
+        "passed": true,
+        "errors": []
+      }
+    ],
+    "passed": 14,
+    "failed": 0,
+    "errors": []
+  },
+  "arenaNormalization": [
+    {
+      "phase": 0,
+      "sourceSize": [
+        512,
+        512
+      ],
+      "scale": 1.0,
+      "pivot": [
+        256,
+        256
+      ]
+    },
+    {
+      "phase": 1,
+      "sourceSize": [
+        512,
+        512
+      ],
+      "scale": 1.0,
+      "pivot": [
+        256,
+        256
+      ]
+    },
+    {
+      "phase": 2,
+      "sourceSize": [
+        400,
+        400
+      ],
+      "scale": 1.28,
+      "pivot": [
+        256,
+        256
+      ]
+    }
+  ],
+  "reviewServerCacheControl": "no-store, no-cache, must-revalidate, max-age=0",
+  "routing": {
+    "stage7BossAttacksAndEscape": "green_rift",
+    "stage8OrdinaryPortalsAllPhases": "red_rift",
+    "voidEffects": "black_void (purple-black blue-rift palette variant)",
+    "cacheRevision": "portal-colors-1017"
+  },
+  "paletteVerification": [
+    {
+      "phase": "form",
+      "frames": 32,
+      "sameAlphaAndPivot": true,
+      "recoloredPixels": 60451,
+      "maxLuminanceError": 0.49400000000000455
+    },
+    {
+      "phase": "loop",
+      "frames": 16,
+      "sameAlphaAndPivot": true,
+      "recoloredPixels": 88940,
+      "maxLuminanceError": 0.45759999999999595
+    },
+    {
+      "phase": "close",
+      "frames": 32,
+      "sameAlphaAndPivot": true,
+      "recoloredPixels": 69769,
+      "maxLuminanceError": 0.47439999999999705
+    }
+  ]
+}

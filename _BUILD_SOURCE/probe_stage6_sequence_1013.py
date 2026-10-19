@@ -1,11 +1,11 @@
-"""Native Stage 6 route introduction and solo miniboss regression fixtures."""
+"""Native Stage 6 route introduction and persistent allied support fixtures."""
 from pathlib import Path
 import sys,json,base64
 from playwright.sync_api import sync_playwright
 R=Path(__file__).resolve().parents[1]
 if not (R/'assets/game.js').exists():R=Path('C:/Users/Mike/Desktop/Github Coding/BulletsOfFury')
 sys.path.insert(0,str(R/'_BUILD_SOURCE'));import shoot
-O=R/'_shots/stage6_sequence_1013';O.mkdir(parents=True,exist_ok=True)
+O=R/'_shots/harrier_wing_1018/route-regression';O.mkdir(parents=True,exist_ok=True)
 checks=[];rows=[];errors=[]
 def check(name,value,data=None):
  checks.append({'name':name,'pass':bool(value),'details':data});print(('PASS ' if value else 'FAIL ')+name,flush=True)
@@ -17,7 +17,7 @@ def capture(p,name):
 def setup(p,diff):
  p.evaluate('d=>{diffKey=d;DIFF=DIFFS[d]}',diff)
  assert p.evaluate(shoot.SETUP,{'state':'PLAY','stage':6,'pilot':'axel','invuln':True})['ok']
- p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(6)&&XART.rdy(VP12_ART[6].key)}',timeout=180000)
+ p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(6)&&XART.rdy(VP12_ART[6].key)}',timeout=180000,polling=50)
  p.evaluate('''()=>{story=null;BOFCinematicDirector.cancel();s6Opening=null;fb2Talk=null;run._mission29OpeningDone=true;
   debugFight=null;stagePlan=[];spawnClock=99999;waveIdx=999;warnT=0;run._gp4StageX=null;
   enemies=[];pBullets=[];eBullets=[];boss=null;bossActive=false;bossDefeated=false;bossWarned=false;
@@ -29,7 +29,7 @@ def setup(p,diff):
 snap='''()=>({scene:!!s6q13Scene(),introDone:!!boss?._rebels?.frIntro?.done,stageTimer,waveIdx,
  vpAge:VP12.age,cpAge:CP12.age,live:enemies.filter(e=>!e.dead).length,shots:eBullets.length,
  allyShots:pBullets.filter(b=>b.ally||b._wingKey).length,wing:s6Wing?.ships.length||0,
- held:!!S6Q13.held,release:H3.release,sub:!!subBossActive,hp:subBoss?.hp,
+ held:BOF_STAGE6_SEQUENCE.snapshot().held,release:H3.release,sub:!!subBossActive,hp:subBoss?.hp,
  forms:VP12.groups.length, introAge:boss?._rebels?.h3Intro?.age||0, route:s6Wing?.route})'''
 port,stop=shoot.serve(str(R))
 try:
@@ -78,27 +78,29 @@ try:
    setup(p,diff)
    p.evaluate('''()=>{s6Wing.choice=false;s6Wing.route=null;stageTimer=25;subBossDone=false;subBossTriggered=true;
     for(const q of s6Wing.ships){q.phase='fight';q.y=VH*.70;q.fcd=0;q.specialCd=0;q.missileCd=0;}
-    pBullets.push({ally:true,_wingKey:'cole',kind:'mg',x:240,y:100,vx:0,vy:-10,dmg:99999});
-    spawnSubBoss(SUBBOSS[6].kind);window.__miniHP=subBoss.hp;window.__wingDraws=0;window.__wingOld=S6Q13.base.draw;
-    S6Q13.base.draw=function(){window.__wingDraws++;return window.__wingOld.apply(this,arguments)};
+    pBullets.push({ally:true,_wingKey:'cole',kind:'mg',x:240,y:100,vx:0,vy:-10,dmg:3});
+    window.__sameWing=s6Wing.ships.slice();spawnSubBoss(SUBBOSS[6].kind);window.__miniHP=subBoss.hp;window.__wingDraws=0;window.__wingOld=s6WingDraw;
+    s6WingDraw=function(){window.__wingDraws++;return window.__wingOld.apply(this,arguments)};
    }''')
-   start=p.evaluate(snap);check(diff+' miniboss removes wing and existing allied shots at spawn',start['held'] and start['wing']==0 and start['allyShots']==0,start)
+   start=p.evaluate(snap);check(diff+' miniboss preserves the approaching wing and existing allied shots',not start['held'] and start['wing']==4 and start['allyShots']>0,start)
    for _ in range(10):step(p,60)
-   mid=p.evaluate(snap);capture(p,diff+'-solo-miniboss')
-   check(diff+' no helper fire or damage throughout miniboss',mid['allyShots']==0 and abs(mid['hp']-start['hp'])<.01,mid)
-   check(diff+' no helper sprites rendered during miniboss',p.evaluate('window.__wingDraws===0'))
-   check(diff+' solo fight uses neutral ally pressure',p.evaluate('s6PressureMultiplier()===1'))
+   mid=p.evaluate(snap);capture(p,diff+'-supported-miniboss')
+   check(diff+' allied fire damages the actual miniboss modules',mid['hp']<start['hp'],mid)
+   check(diff+' native allied sprites remain rendered during the miniboss',p.evaluate('window.__wingDraws>500&&__sameWing.every(q=>s6Wing.ships.includes(q)&&q.phase==="fight")'))
+   check(diff+' active wing retains its native support pressure instead of a forced solo multiplier',p.evaluate('s6PressureMultiplier()>0&&s6PressureMultiplier()<1'))
    # Damage through the native hit owner and advance the full death lifecycle.
-   p.evaluate('''()=>{S6Q13.base.draw=window.__wingOld;_dmgBullet=null;for(let i=0;i<40&&!subBoss.dead;i++)hitSubBoss(1e7,subBoss.x,subBoss.y);}''')
+   p.evaluate('''()=>{s6WingDraw=window.__wingOld;_dmgBullet=null;for(const g of subBoss._cargo13.guns){subBoss._cargo13.directId=g.id;hitSubBoss(1e7);}}''')
+   step(p,60)
+   p.evaluate('subBoss._cargo13.directId="core";hitSubBoss(1e7)')
    for _ in range(25):
     step(p,30)
-    if p.evaluate('subBossDone&&!S6Q13.held'):break
-   end=p.evaluate(snap);check(diff+' allies return after actual miniboss defeat',end['wing']>=4 and not end['held'] and not end['sub'],end)
+    if p.evaluate('subBossDone'):break
+   end=p.evaluate(snap);check(diff+' same allied actors remain after actual miniboss defeat',end['wing']>=4 and not end['held'] and not end['sub'] and p.evaluate('__sameWing.every(q=>s6Wing.ships.includes(q))'),end)
    step(p,120);capture(p,diff+'-wing-return')
    rows[-1]['miniboss']={'start':start,'middle':mid,'end':end}
   b.close()
 finally:stop()
-report={'checks':checks,'passed':sum(c['pass'] for c in checks),'failed':sum(not c['pass'] for c in checks),'rows':rows,'errors':errors,'scope':'Native Edge frame loop and authored renderer; actual Stage 6 keyboard route choice, complete rebel intro, actual miniboss spawn/hit/death. Controlled invulnerable observation fixtures, not human playthrough.'}
+report={'checks':checks,'passed':sum(c['pass'] for c in checks),'failed':sum(not c['pass'] for c in checks),'rows':rows,'errors':errors,'scope':'Native Edge frame loop and authored renderer; actual Stage 6 keyboard route choice, complete rebel intro, persistent allied support through actual miniboss spawn/hit/death. Controlled invulnerable observation fixtures, not human playthrough.'}
 (O/'report.json').write_text(json.dumps(report,indent=2));print(json.dumps({'passed':report['passed'],'failed':report['failed'],'errors':errors}),flush=True)
 assert not errors,errors
 assert report['failed']==0,report['failed']

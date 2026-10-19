@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 0174e6a8-60c5-43ff-b1a5-789419a8d29a\njob_id: 0174e6a8-60c5-43ff-b1a5-789419a8d29a\nmodel: pro\ndescription: RESOLUTION FIRST: one 256x256 RGBA sprite, fixed canvas and center pivot 128,128, even dimensions. Center all physical mass with 24px transparent padding. Bullets of Fury Neo-Geo arcade pixel art, sharp clusters, mechanical volume, dark outlines and bright readable details. No text, labels, UI, scenery or checkerboard. A standalone digital materialization VFX, no ship or actor: small emerald binary square fragments fall in vertical data columns around two bright scanning bars. A narrow center pool of white green energy and many scattered rectangular pixel blocks, dark teal shadows, sharp arcade pixel clusters. Empty transparent background, no frame, ground, circle, scenery or readable lettering.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nasset_id: aee05177-ae32-5760-b210-31effa714864\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0174e6a8-60c5-43ff-b1a5-789419a8d29a\")"
+    }
+  ],
+  "isError": false
+}

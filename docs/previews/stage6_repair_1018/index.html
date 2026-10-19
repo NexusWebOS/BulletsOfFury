@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Stage 6 carrier and allied wing</title><link rel="icon" href="data:,">
+<style>body{margin:0;background:#080d14;color:#dce9f4;font:14px system-ui}nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px}strong{color:#83dcff}button,select{background:#192b3e;color:#fff4db;border:1px solid #75879b;border-radius:4px;padding:8px}iframe{width:100%;height:calc(100vh - 118px);min-height:520px;display:block;border:0;background:#000}p{margin:8px 12px;color:#b0c3d8}button:disabled{opacity:.5}</style>
+<nav><strong>Stage 6</strong><label>Scene <select id="scene"><option value="mini">Fortress miniboss / allied support</option><option value="minicore">Fortress reactor hatch</option><option value="harrier" selected>Larger Harrier / fighter bays and allies</option><option value="fan">Destroyed fan / turbulence</option><option value="ace">Carrier breakup / giant blue ace</option></select></label>
+<label>Difficulty <select id="difficulty"><option value="normal" selected>Normal</option><option value="hard">Hard</option><option value="furious">Furious</option></select></label><label>Flight <select id="flight"><option value="cole">Cole</option><option value="axel">Axel</option><option value="both">Cole + Decker</option></select></label>
+<button id="replay" disabled>Replay</button><button id="break" disabled>Disable a component</button><span id="status">Loading…</span></nav>
+<iframe id="game" title="Actual Stage 6 full playfield and side HUD" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p>Invulnerable review flight. Destroy the Harrier’s eight modules to bring down the carrier and launch the blue ace. Only the Fortress miniboss has a reactor. Allies keep fighting. Review saves are separate from your campaign.</p>
+<script>
+const game=document.querySelector('#game'),scene=document.querySelector('#scene'),difficulty=document.querySelector('#difficulty'),flight=document.querySelector('#flight'),status=document.querySelector('#status');let ready=false,busy=false;
+const params=new URLSearchParams(location.search);for(const el of [scene,difficulty,flight])if([...el.options].some(q=>q.value===params.get(el.id)))el.value=params.get(el.id);
+if(params.get('scene')==='reactor')scene.value='harrier';
+const delay=n=>new Promise(r=>setTimeout(r,n));
+async function begin(){if(!ready||busy)return;busy=true;status.textContent='Preparing…';
+ game.contentWindow.eval(`(()=>{ht27Stop();BOFCinematicDirector.cancel();coopOn=false;debugFight=null;run.pilot=${JSON.stringify(flight.value==='axel'?'axel':'cole')};pilotIndex=PILOTS.findIndex(p=>p.key===run.pilot);diffKey=${JSON.stringify(difficulty.value)};DIFF=DIFFS[diffKey];startRun(6);run.mode='campaign';beginStage(6);setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=fb2Talk=fb2Intro=s6Opening=null;AP10_X.intro=null;P2M.active=null;H3.ending=null;H3.release=false;boss=null;subBoss=null;bossActive=subBossActive=bossDefeated=false;subBossTriggered=aminiTriggered=true;warnT=0;warnKind=null;stagePlan=[];enemies=[];eBullets=[];pBullets=[];powerups=[];VP12.next=CP12.next=EP13.next=HM17.next=TARGET17.nextTank=SEWER17.next=99999;groundTargetingReset();tb28Reset();polishLanes=[];run.lives=5;run.bombs=30;run.shield=0;run.weapon=0;run.wvars[0]=null;run.forge={};run.forgeForms={};run.wlevels[0]=run.wlevel=2;player.x=worldWidth()/2;player.y=VH-80;player.invuln=999999;player.dead=player.out=false;camX=clamp(player.x-VW/2,0,worldWidth()-VW);run.spaceMode=false;s6WingInit();s6Wing.beats=99;s6Wing.all=true;s6Wing.fakeDone=true;s6Wing.route='left';})()`);
+ for(let i=0;i<600;i++){if(game.contentWindow.eval('(()=>{stageLoadTick();return stageLoadReady(6)&&bmfReady("game")&&bmfReady("dialogue")})()'))break;await delay(100);}
+ const mini=['mini','minicore'].includes(scene.value),pair=flight.value==='both'?"coopOn=true;run2.pilot='decker';withSeat(2,()=>{player.reset();player.x=worldWidth()/2+65;player.y=VH-70;player.invuln=0;run.bombs=30;run.lives=5;});player.x=worldWidth()/2-65;":"";
+ const code=mini?"spawnSubBoss__inner('siegefortress17');const b=subBoss;":
+ "spawnBoss('warhive');const b=boss;";
+ const mode=scene.value;
+ const finish=mode==='mini'||mode==='harrier'?"":mini?
+ "b._cargo13.mode='recover';b._cargo13.age=3;b._cargo13.x=worldWidth()/2;b._cargo13.y=95;b._cargo13.ready=true;sc13Sync(b);for(const g of b._cargo13.guns){b._cargo13.directId=g.id;hitSubBoss(1e6);}":
+ "const C=b._carrier17;C.phase='fight';C.t=0;C.depth=false;C.scale=1;C.flight=999;b._noHit=false;b.x=worldWidth()/2;b.y=roster17Home(b);roster17Sync(b);"+
+ (mode==='fan'?"C.direct='L';warhiveDamage(b,1e6);":
+ "for(const p of C.parts){C.direct=p.id;warhiveDamage(b,1e6);}");
+ game.contentWindow.eval('(()=>{'+pair+code+'b._be=null;b.enter=false;b._phaseInvuln=0;'+finish+'player.invuln=0;playerHit=()=>{};s6WingLaunch('+ (mini?'2,false':'4,true')+');subBossDone='+(!mini)+';SC12.invalidate();SC12.refresh();__bofFit();})()');busy=false;status.textContent=scene.selectedOptions[0].textContent;game.contentWindow.focus();
+ history.replaceState(null,'','?'+new URLSearchParams({scene:mode,difficulty:difficulty.value,flight:flight.value,revision:'harrier-wing-1018'}));
+}
+for(const el of [scene,difficulty,flight])el.onchange=begin;document.querySelector('#replay').onclick=begin;
+document.querySelector('#break').onclick=()=>{if(!ready||busy)return;game.contentWindow.eval(`(()=>{const b=subBossActive&&subBoss?subBoss:boss;if(!b||b.dead)return;_dmgBullet=null;
+ if(b._cargo17Mini){const g=b._cargo13.guns.find(g=>!g.dead);b._cargo13.directId=g?g.id:'core';hitSubBoss(1e6);}
+ else if(b._carrier17){const p=b._carrier17.parts.find(p=>!p.dead);if(p){b._carrier17.direct=p.id;warhiveDamage(b,1e6);}}
+ else if(b._whv?.mode==='ace'){const A=b._whv.ace;_lastHitX=A.x;_lastHitY=A.y;hitBoss(1e6);}})()`);};
+game.onload=async()=>{for(let i=0;i<600;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof S6R18!=="undefined"')){ready=true;document.querySelector('#replay').disabled=document.querySelector('#break').disabled=false;await begin();return;}await delay(100);}status.textContent='Reload to retry loading.';};
+(async()=>{const r=await fetch(new URL('../../../index.html?revision=harrier-wing-1018',location.href));if(!r.ok)throw Error('Game load failed: '+r.status);let html=await r.text();
+ function isolate(){const prefix='BOF_STAGE6_REVIEW_1018_',get=Storage.prototype.getItem,set=Storage.prototype.setItem,remove=Storage.prototype.removeItem,key=Storage.prototype.key;Storage.prototype.getItem=function(k){return get.call(this,prefix+k);};Storage.prototype.setItem=function(k,v){return set.call(this,prefix+k,v);};Storage.prototype.removeItem=function(k){return remove.call(this,prefix+k);};Storage.prototype.clear=function(){const keys=[];for(let i=0;i<this.length;i++){const k=key.call(this,i);if(k?.startsWith(prefix))keys.push(k);}for(const k of keys)remove.call(this,k);};window.__stage6RepairStorage=true;}
+ html=html.replace('<head>','<head><base href="'+new URL('../../../',location.href).href+'"><script>('+isolate.toString()+')();</scr'+'ipt>');game.srcdoc=html;
+})().catch(e=>{status.textContent=e.message;console.error(e);});
+</script></html>

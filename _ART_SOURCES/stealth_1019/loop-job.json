@@ -1,0 +1,23 @@
+{
+  "args": {
+    "description": "FRAME FORMAT: fixed 128x160 transparent canvas, central pivot (64,80), no camera movement. Seamless optical cloaking loop. Ragged blue-teal refraction ribbons stream slowly downward around an empty central jet-shaped space. Bright pixel glints travel along the bands, broken scanline fragments slide sideways and dissolve into tiny refractive shards, then reform. Subtle irregular shimmering throughout. Keep the center empty and at least 70 percent transparent. No aircraft, portal, solid shield, emblem, zoom, rotation of the whole image, or growing silhouette. The final pose returns exactly to the supplied first pose.",
+    "first_frame_url": "https://api.pixellab.ai/mcp/images/cbf783f7-7ea3-4a17-8823-6575287bec94/download?index=2",
+    "last_frame_url": "https://api.pixellab.ai/mcp/images/cbf783f7-7ea3-4a17-8823-6575287bec94/download?index=2",
+    "frame_count": 32,
+    "initial_pose": "two sparse ragged refractive bands surrounding an empty vertical center",
+    "subject_description": "transparent optical stealth refraction effect with no aircraft",
+    "view": "high top-down",
+    "direction": "north",
+    "enhance_prompt": false,
+    "no_background": true
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 65fb9a91-ca47-4ea9-ab35-11f4f48a140f\njob_id: 65fb9a91-ca47-4ea9-ab35-11f4f48a140f\ndescription: FRAME FORMAT: fixed 128x160 transparent canvas, central pivot (64,80), no camera movement. Seamless optical cloaking loop. Ragged blue-teal refraction ribbons stream slowly downward around an empty central jet-shaped space. Bright pixel glints travel along the bands, broken scanline fragments slide sideways and dissolve into tiny refractive shards, then reform. Subtle irregular shimmering throughout. Keep the center empty and at least 70 percent transparent. No aircraft, portal, solid shield, emblem, zoom, rotation of the whole image, or growing silhouette. The final pose returns exactly to the supplied first pose.\nframes: 32\nsize: 128x160px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"65fb9a91-ca47-4ea9-ab35-11f4f48a140f\")\nasset_id: 885ac90e-563d-5f01-9678-6ea5f3206d42\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  }
+}

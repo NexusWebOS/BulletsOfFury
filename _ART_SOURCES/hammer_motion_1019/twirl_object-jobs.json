@@ -1,0 +1,31 @@
+{
+  "args": {
+    "name": "BOF symbiote Hammer whirl orientations 1019",
+    "description": "The actual Bullets of Fury symbiote chromium hammer knight in the reference, holding ONE long cylindrical hammer extended at arm height. Keep the battle pose and actual armor design with black infection tendrils, red core, gray chrome. Generate all eight 45-degree combat viewing orientations around the upright body axis, with correct front/side/back occlusion and ONE hammer consistently in his right hand. The body's physical pivot stays at128,128 on every fixed256x256 transparent canvas. Preserve constant scale; every tip stays within a10px transparent margin. No new forms, extra arms, cut-off hammer, zoom, effects or ground. These are the real directions of a whirling attack, not eight versions facing forward.",
+    "first_frame_base64": "Only the inspected actual local twirl reference.",
+    "first_frame_direction": "south",
+    "n_directions": 8,
+    "view": "side"
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"b793015d-b907-4de5-bd16-ef424892ddbc\",\n  \"object_id\": \"fc7f0c8a-cce4-4831-ae88-3115a77a49c6\",\n  \"status\": \"processing\",\n  \"first_direction_generated\": false,\n  \"estimated_generations\": 8,\n  \"job_id\": \"b793015d-b907-4de5-bd16-ef424892ddbc\",\n  \"n_directions\": 8,\n  \"poll_tool\": \"get_object\",\n  \"status_path\": \"/v2/background-jobs/b793015d-b907-4de5-bd16-ef424892ddbc\",\n  \"download_path\": \"/mcp/objects/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/download\"\n}\nid: fc7f0c8a-cce4-4831-ae88-3115a77a49c6\nPoll get_object(object_id=\"fc7f0c8a-cce4-4831-ae88-3115a77a49c6\") or /v2/background-jobs/b793015d-b907-4de5-bd16-ef424892ddbc; wait for the outer job to complete before downloading or animating. The selected first direction is reused without another image charge. Only V3 rotations are billed."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "b793015d-b907-4de5-bd16-ef424892ddbc",
+      "object_id": "fc7f0c8a-cce4-4831-ae88-3115a77a49c6",
+      "status": "processing",
+      "first_direction_generated": false,
+      "estimated_generations": 8,
+      "job_id": "b793015d-b907-4de5-bd16-ef424892ddbc",
+      "n_directions": 8,
+      "poll_tool": "get_object",
+      "status_path": "/v2/background-jobs/b793015d-b907-4de5-bd16-ef424892ddbc",
+      "download_path": "/mcp/objects/fc7f0c8a-cce4-4831-ae88-3115a77a49c6/download"
+    },
+    "isError": false
+  }
+}

@@ -1,9 +1,9 @@
 module.exports=function(vm,c,ok){
  const fs=require('fs'),path=require('path');
- console.log('=== October 11: earned Signature Mk II and owned opening supplies ===');
+ console.log('=== October 11: earned Signature Mk II, normal pickups and no opening supplies ===');
  if(vm.runInContext('typeof FS11',c)==='undefined')vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/signature_specials_1011.js'),'utf8'),c,{filename:'signature_specials_1011.js'});
  const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
-  const o={},sv={receipt:FS11.receipt,ready:stageLoadReady,art:fs11ArtReady,locked:fs11OpeningLocked,boxes:FS11.boxes,pending:FS11.pending};
+  const o={},sv={receipt:FS11.receipt,boxes:FS11.boxes,pending:FS11.pending};
   try{
    ht27Stop();BOFCinematicDirector.cancel();H3.ending=null;AP10_X.intro=null;H3.release=false;P2M.active=null;story=fb2Talk=s6Opening=null;
    coopOn=false;run.mode='arcade';run.stage=1;setState(GS.PLAY);player.reset();FS11.receipt=null;
@@ -44,23 +44,28 @@ module.exports=function(vm,c,ok){
    o['The left Stage X reward path also earns all-pilot Mk II']=fs11Enhanced()&&FS11.receipt.route==='left'&&FS11.receipt.boss==='warhive';
    FS11.receipt=null;FS11.proof=null;delete run._gp4StageX;spawnBoss('warhive');boss.dead=true;boss.hp=0;bossDefeated=true;ap10StageXReward();
    o['An ordinary Stage 6 boss clear cannot earn the Stage X upgrade']=!fs11Enhanced()&&FS11.proof===null;
-   run.stage=1;run.pilot='cole';player.reset();special=null;powerups=[];pBullets=[];FS11.boxes=[];stageTimer=1.2;
-   FS11.pending={stage:1,ready:true,seats:[{seat:1,delivered:false}]};fs11OpeningLocked=()=>false;fs11ArtReady=()=>true;
-   fs11OpeningTick(.05);const box=FS11.boxes[0];
-   o['The first special arrives in a visible unopened box']=box?.pilot==='cole'&&!box.open&&!special;
-   box.x=player.x;box.y=player.y-60;pBullets=[{kind:'mg',x:box.x,y:box.y,w:8,h:12,dmg:4}];fs11OpeningTick(.01);
-   o['A real projectile opens the incoming box before the ability activates']=box.open&&!special&&pBullets[0].dead;
-   box.x=player.x;box.y=player.y;box.openT=.3;fs11OpeningTick(.01);
-   o['Collecting the opening icon gives Cole his warheads instead of a Sonic Cannon loan']=special?.pilot==='cole'&&special.strikes>=3&&FS11.boxes.length===0;
-   endSpecial();for(let i=0;i<10;i++)fs11OpeningTick(.05);o['Respawn ticks cannot duplicate the opening supply']=FS11.boxes.length===0&&FS11.pending===null;
-   coopOn=true;run.pilot='cole';run2.pilot='lizzie';player.reset();withSeat(2,()=>player.reset());
-   FS11.boxes=[];special=null;FS11.seat2={special:null,falva:[],wreck:[],storm:null};FS11.pending={stage:1,ready:true,seats:[{seat:1,delivered:false},{seat:2,delivered:false}]};
-   fs11OpeningTick(.01);o['Co-op receives two independently owned starting boxes']=FS11.boxes.length===2&&FS11.boxes[0].pilot==='cole'&&FS11.boxes[1].pilot==='lizzie';
-   for(const q of FS11.boxes)withSeat(q.seat,()=>{q.open=true;q.openT=.3;q.x=player.x;q.y=player.y;});fs11OpeningTick(.01);
-   o['Co-op starting abilities remain with their intended pilots']=special?.pilot==='cole'&&FS11.seat2.special?.pilot==='lizzie';
+   FS11.receipt=null;run.pilot='cole';run.mode='arcade';coopOn=false;
+   for(let n=1;n<=9;n++){
+    FS11.pending={stage:n,ready:true,seats:[{seat:1,delivered:false}]};FS11.boxes=[{seat:1}];
+    startRun(n);
+    o['Stage '+n+' starts without an opening delivery or stale flying box']=FS11.pending===null&&FS11.boxes.length===0;
+   }
+   FS11.pending={stage:2,ready:true};FS11.boxes=[{seat:1}];beginStage(2);
+   o['A normal level transition also discards any stale delivery']=FS11.pending===null&&FS11.boxes.length===0;
+   pilotIndex=PILOTS.findIndex(p=>p.key==='cole');startRun(1);setState(GS.PLAY);
+   BOFCinematicDirector.cancel();story=fb2Talk=s6Opening=null;H3.release=false;AP10_X.intro=null;
+   stagePlan=[];enemies=[];powerups=[];boss=subBoss=null;bossActive=subBossActive=false;player.invuln=999;
+   for(let i=0;i<180;i++)updatePlay(1/60);
+   o['Opening gameplay grants no free special']=!special&&FS11.pending===null&&FS11.boxes.length===0;
+   applyPowerup({kind:'specialicon',x:player.x,y:player.y});
+   o['Normal special pickups still activate the actual base ability']=special?.pilot==='cole'&&special.strikes>=3&&special._fs11Level===1;
+   endSpecial();coopOn=true;pilotIndex=PILOTS.findIndex(p=>p.key==='cole');p2Index=PILOTS.findIndex(p=>p.key==='lizzie');startRun(1);
+   o['Co-op starts without automatic boxes for either seat']=FS11.pending===null&&FS11.boxes.length===0&&!special&&!FS11.seat2.special;
+   for(const seat of seatList())withSeat(seat,()=>applyPowerup({kind:'specialicon',x:player.x,y:player.y}));
+   o['Normal co-op special pickups remain with their intended pilots']=special?.pilot==='cole'&&FS11.seat2.special?.pilot==='lizzie';
    const p1=special.t,p2=FS11.seat2.special.t;updateSpecial(.1);
    o['Both co-op ability windows tick exactly once']=Math.abs(special.t-p1+.1)<1e-8&&Math.abs(FS11.seat2.special.t-p2+.1)<1e-8;
-  }finally{FS11.receipt=sv.receipt;stageLoadReady=sv.ready;fs11ArtReady=sv.art;fs11OpeningLocked=sv.locked;FS11.boxes=sv.boxes;FS11.pending=sv.pending;coopOn=false;endSpecial();}
+  }finally{FS11.receipt=sv.receipt;FS11.boxes=sv.boxes;FS11.pending=sv.pending;coopOn=false;endSpecial();}
   return o;
  })())`,c));
  for(const [name,passed]of Object.entries(out))ok(passed,name);

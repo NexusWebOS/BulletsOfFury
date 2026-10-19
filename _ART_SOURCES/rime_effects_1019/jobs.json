@@ -1,0 +1,75 @@
+{
+  "swirl": {
+    "args": {
+      "description": "FRAME FORMAT: 160 x 160 transparent pixels per frame, fixed pivot 80,80, one constant scale, reserve 12 pixels transparent margins throughout. Loop a glacial reactor charging cyclone: all three ragged icy streams sweep CLOCKWISE around the fixed empty center, sharp tiny frost slivers flow inward along curved paths and disappear at the center while new mist and ice appear around the outer arcs. The vapor curls actively billow, break apart, and reform as the cyclone turns through a full circular revolution, ending seamlessly at the first pose. No camera motion, translation, growth, solid background, mechanical ring or change of palette. Genuine animated frost motion and changing silhouettes, not rigid rotating picture.",
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/65c4f4e4-7e6f-4480-b753-d99fb42b5c46/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/65c4f4e4-7e6f-4480-b753-d99fb42b5c46/download?index=0",
+      "frame_count": 32,
+      "subject_description": "three blue white ragged frost streams circling an empty central reactor aperture",
+      "initial_pose": "centered three armed glacial spiral, center exactly 80,80 and outer ice streams inside the margins",
+      "view": "high top-down",
+      "direction": "south",
+      "enhance_prompt": false,
+      "no_background": true
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: b7523103-745f-45f6-a289-99de8baddc1c\njob_id: b7523103-745f-45f6-a289-99de8baddc1c\ndescription: FRAME FORMAT: 160 x 160 transparent pixels per frame, fixed pivot 80,80, one constant scale, reserve 12 pixels transparent margins throughout. Loop a glacial reactor charging cyclone: all three ragged icy streams sweep CLOCKWISE around the fixed empty center, sharp tiny frost slivers flow inward along curved paths and disappear at the center while new mist and ice appear around the outer arcs. The vapor curls actively billow, break apart, and reform as the cyclone turns through a full circular revolution, ending seamlessly at the first pose. No camera motion, translation, growth, solid background, mechanical ring or change of palette. Genuine animated frost motion and changing silhouettes, not rigid rotating picture.\nframes: 32\nsize: 160x160px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b7523103-745f-45f6-a289-99de8baddc1c\")\nasset_id: 9304f210-50f8-5710-8e30-ecb102a83a37\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "charge": {
+    "args": {
+      "description": "FRAME FORMAT: 160 x 160 transparent pixels per frame, fixed pivot 80,80, one constant scale, preserve 12 pixels transparent margin. Seamless icy reactor charge loop: rolling cobalt and glacial-blue cold mist spirals COUNTERCLOCKWISE into a bright white cyan nucleus that stays exactly centered at 80,80. Tiny icy splinters curve inward and dissolve; curled frost wisps breathe and continually rearrange around it. Brightness gently pulses twice without flashing or changing overall size. Keep the entire cyclone aligned and its nucleus stationary through the full loop, return to the first pose smoothly. No translation, zoom, camera move, rock, electricity, orange fire or solid background.",
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d1ea5290-3a2a-4706-a5e5-5a2fb9c239d2/download?index=2",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/d1ea5290-3a2a-4706-a5e5-5a2fb9c239d2/download?index=2",
+      "frame_count": 32,
+      "subject_description": "an intense white cyan icy reactor nucleus surrounded by a spiral of blue freezing vapor",
+      "initial_pose": "stationary centered bright nucleus inside an irregular blue frost cyclone",
+      "view": "high top-down",
+      "direction": "south",
+      "enhance_prompt": false,
+      "no_background": true
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: c689aa94-a23a-45ba-92e0-3b54a6b50428\njob_id: c689aa94-a23a-45ba-92e0-3b54a6b50428\ndescription: FRAME FORMAT: 160 x 160 transparent pixels per frame, fixed pivot 80,80, one constant scale, preserve 12 pixels transparent margin. Seamless icy reactor charge loop: rolling cobalt and glacial-blue cold mist spirals COUNTERCLOCKWISE into a bright white cyan nucleus that stays exactly centered at 80,80. Tiny icy splinters curve inward and dissolve; curled frost wisps breathe and continually rearrange around it. Brightness gently pulses twice without flashing or changing overall size. Keep the entire cyclone aligned and its nucleus stationary through the full loop, return to the first pose smoothly. No translation, zoom, camera move, rock, electricity, orange fire or solid background.\nframes: 32\nsize: 160x160px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c689aa94-a23a-45ba-92e0-3b54a6b50428\")\nasset_id: f73975ca-d680-5480-a35d-a92667daa084\nasset_status: pending (saved to your gallery when generation completes)"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "mortar": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 1c7580f8-cd7b-4af2-86e9-e512ba117448\njob_id: 1c7580f8-cd7b-4af2-86e9-e512ba117448\ndescription: A narrow column of icy blue-white laser energy flows strongly downward from the fixed top attachment into the fixed bottom impact. Ragged frost ribbons spiral around the straight beam shaft while sharp frozen splinters and cold vapor flicker at its bottom. The beam thickens slightly and pulses internally, with flowing turbulent cryogenic texture. Keep the centerline at x32 and bottom impact at y232 completely fixed, the same64x256 canvas and same scale in all frames. Seamless continuous loop: no camera motion, no sliding sideways, no cropping, no new structures or symbols, no electricity or fire. Match the crisp 1990s arcade pixel-art design of the source.\nframes: 32\nsize: 64x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"1c7580f8-cd7b-4af2-86e9-e512ba117448\")\nasset_id: a54d8517-62fa-5af3-bb19-b01f400be975\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  },
+  "swirl_seed": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 65c4f4e4-7e6f-4480-b753-d99fb42b5c46\njob_id: 65c4f4e4-7e6f-4480-b753-d99fb42b5c46\nmodel: pro\ndescription: FRAME FORMAT:160x160 transparent pixels, shared fixed canvas, center pivot80,80, reserve20px margins. One isolated animated-effect seed for an ICE reactor charging, detailed Bullets of Fury 1990s arcade shooter pixel art. THREE irregular curved streams of sharp tiny icy splinters and ragged cold mist spiral inward around a mostly transparent empty central space. Each stream is an organic swirling wisp with many little pointed ice fragments following its inward curl. An asymmetric frost cyclone seen straight from above, crisp cobalt outlines and bright glacial-blue/white edges, deep blue mist, highly detailed shaded pixel clusters. Not a physical circular object: absolutely no metal, machine, gear, chain, ring of triangles, radial snowflake star, round frame, icon border, crystal ball, text or lightning. The gaps between all three curling icy ribbons are fully transparent.\nsize: 160x160px\ntransparent: True\ncandidates: 4\npalette: 13 colours (Bullets of Fury glacial cobalt and white)\nmax colours: 32 per image\nasset_id: 2c424eb9-b059-548e-8e7f-e365ee8403ed\nasset_status: pending (saved when generation completes)\ncost: 15 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"65c4f4e4-7e6f-4480-b753-d99fb42b5c46\")"
+      }
+    ],
+    "isError": false
+  },
+  "charge_seed": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: d1ea5290-3a2a-4706-a5e5-5a2fb9c239d2\njob_id: d1ea5290-3a2a-4706-a5e5-5a2fb9c239d2\nmodel: pro\ndescription: FRAME FORMAT:160x160 transparent pixels, fixed canvas, pivot80,80, reserve24px margins. One isolated cryogenic REACTOR ENERGY effect seed in detailed Bullets of Fury 1990s arcade shooter pixel art. A small intense irregular white-cyan nucleus suspended inside rolling glacial BLUE cold vapor, wavy flame-like curls made of freezing mist, with a dozen tiny sharp ice slivers floating toward its center. This is weightless glowing frost energy and vapor, NOT a rock, planet or solid ball. The outside dissolves into sparse icy flecks and transparent space. Animated charged cold gas from deep cobalt shadows to glacial-blue to white, crisp shaded pixel clusters and dark blue edging. Asymmetrical dynamic irregular silhouette, no radial symmetry, no mechanical hardware, no icon, snowflake or star symbol, no circle outline or border, no text, lightning, orange fire, green or purple.\nsize: 160x160px\ntransparent: True\ncandidates: 4\npalette: 13 colours (Bullets of Fury glacial cobalt and white)\nmax colours: 32 per image\nasset_id: ff4cb5a2-0cf4-5ce0-9e1e-623df81c6d21\nasset_status: pending (saved when generation completes)\ncost: 15 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"d1ea5290-3a2a-4706-a5e5-5a2fb9c239d2\")"
+      }
+    ],
+    "isError": false
+  }
+}

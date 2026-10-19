@@ -1,0 +1,23 @@
+{
+  "args": {
+    "description": "FRAME FORMAT fixed 128x160 transparency, pivot64,80. Cloaking effect disperses: ragged refraction ribbons break into traveling horizontal scanline slices, each slice fractures into tiny dim pixel shards and vanishes. By the end absolutely nothing remains, clean transparency. Keep the empty center clear throughout. No camera movement, growing blob, portal, ship or solid shape. All motion is within the same fixed canvas.",
+    "first_frame_url": "https://api.pixellab.ai/mcp/images/cbf783f7-7ea3-4a17-8823-6575287bec94/download?index=2",
+    "last_frame_base64": "iVBORw0KGgoAAAANSUhEUgAAAIAAAACgCAYAAADEkmT9AAAAZ0lEQVR4nO3BgQAAAADDoPlTH+ECVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA1wBArwABncp4CwAAAABJRU5ErkJggg==",
+    "frame_count": 16,
+    "initial_pose": "sparse glowing refraction ribbons around an empty center",
+    "subject_description": "an optical stealth refraction effect with no aircraft",
+    "view": "high top-down",
+    "direction": "north",
+    "enhance_prompt": false,
+    "no_background": true
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 67eb748d-765b-4b5f-86e0-9931c3c22a3a\njob_id: 67eb748d-765b-4b5f-86e0-9931c3c22a3a\ndescription: FRAME FORMAT fixed 128x160 transparency, pivot64,80. Cloaking effect disperses: ragged refraction ribbons break into traveling horizontal scanline slices, each slice fractures into tiny dim pixel shards and vanishes. By the end absolutely nothing remains, clean transparency. Keep the empty center clear throughout. No camera movement, growing blob, portal, ship or solid shape. All motion is within the same fixed canvas.\nframes: 16\nsize: 128x160px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"67eb748d-765b-4b5f-86e0-9931c3c22a3a\")\nasset_id: 7ebbc92f-2b98-5e35-897f-99cec9ca9fc8\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  }
+}

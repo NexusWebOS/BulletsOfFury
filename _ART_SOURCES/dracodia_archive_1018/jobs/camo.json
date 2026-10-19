@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 4e48d5b7-e0f2-48cf-b2f1-8a5f50ca5580\njob_id: 4e48d5b7-e0f2-48cf-b2f1-8a5f50ca5580\nmodel: pro\ndescription: RESOLUTION FIRST: one 256x256 RGBA sprite, fixed canvas and center pivot 128,128, even dimensions. Center all physical mass with 24px transparent padding. Bullets of Fury Neo-Geo arcade pixel art, sharp clusters, mechanical volume, dark outlines and bright readable details. No text, labels, UI, scenery or checkerboard. Regenerate the supplied CAMO COLOSSUS old boss as the same recognizable olive spiked armored warship, central long spindle and paired red munition batteries, organic thorn-like wing edges. Preserve its silhouette, palette, facing and distinctive armor. Top-down enemy warship with two clearly separated side weapon assemblies attached to the core. Red ordnance remains red. Black in reference is empty background. Transparent background.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 33fe2267-254e-50ce-ac9a-54d3d9aed2fa\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"4e48d5b7-e0f2-48cf-b2f1-8a5f50ca5580\")"
+    }
+  ],
+  "isError": false
+}

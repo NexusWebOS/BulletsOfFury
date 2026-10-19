@@ -48,7 +48,8 @@ function target17Highway(dt){
  const y=-48,sourceY=levelSrcY()+y,W=worldWidth(),choices=[.50,.42,.58,.35,.65],start=TARGET17.tanks%choices.length;
  let x=null;
  for(let i=0;i<choices.length;i++){const xx=W*choices[(start+i)%choices.length];
-  if(tankDrivable(xx,sourceY,false)&&tankDrivable(xx-23,sourceY,false)&&tankDrivable(xx+23,sourceY,false)){x=xx;break;}}
+  if(tankDrivable(xx,sourceY,false)&&tankDrivable(xx-23,sourceY,false)&&tankDrivable(xx+23,sourceY,false)&&
+   (typeof groundTrafficCanPlace!=='function'||groundTrafficCanPlace(xx,y,100,112))){x=xx;break;}}
  if(x==null){TARGET17.nextTank=.5;return;}
  const e=spawnEnemy('sandtank',x,y,{shoots:true});
  if(e){e._target17Tank=true;TARGET17.tanks++;target17Log('highway-tank',{x,y,sourceY});}

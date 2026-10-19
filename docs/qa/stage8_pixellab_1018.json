@@ -1,0 +1,3926 @@
+{
+  "core": {
+    "passed": 8791,
+    "failed": 0,
+    "exit": 0,
+    "banner": true
+  },
+  "native_total": 257,
+  "reports": {
+    "combat": {
+      "passed": 232,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "native arrival and 32-pose infection reach active phase1",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "poses": 32
+          }
+        },
+        {
+          "name": "infused sixteen genuine native poses and even fixed module canvases",
+          "passed": true,
+          "data": {
+            "unique": 16,
+            "n": 16,
+            "min": 18673,
+            "max": 19096
+          }
+        },
+        {
+          "name": "ghost sixteen genuine native poses and even fixed module canvases",
+          "passed": true,
+          "data": {
+            "unique": 16,
+            "n": 16,
+            "min": 17070,
+            "max": 17187
+          }
+        },
+        {
+          "name": "colossus sixteen genuine native poses and even fixed module canvases",
+          "passed": true,
+          "data": {
+            "unique": 16,
+            "n": 16,
+            "min": 23358,
+            "max": 23525
+          }
+        },
+        {
+          "name": "hammer sixteen genuine native poses and even fixed module canvases",
+          "passed": true,
+          "data": {
+            "unique": 16,
+            "n": 16,
+            "min": 21809,
+            "max": 22629
+          }
+        },
+        {
+          "name": "helicopter sixteen genuine native poses and even fixed module canvases",
+          "passed": true,
+          "data": {
+            "unique": 16,
+            "n": 16,
+            "min": 19981,
+            "max": 20330
+          }
+        },
+        {
+          "name": "harrier sixteen genuine native poses and even fixed module canvases",
+          "passed": true,
+          "data": {
+            "unique": 16,
+            "n": 16,
+            "min": 13623,
+            "max": 14012
+          }
+        },
+        {
+          "name": "volcano sixteen genuine native poses and even fixed module canvases",
+          "passed": true,
+          "data": {
+            "unique": 16,
+            "n": 16,
+            "min": 28821,
+            "max": 29149
+          }
+        },
+        {
+          "name": "normal infused repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 0,
+            "form": 0,
+            "diff": "normal",
+            "name": "infused",
+            "hp": 3770,
+            "shots": 36,
+            "attacks": [
+              {
+                "type": "claws",
+                "tell": 1.1
+              },
+              {
+                "type": "guns",
+                "tell": 1.1
+              },
+              {
+                "type": "crossbeam",
+                "tell": 1.1
+              },
+              {
+                "type": "claws",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal infused three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 0,
+            "form": 0,
+            "diff": "normal",
+            "name": "infused",
+            "hp": 3770,
+            "shots": 36,
+            "attacks": [
+              {
+                "type": "claws",
+                "tell": 1.1
+              },
+              {
+                "type": "guns",
+                "tell": 1.1
+              },
+              {
+                "type": "crossbeam",
+                "tell": 1.1
+              },
+              {
+                "type": "claws",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal infused core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 28649,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal infused core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal infused left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 28615,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal infused left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal infused right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 28615,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal infused right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal infused destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "infused actual centred J primary can damage core",
+          "passed": true,
+          "data": {
+            "before": 2862.9,
+            "hp": 2814.299999999998
+          }
+        },
+        {
+          "name": "normal ghost repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "form": 0,
+            "diff": "normal",
+            "name": "ghost",
+            "hp": 4290,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "ghostRail",
+                "tell": 1.1
+              },
+              {
+                "type": "pincer",
+                "tell": 1.1
+              },
+              {
+                "type": "voidbombs",
+                "tell": 1.1
+              },
+              {
+                "type": "ghostRail",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal ghost three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "form": 0,
+            "diff": "normal",
+            "name": "ghost",
+            "hp": 4290,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "ghostRail",
+                "tell": 1.1
+              },
+              {
+                "type": "pincer",
+                "tell": 1.1
+              },
+              {
+                "type": "voidbombs",
+                "tell": 1.1
+              },
+              {
+                "type": "ghostRail",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal ghost core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 26967,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal ghost core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal ghost left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 26956,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal ghost left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal ghost right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 26956,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal ghost right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal ghost destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "ghost actual centred J primary can damage core",
+          "passed": true,
+          "data": {
+            "before": 3257.9,
+            "hp": 3205.2499999999977
+          }
+        },
+        {
+          "name": "normal colossus repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 0,
+            "diff": "normal",
+            "name": "colossus",
+            "hp": 3380,
+            "shots": 64,
+            "attacks": [
+              {
+                "type": "tentacles",
+                "tell": 1.1
+              },
+              {
+                "type": "voidfan",
+                "tell": 1.1
+              },
+              {
+                "type": "codewall",
+                "tell": 1.1
+              },
+              {
+                "type": "tentacles",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal colossus three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 0,
+            "diff": "normal",
+            "name": "colossus",
+            "hp": 3380,
+            "shots": 64,
+            "attacks": [
+              {
+                "type": "tentacles",
+                "tell": 1.1
+              },
+              {
+                "type": "voidfan",
+                "tell": 1.1
+              },
+              {
+                "type": "codewall",
+                "tell": 1.1
+              },
+              {
+                "type": "tentacles",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal colossus core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 35689,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal colossus core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal colossus left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 35723,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal colossus left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal colossus right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 35723,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal colossus right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal colossus destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "colossus actual centred J primary can damage core",
+          "passed": true,
+          "data": {
+            "before": 2565.9,
+            "hp": 2513.2499999999977
+          }
+        },
+        {
+          "name": "normal hammer repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 8,
+            "diff": "normal",
+            "name": "hammer",
+            "hp": 3120,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "hammerSwing",
+                "tell": 1.1
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 1.1
+              },
+              {
+                "type": "jump",
+                "tell": 1.1
+              },
+              {
+                "type": "hammerSwing",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal hammer three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 8,
+            "diff": "normal",
+            "name": "hammer",
+            "hp": 3120,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "hammerSwing",
+                "tell": 1.1
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 1.1
+              },
+              {
+                "type": "jump",
+                "tell": 1.1
+              },
+              {
+                "type": "hammerSwing",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal hammer core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 33769,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal hammer core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal hammer left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 33734,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal hammer left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal hammer right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 33734,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal hammer right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal hammer destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hammer actual centred J primary can damage core",
+          "passed": true,
+          "data": {
+            "before": 2368.9,
+            "hp": 2320.299999999998
+          }
+        },
+        {
+          "name": "normal helicopter repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 1,
+            "diff": "normal",
+            "name": "helicopter",
+            "hp": 2340,
+            "shots": 70,
+            "attacks": [
+              {
+                "type": "rotorgun",
+                "tell": 1.1
+              },
+              {
+                "type": "missiles",
+                "tell": 1.1
+              },
+              {
+                "type": "bombs",
+                "tell": 1.1
+              },
+              {
+                "type": "rotorgun",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal helicopter three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 1,
+            "diff": "normal",
+            "name": "helicopter",
+            "hp": 2340,
+            "shots": 70,
+            "attacks": [
+              {
+                "type": "rotorgun",
+                "tell": 1.1
+              },
+              {
+                "type": "missiles",
+                "tell": 1.1
+              },
+              {
+                "type": "bombs",
+                "tell": 1.1
+              },
+              {
+                "type": "rotorgun",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal helicopter core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 32069,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal helicopter core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal helicopter left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 31954,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal helicopter left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal helicopter right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 31954,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal helicopter right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal helicopter destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "helicopter actual centred J primary can damage core",
+          "passed": true,
+          "data": {
+            "before": 1775.9,
+            "hp": 1727.3000000000006
+          }
+        },
+        {
+          "name": "normal harrier repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 6,
+            "diff": "normal",
+            "name": "harrier",
+            "hp": 2861,
+            "shots": 32,
+            "attacks": [
+              {
+                "type": "fanbeam",
+                "tell": 1.1
+              },
+              {
+                "type": "missiles",
+                "tell": 1.1
+              },
+              {
+                "type": "wind",
+                "tell": 1.1
+              },
+              {
+                "type": "fanbeam",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal harrier three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 6,
+            "diff": "normal",
+            "name": "harrier",
+            "hp": 2861,
+            "shots": 32,
+            "attacks": [
+              {
+                "type": "fanbeam",
+                "tell": 1.1
+              },
+              {
+                "type": "missiles",
+                "tell": 1.1
+              },
+              {
+                "type": "wind",
+                "tell": 1.1
+              },
+              {
+                "type": "fanbeam",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal harrier core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 21110,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal harrier core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal harrier left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 21166,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal harrier left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal harrier right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 21166,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal harrier right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal harrier destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "harrier actual centred J primary can damage core",
+          "passed": true,
+          "data": {
+            "before": 2171.9,
+            "hp": 2123.299999999998
+          }
+        },
+        {
+          "name": "normal volcano repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 2,
+            "diff": "normal",
+            "name": "volcano",
+            "hp": 2600,
+            "shots": 84,
+            "attacks": [
+              {
+                "type": "magma",
+                "tell": 1.1
+              },
+              {
+                "type": "flamethrower",
+                "tell": 1.1
+              },
+              {
+                "type": "firewall",
+                "tell": 1.1
+              },
+              {
+                "type": "magma",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal volcano three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 2,
+            "diff": "normal",
+            "name": "volcano",
+            "hp": 2600,
+            "shots": 84,
+            "attacks": [
+              {
+                "type": "magma",
+                "tell": 1.1
+              },
+              {
+                "type": "flamethrower",
+                "tell": 1.1
+              },
+              {
+                "type": "firewall",
+                "tell": 1.1
+              },
+              {
+                "type": "magma",
+                "tell": 1.1
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "normal volcano core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 46697,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal volcano core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal volcano left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 46722,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal volcano left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal volcano right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 46722,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal volcano right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal volcano destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "volcano actual centred J primary can damage core",
+          "passed": true,
+          "data": {
+            "before": 1973.9,
+            "hp": 1925.3000000000006
+          }
+        },
+        {
+          "name": "hard infused repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 0,
+            "form": 0,
+            "diff": "hard",
+            "name": "infused",
+            "hp": 4785,
+            "shots": 56,
+            "attacks": [
+              {
+                "type": "claws",
+                "tell": 0.96
+              },
+              {
+                "type": "guns",
+                "tell": 0.96
+              },
+              {
+                "type": "crossbeam",
+                "tell": 0.96
+              },
+              {
+                "type": "claws",
+                "tell": 0.96
+              },
+              {
+                "type": "guns",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard infused three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 0,
+            "form": 0,
+            "diff": "hard",
+            "name": "infused",
+            "hp": 4785,
+            "shots": 56,
+            "attacks": [
+              {
+                "type": "claws",
+                "tell": 0.96
+              },
+              {
+                "type": "guns",
+                "tell": 0.96
+              },
+              {
+                "type": "crossbeam",
+                "tell": 0.96
+              },
+              {
+                "type": "claws",
+                "tell": 0.96
+              },
+              {
+                "type": "guns",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard infused core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 28645,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard infused core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard infused left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 28615,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard infused left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard infused right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 28615,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard infused right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard infused destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ghost repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "form": 0,
+            "diff": "hard",
+            "name": "ghost",
+            "hp": 5445,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "ghostRail",
+                "tell": 0.96
+              },
+              {
+                "type": "pincer",
+                "tell": 0.96
+              },
+              {
+                "type": "voidbombs",
+                "tell": 0.96
+              },
+              {
+                "type": "ghostRail",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard ghost three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "form": 0,
+            "diff": "hard",
+            "name": "ghost",
+            "hp": 5445,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "ghostRail",
+                "tell": 0.96
+              },
+              {
+                "type": "pincer",
+                "tell": 0.96
+              },
+              {
+                "type": "voidbombs",
+                "tell": 0.96
+              },
+              {
+                "type": "ghostRail",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard ghost core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 26973,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard ghost core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ghost left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 26956,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard ghost left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ghost right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 26956,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard ghost right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard ghost destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard colossus repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 0,
+            "diff": "hard",
+            "name": "colossus",
+            "hp": 4290,
+            "shots": 94,
+            "attacks": [
+              {
+                "type": "tentacles",
+                "tell": 0.96
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.96
+              },
+              {
+                "type": "codewall",
+                "tell": 0.96
+              },
+              {
+                "type": "tentacles",
+                "tell": 0.96
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard colossus three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 0,
+            "diff": "hard",
+            "name": "colossus",
+            "hp": 4290,
+            "shots": 94,
+            "attacks": [
+              {
+                "type": "tentacles",
+                "tell": 0.96
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.96
+              },
+              {
+                "type": "codewall",
+                "tell": 0.96
+              },
+              {
+                "type": "tentacles",
+                "tell": 0.96
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard colossus core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 35659,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard colossus core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard colossus left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 35723,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard colossus left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard colossus right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 35723,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard colossus right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard colossus destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard hammer repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 8,
+            "diff": "hard",
+            "name": "hammer",
+            "hp": 3960,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "hammerSwing",
+                "tell": 0.96
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.96
+              },
+              {
+                "type": "jump",
+                "tell": 0.96
+              },
+              {
+                "type": "hammerSwing",
+                "tell": 0.96
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard hammer three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 8,
+            "diff": "hard",
+            "name": "hammer",
+            "hp": 3960,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "hammerSwing",
+                "tell": 0.96
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.96
+              },
+              {
+                "type": "jump",
+                "tell": 0.96
+              },
+              {
+                "type": "hammerSwing",
+                "tell": 0.96
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard hammer core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 33874,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard hammer core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard hammer left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 33734,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard hammer left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard hammer right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 33734,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard hammer right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard hammer destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard helicopter repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 1,
+            "diff": "hard",
+            "name": "helicopter",
+            "hp": 2970,
+            "shots": 110,
+            "attacks": [
+              {
+                "type": "rotorgun",
+                "tell": 0.96
+              },
+              {
+                "type": "missiles",
+                "tell": 0.96
+              },
+              {
+                "type": "bombs",
+                "tell": 0.96
+              },
+              {
+                "type": "rotorgun",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard helicopter three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 1,
+            "diff": "hard",
+            "name": "helicopter",
+            "hp": 2970,
+            "shots": 110,
+            "attacks": [
+              {
+                "type": "rotorgun",
+                "tell": 0.96
+              },
+              {
+                "type": "missiles",
+                "tell": 0.96
+              },
+              {
+                "type": "bombs",
+                "tell": 0.96
+              },
+              {
+                "type": "rotorgun",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard helicopter core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 32043,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard helicopter core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard helicopter left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 31954,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard helicopter left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard helicopter right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 31954,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard helicopter right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard helicopter destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard harrier repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 6,
+            "diff": "hard",
+            "name": "harrier",
+            "hp": 3631,
+            "shots": 32,
+            "attacks": [
+              {
+                "type": "fanbeam",
+                "tell": 0.96
+              },
+              {
+                "type": "missiles",
+                "tell": 0.96
+              },
+              {
+                "type": "wind",
+                "tell": 0.96
+              },
+              {
+                "type": "fanbeam",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard harrier three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 6,
+            "diff": "hard",
+            "name": "harrier",
+            "hp": 3631,
+            "shots": 32,
+            "attacks": [
+              {
+                "type": "fanbeam",
+                "tell": 0.96
+              },
+              {
+                "type": "missiles",
+                "tell": 0.96
+              },
+              {
+                "type": "wind",
+                "tell": 0.96
+              },
+              {
+                "type": "fanbeam",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard harrier core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 21195,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard harrier core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard harrier left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 21166,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard harrier left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard harrier right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 21166,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard harrier right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard harrier destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard volcano repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 2,
+            "diff": "hard",
+            "name": "volcano",
+            "hp": 3300,
+            "shots": 136,
+            "attacks": [
+              {
+                "type": "magma",
+                "tell": 0.96
+              },
+              {
+                "type": "flamethrower",
+                "tell": 0.96
+              },
+              {
+                "type": "firewall",
+                "tell": 0.96
+              },
+              {
+                "type": "magma",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard volcano three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 2,
+            "diff": "hard",
+            "name": "volcano",
+            "hp": 3300,
+            "shots": 136,
+            "attacks": [
+              {
+                "type": "magma",
+                "tell": 0.96
+              },
+              {
+                "type": "flamethrower",
+                "tell": 0.96
+              },
+              {
+                "type": "firewall",
+                "tell": 0.96
+              },
+              {
+                "type": "magma",
+                "tell": 0.96
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "hard volcano core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 46658,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard volcano core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard volcano left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 46722,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard volcano left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard volcano right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 46722,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard volcano right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard volcano destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious infused repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 0,
+            "form": 0,
+            "diff": "furious",
+            "name": "infused",
+            "hp": 5945,
+            "shots": 116,
+            "attacks": [
+              {
+                "type": "claws",
+                "tell": 0.82
+              },
+              {
+                "type": "guns",
+                "tell": 0.82
+              },
+              {
+                "type": "crossbeam",
+                "tell": 0.82
+              },
+              {
+                "type": "claws",
+                "tell": 0.82
+              },
+              {
+                "type": "guns",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious infused three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 0,
+            "form": 0,
+            "diff": "furious",
+            "name": "infused",
+            "hp": 5945,
+            "shots": 116,
+            "attacks": [
+              {
+                "type": "claws",
+                "tell": 0.82
+              },
+              {
+                "type": "guns",
+                "tell": 0.82
+              },
+              {
+                "type": "crossbeam",
+                "tell": 0.82
+              },
+              {
+                "type": "claws",
+                "tell": 0.82
+              },
+              {
+                "type": "guns",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious infused core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 28604,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious infused core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious infused left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 28615,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious infused left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious infused right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 28615,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious infused right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious infused destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ghost repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "form": 0,
+            "diff": "furious",
+            "name": "ghost",
+            "hp": 6765,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "ghostRail",
+                "tell": 0.82
+              },
+              {
+                "type": "pincer",
+                "tell": 0.82
+              },
+              {
+                "type": "voidbombs",
+                "tell": 0.82
+              },
+              {
+                "type": "ghostRail",
+                "tell": 0.82
+              },
+              {
+                "type": "pincer",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious ghost three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "form": 0,
+            "diff": "furious",
+            "name": "ghost",
+            "hp": 6765,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "ghostRail",
+                "tell": 0.82
+              },
+              {
+                "type": "pincer",
+                "tell": 0.82
+              },
+              {
+                "type": "voidbombs",
+                "tell": 0.82
+              },
+              {
+                "type": "ghostRail",
+                "tell": 0.82
+              },
+              {
+                "type": "pincer",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious ghost core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 26957,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious ghost core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ghost left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 26956,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious ghost left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ghost right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 26956,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious ghost right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious ghost destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious colossus repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 0,
+            "diff": "furious",
+            "name": "colossus",
+            "hp": 5330,
+            "shots": 150,
+            "attacks": [
+              {
+                "type": "tentacles",
+                "tell": 0.82
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.82
+              },
+              {
+                "type": "codewall",
+                "tell": 0.82
+              },
+              {
+                "type": "tentacles",
+                "tell": 0.82
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious colossus three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 0,
+            "diff": "furious",
+            "name": "colossus",
+            "hp": 5330,
+            "shots": 150,
+            "attacks": [
+              {
+                "type": "tentacles",
+                "tell": 0.82
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.82
+              },
+              {
+                "type": "codewall",
+                "tell": 0.82
+              },
+              {
+                "type": "tentacles",
+                "tell": 0.82
+              },
+              {
+                "type": "voidfan",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious colossus core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 35604,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious colossus core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious colossus left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 35723,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious colossus left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious colossus right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 35723,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious colossus right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious colossus destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious hammer repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 8,
+            "diff": "furious",
+            "name": "hammer",
+            "hp": 4920,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "hammerSwing",
+                "tell": 0.82
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.82
+              },
+              {
+                "type": "jump",
+                "tell": 0.82
+              },
+              {
+                "type": "hammerSwing",
+                "tell": 0.82
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious hammer three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 8,
+            "diff": "furious",
+            "name": "hammer",
+            "hp": 4920,
+            "shots": 0,
+            "attacks": [
+              {
+                "type": "hammerSwing",
+                "tell": 0.82
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.82
+              },
+              {
+                "type": "jump",
+                "tell": 0.82
+              },
+              {
+                "type": "hammerSwing",
+                "tell": 0.82
+              },
+              {
+                "type": "chromiumBeams",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious hammer core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 33737,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious hammer core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious hammer left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 33734,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious hammer left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious hammer right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 33734,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious hammer right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious hammer destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious helicopter repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 1,
+            "diff": "furious",
+            "name": "helicopter",
+            "hp": 3690,
+            "shots": 136,
+            "attacks": [
+              {
+                "type": "rotorgun",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              },
+              {
+                "type": "bombs",
+                "tell": 0.82
+              },
+              {
+                "type": "rotorgun",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious helicopter three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 1,
+            "diff": "furious",
+            "name": "helicopter",
+            "hp": 3690,
+            "shots": 136,
+            "attacks": [
+              {
+                "type": "rotorgun",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              },
+              {
+                "type": "bombs",
+                "tell": 0.82
+              },
+              {
+                "type": "rotorgun",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious helicopter core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 31973,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious helicopter core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious helicopter left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 31954,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious helicopter left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious helicopter right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 31954,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious helicopter right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious helicopter destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious harrier repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 6,
+            "diff": "furious",
+            "name": "harrier",
+            "hp": 4510,
+            "shots": 34,
+            "attacks": [
+              {
+                "type": "fanbeam",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              },
+              {
+                "type": "wind",
+                "tell": 0.82
+              },
+              {
+                "type": "fanbeam",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious harrier three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 6,
+            "diff": "furious",
+            "name": "harrier",
+            "hp": 4510,
+            "shots": 34,
+            "attacks": [
+              {
+                "type": "fanbeam",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              },
+              {
+                "type": "wind",
+                "tell": 0.82
+              },
+              {
+                "type": "fanbeam",
+                "tell": 0.82
+              },
+              {
+                "type": "missiles",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious harrier core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 21136,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious harrier core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious harrier left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 21166,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious harrier left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious harrier right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 21166,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious harrier right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious harrier destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious volcano repeatedly releases its distinct attacks",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 2,
+            "diff": "furious",
+            "name": "volcano",
+            "hp": 4100,
+            "shots": 168,
+            "attacks": [
+              {
+                "type": "magma",
+                "tell": 0.82
+              },
+              {
+                "type": "flamethrower",
+                "tell": 0.82
+              },
+              {
+                "type": "firewall",
+                "tell": 0.82
+              },
+              {
+                "type": "magma",
+                "tell": 0.82
+              },
+              {
+                "type": "flamethrower",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious volcano three real native Retina modules",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 2,
+            "diff": "furious",
+            "name": "volcano",
+            "hp": 4100,
+            "shots": 168,
+            "attacks": [
+              {
+                "type": "magma",
+                "tell": 0.82
+              },
+              {
+                "type": "flamethrower",
+                "tell": 0.82
+              },
+              {
+                "type": "firewall",
+                "tell": 0.82
+              },
+              {
+                "type": "magma",
+                "tell": 0.82
+              },
+              {
+                "type": "flamethrower",
+                "tell": 0.82
+              }
+            ],
+            "targets": 3,
+            "mode": "fight",
+            "draws": 48
+          }
+        },
+        {
+          "name": "furious volcano core real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "core",
+            "pixels": 46711,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious volcano core flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious volcano left real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "left",
+            "pixels": 46722,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious volcano left flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious volcano right real damaged pixels flash",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "selected": "right",
+            "pixels": 46722,
+            "flash": 0.12,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious volcano right flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious volcano destroyed weapon removes its pixels, muzzle and lock",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "infused warning reactions tighten on Hard and Furious",
+          "passed": true,
+          "data": [
+            {
+              "type": "claws",
+              "tell": 1.1
+            },
+            {
+              "type": "claws",
+              "tell": 0.96
+            },
+            {
+              "type": "claws",
+              "tell": 0.82
+            }
+          ]
+        },
+        {
+          "name": "ghost warning reactions tighten on Hard and Furious",
+          "passed": true,
+          "data": [
+            {
+              "type": "ghostRail",
+              "tell": 1.1
+            },
+            {
+              "type": "ghostRail",
+              "tell": 0.96
+            },
+            {
+              "type": "ghostRail",
+              "tell": 0.82
+            }
+          ]
+        },
+        {
+          "name": "colossus warning reactions tighten on Hard and Furious",
+          "passed": true,
+          "data": [
+            {
+              "type": "tentacles",
+              "tell": 1.1
+            },
+            {
+              "type": "tentacles",
+              "tell": 0.96
+            },
+            {
+              "type": "tentacles",
+              "tell": 0.82
+            }
+          ]
+        },
+        {
+          "name": "hammer warning reactions tighten on Hard and Furious",
+          "passed": true,
+          "data": [
+            {
+              "type": "hammerSwing",
+              "tell": 1.1
+            },
+            {
+              "type": "hammerSwing",
+              "tell": 0.96
+            },
+            {
+              "type": "hammerSwing",
+              "tell": 0.82
+            }
+          ]
+        },
+        {
+          "name": "helicopter warning reactions tighten on Hard and Furious",
+          "passed": true,
+          "data": [
+            {
+              "type": "rotorgun",
+              "tell": 1.1
+            },
+            {
+              "type": "rotorgun",
+              "tell": 0.96
+            },
+            {
+              "type": "rotorgun",
+              "tell": 0.82
+            }
+          ]
+        },
+        {
+          "name": "harrier warning reactions tighten on Hard and Furious",
+          "passed": true,
+          "data": [
+            {
+              "type": "fanbeam",
+              "tell": 1.1
+            },
+            {
+              "type": "fanbeam",
+              "tell": 0.96
+            },
+            {
+              "type": "fanbeam",
+              "tell": 0.82
+            }
+          ]
+        },
+        {
+          "name": "volcano warning reactions tighten on Hard and Furious",
+          "passed": true,
+          "data": [
+            {
+              "type": "magma",
+              "tell": 1.1
+            },
+            {
+              "type": "magma",
+              "tell": 0.96
+            },
+            {
+              "type": "magma",
+              "tell": 0.82
+            }
+          ]
+        },
+        {
+          "name": "conversion every generated pose draws distinctly through native game context",
+          "passed": true,
+          "data": {
+            "count": 32,
+            "unique": 32
+          }
+        },
+        {
+          "name": "ghost_emerge every generated pose draws distinctly through native game context",
+          "passed": true,
+          "data": {
+            "count": 24,
+            "unique": 24
+          }
+        },
+        {
+          "name": "colossus_emerge every generated pose draws distinctly through native game context",
+          "passed": true,
+          "data": {
+            "count": 24,
+            "unique": 24
+          }
+        },
+        {
+          "name": "morph_hammer every generated pose draws distinctly through native game context",
+          "passed": true,
+          "data": {
+            "count": 16,
+            "unique": 16
+          }
+        },
+        {
+          "name": "morph_helicopter every generated pose draws distinctly through native game context",
+          "passed": true,
+          "data": {
+            "count": 16,
+            "unique": 16
+          }
+        },
+        {
+          "name": "morph_harrier every generated pose draws distinctly through native game context",
+          "passed": true,
+          "data": {
+            "count": 16,
+            "unique": 16
+          }
+        },
+        {
+          "name": "morph_volcano every generated pose draws distinctly through native game context",
+          "passed": true,
+          "data": {
+            "count": 16,
+            "unique": 16
+          }
+        },
+        {
+          "name": "phase1 background has not switched before blackout",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "phase2 arena switches only at full blackout",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "phase2 reform fully restores gameplay without old hazards",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "phase3 owns exactly main plus four finite health pools",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "the established Dracodia speech survives the new reform",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Dracodia speech ends in a damageable main form",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "timer visits exactly Hammer helicopter Harrier volcano without retired forms",
+          "passed": true,
+          "data": [
+            8,
+            1,
+            6,
+            2
+          ]
+        },
+        {
+          "name": "destroyed form 8 stays depleted and returns to main",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "destroyed form 1 stays depleted and returns to main",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "destroyed form 6 stays depleted and returns to main",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "destroyed form 2 stays depleted and returns to main",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "all five forms feed the one established Dracodia final death",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "native red portal and reunion award one final stage clear",
+          "passed": true,
+          "data": {
+            "state": "stageclear",
+            "mode": "done",
+            "cleared": true,
+            "returned": true
+          }
+        },
+        {
+          "name": "no page console drawing or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": [],
+      "observations": [
+        {
+          "phase": 0,
+          "form": 0,
+          "diff": "normal",
+          "name": "infused",
+          "hp": 3770,
+          "shots": 36,
+          "attacks": [
+            {
+              "type": "claws",
+              "tell": 1.1
+            },
+            {
+              "type": "guns",
+              "tell": 1.1
+            },
+            {
+              "type": "crossbeam",
+              "tell": 1.1
+            },
+            {
+              "type": "claws",
+              "tell": 1.1
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 1,
+          "form": 0,
+          "diff": "normal",
+          "name": "ghost",
+          "hp": 4290,
+          "shots": 0,
+          "attacks": [
+            {
+              "type": "ghostRail",
+              "tell": 1.1
+            },
+            {
+              "type": "pincer",
+              "tell": 1.1
+            },
+            {
+              "type": "voidbombs",
+              "tell": 1.1
+            },
+            {
+              "type": "ghostRail",
+              "tell": 1.1
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 0,
+          "diff": "normal",
+          "name": "colossus",
+          "hp": 3380,
+          "shots": 64,
+          "attacks": [
+            {
+              "type": "tentacles",
+              "tell": 1.1
+            },
+            {
+              "type": "voidfan",
+              "tell": 1.1
+            },
+            {
+              "type": "codewall",
+              "tell": 1.1
+            },
+            {
+              "type": "tentacles",
+              "tell": 1.1
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 8,
+          "diff": "normal",
+          "name": "hammer",
+          "hp": 3120,
+          "shots": 0,
+          "attacks": [
+            {
+              "type": "hammerSwing",
+              "tell": 1.1
+            },
+            {
+              "type": "chromiumBeams",
+              "tell": 1.1
+            },
+            {
+              "type": "jump",
+              "tell": 1.1
+            },
+            {
+              "type": "hammerSwing",
+              "tell": 1.1
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 1,
+          "diff": "normal",
+          "name": "helicopter",
+          "hp": 2340,
+          "shots": 70,
+          "attacks": [
+            {
+              "type": "rotorgun",
+              "tell": 1.1
+            },
+            {
+              "type": "missiles",
+              "tell": 1.1
+            },
+            {
+              "type": "bombs",
+              "tell": 1.1
+            },
+            {
+              "type": "rotorgun",
+              "tell": 1.1
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 6,
+          "diff": "normal",
+          "name": "harrier",
+          "hp": 2861,
+          "shots": 32,
+          "attacks": [
+            {
+              "type": "fanbeam",
+              "tell": 1.1
+            },
+            {
+              "type": "missiles",
+              "tell": 1.1
+            },
+            {
+              "type": "wind",
+              "tell": 1.1
+            },
+            {
+              "type": "fanbeam",
+              "tell": 1.1
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 2,
+          "diff": "normal",
+          "name": "volcano",
+          "hp": 2600,
+          "shots": 84,
+          "attacks": [
+            {
+              "type": "magma",
+              "tell": 1.1
+            },
+            {
+              "type": "flamethrower",
+              "tell": 1.1
+            },
+            {
+              "type": "firewall",
+              "tell": 1.1
+            },
+            {
+              "type": "magma",
+              "tell": 1.1
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 0,
+          "form": 0,
+          "diff": "hard",
+          "name": "infused",
+          "hp": 4785,
+          "shots": 56,
+          "attacks": [
+            {
+              "type": "claws",
+              "tell": 0.96
+            },
+            {
+              "type": "guns",
+              "tell": 0.96
+            },
+            {
+              "type": "crossbeam",
+              "tell": 0.96
+            },
+            {
+              "type": "claws",
+              "tell": 0.96
+            },
+            {
+              "type": "guns",
+              "tell": 0.96
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 1,
+          "form": 0,
+          "diff": "hard",
+          "name": "ghost",
+          "hp": 5445,
+          "shots": 0,
+          "attacks": [
+            {
+              "type": "ghostRail",
+              "tell": 0.96
+            },
+            {
+              "type": "pincer",
+              "tell": 0.96
+            },
+            {
+              "type": "voidbombs",
+              "tell": 0.96
+            },
+            {
+              "type": "ghostRail",
+              "tell": 0.96
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 0,
+          "diff": "hard",
+          "name": "colossus",
+          "hp": 4290,
+          "shots": 94,
+          "attacks": [
+            {
+              "type": "tentacles",
+              "tell": 0.96
+            },
+            {
+              "type": "voidfan",
+              "tell": 0.96
+            },
+            {
+              "type": "codewall",
+              "tell": 0.96
+            },
+            {
+              "type": "tentacles",
+              "tell": 0.96
+            },
+            {
+              "type": "voidfan",
+              "tell": 0.96
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 8,
+          "diff": "hard",
+          "name": "hammer",
+          "hp": 3960,
+          "shots": 0,
+          "attacks": [
+            {
+              "type": "hammerSwing",
+              "tell": 0.96
+            },
+            {
+              "type": "chromiumBeams",
+              "tell": 0.96
+            },
+            {
+              "type": "jump",
+              "tell": 0.96
+            },
+            {
+              "type": "hammerSwing",
+              "tell": 0.96
+            },
+            {
+              "type": "chromiumBeams",
+              "tell": 0.96
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 1,
+          "diff": "hard",
+          "name": "helicopter",
+          "hp": 2970,
+          "shots": 110,
+          "attacks": [
+            {
+              "type": "rotorgun",
+              "tell": 0.96
+            },
+            {
+              "type": "missiles",
+              "tell": 0.96
+            },
+            {
+              "type": "bombs",
+              "tell": 0.96
+            },
+            {
+              "type": "rotorgun",
+              "tell": 0.96
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 6,
+          "diff": "hard",
+          "name": "harrier",
+          "hp": 3631,
+          "shots": 32,
+          "attacks": [
+            {
+              "type": "fanbeam",
+              "tell": 0.96
+            },
+            {
+              "type": "missiles",
+              "tell": 0.96
+            },
+            {
+              "type": "wind",
+              "tell": 0.96
+            },
+            {
+              "type": "fanbeam",
+              "tell": 0.96
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 2,
+          "diff": "hard",
+          "name": "volcano",
+          "hp": 3300,
+          "shots": 136,
+          "attacks": [
+            {
+              "type": "magma",
+              "tell": 0.96
+            },
+            {
+              "type": "flamethrower",
+              "tell": 0.96
+            },
+            {
+              "type": "firewall",
+              "tell": 0.96
+            },
+            {
+              "type": "magma",
+              "tell": 0.96
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 0,
+          "form": 0,
+          "diff": "furious",
+          "name": "infused",
+          "hp": 5945,
+          "shots": 116,
+          "attacks": [
+            {
+              "type": "claws",
+              "tell": 0.82
+            },
+            {
+              "type": "guns",
+              "tell": 0.82
+            },
+            {
+              "type": "crossbeam",
+              "tell": 0.82
+            },
+            {
+              "type": "claws",
+              "tell": 0.82
+            },
+            {
+              "type": "guns",
+              "tell": 0.82
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 1,
+          "form": 0,
+          "diff": "furious",
+          "name": "ghost",
+          "hp": 6765,
+          "shots": 0,
+          "attacks": [
+            {
+              "type": "ghostRail",
+              "tell": 0.82
+            },
+            {
+              "type": "pincer",
+              "tell": 0.82
+            },
+            {
+              "type": "voidbombs",
+              "tell": 0.82
+            },
+            {
+              "type": "ghostRail",
+              "tell": 0.82
+            },
+            {
+              "type": "pincer",
+              "tell": 0.82
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 0,
+          "diff": "furious",
+          "name": "colossus",
+          "hp": 5330,
+          "shots": 150,
+          "attacks": [
+            {
+              "type": "tentacles",
+              "tell": 0.82
+            },
+            {
+              "type": "voidfan",
+              "tell": 0.82
+            },
+            {
+              "type": "codewall",
+              "tell": 0.82
+            },
+            {
+              "type": "tentacles",
+              "tell": 0.82
+            },
+            {
+              "type": "voidfan",
+              "tell": 0.82
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 8,
+          "diff": "furious",
+          "name": "hammer",
+          "hp": 4920,
+          "shots": 0,
+          "attacks": [
+            {
+              "type": "hammerSwing",
+              "tell": 0.82
+            },
+            {
+              "type": "chromiumBeams",
+              "tell": 0.82
+            },
+            {
+              "type": "jump",
+              "tell": 0.82
+            },
+            {
+              "type": "hammerSwing",
+              "tell": 0.82
+            },
+            {
+              "type": "chromiumBeams",
+              "tell": 0.82
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 1,
+          "diff": "furious",
+          "name": "helicopter",
+          "hp": 3690,
+          "shots": 136,
+          "attacks": [
+            {
+              "type": "rotorgun",
+              "tell": 0.82
+            },
+            {
+              "type": "missiles",
+              "tell": 0.82
+            },
+            {
+              "type": "bombs",
+              "tell": 0.82
+            },
+            {
+              "type": "rotorgun",
+              "tell": 0.82
+            },
+            {
+              "type": "missiles",
+              "tell": 0.82
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 6,
+          "diff": "furious",
+          "name": "harrier",
+          "hp": 4510,
+          "shots": 34,
+          "attacks": [
+            {
+              "type": "fanbeam",
+              "tell": 0.82
+            },
+            {
+              "type": "missiles",
+              "tell": 0.82
+            },
+            {
+              "type": "wind",
+              "tell": 0.82
+            },
+            {
+              "type": "fanbeam",
+              "tell": 0.82
+            },
+            {
+              "type": "missiles",
+              "tell": 0.82
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        },
+        {
+          "phase": 2,
+          "form": 2,
+          "diff": "furious",
+          "name": "volcano",
+          "hp": 4100,
+          "shots": 168,
+          "attacks": [
+            {
+              "type": "magma",
+              "tell": 0.82
+            },
+            {
+              "type": "flamethrower",
+              "tell": 0.82
+            },
+            {
+              "type": "firewall",
+              "tell": 0.82
+            },
+            {
+              "type": "magma",
+              "tell": 0.82
+            },
+            {
+              "type": "flamethrower",
+              "tell": 0.82
+            }
+          ],
+          "targets": 3,
+          "mode": "fight",
+          "draws": 48
+        }
+      ],
+      "invulnerable": true
+    },
+    "transitions": {
+      "passed": 13,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "old phase remains before blackout",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "phase2 background swaps behind full black",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "ghost intro restores damage and flight",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "phase3 has exactly five enabled pools",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "new main form keeps the existing Dracodia monologue",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "native monologue reaches damageable combat",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "enter": false,
+            "nohit": false
+          }
+        },
+        {
+          "name": "monologue cannot leak its180-second cinematic invulnerability into combat",
+          "passed": true,
+          "data": -0.5
+        },
+        {
+          "name": "combat grace actually expires",
+          "passed": true,
+          "data": -0.5
+        },
+        {
+          "name": "Harrier actually projects both warned fan beams",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "destroyed left emitter cancels its beam and leaves right beam active",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "final depletion reaches the established one-time death",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "final death red portal and reunion reach campaign clear",
+          "passed": true,
+          "data": {
+            "state": "stageclear",
+            "mode": "done",
+            "returned": true,
+            "cleared": true
+          }
+        },
+        {
+          "name": "no page console drawing or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "review": {
+      "passed": 12,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "review storage is isolated from campaign saves",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "review uses the real index and native Stage8 runtime",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "phase1 selector has native pixels, three locks and full playfield",
+          "passed": true,
+          "data": {
+            "phase": 0,
+            "form": 0,
+            "parts": 3,
+            "field": {
+              "x": 395.3125,
+              "y": 0,
+              "w": 909.375,
+              "h": 970
+            },
+            "canvas": {
+              "w": 480,
+              "h": 512
+            },
+            "model": "infused"
+          }
+        },
+        {
+          "name": "phase2 selector has native pixels, three locks and full playfield",
+          "passed": true,
+          "data": {
+            "phase": 1,
+            "form": 0,
+            "parts": 3,
+            "field": {
+              "x": 395.3125,
+              "y": 0,
+              "w": 909.375,
+              "h": 970
+            },
+            "canvas": {
+              "w": 480,
+              "h": 512
+            },
+            "model": "ghost"
+          }
+        },
+        {
+          "name": "colossus selector has native pixels, three locks and full playfield",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 0,
+            "parts": 3,
+            "field": {
+              "x": 395.3125,
+              "y": 0,
+              "w": 909.375,
+              "h": 970
+            },
+            "canvas": {
+              "w": 480,
+              "h": 512
+            },
+            "model": "colossus"
+          }
+        },
+        {
+          "name": "hammer selector has native pixels, three locks and full playfield",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 8,
+            "parts": 3,
+            "field": {
+              "x": 395.3125,
+              "y": 0,
+              "w": 909.375,
+              "h": 970
+            },
+            "canvas": {
+              "w": 480,
+              "h": 512
+            },
+            "model": "hammer"
+          }
+        },
+        {
+          "name": "helicopter selector has native pixels, three locks and full playfield",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 1,
+            "parts": 3,
+            "field": {
+              "x": 395.3125,
+              "y": 0,
+              "w": 909.375,
+              "h": 970
+            },
+            "canvas": {
+              "w": 480,
+              "h": 512
+            },
+            "model": "helicopter"
+          }
+        },
+        {
+          "name": "harrier selector has native pixels, three locks and full playfield",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 6,
+            "parts": 3,
+            "field": {
+              "x": 395.3125,
+              "y": 0,
+              "w": 909.375,
+              "h": 970
+            },
+            "canvas": {
+              "w": 480,
+              "h": 512
+            },
+            "model": "harrier"
+          }
+        },
+        {
+          "name": "volcano selector has native pixels, three locks and full playfield",
+          "passed": true,
+          "data": {
+            "phase": 2,
+            "form": 2,
+            "parts": 3,
+            "field": {
+              "x": 395.3125,
+              "y": 0,
+              "w": 909.375,
+              "h": 970
+            },
+            "canvas": {
+              "w": 480,
+              "h": 512
+            },
+            "model": "volcano"
+          }
+        },
+        {
+          "name": "review weapon-break control damages the real module",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "onion control shows registered native animation samples",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "review has no page console drawing or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    }
+  },
+  "asset": {
+    "models": 7,
+    "modelPoses": 112,
+    "transformationPoses": 144,
+    "shippingPngs": 481,
+    "bytes": 9122421,
+    "canvas": [
+      320,
+      320
+    ],
+    "pivot": [
+      160,
+      160
+    ],
+    "droneCanvas": [
+      256,
+      256
+    ]
+  },
+  "review": "docs/previews/stage8_pixellab_1018/index.html",
+  "invulnerableBot": true,
+  "limits": "Invulnerable native observations verify behavior, pixels and finite completion; they do not establish human balance. Broad combat pass232 and review12 precede the final cinematic-protection repair; focused transition pass13 verifies that repair and the preserved campaign ending.",
+  "source_sha256": {
+    "assets/game.js": "ae206b3d6ec874412cc76f5a65e6bfd4722a21f35e907a1ba0e90934e9009265",
+    "_BUILD_SOURCE/test_fl.js": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+    "assets/stage8_pixellab_1018.js": "063340978db2785ff03ff3c93a94d8b01ccbddfa7bc1de5f1dc1c9ee29cc0cc5",
+    "assets/stage8_pixellab_art_1018.js": "3a9b907a297a4f9c699c5ca85e97dd2e18bc68c4542ff899e108464ec9334a80"
+  }
+}

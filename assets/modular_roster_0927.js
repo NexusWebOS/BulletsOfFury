@@ -18,14 +18,14 @@ function mr27Blit(skin,cell,p,flash,form,owner){
   const im=mr27Cell(skin,cell,form);if(!im)return false;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(p.x,p.y);ctx.rotate(p.rot||0);
   ctx.drawImage(im,-p.w/2,-p.h/2,p.w,p.h);
-  if(flash>0){const white=mr27Cell(skin,cell,hitFlashColor(owner||p));ctx.globalAlpha=Math.min(.30,flash*2);ctx.drawImage(white,-p.w/2,-p.h/2,p.w,p.h);}
+  if(flash>0){const white=mr27Cell(skin,cell,hitFlashColor(owner||p));ctx.globalAlpha=Math.min(cell===0?.30:.65,flash*(cell===0?2:4));   /* 1017: a struck module reads clearly */ctx.drawImage(white,-p.w/2,-p.h/2,p.w,p.h);}
   ctx.restore();return true;
 }
 function mr27Init(b){
   if(!mr27Owns(b)||b._mr27)return;
   const skin=b._ship==='cryospear'?'rime':b._ship==='olivewarden'?'iron':'storm';
   b._mr27={skin,clock:0,stun:0,parts:[],breaks:[],draws:0};XART.rdy('mr27_'+skin);XART.rdy('mr27_corefx');
-  if(skin==='rime'){b.w=286;b.h=266;b.name='RIME WALL â€” MODULAR BASTION';}
+  if(skin==='rime'){b.w=286;b.h=266;b.name='RIME WALL - MODULAR BASTION';}
   if(skin==='iron')b.name='IRON WARDEN';
   for(const [id,f]of [['gunL',.09],['gunR',.09],['rocketL',.055],['rocketR',.055]]){
     const hp=Math.ceil(b.maxhp*f);b._mr27.parts.push({id,hp,maxhp:hp,flash:0,rot:0,recoil:0,dead:false});
@@ -56,7 +56,20 @@ function mr27At(b,x,y){
   if(!b||b.dead||b.enter||b._noHit)return null;
   for(const q of [...b._mr27.parts].reverse())if(!q.dead){const p=mr27Shape(b,q.id),dx=x-p.x,dy=y-p.y,c=Math.cos(p.rot),s=Math.sin(p.rot);
     if(Math.abs(dx*c+dy*s)<p.w*.52&&Math.abs(-dx*s+dy*c)<p.h*.5)return q.id;}
-  return Math.abs(x-b.x)<b.w*.37&&Math.abs(y-(b._drawY??b.y))<b.h*.44?'core':null;
+  return mr27HullAt(b,x,y)?'core':null;
+}
+/* 1017 (Mike: "I cant destroy modular pieces with my bullets"): the core is the hull that is PAINTED,
+   measured offline into MR27_HULL_MASK. The old |dx|<w*.37,|dy|<h*.44 box reached ~40px below the gun
+   turrets, so a round coming up from the player struck 'core' on bare road and never reached the turret. */
+function mr27HullAt(b,x,y){
+  const M=b._mr27,sh=MR27_ART[M.skin]?.cells?.[0];if(!sh)return false;
+  const sc=Math.min(b.w/sh[2],b.h/sh[3]),u=(x-b.x)/(sh[2]*sc)+.5,v=(y-(b._drawY??b.y))/(sh[3]*sc)+.5;
+  if(!(u>=0&&u<1&&v>=0&&v<1))return false;
+  const G=typeof MR27_HULL_MASK!=='undefined'?MR27_HULL_MASK:null;
+  let rows=G&&G.num?.[M.skin];if(G&&!rows&&G.rows[M.skin]){G.num=G.num||{};rows=G.num[M.skin]=G.rows[M.skin].map(h=>parseInt(h,16));}
+  if(!rows)return Math.abs(x-b.x)<b.w*.37&&Math.abs(y-(b._drawY??b.y))<b.h*.44;
+  const n=G.n,gx=Math.floor(u*n),gy=Math.floor(v*n);
+  return Math.floor(rows[gy]/Math.pow(2,n-1-gx))%2===1;
 }
 function mr27Damage(b,dmg,x,y){
   const id=mr27At(b,x??b.x,y??b.y),p=mr27Part(b,id);if(!p)return dmg;
@@ -86,6 +99,7 @@ function mr27Targets(b,a){
       const p=pos();_lastHitX=p.x;_lastHitY=p.y;
       if(S.mini)stage4MiniDroneDamage(b,d,damage);else stage4CoreTurretDamage(b,d,damage);
     },pos().w,pos().h));
+    a[a.length-1]._part=d;   // 1017: the same drone as its escort piece - struck once (pieceKey)
   }
   const shield=b._s4war?.shield;if(shield&&(shield.active||shield.rearming))return;
   for(const p of b._mr27.parts)if(!p.dead){const pos=()=>{const q=mr27Shape(b,p.id);return {...q,hp:p.hp,dead:p.dead||b.dead||b.enter};},q=pos();

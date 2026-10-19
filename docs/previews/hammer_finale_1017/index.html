@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Chromium finale</title><link rel="icon" href="data:,">
+<style>body{margin:0;background:#070d15;color:#d9e8f8;font:15px system-ui}main{max-width:1800px;margin:auto;padding:14px}h1{font-size:21px;margin:0 0 12px;color:#b3c5ff}nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}button,select{padding:9px;border:1px solid #61799a;border-radius:4px;background:#192b43;color:#eef5ff}iframe{display:block;width:100%;height:calc(100vh - 150px);min-height:520px;border:1px solid #3c536e;background:#000}p{margin:10px 0 0;color:#adbccf}</style>
+<main><h1>Chrome Hammer · Last reactor</h1><nav>
+<button id="replay">Play complete finish</button><button id="earth">Approach Earth</button>
+<label>Pilot <select id="pilot"><option selected>cole</option><option>axel</option><option>freezer</option><option>yuri</option><option>maverick</option><option>falva</option><option>lizzie</option><option>decker</option><option>juggernaut</option></select></label>
+<span id="status">Loading the actual game…</span></nav>
+<iframe id="game" title="Native Hammer ending at the normal field of view" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p>The authored kneeling armor stays fixed while chromium drains, the core builds and Retina locks. The shot ignites the armor, then the plates scatter through space. Earth is a separate anchored destination. This review uses isolated saves.</p></main>
+<script>
+const game=document.querySelector('#game'),status=document.querySelector('#status'),pilot=document.querySelector('#pilot');let ready=false,busy=false,scene='finish';
+const delay=n=>new Promise(r=>setTimeout(r,n));
+async function begin(next='finish'){
+ if(!ready||busy)return;busy=true;scene=next;status.textContent='Preparing '+next+'…';
+ const pk=JSON.stringify(pilot.value);
+ game.contentWindow.eval(`(()=>{ht27Stop();BOFCinematicDirector.cancel();coopOn=false;run.pilot=${pk};pilotIndex=PILOTS.findIndex(p=>p.key===run.pilot);run.mode='campaign';startRun(5);beginStage(5);setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=fb2Talk=s6Opening=null;stagePlan=[];enemies=[];eBullets=[];pBullets=[];subBoss=null;subBossActive=false;subBossDone=true;boss=null;bossActive=false;spawnBoss('chromehammer');boss.enter=false;boss._noHit=false;boss.x=worldWidth()/2;boss.y=VH*.31;boss.hp=0;boss.dead=true;boss.dying=0;player.x=worldWidth()/2;player.y=VH*.81;player.dead=player.out=false;player.invuln=99999;camX=clamp(player.x-VW/2,0,worldWidth()-VW);h3EndingStart(boss);if(${JSON.stringify(next)}==='earth'){H3.ending.hf17.phase='after';H3.ending.sm10.phase='death';delete H3.ending.engineDeath;H3.ending.t=24;H3.ending.phase='descent';H3.ending.cheer=H3_CHEERS.length;H3.ending.homeAge=2;H3.ending.descent=0;}if(window.__bofFit)__bofFit();})()`);
+ busy=false;game.contentWindow.focus();
+}
+document.querySelector('#replay').onclick=()=>begin();document.querySelector('#earth').onclick=()=>begin('earth');pilot.onchange=()=>begin(scene);
+game.onload=async()=>{for(let i=0;i<400;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof HF17!=="undefined"')){ready=true;await begin();return;}await delay(100);}status.textContent='Game loading timed out. Reload to retry.';};
+setInterval(()=>{if(!ready||busy)return;const text=game.contentWindow.eval('H3.ending?(H3.ending.hf17?.phase===\'after\'?H3.ending.phase:H3.ending.hf17?.phase):state');status.textContent=pilot.value+' · '+text;},200);
+(async()=>{const url=new URL('../../../index.html?revision=hammer-finale-1017',location.href),r=await fetch(url);if(!r.ok)throw Error('Game load failed: '+r.status);let html=await r.text();
+ function isolate(){const prefix='BOF_HAMMER_FINALE_REVIEW_1017_',get=Storage.prototype.getItem,set=Storage.prototype.setItem,remove=Storage.prototype.removeItem,key=Storage.prototype.key;Storage.prototype.getItem=function(k){return get.call(this,prefix+k);};Storage.prototype.setItem=function(k,v){return set.call(this,prefix+k,v);};Storage.prototype.removeItem=function(k){return remove.call(this,prefix+k);};Storage.prototype.clear=function(){const keys=[];for(let i=0;i<this.length;i++){const k=key.call(this,i);if(k?.startsWith(prefix))keys.push(k);}for(const k of keys)remove.call(this,k);};window.__hammerFinaleReviewStorage=true;}
+ html=html.replace('<head>','<head><base href="'+new URL('../../../',location.href).href+'"><script>('+isolate.toString()+')();</scr'+'ipt>');game.srcdoc=html;
+})().catch(e=>{status.textContent=e.message;console.error(e);});
+</script></html>

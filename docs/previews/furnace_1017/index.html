@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Furnace Tyrant</title>
+<link rel="icon" href="data:,">
+<style>
+body{margin:0;background:#080d13;color:#d8e6ed;font:15px system-ui}main{margin:auto;max-width:1540px;padding:16px}h1{font-size:22px;margin:0 0 12px;color:#ffb966}nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}button,select{padding:9px;background:#202d3a;border:1px solid #7c6450;color:#fff1d6;border-radius:4px}iframe{display:block;width:100%;height:calc(100vh - 160px);min-height:560px;border:1px solid #534538;background:#000}p{color:#acbac6}a{color:#ffc88c}
+</style>
+<main>
+<h1>Furnace Tyrant · Stage 2</h1>
+<nav>
+ <label>Difficulty <select id="difficulty"><option>easy</option><option selected>normal</option><option>hard</option><option>furious</option></select></label>
+ <button data-phase="head">Rotating eye lasers</button><button data-phase="arms">Flamethrower + magma cannon</button><button data-phase="intro">Full encounter</button>
+ <label><input type="checkbox" id="safe" checked> Review invulnerability</label>
+ <span id="status">Loading the actual game…</span>
+</nav>
+<iframe id="game" src="../../../index.html?revision=furnace-1017" title="Actual Stage 2 encounter with regular playfield and side HUD" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p>Click inside the game to play. This is the native encounter at the regular field of view, with the live HUD, damage and collision. The lasers warn, sweep one full turn, then recover. Ice orbs retain their fire-boss advantage.</p>
+</main>
+<script>
+const game=document.querySelector('#game'),status=document.querySelector('#status'),difficulty=document.querySelector('#difficulty'),safe=document.querySelector('#safe');let phase='head',loaded=false;
+const sleep=n=>new Promise(r=>setTimeout(r,n));
+async function begin(next=phase){
+ if(!loaded)return;phase=next;status.textContent='Loading Stage 2…';
+ game.contentWindow.eval(`(()=>{pilotIndex=PILOTS.findIndex(p=>p.key==='cole');run.pilot='cole';run.stage=2;run.mode='campaign';startRun(2);diffKey=${JSON.stringify(difficulty.value)};DIFF=DIFFS[diffKey];curStage=STAGES[1];beginStage(2);setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=fb2Talk=s6Opening=null;stagePlan=[];enemies=[];eBullets=[];pBullets=[];subBoss=null;subBossActive=false;subBossDone=true;boss=null;bossActive=false;spawnBoss('infernoreaver');furnaceSync(boss);if(${JSON.stringify(phase)}!=='intro'){furnaceEnter(boss,${JSON.stringify(phase)});boss._fz.trans=0;boss._mwStun=0;if(boss._mwBarrier){boss._mwBarrier.active=false;boss._mwBarrier.breakT=0;}}player.invuln=${safe.checked?'99999':'0'};player.x=worldWidth()/2;player.y=VH*.82;f17Warm();})()`);
+ status.textContent=difficulty.value+' · '+(phase==='head'?'eye-laser phase':phase==='arms'?'armor phase':'complete fight');game.contentWindow.focus();
+}
+for(const b of document.querySelectorAll('[data-phase]'))b.onclick=()=>begin(b.dataset.phase);
+difficulty.onchange=()=>begin();safe.onchange=()=>{if(loaded)game.contentWindow.eval('player.invuln='+(safe.checked?'99999':'0'));};
+game.onload=async()=>{for(let i=0;i<200;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof FURNACE17!=="undefined"')){loaded=true;await begin();return;}await sleep(100);}status.textContent='The game did not finish loading. Reload this page.';};
+</script>
+</html>

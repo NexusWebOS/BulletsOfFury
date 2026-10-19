@@ -1,0 +1,14 @@
+{
+  "provider": "built-in image generation",
+  "date": "2026-10-18",
+  "references": ["reference_bomb.png", "reference_generator.png"],
+  "referenceOrigin": "Actual lz_bomb and mr27_storm cell5, exported using XART.get and the native game canvas before generation.",
+  "briefs": {
+    "lightning_bomb.png": "Bullets of Fury dark blue/steel lightning bomb, nose downward, cyan electric core and silver/black fins. Sixteen distinct looping charge poses in a4x4 grid, transparent background. Frame format128x192; fixed centre and body scale, no text or borders. Match the actual bomb and Storm generator metal, silhouette detail and cyan lightning palette.",
+    "lightning_impact.png": "Bullets of Fury electric detonation,16 distinct chronological poses in a4x4 grid: white-blue ignition, expanding cyan lightning corona, broken electric ring and fading fragments. Frame format256x256; fixed centre and common proportional scale, transparent background, reserved margins and no labels."
+  },
+  "exportOwner": "_BUILD_SOURCE/build_storm_assault_1018.py",
+  "registration": "registration.json",
+  "shippingFrames": 32,
+  "note": "Briefs summarize the generation direction. Preserve original source grids; exporter corrects approximate grid geometry with shared-scale registration and padding."
+}

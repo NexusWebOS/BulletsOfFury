@@ -121,7 +121,7 @@ warhiveTick=function(b,dt){if(!sc13Owns(b))return SC13.base.tick.apply(this,argu
  const C=b._cargo13;sc13FinalizeBudget(b);dt=Math.min(.05,Math.max(0,dt));b.t+=dt;b.flash=Math.max(0,b.flash-dt);
  if(b.dead){sc13Clear(b);sc13DeathTick(b,dt);return;}
  if(!C.ready){sc13Warm();C.ready=SC13.keys.every(k=>XART.rdy(k));if(!C.ready)return;}
- C.age+=dt;C.coreFl=Math.max(0,C.coreFl-dt);for(const g of C.guns){g.fl=Math.max(0,g.fl-dt);g.cool=Math.max(0,(g.cool||0)-dt);}
+ C.age+=dt;C.coreFl=Math.max(0,C.coreFl-dt);for(const g of C.guns){g.fl=Math.max(0,g.fl-dt);g.flash=Math.max(0,(g.flash||0)-dt);g.cool=Math.max(0,(g.cool||0)-dt);}
  const left=camLeftX(),right=camRightX(),centre=(left+right)/2;
  if(C.mode==='arrive'){const u=clamp(C.age/2.6,0,1),ease=1-(1-u)**3;C.y=lerp(-170,72,ease);C.x=centre;
   if(u>=1){C.mode='recover';C.rest=1.2;sc13Sound('bossRoar',.6);s6WingSay('COLE','TAKE OUT TWO BATTERIES! THAT WILL EXPOSE THE REACTOR.');}
@@ -171,11 +171,11 @@ warhiveDamage=function(b,dmg){if(!sc13Owns(b))return SC13.base.damage.apply(this
  if(id==null)return 0;dmg=Math.max(0,Number(dmg)||0);
  if(id==='core'){
   if(!sc13Open(b)){if((C.shieldSound||0)<C.age){C.shieldSound=C.age+.12;sc13Sound('shieldHitCombat',.42);}return 0;}
-  C.core=Math.max(0,C.core-dmg);C.coreFl=.12;
- }else{const g=C.guns[id];if(!g||g.dead)return 0;g.hp=Math.max(0,g.hp-dmg);g.fl=.12;
+  C.core=Math.max(0,C.core-dmg);C.coreFl=.12;markHit(b);
+ }else{const g=C.guns[id];if(!g||g.dead)return 0;g.hp=Math.max(0,g.hp-dmg);g.fl=.12;markHit(g);
   if(g.hp===0){g.dead=true;g.pose=3;C.queue=C.queue.filter(q=>q.id!==id);C.lasers=C.lasers.filter(q=>q.id!==id);
    const p=sc13Mount(b,id);explode(p.x,p.y,58,'red',null,'nxp_barrage');fxBurst(p.x,p.y,40,{color:'#83dfff',rings:1,chunks:5,sparks:8});
-   sc13Sound('expBig',.50);SC13.stats.modules++;if(C.guns.filter(g=>g.dead).length===2){showCallout('shoot',1.5);s6WingSay('COLE','REACTOR EXPOSED. KEEP THAT FIRING LANE OPEN!');}}
+   sc13Sound('expBig',.50);SC13.stats.modules++;if(!b._cargo17Mini&&C.guns.filter(g=>g.dead).length===2){showCallout('shoot',1.5);s6WingSay('COLE','REACTOR EXPOSED. KEEP THAT FIRING LANE OPEN!');}}
  }
  weaponHitSfx('normal');if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
  b.hp=C.core+C.guns.reduce((sum,g)=>sum+g.hp,0);sc13Sync(b);
@@ -213,7 +213,7 @@ function sc13MuzzleDraw(b,g){if(g.dead)return;const m=sc13Muzzle(b,g.id),L=b._ca
 }
 function sc13GunDraw(b,g){const p=sc13Mount(b,g.id),light=sc13Light(b,g),im=g.pose===1||g.pose===2?(xartPalette('s6cargo13_turrets',light.color)||XART.get('s6cargo13_turrets')):XART.get('s6cargo13_turrets'),size=42,k=size/128;
  const pose=g.dead?3:g.pose;ctx.drawImage(im,pose*128,0,128,160,p.x-64*k,p.y-60*k,128*k,160*k);
- if(g.fl>0&&Math.floor(b.t*30)%2===0){const white=xartTint('s6cargo13_turrets','#ddf6ff',.82);if(white)ctx.drawImage(white,pose*128,0,128,160,p.x-64*k,p.y-60*k,128*k,160*k);}
+ if(Math.max(g.fl||0,g.flash||0)>0){const white=xartTint('s6cargo13_turrets','#ddf6ff',.82);if(white)ctx.drawImage(white,pose*128,0,128,160,p.x-64*k,p.y-60*k,128*k,160*k);}
  if(g.dead)whvPartFx(b,p,0,true,.45,g.id*.7);
  else sc13MuzzleDraw(b,g);
  // Solid health sliver under the gun; wrecks keep their opaque authored state.
@@ -235,7 +235,9 @@ warhiveDraw=function(b){if(!sc13Owns(b))return SC13.base.draw.apply(this,argumen
  const R=C.rockets;if(R&&!R.released)for(const q of R.paths){const m=sc13RocketMount(b,q.side);combatWarningDraw(R,{x:m.x,y:m.y,ex:m.x+Math.cos(q.angle)*VH,ey:m.y+Math.sin(q.angle)*VH,progress:R.t/R.warm,width:18,fieldOnly:true,laneShape:'line'});}
  const hull=XART.get('s6cargo13_hull');ctx.drawImage(hull,C.x-b.w/2,C.y-b.h/2,b.w,b.h);
  sc13LightsDraw(b);
- if(C.coreFl>0&&Math.floor(b.t*30)%2===0){ctx.save();const p=sc13Core(b);ctx.beginPath();ctx.rect(p.x-40,p.y-60,80,120);ctx.clip();const flash=xartTint('s6cargo13_hull','#dcf6ff',.70);if(flash)ctx.drawImage(flash,C.x-b.w/2,C.y-b.h/2,b.w,b.h);ctx.restore();}
+ // The sliding-aperture owner flashes the actual exposed energy core. Its
+ // old rectangular hull flash otherwise paints a white slab behind the core.
+ if(C.coreFl>0&&!(b._cargo17Mini&&b._s6r18?.open>0)&&Math.floor(b.t*30)%2===0){ctx.save();const p=sc13Core(b);ctx.beginPath();ctx.rect(p.x-40,p.y-60,80,120);ctx.clip();const flash=xartTint('s6cargo13_hull','#dcf6ff',.70);if(flash)ctx.drawImage(flash,C.x-b.w/2,C.y-b.h/2,b.w,b.h);ctx.restore();}
  for(const g of C.guns)sc13GunDraw(b,g);
  if(!b.dead&&sc13Open(b)){const p=sc13Core(b);if(Math.floor(b.t*4)%2===0)bmfDrawOn(ctx,window.BOF_UI_FACE||'game','REACTOR',p.x,p.y+59,7,'center');}
  ctx.restore();

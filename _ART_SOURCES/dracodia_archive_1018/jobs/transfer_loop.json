@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 8bc20975-1e31-491f-b3ad-3c336285d99b\njob_id: 8bc20975-1e31-491f-b3ad-3c336285d99b\ndescription: Data blocks rain downward in broken streams while bright emerald scan bars sweep top to bottom, data fragments burst outward then converge, white-green pixels flicker at assembly points. A seamless animated digital download field, centered on fixed transparent canvas with no ship, character, floor, frame or camera motion.\nframes: 32\nsize: 256x256px\ntransparent: True\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8bc20975-1e31-491f-b3ad-3c336285d99b\")\nasset_id: 1f1f0e40-1be3-59fe-9925-f8e05b910ec6\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

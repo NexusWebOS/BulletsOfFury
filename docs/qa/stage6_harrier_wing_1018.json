@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-18",
+  "request": "Remove the main Stage6 Harrier energy core, enlarge the carrier for its blue-jet launch and retain live allied support. Fortress miniboss retains its reactor.",
+  "scope": "Native encounter, UI, route and prior-repair fixtures; not another complete campaign or human balance assessment.",
+  "gitHead": "4b64163d1343f60fe93f11aa30f71bd1308f3c88",
+  "coreSuite": {
+    "exitCode": 0,
+    "printedOkLines": 8785,
+    "failed": 0,
+    "baselinePrintedOkLines": 8785,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/harrier_wing_1018/core-suite-final.log"
+  },
+  "syntax": {
+    "assets/game.js": 0,
+    "assets/gameplay_repair_1004.js": 0,
+    "assets/part2_combat_1010.js": 0,
+    "assets/stage6_sequence_1013.js": 0,
+    "assets/stage6_roster_1017.js": 0,
+    "assets/stage6_reactor_1018.js": 0
+  },
+  "native": {
+    "passed": 225,
+    "failed": 0,
+    "reports": {
+      "encounter": {
+        "passed": 106,
+        "failed": 0,
+        "pageConsoleDrawAssetErrors": [],
+        "report": "_shots/harrier_wing_1018/native/report.json",
+        "exitCode": 0
+      },
+      "review": {
+        "passed": 15,
+        "failed": 0,
+        "pageConsoleDrawAssetErrors": [],
+        "report": "_shots/harrier_wing_1018/native/review-report.json",
+        "exitCode": 0
+      },
+      "route": {
+        "passed": 56,
+        "failed": 0,
+        "pageConsoleDrawAssetErrors": [],
+        "report": "_shots/harrier_wing_1018/route-regression/report.json",
+        "exitCode": 0
+      },
+      "priorRepairs": {
+        "passed": 42,
+        "failed": 0,
+        "pageConsoleDrawAssetErrors": [],
+        "report": "_shots/harrier_wing_1018/playthrough-regression/results.json",
+        "exitCode": 0
+      },
+      "modular": {
+        "passed": 6,
+        "failed": 0,
+        "report": "_shots/modular_1017/harrier-wing-1018-final.json",
+        "exitCode": 0
+      }
+    }
+  },
+  "carrier": {
+    "uniformScale": 1.45,
+    "worldWidth": 668.16,
+    "worldHeight": 375.84,
+    "playfield": [
+      480,
+      512
+    ],
+    "zoom": 1,
+    "moduleCount": 8,
+    "energyCore": false,
+    "completion": "Last module -> falling carrier -> Nightwing after2.4s -> original ace defeat clears stage",
+    "blueJetEmergenceScale": [
+      0.48,
+      1
+    ],
+    "flashTimers": "Common simulation aging through combat, departures and carrier breakup"
+  },
+  "wing": {
+    "oldSuppressors": [
+      "stage6_sequence_1013 miniboss park/clear/skip",
+      "part2_combat_1010 Harrier clear/skip and quick encounter clear"
+    ],
+    "reinforcements": "Select from actual team before native launch",
+    "timedWithdrawal": "Deferred during active encounter/warning; genuine damage retreats retained",
+    "normalNativeEvidence": {
+      "fortress": {
+        "actors": 2,
+        "nativeAllyRounds": 34,
+        "moduleDamage": 76,
+        "changedNativePixels": 1540
+      },
+      "carrier": {
+        "actors": 4,
+        "nativeAllyRounds": 36,
+        "moduleDamage": 89,
+        "changedNativePixels": 2919
+      }
+    }
+  },
+  "fixtures": {
+    "primary": "Real loadout selection persists Machine Gun; temporary primary replacements cleared for gun routing. An initial false miss retained Sonic Boom for10.15s.",
+    "flashExpiry": "Fresh allied impacts isolated only in the pixel/expiry test window; no game flash suppression.",
+    "initialBugsFound": "First native pass exposed the second Harrier wing clear and empty filtered reinforcements; both corrected."
+  },
+  "preservation": {
+    "gameJsOnlyTaskChangeIsDepartureGuard": true,
+    "gameJsLF": true,
+    "testFlByteIdenticalToTaskStart": true,
+    "testFlCRLF": 15889,
+    "protectedFilesUnchanged": [
+      "assets/stage6_carrier_1013.js",
+      "assets/storm_assault_1018.js",
+      "assets/stage8_identity_1018.js"
+    ],
+    "commitOrPush": false
+  },
+  "sourceFiles": {
+    "assets/game.js": {
+      "sha256": "0cb2c234d9014cd04ec11695443fc2fa8888e2dc5fab33c7cfaa5670ab897a53",
+      "crlf": 0,
+      "lf": 80349,
+      "changedFromStart": true
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+      "crlf": 15889,
+      "lf": 15889,
+      "changedFromStart": false
+    },
+    "assets/stage6_sequence_1013.js": {
+      "sha256": "bcb8038c5c37661a58a588c8abe3724a8f10a90e732872c86e0c57533f415077",
+      "crlf": 0,
+      "lf": 71,
+      "changedFromStart": true
+    },
+    "assets/stage6_roster_1017.js": {
+      "sha256": "5d3bcd4e33c3e82d464c7d5db73093c85d93b2a6d67eeb2e71ea9213e887e63d",
+      "crlf": 0,
+      "lf": 194,
+      "changedFromStart": true
+    },
+    "assets/stage6_reactor_1018.js": {
+      "sha256": "cfa2e41b9732b47383029174de9d0bbbeea6dcfed33daf9d398570e72435a914",
+      "crlf": 0,
+      "lf": 182,
+      "changedFromStart": true
+    },
+    "assets/stage6_carrier_1013.js": {
+      "sha256": "3184b04a29dbfa075035df0d402c4263e458fe953e15505424921ce1266eb25c",
+      "crlf": 0,
+      "lf": 248,
+      "changedFromStart": false
+    },
+    "assets/stage8_identity_1018.js": {
+      "sha256": "d56582f82f92198733719f643676e32970ace99025907c34528d6df0a91bd732",
+      "crlf": 0,
+      "lf": 373,
+      "changedFromStart": false
+    },
+    "assets/storm_assault_1018.js": {
+      "sha256": "a7afd7a01d3e3b666bc3950afa7b8a2fd88bf64d90996b793adc24ea688ff444",
+      "crlf": 0,
+      "lf": 204,
+      "changedFromStart": false
+    },
+    "index.html": {
+      "sha256": "44e08125081a68dc1d5c9ee013a1f5bb92d5bde8113dc270418292cea0230a1a",
+      "crlf": 0,
+      "lf": 628,
+      "changedFromStart": true
+    },
+    "assets/part2_combat_1010.js": {
+      "sha256": "8d7ec6463b190a12ee73405f18cd76cce8ebde30766722ab327fc6de5048acdd",
+      "crlf": 0,
+      "lf": 230,
+      "changedFromStart": true
+    },
+    "assets/gameplay_repair_1004.js": {
+      "sha256": "797ed6116bf53f19caba94d13776571749d48f3e802324c9743d8f844317c158",
+      "crlf": 0,
+      "lf": 327,
+      "changedFromStart": true
+    },
+    "docs/previews/stage6_repair_1018/index.html": {
+      "sha256": "d0a6d428b2d74a18af7f2d3597265208a6d0efec6037634039f2efb6f7d22864",
+      "crlf": 0,
+      "lf": 40,
+      "changedFromStart": null
+    },
+    "_BUILD_SOURCE/probe_stage6_repair_1018.py": {
+      "sha256": "20efe73371a329060e23759308bbf5e268c7b3bfc94e6f8008c67a0e1ae93893",
+      "crlf": 0,
+      "lf": 146,
+      "changedFromStart": null
+    },
+    "_BUILD_SOURCE/probe_stage6_review_1018.py": {
+      "sha256": "4a1fd1eac7b2b9b5e8af29566d4316662d87c2d13aa23c261a83a7b4cf274dc9",
+      "crlf": 0,
+      "lf": 72,
+      "changedFromStart": null
+    },
+    "_BUILD_SOURCE/probe_stage6_sequence_1013.py": {
+      "sha256": "a6e538f6e959ba009924f3d9dc0c44eca72772be9661d803a86ccc51d0d4b4b0",
+      "crlf": 0,
+      "lf": 106,
+      "changedFromStart": null
+    },
+    "_BUILD_SOURCE/probe_modular_1017.py": {
+      "sha256": "0c7b493387290b8c15616e5ebe5d6739f66868ba7c19e83ccc33ee3e85306039",
+      "crlf": 0,
+      "lf": 167,
+      "changedFromStart": null
+    },
+    "_BUILD_SOURCE/probe_playthrough_1018.py": {
+      "sha256": "2a6d82855a27d692d2a16dbf615af72f179eedc57e3c16c9831d93ffae5d10e7",
+      "crlf": 0,
+      "lf": 115,
+      "changedFromStart": null
+    }
+  },
+  "review": "http://127.0.0.1:8794/docs/previews/stage6_repair_1018/index.html?scene=harrier&difficulty=normal&flight=cole&revision=harrier-wing-1018",
+  "evidence": [
+    "native/harrier-live-allies.png",
+    "native/fortress-live-allies.png",
+    "native/blue-jet-emerging-from-bay.png",
+    "native/review-harrier-modules.png"
+  ]
+}

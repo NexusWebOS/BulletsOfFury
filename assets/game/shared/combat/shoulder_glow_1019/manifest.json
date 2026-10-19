@@ -1,0 +1,660 @@
+{
+  "canvas": [
+    80,
+    80
+  ],
+  "pivot": [
+    40,
+    40
+  ],
+  "fps": 18,
+  "sourceScale": 1,
+  "sourcePlate": "assets/game/shared/combat/modular_roster_0927/rime.png",
+  "sourceChargeJob": "c689aa94-a23a-45ba-92e0-3b54a6b50428",
+  "banks": {
+    "L": [
+      {
+        "key": "sg19_L_00",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_00.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_01",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_01.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_02",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_02.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_03",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_03.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_04",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_04.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_05",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_05.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_06",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_06.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_07",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_07.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_08",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_08.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_09",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_09.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_10",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_10.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_11",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_11.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_12",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_12.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_13",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_13.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_14",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_14.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_15",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_15.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_16",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_16.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_17",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_17.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_18",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_18.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_19",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_19.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_20",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_20.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_21",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_21.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_22",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_22.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_23",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_23.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_24",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_24.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_25",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_25.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_26",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_26.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_27",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_27.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_28",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_28.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_29",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_29.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_30",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_30.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_L_31",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/l_31.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      }
+    ],
+    "R": [
+      {
+        "key": "sg19_R_00",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_00.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_01",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_01.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_02",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_02.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_03",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_03.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_04",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_04.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_05",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_05.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_06",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_06.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_07",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_07.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_08",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_08.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_09",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_09.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_10",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_10.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_11",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_11.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_12",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_12.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_13",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_13.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_14",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_14.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_15",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_15.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_16",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_16.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_17",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_17.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_18",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_18.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_19",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_19.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_20",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_20.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_21",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_21.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_22",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_22.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_23",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_23.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_24",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_24.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_25",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_25.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_26",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_26.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_27",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_27.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_28",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_28.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_29",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_29.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_30",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_30.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      },
+      {
+        "key": "sg19_R_31",
+        "path": "assets/game/shared/combat/shoulder_glow_1019/r_31.png",
+        "w": 80,
+        "h": 80,
+        "pivot": [
+          40,
+          40
+        ]
+      }
+    ]
+  }
+}

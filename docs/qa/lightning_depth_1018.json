@@ -1,0 +1,5758 @@
+{
+  "date": "2026-10-18",
+  "request": "PixelLab animated lightning behind, over and around Dracodia; lightning effects for the Stage 4 boss.",
+  "native_passed": 219,
+  "native_failed": 0,
+  "core": {
+    "passed_ok_lines": 8785,
+    "errors": 0,
+    "exit_code": 0,
+    "final_banner": true,
+    "baseline_passed_ok_lines": 8785,
+    "log": "_shots/lightning_depth_1018/core-final.log"
+  },
+  "unchanged": {
+    "assets/game.js": true,
+    "_BUILD_SOURCE/test_fl.js": true,
+    "assets/stage8_identity_1018.js": true,
+    "assets/storm_assault_1018.js": true
+  },
+  "syntax_checks": [
+    "assets/game.js",
+    "assets/lightning_depth_1018.js",
+    "assets/lightning_art_1018.js",
+    "assets/dracodia_archive_1018.js",
+    "assets/stage34_assault_1014.js"
+  ],
+  "source_sha256": {
+    "assets/lightning_depth_1018.js": "193c915e20df314368eaca129fb22d2efa9fd0059a18297940ed493257934c02",
+    "assets/lightning_art_1018.js": "80a0329e95f721779939240b5297dbfd59b8c0dc1ecf30048f57893bf5679862",
+    "assets/dracodia_archive_1018.js": "53ecdc957029f80ef383d78ea9f2d91c9bf6a8eb1539e88db57e3d3827bbbfa3",
+    "assets/stage34_assault_1014.js": "142f94b23337932b9240f5ed5a1ee3c097f647e36b4c7deffed10ade28522891",
+    "index.html": "d616120c5e96f09cf91cb60f91f21f01ce3e4f8bf16ea570a7161c28772841b1",
+    "_BUILD_SOURCE/build_lightning_depth_1018.py": "7463ea428f4a1eecac70c14cf65396c6e0001ee3d0ea86be3138762692296286",
+    "_BUILD_SOURCE/probe_lightning_depth_1018.py": "5b37bf5b5ea5cbf4b974faea73ae5f8e1b0c5453a0bd3b8de030afd22cbea92c",
+    "_BUILD_SOURCE/capture_lightning_1018.py": "fc9a9a7a278417f588d14972cfcc4b89d8c4d95304e0f838adbded40ea225bf7"
+  },
+  "art": {
+    "banks": [
+      {
+        "bank": "bolt",
+        "poses": 32,
+        "size": [
+          160,
+          160
+        ],
+        "pivot": [
+          80,
+          80
+        ],
+        "unique": 32,
+        "loop_difference": 3.020419921875,
+        "median_adjacent_difference": 2.991875
+      },
+      {
+        "bank": "orb",
+        "poses": 24,
+        "size": [
+          128,
+          128
+        ],
+        "pivot": [
+          64,
+          64
+        ],
+        "unique": 24,
+        "loop_difference": 9.662246704101562,
+        "median_adjacent_difference": 8.274810791015625
+      },
+      {
+        "bank": "tether",
+        "poses": 32,
+        "size": [
+          288,
+          160
+        ],
+        "pivot": [
+          144,
+          80
+        ],
+        "unique": 32,
+        "loop_difference": 5.294504123263889,
+        "median_adjacent_difference": 4.603927951388889
+      },
+      {
+        "bank": "wrap_back",
+        "poses": 32,
+        "size": [
+          320,
+          320
+        ],
+        "pivot": [
+          160,
+          160
+        ],
+        "unique": 32,
+        "loop_difference": 6.83486328125,
+        "median_adjacent_difference": 7.681710205078125
+      },
+      {
+        "bank": "wrap_front",
+        "poses": 32,
+        "size": [
+          320,
+          320
+        ],
+        "pivot": [
+          160,
+          160
+        ],
+        "unique": 32,
+        "loop_difference": 8.92222412109375,
+        "median_adjacent_difference": 8.254368896484376
+      }
+    ],
+    "exact_depth_reassembly": true,
+    "source_indices": {
+      "orb": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        29,
+        30,
+        31,
+        32
+      ],
+      "wrap": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "bolt": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "tether": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    }
+  },
+  "billing": {
+    "date": "2026-10-18",
+    "starting_account_credits": 3.82,
+    "final_observed_account_credits": 1.06,
+    "observed_account_change": 2.76,
+    "account_delta_note": "Account-wide observation, not a sum of job charges; other account activity may contribute.",
+    "top_up": false,
+    "reference_uploads": [],
+    "job_frame_zero_receipts": [
+      {
+        "name": "wrap",
+        "job_id": "c69d711a-3f9d-46b2-8b4c-e60a0706cfe7",
+        "charged": "charged: $0.0800 in credits",
+        "asset_id": "30a9f365-ca92-5eda-923d-50cae4fa2b8e",
+        "completed": true
+      },
+      {
+        "name": "bolt",
+        "job_id": "b13760f4-f104-499e-b014-436db54c320a",
+        "charged": "charged: $0.0800 in credits",
+        "asset_id": "66574d58-ba5a-54ac-aa61-946bb739da0b",
+        "completed": true
+      },
+      {
+        "name": "orb",
+        "job_id": "0e240895-59a0-4473-bc25-eaee1838ffa2",
+        "charged": "charged: $0.0800 in credits",
+        "asset_id": "944d4b99-d77b-5d29-b838-bab4a6e442e5",
+        "completed": true
+      },
+      {
+        "name": "tether",
+        "job_id": "08bf4689-dfe5-4371-beb1-1826081e5543",
+        "charged": "charged: $0.0800 in credits",
+        "asset_id": "e8f63492-98be-51ce-95ab-2fa86b9d6321",
+        "completed": true
+      },
+      {
+        "name": "bolt_loop",
+        "job_id": "0f2e0cbf-44f8-4fd3-b859-55e9dbdfdc14",
+        "charged": "charged: $0.0574 in credits",
+        "asset_id": "71c87c53-b638-56dc-a7f6-46ef5a71fb54",
+        "completed": true
+      },
+      {
+        "name": "orb_loop",
+        "job_id": "9a491b45-cc31-4d22-87ec-c1dcf1127ad3",
+        "charged": "charged: $0.0392 in credits",
+        "asset_id": "f428bbd0-4842-5ae2-b811-9b02f1f584c5",
+        "completed": true
+      },
+      {
+        "name": "tether_v2",
+        "job_id": "27681a1e-ca6a-4786-a3b1-9974ce96fb5d",
+        "charged": "charged: $0.0800 in credits",
+        "asset_id": "358ec65b-36e9-5037-8dcb-960f1fa13042",
+        "completed": true
+      },
+      {
+        "name": "tether_loop",
+        "job_id": "2e0852cc-8aa1-4cbc-bb17-02b5e12b1903",
+        "charged": "charged: $0.0332 in credits",
+        "asset_id": "06f4d5cf-2a39-58b5-b961-b074a11b8de9",
+        "completed": true
+      },
+      {
+        "name": "wrap_loop",
+        "job_id": "1d9695ab-3290-4013-bf8d-6fa3b354551b",
+        "charged": "charged: $0.0624 in credits",
+        "asset_id": "76cbc59c-b909-5018-8362-03d8963283d2",
+        "completed": true
+      }
+    ],
+    "receipt_note": "Charges are exactly the provider's get_image(index=0) receipt text; these are not asserted to be whole-clip totals."
+  },
+  "repaired_initial_failures": "Three first-run failures exposed the early Stage4 ball rendering route still selecting old art. Corrected tb28BallDraw and scoped warfare/ER26 routes; final focused pass is 48/0.",
+  "evidence": {
+    "native_results": {
+      "lightning_depth": "_shots/lightning_depth_1018/native/results.json",
+      "archive_combat": "_shots/dracodia_archive_1018/native/results.json",
+      "storm_combat": "_shots/storm_assault_1018/native/report.json",
+      "delivered_review": "_shots/dracodia_archive_1018/review/results.json"
+    },
+    "gifs": [
+      "_shots/lightning_depth_1018/dracodia-lightning.gif",
+      "_shots/lightning_depth_1018/stage4-lightning.gif"
+    ],
+    "scope": "Controlled native Chromium encounters at all three difficulties plus production review UI; no claim of a new full-campaign balance run.",
+    "playback_capture": {
+      "exit_code": 0,
+      "page_errors": [],
+      "clips": [
+        {
+          "name": "dracodia-lightning",
+          "frames": 52,
+          "size": [
+            960,
+            600
+          ],
+          "bytes": 3408110,
+          "frame24_palette_mean_absolute_error": 2.783
+        },
+        {
+          "name": "stage4-lightning",
+          "frames": 52,
+          "size": [
+            960,
+            600
+          ],
+          "bytes": 7849053,
+          "frame24_palette_mean_absolute_error": 3.737
+        }
+      ]
+    }
+  },
+  "groups": {
+    "lightning_depth": {
+      "passed": 48,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "bolt keeps even fixed canvases and a shared pivot",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "w": 160,
+            "h": 160,
+            "pivot": [
+              80,
+              80
+            ],
+            "valid": true
+          }
+        },
+        {
+          "name": "bolt renders every actual XART pose through the native game context",
+          "passed": true,
+          "data": [
+            {
+              "hash": 3696372389,
+              "pixels": 1623
+            },
+            {
+              "hash": 3904649326,
+              "pixels": 1600
+            },
+            {
+              "hash": 79684777,
+              "pixels": 1591
+            },
+            {
+              "hash": 3471869399,
+              "pixels": 1586
+            },
+            {
+              "hash": 999202393,
+              "pixels": 1642
+            },
+            {
+              "hash": 415283280,
+              "pixels": 1652
+            },
+            {
+              "hash": 3171764589,
+              "pixels": 1618
+            },
+            {
+              "hash": 2902690359,
+              "pixels": 1591
+            },
+            {
+              "hash": 3061926550,
+              "pixels": 1600
+            },
+            {
+              "hash": 759705251,
+              "pixels": 1640
+            },
+            {
+              "hash": 2148746728,
+              "pixels": 1649
+            },
+            {
+              "hash": 2290347049,
+              "pixels": 1622
+            },
+            {
+              "hash": 2573250966,
+              "pixels": 1593
+            },
+            {
+              "hash": 270347676,
+              "pixels": 1599
+            },
+            {
+              "hash": 4013986419,
+              "pixels": 1584
+            },
+            {
+              "hash": 2414301625,
+              "pixels": 1649
+            },
+            {
+              "hash": 3580972234,
+              "pixels": 1648
+            },
+            {
+              "hash": 1433355525,
+              "pixels": 1612
+            },
+            {
+              "hash": 2581493892,
+              "pixels": 1600
+            },
+            {
+              "hash": 517688576,
+              "pixels": 1603
+            },
+            {
+              "hash": 2031003030,
+              "pixels": 1644
+            },
+            {
+              "hash": 2095158639,
+              "pixels": 1650
+            },
+            {
+              "hash": 965456933,
+              "pixels": 1628
+            },
+            {
+              "hash": 1099895492,
+              "pixels": 1592
+            },
+            {
+              "hash": 3115572141,
+              "pixels": 1599
+            },
+            {
+              "hash": 3956894675,
+              "pixels": 1587
+            },
+            {
+              "hash": 3092043498,
+              "pixels": 1642
+            },
+            {
+              "hash": 212412171,
+              "pixels": 1646
+            },
+            {
+              "hash": 3097962702,
+              "pixels": 1619
+            },
+            {
+              "hash": 57118909,
+              "pixels": 1590
+            },
+            {
+              "hash": 3059076880,
+              "pixels": 1602
+            },
+            {
+              "hash": 3436442705,
+              "pixels": 1646
+            }
+          ]
+        },
+        {
+          "name": "bolt genuinely changes pixels across its generated animation",
+          "passed": true,
+          "data": [
+            {
+              "hash": 3696372389,
+              "pixels": 1623
+            },
+            {
+              "hash": 3904649326,
+              "pixels": 1600
+            },
+            {
+              "hash": 79684777,
+              "pixels": 1591
+            },
+            {
+              "hash": 3471869399,
+              "pixels": 1586
+            },
+            {
+              "hash": 999202393,
+              "pixels": 1642
+            },
+            {
+              "hash": 415283280,
+              "pixels": 1652
+            },
+            {
+              "hash": 3171764589,
+              "pixels": 1618
+            },
+            {
+              "hash": 2902690359,
+              "pixels": 1591
+            },
+            {
+              "hash": 3061926550,
+              "pixels": 1600
+            },
+            {
+              "hash": 759705251,
+              "pixels": 1640
+            },
+            {
+              "hash": 2148746728,
+              "pixels": 1649
+            },
+            {
+              "hash": 2290347049,
+              "pixels": 1622
+            },
+            {
+              "hash": 2573250966,
+              "pixels": 1593
+            },
+            {
+              "hash": 270347676,
+              "pixels": 1599
+            },
+            {
+              "hash": 4013986419,
+              "pixels": 1584
+            },
+            {
+              "hash": 2414301625,
+              "pixels": 1649
+            },
+            {
+              "hash": 3580972234,
+              "pixels": 1648
+            },
+            {
+              "hash": 1433355525,
+              "pixels": 1612
+            },
+            {
+              "hash": 2581493892,
+              "pixels": 1600
+            },
+            {
+              "hash": 517688576,
+              "pixels": 1603
+            },
+            {
+              "hash": 2031003030,
+              "pixels": 1644
+            },
+            {
+              "hash": 2095158639,
+              "pixels": 1650
+            },
+            {
+              "hash": 965456933,
+              "pixels": 1628
+            },
+            {
+              "hash": 1099895492,
+              "pixels": 1592
+            },
+            {
+              "hash": 3115572141,
+              "pixels": 1599
+            },
+            {
+              "hash": 3956894675,
+              "pixels": 1587
+            },
+            {
+              "hash": 3092043498,
+              "pixels": 1642
+            },
+            {
+              "hash": 212412171,
+              "pixels": 1646
+            },
+            {
+              "hash": 3097962702,
+              "pixels": 1619
+            },
+            {
+              "hash": 57118909,
+              "pixels": 1590
+            },
+            {
+              "hash": 3059076880,
+              "pixels": 1602
+            },
+            {
+              "hash": 3436442705,
+              "pixels": 1646
+            }
+          ]
+        },
+        {
+          "name": "orb keeps even fixed canvases and a shared pivot",
+          "passed": true,
+          "data": {
+            "n": 24,
+            "w": 128,
+            "h": 128,
+            "pivot": [
+              64,
+              64
+            ],
+            "valid": true
+          }
+        },
+        {
+          "name": "orb renders every actual XART pose through the native game context",
+          "passed": true,
+          "data": [
+            {
+              "hash": 879739576,
+              "pixels": 2344
+            },
+            {
+              "hash": 476681609,
+              "pixels": 2361
+            },
+            {
+              "hash": 979555782,
+              "pixels": 2435
+            },
+            {
+              "hash": 1896349116,
+              "pixels": 2245
+            },
+            {
+              "hash": 3031868607,
+              "pixels": 1814
+            },
+            {
+              "hash": 3320877278,
+              "pixels": 1951
+            },
+            {
+              "hash": 3930634941,
+              "pixels": 2103
+            },
+            {
+              "hash": 2890022750,
+              "pixels": 2305
+            },
+            {
+              "hash": 4024928126,
+              "pixels": 2355
+            },
+            {
+              "hash": 1286785740,
+              "pixels": 2370
+            },
+            {
+              "hash": 628113394,
+              "pixels": 2412
+            },
+            {
+              "hash": 363911414,
+              "pixels": 2247
+            },
+            {
+              "hash": 3578763672,
+              "pixels": 1807
+            },
+            {
+              "hash": 663672366,
+              "pixels": 1953
+            },
+            {
+              "hash": 2371537137,
+              "pixels": 2099
+            },
+            {
+              "hash": 249794787,
+              "pixels": 2307
+            },
+            {
+              "hash": 1644552516,
+              "pixels": 2360
+            },
+            {
+              "hash": 1342087966,
+              "pixels": 2364
+            },
+            {
+              "hash": 3991462207,
+              "pixels": 2427
+            },
+            {
+              "hash": 3117699322,
+              "pixels": 2252
+            },
+            {
+              "hash": 549938414,
+              "pixels": 1803
+            },
+            {
+              "hash": 3785137428,
+              "pixels": 1912
+            },
+            {
+              "hash": 3648923973,
+              "pixels": 2100
+            },
+            {
+              "hash": 3711087993,
+              "pixels": 2306
+            }
+          ]
+        },
+        {
+          "name": "orb genuinely changes pixels across its generated animation",
+          "passed": true,
+          "data": [
+            {
+              "hash": 879739576,
+              "pixels": 2344
+            },
+            {
+              "hash": 476681609,
+              "pixels": 2361
+            },
+            {
+              "hash": 979555782,
+              "pixels": 2435
+            },
+            {
+              "hash": 1896349116,
+              "pixels": 2245
+            },
+            {
+              "hash": 3031868607,
+              "pixels": 1814
+            },
+            {
+              "hash": 3320877278,
+              "pixels": 1951
+            },
+            {
+              "hash": 3930634941,
+              "pixels": 2103
+            },
+            {
+              "hash": 2890022750,
+              "pixels": 2305
+            },
+            {
+              "hash": 4024928126,
+              "pixels": 2355
+            },
+            {
+              "hash": 1286785740,
+              "pixels": 2370
+            },
+            {
+              "hash": 628113394,
+              "pixels": 2412
+            },
+            {
+              "hash": 363911414,
+              "pixels": 2247
+            },
+            {
+              "hash": 3578763672,
+              "pixels": 1807
+            },
+            {
+              "hash": 663672366,
+              "pixels": 1953
+            },
+            {
+              "hash": 2371537137,
+              "pixels": 2099
+            },
+            {
+              "hash": 249794787,
+              "pixels": 2307
+            },
+            {
+              "hash": 1644552516,
+              "pixels": 2360
+            },
+            {
+              "hash": 1342087966,
+              "pixels": 2364
+            },
+            {
+              "hash": 3991462207,
+              "pixels": 2427
+            },
+            {
+              "hash": 3117699322,
+              "pixels": 2252
+            },
+            {
+              "hash": 549938414,
+              "pixels": 1803
+            },
+            {
+              "hash": 3785137428,
+              "pixels": 1912
+            },
+            {
+              "hash": 3648923973,
+              "pixels": 2100
+            },
+            {
+              "hash": 3711087993,
+              "pixels": 2306
+            }
+          ]
+        },
+        {
+          "name": "tether keeps even fixed canvases and a shared pivot",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "w": 288,
+            "h": 160,
+            "pivot": [
+              144,
+              80
+            ],
+            "valid": true
+          }
+        },
+        {
+          "name": "tether renders every actual XART pose through the native game context",
+          "passed": true,
+          "data": [
+            {
+              "hash": 183197531,
+              "pixels": 4653
+            },
+            {
+              "hash": 3826773653,
+              "pixels": 4656
+            },
+            {
+              "hash": 2463005912,
+              "pixels": 4621
+            },
+            {
+              "hash": 2952768033,
+              "pixels": 4657
+            },
+            {
+              "hash": 536579508,
+              "pixels": 4625
+            },
+            {
+              "hash": 1017528778,
+              "pixels": 4669
+            },
+            {
+              "hash": 2194742426,
+              "pixels": 4731
+            },
+            {
+              "hash": 3505319172,
+              "pixels": 4664
+            },
+            {
+              "hash": 333871097,
+              "pixels": 4689
+            },
+            {
+              "hash": 1952167895,
+              "pixels": 4655
+            },
+            {
+              "hash": 3833677169,
+              "pixels": 4700
+            },
+            {
+              "hash": 1995103806,
+              "pixels": 4643
+            },
+            {
+              "hash": 4148170433,
+              "pixels": 4673
+            },
+            {
+              "hash": 2007616660,
+              "pixels": 4664
+            },
+            {
+              "hash": 4257130323,
+              "pixels": 4771
+            },
+            {
+              "hash": 970557969,
+              "pixels": 4695
+            },
+            {
+              "hash": 714381524,
+              "pixels": 4673
+            },
+            {
+              "hash": 3288922707,
+              "pixels": 4677
+            },
+            {
+              "hash": 2299666730,
+              "pixels": 4658
+            },
+            {
+              "hash": 2228702455,
+              "pixels": 4656
+            },
+            {
+              "hash": 1048747405,
+              "pixels": 4633
+            },
+            {
+              "hash": 3033672748,
+              "pixels": 4673
+            },
+            {
+              "hash": 891667790,
+              "pixels": 4667
+            },
+            {
+              "hash": 1372671008,
+              "pixels": 4652
+            },
+            {
+              "hash": 4174639371,
+              "pixels": 4666
+            },
+            {
+              "hash": 779853055,
+              "pixels": 4606
+            },
+            {
+              "hash": 151668076,
+              "pixels": 4683
+            },
+            {
+              "hash": 1725727721,
+              "pixels": 4694
+            },
+            {
+              "hash": 2143872254,
+              "pixels": 4701
+            },
+            {
+              "hash": 2307599384,
+              "pixels": 4688
+            },
+            {
+              "hash": 71759019,
+              "pixels": 4605
+            },
+            {
+              "hash": 1779590784,
+              "pixels": 4581
+            }
+          ]
+        },
+        {
+          "name": "tether genuinely changes pixels across its generated animation",
+          "passed": true,
+          "data": [
+            {
+              "hash": 183197531,
+              "pixels": 4653
+            },
+            {
+              "hash": 3826773653,
+              "pixels": 4656
+            },
+            {
+              "hash": 2463005912,
+              "pixels": 4621
+            },
+            {
+              "hash": 2952768033,
+              "pixels": 4657
+            },
+            {
+              "hash": 536579508,
+              "pixels": 4625
+            },
+            {
+              "hash": 1017528778,
+              "pixels": 4669
+            },
+            {
+              "hash": 2194742426,
+              "pixels": 4731
+            },
+            {
+              "hash": 3505319172,
+              "pixels": 4664
+            },
+            {
+              "hash": 333871097,
+              "pixels": 4689
+            },
+            {
+              "hash": 1952167895,
+              "pixels": 4655
+            },
+            {
+              "hash": 3833677169,
+              "pixels": 4700
+            },
+            {
+              "hash": 1995103806,
+              "pixels": 4643
+            },
+            {
+              "hash": 4148170433,
+              "pixels": 4673
+            },
+            {
+              "hash": 2007616660,
+              "pixels": 4664
+            },
+            {
+              "hash": 4257130323,
+              "pixels": 4771
+            },
+            {
+              "hash": 970557969,
+              "pixels": 4695
+            },
+            {
+              "hash": 714381524,
+              "pixels": 4673
+            },
+            {
+              "hash": 3288922707,
+              "pixels": 4677
+            },
+            {
+              "hash": 2299666730,
+              "pixels": 4658
+            },
+            {
+              "hash": 2228702455,
+              "pixels": 4656
+            },
+            {
+              "hash": 1048747405,
+              "pixels": 4633
+            },
+            {
+              "hash": 3033672748,
+              "pixels": 4673
+            },
+            {
+              "hash": 891667790,
+              "pixels": 4667
+            },
+            {
+              "hash": 1372671008,
+              "pixels": 4652
+            },
+            {
+              "hash": 4174639371,
+              "pixels": 4666
+            },
+            {
+              "hash": 779853055,
+              "pixels": 4606
+            },
+            {
+              "hash": 151668076,
+              "pixels": 4683
+            },
+            {
+              "hash": 1725727721,
+              "pixels": 4694
+            },
+            {
+              "hash": 2143872254,
+              "pixels": 4701
+            },
+            {
+              "hash": 2307599384,
+              "pixels": 4688
+            },
+            {
+              "hash": 71759019,
+              "pixels": 4605
+            },
+            {
+              "hash": 1779590784,
+              "pixels": 4581
+            }
+          ]
+        },
+        {
+          "name": "wrap_back keeps even fixed canvases and a shared pivot",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "w": 320,
+            "h": 320,
+            "pivot": [
+              160,
+              160
+            ],
+            "valid": true
+          }
+        },
+        {
+          "name": "wrap_back renders every actual XART pose through the native game context",
+          "passed": true,
+          "data": [
+            {
+              "hash": 2473268199,
+              "pixels": 4100
+            },
+            {
+              "hash": 4052013187,
+              "pixels": 4230
+            },
+            {
+              "hash": 2154548971,
+              "pixels": 3571
+            },
+            {
+              "hash": 276365478,
+              "pixels": 3743
+            },
+            {
+              "hash": 1440197852,
+              "pixels": 4092
+            },
+            {
+              "hash": 1964547772,
+              "pixels": 3598
+            },
+            {
+              "hash": 3042814070,
+              "pixels": 3343
+            },
+            {
+              "hash": 2770512172,
+              "pixels": 3572
+            },
+            {
+              "hash": 2947576023,
+              "pixels": 3692
+            },
+            {
+              "hash": 2541680244,
+              "pixels": 3554
+            },
+            {
+              "hash": 641923928,
+              "pixels": 2819
+            },
+            {
+              "hash": 291069427,
+              "pixels": 2684
+            },
+            {
+              "hash": 4112461638,
+              "pixels": 3128
+            },
+            {
+              "hash": 2585441493,
+              "pixels": 3364
+            },
+            {
+              "hash": 2386392893,
+              "pixels": 3082
+            },
+            {
+              "hash": 3782339705,
+              "pixels": 3216
+            },
+            {
+              "hash": 3877636624,
+              "pixels": 3312
+            },
+            {
+              "hash": 3007187543,
+              "pixels": 3276
+            },
+            {
+              "hash": 2493090056,
+              "pixels": 3022
+            },
+            {
+              "hash": 3333787256,
+              "pixels": 3139
+            },
+            {
+              "hash": 275854970,
+              "pixels": 3478
+            },
+            {
+              "hash": 1166031770,
+              "pixels": 2933
+            },
+            {
+              "hash": 1831426327,
+              "pixels": 3397
+            },
+            {
+              "hash": 3655452145,
+              "pixels": 3674
+            },
+            {
+              "hash": 1284210019,
+              "pixels": 3857
+            },
+            {
+              "hash": 104495094,
+              "pixels": 3998
+            },
+            {
+              "hash": 513672021,
+              "pixels": 3393
+            },
+            {
+              "hash": 1313434195,
+              "pixels": 3802
+            },
+            {
+              "hash": 2643863559,
+              "pixels": 4607
+            },
+            {
+              "hash": 2738762562,
+              "pixels": 4227
+            },
+            {
+              "hash": 1145050756,
+              "pixels": 4051
+            },
+            {
+              "hash": 3828780500,
+              "pixels": 4236
+            }
+          ]
+        },
+        {
+          "name": "wrap_back genuinely changes pixels across its generated animation",
+          "passed": true,
+          "data": [
+            {
+              "hash": 2473268199,
+              "pixels": 4100
+            },
+            {
+              "hash": 4052013187,
+              "pixels": 4230
+            },
+            {
+              "hash": 2154548971,
+              "pixels": 3571
+            },
+            {
+              "hash": 276365478,
+              "pixels": 3743
+            },
+            {
+              "hash": 1440197852,
+              "pixels": 4092
+            },
+            {
+              "hash": 1964547772,
+              "pixels": 3598
+            },
+            {
+              "hash": 3042814070,
+              "pixels": 3343
+            },
+            {
+              "hash": 2770512172,
+              "pixels": 3572
+            },
+            {
+              "hash": 2947576023,
+              "pixels": 3692
+            },
+            {
+              "hash": 2541680244,
+              "pixels": 3554
+            },
+            {
+              "hash": 641923928,
+              "pixels": 2819
+            },
+            {
+              "hash": 291069427,
+              "pixels": 2684
+            },
+            {
+              "hash": 4112461638,
+              "pixels": 3128
+            },
+            {
+              "hash": 2585441493,
+              "pixels": 3364
+            },
+            {
+              "hash": 2386392893,
+              "pixels": 3082
+            },
+            {
+              "hash": 3782339705,
+              "pixels": 3216
+            },
+            {
+              "hash": 3877636624,
+              "pixels": 3312
+            },
+            {
+              "hash": 3007187543,
+              "pixels": 3276
+            },
+            {
+              "hash": 2493090056,
+              "pixels": 3022
+            },
+            {
+              "hash": 3333787256,
+              "pixels": 3139
+            },
+            {
+              "hash": 275854970,
+              "pixels": 3478
+            },
+            {
+              "hash": 1166031770,
+              "pixels": 2933
+            },
+            {
+              "hash": 1831426327,
+              "pixels": 3397
+            },
+            {
+              "hash": 3655452145,
+              "pixels": 3674
+            },
+            {
+              "hash": 1284210019,
+              "pixels": 3857
+            },
+            {
+              "hash": 104495094,
+              "pixels": 3998
+            },
+            {
+              "hash": 513672021,
+              "pixels": 3393
+            },
+            {
+              "hash": 1313434195,
+              "pixels": 3802
+            },
+            {
+              "hash": 2643863559,
+              "pixels": 4607
+            },
+            {
+              "hash": 2738762562,
+              "pixels": 4227
+            },
+            {
+              "hash": 1145050756,
+              "pixels": 4051
+            },
+            {
+              "hash": 3828780500,
+              "pixels": 4236
+            }
+          ]
+        },
+        {
+          "name": "wrap_front keeps even fixed canvases and a shared pivot",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "w": 320,
+            "h": 320,
+            "pivot": [
+              160,
+              160
+            ],
+            "valid": true
+          }
+        },
+        {
+          "name": "wrap_front renders every actual XART pose through the native game context",
+          "passed": true,
+          "data": [
+            {
+              "hash": 4061099848,
+              "pixels": 4800
+            },
+            {
+              "hash": 1737252428,
+              "pixels": 4897
+            },
+            {
+              "hash": 1376599294,
+              "pixels": 5002
+            },
+            {
+              "hash": 869430235,
+              "pixels": 4758
+            },
+            {
+              "hash": 386134070,
+              "pixels": 4118
+            },
+            {
+              "hash": 3493022641,
+              "pixels": 4428
+            },
+            {
+              "hash": 3102483556,
+              "pixels": 4245
+            },
+            {
+              "hash": 61571057,
+              "pixels": 3809
+            },
+            {
+              "hash": 3064313050,
+              "pixels": 3334
+            },
+            {
+              "hash": 3905156988,
+              "pixels": 3322
+            },
+            {
+              "hash": 453430413,
+              "pixels": 3507
+            },
+            {
+              "hash": 3953131837,
+              "pixels": 3677
+            },
+            {
+              "hash": 2508860844,
+              "pixels": 2890
+            },
+            {
+              "hash": 3195509043,
+              "pixels": 2885
+            },
+            {
+              "hash": 2527209005,
+              "pixels": 3138
+            },
+            {
+              "hash": 4061883879,
+              "pixels": 3139
+            },
+            {
+              "hash": 1325549309,
+              "pixels": 3132
+            },
+            {
+              "hash": 2796783064,
+              "pixels": 3442
+            },
+            {
+              "hash": 1117101957,
+              "pixels": 3838
+            },
+            {
+              "hash": 1085150723,
+              "pixels": 3963
+            },
+            {
+              "hash": 2574506858,
+              "pixels": 4255
+            },
+            {
+              "hash": 2468201887,
+              "pixels": 4521
+            },
+            {
+              "hash": 3084793523,
+              "pixels": 4469
+            },
+            {
+              "hash": 3504326766,
+              "pixels": 4290
+            },
+            {
+              "hash": 2473108420,
+              "pixels": 4178
+            },
+            {
+              "hash": 2589727159,
+              "pixels": 4581
+            },
+            {
+              "hash": 1017440010,
+              "pixels": 4439
+            },
+            {
+              "hash": 2733635645,
+              "pixels": 4279
+            },
+            {
+              "hash": 2524039653,
+              "pixels": 3665
+            },
+            {
+              "hash": 3157413258,
+              "pixels": 4102
+            },
+            {
+              "hash": 2944872008,
+              "pixels": 4528
+            },
+            {
+              "hash": 4019076493,
+              "pixels": 4804
+            }
+          ]
+        },
+        {
+          "name": "wrap_front genuinely changes pixels across its generated animation",
+          "passed": true,
+          "data": [
+            {
+              "hash": 4061099848,
+              "pixels": 4800
+            },
+            {
+              "hash": 1737252428,
+              "pixels": 4897
+            },
+            {
+              "hash": 1376599294,
+              "pixels": 5002
+            },
+            {
+              "hash": 869430235,
+              "pixels": 4758
+            },
+            {
+              "hash": 386134070,
+              "pixels": 4118
+            },
+            {
+              "hash": 3493022641,
+              "pixels": 4428
+            },
+            {
+              "hash": 3102483556,
+              "pixels": 4245
+            },
+            {
+              "hash": 61571057,
+              "pixels": 3809
+            },
+            {
+              "hash": 3064313050,
+              "pixels": 3334
+            },
+            {
+              "hash": 3905156988,
+              "pixels": 3322
+            },
+            {
+              "hash": 453430413,
+              "pixels": 3507
+            },
+            {
+              "hash": 3953131837,
+              "pixels": 3677
+            },
+            {
+              "hash": 2508860844,
+              "pixels": 2890
+            },
+            {
+              "hash": 3195509043,
+              "pixels": 2885
+            },
+            {
+              "hash": 2527209005,
+              "pixels": 3138
+            },
+            {
+              "hash": 4061883879,
+              "pixels": 3139
+            },
+            {
+              "hash": 1325549309,
+              "pixels": 3132
+            },
+            {
+              "hash": 2796783064,
+              "pixels": 3442
+            },
+            {
+              "hash": 1117101957,
+              "pixels": 3838
+            },
+            {
+              "hash": 1085150723,
+              "pixels": 3963
+            },
+            {
+              "hash": 2574506858,
+              "pixels": 4255
+            },
+            {
+              "hash": 2468201887,
+              "pixels": 4521
+            },
+            {
+              "hash": 3084793523,
+              "pixels": 4469
+            },
+            {
+              "hash": 3504326766,
+              "pixels": 4290
+            },
+            {
+              "hash": 2473108420,
+              "pixels": 4178
+            },
+            {
+              "hash": 2589727159,
+              "pixels": 4581
+            },
+            {
+              "hash": 1017440010,
+              "pixels": 4439
+            },
+            {
+              "hash": 2733635645,
+              "pixels": 4279
+            },
+            {
+              "hash": 2524039653,
+              "pixels": 3665
+            },
+            {
+              "hash": 3157413258,
+              "pixels": 4102
+            },
+            {
+              "hash": 2944872008,
+              "pixels": 4528
+            },
+            {
+              "hash": 4019076493,
+              "pixels": 4804
+            }
+          ]
+        },
+        {
+          "name": "all32 front/back plates recompose the actual full generated poses exactly",
+          "passed": true,
+          "data": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "electricity is visibly hidden by the actual boss body in multiple poses",
+          "passed": true,
+          "data": [
+            {
+              "frame": 0,
+              "behind": 5336,
+              "over": 7355
+            },
+            {
+              "frame": 1,
+              "behind": 5771,
+              "over": 7128
+            },
+            {
+              "frame": 2,
+              "behind": 4482,
+              "over": 7085
+            },
+            {
+              "frame": 3,
+              "behind": 4256,
+              "over": 6539
+            },
+            {
+              "frame": 4,
+              "behind": 4958,
+              "over": 5336
+            },
+            {
+              "frame": 5,
+              "behind": 4449,
+              "over": 4906
+            },
+            {
+              "frame": 6,
+              "behind": 3751,
+              "over": 5292
+            },
+            {
+              "frame": 7,
+              "behind": 3814,
+              "over": 5724
+            },
+            {
+              "frame": 8,
+              "behind": 4962,
+              "over": 4963
+            },
+            {
+              "frame": 9,
+              "behind": 5030,
+              "over": 5558
+            },
+            {
+              "frame": 10,
+              "behind": 3038,
+              "over": 6080
+            },
+            {
+              "frame": 11,
+              "behind": 2480,
+              "over": 5667
+            },
+            {
+              "frame": 12,
+              "behind": 3175,
+              "over": 4293
+            },
+            {
+              "frame": 13,
+              "behind": 4199,
+              "over": 3628
+            },
+            {
+              "frame": 14,
+              "behind": 4548,
+              "over": 3421
+            },
+            {
+              "frame": 15,
+              "behind": 4751,
+              "over": 4297
+            },
+            {
+              "frame": 16,
+              "behind": 4642,
+              "over": 5040
+            },
+            {
+              "frame": 17,
+              "behind": 4215,
+              "over": 6002
+            },
+            {
+              "frame": 18,
+              "behind": 3202,
+              "over": 7041
+            },
+            {
+              "frame": 19,
+              "behind": 3225,
+              "over": 7026
+            },
+            {
+              "frame": 20,
+              "behind": 3903,
+              "over": 6911
+            },
+            {
+              "frame": 21,
+              "behind": 3588,
+              "over": 6416
+            },
+            {
+              "frame": 22,
+              "behind": 4444,
+              "over": 6207
+            },
+            {
+              "frame": 23,
+              "behind": 4383,
+              "over": 7024
+            },
+            {
+              "frame": 24,
+              "behind": 4501,
+              "over": 7253
+            },
+            {
+              "frame": 25,
+              "behind": 5111,
+              "over": 7852
+            },
+            {
+              "frame": 26,
+              "behind": 4415,
+              "over": 7636
+            },
+            {
+              "frame": 27,
+              "behind": 4937,
+              "over": 7412
+            },
+            {
+              "frame": 28,
+              "behind": 6318,
+              "over": 6469
+            },
+            {
+              "frame": 29,
+              "behind": 6370,
+              "over": 6460
+            },
+            {
+              "frame": 30,
+              "behind": 6176,
+              "over": 6723
+            },
+            {
+              "frame": 31,
+              "behind": 5856,
+              "over": 7401
+            }
+          ]
+        },
+        {
+          "name": "electricity also crosses visibly over the actual boss body",
+          "passed": true,
+          "data": [
+            {
+              "frame": 0,
+              "behind": 5336,
+              "over": 7355
+            },
+            {
+              "frame": 1,
+              "behind": 5771,
+              "over": 7128
+            },
+            {
+              "frame": 2,
+              "behind": 4482,
+              "over": 7085
+            },
+            {
+              "frame": 3,
+              "behind": 4256,
+              "over": 6539
+            },
+            {
+              "frame": 4,
+              "behind": 4958,
+              "over": 5336
+            },
+            {
+              "frame": 5,
+              "behind": 4449,
+              "over": 4906
+            },
+            {
+              "frame": 6,
+              "behind": 3751,
+              "over": 5292
+            },
+            {
+              "frame": 7,
+              "behind": 3814,
+              "over": 5724
+            },
+            {
+              "frame": 8,
+              "behind": 4962,
+              "over": 4963
+            },
+            {
+              "frame": 9,
+              "behind": 5030,
+              "over": 5558
+            },
+            {
+              "frame": 10,
+              "behind": 3038,
+              "over": 6080
+            },
+            {
+              "frame": 11,
+              "behind": 2480,
+              "over": 5667
+            },
+            {
+              "frame": 12,
+              "behind": 3175,
+              "over": 4293
+            },
+            {
+              "frame": 13,
+              "behind": 4199,
+              "over": 3628
+            },
+            {
+              "frame": 14,
+              "behind": 4548,
+              "over": 3421
+            },
+            {
+              "frame": 15,
+              "behind": 4751,
+              "over": 4297
+            },
+            {
+              "frame": 16,
+              "behind": 4642,
+              "over": 5040
+            },
+            {
+              "frame": 17,
+              "behind": 4215,
+              "over": 6002
+            },
+            {
+              "frame": 18,
+              "behind": 3202,
+              "over": 7041
+            },
+            {
+              "frame": 19,
+              "behind": 3225,
+              "over": 7026
+            },
+            {
+              "frame": 20,
+              "behind": 3903,
+              "over": 6911
+            },
+            {
+              "frame": 21,
+              "behind": 3588,
+              "over": 6416
+            },
+            {
+              "frame": 22,
+              "behind": 4444,
+              "over": 6207
+            },
+            {
+              "frame": 23,
+              "behind": 4383,
+              "over": 7024
+            },
+            {
+              "frame": 24,
+              "behind": 4501,
+              "over": 7253
+            },
+            {
+              "frame": 25,
+              "behind": 5111,
+              "over": 7852
+            },
+            {
+              "frame": 26,
+              "behind": 4415,
+              "over": 7636
+            },
+            {
+              "frame": 27,
+              "behind": 4937,
+              "over": 7412
+            },
+            {
+              "frame": 28,
+              "behind": 6318,
+              "over": 6469
+            },
+            {
+              "frame": 29,
+              "behind": 6370,
+              "over": 6460
+            },
+            {
+              "frame": 30,
+              "behind": 6176,
+              "over": 6723
+            },
+            {
+              "frame": 31,
+              "behind": 5856,
+              "over": 7401
+            }
+          ]
+        },
+        {
+          "name": "near and far animation plates share the exact body pivot and phase",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "wrapped main form retains actual damaged pixels and native hit flashes",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "owner": 0.16,
+            "part": 0.12,
+            "pixels": 31910
+          }
+        },
+        {
+          "name": "main hit flash expires under the new lightning",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal actual lightning storm still warns before its projectile release",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal live combat uses the animated wrap and forked bolt banks",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal new visible lightning still uses native player damage",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal phase cleanup leaves no lightning ghost or hostile projectiles",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard actual lightning storm still warns before its projectile release",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard live combat uses the animated wrap and forked bolt banks",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard new visible lightning still uses native player damage",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard phase cleanup leaves no lightning ghost or hostile projectiles",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious actual lightning storm still warns before its projectile release",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious live combat uses the animated wrap and forked bolt banks",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious new visible lightning still uses native player damage",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious phase cleanup leaves no lightning ghost or hostile projectiles",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "all four live generator connections use native animated lightning",
+          "passed": true,
+          "data": {
+            "links": [
+              {
+                "x": 136,
+                "y": 134.9714376166254,
+                "ex": 340,
+                "ey": 166.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 134.9714376166254,
+                "ex": 340,
+                "ey": 166.97143761662537
+              },
+              {
+                "x": 136,
+                "y": 290.9714376166254,
+                "ex": 340,
+                "ey": 166.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 290.9714376166254,
+                "ex": 340,
+                "ey": 166.9714376166254
+              }
+            ],
+            "nodes": [
+              {
+                "x": 136,
+                "y": 134.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 134.9714376166254
+              },
+              {
+                "x": 136,
+                "y": 290.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 290.9714376166254
+              }
+            ],
+            "boss": {
+              "x": 340,
+              "y": 166.9714376166254
+            },
+            "pixels": 204
+          }
+        },
+        {
+          "name": "lightning connections terminate at the actual moving hull",
+          "passed": true,
+          "data": {
+            "links": [
+              {
+                "x": 136,
+                "y": 134.9714376166254,
+                "ex": 340,
+                "ey": 166.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 134.9714376166254,
+                "ex": 340,
+                "ey": 166.97143761662537
+              },
+              {
+                "x": 136,
+                "y": 290.9714376166254,
+                "ex": 340,
+                "ey": 166.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 290.9714376166254,
+                "ex": 340,
+                "ey": 166.9714376166254
+              }
+            ],
+            "nodes": [
+              {
+                "x": 136,
+                "y": 134.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 134.9714376166254
+              },
+              {
+                "x": 136,
+                "y": 290.9714376166254
+              },
+              {
+                "x": 544,
+                "y": 290.9714376166254
+              }
+            ],
+            "boss": {
+              "x": 340,
+              "y": 166.9714376166254
+            },
+            "pixels": 204
+          }
+        },
+        {
+          "name": "normal Stage4 charge is surrounded by the new near/far lightning",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal real Stage4 volleys use the animated plasma-ball bank",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal lightning balls remain immune to interception",
+          "passed": true,
+          "data": {
+            "flag": true,
+            "shootable": false,
+            "proof": true,
+            "alive": true
+          }
+        },
+        {
+          "name": "hard Stage4 charge is surrounded by the new near/far lightning",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard real Stage4 volleys use the animated plasma-ball bank",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard lightning balls remain immune to interception",
+          "passed": true,
+          "data": {
+            "flag": true,
+            "shootable": false,
+            "proof": true,
+            "alive": true
+          }
+        },
+        {
+          "name": "furious Stage4 charge is surrounded by the new near/far lightning",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious real Stage4 volleys use the animated plasma-ball bank",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious lightning balls remain immune to interception",
+          "passed": true,
+          "data": {
+            "flag": true,
+            "shootable": false,
+            "proof": true,
+            "alive": true
+          }
+        },
+        {
+          "name": "both real encounters keep their source timing and attack ownership",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Level4 lightning review uses the real full playfield and isolated saves",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Level4 selected lightning scene repeats native charges and real volleys",
+          "passed": true,
+          "data": {
+            "loops": 2,
+            "body": 698,
+            "balls": 5224,
+            "mode": "sa14-storm"
+          }
+        },
+        {
+          "name": "no page, console, draw or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "rows": [
+        {
+          "depth": [
+            {
+              "frame": 0,
+              "behind": 5336,
+              "over": 7355
+            },
+            {
+              "frame": 1,
+              "behind": 5771,
+              "over": 7128
+            },
+            {
+              "frame": 2,
+              "behind": 4482,
+              "over": 7085
+            },
+            {
+              "frame": 3,
+              "behind": 4256,
+              "over": 6539
+            },
+            {
+              "frame": 4,
+              "behind": 4958,
+              "over": 5336
+            },
+            {
+              "frame": 5,
+              "behind": 4449,
+              "over": 4906
+            },
+            {
+              "frame": 6,
+              "behind": 3751,
+              "over": 5292
+            },
+            {
+              "frame": 7,
+              "behind": 3814,
+              "over": 5724
+            },
+            {
+              "frame": 8,
+              "behind": 4962,
+              "over": 4963
+            },
+            {
+              "frame": 9,
+              "behind": 5030,
+              "over": 5558
+            },
+            {
+              "frame": 10,
+              "behind": 3038,
+              "over": 6080
+            },
+            {
+              "frame": 11,
+              "behind": 2480,
+              "over": 5667
+            },
+            {
+              "frame": 12,
+              "behind": 3175,
+              "over": 4293
+            },
+            {
+              "frame": 13,
+              "behind": 4199,
+              "over": 3628
+            },
+            {
+              "frame": 14,
+              "behind": 4548,
+              "over": 3421
+            },
+            {
+              "frame": 15,
+              "behind": 4751,
+              "over": 4297
+            },
+            {
+              "frame": 16,
+              "behind": 4642,
+              "over": 5040
+            },
+            {
+              "frame": 17,
+              "behind": 4215,
+              "over": 6002
+            },
+            {
+              "frame": 18,
+              "behind": 3202,
+              "over": 7041
+            },
+            {
+              "frame": 19,
+              "behind": 3225,
+              "over": 7026
+            },
+            {
+              "frame": 20,
+              "behind": 3903,
+              "over": 6911
+            },
+            {
+              "frame": 21,
+              "behind": 3588,
+              "over": 6416
+            },
+            {
+              "frame": 22,
+              "behind": 4444,
+              "over": 6207
+            },
+            {
+              "frame": 23,
+              "behind": 4383,
+              "over": 7024
+            },
+            {
+              "frame": 24,
+              "behind": 4501,
+              "over": 7253
+            },
+            {
+              "frame": 25,
+              "behind": 5111,
+              "over": 7852
+            },
+            {
+              "frame": 26,
+              "behind": 4415,
+              "over": 7636
+            },
+            {
+              "frame": 27,
+              "behind": 4937,
+              "over": 7412
+            },
+            {
+              "frame": 28,
+              "behind": 6318,
+              "over": 6469
+            },
+            {
+              "frame": 29,
+              "behind": 6370,
+              "over": 6460
+            },
+            {
+              "frame": 30,
+              "behind": 6176,
+              "over": 6723
+            },
+            {
+              "frame": 31,
+              "behind": 5856,
+              "over": 7401
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "archive_combat": {
+      "fixture": false,
+      "art_approval_pending": false,
+      "passed": 71,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "normal lightning gives a real warning before contact",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal lightning actually spirals out from the core",
+          "passed": true,
+          "data": {
+            "count": 12,
+            "angles": [
+              1.0559999999999998,
+              -2.0855926535897935,
+              1.1240000000000006,
+              -2.017592653589793,
+              1.1920000000000006,
+              -1.9495926535897923,
+              1.2600000000000002,
+              -1.8815926535897927,
+              1.3280000000000003,
+              -1.813592653589793,
+              1.3960000000000006,
+              -1.745592653589794
+            ],
+            "release": {
+              "event": "main-release",
+              "t": 1.3333333333333335,
+              "type": "spiralLightning",
+              "reaction": 1.35
+            },
+            "pools": [
+              0,
+              8,
+              1,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "name": "normal retains exactly the five approved form pools",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal spiral trajectory never homes after release",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal retreats to the background before the bomb volley",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal background body cannot hit or take plane damage",
+          "passed": true,
+          "data": {
+            "damage": 0,
+            "depth": 0.53,
+            "scales": [
+              0.6790625,
+              0.6790625,
+              0.6790625
+            ],
+            "plane": false
+          }
+        },
+        {
+          "name": "normal code bombs can be shot down",
+          "passed": true,
+          "data": {
+            "hp": 12,
+            "dead": true,
+            "intercept": true,
+            "target": {
+              "x": 340,
+              "y": 442
+            }
+          }
+        },
+        {
+          "name": "normal surviving bombs detonate at their committed target",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal boss returns to full scale and becomes damageable",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal downloads are harmless while assembling",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal former bosses spawn at half their source HP",
+          "passed": true,
+          "data": [
+            {
+              "id": 6,
+              "kind": "halberd",
+              "hp": 467,
+              "source": 933,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "normal each downloaded hull exposes all three Retina modules",
+          "passed": true,
+          "data": [
+            {
+              "id": 6,
+              "kind": "halberd",
+              "hp": 467,
+              "source": 933,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "normal formation respects the total actor cap",
+          "passed": true,
+          "data": [
+            {
+              "id": 6,
+              "kind": "halberd",
+              "hp": 467,
+              "source": 933,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "normal all summons become active and fire from real mounts",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal native Retina damage flashes the actual independent module pixels",
+          "passed": true,
+          "data": {
+            "hp": 1,
+            "pixels": 11865,
+            "flash": 0.16,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "normal summon flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal destroyed launcher stops its own shots",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal repeated downloads never exceed the live formation cap",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal phase cleanup removes summons, shots and hazards",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard lightning gives a real warning before contact",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard lightning actually spirals out from the core",
+          "passed": true,
+          "data": {
+            "count": 24,
+            "angles": [
+              1.3199999999999992,
+              -2.868790204786392,
+              -0.7743951023931968,
+              1.393333333333333,
+              -2.7954568714530583,
+              -0.7010617690598634,
+              1.4666666666666672,
+              -2.722123538119724,
+              -0.6277284357265283,
+              1.540000000000001,
+              -2.6487902047863905,
+              -0.5543951023931951,
+              1.6133333333333335,
+              -2.5754568714530577,
+              -0.48106176905986187,
+              1.6866666666666668,
+              -2.502123538119724,
+              -0.40772843572652934,
+              1.7599999999999998,
+              -2.4287902047863907,
+              -0.33439510239319614,
+              1.8333333333333344,
+              -2.355456871453059,
+              -0.2610617690598621
+            ],
+            "release": {
+              "event": "main-release",
+              "t": 1.1500000000000008,
+              "type": "spiralLightning",
+              "reaction": 1.16
+            },
+            "pools": [
+              0,
+              8,
+              1,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "name": "hard retains exactly the five approved form pools",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard spiral trajectory never homes after release",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard retreats to the background before the bomb volley",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard background body cannot hit or take plane damage",
+          "passed": true,
+          "data": {
+            "damage": 0,
+            "depth": 0.53,
+            "scales": [
+              0.6790625,
+              0.6790625,
+              0.6790625
+            ],
+            "plane": false
+          }
+        },
+        {
+          "name": "hard code bombs can be shot down",
+          "passed": true,
+          "data": {
+            "hp": 16,
+            "dead": true,
+            "intercept": true,
+            "target": {
+              "x": 340,
+              "y": 442
+            }
+          }
+        },
+        {
+          "name": "hard surviving bombs detonate at their committed target",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard boss returns to full scale and becomes damageable",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard downloads are harmless while assembling",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard former bosses spawn at half their source HP",
+          "passed": true,
+          "data": [
+            {
+              "id": 12,
+              "kind": "halberd",
+              "hp": 583,
+              "source": 1166,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 13,
+              "kind": "spear",
+              "hp": 210,
+              "source": 210,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "hard each downloaded hull exposes all three Retina modules",
+          "passed": true,
+          "data": [
+            {
+              "id": 12,
+              "kind": "halberd",
+              "hp": 583,
+              "source": 1166,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 13,
+              "kind": "spear",
+              "hp": 210,
+              "source": 210,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "hard formation respects the total actor cap",
+          "passed": true,
+          "data": [
+            {
+              "id": 12,
+              "kind": "halberd",
+              "hp": 583,
+              "source": 1166,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 13,
+              "kind": "spear",
+              "hp": 210,
+              "source": 210,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "hard all summons become active and fire from real mounts",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard native Retina damage flashes the actual independent module pixels",
+          "passed": true,
+          "data": {
+            "hp": 1,
+            "pixels": 11865,
+            "flash": 0.16,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "hard summon flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard destroyed launcher stops its own shots",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard repeated downloads never exceed the live formation cap",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard phase cleanup removes summons, shots and hazards",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious lightning gives a real warning before contact",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious lightning actually spirals out from the core",
+          "passed": true,
+          "data": {
+            "count": 36,
+            "angles": [
+              1.613333333333332,
+              -3.0990556470513577,
+              -1.5282593202564618,
+              0.04253700653843475,
+              1.6826666666666659,
+              -3.0297223137180236,
+              -1.4589259869231272,
+              0.11187033987176928,
+              1.7519999999999998,
+              -2.9603889803846903,
+              -1.3895926535897936,
+              0.18120367320510297,
+              1.8213333333333337,
+              -2.8910556470513558,
+              -1.3202593202564588,
+              0.2505370065384375,
+              1.8906666666666683,
+              -2.821722313718022,
+              -1.2509259869231255,
+              0.3198703398717713,
+              1.9600000000000009,
+              -2.7523889803846897,
+              -1.1815926535897923,
+              0.38920367320510413,
+              2.0293333333333337,
+              -2.683055647051357,
+              -1.1122593202564597,
+              0.4585370065384367,
+              2.0986666666666665,
+              -2.613722313718023,
+              -1.042925986923126,
+              0.5278703398717709,
+              2.168,
+              -2.5443889803846895,
+              -0.973592653589793,
+              0.597203673205103
+            ],
+            "release": {
+              "event": "main-release",
+              "t": 0.966666666666668,
+              "type": "spiralLightning",
+              "reaction": 0.98
+            },
+            "pools": [
+              0,
+              8,
+              1,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "name": "furious retains exactly the five approved form pools",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious spiral trajectory never homes after release",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious retreats to the background before the bomb volley",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious background body cannot hit or take plane damage",
+          "passed": true,
+          "data": {
+            "damage": 0,
+            "depth": 0.53,
+            "scales": [
+              0.6790625,
+              0.6790625,
+              0.6790625
+            ],
+            "plane": false
+          }
+        },
+        {
+          "name": "furious code bombs can be shot down",
+          "passed": true,
+          "data": {
+            "hp": 20,
+            "dead": true,
+            "intercept": true,
+            "target": {
+              "x": 230,
+              "y": 377
+            }
+          }
+        },
+        {
+          "name": "furious surviving bombs detonate at their committed target",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious boss returns to full scale and becomes damageable",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious downloads are harmless while assembling",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious former bosses spawn at half their source HP",
+          "passed": true,
+          "data": [
+            {
+              "id": 19,
+              "kind": "halberd",
+              "hp": 689,
+              "source": 1378,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 20,
+              "kind": "spear",
+              "hp": 247,
+              "source": 247,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 21,
+              "kind": "brood",
+              "hp": 234,
+              "source": 234,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "furious each downloaded hull exposes all three Retina modules",
+          "passed": true,
+          "data": [
+            {
+              "id": 19,
+              "kind": "halberd",
+              "hp": 689,
+              "source": 1378,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 20,
+              "kind": "spear",
+              "hp": 247,
+              "source": 247,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 21,
+              "kind": "brood",
+              "hp": 234,
+              "source": 234,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "furious formation respects the total actor cap",
+          "passed": true,
+          "data": [
+            {
+              "id": 19,
+              "kind": "halberd",
+              "hp": 689,
+              "source": 1378,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 20,
+              "kind": "spear",
+              "hp": 247,
+              "source": 247,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 21,
+              "kind": "brood",
+              "hp": 234,
+              "source": 234,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "name": "furious all summons become active and fire from real mounts",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious native Retina damage flashes the actual independent module pixels",
+          "passed": true,
+          "data": {
+            "hp": 1,
+            "pixels": 11865,
+            "flash": 0.16,
+            "owner": 0.16
+          }
+        },
+        {
+          "name": "furious summon flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious destroyed launcher stops its own shots",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious repeated downloads never exceed the live formation cap",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious phase cleanup removes summons, shots and hazards",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "natural main-form controller uses all three new attacks",
+          "passed": true,
+          "data": [
+            "downloadLegion",
+            "spiralLightning",
+            "codeBombs",
+            "coreMissiles",
+            "armLasers"
+          ]
+        },
+        {
+          "name": "bastion archived weapon assemblies actually attack",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "bastion takes actual centered machine-gun damage",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "camo archived weapon assemblies actually attack",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "camo takes actual centered machine-gun damage",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "halberd archived weapon assemblies actually attack",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "halberd takes actual centered machine-gun damage",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "code bomb arrival is harmless until its warned detonation",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "a surviving code bomb actually damages an unprotected native player",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "code bombs respect the native dodge invulnerability path",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "visible spiral bolts actually damage the native player",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "destroying both Camo batteries silences their weapons",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "destroyed hulls retire every cached Retina target immediately",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "no page, console, drawing or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "rows": [
+        {
+          "diff": "normal",
+          "spiral": {
+            "count": 12,
+            "angles": [
+              1.0559999999999998,
+              -2.0855926535897935,
+              1.1240000000000006,
+              -2.017592653589793,
+              1.1920000000000006,
+              -1.9495926535897923,
+              1.2600000000000002,
+              -1.8815926535897927,
+              1.3280000000000003,
+              -1.813592653589793,
+              1.3960000000000006,
+              -1.745592653589794
+            ],
+            "release": {
+              "event": "main-release",
+              "t": 1.3333333333333335,
+              "type": "spiralLightning",
+              "reaction": 1.35
+            },
+            "pools": [
+              0,
+              8,
+              1,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "diff": "normal",
+          "army": [
+            {
+              "id": 6,
+              "kind": "halberd",
+              "hp": 467,
+              "source": 933,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "diff": "hard",
+          "spiral": {
+            "count": 24,
+            "angles": [
+              1.3199999999999992,
+              -2.868790204786392,
+              -0.7743951023931968,
+              1.393333333333333,
+              -2.7954568714530583,
+              -0.7010617690598634,
+              1.4666666666666672,
+              -2.722123538119724,
+              -0.6277284357265283,
+              1.540000000000001,
+              -2.6487902047863905,
+              -0.5543951023931951,
+              1.6133333333333335,
+              -2.5754568714530577,
+              -0.48106176905986187,
+              1.6866666666666668,
+              -2.502123538119724,
+              -0.40772843572652934,
+              1.7599999999999998,
+              -2.4287902047863907,
+              -0.33439510239319614,
+              1.8333333333333344,
+              -2.355456871453059,
+              -0.2610617690598621
+            ],
+            "release": {
+              "event": "main-release",
+              "t": 1.1500000000000008,
+              "type": "spiralLightning",
+              "reaction": 1.16
+            },
+            "pools": [
+              0,
+              8,
+              1,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "diff": "hard",
+          "army": [
+            {
+              "id": 12,
+              "kind": "halberd",
+              "hp": 583,
+              "source": 1166,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 13,
+              "kind": "spear",
+              "hp": 210,
+              "source": 210,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        },
+        {
+          "diff": "furious",
+          "spiral": {
+            "count": 36,
+            "angles": [
+              1.613333333333332,
+              -3.0990556470513577,
+              -1.5282593202564618,
+              0.04253700653843475,
+              1.6826666666666659,
+              -3.0297223137180236,
+              -1.4589259869231272,
+              0.11187033987176928,
+              1.7519999999999998,
+              -2.9603889803846903,
+              -1.3895926535897936,
+              0.18120367320510297,
+              1.8213333333333337,
+              -2.8910556470513558,
+              -1.3202593202564588,
+              0.2505370065384375,
+              1.8906666666666683,
+              -2.821722313718022,
+              -1.2509259869231255,
+              0.3198703398717713,
+              1.9600000000000009,
+              -2.7523889803846897,
+              -1.1815926535897923,
+              0.38920367320510413,
+              2.0293333333333337,
+              -2.683055647051357,
+              -1.1122593202564597,
+              0.4585370065384367,
+              2.0986666666666665,
+              -2.613722313718023,
+              -1.042925986923126,
+              0.5278703398717709,
+              2.168,
+              -2.5443889803846895,
+              -0.973592653589793,
+              0.597203673205103
+            ],
+            "release": {
+              "event": "main-release",
+              "t": 0.966666666666668,
+              "type": "spiralLightning",
+              "reaction": 0.98
+            },
+            "pools": [
+              0,
+              8,
+              1,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "diff": "furious",
+          "army": [
+            {
+              "id": 19,
+              "kind": "halberd",
+              "hp": 689,
+              "source": 1378,
+              "mini": true,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 20,
+              "kind": "spear",
+              "hp": 247,
+              "source": 247,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            },
+            {
+              "id": 21,
+              "kind": "brood",
+              "hp": 234,
+              "source": 234,
+              "mini": false,
+              "phase": "fire",
+              "noHit": false,
+              "parts": [
+                "core",
+                "left",
+                "right"
+              ],
+              "locks": 3
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "storm_combat": {
+      "checks": [
+        {
+          "name": "Shield engagement explains four generators and multi-Retina",
+          "passed": true,
+          "data": {
+            "said": [
+              {
+                "event": "radio",
+                "id": "generators",
+                "who": "decker",
+                "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+              }
+            ],
+            "active": true,
+            "spins": [
+              0.395,
+              4.425000000000001,
+              8.441666666666666,
+              12.471666666666668
+            ]
+          }
+        },
+        {
+          "name": "All four outer generator plates rotate in the actual renderer",
+          "passed": true,
+          "data": {
+            "draws": [
+              {
+                "x": 136,
+                "y": 144.7465122721143,
+                "w": 54,
+                "h": 54,
+                "rot": 1.5511613727099598
+              },
+              {
+                "x": 544,
+                "y": 144.7465122721143,
+                "w": 54,
+                "h": 54,
+                "rot": 3.239767424014477
+              },
+              {
+                "x": 136,
+                "y": 300.7465122721143,
+                "w": 54,
+                "h": 54,
+                "rot": 4.876013597759157
+              },
+              {
+                "x": 544,
+                "y": 300.7465122721143,
+                "w": 54,
+                "h": 54,
+                "rot": 0.2814343418840879
+              }
+            ],
+            "pixels": 155698,
+            "spins": [
+              3.9499999999999984,
+              8.250000000000007,
+              12.416666666666664,
+              0.7166666666666724
+            ]
+          }
+        },
+        {
+          "name": "Real multi-Retina acquires all four spinning generator targets",
+          "passed": true,
+          "data": {
+            "nodes": 4,
+            "marks": 4,
+            "cap": 128,
+            "locked": 4,
+            "alive": true
+          }
+        },
+        {
+          "name": "Multi-Retina launches actual missile salvo at the generators",
+          "passed": true,
+          "data": {
+            "used": 4,
+            "missiles": 4
+          }
+        },
+        {
+          "name": "normal helpers visibly enter from south scaled above the combat plane",
+          "passed": true,
+          "data": {
+            "first": [
+              {
+                "x": 229.6,
+                "y": 702,
+                "scale": 2.25,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              },
+              {
+                "x": 450.4,
+                "y": 702,
+                "scale": 2.25,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              }
+            ],
+            "last": [
+              {
+                "x": 291.3724532096636,
+                "y": 550.6033739504976,
+                "scale": 1.8330955657748988,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              },
+              {
+                "x": 422.462338706023,
+                "y": 610.5794391960256,
+                "scale": 2.061447752676983,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              }
+            ]
+          }
+        },
+        {
+          "name": "normal south entry has no gun shots or Retina targets",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "normal radio detects the incoming lightning wing",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal same helpers become shootable after landing on the combat plane",
+          "passed": true,
+          "data": {
+            "on": true,
+            "same": true,
+            "targets": 4,
+            "moves": [
+              "orbit",
+              "orbit"
+            ]
+          }
+        },
+        {
+          "name": "normal helpers orbit, scatter, cross and rejoin without respawning",
+          "passed": true,
+          "data": {
+            "shots": 55,
+            "missiles": 8,
+            "bullets": 47,
+            "bombs": [
+              {
+                "x": 320,
+                "y": 419,
+                "track": false,
+                "warn": 1.65,
+                "from": {
+                  "x": 211.12727272727273,
+                  "y": 188.42867305067494
+                }
+              },
+              {
+                "x": 360,
+                "y": 419,
+                "track": false,
+                "warn": 1.65,
+                "from": {
+                  "x": 468.8727272727273,
+                  "y": 200.73927911128095
+                }
+              },
+              {
+                "x": 290,
+                "y": 475,
+                "track": false,
+                "warn": 1.65,
+                "from": {
+                  "x": 339.12727272727284,
+                  "y": 217.43283666072045
+                }
+              },
+              {
+                "x": 390,
+                "y": 475,
+                "track": false,
+                "warn": 1.65,
+                "from": {
+                  "x": 340.87272727272716,
+                  "y": 251.4101093879932
+                }
+              }
+            ],
+            "cross": [
+              {
+                "event": "helper-cross",
+                "side": -1,
+                "raid": 1,
+                "from": {
+                  "x": 138.4,
+                  "y": 186
+                },
+                "to": {
+                  "x": 522.4,
+                  "y": 332
+                }
+              },
+              {
+                "event": "helper-cross",
+                "side": 1,
+                "raid": 1,
+                "from": {
+                  "x": 541.6,
+                  "y": 186
+                },
+                "to": {
+                  "x": 157.6,
+                  "y": 397
+                }
+              }
+            ],
+            "orbit": [
+              {
+                "event": "helper-orbit",
+                "side": -1,
+                "raid": 1
+              },
+              {
+                "event": "helper-orbit",
+                "side": 1,
+                "raid": 1
+              }
+            ],
+            "draws": {
+              "bomb": 400,
+              "impact": 192,
+              "glow": 0,
+              "radio": 372
+            },
+            "same": true
+          }
+        },
+        {
+          "name": "normal wing independently fires lightning bullets and counterable missiles",
+          "passed": true,
+          "data": 55
+        },
+        {
+          "name": "normal crossing wing drops fixed lightning bombs with a full warning",
+          "passed": true,
+          "data": [
+            {
+              "x": 320,
+              "y": 419,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 211.12727272727273,
+                "y": 188.42867305067494
+              }
+            },
+            {
+              "x": 360,
+              "y": 419,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 468.8727272727273,
+                "y": 200.73927911128095
+              }
+            },
+            {
+              "x": 290,
+              "y": 475,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 339.12727272727284,
+                "y": 217.43283666072045
+              }
+            },
+            {
+              "x": 390,
+              "y": 475,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 340.87272727272716,
+                "y": 251.4101093879932
+              }
+            }
+          ]
+        },
+        {
+          "name": "hard helpers visibly enter from south scaled above the combat plane",
+          "passed": true,
+          "data": {
+            "first": [
+              {
+                "x": 229.6,
+                "y": 702,
+                "scale": 2.25,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              },
+              {
+                "x": 450.4,
+                "y": 702,
+                "scale": 2.25,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              }
+            ],
+            "last": [
+              {
+                "x": 291.3724532096636,
+                "y": 550.6033739504976,
+                "scale": 1.8330955657748988,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              },
+              {
+                "x": 422.462338706023,
+                "y": 610.5794391960256,
+                "scale": 2.061447752676983,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              }
+            ]
+          }
+        },
+        {
+          "name": "hard south entry has no gun shots or Retina targets",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "hard radio detects the incoming lightning wing",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard same helpers become shootable after landing on the combat plane",
+          "passed": true,
+          "data": {
+            "on": true,
+            "same": true,
+            "targets": 4,
+            "moves": [
+              "orbit",
+              "orbit"
+            ]
+          }
+        },
+        {
+          "name": "hard helpers orbit, scatter, cross and rejoin without respawning",
+          "passed": true,
+          "data": {
+            "shots": 75,
+            "missiles": 15,
+            "bullets": 60,
+            "bombs": [
+              {
+                "x": 320,
+                "y": 419,
+                "track": false,
+                "warn": 1.45,
+                "from": {
+                  "x": 211.12727272727273,
+                  "y": 188.42867305067494
+                }
+              },
+              {
+                "x": 360,
+                "y": 419,
+                "track": false,
+                "warn": 1.45,
+                "from": {
+                  "x": 468.8727272727273,
+                  "y": 200.73927911128095
+                }
+              },
+              {
+                "x": 290,
+                "y": 475,
+                "track": false,
+                "warn": 1.45,
+                "from": {
+                  "x": 339.12727272727284,
+                  "y": 217.43283666072045
+                }
+              },
+              {
+                "x": 390,
+                "y": 475,
+                "track": false,
+                "warn": 1.45,
+                "from": {
+                  "x": 340.87272727272716,
+                  "y": 251.4101093879932
+                }
+              }
+            ],
+            "cross": [
+              {
+                "event": "helper-cross",
+                "side": -1,
+                "raid": 1,
+                "from": {
+                  "x": 138.4,
+                  "y": 186
+                },
+                "to": {
+                  "x": 522.4,
+                  "y": 332
+                }
+              },
+              {
+                "event": "helper-cross",
+                "side": 1,
+                "raid": 1,
+                "from": {
+                  "x": 541.6,
+                  "y": 186
+                },
+                "to": {
+                  "x": 157.6,
+                  "y": 397
+                }
+              }
+            ],
+            "orbit": [
+              {
+                "event": "helper-orbit",
+                "side": -1,
+                "raid": 1
+              },
+              {
+                "event": "helper-orbit",
+                "side": 1,
+                "raid": 1
+              }
+            ],
+            "draws": {
+              "bomb": 752,
+              "impact": 384,
+              "glow": 0,
+              "radio": 687
+            },
+            "same": true
+          }
+        },
+        {
+          "name": "hard wing independently fires lightning bullets and counterable missiles",
+          "passed": true,
+          "data": 75
+        },
+        {
+          "name": "On-plane helpers keep firing during the hull overhead/rearm state",
+          "passed": true,
+          "data": {
+            "shots": 2
+          }
+        },
+        {
+          "name": "hard crossing wing drops fixed lightning bombs with a full warning",
+          "passed": true,
+          "data": [
+            {
+              "x": 320,
+              "y": 419,
+              "track": false,
+              "warn": 1.45,
+              "from": {
+                "x": 211.12727272727273,
+                "y": 188.42867305067494
+              }
+            },
+            {
+              "x": 360,
+              "y": 419,
+              "track": false,
+              "warn": 1.45,
+              "from": {
+                "x": 468.8727272727273,
+                "y": 200.73927911128095
+              }
+            },
+            {
+              "x": 290,
+              "y": 475,
+              "track": false,
+              "warn": 1.45,
+              "from": {
+                "x": 339.12727272727284,
+                "y": 217.43283666072045
+              }
+            },
+            {
+              "x": 390,
+              "y": 475,
+              "track": false,
+              "warn": 1.45,
+              "from": {
+                "x": 340.87272727272716,
+                "y": 251.4101093879932
+              }
+            }
+          ]
+        },
+        {
+          "name": "Updated helper hit/deflect feedback changes actual authored pixels",
+          "passed": true,
+          "data": {
+            "pixels": 6849,
+            "flash": 0,
+            "gunFlash": 0,
+            "hp": 0,
+            "deflect": 0.13
+          }
+        },
+        {
+          "name": "Helper flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious helpers visibly enter from south scaled above the combat plane",
+          "passed": true,
+          "data": {
+            "first": [
+              {
+                "x": 229.6,
+                "y": 702,
+                "scale": 2.25,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              },
+              {
+                "x": 450.4,
+                "y": 702,
+                "scale": 2.25,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              }
+            ],
+            "last": [
+              {
+                "x": 291.3724532096636,
+                "y": 550.6033739504976,
+                "scale": 1.8330955657748988,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              },
+              {
+                "x": 422.462338706023,
+                "y": 610.5794391960256,
+                "scale": 2.061447752676983,
+                "safe": true,
+                "mat": 0,
+                "move": "entry",
+                "phase": "recover"
+              }
+            ]
+          }
+        },
+        {
+          "name": "furious south entry has no gun shots or Retina targets",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "furious radio detects the incoming lightning wing",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious same helpers become shootable after landing on the combat plane",
+          "passed": true,
+          "data": {
+            "on": true,
+            "same": true,
+            "targets": 4,
+            "moves": [
+              "orbit",
+              "orbit"
+            ]
+          }
+        },
+        {
+          "name": "furious helpers orbit, scatter, cross and rejoin without respawning",
+          "passed": true,
+          "data": {
+            "shots": 97,
+            "missiles": 24,
+            "bullets": 73,
+            "bombs": [
+              {
+                "x": 320,
+                "y": 419,
+                "track": false,
+                "warn": 1.3,
+                "from": {
+                  "x": 211.1272727272727,
+                  "y": 188.42867305067494
+                }
+              },
+              {
+                "x": 360,
+                "y": 419,
+                "track": false,
+                "warn": 1.3,
+                "from": {
+                  "x": 468.8727272727273,
+                  "y": 200.73927911128095
+                }
+              },
+              {
+                "x": 290,
+                "y": 475,
+                "track": false,
+                "warn": 1.3,
+                "from": {
+                  "x": 339.12727272727284,
+                  "y": 217.43283666072045
+                }
+              },
+              {
+                "x": 390,
+                "y": 475,
+                "track": false,
+                "warn": 1.3,
+                "from": {
+                  "x": 340.87272727272716,
+                  "y": 251.4101093879932
+                }
+              }
+            ],
+            "cross": [
+              {
+                "event": "helper-cross",
+                "side": -1,
+                "raid": 1,
+                "from": {
+                  "x": 138.39999999999998,
+                  "y": 186
+                },
+                "to": {
+                  "x": 522.4,
+                  "y": 332
+                }
+              },
+              {
+                "event": "helper-cross",
+                "side": 1,
+                "raid": 1,
+                "from": {
+                  "x": 541.6,
+                  "y": 186
+                },
+                "to": {
+                  "x": 157.6,
+                  "y": 397
+                }
+              },
+              {
+                "event": "helper-cross",
+                "side": -1,
+                "raid": 2,
+                "from": {
+                  "x": 138.4,
+                  "y": 146
+                },
+                "to": {
+                  "x": 522.4,
+                  "y": 332
+                }
+              }
+            ],
+            "orbit": [
+              {
+                "event": "helper-orbit",
+                "side": -1,
+                "raid": 1
+              },
+              {
+                "event": "helper-orbit",
+                "side": 1,
+                "raid": 1
+              }
+            ],
+            "draws": {
+              "bomb": 1222,
+              "impact": 590,
+              "glow": 0,
+              "radio": 1001
+            },
+            "same": true
+          }
+        },
+        {
+          "name": "furious wing independently fires lightning bullets and counterable missiles",
+          "passed": true,
+          "data": 97
+        },
+        {
+          "name": "furious crossing wing drops fixed lightning bombs with a full warning",
+          "passed": true,
+          "data": [
+            {
+              "x": 320,
+              "y": 419,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 211.1272727272727,
+                "y": 188.42867305067494
+              }
+            },
+            {
+              "x": 360,
+              "y": 419,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 468.8727272727273,
+                "y": 200.73927911128095
+              }
+            },
+            {
+              "x": 290,
+              "y": 475,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 339.12727272727284,
+                "y": 217.43283666072045
+              }
+            },
+            {
+              "x": 390,
+              "y": 475,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 340.87272727272716,
+                "y": 251.4101093879932
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lightning bomb site stays fixed after the pilot dodges",
+          "passed": true,
+          "data": {
+            "fixed": true,
+            "impact": false,
+            "t": 0.7500000000000007,
+            "warn": 1.45
+          }
+        },
+        {
+          "name": "Lightning bomb cannot hurt before its warning ends and hits at impact",
+          "passed": true,
+          "data": {
+            "before": 0,
+            "hits": 1,
+            "impact": true
+          }
+        },
+        {
+          "name": "normal quarter-HP handoff lights the whole hull and announces the ram",
+          "passed": true,
+          "data": {
+            "phase": "panic",
+            "glow": 0.7550387596899226,
+            "shake": 3.0503875968992267,
+            "road": 705.3353993015996,
+            "radio": {
+              "id": "overload",
+              "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!",
+              "who": "decker",
+              "t": 0.8166666666666675,
+              "duration": 5.2
+            },
+            "draws": 50
+          }
+        },
+        {
+          "name": "normal committed south ram visibly accelerates the road",
+          "passed": true,
+          "data": {
+            "ramFrames": 49,
+            "maxY": 810,
+            "speed": 1169.6949079414746
+          }
+        },
+        {
+          "name": "normal enlarged return flies overhead northward without body damage",
+          "passed": true,
+          "data": {
+            "phase": "overhead",
+            "depth": true,
+            "scale": 2.0879316037732485,
+            "safe": true,
+            "contact": false,
+            "north": true
+          }
+        },
+        {
+          "name": "normal chase remains fast, north-facing, with warned unshootable lightning",
+          "passed": true,
+          "data": {
+            "phase": "rear",
+            "speed": 960.001367388157,
+            "north": true,
+            "shots": 9,
+            "proof": true,
+            "warnings": 2,
+            "said": [
+              {
+                "event": "radio",
+                "id": "generators",
+                "who": "decker",
+                "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+              },
+              {
+                "event": "radio",
+                "id": "overload",
+                "who": "decker",
+                "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+              },
+              {
+                "event": "radio",
+                "id": "chase",
+                "who": "decker",
+                "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+              }
+            ],
+            "audio": [
+              "bossShieldStatic",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "chargeDash",
+              "bossCannon",
+              "chargeDash",
+              "geyserLightning",
+              "element_lightning_hit",
+              "enemyLightningChaingun"
+            ]
+          }
+        },
+        {
+          "name": "normal lightning, rev and attack cues cover the whole transition",
+          "passed": true,
+          "data": [
+            "bossShieldStatic",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "chargeDash",
+            "bossCannon",
+            "chargeDash",
+            "geyserLightning",
+            "element_lightning_hit",
+            "enemyLightningChaingun"
+          ]
+        },
+        {
+          "name": "hard quarter-HP handoff lights the whole hull and announces the ram",
+          "passed": true,
+          "data": {
+            "phase": "panic",
+            "glow": 0.7709401709401711,
+            "shake": 3.2094017094017113,
+            "road": 705.3353993015996,
+            "radio": {
+              "id": "overload",
+              "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!",
+              "who": "decker",
+              "t": 0.8166666666666675,
+              "duration": 5.2
+            },
+            "draws": 245
+          }
+        },
+        {
+          "name": "hard committed south ram visibly accelerates the road",
+          "passed": true,
+          "data": {
+            "ramFrames": 49,
+            "maxY": 810,
+            "speed": 1169.6945730597477
+          }
+        },
+        {
+          "name": "hard enlarged return flies overhead northward without body damage",
+          "passed": true,
+          "data": {
+            "phase": "overhead",
+            "depth": true,
+            "scale": 2.0879316037732485,
+            "safe": true,
+            "contact": false,
+            "north": true
+          }
+        },
+        {
+          "name": "hard chase remains fast, north-facing, with warned unshootable lightning",
+          "passed": true,
+          "data": {
+            "phase": "rear",
+            "speed": 960.0013673881567,
+            "north": true,
+            "shots": 11,
+            "proof": true,
+            "warnings": 3,
+            "said": [
+              {
+                "event": "radio",
+                "id": "generators",
+                "who": "decker",
+                "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+              },
+              {
+                "event": "radio",
+                "id": "overload",
+                "who": "decker",
+                "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+              },
+              {
+                "event": "radio",
+                "id": "chase",
+                "who": "decker",
+                "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+              }
+            ],
+            "audio": [
+              "bossShieldStatic",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "geyserLightning",
+              "chargeDash",
+              "bossCannon",
+              "chargeDash",
+              "geyserLightning",
+              "element_lightning_hit",
+              "enemyLightningChaingun"
+            ]
+          }
+        },
+        {
+          "name": "hard lightning, rev and attack cues cover the whole transition",
+          "passed": true,
+          "data": [
+            "bossShieldStatic",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "geyserLightning",
+            "chargeDash",
+            "bossCannon",
+            "chargeDash",
+            "geyserLightning",
+            "element_lightning_hit",
+            "enemyLightningChaingun"
+          ]
+        },
+        {
+          "name": "furious quarter-HP handoff lights the whole hull and announces the ram",
+          "passed": true,
+          "data": {
+            "phase": "panic",
+            "glow": 0.7904761904761907,
+            "shake": 3.404761904761907,
+            "road": 705.3353993015996,
+            "radio": {
+              "id": "overload",
+              "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!",
+              "who": "decker",
+              "t": 0.8166666666666675,
+              "duration": 5.2
+            },
+            "draws": 429
+          }
+        },
+        {
+          "name": "furious committed south ram visibly accelerates the road",
+          "passed": true,
+          "data": {
+            "ramFrames": 49,
+            "maxY": 810,
+            "speed": 1169.6937195850353
+          }
+        },
+        {
+          "name": "furious enlarged return flies overhead northward without body damage",
+          "passed": true,
+          "data": {
+            "phase": "overhead",
+            "depth": true,
+            "scale": 2.0879316037732476,
+            "safe": true,
+            "contact": false,
+            "north": true
+          }
+        },
+        {
+          "name": "furious chase remains fast, north-facing, with warned unshootable lightning",
+          "passed": true,
+          "data": {
+            "phase": "rear",
+            "speed": 960.001367388156,
+            "north": true,
+            "shots": 13,
+            "proof": true,
+            "warnings": 3,
+            "said": [
+              {
+                "event": "radio",
+                "id": "generators",
+                "who": "decker",
+                "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+              },
+              {
+                "event": "radio",
+                "id": "overload",
+                "who": "decker",
+                "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+              },
+              {
+                "event": "radio",
+                "id": "chase",
+                "who": "decker",
+                "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+              }
+            ],
+            "audio": [
+              "bossShieldStatic",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "element_lightning_hit",
+              "geyserLightning",
+              "element_lightning_hit",
+              "chargeDash",
+              "bossCannon",
+              "chargeDash",
+              "geyserLightning",
+              "element_lightning_hit",
+              "enemyLightningChaingun"
+            ]
+          }
+        },
+        {
+          "name": "furious lightning, rev and attack cues cover the whole transition",
+          "passed": true,
+          "data": [
+            "bossShieldStatic",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "chargeDash",
+            "bossCannon",
+            "chargeDash",
+            "geyserLightning",
+            "element_lightning_hit",
+            "enemyLightningChaingun"
+          ]
+        },
+        {
+          "name": "Decker or Cole briefs the pilot; Axel briefs their co-op pair",
+          "passed": true,
+          "data": {
+            "cole": "decker",
+            "decker": "cole",
+            "both": "axel",
+            "reverse": "axel"
+          }
+        },
+        {
+          "name": "Approved lightning/attack MP3 voices decode in native Chromium",
+          "passed": true,
+          "data": {
+            "loaded": [
+              {
+                "key": "geyserLightning",
+                "slots": [
+                  {
+                    "ready": 4,
+                    "duration": 0.603333,
+                    "used": 1393,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.603333,
+                    "used": 1413,
+                    "paused": true
+                  },
+                  {
+                    "ready": 0,
+                    "duration": NaN,
+                    "used": 1277,
+                    "paused": true
+                  }
+                ]
+              },
+              {
+                "key": "enemyLightningChaingun",
+                "slots": [
+                  {
+                    "ready": 4,
+                    "duration": 0.541927,
+                    "used": 1417,
+                    "paused": true
+                  },
+                  {
+                    "ready": 0,
+                    "duration": NaN,
+                    "used": 1279,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.541927,
+                    "used": 1418,
+                    "paused": true
+                  }
+                ]
+              },
+              {
+                "key": "chargeDash",
+                "slots": [
+                  {
+                    "ready": 4,
+                    "duration": 0.638889,
+                    "used": 1419,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.638889,
+                    "used": 1405,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.638889,
+                    "used": 1420,
+                    "paused": true
+                  }
+                ]
+              },
+              {
+                "key": "missileLaunch",
+                "slots": [
+                  {
+                    "ready": 4,
+                    "duration": 0.438458,
+                    "used": 1421,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.438458,
+                    "used": 1416,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.438458,
+                    "used": 1422,
+                    "paused": true
+                  }
+                ]
+              },
+              {
+                "key": "bombDrop",
+                "slots": [
+                  {
+                    "ready": 4,
+                    "duration": 1.399977,
+                    "used": 1423,
+                    "paused": false
+                  },
+                  {
+                    "ready": 0,
+                    "duration": NaN,
+                    "used": 849,
+                    "paused": true
+                  },
+                  {
+                    "ready": 0,
+                    "duration": NaN,
+                    "used": 992,
+                    "paused": true
+                  }
+                ]
+              },
+              {
+                "key": "element_lightning_hit",
+                "slots": [
+                  {
+                    "ready": 4,
+                    "duration": 0.158957,
+                    "used": 1424,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.158957,
+                    "used": 1398,
+                    "paused": true
+                  },
+                  {
+                    "ready": 4,
+                    "duration": 0.158957,
+                    "used": 1409,
+                    "paused": true
+                  }
+                ]
+              }
+            ],
+            "owned": [
+              {
+                "ready": 4,
+                "started": true,
+                "paused": false,
+                "volume": 0.15200000000000002,
+                "rate": 1
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "name": "Revving loop actually starts and has audible mix gain",
+          "passed": true,
+          "data": [
+            {
+              "ready": 4,
+              "started": true,
+              "paused": false,
+              "volume": 0.15200000000000002,
+              "rate": 1
+            }
+          ]
+        },
+        {
+          "name": "Boss death stops its owned engine loop and clears comms",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No native page, console, draw or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "passed": 50,
+      "failed": 0,
+      "errors": [],
+      "rows": {
+        "normal-wing": {
+          "shots": 55,
+          "missiles": 8,
+          "bullets": 47,
+          "bombs": [
+            {
+              "x": 320,
+              "y": 419,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 211.12727272727273,
+                "y": 188.42867305067494
+              }
+            },
+            {
+              "x": 360,
+              "y": 419,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 468.8727272727273,
+                "y": 200.73927911128095
+              }
+            },
+            {
+              "x": 290,
+              "y": 475,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 339.12727272727284,
+                "y": 217.43283666072045
+              }
+            },
+            {
+              "x": 390,
+              "y": 475,
+              "track": false,
+              "warn": 1.65,
+              "from": {
+                "x": 340.87272727272716,
+                "y": 251.4101093879932
+              }
+            }
+          ],
+          "cross": [
+            {
+              "event": "helper-cross",
+              "side": -1,
+              "raid": 1,
+              "from": {
+                "x": 138.4,
+                "y": 186
+              },
+              "to": {
+                "x": 522.4,
+                "y": 332
+              }
+            },
+            {
+              "event": "helper-cross",
+              "side": 1,
+              "raid": 1,
+              "from": {
+                "x": 541.6,
+                "y": 186
+              },
+              "to": {
+                "x": 157.6,
+                "y": 397
+              }
+            }
+          ],
+          "orbit": [
+            {
+              "event": "helper-orbit",
+              "side": -1,
+              "raid": 1
+            },
+            {
+              "event": "helper-orbit",
+              "side": 1,
+              "raid": 1
+            }
+          ],
+          "draws": {
+            "bomb": 400,
+            "impact": 192,
+            "glow": 0,
+            "radio": 372
+          },
+          "same": true
+        },
+        "hard-wing": {
+          "pixels": 6849,
+          "flash": 0,
+          "gunFlash": 0,
+          "hp": 0,
+          "deflect": 0.13
+        },
+        "furious-wing": {
+          "shots": 97,
+          "missiles": 24,
+          "bullets": 73,
+          "bombs": [
+            {
+              "x": 320,
+              "y": 419,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 211.1272727272727,
+                "y": 188.42867305067494
+              }
+            },
+            {
+              "x": 360,
+              "y": 419,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 468.8727272727273,
+                "y": 200.73927911128095
+              }
+            },
+            {
+              "x": 290,
+              "y": 475,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 339.12727272727284,
+                "y": 217.43283666072045
+              }
+            },
+            {
+              "x": 390,
+              "y": 475,
+              "track": false,
+              "warn": 1.3,
+              "from": {
+                "x": 340.87272727272716,
+                "y": 251.4101093879932
+              }
+            }
+          ],
+          "cross": [
+            {
+              "event": "helper-cross",
+              "side": -1,
+              "raid": 1,
+              "from": {
+                "x": 138.39999999999998,
+                "y": 186
+              },
+              "to": {
+                "x": 522.4,
+                "y": 332
+              }
+            },
+            {
+              "event": "helper-cross",
+              "side": 1,
+              "raid": 1,
+              "from": {
+                "x": 541.6,
+                "y": 186
+              },
+              "to": {
+                "x": 157.6,
+                "y": 397
+              }
+            },
+            {
+              "event": "helper-cross",
+              "side": -1,
+              "raid": 2,
+              "from": {
+                "x": 138.4,
+                "y": 146
+              },
+              "to": {
+                "x": 522.4,
+                "y": 332
+              }
+            }
+          ],
+          "orbit": [
+            {
+              "event": "helper-orbit",
+              "side": -1,
+              "raid": 1
+            },
+            {
+              "event": "helper-orbit",
+              "side": 1,
+              "raid": 1
+            }
+          ],
+          "draws": {
+            "bomb": 1222,
+            "impact": 590,
+            "glow": 0,
+            "radio": 1001
+          },
+          "same": true
+        },
+        "normal-phase": {
+          "phase": "rear",
+          "speed": 960.001367388157,
+          "north": true,
+          "shots": 9,
+          "proof": true,
+          "warnings": 2,
+          "said": [
+            {
+              "event": "radio",
+              "id": "generators",
+              "who": "decker",
+              "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+            },
+            {
+              "event": "radio",
+              "id": "overload",
+              "who": "decker",
+              "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+            },
+            {
+              "event": "radio",
+              "id": "chase",
+              "who": "decker",
+              "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+            }
+          ],
+          "audio": [
+            "bossShieldStatic",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "chargeDash",
+            "bossCannon",
+            "chargeDash",
+            "geyserLightning",
+            "element_lightning_hit",
+            "enemyLightningChaingun"
+          ]
+        },
+        "hard-phase": {
+          "phase": "rear",
+          "speed": 960.0013673881567,
+          "north": true,
+          "shots": 11,
+          "proof": true,
+          "warnings": 3,
+          "said": [
+            {
+              "event": "radio",
+              "id": "generators",
+              "who": "decker",
+              "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+            },
+            {
+              "event": "radio",
+              "id": "overload",
+              "who": "decker",
+              "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+            },
+            {
+              "event": "radio",
+              "id": "chase",
+              "who": "decker",
+              "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+            }
+          ],
+          "audio": [
+            "bossShieldStatic",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "geyserLightning",
+            "chargeDash",
+            "bossCannon",
+            "chargeDash",
+            "geyserLightning",
+            "element_lightning_hit",
+            "enemyLightningChaingun"
+          ]
+        },
+        "furious-phase": {
+          "phase": "rear",
+          "speed": 960.001367388156,
+          "north": true,
+          "shots": 13,
+          "proof": true,
+          "warnings": 3,
+          "said": [
+            {
+              "event": "radio",
+              "id": "generators",
+              "who": "decker",
+              "text": "FOUR SPINNING GENERATORS. TAG WITH MULTI-RETINA, THEN FIRE MISSILES."
+            },
+            {
+              "event": "radio",
+              "id": "overload",
+              "who": "decker",
+              "text": "HULL OVERLOAD! DODGE THE RAM. IT'S ABOUT TO FLEE NORTH!"
+            },
+            {
+              "event": "radio",
+              "id": "chase",
+              "who": "decker",
+              "text": "CHASE ITS EXPOSED REAR CORE! HITS PROVOKE MORE LIGHTNING."
+            }
+          ],
+          "audio": [
+            "bossShieldStatic",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "element_lightning_hit",
+            "geyserLightning",
+            "element_lightning_hit",
+            "chargeDash",
+            "bossCannon",
+            "chargeDash",
+            "geyserLightning",
+            "element_lightning_hit",
+            "enemyLightningChaingun"
+          ]
+        }
+      },
+      "sourceSha256": "a7afd7a01d3e3b666bc3950afa7b8a2fd88bf64d90996b793adc24ea688ff444"
+    },
+    "delivered_review": {
+      "fixture": false,
+      "production_wired": true,
+      "passed": 50,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "review uses production assets, without a fixture injection",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "campaign saves are isolated",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hover loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [],
+            "height": 875
+          }
+        },
+        {
+          "name": "armLasers loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [],
+            "height": 875
+          }
+        },
+        {
+          "name": "armLasers remains selected across complete attack cycles",
+          "passed": true,
+          "data": {
+            "form": 0,
+            "types": [
+              "armLasers",
+              "armLasers",
+              "armLasers"
+            ]
+          }
+        },
+        {
+          "name": "coreMissiles loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": "coreMissiles",
+            "actors": [],
+            "height": 875
+          }
+        },
+        {
+          "name": "coreMissiles remains selected across complete attack cycles",
+          "passed": true,
+          "data": {
+            "form": 0,
+            "types": [
+              "coreMissiles",
+              "coreMissiles"
+            ]
+          }
+        },
+        {
+          "name": "spiralLightning loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": "spiralLightning",
+            "actors": [],
+            "height": 875
+          }
+        },
+        {
+          "name": "spiralLightning remains selected across complete attack cycles",
+          "passed": true,
+          "data": {
+            "form": 0,
+            "types": [
+              "spiralLightning",
+              "spiralLightning"
+            ]
+          }
+        },
+        {
+          "name": "codeBombs loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": "codeBombs",
+            "actors": [
+              "bomb",
+              "bomb",
+              "bomb"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "codeBombs remains selected across complete attack cycles",
+          "passed": true,
+          "data": {
+            "form": 0,
+            "types": [
+              "codeBombs",
+              "codeBombs"
+            ]
+          }
+        },
+        {
+          "name": "downloadLegion loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": "downloadLegion",
+            "actors": [
+              "halberd"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "downloadLegion remains selected across complete attack cycles",
+          "passed": true,
+          "data": {
+            "form": 0,
+            "types": [
+              "downloadLegion",
+              "downloadLegion"
+            ]
+          }
+        },
+        {
+          "name": "bastion loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [
+              "bastion"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "bastion owns its intended archived hull",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [
+              "bastion"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "camo loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [
+              "camo"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "camo owns its intended archived hull",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [
+              "camo"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "halberd loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [
+              "halberd"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "halberd owns its intended archived hull",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": null,
+            "actors": [
+              "halberd"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "natural loads the actual controller and full playfield",
+          "passed": true,
+          "data": {
+            "mode": "fight",
+            "phase": 2,
+            "form": 0,
+            "type": "downloadLegion",
+            "actors": [
+              "halberd"
+            ],
+            "height": 875
+          }
+        },
+        {
+          "name": "arm break button disables the main boss left arm",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "break button disables the actual left launcher",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "bastion_download frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 18,
+            "max": 17,
+            "size": 320
+          }
+        },
+        {
+          "name": "bastion_download onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "camo_download frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 18,
+            "max": 17,
+            "size": 320
+          }
+        },
+        {
+          "name": "camo_download onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "halberd_download frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 22,
+            "max": 21,
+            "size": 320
+          }
+        },
+        {
+          "name": "halberd_download onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "bomb_charge frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 16,
+            "max": 15,
+            "size": 160
+          }
+        },
+        {
+          "name": "bomb_charge onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "bomb_burst frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 22,
+            "max": 21,
+            "size": 160
+          }
+        },
+        {
+          "name": "bomb_burst onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "storm_loop frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "max": 31,
+            "size": 320
+          }
+        },
+        {
+          "name": "storm_loop onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "transfer_loop frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "max": 31,
+            "size": 320
+          }
+        },
+        {
+          "name": "transfer_loop onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "bolt frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "max": 31,
+            "size": 160
+          }
+        },
+        {
+          "name": "bolt onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "orb frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 24,
+            "max": 23,
+            "size": 128
+          }
+        },
+        {
+          "name": "orb onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "tether frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "max": 31,
+            "size": 288
+          }
+        },
+        {
+          "name": "tether onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "wrap_back frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "max": 31,
+            "size": 320
+          }
+        },
+        {
+          "name": "wrap_back onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "wrap_front frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "max": 31,
+            "size": 320
+          }
+        },
+        {
+          "name": "wrap_front onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "wrap frame scrubber displays its complete shipping bank",
+          "passed": true,
+          "data": {
+            "n": 32,
+            "max": 31,
+            "size": 320
+          }
+        },
+        {
+          "name": "wrap onion changes actual rendered pixels",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "existing Roar selector still selects the roar after the new attack book",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "no page, console, draw or missing asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,5570 @@
+{
+  "date": "2026-10-18",
+  "request": "Warden unshootable bullets, full-hull tank clearance engine rule, more roadside atomic pads and a generated modular center gun",
+  "nativePassed": 150,
+  "nativeFailed": 0,
+  "core": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exitCode": 0,
+    "printedOkChecks": 8785,
+    "errors": 0,
+    "baselineOkChecks": 8785,
+    "finalBanner": true,
+    "log": "_shots/stage4_engine_1018/core-suite.log"
+  },
+  "native": {
+    "focused": {
+      "passed": 46,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage4_engine_1018/native/report.json",
+      "checks": [
+        {
+          "name": "normal generated central gun is a live fifth modular part, drawn at regular FOV",
+          "passed": true,
+          "data": {
+            "part": {
+              "id": "gunC",
+              "hp": 231,
+              "maxhp": 231,
+              "flash": 0,
+              "rot": -0.030663733379502952,
+              "recoil": 0,
+              "dead": false,
+              "age": 3.4999999999999925,
+              "fireAge": 0.16666666666666666,
+              "barrel": 1
+            },
+            "shape": {
+              "id": "gunC",
+              "cell": 111,
+              "x": 340.28616277172637,
+              "y": 284.32936224672284,
+              "w": 99.56,
+              "h": 99.56,
+              "rot": -0.030663733379502952
+            },
+            "size": [
+              480,
+              512,
+              680,
+              480
+            ],
+            "ready": true,
+            "draws": {
+              "wc18_gun_00": 563,
+              "wc18_gun_01": 391,
+              "wc18_gun_02": 359,
+              "wc18_gun_03": 538,
+              "wc18_gun_04": 639,
+              "wc18_gun_05": 724,
+              "wc18_gun_06": 760,
+              "wc18_gun_07": 720,
+              "wc18_gun_08": 270,
+              "wc18_gun_09": 357,
+              "wc18_gun_10": 179,
+              "wc18_gun_11": 289,
+              "wc18_gun_12": 355,
+              "wc18_gun_13": 304
+            },
+            "keys": [
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "normal actual MG turn fires L/C/R from matching animated barrel sockets",
+          "passed": true,
+          "data": {
+            "shots": 4,
+            "fired": [
+              {
+                "slot": "L",
+                "x": 275.3375393247559,
+                "y": 234.7280046014679,
+                "proof": true,
+                "shootable": false,
+                "pose": 1,
+                "port": {
+                  "x": 275.3375393247559,
+                  "y": 234.7280046014679
+                }
+              },
+              {
+                "slot": "C",
+                "x": 329.74366253006485,
+                "y": 302.0268965213336,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 329.74366253006485,
+                  "y": 302.0268965213336
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067522167,
+                "y": 234.72800460146118,
+                "proof": true,
+                "shootable": false,
+                "pose": 10,
+                "port": {
+                  "x": 404.66246067522167,
+                  "y": 234.72800460146118
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932479095,
+                "y": 234.72800460145749,
+                "proof": true,
+                "shootable": false,
+                "pose": 12,
+                "port": {
+                  "x": 275.33753932479095,
+                  "y": 234.72800460145749
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.29358037286045,
+                "y": 302.01273397824684,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.29358037286045,
+                  "y": 302.01273397824684
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521,
+                "y": 234.72800460145774,
+                "proof": true,
+                "shootable": false,
+                "pose": 10,
+                "port": {
+                  "x": 404.66246067521,
+                  "y": 234.72800460145774
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.3375393247895,
+                "y": 234.7280046014579,
+                "proof": true,
+                "shootable": false,
+                "pose": 12,
+                "port": {
+                  "x": 275.3375393247895,
+                  "y": 234.7280046014579
+                }
+              },
+              {
+                "slot": "C",
+                "x": 329.7060204738164,
+                "y": 302.01258187190894,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 329.7060204738164,
+                  "y": 302.01258187190894
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 10,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 12,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.2939838052167,
+                "y": 302.01258024125065,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.2939838052167,
+                  "y": 302.01258024125065
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 10,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              }
+            ],
+            "draws": {
+              "wc18_gun_00": 724,
+              "wc18_gun_01": 634,
+              "wc18_gun_02": 924,
+              "wc18_gun_03": 726,
+              "wc18_gun_04": 639,
+              "wc18_gun_05": 1524,
+              "wc18_gun_06": 2028,
+              "wc18_gun_07": 1976,
+              "wc18_gun_08": 863,
+              "wc18_gun_09": 1109,
+              "wc18_gun_10": 554,
+              "wc18_gun_11": 1132,
+              "wc18_gun_12": 1682,
+              "wc18_gun_13": 1444,
+              "wc18_gun_14": 469,
+              "wc18_gun_15": 426
+            },
+            "slots": 3,
+            "proof": true,
+            "errors": []
+          }
+        },
+        {
+          "name": "normal actual J rounds pass the legacy miniboss bullet without destroying it",
+          "passed": true,
+          "data": {
+            "dead": false,
+            "proof": true,
+            "shootable": false,
+            "intercept": false,
+            "element": null,
+            "shots": 1
+          }
+        },
+        {
+          "name": "normal actual missiles retain native player-fire interception",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "hp": 2,
+            "proof": false,
+            "shootable": true,
+            "input": false,
+            "rounds": [
+              {
+                "kind": "mg",
+                "x": 341.89910529145226,
+                "y": 352.0689655172414
+              },
+              {
+                "kind": "mg",
+                "x": 341.89910529145226,
+                "y": 406.0689655172414
+              }
+            ],
+            "weapon": 0,
+            "sonic": 0,
+            "dk": 0,
+            "cooldown": 0.05846666666666667,
+            "state": "play",
+            "held": null
+          }
+        },
+        {
+          "name": "normal native J gunfire damages the actual centre weapon",
+          "passed": true,
+          "data": {
+            "hp": 203,
+            "before": 221,
+            "dead": false,
+            "rounds": [
+              {
+                "kind": "mg",
+                "x": 348.5559375,
+                "y": 324.7374030172414
+              }
+            ],
+            "weapon": 0,
+            "sonic": 0,
+            "dk": 0,
+            "cooldown": 0.008466666666666671,
+            "state": "play",
+            "px": 346.65683220854777,
+            "py": 412.6684375,
+            "shape": {
+              "id": "gunC",
+              "cell": 103,
+              "x": 340,
+              "y": 292.33375,
+              "w": 99.56,
+              "h": 99.56,
+              "rot": 0
+            },
+            "hull": 2833,
+            "mode": "recover"
+          }
+        },
+        {
+          "name": "normal real centre damage flashes authored gun pixels via markHit",
+          "passed": true,
+          "data": {
+            "changed": 3478,
+            "flash": 0.2,
+            "loss": 1
+          }
+        },
+        {
+          "name": "normal centre flash expires without palette suppression",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal manual Retina missile targets and damages the centre independently",
+          "passed": true,
+          "data": {
+            "target": true,
+            "loss": 2,
+            "keys": [
+              {
+                "kind": "gunL",
+                "id": null
+              },
+              {
+                "kind": "gunR",
+                "id": null
+              },
+              {
+                "kind": "rocketL",
+                "id": null
+              },
+              {
+                "kind": "rocketR",
+                "id": null
+              },
+              {
+                "kind": "gunC",
+                "id": null
+              },
+              {
+                "kind": "olivewarden",
+                "id": null
+              }
+            ]
+          }
+        },
+        {
+          "name": "normal destroyed centre stops firing while side guns and rockets remain",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "can": false,
+            "newShots": 0,
+            "other": 4,
+            "breaks": [
+              "gunC"
+            ]
+          }
+        },
+        {
+          "name": "hard generated central gun is a live fifth modular part, drawn at regular FOV",
+          "passed": true,
+          "data": {
+            "part": {
+              "id": "gunC",
+              "hp": 288,
+              "maxhp": 288,
+              "flash": 0,
+              "rot": 0.013264396070001053,
+              "recoil": 0,
+              "dead": false,
+              "age": 3.516666666666659,
+              "fireAge": 0.26666666666666666,
+              "barrel": 0
+            },
+            "shape": {
+              "id": "gunC",
+              "cell": 112,
+              "x": 339.87619707365735,
+              "y": 284.3329289024362,
+              "w": 99.56,
+              "h": 99.56,
+              "rot": 0.013264396070001053
+            },
+            "size": [
+              480,
+              512,
+              680,
+              480
+            ],
+            "ready": true,
+            "draws": {
+              "wc18_gun_00": 15158,
+              "wc18_gun_01": 13714,
+              "wc18_gun_02": 14617,
+              "wc18_gun_03": 13363,
+              "wc18_gun_04": 1238,
+              "wc18_gun_05": 2144,
+              "wc18_gun_06": 2725,
+              "wc18_gun_07": 2632,
+              "wc18_gun_08": 1243,
+              "wc18_gun_09": 1606,
+              "wc18_gun_10": 804,
+              "wc18_gun_11": 1650,
+              "wc18_gun_12": 2303,
+              "wc18_gun_13": 1444,
+              "wc18_gun_14": 469,
+              "wc18_gun_15": 426
+            },
+            "keys": [
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "hard actual MG turn fires L/C/R from matching animated barrel sockets",
+          "passed": true,
+          "data": {
+            "shots": 5,
+            "fired": [
+              {
+                "slot": "L",
+                "x": 275.33753932478675,
+                "y": 234.7280046014587,
+                "proof": true,
+                "shootable": false,
+                "pose": 0,
+                "port": {
+                  "x": 275.33753932478675,
+                  "y": 234.7280046014587
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.2563374818828,
+                "y": 302.02689651679964,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.2563374818828,
+                  "y": 302.02689651679964
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.6624606752049,
+                "y": 234.72800460145623,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.6624606752049,
+                  "y": 234.72800460145623
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.3375393247897,
+                "y": 234.72800460145783,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.3375393247897,
+                  "y": 234.72800460145783
+                }
+              },
+              {
+                "slot": "C",
+                "x": 329.6586374096112,
+                "y": 301.99447746569984,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 329.6586374096112,
+                  "y": 301.99447746569984
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.6624606752108,
+                "y": 234.728004601458,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.6624606752108,
+                  "y": 234.728004601458
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.3446841466541,
+                "y": 301.99320477042386,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.3446841466541,
+                  "y": 301.99320477042386
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 329.65518602918326,
+                "y": 301.99315501717547,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 329.65518602918326,
+                  "y": 301.99315501717547
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.34481904513916,
+                "y": 301.9931530724996,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.34481904513916,
+                  "y": 301.9931530724996
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              }
+            ],
+            "draws": {
+              "wc18_gun_00": 15745,
+              "wc18_gun_01": 14447,
+              "wc18_gun_02": 14806,
+              "wc18_gun_03": 13579,
+              "wc18_gun_04": 1238,
+              "wc18_gun_05": 3035,
+              "wc18_gun_06": 3813,
+              "wc18_gun_07": 3726,
+              "wc18_gun_08": 2198,
+              "wc18_gun_09": 2856,
+              "wc18_gun_10": 1441,
+              "wc18_gun_11": 2905,
+              "wc18_gun_12": 4059,
+              "wc18_gun_13": 2091,
+              "wc18_gun_14": 1103,
+              "wc18_gun_15": 967
+            },
+            "slots": 3,
+            "proof": true,
+            "errors": []
+          }
+        },
+        {
+          "name": "hard actual J rounds pass the legacy miniboss bullet without destroying it",
+          "passed": true,
+          "data": {
+            "dead": false,
+            "proof": true,
+            "shootable": false,
+            "intercept": false,
+            "element": null,
+            "shots": 2
+          }
+        },
+        {
+          "name": "hard actual missiles retain native player-fire interception",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "hp": 2,
+            "proof": false,
+            "shootable": true,
+            "input": false,
+            "rounds": [
+              {
+                "kind": "mg",
+                "x": 341.89910529145226,
+                "y": 406.0689655172414
+              }
+            ],
+            "weapon": 0,
+            "sonic": 0,
+            "dk": 0,
+            "cooldown": 0.05846666666666667,
+            "state": "play",
+            "held": null
+          }
+        },
+        {
+          "name": "hard native J gunfire damages the actual centre weapon",
+          "passed": true,
+          "data": {
+            "hp": 262,
+            "before": 268,
+            "dead": false,
+            "rounds": [
+              {
+                "kind": "mg",
+                "x": 348.5559375,
+                "y": 324.7374030172414
+              }
+            ],
+            "weapon": 0,
+            "sonic": 0,
+            "dk": 0,
+            "cooldown": 0.008466666666666671,
+            "state": "play",
+            "px": 346.65683220854777,
+            "py": 412.6684375,
+            "shape": {
+              "id": "gunC",
+              "cell": 103,
+              "x": 340,
+              "y": 292.33375,
+              "w": 99.56,
+              "h": 99.56,
+              "rot": 0
+            },
+            "hull": 3550,
+            "mode": "recover"
+          }
+        },
+        {
+          "name": "hard real centre damage flashes authored gun pixels via markHit",
+          "passed": true,
+          "data": {
+            "changed": 3478,
+            "flash": 0.2,
+            "loss": 1
+          }
+        },
+        {
+          "name": "hard centre flash expires without palette suppression",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard manual Retina missile targets and damages the centre independently",
+          "passed": true,
+          "data": {
+            "target": true,
+            "loss": 2,
+            "keys": [
+              {
+                "kind": "gunL",
+                "id": null
+              },
+              {
+                "kind": "gunR",
+                "id": null
+              },
+              {
+                "kind": "rocketL",
+                "id": null
+              },
+              {
+                "kind": "rocketR",
+                "id": null
+              },
+              {
+                "kind": "gunC",
+                "id": null
+              },
+              {
+                "kind": "olivewarden",
+                "id": null
+              }
+            ]
+          }
+        },
+        {
+          "name": "hard destroyed centre stops firing while side guns and rockets remain",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "can": false,
+            "newShots": 0,
+            "other": 4,
+            "breaks": [
+              "gunC"
+            ]
+          }
+        },
+        {
+          "name": "furious generated central gun is a live fifth modular part, drawn at regular FOV",
+          "passed": true,
+          "data": {
+            "part": {
+              "id": "gunC",
+              "hp": 340,
+              "maxhp": 340,
+              "flash": 0,
+              "rot": 0.04722189254537477,
+              "recoil": 0.16666666666666682,
+              "dead": false,
+              "age": 3.516666666666659,
+              "fireAge": 0.08333333333333333,
+              "barrel": 0
+            },
+            "shape": {
+              "id": "gunC",
+              "cell": 109,
+              "x": 339.55940645018114,
+              "y": 284.3233452358238,
+              "w": 99.56,
+              "h": 99.56,
+              "rot": 0.04722189254537477
+            },
+            "size": [
+              480,
+              512,
+              680,
+              480
+            ],
+            "ready": true,
+            "draws": {
+              "wc18_gun_00": 27185,
+              "wc18_gun_01": 27046,
+              "wc18_gun_02": 28804,
+              "wc18_gun_03": 22826,
+              "wc18_gun_04": 1828,
+              "wc18_gun_05": 3655,
+              "wc18_gun_06": 4443,
+              "wc18_gun_07": 4346,
+              "wc18_gun_08": 2843,
+              "wc18_gun_09": 3667,
+              "wc18_gun_10": 1780,
+              "wc18_gun_11": 3608,
+              "wc18_gun_12": 4409,
+              "wc18_gun_13": 2091,
+              "wc18_gun_14": 1103,
+              "wc18_gun_15": 967
+            },
+            "keys": [
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              },
+              {
+                "w": 256,
+                "h": 256,
+                "pivot": [
+                  128,
+                  104
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "furious actual MG turn fires L/C/R from matching animated barrel sockets",
+          "passed": true,
+          "data": {
+            "shots": 7,
+            "fired": [
+              {
+                "slot": "L",
+                "x": 275.33753932479067,
+                "y": 234.72800460145754,
+                "proof": true,
+                "shootable": false,
+                "pose": 3,
+                "port": {
+                  "x": 275.33753932479067,
+                  "y": 234.72800460145754
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.25633919416543,
+                "y": 302.0268958670117,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.25633919416543,
+                  "y": 302.0268958670117
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.6624606752099,
+                "y": 234.7280046014577,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.6624606752099,
+                  "y": 234.7280046014577
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.3375393247894,
+                "y": 234.7280046014579,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.3375393247894,
+                  "y": 234.7280046014579
+                }
+              },
+              {
+                "slot": "C",
+                "x": 329.59887335113444,
+                "y": 301.9715064152214,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 329.59887335113444,
+                  "y": 301.9715064152214
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.6624606752105,
+                "y": 234.7280046014579,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.6624606752105,
+                  "y": 234.7280046014579
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.4118973010131,
+                "y": 301.96735041610924,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.4118973010131,
+                  "y": 301.96735041610924
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 329.5873009270387,
+                "y": 301.9670408441123,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 329.5873009270387,
+                  "y": 301.9670408441123
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.4127587602805,
+                "y": 301.96701779715863,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.4127587602805,
+                  "y": 301.96701779715863
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 329.58723679632413,
+                "y": 301.9670160814326,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 329.58723679632413,
+                  "y": 301.9670160814326
+                }
+              },
+              {
+                "slot": "R",
+                "x": 404.66246067521047,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 9,
+                "port": {
+                  "x": 404.66246067521047,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "L",
+                "x": 275.33753932478953,
+                "y": 234.72800460145788,
+                "proof": true,
+                "shootable": false,
+                "pose": 11,
+                "port": {
+                  "x": 275.33753932478953,
+                  "y": 234.72800460145788
+                }
+              },
+              {
+                "slot": "C",
+                "x": 350.4127635344625,
+                "y": 301.9670159537061,
+                "proof": true,
+                "shootable": false,
+                "pose": 8,
+                "port": {
+                  "x": 350.4127635344625,
+                  "y": 301.9670159537061
+                }
+              }
+            ],
+            "draws": {
+              "wc18_gun_00": 28004,
+              "wc18_gun_01": 27858,
+              "wc18_gun_02": 29341,
+              "wc18_gun_03": 23718,
+              "wc18_gun_04": 1828,
+              "wc18_gun_05": 3655,
+              "wc18_gun_06": 5299,
+              "wc18_gun_07": 5388,
+              "wc18_gun_08": 4172,
+              "wc18_gun_09": 5525,
+              "wc18_gun_10": 2760,
+              "wc18_gun_11": 5648,
+              "wc18_gun_12": 5825,
+              "wc18_gun_13": 2768,
+              "wc18_gun_14": 1800,
+              "wc18_gun_15": 1581
+            },
+            "slots": 3,
+            "proof": true,
+            "errors": []
+          }
+        },
+        {
+          "name": "furious actual J rounds pass the legacy miniboss bullet without destroying it",
+          "passed": true,
+          "data": {
+            "dead": false,
+            "proof": true,
+            "shootable": false,
+            "intercept": false,
+            "element": null,
+            "shots": 1
+          }
+        },
+        {
+          "name": "furious actual missiles retain native player-fire interception",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "hp": 2,
+            "proof": false,
+            "shootable": true,
+            "input": false,
+            "rounds": [
+              {
+                "kind": "mg",
+                "x": 341.89910529145226,
+                "y": 352.0689655172414
+              },
+              {
+                "kind": "mg",
+                "x": 341.89910529145226,
+                "y": 406.0689655172414
+              }
+            ],
+            "weapon": 0,
+            "sonic": 0,
+            "dk": 0,
+            "cooldown": 0.05846666666666667,
+            "state": "play",
+            "held": null
+          }
+        },
+        {
+          "name": "furious native J gunfire damages the actual centre weapon",
+          "passed": true,
+          "data": {
+            "hp": 316,
+            "before": 322,
+            "dead": false,
+            "rounds": [
+              {
+                "kind": "mg",
+                "x": 348.5559375,
+                "y": 324.7374030172414
+              }
+            ],
+            "weapon": 0,
+            "sonic": 0,
+            "dk": 0,
+            "cooldown": 0.008466666666666671,
+            "state": "play",
+            "px": 346.65683220854777,
+            "py": 412.6684375,
+            "shape": {
+              "id": "gunC",
+              "cell": 103,
+              "x": 340,
+              "y": 292.33375,
+              "w": 99.56,
+              "h": 99.56,
+              "rot": 0
+            },
+            "hull": 4202,
+            "mode": "recover"
+          }
+        },
+        {
+          "name": "furious real centre damage flashes authored gun pixels via markHit",
+          "passed": true,
+          "data": {
+            "changed": 3658,
+            "flash": 0.2,
+            "loss": 1
+          }
+        },
+        {
+          "name": "furious centre flash expires without palette suppression",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious manual Retina missile targets and damages the centre independently",
+          "passed": true,
+          "data": {
+            "target": true,
+            "loss": 2,
+            "keys": [
+              {
+                "kind": "gunL",
+                "id": null
+              },
+              {
+                "kind": "gunR",
+                "id": null
+              },
+              {
+                "kind": "rocketL",
+                "id": null
+              },
+              {
+                "kind": "rocketR",
+                "id": null
+              },
+              {
+                "kind": "gunC",
+                "id": null
+              },
+              {
+                "kind": "olivewarden",
+                "id": null
+              }
+            ]
+          }
+        },
+        {
+          "name": "furious destroyed centre stops firing while side guns and rockets remain",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "can": false,
+            "newShots": 0,
+            "other": 4,
+            "breaks": [
+              "gunC"
+            ]
+          }
+        },
+        {
+          "name": "normal twelve simultaneous tank births reserve complete hulls immediately",
+          "passed": true,
+          "data": {
+            "count": 12,
+            "pairs": [],
+            "visible": [
+              {
+                "x": 340,
+                "y": 130,
+                "legal": true,
+                "foot": {
+                  "w": 115.3152,
+                  "h": 124.74
+                }
+              }
+            ],
+            "stats": {
+              "reserved": 12,
+              "queued": 11,
+              "blocked": 0
+            }
+          }
+        },
+        {
+          "name": "normal thirty seconds of driving and firing never stacks tank hulls",
+          "passed": true,
+          "data": {
+            "overlaps": 0,
+            "terrain": [],
+            "shots": 69,
+            "audit": {
+              "count": 4,
+              "pairs": [],
+              "visible": [
+                {
+                  "x": 335.41948282002903,
+                  "y": 485.5299999999763,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.6765029407149,
+                  "y": 348.53999999997296,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.63732013217685,
+                  "y": 211.54999999997096,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.5215610840153,
+                  "y": 74.55999999997097,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                }
+              ],
+              "stats": {
+                "reserved": 12,
+                "queued": 9967,
+                "blocked": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "normal queued highway tanks stay on drivable terrain when visible",
+          "passed": true,
+          "data": {
+            "overlaps": 0,
+            "terrain": [],
+            "shots": 69,
+            "audit": {
+              "count": 4,
+              "pairs": [],
+              "visible": [
+                {
+                  "x": 335.41948282002903,
+                  "y": 485.5299999999763,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.6765029407149,
+                  "y": 348.53999999997296,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.63732013217685,
+                  "y": 211.54999999997096,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.5215610840153,
+                  "y": 74.55999999997097,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                }
+              ],
+              "stats": {
+                "reserved": 12,
+                "queued": 9967,
+                "blocked": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Spaced highway tanks still visibly flash their authored damaged pixels",
+          "passed": true,
+          "data": {
+            "pixels": 4740,
+            "loss": 1,
+            "flash": 0.16
+          }
+        },
+        {
+          "name": "Tank hit flashes expire through native movement",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard twelve simultaneous tank births reserve complete hulls immediately",
+          "passed": true,
+          "data": {
+            "count": 12,
+            "pairs": [],
+            "visible": [
+              {
+                "x": 340,
+                "y": 130,
+                "legal": true,
+                "foot": {
+                  "w": 115.3152,
+                  "h": 124.74
+                }
+              }
+            ],
+            "stats": {
+              "reserved": 12,
+              "queued": 11,
+              "blocked": 0
+            }
+          }
+        },
+        {
+          "name": "hard thirty seconds of driving and firing never stacks tank hulls",
+          "passed": true,
+          "data": {
+            "overlaps": 0,
+            "terrain": [],
+            "shots": 192,
+            "audit": {
+              "count": 5,
+              "pairs": [],
+              "visible": [
+                {
+                  "x": 345.41694621926626,
+                  "y": 503.37999999997646,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 341.3619304729271,
+                  "y": 366.38999999997316,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 334.2509096623333,
+                  "y": 229.3999999999706,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 334.8027889701637,
+                  "y": 92.4099999999706,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                }
+              ],
+              "stats": {
+                "reserved": 13,
+                "queued": 9730,
+                "blocked": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "hard queued highway tanks stay on drivable terrain when visible",
+          "passed": true,
+          "data": {
+            "overlaps": 0,
+            "terrain": [],
+            "shots": 192,
+            "audit": {
+              "count": 5,
+              "pairs": [],
+              "visible": [
+                {
+                  "x": 345.41694621926626,
+                  "y": 503.37999999997646,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 341.3619304729271,
+                  "y": 366.38999999997316,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 334.2509096623333,
+                  "y": 229.3999999999706,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 334.8027889701637,
+                  "y": 92.4099999999706,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                }
+              ],
+              "stats": {
+                "reserved": 13,
+                "queued": 9730,
+                "blocked": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "furious twelve simultaneous tank births reserve complete hulls immediately",
+          "passed": true,
+          "data": {
+            "count": 12,
+            "pairs": [],
+            "visible": [
+              {
+                "x": 340,
+                "y": 130,
+                "legal": true,
+                "foot": {
+                  "w": 115.3152,
+                  "h": 124.74
+                }
+              }
+            ],
+            "stats": {
+              "reserved": 12,
+              "queued": 11,
+              "blocked": 0
+            }
+          }
+        },
+        {
+          "name": "furious thirty seconds of driving and firing never stacks tank hulls",
+          "passed": true,
+          "data": {
+            "overlaps": 0,
+            "terrain": [],
+            "shots": 354,
+            "audit": {
+              "count": 5,
+              "pairs": [],
+              "visible": [
+                {
+                  "x": 334.66455403982934,
+                  "y": 484.4799999999737,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 336.59189372543574,
+                  "y": 347.48999999997034,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 343.77375240331486,
+                  "y": 210.49999999996837,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.83486579027846,
+                  "y": 73.50999999996837,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                }
+              ],
+              "stats": {
+                "reserved": 13,
+                "queued": 10962,
+                "blocked": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "furious queued highway tanks stay on drivable terrain when visible",
+          "passed": true,
+          "data": {
+            "overlaps": 0,
+            "terrain": [],
+            "shots": 354,
+            "audit": {
+              "count": 5,
+              "pairs": [],
+              "visible": [
+                {
+                  "x": 334.66455403982934,
+                  "y": 484.4799999999737,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 336.59189372543574,
+                  "y": 347.48999999997034,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 343.77375240331486,
+                  "y": 210.49999999996837,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                },
+                {
+                  "x": 345.83486579027846,
+                  "y": 73.50999999996837,
+                  "legal": true,
+                  "foot": {
+                    "w": 115.3152,
+                    "h": 124.74
+                  }
+                }
+              ],
+              "stats": {
+                "reserved": 13,
+                "queued": 10962,
+                "blocked": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Stage 1 tank-class spawns obey the same engine clearance rule",
+          "passed": true,
+          "data": {
+            "count": 8,
+            "pairs": [],
+            "visible": [
+              {
+                "x": 444,
+                "y": 150,
+                "legal": true,
+                "foot": {
+                  "w": 103,
+                  "h": 103
+                }
+              }
+            ],
+            "stats": {
+              "reserved": 8,
+              "queued": 25,
+              "blocked": 0
+            }
+          }
+        },
+        {
+          "name": "Stage 3 tank-class spawns obey the same engine clearance rule",
+          "passed": true,
+          "data": {
+            "count": 8,
+            "pairs": [],
+            "visible": [
+              {
+                "x": 340,
+                "y": 150,
+                "legal": false,
+                "foot": {
+                  "w": 43,
+                  "h": 40
+                }
+              }
+            ],
+            "stats": {
+              "reserved": 8,
+              "queued": 28,
+              "blocked": 0
+            }
+          }
+        },
+        {
+          "name": "Stage 7 tank-class spawns obey the same engine clearance rule",
+          "passed": true,
+          "data": {
+            "count": 8,
+            "pairs": [],
+            "visible": [
+              {
+                "x": 340,
+                "y": 150,
+                "legal": false,
+                "foot": {
+                  "w": 43,
+                  "h": 40
+                }
+              }
+            ],
+            "stats": {
+              "reserved": 8,
+              "queued": 28,
+              "blocked": 0
+            }
+          }
+        },
+        {
+          "name": "normal denser roadside nuclear pads alternate shoulders",
+          "passed": true,
+          "data": {
+            "difficulty": "normal",
+            "launched": 5,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 119.99999999992978,
+                "hp": 18
+              },
+              {
+                "event": "pad-spawn",
+                "id": 2,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 420.66666666642533,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 1,
+                "x": 187.796875,
+                "y": 224.66666666648757,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 1,
+                "x": 340,
+                "y": 438,
+                "warn": 3.2,
+                "radius": 58
+              },
+              {
+                "event": "atomic-impact",
+                "id": 1,
+                "x": 340,
+                "y": 438,
+                "radius": 58
+              },
+              {
+                "event": "pad-spawn",
+                "id": 3,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 721.333333332921,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 2,
+                "x": 492.203125,
+                "y": 224.66666666648774,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 2,
+                "x": 340,
+                "y": 438,
+                "warn": 3.2,
+                "radius": 58
+              },
+              {
+                "event": "atomic-impact",
+                "id": 2,
+                "x": 340,
+                "y": 438,
+                "radius": 58
+              },
+              {
+                "event": "pad-spawn",
+                "id": 4,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1021.9999999994168,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 3,
+                "x": 187.796875,
+                "y": 224.6666666664878,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 3,
+                "x": 340,
+                "y": 438,
+                "warn": 3.2,
+                "radius": 58
+              },
+              {
+                "event": "atomic-impact",
+                "id": 3,
+                "x": 340,
+                "y": 438,
+                "radius": 58
+              },
+              {
+                "event": "pad-spawn",
+                "id": 5,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 1322.6666666659125,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 4,
+                "x": 492.203125,
+                "y": 224.6666666664878,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 4,
+                "x": 340,
+                "y": 438,
+                "warn": 3.2,
+                "radius": 58
+              },
+              {
+                "event": "atomic-impact",
+                "id": 4,
+                "x": 340,
+                "y": 438,
+                "radius": 58
+              },
+              {
+                "event": "launch",
+                "id": 5,
+                "x": 187.796875,
+                "y": 224.6666666664878,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 5,
+                "x": 340,
+                "y": 438,
+                "warn": 3.2,
+                "radius": 58
+              }
+            ],
+            "scroll": 1800.6666666656408,
+            "gap": 300,
+            "next": 1622.6666666659125
+          }
+        },
+        {
+          "name": "hard denser roadside nuclear pads alternate shoulders",
+          "passed": true,
+          "data": {
+            "difficulty": "hard",
+            "launched": 7,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 119.99999999992978,
+                "hp": 22
+              },
+              {
+                "event": "pad-spawn",
+                "id": 2,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 350.6666666664651,
+                "hp": 22
+              },
+              {
+                "event": "launch",
+                "id": 1,
+                "x": 187.796875,
+                "y": 204.66666666649894,
+                "hp": 22
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 1,
+                "x": 340,
+                "y": 432,
+                "warn": 3,
+                "radius": 64
+              },
+              {
+                "event": "pad-spawn",
+                "id": 3,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 581.3333333330006,
+                "hp": 22
+              },
+              {
+                "event": "atomic-impact",
+                "id": 1,
+                "x": 340,
+                "y": 432,
+                "radius": 64
+              },
+              {
+                "event": "launch",
+                "id": 2,
+                "x": 492.203125,
+                "y": 204.6666666664991,
+                "hp": 22
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 2,
+                "x": 340,
+                "y": 432,
+                "warn": 3,
+                "radius": 64
+              },
+              {
+                "event": "pad-spawn",
+                "id": 4,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 811.9999999995362,
+                "hp": 22
+              },
+              {
+                "event": "atomic-impact",
+                "id": 2,
+                "x": 340,
+                "y": 432,
+                "radius": 64
+              },
+              {
+                "event": "launch",
+                "id": 3,
+                "x": 187.796875,
+                "y": 204.66666666649917,
+                "hp": 22
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 3,
+                "x": 340,
+                "y": 432,
+                "warn": 3,
+                "radius": 64
+              },
+              {
+                "event": "pad-spawn",
+                "id": 5,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 1042.6666666660717,
+                "hp": 22
+              },
+              {
+                "event": "atomic-impact",
+                "id": 3,
+                "x": 340,
+                "y": 432,
+                "radius": 64
+              },
+              {
+                "event": "launch",
+                "id": 4,
+                "x": 492.203125,
+                "y": 204.66666666649917,
+                "hp": 22
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 4,
+                "x": 340,
+                "y": 432,
+                "warn": 3,
+                "radius": 64
+              },
+              {
+                "event": "pad-spawn",
+                "id": 6,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1273.3333333326073,
+                "hp": 22
+              },
+              {
+                "event": "atomic-impact",
+                "id": 4,
+                "x": 340,
+                "y": 432,
+                "radius": 64
+              },
+              {
+                "event": "launch",
+                "id": 5,
+                "x": 187.796875,
+                "y": 204.66666666649917,
+                "hp": 22
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 5,
+                "x": 340,
+                "y": 432,
+                "warn": 3,
+                "radius": 64
+              },
+              {
+                "event": "pad-spawn",
+                "id": 7,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 1503.9999999991428,
+                "hp": 22
+              },
+              {
+                "event": "atomic-impact",
+                "id": 5,
+                "x": 340,
+                "y": 432,
+                "radius": 64
+              },
+              {
+                "event": "launch",
+                "id": 6,
+                "x": 492.203125,
+                "y": 204.66666666649917,
+                "hp": 22
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 6,
+                "x": 340,
+                "y": 432,
+                "warn": 3,
+                "radius": 64
+              },
+              {
+                "event": "atomic-impact",
+                "id": 6,
+                "x": 340,
+                "y": 432,
+                "radius": 64
+              },
+              {
+                "event": "launch",
+                "id": 7,
+                "x": 187.796875,
+                "y": 204.66666666649917,
+                "hp": 22
+              }
+            ],
+            "scroll": 1800.6666666656408,
+            "gap": 230,
+            "next": 1733.9999999991428
+          }
+        },
+        {
+          "name": "furious denser roadside nuclear pads alternate shoulders",
+          "passed": true,
+          "data": {
+            "difficulty": "furious",
+            "launched": 8,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 119.99999999992978,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 2,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 300.66666666649354,
+                "hp": 26
+              },
+              {
+                "event": "launch",
+                "id": 1,
+                "x": 187.796875,
+                "y": 188.66666666650804,
+                "hp": 26
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 1,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              },
+              {
+                "event": "pad-spawn",
+                "id": 3,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 481.3333333330575,
+                "hp": 26
+              },
+              {
+                "event": "launch",
+                "id": 2,
+                "x": 492.203125,
+                "y": 188.6666666665082,
+                "hp": 26
+              },
+              {
+                "event": "atomic-impact",
+                "id": 1,
+                "x": 340,
+                "y": 426,
+                "radius": 70
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 2,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              },
+              {
+                "event": "pad-spawn",
+                "id": 4,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 661.9999999996214,
+                "hp": 26
+              },
+              {
+                "event": "launch",
+                "id": 3,
+                "x": 187.796875,
+                "y": 188.66666666650826,
+                "hp": 26
+              },
+              {
+                "event": "atomic-impact",
+                "id": 2,
+                "x": 340,
+                "y": 426,
+                "radius": 70
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 3,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              },
+              {
+                "event": "pad-spawn",
+                "id": 5,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 842.6666666661854,
+                "hp": 26
+              },
+              {
+                "event": "launch",
+                "id": 4,
+                "x": 492.203125,
+                "y": 188.66666666651963,
+                "hp": 26
+              },
+              {
+                "event": "atomic-impact",
+                "id": 3,
+                "x": 340,
+                "y": 426,
+                "radius": 70
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 4,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              },
+              {
+                "event": "pad-spawn",
+                "id": 6,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1022.6666666662343,
+                "hp": 26
+              },
+              {
+                "event": "launch",
+                "id": 5,
+                "x": 187.796875,
+                "y": 188.0000000001603,
+                "hp": 26
+              },
+              {
+                "event": "atomic-impact",
+                "id": 4,
+                "x": 340,
+                "y": 426,
+                "radius": 70
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 5,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              },
+              {
+                "event": "pad-spawn",
+                "id": 7,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 1202.666666666439,
+                "hp": 26
+              },
+              {
+                "event": "launch",
+                "id": 6,
+                "x": 492.203125,
+                "y": 188.00000000031605,
+                "hp": 26
+              },
+              {
+                "event": "atomic-impact",
+                "id": 5,
+                "x": 340,
+                "y": 426,
+                "radius": 70
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 6,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              },
+              {
+                "event": "pad-spawn",
+                "id": 8,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1382.6666666666436,
+                "hp": 26
+              },
+              {
+                "event": "launch",
+                "id": 7,
+                "x": 187.796875,
+                "y": 188.00000000031605,
+                "hp": 26
+              },
+              {
+                "event": "atomic-impact",
+                "id": 6,
+                "x": 340,
+                "y": 426,
+                "radius": 70
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 7,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              },
+              {
+                "event": "launch",
+                "id": 8,
+                "x": 492.203125,
+                "y": 188.00000000031605,
+                "hp": 26
+              },
+              {
+                "event": "atomic-impact",
+                "id": 7,
+                "x": 340,
+                "y": 426,
+                "radius": 70
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 8,
+                "x": 340,
+                "y": 426,
+                "warn": 2.8,
+                "radius": 70
+              }
+            ],
+            "scroll": 1800.6666666671188,
+            "gap": 180,
+            "next": 1562.6666666666436
+          }
+        },
+        {
+          "name": "Native roadside pressure rises Normal to Hard to Furious",
+          "passed": true,
+          "data": [
+            {
+              "difficulty": "normal",
+              "launched": 5,
+              "events": [
+                {
+                  "event": "pad-spawn",
+                  "id": 1,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 119.99999999992978,
+                  "hp": 18
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 2,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 420.66666666642533,
+                  "hp": 18
+                },
+                {
+                  "event": "launch",
+                  "id": 1,
+                  "x": 187.796875,
+                  "y": 224.66666666648757,
+                  "hp": 18
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 1,
+                  "x": 340,
+                  "y": 438,
+                  "warn": 3.2,
+                  "radius": 58
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 1,
+                  "x": 340,
+                  "y": 438,
+                  "radius": 58
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 3,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 721.333333332921,
+                  "hp": 18
+                },
+                {
+                  "event": "launch",
+                  "id": 2,
+                  "x": 492.203125,
+                  "y": 224.66666666648774,
+                  "hp": 18
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 2,
+                  "x": 340,
+                  "y": 438,
+                  "warn": 3.2,
+                  "radius": 58
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 2,
+                  "x": 340,
+                  "y": 438,
+                  "radius": 58
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 4,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 1021.9999999994168,
+                  "hp": 18
+                },
+                {
+                  "event": "launch",
+                  "id": 3,
+                  "x": 187.796875,
+                  "y": 224.6666666664878,
+                  "hp": 18
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 3,
+                  "x": 340,
+                  "y": 438,
+                  "warn": 3.2,
+                  "radius": 58
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 3,
+                  "x": 340,
+                  "y": 438,
+                  "radius": 58
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 5,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 1322.6666666659125,
+                  "hp": 18
+                },
+                {
+                  "event": "launch",
+                  "id": 4,
+                  "x": 492.203125,
+                  "y": 224.6666666664878,
+                  "hp": 18
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 4,
+                  "x": 340,
+                  "y": 438,
+                  "warn": 3.2,
+                  "radius": 58
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 4,
+                  "x": 340,
+                  "y": 438,
+                  "radius": 58
+                },
+                {
+                  "event": "launch",
+                  "id": 5,
+                  "x": 187.796875,
+                  "y": 224.6666666664878,
+                  "hp": 18
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 5,
+                  "x": 340,
+                  "y": 438,
+                  "warn": 3.2,
+                  "radius": 58
+                }
+              ],
+              "scroll": 1800.6666666656408,
+              "gap": 300,
+              "next": 1622.6666666659125
+            },
+            {
+              "difficulty": "hard",
+              "launched": 7,
+              "events": [
+                {
+                  "event": "pad-spawn",
+                  "id": 1,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 119.99999999992978,
+                  "hp": 22
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 2,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 350.6666666664651,
+                  "hp": 22
+                },
+                {
+                  "event": "launch",
+                  "id": 1,
+                  "x": 187.796875,
+                  "y": 204.66666666649894,
+                  "hp": 22
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 1,
+                  "x": 340,
+                  "y": 432,
+                  "warn": 3,
+                  "radius": 64
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 3,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 581.3333333330006,
+                  "hp": 22
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 1,
+                  "x": 340,
+                  "y": 432,
+                  "radius": 64
+                },
+                {
+                  "event": "launch",
+                  "id": 2,
+                  "x": 492.203125,
+                  "y": 204.6666666664991,
+                  "hp": 22
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 2,
+                  "x": 340,
+                  "y": 432,
+                  "warn": 3,
+                  "radius": 64
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 4,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 811.9999999995362,
+                  "hp": 22
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 2,
+                  "x": 340,
+                  "y": 432,
+                  "radius": 64
+                },
+                {
+                  "event": "launch",
+                  "id": 3,
+                  "x": 187.796875,
+                  "y": 204.66666666649917,
+                  "hp": 22
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 3,
+                  "x": 340,
+                  "y": 432,
+                  "warn": 3,
+                  "radius": 64
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 5,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 1042.6666666660717,
+                  "hp": 22
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 3,
+                  "x": 340,
+                  "y": 432,
+                  "radius": 64
+                },
+                {
+                  "event": "launch",
+                  "id": 4,
+                  "x": 492.203125,
+                  "y": 204.66666666649917,
+                  "hp": 22
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 4,
+                  "x": 340,
+                  "y": 432,
+                  "warn": 3,
+                  "radius": 64
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 6,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 1273.3333333326073,
+                  "hp": 22
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 4,
+                  "x": 340,
+                  "y": 432,
+                  "radius": 64
+                },
+                {
+                  "event": "launch",
+                  "id": 5,
+                  "x": 187.796875,
+                  "y": 204.66666666649917,
+                  "hp": 22
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 5,
+                  "x": 340,
+                  "y": 432,
+                  "warn": 3,
+                  "radius": 64
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 7,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 1503.9999999991428,
+                  "hp": 22
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 5,
+                  "x": 340,
+                  "y": 432,
+                  "radius": 64
+                },
+                {
+                  "event": "launch",
+                  "id": 6,
+                  "x": 492.203125,
+                  "y": 204.66666666649917,
+                  "hp": 22
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 6,
+                  "x": 340,
+                  "y": 432,
+                  "warn": 3,
+                  "radius": 64
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 6,
+                  "x": 340,
+                  "y": 432,
+                  "radius": 64
+                },
+                {
+                  "event": "launch",
+                  "id": 7,
+                  "x": 187.796875,
+                  "y": 204.66666666649917,
+                  "hp": 22
+                }
+              ],
+              "scroll": 1800.6666666656408,
+              "gap": 230,
+              "next": 1733.9999999991428
+            },
+            {
+              "difficulty": "furious",
+              "launched": 8,
+              "events": [
+                {
+                  "event": "pad-spawn",
+                  "id": 1,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 119.99999999992978,
+                  "hp": 26
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 2,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 300.66666666649354,
+                  "hp": 26
+                },
+                {
+                  "event": "launch",
+                  "id": 1,
+                  "x": 187.796875,
+                  "y": 188.66666666650804,
+                  "hp": 26
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 1,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 3,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 481.3333333330575,
+                  "hp": 26
+                },
+                {
+                  "event": "launch",
+                  "id": 2,
+                  "x": 492.203125,
+                  "y": 188.6666666665082,
+                  "hp": 26
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 1,
+                  "x": 340,
+                  "y": 426,
+                  "radius": 70
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 2,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 4,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 661.9999999996214,
+                  "hp": 26
+                },
+                {
+                  "event": "launch",
+                  "id": 3,
+                  "x": 187.796875,
+                  "y": 188.66666666650826,
+                  "hp": 26
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 2,
+                  "x": 340,
+                  "y": 426,
+                  "radius": 70
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 3,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 5,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 842.6666666661854,
+                  "hp": 26
+                },
+                {
+                  "event": "launch",
+                  "id": 4,
+                  "x": 492.203125,
+                  "y": 188.66666666651963,
+                  "hp": 26
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 3,
+                  "x": 340,
+                  "y": 426,
+                  "radius": 70
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 4,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 6,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 1022.6666666662343,
+                  "hp": 26
+                },
+                {
+                  "event": "launch",
+                  "id": 5,
+                  "x": 187.796875,
+                  "y": 188.0000000001603,
+                  "hp": 26
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 4,
+                  "x": 340,
+                  "y": 426,
+                  "radius": 70
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 5,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 7,
+                  "side": -1,
+                  "x": 187.796875,
+                  "y": -36,
+                  "scroll": 1202.666666666439,
+                  "hp": 26
+                },
+                {
+                  "event": "launch",
+                  "id": 6,
+                  "x": 492.203125,
+                  "y": 188.00000000031605,
+                  "hp": 26
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 5,
+                  "x": 340,
+                  "y": 426,
+                  "radius": 70
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 6,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                },
+                {
+                  "event": "pad-spawn",
+                  "id": 8,
+                  "side": 1,
+                  "x": 492.203125,
+                  "y": -36,
+                  "scroll": 1382.6666666666436,
+                  "hp": 26
+                },
+                {
+                  "event": "launch",
+                  "id": 7,
+                  "x": 187.796875,
+                  "y": 188.00000000031605,
+                  "hp": 26
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 6,
+                  "x": 340,
+                  "y": 426,
+                  "radius": 70
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 7,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                },
+                {
+                  "event": "launch",
+                  "id": 8,
+                  "x": 492.203125,
+                  "y": 188.00000000031605,
+                  "hp": 26
+                },
+                {
+                  "event": "atomic-impact",
+                  "id": 7,
+                  "x": 340,
+                  "y": 426,
+                  "radius": 70
+                },
+                {
+                  "event": "escaped-return-locked",
+                  "id": 8,
+                  "x": 340,
+                  "y": 426,
+                  "warn": 2.8,
+                  "radius": 70
+                }
+              ],
+              "scroll": 1800.6666666671188,
+              "gap": 180,
+              "next": 1562.6666666666436
+            }
+          ]
+        },
+        {
+          "name": "No native page, console, draw or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ]
+    },
+    "roadside": {
+      "passed": 61,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/highway_missiles_1017/verification.json",
+      "checks": [
+        {
+          "name": "Both highway shoulders carry tall authored rockets at the regular game FOV",
+          "passed": true,
+          "data": {
+            "plates": {
+              "hm17_pad-get": 142,
+              "hm17_pad": 142,
+              "hm17_missile-get": 142,
+              "hm17_missile": 142,
+              "hm17_lamps-get": 140,
+              "hm17_lamps": 140
+            },
+            "positions": [
+              {
+                "x": 187.796875,
+                "ground": true,
+                "leftEdge": 154.796875,
+                "rightEdge": 220.796875,
+                "phase": "loaded"
+              },
+              {
+                "x": 492.203125,
+                "ground": true,
+                "leftEdge": 459.203125,
+                "rightEdge": 525.203125,
+                "phase": "loaded"
+              }
+            ],
+            "size": [
+              480,
+              512,
+              680,
+              480
+            ],
+            "keys": [
+              {
+                "key": "hm17_pad",
+                "w": 128,
+                "h": 128,
+                "pivot": [
+                  64,
+                  80
+                ],
+                "loaded": true
+              },
+              {
+                "key": "hm17_lamps",
+                "w": 128,
+                "h": 128,
+                "pivot": [
+                  64,
+                  80
+                ],
+                "loaded": true
+              },
+              {
+                "key": "hm17_missile",
+                "w": 64,
+                "h": 192,
+                "pivot": [
+                  32,
+                  96
+                ],
+                "loaded": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "All three authored plates have even dimensions, ready native keys and fixed pivots",
+          "passed": true,
+          "data": [
+            {
+              "key": "hm17_pad",
+              "w": 128,
+              "h": 128,
+              "pivot": [
+                64,
+                80
+              ],
+              "loaded": true
+            },
+            {
+              "key": "hm17_lamps",
+              "w": 128,
+              "h": 128,
+              "pivot": [
+                64,
+                80
+              ],
+              "loaded": true
+            },
+            {
+              "key": "hm17_missile",
+              "w": 64,
+              "h": 192,
+              "pivot": [
+                32,
+                96
+              ],
+              "loaded": true
+            }
+          ]
+        },
+        {
+          "name": "Real pad damage flashes the actual rocket and pad pixels",
+          "passed": true,
+          "data": {
+            "pixels": 3572,
+            "damage": 1,
+            "flash": 0.12
+          }
+        },
+        {
+          "name": "Native hit flashes expire normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "easy standing rocket takes actual machine gun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.86210511260538,
+                "y": 190.00000000000043
+              }
+            ],
+            "diff": "easy",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "easy ordinary gunfire stops the launch with no atomic return",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.86210511260538,
+                "y": 190.00000000000043
+              }
+            ],
+            "diff": "easy",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "easy standing rocket takes actual spread damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.91650634487928,
+                "y": 196.00000000000088
+              }
+            ],
+            "diff": "easy",
+            "weapon": "spread"
+          }
+        },
+        {
+          "name": "easy standing rocket takes actual laser damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.90496826695266,
+                "y": 194.66666666666745
+              }
+            ],
+            "diff": "easy",
+            "weapon": "laser"
+          }
+        },
+        {
+          "name": "easy standing rocket takes actual flamethrower damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.83635088144896,
+                "y": 187.33333333333357
+              }
+            ],
+            "diff": "easy",
+            "weapon": "flamethrower"
+          }
+        },
+        {
+          "name": "easy standing rocket takes actual ice orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88702239562446,
+                "y": 192.6666666666673
+              }
+            ],
+            "diff": "easy",
+            "weapon": "ice orb"
+          }
+        },
+        {
+          "name": "easy standing rocket takes actual fire orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88088924535734,
+                "y": 192.00000000000057
+              }
+            ],
+            "diff": "easy",
+            "weapon": "fire orb"
+          }
+        },
+        {
+          "name": "easy standing rocket takes actual chaingun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 14,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.8557322620147,
+                "y": 189.3333333333337
+              }
+            ],
+            "diff": "easy",
+            "weapon": "chaingun"
+          }
+        },
+        {
+          "name": "easy standing rocket takes actual Retina missile damage",
+          "passed": true,
+          "data": {
+            "hp": 1,
+            "max": 14,
+            "dead": false,
+            "phase": "loaded",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 14
+              }
+            ],
+            "diff": "easy",
+            "weapon": "Retina missile"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual machine gun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.86210511260538,
+                "y": 190.00000000000043
+              }
+            ],
+            "diff": "normal",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "normal ordinary gunfire stops the launch with no atomic return",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.86210511260538,
+                "y": 190.00000000000043
+              }
+            ],
+            "diff": "normal",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual spread damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.91650634487928,
+                "y": 195.99999999999827
+              }
+            ],
+            "diff": "normal",
+            "weapon": "spread"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual laser damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.92766037604972,
+                "y": 197.3333333333314
+              }
+            ],
+            "diff": "normal",
+            "weapon": "laser"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual flamethrower damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.8684256014143,
+                "y": 190.6666666666657
+              }
+            ],
+            "diff": "normal",
+            "weapon": "flamethrower"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual ice orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.8930831824068,
+                "y": 193.33333333333198
+              }
+            ],
+            "diff": "normal",
+            "weapon": "ice orb"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual fire orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88088924535734,
+                "y": 191.99999999999883
+              }
+            ],
+            "diff": "normal",
+            "weapon": "fire orb"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual chaingun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 18,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.8557322620147,
+                "y": 189.33333333333255
+              }
+            ],
+            "diff": "normal",
+            "weapon": "chaingun"
+          }
+        },
+        {
+          "name": "normal standing rocket takes actual Retina missile damage",
+          "passed": true,
+          "data": {
+            "hp": 1,
+            "max": 18,
+            "dead": false,
+            "phase": "loaded",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              }
+            ],
+            "diff": "normal",
+            "weapon": "Retina missile"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual machine gun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.86210511260538,
+                "y": 189.99999999999912
+              }
+            ],
+            "diff": "hard",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "hard ordinary gunfire stops the launch with no atomic return",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.86210511260538,
+                "y": 189.99999999999912
+              }
+            ],
+            "diff": "hard",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual spread damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.95363360859952,
+                "y": 200.66666666666424
+              }
+            ],
+            "diff": "hard",
+            "weapon": "spread"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual laser damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.96774076478204,
+                "y": 202.66666666666396
+              }
+            ],
+            "diff": "hard",
+            "weapon": "laser"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual flamethrower damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.8684256014143,
+                "y": 190.6666666666657
+              }
+            ],
+            "diff": "hard",
+            "weapon": "flamethrower"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual ice orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.8930831824068,
+                "y": 193.33333333333198
+              }
+            ],
+            "diff": "hard",
+            "weapon": "ice orb"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual fire orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88088924535734,
+                "y": 191.99999999999883
+              }
+            ],
+            "diff": "hard",
+            "weapon": "fire orb"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual chaingun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 22,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88702239562446,
+                "y": 192.6666666666654
+              }
+            ],
+            "diff": "hard",
+            "weapon": "chaingun"
+          }
+        },
+        {
+          "name": "hard standing rocket takes actual Retina missile damage",
+          "passed": true,
+          "data": {
+            "hp": 1,
+            "max": 22,
+            "dead": false,
+            "phase": "loaded",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 22
+              }
+            ],
+            "diff": "hard",
+            "weapon": "Retina missile"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual machine gun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88702239562446,
+                "y": 192.6666666666654
+              }
+            ],
+            "diff": "furious",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "furious ordinary gunfire stops the launch with no atomic return",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88702239562446,
+                "y": 192.6666666666654
+              }
+            ],
+            "diff": "furious",
+            "weapon": "machine gun"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual spread damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.95363360859952,
+                "y": 200.66666666666424
+              }
+            ],
+            "diff": "furious",
+            "weapon": "spread"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual laser damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.98461478489278,
+                "y": 205.33333333333022
+              }
+            ],
+            "diff": "furious",
+            "weapon": "laser"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual flamethrower damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.89906674056493,
+                "y": 193.99999999999855
+              }
+            ],
+            "diff": "furious",
+            "weapon": "flamethrower"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual ice orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.90496826695266,
+                "y": 194.66666666666512
+              }
+            ],
+            "diff": "furious",
+            "weapon": "ice orb"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual fire orb damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88088924535734,
+                "y": 191.99999999999883
+              }
+            ],
+            "diff": "furious",
+            "weapon": "fire orb"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual chaingun damage",
+          "passed": true,
+          "data": {
+            "hp": 0,
+            "max": 26,
+            "dead": true,
+            "phase": "destroyed",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "loaded",
+                "x": 187.88702239562446,
+                "y": 192.6666666666692
+              }
+            ],
+            "diff": "furious",
+            "weapon": "chaingun"
+          }
+        },
+        {
+          "name": "furious standing rocket takes actual Retina missile damage",
+          "passed": true,
+          "data": {
+            "hp": 2,
+            "max": 26,
+            "dead": false,
+            "phase": "loaded",
+            "returns": 0,
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 26
+              }
+            ],
+            "diff": "furious",
+            "weapon": "Retina missile"
+          }
+        },
+        {
+          "name": "Launch leaves its empty pad on the ground and keeps the rising rocket lockable",
+          "passed": true,
+          "data": {
+            "phase": "boost",
+            "y": 320.9416666667104,
+            "shootable": true,
+            "empty": 1,
+            "launch": 1
+          }
+        },
+        {
+          "name": "Actual gunfire destroys a launched missile before it escapes",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "phase": "destroyed",
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 1,
+                "x": 187.796875,
+                "y": 328.00000000004377,
+                "hp": 18
+              },
+              {
+                "event": "intercepted",
+                "id": 1,
+                "phase": "boost",
+                "x": 189.69447818568736,
+                "y": 315.03750000004374
+              }
+            ],
+            "returns": 0
+          }
+        },
+        {
+          "name": "A destroyed ascent cannot schedule a delayed return",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Retina keeps a lock when only the ascending missile tail is visible",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Ordinary gunfire can still hit that visible tail above the centre boundary",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Only a fully offscreen missile commits exactly one atomic return",
+          "passed": true,
+          "data": {
+            "phase": "escaped",
+            "y": -72.64166666662273,
+            "top": 0,
+            "q": {
+              "x": 340,
+              "y": 412,
+              "warn": 3.2,
+              "r": 58,
+              "track": false,
+              "owner": null,
+              "t": 0
+            },
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 1,
+                "x": 187.796875,
+                "y": 328.00000000004377,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 1,
+                "x": 340,
+                "y": 412,
+                "warn": 3.2,
+                "radius": 58
+              }
+            ]
+          }
+        },
+        {
+          "name": "Native warning pixels mark the complete circular blast radius",
+          "passed": true,
+          "data": {
+            "w": 116,
+            "h": 112,
+            "diameter": 116,
+            "draws": 2
+          }
+        },
+        {
+          "name": "The atomic landing point stays committed after the player moves",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Return uses actual atomic cloud frames, impact sound and one detonation",
+          "passed": true,
+          "data": {
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 1,
+                "x": 187.796875,
+                "y": 328.00000000004377,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 1,
+                "x": 340,
+                "y": 412,
+                "warn": 3.2,
+                "radius": 58
+              },
+              {
+                "event": "atomic-impact",
+                "id": 1,
+                "x": 340,
+                "y": 412,
+                "radius": 58
+              }
+            ],
+            "sounds": {
+              "nuclearLaunch": 1,
+              "alertDanger": 1,
+              "atomicDetonate": 1
+            },
+            "atomDraws": 34,
+            "dead": false,
+            "nukes": 1
+          }
+        },
+        {
+          "name": "Moving outside the committed blast remains safe",
+          "passed": true,
+          "data": {
+            "events": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": 230,
+                "scroll": 0,
+                "hp": 18
+              },
+              {
+                "event": "launch",
+                "id": 1,
+                "x": 187.796875,
+                "y": 328.00000000004377,
+                "hp": 18
+              },
+              {
+                "event": "escaped-return-locked",
+                "id": 1,
+                "x": 340,
+                "y": 412,
+                "warn": 3.2,
+                "radius": 58
+              },
+              {
+                "event": "atomic-impact",
+                "id": 1,
+                "x": 340,
+                "y": 412,
+                "radius": 58
+              }
+            ],
+            "sounds": {
+              "nuclearLaunch": 1,
+              "alertDanger": 1,
+              "atomicDetonate": 1
+            },
+            "atomDraws": 34,
+            "dead": false,
+            "nukes": 1
+          }
+        },
+        {
+          "name": "Atomic impact hits a pilot who stays on its target",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "impact": true,
+            "x": 340.7064564769948,
+            "y": 416.1909356040489,
+            "origin": [
+              340,
+              412
+            ],
+            "radius": 58
+          }
+        },
+        {
+          "name": "Atomic impact spares a pilot outside its marked radius",
+          "passed": true,
+          "data": {
+            "dead": false,
+            "impact": true,
+            "x": 418,
+            "y": 412,
+            "origin": [
+              340,
+              412
+            ],
+            "radius": 58
+          }
+        },
+        {
+          "name": "Pad stays bolted to terrain through the reflected highway tile seam",
+          "passed": true,
+          "data": {
+            "anchor": -740,
+            "expected": -740,
+            "scroll": 1070.0000000000364,
+            "alive": true
+          }
+        },
+        {
+          "name": "Pause stops the missile clock and terrain together",
+          "passed": true,
+          "data": {
+            "before": [
+              2.499999999999996,
+              1070.0000000000364
+            ],
+            "after": [
+              2.499999999999996,
+              1070.0000000000364
+            ]
+          }
+        },
+        {
+          "name": "normal actual director alternates roadside pads with bounded simultaneous pressure",
+          "passed": true,
+          "data": {
+            "spawns": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 180.0000000000517,
+                "hp": 18
+              },
+              {
+                "event": "pad-spawn",
+                "id": 2,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 480.000000000137,
+                "hp": 18
+              },
+              {
+                "event": "pad-spawn",
+                "id": 3,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 780.0000000002223,
+                "hp": 18
+              },
+              {
+                "event": "pad-spawn",
+                "id": 4,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1080.0000000003172,
+                "hp": 18
+              },
+              {
+                "event": "pad-spawn",
+                "id": 5,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 1380.0000000004536,
+                "hp": 18
+              }
+            ],
+            "config": {
+              "gap": 300,
+              "warm": 3.8,
+              "hp": 18,
+              "return": 3.2,
+              "radius": 58
+            },
+            "living": 0,
+            "returns": 1
+          }
+        },
+        {
+          "name": "hard actual director alternates roadside pads with bounded simultaneous pressure",
+          "passed": true,
+          "data": {
+            "spawns": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 180.66666666656178,
+                "hp": 22
+              },
+              {
+                "event": "pad-spawn",
+                "id": 2,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 411.3333333330973,
+                "hp": 22
+              },
+              {
+                "event": "pad-spawn",
+                "id": 3,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 641.9999999996328,
+                "hp": 22
+              },
+              {
+                "event": "pad-spawn",
+                "id": 4,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 872.6666666661683,
+                "hp": 22
+              },
+              {
+                "event": "pad-spawn",
+                "id": 5,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 1103.333333332704,
+                "hp": 22
+              },
+              {
+                "event": "pad-spawn",
+                "id": 6,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1333.9999999992394,
+                "hp": 22
+              }
+            ],
+            "config": {
+              "gap": 230,
+              "warm": 3.3,
+              "hp": 22,
+              "return": 3,
+              "radius": 64
+            },
+            "living": 0,
+            "returns": 1
+          }
+        },
+        {
+          "name": "furious actual director alternates roadside pads with bounded simultaneous pressure",
+          "passed": true,
+          "data": {
+            "spawns": [
+              {
+                "event": "pad-spawn",
+                "id": 1,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 180.66666666656178,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 2,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 361.3333333331257,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 3,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 541.9999999996896,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 4,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 722.6666666662536,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 5,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 903.3333333328176,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 6,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1083.9999999993815,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 7,
+                "side": -1,
+                "x": 187.796875,
+                "y": -36,
+                "scroll": 1264.6666666659455,
+                "hp": 26
+              },
+              {
+                "event": "pad-spawn",
+                "id": 8,
+                "side": 1,
+                "x": 492.203125,
+                "y": -36,
+                "scroll": 1445.3333333325095,
+                "hp": 26
+              }
+            ],
+            "config": {
+              "gap": 180,
+              "warm": 2.9,
+              "hp": 26,
+              "return": 2.8,
+              "radius": 70
+            },
+            "living": 0,
+            "returns": 1
+          }
+        },
+        {
+          "name": "Roadside pressure increases Normal to Hard to Furious",
+          "passed": true,
+          "data": [
+            5,
+            6,
+            8
+          ]
+        },
+        {
+          "name": "Additional pads stop before the final boss approach",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage reset removes pads and returns; other stages never spawn them",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No page, console, drawing or missing-asset errors",
+          "passed": true,
+          "data": []
+        }
+      ]
+    },
+    "review": {
+      "passed": 10,
+      "failed": 0,
+      "errors": [],
+      "evidence": "_shots/stage4_engine_1018/review/report.json",
+      "checks": [
+        {
+          "name": "Warden review starts with isolated saves and the new central weapon",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Actual keyboard fire reaches the review game",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All16 poses draw actual XART pixels through the game context",
+          "passed": true,
+          "data": [
+            {
+              "key": "wc18_gun_00",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_01",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_02",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_03",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_04",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_05",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_06",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_07",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_08",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_09",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_10",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_11",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_12",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_13",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_14",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            },
+            {
+              "key": "wc18_gun_15",
+              "ready": true,
+              "ok": true,
+              "pixels": 245760
+            }
+          ]
+        },
+        {
+          "name": "normal review shows separated tanks, both shoulders and regular side HUD",
+          "passed": true,
+          "data": {
+            "tanks": 7,
+            "pairs": [],
+            "pads": 2,
+            "size": [
+              480,
+              512,
+              480
+            ],
+            "hud": true
+          }
+        },
+        {
+          "name": "hard review shows separated tanks, both shoulders and regular side HUD",
+          "passed": true,
+          "data": {
+            "tanks": 7,
+            "pairs": [],
+            "pads": 2,
+            "size": [
+              480,
+              512,
+              480
+            ],
+            "hud": true
+          }
+        },
+        {
+          "name": "furious review shows separated tanks, both shoulders and regular side HUD",
+          "passed": true,
+          "data": {
+            "tanks": 7,
+            "pairs": [],
+            "pads": 2,
+            "size": [
+              480,
+              512,
+              480
+            ],
+            "hud": true
+          }
+        },
+        {
+          "name": "Atomic return scene exposes the actual committed ground target",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "All16 even frames render with fixed pivots and working onion scrubbing",
+          "passed": true,
+          "data": {
+            "pose": 9,
+            "onion": true,
+            "size": [
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ],
+              [
+                256,
+                256,
+                [
+                  128,
+                  104
+                ]
+              ]
+            ],
+            "pixels": 92640
+          }
+        },
+        {
+          "name": "Every generated pose has a native registered draw",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No review page, console, draw or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ]
+    },
+    "lastStand": {
+      "passed": 33,
+      "failed": 0,
+      "evidence": "_shots/stage4_engine_1018/laststand.log",
+      "scope": "Normal/Hard existing native last-stand probe; all five modules destroyed through mr27Damage, fan warnings, committed ram and negative control."
+    }
+  },
+  "sourceSHA256": {
+    "assets/game.js": "b108aa6a3dc8e0d4c15344b1d8c5d8624c5801ba9bc095f558f8117995f984b8",
+    "assets/targeting_1017.js": "91833f92fe0998db9ed9bc1d48d9ead6c3cf5e20ff542a661ebbe5948563e34e",
+    "assets/highway_missiles_1017.js": "2de1c5c5aca1e7ced31fe4275f68243072487fcdf1b369baad6f05c9e1dea887",
+    "assets/ground_traffic_1018.js": "7f1f1a1b60caf523afe1f386646bbba655b3d7f78e7b64e8b5b44be351a9a1ca",
+    "assets/warden_center_1018.js": "9c35beb737744194a51ee50bb70a52565262ab14cfcb460bcec968c789af4e88",
+    "assets/warden_center_art_1018.js": "979c3842900ba7ddc652de4f3ef5999a49c4690e10b9e656fe49ec5a88383d0a",
+    "assets/data/ART_TAXONOMY.json": "720a81315cf702d96e4d9613faf0ee5fec14808fc08d0b14506203057f72828c",
+    "index.html": "cb9858a109e80edef86554d492bbb2dd3ec2d8d3a201b269d6c3d388f556a694",
+    "AGENTS.md": "89ebef483b3a4d3019fde45290954d2c7b99ef78d02db27d8a6a406838d343b4",
+    "_BUILD_SOURCE/test_fl.js": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+    "_BUILD_SOURCE/build_warden_center_1018.py": "a761a20ab136e94b22aa61e60cae6ec7c957222e8052750225cd875d1c712d1b",
+    "_BUILD_SOURCE/probe_stage4_engine_1018.py": "0d1e596f1897dae44bf3f3c7432199055ff7e49bfc8328f95a98e7beb15fd3cb",
+    "_BUILD_SOURCE/probe_stage4_engine_review_1018.py": "937ad9dd971d5ab1e71dd73ff7642f60b72a48dfe122e63cc053f6dcd8f505a8"
+  },
+  "initialHashes": {
+    "assets/game.js": {
+      "sha256": "0cb2c234d9014cd04ec11695443fc2fa8888e2dc5fab33c7cfaa5670ab897a53",
+      "crlf": 0,
+      "lf": 80349
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "c5e63b5162e6301f26b67fd8e9ea3b4d192d766367a49d84d3028a1d5506269b",
+      "crlf": 15889,
+      "lf": 15889
+    },
+    "assets/targeting_1017.js": {
+      "sha256": "9b43c09b48bccf99587ad2189e92a062751d447bb44489ec36ce862ee1264fa7",
+      "crlf": 0,
+      "lf": 197
+    },
+    "assets/highway_missiles_1017.js": {
+      "sha256": "19118ba1086e5db141c1c4e313a17e10a89a3a720cb7fe4dd18d244798e53d46",
+      "crlf": 0,
+      "lf": 136
+    },
+    "assets/stage34_assault_1014.js": {
+      "sha256": "142f94b23337932b9240f5ed5a1ee3c097f647e36b4c7deffed10ade28522891",
+      "crlf": 0,
+      "lf": 445
+    },
+    "assets/modular_roster_0927.js": {
+      "sha256": "692141e8fea3a55ca8992648c3ad3e35042e628221175c26edb090ade98f94a9",
+      "crlf": 0,
+      "lf": 183
+    },
+    "assets/storm_assault_1018.js": {
+      "sha256": "a7afd7a01d3e3b666bc3950afa7b8a2fd88bf64d90996b793adc24ea688ff444",
+      "crlf": 0,
+      "lf": 204
+    },
+    "assets/stage6_roster_1017.js": {
+      "sha256": "5d3bcd4e33c3e82d464c7d5db73093c85d93b2a6d67eeb2e71ea9213e887e63d",
+      "crlf": 0,
+      "lf": 194
+    },
+    "assets/stage6_reactor_1018.js": {
+      "sha256": "cfa2e41b9732b47383029174de9d0bbbeea6dcfed33daf9d398570e72435a914",
+      "crlf": 0,
+      "lf": 182
+    },
+    "index.html": {
+      "sha256": "44e08125081a68dc1d5c9ee013a1f5bb92d5bde8113dc270418292cea0230a1a",
+      "crlf": 0,
+      "lf": 628
+    },
+    "AGENTS.md": {
+      "sha256": "7bc6012d919d9102f4ba35f8df9d9ebe950d2a48275f92ac7184c751f4c264c8",
+      "crlf": 7,
+      "lf": 71
+    }
+  },
+  "protectedUnchanged": [
+    "_BUILD_SOURCE/test_fl.js",
+    "assets/stage34_assault_1014.js",
+    "assets/modular_roster_0927.js",
+    "assets/storm_assault_1018.js",
+    "assets/stage6_roster_1017.js",
+    "assets/stage6_reactor_1018.js"
+  ],
+  "lineEndings": {
+    "game": "LF",
+    "test": "CRLF"
+  },
+  "art": {
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      104
+    ],
+    "sourceScale": 0.7,
+    "generatedVia": "built-in image generator; actual Warden armor reference",
+    "pixellabCredits": "exhausted; no top-up",
+    "runtimePNGBytes": 1028879,
+    "owner": "_BUILD_SOURCE/build_warden_center_1018.py",
+    "manifest": "assets/game/levels/stage_04/enemies/warden_center_1018/manifest.json"
+  },
+  "density": {
+    "firstScroll": 100,
+    "normal": {
+      "gap": 300,
+      "cap": 3,
+      "sample45s": 5
+    },
+    "hard": {
+      "gap": 230,
+      "cap": 4,
+      "sample45s": 7
+    },
+    "furious": {
+      "gap": 180,
+      "cap": 4,
+      "sample45s": 8
+    }
+  },
+  "review": "docs/previews/stage4_engine_1018/index.html",
+  "limitations": [
+    "Focused native encounter/traffic fixtures, not a full campaign playthrough.",
+    "Stage1/3/7 smoke covers shared spawn reservations; thirty-second movement samples cover Stage4 on Normal/Hard/Furious.",
+    "Primary module routing isolates a short recovery window and aims at a real barrel."
+  ],
+  "commit": false,
+  "push": false
+}

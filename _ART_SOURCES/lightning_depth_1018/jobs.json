@@ -1,0 +1,60 @@
+{
+  "wrap": {
+    "size": 256,
+    "id": "c69d711a-3f9d-46b2-8b4c-e60a0706cfe7",
+    "isError": false
+  },
+  "bolt": {
+    "size": 128,
+    "id": "b13760f4-f104-499e-b014-436db54c320a",
+    "isError": false
+  },
+  "orb": {
+    "size": 96,
+    "id": "0e240895-59a0-4473-bc25-eaee1838ffa2",
+    "isError": false
+  },
+  "tether": {
+    "size": [
+      256,
+      64
+    ],
+    "id": "08bf4689-dfe5-4371-beb1-1826081e5543",
+    "isError": false
+  },
+  "wrap_loop": {
+    "size": 256,
+    "id": "1d9695ab-3290-4013-bf8d-6fa3b354551b",
+    "isError": false,
+    "count": 32
+  },
+  "bolt_loop": {
+    "size": 128,
+    "id": "0f2e0cbf-44f8-4fd3-b859-55e9dbdfdc14",
+    "isError": false,
+    "count": 32
+  },
+  "orb_loop": {
+    "size": 96,
+    "id": "9a491b45-cc31-4d22-87ec-c1dcf1127ad3",
+    "isError": false,
+    "count": 32
+  },
+  "tether_v2": {
+    "size": [
+      256,
+      128
+    ],
+    "id": "27681a1e-ca6a-4786-a3b1-9974ce96fb5d",
+    "isError": false
+  },
+  "tether_loop": {
+    "size": [
+      256,
+      128
+    ],
+    "id": "2e0852cc-8aa1-4cbc-bb17-02b5e12b1903",
+    "isError": false,
+    "count": 32
+  }
+}

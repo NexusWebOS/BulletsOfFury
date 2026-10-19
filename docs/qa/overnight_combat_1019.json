@@ -1,0 +1,2404 @@
+{
+  "generated": "2026-10-19T12:40:15.940962+00:00",
+  "campaignCases": 30,
+  "campaignCompleted": 30,
+  "shippingProgress": [
+    {
+      "id": "4-normal-shipping-final",
+      "stage": 4,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 382
+    },
+    {
+      "id": "5-normal-shipping-final",
+      "stage": 5,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 318.95
+    },
+    {
+      "id": "6L-normal-shipping-final",
+      "stage": 6,
+      "difficulty": "normal",
+      "route": "left",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 393.48
+    },
+    {
+      "id": "6R-normal-stealth-mount-final",
+      "stage": 6,
+      "difficulty": "normal",
+      "route": "right",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 430.3
+    },
+    {
+      "id": "9-normal-shipping-final",
+      "stage": 9,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 188.52
+    },
+    {
+      "id": "1-normal-shipping-final",
+      "stage": 1,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 191.38
+    },
+    {
+      "id": "2-normal-shipping-final",
+      "stage": 2,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 204.15
+    },
+    {
+      "id": "3-normal-drone-final",
+      "stage": 3,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 226.72
+    },
+    {
+      "id": "7-normal-shipping-final",
+      "stage": 7,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 981.77
+    },
+    {
+      "id": "8-normal-shipping-final",
+      "stage": 8,
+      "difficulty": "normal",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 631.38
+    },
+    {
+      "id": "4-hard-shipping-final",
+      "stage": 4,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 294.77
+    },
+    {
+      "id": "5-hard-shipping-final",
+      "stage": 5,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 372.12
+    },
+    {
+      "id": "6L-hard-shipping-final",
+      "stage": 6,
+      "difficulty": "hard",
+      "route": "left",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 430.68
+    },
+    {
+      "id": "6R-hard-stealth-mount-final",
+      "stage": 6,
+      "difficulty": "hard",
+      "route": "right",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 454.87
+    },
+    {
+      "id": "9-hard-shipping-final",
+      "stage": 9,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 185.67
+    },
+    {
+      "id": "1-hard-shipping-final",
+      "stage": 1,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 252.67
+    },
+    {
+      "id": "2-hard-shipping-final",
+      "stage": 2,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 226.63
+    },
+    {
+      "id": "3-hard-drone-final",
+      "stage": 3,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 282.23
+    },
+    {
+      "id": "7-hard-shipping-final",
+      "stage": 7,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 957.37
+    },
+    {
+      "id": "8-hard-shipping-final",
+      "stage": 8,
+      "difficulty": "hard",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 807.98
+    },
+    {
+      "id": "4-furious-shipping-final",
+      "stage": 4,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 446.73
+    },
+    {
+      "id": "5-furious-shipping-final",
+      "stage": 5,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 577.03
+    },
+    {
+      "id": "6L-furious-shipping-final",
+      "stage": 6,
+      "difficulty": "furious",
+      "route": "left",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 433.6
+    },
+    {
+      "id": "6R-furious-stealth-mount-final",
+      "stage": 6,
+      "difficulty": "furious",
+      "route": "right",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 474.62
+    },
+    {
+      "id": "9-furious-shipping-final",
+      "stage": 9,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 231.43
+    },
+    {
+      "id": "1-furious-shipping-final",
+      "stage": 1,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 239.45
+    },
+    {
+      "id": "2-furious-shipping-final",
+      "stage": 2,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 217.48
+    },
+    {
+      "id": "3-furious-drone-final",
+      "stage": 3,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 208.63
+    },
+    {
+      "id": "7-furious-shipping-final",
+      "stage": 7,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 1102.68
+    },
+    {
+      "id": "8-furious-shipping-final",
+      "stage": 8,
+      "difficulty": "furious",
+      "route": null,
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 975.53
+    }
+  ],
+  "enemyCases": 497,
+  "matrixVersion": 7,
+  "matrixComplete": true,
+  "matrixExpected": 497,
+  "matrixSource": "enemy_matrix/shipping-final-factory",
+  "matrixMethod": "Real Chromium, original authored spawn arguments and attached AI movement state, closest legal stationary camera lane, no player fire, protected pilot. Previous actors and delayed releases are cleared; adaptive and ambush directors are disabled while owned helpers remain. First authored pixels use opaque alpha bounds through the native drawImage transform and canvas clip, sampled every twelve simulation frames. Ordinary projectile ownership is recorded across native per-actor updates; helper and unattributed releases are separate from parent releases. Global native clock covers legacy controllers outside ai27. Separate warning-call and warning-pixel times, authored drawImage calls and real projectile traits. Not human survival evidence. Stage 6 is replaced by a fresh native factory audit: queued fb2 stealth passes are materialized during collection, distinguished by role/direction, then replayed through their real factory. Pending flight-plan queues are cleared between cases. Plane release clocks start at the actual aircraft spawn; pre-flight plan warnings are outside this isolated actor clock. Unaffected stages retain their verified native rows with per-row sourceFolder provenance.",
+  "encounterCases": 57,
+  "encounterSource": "encounters/shipping-final",
+  "earlyComparisons": [
+    {
+      "kind": "razorback",
+      "difficulty": "normal",
+      "seconds": 89.99999999999618,
+      "rounds": 380,
+      "first": 1.3833333333333333,
+      "beams": 0.0,
+      "speed": 5.826687974553604
+    },
+    {
+      "kind": "razorback",
+      "difficulty": "hard",
+      "seconds": 89.99999999999618,
+      "rounds": 305,
+      "first": 4.616666666666656,
+      "beams": 0.0,
+      "speed": 7.150935241497605
+    },
+    {
+      "kind": "razorback",
+      "difficulty": "furious",
+      "seconds": 89.99999999999618,
+      "rounds": 686,
+      "first": 1.4166666666666665,
+      "beams": 0.0,
+      "speed": 10.33972266029876
+    },
+    {
+      "kind": "damkeeper",
+      "difficulty": "normal",
+      "seconds": 89.99999999999618,
+      "rounds": 544,
+      "first": 4.783333333333322,
+      "beams": 0.0,
+      "speed": 7.800000000000001
+    },
+    {
+      "kind": "damkeeper",
+      "difficulty": "hard",
+      "seconds": 89.99999999999618,
+      "rounds": 557,
+      "first": 4.783333333333322,
+      "beams": 0.0,
+      "speed": 8.560637366400005
+    },
+    {
+      "kind": "damkeeper",
+      "difficulty": "furious",
+      "seconds": 89.99999999999618,
+      "rounds": 760,
+      "first": 4.783333333333322,
+      "beams": 0.0,
+      "speed": 10.145940582400003
+    },
+    {
+      "kind": "infernoreaver",
+      "difficulty": "normal",
+      "seconds": 89.99999999999618,
+      "rounds": 62,
+      "first": 2.633333333333329,
+      "beams": 15.883333333333333,
+      "speed": 4.173750000000001
+    },
+    {
+      "kind": "infernoreaver",
+      "difficulty": "hard",
+      "seconds": 89.99999999999618,
+      "rounds": 67,
+      "first": 2.633333333333329,
+      "beams": 17.216666666666665,
+      "speed": 5.276250000000001
+    },
+    {
+      "kind": "infernoreaver",
+      "difficulty": "furious",
+      "seconds": 89.99999999999618,
+      "rounds": 74,
+      "first": 2.633333333333329,
+      "beams": 18.566666666666666,
+      "speed": 6.457500000000001
+    }
+  ],
+  "hammerBooks": [
+    {
+      "difficulty": "normal",
+      "seconds": 43.48333333333215,
+      "morphed": true,
+      "warn": 1,
+      "ball": 31,
+      "whirl": 8,
+      "nova": 1,
+      "rounds": 80
+    },
+    {
+      "difficulty": "hard",
+      "seconds": 43.48333333333215,
+      "morphed": true,
+      "warn": 1,
+      "ball": 31,
+      "whirl": 8,
+      "nova": 1,
+      "rounds": 96
+    },
+    {
+      "difficulty": "furious",
+      "seconds": 47.48333333333192,
+      "morphed": true,
+      "warn": 1,
+      "ball": 31,
+      "whirl": 8,
+      "nova": 1,
+      "rounds": 120
+    }
+  ],
+  "native": {
+    "Rime": {
+      "passed": 64,
+      "failed": 0,
+      "errors": [],
+      "path": "../rime_defense_1019/native-report.json"
+    },
+    "Stealth": {
+      "passed": 14,
+      "failed": 0,
+      "errors": [],
+      "path": "stealth/native-report.json"
+    },
+    "Herald escapes": {
+      "passed": 29,
+      "failed": 0,
+      "errors": [],
+      "path": "herald/escape-report.json"
+    },
+    "Hammer": {
+      "passed": 25,
+      "failed": 0,
+      "errors": [],
+      "path": "hammer/native-report.json"
+    },
+    "Harrier fans": {
+      "passed": 19,
+      "failed": 0,
+      "errors": [],
+      "path": "fans/native-report.json"
+    },
+    "Volcano head": {
+      "passed": 28,
+      "failed": 0,
+      "errors": [],
+      "path": "volcano/native-report.json"
+    },
+    "Warden timing": {
+      "passed": 31,
+      "failed": 0,
+      "errors": [],
+      "path": "warden/native-report.json"
+    },
+    "Ally brightness": {
+      "passed": 12,
+      "failed": 0,
+      "errors": [],
+      "path": "rebels/bullet-pixels-report.json"
+    },
+    "Lizzie Spread": {
+      "passed": 13,
+      "failed": 0,
+      "errors": [],
+      "path": "lizzie-spread-native.json"
+    },
+    "Stage 5 hulls": {
+      "passed": 101,
+      "failed": 0,
+      "errors": [],
+      "path": "stage5-hulls-native.json"
+    },
+    "Stage 9 hulls": {
+      "passed": 74,
+      "failed": 0,
+      "errors": [],
+      "path": "late-hulls-native.json"
+    },
+    "Sewer entry": {
+      "passed": 37,
+      "failed": 0,
+      "errors": [],
+      "path": "sewer-entry/native-report.json"
+    },
+    "Late heavy fleet": {
+      "passed": 133,
+      "failed": 0,
+      "errors": [],
+      "path": "late-fleet/native-report.json"
+    },
+    "Large side arrivals": {
+      "passed": 163,
+      "failed": 0,
+      "errors": [],
+      "path": "side-arrival/native-report.json"
+    },
+    "Restored co-op pools and pixels": {
+      "passed": 226,
+      "failed": 0,
+      "errors": [],
+      "path": "restored-coop/complete/native-report.json"
+    },
+    "Diagonal drone commitment": {
+      "passed": 15,
+      "failed": 0,
+      "errors": [],
+      "path": "drone-commit/native-report.json"
+    },
+    "All nine cloaked pilots and docked mount": {
+      "passed": 23,
+      "failed": 0,
+      "errors": [],
+      "path": "stealth-pilots/native-report.json"
+    }
+  },
+  "finals": [
+    {
+      "id": "6R-normal-final",
+      "outcome": "complete",
+      "errors": [],
+      "stage": 6,
+      "route": "right"
+    },
+    {
+      "id": "8-normal-final",
+      "outcome": "complete",
+      "errors": [],
+      "stage": 8,
+      "route": null
+    },
+    {
+      "id": "9-normal-final",
+      "outcome": "complete",
+      "log": "campaign-stage9-normal-final.log"
+    },
+    {
+      "id": "6R-normal-final",
+      "outcome": "complete",
+      "log": "campaign-focus-normal-final.log"
+    },
+    {
+      "id": "8-normal-final",
+      "outcome": "complete",
+      "log": "campaign-focus-normal-final.log"
+    },
+    {
+      "id": "6R-hard-final",
+      "outcome": "complete",
+      "errors": [],
+      "stage": 6,
+      "route": "right"
+    },
+    {
+      "id": "8-hard-final",
+      "outcome": "complete",
+      "errors": [],
+      "stage": 8,
+      "route": null
+    },
+    {
+      "id": "9-hard-final",
+      "outcome": "complete",
+      "log": "campaign-stage9-hard-final.log"
+    },
+    {
+      "id": "6R-hard-final",
+      "outcome": "complete",
+      "log": "campaign-focus-hard-final.log"
+    },
+    {
+      "id": "8-hard-final",
+      "outcome": "complete",
+      "log": "campaign-focus-hard-final.log"
+    },
+    {
+      "id": "6R-furious-final",
+      "outcome": "complete",
+      "errors": [],
+      "stage": 6,
+      "route": "right"
+    },
+    {
+      "id": "8-furious-final",
+      "outcome": "complete",
+      "errors": [],
+      "stage": 8,
+      "route": null
+    },
+    {
+      "id": "9-furious-final",
+      "outcome": "complete",
+      "log": "campaign-stage9-furious-final.log"
+    },
+    {
+      "id": "6R-furious-final",
+      "outcome": "complete",
+      "log": "campaign-focus-furious-final.log"
+    },
+    {
+      "id": "8-furious-final",
+      "outcome": "complete",
+      "log": "campaign-focus-furious-final.log"
+    }
+  ],
+  "motionFinals": [
+    {
+      "stage": 7,
+      "difficulty": "normal",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 797.4
+    },
+    {
+      "stage": 8,
+      "difficulty": "normal",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 507.87
+    },
+    {
+      "stage": 7,
+      "difficulty": "hard",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 799.03
+    },
+    {
+      "stage": 8,
+      "difficulty": "hard",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 858.52
+    },
+    {
+      "stage": 7,
+      "difficulty": "furious",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 1156.7
+    },
+    {
+      "stage": 8,
+      "difficulty": "furious",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 918.62
+    }
+  ],
+  "fleetMotions": [
+    {
+      "stage": 7,
+      "difficulty": "normal",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 993.43
+    },
+    {
+      "stage": 8,
+      "difficulty": "normal",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 669.88
+    },
+    {
+      "stage": 7,
+      "difficulty": "hard",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 895.22
+    },
+    {
+      "stage": 8,
+      "difficulty": "hard",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 701.28
+    },
+    {
+      "stage": 7,
+      "difficulty": "furious",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 1133.38
+    },
+    {
+      "stage": 8,
+      "difficulty": "furious",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 888.83
+    }
+  ],
+  "coopPools": [
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5frigate",
+      "solo": 42,
+      "before": 42,
+      "party": 53,
+      "multiplier": 1.25,
+      "ratio": 1.2619047619047619
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5rammer",
+      "solo": 34,
+      "before": 34,
+      "party": 43,
+      "multiplier": 1.25,
+      "ratio": 1.2647058823529411
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5skimmer",
+      "solo": 30,
+      "before": 30,
+      "party": 38,
+      "multiplier": 1.25,
+      "ratio": 1.2666666666666666
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5gravity",
+      "solo": 46,
+      "before": 46,
+      "party": 58,
+      "multiplier": 1.25,
+      "ratio": 1.2608695652173914
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5interceptor",
+      "solo": 32,
+      "before": 32,
+      "party": 40,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5minelayer",
+      "solo": 52,
+      "before": 52,
+      "party": 65,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5satellite",
+      "solo": 40,
+      "before": 40,
+      "party": 50,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5portalmine",
+      "solo": 34,
+      "before": 34,
+      "party": 43,
+      "multiplier": 1.25,
+      "ratio": 1.2647058823529411
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5repair",
+      "solo": 28,
+      "before": 28,
+      "party": 35,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5leech",
+      "solo": 38,
+      "before": 38,
+      "party": 48,
+      "multiplier": 1.25,
+      "ratio": 1.263157894736842
+    },
+    {
+      "stage": 5,
+      "difficulty": "normal",
+      "kind": "s5station",
+      "solo": 120,
+      "before": 120,
+      "party": 150,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5frigate",
+      "solo": 49,
+      "before": 48,
+      "party": 60,
+      "multiplier": 1.25,
+      "ratio": 1.2244897959183674
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5rammer",
+      "solo": 40,
+      "before": 39,
+      "party": 49,
+      "multiplier": 1.25,
+      "ratio": 1.225
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5skimmer",
+      "solo": 35,
+      "before": 34,
+      "party": 43,
+      "multiplier": 1.25,
+      "ratio": 1.2285714285714286
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5gravity",
+      "solo": 54,
+      "before": 52,
+      "party": 65,
+      "multiplier": 1.25,
+      "ratio": 1.2037037037037037
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5interceptor",
+      "solo": 37,
+      "before": 36,
+      "party": 45,
+      "multiplier": 1.25,
+      "ratio": 1.2162162162162162
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5minelayer",
+      "solo": 61,
+      "before": 59,
+      "party": 74,
+      "multiplier": 1.25,
+      "ratio": 1.2131147540983607
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5satellite",
+      "solo": 47,
+      "before": 45,
+      "party": 56,
+      "multiplier": 1.25,
+      "ratio": 1.1914893617021276
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5portalmine",
+      "solo": 40,
+      "before": 39,
+      "party": 49,
+      "multiplier": 1.25,
+      "ratio": 1.225
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5repair",
+      "solo": 33,
+      "before": 32,
+      "party": 40,
+      "multiplier": 1.25,
+      "ratio": 1.2121212121212122
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5leech",
+      "solo": 44,
+      "before": 43,
+      "party": 54,
+      "multiplier": 1.25,
+      "ratio": 1.2272727272727273
+    },
+    {
+      "stage": 5,
+      "difficulty": "hard",
+      "kind": "s5station",
+      "solo": 140,
+      "before": 136,
+      "party": 170,
+      "multiplier": 1.25,
+      "ratio": 1.2142857142857142
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5frigate",
+      "solo": 67,
+      "before": 64,
+      "party": 80,
+      "multiplier": 1.25,
+      "ratio": 1.1940298507462686
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5rammer",
+      "solo": 54,
+      "before": 52,
+      "party": 65,
+      "multiplier": 1.25,
+      "ratio": 1.2037037037037037
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5skimmer",
+      "solo": 48,
+      "before": 46,
+      "party": 58,
+      "multiplier": 1.25,
+      "ratio": 1.2083333333333333
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5gravity",
+      "solo": 73,
+      "before": 71,
+      "party": 89,
+      "multiplier": 1.25,
+      "ratio": 1.2191780821917808
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5interceptor",
+      "solo": 51,
+      "before": 49,
+      "party": 61,
+      "multiplier": 1.25,
+      "ratio": 1.196078431372549
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5minelayer",
+      "solo": 82,
+      "before": 80,
+      "party": 100,
+      "multiplier": 1.25,
+      "ratio": 1.2195121951219512
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5satellite",
+      "solo": 63,
+      "before": 61,
+      "party": 76,
+      "multiplier": 1.25,
+      "ratio": 1.2063492063492063
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5portalmine",
+      "solo": 54,
+      "before": 52,
+      "party": 65,
+      "multiplier": 1.25,
+      "ratio": 1.2037037037037037
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5repair",
+      "solo": 44,
+      "before": 43,
+      "party": 54,
+      "multiplier": 1.25,
+      "ratio": 1.2272727272727273
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5leech",
+      "solo": 60,
+      "before": 58,
+      "party": 73,
+      "multiplier": 1.25,
+      "ratio": 1.2166666666666666
+    },
+    {
+      "stage": 5,
+      "difficulty": "furious",
+      "kind": "s5station",
+      "solo": 190,
+      "before": 184,
+      "party": 230,
+      "multiplier": 1.25,
+      "ratio": 1.2105263157894737
+    },
+    {
+      "stage": 7,
+      "difficulty": "normal",
+      "kind": "s7tank",
+      "solo": 44,
+      "before": 44,
+      "party": 55,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 7,
+      "difficulty": "normal",
+      "kind": "s7barge",
+      "solo": 76,
+      "before": 76,
+      "party": 95,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 7,
+      "difficulty": "hard",
+      "kind": "s7tank",
+      "solo": 53,
+      "before": 51,
+      "party": 64,
+      "multiplier": 1.25,
+      "ratio": 1.2075471698113207
+    },
+    {
+      "stage": 7,
+      "difficulty": "hard",
+      "kind": "s7barge",
+      "solo": 91,
+      "before": 88,
+      "party": 110,
+      "multiplier": 1.25,
+      "ratio": 1.2087912087912087
+    },
+    {
+      "stage": 7,
+      "difficulty": "furious",
+      "kind": "s7tank",
+      "solo": 73,
+      "before": 74,
+      "party": 93,
+      "multiplier": 1.25,
+      "ratio": 1.273972602739726
+    },
+    {
+      "stage": 7,
+      "difficulty": "furious",
+      "kind": "s7barge",
+      "solo": 127,
+      "before": 128,
+      "party": 160,
+      "multiplier": 1.25,
+      "ratio": 1.2598425196850394
+    },
+    {
+      "stage": 8,
+      "difficulty": "normal",
+      "kind": "s8deathorb",
+      "solo": 92,
+      "before": 92,
+      "party": 115,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 8,
+      "difficulty": "normal",
+      "kind": "s8carrier",
+      "solo": 180,
+      "before": 180,
+      "party": 225,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 8,
+      "difficulty": "normal",
+      "kind": "s8bomber",
+      "solo": 124,
+      "before": 124,
+      "party": 155,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 8,
+      "difficulty": "normal",
+      "kind": "s8tentacle",
+      "solo": 108,
+      "before": 108,
+      "party": 135,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 8,
+      "difficulty": "hard",
+      "kind": "s8deathorb",
+      "solo": 107,
+      "before": 104,
+      "party": 130,
+      "multiplier": 1.25,
+      "ratio": 1.2149532710280373
+    },
+    {
+      "stage": 8,
+      "difficulty": "hard",
+      "kind": "s8carrier",
+      "solo": 210,
+      "before": 203,
+      "party": 254,
+      "multiplier": 1.25,
+      "ratio": 1.2095238095238094
+    },
+    {
+      "stage": 8,
+      "difficulty": "hard",
+      "kind": "s8bomber",
+      "solo": 145,
+      "before": 140,
+      "party": 175,
+      "multiplier": 1.25,
+      "ratio": 1.206896551724138
+    },
+    {
+      "stage": 8,
+      "difficulty": "hard",
+      "kind": "s8tentacle",
+      "solo": 126,
+      "before": 122,
+      "party": 153,
+      "multiplier": 1.25,
+      "ratio": 1.2142857142857142
+    },
+    {
+      "stage": 8,
+      "difficulty": "furious",
+      "kind": "s8deathorb",
+      "solo": 148,
+      "before": 144,
+      "party": 180,
+      "multiplier": 1.25,
+      "ratio": 1.2162162162162162
+    },
+    {
+      "stage": 8,
+      "difficulty": "furious",
+      "kind": "s8carrier",
+      "solo": 290,
+      "before": 282,
+      "party": 352,
+      "multiplier": 1.25,
+      "ratio": 1.2137931034482758
+    },
+    {
+      "stage": 8,
+      "difficulty": "furious",
+      "kind": "s8bomber",
+      "solo": 200,
+      "before": 194,
+      "party": 243,
+      "multiplier": 1.25,
+      "ratio": 1.215
+    },
+    {
+      "stage": 8,
+      "difficulty": "furious",
+      "kind": "s8tentacle",
+      "solo": 174,
+      "before": 169,
+      "party": 211,
+      "multiplier": 1.25,
+      "ratio": 1.2126436781609196
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9beacon",
+      "solo": 34,
+      "before": 34,
+      "party": 43,
+      "multiplier": 1.25,
+      "ratio": 1.2647058823529411
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9comet",
+      "solo": 28,
+      "before": 28,
+      "party": 35,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9gunship",
+      "solo": 62,
+      "before": 62,
+      "party": 78,
+      "multiplier": 1.25,
+      "ratio": 1.2580645161290323
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9interceptor",
+      "solo": 30,
+      "before": 30,
+      "party": 38,
+      "multiplier": 1.25,
+      "ratio": 1.2666666666666666
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9gateturret",
+      "solo": 42,
+      "before": 42,
+      "party": 53,
+      "multiplier": 1.25,
+      "ratio": 1.2619047619047619
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9prism",
+      "solo": 66,
+      "before": 66,
+      "party": 83,
+      "multiplier": 1.25,
+      "ratio": 1.2575757575757576
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9ring",
+      "solo": 32,
+      "before": 32,
+      "party": 40,
+      "multiplier": 1.25,
+      "ratio": 1.25
+    },
+    {
+      "stage": 9,
+      "difficulty": "normal",
+      "kind": "s9singularity",
+      "solo": 46,
+      "before": 46,
+      "party": 58,
+      "multiplier": 1.25,
+      "ratio": 1.2608695652173914
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9beacon",
+      "solo": 38,
+      "before": 40,
+      "party": 50,
+      "multiplier": 1.25,
+      "ratio": 1.3157894736842106
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9comet",
+      "solo": 31,
+      "before": 33,
+      "party": 41,
+      "multiplier": 1.25,
+      "ratio": 1.3225806451612903
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9gunship",
+      "solo": 69,
+      "before": 73,
+      "party": 91,
+      "multiplier": 1.25,
+      "ratio": 1.318840579710145
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9interceptor",
+      "solo": 33,
+      "before": 35,
+      "party": 44,
+      "multiplier": 1.25,
+      "ratio": 1.3333333333333333
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9gateturret",
+      "solo": 46,
+      "before": 49,
+      "party": 62,
+      "multiplier": 1.25,
+      "ratio": 1.3478260869565217
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9prism",
+      "solo": 73,
+      "before": 77,
+      "party": 97,
+      "multiplier": 1.25,
+      "ratio": 1.3287671232876712
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9ring",
+      "solo": 35,
+      "before": 38,
+      "party": 47,
+      "multiplier": 1.25,
+      "ratio": 1.3428571428571427
+    },
+    {
+      "stage": 9,
+      "difficulty": "hard",
+      "kind": "s9singularity",
+      "solo": 51,
+      "before": 54,
+      "party": 68,
+      "multiplier": 1.25,
+      "ratio": 1.3333333333333333
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9beacon",
+      "solo": 52,
+      "before": 55,
+      "party": 68,
+      "multiplier": 1.25,
+      "ratio": 1.3076923076923077
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9comet",
+      "solo": 43,
+      "before": 45,
+      "party": 56,
+      "multiplier": 1.25,
+      "ratio": 1.302325581395349
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9gunship",
+      "solo": 95,
+      "before": 100,
+      "party": 125,
+      "multiplier": 1.25,
+      "ratio": 1.3157894736842106
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9interceptor",
+      "solo": 46,
+      "before": 48,
+      "party": 60,
+      "multiplier": 1.25,
+      "ratio": 1.3043478260869565
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9gateturret",
+      "solo": 64,
+      "before": 68,
+      "party": 84,
+      "multiplier": 1.25,
+      "ratio": 1.3125
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9prism",
+      "solo": 101,
+      "before": 106,
+      "party": 133,
+      "multiplier": 1.25,
+      "ratio": 1.316831683168317
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9ring",
+      "solo": 49,
+      "before": 51,
+      "party": 64,
+      "multiplier": 1.25,
+      "ratio": 1.3061224489795917
+    },
+    {
+      "stage": 9,
+      "difficulty": "furious",
+      "kind": "s9singularity",
+      "solo": 70,
+      "before": 74,
+      "party": 93,
+      "multiplier": 1.25,
+      "ratio": 1.3285714285714285
+    }
+  ],
+  "rebelFinals": [
+    {
+      "stage": 6,
+      "difficulty": "furious",
+      "route": "right",
+      "outcome": "complete",
+      "errors": [],
+      "seconds": 501.52
+    }
+  ],
+  "rebelSeeds": [
+    {
+      "seed": 1019,
+      "before": {
+        "difficulty": "normal",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 25,
+        "peakEnemy": 15,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "normal",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 17,
+        "peakEnemy": 11,
+        "peakNear": 5,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 1019,
+      "before": {
+        "difficulty": "normal",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 35,
+        "peakEnemy": 17,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "normal",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 18,
+        "peakEnemy": 12,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 1019,
+      "before": {
+        "difficulty": "hard",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 28,
+        "peakEnemy": 14,
+        "peakNear": 4,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "hard",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 18,
+        "peakEnemy": 9,
+        "peakNear": 5,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 1019,
+      "before": {
+        "difficulty": "hard",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 31,
+        "peakEnemy": 14,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "hard",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 26,
+        "peakEnemy": 12,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 1019,
+      "before": {
+        "difficulty": "furious",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 32,
+        "peakEnemy": 14,
+        "peakNear": 4,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "furious",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 20,
+        "peakEnemy": 11,
+        "peakNear": 5,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 1019,
+      "before": {
+        "difficulty": "furious",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 31,
+        "peakEnemy": 16,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "furious",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 19,
+        "peakEnemy": 12,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 2026,
+      "before": {
+        "difficulty": "normal",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 36,
+        "peakEnemy": 15,
+        "peakNear": 4,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "normal",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 20,
+        "peakEnemy": 11,
+        "peakNear": 3,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 2026,
+      "before": {
+        "difficulty": "normal",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 24,
+        "peakEnemy": 16,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "normal",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 16,
+        "peakEnemy": 12,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 2026,
+      "before": {
+        "difficulty": "hard",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 28,
+        "peakEnemy": 13,
+        "peakNear": 4,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "hard",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 15,
+        "peakEnemy": 10,
+        "peakNear": 3,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 2026,
+      "before": {
+        "difficulty": "hard",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 36,
+        "peakEnemy": 15,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "hard",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 21,
+        "peakEnemy": 11,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 2026,
+      "before": {
+        "difficulty": "furious",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 34,
+        "peakEnemy": 13,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "furious",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 28,
+        "peakEnemy": 12,
+        "peakNear": 5,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 2026,
+      "before": {
+        "difficulty": "furious",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 36,
+        "peakEnemy": 15,
+        "peakNear": 4,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "furious",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 22,
+        "peakEnemy": 9,
+        "peakNear": 3,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 5019,
+      "before": {
+        "difficulty": "normal",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 29,
+        "peakEnemy": 15,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "normal",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 13,
+        "peakEnemy": 11,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 5019,
+      "before": {
+        "difficulty": "normal",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 25,
+        "peakEnemy": 17,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "normal",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 15,
+        "peakEnemy": 12,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 5019,
+      "before": {
+        "difficulty": "hard",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 26,
+        "peakEnemy": 13,
+        "peakNear": 4,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "hard",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 23,
+        "peakEnemy": 10,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 5019,
+      "before": {
+        "difficulty": "hard",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 31,
+        "peakEnemy": 16,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "hard",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 20,
+        "peakEnemy": 12,
+        "peakNear": 4,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 5019,
+      "before": {
+        "difficulty": "furious",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 31,
+        "peakEnemy": 13,
+        "peakNear": 5,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "furious",
+        "gang": false,
+        "seconds": 89.99999999999618,
+        "contacts": 28,
+        "peakEnemy": 11,
+        "peakNear": 5,
+        "allies": 4
+      }
+    },
+    {
+      "seed": 5019,
+      "before": {
+        "difficulty": "furious",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 30,
+        "peakEnemy": 13,
+        "peakNear": 4,
+        "allies": 4
+      },
+      "after": {
+        "difficulty": "furious",
+        "gang": true,
+        "seconds": 89.99999999999618,
+        "contacts": 28,
+        "peakEnemy": 12,
+        "peakNear": 4,
+        "allies": 4
+      }
+    }
+  ],
+  "signatureControls": [
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "voss",
+      "kind": "turbo",
+      "warm": 1.5120000000000002,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 4,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "row",
+        "return"
+      ],
+      "travel": 637,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "voss",
+      "kind": "fusion",
+      "warm": 2.3520000000000003,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 1,
+      "phases": [
+        "charge",
+        "fire"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "nyx",
+      "kind": "cloak",
+      "warm": 1.288,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 5,
+      "caught": false,
+      "rounds": 15,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "rook",
+      "kind": "slug",
+      "warm": 1.12,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 0,
+      "caught": false,
+      "rounds": 20,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "rook",
+      "kind": "rookhook",
+      "warm": 1.568,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 3,
+      "caught": true,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "cast",
+        "reel",
+        "sling",
+        "throw",
+        "recover"
+      ],
+      "travel": 208.3333333333334,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "kaia",
+      "kind": "rockets",
+      "warm": 1.9600000000000002,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 6,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": true
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "jace",
+      "kind": "helix",
+      "warm": 2.24,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 8,
+      "ordnance": 1,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "normal",
+      "pilot": "jace",
+      "kind": "ram",
+      "warm": 1.4000000000000001,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 377,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "voss",
+      "kind": "turbo",
+      "warm": 1.35,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 4,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "row",
+        "return"
+      ],
+      "travel": 637,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "voss",
+      "kind": "fusion",
+      "warm": 2.1,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 1,
+      "phases": [
+        "charge",
+        "fire"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "nyx",
+      "kind": "cloak",
+      "warm": 1.15,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 6,
+      "caught": false,
+      "rounds": 18,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "rook",
+      "kind": "slug",
+      "warm": 1,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 0,
+      "caught": false,
+      "rounds": 20,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "rook",
+      "kind": "rookhook",
+      "warm": 1.2,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 3,
+      "caught": true,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "cast",
+        "reel",
+        "sling",
+        "throw",
+        "recover"
+      ],
+      "travel": 208.3333333333334,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "kaia",
+      "kind": "rockets",
+      "warm": 1.75,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 6,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": true
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "jace",
+      "kind": "helix",
+      "warm": 2,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 8,
+      "ordnance": 1,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "hard",
+      "pilot": "jace",
+      "kind": "ram",
+      "warm": 1.25,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 377,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "voss",
+      "kind": "turbo",
+      "warm": 1.2420000000000002,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 4,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "row",
+        "return"
+      ],
+      "travel": 637,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "voss",
+      "kind": "fusion",
+      "warm": 1.9320000000000002,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 1,
+      "phases": [
+        "charge",
+        "fire"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "nyx",
+      "kind": "cloak",
+      "warm": 1.058,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 6,
+      "caught": false,
+      "rounds": 18,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "rook",
+      "kind": "slug",
+      "warm": 0.92,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 0,
+      "caught": false,
+      "rounds": 20,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "rook",
+      "kind": "rookhook",
+      "warm": 1.104,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 4,
+      "caught": true,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "cast",
+        "reel",
+        "sling",
+        "throw",
+        "recover"
+      ],
+      "travel": 208.3333333333334,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "kaia",
+      "kind": "rockets",
+      "warm": 1.61,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 6,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": true
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "jace",
+      "kind": "helix",
+      "warm": 1.84,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 8,
+      "ordnance": 1,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": false
+    },
+    {
+      "control": "Unmodified signature",
+      "difficulty": "furious",
+      "pilot": "jace",
+      "kind": "ram",
+      "warm": 1.1500000000000001,
+      "locked": false,
+      "seconds": 8.399999999999997,
+      "contacts": 1,
+      "caught": false,
+      "rounds": 0,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 377,
+      "interceptable": false
+    },
+    {
+      "control": "Locked missile control",
+      "difficulty": "normal",
+      "pilot": "kaia",
+      "kind": "rockets",
+      "warm": 1.9600000000000002,
+      "locked": true,
+      "seconds": 8.399999999999997,
+      "contacts": 3,
+      "caught": false,
+      "rounds": 6,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": true
+    },
+    {
+      "control": "Locked missile control",
+      "difficulty": "hard",
+      "pilot": "kaia",
+      "kind": "rockets",
+      "warm": 1.75,
+      "locked": true,
+      "seconds": 8.399999999999997,
+      "contacts": 3,
+      "caught": false,
+      "rounds": 6,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": true
+    },
+    {
+      "control": "Locked missile control",
+      "difficulty": "furious",
+      "pilot": "kaia",
+      "kind": "rockets",
+      "warm": 1.61,
+      "locked": true,
+      "seconds": 8.399999999999997,
+      "contacts": 3,
+      "caught": false,
+      "rounds": 6,
+      "ordnance": 0,
+      "beams": 0,
+      "phases": [
+        "charge",
+        "fire",
+        "recover"
+      ],
+      "travel": 0,
+      "interceptable": true
+    }
+  ],
+  "passwordCases": 15,
+  "passwordErrors": [],
+  "method": "Native Chromium; protected visible pilot. Full campaign runs verify progression, not human win rates. The isolated roster uses a sixteen-second window without player fire. First warning pixels are measured through the native warning renderer; a dash means unobserved, not necessarily absent. Equal-window encounter census includes native opening/armor/intro time."
+}

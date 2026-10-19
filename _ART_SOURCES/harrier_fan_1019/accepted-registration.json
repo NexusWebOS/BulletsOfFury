@@ -1,0 +1,166 @@
+{
+  "source": "Current native fmc_harrier fanL",
+  "workbench": "7995aab4-ca2d-4951-8b8a-674edf4af50d",
+  "method": "PixelLab exact workbench copies the authored rotor through 16 rigid 22.5-degree axial positions. Housing and hub protected. No generated flame/color changes accepted.",
+  "sourceCanvas": [
+    160,
+    192
+  ],
+  "sourcePivot": [
+    80,
+    96
+  ],
+  "sharedCrop": [
+    48,
+    64,
+    64,
+    64
+  ],
+  "canvas": [
+    64,
+    64
+  ],
+  "pivot": [
+    32,
+    32
+  ],
+  "annulus": [
+    6,
+    23
+  ],
+  "sourceScale": 0.38,
+  "frames": [
+    {
+      "frame": 0,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 0,
+      "sha256": "f351c0294864fc2331a69bd1b5745786300782e4dcfcc1f84de53cbdef30c79e"
+    },
+    {
+      "frame": 1,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 11,
+      "sha256": "43724fe806d5d1994463ad7b6f7987310b5ced8e16618d70c81078b10f6b62a4"
+    },
+    {
+      "frame": 2,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 15,
+      "sha256": "302287d12f8ec8af37f509df6e1d255e532dddb3c49ca75681051245290d0e72"
+    },
+    {
+      "frame": 3,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 14,
+      "sha256": "6ff85c09bec6f9e7e3edb2bf7ba8e75115068e818e963c26bd525ea567b1e381"
+    },
+    {
+      "frame": 4,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 10,
+      "sha256": "5c499b7e46b1967726e1a10527060c0862aaa6d31eaa9b785674d5e73e046203"
+    },
+    {
+      "frame": 5,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 18,
+      "sha256": "29cb82394139e3837841750884da456342f996280d462cce5174fdc292225e33"
+    },
+    {
+      "frame": 6,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 21,
+      "sha256": "1674838e10081826f6d02fd838d1acc61f88ef2863bbeb038a3f6b81b66c0f95"
+    },
+    {
+      "frame": 7,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 21,
+      "sha256": "534f884ae025fa1027383433524270dc267d082fa58de598c05dff7408787dad"
+    },
+    {
+      "frame": 8,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 20,
+      "sha256": "cb0c6e51156820344dbd3112c451bd66b53ba972e21a1b560daaca12100e6819"
+    },
+    {
+      "frame": 9,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 21,
+      "sha256": "5b1d6518a214f7e29a9c575d1de20fc76c430fa3f2a323728d399c7eddd35065"
+    },
+    {
+      "frame": 10,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 18,
+      "sha256": "2746b40a26b0ac14e4e27a476703d7de3f2b59d24e41918b3d2a15c5f0c387f3"
+    },
+    {
+      "frame": 11,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 17,
+      "sha256": "5f039bece1544b1901019faa7bc25af619278c23425eb42a969a832296c21a45"
+    },
+    {
+      "frame": 12,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 10,
+      "sha256": "0be6a3c0606915115a5590a67506df6f3bac15f653d4b33567a6e28a622ea838"
+    },
+    {
+      "frame": 13,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 14,
+      "sha256": "36ad75f333f4b0747b9073f3846503c7d9835d700addda18f1150990d84392d2"
+    },
+    {
+      "frame": 14,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 12,
+      "sha256": "e9e02a88db821f94ee0c2d57a6ab919bd2ef2a0157eabf56b9b2a2733b226029"
+    },
+    {
+      "frame": 15,
+      "fixedHousing": true,
+      "fixedHub": true,
+      "paletteExact": true,
+      "filledCavityPixels": 10,
+      "sha256": "165c361c8edcbbc6bcaab23fd054bcb18fe0fa84714122c742d0709aa1a39da0"
+    }
+  ],
+  "rejected": {
+    "job": "374fdcfa-03f1-4d57-ad83-0250a7fbe0da",
+    "reason": "AI clip added flames, changed purple to orange and blinked instead of turning. Only its unchanged input frame is used as the exact workbench source."
+  }
+}

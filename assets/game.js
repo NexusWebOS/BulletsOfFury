@@ -5468,7 +5468,7 @@ function drawLevelMaster(dt){
        its fly-away/orb pass pushes to 620px/s so distance opens while the road keeps screaming
        underneath instead of looking paused behind a moving sprite. */
     const _s4mode=boss&&boss._s4war?boss._s4war.mode:null;
-    const _s4spd=_s4mode==='flyaway'?620:(_s4mode==='swerve'?560:480);
+    const _s4spd=boss?._p4Final?.roadSpeed||(_s4mode==='flyaway'?620:(_s4mode==='swerve'?560:480));
     _stage4BossRoadScroll=(_stage4BossRoadScroll+dt*_s4spd)%chaseSpan;
     srcY=chaseSpan-_stage4BossRoadScroll;
     if(road){
@@ -9275,6 +9275,13 @@ function achievementRunComplete(){
    the player feels across a run without the top level becoming a different weapon. */
 const WEAPON_CADENCE={0:0.164,1:0.164,2:0.18,3:0.107,4:0.42,7:0.18,8:0.38};
 const WEAPON_LVL_RAMP={0:1,1:1};        // which weapons get the 5%-per-level cadence ramp
+/* 1017 - Mike: "the speed is too fast by level 2/3" (spread fire). Measured: pellet TRAVEL is a flat 5.6 px a
+   frame at every level; what grew was the stream - about 10 volleys a second (the cadence spread shares with
+   the machine gun) that got 5% quicker per level while each volley gained a pellet, 33 pellets a second at
+   level 1 to 50 at level 3 and 84 at level 5. Spread now SLOWS its volleys as the fan widens instead:
+   x(1 + SPREAD_LV_SLOW*(level-1)), so level 1 is untouched and the stream grows gently (29 / 34 / 38 / 41 / 43
+   pellets a second). One number to tune. */
+const SPREAD_LV_SLOW=0.15;
 
 /* ============================================================
    CO-OP — TWO PILOTS, TWO SETS OF EVERYTHING (drop 0902f)
@@ -27104,6 +27111,45 @@ function subBossBeamImpact(b,beam){
   return null;
 }
 
+/* 1017 - Mike: "Lasers should pierce and target all pieces or enemies that the laser will hit."
+   The held beam already burned every ENEMY in its column; a boss or miniboss took ONE hit at one point
+   (the generic fallback below), so a column crossing a rocket pod and a gun turret damaged whichever
+   the point landed on and nothing else. This walks the encounter's own Retina pieces - the engine-wide
+   modular piece list (0915) - and strikes every live one the column crosses, through the piece's own
+   hit route. Returns how many it struck; 0 means the caller keeps its legacy single hit. */
+function pieceOwner(t){return t?(t._retinaOwner||t._xenoOwner||t._spaceBossOwner||t._spaceSubOwner||null):null;}
+/* The live pieces of one encounter, ONE entry per underlying part. A Stage-4 helper drone is listed
+   twice (as an escort and as its gun) and both routes damage the same drone, so an area weapon that
+   struck every listed piece would hit it twice. */
+function pieceKey(t){return t.part||t._part||t;}
+function livePieces(owner){
+  if(!owner||typeof retinaBossTargets!=='function')return [];
+  let L;try{L=retinaBossTargets(owner)||[];}catch(e){return [];}
+  const out=[],seen=new Set();
+  for(const t of L){if(!t||t.dead||pieceOwner(t)!==owner)continue;const k=pieceKey(t);if(seen.has(k))continue;seen.add(k);out.push(t);}
+  return out;
+}
+/* Every live piece of one encounter that a circle overlaps, nearest first (circle against the piece's box). */
+function piecesInCircle(owner,x,y,R){
+  const out=[];
+  for(const t of livePieces(owner)){
+    const px=t.x,py=t.y;if(!Number.isFinite(px+py))continue;
+    const dx=Math.max(0,Math.abs(px-x)-(t.w||0)/2),dy=Math.max(0,Math.abs(py-y)-(t.h||0)/2),d=dx*dx+dy*dy;
+    if(d<R*R)out.push({t,d,c:dist2(x,y,px,py)});
+  }
+  out.sort((a,b)=>a.d-b.d||a.c-b.c);return out.map(q=>q.t);
+}
+function beamPiercePieces(owner,beam,skip){
+  if(!owner||!beam||typeof retinaBossTargets!=='function')return 0;
+  const hw=(beam.w||0)/2,top=Number.isFinite(beam.top)?beam.top:-20;let n=0;
+  for(const t of livePieces(owner)){
+    if(skip&&skip(t))continue;
+    const x=t.x,y=t.y,w=t.w||0,h=t.h||0;
+    if(!Number.isFinite(x+y)||y-h/2>beam.bot||y+h/2<top||Math.abs(x-beam.x)>=w/2+hw)continue;
+    if(retinaMissileDamage(t,beam.dmg,beam))n++;   // the one piece-damage route Retina missiles use
+  }
+  return n;
+}
 function subBossHit(x, y){ return subBossHitPart(x,y)!==null; }
 
 /* ============================================================
@@ -27136,6 +27182,10 @@ function subBossSolidAt(x, y){
   if(b._rzbPair)return razorbackPairPartAt(b,x,y)!==null;
   if(b._rzb) return razorbackPartAt(b,x,y)!==null;
   if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'&&stage4MiniDroneAt(b,x,y,2))return true;
+  /* 1017 (Mike: "bullets and missiles both should be able to individually target modular pieces"):
+     with no branch here a modular roster unit fell back to its broad box, so every round stopped at the
+     box's bottom edge - below the turrets - and mr27Damage found no part there. Ask the pieces. */
+  if(b._mr27&&typeof mr27At==='function')return mr27At(b,x,y)!==null;
   if(b._s9rift) return !!s9VoidHorizonPart(b,x,y);
   if(b._tempestDuo) return tempestBrothersPartAt(b,x,y)!==null;
   if(b._tlv && typeof tempestPartAt==='function') return tempestPartAt(b,x,y)!==null;   // the pellet box (0805c): a round over bare air flies on (0913b)
@@ -27217,7 +27267,10 @@ function hitSubBoss(dmg, hx, hy){
   if(b._harrier && !b._chCollision) return;   // the hull is absent inside the authored warp aperture
   /* ...but a SEALED quad-laser shows its shield pulse and never white - Mike, 0807b: "do not let the hull flash white until
      you break all the turrets". The seal is derived from the live cannons, exactly as the gate below derives it. */
-  if(!(b._ql && !b._qlHullOpen && (b._qlCan||[]).some(function(c){ return !c.dead; }))) markHit(b);   // 0912y: every other registered hit flashes
+  /* 1017 - Mike: "my bullets are still just making his entire frame flash white". A round that lands on a
+     modular piece flashes THAT piece (mr27Damage sets its own flash); only the hull itself flashes the hull. */
+  const _mrPiece=b._mr27&&typeof mr27At==='function'?mr27At(b,hx??_lastHitX,hy??_lastHitY):null;
+  if(!(b._ql && !b._qlHullOpen && (b._qlCan||[]).some(function(c){ return !c.dead; }))&&!(_mrPiece&&_mrPiece!=='core')) markHit(b);   // 0912y: every other registered hit flashes
   if(b._s9rift){ if(s9VoidHorizonHit(b,dmg,hx,hy)) weaponHitSfx('normal'); return; }
 
   if(b._ship==='magmaward'&&typeof magmaWardBarrierDamage==='function'&&magmaWardBarrierDamage(b,dmg,hx,hy))return;
@@ -27323,7 +27376,7 @@ function hitSubBoss(dmg, hx, hy){
   if(b._rzb && typeof razorbackHit==='function'){ const _rd=razorbackHit(b,dmg,hx,hy); if(!(_rd>0)) return; dmg=_rd; }
   /* the Tempest Leviathan routes a round into an aperture pool or the hull, clamped at its phase gate (0913b) */
   if(b._tlv && typeof tempestHit==='function'){ const _td=tempestHit(b,dmg,hx,hy); if(!(_td>0)) return; dmg=_td; }
-  b.hp-=dmg; b.flash=0.18;
+  b.hp-=dmg; if(!(_mrPiece&&_mrPiece!=='core'))b.flash=0.18;   // 1017: a modular piece flashes alone
   weaponHitSfx('normal');
   /* ⚠ THIS LINE WAS INSIDE THE COMMENT ABOVE (drop 0810l). The `//` ran on past "visually" and
      swallowed it whole, so no sub-boss damage has EVER reached the stats screen — the miniboss
@@ -27586,7 +27639,8 @@ function _weaponCadence(){
   if(run.weapon===3&&heldVariant(3)==='mavhoming')return WEAPON_CADENCE[3];
   if(run.weapon===6)return Math.max(.29,.55-clamp(run.wlevel||1,1,5)*.055);
   if(run.weapon===3 && forgeEntry(3)?.elem==='ice') return .075; // refresh the sustained Ice Laser
-  if(run.weapon===7)return CHAINGUN_LV.cad[clamp(run.wlevel||1,1,5)-1]*(forgeActiveTier(7)>=3?.90:1);   // 0928: level sets the rate, no spin-up, no heat
+  if(run.weapon===7)return CHAINGUN_LV.cad[clamp(run.wlevel||1,1,5)-1]*(forgeActiveTier(7)>=3?.90:1);
+  if(run.weapon===1)return WEAPON_CADENCE[1]*(1+SPREAD_LV_SLOW*(clamp(run.wlevel||1,1,5)-1));   // 1017: see SPREAD_LV_SLOW   // 0928: level sets the rate, no spin-up, no heat
   {
     const _c=WEAPON_CADENCE[run.weapon];
     if(_c!=null && WEAPON_LVL_RAMP[run.weapon]){
@@ -29607,7 +29661,7 @@ function pShoot(){
     //                 feels responsive instead of the old slow plink.
     //   L1            TWO pellets, same colour and same per-bullet damage, so it lands ~1.5x the
     //                 damage of the default without changing how it reads.
-    //   L2+           unchanged from before (colour tiers and wider rows).
+    //   L2..5         one more pellet per level, in a tight row at the centre gun.
     /* COLE'S TIERS (drop 0801k). coleTier() is the ONLY gate — everyone else is capped at 5 here,
        so tier 6+ cannot leak to another pilot through any path that reaches this function. */
     const _cl = coleTier(lv);
@@ -29628,11 +29682,15 @@ function pShoot(){
        pellets. That is why everything past level 1 felt like a sponge without a powerup.
        L0/L1 share a value so the L1 upgrade is still purely "a second bullet" as specified. */
     const _bdmg = 2 + Math.floor(lvv/2);
+    const _muzzle=typeof wm26PlayerNose==='function'?wm26PlayerNose():{x:player.x,y:player.y-18};
+    // The MG uses one nose emitter. Only the separate chaingun owns wing pods.
+    // Cole's exclusive laser tiers retain their authored row spacing.
+    const _laneStep=_cl>=6?(spread>=5?9:11):4;
     for(let i=0;i<spread;i++){
-      const off=(i-(spread-1)/2)*(spread===2?7:(spread>=5?9:11));   // the L1 pair sits tight; five and six rows close up so they still leave the nose
+      const off=(i-(spread-1)/2)*_laneStep;
       // L0 and L1 share the SAME bullet tier so the pair looks like the default gun, doubled
       const _blv = lvv<=1 ? 1 : Math.max(1,lvv);
-      pBullets.push({x:player.x+off, y:player.y-14, vx:0, vy:-9, w:4,h:12, dmg:_bdmg, kind:'mg', lv:_blv});
+      pBullets.push({x:_muzzle.x+off, y:_muzzle.y-6, vx:0, vy:-9, w:4,h:12, dmg:_bdmg, kind:'mg', lv:_blv});
     }
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lvv));   // real machinefx muzzle flash at the nose
     (Audio.SFX.machineGun||Audio.SFX.shoot)();
@@ -34766,6 +34824,8 @@ function enemySeparate(dt){
            unit fight its terrain classifier and let later pair passes push the jet back over it.
            Treat the grounded partner as the fixed obstacle for this one contact only. */
         const groundA=sepGrounded(A), groundB=sepGrounded(B);
+        // Tank pairs reserve their full authored hulls through the shared traffic owner.
+        if(typeof groundTrafficVehicle==='function'&&groundTrafficVehicle(A)&&groundTrafficVehicle(B))continue;
         if(groundA!==groundB){ if(groundA) movA=false; else movB=false; }
         if(!movA && !movB) continue;                    // two immovables: nothing to do
         /* THE SAME BOX TEST probe_stack.py MEASURES WITH, deliberately — a fix and its
@@ -35404,6 +35464,10 @@ function updatePlay(dt){
       e.flash=0;   // never tint a dying wreck (pink-ghost fix)
       continue;
     }
+    // The Warden wing owns its orbit, bombing spiral and harmless depth entry.
+    // Keep the actors in the collision/Retina lists, but do not run a second
+    // mover, edge pin or generic offscreen cull over that authored flight.
+    if(e._wing17){e.flash=Math.max(0,(e.flash||0)-dt);if(e.hp<=0)killEnemy(e);continue;}
     if(e._pt11LegacyFrost){pt11LegacyFrostTick(e,dt);continue;}
     const dxp=_T.x-e.x;
     // movement patterns
@@ -36074,7 +36138,10 @@ function updatePlay(dt){
       || (e.pattern==='jetflyby' && e._phase!=='exit')
       || (e._s8mega==='s8spread' && ((e._side>0&&e.x<0)||
           (e._side<0&&e.x>((typeof worldWidth==='function')?worldWidth():VW))));
-    if(!_racerEntering && (e.y>VH+80 || e.x<-80 || e.x>((typeof worldWidth==='function')?worldWidth():VW)+80)) e.dead=true;
+    // Side spawns clear the camera by half their hull plus ENTRY_CLEAR. A fixed
+    // 80px cull removed larger authored arrivals on frame one, before entry.
+    const _sideCullPad=Math.max(80,Math.max(e.w||0,e._drawW||0)*.5+ENTRY_CLEAR+16);
+    if(!_racerEntering && (e.y>VH+80 || e.x<-_sideCullPad || e.x>((typeof worldWidth==='function')?worldWidth():VW)+_sideCullPad)) e.dead=true;
     if(e.pattern==='racer' && e._phase==='flee' && e.y<-60) e.dead=true;   // culled after fleeing off the top
     } finally {if(typeof ai27End==='function')ai27End(e,_ai27Prev);}
   }
@@ -36503,7 +36570,7 @@ function updatePlay(dt){
         for(const e of enemies){ if(!e.dead && Math.abs(e.x-b.x)<(e.w/2+7) && Math.abs(e.y-b.y)<(e.h/2+9)){ reach=true;b._impactTarget=e;break; } }
         if(!reach){b._impactTarget=missileComponentTargetAt(b.x,b.y,Math.max(b.w,b.h)*.35);if(b._impactTarget)reach=true;}
         if(!reach && boss && bossActive && !boss.dead && bossHitTest(b.x,b.y)){ reach=true;b._impactTarget=boss; }
-        if(!reach && typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && Math.abs(subBoss.x-b.x)<(subBoss.w/2+8) && Math.abs((subBoss._drawY||subBoss.y)-b.y)<(subBoss.h/2+8)){ reach=true;b._impactTarget=subBoss; }
+        if(!reach && typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && Math.abs(subBoss.x-b.x)<(subBoss.w/2+8) && Math.abs((subBoss._drawY||subBoss.y)-b.y)<(subBoss.h/2+8) && subBossSolidAt(b.x,b.y)!==false){ reach=true;b._impactTarget=subBoss; }   // 1017: the pellet box - a missile over bare air beside the hull flies on to the piece it was aimed at
         if(!reach){ for(const p of powerups){ if(spaceShootableContainer(p) && Math.abs(p.x-b.x)<(p.w/2+7) && Math.abs(p.y-b.y)<(p.h/2+9)){ reach=true; break; } } }
       }
       if(boss&&boss._vile&&bossActive&&!boss.dead&&typeof vile25ShieldDeflect==='function'&&vile25ShieldDeflect(boss,b))continue;
@@ -36561,7 +36628,12 @@ function updatePlay(dt){
         else if(boss._r30&&typeof on5FinaleLaser==='function')on5FinaleLaser(b,dt);
         else if(boss._s7mod){if(b._bt<=0){const q=s7mBeamImpact(boss,b);if(q){s7mHit(boss,b.dmg,q.x,q.y,q.id);weaponHitSfx('laser');b._bt=.05;}}}
         else if(b._bt<=0&&stage4PiercingBeam(boss,b)){b._bt=.05;}
-        else if(b._bt<=0 && boss.y<=b.bot && Math.abs(b.x-boss.x)<(boss.w/2+b.w/2)){ hitBoss(b.dmg); weaponHitSfx('laser'); b._bt=0.05; }
+        else if(b._bt<=0){
+          /* every live piece in the column first - a helper or pod outside the hull's box included - and the
+             legacy single hull hit only when the column crosses no piece */
+          if(beamPiercePieces(boss,b)){weaponHitSfx('laser');b._bt=0.05;}
+          else if(boss.y<=b.bot && Math.abs(b.x-boss.x)<(boss.w/2+b.w/2)){_lastHitX=b.x;_lastHitY=boss._drawY??boss.y;hitBoss(b.dmg);weaponHitSfx('laser');b._bt=0.05;}
+        }
       }
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
@@ -36574,9 +36646,15 @@ function updatePlay(dt){
         if(subBoss._bomber){if(b._sbt<=0){const q=siegeBomberBeam(subBoss,b);if(q){siegeBomberHit(subBoss,b.dmg,q.x,q.y,q.id);b._sbt=.05;}}}
         else if(subBoss._s7mod){if(b._sbt<=0){const q=s7mBeamImpact(subBoss,b);if(q){s7mHit(subBoss,b.dmg,q.x,q.y,q.id);weaponHitSfx('laser');b._sbt=.05;}}}
         else if(b._sbt<=0&&(subBoss._rzb||subBoss._rzbPair||subBoss._tempestDuo||subBoss._sg10)){
-          const impact=subBossBeamImpact(subBoss,b);
-          if(impact){hitSubBoss(b.dmg,impact.x,impact.y);weaponHitSfx('laser');b._sbt=0.05;}
-        }else if(b._sbt<=0 && sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)&&!(subBoss._ship==='olivewarden'&&stage4MiniDroneAt(subBoss,b.x,sy,2))){ hitSubBoss(b.dmg, b.x, sy); weaponHitSfx('laser'); b._sbt=0.05; }
+          if(beamPiercePieces(subBoss,b)){weaponHitSfx('laser');b._sbt=0.05;}
+          else{const impact=subBossBeamImpact(subBoss,b);
+          if(impact){hitSubBoss(b.dmg,impact.x,impact.y);weaponHitSfx('laser');b._sbt=0.05;}}
+        }else if(b._sbt<=0){
+          /* the Warden's helper drones are burned by their own loop above - never twice */
+          const _wd=subBoss._ship==='olivewarden'?(t=>t.kind==='helper weapon'||t.kind==='escort'):null;
+          if(beamPiercePieces(subBoss,b,_wd)){weaponHitSfx('laser');b._sbt=0.05;}
+          else if(sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)&&!(subBoss._ship==='olivewarden'&&stage4MiniDroneAt(subBoss,b.x,sy,2))){ hitSubBoss(b.dmg, b.x, sy); weaponHitSfx('laser'); b._sbt=0.05; }
+        }
         if(subBoss._ship==='olivewarden'&&b._sbt<=0)b._sbt=.05;
       }
       for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_/.test(p.kind||''))) continue;
@@ -37208,6 +37286,7 @@ function updatePlay(dt){
     for(const e of enemies){
       if(e._dyingT!=null) continue;   // dying wrecks don't collide
       if(e._noHit) continue;          // submerged/phased (level-7 BUBBLE MAW mid-dive) — no body contact
+      if(e._noBodyContact) continue; // shootable timed ordnance hurts at its committed detonation
       const _hx=(player._hx!=null?player._hx:9)-1, _hy=(player._hy!=null?player._hy:10)-2;
       /* COLLISION, NOT TARGETING: this asks whether the unit touches THE seat swapped in by withSeat. It must read player, never targetShip. */
       if(Math.abs(e.x-player.x)<(e.w/2+_hx) && Math.abs(e.y-player.y)<(e.h/2+_hy)){
@@ -37219,7 +37298,7 @@ function updatePlay(dt){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitBoss(6); player._ramT=0.2; juggernautRamImpact(player.x,player.y-10); shake=Math.max(shake,6); } }
       else playerHit();
     }
-    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && !subBoss._jcGhost && !subBoss._s4MiniSafe && (!subBoss._harrier||pt11HarrierContact(subBoss,player.x,player.y)) && (!subBoss._tempestDuo||tempestBrothersContact(subBoss,player.x,player.y)) && (!subBoss._rzbPair||razorbackPairContact(subBoss,player.x,player.y)) && (!subBoss._hd1003||hd1003At(subBoss,player.x,player.y)!==null) && (!subBoss._sg10||sg10At(subBoss,player.x,player.y,6)!==null) && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
+    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && !subBoss._jcGhost && !subBoss._s4MiniSafe && (!subBoss._harrier||pt11HarrierContact(subBoss,player.x,player.y)) && (!subBoss._tempestDuo||tempestBrothersContact(subBoss,player.x,player.y)) && (!subBoss._rzbPair||razorbackPairContact(subBoss,player.x,player.y)) && (!subBoss._hd1003||hd1003At(subBoss,player.x,player.y)!==null) && (!subBoss._sg10||sg10At(subBoss,player.x,player.y,6)!==null) && (!subBoss._mr27||mr27At(subBoss,player.x,player.y)!==null) && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitSubBoss(6); player._ramT=0.2; juggernautRamImpact(player.x,player.y-10); shake=Math.max(shake,6); } }
       else playerHit();
     }
@@ -37902,7 +37981,7 @@ function hitBoss(dmg){
   if(boss._whv){dmg=warhiveDamage(boss,dmg);if(dmg<=0)return;}
   if(boss._rebels){rebelSquadDamage(boss,dmg);return;}
   if(boss._s4war&&boss._noHit&&!boss._s4CoreHit)return;
-  markHit(boss);   // 0912y: before any shield, barrier or part router can swallow the hit
+  {const _mp=boss._mr27&&typeof mr27At==='function'?mr27At(boss,_lastHitX,_lastHitY):null;if(!(_mp&&_mp!=='core'))markHit(boss);}   // 0912y; 1017: a modular piece flashes alone
   if(boss._s7warden&&typeof s7WardenHit==='function'){
     const _wx=(_dmgBullet&&Number.isFinite(_dmgBullet.x))?_dmgBullet.x:(_lastHitX!=null?_lastHitX:boss.x);
     const _wy=(_dmgBullet&&Number.isFinite(_dmgBullet.y))?_dmgBullet.y:(_lastHitY!=null?_lastHitY:boss.y);
@@ -50306,6 +50385,10 @@ function drawBullets(){
   ctx.shadowBlur=0;   // never inherit a shadow from an upstream draw: it silently blurs every bullet
   // player
   for(const b of pBullets){
+    const allyAlpha=typeof rebelFriendlyBulletAlpha==='function'?rebelFriendlyBulletAlpha(b):1;
+    const allyDrawState=typeof rebelFriendlyBulletBegin==='function'?rebelFriendlyBulletBegin(b):null;
+    if(allyAlpha<1)ctx.save();
+    try{
     /* THE LEVEL'S AURA (0917) - under the round, before any kind branch, so every carrier gets it */
     if(b._inf && (b._infLv|0)>=2 && !(b._launchDelay>0) && typeof infusionAuraDraw==='function') infusionAuraDraw(b);
     if(b._cal50&&!b.dead&&typeof chaingunRoundDraw==='function'&&chaingunRoundDraw(b))continue;
@@ -51551,6 +51634,7 @@ function drawBullets(){
       else { ctx.fillStyle=wcol; ctx.beginPath(); ctx.moveTo(0,-11); ctx.lineTo(4,7); ctx.lineTo(-4,7); ctx.closePath(); ctx.fill(); ctx.fillStyle='#ffffff'; ctx.fillRect(-1.5,-6,3,10); }
       ctx.restore();
     } else { ctx.fillStyle=wcol; circle(b.x,b.y,5); ctx.fillStyle='#ffffff'; circle(b.x,b.y,2.2); }
+    }finally{if(allyAlpha<1)ctx.restore();if(typeof rebelFriendlyBulletEnd==='function')rebelFriendlyBulletEnd(allyDrawState);}
   }
   /* ============================================================
      ⚠ THIS IS THE "PROJECTILES APPEAR WOBBLY" (drop 0811v). Mike, asked which ones:
@@ -56060,7 +56144,7 @@ function s6WingTick(dt){
             s6WingSay(q.key.toUpperCase(),'I AM HIT. SMOKING BADLY. RETURNING TO BASE!');}
         }
       }
-      if(!q.all&&q.t>25){q.phase='leave';q.t=0;s6WingSay(q.key.toUpperCase(),'GO HELP THE OTHERS. STAY IN THERE!');}
+      if(!q.all&&q.t>25&&!bossActive&&!subBossActive&&warnT<=0){q.phase='leave';q.t=0;s6WingSay(q.key.toUpperCase(),'GO HELP THE OTHERS. STAY IN THERE!');}
     }
   }
   W.ships=W.ships.filter(q=>q.phase!=='leave'||q.y>-90);
@@ -56594,19 +56678,26 @@ function wfxUpdate(dt){
 
   /* ---------------- STAGE 2 — FIREWAVE, 1-2-3 ---------------- */
   if(C.kind==='fire'){
-    /* The caldera wave is stage pressure, not a second boss. Retire it the moment the main-boss
-       warning/fight begins so Inferno Reaver's authored lanes remain the only lethal language. */
+    /* Mike 1018: the Furnace keeps the authored travelling walls, not the
+       quarter-screen red columns. Queue them between side vents; the fast
+       final eye sweep owns its own lanes without an overlapping wall. */
     const bossFight=(typeof bossActive!=='undefined'&&bossActive)||
       (typeof warnKind!=='undefined'&&warnKind==='boss');
-    if(bossFight){
+    const furnaceFight=s2FurnaceFight();
+    if(bossFight&&!furnaceFight){
       wfx.fseq=null;wfx.fire=null;wfx.fireCd=Math.max(wfx.fireCd||0,999);
       return;
+    }
+    if(furnaceFight&&!wfx._furnace18){wfx._furnace18=true;wfx.fseq=null;wfx.fire=null;wfx.fireCd=4.5;}
+    if(furnaceFight&&!s2FurnaceHazardWindow()){
+      wfx.fseq=null;wfx.fireCd=Math.max(3,wfx.fireCd||0);return;
     }
     // Mike's spec: THREE alerts appear one after another, each marking where a wave will come
     // from. Then the waves arrive 1, 2, 3 — one at a time, each from its own alert's lane.
     // They travel VERTICALLY (down the screen) and they are big.
     if(!wfx.fseq){
       wfx.fireCd -= dt;
+      if(furnaceFight&&(s2Vents.some(v=>!v.done)||geysers.some(g=>g.hostile&&g.t<g.life)))wfx.fireCd=Math.max(.6,wfx.fireCd);
       if(wfx.fireCd<=0){
         const W=worldWidth();
         const lanes=[W*0.22, W*0.5, W*0.78].sort(()=>Math.random()-0.5);
@@ -78533,42 +78624,58 @@ function efxDraw(){
    0.95 s of warning first - the vent glows and the generated fire starts in it - then a HOSTILE column and
    five chunks of burning rock thrown up out of it, which arc over and come down on the field. The column and
    every chunk hurt the player (playerHit, so a roll's or a respawn's i-frames still protect). Off while a
-   boss is up - the Furnace has its own zone column. */
+   boss is up unless it is the Stage-2 Furnace (1018: warned side eruptions replace its red columns). */
 const S2VENT={warn:0.95,gap:[6.2,10.4],first:4.5,debris:5,edgeMin:10,edgeMax:42};
 let s2Vents=[], s2VentT=4.5, fireDebris=[];
+function s2FurnaceFight(){return run.stage===2&&bossActive&&boss&&!boss.dead&&boss._furnace&&!boss._gp4Host;}
+function s2FurnaceHazardWindow(){const F=s2FurnaceFight()&&boss._fz;return !!(F&&['arms','core'].includes(F.phase)&&!(F.trans>0));}
 function s2VentDiff(){ const k=(typeof diffKey!=='undefined')?diffKey:'normal'; return k==='easy'?1.4:(k==='hard'||k==='furious'||k==='insanity')?0.8:1; }
 function s2VentTick(dt){
   debrisTick(dt);
   for(const v of s2Vents){ v.t+=dt;
-    if(!v.done && v.t>=S2VENT.warn){ v.done=true;
+    const warn=v.warn||S2VENT.warn;
+    if(!v.done && v.t>=warn){ v.done=true;
       const g=geyserSpawn(v.x,v.y,'fire'); if(g) g.hostile=true;
       for(let i=0;i<S2VENT.debris;i++) debrisLaunch(v.x+rnd(-12,12), v.y-rnd(4,24), -v.side, i*0.07+rnd(0,0.05));
       try{ if(Audio.SFX.magmaGeyser) Audio.SFX.magmaGeyser(); }catch(_s){ }
       if(typeof shake!=='undefined') shake=Math.max(shake,6); } }
-  s2Vents=s2Vents.filter(function(v){ return v.t<S2VENT.warn+0.05; });
-  const on=run && run.stage===2 && !(typeof bossActive!=='undefined'&&bossActive) && player && !player.dead
+  s2Vents=s2Vents.filter(function(v){ return v.t<(v.warn||S2VENT.warn)+0.05; });
+  const on=run && run.stage===2 && (!bossActive||(s2FurnaceHazardWindow()&&!(wfx&&wfx.fseq))) && player && !player.dead
            && !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive());
   if(!on) return;
   s2VentT-=dt; if(s2VentT>0) return;
   s2VentT=rnd(S2VENT.gap[0],S2VENT.gap[1])*s2VentDiff();
-  s2VentSpawn(chance(0.5)?-1:1);
+  const side=s2FurnaceFight()?(boss._fz._ventSide18=-(boss._fz._ventSide18||1)):(chance(0.5)?-1:1);
+  s2VentSpawn(side);
 }
 function s2VentSpawn(side,y){
   const L=camLeftX(), R=camRightX();
-  const v={side:side,x:side<0?L+rnd(S2VENT.edgeMin,S2VENT.edgeMax):R-rnd(S2VENT.edgeMin,S2VENT.edgeMax),y:(y!=null?y:VH+2),t:0,done:false};
+  const v={side:side,x:side<0?L+rnd(S2VENT.edgeMin,S2VENT.edgeMax):R-rnd(S2VENT.edgeMin,S2VENT.edgeMax),y:(y!=null?y:VH+2),t:0,done:false,warn:s2FurnaceFight()?1.25:S2VENT.warn};
   s2Vents.push(v);
-  try{ XART.rdy('efx_geyser_fire'); XART.rdy('efx_burn'); XART.rdy('efx_debris_0'); XART.rdy('efx_debris_1'); }catch(_r){ }
+  try{ XART.rdy('efx_geyser_fire'); XART.rdy('efx_burn'); XART.rdy('efx_debris_0'); XART.rdy('efx_debris_1');
+    for(const col of ['green','yellow','red'])XART.rdy('bmfx_alert_'+col+'_impact_imminent');XART.rdy('warn_escape_arrow_0916'); }catch(_r){ }
   try{ if(Audio.SFX.s2GeyserWarn) Audio.SFX.s2GeyserWarn(); }catch(_s){ }
   return v;
 }
 function s2VentDraw(){
   for(const v of s2Vents){ if(v.done) continue;
-    const k=clamp(v.t/S2VENT.warn,0,1), pulse=0.5+0.5*Math.sin(v.t*30);
+    const k=clamp(v.t/(v.warn||S2VENT.warn),0,1), pulse=0.5+0.5*Math.sin(v.t*30);
     ctx.save(); ctx.globalCompositeOperation='lighter';
     const r=14+22*k, gr=ctx.createRadialGradient(v.x,v.y,1,v.x,v.y,r);
     gr.addColorStop(0,'rgba(255,220,120,'+(0.55+0.35*pulse)+')'); gr.addColorStop(0.5,'rgba(255,90,20,'+(0.35+0.2*pulse)+')'); gr.addColorStop(1,'rgba(255,40,0,0)');
     ctx.fillStyle=gr; ctx.beginPath(); ctx.ellipse(v.x,v.y,r,r*0.55,0,0,Math.PI*2); ctx.fill(); ctx.restore();
     const s=12+40*k; efxFrame('efx_burn',Math.floor(v.t*14)%EFX_N,v.x-s/2,v.y-s*0.85,s,s,0.6+0.4*k);
+    // Existing authored asterisk and arrow, placed INSIDE the playfield.
+    // The upward lane is the same reach as the actual side geyser.
+    const col=l23FovPhase(k),ak='bmfx_alert_'+col+'_impact_imminent',horizontal=!!v._ac10Side;
+    const ax=clamp(v.x,camLeftX()+22,camRightX()-22),ay=horizontal?v.y:Math.min(VH-38,v.y-36);
+    ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=.65+.35*pulse;
+    if(XART.rdy(ak))ctx.drawImage(XART.get(ak),Math.round(ax-17),Math.round(ay-17),34,34);
+    if(XART.rdy('warn_escape_arrow_0916')){
+      const im=XART.get('warn_escape_arrow_0916'),ah=24,aw=ah*(im.naturalWidth||im.width)/(im.naturalHeight||im.height);
+      for(const d of [65,135]){ctx.save();ctx.translate(horizontal?v.x-v.side*d:v.x,horizontal?v.y:ay-d);ctx.rotate(horizontal?(v.side<0?0:Math.PI):-Math.PI/2);ctx.drawImage(im,-aw/2,-ah/2,aw,ah);ctx.restore();}
+    }
+    ctx.restore();
     if(chance(0.6)) particles.push({x:v.x+rnd(-8,8),y:v.y-rnd(0,6),vx:rnd(-0.4,0.4),vy:rnd(-2.6,-1),life:rnd(0.25,0.5),t:0,r:rnd(1.2,2.4),color:chance(0.4)?'#ffd27a':'#ff6a1e'});
   }
 }
@@ -78667,6 +78774,9 @@ function zoneDraw(){
 /* the Furnace Tyrant pours a fire column down the zone the player is in, every 8-11 s once it is fighting */
 function furnaceZoneTick(b,dt){
   const F=b._fz; if(!F||b.dead||F.phase==='intro') return;
+  // Stage2 uses travelling walls plus mountain-side vents. Preserve the
+  // separate copied encounter's zone behavior and all friendly geysers.
+  if(run.stage===2){zoneCols=zoneCols.filter(c=>!c.hostile);return;}
   if(F.zoneT==null) F.zoneT=6;
   F.zoneT-=dt; if(F.zoneT>0) return;
   if(zoneCols.some(function(c){ return c.hostile; })) return;

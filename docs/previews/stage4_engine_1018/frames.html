@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Warden center gun · Frames</title><link rel="icon" href="data:,">
+<style>body{margin:24px;background:#08111c;color:#e8edf4;font:15px system-ui}nav{display:flex;align-items:center;gap:14px;flex-wrap:wrap}a{color:#ffcc7b}button,select{background:#1a2b3e;border:1px solid #6d8398;border-radius:4px;padding:8px;color:#fff}canvas{background:#0d1d2c;image-rendering:pixelated;border:1px solid #53677b;max-width:100%;margin:20px 0}#sheet{display:grid;grid-template-columns:repeat(8,128px);gap:6px;max-width:100%;overflow:auto}#sheet img{width:128px;image-rendering:pixelated;background:#112031}p{color:#afc5d7}</style>
+<nav><strong>Warden · Central rotary gun</strong><a href="index.html?scene=warden">Play the encounter</a><select id="bank"><option value="sequence">Complete sequence</option><option value="idle">Idle</option><option value="charge">Charge</option><option value="fire">Fire</option><option value="cool">Cooling</option></select><button id="play">Pause</button><label>Frame <input id="frame" type="range" min="0" max="15" value="0"></label><label><input id="onion" type="checkbox">Onion</label><label><input id="pivot" type="checkbox" checked>Mount</label><span id="label"></span></nav>
+<canvas id="preview" width="512" height="512"></canvas><p>16 authored poses. Fixed 256 × 256 canvas and one shared mounting point. Orange muzzle flashes and smoke remain attached to the recoiling barrels.</p><div id="sheet"></div>
+<script src="../../../assets/warden_center_art_1018.js"></script>
+<script>
+const cv=document.querySelector('#preview'),g=cv.getContext('2d'),slider=document.querySelector('#frame'),bank=document.querySelector('#bank');let playing=true,pose=0,last=0;
+const frames=WC18_ART.frames.map(a=>{const im=new Image();im.src='../../../'+a.path;im.onload=draw;const tile=im.cloneNode();tile.title=a.key;document.querySelector('#sheet').append(tile);return im;});
+function draw(){g.clearRect(0,0,512,512);g.imageSmoothingEnabled=false;const im=frames[pose];if(!im?.complete)return;
+ if(document.querySelector('#onion').checked){g.globalAlpha=.2;g.drawImage(frames[(pose+15)%16],0,0,512,512);g.drawImage(frames[(pose+1)%16],0,0,512,512);}g.globalAlpha=1;g.drawImage(im,0,0,512,512);
+ if(document.querySelector('#pivot').checked){g.strokeStyle='#70e0ff';g.beginPath();g.moveTo(246,208);g.lineTo(266,208);g.moveTo(256,198);g.lineTo(256,218);g.stroke();}
+ document.querySelector('#label').textContent=WC18_ART.frames[pose].key;slider.value=pose;}
+function tick(t){if(playing&&t-last>=100){const b=WC18_ART.banks[bank.value]||[0,16,10];pose=pose<b[0]||pose>=b[0]+b[1]-1?b[0]:pose+1;last=t;draw();}requestAnimationFrame(tick);}
+document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Pause':'Play';};slider.oninput=()=>{playing=false;document.querySelector('#play').textContent='Play';pose=Number(slider.value);draw();};bank.onchange=()=>{pose=(WC18_ART.banks[bank.value]||[0])[0];draw();};document.querySelector('#onion').onchange=document.querySelector('#pivot').onchange=draw;requestAnimationFrame(tick);
+</script></html>

@@ -15,13 +15,13 @@ hammerBossDamage=function(b,dmg){const h=b?._hammer,C=hc17Counter(b),q=_dmgBulle
  if(!(dmg>0))return 0;
  // Body and raised-hammer impacts both count: players can see the counter,
  // and a locked missile no longer has to find an invisible routing column.
- if(hammerMissile(q)&&!C.seen.has(q)){
+ if(hammerMissile(q)&&q.kind!=='spaceVolley'&&!q._autoMissile&&!C.seen.has(q)){
   C.seen.add(q);C.hits++;HC17.hits++;markHit(b);b.flash=Math.max(b.flash||0,.14);
   const p=hammerHeadPoint(b);weaponHitSfx('normal');Audio.SFX.impactMetal?.();
   floatText(p.x,p.y-38,Math.min(C.hits,C.required)+' / '+C.required,'#9fffea');
   h.recovery.coreHP=Math.max(1,h.recovery.coreMax*(1-C.hits/C.required));
   if(C.hits>=C.required)hammerRecoveryBreak(b);
- }else if(!hammerMissile(q)){markHit(b);b.flash=Math.max(b.flash||0,.08);weaponHitSfx('normal');}
+ }else{markHit(b);b.flash=Math.max(b.flash||0,.08);weaponHitSfx('normal');}
  return 0;
 };
 hammerChromiumPoseDraw=function(b){const h=b?._hammer,C=hc17Counter(b);if(!C)return HC17.base.pose.apply(this,arguments);

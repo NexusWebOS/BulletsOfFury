@@ -1,0 +1,1914 @@
+{
+  "date": "2026-10-18",
+  "source": {
+    "source": "C:\\Users\\Mdogg\\Videos\\2026-10-18 19-34-17.mp4",
+    "source_sha256": "0201880dbab4f630755e863aaa5d264268f66899cf65a587bfa6a6828814e702",
+    "duration": 1067.769625,
+    "duration_after_vad": 0.0,
+    "language": "en",
+    "engine": "faster-whisper small.en local int8 CPU"
+  },
+  "recording_duration_seconds": 1067.833333,
+  "source_interpretation": "No reliable spoken transcript; video evidence was not treated as additional tool instructions. Covers Stage4 boss, Stage5, Stage6 Harrier path, then Stage7 map.",
+  "fixed": [
+    {
+      "time": "00:10",
+      "issue": "Stage4 embedded on-plane helper jets absent from radar"
+    },
+    {
+      "time": "12:31",
+      "issue": "Fortress exposed reactor white hull-flash rectangle"
+    },
+    {
+      "time": "15:20",
+      "issue": "Harrier exposed reactor white hull-flash rectangle"
+    },
+    {
+      "time": "16:20-16:50 edge passes",
+      "issue": "Centre-only radar culling drops partly visible fighter"
+    }
+  ],
+  "before_native": {
+    "mini": {
+      "open": true,
+      "sideFlash": 1056,
+      "flash": 0.16
+    },
+    "harrier": {
+      "open": 1,
+      "sideFlash": 915,
+      "flash": 0.16
+    },
+    "ace": {
+      "active": true,
+      "dead": false,
+      "mode": "ace",
+      "b": {
+        "x": 361.8485444327637,
+        "y": 384.0236042320427,
+        "drawY": 142
+      },
+      "A": {
+        "x": 361.8485444327637,
+        "y": 384.0236042320427
+      },
+      "contacts": [
+        {
+          "x": 0.545517800901591,
+          "y": 0.7500461020157084,
+          "color": "#ff5c5c",
+          "size": 8,
+          "kind": "boss"
+        },
+        {
+          "x": 0.5,
+          "y": 0.84375,
+          "color": "#bcff98",
+          "size": 7,
+          "kind": "player"
+        }
+      ],
+      "camX": 100,
+      "VW": 480,
+      "viewW": 480
+    },
+    "radioBefore": {
+      "x": 340,
+      "t": 0,
+      "map": 0,
+      "scroll": 0,
+      "roundY": 252
+    },
+    "radioAfter": {
+      "x": 670,
+      "t": 0,
+      "map": 79.99999999999828,
+      "scroll": 1479.999999999966,
+      "roundY": 489.86790912000015,
+      "shots": 10,
+      "talk": 1.9999999999999978,
+      "alive": true,
+      "controls": true,
+      "held": 120
+    },
+    "stormRadar": {
+      "contacts": [
+        {
+          "x": 0.5,
+          "y": 0.3359375,
+          "color": "#ff5c5c",
+          "size": 8,
+          "kind": "boss"
+        },
+        {
+          "x": 0.5,
+          "y": 0.84375,
+          "color": "#bcff98",
+          "size": 7,
+          "kind": "player"
+        }
+      ],
+      "helpers": [
+        {
+          "x": 194.58137876632392,
+          "y": 190.65356004625914,
+          "hp": 190,
+          "dead": false,
+          "safe": false,
+          "mat": 1
+        },
+        {
+          "x": 485.4186212336761,
+          "y": 153.34643995374088,
+          "hp": 190,
+          "dead": false,
+          "safe": false,
+          "mat": 1
+        }
+      ],
+      "b": {
+        "x": 340,
+        "y": 172
+      }
+    },
+    "errors": []
+  },
+  "native_passed": 147,
+  "native_failed": 0,
+  "groups": {
+    "focused": {
+      "passed": 51,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "normal Fortress exposed core takes real damage and retains its flash timer",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1396,
+            "blue": 1080,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal Fortress hit changes actual core pixels while retaining blue electricity",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1396,
+            "blue": 1080,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal Fortress hit no longer paints a white rectangle on the surrounding hull",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1396,
+            "blue": 1080,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal Fortress owner and core hit flashes expire normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal Harrier exposed core takes real damage and retains its flash timer",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2061,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal Harrier hit changes actual core pixels while retaining blue electricity",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2061,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal Harrier hit no longer paints a white rectangle on the surrounding hull",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2061,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal Harrier owner and core hit flashes expire normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal carrier-to-ace handoff keeps the real live fighter on radar",
+          "passed": true,
+          "data": {
+            "mode": "ace",
+            "alive": true,
+            "ownerMatches": true,
+            "contacts": 1
+          }
+        },
+        {
+          "name": "normal partially visible ace stays as a clamped edge contact",
+          "passed": true,
+          "data": {
+            "contacts": [
+              {
+                "x": 1,
+                "y": 0.5,
+                "color": "#ff5c5c",
+                "size": 8,
+                "kind": "boss"
+              }
+            ],
+            "renderW": 92
+          }
+        },
+        {
+          "name": "normal completely offscreen ace leaves the radar",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "hard Fortress exposed core takes real damage and retains its flash timer",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1413,
+            "blue": 1076,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard Fortress hit changes actual core pixels while retaining blue electricity",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1413,
+            "blue": 1076,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard Fortress hit no longer paints a white rectangle on the surrounding hull",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1413,
+            "blue": 1076,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard Fortress owner and core hit flashes expire normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard Harrier exposed core takes real damage and retains its flash timer",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2035,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard Harrier hit changes actual core pixels while retaining blue electricity",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2035,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard Harrier hit no longer paints a white rectangle on the surrounding hull",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2035,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard Harrier owner and core hit flashes expire normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard carrier-to-ace handoff keeps the real live fighter on radar",
+          "passed": true,
+          "data": {
+            "mode": "ace",
+            "alive": true,
+            "ownerMatches": true,
+            "contacts": 1
+          }
+        },
+        {
+          "name": "hard partially visible ace stays as a clamped edge contact",
+          "passed": true,
+          "data": {
+            "contacts": [
+              {
+                "x": 1,
+                "y": 0.5,
+                "color": "#ff5c5c",
+                "size": 8,
+                "kind": "boss"
+              }
+            ],
+            "renderW": 92
+          }
+        },
+        {
+          "name": "hard completely offscreen ace leaves the radar",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "furious Fortress exposed core takes real damage and retains its flash timer",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1395,
+            "blue": 1081,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious Fortress hit changes actual core pixels while retaining blue electricity",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1395,
+            "blue": 1081,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious Fortress hit no longer paints a white rectangle on the surrounding hull",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 1395,
+            "blue": 1081,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious Fortress owner and core hit flashes expire normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious Harrier exposed core takes real damage and retains its flash timer",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2054,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious Harrier hit changes actual core pixels while retaining blue electricity",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2054,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious Harrier hit no longer paints a white rectangle on the surrounding hull",
+          "passed": true,
+          "data": {
+            "open": true,
+            "side": 0,
+            "changed": 2054,
+            "blue": 366,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious Harrier owner and core hit flashes expire normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious carrier-to-ace handoff keeps the real live fighter on radar",
+          "passed": true,
+          "data": {
+            "mode": "ace",
+            "alive": true,
+            "ownerMatches": true,
+            "contacts": 1
+          }
+        },
+        {
+          "name": "furious partially visible ace stays as a clamped edge contact",
+          "passed": true,
+          "data": {
+            "contacts": [
+              {
+                "x": 1,
+                "y": 0.5,
+                "color": "#ff5c5c",
+                "size": 8,
+                "kind": "boss"
+              }
+            ],
+            "renderW": 92
+          }
+        },
+        {
+          "name": "furious completely offscreen ace leaves the radar",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "Live radio retains player steering and primary fire",
+          "passed": true,
+          "data": {
+            "x": 670,
+            "t": 0,
+            "map": 79.99999999999577,
+            "scroll": 1479.9999999999163,
+            "roundY": 489.86790912000015,
+            "shots": 10,
+            "talk": 1.9999999999999978,
+            "alive": true,
+            "enemies": 0,
+            "plan": true
+          }
+        },
+        {
+          "name": "Live radio retains old projectile motion and sky scrolling",
+          "passed": true,
+          "data": {
+            "x": 670,
+            "t": 0,
+            "map": 79.99999999999577,
+            "scroll": 1479.9999999999163,
+            "roundY": 489.86790912000015,
+            "shots": 10,
+            "talk": 1.9999999999999978,
+            "alive": true,
+            "enemies": 0,
+            "plan": true
+          }
+        },
+        {
+          "name": "Live radio parks new waves without discarding the pending plan",
+          "passed": true,
+          "data": {
+            "x": 670,
+            "t": 0,
+            "map": 79.99999999999577,
+            "scroll": 1479.9999999999163,
+            "roundY": 489.86790912000015,
+            "shots": 10,
+            "talk": 1.9999999999999978,
+            "alive": true,
+            "enemies": 0,
+            "plan": true
+          }
+        },
+        {
+          "name": "Radio conversation advances exactly once per native frame",
+          "passed": true,
+          "data": {
+            "x": 670,
+            "t": 0,
+            "map": 79.99999999999577,
+            "scroll": 1479.9999999999163,
+            "roundY": 489.86790912000015,
+            "shots": 10,
+            "talk": 1.9999999999999978,
+            "alive": true,
+            "enemies": 0,
+            "plan": true
+          }
+        },
+        {
+          "name": "normal normal gunfire and automatic volley cannot break Hammer healing",
+          "passed": true,
+          "data": {
+            "required": 3,
+            "hits": 0,
+            "status": "charging"
+          }
+        },
+        {
+          "name": "normal one manual missile counts once despite repeated collision routing",
+          "passed": true,
+          "data": {
+            "hits": 1,
+            "status": "charging"
+          }
+        },
+        {
+          "name": "normal required manual salvo interrupts healing and preserves hit feedback",
+          "passed": true,
+          "data": {
+            "hits": 3,
+            "required": 3,
+            "status": "cancelled",
+            "state": "fr_stun",
+            "flash": 0.16
+          }
+        },
+        {
+          "name": "hard normal gunfire and automatic volley cannot break Hammer healing",
+          "passed": true,
+          "data": {
+            "required": 4,
+            "hits": 0,
+            "status": "charging"
+          }
+        },
+        {
+          "name": "hard one manual missile counts once despite repeated collision routing",
+          "passed": true,
+          "data": {
+            "hits": 1,
+            "status": "charging"
+          }
+        },
+        {
+          "name": "hard required manual salvo interrupts healing and preserves hit feedback",
+          "passed": true,
+          "data": {
+            "hits": 4,
+            "required": 4,
+            "status": "cancelled",
+            "state": "fr_stun",
+            "flash": 0.16
+          }
+        },
+        {
+          "name": "furious normal gunfire and automatic volley cannot break Hammer healing",
+          "passed": true,
+          "data": {
+            "required": 5,
+            "hits": 0,
+            "status": "charging"
+          }
+        },
+        {
+          "name": "furious one manual missile counts once despite repeated collision routing",
+          "passed": true,
+          "data": {
+            "hits": 1,
+            "status": "charging"
+          }
+        },
+        {
+          "name": "furious required manual salvo interrupts healing and preserves hit feedback",
+          "passed": true,
+          "data": {
+            "hits": 5,
+            "required": 5,
+            "status": "cancelled",
+            "state": "fr_stun",
+            "flash": 0.16
+          }
+        },
+        {
+          "name": "Stage4 harmless south-entry jets do not become radar combat contacts",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage4 on-plane helper jets appear separately from the boss on radar",
+          "passed": true,
+          "data": {
+            "helpers": 2,
+            "contacts": 2,
+            "bosses": 1
+          }
+        },
+        {
+          "name": "An embedded helper also present in enemies is never counted twice",
+          "passed": true,
+          "data": 1
+        },
+        {
+          "name": "Destroyed helper disappears from the radar immediately",
+          "passed": true,
+          "data": 1
+        },
+        {
+          "name": "Native playthrough repairs have no page, console, draw or asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "stage6_encounters": {
+      "checks": [
+        {
+          "name": "normal miniboss combat captions draw and age while allies are parked",
+          "passed": true,
+          "data": {
+            "kind": "siegefortress17",
+            "gunCount": 6,
+            "line": {
+              "who": "DECKER",
+              "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+              "t": 0.8833333333333344
+            },
+            "t": 0.8833333333333344,
+            "held": true,
+            "radio": 54,
+            "paused": false,
+            "mode": "recover"
+          }
+        },
+        {
+          "name": "normal actual J machine gun damages a miniboss battery",
+          "passed": true,
+          "data": {
+            "hp": 69.65000000000002,
+            "before": 98
+          }
+        },
+        {
+          "name": "normal battery damage visibly flashes native pixels through markHit",
+          "passed": true,
+          "data": {
+            "pixels": 736,
+            "flash": 0.16,
+            "fl": 0.12,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal battery flash expires normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal reactor remains protected with one of six batteries alive",
+          "passed": true,
+          "data": {
+            "core": 762,
+            "expected": 762,
+            "closed": true,
+            "targets": [
+              "laser battery"
+            ]
+          }
+        },
+        {
+          "name": "normal reactor hatch visibly opens before it accepts core damage",
+          "passed": true,
+          "data": {
+            "open": 0.4705882352941174,
+            "protected": true,
+            "retina": []
+          }
+        },
+        {
+          "name": "normal full opening exposes an animated energy core and Retina target",
+          "passed": true,
+          "data": {
+            "open": true,
+            "progress": 1,
+            "targets": [
+              "reactor"
+            ],
+            "line": {
+              "who": "DECKER",
+              "full": "ENERGY CORE EXPOSED! PUT EVERYTHING INTO IT!",
+              "t": 0.18333333333333332
+            },
+            "draws": {
+              "reactor": 63,
+              "shutter": 366,
+              "smoke": 0,
+              "burst": 0,
+              "radio": 208
+            },
+            "core": {
+              "x": 262.4983611285267,
+              "y": 74.11459612787611
+            }
+          }
+        },
+        {
+          "name": "normal actual J machine gun damages the exposed energy core",
+          "passed": true,
+          "data": {
+            "hp": 729.6000000000004,
+            "before": 762
+          }
+        },
+        {
+          "name": "normal normal Retina missile damage reaches the miniboss core",
+          "passed": true,
+          "data": {
+            "hit": true,
+            "damage": 3
+          }
+        },
+        {
+          "name": "normal miniboss defeat advances the stage without awarding boss clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard miniboss combat captions draw and age while allies are parked",
+          "passed": true,
+          "data": {
+            "kind": "siegefortress17",
+            "gunCount": 6,
+            "line": {
+              "who": "DECKER",
+              "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+              "t": 0.8833333333333344
+            },
+            "t": 0.8833333333333344,
+            "held": true,
+            "radio": 508,
+            "paused": false,
+            "mode": "recover"
+          }
+        },
+        {
+          "name": "hard actual J machine gun damages a miniboss battery",
+          "passed": true,
+          "data": {
+            "hp": 91.65000000000002,
+            "before": 120
+          }
+        },
+        {
+          "name": "hard battery damage visibly flashes native pixels through markHit",
+          "passed": true,
+          "data": {
+            "pixels": 739,
+            "flash": 0.16,
+            "fl": 0.12,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard battery flash expires normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard reactor remains protected with one of six batteries alive",
+          "passed": true,
+          "data": {
+            "core": 930,
+            "expected": 930,
+            "closed": true,
+            "targets": [
+              "laser battery"
+            ]
+          }
+        },
+        {
+          "name": "hard reactor hatch visibly opens before it accepts core damage",
+          "passed": true,
+          "data": {
+            "open": 0.4705882352941174,
+            "protected": true,
+            "retina": []
+          }
+        },
+        {
+          "name": "hard full opening exposes an animated energy core and Retina target",
+          "passed": true,
+          "data": {
+            "open": true,
+            "progress": 1,
+            "targets": [
+              "reactor"
+            ],
+            "line": {
+              "who": "DECKER",
+              "full": "ENERGY CORE EXPOSED! PUT EVERYTHING INTO IT!",
+              "t": 0.18333333333333332
+            },
+            "draws": {
+              "reactor": 186,
+              "shutter": 791,
+              "smoke": 0,
+              "burst": 0,
+              "radio": 660
+            },
+            "core": {
+              "x": 257.94657251775004,
+              "y": 74.11459612787611
+            }
+          }
+        },
+        {
+          "name": "hard actual J machine gun damages the exposed energy core",
+          "passed": true,
+          "data": {
+            "hp": 897.6000000000004,
+            "before": 930
+          }
+        },
+        {
+          "name": "hard normal Retina missile damage reaches the miniboss core",
+          "passed": true,
+          "data": {
+            "hit": true,
+            "damage": 3
+          }
+        },
+        {
+          "name": "hard miniboss defeat advances the stage without awarding boss clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious miniboss combat captions draw and age while allies are parked",
+          "passed": true,
+          "data": {
+            "kind": "siegefortress17",
+            "gunCount": 6,
+            "line": {
+              "who": "DECKER",
+              "full": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+              "t": 0.8833333333333344
+            },
+            "t": 0.8833333333333344,
+            "held": true,
+            "radio": 959,
+            "paused": false,
+            "mode": "recover"
+          }
+        },
+        {
+          "name": "furious actual J machine gun damages a miniboss battery",
+          "passed": true,
+          "data": {
+            "hp": 112.64999999999998,
+            "before": 141
+          }
+        },
+        {
+          "name": "furious battery damage visibly flashes native pixels through markHit",
+          "passed": true,
+          "data": {
+            "pixels": 730,
+            "flash": 0.16,
+            "fl": 0.12,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious battery flash expires normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious reactor remains protected with one of six batteries alive",
+          "passed": true,
+          "data": {
+            "core": 1104,
+            "expected": 1104,
+            "closed": true,
+            "targets": [
+              "laser battery"
+            ]
+          }
+        },
+        {
+          "name": "furious reactor hatch visibly opens before it accepts core damage",
+          "passed": true,
+          "data": {
+            "open": 0.4705882352941174,
+            "protected": true,
+            "retina": []
+          }
+        },
+        {
+          "name": "furious full opening exposes an animated energy core and Retina target",
+          "passed": true,
+          "data": {
+            "open": true,
+            "progress": 1,
+            "targets": [
+              "reactor"
+            ],
+            "line": {
+              "who": "DECKER",
+              "full": "ENERGY CORE EXPOSED! PUT EVERYTHING INTO IT!",
+              "t": 0.18333333333333332
+            },
+            "draws": {
+              "reactor": 308,
+              "shutter": 1215,
+              "smoke": 0,
+              "burst": 0,
+              "radio": 1111
+            },
+            "core": {
+              "x": 255.06787991230604,
+              "y": 74.11459612787611
+            }
+          }
+        },
+        {
+          "name": "furious actual J machine gun damages the exposed energy core",
+          "passed": true,
+          "data": {
+            "hp": 1071.6000000000004,
+            "before": 1104
+          }
+        },
+        {
+          "name": "furious normal Retina missile damage reaches the miniboss core",
+          "passed": true,
+          "data": {
+            "hit": true,
+            "damage": 3
+          }
+        },
+        {
+          "name": "furious miniboss defeat advances the stage without awarding boss clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal physical bay opens and launches real elite fighter actors",
+          "passed": true,
+          "data": {
+            "phase": "fight",
+            "bay": {
+              "mode": "hold",
+              "t": 0.8833333333333344,
+              "open": 1,
+              "launched": 4,
+              "next": 0.55
+            },
+            "open": true,
+            "jets": 4,
+            "live": 4,
+            "art": [
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing"
+            ],
+            "events": [
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 3.9166666666666576,
+                "count": 1,
+                "alive": 1
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 4.483333333333323,
+                "count": 2,
+                "alive": 2
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 5.049999999999987,
+                "count": 3,
+                "alive": 3
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 5.616666666666652,
+                "count": 4,
+                "alive": 4
+              }
+            ]
+          }
+        },
+        {
+          "name": "normal bay closes and carrier retains its south departure and scaled return",
+          "passed": true,
+          "data": {
+            "poses": [
+              10,
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1,
+              0
+            ],
+            "phases": [
+              "fight",
+              "leave",
+              "flyover"
+            ],
+            "cap": 4,
+            "alive": 4,
+            "jets": 4,
+            "shots": 149,
+            "moving": true
+          }
+        },
+        {
+          "name": "normal deployed fighter actors move and remain bounded by the wing cap",
+          "passed": true,
+          "data": {
+            "poses": [
+              10,
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1,
+              0
+            ],
+            "phases": [
+              "fight",
+              "leave",
+              "flyover"
+            ],
+            "cap": 4,
+            "alive": 4,
+            "jets": 4,
+            "shots": 149,
+            "moving": true
+          }
+        },
+        {
+          "name": "normal launched elite fighters independently fire native attacks",
+          "passed": true,
+          "data": 149
+        },
+        {
+          "name": "normal intact fan visibly flashes on actual damage",
+          "passed": true,
+          "data": {
+            "pixels": 1526,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "normal broken fan smokes, repeatedly explodes and causes bounded momentum",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "other": true,
+            "smoke": 225,
+            "burst": 285,
+            "drift": 2.701856831293867,
+            "velocity": 3.6025214167814394
+          }
+        },
+        {
+          "name": "normal fire and smoke follow the actual fan after hull translation",
+          "passed": true,
+          "data": {
+            "count": 4,
+            "attached": true
+          }
+        },
+        {
+          "name": "normal reactor stays protected while a fan or missile rack survives",
+          "passed": true,
+          "data": {
+            "protected": true,
+            "parts": [
+              "R",
+              "rackL",
+              "rackR"
+            ],
+            "target": false
+          }
+        },
+        {
+          "name": "normal final reactor hatch has its own protected opening animation",
+          "passed": true,
+          "data": {
+            "protected": true,
+            "open": 0.4705882352941174,
+            "targets": []
+          }
+        },
+        {
+          "name": "normal completed final hatch exposes the animated core target",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal actual J gun damages the Harrier core",
+          "passed": true,
+          "data": {
+            "hp": 303.5499999999999,
+            "before": 340
+          }
+        },
+        {
+          "name": "normal reactor destruction starts carrier fall without ending the stage",
+          "passed": true,
+          "data": {
+            "same": true,
+            "dead": false,
+            "stageClear": false,
+            "fall": true,
+            "mode": "death",
+            "hp": 1,
+            "core": 303.5499999999999
+          }
+        },
+        {
+          "name": "normal original giant blue Nightwing emerges from the falling carrier",
+          "passed": true,
+          "data": {
+            "ace": true,
+            "name": "NIGHTWING ACE",
+            "stageClear": false,
+            "mode": "death",
+            "hp": 4469.615024000001,
+            "max": 4469.615024000001,
+            "size": [
+              148,
+              152
+            ],
+            "pool": 4469.615024000001,
+            "dead": false
+          }
+        },
+        {
+          "name": "normal ace takes over the same live boss encounter",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal giant ace retains real damage and native hit feedback",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "flash": 0.16,
+            "pixels": 11967
+          }
+        },
+        {
+          "name": "normal ace flash expires normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "normal only the ace defeat awards the native Stage6 boss clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard physical bay opens and launches real elite fighter actors",
+          "passed": true,
+          "data": {
+            "phase": "fight",
+            "bay": {
+              "mode": "hold",
+              "t": 0.5166666666666666,
+              "open": 1,
+              "launched": 5,
+              "next": 0.5
+            },
+            "open": true,
+            "jets": 5,
+            "live": 5,
+            "art": [
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing"
+            ],
+            "events": [
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 3.9166666666666576,
+                "count": 1,
+                "alive": 1
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 4.433333333333323,
+                "count": 2,
+                "alive": 2
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 4.949999999999988,
+                "count": 3,
+                "alive": 3
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 5.466666666666653,
+                "count": 4,
+                "alive": 4
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 5.983333333333317,
+                "count": 5,
+                "alive": 5
+              }
+            ]
+          }
+        },
+        {
+          "name": "hard bay closes and carrier retains its south departure and scaled return",
+          "passed": true,
+          "data": {
+            "poses": [
+              10,
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1,
+              0
+            ],
+            "phases": [
+              "fight",
+              "leave",
+              "flyover"
+            ],
+            "cap": 5,
+            "alive": 5,
+            "jets": 5,
+            "shots": 239,
+            "moving": true
+          }
+        },
+        {
+          "name": "hard deployed fighter actors move and remain bounded by the wing cap",
+          "passed": true,
+          "data": {
+            "poses": [
+              10,
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1,
+              0
+            ],
+            "phases": [
+              "fight",
+              "leave",
+              "flyover"
+            ],
+            "cap": 5,
+            "alive": 5,
+            "jets": 5,
+            "shots": 239,
+            "moving": true
+          }
+        },
+        {
+          "name": "hard launched elite fighters independently fire native attacks",
+          "passed": true,
+          "data": 239
+        },
+        {
+          "name": "hard intact fan visibly flashes on actual damage",
+          "passed": true,
+          "data": {
+            "pixels": 1526,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "hard broken fan smokes, repeatedly explodes and causes bounded momentum",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "other": true,
+            "smoke": 2799,
+            "burst": 1687,
+            "drift": 2.701856831293867,
+            "velocity": 3.6025214167814394
+          }
+        },
+        {
+          "name": "hard fire and smoke follow the actual fan after hull translation",
+          "passed": true,
+          "data": {
+            "count": 4,
+            "attached": true
+          }
+        },
+        {
+          "name": "hard reactor stays protected while a fan or missile rack survives",
+          "passed": true,
+          "data": {
+            "protected": true,
+            "parts": [
+              "R",
+              "rackL",
+              "rackR"
+            ],
+            "target": false
+          }
+        },
+        {
+          "name": "hard final reactor hatch has its own protected opening animation",
+          "passed": true,
+          "data": {
+            "protected": true,
+            "open": 0.4705882352941174,
+            "targets": []
+          }
+        },
+        {
+          "name": "hard completed final hatch exposes the animated core target",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard actual J gun damages the Harrier core",
+          "passed": true,
+          "data": {
+            "hp": 383.5499999999999,
+            "before": 420
+          }
+        },
+        {
+          "name": "hard reactor destruction starts carrier fall without ending the stage",
+          "passed": true,
+          "data": {
+            "same": true,
+            "dead": false,
+            "stageClear": false,
+            "fall": true,
+            "mode": "death",
+            "hp": 1,
+            "core": 383.5499999999999
+          }
+        },
+        {
+          "name": "hard original giant blue Nightwing emerges from the falling carrier",
+          "passed": true,
+          "data": {
+            "ace": true,
+            "name": "NIGHTWING ACE",
+            "stageClear": false,
+            "mode": "death",
+            "hp": 4916.576526400001,
+            "max": 4916.576526400001,
+            "size": [
+              148,
+              152
+            ],
+            "pool": 4916.576526400001,
+            "dead": false
+          }
+        },
+        {
+          "name": "hard ace takes over the same live boss encounter",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard giant ace retains real damage and native hit feedback",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "flash": 0.16,
+            "pixels": 11991
+          }
+        },
+        {
+          "name": "hard ace flash expires normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "hard only the ace defeat awards the native Stage6 boss clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious physical bay opens and launches real elite fighter actors",
+          "passed": true,
+          "data": {
+            "phase": "fight",
+            "bay": {
+              "mode": "hold",
+              "t": 0.5166666666666666,
+              "open": 1,
+              "launched": 5,
+              "next": 0.5
+            },
+            "open": true,
+            "jets": 5,
+            "live": 5,
+            "art": [
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing",
+              "xelite_hivewing"
+            ],
+            "events": [
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 3.9166666666666576,
+                "count": 1,
+                "alive": 1
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 4.433333333333323,
+                "count": 2,
+                "alive": 2
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 4.949999999999988,
+                "count": 3,
+                "alive": 3
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 5.466666666666653,
+                "count": 4,
+                "alive": 4
+              },
+              {
+                "event": "jet-launch",
+                "mini": false,
+                "t": 5.983333333333317,
+                "count": 5,
+                "alive": 5
+              }
+            ]
+          }
+        },
+        {
+          "name": "furious bay closes and carrier retains its south departure and scaled return",
+          "passed": true,
+          "data": {
+            "poses": [
+              10,
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1,
+              0
+            ],
+            "phases": [
+              "fight",
+              "leave",
+              "flyover"
+            ],
+            "cap": 5,
+            "alive": 5,
+            "jets": 5,
+            "shots": 278,
+            "moving": true
+          }
+        },
+        {
+          "name": "furious deployed fighter actors move and remain bounded by the wing cap",
+          "passed": true,
+          "data": {
+            "poses": [
+              10,
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1,
+              0
+            ],
+            "phases": [
+              "fight",
+              "leave",
+              "flyover"
+            ],
+            "cap": 5,
+            "alive": 5,
+            "jets": 5,
+            "shots": 278,
+            "moving": true
+          }
+        },
+        {
+          "name": "furious launched elite fighters independently fire native attacks",
+          "passed": true,
+          "data": 278
+        },
+        {
+          "name": "furious intact fan visibly flashes on actual damage",
+          "passed": true,
+          "data": {
+            "pixels": 1526,
+            "flash": 0.16,
+            "damage": 1
+          }
+        },
+        {
+          "name": "furious broken fan smokes, repeatedly explodes and causes bounded momentum",
+          "passed": true,
+          "data": {
+            "dead": true,
+            "other": true,
+            "smoke": 5358,
+            "burst": 3080,
+            "drift": 2.701856831293867,
+            "velocity": 3.6025214167814394
+          }
+        },
+        {
+          "name": "furious fire and smoke follow the actual fan after hull translation",
+          "passed": true,
+          "data": {
+            "count": 4,
+            "attached": true
+          }
+        },
+        {
+          "name": "furious reactor stays protected while a fan or missile rack survives",
+          "passed": true,
+          "data": {
+            "protected": true,
+            "parts": [
+              "R",
+              "rackL",
+              "rackR"
+            ],
+            "target": false
+          }
+        },
+        {
+          "name": "furious final reactor hatch has its own protected opening animation",
+          "passed": true,
+          "data": {
+            "protected": true,
+            "open": 0.4705882352941174,
+            "targets": []
+          }
+        },
+        {
+          "name": "furious completed final hatch exposes the animated core target",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious actual J gun damages the Harrier core",
+          "passed": true,
+          "data": {
+            "hp": 463.5499999999999,
+            "before": 500
+          }
+        },
+        {
+          "name": "furious reactor destruction starts carrier fall without ending the stage",
+          "passed": true,
+          "data": {
+            "same": true,
+            "dead": false,
+            "stageClear": false,
+            "fall": true,
+            "mode": "death",
+            "hp": 1,
+            "core": 463.5499999999999
+          }
+        },
+        {
+          "name": "furious original giant blue Nightwing emerges from the falling carrier",
+          "passed": true,
+          "data": {
+            "ace": true,
+            "name": "NIGHTWING ACE",
+            "stageClear": false,
+            "mode": "death",
+            "hp": 5810.4995312,
+            "max": 5810.4995312,
+            "size": [
+              148,
+              152
+            ],
+            "pool": 5810.4995312,
+            "dead": false
+          }
+        },
+        {
+          "name": "furious ace takes over the same live boss encounter",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious giant ace retains real damage and native hit feedback",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "flash": 0.16,
+            "pixels": 11100
+          }
+        },
+        {
+          "name": "furious ace flash expires normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "furious only the ace defeat awards the native Stage6 boss clear",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No native page, console, draw or missing-asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "passed": 82,
+      "failed": 0,
+      "errors": [],
+      "rows": {
+        "normal": {
+          "damage": 1,
+          "flash": 0.16,
+          "pixels": 11967
+        },
+        "hard": {
+          "damage": 1,
+          "flash": 0.16,
+          "pixels": 11991
+        },
+        "furious": {
+          "damage": 1,
+          "flash": 0.16,
+          "pixels": 11100
+        }
+      },
+      "sourceSha256": "d32aadde04d279b0653015faff5983b6844d8c00df5956686d455ee747916ff8"
+    },
+    "delivered_review": {
+      "checks": [
+        {
+          "name": "Review uses the actual Stage6 miniboss, full playfield and isolated saves",
+          "passed": true,
+          "data": {
+            "native": true,
+            "radio": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+            "age": 0.9500000000000013,
+            "draws": 58,
+            "field": {
+              "x": 386.5625,
+              "y": 0,
+              "w": 826.875,
+              "h": 882
+            },
+            "mode": "sides",
+            "isolated": true
+          }
+        },
+        {
+          "name": "Miniboss dialogue is visible in the actual side HUD and advances",
+          "passed": true,
+          "data": {
+            "native": true,
+            "radio": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+            "age": 0.9500000000000013,
+            "draws": 58,
+            "field": {
+              "x": 386.5625,
+              "y": 0,
+              "w": 826.875,
+              "h": 882
+            },
+            "mode": "sides",
+            "isolated": true
+          }
+        },
+        {
+          "name": "Combat continues while the miniboss caption is displayed",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Miniboss energy core takes damage and flashes actual pixels",
+          "passed": true,
+          "data": {
+            "hp": 1,
+            "flash": 0.16,
+            "pixels": 1396,
+            "open": true
+          }
+        },
+        {
+          "name": "Miniboss reactor hit flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Fan review produces attached smoke, explosions and momentum",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Replacement jets reuse a vacant slot without healing survivors or exceeding cap",
+          "passed": true,
+          "data": {
+            "slot": 1,
+            "expected": 1,
+            "count": 4,
+            "cap": 4,
+            "unique": 4,
+            "same": true
+          }
+        },
+        {
+          "name": "Harrier energy core takes damage and flashes actual pixels",
+          "passed": true,
+          "data": {
+            "damage": 1,
+            "flash": 0.16,
+            "pixels": 1734,
+            "open": 1
+          }
+        },
+        {
+          "name": "Harrier reactor hit flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Ace review follows the real falling-carrier transition",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Co-op miniboss retains live captions for both native HUD rows",
+          "passed": true,
+          "data": {
+            "seats": 2,
+            "pilots": [
+              "cole",
+              "decker"
+            ],
+            "rows": 2,
+            "line": "DESTROY ALL SIX LASER BATTERIES TO OPEN THE REACTOR.",
+            "t": 0.8833333333333344
+          }
+        },
+        {
+          "name": "Compact HUD also displays live Stage6 radio",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "StageX legacy Harrier and the alternate Rebel branch keep their own controllers",
+          "passed": true,
+          "data": {
+            "stageX": true,
+            "rebel": true
+          }
+        },
+        {
+          "name": "Review has no native page, console, draw or missing-asset errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "passed": 14,
+      "failed": 0,
+      "errors": []
+    }
+  },
+  "core": {
+    "passed_ok_lines": 8785,
+    "errors": 0,
+    "exit_code": 0,
+    "final_banner": true,
+    "baseline_passed_ok_lines": 8785,
+    "log": "_shots/review_levels456_1018/core.log"
+  },
+  "unchanged": {
+    "assets/game.js": true,
+    "_BUILD_SOURCE/test_fl.js": true,
+    "assets/hammer_counter_1017.js": true,
+    "assets/lightning_depth_1018.js": true,
+    "assets/hammer_finale_1017.js": true
+  },
+  "source_sha256": {
+    "assets/siege_console_1012.js": "2cac28884e1df0aec21162536f80fd878ea6b680f52ee614e8794ef90e8bf5af",
+    "assets/stage6_carrier_1013.js": "3184b04a29dbfa075035df0d402c4263e458fe953e15505424921ce1266eb25c",
+    "assets/stage6_roster_1017.js": "3fcd3fb8da3e45c7cd659c35e898d8a6f0502185dda431edf07542c7c80fcb71",
+    "assets/stage6_reactor_1018.js": "d32aadde04d279b0653015faff5983b6844d8c00df5956686d455ee747916ff8",
+    "index.html": "8c57de48cd83aa0530994b7db376791141ecf8014b10f63d46cf3c758d184e90",
+    "_BUILD_SOURCE/probe_playthrough_1018.py": "125897af79930f2c1e445504d65b444c19fcecd9b995d9390a662fcc699241c0"
+  },
+  "syntax_checks": [
+    "assets/game.js",
+    "assets/siege_console_1012.js",
+    "assets/stage6_carrier_1013.js",
+    "assets/stage6_roster_1017.js",
+    "assets/stage6_reactor_1018.js"
+  ],
+  "harness_repair": "Initial focused test timed out on a new Stage5 asset wait because native child RAF was trapped. Explicit polling=50 plus stageLoadBegin(5) fixed the harness; no production change for that timeout.",
+  "limits": [
+    "Recording omits Stage4 highway/miniboss and the alternate Rebel route.",
+    "Targeted native regressions do not constitute a new full-campaign playthrough at every difficulty."
+  ],
+  "review_revision": "playthrough-fixes-1018",
+  "commit_or_push": false,
+  "prior_verification_gap": "Earlier core checks accepted any visible hit-pixel change and expiry; the rectangle passed. New checks exclude surrounding-hull changes and require surviving blue core pixels. Embedded helper and edge-hull radar cases were also previously absent."
+}

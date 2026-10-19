@@ -71,7 +71,7 @@ const AIR13_DRAW=drawEnemy;
 drawEnemy=function(e){
  if(e._vp12||e.dead||e._dyingT!=null||run.stage===1)return AIR13_DRAW.apply(this,arguments);
  const d=AIR13.aliases.get(e.type),source=d?.sourceKeys?.[e.type];
- if(!d||!source||!XART.rdy(source)||e.hp<e.maxhp*.5)return AIR13_DRAW.apply(this,arguments);
+ if(!d||!source||!XART.rdy(source)||(run.stage!==4&&e.hp<e.maxhp*.5))return AIR13_DRAW.apply(this,arguments);
  const request=e._air13Motion,roll=request?.kind==='roll'||e._barrelT>0;
  if(!roll&&!request&&Math.abs(e.spin||0)<.08)return AIR13_DRAW.apply(this,arguments);
  const dur=['horizon','dreadv'].includes(e.type)?.92:.72;

@@ -58,7 +58,7 @@ try:
    p.evaluate('''()=>{er26Set(B,'recover');B._s4war.shield.rearming=false;B._s4war.shield.active=false;stage4CoreTurretSpawnMissing(B,.5);}''')
    frames(240)
    row=p.evaluate('''()=>({jets:B._s4war.coreTurrets.filter(d=>!d.dead).map(d=>({size:d.size,entry:d._noHit,phase:d._sg17?.phase,age:d._sg17?.age})),shots:SG17.shots,art:art17.a17_stormJet||0})''')
-   check(diff+' lightning guards use authored aircraft at twice Warden-helper size',len(row['jets'])==2 and all(j['size']==192 for j in row['jets']) and row['art']>0,row)
+   check(diff+' lightning guards use compact authored116px aircraft',len(row['jets'])==2 and all(j['size']==116 for j in row['jets']) and row['art']>0,row)
    check(diff+' guards finish entry and fire independently',all(not j['entry'] for j in row['jets']) and row['shots']>0,row)
    snap('sovereign-'+diff+'-large-lightning-guards')
    if diff=='hard':

@@ -1,0 +1,23 @@
+{
+  "args": {
+    "first_frame_base64": "Local actual reference ball-reference.png",
+    "last_frame_base64": "Same pinned reference",
+    "description": "FRAME FORMAT fixed256x256, physical pivot128,128, constant scale and framing, transparent margin10px. Roll this actual armored symbiote ball through one complete three-dimensional forward tumble, showing real surface rotation. The red-eyed armor pods and curled limbs pass over the top, disappear behind the sphere and emerge underneath with correct changing occlusion, returning exactly to the supplied pose after360 degrees. Purple-black tendrils drag slightly then catch up. The whole ball stays pinned at the same physical pivot, same size. No translation, zoom, camera movement, flat2D picture rotation, added features, explosions, aura or background. Real newly drawn rolling orientations.",
+    "frame_count": 32,
+    "subject_description": "the actual chromium symbiote boss curled into a ball with red-eyed armor pods",
+    "initial_pose": "curled armored ball with its red reactor facing the camera",
+    "view": "side",
+    "direction": "south",
+    "no_background": true,
+    "enhance_prompt": false
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 74c4e4fd-d2a5-4534-9126-9419cffe2380\njob_id: 74c4e4fd-d2a5-4534-9126-9419cffe2380\ndescription: FRAME FORMAT fixed256x256, physical pivot128,128, constant scale and framing, transparent margin10px. Roll this actual armored symbiote ball through one complete three-dimensional forward tumble, showing real surface rotation. The red-eyed armor pods and curled limbs pass over the top, disappear behind the sphere and emerge underneath with correct changing occlusion, returning exactly to the supplied pose after360 degrees. Purple-black tendrils drag slightly then catch up. The whole ball stays pinned at the same physical pivot, same size. No translation, zoom, camera movement, flat2D picture rotation, added features, explosions, aura or background. Real newly drawn rolling orientations.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"74c4e4fd-d2a5-4534-9126-9419cffe2380\")\nasset_id: cd43e60f-e7b0-508b-9588-44b7b30d0518\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  }
+}

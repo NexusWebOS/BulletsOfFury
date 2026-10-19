@@ -1,0 +1,186 @@
+{
+  "job": "ef9017f2-aef2-4f32-8a9e-6c57255b0878",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "scale": 1,
+  "records": [
+    {
+      "index": 0,
+      "bounds": [
+        52,
+        69,
+        238,
+        194
+      ],
+      "hash": "76938a3abc3d1a19566b01aa315abe0920b6801c20d2c5888e63214f122f37c7"
+    },
+    {
+      "index": 1,
+      "bounds": [
+        54,
+        68,
+        235,
+        193
+      ],
+      "hash": "adab56b6ef47306530defe8dc025e66a14077f24325fa18782389454eecc3d8d"
+    },
+    {
+      "index": 2,
+      "bounds": [
+        54,
+        69,
+        205,
+        193
+      ],
+      "hash": "db04c5530d8eaef90c7f1807565ae8b943ffcccb04cdde527b82b4c4dbbb4719"
+    },
+    {
+      "index": 3,
+      "bounds": [
+        54,
+        67,
+        195,
+        195
+      ],
+      "hash": "a20b41830d57f1960692b8e5e2510557690d0a1e2934d8ff66b417543114beeb"
+    },
+    {
+      "index": 4,
+      "bounds": [
+        17,
+        64,
+        195,
+        193
+      ],
+      "hash": "c30a8368845273688188a7abf648e4aaf82c49b8beab4933c192ec096321e59a"
+    },
+    {
+      "index": 5,
+      "bounds": [
+        21,
+        70,
+        195,
+        193
+      ],
+      "hash": "f72654bc11006f23c675702cd4b427dbbeca16e8864b7397e24fecb6af901cb8"
+    },
+    {
+      "index": 6,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "019b44e24ef0af997ceca73ff66002e6084a1636a3ebefc01b38984a1f4ac506"
+    },
+    {
+      "index": 7,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "220c02360df315404298758fe9cb5620d9e5756684dbcd6a0ea4d5f9af49e8af"
+    },
+    {
+      "index": 8,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "21da3cb18bb040bfb4ebb96d81ab3220036160ccd10f438ec151b171cb3bfb91"
+    },
+    {
+      "index": 9,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "1999b0820dae37c846ecd578d4f54d1cc61fa192895cf5148736540b09f40fda"
+    },
+    {
+      "index": 10,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "f134d70025b96e3bba8784b15142ae9af70c7c6d8a39d52f93fd45eeb8485c7d"
+    },
+    {
+      "index": 11,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "49235e2929cc87f954db8d31d57721fd097d2f5d14c7477311c64d878939123e"
+    },
+    {
+      "index": 12,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "78a62e6009bdbb5343c7efa844b0d812af93a432be5a14ca6d634a3cb7428e5e"
+    },
+    {
+      "index": 13,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "966ee5a51150765bc7322cf184ef55430a5cf0ac7b5c6c5c155c3be274c58e71"
+    },
+    {
+      "index": 14,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "86b31aacf37b821a026526b5f1e9949ab27a8b02fe7be9d05d0d2407b747f812"
+    },
+    {
+      "index": 15,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "6edb0042e859952dfb3eda61c9fce6e6a2b680b43ba32d8d911cef24d6dc3876"
+    },
+    {
+      "index": 16,
+      "bounds": [
+        26,
+        65,
+        195,
+        193
+      ],
+      "hash": "9df53a37d18b7bcbbc587344c0e3386acb9bc31062aa80ab43ba919f301eb5db"
+    }
+  ],
+  "status": "REJECTED: hammer moves to the opposite side and settles across the shoulders; no overhead hold. Most later frames repeat a near-static pose. No runtime/manifest integration.",
+  "charged_usd": 0.0434
+}

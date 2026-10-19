@@ -1,0 +1,56 @@
+{
+  "pad": {
+    "key": "hm17_pad",
+    "path": "assets/game/levels/stage_04/enemies/highway_missiles_1017/pad.png",
+    "w": 128,
+    "h": 128,
+    "pivot": [
+      64,
+      80
+    ],
+    "scale": 0.55,
+    "ink": [
+      3,
+      8,
+      123,
+      119
+    ],
+    "sha256": "e4e997a31ef0b8d758863a50f78fc14ede4dfde40c173457a4131c7b6c2ff87a"
+  },
+  "lamps": {
+    "key": "hm17_lamps",
+    "path": "assets/game/levels/stage_04/enemies/highway_missiles_1017/lamps.png",
+    "w": 128,
+    "h": 128,
+    "pivot": [
+      64,
+      80
+    ],
+    "scale": 0.55,
+    "ink": [
+      3,
+      8,
+      123,
+      119
+    ],
+    "sha256": "e2b5a99e0ddd70e3c26d691171d420dcb5e80597329149be2c6a0814c4a410c6"
+  },
+  "missile": {
+    "key": "hm17_missile",
+    "path": "assets/game/levels/stage_04/enemies/highway_missiles_1017/missile.png",
+    "w": 64,
+    "h": 192,
+    "pivot": [
+      32,
+      96
+    ],
+    "scale": 0.64,
+    "ink": [
+      8,
+      4,
+      58,
+      188
+    ],
+    "sha256": "185ba08dc8c7b8a04323da7c11d2592d66c6ce338731899ef63f27370a1275c1"
+  }
+}

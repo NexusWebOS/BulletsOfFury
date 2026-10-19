@@ -22,14 +22,6 @@ spaceVolleyAutoTick=function(dt,firing){if(ap10Charging())return;return AP10.bas
 // must not turn a spread weapon into a homing weapon.
 const AP10_STEER=fb10Steer;
 fb10Steer=function(b,dt){if(b.kind==='spread'){b._steerX=null;return;}return AP10_STEER.apply(this,arguments);};
-// All MG upgrades use at most the two physical wing lanes. Other specials and
-// independent helper guns remain separate emitters.
-pShoot=function(){const n=pBullets.length,r=AP10.base.shoot.apply(this,arguments);
- if(!spaceWeaponsActive()&&[0,7].includes(run.weapon)&&!specialActive()){
-  const born=pBullets.slice(n).filter(b=>b.kind==='mg'&&!b._child&&!b.ally);
-  if(born.length>2){const order=born.slice().sort((a,b)=>a.x-b.x),keep=new Set([order[0],order.at(-1)]);
-   pBullets=pBullets.filter((b,i)=>i<n||!born.includes(b)||keep.has(b));}
- }return r;};
 // Same-element bosses resist the whole damaging round, including orb shards.
 // Keep the existing critical weakness reactions and ordinary enemy tuning.
 elementalDamageResult=function(t,role,b,dmg,x,y){const r=AP10.base.elem.apply(this,arguments);
@@ -144,6 +136,6 @@ cmap2Bob=function(k){return AP10_MAP.bob.apply(this,arguments)+(k===sselCursor?M
 cmap2BarDraw=function(dt){if(cmap2.focus!=='bar'&&!campPause)return;return AP10_MAP.bar.apply(this,arguments);};
 sselShipDraw=function(){
  if(!sselShip)return;const sh=sselShip,pk=_pilotKey(),im=map4eShipFrame('ship_'+pk,sh.head)||map4eShipFrame('ship_cole',sh.head);if(!im)return;
- const size=40/(cmap2On()?Math.max(.25,cmap2.cam.z):1),k=size/Math.max(im.width,im.height);
+ const size=(typeof cf9ShipSize==='function'?cf9ShipSize():40)/(cmap2On()?Math.max(.25,cmap2.cam.z):1),k=size/Math.max(im.width,im.height);
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,sh.x-im.width*k/2,sh.y-im.height*k/2,im.width*k,im.height*k);ctx.restore();
 };

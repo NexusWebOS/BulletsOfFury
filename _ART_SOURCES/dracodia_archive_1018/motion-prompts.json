@@ -1,0 +1,38 @@
+{
+  "bastion_download": [
+    "bastion",
+    "The intact ship digitally DISASSEMBLES: green scan bars pass over it, individual armor plates fragment into glowing binary blocks and stream upward, leaving scattered tiny green and purple code pixels, then only sparse isolated pixels. Camera and ship center stay completely fixed, no flight, rotation, zoom or extra objects. Body identity remains recognizable until dissolved."
+  ],
+  "camo_download": [
+    "camo",
+    "The intact ship digitally DISASSEMBLES: green scan bars pass over it, individual thorn armor plates and red batteries fragment into luminous binary blocks and stream upward, leaving sparse green and red code pixels. Fixed camera and immutable centered ship, no rotation, flight or zoom. Preserve its physical identity."
+  ],
+  "halberd_download": [
+    "halberd",
+    "The intact broad gunship digitally DISASSEMBLES: green scan bars pass over it, blue metal wing panels fragment into luminous binary blocks and rise upward in orderly data columns, ending in sparse blue and green pixels. Completely fixed camera, size, center and identity. No flight, rotation or zoom."
+  ],
+  "transfer_loop": [
+    "transfer",
+    "Data blocks rain downward in broken streams while bright emerald scan bars sweep top to bottom, data fragments burst outward then converge, white-green pixels flicker at assembly points. A seamless animated digital download field, centered on fixed transparent canvas with no ship, character, floor, frame or camera motion."
+  ],
+  "bomb_burst_v2": [
+    "bomb",
+    "A SINGLE explosive detonation: the casing shatters immediately into many irregular chrome fragments, a dense emerald-white PLASMA CLOUD balloons outward, violet-black curling turbulent smoke, organic green fire tendrils and tiny binary pixel embers. The initial flash is brief, then actual rolling energy volume and scattered fragments expand and fade to empty transparent air. No star shapes, straight pointed rays, geometric icons, circular glyph grids, reset, surviving bomb or camera movement. All fragments stay inside the canvas."
+  ],
+  "bomb_charge": [
+    "bomb",
+    "The same compact code bomb charges and pulsates in a seamless loop: green reactor flickers brighter, purple shell seams surge, small binary code sparks orbit close to the casing. Physical casing stays centered at exactly the same scale and pose, no translation, spin, extra bombs or background."
+  ],
+  "bomb_burst": [
+    "bomb",
+    "This code bomb explodes into a violent emerald white core flash, violet-black energy shockwave, fractured chrome casing fragments and thousands of little binary code sparks, then scattered fading green sparks. An actual compact pixel-art explosion expanding from the fixed center, all fragments stay in frame. Transparent background; no intact bomb remaining at the end, no scene or UI."
+  ],
+  "lightning_loop": [
+    "lightning",
+    "Seamless loop of this single curling lightning bolt crackling and forking rapidly, internal blue-white current travels along its curved tail and violet sparks flicker. Keep the same centered crescent silhouette, size, pivot and facing; no travel, zoom or extra projectiles."
+  ],
+  "storm_loop": [
+    "storm",
+    "Seamless slow swirling void turbulence: dark vapor curls circularly, dim green circuit sparks blink through it and code shards drift within the clouds. Preserve a mostly empty transparent center. No borders, walls, scenery, characters or camera motion."
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "name": "bastion",
+    "exact_module_reassembly": true,
+    "format": [
+      320,
+      320
+    ],
+    "pivot": [
+      160,
+      160
+    ],
+    "muzzles": {
+      "left": [
+        103,
+        215
+      ],
+      "right": [
+        218,
+        215
+      ],
+      "core": [
+        160,
+        225
+      ]
+    }
+  },
+  {
+    "name": "camo",
+    "exact_module_reassembly": true,
+    "format": [
+      320,
+      320
+    ],
+    "pivot": [
+      160,
+      160
+    ],
+    "muzzles": {
+      "left": [
+        103,
+        214
+      ],
+      "right": [
+        216,
+        214
+      ],
+      "core": [
+        160,
+        230
+      ]
+    }
+  },
+  {
+    "name": "halberd",
+    "exact_module_reassembly": true,
+    "format": [
+      320,
+      320
+    ],
+    "pivot": [
+      160,
+      160
+    ],
+    "muzzles": {
+      "left": [
+        94,
+        191
+      ],
+      "right": [
+        225,
+        192
+      ],
+      "core": [
+        160,
+        212
+      ]
+    }
+  }
+]

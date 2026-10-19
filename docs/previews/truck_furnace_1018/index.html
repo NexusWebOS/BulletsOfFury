@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Missile truck and Furnace</title><link rel="icon" href="data:,">
+<style>
+body{margin:0;background:#080f15;color:#e3e9ec;font:15px system-ui}main{max-width:1700px;margin:auto;padding:16px}h1{font-size:22px;color:#ffc26d;margin:0 0 12px}nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 12px}button,select{background:#172a37;color:#fff2ce;border:1px solid #7e7253;padding:9px;border-radius:4px}iframe{display:block;width:100%;height:calc(100vh - 190px);min-height:540px;border:1px solid #6a5b3b;background:black}a{color:#a8d9ee}p{color:#b5c3cc;margin:10px 0}#status{color:#f1cb8b}
+</style>
+<main>
+<h1>Missile truck and Furnace Tyrant</h1>
+<nav>
+<label>Scene <select id="scene"><option value="truck">Level 1 · Missile truck</option><option value="black">Level 1 · Black missile truck</option><option value="arms">Level 2 · Arms and fire walls</option><option value="core">Level 2 · Core and side geysers</option><option value="head">Level 2 · Spinning eye lasers</option></select></label>
+<label>Difficulty <select id="difficulty"><option selected>normal</option><option>hard</option><option>furious</option></select></label>
+<button id="restart">Restart</button><button id="hit">Hit truck</button><button id="rack">Destroy one rack</button>
+<span id="status">Loading the actual game…</span>
+</nav>
+<iframe id="game" title="Actual game at its regular field of view" src="../../../index.html?revision=truck-furnace-1018" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p id="description">The actual Stage 1 truck uses an eight-pose chassis and a sixteen-pose launcher sequence. Each rack can be destroyed separately. Click inside the game to play; review invulnerability is enabled.</p>
+<p><a href="../../../_shots/truck_furnace_1018/hull-onion.png">Chassis onion</a> · <a href="../../../_shots/truck_furnace_1018/launcher-onion.png">Launcher onion</a> · <a href="../../../_shots/truck_furnace_1018/native/results.json">Native verification</a></p>
+</main>
+<script>
+const game=document.querySelector('#game'),scene=document.querySelector('#scene'),difficulty=document.querySelector('#difficulty'),status=document.querySelector('#status');let loaded=false;
+const params=new URLSearchParams(location.search);if(params.has('scene'))scene.value=params.get('scene');if(params.has('difficulty'))difficulty.value=params.get('difficulty');
+const sleep=n=>new Promise(r=>setTimeout(r,n));
+async function begin(){
+ if(!loaded)return;status.textContent='Preparing encounter…';
+ const s=scene.value,d=difficulty.value,truck=s==='truck'||s==='black';
+ game.contentWindow.eval(`(()=>{pilotIndex=PILOTS.findIndex(q=>q.key==='cole');diffKey=${JSON.stringify(d)};DIFF=DIFFS[diffKey];run.mode='arcade';startRun(${truck?1:2});BOFCinematicDirector.cancel();story=fb2Talk=s6Opening=null;setState(GS.PLAY);player.reset();player.invuln=99999;Input.keys.j=false;stagePlan=[];enemies=[];eBullets=[];pBullets=[];subBossActive=bossActive=false;subBoss=boss=null;subBossDone=true;window.reviewTruck18=null;})()`);
+ for(let i=0;i<500;i++){if(game.contentWindow.eval(`(()=>{stageLoadTick();return stageLoadReady(${truck?1:2});})()`))break;await sleep(30);}
+ if(truck){
+  game.contentWindow.eval(`(()=>{const cfg=_levelCfg(),im=XART.get(cfg.master),range=im.naturalHeight-VH;let spot=null;
+   for(let y=1200;y<im.naturalHeight-VH-100&&!spot;y+=100)for(let x=160;x<worldWidth()-160&&!spot;x+=32)if([-50,0,50].every(dx=>[-70,0,70].every(dy=>tankDrivable(x+dx,y+180+dy,false))))spot={x,y};
+   if(!spot)throw Error('Truck land is not ready');mapScroll=range-spot.y;drawBG(0);_lastScrollDy=0;window.reviewTruck18=spawnEnemy(${JSON.stringify(s==='black'?'s1truckmissile_b':'s1truckmissile')},spot.x,150,{});reviewTruck18.x=spot.x;reviewTruck18.y=150;reviewTruck18._lvlY=spot.y+150;player.x=spot.x;player.y=VH*.86;camX=clamp(player.x-VW/2,0,worldWidth()-VW);mt18Warm();})()`);
+ }else game.contentWindow.eval(`(()=>{spawnBoss('infernoreaver');furnaceSync(boss);furnaceEnter(boss,${JSON.stringify(s)});boss._fz.trans=0;boss._mwStun=0;if(boss._mwBarrier){boss._mwBarrier.active=false;boss._mwBarrier.breakT=0;}player.x=worldWidth()/2;player.y=VH*.84;s2VentT=2.3;f17Warm();})()`);
+ game.contentWindow.eval('player.invuln=99999');
+ document.querySelector('#description').textContent=truck?'Two independent launcher racks aim, warn, release a committed three-missile burst and reload. Destroy a rack to silence it. Click inside the game to play; review invulnerability is enabled.':'The native flamethrower remains. Fire walls replace the red zone columns; mountain-side geysers show direction arrows and impact asterisks. The head completes one turn in 5.8s Normal, 4s Hard and 3s Furious. Review invulnerability is enabled.';
+ document.querySelector('#hit').disabled=document.querySelector('#rack').disabled=!truck;
+ status.textContent=d+' · '+scene.selectedOptions[0].textContent;game.contentWindow.focus();
+}
+document.querySelector('#restart').onclick=begin;scene.onchange=begin;difficulty.onchange=begin;
+document.querySelector('#hit').onclick=()=>game.contentWindow.eval(`(()=>{const e=reviewTruck18;if(!e||e.dead)return;const p=e._mt18.parts.find(p=>p.hp>0);e._mt18.direct=p?p.id:'hull';_dmgBullet={kind:'bullet',x:e.x,y:e.y};hitEnemy(e,1);})()`);
+document.querySelector('#rack').onclick=()=>game.contentWindow.eval(`(()=>{const e=reviewTruck18,p=e?._mt18?.parts.find(p=>p.hp>0);if(p){e._mt18.direct=p.id;_dmgBullet={kind:'missile',x:e.x+p.dx,y:e.y+p.dy};hitEnemy(e,p.hp+.1);}})()`);
+game.onload=async()=>{for(let i=0;i<500;i++){if(game.contentWindow.eval('window.__bofFrames>4&&typeof MT18!=="undefined"')){loaded=true;await begin();return;}await sleep(50);}status.textContent='Game loading timed out.';};
+</script>
+</html>

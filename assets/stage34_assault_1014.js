@@ -377,7 +377,7 @@ drawEnemy=function(e){if(!e._sa14Escort)return SA14.base.enemy.apply(this,argume
 };
 mr27Blit=function(skin,cell,p,flash,form,owner){
  const A=owner?._sa14,r=SA14.base.blit.call(this,skin,cell,p,flash,form,owner);
- if(r&&A&&A.glow>.50){const color=Math.floor(A.age*22)%2?'#83d9ff':'#ffffff',im=mr27Cell(skin,cell,color);
+ if(r&&A&&A.glow>.50){const color=Math.floor((owner._er26?.clock||A.age)*22)%2?'#83d9ff':'#ffffff',im=mr27Cell(skin,cell,color);
   if(im){ctx.save();ctx.globalAlpha=(A.glow-.50)*.95;ctx.translate(p.x,p.y);ctx.rotate(p.rot||0);ctx.drawImage(im,-p.w/2,-p.h/2,p.w,p.h);ctx.restore();}}
  return r;
 };
@@ -397,8 +397,8 @@ mr27Over=function(b){if(!sa14Storm(b)||!b._sa14)return SA14.base.over.apply(this
    ctx.drawImage(XART.get(key),b.x-size/2,(b._drawY??b.y)-size/2,size,size);ctx.restore();}
  }
  // Keep all four objective plates above the helpers that sit between them.
- if(!A.depth)for(const d of b._s4war.coreTurrets)if(!d.dead&&d.materialize>.1)mr27HelperDraw(b,d);
- if(H&&(H.active||H.rearming)){for(const n of H.nodes)if(!n.dead){mr27Blit('storm',5,{x:n.x,y:n.y,w:54*A.scale,h:54*A.scale,rot:0},n.flash,null,b);
+ for(const d of b._s4war.coreTurrets)if(!d.dead&&(d.materialize>.1||d._sg17?.move==='entry'))mr27HelperDraw(b,d);
+ if(H&&(H.active||H.rearming)){for(const n of H.nodes)if(!n.dead){mr27Blit('storm',5,{x:n.x,y:n.y,w:54*A.scale,h:54*A.scale,rot:(n.spin||0)/16*TAU},n.flash,null,b);
   mr27CoreDraw(b,{x:n.x,y:n.y,w:15*A.scale,h:34*A.scale,rot:(n.spin||0)/16*TAU});
   av3Beam(ctx,n.x,n.y,Math.atan2(b.y-n.y,b.x-n.x),Math.hypot(b.x-n.x,b.y-n.y),7,'lightning',b._mr27.clock,.65,false);
  }}
@@ -408,6 +408,10 @@ function sa14BlueArc(x,y,angle,length,clock,alpha){if(!XART.rdy('cfx_stage4_chai
  const im=XART.get('cfx_stage4_chain_lightning'),f=Math.floor(clock*18)%8,w=length*256/384;
  ctx.save();ctx.translate(x,y);ctx.rotate(angle-Math.PI/2);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=alpha;
  ctx.drawImage(im,(f%4)*256,Math.floor(f/4)*384,256,384,-w/2,0,w,length);ctx.restore();
+}
+function sa14ChargeFx(b,p,glow,t){
+ for(let i=0;i<4;i++){const angle=t*1.5+i*TAU/4;sa14BlueArc(p.x,p.y,angle,50+glow*85,t+i*.13,.4+glow*.4);}
+ const key='s4w_lightning_ball_'+Math.floor(t*18)%16;if(XART.rdy(key)){const size=24+glow*42;ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-size/2,p.y-size/2,size,size);ctx.restore();}
 }
 function sa14Draw(b){const R=b._er26,A=b._sa14;if(!A||b.dead||b.enter)return;
  const turn=A.escortTurn;
@@ -421,10 +425,7 @@ function sa14Draw(b){const R=b._er26,A=b._sa14;if(!A||b.dead||b.enter)return;
   if(R.warnings.length)combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,width:1,progress:R.warnings[0].progress,alertOnly:true,
    alertX:b.x,alertY:Math.max(PLAY.y+24,b.y-b.h*.46-22)});
  }
- if(A.glow>.02){const p=shipBossMount(b,'C'),t=R.clock;
-  for(let i=0;i<4;i++){const angle=t*1.5+i*TAU/4;sa14BlueArc(p.x,p.y,angle,50+A.glow*85,t+i*.13,.4+A.glow*.4);}
-  const key='s4w_lightning_ball_'+Math.floor(t*18)%16;if(XART.rdy(key)){const size=24+A.glow*42;ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-size/2,p.y-size/2,size,size);ctx.restore();}
- }
+ if(A.glow>.02)sa14ChargeFx(b,shipBossMount(b,'C'),A.glow,R.clock);
  if(R.mode==='sa14-lock'&&R.t<R.warm){const T=R._sa14,k=clamp(R.t/R.warm,0,1),orbit=R.t<R.warm-.4?(1-k)*22:0;
   const x=T.aim.x+Math.cos(R.t*TAU*1.4)*orbit,y=T.aim.y+Math.sin(R.t*TAU*1.4)*orbit;
   ph8Icon(ctx,(orbit?'retm_':'retmb_')+Math.floor(R.t*16)%4,x,y,56);
