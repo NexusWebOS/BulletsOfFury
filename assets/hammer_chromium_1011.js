@@ -1,5 +1,5 @@
 "use strict";
-/* Mike 1011 recording, 38:02: bottom-half Chromium columns and an anchored SIDE SLIDE.
+/* Mike 1011 recording, 38:02: bottom-half Chromium columns and an committed JUMP STRIKE.
    Reuses the authored Chromium beam and intact sixteen-pose Hammer banks. */
 const HC11={version:1,events:[],draws:{beam:0,counter:0},base:{impact:hammerStormImpact,tick:hammerStormTick,
  wave:hammerStormWaveTick,shape:hammerStormSpikeShape,hits:hammerStormSpikeHits,spikeDraw:hammerStormSpikeDraw,
@@ -15,13 +15,13 @@ hammerStormImpact=function(b){const r=HC11.base.impact.apply(this,arguments);if(
  h.hc11Counter=null;h.hc11CounterDone=false;h.bm9Counter=null;h.bm9CounterDone=true;
  h.stormBounds.top=top;h.stormBounds.bottom=bottom;
  for(const q of h.stormWaves||[]){Object.assign(q,{hc11Beam:true,y:bottom,top,height:bottom-top,radius:17,retinaWidth:64,
-  warm:Math.max(1.2,q.warm),active:1.18,hitSeats:{}});}
+  warm:Math.max(1.2,q.warm),active:.44,hitSeats:{}});}
  hc11Log('chromium-bottom-half',{top,bottom,lanes:h.stormWaves.length});return r;
 };
 function hc11BeamShape(q){
  const start=q.split+(q.delay||0)+q.warm,dur=q.active,age=q.t-start;
  if(q.t<start||q.t>=start+dur)return null;
- const rise=.16,fade=.22,p=clamp(age/rise,0,1),out=clamp((dur-age)/fade,0,1);
+ const rise=.10,fade=.10,p=clamp(age/rise,0,1),out=clamp((dur-age)/fade,0,1);
  return {hc11Beam:true,age,dur,f:hammerChromiumFrame(age,dur),height:q.height,
   width:q.radius*2*Math.min(p,out),alpha:Math.min(1,p*2,out*2),live:age>=.10&&age<dur-.12};
 }
@@ -82,20 +82,22 @@ function hc11Landing(anchor,side){
 }
 function hc11BeginCounter(b,anchor){const h=b._hammer,preferred=anchor.x>=b.x?1:-1;
  const a=hc11Landing(anchor,preferred),z=hc11Landing(anchor,-preferred),land=z.penalty<a.penalty?z:a;
- const lock=hammerFurious()?.62:hammerHard()?.72:diffKey==='easy'?.96:.84;
- const C=h.hc11Counter={anchor:{...anchor},bank:land.bank,side:land.side,land,t:0,riseAt:.32,lockAt:.80,
-  diveAt:.80+lock,tell:1.22+lock,strikeEnd:1.58+lock,end:2.30+lock,
+ const lock=hammerFurious()?.75:hammerHard()?.80:diffKey==='easy'?1.0:.90;
+ const C=h.hc11Counter={anchor:{...anchor},bank:land.bank,side:land.side,land,t:0,riseAt:lock*.35,lockAt:lock,
+  diveAt:lock,tell:lock+.42,strikeEnd:lock+.58,end:lock+1.0,
   ox:b.x,oy:b.y,x:b.x,y:b.y,scale:1,angle:0,hitSeats:{}};
  C.sky={x:clamp(anchor.x-land.side*65,camLeftX()+55,camRightX()-55),y:Math.max(viewTopY()+72,anchor.y-115)};
  h.bm9Counter=null;h.bm9CounterDone=true;h.stormRecovery=null;
  Audio.SFX.bossWeaponCharge?.();hc11Log('upper-half-lock',{...anchor,side:C.side});return C;
 }
 function hc11Pose(C,t=C.t){const ease=p=>p*p*(3-2*p);let x=C.ox,y=C.oy,scale=1,angle=0;
- // Stay on the player's plane, sliding into the measured side-strike pose.
- // Only the separate orbital jump attack travels into the background.
- if(t<C.tell){const u=ease(clamp(t/C.diveAt,0,1));
-  x=lerp(C.ox,C.land.x,u);y=lerp(C.oy,C.land.y,u);scale=lerp(1,C.land.scale,u);angle=C.land.angle*u;}
- else if(t>=C.tell){x=C.land.x;y=C.land.y;scale=C.land.scale;angle=C.land.angle;
+ // Commit to one warned world position. The flight is a harmless arc;
+ // the authored hammer release starts only after the boss lands.
+ if(t<C.diveAt){angle=C.land.angle*.15*clamp(t/C.diveAt,0,1);}
+ else if(t<C.tell){const p=clamp((t-C.diveAt)/(C.tell-C.diveAt),0,1),u=ease(p);
+  x=lerp(C.ox,C.land.x,u);y=lerp(C.oy,C.land.y,u)-Math.sin(Math.PI*p)*95;
+  scale=lerp(1,C.land.scale,u);angle=lerp(C.land.angle*.15,C.land.angle,u);}
+ else {x=C.land.x;y=C.land.y;scale=C.land.scale;angle=C.land.angle;
   if(t>=C.strikeEnd){const u=ease(clamp((t-C.strikeEnd)/(C.end-C.strikeEnd),0,1));scale=lerp(scale,1,u);angle*=1-u;}}
  return{x,y,scale,angle};
 }
@@ -115,15 +117,15 @@ function hc11StrikeTick(C,before){
  samples.push(end);let previous=C.previous||hc11Tip(C,7,C.land.x,C.land.y,C.land.scale,C.land.angle);
  for(const t of samples){const f=hc11Frame(C,t),q=hc11Tip(C,f,C.land.x,C.land.y,C.land.scale,C.land.angle),L={x:previous.x,y:previous.y,ex:q.x,ey:q.y};
   for(const seat of seatList())withSeat(seat,()=>{if(!C.hitSeats[seat]&&!player.dead&&!player.out&&player.invuln<=0&&s81003Distance(player.x,player.y,L)<22){
-   C.hitSeats[seat]=true;playerHit('Hammer anchored side strike');}});previous=q;
+   C.hitSeats[seat]=true;playerHit('Hammer jump strike');}});previous=q;
  }
  C.previous=previous;
 }
 function hc11CounterTick(b,C,dt){const h=b._hammer,before=C.t;C.t+=dt;
  Object.assign(C,hc11Pose(C));b.x=C.x;b.y=C.y;
- if(C.t<C.tell)combatWarningTick(C,'hammer-side-counter',C.t,C.tell);
- if(before<C.diveAt&&C.t>=C.diveAt){Audio.SFX.hammerThrow?.();hc11Log('upper-half-slide',{...C.anchor});}
- if(before<C.tell&&C.t>=C.tell){combatWarningTick(C,'hammer-side-counter',C.tell,C.tell);Audio.SFX.hammerImpact?.();shake=Math.max(shake,6);}
+ if(C.t<C.tell)combatWarningTick(C,'hammer-jump-counter',C.t,C.tell);
+ if(before<C.diveAt&&C.t>=C.diveAt){Audio.SFX.hammerThrow?.();hc11Log('upper-half-jump',{...C.anchor});}
+ if(before<C.tell&&C.t>=C.tell){combatWarningTick(C,'hammer-jump-counter',C.tell,C.tell);Audio.SFX.hammerImpact?.();shake=Math.max(shake,6);}
  hc11StrikeTick(C,before);
  if(!C.impact&&C.t>=C.tell+(C.strikeEnd-C.tell)*.75){C.impact=true;h.leapFx=.01;h.leapFxX=C.anchor.x;h.leapFxY=C.anchor.y;
   hc11Log('anchored-hammer-impact',{...C.anchor,tip:hc11Tip(C,11,C.land.x,C.land.y,C.land.scale,C.land.angle)});}
@@ -143,7 +145,7 @@ hammerStormTick=function(b,dt){const h=b._hammer;
 hammerStrikeCommitted=function(b){const C=b?._hammer?.hc11Counter;return !!C&&C.t<C.strikeEnd||HC11.base.committed.apply(this,arguments);};
 hammerDepthScale=function(b){return b?._hammer?.hc11Counter?.scale??HC11.base.depth.apply(this,arguments);};
 hammerOnPlayerPlane=function(b){const C=b?._hammer?.hc11Counter;
- // This move's collision is the measured hammer sweep. The sliding body cannot
+ // This move's collision is the landing hammer sweep. The airborne body cannot
  // create a second untelegraphed contact hit.
  return C?false:HC11.base.plane.apply(this,arguments);
 };

@@ -1,0 +1,2874 @@
+{
+  "summary": {
+    "native_passed": 75,
+    "browser_errors": [],
+    "regression_passed": 8940,
+    "regression_errors": 0,
+    "syntax": "game.js, performance_finish_1020.js, stage6_roster_1017.js clean",
+    "runtime_bytes": 1033324,
+    "frames": 160,
+    "banks": {
+      "carrier_turret": {
+        "size": [
+          160,
+          192
+        ],
+        "frames": 16,
+        "unique": 13,
+        "bounds": [
+          [
+            33,
+            28,
+            126,
+            161
+          ],
+          [
+            33,
+            26,
+            126,
+            164
+          ],
+          [
+            33,
+            25,
+            126,
+            166
+          ],
+          [
+            33,
+            24,
+            126,
+            169
+          ],
+          [
+            33,
+            24,
+            126,
+            169
+          ],
+          [
+            33,
+            24,
+            126,
+            169
+          ],
+          [
+            33,
+            24,
+            126,
+            168
+          ],
+          [
+            33,
+            24,
+            126,
+            169
+          ],
+          [
+            33,
+            27,
+            127,
+            123
+          ],
+          [
+            33,
+            29,
+            127,
+            153
+          ],
+          [
+            33,
+            30,
+            127,
+            159
+          ],
+          [
+            33,
+            29,
+            127,
+            153
+          ],
+          [
+            33,
+            30,
+            127,
+            159
+          ],
+          [
+            33,
+            30,
+            127,
+            159
+          ],
+          [
+            33,
+            30,
+            127,
+            159
+          ],
+          [
+            33,
+            28,
+            126,
+            161
+          ]
+        ],
+        "bytes": 21314,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\carrier_turret\\016.png"
+        ]
+      },
+      "bomber_cannon": {
+        "size": [
+          104,
+          240
+        ],
+        "frames": 16,
+        "unique": 12,
+        "bounds": [
+          [
+            17,
+            17,
+            87,
+            224
+          ],
+          [
+            17,
+            17,
+            87,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            16,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            87,
+            224
+          ],
+          [
+            16,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            88,
+            224
+          ],
+          [
+            17,
+            17,
+            87,
+            224
+          ],
+          [
+            17,
+            17,
+            87,
+            224
+          ],
+          [
+            17,
+            17,
+            87,
+            224
+          ]
+        ],
+        "bytes": 29436,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\bomber_cannon\\016.png"
+        ]
+      },
+      "laser_terminal": {
+        "size": [
+          256,
+          256
+        ],
+        "frames": 16,
+        "unique": 15,
+        "bounds": [
+          [
+            64,
+            40,
+            192,
+            216
+          ],
+          [
+            36,
+            68,
+            220,
+            182
+          ],
+          [
+            36,
+            88,
+            220,
+            134
+          ],
+          [
+            36,
+            80,
+            220,
+            135
+          ],
+          [
+            37,
+            74,
+            220,
+            137
+          ],
+          [
+            36,
+            69,
+            220,
+            138
+          ],
+          [
+            36,
+            65,
+            220,
+            139
+          ],
+          [
+            36,
+            59,
+            220,
+            140
+          ],
+          [
+            38,
+            54,
+            216,
+            141
+          ],
+          [
+            44,
+            127,
+            212,
+            142
+          ],
+          [
+            56,
+            134,
+            191,
+            143
+          ],
+          [
+            85,
+            140,
+            170,
+            144
+          ],
+          null,
+          null,
+          null,
+          null
+        ],
+        "bytes": 7780,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\laser_terminal\\016.png"
+        ]
+      },
+      "dark_terminal": {
+        "size": [
+          256,
+          256
+        ],
+        "frames": 16,
+        "unique": 14,
+        "bounds": [
+          [
+            38,
+            43,
+            216,
+            221
+          ],
+          [
+            29,
+            36,
+            224,
+            228
+          ],
+          [
+            35,
+            37,
+            219,
+            220
+          ],
+          [
+            56,
+            57,
+            199,
+            200
+          ],
+          [
+            54,
+            53,
+            202,
+            204
+          ],
+          [
+            55,
+            53,
+            199,
+            203
+          ],
+          [
+            54,
+            52,
+            201,
+            204
+          ],
+          [
+            54,
+            53,
+            202,
+            204
+          ],
+          [
+            56,
+            54,
+            194,
+            202
+          ],
+          [
+            0,
+            0,
+            199,
+            188
+          ],
+          [
+            0,
+            0,
+            167,
+            165
+          ],
+          [
+            0,
+            0,
+            152,
+            168
+          ],
+          [
+            0,
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            0,
+            130,
+            51
+          ],
+          [
+            0,
+            0,
+            3,
+            4
+          ]
+        ],
+        "bytes": 27016,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\dark_terminal\\016.png"
+        ]
+      },
+      "ice_shatter": {
+        "size": [
+          256,
+          256
+        ],
+        "frames": 16,
+        "unique": 16,
+        "bounds": [
+          [
+            45,
+            44,
+            219,
+            216
+          ],
+          [
+            38,
+            33,
+            225,
+            218
+          ],
+          [
+            34,
+            28,
+            222,
+            224
+          ],
+          [
+            39,
+            24,
+            217,
+            229
+          ],
+          [
+            35,
+            20,
+            220,
+            233
+          ],
+          [
+            32,
+            18,
+            223,
+            236
+          ],
+          [
+            29,
+            16,
+            226,
+            240
+          ],
+          [
+            26,
+            13,
+            229,
+            242
+          ],
+          [
+            24,
+            11,
+            231,
+            244
+          ],
+          [
+            22,
+            9,
+            233,
+            246
+          ],
+          [
+            21,
+            9,
+            235,
+            248
+          ],
+          [
+            20,
+            9,
+            235,
+            247
+          ],
+          [
+            19,
+            11,
+            237,
+            247
+          ],
+          [
+            17,
+            27,
+            238,
+            210
+          ],
+          [
+            36,
+            134,
+            219,
+            139
+          ],
+          null
+        ],
+        "bytes": 32614,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\ice_shatter\\016.png"
+        ]
+      },
+      "cole_report_face": {
+        "size": [
+          192,
+          192
+        ],
+        "frames": 16,
+        "unique": 16,
+        "bounds": [
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ]
+        ],
+        "bytes": 12528,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_face\\016.png"
+        ]
+      },
+      "cole_horror_face": {
+        "size": [
+          192,
+          192
+        ],
+        "frames": 16,
+        "unique": 16,
+        "bounds": [
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ],
+          [
+            50,
+            88,
+            134,
+            148
+          ]
+        ],
+        "bytes": 7432,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_face\\016.png"
+        ]
+      },
+      "cole_report_gesture": {
+        "size": [
+          256,
+          256
+        ],
+        "frames": 24,
+        "unique": 24,
+        "bounds": [
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ],
+          [
+            23,
+            84,
+            232,
+            240
+          ]
+        ],
+        "bytes": 124378,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\016.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\017.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\018.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\019.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\020.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\021.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\022.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\023.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_report_gesture\\024.png"
+        ]
+      },
+      "cole_horror_gesture": {
+        "size": [
+          256,
+          256
+        ],
+        "frames": 24,
+        "unique": 24,
+        "bounds": [
+          [
+            26,
+            84,
+            230,
+            240
+          ],
+          [
+            25,
+            84,
+            231,
+            240
+          ],
+          [
+            24,
+            84,
+            231,
+            240
+          ],
+          [
+            24,
+            84,
+            231,
+            240
+          ],
+          [
+            25,
+            84,
+            231,
+            240
+          ],
+          [
+            25,
+            84,
+            230,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ],
+          [
+            27,
+            84,
+            228,
+            240
+          ]
+        ],
+        "bytes": 80838,
+        "source_paths": [
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\000.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\001.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\002.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\003.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\004.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\005.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\006.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\007.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\008.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\009.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\010.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\011.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\012.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\013.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\014.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\015.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\016.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\017.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\018.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\019.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\020.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\021.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\022.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\023.png",
+          "_ART_SOURCES\\performance_finish_1020\\returned\\cole_horror_gesture\\024.png"
+        ]
+      }
+    },
+    "protected_hashes": {
+      "assets/game.js": "ee8586ca61002e07d4262552ff9a2b48931d67aa08c02efaaf15d83f76fb9710",
+      "_BUILD_SOURCE/test_fl.js": "8c80e17cba07d403df5ae19d123f93ab1c3db22131fc8087fd909e397af74fb5",
+      "assets/command_ui_1020.js": "b36ea144dc9727b2d2e9a2049af68d093a715d97b57851f8ea66b1f8fb7e0914"
+    },
+    "actual_charge_usd": 0.3528,
+    "daily_generations_used": 2,
+    "remaining_balance_display_usd": 0.58
+  },
+  "verification": {
+    "checks": [
+      {
+        "name": "All nine atlases and both cleaned full-body bases decode",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "easy siegebomber real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 600,
+          "frames": {
+            "pf20_bomber_cannon": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 248.8,
+          "y": 138.24,
+          "parts": 4
+        }
+      },
+      {
+        "name": "easy siegebomber damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 1625,
+          "restored": 0,
+          "flash": 0.2,
+          "hp": 129
+        }
+      },
+      {
+        "name": "easy siegefortress17 real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 1494,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 358.14405882956686,
+          "y": 72.30260742498864,
+          "parts": 6
+        }
+      },
+      {
+        "name": "easy siegefortress17 damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 828,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 72
+        }
+      },
+      {
+        "name": "easy warhive real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 826,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 332.1525101594683,
+          "y": 198.80214657631038,
+          "parts": 8
+        }
+      },
+      {
+        "name": "easy warhive damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 600,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 104
+        }
+      },
+      {
+        "name": "normal siegebomber real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 600,
+          "frames": {
+            "pf20_bomber_cannon": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 431.1108278966267,
+          "y": 138.24,
+          "parts": 4
+        }
+      },
+      {
+        "name": "normal siegebomber damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 1624,
+          "restored": 0,
+          "flash": 0.2,
+          "hp": 249
+        }
+      },
+      {
+        "name": "normal siegefortress17 real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 1510,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 363.1708609062034,
+          "y": 72.30260742498864,
+          "parts": 6
+        }
+      },
+      {
+        "name": "normal siegefortress17 damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 829,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 97
+        }
+      },
+      {
+        "name": "normal warhive real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 826,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 332.1525101594683,
+          "y": 198.80214657631038,
+          "parts": 8
+        }
+      },
+      {
+        "name": "normal warhive damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 600,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 124
+        }
+      },
+      {
+        "name": "hard siegebomber real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 600,
+          "frames": {
+            "pf20_bomber_cannon": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 431.2,
+          "y": 138.24,
+          "parts": 4
+        }
+      },
+      {
+        "name": "hard siegebomber damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 1691,
+          "restored": 0,
+          "flash": 0.2,
+          "hp": 294
+        }
+      },
+      {
+        "name": "hard siegefortress17 real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 1520,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 304.7795129892208,
+          "y": 72.30260742498864,
+          "parts": 6
+        }
+      },
+      {
+        "name": "hard siegefortress17 damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 825,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 119
+        }
+      },
+      {
+        "name": "hard warhive real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 762,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 332.1525101594683,
+          "y": 198.80214657631038,
+          "parts": 8
+        }
+      },
+      {
+        "name": "hard warhive damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 600,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 144
+        }
+      },
+      {
+        "name": "furious siegebomber real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 600,
+          "frames": {
+            "pf20_bomber_cannon": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 430.3213624888889,
+          "y": 138.24,
+          "parts": 4
+        }
+      },
+      {
+        "name": "furious siegebomber damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 1636,
+          "restored": 0,
+          "flash": 0.2,
+          "hp": 337
+        }
+      },
+      {
+        "name": "furious siegefortress17 real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 1522,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 308.48565354584446,
+          "y": 72.30260742498864,
+          "parts": 6
+        }
+      },
+      {
+        "name": "furious siegefortress17 damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 836,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 140
+        }
+      },
+      {
+        "name": "furious warhive real phase animations and finite actor",
+        "ok": true,
+        "data": {
+          "blits": 752,
+          "frames": {
+            "pf20_carrier_turret": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "dead": false,
+          "x": 332.1525101594683,
+          "y": 198.80214657631038,
+          "parts": 8
+        }
+      },
+      {
+        "name": "furious warhive damaged module visibly flashes and restores",
+        "ok": true,
+        "data": {
+          "changed": 600,
+          "restored": 0,
+          "flash": 0.16,
+          "hp": 164
+        }
+      },
+      {
+        "name": "laser native hit creates contextual death",
+        "ok": true,
+        "data": {
+          "kind": "laser",
+          "life": 1.5,
+          "dead": true,
+          "lost": 0
+        }
+      },
+      {
+        "name": "laser finite terminal sequence and one transition cue",
+        "ok": true,
+        "data": {
+          "cue": true,
+          "ended": true,
+          "t": 1.97,
+          "life": 1.5
+        }
+      },
+      {
+        "name": "ice native hit creates contextual death",
+        "ok": true,
+        "data": {
+          "kind": "ice",
+          "life": 1.5,
+          "dead": true,
+          "lost": 0
+        }
+      },
+      {
+        "name": "ice irregular fragments preserve victim coverage and color",
+        "ok": true,
+        "data": {
+          "pieces": 11,
+          "alphaMismatch": 0,
+          "premul": 0.9882352941176471
+        }
+      },
+      {
+        "name": "ice finite terminal sequence and one transition cue",
+        "ok": true,
+        "data": {
+          "cue": true,
+          "ended": true,
+          "t": 1.97,
+          "life": 1.5
+        }
+      },
+      {
+        "name": "dark native hit creates contextual death",
+        "ok": true,
+        "data": {
+          "kind": "dark",
+          "life": 1.5,
+          "dead": true,
+          "lost": 0
+        }
+      },
+      {
+        "name": "dark irregular fragments preserve victim coverage and color",
+        "ok": true,
+        "data": {
+          "pieces": 11,
+          "alphaMismatch": 0,
+          "premul": 0.9882352941176471
+        }
+      },
+      {
+        "name": "dark finite terminal sequence and one transition cue",
+        "ok": true,
+        "data": {
+          "cue": true,
+          "ended": true,
+          "t": 1.97,
+          "life": 1.5
+        }
+      },
+      {
+        "name": "shadow native hit creates contextual death",
+        "ok": true,
+        "data": {
+          "kind": "shadow",
+          "life": 1.7,
+          "dead": true,
+          "lost": 0
+        }
+      },
+      {
+        "name": "shadow irregular fragments preserve victim coverage and color",
+        "ok": true,
+        "data": {
+          "pieces": 11,
+          "alphaMismatch": 0,
+          "premul": 0.9882352941176471
+        }
+      },
+      {
+        "name": "shadow finite terminal sequence and one transition cue",
+        "ok": true,
+        "data": {
+          "cue": true,
+          "ended": true,
+          "t": 2.17,
+          "life": 1.7
+        }
+      },
+      {
+        "name": "shield preserves native hit protection",
+        "ok": true,
+        "data": {
+          "dead": false,
+          "context": false
+        }
+      },
+      {
+        "name": "iframe preserves native hit protection",
+        "ok": true,
+        "data": {
+          "dead": false,
+          "context": false
+        }
+      },
+      {
+        "name": "roll preserves native hit protection",
+        "ok": true,
+        "data": {
+          "dead": false,
+          "context": false
+        }
+      },
+      {
+        "name": "somer preserves native hit protection",
+        "ok": true,
+        "data": {
+          "dead": false,
+          "context": false
+        }
+      },
+      {
+        "name": "Ordinary bullet death retains original spin owner",
+        "ok": true,
+        "data": {
+          "dead": true,
+          "context": false,
+          "spin": true
+        }
+      },
+      {
+        "name": "Reporting Cole uses distinct face/gesture frames on fixed full-body geometry",
+        "ok": true,
+        "data": [
+          {
+            "t": 0,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_report_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": false,
+              "performance": true
+            },
+            "hash": 2669634312,
+            "frame": {
+              "face": 0,
+              "gesture": 0,
+              "horror": false,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "report"
+            }
+          },
+          {
+            "t": 0.5,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_report_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": false,
+              "performance": true
+            },
+            "hash": 2820918745,
+            "frame": {
+              "face": 4,
+              "gesture": 4,
+              "horror": false,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "report"
+            }
+          },
+          {
+            "t": 0.8,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_report_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": false,
+              "performance": true
+            },
+            "hash": 1836235217,
+            "frame": {
+              "face": 6,
+              "gesture": 6,
+              "horror": false,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "report"
+            }
+          },
+          {
+            "t": 1.4,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_report_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": false,
+              "performance": true
+            },
+            "hash": 612554947,
+            "frame": {
+              "face": 11,
+              "gesture": 11,
+              "horror": false,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "report"
+            }
+          },
+          {
+            "t": 2.2,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_report_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": false,
+              "performance": true
+            },
+            "hash": 3998112754,
+            "frame": {
+              "face": 1,
+              "gesture": 17,
+              "horror": false,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "report"
+            }
+          },
+          {
+            "t": 3.2,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_report_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": false,
+              "performance": true
+            },
+            "hash": 1857339207,
+            "frame": {
+              "face": 9,
+              "gesture": 1,
+              "horror": false,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "report"
+            }
+          },
+          {
+            "t": 4.7,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_report_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": false,
+              "performance": true
+            },
+            "hash": 2606430448,
+            "frame": {
+              "face": 5,
+              "gesture": 13,
+              "horror": false,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "report"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Horrified Cole uses distinct face/gesture frames on fixed full-body geometry",
+        "ok": true,
+        "data": [
+          {
+            "t": 0,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_horror_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": true,
+              "performance": true
+            },
+            "hash": 2698864547,
+            "frame": {
+              "face": 0,
+              "gesture": 0,
+              "horror": true,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "alarm"
+            }
+          },
+          {
+            "t": 0.5,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_horror_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": true,
+              "performance": true
+            },
+            "hash": 1670678086,
+            "frame": {
+              "face": 4,
+              "gesture": 4,
+              "horror": true,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "alarm"
+            }
+          },
+          {
+            "t": 0.8,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_horror_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": true,
+              "performance": true
+            },
+            "hash": 252492972,
+            "frame": {
+              "face": 6,
+              "gesture": 6,
+              "horror": true,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "alarm"
+            }
+          },
+          {
+            "t": 1.4,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_horror_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": true,
+              "performance": true
+            },
+            "hash": 1537222070,
+            "frame": {
+              "face": 11,
+              "gesture": 11,
+              "horror": true,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "alarm"
+            }
+          },
+          {
+            "t": 2.2,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_horror_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": true,
+              "performance": true
+            },
+            "hash": 3212725886,
+            "frame": {
+              "face": 15,
+              "gesture": 17,
+              "horror": true,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "alarm"
+            }
+          },
+          {
+            "t": 3.2,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_horror_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": true,
+              "performance": true
+            },
+            "hash": 2897020765,
+            "frame": {
+              "face": 15,
+              "gesture": 13,
+              "horror": true,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "alarm"
+            }
+          },
+          {
+            "t": 4.7,
+            "q": {
+              "pilot": "cole",
+              "key": "pf20_cole_horror_face",
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "horror": true,
+              "performance": true
+            },
+            "hash": 3336426854,
+            "frame": {
+              "face": 12,
+              "gesture": 13,
+              "horror": true,
+              "x": 240,
+              "bottom": 487,
+              "height": 435.2,
+              "scene": "alarm"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Other eight pilot identities retain existing poses for likeness review",
+        "ok": true,
+        "data": [
+          {
+            "key": "axel",
+            "performance": false,
+            "draw": "inv20_axel_horror"
+          },
+          {
+            "key": "freezer",
+            "performance": false,
+            "draw": "inv20_freezer_horror"
+          },
+          {
+            "key": "yuri",
+            "performance": false,
+            "draw": "inv20_yuri_horror"
+          },
+          {
+            "key": "maverick",
+            "performance": false,
+            "draw": "inv20_maverick_horror"
+          },
+          {
+            "key": "falva",
+            "performance": false,
+            "draw": "inv20_falva_horror"
+          },
+          {
+            "key": "lizzie",
+            "performance": false,
+            "draw": "inv20_lizzie_horror"
+          },
+          {
+            "key": "decker",
+            "performance": false,
+            "draw": "inv20_decker_horror"
+          },
+          {
+            "key": "juggernaut",
+            "performance": false,
+            "draw": "inv20_juggernaut_horror"
+          }
+        ]
+      },
+      {
+        "name": "Native renderer used all nine atlas banks",
+        "ok": true,
+        "data": {
+          "pf20_bomber_cannon": [
+            0,
+            11,
+            12,
+            13,
+            14,
+            15,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            9
+          ],
+          "pf20_carrier_turret": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            9
+          ],
+          "pf20_laser_terminal": [
+            1,
+            4,
+            7,
+            11,
+            15
+          ],
+          "pf20_ice_shatter": [
+            1,
+            6,
+            11,
+            15
+          ],
+          "pf20_dark_terminal": [
+            0,
+            3,
+            6,
+            9,
+            12,
+            15
+          ],
+          "pf20_cole_report_gesture": [
+            19,
+            0,
+            4,
+            6,
+            11,
+            17,
+            1,
+            13,
+            2,
+            3,
+            5,
+            7,
+            8,
+            9,
+            10,
+            12,
+            14,
+            15,
+            16,
+            18,
+            20,
+            21,
+            22,
+            23
+          ],
+          "pf20_cole_report_face": [
+            -1
+          ],
+          "pf20_cole_horror_gesture": [
+            11,
+            14,
+            0,
+            4,
+            6,
+            17,
+            13,
+            1,
+            2,
+            3,
+            5,
+            7,
+            8,
+            9,
+            10,
+            12,
+            15,
+            16,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "pf20_cole_horror_face": [
+            -1
+          ]
+        }
+      },
+      {
+        "name": "No browser/page errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "edge_cases": {
+    "checks": [
+      {
+        "name": "easy laser native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "laser",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "easy ice native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "ice",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "easy dark native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "dark",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "easy shadow native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "shadow",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 7
+        }
+      },
+      {
+        "name": "normal laser native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "laser",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "normal ice native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "ice",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "normal dark native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "dark",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "normal shadow native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "shadow",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 7
+        }
+      },
+      {
+        "name": "hard laser native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "laser",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "hard ice native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "ice",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "hard dark native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "dark",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "hard shadow native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "shadow",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 7
+        }
+      },
+      {
+        "name": "furious laser native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "laser",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "furious ice native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "ice",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "furious dark native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "dark",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 0
+        }
+      },
+      {
+        "name": "furious shadow native respawn spends exactly one life and clears effect",
+        "ok": true,
+        "data": {
+          "first": "shadow",
+          "dead": false,
+          "lives": 3,
+          "context": false,
+          "invuln": 7
+        }
+      },
+      {
+        "name": "siegebomber hit flash expires and destroyed weapon cancels pending release",
+        "ok": true,
+        "data": {
+          "expired": true,
+          "dead": true,
+          "delta": 1,
+          "livePieces": 1,
+          "pending": false
+        }
+      },
+      {
+        "name": "siegebomber destroyed weapon leaves no animated ghost",
+        "ok": true,
+        "data": {
+          "expired": true,
+          "dead": true,
+          "delta": 1,
+          "livePieces": 1,
+          "pending": false
+        }
+      },
+      {
+        "name": "siegefortress17 hit flash expires and destroyed weapon cancels pending release",
+        "ok": true,
+        "data": {
+          "expired": true,
+          "dead": true,
+          "delta": 0,
+          "livePieces": 0,
+          "pending": false
+        }
+      },
+      {
+        "name": "siegefortress17 destroyed weapon leaves no animated ghost",
+        "ok": true,
+        "data": {
+          "expired": true,
+          "dead": true,
+          "delta": 0,
+          "livePieces": 0,
+          "pending": false
+        }
+      },
+      {
+        "name": "warhive hit flash expires and destroyed weapon cancels pending release",
+        "ok": true,
+        "data": {
+          "expired": true,
+          "dead": true,
+          "delta": 3,
+          "livePieces": 3,
+          "pending": false
+        }
+      },
+      {
+        "name": "warhive destroyed weapon leaves no animated ghost",
+        "ok": true,
+        "data": {
+          "expired": true,
+          "dead": true,
+          "delta": 3,
+          "livePieces": 3,
+          "pending": false
+        }
+      },
+      {
+        "name": "Rendering weapon frames creates no attacks, damage or warnings",
+        "ok": true,
+        "data": {
+          "same": true,
+          "frames": [
+            {
+              "bank": "carrier_turret",
+              "frame": 11,
+              "x": 433.6,
+              "y": 174.3125,
+              "k": 0.296875
+            },
+            {
+              "bank": "carrier_turret",
+              "frame": 11,
+              "x": 433.6,
+              "y": 174.3125,
+              "k": 0.296875
+            },
+            {
+              "bank": "carrier_turret",
+              "frame": 11,
+              "x": 433.6,
+              "y": 174.3125,
+              "k": 0.296875
+            },
+            {
+              "bank": "carrier_turret",
+              "frame": 11,
+              "x": 433.6,
+              "y": 174.3125,
+              "k": 0.296875
+            },
+            {
+              "bank": "carrier_turret",
+              "frame": 11,
+              "x": 433.6,
+              "y": 174.3125,
+              "k": 0.296875
+            },
+            {
+              "bank": "carrier_turret",
+              "frame": 11,
+              "x": 433.6,
+              "y": 174.3125,
+              "k": 0.296875
+            }
+          ]
+        }
+      },
+      {
+        "name": "Aircraft captures actual artwork for all nine pilots",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "axel",
+            "n": 2653,
+            "hash": 371522521,
+            "space": false
+          },
+          {
+            "pilot": "decker",
+            "n": 3867,
+            "hash": 3728970886,
+            "space": false
+          },
+          {
+            "pilot": "maverick",
+            "n": 4185,
+            "hash": 611110835,
+            "space": false
+          },
+          {
+            "pilot": "freezer",
+            "n": 5039,
+            "hash": 4231993399,
+            "space": false
+          },
+          {
+            "pilot": "juggernaut",
+            "n": 4794,
+            "hash": 1942068854,
+            "space": false
+          },
+          {
+            "pilot": "yuri",
+            "n": 3363,
+            "hash": 3083905584,
+            "space": false
+          },
+          {
+            "pilot": "lizzie",
+            "n": 3599,
+            "hash": 3153543601,
+            "space": false
+          },
+          {
+            "pilot": "falva",
+            "n": 3959,
+            "hash": 3081708225,
+            "space": false
+          },
+          {
+            "pilot": "cole",
+            "n": 3891,
+            "hash": 804119022,
+            "space": false
+          }
+        ]
+      },
+      {
+        "name": "Furyship captures actual artwork for all nine pilots",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "axel",
+            "n": 6135,
+            "hash": 1833742324,
+            "space": true
+          },
+          {
+            "pilot": "decker",
+            "n": 6135,
+            "hash": 986793197,
+            "space": true
+          },
+          {
+            "pilot": "maverick",
+            "n": 6135,
+            "hash": 3600522492,
+            "space": true
+          },
+          {
+            "pilot": "freezer",
+            "n": 6135,
+            "hash": 1538460021,
+            "space": true
+          },
+          {
+            "pilot": "juggernaut",
+            "n": 6135,
+            "hash": 1988068563,
+            "space": true
+          },
+          {
+            "pilot": "yuri",
+            "n": 6135,
+            "hash": 2759139404,
+            "space": true
+          },
+          {
+            "pilot": "lizzie",
+            "n": 6135,
+            "hash": 831434875,
+            "space": true
+          },
+          {
+            "pilot": "falva",
+            "n": 6135,
+            "hash": 3190561253,
+            "space": true
+          },
+          {
+            "pilot": "cole",
+            "n": 6135,
+            "hash": 2836234960,
+            "space": true
+          }
+        ]
+      },
+      {
+        "name": "Co-op victims keep separate effect canvases, clocks, lives and restored seat",
+        "ok": true,
+        "data": {
+          "different": true,
+          "kinds": [
+            "laser",
+            "ice"
+          ],
+          "dead": [
+            false,
+            false
+          ],
+          "lives": [
+            3,
+            3
+          ],
+          "contexts": [
+            false,
+            false
+          ],
+          "seat": 1
+        }
+      },
+      {
+        "name": "Pause does not advance contextual death clock",
+        "ok": true,
+        "data": {
+          "same": true,
+          "state": "paused"
+        }
+      },
+      {
+        "name": "All four terminal transition cues use decoded mixer voices at audible gain",
+        "ok": true,
+        "data": {
+          "events": [
+            "slice",
+            "expIce",
+            "shadowRelease",
+            "shadowRelease"
+          ],
+          "ready": [
+            {
+              "key": "slice",
+              "decoded": true,
+              "volume": 0.24,
+              "played": true
+            },
+            {
+              "key": "expIce",
+              "decoded": true,
+              "volume": 0.268,
+              "played": true
+            },
+            {
+              "key": "shadowRelease",
+              "decoded": true,
+              "volume": 0.24,
+              "played": true
+            },
+            {
+              "key": "shadowRelease",
+              "decoded": true,
+              "volume": 0.24,
+              "played": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "No browser errors in edge cases",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

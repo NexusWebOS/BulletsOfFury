@@ -1,0 +1,6737 @@
+{
+  "passed": 21,
+  "total": 21,
+  "errors": [],
+  "checks": [
+    {
+      "name": "New lava and arena textures stay outside title/boot loading",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Level2 native terrain, route dimensions and combat configuration remain intact",
+      "passed": true,
+      "data": {
+        "master": "nst2_master",
+        "liquid": "nlq3_lava",
+        "fill": "#241008",
+        "tile": 0.5,
+        "fps": 10,
+        "arenaLiquid": true,
+        "continuousBoss": true,
+        "plateW": 680,
+        "h": 4080,
+        "bossDim": 0.58
+      }
+    },
+    {
+      "name": "Level2 loading includes lava and excludes Dracodia arena art",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All32 lava phases draw at their real fixed224-square cells",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Level2 molten water palette applies on all4 difficulties",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All32 authored PixelLab curtain phases select exact lossless native cells",
+      "passed": true,
+      "data": {
+        "frames": 32,
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "Stage8 gate warms all arena, wireframe, curtain and original lava keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Correct live jungle terrain selected for form1",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Correct live lava terrain selected for form2",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Correct live sky terrain selected for form6",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Correct live space terrain selected for form8",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Phoenix draws original animated cracked lava through its new transparent land",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Arena rendering allocates no canvas per frame and holds terrain scale/pivot",
+      "passed": true,
+      "data": {
+        "allocations": 0,
+        "plateStable": true
+      }
+    },
+    {
+      "name": "Solid arena architecture remains world anchored as the pilot moves laterally",
+      "passed": true,
+      "data": [
+        {
+          "x": -24,
+          "y": -108,
+          "k": 1.421875,
+          "w": 728,
+          "h": 728,
+          "cam": 89.2
+        },
+        {
+          "x": -24,
+          "y": -108,
+          "k": 1.421875,
+          "w": 728,
+          "h": 728,
+          "cam": 90.49600000000001
+        },
+        {
+          "x": -24,
+          "y": -108,
+          "k": 1.421875,
+          "w": 728,
+          "h": 728,
+          "cam": 102.43648
+        }
+      ]
+    },
+    {
+      "name": "All4 arenas download through native erase/build/fight transitions on all4 difficulties",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Returning to main Dracodia restores the native void arena",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Arena downloads cannot revive a destroyed Phoenix cannon",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native boss hit flash remains visibly different above downloaded terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pausing freezes arena, cloud and download animation clocks",
+      "passed": true,
+      "data": [
+        {
+          "state": "paused",
+          "clock": 58.599999999997955
+        },
+        {
+          "state": "paused",
+          "clock": 58.599999999997955
+        }
+      ]
+    },
+    {
+      "name": "Download charge and native materialization cues have decoded mixer voices",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser page, console, drawing or failed asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "transitions": [
+    {
+      "diff": "easy",
+      "form": 1,
+      "theme": "jungle",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "jungle",
+        "form": 1,
+        "hp": 1080,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 1.4999999999999996
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 1560,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 2.9999999999999942
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 1080,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "jungle",
+            "mode": "fight",
+            "form": 1,
+            "t": 4.19999999999999,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 54.59999999999987,
+              "nearData": 2.7299999999999938
+            }
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 1080,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "easy",
+      "form": 2,
+      "theme": "lava",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "lava",
+        "form": 2,
+        "hp": 1200,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 4.699999999999989
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 1560,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 6.199999999999983
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 1200,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "lava",
+            "mode": "fight",
+            "form": 2,
+            "t": 7.399999999999979,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 96.19999999999973,
+              "nearData": 4.809999999999986
+            }
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 1200,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "easy",
+      "form": 6,
+      "theme": "sky",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "sky",
+        "form": 6,
+        "hp": 1320,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 7.899999999999977
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 1560,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 9.400000000000047
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 1320,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "sky",
+            "mode": "fight",
+            "form": 6,
+            "t": 10.600000000000106,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 137.80000000000138,
+              "nearData": 6.890000000000069
+            }
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 1320,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "easy",
+      "form": 8,
+      "theme": "space",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "space",
+        "form": 8,
+        "hp": 1440,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 11.100000000000131
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 1560,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 12.600000000000206
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 1440,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "space",
+            "mode": "fight",
+            "form": 8,
+            "t": 13.800000000000265,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 179.40000000000344,
+              "nearData": 8.970000000000173
+            }
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 1440,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "normal",
+      "form": 1,
+      "theme": "jungle",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "jungle",
+        "form": 1,
+        "hp": 2340,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0,
+            "cut": 0,
+            "t": 13.800000000000265
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.034482758620689655,
+            "cut": 1.7844110049612527,
+            "t": 13.850000000000268
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.06896551724137931,
+            "cut": 6.969699454672188,
+            "t": 13.90000000000027
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.10344827586206896,
+            "cut": 15.30394850137357,
+            "t": 13.950000000000273
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.13793103448275862,
+            "cut": 26.535241297306158,
+            "t": 14.000000000000275
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.17241379310344826,
+            "cut": 40.41166099471072,
+            "t": 14.050000000000278
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.20689655172413793,
+            "cut": 56.681290745828036,
+            "t": 14.10000000000028
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.24137931034482757,
+            "cut": 75.09221370289883,
+            "t": 14.150000000000283
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.27586206896551724,
+            "cut": 95.39251301816391,
+            "t": 14.200000000000285
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.31034482758620685,
+            "cut": 117.33027184386401,
+            "t": 14.250000000000288
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 14.30000000000029
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.37931034482758624,
+            "cut": 165.11050063553245,
+            "t": 14.350000000000293
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.413793103448276,
+            "cut": 190.44913690598233,
+            "t": 14.400000000000295
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4482758620689658,
+            "cut": 216.41756529583031,
+            "t": 14.450000000000298
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4827586206896555,
+            "cut": 242.7638689573171,
+            "t": 14.5000000000003
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5172413793103453,
+            "cut": 269.23613104268355,
+            "t": 14.550000000000303
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.551724137931035,
+            "cut": 295.5824347041703,
+            "t": 14.600000000000305
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5862068965517249,
+            "cut": 321.5508630940183,
+            "t": 14.650000000000308
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6206896551724146,
+            "cut": 346.8894993644681,
+            "t": 14.70000000000031
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6551724137931043,
+            "cut": 371.3464266677607,
+            "t": 14.750000000000313
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.689655172413794,
+            "cut": 394.66972815613656,
+            "t": 14.800000000000315
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7241379310344835,
+            "cut": 416.6074869818366,
+            "t": 14.850000000000318
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7586206896551732,
+            "cut": 436.9077862971016,
+            "t": 14.90000000000032
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7931034482758627,
+            "cut": 455.3187092541723,
+            "t": 14.950000000000323
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8275862068965522,
+            "cut": 471.58833900528947,
+            "t": 15.000000000000325
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8620689655172417,
+            "cut": 485.4647587026939,
+            "t": 15.050000000000328
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8965517241379313,
+            "cut": 496.6960514986265,
+            "t": 15.10000000000033
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9310344827586208,
+            "cut": 505.0303005453278,
+            "t": 15.150000000000333
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9655172413793103,
+            "cut": 510.2155889950388,
+            "t": 15.200000000000335
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9999999999999999,
+            "cut": 512,
+            "t": 15.250000000000338
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.020833333333333332,
+            "cut": 0.6574074074074074,
+            "t": 15.30000000000034
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.05208333333333333,
+            "cut": 4.0219907407407405,
+            "t": 15.350000000000342
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.08333333333333333,
+            "cut": 10.074074074074074,
+            "t": 15.400000000000345
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.11458333333333331,
+            "cut": 18.6261574074074,
+            "t": 15.450000000000347
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.14583333333333331,
+            "cut": 29.490740740740733,
+            "t": 15.50000000000035
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.17708333333333331,
+            "cut": 42.48032407407407,
+            "t": 15.550000000000352
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.20833333333333331,
+            "cut": 57.4074074074074,
+            "t": 15.600000000000355
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.23958333333333331,
+            "cut": 74.08449074074073,
+            "t": 15.650000000000357
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.2708333333333333,
+            "cut": 92.32407407407406,
+            "t": 15.70000000000036
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.30208333333333326,
+            "cut": 111.93865740740736,
+            "t": 15.750000000000362
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 15.800000000000365
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.3645833333333334,
+            "cut": 154.54282407407413,
+            "t": 15.850000000000367
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.3958333333333335,
+            "cut": 177.15740740740753,
+            "t": 15.90000000000037
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.4270833333333336,
+            "cut": 200.39699074074096,
+            "t": 15.950000000000372
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.4583333333333337,
+            "cut": 224.07407407407436,
+            "t": 16.000000000000373
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.4895833333333338,
+            "cut": 248.00115740740776,
+            "t": 16.05000000000037
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.5208333333333339,
+            "cut": 271.99074074074116,
+            "t": 16.100000000000367
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.5520833333333339,
+            "cut": 295.85532407407453,
+            "t": 16.150000000000365
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.583333333333334,
+            "cut": 319.40740740740796,
+            "t": 16.20000000000036
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.6145833333333341,
+            "cut": 342.45949074074133,
+            "t": 16.25000000000036
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.645833333333334,
+            "cut": 364.8240740740746,
+            "t": 16.300000000000356
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.6770833333333339,
+            "cut": 386.3136574074078,
+            "t": 16.350000000000353
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.7083333333333338,
+            "cut": 406.74074074074105,
+            "t": 16.40000000000035
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.7395833333333337,
+            "cut": 425.9178240740743,
+            "t": 16.450000000000347
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.7708333333333336,
+            "cut": 443.6574074074075,
+            "t": 16.500000000000345
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.8020833333333335,
+            "cut": 459.7719907407408,
+            "t": 16.55000000000034
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.8333333333333334,
+            "cut": 474.07407407407413,
+            "t": 16.60000000000034
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.8645833333333333,
+            "cut": 486.3761574074074,
+            "t": 16.650000000000336
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.8958333333333331,
+            "cut": 496.4907407407407,
+            "t": 16.700000000000333
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.927083333333333,
+            "cut": 504.230324074074,
+            "t": 16.75000000000033
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.9583333333333329,
+            "cut": 509.4074074074074,
+            "t": 16.800000000000328
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.9895833333333328,
+            "cut": 511.8344907407407,
+            "t": 16.850000000000325
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "jungle",
+            "mode": "fight",
+            "form": 1,
+            "t": 16.900000000000322,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 219.7000000000042,
+              "nearData": 10.985000000000209
+            }
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "jungle",
+            "mode": "fight",
+            "form": 1,
+            "t": 16.95000000000032,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 220.35000000000414,
+              "nearData": 11.017500000000208
+            }
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "jungle",
+            "mode": "fight",
+            "form": 1,
+            "t": 17.000000000000316,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 221.00000000000412,
+              "nearData": 11.050000000000207
+            }
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2340,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "normal",
+      "form": 2,
+      "theme": "lava",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "lava",
+        "form": 2,
+        "hp": 2600,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0,
+            "cut": 0,
+            "t": 17.000000000000316
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.034482758620689655,
+            "cut": 1.7844110049612527,
+            "t": 17.050000000000313
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.06896551724137931,
+            "cut": 6.969699454672188,
+            "t": 17.10000000000031
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.10344827586206896,
+            "cut": 15.30394850137357,
+            "t": 17.150000000000308
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.13793103448275862,
+            "cut": 26.535241297306158,
+            "t": 17.200000000000305
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.17241379310344826,
+            "cut": 40.41166099471072,
+            "t": 17.250000000000302
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.20689655172413793,
+            "cut": 56.681290745828036,
+            "t": 17.3000000000003
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.24137931034482757,
+            "cut": 75.09221370289883,
+            "t": 17.350000000000296
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.27586206896551724,
+            "cut": 95.39251301816391,
+            "t": 17.400000000000293
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.31034482758620685,
+            "cut": 117.33027184386401,
+            "t": 17.45000000000029
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 17.500000000000288
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.37931034482758624,
+            "cut": 165.11050063553245,
+            "t": 17.550000000000285
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.413793103448276,
+            "cut": 190.44913690598233,
+            "t": 17.600000000000282
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4482758620689658,
+            "cut": 216.41756529583031,
+            "t": 17.65000000000028
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4827586206896555,
+            "cut": 242.7638689573171,
+            "t": 17.700000000000276
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5172413793103453,
+            "cut": 269.23613104268355,
+            "t": 17.750000000000274
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.551724137931035,
+            "cut": 295.5824347041703,
+            "t": 17.80000000000027
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5862068965517249,
+            "cut": 321.5508630940183,
+            "t": 17.850000000000268
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6206896551724146,
+            "cut": 346.8894993644681,
+            "t": 17.900000000000265
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6551724137931043,
+            "cut": 371.3464266677607,
+            "t": 17.950000000000262
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.689655172413794,
+            "cut": 394.66972815613656,
+            "t": 18.00000000000026
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7241379310344835,
+            "cut": 416.6074869818366,
+            "t": 18.050000000000257
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7586206896551732,
+            "cut": 436.9077862971016,
+            "t": 18.100000000000254
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7931034482758627,
+            "cut": 455.3187092541723,
+            "t": 18.15000000000025
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8275862068965522,
+            "cut": 471.58833900528947,
+            "t": 18.200000000000248
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8620689655172417,
+            "cut": 485.4647587026939,
+            "t": 18.250000000000245
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8965517241379313,
+            "cut": 496.6960514986265,
+            "t": 18.300000000000242
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9310344827586208,
+            "cut": 505.0303005453278,
+            "t": 18.35000000000024
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9655172413793103,
+            "cut": 510.2155889950388,
+            "t": 18.400000000000237
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9999999999999999,
+            "cut": 512,
+            "t": 18.450000000000234
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.020833333333333332,
+            "cut": 0.6574074074074074,
+            "t": 18.50000000000023
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.05208333333333333,
+            "cut": 4.0219907407407405,
+            "t": 18.550000000000228
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.08333333333333333,
+            "cut": 10.074074074074074,
+            "t": 18.600000000000225
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.11458333333333331,
+            "cut": 18.6261574074074,
+            "t": 18.650000000000222
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.14583333333333331,
+            "cut": 29.490740740740733,
+            "t": 18.70000000000022
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.17708333333333331,
+            "cut": 42.48032407407407,
+            "t": 18.750000000000217
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.20833333333333331,
+            "cut": 57.4074074074074,
+            "t": 18.800000000000214
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.23958333333333331,
+            "cut": 74.08449074074073,
+            "t": 18.85000000000021
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.2708333333333333,
+            "cut": 92.32407407407406,
+            "t": 18.900000000000208
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.30208333333333326,
+            "cut": 111.93865740740736,
+            "t": 18.950000000000205
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 19.000000000000203
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.3645833333333334,
+            "cut": 154.54282407407413,
+            "t": 19.0500000000002
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.3958333333333335,
+            "cut": 177.15740740740753,
+            "t": 19.100000000000197
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.4270833333333336,
+            "cut": 200.39699074074096,
+            "t": 19.150000000000194
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.4583333333333337,
+            "cut": 224.07407407407436,
+            "t": 19.20000000000019
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.4895833333333338,
+            "cut": 248.00115740740776,
+            "t": 19.25000000000019
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.5208333333333339,
+            "cut": 271.99074074074116,
+            "t": 19.300000000000185
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.5520833333333339,
+            "cut": 295.85532407407453,
+            "t": 19.350000000000183
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.583333333333334,
+            "cut": 319.40740740740796,
+            "t": 19.40000000000018
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.6145833333333341,
+            "cut": 342.45949074074133,
+            "t": 19.450000000000177
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.645833333333334,
+            "cut": 364.8240740740746,
+            "t": 19.500000000000174
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.6770833333333339,
+            "cut": 386.3136574074078,
+            "t": 19.55000000000017
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.7083333333333338,
+            "cut": 406.74074074074105,
+            "t": 19.60000000000017
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.7395833333333337,
+            "cut": 425.9178240740743,
+            "t": 19.650000000000166
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.7708333333333336,
+            "cut": 443.6574074074075,
+            "t": 19.700000000000163
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.8020833333333335,
+            "cut": 459.7719907407408,
+            "t": 19.75000000000016
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.8333333333333334,
+            "cut": 474.07407407407413,
+            "t": 19.800000000000157
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.8645833333333333,
+            "cut": 486.3761574074074,
+            "t": 19.850000000000154
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.8958333333333331,
+            "cut": 496.4907407407407,
+            "t": 19.90000000000015
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.927083333333333,
+            "cut": 504.230324074074,
+            "t": 19.95000000000015
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.9583333333333329,
+            "cut": 509.4074074074074,
+            "t": 20.000000000000146
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.9895833333333328,
+            "cut": 511.8344907407407,
+            "t": 20.050000000000143
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "lava",
+            "mode": "fight",
+            "form": 2,
+            "t": 20.10000000000014,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 261.30000000000183,
+              "nearData": 13.065000000000092
+            }
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "lava",
+            "mode": "fight",
+            "form": 2,
+            "t": 20.150000000000137,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 261.9500000000018,
+              "nearData": 13.097500000000089
+            }
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "lava",
+            "mode": "fight",
+            "form": 2,
+            "t": 20.200000000000134,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 262.6000000000017,
+              "nearData": 13.130000000000088
+            }
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 2600,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "normal",
+      "form": 6,
+      "theme": "sky",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "sky",
+        "form": 6,
+        "hp": 2861,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0,
+            "cut": 0,
+            "t": 20.200000000000134
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.034482758620689655,
+            "cut": 1.7844110049612527,
+            "t": 20.25000000000013
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.06896551724137931,
+            "cut": 6.969699454672188,
+            "t": 20.30000000000013
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.10344827586206896,
+            "cut": 15.30394850137357,
+            "t": 20.350000000000126
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.13793103448275862,
+            "cut": 26.535241297306158,
+            "t": 20.400000000000123
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.17241379310344826,
+            "cut": 40.41166099471072,
+            "t": 20.45000000000012
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.20689655172413793,
+            "cut": 56.681290745828036,
+            "t": 20.500000000000117
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.24137931034482757,
+            "cut": 75.09221370289883,
+            "t": 20.550000000000114
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.27586206896551724,
+            "cut": 95.39251301816391,
+            "t": 20.60000000000011
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.31034482758620685,
+            "cut": 117.33027184386401,
+            "t": 20.65000000000011
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 20.700000000000106
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.37931034482758624,
+            "cut": 165.11050063553245,
+            "t": 20.750000000000103
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.413793103448276,
+            "cut": 190.44913690598233,
+            "t": 20.8000000000001
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4482758620689658,
+            "cut": 216.41756529583031,
+            "t": 20.850000000000097
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4827586206896555,
+            "cut": 242.7638689573171,
+            "t": 20.900000000000095
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5172413793103453,
+            "cut": 269.23613104268355,
+            "t": 20.95000000000009
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.551724137931035,
+            "cut": 295.5824347041703,
+            "t": 21.00000000000009
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5862068965517249,
+            "cut": 321.5508630940183,
+            "t": 21.050000000000086
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6206896551724146,
+            "cut": 346.8894993644681,
+            "t": 21.100000000000083
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6551724137931043,
+            "cut": 371.3464266677607,
+            "t": 21.15000000000008
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.689655172413794,
+            "cut": 394.66972815613656,
+            "t": 21.200000000000077
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7241379310344835,
+            "cut": 416.6074869818366,
+            "t": 21.250000000000075
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7586206896551732,
+            "cut": 436.9077862971016,
+            "t": 21.30000000000007
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7931034482758627,
+            "cut": 455.3187092541723,
+            "t": 21.35000000000007
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8275862068965522,
+            "cut": 471.58833900528947,
+            "t": 21.400000000000066
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8620689655172417,
+            "cut": 485.4647587026939,
+            "t": 21.450000000000063
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8965517241379313,
+            "cut": 496.6960514986265,
+            "t": 21.50000000000006
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9310344827586208,
+            "cut": 505.0303005453278,
+            "t": 21.550000000000058
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9655172413793103,
+            "cut": 510.2155889950388,
+            "t": 21.600000000000055
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9999999999999999,
+            "cut": 512,
+            "t": 21.650000000000052
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.020833333333333332,
+            "cut": 0.6574074074074074,
+            "t": 21.70000000000005
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.05208333333333333,
+            "cut": 4.0219907407407405,
+            "t": 21.750000000000046
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.08333333333333333,
+            "cut": 10.074074074074074,
+            "t": 21.800000000000043
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.11458333333333331,
+            "cut": 18.6261574074074,
+            "t": 21.85000000000004
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.14583333333333331,
+            "cut": 29.490740740740733,
+            "t": 21.900000000000038
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.17708333333333331,
+            "cut": 42.48032407407407,
+            "t": 21.950000000000035
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.20833333333333331,
+            "cut": 57.4074074074074,
+            "t": 22.000000000000032
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.23958333333333331,
+            "cut": 74.08449074074073,
+            "t": 22.05000000000003
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.2708333333333333,
+            "cut": 92.32407407407406,
+            "t": 22.100000000000026
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.30208333333333326,
+            "cut": 111.93865740740736,
+            "t": 22.150000000000023
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 22.20000000000002
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.3645833333333334,
+            "cut": 154.54282407407413,
+            "t": 22.250000000000018
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.3958333333333335,
+            "cut": 177.15740740740753,
+            "t": 22.300000000000015
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.4270833333333336,
+            "cut": 200.39699074074096,
+            "t": 22.350000000000012
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.4583333333333337,
+            "cut": 224.07407407407436,
+            "t": 22.40000000000001
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.4895833333333338,
+            "cut": 248.00115740740776,
+            "t": 22.450000000000006
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.5208333333333339,
+            "cut": 271.99074074074116,
+            "t": 22.500000000000004
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.5520833333333339,
+            "cut": 295.85532407407453,
+            "t": 22.55
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.583333333333334,
+            "cut": 319.40740740740796,
+            "t": 22.599999999999998
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.6145833333333341,
+            "cut": 342.45949074074133,
+            "t": 22.649999999999995
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.645833333333334,
+            "cut": 364.8240740740746,
+            "t": 22.699999999999992
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.6770833333333339,
+            "cut": 386.3136574074078,
+            "t": 22.74999999999999
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.7083333333333338,
+            "cut": 406.74074074074105,
+            "t": 22.799999999999986
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.7395833333333337,
+            "cut": 425.9178240740743,
+            "t": 22.849999999999984
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.7708333333333336,
+            "cut": 443.6574074074075,
+            "t": 22.89999999999998
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.8020833333333335,
+            "cut": 459.7719907407408,
+            "t": 22.949999999999978
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.8333333333333334,
+            "cut": 474.07407407407413,
+            "t": 22.999999999999975
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.8645833333333333,
+            "cut": 486.3761574074074,
+            "t": 23.049999999999972
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.8958333333333331,
+            "cut": 496.4907407407407,
+            "t": 23.09999999999997
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.927083333333333,
+            "cut": 504.230324074074,
+            "t": 23.149999999999967
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.9583333333333329,
+            "cut": 509.4074074074074,
+            "t": 23.199999999999964
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.9895833333333328,
+            "cut": 511.8344907407407,
+            "t": 23.24999999999996
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "sky",
+            "mode": "fight",
+            "form": 6,
+            "t": 23.299999999999958,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 302.89999999999947,
+              "nearData": 15.144999999999973
+            }
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "sky",
+            "mode": "fight",
+            "form": 6,
+            "t": 23.349999999999955,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 303.54999999999944,
+              "nearData": 15.177499999999972
+            }
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "sky",
+            "mode": "fight",
+            "form": 6,
+            "t": 23.399999999999952,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 304.19999999999936,
+              "nearData": 15.209999999999969
+            }
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 2861,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "normal",
+      "form": 8,
+      "theme": "space",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "space",
+        "form": 8,
+        "hp": 3120,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0,
+            "cut": 0,
+            "t": 23.399999999999952
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.034482758620689655,
+            "cut": 1.7844110049612527,
+            "t": 23.44999999999995
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.06896551724137931,
+            "cut": 6.969699454672188,
+            "t": 23.499999999999947
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.10344827586206896,
+            "cut": 15.30394850137357,
+            "t": 23.549999999999944
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.13793103448275862,
+            "cut": 26.535241297306158,
+            "t": 23.59999999999994
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.17241379310344826,
+            "cut": 40.41166099471072,
+            "t": 23.649999999999938
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.20689655172413793,
+            "cut": 56.681290745828036,
+            "t": 23.699999999999935
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.24137931034482757,
+            "cut": 75.09221370289883,
+            "t": 23.749999999999932
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.27586206896551724,
+            "cut": 95.39251301816391,
+            "t": 23.79999999999993
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.31034482758620685,
+            "cut": 117.33027184386401,
+            "t": 23.849999999999927
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 23.899999999999924
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.37931034482758624,
+            "cut": 165.11050063553245,
+            "t": 23.94999999999992
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.413793103448276,
+            "cut": 190.44913690598233,
+            "t": 23.99999999999992
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4482758620689658,
+            "cut": 216.41756529583031,
+            "t": 24.049999999999915
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.4827586206896555,
+            "cut": 242.7638689573171,
+            "t": 24.099999999999913
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5172413793103453,
+            "cut": 269.23613104268355,
+            "t": 24.14999999999991
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.551724137931035,
+            "cut": 295.5824347041703,
+            "t": 24.199999999999907
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.5862068965517249,
+            "cut": 321.5508630940183,
+            "t": 24.249999999999904
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6206896551724146,
+            "cut": 346.8894993644681,
+            "t": 24.2999999999999
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.6551724137931043,
+            "cut": 371.3464266677607,
+            "t": 24.3499999999999
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.689655172413794,
+            "cut": 394.66972815613656,
+            "t": 24.399999999999896
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7241379310344835,
+            "cut": 416.6074869818366,
+            "t": 24.449999999999893
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7586206896551732,
+            "cut": 436.9077862971016,
+            "t": 24.49999999999989
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.7931034482758627,
+            "cut": 455.3187092541723,
+            "t": 24.549999999999887
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8275862068965522,
+            "cut": 471.58833900528947,
+            "t": 24.599999999999884
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8620689655172417,
+            "cut": 485.4647587026939,
+            "t": 24.64999999999988
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.8965517241379313,
+            "cut": 496.6960514986265,
+            "t": 24.69999999999988
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9310344827586208,
+            "cut": 505.0303005453278,
+            "t": 24.749999999999876
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9655172413793103,
+            "cut": 510.2155889950388,
+            "t": 24.799999999999873
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.9999999999999999,
+            "cut": 512,
+            "t": 24.84999999999987
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3380,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.020833333333333332,
+            "cut": 0.6574074074074074,
+            "t": 24.899999999999867
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.05208333333333333,
+            "cut": 4.0219907407407405,
+            "t": 24.949999999999864
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.08333333333333333,
+            "cut": 10.074074074074074,
+            "t": 24.99999999999986
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.11458333333333331,
+            "cut": 18.6261574074074,
+            "t": 25.04999999999986
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.14583333333333331,
+            "cut": 29.490740740740733,
+            "t": 25.099999999999856
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.17708333333333331,
+            "cut": 42.48032407407407,
+            "t": 25.149999999999853
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.20833333333333331,
+            "cut": 57.4074074074074,
+            "t": 25.19999999999985
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.23958333333333331,
+            "cut": 74.08449074074073,
+            "t": 25.249999999999847
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.2708333333333333,
+            "cut": 92.32407407407406,
+            "t": 25.299999999999844
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.30208333333333326,
+            "cut": 111.93865740740736,
+            "t": 25.34999999999984
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 25.39999999999984
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.3645833333333334,
+            "cut": 154.54282407407413,
+            "t": 25.449999999999836
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.3958333333333335,
+            "cut": 177.15740740740753,
+            "t": 25.499999999999833
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.4270833333333336,
+            "cut": 200.39699074074096,
+            "t": 25.54999999999983
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.4583333333333337,
+            "cut": 224.07407407407436,
+            "t": 25.599999999999827
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.4895833333333338,
+            "cut": 248.00115740740776,
+            "t": 25.649999999999824
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.5208333333333339,
+            "cut": 271.99074074074116,
+            "t": 25.69999999999982
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.5520833333333339,
+            "cut": 295.85532407407453,
+            "t": 25.74999999999982
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.583333333333334,
+            "cut": 319.40740740740796,
+            "t": 25.799999999999816
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.6145833333333341,
+            "cut": 342.45949074074133,
+            "t": 25.849999999999813
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.645833333333334,
+            "cut": 364.8240740740746,
+            "t": 25.89999999999981
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.6770833333333339,
+            "cut": 386.3136574074078,
+            "t": 25.949999999999807
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.7083333333333338,
+            "cut": 406.74074074074105,
+            "t": 25.999999999999805
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.7395833333333337,
+            "cut": 425.9178240740743,
+            "t": 26.0499999999998
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.7708333333333336,
+            "cut": 443.6574074074075,
+            "t": 26.0999999999998
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.8020833333333335,
+            "cut": 459.7719907407408,
+            "t": 26.149999999999796
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.8333333333333334,
+            "cut": 474.07407407407413,
+            "t": 26.199999999999793
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.8645833333333333,
+            "cut": 486.3761574074074,
+            "t": 26.24999999999979
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.8958333333333331,
+            "cut": 496.4907407407407,
+            "t": 26.299999999999788
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.927083333333333,
+            "cut": 504.230324074074,
+            "t": 26.349999999999785
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.9583333333333329,
+            "cut": 509.4074074074074,
+            "t": 26.399999999999782
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.9895833333333328,
+            "cut": 511.8344907407407,
+            "t": 26.44999999999978
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "space",
+            "mode": "fight",
+            "form": 8,
+            "t": 26.499999999999776,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 344.4999999999971,
+              "nearData": 17.224999999999856
+            }
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "space",
+            "mode": "fight",
+            "form": 8,
+            "t": 26.549999999999773,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 345.1499999999971,
+              "nearData": 17.257499999999855
+            }
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": false
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "space",
+            "mode": "fight",
+            "form": 8,
+            "t": 26.59999999999977,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 345.799999999997,
+              "nearData": 17.28999999999985
+            }
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3120,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "hard",
+      "form": 1,
+      "theme": "jungle",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "jungle",
+        "form": 1,
+        "hp": 2970,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 27.099999999999742
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 4290,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 28.599999999999657
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2970,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "jungle",
+            "mode": "fight",
+            "form": 1,
+            "t": 29.79999999999959,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 387.39999999999463,
+              "nearData": 19.369999999999735
+            }
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 2970,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "hard",
+      "form": 2,
+      "theme": "lava",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "lava",
+        "form": 2,
+        "hp": 3300,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 30.29999999999956
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 4290,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 31.799999999999475
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 3300,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "lava",
+            "mode": "fight",
+            "form": 2,
+            "t": 32.99999999999941,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 428.9999999999923,
+              "nearData": 21.44999999999962
+            }
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 3300,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "hard",
+      "form": 6,
+      "theme": "sky",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "sky",
+        "form": 6,
+        "hp": 3631,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 33.49999999999938
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 4290,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 34.9999999999993
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 3631,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "sky",
+            "mode": "fight",
+            "form": 6,
+            "t": 36.19999999999923,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 470.59999999998996,
+              "nearData": 23.5299999999995
+            }
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 3631,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "hard",
+      "form": 8,
+      "theme": "space",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "space",
+        "form": 8,
+        "hp": 3960,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 36.6999999999992
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 4290,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 38.199999999999115
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3960,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "space",
+            "mode": "fight",
+            "form": 8,
+            "t": 39.39999999999905,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 512.1999999999877,
+              "nearData": 25.60999999999938
+            }
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 3960,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "furious",
+      "form": 1,
+      "theme": "jungle",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "jungle",
+        "form": 1,
+        "hp": 3690,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 39.89999999999902
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 5330,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "jungle",
+            "from": "void",
+            "mode": "build",
+            "form": 1,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 41.39999999999893
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3690,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "jungle",
+            "mode": "fight",
+            "form": 1,
+            "t": 42.599999999998865,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 553.7999999999853,
+              "nearData": 27.689999999999262
+            }
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 3690,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "furious",
+      "form": 2,
+      "theme": "lava",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "lava",
+        "form": 2,
+        "hp": 4100,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 43.099999999998836
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 5330,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "lava",
+            "from": "void",
+            "mode": "build",
+            "form": 2,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 44.59999999999875
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 4100,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "lava",
+            "mode": "fight",
+            "form": 2,
+            "t": 45.79999999999868,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 595.3999999999829,
+              "nearData": 29.769999999999143
+            }
+          },
+          "parts": [
+            "core",
+            "head",
+            "wingL",
+            "clawL",
+            "cannonL",
+            "wingR",
+            "clawR",
+            "cannonR"
+          ],
+          "hp": 4100,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "furious",
+      "form": 6,
+      "theme": "sky",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "sky",
+        "form": 6,
+        "hp": 4510,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 46.299999999998654
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 5330,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "sky",
+            "from": "void",
+            "mode": "build",
+            "form": 6,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 47.79999999999857
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 4510,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "sky",
+            "mode": "fight",
+            "form": 6,
+            "t": 48.9999999999985,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 636.9999999999806,
+              "nearData": 31.849999999999028
+            }
+          },
+          "parts": [
+            "core",
+            "fanL",
+            "fanR",
+            "rackL",
+            "rackR",
+            "beam"
+          ],
+          "hp": 4510,
+          "protected": false
+        }
+      ]
+    },
+    {
+      "diff": "furious",
+      "form": 8,
+      "theme": "space",
+      "passed": true,
+      "end": {
+        "mode": "fight",
+        "theme": "space",
+        "form": 8,
+        "hp": 4920,
+        "lives": 3
+      },
+      "states": [
+        {
+          "mode": "v18formOut",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "erase",
+            "form": 0,
+            "u": 0.3448275862068965,
+            "cut": 140.65357333223992,
+            "t": 49.49999999999847
+          },
+          "parts": [
+            "core",
+            "left",
+            "right"
+          ],
+          "hp": 5330,
+          "protected": true
+        },
+        {
+          "mode": "v18formIn",
+          "arena": {
+            "theme": "space",
+            "from": "void",
+            "mode": "build",
+            "form": 8,
+            "u": 0.3333333333333333,
+            "cut": 132.74074074074073,
+            "t": 50.99999999999839
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 4920,
+          "protected": true
+        },
+        {
+          "mode": "fight",
+          "arena": {
+            "theme": "space",
+            "mode": "fight",
+            "form": 8,
+            "t": 52.19999999999832,
+            "layers": {
+              "terrain": 0,
+              "farCloud": 678.5999999999782,
+              "nearData": 33.929999999998905
+            }
+          },
+          "parts": [
+            "core",
+            "hammer",
+            "chaingun"
+          ],
+          "hp": 4920,
+          "protected": false
+        }
+      ]
+    }
+  ],
+  "movie_frames": {
+    "jungle": 65,
+    "lava": 65,
+    "sky": 65,
+    "space": 65
+  },
+  "curtain_frames": 32,
+  "protected_sha256": {
+    "assets/game.js": "ee8586ca61002e07d4262552ff9a2b48931d67aa08c02efaaf15d83f76fb9710",
+    "_BUILD_SOURCE/test_fl.js": "8c80e17cba07d403df5ae19d123f93ab1c3db22131fc8087fd909e397af74fb5",
+    "assets/command_ui_1020.js": "b36ea144dc9727b2d2e9a2049af68d093a715d97b57851f8ea66b1f8fb7e0914",
+    "assets/stormglass_tutorial_1020.js": "87076c8f9c2288f21d98b60fb75cd2d539d653dde3f597f3bfece488edd8b290",
+    "assets/stage1_water_1020.js": "fb0881eb42ea0b03e9a88f4dc4c864e741723dc3ac620b79ba796f9679b5b440"
+  },
+  "full_suite": {
+    "passed": 8940,
+    "errors": 0,
+    "exit": 0
+  },
+  "art_audit": {
+    "arenas": {
+      "jungle_terrain": {
+        "source_sha256": "44fd7d509bae0b8727887bbf52ef8e1560a956b361ef0319ef8994c6d8b7d097",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.0,
+        "bytes": 114046
+      },
+      "jungle_wire": {
+        "source_sha256": "fd7db784ba502fb405f759e4044fe4ef89a730764c9e23e11a8b1462783f132f",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.0,
+        "bytes": 40474
+      },
+      "lava_terrain": {
+        "source_sha256": "526cd403d3c656ee492289e3e85f11cfb88f2aa90b61bf5ae6ac1501832d480f",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.7225875854492188,
+        "bytes": 30100
+      },
+      "lava_wire": {
+        "source_sha256": "2f2ef7721b90c96d38c25946589efebd3c6db71315073b2ceadc56f3f9479c99",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.7225875854492188,
+        "bytes": 19172
+      },
+      "space_terrain": {
+        "source_sha256": "dc3afd9186269ecb630c5907729eff4af28c707ab6bfb252bc0d202282b72ffb",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.0,
+        "bytes": 80402
+      },
+      "space_wire": {
+        "source_sha256": "72075350298ab817ee5e16483db2726eb01be90ce659fa69788a968baabdd0c1",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.0,
+        "bytes": 80452
+      },
+      "sky_terrain": {
+        "source_sha256": "fb2fcab4f8de5a01b7107961a368be20ca4ca68cfefd9527ffbdcf0883ee5b11",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.0,
+        "bytes": 65084
+      },
+      "sky_wire": {
+        "source_sha256": "7b908031309bc015a365d63a8d7b06f8c837a85b31952de8e530d15166d6f800",
+        "size": [
+          512,
+          512
+        ],
+        "transparent_fraction": 0.0,
+        "bytes": 41608
+      }
+    },
+    "bytes": 471338,
+    "curtain_frames": 32,
+    "curtain_unique": 32,
+    "pending_animation": false,
+    "curtain_sheet": [
+      1560,
+      1560
+    ],
+    "runtime_bytes": 576513,
+    "curtain_alpha_bounds": [
+      [
+        0,
+        71,
+        256,
+        187
+      ],
+      [
+        0,
+        67,
+        256,
+        193
+      ],
+      [
+        0,
+        62,
+        256,
+        198
+      ],
+      [
+        0,
+        52,
+        256,
+        204
+      ],
+      [
+        0,
+        47,
+        256,
+        209
+      ],
+      [
+        0,
+        44,
+        256,
+        215
+      ],
+      [
+        0,
+        40,
+        256,
+        220
+      ],
+      [
+        0,
+        37,
+        256,
+        218
+      ],
+      [
+        0,
+        42,
+        256,
+        218
+      ],
+      [
+        0,
+        40,
+        256,
+        214
+      ],
+      [
+        0,
+        41,
+        256,
+        217
+      ],
+      [
+        0,
+        50,
+        256,
+        212
+      ],
+      [
+        0,
+        56,
+        256,
+        216
+      ],
+      [
+        0,
+        74,
+        256,
+        182
+      ],
+      [
+        0,
+        90,
+        256,
+        171
+      ],
+      [
+        0,
+        83,
+        256,
+        177
+      ],
+      [
+        0,
+        74,
+        256,
+        185
+      ],
+      [
+        0,
+        67,
+        256,
+        190
+      ],
+      [
+        0,
+        64,
+        256,
+        196
+      ],
+      [
+        0,
+        54,
+        256,
+        203
+      ],
+      [
+        0,
+        48,
+        256,
+        209
+      ],
+      [
+        0,
+        42,
+        256,
+        214
+      ],
+      [
+        0,
+        40,
+        256,
+        219
+      ],
+      [
+        0,
+        37,
+        256,
+        218
+      ],
+      [
+        0,
+        43,
+        256,
+        218
+      ],
+      [
+        0,
+        40,
+        256,
+        214
+      ],
+      [
+        0,
+        41,
+        256,
+        217
+      ],
+      [
+        0,
+        50,
+        256,
+        212
+      ],
+      [
+        0,
+        68,
+        256,
+        182
+      ],
+      [
+        0,
+        75,
+        256,
+        182
+      ],
+      [
+        0,
+        87,
+        256,
+        173
+      ],
+      [
+        0,
+        78,
+        256,
+        181
+      ]
+    ]
+  },
+  "credits_charged_usd": 1.3326
+}

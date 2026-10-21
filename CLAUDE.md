@@ -1,3 +1,11 @@
+## October21 — final art, dogfight and coastal city
+
+New256-square corrupted Hammer acting banks with muzzle/head alignment; Stage5 bomber requires full displayed module health; Forge isolates Lizzie mount/space/death/special state and persists alternating chaingun barrels. PixelLab portal-only violet/blue loops, seven animated bubble/code shield variants, new wall/carrier shield, Nyx orbs, stage4 drift and supplementary NeoGeo final-destruction effects from actual BOF/user pack references. Native death and opaque modular wreck rules retained.
+
+40 aircraft designs ×4 motion banks plus idle;13 palette/family reuses cover53 source design IDs. Fixed128 cells, common64,64 pivot; three source sections reconstruct every pixel without duplicate textures. Five individual Rebel books, all-lane FOVs, real Retina reveals, shootable homing volleys, star/bowling/H/X formation/scatter/depth-return,8% further HP reduction, Rook/Juggernaut ram feedback. StageX gets a proper Seabreak City entrance, seamless coast-to-city travel and independent animated water. Six cinematic concept proposals generated with actual identity references.
+
+Full required regression8943/0/exit0; updated obsolete bomber core-only defeat expectations while preserving cookoff/hazard/reward/progression checks. Native Edge/Firefox/Chrome contract checks, decoded audio/contact checks and environment/seam checks. Details/audits/builders: docs/FINAL_VERSION_1021.md; _ART_SOURCES/final_version_1021; review _shots/final_version_1021/review.html. Existing unrelated work preserved. Local build only.
+
 # 2026-10-19 - Completed overnight combat pass, final verified checkpoint
 
 Mike asked for continuous overnight analysis/fixes until he returns. Read
@@ -679,6 +687,22 @@ with mode and co-op restored. Pause shows SKIP TUTORIAL. Runtime assets/tutorial
 game.js edits); doc docs/TUTORIAL_1015.md; probe _BUILD_SOURCE/probe_tutorial_1015.py 42/0 for cole,
 juggernaut, lizzie and decker. Full suite 8,700/0, exit 0. No commit/push.
 Trap: dlgBox types on performance.now(); pass `shown` from a game-clock counter.
+
+# 2026-10-15 — LOCAL: FOV-only boss warnings and missing combat audio
+
+Removed anchored arrow boxes/legacy arrow fallback and duplicate boss/rebel
+hazard signs; stage preload requires all three authored FOV colours. Unknown
+laser families use regular FOV. Impact reticles, projectile alerts and SHOOT!
+objectives retain their own paths. Added combat_audio_1015.js:17 missing cue
+names resolved, semantic projectile reports, bounded targeted-ball release/
+impact fallback. Five enemy/ally gun sites no longer depend on Cole's player
+cue. No new media, projectile scan or gameplay balance/hit-routing changes.
+Native Edge372/372,329 scene samples across185 current BOF actors and48
+encounters on all4tiers;8 decoded-audio captures nonzero. Stage2 and Hammer
+focused4tier fixtures pass;64voice budget retained, no browser/media errors.
+Required fullsuite8700/0, finalBUILDOK/exit0;11syntax checks clean. Details:
+docs/COMBAT_FOV_AUDIO_1015.md and docs/qa/combat_fov_audio_1015.json.
+Local only; no commit/push. Preserve separate ongoing Overdrive changes.
 
 # 2026-10-15 — RELEASE: Warden warnings, larger helpers and hit feedback
 
@@ -7629,3 +7653,19 @@ accepted and rejected generations preserved in _ART_SOURCES/survivor_1010.
 Details docs/SURVIVOR_1010.md;portable evidence docs/qa/survivor_1010.json.
 game.js/test_fl.js/homecoming art unchanged;LF/CRLF retained. All previous
 work/staged7/8 and safety stash preserved. No commit/push.
+
+
+## October20 — targeted older boss banks, terminal effects and Cole performance
+
+17 older native encounters visually audited; upgraded Stage5 Eclipse bomber cannon windup/recoil/recovery and Stage6 cargo/Warhive shared turret bank. Existing combat owners/timings/warnings/audio/collisions preserved; native hit flashes/expiry and opaque wrecks verified. Three new PixelLab laser/ice/dark player terminal effects use actual victim hull; irregular fragments replace ice tiles. Respawn now releases old contextual canvases in either seat. Cole-only face/gesture banks preserve fixed source head identity; reporting restores full-body512x1024 source, squad retains closer framing. Other8 pilots await Mike's requested Cole likeness review.9 atlases/160slots; runtime1,033,324bytes. Native75/75, full8940/0/exit0, syntax clean; core/test/CommandUI hashes unchanged. PixelLab$0.3528+2daily, no jobs pending. Review _shots/performance_finish_1020/review.html; docs/PERFORMANCE_FINISH_1020.md. No push requested.
+
+
+
+## October21 — Instructor card text fitting and black/red portrait frame
+
+Mike requested safe scaling/centering for every B.O.B. dossier label and a black/red Instructor Cole portrait box. `ic20CardDraw` now maps explicit text apertures from the1200x832 authored template, bounds its overall proportional size to the available screen, and separates the part title from the rotating model. Ten independently centered/fit/clipped text blocks cover the title/subtitle, part name, six statistics and retirement line. The model has its own viewport. Tutorial objective/footer labels now fit their own bounds. Inset dialogue retains enough vertical room for the three longest four-line lessons; all17 lesson texts and runtime reactor feedback fit completely. Native logical selection and deploy controls remain.
+
+The built-in image generator supplied the charcoal/black steel and red lamp treatment. The owning builder applies its palette only to the original green frame pixels in an explicit rim mask, preserving the exact portrait artwork, expressions, alpha and frame geometry. Four256-square `*-black-red.webp` exports; old green exports archived outside game assets in `_ART_SOURCES/instructor_bob_1020/palette_black_red_1020/previous-green-exports`. Two naturally greenish eye pixels are deliberately preserved. No original photos uploaded; no PixelLab charge. Source image, palette export audit and notes saved beside originals.
+
+Native UI verification:41/41, four card selections at390x844,1366x768,1920x1080,768x1024; all10 text blocks centered and bounded, model/title and card/prompts clear, all lesson text fits, all4 portrait states decoded, actual selection/deploy controls. No browser errors. During testing, repaired the existing locked-pilot hover font guard (`typeof _pilotFace` before access); no other core changes. Required full regression8940/0/exit0 and syntax clean. Core game LF and test harness CRLF preserved. Cache instructor-bob-fit-black-red-1020. Updated review `_shots/instructor_fit_1020/review.html`; previous instructor review redirects here. No GitHub push requested.
+

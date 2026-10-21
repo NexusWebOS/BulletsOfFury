@@ -11,7 +11,7 @@
   @font-face{ font-family:'BOFmil'; src:url('assets/game/shared/fonts/fonts/command_0914/BOFCommandSignal.ttf') format('truetype'); font-display:swap; }
   html,body{margin:0;padding:0;height:100%;background:#05060a;overflow:hidden;
     font-family:"Courier New",monospace;color:#cfd6e0;-webkit-user-select:none;user-select:none;touch-action:none;}
-  /* ROOM: a simple centred row — credits, game, credits. No cabinet, no filtered ancestor. */
+  /* ROOM: a simple centred row â€” credits, game, credits. No cabinet, no filtered ancestor. */
   #room{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,54px);
     background:radial-gradient(130% 100% at 50% 12%, #181320 0%, #0b0b12 55%, #050507 100%);}
   #stage{display:flex;flex-direction:column;align-items:center;gap:6px;}
@@ -33,9 +33,9 @@
   #screen-area{position:relative;flex:0 0 auto;width:100%;overflow:hidden;}
   /* The canvas is sized in JS by fitCanvas() (aspect-locked) and CENTRED here. It used to be
      forced to width:100%;height:100%, which stretched it to whatever shape #screen-area was and
-     made fitCanvas's own sizing pointless — that is why fullscreen was off-centre and distorted. */
+     made fitCanvas's own sizing pointless â€” that is why fullscreen was off-centre and distorted. */
   /* image-rendering was `auto`, i.e. the browser bilinear-scaled the backing canvas AGAIN on the
-     way to the display — a second blur on top of the one imageSmoothingEnabled was adding. The
+     way to the display â€” a second blur on top of the one imageSmoothingEnabled was adding. The
      equip-box canvas below already had `pixelated`; the game canvas is the one the player looks
      at, so it is the one that needed it. */
   #screen-area canvas{display:block;position:absolute;left:50%;top:50%;
@@ -88,7 +88,7 @@
   /* POSITION:FIXED CONTAINING-BLOCK TRAP.
      #cabinet carries a drop-shadow filter, and ANY filtered ancestor becomes the containing block
      for its position:fixed descendants. So #game-frame's fullscreen left/top were being measured
-     from the CABINET's box instead of the viewport — and since the cabinet is flex-centred inside
+     from the CABINET's box instead of the viewport â€” and since the cabinet is flex-centred inside
      #room, that offset pushed the whole game across. Clearing the filter (and collapsing the
      cabinet, which is invisible in fullscreen anyway) makes fixed mean fixed again. */
   body.fs #stage{gap:0 !important;}
@@ -98,7 +98,7 @@
 
 
   /* CREDIT RAILS. Vertical text either side of the play window. pointer-events:none so they can
-     never intercept a click meant for the canvas — the whole reason the cabinet came out. */
+     never intercept a click meant for the canvas â€” the whole reason the cabinet came out. */
   #credit-left,#credit-right{
     pointer-events:none; user-select:none;
     font-family:'BOFmil',monospace; letter-spacing:.14em; line-height:1.5;
@@ -130,6 +130,7 @@
   body.cinematic-full #screen{width:100vw !important;height:100vh !important;}
 </style>
 <link rel="stylesheet" href="assets/siege_console_1012.css?v=1012">
+<link rel="stylesheet" href="assets/holoscan_dossier_1021.css?v=holoscan-1021-3">
 </head>
 <body>
 <div id="room">
@@ -169,7 +170,7 @@
        arcade attract reel and the pilot select all carried an EQUIPPED panel hanging over
        them. It belongs to the run, not to the app. Cleared above, so hiding is simply
        returning early. */
-    /* ⚠ NOT window.state. game.js declares it with `let` at top level, which creates a LEXICAL
+    /* âš  NOT window.state. game.js declares it with `let` at top level, which creates a LEXICAL
        global - reachable as a bare identifier from another classic script, but never a property
        of window. Reading window.state gives undefined and would hide the box in every state,
        including gameplay. */
@@ -186,8 +187,8 @@
       if(run && !window.player.dead && run.weapon!=null){
         var wt=WT[run.weapon]||'mg';
         var wlv=Math.max(1,Math.min(5,(run.wlevels&&run.wlevels[run.weapon])||run.wlevel||1));
-        /* ⚠ THE PRECEDING COMMENT WAS WRONG AND IT COST MIKE THE RIGHT ICON (fixed 0810s).
-           micon_* DOES exist — as 57 rects in BOFX.icons, the THIRD art store, which XART can
+        /* âš  THE PRECEDING COMMENT WAS WRONG AND IT COST MIKE THE RIGHT ICON (fixed 0810s).
+           micon_* DOES exist â€” as 57 rects in BOFX.icons, the THIRD art store, which XART can
            never answer for. So `X.rdy('micon_...')` was false for every weapon on every frame,
            the micon_ candidate always lost, and this quietly drew the older *_icon_* set. That
            is "I see your using a basic graphic for fireball icon".
@@ -357,6 +358,7 @@
 <script src="assets/stagefonts_v4.js"></script>
 <script src="assets/game/shared/fonts/fonts/bmf_maps.js"></script>
 <script src="assets/game/shared/fonts/fonts/command_0914/fonts.js"></script>
+<script src="assets/game/shared/fonts/fonts/iron_signal_1020/fonts.js?v=iron-signal-aligned-1020"></script>
 <!-- Measured section geometry for the eight 0801hm miniboss bodies (window.BOFSG).
      Must load BEFORE game.js: sxDraw composites the body from its section plates
      using these offsets, and sxHit attributes shots with these centroids. -->
@@ -367,17 +369,17 @@
 <script src="assets/game/shared/atlases/stage_runtime_atlases.js"></script>
 <script src="assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js"></script>
 <script src="assets/audio_feedback_0927.js"></script>
-<script src="assets/game.js?v=overnight-combat-1019"></script>
+<script src="assets/game.js?v=final-version-1021-3"></script>
 <script src="assets/campaign_story_0924.js"></script>
 <script src="assets/vile_finale_0924.js"></script>
-<script src="assets/rival_fight_0924.js"></script>
+<script src="assets/rival_fight_0924.js?v=-local-fov-audio-1019"></script>
 <script src="assets/stage3_thermo.js"></script>
 <script src="assets/encounters_0926.js"></script>
 <script src="assets/weapon_muzzles_0926.js?v=machinegun-nose-1018"></script>
 <script src="assets/combat_ai_0927.js"></script>
 <script src="assets/late_encounters_0927.js"></script>
 <script src="assets/stage7_modular_0927.js"></script>
-<script src="assets/combat_polish_0927b.js?v=no-warning-arrows-1016"></script>
+<script src="assets/combat_polish_0927b.js?v=final-version-1021-3"></script>
 <script src="assets/modular_roster_art_0927.js"></script>
 <script src="assets/mr27_hull_mask_1017.js?v=frost-core-1017"></script>
 <script src="assets/modular_roster_0927.js?v=warden-wing-1017"></script>
@@ -415,7 +417,7 @@
 <script src="assets/feedback_1001b.js"></script>
 <script src="assets/feedback_art_1002.js"></script>
 <script src="assets/s4_core_revival_art_1006.js"></script>
-<script src="assets/feedback_1002.js"></script>
+<script src="assets/feedback_1002.js?v=-local-fov-audio-1019"></script>
 <script src="assets/s4_core_revival_1006.js"></script>
 <script src="assets/icon_ink_1002.js"></script>
 <script src="assets/feedback_claude_1003.js"></script>
@@ -439,14 +441,14 @@
 <script src="assets/combat_art_1003i.js"></script>
 <script src="assets/combat_1003i.js"></script>
 <script src="assets/finale_structure_1003j.js"></script>
-<script src="assets/rebel_gang_1004.js"></script>
+<script src="assets/rebel_gang_1004.js?v=-local-fov-audio-1019"></script>
 <script src="assets/sky_repair_art_1004i.js"></script>
 <script src="assets/gameplay_repair_1004.js?v=harrier-wing-1018"></script>
 <script src="assets/finale_donors_1004.js"></script>
 <script src="assets/campaign_focus_1004b.js"></script>
 <script src="assets/rebel_arsenal_art_1004c.js"></script>
-<script src="assets/rebel_arsenal_1004c.js?v=rebel-flight-audio-1013"></script>
-<script src="assets/stage3_combat_1004k.js"></script>
+<script src="assets/rebel_arsenal_1004c.js?v=rebel-flight-audio-1013-local-fov-audio-1019"></script>
+<script src="assets/stage3_combat_1004k.js?v=-local-fov-audio-1019"></script>
 <script src="assets/cole_fusion_art_1004l.js"></script>
 <script src="assets/cole_fusion_1004l.js"></script>
 <script src="assets/rebel_showcase_1004l.js"></script>
@@ -463,10 +465,10 @@
 <script src="assets/dracodia_art_1005.js"></script>
 <script src="assets/dracodia_cinematic_1005.js"></script>
 <script src="assets/hammer_knight_art_1005.js"></script>
-<script src="assets/hammer_knight_1005.js"></script>
+<script src="assets/hammer_knight_1005.js?v=-local-fov-audio-1019"></script>
 <script src="assets/finale_motion_art_1006.js"></script>
 <script src="assets/finale_ai_1006.js"></script>
-<script src="assets/engine_combat_1007.js"></script>
+<script src="assets/engine_combat_1007.js?v=-local-fov-audio-1019"></script>
 <script src="assets/hardcorps_bosses_1007.js"></script>
 <script src="assets/lost_airbase_1007.js"></script>
 <script src="assets/rebel_air_1007.js"></script>
@@ -532,11 +534,11 @@
 <script src="assets/hq_landing_1010.js"></script>
 <script src="assets/part2_art_1010.js"></script>
 <script src="assets/part2_fire_renderer_1011.js"></script>
-<script src="assets/part2_combat_1010.js?v=harrier-wing-1018"></script>
-<script src="assets/part2_encounters_1010.js"></script>
+<script src="assets/part2_combat_1010.js?v=retina-colors-1020"></script>
+<script src="assets/part2_encounters_1010.js?v=-local-fov-audio-1019"></script>
 <script src="assets/part2_modes_1010.js"></script>
 <script src="assets/part2_motion_1011.js"></script>
-<script src="assets/hammer_chromium_1011.js"></script>
+<script src="assets/hammer_chromium_1011.js?v=1019-jump-escape"></script>
 <script src="assets/enemy_behaviour_1011.js"></script>
 <script src="assets/signature_specials_1011.js?v=no-opening-supply-1018"></script>
 <script src="assets/wind_projectile_painter_1011.js"></script>
@@ -637,6 +639,41 @@
 <script src="assets/sewer_entry_1019.js?v=sewer-entry-1019"></script>
 <script src="assets/late_fleet_1019.js?v=late-fleet-party-1019"></script>
 <script src="assets/drone_commit_1019.js?v=drone-commit-1019"></script>
+<script src="assets/hammer_finish_art_1019.js?v=hammer-finish-1019"></script>
+<script src="assets/hammer_finish_1019.js?v=hammer-finish-1019"></script>
+<script src="assets/soul_bomb_art_1019.js?v=soul-bomb-purple-1019"></script>
+<script src="assets/soul_bomb_1019.js?v=soul-bomb-purple-1019"></script>
+<script src="assets/dracodia_download_art_1019.js?v=phoenix-wire-final-1020"></script>
+<script src="assets/dracodia_demon_art_1019.js?v=wire-download-1019"></script>
+<script src="assets/dracodia_demon_1019.js?v=wire-download-1019"></script>
+<script src="assets/dracodia_volcano_art_1019.js?v=volcano-modular-final-1019"></script>
+<script src="assets/dracodia_volcano_1019.js?v=volcano-modular-final-1019"></script>
+<script src="assets/dracodia_phoenix_art_1020.js?v=phoenix-final-1020"></script>
+<script src="assets/dracodia_phoenix_1020.js?v=phoenix-final-1020"></script>
+<script src="assets/phoenix_swoon_art_1020.js?v=corner-warning-v3-1020"></script>
+<script src="assets/boss_shared_1020.js?v=bosses-1020-final"></script>
+<script src="assets/phoenix_swoon_1020.js?v=whole-wings-1020-final"></script>
+<script src="assets/helicopter_assault_1020.js?v=routes-1020-final"></script>
+<script src="assets/hammer_redesign_art_1020.js?v=actors-1020-final"></script>
+<script src="assets/hammer_redesign_1020.js?v=final-version-1021-3"></script>
+<script src="assets/boss_download_1020.js?v=inventory-1020"></script>
+<script src="assets/combat_audio_1015.js?v=1"></script>
+<script src="assets/cinematic_ending_art_1020.js?v=ending-1020-f4b3d4961c"></script>
+<script src="assets/cinematic_ending_1020.js?v=ending-1020-f4b3d4961c"></script>
+<script src="assets/cinematic_invasion_art_1020.js?v=invasion-42ebd40372"></script>
+<script src="assets/cinematic_invasion_1020.js?v=invasion-42ebd40372"></script>
+<script src="assets/dracodia_dialogue_portrait_1020.js?v=framed-portrait-1020"></script>
+<script src="assets/command_ui_1020.js?v=command-full-nameplate-4"></script>
+<script src="assets/stormglass_water_art_1020.js?v=pixellab-water-1020"></script>
+<script src="assets/stormglass_tutorial_1020.js?v=pixellab-water-1020"></script>
+<script src="assets/stage1_water_art_1020.js?v=stage1-blue-water-1020"></script>
+<script src="assets/stage1_water_1020.js?v=stage1-blue-water-1020"></script>
+<script src="assets/stage2_lava_art_1020.js?v=stage2-lava-1020"></script>
+<script src="assets/stage2_lava_1020.js?v=stage2-lava-1020"></script>
+<script src="assets/arena_download_art_1020.js?v=arena-download-final32-1020"></script>
+<script src="assets/arena_download_1020.js?v=arena-download-final32-1020"></script>
+<script src="assets/instructor_bob_art_1020.js?v=instructor-bob-fit-black-red-1020"></script>
+<script src="assets/instructor_bob_1020.js?v=holoscan-1021-3"></script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
 
 <script>
@@ -648,5 +685,20 @@
   n.querySelector('button').onclick=function(){n.remove();};document.body.appendChild(n);
 })();
 </script>
+<script src="assets/performance_finish_art_1020.js?v=performance-1020-1"></script>
+<script src="assets/performance_finish_1020.js?v=performance-1020-1"></script>
+<script src="assets/rebel_dogfight_1021.js?v=final-version-1021-3"></script>
+<script src="assets/coastal_city_art_1021.js?v=final-version-1021-3"></script>
+<script src="assets/coastal_city_1021.js?v=final-version-1021-3"></script>
+<script src="assets/final_effects_art_1021.js?v=final-version-1021-3"></script>
+<script src="assets/final_effects_1021.js?v=final-version-1021-3"></script>
+<script src="assets/air_refit_art_1021.js?v=final-version-1021-3"></script>
+<script src="assets/air_refit_1021.js?v=final-version-1021-3"></script>
+<script src="assets/menu_windows_art_1021.js?v=menu-heart-1021-2"></script>
+<script src="assets/menu_windows_1021.js?v=menu-heart-1021-2"></script>
+<script src="assets/chrome_heart_music_1021.js?v=menu-heart-1021-2"></script>
+<script src="assets/chrome_heart_art_1021.js?v=menu-heart-1021-2"></script>
+<script src="assets/chrome_heart_1021.js?v=menu-heart-1021-2"></script>
+<script src="assets/holoscan_dossier_1021.js?v=holoscan-1021-3"></script>
 </body>
 </html>

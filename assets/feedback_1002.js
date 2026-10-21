@@ -176,7 +176,7 @@ er26Combat=function(b,dt){
    const angle=a+(wave%7-3)*.055;
    for(const offset of (mode==='ice-crossfire1002'?[-.075,.075]:[0])){
     const q=eShootT(p.x,p.y,angle+offset,5.1+n*.55,'mg',{w:7,h:17,silent:true});Object.assign(q,{_boss:true,_noArsenal:true,_er26Source:b._ship,_coldTracer1002:true});
-   }mr27Fire(b,side,angle);shipBossMuzzleStart(b,[side],{fam:'mg',life:.08,hpx:28});Audio.SFX.machineGun?.();
+   }mr27Fire(b,side,angle);shipBossMuzzleStart(b,[side],{fam:'mg',life:.08,hpx:28});Audio.SFX.enemyMachineGunHeavy?.();
   }
   R.shot=wave%9===8?.48:[.115,.09,.072][n];
  }

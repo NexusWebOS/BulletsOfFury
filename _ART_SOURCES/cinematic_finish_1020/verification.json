@@ -1,0 +1,40 @@
+{
+  "nativePassed": 131,
+  "nativeChecks": 131,
+  "reports": {
+    "report": {
+      "passed": 80,
+      "checks": 80
+    },
+    "mechanics-report": {
+      "passed": 32,
+      "checks": 32
+    },
+    "review-report": {
+      "passed": 8,
+      "checks": 8
+    },
+    "film-report": {
+      "passed": 11,
+      "checks": 11
+    }
+  },
+  "regressionChecks": 8938,
+  "regressionPassed": true,
+  "assets": [
+    {
+      "name": "debrief",
+      "even": true,
+      "originalPixelsPreserved": true,
+      "bytes": 2369488
+    },
+    {
+      "name": "relay",
+      "even": true,
+      "originalPixelsPreserved": true,
+      "bytes": 2532248
+    }
+  ],
+  "videoDurationSeconds": 66.071,
+  "review": "docs/previews/cinematic_finish_1020/index.html"
+}

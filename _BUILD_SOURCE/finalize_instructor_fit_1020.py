@@ -1,0 +1,38 @@
+from pathlib import Path
+from PIL import Image
+import json,shutil,hashlib
+R=Path(r'C:/Users/Mike/Desktop/Github Coding/BulletsOfFury');O=R/'_shots/instructor_fit_1020';A=R/'_ART_SOURCES/instructor_bob_1020/palette_black_red_1020';P=R/'assets/game/pilots/cole/portraits/instructor_1020'
+qa=json.loads((O/'verification.json').read_text());assert not qa['errors'] and all(q['ok'] for q in qa['checks'])
+reg=(R/'_shots/instructor-fit-regression-1020.log').read_text();assert 'BUILD OK, 0 ERRORS' in reg;assert sum(l.lstrip().startswith('ok ') for l in reg.splitlines())==8940
+for name in ['neutral','talk-small','talk-open','smile']:
+ old=(P/(name+'.webp')).resolve();assert old.parent==P.resolve() and old.is_relative_to(R.resolve())
+ if old.exists():
+  dest=A/'previous-green-exports';dest.mkdir(exist_ok=True);shutil.move(str(old),str(dest/old.name))
+raw=json.loads((A/'export-audit.json').read_text());assert all(p['face_unchanged'] and p['alpha_unchanged'] for p in raw['portraits'])
+(R/'docs/qa/instructor_fit_1020.json').write_text(json.dumps(dict(native=qa,portrait_export=raw,regression=dict(passed=8940,errors=0)),indent=2),encoding='utf-8')
+note='''## October21 — Instructor card text fitting and black/red portrait frame
+
+Mike requested safe scaling/centering for every B.O.B. dossier label and a black/red Instructor Cole portrait box. `ic20CardDraw` now maps explicit text apertures from the1200x832 authored template, bounds its overall proportional size to the available screen, and separates the part title from the rotating model. Ten independently centered/fit/clipped text blocks cover the title/subtitle, part name, six statistics and retirement line. The model has its own viewport. Tutorial objective/footer labels now fit their own bounds. Inset dialogue retains enough vertical room for the three longest four-line lessons; all17 lesson texts and runtime reactor feedback fit completely. Native logical selection and deploy controls remain.
+
+The built-in image generator supplied the charcoal/black steel and red lamp treatment. The owning builder applies its palette only to the original green frame pixels in an explicit rim mask, preserving the exact portrait artwork, expressions, alpha and frame geometry. Four256-square `*-black-red.webp` exports; old green exports archived outside game assets in `_ART_SOURCES/instructor_bob_1020/palette_black_red_1020/previous-green-exports`. Two naturally greenish eye pixels are deliberately preserved. No original photos uploaded; no PixelLab charge. Source image, palette export audit and notes saved beside originals.
+
+Native UI verification:41/41, four card selections at390x844,1366x768,1920x1080,768x1024; all10 text blocks centered and bounded, model/title and card/prompts clear, all lesson text fits, all4 portrait states decoded, actual selection/deploy controls. No browser errors. During testing, repaired the existing locked-pilot hover font guard (`typeof _pilotFace` before access); no other core changes. Required full regression8940/0/exit0 and syntax clean. Core game LF and test harness CRLF preserved. Cache instructor-bob-fit-black-red-1020. Updated review `_shots/instructor_fit_1020/review.html`; previous instructor review redirects here. No GitHub push requested.
+
+'''
+p=R/'docs/INSTRUCTOR_BOB_1020.md';raw=p.read_bytes()
+if b'## October21' not in raw:p.write_bytes(raw+b'\n\n'+note.encode('utf-8'))
+p=R/'HANDOFF_CODEX.md';raw=p.read_bytes()
+if b'## October21' not in raw:p.write_bytes(note.encode('utf-8')+raw)
+p=R/'CLAUDE.md';raw=p.read_bytes()
+if b'## October21' not in raw:p.write_bytes(raw+b'\n\n'+note.encode('utf-8'))
+p=R/'assets/data/ART_TAXONOMY.json';src=p.read_text(encoding='utf-8');entry={'role':'tutorial_instructor_cole_frame_palette_only','sheet':None,'note':'Image-generator black/charcoal steel/red lamp reference; original portrait geometry, alpha and all four expressions retained. Native256-square final exports in Cole portraits/instructor_1020, owning build_instructor_bob_1020.py. Explicit frame rim mask excludes face pixels. Old green exports archived out of assets. Text safe apertures/41 native checks/full8940/0; see docs/INSTRUCTOR_BOB_1020.md.'}
+if '"ic20_black_red_"' not in src:
+ src='{\n  "ic20_black_red_": '+json.dumps(entry,indent=2).replace('\n','\n  ')+','+src.lstrip()[1:];json.loads(src);p.write_text(src,encoding='utf-8')
+parts=['Full unit','Missile pod','Cannon pod','Cryo reactor'];cards=''.join(f'<article><h2>{name}</h2><a href="card-390-{i}.png"><img src="card-390-{i}.png" alt="{name} fitted card at390px"></a></article>' for i,name in enumerate(parts))
+portraits=''.join(f'<figure><img src="../../assets/game/pilots/cole/portraits/instructor_1020/{n}-black-red.webp" alt="Instructor {n}"><figcaption>{n}</figcaption></figure>' for n in ['neutral','talk-small','talk-open','smile'])
+page='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BOF · Instructor text fit and black/red frame</title><style>:root{color-scheme:dark}*{box-sizing:border-box}body{background:#080e16;color:#e7eff8;font:16px/1.6 system-ui;margin:auto;max-width:1500px;padding:25px}h1{color:#ff7b76}h2{font-size:20px;color:#f3d59b}p{max-width:1050px}a{color:#91d9ff}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px}article{background:#121e29;padding:14px;border:1px solid #394b59;border-radius:6px}img{display:block;max-width:100%;height:auto;image-rendering:pixelated}article img{width:100%}figure{margin:0;padding:12px;background:#111b26}figure img{width:192px;max-width:100%;margin:auto}figcaption{text-align:center}.proof{border-left:4px solid #ff4f53;background:#191d27;padding:12px 18px}.wide{width:100%}nav{display:flex;gap:18px;flex-wrap:wrap;margin:20px 0}</style><h1>Instructor Cole · fitted UI + black/red frame</h1><p class="proof">All card text now scales and centers inside its own authored aperture. The rotating model clears the part title. All17 lesson sentences fit. Your face, expressions and clothing are preserved; only the portrait-frame palette changes.</p><nav><a href="../../index.html">Play BOF</a><a href="verification.json">41 native checks</a><a href="../../docs/qa/instructor_fit_1020.json">Complete verification</a><a href="../instructor_bob_1020/review-before-fit.html">Original tutorial review</a></nav><h2>All four portrait expressions</h2><div class="grid">'''+portraits+'''</div><h2>Native narrow-browser views</h2><div class="grid">'''+cards+'''</div><h2>Desktop · card, dialogue and gameplay HUD</h2><a href="card-1366-3.png"><img class="wide" src="card-1366-3.png" alt="Desktop fitted tutorial interface"></a><h2>Longest lesson dialogue / invitation</h2><div class="grid"><article><img src="long-dialogue-390.png" alt="Longest graduation text fits completely"></article><article><img src="invitation-390.png" alt="Black/red Instructor invitation"></article></div><p>Verified390x844,1366x768,1920x1080 and768x1024.41/41 native checks;8,940 regression checks / zero errors. Tutorial controls and combat behavior preserved. Local update; no GitHub push.</p></html>'''
+(O/'review.html').write_text(page,encoding='utf-8')
+p=R/'_shots/instructor_bob_1020/review.html';backup=p.with_name('review-before-fit.html')
+if not backup.exists():shutil.copyfile(p,backup)
+p.write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=../instructor_fit_1020/review.html"><a href="../instructor_fit_1020/review.html">Updated Instructor Cole and fitted B.O.B. card review</a>',encoding='utf-8')
+print(json.dumps(dict(native=41,regression=8940,errors=0,portraits=4,review=str(O/'review.html'))))

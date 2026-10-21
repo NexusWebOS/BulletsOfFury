@@ -1,0 +1,425 @@
+{
+  "passed": 80,
+  "total": 80,
+  "errors": [],
+  "checks": [
+    {
+      "name": "axel HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole HUD and dialogue use roster color, actual portrait and ship",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole colored name glyphs actually reach the canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cole Sonic Boom and seven nuclear warheads are independently visible",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Decker cloak and shotgun timers coexist",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Lizzie atom bombs and turret timer coexist",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Depleted cooldowns, lives, missiles and armor reflect actual state",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Co-op retains two independent pilot readouts and colors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "(390, 844) playfield and HUD remain inside viewport",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "(1366, 768) playfield and HUD remain inside viewport",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "(2560, 1440) playfield and HUD remain inside viewport",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Ending dialogue retains colored speaker and actual portrait",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cole body aliases resolve to corrected full-body master",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cole ending report and horror retain fixed original runtime canvas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Post-stage director still completes its original callback",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/axel named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/decker named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/maverick named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/freezer named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/juggernaut named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/yuri named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/lizzie named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/falva named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template a/cole named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/axel named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/decker named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/maverick named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/freezer named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/juggernaut named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/yuri named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/lizzie named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/falva named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template b/cole named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/axel named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/decker named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/maverick named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/freezer named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/juggernaut named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/yuri named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/lizzie named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/falva named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template c/cole named dialogue and rails load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Template library fits narrow window",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native browser or missing-asset errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Even frame cole-horror.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame cole-neutral.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame cole-report.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame cole-talk.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame dialogue-a.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame dialogue-b.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame dialogue-c.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame hud-a-left.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame hud-a-right.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame hud-b-left.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame hud-b-right.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame hud-c-left.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even frame hud-c-right.webp",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cole pose cole-horror retains clear frame margins",
+      "passed": true,
+      "data": [
+        55,
+        10,
+        456,
+        990
+      ]
+    },
+    {
+      "name": "Cole pose cole-neutral retains clear frame margins",
+      "passed": true,
+      "data": [
+        47,
+        11,
+        465,
+        989
+      ]
+    },
+    {
+      "name": "Cole pose cole-report retains clear frame margins",
+      "passed": true,
+      "data": [
+        46,
+        9,
+        466,
+        989
+      ]
+    },
+    {
+      "name": "Cole pose cole-talk retains clear frame margins",
+      "passed": true,
+      "data": [
+        54,
+        10,
+        466,
+        990
+      ]
+    },
+    {
+      "name": "Stage4 radio stays in HUD and retains secondary status",
+      "passed": true
+    },
+    {
+      "name": "Clearing radio restores normal secondary instrument",
+      "passed": true
+    },
+    {
+      "name": "Native Dracodia dialogue uses proper dedicated portrait in new frame",
+      "passed": true
+    },
+    {
+      "name": "No extra renderer or radio errors",
+      "passed": true
+    }
+  ],
+  "integrityHarness": "Final FALVA/LIZZIE BUILD OK, 0 ERRORS",
+  "kitBytes": 65988385
+}

@@ -56,18 +56,13 @@ chaingunMountsDraw=function(){
   if(player._chainMuzzle>0)wm26Draw(ctx,'chaingun',p.x,socketY-12,-Math.PI/2,1-player._chainMuzzle/.10,18,wlvGlow(clamp(run.wlevel||1,1,5)));
  }
 };
-// A warning never blanks just as it becomes urgent. Brightness pulses, while
-// the original authored green/yellow/red silhouette remains readable.
-l23WarnSymbolDraw=function(owner,B){
- if(!owner||!B||owner.dead||B.released||B.t>=B.warm||enemyWarningOwner(owner)||EC7.alerts.has(owner))return false;
- const p=clamp(B.t/Math.max(.001,B.warm),0,1),color=l23FovPhase(p),key='bmfx_alert_'+color+'_danger';if(!XART.rdy(key))return false;
- const im=XART.get(key),h=32,w=h*(im.width/im.height),top=(owner._drawY??owner.y)-(owner._drawH??owner.h??30)*.5;
- const x=clamp(Number.isFinite(B.alertX)?B.alertX:owner.x,camLeftX()+w*.5+4,camRightX()-w*.5-4);
- const y=clamp(Number.isFinite(B.alertY)?B.alertY:top-h-10,Math.max(L23_WARN_MINY,viewTopY()+8),VH-h-8);
- const age=B.blinkT??B.t,pulse=.5+.5*Math.sin(age*(color==='red'?22:color==='yellow'?12:5));
- ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha*=(color==='green'?.68:.78+.22*pulse)*(B.alpha??1);
- ctx.drawImage(im,Math.round(x-w/2),Math.round(y),w,h);ctx.restore();EC7.alerts.add(owner);return true;
-};
+// Boss/miniboss tells use the actual threatened field. Front-pass callers
+// request only the old floating symbol; their back pass already paints the FOV.
+// Shoot!/hammer objectives and ground-impact reticles have separate owners.
+l23WarnSymbolDraw=function(){return false;};
+const EC7_LOAD=stageLoadBegin;
+stageLoadBegin=function(n,keys){return EC7_LOAD.call(this,n,[...(keys||[]),
+ ...['green','yellow','red'].map(c=>'bmfx_fov_'+c+'_tall')]);};
 combatWarningDraw=function(owner,q){
  if(!owner||owner.dead||!q||q.progress==null)return;
  const k=clamp(q.progress,0,1);
@@ -77,6 +72,6 @@ combatWarningDraw=function(owner,q){
   const len=q.len??(q.laneShape==='line'?Math.hypot(q.ex-q.x,q.ey-q.y):undefined);
   l23FovWarm();EC7_BASE.warn(owner,{...q,len,fieldOnly:true});EC7.laneDraws++;
  }
- if(!q.fieldOnly)l23WarnSymbolDraw(owner,{t:k,warm:1,released:false,alertX:q.alertX,alertY:q.alertY,alpha:q.alpha,blinkT:owner.t??stateT});
+ // alertOnly is the duplicate front pass, not a second threatened lane.
 };
 drawWorld=function(){EC7.frame++;EC7.alerts=new WeakSet();return EC7_BASE.world.apply(this,arguments);};

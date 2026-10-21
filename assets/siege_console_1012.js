@@ -189,6 +189,7 @@ const SC12 = (() => {
   if(!api.layout||api.layout.rows!==rows||api.layout.viewport[0]!==innerWidth||api.layout.viewport[1]!==innerHeight)fit();
   if(state==='play'&&api.previousState===state&&stateT>=api.previousT)api.clock+=Math.min(.1,stateT-api.previousT);
   api.previousState=state;api.previousT=stateT;
+  if(bmfReady(window.BOF_UI_FACE||'game')&&api.render&&api.render()){api.draws++;return;}
   if(!XART.rdy(art.key)||!bmfReady(window.BOF_UI_FACE||'game'))return;
   api.contacts=contacts();const values=seatList().map(readSeat),source=XART.get(art.key);
   api.highScore=Math.max(highScore,...values.map(v=>v.score));

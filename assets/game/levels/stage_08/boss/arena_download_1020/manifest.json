@@ -1,0 +1,302 @@
+{
+  "arenas": {
+    "jungle": {
+      "terrain": {
+        "key": "ad20_jungle_terrain",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/jungle/terrain.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      },
+      "wire": {
+        "key": "ad20_jungle_wire",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/jungle/wire.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      }
+    },
+    "lava": {
+      "terrain": {
+        "key": "ad20_lava_terrain",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/lava/terrain.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      },
+      "wire": {
+        "key": "ad20_lava_wire",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/lava/wire.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      }
+    },
+    "space": {
+      "terrain": {
+        "key": "ad20_space_terrain",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/space/terrain.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      },
+      "wire": {
+        "key": "ad20_space_wire",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/space/wire.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      }
+    },
+    "sky": {
+      "terrain": {
+        "key": "ad20_sky_terrain",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/sky/terrain.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      },
+      "wire": {
+        "key": "ad20_sky_wire",
+        "path": "assets/game/levels/stage_08/boss/arena_download_1020/sky/wire.webp",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          256
+        ]
+      }
+    }
+  },
+  "curtain": {
+    "key": "ad20_download_curtain",
+    "path": "assets/game/levels/stage_08/boss/arena_download_1020/download-curtain-32.webp",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 32,
+    "fps": 20,
+    "columns": 6,
+    "cells": [
+      [
+        2,
+        2,
+        256,
+        256
+      ],
+      [
+        262,
+        2,
+        256,
+        256
+      ],
+      [
+        522,
+        2,
+        256,
+        256
+      ],
+      [
+        782,
+        2,
+        256,
+        256
+      ],
+      [
+        1042,
+        2,
+        256,
+        256
+      ],
+      [
+        1302,
+        2,
+        256,
+        256
+      ],
+      [
+        2,
+        262,
+        256,
+        256
+      ],
+      [
+        262,
+        262,
+        256,
+        256
+      ],
+      [
+        522,
+        262,
+        256,
+        256
+      ],
+      [
+        782,
+        262,
+        256,
+        256
+      ],
+      [
+        1042,
+        262,
+        256,
+        256
+      ],
+      [
+        1302,
+        262,
+        256,
+        256
+      ],
+      [
+        2,
+        522,
+        256,
+        256
+      ],
+      [
+        262,
+        522,
+        256,
+        256
+      ],
+      [
+        522,
+        522,
+        256,
+        256
+      ],
+      [
+        782,
+        522,
+        256,
+        256
+      ],
+      [
+        1042,
+        522,
+        256,
+        256
+      ],
+      [
+        1302,
+        522,
+        256,
+        256
+      ],
+      [
+        2,
+        782,
+        256,
+        256
+      ],
+      [
+        262,
+        782,
+        256,
+        256
+      ],
+      [
+        522,
+        782,
+        256,
+        256
+      ],
+      [
+        782,
+        782,
+        256,
+        256
+      ],
+      [
+        1042,
+        782,
+        256,
+        256
+      ],
+      [
+        1302,
+        782,
+        256,
+        256
+      ],
+      [
+        2,
+        1042,
+        256,
+        256
+      ],
+      [
+        262,
+        1042,
+        256,
+        256
+      ],
+      [
+        522,
+        1042,
+        256,
+        256
+      ],
+      [
+        782,
+        1042,
+        256,
+        256
+      ],
+      [
+        1042,
+        1042,
+        256,
+        256
+      ],
+      [
+        1302,
+        1042,
+        256,
+        256
+      ],
+      [
+        2,
+        1302,
+        256,
+        256
+      ],
+      [
+        262,
+        1302,
+        256,
+        256
+      ]
+    ],
+    "sheet_width": 1560,
+    "sheet_height": 1560,
+    "pending_animation": false
+  }
+}

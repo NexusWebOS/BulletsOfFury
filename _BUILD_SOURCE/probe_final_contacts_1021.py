@@ -1,0 +1,30 @@
+from pathlib import Path
+import sys,ast,json,base64,http.server
+from playwright.sync_api import sync_playwright
+R=Path(r'C:\Users\Mike\Desktop\Github Coding\BulletsOfFury');sys.path.insert(0,str(R/'_BUILD_SOURCE'));import shoot
+O=R/'_shots/final_version_1021/contacts';O.mkdir(parents=True,exist_ok=True);checks=[];errors=[]
+def const(file,name):return next(ast.literal_eval(n.value) for n in ast.parse((R/'_BUILD_SOURCE'/file).read_text(encoding='utf-8')).body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id==name for t in n.targets))
+SETUP=const('probe_feedback_1002.py','SETUP');BOOT=const('probe_boss_redesign_1020.py','BOOT')
+def ck(name,ok,data=None):checks.append(dict(name=name,ok=bool(ok),data=data));(O/'report.json').write_text(json.dumps(dict(checks=checks,errors=errors),indent=2));print(('PASS ' if ok else 'FAIL ')+name,flush=True)
+def shot(p,name):
+ p.evaluate('shake=0;ctx.setTransform(SS,0,0,SS,0,0);drawWorld(0)');(O/(name+'.png')).write_bytes(base64.b64decode(p.evaluate('cv.toDataURL().split(",")[1]')))
+http.server.ThreadingHTTPServer.request_queue_size=128;port,stop=shoot.serve(str(R))
+try:
+ with sync_playwright() as pw:
+  br=pw.chromium.launch(channel='msedge',args=['--autoplay-policy=no-user-gesture-required']);p=br.new_page(viewport=dict(width=1440,height=1000));p.set_default_timeout(180000);p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text[:600]) if m.type=='error' or 'draw error' in m.text else None);p.goto(f'http://127.0.0.1:{port}');p.wait_for_function('window.__bofFrames>4');p.evaluate(shoot.TRAP_RAF);p.mouse.click(600,400)
+  for diff in ['easy','normal','hard','furious']:
+   p.evaluate(SETUP,dict(stage=6,kind='rebelsquad',pilot='cole',diff=diff));p.evaluate('''()=>{window.R=B._rebels;rf28Init(B,R);R.frIntro={done:true};window.G=rg4Init(B);G.gang=true;G.scene=null;G.rescueDone=true;G.rescueAt=Infinity;G.releaseAt=999;rd21State(B).next=999;H3.release=false;H3.ending=null;fb2Talk=fb2Intro=thaw=s6Opening=null;BOFCinematicDirector.cancel();AP10_X.intro=null;story=null;P2M.active=null;for(const q of R.ships){q.rg4.act=null;q.rg4.cd=999;q.rg4.gunCd=999;}player.fireCd=999;rg4Warm();}''');p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(6)}')
+   row=p.evaluate('''()=>{const q=R.ships[0],target={key:'cole',ref:player,seat:1},A={shot:0,target,locked:true};eBullets=[];ra4Rocket(q,G,A);const m=eBullets.at(-1);m.x=player.x-160;m.y=player.y-200;m.vx=0;m.vy=3;m.t=.1;const a=Math.atan2(m.vy,m.vx);updatePlay(1/60);const turn=Math.abs(Math.atan2(m.vy,m.vx)-a);pBullets=[{kind:'mg',x:m.x+m.vx,y:m.y+m.vy,vx:0,vy:0,w:40,h:60,dmg:3,t:0}];updatePlay(1/60);return{turned:turn,intercepted:m.dead||!eBullets.includes(m),hp:m.hp,shootable:m._shootable};}''');ck(diff+' Rebel Retina missile steers then is intercepted by real player bullet',row['turned']>0 and row['intercepted'] and row['shootable'],row)
+   row=p.evaluate('''()=>{const q=R.ships.find(q=>q.key==='rook');for(const s of R.ships)s.rg4.act=null;q._rd21Cloak=false;q.x=worldWidth()/2;q.y=150;const effects=pImpacts.length;rg4Attack(q,R,G,'ram');const A=q.rg4.act,seen=new Set();for(let i=0;i<500&&q.rg4.act;i++){seen.add(q.rg4.act.phase);rg4AttackTick(q,R,G,1/60);if(i%10===0)fr27RebelDrawShip(q);}return{kind:A?.kind,phases:[...seen],finished:!q.rg4.act,bursts:pImpacts.length-effects};}''');ck(diff+' Rook actual ram has charge/release/recovery and authored effects',row['kind']=='ram' and row['finished'] and 'charge' in row['phases'] and 'fire' in row['phases'] and row['bursts']>=2,row)
+  # Source-matching hit positions, not just animation state selection.
+  p.evaluate(SETUP,dict(stage=8,kind='vileexistence',pilot='cole'));p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(8)&&v18Warm()}');p.evaluate(BOOT)
+  for side in [-1,1]:
+   row=p.evaluate('''side=>{setup20(8,'normal');const Q=hb20State(B);hb20Start(B,'gun');Q.action.dir=side;Q.action.t=Q.action.tell+.1;const pose=hb20Pose(B),m=hb20GunMount(B,Q.action),rig=v19HammerRig(B),part=rig.find(v=>v.layer==='chaingun');return{dx:m.x-B.x,dy:m.y-B.y,k:pose.k,inside:!!part&&v19AtRect(part,m.x,m.y),finite:Number.isFinite(m.x+m.y)};}''',side);ck('new Hammer '+str(side)+' barrel matches physical gun target',row['inside'] and row['finite'] and row['dx']*side>30 and 15<row['dy']<70,row);p.evaluate('paint20()');shot(p,'gun-'+str(side))
+  p.evaluate('setup20(8,"normal");j3FinalDeath(B)');row=p.evaluate('''()=>{const modes=[],burstKeys=new Set();let peak=0;for(let i=0;i<230;i++){updatePlay(1/60);modes.push(B._r30.mode);for(const f of FV21.fx)burstKeys.add(f.name);peak=Math.max(peak,FV21.fx.length);if(i%12===0)drawWorld(0);}return{modes:[...new Set(modes)],bursts:[...burstKeys],peak,latched:!!B._fv21Final};}''');ck('final destruction keeps native fall and adds bounded authored explosion sequences',row['latched'] and bool(set(row['modes'])&{'finalFall','dr5Death'}) and len(row['bursts'])>=3 and row['peak']<=12,row);shot(p,'final-destruction')
+  cues=['bossWeaponCharge','retinaCharge','enemyMachineGunLight','shadowRelease','juggernautChargeStart','juggernautRamLaunch','juggernautRamStop','juggernautRamImpact','hammerChaingun'];p.evaluate('keys=>{Snd.prepare(keys);window.soundKeys=keys;}',cues)
+  p.wait_for_function('soundKeys.every(k=>Snd.pools[k]?.slots.some(s=>s?.el.readyState>=3))')
+  for cue in cues:
+   p.evaluate('k=>{if(Snd._last)delete Snd._last[k];Snd.play(k,.7)}',cue);p.wait_for_timeout(130);row=p.evaluate('k=>({key:k,voices:Snd.pools[k].slots.filter(Boolean).map(s=>({ready:s.el.readyState,time:s.el.currentTime,error:s.el.error?.code,paused:s.el.paused}))})',cue);ck(cue+' sample decodes and advances playback',any(v['ready']>=3 and v['time']>0 and not v.get('error') for v in row['voices']),row)
+  ck('no renderer errors',not errors,errors);br.close()
+finally:stop()
+print(json.dumps(dict(checks=len(checks),passed=sum(q['ok'] for q in checks),errors=errors)));sys.exit(bool(errors) or not all(q['ok'] for q in checks))

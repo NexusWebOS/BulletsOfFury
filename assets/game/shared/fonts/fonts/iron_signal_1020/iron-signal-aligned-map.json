@@ -1,0 +1,1634 @@
+{
+  "schema": "coleforge.bitmap-font.v2",
+  "family": "BOF Iron Signal",
+  "capsOnly": true,
+  "line_height": 14,
+  "baseline": 13,
+  "cap_height": 12,
+  "cap_top": 1,
+  "revision": "aligned-2",
+  "glyphs": {
+    "A": {
+      "sprite_rect": [
+        3,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "B": {
+      "sprite_rect": [
+        23,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "C": {
+      "sprite_rect": [
+        43,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "D": {
+      "sprite_rect": [
+        63,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "E": {
+      "sprite_rect": [
+        83,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "F": {
+      "sprite_rect": [
+        103,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "G": {
+      "sprite_rect": [
+        123,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "H": {
+      "sprite_rect": [
+        143,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "I": {
+      "sprite_rect": [
+        163,
+        3,
+        8,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        9,
+        13
+      ],
+      "x_advance": 10
+    },
+    "J": {
+      "sprite_rect": [
+        183,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "K": {
+      "sprite_rect": [
+        3,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "L": {
+      "sprite_rect": [
+        23,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "M": {
+      "sprite_rect": [
+        43,
+        23,
+        14,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        15,
+        13
+      ],
+      "x_advance": 16
+    },
+    "N": {
+      "sprite_rect": [
+        63,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "O": {
+      "sprite_rect": [
+        83,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "P": {
+      "sprite_rect": [
+        103,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "Q": {
+      "sprite_rect": [
+        123,
+        23,
+        12,
+        13
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        14
+      ],
+      "x_advance": 14
+    },
+    "R": {
+      "sprite_rect": [
+        143,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "S": {
+      "sprite_rect": [
+        163,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "T": {
+      "sprite_rect": [
+        183,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "U": {
+      "sprite_rect": [
+        3,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "V": {
+      "sprite_rect": [
+        23,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "W": {
+      "sprite_rect": [
+        43,
+        43,
+        16,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        17,
+        13
+      ],
+      "x_advance": 18
+    },
+    "X": {
+      "sprite_rect": [
+        63,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "Y": {
+      "sprite_rect": [
+        83,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "Z": {
+      "sprite_rect": [
+        103,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    ".": {
+      "sprite_rect": [
+        123,
+        50,
+        4,
+        4
+      ],
+      "bounds_in_cell": [
+        1,
+        8,
+        5,
+        12
+      ],
+      "x_advance": 6
+    },
+    ",": {
+      "sprite_rect": [
+        143,
+        50,
+        4,
+        6
+      ],
+      "bounds_in_cell": [
+        1,
+        8,
+        5,
+        14
+      ],
+      "x_advance": 6
+    },
+    "!": {
+      "sprite_rect": [
+        163,
+        43,
+        4,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        5,
+        13
+      ],
+      "x_advance": 6
+    },
+    "?": {
+      "sprite_rect": [
+        183,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    ":": {
+      "sprite_rect": [
+        3,
+        65,
+        4,
+        9
+      ],
+      "bounds_in_cell": [
+        1,
+        3,
+        5,
+        12
+      ],
+      "x_advance": 6
+    },
+    ";": {
+      "sprite_rect": [
+        23,
+        65,
+        4,
+        11
+      ],
+      "bounds_in_cell": [
+        1,
+        3,
+        5,
+        14
+      ],
+      "x_advance": 6
+    },
+    "'": {
+      "sprite_rect": [
+        43,
+        63,
+        4,
+        5
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        5,
+        6
+      ],
+      "x_advance": 6
+    },
+    "\"": {
+      "sprite_rect": [
+        63,
+        63,
+        8,
+        5
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        9,
+        6
+      ],
+      "x_advance": 10
+    },
+    "-": {
+      "sprite_rect": [
+        83,
+        68,
+        6,
+        2
+      ],
+      "bounds_in_cell": [
+        1,
+        6,
+        7,
+        8
+      ],
+      "x_advance": 8
+    },
+    "+": {
+      "sprite_rect": [
+        103,
+        64,
+        10,
+        10
+      ],
+      "bounds_in_cell": [
+        1,
+        2,
+        11,
+        12
+      ],
+      "x_advance": 12
+    },
+    "(": {
+      "sprite_rect": [
+        123,
+        63,
+        6,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        7,
+        13
+      ],
+      "x_advance": 8
+    },
+    ")": {
+      "sprite_rect": [
+        143,
+        63,
+        6,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        7,
+        13
+      ],
+      "x_advance": 8
+    },
+    "0": {
+      "sprite_rect": [
+        163,
+        63,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "1": {
+      "sprite_rect": [
+        183,
+        63,
+        8,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        9,
+        13
+      ],
+      "x_advance": 10
+    },
+    "2": {
+      "sprite_rect": [
+        3,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "3": {
+      "sprite_rect": [
+        23,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "4": {
+      "sprite_rect": [
+        43,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "5": {
+      "sprite_rect": [
+        63,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "6": {
+      "sprite_rect": [
+        83,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "7": {
+      "sprite_rect": [
+        103,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "8": {
+      "sprite_rect": [
+        123,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "9": {
+      "sprite_rect": [
+        143,
+        83,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "/": {
+      "sprite_rect": [
+        163,
+        83,
+        9,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        10,
+        13
+      ],
+      "x_advance": 11
+    },
+    "%": {
+      "sprite_rect": [
+        183,
+        83,
+        13,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        14,
+        13
+      ],
+      "x_advance": 15
+    },
+    "*": {
+      "sprite_rect": [
+        3,
+        103,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "=": {
+      "sprite_rect": [
+        23,
+        105,
+        10,
+        7
+      ],
+      "bounds_in_cell": [
+        1,
+        3,
+        11,
+        10
+      ],
+      "x_advance": 12
+    },
+    "_": {
+      "sprite_rect": [
+        43,
+        113,
+        12,
+        3
+      ],
+      "bounds_in_cell": [
+        1,
+        11,
+        13,
+        14
+      ],
+      "x_advance": 14
+    },
+    "$": {
+      "sprite_rect": [
+        63,
+        102,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        1,
+        0,
+        11,
+        14
+      ],
+      "x_advance": 12
+    },
+    "\\": {
+      "sprite_rect": [
+        83,
+        103,
+        9,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        10,
+        13
+      ],
+      "x_advance": 11
+    },
+    "[": {
+      "sprite_rect": [
+        103,
+        103,
+        5,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        6,
+        13
+      ],
+      "x_advance": 7
+    },
+    "]": {
+      "sprite_rect": [
+        123,
+        103,
+        5,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        6,
+        13
+      ],
+      "x_advance": 7
+    },
+    "{": {
+      "sprite_rect": [
+        143,
+        103,
+        5,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        6,
+        13
+      ],
+      "x_advance": 7
+    },
+    "}": {
+      "sprite_rect": [
+        163,
+        103,
+        5,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        6,
+        13
+      ],
+      "x_advance": 7
+    },
+    "<": {
+      "sprite_rect": [
+        183,
+        103,
+        7,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        8,
+        13
+      ],
+      "x_advance": 9
+    },
+    ">": {
+      "sprite_rect": [
+        3,
+        123,
+        7,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        8,
+        13
+      ],
+      "x_advance": 9
+    },
+    "&": {
+      "sprite_rect": [
+        23,
+        123,
+        9,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        10,
+        13
+      ],
+      "x_advance": 11
+    },
+    "#": {
+      "sprite_rect": [
+        43,
+        123,
+        9,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        10,
+        13
+      ],
+      "x_advance": 11
+    },
+    "@": {
+      "sprite_rect": [
+        63,
+        123,
+        9,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        10,
+        13
+      ],
+      "x_advance": 11
+    },
+    "^": {
+      "sprite_rect": [
+        83,
+        123,
+        10,
+        6
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        11,
+        7
+      ],
+      "x_advance": 12
+    },
+    "|": {
+      "sprite_rect": [
+        103,
+        123,
+        2,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        3,
+        13
+      ],
+      "x_advance": 4
+    },
+    "~": {
+      "sprite_rect": [
+        123,
+        126,
+        10,
+        4
+      ],
+      "bounds_in_cell": [
+        1,
+        4,
+        11,
+        8
+      ],
+      "x_advance": 12
+    },
+    "`": {
+      "sprite_rect": [
+        143,
+        123,
+        4,
+        4
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        5,
+        5
+      ],
+      "x_advance": 6
+    },
+    "\u2190": {
+      "sprite_rect": [
+        163,
+        124,
+        10,
+        10
+      ],
+      "bounds_in_cell": [
+        1,
+        2,
+        11,
+        12
+      ],
+      "x_advance": 12
+    },
+    "\u2192": {
+      "sprite_rect": [
+        183,
+        124,
+        10,
+        10
+      ],
+      "bounds_in_cell": [
+        1,
+        2,
+        11,
+        12
+      ],
+      "x_advance": 12
+    },
+    "\u2191": {
+      "sprite_rect": [
+        3,
+        142,
+        10,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        0,
+        11,
+        12
+      ],
+      "x_advance": 12
+    },
+    "\u2193": {
+      "sprite_rect": [
+        23,
+        144,
+        10,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        2,
+        11,
+        14
+      ],
+      "x_advance": 12
+    },
+    "\u2022": {
+      "sprite_rect": [
+        43,
+        146,
+        6,
+        6
+      ],
+      "bounds_in_cell": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "x_advance": 8
+    },
+    " ": {
+      "sprite_rect": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bounds_in_cell": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x_advance": 6
+    },
+    "\u2019": {
+      "sprite_rect": [
+        43,
+        63,
+        4,
+        5
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        5,
+        6
+      ],
+      "x_advance": 6
+    },
+    "\u2018": {
+      "sprite_rect": [
+        43,
+        63,
+        4,
+        5
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        5,
+        6
+      ],
+      "x_advance": 6
+    },
+    "\u201c": {
+      "sprite_rect": [
+        63,
+        63,
+        8,
+        5
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        9,
+        6
+      ],
+      "x_advance": 10
+    },
+    "\u201d": {
+      "sprite_rect": [
+        63,
+        63,
+        8,
+        5
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        9,
+        6
+      ],
+      "x_advance": 10
+    },
+    "\u2013": {
+      "sprite_rect": [
+        83,
+        68,
+        6,
+        2
+      ],
+      "bounds_in_cell": [
+        1,
+        6,
+        7,
+        8
+      ],
+      "x_advance": 8
+    },
+    "\u2014": {
+      "sprite_rect": [
+        83,
+        68,
+        6,
+        2
+      ],
+      "bounds_in_cell": [
+        1,
+        6,
+        7,
+        8
+      ],
+      "x_advance": 8
+    },
+    "\u00d7": {
+      "sprite_rect": [
+        63,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "\u2026": {
+      "sprite_rect": [
+        123,
+        50,
+        4,
+        4
+      ],
+      "bounds_in_cell": [
+        1,
+        8,
+        5,
+        12
+      ],
+      "x_advance": 6
+    },
+    "a": {
+      "sprite_rect": [
+        3,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "b": {
+      "sprite_rect": [
+        23,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "c": {
+      "sprite_rect": [
+        43,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "d": {
+      "sprite_rect": [
+        63,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "e": {
+      "sprite_rect": [
+        83,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "f": {
+      "sprite_rect": [
+        103,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "g": {
+      "sprite_rect": [
+        123,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "h": {
+      "sprite_rect": [
+        143,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "i": {
+      "sprite_rect": [
+        163,
+        3,
+        8,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        9,
+        13
+      ],
+      "x_advance": 10
+    },
+    "j": {
+      "sprite_rect": [
+        183,
+        3,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        12,
+        13
+      ],
+      "x_advance": 13
+    },
+    "k": {
+      "sprite_rect": [
+        3,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "l": {
+      "sprite_rect": [
+        23,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "m": {
+      "sprite_rect": [
+        43,
+        23,
+        14,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        15,
+        13
+      ],
+      "x_advance": 16
+    },
+    "n": {
+      "sprite_rect": [
+        63,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "o": {
+      "sprite_rect": [
+        83,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "p": {
+      "sprite_rect": [
+        103,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "q": {
+      "sprite_rect": [
+        123,
+        23,
+        12,
+        13
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        14
+      ],
+      "x_advance": 14
+    },
+    "r": {
+      "sprite_rect": [
+        143,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "s": {
+      "sprite_rect": [
+        163,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "t": {
+      "sprite_rect": [
+        183,
+        23,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "u": {
+      "sprite_rect": [
+        3,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "v": {
+      "sprite_rect": [
+        23,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "w": {
+      "sprite_rect": [
+        43,
+        43,
+        16,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        17,
+        13
+      ],
+      "x_advance": 18
+    },
+    "x": {
+      "sprite_rect": [
+        63,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "y": {
+      "sprite_rect": [
+        83,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    },
+    "z": {
+      "sprite_rect": [
+        103,
+        43,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        1,
+        1,
+        13,
+        13
+      ],
+      "x_advance": 14
+    }
+  },
+  "source": "PixelLab font job cfa58012-3393-419d-acf3-3b3de1b398e5; existing authored supplemental punctuation",
+  "texture_filter": "nearest"
+}

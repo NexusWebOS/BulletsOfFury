@@ -1,0 +1,17 @@
+{
+  "charge": {
+    "frames": 13,
+    "alphaIdentical": true,
+    "exactMapping": true
+  },
+  "flight": {
+    "frames": 13,
+    "alphaIdentical": true,
+    "exactMapping": true
+  },
+  "burst": {
+    "frames": 9,
+    "alphaIdentical": true,
+    "exactMapping": true
+  }
+}

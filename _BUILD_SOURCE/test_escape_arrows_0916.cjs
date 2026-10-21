@@ -1,25 +1,16 @@
 module.exports=function testEscapeArrows(vm,ctxv,ok){
-  console.log('=== 362. the Stage-4 giant strike: escape arrows, and the beat they flash on (S4-16) ===');
-  /* Mike: "Authored left/right escape arrows: flipped pair, flashing with synchronized warning
-     sounds for the giant strike." 8ed5f1a8 shipped this unverified and said so; verified in real
-     Chromium by probe_escape_0916.py (16/16) - the arrows draw 234 times across a charge, two per
-     lit frame, one mirrored, in both safe lanes, in seven bursts.
-
-     ⚠⚠ AND THE SOUND HALF WAS BROKEN, WHICH IS WHY "synchronized" COULD NOT HAVE BEEN TRUE.
-     l23WarnSound divides by `B.warm` - the field the beam warns carry - and the giant strike's
-     object only had `charge`. NaN propagates: `n` is NaN, `n===B._arrowN` is false FOR EVER
-     because NaN equals nothing including itself, and the `n>0` guard that limits the alert to one
-     is false too. Measured on the shipped build: 279 alert calls across one five-second charge,
-     against a design of ONE. After the fix: one, plus the separate red-phase danger alert. */
+  console.log('=== 362. the Stage-4 giant strike: FOV-only presentation and bounded warning audio ===');
+  /* October 15: the FOV replaces the escape-arrow pair. Keep the original
+     sound-shape regression: warm and charge must still use the same duration. */
   const st=vm.runInContext('stage4GiantStrikeStart.toString()',ctxv).replace(/\/\*[\s\S]*?\*\/|\/\/[^\n]*/g,'');
   ok(/warm\s*:\s*S4_GIANT_STRIKE\.charge/.test(st),
      'the strike carries the `warm` l23WarnSound divides by, from the same number as its charge');
 
-  /* the beep and the arrows must derive from ONE constant, which is what makes them one event */
+  /* The native FOV owns the tell; no arrow/sign overlay can return. */
   const dr=vm.runInContext('stage4GiantStrikeDraw.toString()',ctxv).replace(/\/\*[\s\S]*?\*\/|\/\/[^\n]*/g,'');
-  ok(/L23_WARN_ARROWS/.test(dr), 'the arrow flash counts in L23_WARN_ARROWS, the same constant the beep does');
-  ok(/warn_escape_arrow_0916/.test(dr), 'it draws the authored escape arrow plate');
-  ok(/scale\(-1,1\)/.test(dr), 'the pair is ONE plate, mirrored - two files would be two things to keep in step');
+  ok(/l23FovDraw/.test(dr), 'the strike paints the shared FOV');
+  ok(!/warn_escape_arrow_0916/.test(dr), 'the strike does not draw an anchored escape arrow');
+  ok(!/bmfx_alert_/.test(dr), 'the strike has no duplicate floating hazard sign');
   ok(vm.runInContext("typeof XART!=='undefined'&&!!XART._src['warn_escape_arrow_0916']",ctxv),
      'and that plate is registered');
 

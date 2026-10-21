@@ -97,7 +97,10 @@ module.exports=function(vm,ctxv,ok){
   }
   diffKey='normal';DIFF=DIFFS.normal;beginStage(5);spawnSubBoss__inner('siegebomber');const bomber=subBoss;bomber.enter=false;
   siegeBomberHit(bomber,bomber._bomber.core,bomber.x,bomber.y,'core');
-  o['Bomber destroyed core empties the health gauge even with surviving engines']=bomber.dead&&bomber.hp===0&&bomber._bomber.parts.some(p=>p.hp>0);
+  o['Bomber destroyed core leaves surviving module health on the gauge']=!bomber.dead&&bomber.hp>0&&bomber.hp===bomber._bomber.parts.reduce((n,p)=>n+p.hp,0);
+  o['Bomber destroyed core stops exposing a live Retina target']=siegeBomberTargets(bomber).find(t=>t._retinaId==='bomber-core')?.dead===true;
+  for(const p of bomber._bomber.parts)siegeBomberHit(bomber,1e6,NaN,NaN,p.id);
+  o['Bomber defeat waits for every remaining module']=bomber.dead&&bomber.hp===0;
   beginStage(8);setState(GS.PLAY);spawnBoss('vileexistence');const final=boss;final._symEntry=null;final.enter=false;vile24BuildForm(final,3);final.flash=0;final.x=worldWidth()/2;final.y=140;
   const fp={type:'phantom',t:0};vile25Start(final,fp);final._v24.pattern=fp;fp.t=.8;fp.cycle=0;fp.tx=final.x+150;fp.ty=400;
   o['Phantom underground has no invisible body, shield or lock target']=!bossHitTest(final.x,final.y)&&!vile25ShieldContact(final,{x:final.x,y:final.y})&&retinaBossTargets(final).length===0;

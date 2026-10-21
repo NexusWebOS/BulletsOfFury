@@ -119,9 +119,11 @@ rg4Friendly=function(m,G){const r=P2_RESCUE_FRIENDLY.apply(this,arguments),C=G.s
  }return r;
 };
 const P2_COLORS={lizzie:'#ffd438',nyx:'#b073ff',kaia:'#25d9bd',jace:'#ff4838',decker:'#ff9b30',rook:'#ff9b30',voss:'#ff244b'};
-Object.assign(RETINA_TINTS,P2_COLORS);
+// Rebel scanner identities extend the target palette. Dialogue colors must not
+// overwrite the main pilots' separately approved Retina colors (Decker is yellow).
+for(const [pk,col]of Object.entries(P2_COLORS))if(!PILOTS.some(p=>p.key===pk))RETINA_TINTS[pk]=col;
 const P2_BOSS_RETINA=drawBossRetina;
-drawBossRetina=function(t,x,y,spin,alpha){const pk=_pilotKey(),col=P2_COLORS[pk],key='nbret_'+pk;
+drawBossRetina=function(t,x,y,spin,alpha){const pk=_pilotKey(),col=retinaColor(pk),key='nbret_'+pk;
  if(!col||!XART.rdy(key))return P2_BOSS_RETINA.apply(this,arguments);
  const im=xartPalette(key,col)||XART.get(key);ctx.save();ctx.globalAlpha=alpha==null?.95:alpha;
  ctx.translate(x,y);ctx.rotate(spin||0);ctx.shadowColor=col;ctx.shadowBlur=12;ctx.drawImage(im,-29,-29,58,58);ctx.restore();return true;

@@ -1,0 +1,24 @@
+{
+  "passed": 14,
+  "checks": 14,
+  "errors": [],
+  "concepts": {
+    "dialogue": [
+      "a",
+      "b",
+      "c"
+    ],
+    "hud": [
+      "a",
+      "b",
+      "c"
+    ],
+    "selected": null
+  },
+  "portraitInstalled": true,
+  "nativeScreenshots": [
+    "dracodia-dialogue-native.png",
+    "dracodia-portrait-native.png"
+  ],
+  "review": "docs/previews/ui_concepts_1020/index.html"
+}

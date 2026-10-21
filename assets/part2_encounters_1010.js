@@ -66,7 +66,7 @@ function p2eAttack(b,dt){
   if(A.wave>12)return true;const angle=a+(A.wave%5-2)*.025;
   mr27Fire(b,slot,angle);const tip=shipBossMount(b,slot),q=b._s4war?stage4WarfareShot(b,tip,angle,4.7+n*.25,'mg',{szMul:1.15}):eShootT(tip.x,tip.y,angle,5.0,'mg',{w:7,h:17});
   q._p2Emitter={ship:b._ship,slot,x:tip.x,y:tip.y};q.mg=true;q._shootable=false;q._weaponProof=true;
-  shipBossMuzzleStart(b,[slot],{fam:'mg',life:.1,hpx:30});Audio.SFX.machineGun?.();A.shot=diffKey==='easy'?.19:.115;
+  shipBossMuzzleStart(b,[slot],{fam:'mg',life:.1,hpx:30});Audio.SFX.enemyMachineGunHeavy?.();A.shot=diffKey==='easy'?.19:.115;
  }else if(mode==='p2-rockets'){
   if(A.wave>3+n)return true;mr27Fire(b,slot,a);const tip=shipBossMount(b,slot),q=eShootT(tip.x,tip.y,a,5.2+n*.65,'emissile',{w:12,h:24,silent:true});
   Object.assign(q,{_p2Emitter:{ship:b._ship,slot,x:tip.x,y:tip.y},_shootable:true,_weaponProof:false,hp:2,homing:false,_boss:true,_noArsenal:true});

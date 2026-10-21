@@ -113,7 +113,7 @@ function polishEncounterAttack(b,dt){
   return true;
 }
 function polishLane(owner,x,y,angle,opt={}){const q={owner,x,y,angle,t:0,warn:opt.warn||1.25,speed:opt.speed||5,width:opt.width||34,fire:opt.fire,mount:opt.mount,
-  offset:owner&&Number.isFinite(owner.x+owner.y)?{x:x-owner.x,y:y-owner.y}:null};polishLanes.push(q);return q;}
+  offset:owner&&Number.isFinite(owner.x+owner.y)?{x:x-owner.x,y:y-owner.y}:null};polishLanes.push(q);l23FovWarm();return q;}
 function polishLaneOrigin(q){
   // The direction is committed, but the physical launcher travels with its hull.
   // Use this in both update and draw so the last warning matches the release.
@@ -138,9 +138,9 @@ function polishCombatDraw(){
   // This hook is after world restore; warnings convert world positions explicitly.
   ctx.save();ctx.translate(-camLeftX(),0);
   for(const q of groundTargetingFx)if(q._polishBomb&&!q.owner?._bomber&&q.t>0&&q.t<q.warn&&XART.rdy('lz_bomb')){const p=clamp(q.t/q.warn,0,1),im=XART.get('lz_bomb');ctx.save();ctx.translate(lerp(q._polishBomb.x,q.x,p),lerp(q._polishBomb.y,q.y,p));ctx.rotate(Math.PI);ctx.drawImage(im,-7,-17,14,34);ctx.restore();}
-  // The shared FOV and alert own every lane. Legacy metal arrow signs must
-  // never be drawn over them, including boss-owned lanes.
-  for(const q of polishLanes){polishLaneOrigin(q);const p=clamp(q.t/q.warn,0,1);combatWarningDraw(q,{x:q.x,y:q.y,ex:q.x+Math.cos(q.angle)*VH,ey:q.y+Math.sin(q.angle)*VH,progress:p,width:q.width});}
+  for(const q of polishLanes){polishLaneOrigin(q);const p=clamp(q.t/q.warn,0,1);combatWarningDraw(q,{x:q.x,y:q.y,ex:q.x+Math.cos(q.angle)*VH,ey:q.y+Math.sin(q.angle)*VH,progress:p,width:q.width});
+    // The committed FOV above is the whole warning; no muzzle-anchored arrow box.
+  }
   const b=subBoss;if(b?._bomber&&!b.dead){const B=b._bomber;if(B.mode==='charge'||B.mode==='beam'){ctx.restore();ctx.save();ctx.fillStyle='rgba(0,0,12,'+(B.mode==='beam'?.56:clamp(B.t/B.dur,0,1)*.62)+')';ctx.fillRect(0,0,VW,VH);ctx.translate(-camLeftX(),0);siegeBomberBeamDraw(b);}}
   ctx.restore();
 }
@@ -154,7 +154,7 @@ function siegeBomberInit(b){
 }
 function siegeBomberParts(b){
   if(b._bomber.space)return mr27SpaceParts(b);const W=b.w;return [{id:'core',cell:0,x:b.x,y:b.y,w:W,h:b.h},...[-1,1].flatMap(s=>[{id:s<0?'engineL':'engineR',cell:1,x:b.x+s*W*.30,y:b.y+W*.12,w:W*.15,h:W*.43},{id:s<0?'laserL':'laserR',cell:2,x:b.x+s*W*.17,y:b.y-W*.015,w:W*.13,h:W*.36}])];}
-function siegeBomberAt(b,x,y,pad=0){if(b.dead||b.enter||!Number.isFinite(x)||!Number.isFinite(y))return null;for(const p of siegeBomberParts(b).reverse()){const m=b._bomber.parts.find(q=>q.id===p.id);if(m&&m.hp<=0)continue;const core=p.id==='core',w=core?p.w*.48:p.w,h=core?p.h*.82:p.h;if(Math.abs(x-p.x)<w/2+pad&&Math.abs(y-p.y)<h/2+pad)return p.id;}return null;}
+function siegeBomberAt(b,x,y,pad=0){if(b.dead||b.enter||!Number.isFinite(x)||!Number.isFinite(y))return null;for(const p of siegeBomberParts(b).reverse()){const m=b._bomber.parts.find(q=>q.id===p.id);if((m&&m.hp<=0)||(p.id==='core'&&b._bomber.core<=0))continue;const core=p.id==='core',w=core?p.w*.48:p.w,h=core?p.h*.82:p.h;if(Math.abs(x-p.x)<w/2+pad&&Math.abs(y-p.y)<h/2+pad)return p.id;}return null;}
 function siegeBomberBeam(b,beam){const bottom=Math.min(beam.bot??player.y,b.y+b.h),top=Math.max(beam.top||0,b.y-b.h);
   /* The laser plates are painted over their adjacent engines. A held beam aimed at a turret's
      centre must hit that visible plate even where its lower edge overlaps an engine box. */
@@ -164,13 +164,13 @@ function siegeBomberBeam(b,beam){const bottom=Math.min(beam.bot??player.y,b.y+b.
       return {x:beam.x,y:Math.min(bottom,p.y+p.h*.5),id:p.id};
   }
   for(let y=bottom;y>top;y-=3)for(const x of [beam.x,beam.x-(beam.w||6)*.4,beam.x+(beam.w||6)*.4]){const id=siegeBomberAt(b,x,y,2);if(id)return{x,y,id};}return null;}
-function siegeBomberTargets(b){return siegeBomberParts(b).map(p=>retinaDynamicPiece(b,'bomber-'+p.id,p.id==='core'?'boss':'module',()=>{const q=siegeBomberParts(b).find(q=>q.id===p.id),m=b._bomber.parts.find(q=>q.id===p.id);return{x:q.x,y:q.y,hp:m?m.hp:b._bomber.core,dead:b.dead||b.enter||!!(m&&m.hp<=0)};},d=>siegeBomberHit(b,d,p.x,p.y,p.id),p.w,p.h));}
+function siegeBomberTargets(b){return siegeBomberParts(b).map(p=>retinaDynamicPiece(b,'bomber-'+p.id,p.id==='core'?'boss':'module',()=>{const q=siegeBomberParts(b).find(q=>q.id===p.id),m=b._bomber.parts.find(q=>q.id===p.id);return{x:q.x,y:q.y,hp:m?m.hp:b._bomber.core,dead:b.dead||b.enter||!!(m?m.hp<=0:b._bomber.core<=0)};},d=>siegeBomberHit(b,d,p.x,p.y,p.id),p.w,p.h));}
 function siegeBomberHit(b,dmg,x,y,id){if(b.enter||b.dead||dmg<=0||b._bomber.mode==='overdrive')return;const B=b._bomber,target=id||siegeBomberAt(b,x,y,Math.max(2,(_dmgBullet?.w||0)*.35))||(!Number.isFinite(x)||!Number.isFinite(y)?'core':null),p=B.parts.find(p=>p.id===target);if(!p&&target!=='core')return;
   if(p&&p.hp<=0)return;
   if(p){p.hp=Math.max(0,p.hp-dmg);p.flash=.2;if(!p.hp){const shape=siegeBomberParts(b).find(q=>q.id===p.id);if(typeof d27ModuleRupture==='function')d27ModuleRupture(b,p,{...shape,debrisImage:B.space?mr27Cell('space',shape.cell,typeof d27FuriousBomber==='function'&&d27FuriousBomber(b)?'fury':null):polishCell('bomber',shape.cell)},'red');explode(shape.x,shape.y,b.w*.24,'red');Audio.SFX.expBig?.();if(p.id.startsWith('laser')&&['charge','beam'].includes(B.mode))siegeBomberSet(b,'recover');}}
   else {B.core=Math.max(0,B.core-dmg);b.flash=.18;}
   b.hp=B.core+B.parts.reduce((s,p)=>s+p.hp,0);
-  if(B.core<=0){b.hp=0;b.dead=true;b.dying=0;groundTargetingCancel(b);polishLanes=polishLanes.filter(q=>q.owner!==b);achievementEncounterDefeat(b,'miniboss');continueRewardResolve(b,b.x,b.y,'miniboss');Audio.SFX.expBig?.();}
+  if(b.hp<=0){b.hp=0;b.dead=true;b.dying=0;groundTargetingCancel(b);polishLanes=polishLanes.filter(q=>q.owner!==b);achievementEncounterDefeat(b,'miniboss');continueRewardResolve(b,b.x,b.y,'miniboss');Audio.SFX.expBig?.();}
 }
 function siegeBomberSet(b,mode){const B=b._bomber;B.mode=mode;B.t=0;B.cd=0;B.dur=({bombs:diffKey==='easy'?3.1:4.2,charge:diffKey==='easy'?3.4:2.7,beam:1.5,crossfire:diffKey==='easy'?3.1:3.8,missiles:diffKey==='easy'?2.4:3.3,recover:diffKey==='easy'?2.0:diffKey==='normal'?1.55:1.25})[mode]||2;if(typeof d27FuriousBomber==='function'&&d27FuriousBomber(b)){B.dur=({bombs:3.6,charge:1.65,beam:1.25,crossfire:3.2,missiles:2.7,recover:.85})[mode]||B.dur;B.safeLane=Math.floor(Math.random()*5);B.volley=0;}if(mode==='lob'){B.dur=[1.1,.95,.85][B.n]*(diffKey==='easy'?1.3:1)+(2+B.n)*.34+1.5;B.lobCast=false;}
   if(mode==='carpet'){B.dur=3.6;B.carpetCast=false;}

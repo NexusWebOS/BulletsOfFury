@@ -30,7 +30,7 @@
   for(const k of e.artKeys||[])$('#sources').append(el('p',null,k));
   tiles=[];$('#projectiles').replaceChildren();updateProjectiles(e.projectileKinds||[],[]);
   motion=[];$('#animations').replaceChildren();motionTime=0;
-  for(const bank of e.animationBanks||[])for(const name of ['heading','roll','idle','attack','fire','move']){const b=bank[name];if(!b)continue;const card=el('div','motion'),canvas=el('canvas');canvas.width=192;canvas.height=160;card.append(canvas,el('span',null,readable(name)),el('small',null,(b.frames?.length||b.frames||'?')+' authored frames'));$('#animations').append(card);motion.push({canvas,bank:b});}
+  for(const bank of e.animationBanks||[])for(const name of ['heading','idle','attack','drift','roll','somer','fire','move','dance','slam','spin','channel','heart','shield']){const b=bank[name];if(!b)continue;const card=el('div','motion'),canvas=el('canvas');canvas.width=192;canvas.height=160;card.append(canvas,el('span',null,readable(name)),el('small',null,(b.frames?.length||b.frames||'?')+' authored frames'));$('#animations').append(card);motion.push({canvas,bank:b});}
   if(!motion.length){for(const key of(e.artKeys||[]).slice(0,3)){const card=el('div','motion'),canvas=el('canvas');canvas.width=192;canvas.height=160;card.append(canvas,el('span',null,readable(key)));$('#animations').append(card);motion.push({canvas,key});}}
   if(!motion.length)$('#animations').append(el('p','caption','This encounter uses a live rig or layered boss animation. Its complete animation is shown in the viewport above.'));
  }

@@ -1,0 +1,1999 @@
+{
+  "art": {
+    "images": {
+      "panel": {
+        "key": "inv20_panel",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/panel.png",
+        "w": 512,
+        "h": 128
+      },
+      "cole": {
+        "key": "inv20_cole",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/cole.png",
+        "w": 256,
+        "h": 384
+      },
+      "axel": {
+        "key": "inv20_axel",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/axel.png",
+        "w": 256,
+        "h": 384
+      },
+      "freezer": {
+        "key": "inv20_freezer",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/freezer.png",
+        "w": 256,
+        "h": 384
+      },
+      "yuri": {
+        "key": "inv20_yuri",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/yuri.png",
+        "w": 256,
+        "h": 384
+      },
+      "maverick": {
+        "key": "inv20_maverick",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/maverick.png",
+        "w": 256,
+        "h": 384
+      },
+      "falva": {
+        "key": "inv20_falva",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/falva.png",
+        "w": 256,
+        "h": 384
+      },
+      "lizzie": {
+        "key": "inv20_lizzie",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/lizzie.png",
+        "w": 256,
+        "h": 384
+      },
+      "decker": {
+        "key": "inv20_decker",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/decker.png",
+        "w": 256,
+        "h": 384
+      },
+      "juggernaut": {
+        "key": "inv20_juggernaut",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/juggernaut.png",
+        "w": 256,
+        "h": 384
+      },
+      "cole_horror": {
+        "key": "inv20_cole_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/cole_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "axel_horror": {
+        "key": "inv20_axel_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/axel_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "freezer_horror": {
+        "key": "inv20_freezer_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/freezer_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "yuri_horror": {
+        "key": "inv20_yuri_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/yuri_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "maverick_horror": {
+        "key": "inv20_maverick_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/maverick_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "falva_horror": {
+        "key": "inv20_falva_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/falva_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "lizzie_horror": {
+        "key": "inv20_lizzie_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/lizzie_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "decker_horror": {
+        "key": "inv20_decker_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/decker_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "juggernaut_horror": {
+        "key": "inv20_juggernaut_horror",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/juggernaut_horror.png",
+        "w": 256,
+        "h": 384
+      },
+      "base": {
+        "key": "inv20_base",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/base.png",
+        "w": 512,
+        "h": 288
+      },
+      "coast": {
+        "key": "inv20_coast",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/coast.png",
+        "w": 512,
+        "h": 288
+      },
+      "earth": {
+        "key": "inv20_earth",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/earth.png",
+        "w": 512,
+        "h": 288
+      },
+      "solar": {
+        "key": "inv20_solar",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/solar.png",
+        "w": 512,
+        "h": 288
+      },
+      "remnant": {
+        "key": "inv20_remnant",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/remnant.png",
+        "w": 256,
+        "h": 256
+      },
+      "clump": {
+        "key": "inv20_clump",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/clump.png",
+        "w": 256,
+        "h": 256
+      },
+      "font": {
+        "key": "inv20_font",
+        "path": "assets/game/shared/cinematics/cinematic_invasion_1020/font.png",
+        "w": 512,
+        "h": 512
+      }
+    },
+    "banks": {
+      "roar": [
+        {
+          "key": "inv20_roar_00",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/roar_00.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_roar_01",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/roar_01.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_roar_02",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/roar_02.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_roar_03",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/roar_03.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_roar_04",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/roar_04.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_roar_05",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/roar_05.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        }
+      ],
+      "emerge": [
+        {
+          "key": "inv20_emerge_00",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_00.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_01",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_01.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_02",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_02.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_03",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_03.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_04",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_04.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_05",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_05.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_06",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_06.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_07",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_07.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_08",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_08.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_09",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_09.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_10",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_10.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_11",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_11.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_12",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_12.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_13",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_13.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_14",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_14.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_15",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_15.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        },
+        {
+          "key": "inv20_emerge_16",
+          "path": "assets/game/shared/cinematics/cinematic_invasion_1020/emerge_16.png",
+          "w": 288,
+          "h": 288,
+          "pivot": [
+            144,
+            186
+          ]
+        }
+      ]
+    },
+    "font": {
+      "schema": "coleforge.bitmap-font.v2",
+      "family": "Fury Signal / PixelLab 1020",
+      "capsOnly": true,
+      "line_height": 54,
+      "baseline": 48,
+      "glyphs": {
+        "A": {
+          "sprite_rect": [
+            4,
+            4,
+            42,
+            48
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            48
+          ],
+          "x_advance": 48
+        },
+        "B": {
+          "sprite_rect": [
+            68,
+            4,
+            42,
+            48
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            48
+          ],
+          "x_advance": 48
+        },
+        "C": {
+          "sprite_rect": [
+            132,
+            4,
+            44,
+            48
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            44,
+            48
+          ],
+          "x_advance": 50
+        },
+        "D": {
+          "sprite_rect": [
+            196,
+            4,
+            42,
+            48
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            48
+          ],
+          "x_advance": 48
+        },
+        "E": {
+          "sprite_rect": [
+            260,
+            4,
+            41,
+            48
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            48
+          ],
+          "x_advance": 47
+        },
+        "F": {
+          "sprite_rect": [
+            324,
+            4,
+            41,
+            48
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            48
+          ],
+          "x_advance": 47
+        },
+        "G": {
+          "sprite_rect": [
+            388,
+            4,
+            42,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            51
+          ],
+          "x_advance": 48
+        },
+        "H": {
+          "sprite_rect": [
+            452,
+            4,
+            41,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            51
+          ],
+          "x_advance": 47
+        },
+        "I": {
+          "sprite_rect": [
+            4,
+            68,
+            22,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            22,
+            51
+          ],
+          "x_advance": 28
+        },
+        "J": {
+          "sprite_rect": [
+            68,
+            68,
+            42,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            51
+          ],
+          "x_advance": 48
+        },
+        "K": {
+          "sprite_rect": [
+            132,
+            68,
+            41,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            51
+          ],
+          "x_advance": 47
+        },
+        "L": {
+          "sprite_rect": [
+            196,
+            68,
+            41,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            51
+          ],
+          "x_advance": 47
+        },
+        "M": {
+          "sprite_rect": [
+            260,
+            68,
+            45,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            45,
+            50
+          ],
+          "x_advance": 51
+        },
+        "N": {
+          "sprite_rect": [
+            324,
+            68,
+            41,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            50
+          ],
+          "x_advance": 47
+        },
+        "O": {
+          "sprite_rect": [
+            388,
+            68,
+            42,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            50
+          ],
+          "x_advance": 48
+        },
+        "P": {
+          "sprite_rect": [
+            452,
+            68,
+            42,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            50
+          ],
+          "x_advance": 48
+        },
+        "Q": {
+          "sprite_rect": [
+            4,
+            132,
+            46,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            46,
+            50
+          ],
+          "x_advance": 52
+        },
+        "R": {
+          "sprite_rect": [
+            68,
+            132,
+            41,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            50
+          ],
+          "x_advance": 47
+        },
+        "S": {
+          "sprite_rect": [
+            132,
+            132,
+            42,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            50
+          ],
+          "x_advance": 48
+        },
+        "T": {
+          "sprite_rect": [
+            196,
+            132,
+            41,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            50
+          ],
+          "x_advance": 47
+        },
+        "U": {
+          "sprite_rect": [
+            260,
+            132,
+            42,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            50
+          ],
+          "x_advance": 48
+        },
+        "V": {
+          "sprite_rect": [
+            324,
+            132,
+            42,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            50
+          ],
+          "x_advance": 48
+        },
+        "W": {
+          "sprite_rect": [
+            388,
+            132,
+            57,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            57,
+            50
+          ],
+          "x_advance": 63
+        },
+        "X": {
+          "sprite_rect": [
+            452,
+            132,
+            42,
+            50
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            50
+          ],
+          "x_advance": 48
+        },
+        "Y": {
+          "sprite_rect": [
+            4,
+            196,
+            42,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            51
+          ],
+          "x_advance": 48
+        },
+        "Z": {
+          "sprite_rect": [
+            68,
+            196,
+            41,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            51
+          ],
+          "x_advance": 47
+        },
+        "0": {
+          "sprite_rect": [
+            132,
+            196,
+            42,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            42,
+            51
+          ],
+          "x_advance": 48
+        },
+        "1": {
+          "sprite_rect": [
+            196,
+            196,
+            22,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            22,
+            51
+          ],
+          "x_advance": 28
+        },
+        "2": {
+          "sprite_rect": [
+            260,
+            196,
+            41,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            51
+          ],
+          "x_advance": 47
+        },
+        "3": {
+          "sprite_rect": [
+            324,
+            196,
+            41,
+            51
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            41,
+            51
+          ],
+          "x_advance": 47
+        },
+        "4": {
+          "sprite_rect": [
+            388,
+            196,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "5": {
+          "sprite_rect": [
+            452,
+            196,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "6": {
+          "sprite_rect": [
+            4,
+            260,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "7": {
+          "sprite_rect": [
+            68,
+            260,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "8": {
+          "sprite_rect": [
+            132,
+            260,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "9": {
+          "sprite_rect": [
+            196,
+            260,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        ".": {
+          "sprite_rect": [
+            260,
+            260,
+            12,
+            6
+          ],
+          "bounds_in_cell": [
+            0,
+            42,
+            12,
+            48
+          ],
+          "x_advance": 18
+        },
+        ",": {
+          "sprite_rect": [
+            324,
+            260,
+            12,
+            18
+          ],
+          "bounds_in_cell": [
+            0,
+            30,
+            12,
+            48
+          ],
+          "x_advance": 18
+        },
+        "!": {
+          "sprite_rect": [
+            388,
+            260,
+            6,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            6,
+            48
+          ],
+          "x_advance": 12
+        },
+        "?": {
+          "sprite_rect": [
+            452,
+            260,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        ":": {
+          "sprite_rect": [
+            4,
+            324,
+            6,
+            30
+          ],
+          "bounds_in_cell": [
+            0,
+            18,
+            6,
+            48
+          ],
+          "x_advance": 12
+        },
+        ";": {
+          "sprite_rect": [
+            68,
+            324,
+            12,
+            36
+          ],
+          "bounds_in_cell": [
+            0,
+            12,
+            12,
+            48
+          ],
+          "x_advance": 18
+        },
+        "'": {
+          "sprite_rect": [
+            132,
+            324,
+            6,
+            12
+          ],
+          "bounds_in_cell": [
+            0,
+            36,
+            6,
+            48
+          ],
+          "x_advance": 12
+        },
+        "\"": {
+          "sprite_rect": [
+            196,
+            324,
+            18,
+            12
+          ],
+          "bounds_in_cell": [
+            0,
+            36,
+            18,
+            48
+          ],
+          "x_advance": 24
+        },
+        "-": {
+          "sprite_rect": [
+            260,
+            324,
+            18,
+            6
+          ],
+          "bounds_in_cell": [
+            0,
+            42,
+            18,
+            48
+          ],
+          "x_advance": 24
+        },
+        "+": {
+          "sprite_rect": [
+            324,
+            324,
+            30,
+            30
+          ],
+          "bounds_in_cell": [
+            0,
+            18,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "(": {
+          "sprite_rect": [
+            388,
+            324,
+            18,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            18,
+            48
+          ],
+          "x_advance": 24
+        },
+        ")": {
+          "sprite_rect": [
+            452,
+            324,
+            18,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            18,
+            48
+          ],
+          "x_advance": 24
+        },
+        "/": {
+          "sprite_rect": [
+            4,
+            388,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "&": {
+          "sprite_rect": [
+            68,
+            388,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "%": {
+          "sprite_rect": [
+            132,
+            388,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "<": {
+          "sprite_rect": [
+            196,
+            388,
+            24,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            24,
+            48
+          ],
+          "x_advance": 30
+        },
+        ">": {
+          "sprite_rect": [
+            260,
+            388,
+            24,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            24,
+            48
+          ],
+          "x_advance": 30
+        },
+        "=": {
+          "sprite_rect": [
+            324,
+            388,
+            30,
+            18
+          ],
+          "bounds_in_cell": [
+            0,
+            30,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "[": {
+          "sprite_rect": [
+            388,
+            388,
+            18,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            18,
+            48
+          ],
+          "x_advance": 24
+        },
+        "]": {
+          "sprite_rect": [
+            452,
+            388,
+            18,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            18,
+            48
+          ],
+          "x_advance": 24
+        },
+        "#": {
+          "sprite_rect": [
+            4,
+            452,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "@": {
+          "sprite_rect": [
+            68,
+            452,
+            30,
+            42
+          ],
+          "bounds_in_cell": [
+            0,
+            6,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "_": {
+          "sprite_rect": [
+            132,
+            452,
+            30,
+            6
+          ],
+          "bounds_in_cell": [
+            0,
+            42,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        "*": {
+          "sprite_rect": [
+            196,
+            452,
+            30,
+            30
+          ],
+          "bounds_in_cell": [
+            0,
+            18,
+            30,
+            48
+          ],
+          "x_advance": 36
+        },
+        " ": {
+          "sprite_rect": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "bounds_in_cell": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "x_advance": 24
+        }
+      }
+    }
+  },
+  "audit": {
+    "images": {
+      "panel": {
+        "size": [
+          512,
+          128
+        ],
+        "bbox": [
+          4,
+          0,
+          508,
+          128
+        ],
+        "sha256": "310d0f7659d9a3e7a62faf3c7df826116746032b893dd5b501a0799471ecb775"
+      },
+      "cole": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          2,
+          0,
+          254,
+          383
+        ],
+        "sha256": "6f51197bb3ad0460458978d44ceb306aa53d927b8694ff04befaf1ecb49e2273"
+      },
+      "axel": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          0,
+          13,
+          256,
+          370
+        ],
+        "sha256": "f3aef83034fb20256ab4c01358deab796b116cdd5b393c920d01350bbd68e9cf"
+      },
+      "freezer": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          1,
+          4,
+          254,
+          379
+        ],
+        "sha256": "4e879391b1bc22ab6ecbc2c499ba936e92443aea4338b2b0911c4dbfa08aa4cd"
+      },
+      "yuri": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          7,
+          6,
+          249,
+          378
+        ],
+        "sha256": "32657593bfc2678c7b735ef7f3c10e75d70ea1ef85f3ba3050c0cfb911d5665f"
+      },
+      "maverick": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          2,
+          10,
+          253,
+          373
+        ],
+        "sha256": "b09ab64083995c55ce0179e818224c2b5c33b275ffcd04e01b8a63d2071a2b14"
+      },
+      "falva": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          13,
+          9,
+          243,
+          375
+        ],
+        "sha256": "bc6fb54888cd680fca99c8f13cdf3d68e2db008da2ecdf0ee6c7c4f1221c8635"
+      },
+      "lizzie": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          0,
+          11,
+          256,
+          373
+        ],
+        "sha256": "fac989416aa246e0264f5748ddc683f9c491c5483494bf75a48c852491301e65"
+      },
+      "decker": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          0,
+          5,
+          256,
+          378
+        ],
+        "sha256": "8585c756f87312e8f633787efaea2cf02990d9e12a6d591e42628f2bf63e8c0f"
+      },
+      "juggernaut": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          2,
+          6,
+          254,
+          377
+        ],
+        "sha256": "7f9d39aabaebc692cb8ff0b54703aef80916b3aa27e9bb2b80e8fa734426db99"
+      },
+      "cole_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          2,
+          0,
+          254,
+          382
+        ],
+        "sha256": "f315619cfc68bdbd489eeaee5e3a0d2005fd9bcca0070e9c353535ce6959ba5e"
+      },
+      "axel_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          0,
+          13,
+          256,
+          370
+        ],
+        "sha256": "b34a3149eed12b8d859ca2027c10800affc885aeb69aeb8b54294782a5b20577"
+      },
+      "freezer_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          1,
+          4,
+          254,
+          379
+        ],
+        "sha256": "2a02a5f90a589d5e7f6c7cf6dab11a74980a27c0b902350adf4f34c79ac316f6"
+      },
+      "yuri_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          7,
+          6,
+          249,
+          378
+        ],
+        "sha256": "4942efd02e2de332a428e199c09cc77c3d2a96eb285525fd67fc8f19d268807d"
+      },
+      "maverick_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          2,
+          10,
+          253,
+          373
+        ],
+        "sha256": "e169b09629fccf57c71bf9e80b1cd0e0fcc47af75235cb6be82e86fd60711306"
+      },
+      "falva_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          13,
+          9,
+          243,
+          376
+        ],
+        "sha256": "89842e91f187f708fb86e76b70e7ed63b7520d32cdd72375107f1b94701823f5"
+      },
+      "lizzie_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          0,
+          11,
+          256,
+          373
+        ],
+        "sha256": "b86a400b9100482ac71720b4d508839f32b32226be1c1edc88af956dfa6b0c5d"
+      },
+      "decker_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          0,
+          5,
+          256,
+          378
+        ],
+        "sha256": "2462a156f753979ab3b38c865918089ac2d67474876c0e10ddbd018c2e482610"
+      },
+      "juggernaut_horror": {
+        "size": [
+          256,
+          384
+        ],
+        "bbox": [
+          2,
+          6,
+          254,
+          377
+        ],
+        "sha256": "2803d2e248c0482f82e64eee186b3e350eb8e8cd2cb2ba92e2f14842831b0ec6"
+      },
+      "base": {
+        "size": [
+          512,
+          288
+        ],
+        "bbox": [
+          0,
+          0,
+          512,
+          288
+        ],
+        "sha256": "8fd6736e3b9c0b5c31de2e6ec086f56b623c37843255215c1e851659c3accb80"
+      },
+      "coast": {
+        "size": [
+          512,
+          288
+        ],
+        "bbox": [
+          0,
+          0,
+          512,
+          288
+        ],
+        "sha256": "ad373ce0c8d1a0d290649eb09dd43db4eeac24b1df5d9fbd275de76dfd8d6f06"
+      },
+      "earth": {
+        "size": [
+          512,
+          288
+        ],
+        "bbox": [
+          0,
+          0,
+          512,
+          288
+        ],
+        "sha256": "cc5b42dcda1d88fa9032751a24e184924cd3364e23a78d768154181ecdf66bba"
+      },
+      "solar": {
+        "size": [
+          512,
+          288
+        ],
+        "bbox": [
+          0,
+          0,
+          512,
+          288
+        ],
+        "sha256": "22e1493249b58c09569a55e937d75bd473a5a2936ce49b9953da8b554d30dd73"
+      },
+      "remnant": {
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          30,
+          28,
+          222,
+          222
+        ],
+        "sha256": "77f0c5d1a36a76106b049fee240dd7997e945c3f870b1d275056b1883d2a0bc9"
+      },
+      "clump": {
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          30,
+          28,
+          222,
+          149
+        ],
+        "sha256": "970f94098d3efa3f6d6dba8fb25a66737e275418fba9bf4f9ac4b09fa9e365cd"
+      },
+      "font": {
+        "size": [
+          512,
+          512
+        ],
+        "bbox": [
+          4,
+          4,
+          494,
+          494
+        ],
+        "sha256": "7a4835a237b60ac78d19dade6c3d07964721c798608aa6256f53b4dd4b0cad9d"
+      },
+      "roar_00": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          238
+        ],
+        "sha256": "97561a1440c3b61e21689da402086b108ee2ef099730f6d280bd4d9a8bfc4442"
+      },
+      "roar_01": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          49,
+          44,
+          238,
+          240
+        ],
+        "sha256": "db00e0550567535bddc2e79966bd1de16d10749588c4a393b59e7ee953f22dce"
+      },
+      "roar_02": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          47,
+          47,
+          238,
+          238
+        ],
+        "sha256": "35c9193b0edd13d4afed71f7e02104545bae39967bdc9b276725c2fd6c41e27c"
+      },
+      "roar_03": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          45,
+          47,
+          238,
+          236
+        ],
+        "sha256": "b51ffb9e8128d8927400940ca2b2a8e8b63ae8ed0349e64074f8bd9442240037"
+      },
+      "roar_04": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          45,
+          47,
+          238,
+          234
+        ],
+        "sha256": "9871d70f4e56b66ab53034ee7a905c40aa29ff5f94906e58676c8357910e3b6b"
+      },
+      "roar_05": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          47,
+          238,
+          235
+        ],
+        "sha256": "016188fac46087d596e6eecf0e76e0d3449a3094a69516d4e26b73f9fa309439"
+      },
+      "emerge_00": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          165
+        ],
+        "sha256": "4d27567b276aa1bb1fbac309f3cc6c1744241785e1787024555b794c33c81635"
+      },
+      "emerge_01": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          43,
+          238,
+          165
+        ],
+        "sha256": "94adbcb33a6ca0bb0e21bbc5317b8ecdd86e917985384c85587a734aa738c7c1"
+      },
+      "emerge_02": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          43,
+          238,
+          179
+        ],
+        "sha256": "5d25fb9f52b948bf52cdb9b762877956fb4f2f20e805e14dae63cc5a9eb0820d"
+      },
+      "emerge_03": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          47,
+          238,
+          190
+        ],
+        "sha256": "e1a2b4e2e58fd1cef407f397b21e73d04acb413ea672cb0b62a01114871f5201"
+      },
+      "emerge_04": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          55,
+          238,
+          209
+        ],
+        "sha256": "ef311ebdd9b57dd3933f4c5a22b9257cf227401dc4610ca90f2b4b0f2b6567a4"
+      },
+      "emerge_05": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          84,
+          238,
+          238
+        ],
+        "sha256": "34374ed142af6ecd726eda22290bab60bff9379bb13215edff42a43f7d27b6ec"
+      },
+      "emerge_06": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          84,
+          238,
+          238
+        ],
+        "sha256": "6e2a715a99f562314e10092b4fb0dbe94f1798e821cbd442de5fbcc63e260fdc"
+      },
+      "emerge_07": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          84,
+          238,
+          238
+        ],
+        "sha256": "6752a5b7b59cf84b619f3252338b81e886faa213f04951f6f84917790f8c8451"
+      },
+      "emerge_08": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          76,
+          238,
+          238
+        ],
+        "sha256": "f294bc365646b5447f5f6415bae5e53f49c5d02183972ebceb08d5bc847220a3"
+      },
+      "emerge_09": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          64,
+          238,
+          238
+        ],
+        "sha256": "c47bb23b78d1ec8e23966287f9d92ef7ee7fb968b6c1d99efaf3abf10f8897fa"
+      },
+      "emerge_10": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          50,
+          238,
+          238
+        ],
+        "sha256": "85022fc574ec4bed3fcb8c81c565b066185c83b0164ab355428ea44dda8f14b9"
+      },
+      "emerge_11": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          238
+        ],
+        "sha256": "2de8922af1fca558a48a0abe40a1363baf12763259388f12029f7e0efd22359f"
+      },
+      "emerge_12": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          238
+        ],
+        "sha256": "4c765f704422bc4fdcd67d0551798e700786a6b662008f7bfb40159077e7a434"
+      },
+      "emerge_13": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          238
+        ],
+        "sha256": "2032910d9595345f71fa5f99a21dec6f86f652a1ca21a5baf9db9d193d77ad89"
+      },
+      "emerge_14": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          238
+        ],
+        "sha256": "9723f4276630227f7ab20e736261ccd745b7a7073d7f93a7038447b80177daf4"
+      },
+      "emerge_15": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          238
+        ],
+        "sha256": "b43700cf1ecc51bbea487d8118dceb0a27c9cfc9614fabc1fdf203df237ee577"
+      },
+      "emerge_16": {
+        "size": [
+          288,
+          288
+        ],
+        "bbox": [
+          46,
+          44,
+          238,
+          238
+        ],
+        "sha256": "90b529f161d4476af4447e27b715de4fadeba0421fada93a2be2fe39f8f32b87"
+      }
+    },
+    "banks": {
+      "roar": {
+        "frames": 6,
+        "canvas": [
+          288,
+          288
+        ],
+        "pivot": [
+          144,
+          186
+        ],
+        "sourceCanvas": [
+          256,
+          256
+        ],
+        "sharedPadding": 16,
+        "fixedRoot": true
+      },
+      "emerge": {
+        "frames": 17,
+        "canvas": [
+          288,
+          288
+        ],
+        "pivot": [
+          144,
+          186
+        ],
+        "sourceCanvas": [
+          256,
+          256
+        ],
+        "sharedPadding": 16,
+        "fixedRoot": true
+      }
+    }
+  }
+}

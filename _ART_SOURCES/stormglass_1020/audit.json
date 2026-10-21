@@ -1,0 +1,23 @@
+{
+  "source": "_ART_SOURCES\\stormglass_1020\\generated-terrain.png",
+  "source_size": [
+    887,
+    1774
+  ],
+  "canvas": [
+    680,
+    1360
+  ],
+  "proportional_scale": 0.7666290868094702,
+  "normalization": "nearest; even canvas; no per-frame resizing",
+  "registration": "sg20_stormglass in assets/stormglass_tutorial_1020.js",
+  "runtime_bytes": 900538,
+  "generator": "built-in image generation",
+  "layers": {
+    "ocean": "native authored nlq2_water / nwl_water animation, 6fps,10px/s",
+    "far_clouds": "native 6-pose low rolling bank,15px/s",
+    "academy": "generated transparent architecture,28px/s",
+    "near_clouds": "native 6-pose low rolling bank,39px/s; all layers below gameplay"
+  },
+  "ship_references": "none required: terrain has no ships; actual native aircraft render in game"
+}

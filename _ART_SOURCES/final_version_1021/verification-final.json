@@ -1,0 +1,88 @@
+{
+  "complete": true,
+  "regression": {
+    "assertions": 8943,
+    "errors": 0,
+    "exit": 0,
+    "log": "_shots\\final-version-regression-1021-complete.log"
+  },
+  "native": {
+    "edge_contracts": {
+      "checks": 155,
+      "passed": true,
+      "report": "_shots\\final_version_1021\\contracts\\msedge-report.json"
+    },
+    "edge_air_actions": {
+      "checks": 176,
+      "passed": true,
+      "report": "_shots\\final_version_1021\\air-actions\\msedge.json"
+    },
+    "chrome_air_actions": {
+      "checks": 176,
+      "passed": true,
+      "report": "_shots\\final_version_1021\\air-actions\\chrome.json"
+    },
+    "firefox_air_actions": {
+      "checks": 176,
+      "passed": true,
+      "report": "_shots\\final_version_1021\\air-actions\\firefox.json"
+    },
+    "hammer_and_shields": {
+      "checks": 68,
+      "passed": true,
+      "report": "_shots\\final_version_1021\\native\\report.json"
+    },
+    "contacts_and_audio": {
+      "checks": 21,
+      "passed": true,
+      "report": "_shots\\final_version_1021\\contacts\\report.json"
+    },
+    "environment": {
+      "checks": 8,
+      "passed": true,
+      "report": "_shots\\final_version_1021\\environment\\report.json"
+    },
+    "allied_missile_defense": {
+      "difficulties": 4,
+      "passed": true,
+      "report": "_shots/final_version_1021/ally-defense.json"
+    }
+  },
+  "review": {
+    "rows": [
+      {
+        "size": [
+          1440,
+          1000
+        ],
+        "overflow": false,
+        "models": 40,
+        "pending": "40 completed aircraft designs \u2022 0 awaiting complete banks"
+      },
+      {
+        "size": [
+          390,
+          844
+        ],
+        "overflow": false,
+        "models": 40,
+        "pending": "40 completed aircraft designs \u2022 0 awaiting complete banks"
+      }
+    ],
+    "errors": []
+  },
+  "art": {
+    "aircraft": 40,
+    "designIDsIncludingFamilies": 53,
+    "motionPosesPlusIdle": 2280,
+    "effectFrames": 558,
+    "clippedFrames": 0,
+    "airRuntimeBytes": 2543592
+  },
+  "credits": {
+    "startingDisplayedUSD": 10.58,
+    "closingDisplayedUSD": 2.91,
+    "accountPurchasePerformed": false
+  },
+  "reviewURL": "http://127.0.0.1:8794/_shots/final_version_1021/review.html"
+}

@@ -60,7 +60,9 @@ module.exports=function(vm,c,ok){
    const frost={_ship:'frostcruiser',_mr27:{parts:[{id:'gunL',dead:true},{id:'gunR',dead:true}]}};
    o['A disarmed Frost Cruiser still has core balls, a beam and a committed charge']=String(er26Book(frost))==='p2-core-balls,p2-core-laser,p2-core-charge';
    o['All three Stage 4 attack families preserve an authored emitter owner']=er26Book({_ship:'stormsovereign'}).includes('p2-battery')&&er26Book({_ship:'stormsovereign'}).includes('p2-rockets')&&er26Book({_ship:'stormsovereign'}).includes('ap10-stormburst');
-   o['Personal dialogue and lock colors match their pilots']=RETINA_TINTS.lizzie==='#ffd438'&&RETINA_TINTS.kaia==='#25d9bd'&&dialogueNameColor('JACE')==='#ff4838'&&dialogueNameColor('ROOK')==='#ff9b30';
+   o['Main-pilot targeting retains the specified blue, yellow and gold Retina palette']=retinaColor('axel')==='#2f6fff'&&retinaColor('decker')==='#ffe11a'&&retinaColor('lizzie')==='#ffc21a';
+   o['Rebel scanner and dialogue colors retain their separately authored identities']=retinaColor('kaia')==='#25d9bd'&&dialogueNameColor('JACE')==='#ff4838'&&dialogueNameColor('ROOK')==='#ff9b30';
+   o['Orange Decker dialogue cannot overwrite his yellow Retina']=dialogueNameColor('DECKER')==='#ff9b30'&&RETINA_TINTS.decker==='#ffe11a';
    boss={_rebels:{}};story=null;s6Wing={route:'right'};o['Rebel pursuit cannot play the obsolete storm-platform scene']=!storyPlay(6,'boss')&&story===null&&arcStageCard(6,'boss_warning')[0]==='REBEL FURY SQUADRON';
    boss={_whv:{}};s6Wing={route:'left'};storyPlay(6,'boss');o['Harrier pursuit owns its weather dialogue and actual cannon objectives']=story.key==='P2.S06.HARRIER'&&story.lines.some(q=>q[0]==='YURI')&&/HARRIER/.test(arcStageCard(6,'boss_warning')[0]);
    return o;

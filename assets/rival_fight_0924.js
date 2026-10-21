@@ -183,7 +183,7 @@ const Rival24=(()=>{
         const dx=target?target.x-q.x:0,dy=target?target.y-q.y:-300,mag=Math.hypot(dx,dy)||1;
         pBullets.push({x:q.x,y:q.y-17,vx:dx/mag*10,vy:dy/mag*10,w:5,h:12,dmg:3,kind:'mg',ally:true,col:(PILOTS.find(p=>p.key===q.key)||{}).tint||'#adf5ff'});
         q._muzzle=.10;
-        if(Audio.SFX.machineGun)Audio.SFX.machineGun();
+        if(Audio.SFX.enemyMachineGunLight)Audio.SFX.enemyMachineGunLight();
       }
       q._muzzle=Math.max(0,(q._muzzle||0)-dt);
     }

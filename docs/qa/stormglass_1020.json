@@ -1,0 +1,318 @@
+{
+  "passed": 22,
+  "total": 22,
+  "errors": [],
+  "checks": [
+    {
+      "name": "Fresh pilot is offered the new academy",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "New tutorial bypasses the campaign runway and reaches its own course",
+      "passed": true,
+      "data": {
+        "state": "play",
+        "stage": 1,
+        "mode": "arcade",
+        "lives": 5,
+        "tut": true,
+        "lesson": "move",
+        "li": 0,
+        "hits": 0,
+        "done": 0,
+        "foreign": 0,
+        "ask": false,
+        "dead": false,
+        "_h": 0,
+        "err1": false,
+        "err2": false,
+        "pause": "SKIP TUTORIAL"
+      }
+    },
+    {
+      "name": "Pausing freezes tutorial travel and exposes skip",
+      "passed": true,
+      "data": [
+        181.0666666666672,
+        181.53333333333387,
+        181.53333333333387
+      ]
+    },
+    {
+      "name": "Every lesson completed with real controls, including multi-lock and three-wave exam",
+      "passed": true,
+      "data": {
+        "move": {
+          "start": 30,
+          "hits": 0,
+          "shot": true,
+          "done": true
+        },
+        "fire": {
+          "start": 300,
+          "hits": 0,
+          "shot": true,
+          "done": true
+        },
+        "crate": {
+          "start": 750,
+          "hits": 0,
+          "shot": true,
+          "done": true
+        },
+        "roll": {
+          "start": 960,
+          "hits": 0,
+          "done": true,
+          "shot": true
+        },
+        "somer": {
+          "start": 1080,
+          "hits": 0,
+          "done": true,
+          "shot": true
+        },
+        "missile": {
+          "start": 1230,
+          "hits": 1,
+          "done": true,
+          "shot": true
+        },
+        "retina": {
+          "start": 1350,
+          "hits": 2,
+          "done": true,
+          "shot": true
+        },
+        "multi": {
+          "start": 1500,
+          "hits": 2,
+          "done": true,
+          "shot": true
+        },
+        "warn": {
+          "start": 1650,
+          "hits": 2,
+          "shot": true,
+          "done": true
+        },
+        "strike": {
+          "start": 2310,
+          "hits": 2,
+          "shot": true,
+          "done": true
+        },
+        "special": {
+          "start": 2970,
+          "hits": 2,
+          "shot": true,
+          "done": true
+        },
+        "brief1": {
+          "start": 3210,
+          "hits": 2,
+          "shot": true
+        },
+        "brief2": {
+          "start": 3390,
+          "hits": 2,
+          "shot": true,
+          "done": true
+        },
+        "exam": {
+          "start": 3600,
+          "hits": 2,
+          "shot": true,
+          "done": true
+        },
+        "debrief": {
+          "start": 5820,
+          "hits": 9,
+          "shot": true,
+          "done": true
+        }
+      }
+    },
+    {
+      "name": "No campaign enemies entered the training field",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Hits cannot spend lives",
+      "passed": true,
+      "data": [
+        5,
+        5
+      ]
+    },
+    {
+      "name": "Graduation stores only a tutorial report and restores normal Stage 1",
+      "passed": true,
+      "data": {
+        "state": "intro",
+        "stage": 1,
+        "mode": "arcade",
+        "lives": 5,
+        "tut": false,
+        "lesson": null,
+        "li": -1,
+        "hits": 0,
+        "done": 0,
+        "foreign": 0,
+        "ask": false,
+        "dead": false,
+        "_h": 0,
+        "err1": false,
+        "err2": false,
+        "pause": "RESTART LEVEL"
+      }
+    },
+    {
+      "name": "Terrain used the new authored artwork in native rendering",
+      "passed": true,
+      "data": 6475
+    },
+    {
+      "name": "Ace warning has a full three-second readable commitment window",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Instructor visibly flashes on hit and restores its authored pixels",
+      "passed": true,
+      "data": {
+        "changed": 8658,
+        "restored": 0
+      }
+    },
+    {
+      "name": "Ocean genuinely animates while academy scroll is held fixed",
+      "passed": true,
+      "data": {
+        "changed": 4850,
+        "f0": 0,
+        "f1": 2,
+        "layers": {
+          "ocean": 40,
+          "farCloud": 60,
+          "academy": 600,
+          "nearCloud": 156
+        },
+        "offsets": [
+          {
+            "kind": "ocean",
+            "dx": -19
+          },
+          {
+            "kind": "farCloud",
+            "dx": -29
+          },
+          {
+            "kind": "academy",
+            "dx": -80
+          },
+          {
+            "kind": "nearCloud",
+            "dx": -66
+          }
+        ]
+      }
+    },
+    {
+      "name": "All four authored parallax layers respond independently to camera movement",
+      "passed": true,
+      "data": [
+        {
+          "kind": "ocean",
+          "dx": -19
+        },
+        {
+          "kind": "farCloud",
+          "dx": -29
+        },
+        {
+          "kind": "academy",
+          "dx": -80
+        },
+        {
+          "kind": "nearCloud",
+          "dx": -66
+        }
+      ]
+    },
+    {
+      "name": "Each parallax layer has its own travel speed",
+      "passed": true,
+      "data": {
+        "ocean": 40,
+        "farCloud": 60,
+        "academy": 600,
+        "nearCloud": 156
+      }
+    },
+    {
+      "name": "Training fire requests a decoded native machine-gun cue through the mixer",
+      "passed": true,
+      "data": {
+        "events": [
+          "enemyMachineGunLight"
+        ],
+        "decoded": true
+      }
+    },
+    {
+      "name": "easy keeps beginner training armor and projectile speed",
+      "passed": true,
+      "data": {
+        "speed": 3,
+        "hp": 35
+      }
+    },
+    {
+      "name": "normal keeps beginner training armor and projectile speed",
+      "passed": true,
+      "data": {
+        "speed": 3,
+        "hp": 35
+      }
+    },
+    {
+      "name": "hard keeps beginner training armor and projectile speed",
+      "passed": true,
+      "data": {
+        "speed": 3,
+        "hp": 35
+      }
+    },
+    {
+      "name": "furious keeps beginner training armor and projectile speed",
+      "passed": true,
+      "data": {
+        "speed": 3,
+        "hp": 35
+      }
+    },
+    {
+      "name": "Skip restores Campaign and removes all academy state",
+      "passed": true,
+      "data": "campaignintro"
+    },
+    {
+      "name": "Co-op tutorial is safely solo",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Co-op restored on exit",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page, console or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,4196 @@
+{
+  "banks": {
+    "corrupt_slam": [
+      {
+        "key": "hb20_corrupt_slam_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          74,
+          193,
+          192
+        ],
+        "tip": [
+          72,
+          154
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          68,
+          49,
+          187,
+          182
+        ],
+        "tip": [
+          102,
+          57
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          75,
+          47,
+          191,
+          170
+        ],
+        "tip": [
+          169,
+          60
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          49,
+          191,
+          167
+        ],
+        "tip": [
+          168,
+          67
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          49,
+          191,
+          167
+        ],
+        "tip": [
+          177,
+          65
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          63,
+          75,
+          199,
+          200
+        ],
+        "tip": [
+          82,
+          191
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          100,
+          199,
+          200
+        ],
+        "tip": [
+          69,
+          161
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          99,
+          199,
+          200
+        ],
+        "tip": [
+          74,
+          181
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          99,
+          199,
+          200
+        ],
+        "tip": [
+          74,
+          161
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          99,
+          199,
+          200
+        ],
+        "tip": [
+          75,
+          181
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          59,
+          94,
+          199,
+          199
+        ],
+        "tip": [
+          75,
+          178
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          78,
+          194,
+          196
+        ],
+        "tip": [
+          75,
+          176
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          66,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          66,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          66,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_slam_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_slam/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          66,
+          157
+        ]
+      }
+    ],
+    "corrupt_side": [
+      {
+        "key": "hb20_corrupt_side_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          73,
+          191,
+          197
+        ],
+        "tip": [
+          98,
+          180
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          94,
+          70,
+          198,
+          183
+        ],
+        "tip": [
+          158,
+          171
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          93,
+          70,
+          226,
+          183
+        ],
+        "tip": [
+          209,
+          146
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          93,
+          71,
+          231,
+          183
+        ],
+        "tip": [
+          215,
+          138
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          93,
+          70,
+          225,
+          183
+        ],
+        "tip": [
+          209,
+          146
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          34,
+          74,
+          213,
+          184
+        ],
+        "tip": [
+          91,
+          163
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          29,
+          66,
+          178,
+          183
+        ],
+        "tip": [
+          91,
+          76
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          68,
+          63,
+          178,
+          183
+        ],
+        "tip": [
+          92,
+          70
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          63,
+          178,
+          183
+        ],
+        "tip": [
+          91,
+          74
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          66,
+          66,
+          178,
+          183
+        ],
+        "tip": [
+          80,
+          75
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          52,
+          68,
+          178,
+          183
+        ],
+        "tip": [
+          69,
+          88
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          37,
+          69,
+          178,
+          183
+        ],
+        "tip": [
+          53,
+          105
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          29,
+          70,
+          177,
+          183
+        ],
+        "tip": [
+          47,
+          112
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          36,
+          70,
+          179,
+          182
+        ],
+        "tip": [
+          48,
+          134
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          41,
+          72,
+          187,
+          189
+        ],
+        "tip": [
+          61,
+          154
+        ]
+      },
+      {
+        "key": "hb20_corrupt_side_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_side/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      }
+    ],
+    "corrupt_unarmed": [
+      {
+        "key": "hb20_corrupt_unarmed_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_unarmed/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      }
+    ],
+    "corrupt_break": [
+      {
+        "key": "hb20_corrupt_break_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          59,
+          70,
+          191,
+          192
+        ],
+        "tip": [
+          73,
+          155
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          68,
+          191,
+          191
+        ],
+        "tip": [
+          74,
+          153
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          68,
+          191,
+          191
+        ],
+        "tip": [
+          74,
+          153
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          68,
+          191,
+          191
+        ],
+        "tip": [
+          74,
+          153
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          68,
+          191,
+          191
+        ],
+        "tip": [
+          74,
+          153
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          66,
+          202,
+          179
+        ],
+        "tip": [
+          66,
+          143
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          51,
+          69,
+          207,
+          179
+        ],
+        "tip": [
+          69,
+          150
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          41,
+          73,
+          211,
+          182
+        ],
+        "tip": [
+          56,
+          137
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          45,
+          71,
+          208,
+          182
+        ],
+        "tip": [
+          65,
+          152
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          91,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          135,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          91,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          134,
+          77
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          91,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          133,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          133,
+          77
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          87,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          133,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          85,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          136,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          135,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_17",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/17.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          91,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          135,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_18",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/18.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          91,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          133,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_19",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/19.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          134,
+          77
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_20",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/20.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          87,
+          62,
+          184,
+          182
+        ],
+        "tip": [
+          133,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_21",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/21.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          85,
+          62,
+          184,
+          182
+        ],
+        "tip": [
+          134,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_22",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/22.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          135,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_23",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/23.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          91,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          134,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_24",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/24.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          91,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          133,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_25",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/25.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          132,
+          77
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_26",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/26.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          87,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          133,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_27",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/27.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          85,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          135,
+          78
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_28",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/28.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          61,
+          184,
+          182
+        ],
+        "tip": [
+          135,
+          77
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_29",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/29.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          88,
+          69,
+          184,
+          182
+        ],
+        "tip": [
+          93,
+          118
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_30",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/30.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          47,
+          67,
+          191,
+          183
+        ],
+        "tip": [
+          67,
+          143
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_31",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/31.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          48,
+          63,
+          193,
+          185
+        ],
+        "tip": [
+          131,
+          77
+        ]
+      },
+      {
+        "key": "hb20_corrupt_break_32",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_break/32.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          50,
+          63,
+          193,
+          182
+        ],
+        "tip": [
+          130,
+          77
+        ]
+      }
+    ],
+    "corrupt_punch": [
+      {
+        "key": "hb20_corrupt_punch_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          77,
+          55,
+          176,
+          211
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          81,
+          59,
+          220,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          59,
+          214,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          76,
+          58,
+          208,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          57,
+          197,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          71,
+          56,
+          183,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          60,
+          187,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          81,
+          59,
+          183,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          73,
+          60,
+          176,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          60,
+          176,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          75,
+          59,
+          176,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          77,
+          56,
+          175,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_punch_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_punch/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      }
+    ],
+    "corrupt_fists": [
+      {
+        "key": "hb20_corrupt_fists_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          84,
+          51,
+          172,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          42,
+          174,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          34,
+          179,
+          210
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          75,
+          36,
+          182,
+          219
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          77,
+          194,
+          220
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          59,
+          115,
+          198,
+          221
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          54,
+          116,
+          202,
+          220
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          53,
+          116,
+          204,
+          218
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          75,
+          116,
+          182,
+          218
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          75,
+          116,
+          182,
+          218
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          75,
+          116,
+          182,
+          218
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          101,
+          179,
+          210
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          80,
+          179,
+          210
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          80,
+          64,
+          177,
+          210
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          81,
+          58,
+          175,
+          211
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fists_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fists/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      }
+    ],
+    "corrupt_fire": [
+      {
+        "key": "hb20_corrupt_fire_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          51,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          41,
+          174,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          41,
+          175,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          41,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          44,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          51,
+          173,
+          212
+        ]
+      },
+      {
+        "key": "hb20_corrupt_fire_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_fire/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          53,
+          173,
+          212
+        ]
+      }
+    ],
+    "corrupt_spin": [
+      {
+        "key": "hb20_corrupt_spin_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          71,
+          73,
+          191,
+          197
+        ],
+        "tip": [
+          102,
+          174
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          97,
+          72,
+          182,
+          196
+        ],
+        "tip": [
+          133,
+          175
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          102,
+          69,
+          179,
+          193
+        ],
+        "tip": [
+          159,
+          167
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          107,
+          66,
+          207,
+          186
+        ],
+        "tip": [
+          189,
+          162
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          98,
+          64,
+          214,
+          185
+        ],
+        "tip": [
+          193,
+          151
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          82,
+          63,
+          208,
+          183
+        ],
+        "tip": [
+          180,
+          151
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          62,
+          184,
+          180
+        ],
+        "tip": [
+          168,
+          132
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          72,
+          62,
+          162,
+          184
+        ],
+        "tip": [
+          96,
+          169
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          86,
+          62,
+          158,
+          186
+        ],
+        "tip": [
+          112,
+          174
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          73,
+          64,
+          153,
+          189
+        ],
+        "tip": [
+          87,
+          142
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          66,
+          151,
+          190
+        ],
+        "tip": [
+          65,
+          145
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          49,
+          68,
+          164,
+          190
+        ],
+        "tip": [
+          54,
+          137
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          44,
+          70,
+          172,
+          187
+        ],
+        "tip": [
+          51,
+          145
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          49,
+          72,
+          184,
+          190
+        ],
+        "tip": [
+          59,
+          152
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          68,
+          160
+        ]
+      },
+      {
+        "key": "hb20_corrupt_spin_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_spin/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          76,
+          175
+        ]
+      }
+    ],
+    "corrupt_dance": [
+      {
+        "key": "hb20_corrupt_dance_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          55,
+          70,
+          192,
+          189
+        ],
+        "tip": [
+          68,
+          152
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          68,
+          195,
+          179
+        ],
+        "tip": [
+          71,
+          139
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          62,
+          68,
+          201,
+          181
+        ],
+        "tip": [
+          76,
+          131
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          63,
+          66,
+          202,
+          182
+        ],
+        "tip": [
+          82,
+          98
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          58,
+          54,
+          202,
+          179
+        ],
+        "tip": [
+          149,
+          72
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          62,
+          200,
+          179
+        ],
+        "tip": [
+          143,
+          74
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          60,
+          66,
+          198,
+          179
+        ],
+        "tip": [
+          74,
+          116
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          52,
+          73,
+          190,
+          197
+        ],
+        "tip": [
+          68,
+          160
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          55,
+          70,
+          191,
+          189
+        ],
+        "tip": [
+          67,
+          154
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          68,
+          195,
+          179
+        ],
+        "tip": [
+          70,
+          139
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          68,
+          200,
+          180
+        ],
+        "tip": [
+          73,
+          120
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          66,
+          202,
+          182
+        ],
+        "tip": [
+          149,
+          79
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          58,
+          54,
+          202,
+          179
+        ],
+        "tip": [
+          88,
+          82
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          62,
+          200,
+          179
+        ],
+        "tip": [
+          83,
+          92
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          60,
+          66,
+          198,
+          179
+        ],
+        "tip": [
+          77,
+          117
+        ]
+      },
+      {
+        "key": "hb20_corrupt_dance_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_dance/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          52,
+          73,
+          190,
+          197
+        ],
+        "tip": [
+          68,
+          157
+        ]
+      }
+    ],
+    "corrupt_charge": [
+      {
+        "key": "hb20_corrupt_charge_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          76,
+          175
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          58,
+          72,
+          192,
+          182
+        ],
+        "tip": [
+          74,
+          113
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          65,
+          58,
+          184,
+          182
+        ],
+        "tip": [
+          82,
+          86
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          56,
+          184,
+          182
+        ],
+        "tip": [
+          87,
+          83
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          56,
+          184,
+          182
+        ],
+        "tip": [
+          101,
+          85
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          59,
+          49,
+          184,
+          182
+        ],
+        "tip": [
+          87,
+          83
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          45,
+          184,
+          182
+        ],
+        "tip": [
+          105,
+          70
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          56,
+          184,
+          182
+        ],
+        "tip": [
+          104,
+          69
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          56,
+          184,
+          182
+        ],
+        "tip": [
+          105,
+          70
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          68,
+          184,
+          182
+        ],
+        "tip": [
+          85,
+          81
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          55,
+          73,
+          191,
+          192
+        ],
+        "tip": [
+          73,
+          173
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          156
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          156
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          83,
+          172
+        ]
+      },
+      {
+        "key": "hb20_corrupt_charge_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_charge/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          156
+        ]
+      }
+    ],
+    "corrupt_gun": [
+      {
+        "key": "hb20_corrupt_gun_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          199,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          199,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          200,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          233,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          230,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          228,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          226,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          199,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          233,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          230,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          228,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          226,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          199,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          233,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          230,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          228,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          62,
+          226,
+          213
+        ]
+      }
+    ],
+    "corrupt_gun_left": [
+      {
+        "key": "hb20_corrupt_gun_left_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          23,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          26,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          28,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          30,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          23,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          26,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          28,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          30,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          57,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          23,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          26,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          28,
+          62,
+          182,
+          213
+        ]
+      },
+      {
+        "key": "hb20_corrupt_gun_left_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_gun_left/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          30,
+          62,
+          182,
+          213
+        ]
+      }
+    ],
+    "corrupt_idle": [
+      {
+        "key": "hb20_corrupt_idle_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_idle/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          73,
+          190,
+          194
+        ],
+        "tip": [
+          70,
+          157
+        ]
+      }
+    ],
+    "corrupt_tool": [
+      {
+        "key": "hb20_corrupt_tool_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_tool/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          16,
+          87,
+          240,
+          229
+        ],
+        "tip": [
+          41,
+          168
+        ]
+      }
+    ],
+    "corrupt_ball": [
+      {
+        "key": "hb20_corrupt_ball_0",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          69,
+          59,
+          186,
+          175
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_1",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          67,
+          61,
+          187,
+          179
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_2",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          67,
+          60,
+          192,
+          183
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_3",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          71,
+          61,
+          192,
+          184
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_4",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          73,
+          61,
+          196,
+          187
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_5",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          77,
+          65,
+          198,
+          187
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_6",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          81,
+          69,
+          197,
+          186
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_7",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          77,
+          67,
+          195,
+          187
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_8",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          73,
+          67,
+          196,
+          192
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_9",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          72,
+          71,
+          195,
+          192
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_10",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          69,
+          73,
+          195,
+          196
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_11",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          69,
+          77,
+          191,
+          198
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_12",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          70,
+          81,
+          187,
+          197
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_13",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          69,
+          77,
+          189,
+          195
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_14",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          64,
+          73,
+          189,
+          196
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_15",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          64,
+          72,
+          185,
+          195
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_16",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          60,
+          69,
+          183,
+          195
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_17",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/17.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          58,
+          69,
+          179,
+          191
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_18",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/18.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          59,
+          70,
+          175,
+          187
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_19",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/19.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          61,
+          69,
+          179,
+          189
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_20",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/20.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          60,
+          64,
+          183,
+          189
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_21",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/21.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          61,
+          64,
+          184,
+          185
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_22",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/22.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          61,
+          60,
+          187,
+          183
+        ]
+      },
+      {
+        "key": "hb20_corrupt_ball_23",
+        "path": "assets/game/levels/stage_08/boss/hammer_redesign_1020/corrupt_ball/23.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "bounds": [
+          65,
+          58,
+          187,
+          179
+        ]
+      }
+    ]
+  },
+  "registry": "assets/hammer_redesign_art_1020.js",
+  "source": "_ART_SOURCES/boss_redesign_1020/jobs.json"
+}

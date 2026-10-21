@@ -1,19 +1,11 @@
-# Bullets of Fury: Field Manual
+# Bullets of Fury: Field Manual 1.2
 
-Offline Manifest V3 extension. No host permissions, tracking, external code or network requests. Notes/bookmarks use this extension’s local storage.
+Offline Manifest V3 extension. No host permissions, tracking, external code or network requests. Notes/bookmarks remain on this device.
 
-## Install in Chrome or Edge
-1. Extract the ZIP into a permanent folder.
-2. Open chrome://extensions (Edge: edge://extensions).
-3. Enable Developer mode. Choose Load unpacked.
-4. Select the folder containing manifest.json. Pin Field Manual; click its icon, then OPEN THE FULL GUIDE.
+## Install or update
 
-This ZIP is an unpacked extension, not a Chrome Web Store listing. Firefox users can open guide.html as a standalone manual; this package is not a Firefox add-on.
+Extract into a permanent folder. In chrome://extensions or edge://extensions enable Developer mode, choose Load unpacked and select the folder containing manifest.json. For an existing install, replace its files in the same folder and press Reload on its extension card to retain notes/bookmarks. Firefox can open guide.html as a standalone document; this is not a Firefox add-on.
 
-Edition: October 12, 2026. Pilot, special, stage, weapon and difficulty data exported from current runtime. Combat advice derived from Hard Corps encounter documentation and current game systems. Base-game rules; Overdrive rules are separate. Original BOF art, BlackOpsOne font (notice in art), generated icon. No guaranteed survival claims.
+October 21, 2026 edition. Current runtime pilot, weapon, stage and difficulty data; fresh Command Armor screenshots; paired-ability details; revised Hammer, Phoenix, Dracodia and Rebel tactics; Stormglass/B.O.B. and Chrome Heart briefings; actual current aircraft art. Unchanged historical encounter pictures remain illustrative; dynamic attack timing is authoritative in the game. This manual does not measure human win rates. Overdrive uses separate rules.
 
-Manifest documentation: https://developer.chrome.com/docs/extensions/reference/manifest
-
-Revision 1.1: illustrated HUD, nine ability loadouts, five paired-ability explanations, 24 enemy plates, artwork or live captures for every roster encounter, key fight arena screenshots. Original SPECIAL_INFO summaries were incomplete; display names now come from PC_SPECIAL and mechanics from the implemented controllers. Detailed attack timing research remains incomplete for some encounters.
-
-Revision 1.1: illustrated HUD, nine ability loadouts, five paired-ability explanations, 24 enemy plates, artwork or live captures for every roster encounter, key fight arena screenshots. Original SPECIAL_INFO summaries were incomplete; display names now come from PC_SPECIAL and mechanics from the implemented controllers. Detailed attack timing research remains incomplete for some encounters.
+Chrome Heart uses the native gameplay reel. The guide does not grant password unlocks. Aqua music is not bundled. Original game art, generated insignia and BlackOpsOne font (license in art) retained.

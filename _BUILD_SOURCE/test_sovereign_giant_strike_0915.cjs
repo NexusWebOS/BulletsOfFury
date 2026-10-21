@@ -16,7 +16,7 @@ module.exports=function(vm,ctxv,ok){
       player.x=(R.left+R.right)*.5;stage4GiantStrikeTick(b,.02);stage4GiantStrikeTick(b,.10);o.centralHitsOnce=S.giantStrikeHits===1&&Object.keys(G.hitSeats).length===1;
       S.finalGuns='active';S.finalGunShot=-1;var before=eBullets.length;stage4WarfareBossTick(b,.016);o.gunsSuspended=eBullets.length===before;
       stage4GiantStrikeTick(b,G.active+G.recover);o.recovers=S.giantStrike===null&&S.mode==='burst';
-      var drawSource=stage4GiantStrikeDraw.toString();o.authoredArt=drawSource.indexOf('bmfx_alert_')>=0&&drawSource.indexOf('cfx_stage4_chain_lightning')>=0&&drawSource.indexOf('s4w_lightning_ball_')>=0;
+      var drawSource=stage4GiantStrikeDraw.toString();o.authoredArt=drawSource.indexOf('l23FovDraw')>=0&&drawSource.indexOf('warn_escape_arrow_0916')<0&&drawSource.indexOf('cfx_stage4_chain_lightning')>=0&&drawSource.indexOf('s4w_lightning_ball_')>=0;
       o.noWhiteFlash=!/flashScreen\s*=/.test(stage4GiantStrikeTick.toString()+stage4GiantStrikeDraw.toString());
       return JSON.stringify(o);
     }finally{boss=save.boss;bossActive=save.active;run.stage=save.runStage;run.shield=save.runShield;curStage=save.curStage;diffKey=save.diffKey;DIFF=save.DIFF;eBullets=save.bullets;pBullets=save.pb;enemies=save.en;stagePlan=save.plan;player.x=save.px;player.y=save.py;player.dead=save.pdead;player.alive=save.palive;player.invuln=save.pinv;}

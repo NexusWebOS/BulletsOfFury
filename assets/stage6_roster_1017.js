@@ -141,8 +141,11 @@ function roster17Draw(b,C=b._carrier17){const W=b._whv;if(C.crashed)return;
  }
  if(XART.rdy(key))ctx.drawImage(XART.get(key),cx-hullW/2,cy-hullH/2,hullW,hullH);
  for(const p of C.parts.filter(p=>p.kind!=='fan')){const q=mount(p);
-  if(p.kind==='laser'){const pose=p.dead?3:p.phase==='fire'?2:p.phase==='tell'?1:0,im=p.flash>0?xartTint('s6cargo13_turrets','#ffffff',1):XART.get('s6cargo13_turrets');
-   if(im)ctx.drawImage(im,pose*128,0,128,160,q.x-19,q.y-22,38,47.5);
+  if(p.kind==='laser'){
+   if(!(typeof pf20TurretDraw==='function'&&pf20TurretDraw(p,q.x,q.y,38,47.5,p.flash||0))){
+    const pose=p.dead?3:p.phase==='fire'?2:p.phase==='tell'?1:0,im=p.flash>0?xartTint('s6cargo13_turrets','#ffffff',1):XART.get('s6cargo13_turrets');
+    if(im)ctx.drawImage(im,pose*128,0,128,160,q.x-19,q.y-22,38,47.5);
+   }
   }else if(!p.dead)enc30Cell(p.id==='rackL'?'tank_pod_l':'tank_pod_r',0,q.x,q.y,30,54,p.flash>0?'#ffffff':null);
   else whvPartFx(b,q,0,true,.5,p.dx);
  }

@@ -1,0 +1,2 @@
+"use strict";
+const CC21_ART={"key":"cc21_city","path":"assets/game/levels/stage_x/stage/coastal_city_1021/city-coast.webp","w":768,"h":1536,"urban":864,"waterPixels":160549,"source":"stagex-city-source.png","scroll":38,"layout":"coast once, then alternating original/reflected adjacent urban districts in monotonically northward world coordinates","card":"assets/game/levels/stage_x/stage/coastal_city_1021/entrance-card.webp"};

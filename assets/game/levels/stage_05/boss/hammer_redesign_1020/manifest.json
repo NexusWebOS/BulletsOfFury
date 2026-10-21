@@ -1,0 +1,2750 @@
+{
+  "banks": {
+    "blue_slam": [
+      {
+        "key": "hb20_blue_slam_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          78,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          54,
+          75,
+          183,
+          197
+        ],
+        "tip": [
+          68,
+          130
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          70,
+          57,
+          183,
+          197
+        ],
+        "tip": [
+          93,
+          70
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          77,
+          58,
+          183,
+          197
+        ],
+        "tip": [
+          156,
+          74
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          77,
+          60,
+          186,
+          197
+        ],
+        "tip": [
+          168,
+          92
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          77,
+          61,
+          182,
+          197
+        ],
+        "tip": [
+          162,
+          73
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          60,
+          59,
+          183,
+          197
+        ],
+        "tip": [
+          84,
+          170
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          80,
+          183,
+          204
+        ],
+        "tip": [
+          93,
+          182
+        ]
+      },
+      {
+        "key": "hb20_blue_slam_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_slam/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          182,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      }
+    ],
+    "blue_side": [
+      {
+        "key": "hb20_blue_side_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_side_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          44,
+          78,
+          182,
+          197
+        ],
+        "tip": [
+          65,
+          155
+        ]
+      },
+      {
+        "key": "hb20_blue_side_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          35,
+          78,
+          182,
+          197
+        ],
+        "tip": [
+          49,
+          129
+        ]
+      },
+      {
+        "key": "hb20_blue_side_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          67,
+          183,
+          197
+        ],
+        "tip": [
+          115,
+          77
+        ]
+      },
+      {
+        "key": "hb20_blue_side_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          68,
+          215,
+          197
+        ],
+        "tip": [
+          194,
+          82
+        ]
+      },
+      {
+        "key": "hb20_blue_side_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          71,
+          216,
+          197
+        ],
+        "tip": [
+          196,
+          84
+        ]
+      },
+      {
+        "key": "hb20_blue_side_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          35,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          49,
+          128
+        ]
+      },
+      {
+        "key": "hb20_blue_side_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          45,
+          78,
+          183,
+          197
+        ],
+        "tip": [
+          63,
+          152
+        ]
+      },
+      {
+        "key": "hb20_blue_side_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      }
+    ],
+    "blue_side_left": [
+      {
+        "key": "hb20_blue_side_left_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          73,
+          77,
+          195,
+          197
+        ],
+        "tip": [
+          168,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          78,
+          212,
+          197
+        ],
+        "tip": [
+          189,
+          155
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          78,
+          221,
+          197
+        ],
+        "tip": [
+          205,
+          129
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          73,
+          67,
+          178,
+          197
+        ],
+        "tip": [
+          138,
+          77
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          41,
+          68,
+          178,
+          197
+        ],
+        "tip": [
+          59,
+          82
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          40,
+          71,
+          178,
+          197
+        ],
+        "tip": [
+          58,
+          84
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          73,
+          77,
+          221,
+          197
+        ],
+        "tip": [
+          205,
+          128
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          73,
+          78,
+          211,
+          197
+        ],
+        "tip": [
+          191,
+          152
+        ]
+      },
+      {
+        "key": "hb20_blue_side_left_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_side_left/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          73,
+          77,
+          195,
+          197
+        ],
+        "tip": [
+          168,
+          172
+        ]
+      }
+    ],
+    "blue_gun": [
+      {
+        "key": "hb20_blue_gun_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          220
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          220
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          218
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          229
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          220
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          215
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          225
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          232
+        ]
+      },
+      {
+        "key": "hb20_blue_gun_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_gun/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          70,
+          176,
+          220
+        ]
+      }
+    ],
+    "blue_entry": [
+      {
+        "key": "hb20_blue_entry_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          43,
+          51,
+          213,
+          200
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          68,
+          64,
+          188,
+          197
+        ],
+        "tip": [
+          92,
+          89
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          70,
+          64,
+          189,
+          197
+        ],
+        "tip": [
+          95,
+          89
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          70,
+          64,
+          189,
+          197
+        ],
+        "tip": [
+          95,
+          89
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          70,
+          64,
+          189,
+          197
+        ],
+        "tip": [
+          95,
+          89
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          70,
+          64,
+          189,
+          197
+        ],
+        "tip": [
+          95,
+          89
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          70,
+          64,
+          189,
+          197
+        ],
+        "tip": [
+          95,
+          89
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          62,
+          80,
+          187,
+          197
+        ],
+        "tip": [
+          86,
+          108
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          62,
+          81,
+          186,
+          197
+        ],
+        "tip": [
+          82,
+          148
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_9",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_10",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_11",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_12",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_13",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          54,
+          196,
+          197
+        ],
+        "tip": [
+          173,
+          143
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_14",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          54,
+          183,
+          197
+        ],
+        "tip": [
+          157,
+          133
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_15",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          67,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_entry_16",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_entry/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      }
+    ],
+    "blue_spin": [
+      {
+        "key": "hb20_blue_spin_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          43,
+          51,
+          213,
+          200
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          77,
+          180,
+          199
+        ],
+        "tip": [
+          79,
+          171
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          44,
+          76,
+          173,
+          200
+        ],
+        "tip": [
+          65,
+          167
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          32,
+          76,
+          164,
+          201
+        ],
+        "tip": [
+          46,
+          162
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          30,
+          74,
+          168,
+          201
+        ],
+        "tip": [
+          49,
+          142
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          49,
+          73,
+          167,
+          200
+        ],
+        "tip": [
+          58,
+          142
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          78,
+          73,
+          161,
+          197
+        ],
+        "tip": [
+          87,
+          137
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          72,
+          73,
+          167,
+          194
+        ],
+        "tip": [
+          75,
+          162
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          80,
+          73,
+          183,
+          195
+        ],
+        "tip": [
+          172,
+          138
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_9",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          90,
+          73,
+          214,
+          197
+        ],
+        "tip": [
+          197,
+          143
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_10",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          87,
+          74,
+          224,
+          200
+        ],
+        "tip": [
+          209,
+          152
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_11",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          86,
+          75,
+          218,
+          202
+        ],
+        "tip": [
+          192,
+          161
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_12",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          89,
+          76,
+          194,
+          201
+        ],
+        "tip": [
+          168,
+          171
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_13",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          90,
+          76,
+          179,
+          200
+        ],
+        "tip": [
+          138,
+          176
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_14",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          83,
+          77,
+          184,
+          199
+        ],
+        "tip": [
+          129,
+          176
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_15",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          77,
+          77,
+          186,
+          198
+        ],
+        "tip": [
+          106,
+          174
+        ]
+      },
+      {
+        "key": "hb20_blue_spin_16",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_spin/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      }
+    ],
+    "blue_dance": [
+      {
+        "key": "hb20_blue_dance_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          43,
+          51,
+          213,
+          200
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          62,
+          78,
+          181,
+          195
+        ],
+        "tip": [
+          84,
+          160
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          60,
+          74,
+          174,
+          194
+        ],
+        "tip": [
+          85,
+          120
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          66,
+          68,
+          168,
+          193
+        ],
+        "tip": [
+          87,
+          87
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          68,
+          61,
+          170,
+          193
+        ],
+        "tip": [
+          95,
+          83
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          65,
+          174,
+          193
+        ],
+        "tip": [
+          95,
+          87
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          69,
+          71,
+          183,
+          197
+        ],
+        "tip": [
+          95,
+          93
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          66,
+          69,
+          183,
+          197
+        ],
+        "tip": [
+          94,
+          92
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          59,
+          60,
+          197,
+          197
+        ],
+        "tip": [
+          84,
+          119
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_9",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          61,
+          197,
+          197
+        ],
+        "tip": [
+          83,
+          160
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_10",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          62,
+          197,
+          197
+        ],
+        "tip": [
+          85,
+          173
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_11",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          62,
+          197,
+          197
+        ],
+        "tip": [
+          85,
+          173
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_12",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          62,
+          197,
+          197
+        ],
+        "tip": [
+          85,
+          173
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_13",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          63,
+          197,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_14",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          58,
+          191,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_15",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          59,
+          77,
+          191,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_dance_16",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_dance/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          77,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      }
+    ],
+    "blue_empty": [
+      {
+        "key": "hb20_blue_empty_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_empty/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          72,
+          194,
+          197
+        ]
+      }
+    ],
+    "blue_throw": [
+      {
+        "key": "hb20_blue_throw_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          43,
+          51,
+          213,
+          200
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/01.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          61,
+          78,
+          183,
+          197
+        ],
+        "tip": [
+          85,
+          173
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/02.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          47,
+          74,
+          183,
+          197
+        ],
+        "tip": [
+          67,
+          155
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/03.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          54,
+          51,
+          176,
+          199
+        ],
+        "tip": [
+          79,
+          66
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/04.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          58,
+          176,
+          199
+        ],
+        "tip": [
+          135,
+          71
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/05.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          60,
+          176,
+          199
+        ],
+        "tip": [
+          145,
+          79
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/06.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          60,
+          176,
+          199
+        ],
+        "tip": [
+          145,
+          79
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/07.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          60,
+          176,
+          199
+        ],
+        "tip": [
+          145,
+          79
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/08.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          74,
+          51,
+          176,
+          199
+        ],
+        "tip": [
+          120,
+          69
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_9",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/09.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          56,
+          53,
+          183,
+          197
+        ],
+        "tip": [
+          65,
+          104
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_10",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/10.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          65,
+          73,
+          218,
+          197
+        ],
+        "tip": [
+          161,
+          145
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_11",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/11.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          72,
+          226,
+          197
+        ],
+        "tip": [
+          210,
+          159
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_12",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/12.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          72,
+          194,
+          197
+        ],
+        "tip": [
+          95,
+          93
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_13",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/13.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          72,
+          194,
+          197
+        ],
+        "tip": [
+          95,
+          93
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_14",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/14.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          72,
+          194,
+          197
+        ],
+        "tip": [
+          95,
+          93
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_15",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/15.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          72,
+          194,
+          197
+        ],
+        "tip": [
+          95,
+          93
+        ]
+      },
+      {
+        "key": "hb20_blue_throw_16",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/16.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          64,
+          72,
+          194,
+          197
+        ],
+        "tip": [
+          95,
+          93
+        ]
+      }
+    ],
+    "blue_idle": [
+      {
+        "key": "hb20_blue_idle_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_idle/00.png",
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "bounds": [
+          43,
+          51,
+          213,
+          200
+        ],
+        "tip": [
+          85,
+          172
+        ]
+      }
+    ],
+    "counter_right": [
+      {
+        "key": "hb20_counter_right_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_00.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          122,
+          154,
+          366,
+          394
+        ],
+        "tip": [
+          170,
+          344
+        ]
+      },
+      {
+        "key": "hb20_counter_right_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_01.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          88,
+          156,
+          364,
+          394
+        ],
+        "tip": [
+          130,
+          310
+        ]
+      },
+      {
+        "key": "hb20_counter_right_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_02.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          70,
+          156,
+          364,
+          394
+        ],
+        "tip": [
+          98,
+          258
+        ]
+      },
+      {
+        "key": "hb20_counter_right_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          134,
+          366,
+          394
+        ],
+        "tip": [
+          230,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_right_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          134,
+          366,
+          394
+        ],
+        "tip": [
+          230,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_right_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          134,
+          366,
+          394
+        ],
+        "tip": [
+          230,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_right_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          134,
+          366,
+          394
+        ],
+        "tip": [
+          230,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_right_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          134,
+          366,
+          394
+        ],
+        "tip": [
+          230,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_right_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          134,
+          366,
+          394
+        ],
+        "tip": [
+          230,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_right_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_04.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          136,
+          430,
+          394
+        ],
+        "tip": [
+          388,
+          164
+        ]
+      },
+      {
+        "key": "hb20_counter_right_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_04.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          136,
+          430,
+          394
+        ],
+        "tip": [
+          388,
+          164
+        ]
+      },
+      {
+        "key": "hb20_counter_right_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_05.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          156,
+          142,
+          432,
+          394
+        ],
+        "tip": [
+          392,
+          168
+        ]
+      },
+      {
+        "key": "hb20_counter_right_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_06.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          70,
+          154,
+          366,
+          394
+        ],
+        "tip": [
+          98,
+          256
+        ]
+      },
+      {
+        "key": "hb20_counter_right_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_07.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          90,
+          156,
+          366,
+          394
+        ],
+        "tip": [
+          126,
+          304
+        ]
+      },
+      {
+        "key": "hb20_counter_right_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_08.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          122,
+          154,
+          366,
+          394
+        ],
+        "tip": [
+          170,
+          344
+        ]
+      },
+      {
+        "key": "hb20_counter_right_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_right_00.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          122,
+          154,
+          366,
+          394
+        ],
+        "tip": [
+          170,
+          344
+        ]
+      }
+    ],
+    "counter_left": [
+      {
+        "key": "hb20_counter_left_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_00.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          154,
+          390,
+          394
+        ],
+        "tip": [
+          336,
+          344
+        ]
+      },
+      {
+        "key": "hb20_counter_left_1",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_01.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          148,
+          156,
+          424,
+          394
+        ],
+        "tip": [
+          378,
+          310
+        ]
+      },
+      {
+        "key": "hb20_counter_left_2",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_02.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          148,
+          156,
+          442,
+          394
+        ],
+        "tip": [
+          410,
+          258
+        ]
+      },
+      {
+        "key": "hb20_counter_left_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          134,
+          356,
+          394
+        ],
+        "tip": [
+          276,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_left_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          134,
+          356,
+          394
+        ],
+        "tip": [
+          276,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_left_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          134,
+          356,
+          394
+        ],
+        "tip": [
+          276,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_left_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          134,
+          356,
+          394
+        ],
+        "tip": [
+          276,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_left_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          134,
+          356,
+          394
+        ],
+        "tip": [
+          276,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_left_3",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_03.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          134,
+          356,
+          394
+        ],
+        "tip": [
+          276,
+          154
+        ]
+      },
+      {
+        "key": "hb20_counter_left_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_04.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          82,
+          136,
+          356,
+          394
+        ],
+        "tip": [
+          118,
+          164
+        ]
+      },
+      {
+        "key": "hb20_counter_left_4",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_04.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          82,
+          136,
+          356,
+          394
+        ],
+        "tip": [
+          118,
+          164
+        ]
+      },
+      {
+        "key": "hb20_counter_left_5",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_05.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          80,
+          142,
+          356,
+          394
+        ],
+        "tip": [
+          116,
+          168
+        ]
+      },
+      {
+        "key": "hb20_counter_left_6",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_06.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          154,
+          442,
+          394
+        ],
+        "tip": [
+          410,
+          256
+        ]
+      },
+      {
+        "key": "hb20_counter_left_7",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_07.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          156,
+          422,
+          394
+        ],
+        "tip": [
+          382,
+          304
+        ]
+      },
+      {
+        "key": "hb20_counter_left_8",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_08.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          154,
+          390,
+          394
+        ],
+        "tip": [
+          336,
+          344
+        ]
+      },
+      {
+        "key": "hb20_counter_left_0",
+        "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/counter_left_00.png",
+        "w": 512,
+        "h": 512,
+        "pivot": [
+          256,
+          224
+        ],
+        "bounds": [
+          146,
+          154,
+          390,
+          394
+        ],
+        "tip": [
+          336,
+          344
+        ]
+      }
+    ]
+  },
+  "registry": "assets/hammer_redesign_art_1020.js",
+  "source": "_ART_SOURCES/boss_redesign_1020/jobs.json"
+}

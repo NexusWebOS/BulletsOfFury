@@ -180,8 +180,6 @@ function hk5Warning(b,K){const u=clamp(K.t/(K.kind==='armageddon'?2.2:1.15),0,1)
  }if(K.phase==='followTell')combatWarningDraw(b,{x:b.x-110,y:K.ty-30,ex:b.x+110,ey:K.ty-30,width:65,progress:clamp(K.t/.75,0,1)});
  for(const q of K.rows||[]){if(q.t<0)continue;if(q.t<q.tell){const progress=q.t/q.tell;
   groundTargetReticleDraw(q.x,q.y,72,progress,.9);combatWarningDraw(q,{x:q.x,y:q.y,ex:q.ex,ey:q.y,width:q.width,progress});
-  // Mandatory direction glyph: arrows originate on the actual edge Retina.
-  campText(q.side<0?'>>>':'<<<',q.x+(q.side<0?47:-47),q.y-9,13,'#ffdb91');HK5.draws.edgeArrow=(HK5.draws.edgeArrow||0)+1;
  }for(let i=0;i<3;i++){const node={...q,t:q.t-i*.22,active:1.02},A=hk5EruptionShape(node);if(A){const a=HK5_ART.effects[A.f],x=lerp(q.x,q.ex,(i+1)/4);
    hk5Cell(a,x,q.y+36-(a.foot-.5)*q.width,72,q.width);}}}
 }

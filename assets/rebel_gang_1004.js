@@ -169,7 +169,6 @@ retinaBossTargets=function(b){let targets=RG4_BASE.targets.apply(this,arguments)
 drawCombatFinalProjectile=function(p){if(p._rg4Helper){av3Bolt(p,'ice');return true;}return RG4_BASE.projectile.apply(this,arguments);};
 function rg4Warning(q,A){if(A.phase!=='charge')return;const p=clamp(A.t/A.warm,0,1),x=q.x,y=q.y+32;
  if(!['ghost','stealth'].includes(A.kind)||A.t>=A.warm-.75)combatWarningDraw(q,{x,y,ex:x+Math.cos(A.a)*VH*1.3,ey:y+Math.sin(A.a)*VH*1.3,width:A.kind==='fusion'?32:A.kind==='roller'?52:24,progress:p,fieldOnly:true});
- const key='bmfx_alert_'+l23FovPhase(p)+'_impact_imminent';if(XART.rdy(key)){const im=XART.get(key),s=32;ctx.save();ctx.globalAlpha=p<.33?.65:(Math.floor(A.t*10)%2?1:.55);ctx.drawImage(im,q.x-s/2,q.y+28-s/2,s,s);ctx.restore();RG4.draws.asterisk=(RG4.draws.asterisk||0)+1;}
 }
 fr27RebelDrawShip=function(q){const G=rg4State(),A=q.rg4?.act;RG4_BASE.ship.apply(this,arguments);if(!G||q.dead)return;
  const gangCharge=G.scene?.kind==='gang',fusion=A?.kind==='fusion'&&A.phase==='charge';

@@ -1,7 +1,7 @@
 module.exports=function(vm,c,ok){
  const fs=require('fs'),path=require('path');
  if(vm.runInContext('typeof HC11',c)==='undefined')vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/hammer_chromium_1011.js'),'utf8'),c,{filename:'hammer_chromium_1011.js'});
- console.log('=== Hammer 1011: half-screen beams and anchored slide counter ===');
+ console.log('=== Hammer 1011: half-screen beams and committed jump counter ===');
  const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const out={},oldHit=playerHit;let hits=0;
   function fight(diff='normal'){
@@ -22,14 +22,15 @@ module.exports=function(vm,c,ok){
     out[diff+': all real storm lanes stop exactly at the screen midpoint']=h.stormWaves.every(q=>q.hc11Beam&&q.top===hc11MidY()&&q.y-q.height===q.top);
     out[diff+': every column retains a full lane warning and gaps']=q.warm>=1.2&&q.retinaWidth>=q.radius*2&&h.stormWaves[1].x-h.stormWaves[0].x>q.radius*2+24;
     q.t=q.split+q.delay+q.warm+.08;out[diff+': ignition glow cannot damage the player']=!hammerStormSpikeHits(q,q.x,q.y-20);
-    q.t=q.split+q.delay+q.warm+.35;
+    q.t=q.split+q.delay+q.warm+.18;
     out[diff+': straight beam hits near its top and bottom equally']=hammerStormSpikeHits(q,q.x+14,q.top+1)&&hammerStormSpikeHits(q,q.x+14,q.y-1);
     out[diff+': beam collision never crosses the midpoint or side margin']=!hammerStormSpikeHits(q,q.x,q.top-.01)&&!hammerStormSpikeHits(q,q.x+18,q.top+30);
+    out[diff+': spike expires before a single roll ends']=q.active<BR_DUR;
     q.t=q.split+q.delay+q.warm+q.active;
     out[diff+': expired beam has neither sprite nor hidden collision']=hammerStormSpikeShape(q)===null&&!hammerStormSpikeHits(q,q.x,q.y-30);
     h.t=1;player.y=hc11MidY();hammerStormTick(b,0);out[diff+': the midpoint itself does not trigger an upper counter']=!h.hc11Counter;
     player.y=hc11MidY()-1;hammerStormTick(b,0);
-    out[diff+': crossing above halfway starts a committed side slide']=!!h.hc11Counter&&hammerStrikeCommitted(b);
+    out[diff+': crossing above halfway starts a committed jump strike']=!!h.hc11Counter&&hammerStrikeCommitted(b);
    }
    for(const camera of ['left','right'])for(const side of [-1,1]){
     const b=fight('furious'),h=b._hammer;camX=camera==='left'?0:Math.max(0,worldWidth()-viewW());
@@ -37,11 +38,13 @@ module.exports=function(vm,c,ok){
     const tip=hc11Tip(C,11,land.x,land.y,land.scale,land.angle),L=hc11StrikeLane(C);
     out[camera+' '+side+': orbit puts the authored head on the locked player position']=Math.hypot(tip.x-anchor.x,tip.y-anchor.y)<1e-7;
     out[camera+' '+side+': warning covers the complete curved hammer release']=[7,8,9,10,11].every(f=>{const p=hc11Tip(C,f,land.x,land.y,land.scale,land.angle);return s81003Distance(p.x,p.y,L)+19<=L.width/2+1e-7;});
+    const start=hc11Pose(C,C.diveAt*.5),air=hc11Pose(C,C.diveAt+.21);
+    out[camera+' '+side+': windup holds position and flight follows a raised arc']=start.x===C.ox&&start.y===C.oy&&air.y<(C.oy+C.land.y)/2-90;
     const lock=JSON.stringify(C.anchor);player.x+=170;player.y+=100;camX+=25;hc11CounterTick(b,C,C.lockAt+.1);
     out[camera+' '+side+': camera motion and dodging cannot drag the world anchor']=JSON.stringify(C.anchor)===lock;
-    out[camera+' '+side+': sliding boss stays full-size and cannot make unwarned body contact']=C.scale>=1&&C.scale<=1.1&&!hammerOnPlayerPlane(b)&&hammerStrikeCommitted(b);
+    out[camera+' '+side+': jumping boss stays full-size and cannot make unwarned body contact']=C.scale>=1&&C.scale<=1.1&&!hammerOnPlayerPlane(b)&&hammerStrikeCommitted(b);
     player.invuln=0;player.x=anchor.x;player.y=anchor.y;hits=0;
-    hc11CounterTick(b,C,C.tell-C.t-.01);out[camera+' '+side+': full locked warning and slide remain harmless']=hits===0;
+    hc11CounterTick(b,C,C.tell-C.t-.01);out[camera+' '+side+': full locked warning and flight remain harmless']=hits===0;
     hc11CounterTick(b,C,.35);out[camera+' '+side+': held position is hit by the anchored head sweep']=hits===1;
     hc11CounterTick(b,C,.1);out[camera+' '+side+': one swing cannot hit a seat repeatedly']=hits===1;
     hc11CounterTick(b,C,C.end-C.t+.01);out[camera+' '+side+': recovery releases the attack and restores storm movement']=!h.hc11Counter&&h.hc11CounterDone&&!!h.stormRecovery;
@@ -49,9 +52,9 @@ module.exports=function(vm,c,ok){
    const b=fight(),h=b._hammer,C=hc11BeginCounter(b,{x:b.x+85,y:hc11MidY()-30,seat:1});
    player.x=worldWidth()+200;player.y=hc11MidY()-50;player.invuln=0;hits=0;
    for(let i=0;i<220&&h.hc11Counter;i++)hc11CounterTick(b,C,1/60);
-   out['Leaving the warned anchor avoids the full slide and side strike']=hits===0;
+   out['Leaving the warned anchor avoids the full jump and landing strike']=hits===0;
    const d=fight(),hd=d._hammer,D=hc11BeginCounter(d,{x:d.x+100,y:hc11MidY()-35,seat:1});
-   hammerBossModuleBreak(d,'hammer');out['Hammer depletion queues the break through the side slide']=hd.hm10BreakPending&&!hd.hammerDestroyed&&hammerStrikeCommitted(d);
+   hammerBossModuleBreak(d,'hammer');out['Hammer depletion queues the break through the jump strike']=hd.hm10BreakPending&&!hd.hammerDestroyed&&hammerStrikeCommitted(d);
    player.invuln=999;for(let i=0;i<240&&hd.hm10BreakPending;i++)hammerBossTick(d,1/60);
    out['The committed strike lands before the depleted hammer breaks']=!hd.hm10BreakPending&&hd.hammerDestroyed&&D.impact;
    out['Legacy orbital jump commitment remains active']=(()=>{const b=fight();hammerState(b,'giant_dive');return hammerStrikeCommitted(b);})();

@@ -1,0 +1,35 @@
+{
+  "selectedConcept": 2,
+  "implemented": true,
+  "checks": {
+    "msedge": {
+      "passed": 46,
+      "errors": []
+    },
+    "chrome": {
+      "passed": 29,
+      "errors": []
+    },
+    "firefox": {
+      "passed": 29,
+      "errors": []
+    },
+    "tutorial_combat": {
+      "passed": 27,
+      "errors": []
+    },
+    "interactive_review": {
+      "passed": 8,
+      "errors": []
+    },
+    "full_suite": {
+      "assertions": 8943,
+      "errors": 0,
+      "exit": 0
+    }
+  },
+  "asset_bytes": 1183916,
+  "new_pixel_lab_generations": 0,
+  "cole_likeness_approved": false,
+  "published_to_github": false
+}

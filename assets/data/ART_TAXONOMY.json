@@ -1,4 +1,84 @@
 {
+  "af21_": {
+    "role": "modular_aircraft_fixed_pivot_flight_banks",
+    "sheet": null,
+    "note": "40 PixelLab hulls; idle plus16 roll/16 somersault/16 drift/8 attack. Fixed128 cells/pivot64,64; master palette locked offline; center/port/starboard sections reconstruct exact pixels with one shared texture.13 family aliases cover53 source design IDs. Stage-owned directories and selective preload. Native muzzle, hit/death and shot owners retained. Builder build_air_refit_1021.py and air-production-manifest.json own sheets/cells together."
+  },
+  "fv21_hammer_": {
+    "role": "stage8_corrupted_hammer_actor",
+    "sheet": null,
+    "note": "Re-authored256-square chromium actor, fixed128,112 body pivot; measured hammer tips/gun muzzle/weapon target.15 banks, common1.1 world scale; draw/target owners remain hammer_redesign_1020. Builder build_final_effects_1021.py owns registry and atlases."
+  },
+  "fv21_portal": {
+    "role": "upright_portal_only_energy",
+    "sheet": null,
+    "note": "32 violet/blue PixelLab frames,256 even cells,128 pivot. Stage5 pass-through and return portal owners retain native mechanics; hardware gate omitted. Original sources retained."
+  },
+  "fv21_shield_": {
+    "role": "animated_enemy_shield_layer",
+    "sheet": null,
+    "note": "Transparent-center hex/electric/fire/toxic/ice/code/dark shells and Hammer wall. Native energy/deploy/break/hit timers retained. No threat collision or shield reflection granted by artwork."
+  },
+  "fv21_nyx_orb": {
+    "role": "enemy_projectile_shadow",
+    "sheet": null,
+    "note": "16 accepted128-square dark-purple energy phases, pivot64,64. Native projectile, FOV and audio owners retained."
+  },
+  "fv21_wind_round": {
+    "role": "enemy_projectile_wind",
+    "sheet": null,
+    "note": "Teal palette variant of the16 accepted energy phases; Kaia wind spread. Native slow projectile trajectories and all-lane FOVs."
+  },
+  "fv21_explosion_": {
+    "role": "supplementary_final_destruction_effect",
+    "sheet": null,
+    "note": "NeoGeo PixelLab star/chain burst footage. Used alongside selected supplied ColeForge rupture/implosion/smoke banks in native Dracodia destruction; bounded10 bursts/12 active effects. Original engine death sequence retained."
+  },
+  "cc21_": {
+    "role": "stage_x_coastal_city_and_entrance_card",
+    "sheet": null,
+    "note": "Seabreak City coastal-to-urban scrolling source; fixed world geometry, pixel-matched repeated districts, independent actual PixelLab blue water.3-second protected campaign entrance and existing Rival card owner. Builder build_coastal_city_1021.py."
+  },
+  "ic20_black_red_": {
+    "role": "tutorial_instructor_cole_frame_palette_only",
+    "sheet": null,
+    "note": "Image-generator black/charcoal steel/red lamp reference; original portrait geometry, alpha and all four expressions retained. Native256-square final exports in Cole portraits/instructor_1020, owning build_instructor_bob_1020.py. Explicit frame rim mask excludes face pixels. Old green exports archived out of assets. Text safe apertures/41 native checks/full8940/0; see docs/INSTRUCTOR_BOB_1020.md."
+  },
+  "pf20_": {
+    "role": "selected_older_boss_weapon_performance_player_terminal_effects_and_cole_cinematic_animation",
+    "sheet": null,
+    "note": "PixelLab2 weapon banks/3 terminal effect banks/4 Cole-only face and gesture banks,160 animation slots with deliberate clean recoil and blank-tail reuse. Stage5/Stage6 owning folders; shared player_fx/terminal_1020; Cole body_frames/performance_1020. Fixed even cells/common pivots/2px extrusion; generated art registry owned by build_performance_1020.py. Runtime performance_finish_1020.js; narrow stage6_roster render hook. Native75/75, full8940/0. Mike-approved source artwork uploads; no photos. Other8 pilots await Cole likeness review. Runtime1033324bytes; source receipts and export manifest in _ART_SOURCES/performance_finish_1020. docs/PERFORMANCE_FINISH_1020.md."
+  },
+  "ad20_": {
+    "role": "dracodia_copied_form_corrupted_origin_arenas_and_download_transition",
+    "sheet": null,
+    "note": "PixelLab Pro512-square jungle/lava/space/sky terrain plus four matching mesh edits. Lava terrain/mesh retain identical72.26percent transparent openings over untouched native cracked-lava8-frame reel.32 genuine PixMiniMax curtain poses256-square/pivot128,20fps,1560-square edge-extruded atlas. World-fixed structures, independent far/near data and sky cloud motion. Native1.45s erase/1.6s build transformations, no new combat delay; destroyed modules retained. Owner build_arena_download_1020.py writes plates/manifest/registry together. Runtime arena_download_1020.js; native21/21, full8940/0. Provenance and actual charges$1.3326 in _ART_SOURCES/arena_download_1020; docs/ARENA_DOWNLOAD_1020.md."
+  },
+  "s2l20_lava": {
+    "role": "stage2_molten_palette_pixellab_surface_animation",
+    "sheet": "assets/game/levels/stage_02/terrain/lava_pixellab_1020/lava.webp",
+    "note": "Offline fixed red/orange/gold palette of approved Stormglass ocean;32 real phases/12fps,224-square cells/pivot112,2px extrusion. Same geometry/alpha/order; no new palette generation charge. Stage2-only renderer preserves terrain/config/encounters; original cracked lava remains for Dracodia Phoenix arena. Owner build_stage2_lava_1020.py generates atlas/cells/registry together. Runtime stage2_lava_1020.js; docs/ARENA_DOWNLOAD_1020.md."
+  },
+  "s1w20_ocean": {
+    "role": "stage1_bright_blue_pixellab_ocean_animation",
+    "sheet": "assets/game/levels/stage_01/terrain/water_pixellab_1020/ocean.webp",
+    "note": "Bright royal-blue palette variant of accepted Stormglass PixelLab ocean;32 real poses/12fps,224-square cells, common112-square pivot and2px extrusion. One fixed offline palette ramp, same alpha/geometry/order, no new generation credits. Builder build_stage1_water_1020.py owns atlas/metadata/registry together. Stage1-only blit owner stage1_water_1020.js; native terrain/masks/routes retained, tutorial stays teal and other liquids unchanged. Native14/14, full suite zero errors. See docs/STAGE1_WATER_PIXELLAB_1020.md."
+  },
+  "sgw20_ocean": {
+    "role": "dedicated_tutorial_pixellab_ocean_animation",
+    "sheet": "assets/game/levels/tutorial/stormglass_1020/water/ocean.webp",
+    "note": "PixelLab Pro Flash256-square teal ocean seed and PixMiniMax32 generated animation phases, fixed224x224 delivered cells, common spatial overlap32px, one scale1.0, no temporal interpolation or duplicated motion frames.32-pose12fps loop on one lossless atlas with2px edge-extruded gutters; metadata and registration generated together by build_stormglass_water_1020.py. Tutorial-only lazy loading; replaces recolored legacy water in Stormglass while retaining all4 independent parallax layers. Source jobs, raw frames, exact prompts and audit in _ART_SOURCES/stormglass_water_pixellab_1020. Native water QA and complete tutorial playback verified."
+  },
+  "sg20_stormglass": {
+    "role": "dedicated_tutorial_stormglass_academy_scrolling_terrain",
+    "sheet": null,
+    "note": "Built-in image generation October20. Tutorial-only floating offshore academy.680x1360 transparent architecture with independently animated PixelLab ocean and native distant/near cloud parallax. Proportional nearest export, even canvas, no ships baked into terrain. Source and exact prompt in _ART_SOURCES/stormglass_1020; builder build_stormglass_1020.py. Lazy XART registration in stormglass_tutorial_1020.js, no shared atlas edits or campaign stage replacement."
+  },
+  "bof_iron_signal_1020": {
+    "role": "dialogue_cinematic_bitmap_font_military_digital",
+    "sheet": "assets/game/shared/fonts/fonts/iron_signal_1020/iron-signal-aligned-alpha.png",
+    "note": "PixelLab BOF Iron Signal.73 visible glyphs in200x160 sheet/20x20 cells, common13px baseline and14px line height. Existing authored supplemental punctuation; normalized white alpha and nearest filtering. Dialogue/cutscene aliases only; HUD/menu/stage display unchanged. Fonts.js, metrics and atlas built together by build_iron_signal_1020.py. Original atlas/font/prompt in _ART_SOURCES/iron_signal_1020."
+  },
   "rd19_": {
     "role": "stage3_icy_reactor_swirl_charge_and_shoulder_laser_mortar",
     "sheet": null,
@@ -62,7 +142,7 @@
   "ap10_wind_icon_": {
     "role": "wind_projectile_upgrade_menu_badges",
     "sheet": null,
-    "note": "October11 Wind follow-up:45 drawn weapon badges I–V now use emerald borders with white Roman tags and silver projectile interiors. All128x128, pivot64,64. Original silver sheets and new built-in border edits retained in _ART_SOURCES/wind_icons_1011. Owning build_audio_fx_1010.py invokes wind_icon_art_1011.py and updates pixels plus audio_fx_art_1010.js together. Loose assets/game/shared/ui/wind_icons_1011. Native Forge, upgrade-menu and Stage6 reward checks pass. Separate gust reward symbol remains ap10_wind_symbol. See docs/feedback/WIND_PROJECTILES_1011.md."
+    "note": "October11 Wind follow-up:45 drawn weapon badges I\u2013V now use emerald borders with white Roman tags and silver projectile interiors. All128x128, pivot64,64. Original silver sheets and new built-in border edits retained in _ART_SOURCES/wind_icons_1011. Owning build_audio_fx_1010.py invokes wind_icon_art_1011.py and updates pixels plus audio_fx_art_1010.js together. Loose assets/game/shared/ui/wind_icons_1011. Native Forge, upgrade-menu and Stage6 reward checks pass. Separate gust reward symbol remains ap10_wind_symbol. See docs/feedback/WIND_PROJECTILES_1011.md."
   },
   "ap10_wind_symbol": {
     "role": "wind_elemental_reward_and_selector_symbol",
@@ -254,7 +334,7 @@
     "sheet": null,
     "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/shared/effects/fx_burn_0922/provenance.json."
   },
-  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again â€” look it up here, and if it is not here, render it and ask.",
+  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u00e2\u20ac\u201d look it up here, and if it is not here, render it and ask.",
   "?": {
     "role": "boot",
     "sheet": "boot",
@@ -364,7 +444,7 @@
     "role": "miniboss",
     "sheet": "miniboss_stage4"
   },
-  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set â€” pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr â€” blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
+  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set \u00e2\u20ac\u201d pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr \u00e2\u20ac\u201d blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
   "n6": {
     "role": "enemy",
     "sheet": "stage6roster"
@@ -380,7 +460,7 @@
   "nxp_": {
     "role": "explosions",
     "sheet": "explosions",
-    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail â€” my sampler's fault, not his."
+    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail \u00e2\u20ac\u201d my sampler's fault, not his."
   },
   "nbs_": {
     "role": "bossbarfill",
@@ -460,14 +540,14 @@
   "ndk_": {
     "role": "deckerweapon",
     "sheet": "playerprojectiles",
-    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker â€” the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
+    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker \u00e2\u20ac\u201d the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
   },
   "nthp_": {
     "role": "pilotthrusters",
     "sheet": "playerships",
-    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs â€” he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
+    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs \u00e2\u20ac\u201d he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
   },
-  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail â€” the sampler took the first frame of each reel, which for an effect is a 4px spark.",
+  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail \u00e2\u20ac\u201d the sampler took the first frame of each reel, which for an effect is a 4px spark.",
   "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index.",
   "rr_ship_": {
     "role": "enemyship_master",
@@ -697,7 +777,7 @@
   "map4f_": {
     "role": "campaign_marker",
     "sheet": null,
-    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated Iâ€“IX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
+    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated I\u00e2\u20ac\u201cIX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
   },
   "map4e_region_hub": {
     "role": "campaign_landmark",
@@ -797,7 +877,7 @@
   "pxv17_": {
     "role": "pixellab_stage7_stage8_portal_lifecycles_three_void_arenas_and_compact_wind_rounds",
     "sheet": null,
-    "note": "Four separate16–32-pose form/loop/close portal families, three512x512 open dark arenas,16 authored code-parallax poses and three16-pose compact Wind round families. Actual PixelLab frames on even320x320,256x256 and64x64 canvases, fixed center pivots, one common proportional scale per animation. Runtime pixellab_void_1017; owning exporter build_pixellab_void_1017.py. No reversed closure, per-frame stretching or combat changes."
+    "note": "Four separate16\u201332-pose form/loop/close portal families, three512x512 open dark arenas,16 authored code-parallax poses and three16-pose compact Wind round families. Actual PixelLab frames on even320x320,256x256 and64x64 canvases, fixed center pivots, one common proportional scale per animation. Runtime pixellab_void_1017; owning exporter build_pixellab_void_1017.py. No reversed closure, per-frame stretching or combat changes."
   },
   "sk19_": {
     "role": "optical_stealth_refraction_form_loop_dissipate",
@@ -823,5 +903,71 @@
     "role": "stage8_volcano_detached_head_animation",
     "sheet": null,
     "note": "32 genuine PixelLab quarter-turn poses,16 lamp-only charge frames.128x128/pivot64,64,scale1, measured per-frame eyes and angles. Owner build_volcano_head_1019.py; native volcano_head_1019.js."
+  },
+  "vp23_phoenix_": {
+    "role": "stage8_corrupted_phoenix_modules",
+    "sheet": null,
+    "note": "Forward-facing PixelLab fire phoenix. Seventeen320-square lossless parts and nine coordinated poses; fixed anatomical pivots. Owner build_dracodia_phoenix_1020.py / dracodia_phoenix_1020.js."
+  },
+  "ph20_": {
+    "role": "stage8_corrupted_phoenix_attacks",
+    "sheet": null,
+    "note": "PixelLab molten feather, sixteen muzzle blooms and sixteen continuous beam heat-pulse frames. Owner build_dracodia_phoenix_1020.py / dracodia_phoenix_1020.js."
+  },
+  "vh19_charge_phoenix_": {
+    "role": "stage8_phoenix_head_charge",
+    "sheet": null,
+    "note": "Sixteen eye-only charge states on a fixed128-square canvas; physical eye sockets. Owner build_dracodia_phoenix_1020.py / dracodia_phoenix_1020.js."
+  },
+  "vh19_spin_phoenix_": {
+    "role": "stage8_phoenix_head_turn",
+    "sheet": null,
+    "note": "Thirty-two fixed-pivot turns of the new PixelLab phoenix skull; matching eye sockets. Owner build_dracodia_phoenix_1020.py / dracodia_phoenix_1020.js."
+  },
+  "cinematic_finish_1020": {
+    "kind": "cinematic",
+    "scope": "shared",
+    "owner": "_BUILD_SOURCE/build_cinematic_finish_1020.py",
+    "manifest": "assets/game/shared/cinematics/cinematic_finish_1020/manifest.json",
+    "note": "October20: built-in image_gen environment-only dawn debrief and severed orbital relay. Original pixels preserved with even padding. Actual original nine pilot bodies/portraits/ships and native combat Dracodia anatomy are composited by cinematic_ending_1020.js. Resolved victory and pilot epilogues precede credits and sequel stinger. Co-op retains both actual aircraft and actors. Prompts/native identity exports: _ART_SOURCES/cinematic_finish_1020. Docs/CINEMATIC_ENDING_1020.md and docs/qa/cinematic_ending_1020.json own direction/evidence. Retired organic ending files remain archived but83 textures leave current preloads."
+  },
+  "cinematic_invasion_1020": {
+    "role": "cinematic_invasion_ending",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_cinematic_invasion_1020.py",
+    "manifest": "assets/game/shared/cinematics/cinematic_invasion_1020/manifest.json",
+    "note": "PixelLab18 identity-referenced pilot poses, frame/font,4 environment plates,17-frame machine symbiote/head emergence and6-frame scream. Actual native ships/enemies/boats. Supersedes earlier resolved epilogues and sequel shadow. Runtime cinematic_invasion_1020.js; current docs CINEMATIC_INVASION_1020.md. All even fixed canvases; raw requests/jobs/rejections/native identity exports under _ART_SOURCES/cinematic_invasion_1020."
+  },
+  "dp20_dracodia_portrait": {
+    "role": "stage8_dialogue_portrait",
+    "sheet": null,
+    "note": "Dedicated built-in image_gen illustrated head/shoulder portrait from actual native Dracodia crown/skull/armor references.1254-square lossless WebP, static expression. Owner dracodia_dialogue_portrait_1020.js, source _ART_SOURCES/ui_concepts_1020/art/dracodia-portrait.png. Three window/HUD choices remain unselected concept art, not gameplay assets."
+  },
+  "ui20_": {
+    "role": "selected_command_armor_hud_dialogue_and_corrected_cole_front_frames",
+    "sheet": null,
+    "note": "Built-in image_gen. Actual pilot portraits/names/colors and state-driven solid meters. UI art assets/game/shared/ui/command_1020; complete Cole frames assets/game/pilots/cole/body_frames/front_identity_1020. Runtime command_ui_1020.js. Three expansion template styles and all9pilot palettes archived separately; only A is preloaded. Cole corrected after user rejected cropped actors/facial drift; no claim of likeness approval."
+  },
+  "hb20_chaingun_": {
+    "role": "hammer_boss_exclusive_rotary_weapon_crate_and_released_icon",
+    "sheet": null,
+    "note": "Built-in image_gen, two128square authored assets, no I/numeral. Stage5 and Dracodia Hammer Stage8, owner hammer_redesign_1020.js. No normal player-crate overrides; existing strike/pickup clocks and sounds retained."
+  },
+  "dp20_": {
+    "role": "dracodia_framed_communicator_portrait",
+    "sheet": null,
+    "note": "Regenerated512square portrait with complete violet/chromium bezel and red indicators. Owner dracodia_dialogue_portrait_1020.js; path dracodia_portrait_box_1020/portrait.webp; all existingface/talkaliases use it. Static expression, not a new mouth bank."
+  },
+  "ic20_": {
+    "role": "tutorial_instructor_cole_portraits_and_dossier",
+    "owner": "_BUILD_SOURCE/build_instructor_bob_1020.py",
+    "manifest": "assets/game/levels/tutorial/stormglass_1020/instructor_bob/manifest.json",
+    "note": "Built-in image_gen: four square framed 16-bit portraits from Mike photos, black blazer/shirt/red tie. Tutorial only. Common256-square cells. Dossier locally reuses the existing Overdrive card template. Raw source photos remain in _ART_SOURCES, outside runtime assets. No claim of user-approved likeness."
+  },
+  "bob20_": {
+    "role": "tutorial_modular_ballistics_orientation_bot",
+    "owner": "_BUILD_SOURCE/build_instructor_bob_1020.py",
+    "manifest": "assets/game/levels/tutorial/stormglass_1020/instructor_bob/manifest.json",
+    "note": "Exclusive PixelLab bot; disjoint live core/missile/cannon alpha plates recompose seed pixel-exactly. Shared256canvas/pivot128, authored target and muzzle landmarks. Four32-pose PixelLab yaw turntables, full unit and each module, in four independent atlases; fixed cameras and pivots, no flat spinning. Native hit flashes, actual element damage, ground missiles/FOV lanes. Runtime instructor_bob_1020.js, tutorial-only warm keys."
   }
 }

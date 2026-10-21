@@ -1,0 +1,438 @@
+{
+  "passed": 27,
+  "total": 27,
+  "errors": [],
+  "checks": [
+    {
+      "name": "easy Stage5 uses exclusive chaingun box and no player crate",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "easy Stage5 struck crate disappears and exclusive numeral-free icon flies to boss",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_7",
+          "hb20_chaingun_icon_exclusive",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "easy Stage5 completes pickup and retires both pickup sprites",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "bmfx_fov_green_tall",
+          "hf19_chaingun_2",
+          "hb20_blue_gun_0",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "normal Stage5 uses exclusive chaingun box and no player crate",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "normal Stage5 struck crate disappears and exclusive numeral-free icon flies to boss",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_7",
+          "hb20_chaingun_icon_exclusive",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "normal Stage5 completes pickup and retires both pickup sprites",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "bmfx_fov_green_tall",
+          "hf19_chaingun_2",
+          "hb20_blue_gun_0",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "hard Stage5 uses exclusive chaingun box and no player crate",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "hard Stage5 struck crate disappears and exclusive numeral-free icon flies to boss",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_7",
+          "hb20_chaingun_icon_exclusive",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "hard Stage5 completes pickup and retires both pickup sprites",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "bmfx_fov_green_tall",
+          "hf19_chaingun_2",
+          "hb20_blue_gun_0",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "furious Stage5 uses exclusive chaingun box and no player crate",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "furious Stage5 struck crate disappears and exclusive numeral-free icon flies to boss",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "arch_orbital_sweep_0926",
+          "hb20_blue_slam_7",
+          "hb20_chaingun_icon_exclusive",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "furious Stage5 completes pickup and retires both pickup sprites",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "bmfx_fov_green_tall",
+          "hf19_chaingun_2",
+          "hb20_blue_gun_0",
+          "fury_thrusters_04",
+          "nxp_white_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "easy Stage8 corrupted Hammer uses the same exclusive crate independent of pilot",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_02",
+          "d20_storm_loop_18",
+          "hb20_corrupt_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "easy Stage8 release uses exclusive chaingun icon",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_08",
+          "d20_storm_loop_24",
+          "hb20_corrupt_slam_13",
+          "hb20_chaingun_icon_exclusive",
+          "nxp_white_0",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "easy Stage8 transitions into its gun attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal Stage8 corrupted Hammer uses the same exclusive crate independent of pilot",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_16",
+          "d20_storm_loop_00",
+          "hb20_corrupt_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "normal Stage8 release uses exclusive chaingun icon",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_22",
+          "d20_storm_loop_06",
+          "hb20_corrupt_slam_13",
+          "hb20_chaingun_icon_exclusive",
+          "nxp_white_0",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "normal Stage8 transitions into its gun attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard Stage8 corrupted Hammer uses the same exclusive crate independent of pilot",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_29",
+          "d20_storm_loop_13",
+          "hb20_corrupt_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "hard Stage8 release uses exclusive chaingun icon",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_03",
+          "d20_storm_loop_19",
+          "hb20_corrupt_slam_13",
+          "hb20_chaingun_icon_exclusive",
+          "nxp_white_0",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "hard Stage8 transitions into its gun attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious Stage8 corrupted Hammer uses the same exclusive crate independent of pilot",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_11",
+          "d20_storm_loop_27",
+          "hb20_corrupt_slam_0",
+          "hb20_chaingun_crate_exclusive",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "furious Stage8 release uses exclusive chaingun icon",
+      "passed": true,
+      "data": {
+        "keys": [
+          "fr27_realm_terrain",
+          "pxv17_arena_2",
+          "d20_storm_loop_17",
+          "d20_storm_loop_01",
+          "hb20_corrupt_slam_13",
+          "hb20_chaingun_icon_exclusive",
+          "nxp_white_0",
+          "eh7_stage_08",
+          "bmbar_fill_grey"
+        ],
+        "generic": 0
+      }
+    },
+    {
+      "name": "furious Stage8 transitions into its gun attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual monologue uses regenerated framed portrait",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every Dracodia form/talking alias resolves to new framed portrait",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page, draw, console or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "assets": [
+    {
+      "name": "portrait",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-fef900fc-a684-4980-bb85-c148f72e72c8.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        256,
+        256
+      ],
+      "path": "assets/game/levels/stage_08/cinematics/dracodia_portrait_box_1020/portrait.webp",
+      "scale": 0.4082934609250399
+    },
+    {
+      "name": "crate",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-259f3a9b-b32e-40be-8775-6a78ef98018b.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        64
+      ],
+      "path": "assets/game/shared/pickups/hammer_chaingun_1020/crate.webp",
+      "scale": 0.10207336523125997
+    },
+    {
+      "name": "icon",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-ac81ce0e-8ebb-4ac6-9242-4613ab4582f4.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        64
+      ],
+      "path": "assets/game/shared/pickups/hammer_chaingun_1020/icon.webp",
+      "scale": 0.10207336523125997
+    }
+  ]
+}

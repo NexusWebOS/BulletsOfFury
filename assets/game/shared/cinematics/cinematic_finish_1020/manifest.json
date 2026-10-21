@@ -1,0 +1,60 @@
+{
+  "art": {
+    "debrief": {
+      "key": "ce20_debrief",
+      "path": "assets/game/shared/cinematics/cinematic_finish_1020/debrief.webp",
+      "w": 1672,
+      "h": 942,
+      "content_rect": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    "relay": {
+      "key": "ce20_relay",
+      "path": "assets/game/shared/cinematics/cinematic_finish_1020/relay.webp",
+      "w": 1672,
+      "h": 942,
+      "content_rect": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    }
+  },
+  "sources": [
+    {
+      "name": "debrief",
+      "master": "_ART_SOURCES/cinematic_finish_1020/debrief-master.png",
+      "sha256": "f2e1111f419e5c2d4ad43a2b7317f4d18a7360aa930f8180a1a78d749624f459",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "exportSize": [
+        1672,
+        942
+      ],
+      "bytes": 2369488,
+      "policy": "Original generated pixels preserved; even transparent-free bottom padding only; no resampling. Environment has no pilots or aircraft."
+    },
+    {
+      "name": "relay",
+      "master": "_ART_SOURCES/cinematic_finish_1020/relay-master.png",
+      "sha256": "4355ebfd9fabb7568d2eaebf9b2b025525c6215c4f091c151bda2c1801a9a737",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "exportSize": [
+        1672,
+        942
+      ],
+      "bytes": 2532248,
+      "policy": "Original generated pixels preserved; even transparent-free bottom padding only; no resampling. Environment has no pilots or aircraft."
+    }
+  ]
+}

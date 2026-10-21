@@ -17587,38 +17587,7 @@ function stage4GiantStrikeDraw(b){
   ctx.save();ctx.fillStyle='rgba(1,3,12,'+(charging?(.13+.28*q):.46)+')';ctx.fillRect(R.viewLeft,0,R.viewRight-R.viewLeft,VH);ctx.restore();
   if(charging){
     const col=stage4GiantStrikeColor(G),B={family:'rime',angles:[Math.PI/2],t:G.t,warm:G.charge,released:false,fovColor:col};
-    /* ⚠ THE ESCAPE ARROWS FLASH ON THE WARNING'S OWN BEAT (S4-16, Mike: "Authored left/right escape
-       arrows: flipped pair, flashing with synchronized warning sounds"). l23WarnSound fires once per
-       revealed arrow - k*L23_WARN_ARROWS - so the flash is derived from the SAME k rather than a
-       timer of its own. A fixed cadence drifts against the beeps and reads as an unrelated alarm
-       running underneath, which is the exact fault 0905t fixed for the laser warn.
-       They sit IN the safe lanes the strike leaves open (17% at each camera edge), at the player's
-       own altitude, pointing outward: the arrow says where to go, not where the danger is. */
-    {
-      const _ak='warn_escape_arrow_0916';
-      if(XART.rdy(_ak)){
-        const im=XART.get(_ak);
-        const beat=Math.floor(q*L23_WARN_ARROWS), frac=(q*L23_WARN_ARROWS)-beat;
-        const lit=frac<0.62;                                   // on for the front of each beat
-        if(lit){
-          const ah=Math.max(18, R.safe*0.42), aw=ah*(im.naturalWidth/Math.max(1,im.naturalHeight));
-          const py2=clamp((typeof player!=='undefined'&&player&&!player.dead)?player.y-18:VH*0.72, VH*0.34, VH-30);
-          const a=(col==='red'?0.95:0.72)*(0.55+0.45*(1-frac/0.62));
-          const lx=R.viewLeft+R.safe*0.5, rx=R.viewRight-R.safe*0.5;
-          ctx.save(); ctx.globalAlpha=a; ctx.imageSmoothingEnabled=false;
-          ctx.drawImage(im, Math.round(rx-aw/2), Math.round(py2-ah/2), Math.round(aw), Math.round(ah));
-          ctx.translate(Math.round(lx),0); ctx.scale(-1,1);     // the pair is ONE plate, mirrored
-          ctx.drawImage(im, Math.round(-aw/2), Math.round(py2-ah/2), Math.round(aw), Math.round(ah));
-          ctx.restore();
-        }
-      }
-    }
     ctx.save();ctx.translate(p.x,p.y);l23FovDraw(b,B,0,p,q,(R.right-R.left)*.5);ctx.restore();
-    const ak='bmfx_alert_'+col+'_danger';
-    if(XART.rdy(ak)&&(Math.floor(G.t*(col==='red'?8:4))%2)===0){
-      const im=XART.get(ak),h=46,w=h*(im.naturalWidth/Math.max(1,im.naturalHeight)),top=(b._drawY!=null?b._drawY:b.y)-b.h*.5;
-      ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=col==='red'?1:.92;ctx.drawImage(im,p.x-w/2,Math.max(L23_WARN_MINY+35,top+6),w,h);ctx.restore();
-    }
     combatAtlasDraw('cfx_stage4_chain_lightning',4,2,frame,p.x,p.y,58+q*42,82+q*62,{blend:'lighter',alpha:.48+.46*q});
     const orb='s4w_lightning_ball_'+(Math.floor(G.t*18)%16);
     if(XART.rdy(orb)){const im=XART.get(orb),sz=36+q*55;ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.48+.46*q;ctx.drawImage(im,p.x-sz/2,p.y-sz/2,sz,sz);ctx.restore();}
@@ -17645,7 +17614,7 @@ function stage4WarfareBossTick(b,dt){
   /* Helper chainguns replace the carrier spread once unlocked; do not layer both attacks. */
   if(S.ram&&stage4RamTick(b,dt))return true;
   if(giantActive){stage4GiantStrikeTick(b,dt);b._animKey=!S.giantStrike||S.giantStrike.released?'s4w_boss_energized_'+(Math.floor((b.t||0)*11)%12):'s4w_boss_charge_'+clamp(Math.floor(S.giantStrike.t/S.giantStrike.charge*12),0,11);return true;}
-  const mid=(camLeftX()+camRightX())*.5,sy=S.homeY,margin=Math.max(154,b.w*.54),amp=S.shield.active?2:12;S.poseRot=0;S.scale=1;
+  const mid=(camLeftX()+camRightX())*.5,sy=S.homeY,margin=Math.max(154,b.w*.54),amp=S.shield.active?2:Math.min(85,Math.max(12,(viewW()-320)/2));S.poseRot=0;S.scale=1;
   if(S.mode==='rearm'){
     b.y+=(sy-b.y)*Math.min(1,dt*7.5);b.x+=(mid-b.x)*Math.min(1,dt*7.5);
     S.poseRot=0;S.scale=1+Math.sin(S.t*20)*.012;      /* see the swerve note below (0906) */
@@ -18195,10 +18164,9 @@ function l23FovWarm(){
   }
 }
 function l23FovDraw(b,B,i,p,k,lane){
-  /* runs inside the lane's own rotate(angle - PI/2), so +y is down the beam. Returns false when the
-     family has no row or the frame has not decoded yet, and the caller falls back to the lane plate -
-     a laser is never left without a tell. */
-  const F=L23_FOV[B.family]; if(!F||typeof XART==='undefined'||!XART)return false;
+  /* Runs inside the lane rotation; +y is down the beam. Unknown families use
+     the regular FOV. The three colours are required stage-load assets. */
+  const F=L23_FOV[B.family]||L23_FOV.rime; if(typeof XART==='undefined'||!XART)return false;
   const col=B.fovColor||l23FovPhase(k), key='bmfx_fov_'+col+'_tall';
   if(!XART.rdy(key))return false;
   const im=XART.get(key); if(!im||!im.width)return false;
@@ -18436,82 +18404,9 @@ function l23BossBeamDraw(b){
 
          So: the plate uses the SAME alpha the fillRects always did, and fades across the hull
          overlap so the boss reads through its own telegraph. */
-      if(l23FovDraw(b,B,i,p,k,lane)){
-        /* 0912x: the stage-3 laser warns with the pack's FOV cones - green, yellow, red, no arrows (L23_FOV) */
-      }else if(typeof XART!=='undefined'&&XART.rdy('nwarn_lane')){
-        const _lim=XART.get('nwarn_lane');
-        const _seg=Math.max(24,lane*(_lim.height/_lim.width));
-        const _off=(B.t*_seg*1.6)%_seg;
-        const _hullBot=((b._drawY!=null?b._drawY:b.y)+(b._drawH!=null?b._drawH:b.h)*.5);
-        const _clear=Math.max(0,_hullBot-shipBossMount(b,B.slots[i]).y);   // how much lane lies on the hull
-        ctx.save();ctx.beginPath();ctx.rect(-lane/2,0,lane,len);ctx.clip();
-        /* ⚠ THE CAP CAME OFF ONCE THE ORIGIN MOVED. The 0905p alpha was held down to the fillRects'
-           because the lane started at TL/TR - up inside the hull - and 140px of it lay across the
-           ship. Firing from the cannon TIPS leaves only ~17px of overlap, so the plate can carry
-           its own weight again; at the fillRect alpha it washed out to a pale band on the ice and
-           stopped reading as a warning, which is the one job a telegraph has. The ramp below still
-           protects the short stretch that does cross the hull. */
-        /* ⚠ MIKE, 0905: "those zones are too dark to see, and we need them to do a pixel glow from
-           bottom to top as a cool effect before officially firing off." Two things.
-           BRIGHTNESS: 1.55 was still losing the lane against stage 3's pale ice - 2.35 holds it.
-           THE CHARGE GLOW: a band runs the length of the lane from the FAR END back up to the
-           muzzle across the warn (`_gy = len*(1-k)`, so k=0 is at the bottom of the screen and k=1
-           arrives at the cannon just as it fires). It is drawn by re-blitting the PLATE'S OWN TILES
-           additively where the band passes, not by laying a gradient over them - so what glows is
-           the authored pixels, which is what "pixel glow" has to mean in a 16-bit set. A gradient
-           would also have cost an allocation per slot per frame; this reuses the tile already in
-           hand. */
-        const _a=Math.min(1,(_AL.a0+_AL.a1*k)*pulse*2.35);
-        /* ⚠ MIKE, 0905: "those arrows should be facing south the whole time, and they appear 1 by 1
-           as they fire the alert zones".
-           SOUTH: the whole lane is drawn inside `ctx.rotate(angle - PI/2)`, so every chevron used to
-           rotate WITH its lane - on the 78-degree sweep they pointed nearly sideways, which reads as
-           decoration instead of 'the danger comes from up there'. Each tile is now counter-rotated
-           by exactly that angle about its own centre, so the arrows hold south at every sweep
-           position while the corridor itself still follows the beam.
-           ⚠ THE TILES THEREFORE NO LONGER SEAM INTO A STRIP - each is a marker placed ALONG the
-           lane, which is what makes them read as separate arrows. That is deliberate; do not
-           'fix' it back to a continuous tile.
-           ONE BY ONE: an arrow is revealed once the rising charge has passed it (`_gy <= _mid`),
-           so they pop in from the far end up to the muzzle across the warn rather than all at once. */
-        /* ⚠ TWO PASSES, AND THE SECOND ONE IS WHY. Counter-rotating every tile made the arrows face
-           south (Mike's ask) but destroyed the CORRIDOR: the tiles stop seaming into a strip, so the
-           danger zone read as scattered markers instead of a lane. The corridor and the arrows are
-           different jobs, so they get different passes - the strip stays rotated WITH the beam and
-           continuous, and the arrows ride on top of it counter-rotated, revealed one by one. */
-        const _gy=len*(1-k), _gh=Math.max(56,len*.17);
-        const _back=-(B.angles[i]-Math.PI/2);
-        ctx.globalCompositeOperation='source-over';
-        for(let y=-_seg+_off;y<len;y+=_seg){
-          const _mid=y+_seg*.5;
-          ctx.globalAlpha=_a*(_clear>0?clamp(_mid/_clear,.34,1):1)*.62;
-          ctx.drawImage(_lim,-lane/2,y,lane,_seg);
-        }
-        /* the arrows: SOUTH at every sweep angle, and each appears only once the rising charge
-           has passed it, so they pop in from the far end up to the muzzle across the warn */
-        for(let y=-_seg+_off;y<len;y+=_seg){
-          const _mid=y+_seg*.5;
-          if(_mid<_gy-_seg*.35) continue;
-          const _pop=clamp((_gy-_mid+_seg*.35)/(_seg*.9),0,1);
-          const _d=Math.abs(_mid-_gy);
-          ctx.save();ctx.translate(0,_mid);ctx.rotate(_back);
-          ctx.globalCompositeOperation='lighter';
-          ctx.globalAlpha=(.30+.34*k)*(1-_pop*.7)*(_d<_gh?(1+(1-_d/_gh)*.85):1)*.9;
-          ctx.drawImage(_lim,-lane/2,-_seg/2,lane,_seg);
-          ctx.restore();
-        }
-        ctx.globalCompositeOperation='source-over';
-        ctx.restore();
-      }else{
-      /* on a lava stage a red wash vanishes - the lane needs a dark outline and white-hot rails */
-      ctx.globalAlpha=0.62*pulse; ctx.fillStyle=_AL.shell; ctx.fillRect(-lane/2-3,0,lane+6,len);
-      ctx.globalAlpha=(_AL.a0+_AL.a1*k)*pulse; ctx.fillStyle=_AL.lane; ctx.fillRect(-lane/2,0,lane,len);
-      ctx.globalAlpha=0.95; ctx.fillStyle='#ffffff';
-      ctx.fillRect(-lane/2,0,3,len); ctx.fillRect(lane/2-3,0,3,len);
-      /* hazard ticks marching down the rails read as 'incoming' even on a busy field */
-      const ph=(B.t*180)%28; ctx.globalAlpha=(0.30+0.40*k)*pulse; ctx.fillStyle=_AL.tick;
-      for(let y=ph;y<len;y+=28){ ctx.fillRect(-lane/2-1,y,5,2); ctx.fillRect(lane/2-4,y,5,2); }
-      }
+      // Every boss laser uses the authored FOV. Never revive the boxed-arrow
+      // lane when a lazy image has not decoded; stage loading owns readiness.
+      l23FovDraw(b,B,i,p,k,lane);
       ctx.restore();
     }
     ctx.restore(); ctx.globalAlpha=1;
@@ -33049,11 +32944,11 @@ function drawBossRetina(t, x, y, spin, alpha){
   if(typeof XART==='undefined') return false;
   const k='nbret_'+_pilotKey();
   if(!XART.rdy(k)) return false;
-  const im=XART.get(k);
+  const col=retinaColor(_pilotKey()),im=xartPalette(k,col)||XART.get(k);
   const d=58;                                  // fixed size — never grows with the boss
   ctx.save(); ctx.globalAlpha=alpha==null?0.95:alpha;
   ctx.translate(x,y); ctx.rotate(spin||0);
-  ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12;
+  ctx.shadowColor=retinaColor(_pilotKey()); ctx.shadowBlur=12;
   ctx.drawImage(im,-d/2,-d/2,d,d);
   ctx.restore();
   return true;
@@ -33079,7 +32974,7 @@ function drawRetina(){
       const base=Math.max(26,(t.w||24)*1.0)*r.scale, sc=base/_iw;
       ctx.save(); ctx.globalAlpha=0.9;
       ctx.translate(r.x,r.y); ctx.rotate(r.spin||0);
-      ctx.shadowColor=_pilotTint(); ctx.shadowBlur=10;
+      ctx.shadowColor=retinaColor(_pilotKey()); ctx.shadowBlur=10;
       ctx.drawImage(im,-_iw*sc/2,-_ih*sc/2,_iw*sc,_ih*sc);
       ctx.restore();
     }
@@ -33094,11 +32989,11 @@ function drawRetina(){
       const base=Math.max(28,(t.w||24)*1.05), sc=base/_iw;
       ctx.save(); ctx.globalAlpha=flashing?0.95:0.9;
       ctx.translate(r.x,r.y); ctx.rotate(r.spin||0);
-      ctx.shadowColor=_pilotTint(); ctx.shadowBlur=flashing?16:8;
+      ctx.shadowColor=retinaColor(_pilotKey()); ctx.shadowBlur=flashing?16:8;
       ctx.drawImage(im,-_iw*sc/2,-_ih*sc/2,_iw*sc,_ih*sc);
       ctx.restore();
     } else {
-      ctx.save(); ctx.strokeStyle=_pilotTint(); ctx.lineWidth=2;
+      ctx.save(); ctx.strokeStyle=retinaColor(k); ctx.lineWidth=2;
       ctx.strokeRect(r.x-(t.w||24)/2-4, r.y-(t.h||24)/2-4, (t.w||24)+8, (t.h||24)+8); ctx.restore();
     }
   }
@@ -35009,8 +34904,8 @@ function updatePlay(dt){
     if(Input.tapSeat(_seat,'retina')||(_seat===1&&Input.tap('l'))||_wheelLock){retinaScanClear();cycleLock();}
     retinaScanInput(dt);
     const _nowT=performance.now()/1000;
-    if(Input.tapSeat(_seat,'left')){ if(!retinaScanHeld()&&_nowT-player._tapL<=BR_WINDOW) startRoll(-1); player._tapL=_nowT; player._tapR=-9; }
-    if(Input.tapSeat(_seat,'right')){ if(!retinaScanHeld()&&_nowT-player._tapR<=BR_WINDOW) startRoll(1); player._tapR=_nowT; player._tapL=-9; }
+    if(Input.tapSeat(_seat,'left')){ if(_nowT-player._tapL<=BR_WINDOW) startRoll(-1); player._tapL=_nowT; player._tapR=-9; }
+    if(Input.tapSeat(_seat,'right')){ if(_nowT-player._tapR<=BR_WINDOW) startRoll(1); player._tapR=_nowT; player._tapL=-9; }
     /* double-tap UP -> somersault (Mike, 0906). Placed beside the roll taps so both are read
        before movement and a flip can begin on the same frame it was asked for. */
     if(Input.tapSeat(_seat,'up')){ if(_nowT-(player._tapU||-9)<=SS_WINDOW) startSomersault(); player._tapU=_nowT; }
@@ -37255,7 +37150,7 @@ function updatePlay(dt){
         else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:118,wpx:132,blend:'lighter'});
         else if(b._carrierWarhead)carrierWarheadBurst(b,'s6mb_bombimpact',10,176,.46);
         if(b._s6Opening){b._s6Hit=true;run.shield=0;run._megaShield=false;}
-        playerHit(); return !b._ovSonicWave&&!b._pt11Wave;
+        playerHit(typeof dr21ProjectileDeathSource==='function'?dr21ProjectileDeathSource(b):undefined); return !b._ovSonicWave&&!b._pt11Wave;
         }
         return false;
       })) { b.dead=true; break; }
@@ -41974,17 +41869,21 @@ function nuoColour(pilot){ return NUO_TINTS[pilot||(run&&run.pilot)||'axel'] || 
 
    72 keys (9 pilots x 4 frames x retA/retB) collapse to 8 greyscale masters, built by
    averaging all nine sets to cancel any single pilot's colour cast and normalising the
-   luminance to 2-98% so the tint gets the full range. Tinted through the same compositing
-   path as the helper orb — no getImageData, so it survives file://. */
+   luminance to 2-98% so the tint gets the full range. Color compositing preserves
+   that luminance and replaces the hue — no pixel reads, so it survives file://. */
 const RETINA_TINTS = {
   yuri:'#e02020', axel:'#2f6fff', cole:'#39ff5a', decker:'#ffe11a',
   juggernaut:'#ff8a1a', lizzie:'#ffc21a', falva:'#ff4fa3',
   freezer:'#9a4fe0', maverick:'#1f7a3a',
 };
+// The targeting palette is explicitly authored separately from dialogue and hull colors.
+function retinaColor(pilot){return RETINA_TINTS[pilot||_pilotKey()]||RETINA_TINTS.cole;}
 function retinaTinted(fam, frame, pilot){
-  const col = RETINA_TINTS[pilot] || RETINA_TINTS.cole;
+  const col = retinaColor(pilot);
   const master = (fam==='retB' ? 'retmb_' : 'retm_') + (frame|0);
-  const t = nuoTinted(master, col);
+  // Color compositing replaces the old hue while retaining authored luminance.
+  // Multiply kept a residual hue cast in some scan frames, unlike the boss ring.
+  const t = xartPalette(master, col);
   if(t) return t;
   const legacy = fam+'_'+pilot+'_'+(frame|0);        // pre-0805h art, if it is still present
   return (typeof XART!=='undefined' && XART.rdy(legacy)) ? XART.get(legacy) : null;
@@ -56129,7 +56028,7 @@ function s6WingTick(dt){
           pBullets.push({kind:'mg',lv:q.boostT>0?3:2,x:q.x,y:q.y-24,
             vx:Math.cos(a)*11,vy:Math.sin(a)*11,w:4,h:12,t:0,
             dmg:(q.all?1.4:2)+(q.boostT>0?1:0),ally:true,_wingKey:q.key,_inf:null});
-          if(Audio.SFX&&Audio.SFX.machineGun)Audio.SFX.machineGun();
+          if(Audio.SFX&&Audio.SFX.enemyMachineGunLight)Audio.SFX.enemyMachineGunLight();
         }
       }
       if(q.canBeHit&&!q.dodgeT&&!q.hurtT){
@@ -69071,7 +68970,7 @@ function drawPilot(dt){
     pilotFlash=Math.min(1,pilotFlash+dt*3);
     if(Math.sin(performance.now()/140)>-0.2){
       /* same screen, same fault (drop 0812j) */
-      if(_pilotFace && typeof stageText==='function'){
+      if(typeof _pilotFace!=='undefined' && _pilotFace && typeof stageText==='function'){
         stageText(_pilotFace,'UNLOCK WITH PASSWORD...', VW/2, cardRect[1]+cardRect[3]+14, 12, '#ffe98a', 1, 1, 0.09);
       } else if(typeof msgText==='function'){
         msgText('UNLOCK WITH PASSWORD...', VW/2, cardRect[1]+cardRect[3]+14, 12, '#ffe98a', 1, 1, 0.09);
@@ -77701,14 +77600,18 @@ function forgePreviewSwap(P,VWp,VHp,fn){
   // cooldown can leak in, and no preview attack can mutate live entities or effects.
   const sv={run:Object.assign({},run),player,special,boss,subBoss,pb:pBullets,eb:eBullets,pa:particles,en:enemies,pu:powerups,zp:zaps,
     ba:bossActive,sba:subBossActive,bursts:efxBursts,geysers,voids,clock:efxClock,vents:s2Vents,debris:fireDebris,zones:zoneCols,
-    impacts:pImpacts,explosions,smoke:smokeTrails,sh:shake,flash:flashScreen,stats:stageStats,yuri:yuriLightningOrbUnlocked,sfx:Audio.SFX,loop:Snd.loopOn,loopOff:Snd.loopOff,play:Snd.play};
+    lzMount,impacts:pImpacts,explosions,smoke:smokeTrails,sh:shake,flash:flashScreen,stats:stageStats,yuri:yuriLightningOrbUnlocked,sfx:Audio.SFX,loop:Snd.loopOn,loopOff:Snd.loopOff,play:Snd.play};
   try{
     Snd.play=function(k,v){if(P.audition)forgePreviewCues.add(k);return sv.play.call(Snd,k,v);};
     Object.assign(run,{weapon:P.w,wlevel:P.lv,wlevels:WEAPONS.map(()=>P.lv),wvars:WEAPONS.map(()=>null),
       spaceMode:false,dkT:0,sonicT:0,forge:{},forgeForms:{},forgeElems:{},_forgeBlastSeq:P.blastSeq||(P.blastSeq={}),_chainRev:0,_chainHeat:0,_chainOverheat:0,_kinN:0,
+      // A preview owns its alternating barrels and visual clocks; live flight never supplies them.
+      _chainSide:P.chainSide||0,_chainSpinT:P.chainSpinT||0,
       infusion:P.elem?{elem:P.elem,lv:P.lv,hits:0}:null});
-    player=Object.assign({},sv.player,{x:VW/2,y:VH-70,dead:false,invuln:0,_mgMuzT:0,_spaceMuzzle:0});
-    special=null;boss=null;subBoss=null;bossActive=false;subBossActive=false;enemies=[];powerups=[];
+    player=Object.assign({},sv.player,{x:VW/2,y:VH-70,dead:false,out:false,invuln:0,
+      roll:0,somer:0,spin:0,_spin:null,_hammerEvap:0,_eradicated:0,_cinematicHide:false,_s7Hidden:false,
+      _mgMuzT:P.mgMuzT||0,_chainMuzzle:P.chainMuzzle||0,_spaceMuzzle:0});
+    special=null;lzMount=null;boss=null;subBoss=null;bossActive=false;subBossActive=false;enemies=[];powerups=[];
     pImpacts=P.impacts;explosions=P.explosions;smokeTrails=P.smoke;pBullets=P.bullets;eBullets=[];particles=P.parts;zaps=P.zaps;efxBursts=P.bursts;geysers=P.geysers;voids=P.voids;s2Vents=[];fireDebris=[];zoneCols=[];efxClock=P.t;
     stageStats=Object.assign({},sv.stats);Audio.SFX=Object.fromEntries(Object.keys(sv.sfx).map(k=>[k,()=>{if(P.audition&&P.t>=(P.nextSound||0)){P.nextSound=P.t+.18;sv.sfx[k]?.();}}]));Snd.loopOn=(k)=>{if(P.audition&&P.t>=(P.nextLoopSound||0)){P.nextLoopSound=P.t+.40;sv.sfx[k]?.();}};Snd.loopOff=()=>{};
     if(P.pilot)run.pilot=P.pilot;
@@ -77721,8 +77624,10 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     fn();
   }catch(err){P.err=String(err&&err.message||err);}
   finally{
+    P.chainSide=run._chainSide;P.chainSpinT=run._chainSpinT;
+    P.mgMuzT=player._mgMuzT;P.chainMuzzle=player._chainMuzzle;
     P.impacts=pImpacts;P.explosions=explosions;P.smoke=smokeTrails;P.bullets=pBullets;P.parts=particles;P.zaps=zaps;P.bursts=efxBursts;P.geysers=geysers;P.voids=voids;
-    Snd.play=sv.play;
+    Snd.play=sv.play;lzMount=sv.lzMount;
     for(const k of Object.keys(run))if(!(k in sv.run))delete run[k];Object.assign(run,sv.run);player=sv.player;special=sv.special;boss=sv.boss;subBoss=sv.subBoss;pBullets=sv.pb;eBullets=sv.eb;particles=sv.pa;
     enemies=sv.en;powerups=sv.pu;zaps=sv.zp;bossActive=sv.ba;subBossActive=sv.sba;efxBursts=sv.bursts;geysers=sv.geysers;voids=sv.voids;
     pImpacts=sv.impacts;explosions=sv.explosions;smokeTrails=sv.smoke;efxClock=sv.clock;s2Vents=sv.vents;fireDebris=sv.debris;zoneCols=sv.zones;shake=sv.sh;flashScreen=sv.flash;stageStats=sv.stats;yuriLightningOrbUnlocked=sv.yuri;Audio.SFX=sv.sfx;Snd.loopOn=sv.loop;Snd.loopOff=sv.loopOff;
@@ -77736,6 +77641,8 @@ function forgePreviewTick(P,VWp,VHp,dt){
   P.t+=dt;
   P.audition=true;
   forgePreviewSwap(P,VWp,VHp,function(){
+    player._mgMuzT=Math.max(0,(player._mgMuzT||0)-dt);
+    player._chainMuzzle=Math.max(0,(player._chainMuzzle||0)-dt);
     P.cd-=dt;
     if(P.cd<=0){
       if(P.space!=null){

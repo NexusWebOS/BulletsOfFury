@@ -1,0 +1,37 @@
+[
+  {
+    "module": "head",
+    "sourceComponents": 1,
+    "exportedComponents": 1
+  },
+  {
+    "module": "wingL",
+    "sourceComponents": 1,
+    "exportedComponents": 1
+  },
+  {
+    "module": "wingR",
+    "sourceComponents": 1,
+    "exportedComponents": 1
+  },
+  {
+    "module": "clawL",
+    "sourceComponents": 2,
+    "exportedComponents": 1
+  },
+  {
+    "module": "clawR",
+    "sourceComponents": 1,
+    "exportedComponents": 1
+  },
+  {
+    "module": "tail",
+    "sourceComponents": 1,
+    "exportedComponents": 1
+  },
+  {
+    "module": "core",
+    "sourceComponents": 6,
+    "exportedComponents": 1
+  }
+]

@@ -30,7 +30,7 @@
   const ticket=++A.serial;A.entry=entry;A.error=null;A.actor=null;A.seen.clear();A.difficulty=difficulty;A.loading=true;A.elapsed=0;if(!preserveSound)clock.paused=false;
   const s=entry.spawn||{},stage=s.stage||entry.stages?.[0]||1;
   try{
-   BOFDEBUG.lab.on(Math.min(9,stage),'cole',difficulty);isolate();boss=null;subBoss=null;bossActive=false;subBossActive=false;
+   run._heartMode=false;BOFDEBUG.lab.on(Math.min(9,stage),'cole',difficulty);isolate();boss=null;subBoss=null;bossActive=false;subBossActive=false;
    if(stage===10){run.stage=10;curStage=STAGES.find(v=>v.n===10)||curStage;}
    mute(preserveSound?A.muted:true);ep13Warm?.();const artKeys=(entry.artKeys||[]).filter(k=>XART._src[k]||BOFX.cells[k]||BOFX.img[k]);for(const k of artKeys)XART.rdy(k);
    if(s.kind==='warhive'&&typeof SC13!=='undefined')for(const k of SC13.keys)XART.rdy(k);
@@ -43,6 +43,8 @@
     if(A.actor?.err)throw new Error(A.actor.err);
     A.actor._ai27={seen:1,visible:true,flinch:0};
     if(A.actor._mm1003){A.actor._mm1003.phase='rest';A.actor._mm1003.stagger=0;}
+   }else if(s.method==='chrome-heart'){
+    run._heartMode=true;spawnBoss('chromehammer');A.actor=boss;
    }else if(s.method==='encounter'||s.method==='rebel'){
     A.actor=on5LaunchEncounter({stage:Math.min(9,stage),role:s.role||'boss',kind:s.method==='rebel'?'rebelsquad':s.kind,phase:s.phase,mimic:s.mimic});
     if(s.method==='rebel'){
@@ -63,7 +65,7 @@
   }catch(e){A.error=String(e.message||e);return {error:A.error};}finally{if(ticket===A.serial)A.loading=false;}
  }
  function snapshot(){const b=A.actor;return {ready:!!ASSETS.ready,entry:A.entry?.id,error:A.error,elapsed:A.elapsed||0,frames:clock.frames,paused:clock.paused,speed:clock.speed,muted:A.muted,healthControl:healthControl(),
-  actor:b?{type:b.type||b.kind,hp:b.hp,maxhp:b.maxhp,dead:!!b.dead,x:b.x,y:b.y,phase:b._ep13?.phase||b.phase,pattern:b._ep13?.kind||b._cargo13?.mode||b._er26?.mode||b._s7mod?.mode||b._hammer?.state||b._mm1003?.phase||b._r30?.mode||b._sbPat||b._pat||b.pat}:null,
+  actor:b?{type:b.type||b.kind,hp:b.hp,maxhp:b.maxhp,dead:!!b.dead,x:b.x,y:b.y,phase:b._ep13?.phase||b.phase,pattern:b._heart?.action?.type||b._ep13?.kind||b._cargo13?.mode||b._er26?.mode||b._s7mod?.mode||b._hammer?.state||b._mm1003?.phase||b._r30?.mode||b._sbPat||b._pat||b.pat}:null,
   projectiles:[...A.seen.keys()],liveProjectiles:eBullets.length,activeBeams:b?._cargo13?.lasers?.filter(l=>l.t>=l.warm&&l.t<l.warm+l.fire).length||0,stage:run.stage};}
  function after(){if(!A.entry||A.error||A.loading)return;
   A.elapsed=(A.elapsed||0)+Math.max(0,stateT-(A.lastT||stateT));A.lastT=stateT;

@@ -1,0 +1,3770 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Real tutorial entered",
+        "ok": true,
+        "data": {
+          "state": "play",
+          "stage": 1,
+          "mode": "arcade",
+          "lives": 5,
+          "tut": true,
+          "lesson": "move",
+          "li": 0,
+          "hits": 0,
+          "done": 0,
+          "foreign": 0,
+          "ask": false,
+          "dead": false,
+          "_h": 0,
+          "err1": false,
+          "err2": false,
+          "pause": "SKIP TUTORIAL"
+        }
+      },
+      {
+        "name": "390x844 part0 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FULL UNIT",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                54,
+                4,
+                169,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "440 TOTAL HP",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                4,
+                144,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "TRAINING MECH / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "PODS FIRST, THEN CORE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE CORE BONUS X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 part0 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 part1 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                42,
+                4,
+                181,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "90 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GROUND MISSILE POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NO ELEMENT BONUS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA TARGET: POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GROUND STRIKES",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 part1 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 part2 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CANNON POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                45,
+                4,
+                178,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "110 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FOV MACHINE CANNON",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GREEN AIM / YELLOW SET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RED: LEAVE THE LANE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GUN VOLLEYS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 part2 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 part3 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CRYO REACTOR",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                31,
+                4,
+                192,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "240 HP / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                5,
+                4,
+                143,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BLUE REACTOR TARGET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA MISSILE X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "SHUTTER: BOTH PODS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 part3 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "390x844 every lesson dialogue fits its inset",
+        "ok": true,
+        "data": [
+          {
+            "id": "move",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "fire",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "crate",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "roll",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "somer",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "missile",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "retina",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "multi",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "warn",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "strike",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_ice",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_fire",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "special",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "brief2",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "bob_card",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "exam",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "debrief",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "feedback",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          }
+        ]
+      },
+      {
+        "name": "1366x768 part0 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FULL UNIT",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                54,
+                4,
+                169,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "440 TOTAL HP",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                4,
+                144,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "TRAINING MECH / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "PODS FIRST, THEN CORE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE CORE BONUS X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 part0 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 part1 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                42,
+                4,
+                181,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "90 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GROUND MISSILE POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NO ELEMENT BONUS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA TARGET: POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GROUND STRIKES",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 part1 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 part2 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CANNON POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                45,
+                4,
+                178,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "110 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FOV MACHINE CANNON",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GREEN AIM / YELLOW SET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RED: LEAVE THE LANE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GUN VOLLEYS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 part2 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 part3 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CRYO REACTOR",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                31,
+                4,
+                192,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "240 HP / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                5,
+                4,
+                143,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BLUE REACTOR TARGET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA MISSILE X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "SHUTTER: BOTH PODS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 part3 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1366x768 every lesson dialogue fits its inset",
+        "ok": true,
+        "data": [
+          {
+            "id": "move",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "fire",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "crate",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "roll",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "somer",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "missile",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "retina",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "multi",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "warn",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "strike",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_ice",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_fire",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "special",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "brief2",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "bob_card",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "exam",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "debrief",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "feedback",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          }
+        ]
+      },
+      {
+        "name": "1920x1080 part0 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FULL UNIT",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                54,
+                4,
+                169,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "440 TOTAL HP",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                4,
+                144,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "TRAINING MECH / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "PODS FIRST, THEN CORE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE CORE BONUS X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 part0 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 part1 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                42,
+                4,
+                181,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "90 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GROUND MISSILE POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NO ELEMENT BONUS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA TARGET: POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GROUND STRIKES",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 part1 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 part2 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CANNON POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                45,
+                4,
+                178,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "110 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FOV MACHINE CANNON",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GREEN AIM / YELLOW SET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RED: LEAVE THE LANE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GUN VOLLEYS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 part2 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 part3 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CRYO REACTOR",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                31,
+                4,
+                192,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "240 HP / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                5,
+                4,
+                143,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BLUE REACTOR TARGET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA MISSILE X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "SHUTTER: BOTH PODS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 part3 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "1920x1080 every lesson dialogue fits its inset",
+        "ok": true,
+        "data": [
+          {
+            "id": "move",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "fire",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "crate",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "roll",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "somer",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "missile",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "retina",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "multi",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "warn",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "strike",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_ice",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_fire",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "special",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "brief2",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "bob_card",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "exam",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "debrief",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "feedback",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          }
+        ]
+      },
+      {
+        "name": "768x1024 part0 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FULL UNIT",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                54,
+                4,
+                169,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "440 TOTAL HP",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                4,
+                144,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "TRAINING MECH / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "PODS FIRST, THEN CORE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE CORE BONUS X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 part0 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 part1 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "MISSILE POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                42,
+                4,
+                181,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "90 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GROUND MISSILE POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NO ELEMENT BONUS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA TARGET: POD",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GROUND STRIKES",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 part1 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 part2 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CANNON POD",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                45,
+                4,
+                178,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "110 HP / STEEL",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "FOV MACHINE CANNON",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "NEUTRAL DAMAGE X1",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "GREEN AIM / YELLOW SET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                8,
+                144,
+                17
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RED: LEAVE THE LANE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "STOPS GUN VOLLEYS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 part2 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 part3 all ten text blocks fit and center",
+        "ok": true,
+        "data": {
+          "card": {
+            "x": 9.999999999999972,
+            "y": 153,
+            "w": 460.00000000000006,
+            "h": 318.93333333333334
+          },
+          "model": {
+            "x": 92.99166666666665,
+            "y": 259.56666666666666,
+            "w": 120.75000000000001,
+            "h": 120.75000000000001
+          },
+          "rows": [
+            {
+              "text": "B.O.B.",
+              "w": 246.86666666666667,
+              "h": 16.483333333333334,
+              "ink": [
+                97,
+                4,
+                158,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BALLISTICS ORIENTATION BOT",
+              "w": 246.86666666666667,
+              "h": 11.5,
+              "ink": [
+                16,
+                4,
+                239,
+                16
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "CRYO REACTOR",
+              "w": 214.66666666666669,
+              "h": 16.483333333333334,
+              "ink": [
+                31,
+                4,
+                192,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "240 HP / ICE",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                5,
+                4,
+                143,
+                21
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "BLUE REACTOR TARGET",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WEAK: FIRE X1.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                5,
+                144,
+                20
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RESISTS ICE X0.5",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "RETINA MISSILE X2",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                6,
+                144,
+                19
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "SHUTTER: BOTH PODS",
+              "w": 139.53333333333333,
+              "h": 16.1,
+              "ink": [
+                4,
+                7,
+                144,
+                18
+              ],
+              "fits": true,
+              "centered": true
+            },
+            {
+              "text": "WHY HAVEN'T I RETIRED YET?",
+              "w": 356.5,
+              "h": 31.81666666666667,
+              "ink": [
+                4,
+                10,
+                361,
+                30
+              ],
+              "fits": true,
+              "centered": true
+            }
+          ],
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 part3 model clears title and card clears prompts",
+        "ok": true,
+        "data": {
+          "gap": 3.4499999999999886,
+          "bottom": 471.93333333333334,
+          "hintTop": 487
+        }
+      },
+      {
+        "name": "768x1024 every lesson dialogue fits its inset",
+        "ok": true,
+        "data": [
+          {
+            "id": "move",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "fire",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "crate",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "roll",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "somer",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "missile",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "retina",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "multi",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "warn",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "strike",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_ice",
+            "lines": 3,
+            "height": 36,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "elements_fire",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "special",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "brief2",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "bob_card",
+            "lines": 3,
+            "height": 31,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "exam",
+            "lines": 4,
+            "height": 38,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "debrief",
+            "lines": 3,
+            "height": 28,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          },
+          {
+            "id": "feedback",
+            "lines": 3,
+            "height": 39,
+            "room": 39.75,
+            "fit": true,
+            "rect": {
+              "x": 135.0909090909091,
+              "y": 91.75,
+              "w": 306.9090909090909,
+              "h": 39.75
+            }
+          }
+        ]
+      },
+      {
+        "name": "All four talking portrait states use black/red exports",
+        "ok": true,
+        "data": [
+          {
+            "key": "ic20_neutral",
+            "path": "assets/game/pilots/cole/portraits/instructor_1020/neutral-black-red.webp",
+            "ready": true
+          },
+          {
+            "key": "ic20_talk-small",
+            "path": "assets/game/pilots/cole/portraits/instructor_1020/talk-small-black-red.webp",
+            "ready": true
+          },
+          {
+            "key": "ic20_talk-open",
+            "path": "assets/game/pilots/cole/portraits/instructor_1020/talk-open-black-red.webp",
+            "ready": true
+          },
+          {
+            "key": "ic20_smile",
+            "path": "assets/game/pilots/cole/portraits/instructor_1020/smile-black-red.webp",
+            "ready": true
+          }
+        ]
+      },
+      {
+        "name": "Part selection still uses native controls",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Deploy still advances to the graduation fight",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "No browser errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "portrait_export": {
+    "palettes": {
+      "metal": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          1
+        ],
+        [
+          5,
+          5,
+          7
+        ],
+        [
+          7,
+          7,
+          10
+        ],
+        [
+          22,
+          3,
+          4
+        ],
+        [
+          9,
+          10,
+          12
+        ],
+        [
+          15,
+          12,
+          14
+        ],
+        [
+          34,
+          32,
+          35
+        ],
+        [
+          39,
+          41,
+          45
+        ],
+        [
+          40,
+          42,
+          46
+        ],
+        [
+          41,
+          43,
+          47
+        ],
+        [
+          42,
+          43,
+          47
+        ],
+        [
+          43,
+          45,
+          49
+        ],
+        [
+          44,
+          46,
+          50
+        ],
+        [
+          66,
+          42,
+          46
+        ],
+        [
+          58,
+          54,
+          57
+        ],
+        [
+          93,
+          96,
+          100
+        ],
+        [
+          127,
+          121,
+          124
+        ]
+      ],
+      "lights": [
+        [
+          145,
+          10,
+          11
+        ],
+        [
+          251,
+          2,
+          3
+        ],
+        [
+          251,
+          23,
+          30
+        ],
+        [
+          251,
+          61,
+          65
+        ]
+      ]
+    },
+    "portraits": [
+      {
+        "pose": "neutral",
+        "changed": 17177,
+        "face_unchanged": true,
+        "alpha_unchanged": true
+      },
+      {
+        "pose": "talk-small",
+        "changed": 17266,
+        "face_unchanged": true,
+        "alpha_unchanged": true
+      },
+      {
+        "pose": "talk-open",
+        "changed": 17235,
+        "face_unchanged": true,
+        "alpha_unchanged": true
+      },
+      {
+        "pose": "smile",
+        "changed": 17047,
+        "face_unchanged": true,
+        "alpha_unchanged": true
+      }
+    ]
+  },
+  "regression": {
+    "passed": 8940,
+    "errors": 0
+  }
+}

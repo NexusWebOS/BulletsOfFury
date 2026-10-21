@@ -1,0 +1,31 @@
+{
+  "nativePassed": 153,
+  "nativeChecks": 153,
+  "reports": {
+    "report": {
+      "passed": 97,
+      "checks": 97
+    },
+    "mechanics-report": {
+      "passed": 31,
+      "checks": 31
+    },
+    "review-report": {
+      "passed": 10,
+      "checks": 10
+    },
+    "film-report": {
+      "passed": 15,
+      "checks": 15
+    }
+  },
+  "regressionChecks": 8938,
+  "regressionPassed": true,
+  "runtimeImages": 49,
+  "runtimeCompressedBytes": 1217589,
+  "evenFrames": true,
+  "animationSourcePixelsPreserved": true,
+  "movieSeconds": 151.848,
+  "movieSilent": true,
+  "review": "docs/previews/cinematic_invasion_1020/index.html"
+}

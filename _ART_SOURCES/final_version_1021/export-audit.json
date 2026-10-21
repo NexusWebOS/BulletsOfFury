@@ -1,0 +1,431 @@
+[
+  {
+    "bank": "hammer_idle",
+    "frames": 8,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_spin",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_side",
+    "frames": 12,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_gun_left",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_gun",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_unarmed",
+    "frames": 8,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_dance",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_fire",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_punch",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_fists",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_break",
+    "frames": 15,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_tool",
+    "frames": 1,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_slam",
+    "frames": 20,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_charge",
+    "frames": 14,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "hammer_ball",
+    "frames": 24,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      112
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "portal",
+    "frames": 32,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "portal_blue",
+    "frames": 32,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "boss4_drift",
+    "frames": 16,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_wall",
+    "frames": 16,
+    "cell": [
+      256,
+      128
+    ],
+    "pivot": [
+      128,
+      64
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "nyx_orb",
+    "frames": 16,
+    "cell": [
+      128,
+      128
+    ],
+    "pivot": [
+      64,
+      64
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "wind_round",
+    "frames": 16,
+    "cell": [
+      128,
+      128
+    ],
+    "pivot": [
+      64,
+      64
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_hex",
+    "frames": 24,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_volt",
+    "frames": 24,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_fire",
+    "frames": 24,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_toxic",
+    "frames": 24,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_ice",
+    "frames": 24,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_code",
+    "frames": 24,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "shield_void",
+    "frames": 6,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "explosion_star_burst",
+    "frames": 25,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "explosion_chain_burst",
+    "frames": 17,
+    "cell": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "pack_fuel_tank_rupture",
+    "frames": 8,
+    "cell": [
+      176,
+      160
+    ],
+    "pivot": [
+      88,
+      86
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "pack_implosion_collapse",
+    "frames": 8,
+    "cell": [
+      176,
+      160
+    ],
+    "pivot": [
+      92,
+      86
+    ],
+    "clipped": []
+  },
+  {
+    "bank": "pack_standard_eexplosions_04_smoke_core_blast",
+    "frames": 8,
+    "cell": [
+      176,
+      144
+    ],
+    "pivot": [
+      88,
+      72
+    ],
+    "clipped": []
+  }
+]

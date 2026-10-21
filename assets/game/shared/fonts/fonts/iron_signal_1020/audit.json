@@ -1,0 +1,1705 @@
+{
+  "source_job": "cfa58012-3393-419d-acf3-3b3de1b398e5",
+  "source_asset": "521976eb-4e8a-5749-b840-40a1b347c86c",
+  "source_grid": [
+    8,
+    10
+  ],
+  "source_cell": [
+    16,
+    16
+  ],
+  "runtime_cell": [
+    20,
+    20
+  ],
+  "runtime_sheet": [
+    200,
+    160
+  ],
+  "baseline": 13,
+  "line_height": 14,
+  "glyphs": [
+    {
+      "char": "A",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "B",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "C",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "D",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        3,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "E",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        4,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "F",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        5,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "G",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        6,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "H",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        7,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "I",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        8,
+        0
+      ],
+      "visible": [
+        8,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        8,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "J",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        9,
+        0
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        11,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "K",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "L",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "M",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "visible": [
+        14,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        14,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "N",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "O",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        4,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "P",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        5,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "Q",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        6,
+        1
+      ],
+      "visible": [
+        12,
+        13
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "R",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        7,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "S",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        8,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "T",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        9,
+        1
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "U",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        2
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "V",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        2
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "W",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        2
+      ],
+      "visible": [
+        16,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        16,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "X",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        3,
+        2
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "Y",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        4,
+        2
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "Z",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        5,
+        2
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": ".",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        6,
+        2
+      ],
+      "visible": [
+        4,
+        4
+      ],
+      "top": 8,
+      "baseline": 13,
+      "source_visible": [
+        4,
+        4
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": ",",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        7,
+        2
+      ],
+      "visible": [
+        4,
+        6
+      ],
+      "top": 8,
+      "baseline": 13,
+      "source_visible": [
+        4,
+        6
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "!",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        8,
+        2
+      ],
+      "visible": [
+        4,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        4,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "?",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        9,
+        2
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": ":",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        3
+      ],
+      "visible": [
+        4,
+        9
+      ],
+      "top": 3,
+      "baseline": 13,
+      "source_visible": [
+        4,
+        9
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": ";",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        3
+      ],
+      "visible": [
+        4,
+        11
+      ],
+      "top": 3,
+      "baseline": 13,
+      "source_visible": [
+        4,
+        11
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "'",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        3
+      ],
+      "visible": [
+        4,
+        5
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        4,
+        5
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "\"",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        3,
+        3
+      ],
+      "visible": [
+        8,
+        5
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        8,
+        5
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "-",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        4,
+        3
+      ],
+      "visible": [
+        6,
+        2
+      ],
+      "top": 6,
+      "baseline": 13,
+      "source_visible": [
+        6,
+        2
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "+",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        5,
+        3
+      ],
+      "visible": [
+        10,
+        10
+      ],
+      "top": 2,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        10
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "(",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        6,
+        3
+      ],
+      "visible": [
+        6,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        7,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": ")",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        7,
+        3
+      ],
+      "visible": [
+        6,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        7,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "0",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        8,
+        3
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "1",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        9,
+        3
+      ],
+      "visible": [
+        8,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        8,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "2",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "3",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "4",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "5",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        3,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "6",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        4,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "7",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        5,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "8",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        6,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "9",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        7,
+        4
+      ],
+      "visible": [
+        12,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "/",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        8,
+        4
+      ],
+      "visible": [
+        9,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "%",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        9,
+        4
+      ],
+      "visible": [
+        13,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        14,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "*",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        5
+      ],
+      "visible": [
+        11,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        13
+      ],
+      "cap_scale": 0.9230769230769231
+    },
+    {
+      "char": "=",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        5
+      ],
+      "visible": [
+        10,
+        7
+      ],
+      "top": 3,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        7
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "_",
+      "source": "PixelLab cfa58012-3393-419d-acf3-3b3de1b398e5",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        5
+      ],
+      "visible": [
+        12,
+        3
+      ],
+      "top": 11,
+      "baseline": 13,
+      "source_visible": [
+        12,
+        3
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "$",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        3,
+        5
+      ],
+      "visible": [
+        10,
+        14
+      ],
+      "top": 0,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        14
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "\\",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        4,
+        5
+      ],
+      "visible": [
+        9,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "[",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        5,
+        5
+      ],
+      "visible": [
+        5,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        6,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "]",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        6,
+        5
+      ],
+      "visible": [
+        5,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        6,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "{",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        7,
+        5
+      ],
+      "visible": [
+        5,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        6,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "}",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        8,
+        5
+      ],
+      "visible": [
+        5,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        6,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "<",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        9,
+        5
+      ],
+      "visible": [
+        7,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        8,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": ">",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        6
+      ],
+      "visible": [
+        7,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        8,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "&",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        6
+      ],
+      "visible": [
+        9,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "#",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        6
+      ],
+      "visible": [
+        9,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "@",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        3,
+        6
+      ],
+      "visible": [
+        9,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "^",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        4,
+        6
+      ],
+      "visible": [
+        10,
+        6
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        6
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "|",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        5,
+        6
+      ],
+      "visible": [
+        2,
+        12
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        2,
+        14
+      ],
+      "cap_scale": 0.8571428571428571
+    },
+    {
+      "char": "~",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        6,
+        6
+      ],
+      "visible": [
+        10,
+        4
+      ],
+      "top": 4,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        4
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "`",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        7,
+        6
+      ],
+      "visible": [
+        4,
+        4
+      ],
+      "top": 1,
+      "baseline": 13,
+      "source_visible": [
+        4,
+        4
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "\u2190",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        8,
+        6
+      ],
+      "visible": [
+        10,
+        10
+      ],
+      "top": 2,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        10
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "\u2192",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        9,
+        6
+      ],
+      "visible": [
+        10,
+        10
+      ],
+      "top": 2,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        10
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "\u2191",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        0,
+        7
+      ],
+      "visible": [
+        10,
+        12
+      ],
+      "top": 0,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "\u2193",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        1,
+        7
+      ],
+      "visible": [
+        10,
+        12
+      ],
+      "top": 2,
+      "baseline": 13,
+      "source_visible": [
+        10,
+        12
+      ],
+      "cap_scale": 1.0
+    },
+    {
+      "char": "\u2022",
+      "source": "existing Command punctuation, common scale2",
+      "canvas": [
+        20,
+        20
+      ],
+      "cell": [
+        2,
+        7
+      ],
+      "visible": [
+        6,
+        6
+      ],
+      "top": 4,
+      "baseline": 13,
+      "source_visible": [
+        6,
+        6
+      ],
+      "cap_scale": 1.0
+    }
+  ],
+  "runtime_bytes": 11099,
+  "atlas_sha256": "0ef7dc404b760287bd1e288d27adf85cdbf41edc37922235371313d8560e82dc"
+}

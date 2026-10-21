@@ -1,0 +1,72 @@
+{
+  "source_sha256": "23876386a2a587ec826971228652c41c074ac41ee591828099a9309abaa6ce19",
+  "output_sha256": "214fa85de74709e76026792878c71d10fabb087564b979ac0ce3410903b2b06b",
+  "frames": 32,
+  "distinct_frames": 32,
+  "geometry_unchanged": true,
+  "alpha_unchanged": true,
+  "palette_knots": [
+    29,
+    46,
+    52,
+    60,
+    80,
+    110,
+    150,
+    200,
+    244
+  ],
+  "palette_rgb": [
+    [
+      0,
+      20,
+      110
+    ],
+    [
+      0,
+      34,
+      190
+    ],
+    [
+      0,
+      62,
+      235
+    ],
+    [
+      6,
+      100,
+      251
+    ],
+    [
+      36,
+      150,
+      255
+    ],
+    [
+      92,
+      196,
+      255
+    ],
+    [
+      155,
+      226,
+      255
+    ],
+    [
+      214,
+      247,
+      255
+    ],
+    [
+      246,
+      255,
+      255
+    ]
+  ],
+  "runtime_bytes": 350032,
+  "new_generation_cost": 0,
+  "source_jobs": [
+    "09d1b679-e3a5-4506-8be8-011ac609a5c5",
+    "afa80ee9-340a-4002-8fff-90a9f79a0d69"
+  ]
+}

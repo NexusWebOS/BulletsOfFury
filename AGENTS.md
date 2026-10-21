@@ -50,6 +50,17 @@ current Git state and runtime before relying on them.
 - Read `docs/ATLAS_REPACK_0903.md` before editing an atlas. Register sheet and cell
   changes together; generated manifests require their owning build workflow.
 
+## Combat warnings and audio
+
+- Bosses and minibosses use authored green/yellow/red FOV warnings. Do not add
+  muzzle-anchored arrow boxes or duplicate floating hazard signs. Keep impact
+  reticles, projectile collision alerts and explicit SHOOT! objectives with
+  their existing owners; preload all FOV colours before combat.
+- Added or updated enemy attacks need an approved sound assignment through the
+  shared mixer and retrigger gates. Preserve intentional silent volley partners,
+  cancel pending audio with the launcher, and use enemy gun cues independently
+  of the player's current weapon. Verify decoded playback for new cue routes.
+
 ## Hit feedback
 
 - Every added or updated enemy, boss, helper and modular piece must visibly flash
@@ -78,3 +89,20 @@ relevant existing probe. Inspect screenshots and both page and console errors.
 State assertions alone do not verify pixels. Check local art through `XART.get`
 keys and the game context's own `drawImage`; cached canvases have no reliable
 `.src` or object identity. Poll lazy asset readiness and yield between frame batches.
+
+
+## October21 art/combat contracts
+
+- Aircraft refits use complete idle/attack/drift/roll/somersault banks before activation. Keep fixed even cells/common fuselage pivots, one proportional scale, registered weapon sockets and disjoint reusable modules. Native emitters own muzzle flashes/projectiles. Preserve metallic highlights and dark outlines in palette variants.
+- Re-authored weapon silhouettes require new measured muzzle/head/target anchors. Verify actual native damaged pixels, target overlap and hit-flash expiry; a selected animation key is insufficient evidence.
+- Composite encounters retain the entire displayed live health budget. A destroyed core stops exposing a live Retina target; surviving modules keep fighting. Defeat/rewards/cookoff/progression occur once at full exhaustion.
+- Rebel formation/personal attacks keep complete FOV lanes, committed reaction windows, shootable homing missiles and heavy-attack interlocks. Cloak reveal must work through regular Retina, Multi-Retina and missiles. Depth attacks return visibly and restore scale/heading.
+- Shield variants remain transparent enough to read the hull and honor native energy/deploy/break/hit timers. Portal-only art keeps the native pass-through window and upright travel orientation.
+- Supplementary explosions attach to the current native death owner, remain bounded and never replace hit/burning-spin/crash/shock-ring rules or fade modular wrecks.
+- Coastal scrolling is monotonic; adjacent district rows match. Water and other animated parallax layers use independent clocks. Stage cards freeze unsafe live combat until their protected entrance finishes.
+
+## Menu windows and Chrome Heart (October21)
+
+- Menu confirmation/training prompts use the avatar-free S/M/L/XL `MW21` family, its measured text apertures and proportional corner-preserving renderer. Cinematic pilot dialogue stays separate. Never stretch a cinematic portrait plate into a tall menu window.
+- Mike selected concept02, Holoscan / Exploded View, on October21. Its live owner is `assets/holoscan_dossier_1021.js`: actual authored turntables, shared BOB20_SPEC stats, readable responsive text and native tutorial input/clocks. Preserve the selected cyan/black material, fixed frame pivots and all four part views. Do not reintroduce the Overdrive card or concept-only weapon/size statistics.
+- BARBIE is a protected account unlock after a real Falva/Lizzie final win (including co-op), never a debug victory. Chrome Heart stays scoped to its secret arena, with native dodge/death/audio ownership, absorbing shields, real hit flashes and its own post-fight result. See `docs/MENU_HEART_1021.md`.

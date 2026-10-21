@@ -170,7 +170,6 @@ rg4Warning=function(q,A){if(!['turbo','ram','slug','rockets','helix','cloak'].in
  if(row){ctx.save();ctx.beginPath();ctx.rect(camLeftX(),y-31,viewW(),62);ctx.clip();}
  combatWarningDraw(q,{x,y,ex,ey,len:row?Math.abs(ex-x):undefined,width:['turbo','ram'].includes(A.kind)?55:A.kind==='helix'?48:26,progress:p,fieldOnly:true});
  if(row)ctx.restore();
- const key='bmfx_alert_'+l23FovPhase(p)+'_impact_imminent';if(XART.rdy(key))ra4Blit(XART.get(key),row?camLeftX()+viewW()/2:q.x,row?y:q.y+40,30,30);
  if(A.kind==='rockets')ra4LockWarning(A,q.key);
 };
 fr27RebelDrawShip=function(q){const G=rg4State(),A=q.rg4?.act;if(!G?.arsenal1004c)return RA4_BASE.ship.apply(this,arguments);

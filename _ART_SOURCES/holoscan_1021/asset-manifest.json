@@ -1,0 +1,60 @@
+{
+  "selectedConcept": 2,
+  "name": "Holoscan / Exploded View",
+  "source": "Built-in image_gen clean frame from approved concept; current PixelLab B.O.B. turntables reused without regeneration.",
+  "assets": {
+    "frame": {
+      "path": "assets/game/shared/ui/holoscan_1021/frame.webp",
+      "width": 1500,
+      "height": 994,
+      "sourceRect": [
+        18,
+        14,
+        1518,
+        1008
+      ],
+      "bytes": 918544
+    },
+    "grid": {
+      "path": "assets/game/shared/ui/holoscan_1021/grid.webp",
+      "width": 256,
+      "height": 256,
+      "sourceRect": [
+        124,
+        178,
+        380,
+        434
+      ],
+      "bytes": 29624
+    },
+    "floor": {
+      "path": "assets/game/shared/ui/holoscan_1021/floor.webp",
+      "width": 1450,
+      "height": 216,
+      "sourceRect": [
+        44,
+        700,
+        1494,
+        916
+      ],
+      "bytes": 221392
+    },
+    "dais": {
+      "path": "assets/game/shared/ui/holoscan_1021/dais.webp",
+      "width": 206,
+      "height": 46,
+      "sourceRect": [
+        282,
+        612,
+        488,
+        658
+      ],
+      "bytes": 14356
+    }
+  },
+  "runtimeBytes": 1183916,
+  "newAnimationGenerations": 0,
+  "statsOwner": "BOB20_SPEC in assets/instructor_bob_1020.js",
+  "font": "Existing corrected BOF Iron Signal Bold TTF",
+  "notes": "Frame uses 72px nine-slice corners. Grid/floor/dais are authored image crops. New UI clocks are owned by the native tutorial; no extra animation loop."
+}

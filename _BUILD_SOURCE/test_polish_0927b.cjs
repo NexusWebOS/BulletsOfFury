@@ -36,7 +36,7 @@ module.exports=function(vm,ctxv,ok){
   b.x+=50;b.y+=20;polishLaneOrigin(lane);out['moving launcher carries its warning without retargeting']=lane.x===250&&lane.y===140&&lane.angle===Math.PI/2;
   polishCombatTick(.11);out['missile follows announced lane at authored speed']=eBullets.length===1&&eBullets[0]._committed&&!eBullets[0].homing&&eBullets[0].spd===4.9&&Math.abs(eBullets[0].vx)<.001;
   out['moving launcher fires from its current warning origin']=eBullets[0].x===250&&eBullets[0].y===140;
-  siegeBomberHit(b,1e6,b.x,b.y,'core');polishCombatTick(.1);out['bomber defeat cancels its hazards and starts engine cookoffs']=b.dead&&polishLanes.length===0&&polishDeaths.length===1;
+  siegeBomberHit(b,1e6,b.x,b.y,'core');out['core loss keeps surviving modules and their HP in the fight']=!b.dead&&b.hp===B.parts.reduce((n,p)=>n+p.hp,0)&&b.hp>0;for(const p of B.parts)siegeBomberHit(b,1e6,NaN,NaN,p.id);polishCombatTick(.1);out['bomber defeat cancels its hazards and starts engine cookoffs']=b.dead&&polishLanes.length===0&&polishDeaths.length===1;
   for(let i=0;i<180;i++)siegeBomberTick(b,1/60);out['bomber death releases the campaign miniboss gate']=subBoss===null&&!subBossActive&&subBossDone;
   return JSON.stringify(out);
  })()`,ctxv));

@@ -103,7 +103,7 @@ l23BossBeamTick=function(b,dt){const B=b._l23Beam;
 };
 function s3kMG(b,slot,a){if(!mr27CanFire(b,slot))return;mr27Fire(b,slot,a);const p=shipBossMount(b,slot);
   const q=eShootT(p.x,p.y,a,5.3,'mg',{w:7,h:17,silent:true});Object.assign(q,{_boss:true,_noArsenal:true,_coldTracer1002:true,_er26Source:b._ship,_weaponProof:true});
-  shipBossMuzzleStart(b,[slot],{fam:'mg',life:.08,hpx:28});Audio.SFX.machineGun?.();b._er26.shots++;
+  shipBossMuzzleStart(b,[slot],{fam:'mg',life:.08,hpx:28});Audio.SFX.enemyMachineGunHeavy?.();b._er26.shots++;
 }
 er26Combat=function(b,dt){if(!s3kOwns(b))return S3K_BASE.combat.apply(this,arguments);
   const R=b._er26,mode=R.mode;

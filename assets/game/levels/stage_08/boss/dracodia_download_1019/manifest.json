@@ -1,0 +1,144 @@
+{
+  "forms": {
+    "ghost": {
+      "key": "dr22_wire_ghost",
+      "path": "assets/game/levels/stage_08/boss/dracodia_download_1019/ghost.png",
+      "w": 256,
+      "h": 256,
+      "columns": 4,
+      "frames": 16,
+      "pivot": [
+        128,
+        128
+      ],
+      "bounds": [
+        83,
+        50,
+        186,
+        202
+      ],
+      "captureScale": 0.5,
+      "captureSize": 410
+    },
+    "colossus": {
+      "key": "dr22_wire_colossus",
+      "path": "assets/game/levels/stage_08/boss/dracodia_download_1019/colossus.png",
+      "w": 256,
+      "h": 256,
+      "columns": 4,
+      "frames": 16,
+      "pivot": [
+        128,
+        128
+      ],
+      "bounds": [
+        52,
+        51,
+        204,
+        207
+      ],
+      "captureScale": 0.5,
+      "captureSize": 410
+    },
+    "helicopter": {
+      "key": "dr22_wire_helicopter",
+      "path": "assets/game/levels/stage_08/boss/dracodia_download_1019/helicopter.png",
+      "w": 256,
+      "h": 256,
+      "columns": 4,
+      "frames": 16,
+      "pivot": [
+        128,
+        128
+      ],
+      "bounds": [
+        53,
+        55,
+        203,
+        204
+      ],
+      "captureScale": 0.5,
+      "captureSize": 410
+    },
+    "harrier": {
+      "key": "dr22_wire_harrier",
+      "path": "assets/game/levels/stage_08/boss/dracodia_download_1019/harrier.png",
+      "w": 256,
+      "h": 256,
+      "columns": 4,
+      "frames": 16,
+      "pivot": [
+        128,
+        128
+      ],
+      "bounds": [
+        50,
+        76,
+        206,
+        182
+      ],
+      "captureScale": 0.5,
+      "captureSize": 410
+    },
+    "volcano": {
+      "key": "dr22_wire_volcano",
+      "path": "assets/game/levels/stage_08/boss/dracodia_download_1019/volcano.png",
+      "w": 256,
+      "h": 256,
+      "columns": 4,
+      "frames": 16,
+      "pivot": [
+        128,
+        128
+      ],
+      "bounds": [
+        48,
+        48,
+        208,
+        204
+      ],
+      "captureScale": 0.5,
+      "captureSize": 410
+    },
+    "infused": {
+      "key": "dr22_wire_infused",
+      "path": "assets/game/levels/stage_08/boss/dracodia_download_1019/infused.png",
+      "w": 256,
+      "h": 256,
+      "columns": 4,
+      "frames": 16,
+      "pivot": [
+        128,
+        128
+      ],
+      "bounds": [
+        52,
+        79,
+        204,
+        187
+      ],
+      "captureScale": 0.5,
+      "captureSize": 410
+    },
+    "hammer": {
+      "key": "dr22_wire_hammer",
+      "path": "assets/game/levels/stage_08/boss/dracodia_download_1019/hammer.png",
+      "w": 256,
+      "h": 256,
+      "columns": 4,
+      "frames": 16,
+      "pivot": [
+        128,
+        128
+      ],
+      "bounds": [
+        63,
+        93,
+        184,
+        202
+      ],
+      "captureScale": 0.5,
+      "captureSize": 410
+    }
+  }
+}

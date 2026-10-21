@@ -14796,8 +14796,8 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(_fd.indexOf("'bmfx_fov_'") > 0 && _fd.indexOf("'_tall'") > 0 && _fd.indexOf('nwarn') < 0,
      'the cone draw asks for the pack cones and never the arrow lane');
   var _bd = _fn289('l23BossBeamDraw');
-  ok(_bd.indexOf('l23FovDraw(') > 0 && _bd.indexOf('l23FovDraw(') < _bd.indexOf("XART.rdy('nwarn_lane')"),
-     'the beam draw tries the cones BEFORE the arrow lane, so the arrows are only the not-yet-decoded fallback');
+  ok(_bd.indexOf('l23FovDraw(') > 0 && _bd.indexOf("XART.rdy('nwarn_lane')") < 0,
+     'the beam warning uses the FOV without reviving boxed arrows during lazy decoding');
   var _sd = _fn289('l23WarnSymbolDraw');
   ok(_sd.indexOf("'bmfx_alert_'") > 0 && _sd.indexOf("'_danger'") > 0 && _sd.indexOf('l23FovPhase(') > 0,
      'the frame above the boss is the pack alert in the same colour as the cone');
@@ -15883,6 +15883,9 @@ require('./test_spread_rounds_1017.cjs')(vm,ctxv,ok);
 require('./test_player_shield_1018.cjs')(vm,ctxv,ok);
 require('./test_charge_fx_1018.cjs')(vm,ctxv,ok);
 require('./test_machinegun_1018.cjs')(vm,ctxv,ok);
+require('./test_hammer_finish_1019.cjs')(vm,ctxv,ok);
+require('./test_soul_bomb_1019.cjs')(vm,ctxv,ok);
+require('./test_boss_redesign_1020.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 
