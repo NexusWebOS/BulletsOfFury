@@ -84,16 +84,21 @@
         <label>FORM <select id="t-variant"></select></label>
         <button class="tb" id="t-equip" title="Equip the live player; unavailable in space mode">EQUIP</button>
         <button class="tb" id="t-rec" title="R in the fight also toggles this"><span class="ico" data-icon="pattern"></span>REC</button>
-        <button class="tb" id="t-invuln"><span class="ico" data-icon="shield"></span>INVULN</button>
-        <label>SPEED <input type="range" id="t-speed" min="0.1" max="1" step="0.05" value="1"><span id="t-speed-v">1.00</span></label>
+        <button class="tb" id="t-invuln" title="GOD: every hit refused, no blinking ship (F9)"><span class="ico" data-icon="shield"></span>GOD</button>
+        <label>SPEED <input type="range" id="t-speed" min="0.1" max="2" step="0.05" value="1"><span id="t-speed-v">1.00</span></label>
+        <button class="tb" id="t-freeze" title="Freeze the combat clock ( [ )">FREEZE</button>
+        <button class="tb" id="t-step" title="Advance one 60 Hz tick while frozen ( ] )">STEP</button>
+        <button class="tb" id="t-restart" title="Restart this fight from the top, same pilot and difficulty (F10)">RESTART</button>
         <button class="tb" id="t-pause"><span class="ico" data-icon="pause"></span>PAUSE</button>
         <button class="tb" id="t-kill"><span class="ico" data-icon="damage"></span>KILL</button>
         <label>HP <input type="number" id="t-hp" min="1" max="100" value="100" style="width:52px">%</label>
         <button class="tb" id="t-sethp">SET</button>
+        <span class="tb-grp" title="Jump the boss to a phase threshold"><button class="tb" data-hpj="0.75">75</button><button class="tb" data-hpj="0.5">50</button><button class="tb" data-hpj="0.25">25</button><button class="tb" data-hpj="0.05">5</button></span>
         <label>PART <select id="t-part"><option value="">NO PARTS</option></select></label>
         <label>PART HP% <input type="number" id="t-part-hp" min="0" max="100" value="100" style="width:46px"></label>
         <button class="tb" id="t-setpart">SET PART</button>
         <label class="chk"><input type="checkbox" id="t-overlay" checked> ANCHORS</label>
+        <label class="chk"><input type="checkbox" id="t-hud"> ENGINE HUD</label>
       </div>
       <div id="stage-wrap">
         <iframe id="host" src="index.html?bossmode=1" title="engine" allow="autoplay"></iframe>
@@ -151,6 +156,8 @@
     </div>
 
     <div class="pane" id="pane-clips">
+      <div id="runs-h">RUN LOG <span id="runs-sub">every fight played here, newest first · best times count unassisted wins only</span></div>
+      <div id="runs-list"></div>
       <div id="clips-list"></div>
       <video id="clip-video" controls></video>
     </div>
@@ -185,10 +192,11 @@
   <span class="tf" id="tf-boss">no boss</span>
   <span class="tf" id="tf-pat"></span>
   <span class="tf" id="tf-pos"></span>
+  <span class="tf" id="tf-fight"></span>
   <span class="tf" id="tf-parts"></span>
   <span class="tf" id="tf-rec"></span>
   <span class="tf grow" id="tf-msg"></span>
-  <span class="tf" id="tf-keys">L list · Tab inspector · T theater · F5 play · F6 stop · Ctrl+S save</span>
+  <span class="tf" id="tf-keys">L list · Tab inspector · T theater · F5 play · F6 stop · F9 god · F10 restart · [ ] freeze/step · Ctrl+S save</span>
 </footer>
 
 <!-- OPEN BOSS -->

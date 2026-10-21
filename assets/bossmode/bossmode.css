@@ -230,3 +230,14 @@ table.t input.n{width:60px}
 .sc-act{border:1px solid var(--line2);border-radius:5px;padding:5px;margin:5px 0;background:rgba(0,0,0,.25)}
 .sc-act b{color:var(--hot2);flex:1}
 .sc-shapes{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0}
+
+/* 1021: the debug toolkit - run log, fight telemetry, phase jumps */
+.tb-grp{display:inline-flex;gap:2px}
+.tb-grp .tb{min-width:26px;padding-left:4px;padding-right:4px}
+#tf-fight{color:var(--hot2)}
+#runs-h{font-size:11px;color:var(--hot2);padding:6px 8px 2px;letter-spacing:1px}
+#runs-sub{color:var(--mute);font-size:10px;letter-spacing:0;margin-left:8px}
+#runs-list{max-height:34%;overflow:auto;padding:0 8px 6px}
+.run{display:flex;gap:10px;font-size:11px;padding:3px 6px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--dim)}
+.run b{color:#cfd6e0;min-width:210px}
+.run .w{color:#8de23a}.run .l{color:var(--bad)}.run .nb{color:#ffd25a;font-weight:bold}.run .as{color:var(--mute)}

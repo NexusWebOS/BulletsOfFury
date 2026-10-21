@@ -70069,10 +70069,14 @@ function drawDebugMenu(dt, inert){
       ctx.save(); ctx.font='bold 9px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle';
       ctx.fillStyle=c?'#ff8a7a':'#8fd0ff'; ctx.fillText(c?'BOSS':'MINI', x+6, y+h/2+1);
       ctx.fillStyle=F?(sel?'#ffffff':'#cfd6e0'):'#4a4d55';
-      let nm=F?F.name:'- NONE -'; if(nm.length>24) nm=nm.slice(0,23)+'…';
-      ctx.fillText(nm, x+38, y+h/2+1); ctx.restore();
+      const _best=(F&&typeof debugBestLabel==='function')?debugBestLabel(S.n,role):'';
+      let nm=F?F.name:'- NONE -'; const _cap=_best?18:24; if(nm.length>_cap) nm=nm.slice(0,_cap-1)+'…';
+      ctx.fillText(nm, x+38, y+h/2+1);
+      if(_best){ ctx.textAlign='right'; ctx.fillStyle='#ffd25a'; ctx.font='bold 8px "BOFmil", monospace'; ctx.fillText(_best, x+w-5, y+h/2+1); }
+      ctx.restore();
     }
   }
+  if(typeof dbgToolsMenuDraw==='function'){ try{ dbgToolsMenuDraw(dt); }catch(_dtm){} }   // last result + toolkit toggles (1021)
   // footer
   ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic'; ctx.font='9px "BOFmil", monospace';
   const ov=Object.keys(BOSSMODE_OVERRIDES).length;
@@ -70090,13 +70094,13 @@ function drawDebugMenu(dt, inert){
   // ---- input ----
   if(hover && Input.consumeMouseMoved()){ M.row=hover.row; M.col=hover.col; }
   const click=!!(m && m.down && !drawDebugMenu._md); drawDebugMenu._md=!!(m&&m.down);
-  if(click&&m.y>=64&&m.y<83){M.row=-2;const ds=['easy','normal','hard','furious'];diffKey=ds[(ds.indexOf(diffKey)+1)%ds.length];}
+  if(click&&m.y>=64&&m.y<83){M.row=-2;const ds=DIFF_KEYS;diffKey=ds[(ds.indexOf(diffKey)+1)%ds.length];}   // INSANITY included: debug skips the shop
   if(Input.menuUp()){ M.row=Math.max(-2,M.row-1); try{Audio.SFX.blip();}catch(_e){} }
   if(Input.menuDown()){ M.row=Math.min(nStages-1,M.row+1); try{Audio.SFX.blip();}catch(_e){} }
   const _ml=Input.menuLeft(), _mr=Input.menuRight();   // read once each: taps are consumed
   if(_ml||_mr){
     const d=_ml?-1:1;
-    if(M.row===-2){const ds=['easy','normal','hard','furious'];diffKey=ds[(ds.indexOf(diffKey)+d+ds.length)%ds.length];}
+    if(M.row===-2){const ds=DIFF_KEYS;diffKey=ds[(ds.indexOf(diffKey)+d+ds.length)%ds.length];}
     else if(M.row===-1){ M.pilot=(M.pilot+d+PILOTS.length)%PILOTS.length; }
     else M.col=1-M.col;
     try{Audio.SFX.blip();}catch(_e){}
