@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 233f33e4-7357-4411-b063-9d97ab39e416\njob_id: 233f33e4-7357-4411-b063-9d97ab39e416\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full body; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Animate the robot BODY ONLY, completely empty-handed throughout. Clench both empty hands into fists, pull the shoulders back and roar, flare the existing blue chest and armor lights briefly, then lean forward with both fists braced beside the torso. Only this single body on transparency. Keep all surrounding space completely empty. No props, no scenery, no additional objects, no separate effects.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10213307\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"233f33e4-7357-4411-b063-9d97ab39e416\")\nasset_id: cfa9ecbb-68ec-56d0-a5d5-6eb17a7cf6ec\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

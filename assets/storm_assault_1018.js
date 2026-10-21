@@ -160,6 +160,7 @@ sg17Wing=function(b,d,dt){const rank=p4Rank(),S=b._s4war;
    Object.assign(q,{_sa14CoreShot:true,_sg17JetShot:true,_weaponProof:!C.missile,_shootable:C.missile,homing:false,
     _er26Source:'core',_air17Element:'lightning',_air17Missile:!!C.missile});
    if(C.missile){q.kind='emissile';q.hp=rank>=2?3:2;q.w=10;q.h=24;q._s4Accel=1.1;q._s4Max=5.8;}
+   sg17Protect(q); // Lightning cannot be intercepted, including this missile-shaped reel.
    S.coreShots++;S.coreBarrelShots[side]++;b._er26.helperShots++;SG17.shots++;stage4CoreTurretMuzzle(b,d,side);
    C.shot=C.missile?.23:[.18,.15,.12,.10][rank];
   }

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: faaa3964-60c1-428e-a845-76edea116e88\njob_id: faaa3964-60c1-428e-a845-76edea116e88\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full body; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Animate the robot BODY ONLY, completely empty-handed throughout. Brace both feet wide and spread both empty arms to the sides, leaning backward with the chest aperture aimed toward the viewer. The circular reactor panels open, subtle blue light pulses only INSIDE the chest aperture. Hold this powerful braced posture. Only this single body on transparency. Keep all surrounding space completely empty. No props, no scenery, no additional objects, no separate effects.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10213306\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"faaa3964-60c1-428e-a845-76edea116e88\")\nasset_id: 24069bef-03f6-528c-af2e-96677658f700\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

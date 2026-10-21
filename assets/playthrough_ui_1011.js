@@ -51,12 +51,16 @@ function pt11DifficultyFace(im,key,x,y,w,h){
 }
 
 // The intro keeps the selected pilot's real ship and face throughout the shot.
-function pt11OpeningShip(pk,t,x,y,h){
+function pt11OpeningShip(pk,t,x,y,h,power){
  const ph=SHIP_GLOW_SEQ[Math.floor(t*1000/SHIP_GLOW_MS)%SHIP_GLOW_SEQ.length],base='ship_'+pk;
  const key=ph&&window.BOFX?.ships?.[base+'_'+ph]?base+'_'+ph:base;
  if(!XART.rdy(key))return false;const im=XART.get(key),w=h*im.width/im.height;
+ // Opening time owns exhaust even while the combat clock/player is idle.
+ const burn=power??(.48+.06*Math.sin(t*17)),previous=player._thrustFrame;
+ let plume=false;player._thrustFrame=Math.floor(t*1000/55);
+ try{plume=pf27PlaneThrustDraw(ctx,key,x,y,w,h,burn);}finally{player._thrustFrame=previous;}
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,x-w/2,y-h/2,w,h);ctx.restore();
- PT11_UI.ship={pilot:pk,key,x,y,h};return true;
+ PT11_UI.ship={pilot:pk,key,x,y,w,h,power:burn,plume,thrustFrame:Math.floor(t*1000/55)};return true;
 }
 const pt11IntroWarm=campaignIntroWarm;
 campaignIntroWarm=function(){const r=pt11IntroWarm.apply(this,arguments);

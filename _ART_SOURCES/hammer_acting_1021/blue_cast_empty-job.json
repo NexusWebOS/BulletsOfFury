@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 004ec3dd-21a7-428f-80e6-aeba1614f022\njob_id: 004ec3dd-21a7-428f-80e6-aeba1614f022\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. UNARMED version of this exact robot. The hammer has been destroyed: absolutely NO hammer, shaft, gun or extra weapon. Exactly TWO arms. Extend the right open hand forward to cast a spell, lean into the gesture while the left arm stays braced and open. Hold the casting hand clearly outstretched. Small energy in palm only, no large baked effect.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212605\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"004ec3dd-21a7-428f-80e6-aeba1614f022\")\nasset_id: 04527db5-7355-5d8c-a379-a43836cbd2ef\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

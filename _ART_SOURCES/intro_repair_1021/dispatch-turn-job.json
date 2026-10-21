@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 072ca6a1-aa1a-462f-b050-8c72da79820f\njob_id: 072ca6a1-aa1a-462f-b050-8c72da79820f\nmode: text\nframes: 1\nsize: 512x288px\ntransparent: False\nedit: Keep exact512x288 fixed cinematic camera, same tower room, two consoles, twilight windows and same two characters. New dramatic pose: BOTH seated dispatchers turn their upper bodies and heads toward each other, concerned eye contact. Decker on left stays blond with black rectangular glasses and black flight jacket/yellow piping; Lizzie on right keeps long curly auburn hair and yellow jacket/black shirt. Lizzie lifts one hand off controls to gesture urgently at the exit. Same character proportions and positions as source. No text, subtitles, UI, added people or aircraft. Crisp Bullets of Fury pixel-art story plate.\nseed: 102108\nasset_id: e061f5c8-145f-5c19-a022-53fe3900db0a\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"072ca6a1-aa1a-462f-b050-8c72da79820f\")"
+    }
+  ],
+  "isError": false
+}

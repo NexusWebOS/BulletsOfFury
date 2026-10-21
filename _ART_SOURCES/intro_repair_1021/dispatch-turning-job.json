@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: d47b64e9-2194-445d-a755-2261b8866404\njob_id: d47b64e9-2194-445d-a755-2261b8866404\ndescription: Fixed256x144 cinematic, locked camera, stationary room. Both seated dispatchers turn to face each other urgently. LEFT Decker, blond hair, black rectangular glasses, black-and-yellow jacket, pivots his head and shoulders right toward Lizzie. RIGHT Lizzie, curly auburn hair and yellow jacket, turns left to meet his eyes and points toward the exit with her right arm. They speak urgently, then hold the supplied final pose. Preserve both exact faces, clothing, body positions, two chairs, console mounts and window skyline. No zoom, pan, camera wobble, additional people, letters or subtitles. Real articulated turning frames.\nframes: 24\nsize: 256x144px\ntransparent: False\nlast_frame: yes (animating toward it)\nseed: 102110\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d47b64e9-2194-445d-a755-2261b8866404\")\nasset_id: 4eb8e854-a2ab-5f42-ae64-c0d24912f8d2\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,86 @@
+{
+  "bullet_green": {
+    "job": "f75906da-2e22-412a-843a-1da0fa4083b9",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_bullet.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original green sonic bullet sprite. The original corkscrew energy bands flow along the original metal-core sonic projectile, existing sparks pulse. Projectile fixed in place; metal body never changes. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged."
+  },
+  "wave_green": {
+    "job": "1f70b1ae-897b-4726-b770-1ab605c7feaa",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_wave.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original green sonic wave sprite. Energy flows along the ORIGINAL bright crescent ridge; original fine trailing arcs ripple very slightly in place. Exact original broad crescent silhouette, facing and center. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged."
+  },
+  "ring_green": {
+    "job": "490e16d6-6634-43c5-9d1d-f35ed686d8ba",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_ring.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original green sonic ring sprite. A ripple of light travels around the ORIGINAL single luminous pressure ring and its existing tiny perimeter sparks flicker. Exact original radius, thickness and center remain constant. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged."
+  },
+  "charge_green": {
+    "job": "1b5d7453-5a7d-4471-abed-a91950cb0071",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_charge.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original green sonic charge sprite. Light flows along the ORIGINAL concentric charging rings into the white central light. Existing thin spiral streaks shimmer around it. Keep every original shape, center and radius. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged."
+  },
+  "bullet_red": {
+    "job": "610106a5-6540-4e74-b7f8-eccaa2aa7091",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original red sonic bullet sprite. The original corkscrew energy bands flow along the original metal-core sonic projectile, existing sparks pulse. Projectile fixed in place; metal body never changes. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged."
+  },
+  "wave_red": {
+    "job": "a28b4bc3-0307-40e9-ab26-10afd8ded7b4",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_wave.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original red sonic wave sprite. Energy flows along the ORIGINAL bright crescent ridge; original fine trailing arcs ripple very slightly in place. Exact original broad crescent silhouette, facing and center. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged."
+  },
+  "ring_red": {
+    "job": "3b4a8336-fe75-4641-91c9-d032786be478",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_ring.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original red sonic ring sprite. A ripple of light travels around the ORIGINAL single luminous pressure ring and its existing tiny perimeter sparks flicker. Exact original radius, thickness and center remain constant. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged."
+  },
+  "charge_red": {
+    "job": "1b5d7453-5a7d-4471-abed-a91950cb0071",
+    "source": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_charge.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "frames": 9,
+    "prompt": "FRAME FORMAT256x256pixels, exact source canvas and pivot128,128. Animate this EXACT original red sonic charge sprite. Light flows along the ORIGINAL concentric charging rings into the white central light. Existing thin spiral streaks shimmer around it. Keep every original shape, center and radius. Seamless8frame loop. Exact source palette and original silhouette, no redesign or added shapes/objects/text, no camera movement, zoom or drift. Original transparent padding. Supplied first/last frames must remain unchanged.",
+    "requestedJob": "0c31b8d5-c149-4984-947b-8590fc7efec3",
+    "requestedJobStatus": "cancelled; paired with original green-charge light motion",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_charge.png",
+    "rawBank": "charge_green"
+  }
+}

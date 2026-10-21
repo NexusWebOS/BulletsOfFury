@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Original sonic effects</title><link rel="icon" href="data:,">
+<style>body{margin:0;background:#080d13;color:#e4eff4;font:14px system-ui}header{display:flex;gap:12px;padding:8px 12px;align-items:center;flex-wrap:wrap}select,button{font:inherit;padding:6px;background:#193043;color:inherit;border:1px solid #69869b;border-radius:4px}iframe{display:block;width:100%;height:calc(100dvh - 55px);border:0}#status{color:#a9cad8}</style>
+<header><strong>Sonic attacks</strong><label>Encounter <select id="scene"><option value="tank">Razorback sonic</option><option value="targetPulse">Razorback Retina sonic pulse</option><option value="nova">Razorback pressure nova</option><option value="rushNorth">Helicopter north rush</option><option value="rushSouth">Helicopter south rush</option><option value="sweep">Helicopter strafing sweep</option><option value="heli">Helicopter sonic combo</option><option value="pressure">Incoming red pressure shot</option><option value="cole">Cole sonic wave</option><option value="missiles">Helicopter missile barrage</option><option value="charge">Helicopter charge</option></select></label><label>Difficulty <select id="difficulty"><option>normal</option><option>hard</option><option>furious</option></select></label><button id="replay" disabled>Replay</button><span id="status">Loading the actual game…</span></header>
+<iframe id="game" title="Actual Bullets of Fury sonic encounters" allow="autoplay; fullscreen" src="../../../index.html?revision=helicopter-charge-audio-1021"></iframe>
+<script>
+const game=document.querySelector('#game'),scene=document.querySelector('#scene'),difficulty=document.querySelector('#difficulty'),replay=document.querySelector('#replay'),status=document.querySelector('#status'),params=new URLSearchParams(location.search);
+for(const [el,key]of [[scene,'scene'],[difficulty,'difficulty']])if([...el.options].some(o=>o.value===params.get(key)))el.value=params.get(key);
+function play(){const s=scene.value,d=difficulty.value;game.contentWindow.eval(`(()=>{
+ diffKey=${JSON.stringify(d)};run.mode='arcade';run.pilot='cole';pilotIndex=PILOTS.findIndex(p=>p.key==='cole');DIFF=difficultyForRun(run.mode,diffKey);startRun(1);beginStage(1);curStage=STAGES[0];setState(GS.PLAY);storySkip();BOFCinematicDirector.cancel();
+ clearInterval(window._sx21ReviewTimer);window._sx21ReviewTimer=0;
+ player.invuln=1e9;player.y=VH*.82;enemies=[];eBullets=[];pBullets=[];stagePlan=[];waveIdx=999;spawnClock=9999;_adaptiveSpawnT=9999;mapScroll=1400;boss=null;bossActive=false;subBoss=null;subBossActive=false;Input.clearTaps();sx21Warm();
+ if(${JSON.stringify(s)}==='cole'){weaponFeedbackWarm('cole');const fire=()=>pBullets.push({kind:'sonic',x:player.x,y:player.y-25,vx:0,vy:-SONIC_SPD,w:44,h:44,dmg:22,t:0,life:SONIC_LIFE,_p:1,pierce:true});fire();window._sx21ReviewTimer=setInterval(fire,1300);}
+ else if(${JSON.stringify(s)}==='pressure'){const fire=()=>{for(const off of [-.28,0,.28])eShootT(worldWidth()/2,VH*.20,Math.PI/2+off,3,'rzbSonic',{w:15,h:15});};fire();window._sx21ReviewTimer=setInterval(fire,1500);}
+ else if(['tank','nova','targetPulse'].includes(${JSON.stringify(s)})){
+  spawnSubBoss('razorback');for(const a of subBoss._rzbPair?subBoss._rzbPair.actors:[subBoss]){a.y=VH*.28;a.enter=false;const r=a._rzb;r.state='guns';r.attack=${JSON.stringify(s)}==='nova'?'nova':'sonic';r.at=0;r.idx=1;r.beat=-1;r.charge=0;r.turret=0;r.a=0;r.tgt={x:a.x,y:a.y};}if(${JSON.stringify(s)}==='targetPulse'){subBoss._target17={phase:'recover',t:0,cool:.15,serial:0,shots:0,kind:'sonic'};}
+ }else{spawnBoss('damkeeper');updateOverlordX(boss,0);boss.enter=false;boss._ovIntro=null;boss._ovAirborne=false;boss.x=worldWidth()/2;boss.y=VH*.24;boss._pivot=0;
+  if(${JSON.stringify(s)}==='missiles')ovStartMissileLock(boss,'fight');else if(${JSON.stringify(s)}==='charge')ovStartChargeTell(boss);else if(${JSON.stringify(s)}==='sweep')ovStartSweep(boss);else if(['rushNorth','rushSouth'].includes(${JSON.stringify(s)})){ovStartRush(boss);ovRushLeg(boss);if(${JSON.stringify(s)}==='rushSouth'){boss._ovRush.leg=1;ovRushLeg(boss);}}else ovSonicStart(boss);}
+ })()`);status.textContent='Live encounter · protected review pilot';game.contentWindow.focus();}
+replay.onclick=play;scene.onchange=play;difficulty.onchange=play;
+game.onload=async()=>{for(let i=0;i<600;i++){if(game.contentWindow.BOF_SONIC_EFFECTS&&game.contentWindow.__bofFrames>4){replay.disabled=false;play();return;}await new Promise(r=>setTimeout(r,100));}status.textContent='Reload to retry game loading.';};
+</script></html>

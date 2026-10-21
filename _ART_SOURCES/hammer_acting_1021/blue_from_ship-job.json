@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 39c0ef3f-c6f0-436f-8e4f-aec9c70202c3\njob_id: 39c0ef3f-c6f0-436f-8e4f-aec9c70202c3\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. The actual supplied ship mechanically unfolds INTO the exact supplied humanoid endpoint. Preserve this precise aircraft silhouette, blue nose core, wings and metal palette at the start. Wings fold into shoulders and arms, fuselage splits into torso and legs, the chest core stays centered and the long hammer deploys into both hands. End in the supplied complete humanoid ready pose. No generic substitute jet, no duplicate ship, no camera travel. Gameplay supplies fly-in movement.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 10212301\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"39c0ef3f-c6f0-436f-8e4f-aec9c70202c3\")\nasset_id: 3c3191b1-b9d9-5ede-9ef8-cd21f1fd3ba2\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

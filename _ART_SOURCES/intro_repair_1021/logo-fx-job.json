@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: cc16e63a-a6a7-498e-8047-95cf644ace9c\njob_id: cc16e63a-a6a7-498e-8047-95cf644ace9c\nmodel: pro\ndescription: FRAME FORMAT: 256 x 128 transparent pixels, fixed pivot128,64 with wide transparent margins. Bullets of Fury arcade logo reveal EFFECT ONLY: a sharp white-cyan electrical flash with fiery orange sparks and blue plasma streaks sweeping horizontally around a mostly empty center. Use the supplied logo only for its metallic arcade lighting and fiery cyan-orange palette. Do NOT reproduce or invent any text or logo; the actual unchanged game logo is composited separately. Crisp authored pixel-art lightning branches and scattered sparks, silhouette unclipped, transparent background, no rectangle, no blur.\nsize: 256x128px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 102103\nasset_id: 5182fde8-7243-5ab5-a4ea-888e241a7b09\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"cc16e63a-a6a7-498e-8047-95cf644ace9c\")"
+    }
+  ],
+  "isError": false
+}

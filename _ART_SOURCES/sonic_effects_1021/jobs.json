@@ -1,0 +1,72 @@
+{
+  "tank_wave": {
+    "job": "0f8abe0a-a35c-4d60-ae73-096ecb5f3447",
+    "seedJob": "91cadb26-67fe-41bc-86f8-78bec4e251ac",
+    "frames": 17,
+    "canvas": [
+      192,
+      128
+    ],
+    "prompt": "The stationary green pressure arc's separate luminous ridges ripple steadily outward and then replenish behind the leading edge. Thin wisps flicker upward. Entire crescent remains centered and same silhouette, dimensions and facing in every frame, do not translate, zoom, rotate the whole sprite or change camera. All 16frames form a seamless traveling-wave loop. Transparent background, no vehicles or objects. Keep all energy fully inside the192x128 canvas with stable center96,64."
+  },
+  "tank_charge": {
+    "job": "8eb40f69-6888-463c-a341-249813dec25e",
+    "seedJob": "90af9471-9096-4e61-bc85-a34746e201f7",
+    "frames": 17,
+    "canvas": [
+      160,
+      160
+    ],
+    "prompt": "Two green sonic ribbon coils wind continuously INWARD clockwise toward the fixed white center, sparks feed into it, concentric pressure ripples contract and replenish. Real clear curling spiral motion, continuous seamless loop16frames. Do not rotate or zoom the entire image. Same center80,80 and same canvas160x160 and shared margins across every frame. No vehicle, solid objects or scenery."
+  },
+  "heli_wave": {
+    "job": "42af6fb3-3926-4487-b8a6-e92ffa3a7bcb",
+    "seedJob": "99aa53f8-545f-4e8c-b290-d91d5baa1c27",
+    "frames": 17,
+    "canvas": [
+      224,
+      112
+    ],
+    "prompt": "The blue white pressure-wave ridges continuously ripple outward one after another from the shallow inner arc to the broad leading sonic crescent, small blue acoustic wisps flutter behind. Seamless16frame repeating attack loop, effect remains fixed in place, same size and facing every frame. Crisp pixel art, transparent background. Same224x112 canvas fixed112,56 pivot, preserve shape and margins. No objects or scenery."
+  },
+  "heli_charge": {
+    "job": "a9663394-9aae-4339-b837-725acae69106",
+    "seedJob": "b5cc9bdf-6a0d-4ae8-9420-5c983ecc10f6",
+    "frames": 17,
+    "canvas": [
+      160,
+      160
+    ],
+    "prompt": "The concentric sonic-energy coils spiral clockwise INWARD into the white-blue central light, two curling blue ribbons twist clearly, fine electrical sparks collect toward center and the central light pulses powerfully. Seamless16frame loop. Keep same center80,80 and identical160x160 canvas with no zoom, camera movement or drift. Transparent gaps, no objects or scenery."
+  },
+  "tank_ring": {
+    "job": "78d100d6-ca85-41f0-bdfe-2b6b0cae9d8c",
+    "seedJob": "bea2ecd7-3c7c-482a-954b-38fc6b27e66d",
+    "frames": 17,
+    "canvas": [
+      192,
+      192
+    ],
+    "prompt": "The thin green shockwave rings ripple outward from the inner perimeter toward the outer perimeter, replenishing continuously. Fine luminous pressure filaments chase clockwise around the circumference and green sparks shimmer. Seamless16frame loop, concentric rings fixed center96,96 and constant overall radius in every frame, same192x192canvas, no camera movement, no objects, no shape drift."
+  },
+  "heli_front": {
+    "job": "7c26fc6b-d567-4eb8-b184-afa49b87f460",
+    "seedJob": "1f665c2b-b691-4f23-b587-39c90de1ba6d",
+    "canvas": [
+      256,
+      48
+    ],
+    "frames": 17,
+    "prompt": "Blue-white acoustic oscillations ripple rapidly left-to-right along the stationary wide horizontal wavefront, adjacent thin sine ridges shimmer and pulse, small pressure filaments trail upward.16-frame seamless animation. Preserve256x48canvas, fixed128,24anchor, extreme wide shallow silhouette, no camera movement, drift, zoom or rotation. Transparent background, effect only."
+  },
+  "spiral": {
+    "job": "abf6bc96-9873-44c8-8fbb-e473edc18c6d",
+    "seedJob": "226df47d-0887-40ad-8be8-7d0cd6a821c0",
+    "canvas": [
+      160,
+      160
+    ],
+    "frames": 17,
+    "prompt": "The two luminous green spiral arms flow visibly clockwise inward toward the fixed white central light in a seamless continuous16frame cycle. Bright energy filaments stream along the curved open spiral arms and sparks feed into the center. A powerful spinning sonic vortex with clearly moving coils. Keep overall diameter and160x160canvas and center80,80identical through allframes, no zoom or drift. No opaque gray blobs, no background or objects."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "charge": {
+    "job": "5f767396-e86b-43d6-8380-07edca42d29d",
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_charge.png",
+    "frames": 9,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "status": "completed",
+    "assetId": "b438fad3-e4ec-5d6c-9d19-0315ea938fa0",
+    "motion": "Original concentric red rings surge and ripple; white highlights race around existing rings and thin spirals stream inward. Fixed pivot, original identity and transparent margins."
+  },
+  "bullet": {
+    "job": "7934038a-b1a2-41cd-b181-26426e5836e1",
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+    "frames": 9,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "status": "completed",
+    "assetId": "2a3c2a03-1f4b-5753-8e5e-e5f9ab84a06f",
+    "motion": "Original red acoustic corkscrew bands travel around the unchanged metal-core missile, red sparks flicker, white highlights pulse. Fixed pivot and original nose-down design."
+  }
+}

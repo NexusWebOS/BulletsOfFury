@@ -240,7 +240,7 @@ hammerBossTick=function(b,dt){const h=b._hammer,ghost=pt11HammerGhost(b);
 };
 hammerBossDamage=function(b,dmg){if(pt11HammerGhost(b)){b._hammerModuleHit=null;return 0;}return PT11.base.hammerDamage.apply(this,arguments);};
 hammerBossDraw=function(b){const ghost=pt11HammerGhost(b),h=b._hammer;
- if(!b.dead&&['hammer','shield','storm_idle'].includes(h.state)&&(!b._hammerTime||b._hammerTime.mode==='attack')&&(!b._hama||b._hama.mode==='attack')&&pt11Ready('hammer_core')){
+ if(!b.dead&&!h.hc11Counter&&['hammer','shield','storm_idle'].includes(h.state)&&(!b._hammerTime||b._hammerTime.mode==='attack')&&(!b._hama||b._hama.mode==='attack')&&pt11Ready('hammer_core')){
   pt11Plate('hammer_core',Math.floor(hm10Data(b).age*10)%8,b.x,b.y,HM10.bodyScale,0,b.flash);hm10WallDraw(b);return;}
  ctx.save();if(ghost)ctx.globalAlpha*=.30+.07*Math.sin(b._hammer.t*14);
  try{return PT11.base.hammerDraw.apply(this,arguments);}finally{ctx.restore();}};

@@ -3233,14 +3233,8 @@ function drawBossSprite(b){
       const T=b._chargeTell, p=ovChargeWarningProgress(T), hub=ovChargeOrigin(b,T);
       combatWarningDraw(b,{x:hub.x,y:hub.y,ex:T.lane,ey:T.dir<0?0:VH,progress:p,width:42,fieldOnly:true});
     }
-    if((b._ovChargeGlow||0)>0){
-      const p=clamp(b._ovChargeGlow,0,1),gi=Math.min(5,Math.floor(p*6));
-      const gk='s1fx_green_impact_'+gi;
-      if(XART.rdy(gk)){ const gim=XART.get(gk),gd=w*(0.78+p*0.72);
-        ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.34+0.48*p;
-        ctx.drawImage(gim,dx-gd/2,yy-gd/2,gd,gd); ctx.restore();
-      }
-    }
+    // One sonic charge at the firing mount owns the wind-up effect. Impact
+    // and rotor-vortex plates are attacks/hit effects, not stacked charge art.
     // body first, then the spinning rotor overlay (same rect = shared 192 center anchor)
     const piv=b._pivot||0;
     if(b._ovSonic){ctx.save();ctx.shadowColor='#63ff25';ctx.shadowBlur=14;
@@ -38919,7 +38913,8 @@ function hammerStormTick(b,dt){const h=b._hammer,s=h.state,home=h.stormHome||{x:
   }else if(s==='storm_slam'){
     const dur=hammerFurious()?.46:hammerHard()?.52:.6,p=clamp(h.t/dur,0,1),ease=p*p*(3-2*p),q=h.stormTarget;
     // The authored impact head, rather than the chest, lands on the committed Retina.
-    b.x=lerp(h.ox,q.x+.7,ease);b.y=lerp(h.oy,q.y-74.9,ease)-Math.sin(p*Math.PI)*65;
+    const landing=(typeof ha21Landing==='function'&&ha21Landing(b,q,'slam',12))||{x:q.x+.7,y:q.y-74.9};
+    b.x=lerp(h.ox,landing.x,ease);b.y=lerp(h.oy,landing.y,ease)-Math.sin(p*Math.PI)*65;
     if(p>=1)hammerStormImpact(b);
   }else if(s==='storm_split'){
     hammerStormWaveTick(b,dt);
@@ -39194,11 +39189,12 @@ function hammerCombatTick(b,dt){
   }
   if(s==='giant_dive'){
     const p=clamp(h.t/.52,0,1),k=p*p;
-    b.x=lerp(h.giantFromX,h.tx,k);b.y=lerp(h.giantFromY,h.ty,k);
-    if(p>=1){hammerState(b,'giant_sweep');h.hitCd=0;shake=Math.max(shake,15);if(Audio.SFX.hammerImpact)Audio.SFX.hammerImpact();h.leapFx=.01;h.leapFxX=b.x;h.leapFxY=b.y;}return true;
+    const landing=(typeof ha21Landing==='function'&&ha21Landing(b,{x:h.tx,y:h.ty},'slam',12,1.75*1.65))||{x:h.tx,y:h.ty};
+    b.x=lerp(h.giantFromX,landing.x,k);b.y=lerp(h.giantFromY,landing.y,k);
+    if(p>=1){hammerState(b,'giant_sweep');h.hitCd=0;shake=Math.max(shake,15);if(Audio.SFX.hammerImpact)Audio.SFX.hammerImpact();h.leapFx=.01;h.leapFxX=h.tx;h.leapFxY=h.ty;}return true;
   }
   if(s==='giant_sweep'){
-    if(h.t<=.32&&h.hitCd<=0&&!player.dead&&Math.abs(player.x-b.x)<150&&Math.abs(player.y-b.y)<78){playerHit();h.hitCd=1;}
+    if(h.t<=.32&&h.hitCd<=0&&!player.dead&&Math.abs(player.x-(h.tx??b.x))<150&&Math.abs(player.y-(h.ty??b.y))<78){playerHit();h.hitCd=1;}
     if(h.t>=.44)hammerState(b,'giant_recover');return true;
   }
   if(s==='giant_knockback'){
@@ -39354,8 +39350,8 @@ function hammerBossTick(b,dt){
   }
   else if(h.state==='throw'){hammerBoomerangTick(b,dt);}
   else if(h.state==='warn'){const warn=fur?.58:1.2;combatWarningTick(b,'chrome-hammer-leap',Math.min(h.t,warn),warn);if(h.t>=warn){hammerState(b,'leap');(Audio.SFX.hammerLeap||Audio.SFX.enemyShoot||function(){})();}}
-  else if(h.state==='leap'||h.state==='back'){const dur=fur?.27:.52,p=clamp(h.t/dur,0,1),q=p*p*(3-2*p);b.x=lerp(h.ox,h.tx,q);b.y=lerp(h.oy,h.ty,q);if(p>=1){if(h.state==='leap'){shake=Math.max(shake,11);explode(b.x,b.y+32,70,'blue');if(Audio.SFX.hammerImpact)Audio.SFX.hammerImpact();h.leapFx=.01;h.leapFxX=b.x;h.leapFxY=b.y+32;
-      if(!player.dead&&player.invuln<=0&&Math.hypot(player.x-b.x,player.y-(b.y+32))<62)playerHit();for(let i=0;i<8;i++)hammerEnergyBomb(b.x,b.y,TAU*i/8,hammerFurious()?7.4:hammerHard()?5.7:3.5);hammerState(b,'recover');}else{h.attackCycle++;hammerState(b,'shield');}}}
+  else if(h.state==='leap'||h.state==='back'){const dur=fur?.27:.52,p=clamp(h.t/dur,0,1),q=p*p*(3-2*p),landing=(h.state==='leap'&&typeof ha21Landing==='function'&&ha21Landing(b,{x:h.tx,y:h.ty+32},'jump',10))||{x:h.tx,y:h.ty};b.x=lerp(h.ox,landing.x,q);b.y=lerp(h.oy,landing.y,q);if(p>=1){if(h.state==='leap'){shake=Math.max(shake,11);explode(h.tx,h.ty+32,70,'blue');if(Audio.SFX.hammerImpact)Audio.SFX.hammerImpact();h.leapFx=.01;h.leapFxX=h.tx;h.leapFxY=h.ty+32;
+      if(!player.dead&&player.invuln<=0&&Math.hypot(player.x-h.tx,player.y-(h.ty+32))<62)playerHit();for(let i=0;i<8;i++)hammerEnergyBomb(h.tx,h.ty,TAU*i/8,hammerFurious()?7.4:hammerHard()?5.7:3.5);hammerState(b,'recover');}else{h.attackCycle++;hammerState(b,'shield');}}}
   else if(h.state==='recover'){if(h.t>=hammerRecoverDuration()){if((h.followCount||0)<(fur?5:hammerHard()?3:1)){h.followCount=(h.followCount||0)+1;h.comboPending=true;hammerState(b,'leap_reset');}else{h.followCount=0;h.tx=homeX;h.ty=homeY;hammerState(b,'back');}}}
   else if(h.state==='leap_reset'){const p=clamp(h.t/(fur?.42:.62),0,1),e=p*p*(3-2*p);b.x=lerp(h.ox,homeX,e);b.y=lerp(h.oy,homeY,e);if(p>=1)hammerState(b,'hammer');}
   else if(h.state==='shield'){if(h.t>1.0){hammerBallArm(b);hammerState(b,'curl');}}
@@ -40070,9 +40066,6 @@ function updateOverlordX(b, dt){
     }
     else if(!T.locked){
       T.locked=true; T.lane=clamp(T.lane,72,VW-72);
-      const hub=ovMount(b,0,4);
-      navalFlash(null,{x:hub[0],y:hub[1]},1.42,'s1fx_wind_vortex',{n:6,hpx:124,life:T.dur-T.t+0.12,anchor:0.5,
-        follow:()=>{const p=ovMount(b,0,4);return {x:p[0],y:p[1]};}});
     }
     const oldX=b.x;
     b.x=lerp(b.x,T.lane,p<0.48?0.10:0.035);
@@ -40091,10 +40084,8 @@ function updateOverlordX(b, dt){
     const tellRate=17;
     b._ovJitterX=Math.sin(T.t*tellRate)*tellShake;
     b._ovJitterY=Math.cos(T.t*tellRate)*tellShake*0.62;
-    if(T.pulse<=0){ T.pulse=p>0.72?0.075:0.14; const hub=ovMount(b,0,2);
-      navalFlash(null,{x:hub[0],y:hub[1]},0.62+p*0.45,'s1fx_green_impact',{n:6,hpx:76+p*34,life:0.18,anchor:0.5,
-        follow:()=>{const q=ovMount(b,0,2);return {x:q[0],y:q[1]};}});
-    }
+    // The animated sonic charge is drawn once by its own owner. Do not spawn
+    // repeating impact bursts or a second sustained vortex over the rotor.
     if(p>0.82) shake=Math.max(shake,2+p*3);
     if(T.t>=T.dur){
       b._ovState='chargeOff'; b._chg={t:0,lane:T.lane,v:b._enraged?225:190,dir:T.dir,pass:T.pass};
@@ -79712,7 +79703,7 @@ const Snd=(function(){
     razorbackRocket:{g:0.62,lp:5600,min:0.11},
     razorbackRam:{g:0.62,lp:5600,min:0.13},
     overlordGun:{g:0.6,lp:5600,min:0.085},
-    overlordRocket:{g:0.65,lp:5600,min:0.75},
+    overlordRocket:{g:0.78,native:true,min:0.10},
     overlordLance:{g:0.55,lp:5600,min:0.13},
     overlordWind:{g:0.48,lp:5600,min:1.05},
     overlordCharge:{g:0.53,lp:5600,min:0.16},

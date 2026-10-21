@@ -14,7 +14,9 @@ function sg17Protect(q){if(!q||q.dead)return q;
 }
 s4ac13Mark=function(q){return sg17Protect(SG17.base.mark.apply(this,arguments));};
 stage4WarfareShot=function(b,p,a,speed,role){const q=SG17.base.shot.apply(this,arguments);
- return sa14Storm(b)&&role==='orb'?sg17Protect(q):q;};
+ // Protect every energy release immediately, before another owner or special
+ // can treat it as interceptable ordnance. Physical rockets retain their policy.
+ return sa14Storm(b)&&['orb','lightning','lightningmg','spread'].includes(role)?sg17Protect(q):q;};
 ordnanceBreak1002=function(q){if(q&&(q._sg17Lightning||sa14Electric(q)))return;
  return SG17.base.break.apply(this,arguments);};
 er26Set=function(b,mode){const r=SG17.base.set.apply(this,arguments);
@@ -67,6 +69,7 @@ function sg17Wing(b,d,dt){const rank=vp12Tier(),S=b._s4war;
    const q=stage4WarfareShot(b,p,angle,C.missile?2.8+rank*.2:3.7+rank*.3,C.missile?'rocket':'lightningmg',{szMul:.70});
    Object.assign(q,{_sa14CoreShot:true,_sg17JetShot:true,_weaponProof:!C.missile,_shootable:C.missile,homing:false,_er26Source:'core',_air17Element:'lightning',_air17Missile:!!C.missile});
    if(C.missile){q.kind='emissile';q.hp=rank>=2?3:2;q.w=10;q.h=24;q._s4Accel=1.1;q._s4Max=5.8;Audio.SFX.enemyMissile?.();}
+   sg17Protect(q); // The helper's lightning missiles are dodge-only energy too.
    S.coreShots++;S.coreBarrelShots[side]++;b._er26.helperShots++;SG17.shots++;
    stage4CoreTurretMuzzle(b,d,side);if(!C.missile&&C.round%3===1)Audio.SFX.enemyMachineGunHeavy?.();C.shot=C.missile?.23:[.18,.15,.12,.10][rank];
   }

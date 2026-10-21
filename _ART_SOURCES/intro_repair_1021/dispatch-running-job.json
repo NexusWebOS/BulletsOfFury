@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 9c0e531a-9df5-4d5a-9bf8-ef6f9d8ae85a\njob_id: 9c0e531a-9df5-4d5a-9bf8-ef6f9d8ae85a\ndescription: Fixed256x144 pixel cinematic, locked camera and stationary control room. NON-LOOPING action: the two dispatchers SPRINT SCREEN RIGHT through the bright open doorway toward their jets outside. Lizzie leads, long curly auburn hair and yellow jacket, with real pumping arms, alternating bent knees and flying black boots. Decker follows, blond hair, black rectangular glasses, black-and-yellow jacket, running with urgent articulated strides. They translate across the room and EXIT screen right, first Lizzie then Decker; the final frames show the empty room with abandoned chairs and glowing consoles. Preserve exact faces, outfits, anatomy, room perspective and mounting positions. No in-place running, no camera pan/zoom, no extra people, letters or aircraft.\nframes: 32\nsize: 256x144px\ntransparent: False\nseed: 102111\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"9c0e531a-9df5-4d5a-9bf8-ef6f9d8ae85a\")\nasset_id: b1e6ff13-f8c5-52d7-be0c-a35282b29b04\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 2e062e44-ae8b-4ab7-ac2d-c9b2f3bcac3b\njob_id: 2e062e44-ae8b-4ab7-ac2d-c9b2f3bcac3b\nmodel: pro\ndescription: FRAME FORMAT: 256 x 256 pixel transparent sprite, fixed canvas pivot128,128 and one proportional scale. Improve the supplied actual Fury communications satellite in detailed Bullets of Fury arcade pixel art. Preserve its recognizable three dishes, central cylindrical relay, white eagle insignia, two rectangular side solar decks, cyan illuminated belt and lower engine. Rich dark chromium panels, sharp bright metallic bevels, tiny antennae and orange warning lamps. Intact healthy satellite before invasion. Three-quarter top-down space view, same silhouette and perspective as reference, full object centered with transparent margin for future alien tendrils. No text or extra objects.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 102101\nasset_id: 23bdb4af-9bd1-5936-be29-84b5300ace8a\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"2e062e44-ae8b-4ab7-ac2d-c9b2f3bcac3b\")"
+    }
+  ],
+  "isError": false
+}

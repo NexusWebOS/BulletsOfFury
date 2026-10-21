@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 3e9bbae7-f072-4602-b6df-aee459ec4f96\njob_id: 3e9bbae7-f072-4602-b6df-aee459ec4f96\nmodel: pro\ndescription: FRAME FORMAT: 512 x 288 pixels, fixed cinematic canvas and camera. Detailed Bullets of Fury arcade pixel-art scene. Lizzie and Decker at their dispatch consoles in the supplied observation tower, concerned and speaking into headsets while city warning lights flicker through the windows. Clearly show both faces in three-quarter side view and hands at controls, waist-up. LEFT Decker has the exact supplied blond swept hair, black rectangular glasses, slim young face, black flight jacket with yellow piping. RIGHT Lizzie has the exact supplied long curly auburn hair, warm tan skin and yellow flight jacket over black shirt. Preserve both identities, no generic military operators. Wide composition, twilight city outside, red alert lamps, cyan screens. Empty bottom quarter clear for separately drawn game dialogue. No letters, captions, logos, weapons, visible aircraft or UI frame.\nsize: 512x288px\ntransparent: False\ncandidates: 1\nreferences: 3\nseed: 102102\nasset_id: 96798a55-3c97-540c-ab58-209df37e1c1d\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"3e9bbae7-f072-4602-b6df-aee459ec4f96\")"
+    }
+  ],
+  "isError": false
+}

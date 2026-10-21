@@ -2,7 +2,9 @@
 /* Full authored hulls reserve ground traffic space at birth and after movement.
    Crowded vehicles wait upstream; their weapons keep their native clocks. */
 const GT18={serial:0,gap:12,resolving:false,stats:{reserved:0,queued:0,blocked:0},base:{
- spawn:spawnEnemy,separate:enemySeparate,drive:tankDriveStep,play:updatePlay,begin:beginStage}};
+ spawn:spawnEnemy,separate:enemySeparate,drive:tankDriveStep,play:updatePlay,begin:beginStage,drivable:tankDrivable}};
+function groundTrafficDamClear(y,h=0){return run.stage!==1||y+h/2<210||y-h/2>420;}
+tankDrivable=function(x,y,open){return groundTrafficDamClear(y)&&GT18.base.drivable.apply(this,arguments);};
 function groundTrafficVehicle(e){return !!e&&!e.dead&&e._dyingT==null&&!e.prop&&!e._prop&&!e._boss&&!e._amini&&!e._modTurret&&
  !!(e._tank||e._modTank||e._vkind==='tank'||/tank|crawler|halftrack|apc/i.test(e.type||''));}
 function groundTrafficFootprint(e){
@@ -15,6 +17,7 @@ function groundTrafficLegal(e,x,y){const W=worldWidth(),F=groundTrafficFootprint
  if(x<F.w*.35+6||x>W-F.w*.35-6)return false;
  if(typeof tankDrivable!=='function')return true;
  const sy=levelSrcY()+y,open=run.stage===4;
+ if(!groundTrafficDamClear(sy,F.h))return false;
  if(!tankDrivable(x,sy,open))return false;
  return run.stage!==4||[-1,1].every(s=>tankDrivable(x+s*F.w*.35,sy,open));
 }
@@ -30,7 +33,7 @@ function groundTrafficReserve(e,settled){const F=groundTrafficFootprint(e);let y
   const contacts=settled.filter(o=>groundTrafficTouch(e,o,e.x,y));if(!contacts.length)break;
   y=Math.min(...contacts.map(o=>o.y-(F.h+groundTrafficFootprint(o).h)/2-GT18.gap-.25));
  }
- if(Math.abs(y-e.y)<.01)return;
+ if(Math.abs(y-e.y)<.01&&groundTrafficDamClear(levelSrcY()+y,F.h))return;
  let legal=null;
  for(let n=0;n<=1536;n+=8){const yy=y-n;
   if(groundTrafficLegal(e,e.x,yy)&&!settled.some(o=>groundTrafficTouch(e,o,e.x,yy))){legal=yy;break;}}
@@ -52,7 +55,7 @@ spawnEnemy=function(){const start=enemies.length,r=GT18.base.spawn.apply(this,ar
 tankDriveStep=function(e){if(!groundTrafficVehicle(e))return GT18.base.drive.apply(this,arguments);
  const before={x:e.x,y:e.y,row:e._lvlY},clear=!enemies.some(o=>o!==e&&groundTrafficVehicle(o)&&groundTrafficTouch(e,o));
  const result=GT18.base.drive.apply(this,arguments);
- if(clear&&enemies.some(o=>o!==e&&groundTrafficVehicle(o)&&groundTrafficTouch(e,o))){
+ if(clear&&(!groundTrafficDamClear(levelSrcY()+e.y,groundTrafficFootprint(e).h)||enemies.some(o=>o!==e&&groundTrafficVehicle(o)&&groundTrafficTouch(e,o)))){
   e.x=before.x;e.y=before.y;e._lvlY=before.row;e.vx=0;e._trafficBusy=true;
   if(e._phase==='drive')e._phase='brake';GT18.stats.blocked++;return false;
  }e._trafficBusy=false;return result;};

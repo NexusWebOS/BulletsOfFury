@@ -100,7 +100,7 @@ stage4ShieldSyncNodes=function(b){
  const k=b._sa14?.scale||1;
  for(const n of H.nodes){n.x=b.x+n.side*H.anchorX*k;n.y=(b._drawY??b.y)+(H.anchorY+n.row*H.rowOffset)*k;}
 };
-function sa14Electric(q){return !!q&&(q._sa14Electric||s4ac13Electric(q));}
+function sa14Electric(q){return !!q&&(q._sg17Lightning||q._sa14Electric||s4ac13Electric(q));}
 s3kOrdnanceRules=function(q){if(sa14Electric(q)){q._weaponProof=true;q._shootable=false;q._s3kOriginalProof=true;return;}
  return SA14.base.rules.apply(this,arguments);};
 enemyOrdnanceCanIntercept=function(q){return !sa14Electric(q)&&SA14.base.canIntercept.apply(this,arguments);};

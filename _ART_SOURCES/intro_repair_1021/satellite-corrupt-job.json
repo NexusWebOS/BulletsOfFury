@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: ec122038-806b-4d9a-bf39-628fa154af91\njob_id: ec122038-806b-4d9a-bf39-628fa154af91\nmode: reference\nframes: 1\nsize: 256x256px\ntransparent: True\nedit: FRAME FORMAT: keep the exact256x256 canvas, center128,128, same satellite size, same pose and perspective. Final state of the supplied Fury satellite taken over by Dracodia. Preserve the recognisable three dishes, two rectangular side decks and eagle insignia. Alien BLACK chrome symbiote tendrils tightly entwine the hull and dishes, replacing clean circuitry with branching magenta-purple glowing machine veins. Central belt and engine turn sinister violet, a red alien mechanical heart blooms at the relay center. Tiny sharp biomechanical spines, parasitic cables, corrupted triangular plate growth. Use the Dracodia reference for alien dark-metal armor, red core and purple energy identity ONLY; no head, person, frame, letters or unrelated ship. Keep transparent margins, silhouette intact and stationary.\nseed: 102104\nasset_id: 69a1bf53-a57e-5d79-8fda-7b15838075b8\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"ec122038-806b-4d9a-bf39-628fa154af91\")"
+    }
+  ],
+  "isError": false
+}

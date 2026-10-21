@@ -1,11 +1,18 @@
 'use strict';
 /* Tutorial-only ownership: authored Cole portraits, B.O.B.'s live modules and dossier.
    Ordinary combat, controls, elements, targeting, audio and all campaign stages retain their owners. */
-const BOB20_SPEC=Object.freeze({missile:Object.freeze({hp:90,element:null}),cannon:Object.freeze({hp:110,element:null}),core:Object.freeze({hp:240,element:'ice',missileMultiplier:2})});
+const BOB20_SPEC=Object.freeze({missile:Object.freeze({element:null}),cannon:Object.freeze({element:null}),core:Object.freeze({element:'ice',missileMultiplier:2})});
+const IC21_TUNING={
+ easy:{hp:[90,110,240],tell:1.6,gap:1,shots:4,speed:3.1,strike:5,strikeWarn:2.5,move:.09,escorts:0,jetTell:1.1,jetGap:2.5,jetShots:2,jetSpeed:3},
+ normal:{hp:[120,145,300],tell:1.2,gap:.75,shots:5,speed:3.6,strike:4.6,strikeWarn:2,move:.14,escorts:0,jetTell:.95,jetGap:2.1,jetShots:3,jetSpeed:3.4},
+ hard:{hp:[165,195,410],tell:.95,gap:.6,shots:7,speed:4,strike:3.5,strikeWarn:1.7,move:.18,escorts:1,jetTell:.75,jetGap:1.55,jetShots:4,jetSpeed:3.9},
+ furious:{hp:[210,250,540],tell:.7,gap:.45,shots:9,speed:4.4,strike:2.6,strikeWarn:1.4,move:.22,escorts:2,jetTell:.6,jetGap:1.1,jetShots:5,jetSpeed:4.4}
+};
+function ic21Tuning(){return IC21_TUNING[diffKey]||IC21_TUNING.normal;}
 const IC20={base:{keys:sg20Keys,warm:sg20Warm,ready:sg20LayersReady,ask:tutAskDraw,
  overlay:tutOverlayDraw,update:updatePlay,next:tutNext,cleanup:tutCleanup,hold:tutHold,start:tutStart,
  draw:drawEnemy,hit:hitEnemy,kill:killEnemy,wave:sg20ExamWave,strikeTick:s6StrikeMissileTick,jet:jetTick},draws:0,partDraws:0,hits:[]};
-const IC20_KEYS=[...IC20_ART.portraits,IC20_ART.whole,IC20_ART.card,...Object.values(IC20_ART.parts),...Object.values(IC20_ART.views)].map(a=>a.key);
+const IC20_KEYS=[...IC20_ART.portraits,IC20_ART.whole,IC20_ART.card,...Object.values(IC20_ART.parts),...Object.values(IC20_ART.views)].map(a=>a.key).concat(['idle','happy','talk-closed','talk-small','talk-medium','talk-wide','talk-o'].map(e=>'comm_cole_'+e));
 for(const a of [...IC20_ART.portraits,IC20_ART.whole,IC20_ART.card,...Object.values(IC20_ART.parts),...Object.values(IC20_ART.views)])XART._src[a.key]=a.path;
 const IC20_MISSILES=[...Array.from({length:6},(_,i)=>'s1fx_jungle_missile_'+i),...Array.from({length:6},(_,i)=>S1_MUZZLE_MILITARY+'_'+i),...Array.from({length:8},(_,i)=>'laser_round_muzzle_'+i)];
 sg20Keys=function(){return [...IC20.base.keys(),...IC20_KEYS,...IC20_MISSILES];};
@@ -13,11 +20,11 @@ sg20Warm=function(){IC20.base.warm();for(const k of [...IC20_KEYS,...IC20_MISSIL
  if(!IC20.audio){IC20.audio=true;Snd.prepare(['expSmall','expBig','shieldHitHeavy','powerup','enemyMachineGunLight','missileLaunch']);}};
 sg20LayersReady=function(){return IC20.base.ready()&&IC20_KEYS.every(k=>XART.rdy(k))&&IC20_MISSILES.every(k=>XART.rdy(k));};
 tutStart=function(){IC20.hits=[];IC20.labStats={};return IC20.base.start.apply(this,arguments);};
-function ic20Port(smile=false){if(smile)return 'ic20_smile';
+function ic20Port(smile=false){if(smile)return 'comm_cole_happy';
  const T=TUT,t=T?T._sg?.time||T.t:0,typing=T&&(T.typed||0)<(T.say||T.text||'').length;
- return typing?['ic20_neutral','ic20_talk-small','ic20_neutral','ic20_talk-open'][Math.floor(t*8)%4]:'ic20_neutral';}
+ return typing?['comm_cole_talk-closed','comm_cole_talk-small','comm_cole_talk-medium','comm_cole_talk-wide'][Math.floor(t*8)%4]:'comm_cole_idle';}
 tutAskDraw=function(dt){const prior=dlgBox;
- dlgBox=function(o){return prior({...o,who:'COLE',portraitKey:'ic20_neutral',tint:UI20.color('COLE')});};
+ dlgBox=function(o){return prior({...o,who:'COLE',portraitKey:'comm_cole_idle',tint:UI20.color('COLE')});};
  try{return IC20.base.ask(dt);}finally{dlgBox=prior;}};
 function ic20Panel(full,shown,y=PLAY.y+5,h=100,smile=false){
  const r=ui20Panel('COLE',12,y,VW-24,h,true);if(!r)return;
@@ -34,10 +41,10 @@ function ic20BoxText(s,r,maxH,color='#e6f3f3'){
 function ic20Meter(x,y,w,h,ratio,color){ctx.fillStyle='#03080e';ctx.fillRect(x,y,w,h);ctx.fillStyle='#526776';ctx.fillRect(x+1,y+1,w-2,h-2);
  ctx.fillStyle='#0a131b';ctx.fillRect(x+2,y+2,w-4,h-4);ctx.fillStyle=color;ctx.fillRect(x+2,y+2,Math.max(0,w-4)*clamp(ratio,0,1),h-4);}
 function bob20Spawn(L,mode='exam'){
- const F=tutField(),G={x:F.cx,y:tutTop()+55,y0:tutTop()+55,k:.88,t:0,mode,parts:{},cycle:null,next:.8,turn:0};
+ const F=tutField(),G={x:F.cx,cx:F.cx,y:tutTop()+55,y0:tutTop()+55,k:.88,t:0,mode,parts:{},cycle:null,next:.4,missileNext:1.1,turn:0,tuning:ic21Tuning()};
  for(const id of mode==='exam'?['missile','cannon','core']:mode==='warn'?['cannon']:mode==='strike'?['missile']:['core']){
   const a=IC20_ART.parts[id],off={x:(a.target[0]-128)*G.k,y:(a.target[1]-128)*G.k};
-  const hp=mode==='exam'?BOB20_SPEC[id].hp:mode==='element'?150:9999;
+  const hp=mode==='exam'?G.tuning.hp[['missile','cannon','core'].indexOf(id)]:mode==='element'?150:9999;
   const e=tutSpawn('s1jetBomber',G.x+off.x,G.y+off.y,hp,{amp:0});if(!e)continue;
   e.w=id==='core'?66:id==='missile'?48:42;e.h=id==='core'?56:id==='missile'?94:108;
   e._bob20={id,G,off};e._esh=null;e._iceEnemy=id==='core';e.dropOk=false;
@@ -47,7 +54,7 @@ function bob20Spawn(L,mode='exam'){
 }
 function bob20Alive(e){return !!e&&!e.dead&&e.hp>0&&e._dyingT==null;}
 // B.O.B. borrows the native enemy damage/target container, never the Stage1 jet AI or its elite HP multipliers.
-jetTick=function(e,dt){if(e?._bob20)return;return IC20.base.jet.apply(this,arguments);};
+jetTick=function(e,dt){if(e?._tut)return;return IC20.base.jet.apply(this,arguments);};
 function bob20Pods(G){return ['missile','cannon'].some(id=>bob20Alive(G.parts[id]));}
 tutHold=function(dt){IC20.base.hold(dt);if(!tutLive())return;
  for(const e of enemies)if(e._bob20&&!e.dead){const {G,off}=e._bob20;
@@ -165,17 +172,17 @@ function ic20CardDraw(L){
  ctx.fillStyle='#030a13ed';ctx.fillRect(0,PLAY.y+105,VW,PLAY.h-105);
  if(XART.rdy(IC20_ART.card.key))ctx.drawImage(XART.get(IC20_ART.card.key),x,y,w,h);
  // Hide the Overdrive template's old insignia beneath the actual instructor's framed portrait.
- const p=rect(982,44,156,156);if(XART.rdy('ic20_neutral'))ui20Portrait(ctx,'ic20_neutral',p);
+ const p=rect(982,44,156,156);if(XART.rdy('comm_cole_idle'))ui20Portrait(ctx,'comm_cole_idle',p);
  text('B.O.B.',[278,80,644,43],39,'#ffd38b');
  text('BALLISTICS ORIENTATION BOT',[278,132,644,30],24,'#c0ebff');
  const names=['FULL UNIT','MISSILE POD','CANNON POD','CRYO REACTOR'];
  text(names[L.sel],[94,226,560,43],31,'#a5f5ff');
  if(a&&XART.rdy(a.key)){const f=Math.floor(L.yaw)%a.frames,c=a.cells[f],r=rect(92,278,564,315),sz=Math.min(r.w,r.h),mx=r.x+(r.w-sz)/2,my=r.y+(r.h-sz)/2;
   ctx.save();ctx.beginPath();ctx.rect(r.x,r.y,r.w,r.h);ctx.clip();ctx.imageSmoothingEnabled=false;ctx.drawImage(XART.get(a.key),...c,mx,my,sz,sz);ctx.restore();IC20.cardFrame={part:key,frame:f};IC20.cardLayout.model={x:mx,y:my,w:sz,h:sz};}
- const lines=key==='whole'?['440 TOTAL HP','TRAINING MECH / ICE','WEAK: FIRE X1.5','RESISTS ICE X0.5','PODS FIRST, THEN CORE','MISSILE CORE BONUS X2']:
- key==='core'?['240 HP / ICE','BLUE REACTOR TARGET','WEAK: FIRE X1.5','RESISTS ICE X0.5','RETINA MISSILE X2','SHUTTER: BOTH PODS']:
- key==='missile'?['90 HP / STEEL','GROUND MISSILE POD','NEUTRAL DAMAGE X1','NO ELEMENT BONUS','RETINA TARGET: POD','STOPS GROUND STRIKES']:
- ['110 HP / STEEL','FOV MACHINE CANNON','NEUTRAL DAMAGE X1','GREEN AIM / YELLOW SET','RED: LEAVE THE LANE','STOPS GUN VOLLEYS'];
+ const hp=ic21Tuning().hp,lines=key==='whole'?[hp.reduce((a,b)=>a+b,0)+' TOTAL HP',diffKey.toUpperCase()+' / ICE','WEAK: FIRE X1.5','RESISTS ICE X0.5','PODS FIRST, THEN CORE','MISSILE CORE BONUS X2']:
+ key==='core'?[hp[2]+' HP / ICE','BLUE REACTOR TARGET','WEAK: FIRE X1.5','RESISTS ICE X0.5','RETINA MISSILE X2','SHUTTER: BOTH PODS']:
+ key==='missile'?[hp[0]+' HP / STEEL','GROUND MISSILE POD','NEUTRAL DAMAGE X1','NO ELEMENT BONUS','RETINA TARGET: POD','STOPS GROUND STRIKES']:
+ [hp[1]+' HP / STEEL','FOV MACHINE CANNON','NEUTRAL DAMAGE X1','GREEN AIM / YELLOW SET','RED: LEAVE THE LANE','STOPS GUN VOLLEYS'];
  for(let i=0;i<lines.length;i++)text(lines[i],[735,234+i*56,364,42],27,i===2?'#ffd38b':'#e6f3f3');
  text('WHY HAVEN\'T I RETIRED YET?',[135,661,930,83],36,'#ffd38b');IC20.layoutCapture=null;
  if(typeof controlHintRow==='function')controlHintRow([['pad_dpad','PART / TURN'],['pad_a',L.age>3.8?'DEPLOY':'SCANNING'],['pad_b','FULL UNIT']]);
@@ -183,27 +190,63 @@ function ic20CardDraw(L){
 const IC20_CARD={id:'bob_card',good:'DOSSIER STUDIED',text:()=> 'MEET B.O.B.! INSPECT HIS PARTS. BREAK BOTH PODS TO EXPOSE THE ICE REACTOR. AIM RETINA MISSILES AT THE BLUE CORE.',
  start(L){L.age=0;L.yaw=0;L.sel=0;L.seen={0:true};},tick:ic20CardTick};
 TUT_LESSONS.splice(TUT_LESSONS.findIndex(d=>d.id==='exam'),0,IC20_CARD);
-const ic20ExamStart=SG20_EXAM.start,ic20ExamTick=SG20_EXAM.tick,ic20ExamDraw=SG20_EXAM.draw;
-sg20ExamWave=function(L){if(L.wave!==2)return IC20.base.wave(L);
+sg20ExamWave=function(L){if(L.wave!==2){
+ IC20.base.wave(L);const D=ic21Tuning(),F=tutField(),n=L.units.length+D.escorts;
+ while(L.units.length<n)L.units.push(tutSpawn('s1jetDelta',F.cx,tutTop()+35,45,{amp:0}));
+ L.units=L.units.filter(Boolean);L.units.forEach((e,i)=>{
+  e.hp=e.maxhp=(L.wave===1?40:55)*(1+D.escorts*.25);e._entry=0;
+  const x=F.L+F.W*(.16+.68*(i/(L.units.length-1||1)));
+  Object.assign(e._tutHold,{x,y:tutTop()+24+(i%2)*24,amp:0});
+  e._ic21Escort={home:x,wait:.25+i*.24,cycle:null,releases:0};
+ });return;
+}
  tutClearField();L.wave=3;L.gap=0;L.age=0;L.c=null;bob20Spawn(L,'exam');};
 SG20_EXAM.text=()=> 'GRADUATION: TWO ESCORT WAVES, THEN B.O.B. HIS PODS ARE REAL TARGETS. WATCH THE FOV AND GROUND WARNINGS. BREAK BOTH PODS, THEN HIT HIS EXPOSED BLUE CORE.';
 SG20_EXAM.obj=L=>L.wave<3?'ESCORT WAVE '+L.wave+' / 2':bob20Pods(L.bob)?'DISABLE BOTH WEAPON PODS':'REACTOR OPEN - RETINA + MISSILE';
-SG20_EXAM.tick=function(L,dt){if(L.wave<3)return ic20ExamTick(L,dt);
+function ic21JetRelease(e,C,D){
+ const y=e.y+e.h*.3,angle=Math.atan2(C.y-y,C.x-e.x);
+ for(const side of [-1,1]){const x=e.x+side*e.w*.22,before=eBullets.length;
+  tutShoot(x,y,angle,D.jetSpeed);
+  if(eBullets.length>before){wm26Emit(e,x,y,angle,'mg',null,{size:20,life:.12});e._af21FireAt=efxClock;}
+ }
+ C.fired++;e._ic21Escort.releases++;
+}
+function ic21EscortTick(L,dt){
+ const alive=tutAlive(L.units);if(!alive.length){L.gap+=dt;if(L.gap>1.3)sg20ExamWave(L);return false;}
+ const D=ic21Tuning(),F=tutField();L.age+=dt;
+ for(const [i,e]of alive.entries()){
+  const A=e._ic21Escort;if(!A)continue;
+  e._tutHold.x=clamp(A.home+Math.sin(L.age*(.75+D.escorts*.18)+i)*F.W*(.045+D.escorts*.018),F.L+32,F.R-32);
+  if(!A.cycle){A.wait-=dt;if(A.wait<=0)A.cycle={t:0,x:player.x,y:player.y,fired:0,warn:D.jetTell};}
+  const C=A.cycle;if(!C)continue;C.t+=dt;
+  if(C.t<C.warn*.65){C.x=player.x;C.y=player.y;}
+  if(C.t<C.warn){combatWarningTick(e,'ic21-escort',C.t,C.warn);continue;}
+  if(C.fired<D.jetShots&&C.t>=C.warn+C.fired*.10)ic21JetRelease(e,C,D);
+  if(C.t>C.warn+D.jetShots*.10){A.cycle=null;A.wait=D.jetGap;}
+ }return false;
+}
+SG20_EXAM.tick=function(L,dt){if(L.wave<3)return ic21EscortTick(L,dt);
  const G=L.bob;if(!G)return false;G.t+=dt;if(!Object.values(G.parts).some(bob20Alive)){L.gap+=dt;return L.gap>1.3;}
- if(!G.cycle){G.next-=dt;if(G.next<=0){const cannon=bob20Alive(G.parts.cannon),launcher=bob20Alive(G.parts.missile);
-  const type=cannon&&launcher?(G.turn++%2?'strike':'lane'):cannon?'lane':launcher?'strike':'core';
-  if(type==='strike'){G.q=bob20Ground(G.parts.missile);G.next=3.9;}
-  else G.cycle={type,t:0,x:player.x,fired:0};}}
+ const D=G.tuning,F=tutField(),exposed=!bob20Pods(G);
+ G.x=G.cx+Math.sin(G.t*(exposed?1.15:.8))*F.W*D.move;
+ if(bob20Alive(G.parts.missile)){G.missileNext-=dt;if(G.missileNext<=0){G.q=bob20Ground(G.parts.missile,D.strikeWarn);G.missileNext=D.strike;}}
+ if(!G.cycle){G.next-=dt;if(G.next<=0){
+  const type=bob20Alive(G.parts.cannon)?'lane':exposed?'core':null;
+  if(type)G.cycle={type,t:0,x:player.x,fired:0,warn:D.tell*(exposed?.78:1)};
+ }}
  const C=G.cycle;if(!C)return false;C.t+=dt;
- const gun=C.type==='core'?G.parts.core:G.parts.cannon;if(!bob20Alive(gun)){G.cycle=null;G.next=.8;return false;}
- if(C.t<1)C.x+=clamp(player.x-C.x,-110*dt,110*dt);
- if(C.t<3){combatWarningTick(gun,'bob20-lane',C.t,3);return false;}
- if(C.fired<6&&C.t>=3+C.fired*.16){const m=bob20Port(gun),a=Math.atan2(PLAY.y+PLAY.h-m.y,C.x-m.x);
-  for(const o of [-.08,0,.08])tutShoot(m.x,m.y,a+o,3);bob20Muzzle(gun);C.fired++;}
- if(C.t>5){G.cycle=null;G.next=1;}return false;
+ const gun=C.type==='core'?G.parts.core:G.parts.cannon;if(!bob20Alive(gun)){G.cycle=null;G.next=.2;return false;}
+ if(C.t<C.warn*.65)C.x+=clamp(player.x-C.x,-240*dt,240*dt);
+ if(C.t<C.warn){combatWarningTick(gun,'bob20-lane',C.t,C.warn);return false;}
+ if(C.fired<D.shots&&C.t>=C.warn+C.fired*.10){const m=bob20Port(gun),a=Math.atan2(PLAY.y+PLAY.h-m.y,C.x-m.x);
+  for(const o of C.type==='core'?[-.16,-.08,0,.08,.16]:[-.065,0,.065])tutShoot(m.x,m.y,a+o,D.speed);
+  bob20Muzzle(gun);C.fired++;}
+ if(C.t>C.warn+D.shots*.10){G.cycle=null;G.next=D.gap;}return false;
 };
-SG20_EXAM.draw=function(L){if(L.wave<3)return ic20ExamDraw(L);const G=L.bob,C=G?.cycle;
- if(C&&C.t<3){const e=C.type==='core'?G.parts.core:G.parts.cannon;if(bob20Alive(e))combatWarningDraw(e,{...bob20Port(e),ex:C.x,ey:PLAY.y+PLAY.h+20,progress:C.t/3,width:48});}
+SG20_EXAM.draw=function(L){if(L.wave<3){
+ for(const e of tutAlive(L.units)){const C=e._ic21Escort?.cycle;if(C&&C.t<C.warn)combatWarningDraw(e,{x:e.x,y:e.y+e.h*.3,ex:C.x,ey:C.y,progress:C.t/C.warn,width:26});}return;
+}const G=L.bob,C=G?.cycle;
+ if(C&&C.t<C.warn){const e=C.type==='core'?G.parts.core:G.parts.cannon;if(bob20Alive(e))combatWarningDraw(e,{...bob20Port(e),ex:C.x,ey:PLAY.y+PLAY.h+20,progress:C.t/C.warn,width:C.type==='core'?72:48});}
 };
 updatePlay=function(dt){if(!tutLive()||TUT.L?.def.id!=='bob_card')return IC20.base.update.apply(this,arguments);
  if(pauseTapped()){setState('paused');return;}
@@ -226,3 +269,27 @@ tutOverlayDraw=function(){const T=TUT;if(!T?.L)return;const D=T.L.def,full=T.say
 };
 BOFTUTORIAL.lessons=TUT_LESSONS.map(d=>d.id);
 window.BOFINSTRUCTOR={name:'Instructor Cole',boss:'B.O.B. - Ballistics Orientation Bot',get artReady(){return sg20LayersReady();},get hits(){return IC20.hits;},get bossState(){return TUT?.L?.bob;},get card(){return IC20.cardFrame;}};
+// Mike's red/black formal portrait belongs to the author credits. Flight training
+// uses the actual green-uniform Cole comm bank above.
+drawCredits=function(dt){
+ scrollSpaceBG(dt);const logo='cf_logo';
+ if(XART.rdy(logo)){const im=XART.get(logo),w=250,h=w*im.height/im.width;ctx.drawImage(im,VW/2-w/2,55-h/2,w,h);}
+ ['cfic_shield','cfic_star','cfic_wings','cfic_radar'].forEach((key,i)=>{
+  if(XART.rdy(key)){const im=XART.get(key),w=32,h=w*im.height/im.width;ctx.drawImage(im,VW/2-82+i*44,97-h/2,w,h);}
+ });
+ if(XART.rdy('cfui_panel')){const im=XART.get('cfui_panel'),w=VW-40,h=w*im.height/(im.width-110);ctx.drawImage(im,110,0,im.width-110,im.height,20,160,w,h);}
+ ui20Portrait(ctx,'ic20_neutral',{x:50,y:201,w:96,h:96});
+ msgFaceUse('dialogue');
+ IC20.creditsLayout=[];
+ const text=(value,x,y,w,h,maxH=14,color='#eaf2ff')=>{const layout=msgDrawBlock({text:value,budget:value.length,x,y,w,h,maxH,minH:8,lineMul:1.25,color,align:'center',valign:'middle',stableCenter:true,outline:false});IC20.creditsLayout.push({text:value,x,y,w,h,layout});return layout;};
+ text('CREDITS',24,133,VW-48,22,18,'#ffd58b');
+ text('MICHAEL\n"FORGE MASTER"\nCOLE',165,206,VW-211,78,16,'#ffd58b');
+ text('DIRECTOR / DESIGNER / CODER\nMUSIC / SOUNDS',48,302,VW-96,30,12);
+ text('ART',48,342,VW-96,16,12,'#a7cce5');
+ text('GPT IMAGES, NANO BANANA PRO\n& SPRITECOOK',48,361,VW-96,30,12);
+ text('WRITTEN, CODED AND DESIGNED BY\nMICHAEL "FORGE MASTER" COLE',48,408,VW-96,22,9);
+ text('COLEFORGE PHOENIX ENGINE',28,470,VW-56,15,10,'#a7cce5');
+ msgFaceUse(null);controlHintRow([['pad_b','BACK']]);
+ if(Input.mouse.down&&!drawCredits._md)Input.injectTap('enter');drawCredits._md=Input.mouse.down;
+ if(Input.menuConfirm()||Input.menuBack()||backButton()){setState(GS.TITLE);menuIndex=3;}
+};

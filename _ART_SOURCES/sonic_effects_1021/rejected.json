@@ -1,0 +1,9 @@
+{
+  "rejectedSeeds": [
+    {"job": "f16e132e-0d4c-42da-8fd5-a8ed4de8d549", "reason": "Generated a tank/card instead of an isolated charge effect. Never integrated."}
+  ],
+  "supersededAnimations": [
+    {"job": "8eb40f69-6888-463c-a341-249813dec25e", "reason": "Concentric target and gray matte; superseded by true spiral job abf6bc96-9873-44c8-8fbb-e473edc18c6d. Retained source, excluded from final runtime export."}
+  ],
+  "tankRingSelection": {"job": "78d100d6-ca85-41f0-bdfe-2b6b0cae9d8c", "acceptedIndices": [0,1,4,5,6,9,10,11,12,15,16], "reason": "Discard six poses with excessive outer-radius collapse or center artifacts; retain fixed common canvas/pivot and native safe-arc clipping."}
+}

@@ -6,8 +6,8 @@ b20Register(HB20_ART);
 const HB20_PICKUP={box:'hb20_chaingun_crate_exclusive',icon:'hb20_chaingun_icon_exclusive'};
 XART._src[HB20_PICKUP.box]='assets/game/shared/pickups/hammer_chaingun_1020/crate.webp';
 XART._src[HB20_PICKUP.icon]='assets/game/shared/pickups/hammer_chaingun_1020/icon.webp';
-// The existing counter solver reads measured head locations from these frames.
-HM10_ART.swing_right=HB20_ART.banks.counter_right;HM10_ART.swing_left=HB20_ART.banks.counter_left;
+// Stage5 keeps its original sixteen-pose side swings and measured hammer tips.
+// Dracodia's independent form selects its own HB20 banks below.
 const hb20AllKeys=()=>[...b20Keys(HB20_ART.banks),...Object.values(HB20_PICKUP)];
 v18Keys=function(){return [...HB20.base.keys(),...hb20AllKeys()];};
 v18Warm=function(){const before=HB20.base.warm();return Object.values(HB20_PICKUP).map(k=>XART.rdy(k)).every(Boolean)&&b20Ready(HB20_ART.banks)&&before;};
@@ -16,41 +16,17 @@ function hb20Own(b){return v19Native(b)&&b._r30.v18.form===8;}
 function hb20State(b){return j3State(b).hb20;}
 function hb20Pick(name,t=0,d=1,loop=false){return b20Frame(HB20_ART.banks[name],t,d,loop);}
 function hb20World(a,p,b,k=1.4,rot=0){const x=(p[0]-a.pivot[0])*k,y=(p[1]-a.pivot[1])*k;return{x:b.x+x*Math.cos(rot)-y*Math.sin(rot),y:b.y+x*Math.sin(rot)+y*Math.cos(rot)};}
-function hb20Blue(b){const h=b._hammer,s=h.state,C=h.hc11Counter;let a,k=1.4,rot=0;
- if(C)return{a:HM10_ART[C.bank][hc11Frame(C)],k:HM10.bodyScale*C.scale,rot:C.angle,kind:'counter'};
- if(h.hb20Pickup){const q=h.hb20Pickup;a=hb20Pick('blue_slam',clamp((q.t-.8)/1.4,0,1),1);}
- else if(['chain_warn','chaingun','chain_cool','chaingun_draw'].includes(s)&&!h.chainDestroyed)a=hb20Pick('blue_gun',h.t,.56,s==='chaingun');
- else if(['curl','ball','uncurl'].includes(s))return null; // Native blue spikeball is explicitly retained.
- else if(['flyby','return','unfold'].includes(s))a=hb20Pick('blue_entry',s==='unfold'?h.t:0,2);
- else if(b._hammerTime?.mode==='intro')a=hb20Pick('blue_entry',(b._hammerTime.clock||0)/Math.max(1,ht27IntroEnd())*2,2);
- else if(hf19Recovery(b)){const q=hf19Pick(b);if(q)return{...q,rot:0};a=hb20Pick('blue_empty');}
- else if(h.throw||h.hammerDestroyed)a=hb20Pick('blue_empty');
- else if(s==='spin'||s==='revenge_charge'||s==='hammer_catch')a=hb20Pick('blue_throw',h.t,s==='spin'?HAMMER_SPIN_TIME:1.2);
- else if(['whirlwind','whirl_warn','whirl_turn','fr_twirl'].includes(s))a=hb20Pick('blue_spin',h.t,.8,true);
- else if(/dance/.test(s)||b._hammerTime&&b._hammerTime.mode!=='attack'||b._hama&&b._hama.mode!=='attack')a=hb20Pick('blue_dance',h.t,1.5,true);
- else if(['warn','leap','recover','giant_windup','giant_rise','giant_warn','giant_dive','giant_sweep','storm_warn','storm_slam'].includes(s)){
-  let u=s==='warn'?clamp(h.t/(hammerFurious()?.58:1.2),0,1)*.45:s==='leap'?.45+clamp(h.t/(hammerFurious()?.27:.52),0,1)*.28:s==='recover'?.73+clamp(h.t/hammerRecoverDuration(),0,1)*.27:s==='giant_dive'?.45+clamp(h.t/.52,0,1)*.28:s==='giant_sweep'?.73:.36;
-  a=hb20Pick('blue_slam',u,1);if(s.startsWith('giant_'))k*=hammerDepthScale(b);
- }else if(['storm_raise','storm_rebuild','shield','fr_activation','spell','spell_blast','mega_charge','mega_beam','nova_charge','nova_release'].includes(s))a=hb20Pick('blue_slam',.35+Math.sin(h.t*3)*.035,1);
- else a=hb20Pick('blue_idle');
- return a?{a,k,rot,kind:s}:null;
-}
-// Suppress only retired actor plates while the native Stage5 warning/effect draw
-// runs. Shared effects, flying hammers, retinas and the retained spikeball remain.
-const hb20Get=XART.get,hb20Tint=xartTint,hb20Blit=ctx.drawImage;
-XART.get=function(key){const im=hb20Get.apply(this,arguments);if(im)HB20.tags.set(im,key);return im;};
-xartTint=function(key){const im=hb20Tint.apply(this,arguments);if(im)HB20.tags.set(im,key);return im;};
-function hb20Retired(key){return /^(hb20_counter_|hf19_(chaingun|recovery)|hm10_(shield_form|shield_wall|core|swing_)|pt11_hammer_core|ht27_boss|hama_boss|fr27_chromium_actions)/.test(key)||/^arch_(idle|master|leap_strike|ship_transform|twirl_throw|chaingun_detach_fire|chaingun_break_enrage|blaster_body|blaster_gun|orbital_sweep|whirlwind|hammer_overhead|hammer_throw|storm_charge|combat|spell_raise|stun|arsenal_cast)/.test(key);}
-ctx.drawImage=function(im){if(HB20.painting&&hb20Retired(HB20.tags.get(im)||''))return;return hb20Blit.apply(this,arguments);};
-hammerBossDraw=function(b){if(!b?._hammer||b._gp4Host||b.dead)return HB20.base.draw.apply(this,arguments);const q=hb20Blue(b),old=HB20.painting;
- if(q)HB20.painting=b;try{HB20.base.draw.apply(this,arguments);}finally{HB20.painting=old;}
- if(q){b20Image(q.a,b.x,b.y,q.k,q.rot,b.flash||0);HB20.draws[q.kind]=(HB20.draws[q.kind]||0)+1;hm10WallDraw(b);
-  if(q.kind==='chaingun'&&b._hammer.chainMuzzle>0){const m=hammerBlasterMount(b);wm26Draw(ctx,'chaingun',m.x,m.muzzleY,Math.PI/2,1-b._hammer.chainMuzzle/.09,48);}}
- if(b._hammer.hb20Pickup)hb20PickupDraw(b,b._hammer.hb20Pickup,false);
+function hb20PickupFrame(C){const t=C.t;return t<.8?0:t<1.3?Math.min(3,Math.floor((t-.8)/.5*4)):t<1.78?4+Math.min(2,Math.floor((t-1.3)/.48*3)):7+Math.min(4,Math.floor((t-1.78)/1.07*5));}
+hammerBossDraw=function(b){const C=b?._hammer?.hb20Pickup;
+ if(!C||b._gp4Host||b.dead)return HB20.base.draw.apply(this,arguments);
+ // The crate interlude uses the same authored orbital strike as the fight.
+ hammerBossAtmosphereDraw(b);hammerOrbitalPose(b,hb20PickupFrame(C),1,b.flash>0?'white':null);hb20PickupDraw(b,C,false);
 };
-hammerHeadPoint=function(b){if(!b?._hammer||b._gp4Host||b._hammer.hc11Counter||b._hammer.throw)return HB20.base.head.apply(this,arguments);const q=hb20Blue(b);return q?.a.tip?hb20World(q.a,q.a.tip,b,q.k,q.rot):HB20.base.head.apply(this,arguments);};
-hammerBlasterMount=function(b){const m=HB20.base.mount.apply(this,arguments);if(!b?._hammer||b._gp4Host)return m;return{...m,x:b.x,y:b.y+55,muzzleY:b.y+140};};
-function hb20Pickup(b,corrupt=false){const a=hb20Pick(corrupt?'corrupt_slam':'blue_slam',corrupt?.52:.7,1),k=corrupt?1.1:1.4,station={x:clamp(b.x,camLeftX()+160,camRightX()-160),y:clamp(b.y,viewTopY()+130,viewTopY()+viewH()*.45)},box=hb20World(a,a.tip||[77,180],station,k);return{t:0,origin:{x:b.x,y:b.y},station,box,corrupt,hit:false,obtained:false};}
+hammerHeadPoint=function(b){const C=b?._hammer?.hb20Pickup;
+ if(!C||b._gp4Host)return HB20.base.head.apply(this,arguments);
+ const r=HAMMER_STRIKE_REEL[hb20PickupFrame(C)];return{x:b.x+(r[6]-r[4])*.70,y:b.y+(r[7]-r[5])*.70};
+};
+function hb20Pickup(b,corrupt=false){const station={x:clamp(b.x,camLeftX()+160,camRightX()-160),y:clamp(b.y,viewTopY()+130,viewTopY()+viewH()*.45)},r=HAMMER_STRIKE_REEL[7],a=corrupt?hb20Pick('corrupt_slam',.52,1):null,box=corrupt?hb20World(a,a.tip||[77,180],station,1.1):{x:station.x+(r[6]-r[4])*.70,y:station.y+(r[7]-r[5])*.70};return{t:0,origin:{x:b.x,y:b.y},station,box,corrupt,hit:false,obtained:false};}
 hammerPhaseTwoStart=function(b){if(b._gp4Host||b._hammer.hb20PickupDone)return HB20.base.phase.apply(this,arguments);const h=b._hammer;h.hb20Pickup=hb20Pickup(b);h.phasePending=false;h.throw=null;h.hammerDestroyed=false;h.hammerHP=Math.max(1,h.hammerHP);hammerState(b,'hb20_pickup');b._noHit=false;b20Cue('bossWeaponCharge');b20Log('hammer-crate-spawn',{stage:5});};
 function hb20PickupTick(b,C,dt){C.t+=dt;const u=v19Ease(C.t/.8);b.x=lerp(C.origin.x,C.station.x,u);b.y=lerp(C.origin.y,C.station.y,u);
  if(!C.hit&&C.t>=1.78){C.hit=true;explode(C.box.x,C.box.y,54,C.corrupt?'purple':'blue');b20Cue('hammerImpact');b20Log('hammer-crate-struck',{stage:C.corrupt?8:5});}
@@ -71,7 +47,7 @@ function hb20Start(b,type){const Q=hb20State(b),rank=b20Rank(),T=[1.55,1.3,1.1,.
  if(A.type==='skystrike'){A.tell=[1.9,1.65,1.45,1.3][rank];A.duration=A.tell+1.75;}
  else if(A.type==='pickup'){A.crate=hb20Pickup(b,true);A.duration=2.85;}
  else if(A.type==='break'){A.tell=0;A.duration=4.6;Q.broken=true;Q.gunSeen=true;Q.parts[1].destroyed=true;Q.parts[2].destroyed=true;Q.shield=4.65;}
- else if(A.type==='luminaire'){A.tell=[2.65,2.35,2.1,1.9][rank];A.duration=A.tell+.65;A.safe=Q.safe;A.area={left:camLeftX(),top:viewTopY(),w:viewW(),h:viewH()};A.coreFrom={x:b.x,y:b.y-45};}
+ else if(A.type==='luminaire'){A.tell=[2.65,2.35,2.1,1.9][rank];A.duration=A.tell+.65;A.safe=Q.safe;A.area={left:camLeftX(),top:viewTopY(),w:viewW(),h:viewH()};A.coreFrom={x:b.x,y:b.y};}
  else if(A.type==='fire'){A.tell=0;A.duration=1.9;Q.rage=true;Q.broken=true;Q.parts[1].destroyed=true;b.name='DRACODIA — UNBOUND FIRE';}
  else if(A.type==='ball'){A.duration=T+3.1;A.dir=target.x>=b.x?1:-1;A.from={x:b.x,y:b.y};A.to={x:A.dir>0?camRightX()-60:camLeftX()+60,y:viewTopY()+viewH()*.76};}
  else if(A.type==='gun'){A.duration=T+3.5;A.dir=b.x>(camLeftX()+camRightX())/2?-1:1;Q.parts[2].destroyed=false;}
@@ -122,7 +98,7 @@ v19NativeTick=function(b,dt){if(!hb20Own(b)||!hb20State(b))return HB20.base.nati
   if(A.type==='pickup'){const done=hb20PickupTick(b,A.crate,dt);if(done)A.t=A.duration;}
   else if(A.type==='skystrike'){if(A.t<.6){const v=A.t/.6;Q.scale=lerp(1,.25,v);b.y=lerp(A.origin.y,viewTopY()-170,v);b._noHit=true;}
    else if(u<0){Q.scale=.25;b.x=A.target.x;b.y=viewTopY()-170;b._noHit=true;}
-   else if(u<.65){const v=v19Ease(u/.65);Q.scale=lerp(.25,1.2,v);const q=hb20Pick('corrupt_slam',.70,1),at=hb20World(q,q.tip,b,1.1*1.2);b.x=lerp(A.target.x,A.target.x-(at.x-b.x),v);b.y=lerp(viewTopY()-170,A.target.y-(at.y-b.y),v);b._noHit=v<.7;}
+   else if(u<.65){const v=v19Ease(u/.65);Q.scale=lerp(.25,1.2,v);const pose=hb20Pose(b),at=hb20World(pose.a,pose.a.tip||[77,180],b,pose.k,pose.rot);b.x=lerp(A.target.x,A.target.x-(at.x-b.x),v);b.y=lerp(viewTopY()-170,A.target.y-(at.y-b.y),v);b._noHit=v<.7;}
    if(u>=.65&&!A.impact){A.impact=true;hb20Melee(b,A,A.target,A.target,46);hb20Wave(b,Q,A.target);explode(A.target.x,A.target.y,100,'purple');shake=Math.max(shake,10);}
   }
   else if(A.type==='shield'){if(u>=0)Q.shield=.15;}

@@ -13144,8 +13144,8 @@ console.log("=== 265. Stage-1 VFX edge safety and Overlord hunter flight ===");
      'below half health, authored smoke emits from the rotor hub rather than the tail');
   ok(Math.abs(_rage265.jx)>0.05||Math.abs(_rage265.jy)>0.05,
      'the damaged helicopter carries localized aggressive shake without moving its collision path');
-  ok(vm.runInContext("(function(){var s=drawBossSprite.toString();return s.indexOf('_ovChargeGlow')>=0&&s.indexOf(\"'#ff321f'\")>=0;})()",ctxv),
-     'the renderer shows the growing green charge glow and the enraged red hull pulse');
+  ok(vm.runInContext("(function(){var s=drawBossSprite.toString();return s.indexOf('_ovChargeGlow')<0&&s.indexOf(\"'#ff321f'\")>=0;})()",ctxv),
+     'the renderer omits the retired impact charge overlay and retains the enraged red hull pulse');
 }
 
 // ===== 266. MOVING MUZZLE HARDPOINTS + STAGE-2 VOLCANIC OVERHAUL =====

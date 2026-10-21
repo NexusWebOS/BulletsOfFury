@@ -1,0 +1,1674 @@
+{
+  "native": {
+    "passed": 105,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "normal hammer draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_idle",
+          "keys": [
+            "ha21_blue_idle_0"
+          ],
+          "suppressed": 1
+        }
+      },
+      {
+        "name": "normal hammer retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 588,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal warn draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_jump",
+          "keys": [
+            "bmfx_fov_yellow_tall",
+            "hammer_reticle",
+            "ha21_blue_jump_4"
+          ],
+          "suppressed": 6
+        }
+      },
+      {
+        "name": "normal warn retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 520,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal leap draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_jump",
+          "keys": [
+            "ha21_blue_jump_10"
+          ],
+          "suppressed": 11
+        }
+      },
+      {
+        "name": "normal leap retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 573,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal spin draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_throw",
+          "keys": [
+            "ha21_blue_throw_2"
+          ],
+          "suppressed": 16
+        }
+      },
+      {
+        "name": "normal spin retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 576,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal whirlwind draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_spin",
+          "keys": [
+            "ha21_blue_spin_7"
+          ],
+          "suppressed": 22
+        }
+      },
+      {
+        "name": "normal whirlwind retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 560,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal storm_raise draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_hold",
+          "keys": [
+            "ha21_blue_hold_9"
+          ],
+          "suppressed": 27
+        }
+      },
+      {
+        "name": "normal storm_raise retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 835,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal spell draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_cast",
+          "keys": [
+            "ha21_blue_cast_5"
+          ],
+          "suppressed": 33
+        }
+      },
+      {
+        "name": "normal spell retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 436,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal mega_charge draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_beam_empty",
+          "keys": [
+            "ha21_blue_beam_empty_7",
+            "bmfx_fov_yellow_tall"
+          ],
+          "suppressed": 38
+        }
+      },
+      {
+        "name": "normal mega_charge retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 11301,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal enrage draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_rage",
+          "keys": [
+            "ha21_blue_rage_5"
+          ],
+          "suppressed": 43
+        }
+      },
+      {
+        "name": "normal enrage retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 884,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal fr_activation draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_chromium",
+          "keys": [
+            "fv21_shield_wall_0",
+            "ha21_blue_chromium_4"
+          ],
+          "suppressed": 48
+        }
+      },
+      {
+        "name": "normal fr_activation retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 2696,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal curl draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_to_ball",
+          "keys": [
+            "ha21_blue_to_ball_9"
+          ],
+          "suppressed": 53
+        }
+      },
+      {
+        "name": "normal curl retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 790,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal unfold draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_from_ship",
+          "keys": [
+            "ha21_blue_from_ship_5"
+          ],
+          "suppressed": 58
+        }
+      },
+      {
+        "name": "normal unfold retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 1305,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "normal stun retains original kneeling recovery acting",
+        "passed": true,
+        "data": {
+          "pick": null,
+          "old": "recovery",
+          "keys": [
+            "arch_stun_0920",
+            "arch_stun_static_0926"
+          ]
+        }
+      },
+      {
+        "name": "normal real committed counter finishes with new measured side swing and aligned hammer contact",
+        "passed": true,
+        "data": {
+          "done": true,
+          "keys": [
+            "hammer_reticle",
+            "bmfx_badge_green",
+            "bmfx_fov_green_tall",
+            "ha21_blue_counter_left_0",
+            "ha21_blue_counter_left_1",
+            "ha21_blue_counter_left_2",
+            "ha21_blue_counter_left_3",
+            "ha21_blue_counter_left_4",
+            "bmfx_fov_yellow_tall",
+            "ha21_blue_counter_left_5",
+            "ha21_blue_counter_left_6",
+            "ha21_blue_counter_left_7",
+            "bmfx_fov_red_tall",
+            "ha21_blue_counter_left_8",
+            "ha21_blue_counter_left_9",
+            "ha21_blue_counter_left_10",
+            "arch_leap_shock",
+            "ha21_blue_counter_left_11",
+            "ha21_blue_counter_left_12",
+            "ha21_blue_counter_left_13",
+            "ha21_blue_counter_left_14",
+            "ha21_blue_counter_left_15",
+            "ha21_blue_idle_0"
+          ],
+          "error": 0,
+          "finite": true
+        }
+      },
+      {
+        "name": "hard hammer draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_idle",
+          "keys": [
+            "ha21_blue_idle_0"
+          ],
+          "suppressed": 179
+        }
+      },
+      {
+        "name": "hard hammer retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 588,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard warn draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_jump",
+          "keys": [
+            "bmfx_fov_yellow_tall",
+            "hammer_reticle",
+            "ha21_blue_jump_4"
+          ],
+          "suppressed": 183
+        }
+      },
+      {
+        "name": "hard warn retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 520,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard leap draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_jump",
+          "keys": [
+            "ha21_blue_jump_10"
+          ],
+          "suppressed": 187
+        }
+      },
+      {
+        "name": "hard leap retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 573,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard spin draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_throw",
+          "keys": [
+            "ha21_blue_throw_2"
+          ],
+          "suppressed": 191
+        }
+      },
+      {
+        "name": "hard spin retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 576,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard whirlwind draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_spin",
+          "keys": [
+            "ha21_blue_spin_7"
+          ],
+          "suppressed": 196
+        }
+      },
+      {
+        "name": "hard whirlwind retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 560,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard storm_raise draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_hold",
+          "keys": [
+            "ha21_blue_hold_9"
+          ],
+          "suppressed": 200
+        }
+      },
+      {
+        "name": "hard storm_raise retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 835,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard spell draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_cast",
+          "keys": [
+            "ha21_blue_cast_5"
+          ],
+          "suppressed": 205
+        }
+      },
+      {
+        "name": "hard spell retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 436,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard mega_charge draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_beam_empty",
+          "keys": [
+            "ha21_blue_beam_empty_7",
+            "bmfx_fov_yellow_tall"
+          ],
+          "suppressed": 209
+        }
+      },
+      {
+        "name": "hard mega_charge retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 12228,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard enrage draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_rage",
+          "keys": [
+            "ha21_blue_rage_5"
+          ],
+          "suppressed": 213
+        }
+      },
+      {
+        "name": "hard enrage retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 884,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard fr_activation draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_chromium",
+          "keys": [
+            "fv21_shield_wall_0",
+            "ha21_blue_chromium_4"
+          ],
+          "suppressed": 217
+        }
+      },
+      {
+        "name": "hard fr_activation retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 2696,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard curl draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_to_ball",
+          "keys": [
+            "ha21_blue_to_ball_9"
+          ],
+          "suppressed": 221
+        }
+      },
+      {
+        "name": "hard curl retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 790,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard unfold draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_from_ship",
+          "keys": [
+            "ha21_blue_from_ship_5"
+          ],
+          "suppressed": 225
+        }
+      },
+      {
+        "name": "hard unfold retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 1305,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "hard stun retains original kneeling recovery acting",
+        "passed": true,
+        "data": {
+          "pick": null,
+          "old": "recovery",
+          "keys": [
+            "arch_stun_0920",
+            "arch_stun_static_0926"
+          ]
+        }
+      },
+      {
+        "name": "hard real committed counter finishes with new measured side swing and aligned hammer contact",
+        "passed": true,
+        "data": {
+          "done": true,
+          "keys": [
+            "hammer_reticle",
+            "bmfx_badge_green",
+            "bmfx_fov_green_tall",
+            "ha21_blue_counter_left_0",
+            "ha21_blue_counter_left_1",
+            "ha21_blue_counter_left_2",
+            "ha21_blue_counter_left_3",
+            "ha21_blue_counter_left_4",
+            "bmfx_fov_yellow_tall",
+            "ha21_blue_counter_left_5",
+            "ha21_blue_counter_left_6",
+            "ha21_blue_counter_left_7",
+            "bmfx_fov_red_tall",
+            "ha21_blue_counter_left_8",
+            "ha21_blue_counter_left_9",
+            "ha21_blue_counter_left_10",
+            "arch_leap_shock",
+            "ha21_blue_counter_left_11",
+            "ha21_blue_counter_left_12",
+            "ha21_blue_counter_left_13",
+            "ha21_blue_counter_left_14",
+            "ha21_blue_counter_left_15",
+            "ha21_blue_idle_0"
+          ],
+          "error": 0,
+          "finite": true
+        }
+      },
+      {
+        "name": "furious hammer draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_idle",
+          "keys": [
+            "ha21_blue_idle_0"
+          ],
+          "suppressed": 339
+        }
+      },
+      {
+        "name": "furious hammer retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 588,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious warn draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_jump",
+          "keys": [
+            "bmfx_fov_red_tall",
+            "hammer_reticle",
+            "ha21_blue_jump_7"
+          ],
+          "suppressed": 343
+        }
+      },
+      {
+        "name": "furious warn retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 1123,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious leap draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_jump",
+          "keys": [
+            "ha21_blue_jump_10"
+          ],
+          "suppressed": 347
+        }
+      },
+      {
+        "name": "furious leap retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 573,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious spin draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_throw",
+          "keys": [
+            "ha21_blue_throw_2"
+          ],
+          "suppressed": 351
+        }
+      },
+      {
+        "name": "furious spin retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 576,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious whirlwind draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_spin",
+          "keys": [
+            "ha21_blue_spin_7"
+          ],
+          "suppressed": 356
+        }
+      },
+      {
+        "name": "furious whirlwind retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 560,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious storm_raise draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_hold",
+          "keys": [
+            "ha21_blue_hold_9"
+          ],
+          "suppressed": 360
+        }
+      },
+      {
+        "name": "furious storm_raise retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 835,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious spell draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_cast",
+          "keys": [
+            "ha21_blue_cast_5"
+          ],
+          "suppressed": 365
+        }
+      },
+      {
+        "name": "furious spell retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 436,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious mega_charge draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_beam_empty",
+          "keys": [
+            "ha21_blue_beam_empty_7",
+            "bmfx_fov_yellow_tall"
+          ],
+          "suppressed": 369
+        }
+      },
+      {
+        "name": "furious mega_charge retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 11905,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious enrage draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_rage",
+          "keys": [
+            "ha21_blue_rage_5"
+          ],
+          "suppressed": 373
+        }
+      },
+      {
+        "name": "furious enrage retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 884,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious fr_activation draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_chromium",
+          "keys": [
+            "fv21_shield_wall_0",
+            "ha21_blue_chromium_4"
+          ],
+          "suppressed": 377
+        }
+      },
+      {
+        "name": "furious fr_activation retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 2696,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious curl draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_to_ball",
+          "keys": [
+            "ha21_blue_to_ball_9"
+          ],
+          "suppressed": 381
+        }
+      },
+      {
+        "name": "furious curl retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 790,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious unfold draws exactly one new whole actor without retired body blits",
+        "passed": true,
+        "data": {
+          "kind": "blue_from_ship",
+          "keys": [
+            "ha21_blue_from_ship_5"
+          ],
+          "suppressed": 385
+        }
+      },
+      {
+        "name": "furious unfold retains visible hit flash and authored palette after expiry",
+        "passed": true,
+        "data": {
+          "white": 1305,
+          "expiry": 0,
+          "timer": 0.12
+        }
+      },
+      {
+        "name": "furious stun retains original kneeling recovery acting",
+        "passed": true,
+        "data": {
+          "pick": null,
+          "old": "recovery",
+          "keys": [
+            "arch_stun_0920",
+            "arch_stun_static_0926"
+          ]
+        }
+      },
+      {
+        "name": "furious real committed counter finishes with new measured side swing and aligned hammer contact",
+        "passed": true,
+        "data": {
+          "done": true,
+          "keys": [
+            "hammer_reticle",
+            "bmfx_badge_green",
+            "bmfx_fov_green_tall",
+            "ha21_blue_counter_left_0",
+            "ha21_blue_counter_left_1",
+            "ha21_blue_counter_left_2",
+            "ha21_blue_counter_left_3",
+            "ha21_blue_counter_left_4",
+            "bmfx_fov_yellow_tall",
+            "ha21_blue_counter_left_5",
+            "ha21_blue_counter_left_6",
+            "ha21_blue_counter_left_7",
+            "bmfx_fov_red_tall",
+            "ha21_blue_counter_left_8",
+            "ha21_blue_counter_left_9",
+            "ha21_blue_counter_left_10",
+            "arch_leap_shock",
+            "ha21_blue_counter_left_11",
+            "ha21_blue_counter_left_12",
+            "ha21_blue_counter_left_13",
+            "ha21_blue_counter_left_14",
+            "ha21_blue_counter_left_15",
+            "ha21_blue_idle_0"
+          ],
+          "error": 0,
+          "finite": true
+        }
+      },
+      {
+        "name": "normal leap native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "recover",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 473
+          },
+          "target": {
+            "x": 340,
+            "y": 473
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "normal storm_slam native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "storm_split",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 488
+          },
+          "target": {
+            "x": 340,
+            "y": 488
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "normal giant_dive native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "giant_sweep",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 441
+          },
+          "target": {
+            "x": 340,
+            "y": 441
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "hard leap native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "recover",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 473
+          },
+          "target": {
+            "x": 340,
+            "y": 473
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "hard storm_slam native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "storm_split",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 488
+          },
+          "target": {
+            "x": 340,
+            "y": 488
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "hard giant_dive native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "giant_sweep",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 441
+          },
+          "target": {
+            "x": 340,
+            "y": 441
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "furious leap native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "recover",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 473
+          },
+          "target": {
+            "x": 340,
+            "y": 473
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "furious storm_slam native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "storm_split",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 488
+          },
+          "target": {
+            "x": 340,
+            "y": 488
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "furious giant_dive native impact coincides with the new visible hammer head",
+        "passed": true,
+        "data": {
+          "state": "giant_sweep",
+          "error": 0,
+          "tip": {
+            "x": 340,
+            "y": 441
+          },
+          "target": {
+            "x": 340,
+            "y": 441
+          },
+          "finite": true
+        }
+      },
+      {
+        "name": "Native crate strike uses the new overhead reel with exact hammer-to-crate contact and chaingun handoff",
+        "passed": true,
+        "data": {
+          "done": true,
+          "hit": true,
+          "obtained": true,
+          "contact": 0,
+          "keys": [
+            "hb20_chaingun_crate_exclusive",
+            "ha21_blue_slam_armor_0",
+            "ha21_blue_slam_armor_1",
+            "ha21_blue_slam_armor_2",
+            "ha21_blue_slam_armor_3",
+            "ha21_blue_slam_armor_4",
+            "ha21_blue_slam_armor_5",
+            "ha21_blue_slam_armor_6",
+            "ha21_blue_slam_armor_7",
+            "ha21_blue_slam_armor_8",
+            "ha21_blue_slam_armor_9",
+            "ha21_blue_slam_armor_10",
+            "ha21_blue_slam_armor_11",
+            "hb20_chaingun_icon_exclusive",
+            "ha21_blue_slam_armor_12",
+            "ha21_blue_slam_armor_13",
+            "ha21_blue_slam_armor_14",
+            "ha21_blue_slam_armor_15",
+            "ha21_blue_slam_armor_16",
+            "bmfx_fov_green_tall",
+            "hf19_chaingun_2"
+          ]
+        }
+      },
+      {
+        "name": "Actual native game frames expire the hit flash and restore authored body pixels",
+        "passed": true,
+        "data": {
+          "before": {
+            "timer": 0.12,
+            "white": 7352,
+            "baseline": 4552
+          },
+          "after": {
+            "timer": 0,
+            "white": 4544
+          }
+        }
+      },
+      {
+        "name": "Every new source cell really draws nonempty authored pixels in Chromium",
+        "passed": true,
+        "data": {
+          "cells": 763,
+          "visible": 763
+        }
+      },
+      {
+        "name": "Corrupted skystrike uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_jump",
+          "key": "ha21_corrupt_jump_5",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted side uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_side",
+          "key": "ha21_corrupt_side_5",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted throw uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_throw",
+          "key": "ha21_corrupt_throw_4",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted ball uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_to_ball",
+          "key": "ha21_corrupt_to_ball_12",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted charge uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_hold",
+          "key": "ha21_corrupt_hold_12",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted shield uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_chromium",
+          "key": "ha21_corrupt_chromium_12",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted spin uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_spin",
+          "key": "ha21_corrupt_spin_0",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted luminaire uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_beam_empty",
+          "key": "ha21_corrupt_beam_empty_12",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted fire uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_rage_empty",
+          "key": "ha21_corrupt_rage_empty_7",
+          "owns": true
+        }
+      },
+      {
+        "name": "Corrupted break uses its own generated whole actor",
+        "passed": true,
+        "data": {
+          "kind": "corrupt_stun",
+          "key": "ha21_corrupt_stun_16",
+          "owns": true
+        }
+      },
+      {
+        "name": "normal native corrupted jump completes with its real visible hammer at the warned impact",
+        "passed": true,
+        "data": {
+          "done": true,
+          "contact": 0,
+          "finite": true
+        }
+      },
+      {
+        "name": "hard native corrupted jump completes with its real visible hammer at the warned impact",
+        "passed": true,
+        "data": {
+          "done": true,
+          "contact": 0,
+          "finite": true
+        }
+      },
+      {
+        "name": "furious native corrupted jump completes with its real visible hammer at the warned impact",
+        "passed": true,
+        "data": {
+          "done": true,
+          "contact": 0,
+          "finite": true
+        }
+      },
+      {
+        "name": "Corrupted native crate strike aligns the new overhead pose and completes its pickup",
+        "passed": true,
+        "data": {
+          "done": true,
+          "contact": 0,
+          "hit": true,
+          "obtained": true
+        }
+      },
+      {
+        "name": "No page console draw or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "preview": {
+    "passed": 33,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "corrupt intro",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": null,
+          "mode": "v18formIn"
+        }
+      },
+      {
+        "name": "corrupt slam",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "skystrike",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt jump",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "skystrike",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt side",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "side",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt hold",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "charge",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt armor",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "shield",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt throw",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "throw",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt cast",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "charge",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt beam",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "luminaire",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt spin",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "spin",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt ball",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "ball",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt stun",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "break",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt rage",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": "fire",
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "corrupt fight",
+        "passed": true,
+        "data": {
+          "kind": "vileexistence",
+          "finite": true,
+          "ready": true,
+          "state": null,
+          "action": null,
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "blue intro",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "flyby",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue slam",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "giant_warn",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue jump",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "warn",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue side",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "storm_split",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue hold",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "storm_raise",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue armor",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "fr_activation",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue throw",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "spin",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "Actual thrown hammer and empty-hand follow-through coexist",
+        "passed": true
+      },
+      {
+        "name": "blue cast",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "spell",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue beam",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "mega_charge",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "Actual standard laser release survives native phase gates",
+        "passed": true
+      },
+      {
+        "name": "blue spin",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "whirl_warn",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue ball",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "curl",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue stun",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "hammer_stun",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue rage",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "storm_raise",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "blue fight",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "hammer",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "Hard replay applies actual difficulty",
+        "passed": true
+      },
+      {
+        "name": "Normal replay applies actual difficulty",
+        "passed": true
+      },
+      {
+        "name": "No page console draw or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "release": {
+    "passed": 7,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "blue throw",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "spin",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "Actual thrown hammer and empty-hand follow-through coexist",
+        "passed": true
+      },
+      {
+        "name": "blue beam",
+        "passed": true,
+        "data": {
+          "kind": "chromehammer",
+          "finite": true,
+          "ready": true,
+          "state": "mega_charge",
+          "action": null,
+          "mode": null
+        }
+      },
+      {
+        "name": "Actual standard laser release survives native phase gates",
+        "passed": true
+      },
+      {
+        "name": "Hard replay applies actual difficulty",
+        "passed": true
+      },
+      {
+        "name": "Normal replay applies actual difficulty",
+        "passed": true
+      },
+      {
+        "name": "No page console draw or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "core": {
+    "passed": 8943,
+    "errors": 0,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "art": {
+    "credit_start": 11.05,
+    "credit_end": 9.58,
+    "credit_delta": 1.47,
+    "active_jobs": 0,
+    "reference": "Actual blue_idle/corrupt_idle and empty-handed runtime exports; actual XART ship/ball export manifest in references/native-export.json.",
+    "rejected": {
+      "blue_beam": "Baked ray and gray matte; never registered. Replaced by body-only blue_beam_clean under native laser owner.",
+      "corrupt_beam": "Armed beam candidate unused; broken-weapon luminaire uses clean unarmed reactor posture.",
+      "blue_cast_empty": "Invented separate hammer. Replaced completely with blue_cast_clean.",
+      "blue_beam_empty": "Superseded by stricter blue_beam_clean.",
+      "blue_rage_empty": "Superseded by stricter blue_rage_clean.",
+      "blue_throw_release": "Repeated ground strike; excluded from final body reel."
+    },
+    "selection": {
+      "blue_chromium": "Raw7/8 circular overlays excluded; hold raw6 and raw9 at those slots.",
+      "corrupt_chromium": "Raw11/12/13 circle overlay slots hold the accepted raw10 plated pose.",
+      "blue_throw": "Original raw0..6 wind-up, then accepted Pro empty-hand follow-through and its8-frame body-only recovery. Native thrown weapon is drawn separately.",
+      "corrupt_stun": "New deep one-knee floor-anchored unarmed acting; standard Stage5 retains its native hit/kneel/get-up death/recovery poses."
+    },
+    "runtime": {
+      "banks": 47,
+      "cells": 763,
+      "bytes": 2752730,
+      "per_stage_preload": "Stage5 blue, Stage8 corrupted; native counter dependencies retain their own warm path."
+    }
+  },
+  "notes": [
+    "Full preview control pass preceded final cast-layer/throw-depth fixes; final focused release pass and all 105 native checks cover the final runtime.",
+    "A repeated full preview run stalled after corrupted slam and was stopped; its partial output is not counted as a pass.",
+    "Throw replay now calls the native target initializer instead of entering spin with undefined target coordinates."
+  ]
+}

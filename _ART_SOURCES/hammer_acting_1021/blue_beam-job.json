@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: f5b66177-286c-4e99-b200-11f73bd686f0\njob_id: f5b66177-286c-4e99-b200-11f73bd686f0\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Brace both feet wide, lean back slightly, spread both arms to either side and aim the bright circular chest core forward and down toward the player for a sustained laser beam. Chest core opens and pulses intensely while the head stays above it. Hold the braced firing posture for the last half. No beam or scenery baked into sprite; the game owns the actual laser. Keep hammer held to one side, visible entire shaft.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212106\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f5b66177-286c-4e99-b200-11f73bd686f0\")\nasset_id: bb5b1698-3734-59b8-8192-cbdef133842c\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -32,22 +32,22 @@ try:
    for stage in [1,2,3,4,5,6,7,8,9]:
     init(stage);tick(240);r=measure('selected-stage'+str(stage))
     if not args.before:
-     check('Stage'+str(stage)+' holds the closer camera',r['z']>=1,r)
-     check('Stage'+str(stage)+' has a larger readable flag and ship',r['detail']>=55 and r['shipSize']>=51,r)
+     check('Stage'+str(stage)+' holds the closer camera',r['z']>=1.5,r)
+     check('Stage'+str(stage)+' has a larger readable flag and ship',r['detail']>=71 and r['shipSize']>=67,r)
      check('Stage'+str(stage)+' keeps both markers inside the map band',r['left']<r['ship']['x']<r['right'] and r['top']+r['detail']<r['flag']['y']<r['bottom']-r['shipSize']/2,r)
-     check('Stage'+str(stage)+' actually draws the authored flag at56px without smoothing',abs(r['pixels']['flag']['height']-56)<.01 and not r['pixels']['flag']['smoothing'] and r['pixels']['flag']['key'].startswith('map4f_flag'),r['pixels']['flag'])
-     check('Stage'+str(stage)+' actually draws the pilot hull at52px without smoothing',abs(r['pixels']['ship']['size']-52)<.01 and not r['pixels']['ship']['smoothing'],r['pixels']['ship'])
+     check('Stage'+str(stage)+' actually draws the authored flag at72px without smoothing',abs(r['pixels']['flag']['height']-72)<.01 and not r['pixels']['flag']['smoothing'] and r['pixels']['flag']['key'].startswith('map4f_flag'),r['pixels']['flag'])
+     check('Stage'+str(stage)+' actually draws the pilot hull at68px without smoothing',abs(r['pixels']['ship']['size']-68)<.01 and not r['pixels']['ship']['smoothing'],r['pixels']['ship'])
    if not args.before:
     for source,direction,target in [(1,'right',2),(4,'down',5),(7,'up',8)]:
      init(source);tick(60);p.evaluate('(direction)=>Input.injectTap(keybind[direction][0])',direction);trace=[]
      for i in range(90):
       tick(1);trace.append(p.evaluate('()=>({z:cmap2.cam.z,s:cmap2ToScreen(sselShip.x,sselShip.y),left:-campaignViewOffset(),right:VW+campaignViewOffset()})'))
      measure('travel-'+str(source)+'-'+str(target));check('Real '+direction+' input selects Stage'+str(target),p.evaluate('(n)=>sselCursor===n',target))
-     check(str(source)+' to'+str(target)+' stays close and keeps the ship in view',all(r['z']>=1 and r['left']+26<r['s']['x']<r['right']-26 and 72<r['s']['y']<286 for r in trace),{'trace':trace[::15],'minY':min(r['s']['y'] for r in trace),'maxY':max(r['s']['y'] for r in trace)})
+     check(str(source)+' to'+str(target)+' stays close and keeps the ship in view',all(r['z']>=1.5 and r['left']+26<r['s']['x']<r['right']-26 and 72<r['s']['y']<286 for r in trace),{'trace':trace[::15],'minY':min(r['s']['y'] for r in trace),'maxY':max(r['s']['y'] for r in trace)})
     p.evaluate('cmap2.focus="bar"');tick(240);r=measure('overview');check('The top-menu overview remains available',r['z']<.3,r)
-    init(6);p.evaluate('''()=>{campaign.rivalScattered=true;campaign.rivalDefeated=[false,false,false,false,false];}''');tick(360);r=measure('stage6-with-rebels');check('Selected Stage6 stays close after the rebel flight',r['z']>=1 and p.evaluate('Rival24.mapAvailable'),r)
+    init(6);p.evaluate('''()=>{campaign.rivalScattered=true;campaign.rivalDefeated=[false,false,false,false,false];}''');tick(360);r=measure('stage6-with-rebels');check('Selected Stage6 stays close after the rebel flight',r['z']>=1.5 and p.evaluate('Rival24.mapAvailable'),r)
     p.evaluate('''()=>{Input.injectTap(keybind.up[0]);}''');tick(240);r=measure('stagex-framing');check('Stage X keeps its dedicated encounter camera and controls',p.evaluate('Rival24.mapFocused||map4hXFocused()') and r['z']<.5,r)
-    init(2);p.evaluate('''()=>{campaign.unlockedMax=1;campaign.rank={1:'A'};openStageSelect(2,{unlock:2});sselBoot=0;}''');tick(420);r=measure('post-clear');check('The unlock cinematic finishes close to the newly available level',p.evaluate('!sselUnlockCine&&sselCursor===2&&campaign.unlockedMax>=2') and r['z']>=1,r)
+    init(2);p.evaluate('''()=>{campaign.unlockedMax=1;campaign.rank={1:'A'};openStageSelect(2,{unlock:2});sselBoot=0;}''');tick(420);r=measure('post-clear');check('The unlock cinematic finishes close to the newly available level',p.evaluate('!sselUnlockCine&&sselCursor===2&&campaign.unlockedMax>=2') and r['z']>=1.5,r)
     p.set_viewport_size({'width':1000,'height':900});init(4);tick(240);r=measure('compact-stage4');check('Compact viewport keeps enlarged markers clear of the briefing',r['flag']['y']+r['shipSize']/2<r['bottom'],r)
   else:
    p.goto(f'http://127.0.0.1:{port}/docs/previews/campaign_close_1017/index.html');p.wait_for_function('ready&&game.contentWindow.__campaignCloseReviewStorage&&game.contentWindow.eval("sselCursor===4&&cmap2.cam.z>1")')

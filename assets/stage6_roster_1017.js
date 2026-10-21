@@ -5,6 +5,9 @@ const ROSTER17={buildingMini:false,base:{init:warhiveInit,tick:warhiveTick,draw:
  damage:warhiveDamage,hit:warhiveHitTest,targets:warhiveRetinaTargets,spawn:spawnSubBoss__inner,
  miniTick:updateSubBoss,miniDraw:drawSubBoss,miniHit:hitSubBoss,solid:subBossSolidAt,
  part:subBossHitPart,retina:retinaBossTargets,die:bossDie,open:sc13Open,begin:beginStage,partPos:whvPartPos}};
+for(const a of HH21_ART.frames)XART._src[a.key]=a.path;
+const roster17Load=stageLoadBegin;stageLoadBegin=function(n,keys){
+ return roster17Load.call(this,n,[...(keys||[]),...(n===6?[...HH21_ART.frames.map(a=>a.key),'d27_'+DIRECTOR_ART.reels.mg.sheet]:[])]);};
 SUBBOSS[5]={...SUBBOSS[5],kind:'siegebomber'};
 SUBBOSS[6]={...SUBBOSS[6],kind:'siegefortress17'};
 const ROSTER17_BOMBER=mr27BomberSetup;mr27BomberSetup=function(b){const r=ROSTER17_BOMBER.apply(this,arguments);
@@ -25,7 +28,7 @@ function roster17Sync(b){const C=b._carrier17,W=b._whv;
 }
 function roster17Budget(b){const C=b._carrier17;if(C.budgetFinalized)return;C.budgetFinalized=true;
  // The legacy stage floor knows only the two fans and door. Reconcile our
- // complete eight-module budget after spawnBoss has finished its modifiers.
+ // complete module budget after spawnBoss has finished its modifiers.
  for(const p of C.parts){p.hp=p.maxhp;if(p.kind==='fan')p.max=p.maxhp;}
  b.maxhp=C.parts.reduce((s,p)=>s+p.maxhp,0);roster17Sync(b);
 }
@@ -40,7 +43,16 @@ warhiveInit=function(b){
  const rank=target17Rank(),mul=coopActive()?1.5:1,parts=[];
  const add=(id,kind,dx,dy,hp,w,h)=>parts.push({id,kind,dx,dy,hp:Math.ceil(hp*mul),maxhp:Math.ceil(hp*mul),w,h,dead:false,flash:0,t:0,phase:'rest',cool:1.1+parts.length*.25,serial:0});
  add('L','fan',-169.5,-10,140+rank*22,66,66);add('R','fan',169.5,-10,140+rank*22,66,66);
- for(const [i,x] of [-104,-40,40,104].entries())add('laser'+i,'laser',x,65,105+rank*20,38,54);
+ // Only the outer batteries sit beside the fan nacelles. The bay stays clear.
+ for(const [i,x] of [[0,-104],[3,104]])add('laser'+i,'laser',x,65,105+rank*20,38,54);
+ // Four gun housings already exist on the whole authored hull. Split the
+ // removed bay batteries' health between these actual, targetable sockets.
+ const gunHP=105+rank*20;
+ for(const [i,x,y,muzzleY,rect] of [[0,177,103,116,[168,86,18,32]],[1,211,94,110,[200,76,22,36]],
+  [2,301,94,110,[290,76,22,36]],[3,335,103,116,[326,86,18,32]]]){
+  add('hullGun'+i,'gun',x-256,y-144,i%2?Math.floor(gunHP/2):Math.ceil(gunHP/2),20,30);
+  Object.assign(parts.at(-1),{hullGun:i,sourceRect:rect,muzzleDY:muzzleY-y,muzzleAge:99});
+ }
  add('rackL','missile',-108,-34,125+rank*20,35,60);add('rackR','missile',108,-34,125+rank*20,35,60);
  b._carrier17={parts,hullScale:1.45,age:0,phase:'arrive',t:0,scale:1.8,depth:true,cycles:0,flight:13,hit:null,shots:0};
  for(const id of ['L','R']){const p=parts.find(p=>p.id===id);b._whv.parts[id]=p;p.fl=0;p.max=p.maxhp;}
@@ -84,7 +96,28 @@ warhiveRetinaTargets=function(b,out){if(!roster17Active(b))return ROSTER17.base.
   ()=>({...roster17Mount(b,p),hp:p.hp,dead:p.dead||!roster17Ready(b)}),d=>{C.direct=p.id;hitBoss(d);},p.w*roster17HullScale(b),p.h*roster17HullScale(b)));
 };
 function roster17FlashTick(C,dt){for(const p of C.parts){p.flash=Math.max(0,(p.flash||0)-dt);p.fl=Math.max(0,(p.fl||0)-dt);}}
+function roster17Muzzle(b,p){const m=roster17Mount(b,p),k=roster17HullScale(b);
+ m.y+=p.kind==='gun'?p.muzzleDY*WHV_S*k:p.h*k*.35;return m;}
+function roster17GunConfig(){const rank=target17Rank();return{warm:[1.2,1.1,1,.85][rank],rounds:[4,5,7,9][rank],gap:[.18,.16,.125,.10][rank],speed:3.6+rank*.3,rest:[2.4,2.1,1.8,1.6][rank]};}
+function roster17HullGun(b,p,dt){if(p.dead)return;
+ const cfg=roster17GunConfig(),C=b._carrier17;p.t+=dt;p.cool-=dt;p.muzzleAge+=dt;
+ if(p.phase==='rest'&&p.cool<=0){const m=roster17Muzzle(b,p),target=targetShip(m.x,m.y);
+  p.angle=Math.atan2(target.y-m.y,target.x-m.x);p.phase='tell';p.t=0;p.serial++;p.round=0;p.shot=0;
+  p.lanes=Array.from({length:cfg.rounds},(_,i)=>p.angle+(i/(cfg.rounds-1)-.5)*.24);Audio.SFX.bossWeaponCharge?.();
+ }else if(p.phase==='tell'){
+  combatWarningTick(p,'harrier-hull-'+p.serial,p.t,cfg.warm);
+  if(p.t>=cfg.warm){p.phase='fire';p.t=0;p.shot=0;}
+ }else if(p.phase==='fire'){
+  p.shot-=dt;if(p.shot<=0&&p.round<cfg.rounds){const m=roster17Muzzle(b,p),a=p.lanes[p.round++];
+   const q=eShootT(m.x,m.y,a,cfg.speed,'s6tracer',{owner:b,w:6,h:16,silent:true,noMuzzle:true});
+   Object.assign(q,{owner:b,_carrier17Shot:true,_carrierHullGun:p.id,_shootable:false,_weaponProof:true,mg:true,homing:false,_noArsenal:true});
+   p.muzzleAge=0;p.muzzleAngle=a;p.shot=cfg.gap;C.shots++;Audio.SFX.enemyMachineGunHeavy?.();
+  }
+  if(p.round>=cfg.rounds&&p.muzzleAge>.16){p.phase='rest';p.t=0;p.cool=cfg.rest+p.hullGun*.11;}
+ }
+}
 function roster17Weapon(b,p,dt){const C=b._carrier17,rank=target17Rank();
+ if(p.kind==='gun')return roster17HullGun(b,p,dt);
  if(p.dead)return;p.cool-=dt;p.t+=dt;
  const warm=p.kind==='laser'?1.12:1.15;
  if(p.phase==='rest'&&p.cool<=0){const m=roster17Mount(b,p),t=targetShip(m.x,m.y);p.aim={x:t.x,y:t.y};p.angle=Math.atan2(t.y-m.y,t.x-m.x);p.phase='tell';p.t=0;p.serial++;p.round=0;p.shot=0;Audio.SFX.bossWeaponCharge?.();}
@@ -141,7 +174,14 @@ function roster17Draw(b,C=b._carrier17){const W=b._whv;if(C.crashed)return;
  }
  if(XART.rdy(key))ctx.drawImage(XART.get(key),cx-hullW/2,cy-hullH/2,hullW,hullH);
  for(const p of C.parts.filter(p=>p.kind!=='fan')){const q=mount(p);
-  if(p.kind==='laser'){
+  if(p.kind==='gun'){
+   // Animate the existing hull pixels in place; never paste another turret on top.
+   if(p.dead||p.flash>0||['tell','fire'].includes(p.phase)){
+    const a=HH21_ART.frames[p.hullGun],flash=p.flash>0,im=flash?XART.get(a.key):xartTint(a.key,p.dead?'#10151f':'#70dfff',1);
+    if(im){ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha*=flash?1:p.dead?.74:p.phase==='fire'?.48:.18+.22*(.5+.5*Math.sin(p.t*24));
+     ctx.drawImage(im,q.x-a.pivot[0]*WHV_S,q.y-a.pivot[1]*WHV_S,a.w*WHV_S,a.h*WHV_S);ctx.restore();}
+   }
+  }else if(p.kind==='laser'){
    if(!(typeof pf20TurretDraw==='function'&&pf20TurretDraw(p,q.x,q.y,38,47.5,p.flash||0))){
     const pose=p.dead?3:p.phase==='fire'?2:p.phase==='tell'?1:0,im=p.flash>0?xartTint('s6cargo13_turrets','#ffffff',1):XART.get('s6cargo13_turrets');
     if(im)ctx.drawImage(im,pose*128,0,128,160,q.x-19,q.y-22,38,47.5);
@@ -152,9 +192,18 @@ function roster17Draw(b,C=b._carrier17){const W=b._whv;if(C.crashed)return;
  ctx.restore();
  // Draw warnings on the combat plane, from the same enlarged world sockets
  // used by damage. Scaling the whole ray with the hull displaced its endpoint.
- if(roster17Ready(b))for(const p of C.parts)if(!p.dead){const unit=roster17HullScale(b),m=roster17Mount(b,p);m.y+=p.h*unit*.35;
+ if(roster17Ready(b))for(const p of C.parts)if(!p.dead){const unit=roster17HullScale(b),m=roster17Muzzle(b,p);
   const angle=p.angle??Math.PI/2,ex=m.x+Math.cos(angle)*900,ey=m.y+Math.sin(angle)*900;
-  if(p.phase==='tell')combatWarningDraw(p,{x:m.x,y:m.y,ex,ey,progress:p.t/(p.kind==='laser'?1.12:1.15),width:(p.kind==='laser'?26:20)*unit});
+  if(p.kind==='gun'){
+   if(p.phase==='tell'){
+    // Show both edges and the centre of the committed fan without stacking
+    // nine opaque fields over each gun on Furious.
+    const lanes=p.lanes||[],fan=lanes.length?[lanes[0],lanes[Math.floor(lanes.length/2)],lanes.at(-1)]:[];
+    for(const a of fan)combatWarningDraw(p,{x:m.x,y:m.y,ex:m.x+Math.cos(a)*900,ey:m.y+Math.sin(a)*900,progress:p.t/roster17GunConfig().warm,width:12,alpha:.32,fieldOnly:true});
+    combatWarningDraw(p,{x:m.x,y:m.y,ex,ey,progress:p.t/roster17GunConfig().warm,alertOnly:true,alertX:m.x,alertY:m.y-28});
+   }
+   if(p.muzzleAge<.14)wm26Draw(ctx,'mg',m.x,m.y,p.muzzleAngle,p.muzzleAge/.14,42*unit);
+  }else if(p.phase==='tell')combatWarningDraw(p,{x:m.x,y:m.y,ex,ey,progress:p.t/(p.kind==='laser'?1.12:1.15),width:(p.kind==='laser'?26:20)*unit});
   if(p.kind==='laser'&&p.phase==='fire'){const open=clamp(Math.min(p.t/.1,(.62-p.t)/.12),0,1);if(open>0)av3Beam(ctx,m.x,m.y,p.angle,900,(14+target17Rank()*2)*unit*open,'ice',b.t);}
  }
 }

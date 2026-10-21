@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: a2fa4998-0743-4cf5-bdcf-c0bab13dfa96\njob_id: a2fa4998-0743-4cf5-bdcf-c0bab13dfa96\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Wind the hammer back over the right shoulder, step forward and extend both arms into a powerful hammer THROW toward the viewer and down. Open hands at the release pose and finish with EMPTY hands extended forward, then braced unarmed recovery. After release do not draw the flying hammer anywhere; the game renders the detached weapon separately. Exactly two arms, no second hammer.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212204\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a2fa4998-0743-4cf5-bdcf-c0bab13dfa96\")\nasset_id: 605def32-116b-52ca-97b6-a6244e5f14e5\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

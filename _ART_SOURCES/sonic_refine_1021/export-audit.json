@@ -1,0 +1,302 @@
+[
+  {
+    "key": "sr21_charge_red",
+    "path": "assets/game/shared/combat/sonic_refine_1021/charge_red.webp",
+    "sourceKey": "rzbf_sonic_charge",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 16,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "job": "5f767396-e86b-43d6-8380-07edca42d29d",
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_charge.png",
+    "firstLastExact": true,
+    "metalOriginal": false,
+    "sha256": "9cbdf4354f67067ceae9ff88ad2a68ebb974c707180e46cc257ffeee25216c05",
+    "unique": 8
+  },
+  {
+    "key": "sr21_charge_green",
+    "path": "assets/game/shared/combat/sonic_refine_1021/charge_green.webp",
+    "sourceKey": "rzb_sonic_charge",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 16,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "job": "5f767396-e86b-43d6-8380-07edca42d29d",
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_charge.png",
+    "firstLastExact": true,
+    "metalOriginal": false,
+    "sha256": "c5e0521f6b42337e46e31783b4237c2f789d852caaf01212f98a3ac0375503a3",
+    "unique": 8
+  },
+  {
+    "key": "sr21_bullet_red",
+    "path": "assets/game/shared/combat/sonic_refine_1021/bullet_red.webp",
+    "sourceKey": "rzbf_sonic_bullet",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 16,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "job": "7934038a-b1a2-41cd-b181-26426e5836e1",
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+    "firstLastExact": true,
+    "metalOriginal": true,
+    "sha256": "dd7c31247b3afabd16d28e54aa58a87c7c5a26c1288b801b50600cd9f7001c24",
+    "unique": 8
+  },
+  {
+    "key": "sr21_bullet_green",
+    "path": "assets/game/shared/combat/sonic_refine_1021/bullet_green.webp",
+    "sourceKey": "rzb_sonic_bullet",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 16,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "job": "7934038a-b1a2-41cd-b181-26426e5836e1",
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+    "firstLastExact": true,
+    "metalOriginal": true,
+    "sha256": "51e9505e47e9befea58228544a06cc250d8123c5c573db20443a307af52307ab",
+    "unique": 8
+  }
+]

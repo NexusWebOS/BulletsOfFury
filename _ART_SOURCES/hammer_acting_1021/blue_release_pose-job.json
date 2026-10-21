@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 7f7111af-8809-4a1f-8009-06b69cc66dc1\njob_id: 7f7111af-8809-4a1f-8009-06b69cc66dc1\nmodel: pro\ndescription: FRAME FORMAT: 256x256 transparent pixel-art sprite, fixed chest128,112, same proportional body scale as reference. The exact supplied black steel/cyan robot in a dynamic THROW FOLLOW-THROUGH pose: twist the shoulders, lean forward, extend BOTH EMPTY ARMS down and forward toward the bottom right, OPEN both hands with clearly splayed fingers. Both hands have just RELEASED an object and are visibly EMPTY. Full body, feet planted wide, readable forward thrust of the shoulders and arms. The body must look like it has just hurled something forcefully, with both extended hands empty. Preserve original armor, helmet, blue lights and cyan chest reactor; exactly two arms, two empty hands, transparent background and generous margins. Body only, no scenery, props, effects, captions or extra objects.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 10215000\nasset_id: 2c541a96-990d-5626-9b26-80090217e392\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"7f7111af-8809-4a1f-8009-06b69cc66dc1\")"
+    }
+  ],
+  "isError": false
+}

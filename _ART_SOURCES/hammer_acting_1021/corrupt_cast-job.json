@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: a96fe63a-b334-4911-932c-6095ddb719cb\njob_id: a96fe63a-b334-4911-932c-6095ddb719cb\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Keep the hammer gripped in the left hand beside the body. Raise the free right arm, open its palm toward the viewer and cast a spell with a clear outstretched hand. Lean into the casting gesture, hold the palm outward, small energy gathering in the palm and chest. No giant effect, no beam or projectile baked into the sprite. Finish with hand clearly extended.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212205\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a96fe63a-b334-4911-932c-6095ddb719cb\")\nasset_id: d689f914-de5a-5f6f-b0a6-643eee346bb6\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -18,12 +18,19 @@ function hf19Shield(b){return !b.dead&&(['shield','fr_activation'].includes(b._h
 function hf19Recovery(b){return !b.dead&&['recover','back','giant_recover','giant_knockback','hammer_exposed','hammer_stun','storm_stun','fr_stun','recharge1002'].includes(b._hammer.state);}
 function hf19Pick(b){const h=b._hammer;if(b.dead||h.hc11Counter)return null;
  if(hf19Shield(b)){const f=h.state==='fr_activation'?Math.min(15,Math.floor(clamp(h.t/FR27_ACT.end,0,.999)*16)):8+Math.floor(h.t*10)%4;return {a:HM10_ART.shield_form[f],k:HM10.bodyScale,kind:'shield'};}
- if(hf19Recovery(b)){const duration=['hammer_stun','storm_stun','fr_stun'].includes(h.state)?1.6:.6,u=clamp(h.t/duration,0,.999),f=u<.18?2:u<.64?1:u<.85?0:4;return {a:HMF19_ART.banks.recovery[f],k:1.14,kind:'recovery'};}
+ // Stage5's original impact, kneeling hold and raised-hand recovery use the
+ // native five/four-second state clock, including its accelerated playback.
+ if(run.stage===5&&!b._gp4Host&&['hammer_stun','storm_stun','fr_stun'].includes(h.state)){
+  const duration=h.state==='hammer_stun'?5:4,u=clamp(h.t/duration,0,1);
+  return{a:{key:'arch_stun_0920'},nativeStun:u<.06?0:u<.82?1:2,kind:'recovery'};
+ }
+ if(hf19Recovery(b)){const duration=['hammer_stun','storm_stun','fr_stun'].includes(h.state)?1.6:h.state==='recover'?hammerRecoverDuration():.6,u=clamp(h.t/duration,0,.999),f=u<.18?2:u<.64?1:u<.85?0:4;return {a:HMF19_ART.banks.recovery[f],k:1.14,kind:'recovery'};}
  if(['chain_warn','chaingun','chain_cool'].includes(h.state)&&!h.chainDestroyed){const fire=h.state==='chaingun'&&(h.chainMuzzle||0)>0;
   const f=fire?1+Math.floor((h.t||0)*16)%8:2;return {a:HMF19_ART.banks.chaingun[f],k:1/.70,kind:'chaingun'};}
  return null;
 }
 function hf19Plate(b,q){const a=q.a;if(!XART.rdy(a.key))return false;ctx.save();ctx.imageSmoothingEnabled=false;
+ if(q.nativeStun!=null){archBlit('stun_0920',q.nativeStun,b.x,b.y,240,b.flash>0?'white':null,0);ctx.restore();HMF19.draws.recovery=(HMF19.draws.recovery||0)+1;return true;}
  const im=b.flash>0?xartTint(a.key,'#ffffff',1):XART.get(a.key);
  ctx.drawImage(im,b.x-a.pivot[0]*q.k,b.y-a.pivot[1]*q.k,a.w*q.k,a.h*q.k);ctx.restore();HMF19.draws[q.kind]=(HMF19.draws[q.kind]||0)+1;return true;
 }

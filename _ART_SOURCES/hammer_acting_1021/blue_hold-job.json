@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 15ecf84e-e781-47d5-b2c2-6d4476853184\njob_id: 15ecf84e-e781-47d5-b2c2-6d4476853184\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Bring the hammer high over the head in both hands, arms lifted, then HOLD the hammer above the helmet while its energy head pulses brighter. Final half remains in that same raised-hammer pose, with subtle charged energy flowing inside the hammer and chest. Whole weapon stays visible and attached, no swing or release. Keep feet planted and fixed chest anchor.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212103\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"15ecf84e-e781-47d5-b2c2-6d4476853184\")\nasset_id: 9af7a543-ab5d-51cd-bd09-379f55c87b86\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

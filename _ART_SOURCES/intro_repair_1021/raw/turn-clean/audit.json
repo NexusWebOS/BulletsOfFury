@@ -1,0 +1,141 @@
+{
+  "pixelLabWorkbench": "cf1b86f8-848c-490c-8218-c3bfa626f323",
+  "sourceJob": "d47b64e9-2194-445d-a755-2261b8866404",
+  "canvas": [
+    256,
+    144
+  ],
+  "pivot": [
+    128,
+    72
+  ],
+  "scale": 1,
+  "rows": [
+    {
+      "frame": 0,
+      "changed": 0,
+      "hash": "3dbe7e3a60b7830127e7a4bf06b9b8edf032e38460bc0a8cd28cb7809a1e5ed3"
+    },
+    {
+      "frame": 1,
+      "changed": 6144,
+      "hash": "631dcb376c6f7e282712601623fd045875fe94d29ef324c1874c45aac26c02fa"
+    },
+    {
+      "frame": 2,
+      "changed": 6144,
+      "hash": "6a7f67c52c16618a9d0302a01998ec5c9c3cc3941f4f06ceae57faae8a76e4bd"
+    },
+    {
+      "frame": 3,
+      "changed": 6144,
+      "hash": "9701bc8e6115af8c541d0fd080ac1e530183fd187c93cab6a36bd4515ee37875"
+    },
+    {
+      "frame": 4,
+      "changed": 0,
+      "hash": "c50a5cde17ac1c6fe8b07b6e3defb4085296c48cdfe8483b527287600eecf0fb"
+    },
+    {
+      "frame": 5,
+      "changed": 0,
+      "hash": "04614775c291a074ac8d8d6d049010ead2514b262fe2c69d2c62416d99466163"
+    },
+    {
+      "frame": 6,
+      "changed": 0,
+      "hash": "d8abf21f57c1cd3e94d4952aa70450f77a4d69074829866dbac7512c7c13462e"
+    },
+    {
+      "frame": 7,
+      "changed": 0,
+      "hash": "f661c4c17c441b8879f364991ed7ae6793ac75559787fa6a31333de77ef9847f"
+    },
+    {
+      "frame": 8,
+      "changed": 0,
+      "hash": "b34d8b0bd92c2fdfcd26cd191780c751d041bd7b2d20551a37f22cb9a6e6ab9c"
+    },
+    {
+      "frame": 9,
+      "changed": 0,
+      "hash": "c3e6c1bf3367d214bbeb0ce80a3d946c82ada4406d00b0dec00d52dc144ecf7b"
+    },
+    {
+      "frame": 10,
+      "changed": 0,
+      "hash": "f2965856b2b18a83d82979d28ae712861dd47a62689af9d8dbbb59c501433ca5"
+    },
+    {
+      "frame": 11,
+      "changed": 0,
+      "hash": "98c8acdfb40010bf9dc9157774505baf9b6205bd167169ff3a949b5e41ec309e"
+    },
+    {
+      "frame": 12,
+      "changed": 0,
+      "hash": "80aab9d3a84bab1e92690b44217ec298b26ae819cbee0600818ae34fb12b4f5d"
+    },
+    {
+      "frame": 13,
+      "changed": 0,
+      "hash": "b8742eff31f579ee7d9573affd48c570c93bd942a79f16134ba8f4529d3e54de"
+    },
+    {
+      "frame": 14,
+      "changed": 0,
+      "hash": "99f25c9d99102685ddaef96954fbd5093e01a0db05e3a20a7a0e795b06141092"
+    },
+    {
+      "frame": 15,
+      "changed": 0,
+      "hash": "feeac15a9091df3a3547188cb4a950592da92c20c87efb1ba23dcb2588481e89"
+    },
+    {
+      "frame": 16,
+      "changed": 0,
+      "hash": "5d9d3e60c3d293772a748b3dbcbb0ac4141678376f70f8871afea29fe6be4b4d"
+    },
+    {
+      "frame": 17,
+      "changed": 0,
+      "hash": "09378562b1047930de8211a0014ae46e48e1b9d51b72802048ead64b2c0aca65"
+    },
+    {
+      "frame": 18,
+      "changed": 0,
+      "hash": "830762f97c0211a604ad0777c2f6f80344756f48d23609faffcbb9ea25a46c28"
+    },
+    {
+      "frame": 19,
+      "changed": 0,
+      "hash": "aa9d15bd0db0c8e503ffb6c86980ad636d271b548fcff75b63e34e453ba5770e"
+    },
+    {
+      "frame": 20,
+      "changed": 0,
+      "hash": "ebfa5dbc2418d1ef8863ee7ce9aa49432c6ebc355d2000381764b91ed8c66055"
+    },
+    {
+      "frame": 21,
+      "changed": 0,
+      "hash": "fb1a9572a07bf4d5ef91fe00cc81c234477b2e1aeb3006872516f0d5a7a60032"
+    },
+    {
+      "frame": 22,
+      "changed": 0,
+      "hash": "9d5f669ccf0776f446f918db22cf16cc68370cda53c4d74cda98f6e4fb412bc2"
+    },
+    {
+      "frame": 23,
+      "changed": 0,
+      "hash": "b7e6b70b79d496c940e05cf5b75f7b3b8d2764ab2adac1ec9d22825b5956d112"
+    },
+    {
+      "frame": 24,
+      "changed": 0,
+      "hash": "d5e79d0b5ae3c085a9fb40781c2dd5392a45e953a512d4c53d0d4c36b460d3c8"
+    }
+  ],
+  "operation": "Copy stationary source-frame lower letterbox [0,120,255,143] to frames2,3,4 only. No character or room pixels above row120 changed."
+}

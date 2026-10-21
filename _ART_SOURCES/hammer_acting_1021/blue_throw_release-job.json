@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 29749896-7d12-4035-a484-adab2204511e\njob_id: 29749896-7d12-4035-a484-adab2204511e\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Throw the hammer AWAY from the robot: extend both arms FORWARD, OPEN the hands and LET GO of the handle. The hammer flies away and is completely ABSENT by the middle of the clip. Finish in the exact supplied EMPTY-HANDED pose. DO NOT swing the hammer to the ground. DO NOT keep gripping it. No ground strike. Only the body remains after release; gameplay renders the independent flying weapon.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 10212900\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"29749896-7d12-4035-a484-adab2204511e\")\nasset_id: c5152c38-c69e-5a7d-834b-cf301972080e\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: ad8a1efd-f66c-45e3-8a92-645a56a1b69f\njob_id: ad8a1efd-f66c-45e3-8a92-645a56a1b69f\ndescription: FRAME FORMAT: 256 x256 transparent pixels, common scale and fixed floor contact at pixel128,200. Same exact character, palette, proportions and crisp arcade pixels, empty background. Recoil from a hard hit, buckle at the knees and collapse onto ONE KNEE, the opposite empty fist braced on the floor, head hanging LOW in exhaustion. The chest naturally drops as the knee bends. Hold that clear deeply KNEELING defeated pose for the final half of the animation. Keep both feet/floor contacts at the same baseline, no jumping or camera movement. Exactly two arms and empty hands; this single whole body only, nothing else.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10214000\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ad8a1efd-f66c-45e3-8a92-645a56a1b69f\")\nasset_id: 329324d0-c4d4-553e-92c8-d46c8aebe7ca\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

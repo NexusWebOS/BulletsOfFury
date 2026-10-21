@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Hammerboss acting</title><link rel="icon" href="data:,">
+<style>body{margin:0;background:#080d13;color:#e4eff4;font:14px system-ui}header{display:flex;gap:12px;padding:8px 12px;align-items:center;flex-wrap:wrap}select,button{font:inherit;padding:6px;background:#193043;color:inherit;border:1px solid #69869b;border-radius:4px}iframe{display:block;width:100%;height:calc(100dvh - 55px);border:0}#status{color:#a9cad8}</style>
+<header><strong>Hammerboss</strong><label>Form <select id="variant"><option value="blue">Standard</option><option value="corrupt">Corrupted</option></select></label><label>Attack <select id="scene"><option value="fight">Native fight</option><option value="intro">Ship arrival</option><option value="slam">Overhead slam</option><option value="jump">Jump strike</option><option value="side">Side counter</option><option value="hold">Raised hammer charge</option><option value="armor">Chromium takeover</option><option value="throw">Hammer throw</option><option value="cast">Casting</option><option value="beam">Laser stance</option><option value="spin">Whole-body spin</option><option value="ball">Ball transformation</option><option value="stun">Kneeling stun</option><option value="rage">Rage</option></select></label><label>Difficulty <select id="difficulty"><option>normal</option><option>hard</option><option>furious</option></select></label><button id="replay" disabled>Replay</button><span id="status">Loading the game…</span></header>
+<iframe id="game" title="Actual Bullets of Fury Hammerboss encounters" allow="autoplay; fullscreen" src="../../../index.html?revision=hammer-acting-final-1021"></iframe>
+<script>
+const game=document.querySelector('#game'),scene=document.querySelector('#scene'),variant=document.querySelector('#variant'),difficulty=document.querySelector('#difficulty'),replay=document.querySelector('#replay'),status=document.querySelector('#status'),params=new URLSearchParams(location.search);
+for(const [el,key]of [[scene,'scene'],[variant,'variant'],[difficulty,'difficulty']])if([...el.options].some(o=>o.value===params.get(key)))el.value=params.get(key);
+async function play(){replay.disabled=true;const g=game.contentWindow;
+ g.eval(`BAL7.setup({stage:${variant.value==='blue'?5:8},kind:${JSON.stringify(variant.value==='blue'?'chromehammer':'vileexistence')},pilot:'cole',diff:${JSON.stringify(difficulty.value)},fire:false,seconds:60});`);
+ for(let i=0;i<1200;i++){const ready=g.eval('(()=>{stageLoadTick();return ha21Ready()&&stageLoadReady(run.stage)&&(run.stage===8?v18Warm():hm10Ready()&&hf19Ready());})()');if(ready)break;await new Promise(r=>setTimeout(r,100));}
+ g.eval(`(()=>{const b=boss,h=b._hammer,s=${JSON.stringify(scene.value)};BOFCinematicDirector.cancel();story=fb2Talk=fb2Intro=null;H3.ending=null;H3.release=false;AP10_X.intro=null;P2M.active=null;b.enter=b.dead=b._noHit=false;b._cin30Spoke=b._fb2IntroSeen=true;b.x=worldWidth()/2;b.y=190;b._drawY=b.y;player.invuln=1e9;player.y=VH-65;camX=b.x-viewW()/2;l5Rocks=[];l5RockT=9999;
+ if(${JSON.stringify(variant.value)}==='corrupt'){
+  v18Budget(b);v18Enter(b,2,8);v18Fight(b);hb20Init(b);const Q=hb20State(b);
+  if(s==='intro'){v18SetMode(b,'v18formIn');}else if(s==='stun')hb20Start(b,'break');else if(s!=='fight'){
+   const action={slam:'skystrike',jump:'skystrike',side:'side',hold:'charge',armor:'shield',throw:'throw',cast:'charge',beam:'luminaire',spin:'spin',ball:'ball',rage:'fire'}[s];
+   if(s==='beam'){Q.broken=true;Q.safe=hb20Quadrant(player.x,player.y);}hb20Start(b,action);
+  }
+ }else{
+  h.balance0922=h.gp4FailsafeSeen=h._fb2RageDone=h.intro1002=true;h.mode='storm';h.phasePending=h.frRecovery=h.openingJump1003=false;h.recovery=null;h.hc11Counter=h.bm9Counter=null;
+  if(b._hammerTime)b._hammerTime.mode='attack';if(b._hama)b._hama.mode='attack';h.stormHome={x:b.x,y:b.y};hammerStormTarget(b);hammerStormImpact(b);h.leapFx=0;h.frArmor={hp:b.maxhp,max:b.maxhp,t:0,active:true,activated:false,half:true,checkpoints:[.75,.5,.35,.15],rage:false,barrier:0};h.hammerDestroyed=false;
+  if(s==='intro'){b.y=VH+50;hammerState(b,'flyby');}
+  else if(s==='armor')fr27BeginArmor(b);
+  else if(s==='side'){hammerState(b,'storm_split');hc11BeginCounter(b,{x:player.x,y:hc11MidY()-60,seat:1});}
+  else if(s==='slam'){hammerGiantArm(b);}
+  else if(s==='jump'){hammerTarget(b);hammerState(b,'warn');}
+  else if(s==='hold')hammerStormStart(b);
+  else if(s==='throw')hammerBoomerangStart(b);
+  else if(s==='cast'){h.hammerDestroyed=true;h.mode='chaingun';hammerSpellStart(b);}
+  else if(s==='beam'){h.hammerDestroyed=true;h.mode='chaingun';hammerState(b,'mega_charge');}
+  else if(s==='spin')hammerWhirlStart(b);
+  else if(s==='ball'){hammerBallArm(b);hammerState(b,'curl');}
+  else if(s==='stun')hammerState(b,'hammer_stun');
+  else if(s==='rage'){h.hammerDestroyed=true;hammerState(b,'enrage');}
+  else hammerState(b,'hammer');
+ }
+ })()`);
+ replay.disabled=false;status.textContent='Live encounter · protected review pilot';g.focus();
+}
+for(const el of [scene,variant,difficulty])el.onchange=play;replay.onclick=play;
+game.onload=async()=>{const g=game.contentWindow;for(let i=0;i<1200;i++){if(g.BOF_HAMMER_ACTING&&g.__bofFrames>4){const script=g.document.createElement('script');script.src='_BUILD_SOURCE/balance_lab_1007.js';script.onload=play;g.document.body.append(script);return;}await new Promise(r=>setTimeout(r,100));}status.textContent='Reload to retry loading.';};
+</script></html>

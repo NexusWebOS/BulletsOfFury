@@ -1,0 +1,7 @@
+from pathlib import Path
+import json,sys
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from pixellab_mcp import PixelLab
+R=Path(__file__).resolve().parents[1];D=R/'_ART_SOURCES/hammer_acting_1021';refs=json.loads((D/'upload-refs.json').read_text())
+args=dict(width=256,height=256,no_background=True,reference_images=[dict(url=refs['blue_empty'],usage='Exact same armor, palette, cyan chest, helmet and humanoid identity. Use the EMPTY-HANDED body only; change its pose.')],seed=10215000,description='FRAME FORMAT: 256x256 transparent pixel-art sprite, fixed chest128,112, same proportional body scale as reference. The exact supplied black steel/cyan robot in a dynamic THROW FOLLOW-THROUGH pose: twist the shoulders, lean forward, extend BOTH EMPTY ARMS down and forward toward the bottom right, OPEN both hands with clearly splayed fingers. Both hands have just RELEASED an object and are visibly EMPTY. Full body, feet planted wide, readable forward thrust of the shoulders and arms. The body must look like it has just hurled something forcefully, with both extended hands empty. Preserve original armor, helmet, blue lights and cyan chest reactor; exactly two arms, two empty hands, transparent background and generous margins. Body only, no scenery, props, effects, captions or extra objects.')
+c=PixelLab();r=c.call('create_image_pro',args);c.close();(D/'blue_release_pose-job.json').write_text(json.dumps(r,indent=2)+'\n');print('\n'.join(x.get('text','') for x in r.get('content',[]) if x.get('type')=='text')[:900])

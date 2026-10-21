@@ -1,0 +1,32 @@
+[
+  {
+    "name": "blue_ship",
+    "key": "ship_transform",
+    "frame": 15,
+    "source": [
+      206,
+      206
+    ],
+    "scale": 1
+  },
+  {
+    "name": "blue_ball",
+    "key": "spiked_ball",
+    "frame": 15,
+    "source": [
+      206,
+      206
+    ],
+    "scale": 1
+  },
+  {
+    "name": "blue_kneel",
+    "key": "stun_0920",
+    "frame": 1,
+    "source": [
+      724,
+      724
+    ],
+    "scale": 0.3149171270718232
+  }
+]

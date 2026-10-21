@@ -99,7 +99,7 @@ function target17Emit(b,T,port,rocket){
  let q;
  if(kind==='sonic'){
   q=eShootT(p.x,p.y,a,2.5+rank*.18,'emissile',{w:32,h:40,silent:true});
-  Object.assign(q,{_target17Art:'sonic',_target17Guide:{target:T.target,t:0,for:1.35,turn:1.05},hp:4+Math.min(2,rank),_shootable:true,_weaponProof:false});
+  Object.assign(q,{_target17Art:'sonic',_target17RazorFurious:!!(port.body||b)._rzb?.furious,_target17Guide:{target:T.target,t:0,for:1.35,turn:1.05},hp:4+Math.min(2,rank),_shootable:true,_weaponProof:false});
   (Audio.SFX.missile||Audio.SFX.bossWeaponCharge)?.();
  }else if(kind==='fire'||kind==='ice'){
   q=eShootT(p.x,p.y,a,(rocket?2.5:3.1)+rank*.16,rocket?'emissile':'mg',{w:rocket?12:7,h:rocket?24:16,silent:true});
@@ -166,6 +166,7 @@ er26ProjectileDraw=function(q){
  const art=q._target17Art;if(!art)return TARGET17.base.projectile.apply(this,arguments);
  const age=q._target17Age||0,sonic=art==='sonic',key=sonic?'pt11_sonic_pulse_'+Math.floor(age*16)%16:
   art==='fire'?'l23fx_inferno_mg_'+Math.floor(age*16)%8:'bfx_cryo_'+(art==='ice-missile'?'m_':'p_')+Math.floor(age*14)%6;
+ if(sonic&&typeof sx21TargetPulseDraw==='function')return sx21TargetPulseDraw(q);
  if(!XART.rdy(key))return true;const im=XART.get(key),size=sonic?72:art==='fire'?28:art==='ice-missile'?34:22;
  const h=sonic?size:size*(im.height||im.naturalHeight)/(im.width||im.naturalWidth);
  ctx.save();ctx.translate(q.x,q.y);if(!sonic)ctx.rotate(Math.atan2(q.vy,q.vx)-Math.PI/2);ctx.imageSmoothingEnabled=false;

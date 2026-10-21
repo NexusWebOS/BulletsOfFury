@@ -1,0 +1,182 @@
+[
+  {
+    "name": "blue_beam-job",
+    "job": "f5b66177-286c-4e99-b200-11f73bd686f0",
+    "error": false
+  },
+  {
+    "name": "blue_beam_clean-job",
+    "job": "faaa3964-60c1-428e-a845-76edea116e88",
+    "error": false
+  },
+  {
+    "name": "blue_beam_empty-job",
+    "job": "9cf080ad-0dd9-4391-87b4-918ba925f88b",
+    "error": false
+  },
+  {
+    "name": "blue_cast-job",
+    "job": "b2b9f17f-44f4-400c-876e-0c57357e70ad",
+    "error": false
+  },
+  {
+    "name": "blue_cast_clean-job",
+    "job": "778a932b-91d2-4b72-8ca0-980cdf12bd11",
+    "error": false
+  },
+  {
+    "name": "blue_cast_empty-job",
+    "job": "004ec3dd-21a7-428f-80e6-aeba1614f022",
+    "error": false
+  },
+  {
+    "name": "blue_chromium-job",
+    "job": "36a968a1-0512-47cb-b114-ab388e2e650f",
+    "error": false
+  },
+  {
+    "name": "blue_from_ship-job",
+    "job": "39c0ef3f-c6f0-436f-8e4f-aec9c70202c3",
+    "error": false
+  },
+  {
+    "name": "blue_hold-job",
+    "job": "15ecf84e-e781-47d5-b2c2-6d4476853184",
+    "error": false
+  },
+  {
+    "name": "blue_jump-job",
+    "job": "78f29ead-96b6-4a8e-baa5-0f7d1a3ea47e",
+    "error": false
+  },
+  {
+    "name": "blue_rage-job",
+    "job": "916bf610-7c07-4669-bbc1-b6c67b185b70",
+    "error": false
+  },
+  {
+    "name": "blue_rage_clean-job",
+    "job": "233f33e4-7357-4411-b063-9d97ab39e416",
+    "error": false
+  },
+  {
+    "name": "blue_rage_empty-job",
+    "job": "cbf8fada-7c3b-4c20-bde2-6874ca1f7018",
+    "error": false
+  },
+  {
+    "name": "blue_release_pose-job",
+    "job": "7f7111af-8809-4a1f-8009-06b69cc66dc1",
+    "error": false
+  },
+  {
+    "name": "blue_side-job",
+    "job": "a6066b74-c9cb-4fc2-89be-d7baa115fdf8",
+    "error": false
+  },
+  {
+    "name": "blue_slam-job",
+    "job": "128ed526-8627-4a52-a6c5-813ab133a19d",
+    "error": false
+  },
+  {
+    "name": "blue_spin-job",
+    "job": "e493fdd1-b3ba-4773-845d-090b44f88348",
+    "error": false
+  },
+  {
+    "name": "blue_throw-job",
+    "job": "13254f09-2f03-471f-aa5f-a61df7c0c3c7",
+    "error": false
+  },
+  {
+    "name": "blue_throw_follow-job",
+    "job": "99d9918f-ba8f-4717-8e4a-ed8701f080a1",
+    "error": false
+  },
+  {
+    "name": "blue_throw_release-job",
+    "job": "29749896-7d12-4035-a484-adab2204511e",
+    "error": false
+  },
+  {
+    "name": "blue_to_ball-job",
+    "job": "f59d8ec3-0a23-473b-beac-5bf164124a04",
+    "error": false
+  },
+  {
+    "name": "corrupt_beam-job",
+    "job": "a8d9ae30-5f93-4935-85bb-924392fac8cd",
+    "error": false
+  },
+  {
+    "name": "corrupt_beam_empty-job",
+    "job": "c512226f-f377-4222-a9fa-c1fef92b5878",
+    "error": false
+  },
+  {
+    "name": "corrupt_cast-job",
+    "job": "a96fe63a-b334-4911-932c-6095ddb719cb",
+    "error": false
+  },
+  {
+    "name": "corrupt_chromium-job",
+    "job": "6c5ceb9b-6991-4ec5-a421-84a1393ded3b",
+    "error": false
+  },
+  {
+    "name": "corrupt_from_ship-job",
+    "job": "1405850f-c35f-442a-b0ee-e1629e516173",
+    "error": false
+  },
+  {
+    "name": "corrupt_hold-job",
+    "job": "46300d3f-f08a-4a71-adb6-cf5fc7d4afd8",
+    "error": false
+  },
+  {
+    "name": "corrupt_jump-job",
+    "job": "95a6b998-0d6f-4ad1-99ca-07de8e195e22",
+    "error": false
+  },
+  {
+    "name": "corrupt_rage-job",
+    "job": "0d32d10a-d8b8-4ad1-b671-0b662c220775",
+    "error": false
+  },
+  {
+    "name": "corrupt_rage_empty-job",
+    "job": "91fa95f5-ab7b-4ba7-aeb5-e54d8d62ef72",
+    "error": false
+  },
+  {
+    "name": "corrupt_side-job",
+    "job": "65078bca-d3a1-480b-ac75-5bb9961ad638",
+    "error": false
+  },
+  {
+    "name": "corrupt_slam-job",
+    "job": "0aae74cc-1f74-45f3-9b93-5e25451c9161",
+    "error": false
+  },
+  {
+    "name": "corrupt_spin-job",
+    "job": "fdace704-ffa8-4457-b950-1ef4760919a6",
+    "error": false
+  },
+  {
+    "name": "corrupt_stun-job",
+    "job": "ad8a1efd-f66c-45e3-8a92-645a56a1b69f",
+    "error": false
+  },
+  {
+    "name": "corrupt_throw-job",
+    "job": "a2fa4998-0743-4cf5-bdcf-c0bab13dfa96",
+    "error": false
+  },
+  {
+    "name": "corrupt_to_ball-job",
+    "job": "963d9f1f-a418-47a1-a339-b4522749f441",
+    "error": false
+  }
+]

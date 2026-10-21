@@ -1,0 +1,27 @@
+{
+  "credit_start": 11.05,
+  "credit_end": 9.58,
+  "credit_delta": 1.47,
+  "active_jobs": 0,
+  "reference": "Actual blue_idle/corrupt_idle and empty-handed runtime exports; actual XART ship/ball export manifest in references/native-export.json.",
+  "rejected": {
+    "blue_beam": "Baked ray and gray matte; never registered. Replaced by body-only blue_beam_clean under native laser owner.",
+    "corrupt_beam": "Armed beam candidate unused; broken-weapon luminaire uses clean unarmed reactor posture.",
+    "blue_cast_empty": "Invented separate hammer. Replaced completely with blue_cast_clean.",
+    "blue_beam_empty": "Superseded by stricter blue_beam_clean.",
+    "blue_rage_empty": "Superseded by stricter blue_rage_clean.",
+    "blue_throw_release": "Repeated ground strike; excluded from final body reel."
+  },
+  "selection": {
+    "blue_chromium": "Raw7/8 circular overlays excluded; hold raw6 and raw9 at those slots.",
+    "corrupt_chromium": "Raw11/12/13 circle overlay slots hold the accepted raw10 plated pose.",
+    "blue_throw": "Original raw0..6 wind-up, then accepted Pro empty-hand follow-through and its8-frame body-only recovery. Native thrown weapon is drawn separately.",
+    "corrupt_stun": "New deep one-knee floor-anchored unarmed acting; standard Stage5 retains its native hit/kneel/get-up death/recovery poses."
+  },
+  "runtime": {
+    "banks": 47,
+    "cells": 763,
+    "bytes": 2752730,
+    "per_stage_preload": "Stage5 blue, Stage8 corrupted; native counter dependencies retain their own warm path."
+  }
+}

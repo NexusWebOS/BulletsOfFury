@@ -1,4 +1,39 @@
 {
+  "rp21_": {
+    "role": "razorback_targeted_sonic_pulse",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_razorback_pulse_1021.py",
+    "note": "Exact16 original pt11_sonic_pulse gold arcs, recolored red/green with original alpha and luminance preserved. Fixed128x128/pivot64,64,scale1. Enemy Retina pulse only; player Forge gold art unchanged."
+  },
+  "sr21_": {
+    "role": "reference_sonic_charge_and_missile_animation",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_sonic_refine_1021.py",
+    "note": "PixelLab animations seeded with actual original red sonic charge and metal-core sound round. Four256x256 banks, pivot128,128 and common scale1. Original charge remains visible under the generated ripples; original metal pixels restored. Green energy derivative preserves original green family. Supersedes so21 charge/bullet opacity-only banks; original so21 wave/ring animations remain active."
+  },
+  "so21_": {
+    "role": "original_sonic_sprite_animation",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_sonic_original_1021.py",
+    "note": "Actual original green/red rzb/rzbf bullet, crescent wave, ring and charge sprites. PixelLab reference animation drives opacity only; every exported RGB pixel and silhouette exactly matches its original, first/last poses byte-identical. Fixed256 cells/pivot128,128/scale1. Native geometry and palettes, no added glyphs or invented shapes. Supersedes sx21_ redesign."
+  },
+  "sx21_": {
+    "role": "sonic_tank_and_overlord_pressure_wave_spiral_charge_animation",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_sonic_effects_1021.py",
+    "note": "Superseded by so21_ original-pixel animation; retained candidate sources only. Six PixelLab effect-only banks with green/red Razorback and green/lime Overlord palette variants. Shared even canvases, common source-center pivots, fixed proportional scale and native collision-shaped clipping. No boss hull replacements; hit flashes, weapons and warning timing retain native owners."
+  },
+  "hh21_gun_": {
+    "role": "harrier_native_hull_gun_highlight_masks",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_harrier_hull_masks_1021.py",
+    "note": "Four32x40 transparent highlight masks sampled from carrier_closed_wells native gun pixels; common pivot16,20 and source-pixel scale. Used only for existing hull gun charge/hit/disabled feedback. Whole carrier plate remains intact; no replacement or added turret sprites. Registry harrier_hull_art_1021.js owns geometry and source provenance."
+  },
+  "ip21_": {
+    "role": "campaign_opening_plates_and_logo_effects",
+    "sheet": null,
+    "note": "PixelLab Fury satellite corruption, Lizzie/Decker dispatch/turn/run and effect-only logo flash. Fixed even cells, centered common pivots and source scale1; own build_intro_repair_1021.py registers all sheets/cells. Native pilot cockpit/aircraft and original nbl_logo_0916 remain authoritative. Guarded PixelLab lower-band subtitle repair preserves every character pixel."
+  },
   "af21_": {
     "role": "modular_aircraft_fixed_pivot_flight_banks",
     "sheet": null,
@@ -969,5 +1004,11 @@
     "owner": "_BUILD_SOURCE/build_instructor_bob_1020.py",
     "manifest": "assets/game/levels/tutorial/stormglass_1020/instructor_bob/manifest.json",
     "note": "Exclusive PixelLab bot; disjoint live core/missile/cannon alpha plates recompose seed pixel-exactly. Shared256canvas/pivot128, authored target and muzzle landmarks. Four32-pose PixelLab yaw turntables, full unit and each module, in four independent atlases; fixed cameras and pivots, no flat spinning. Native hit flashes, actual element damage, ground missiles/FOV lanes. Runtime instructor_bob_1020.js, tutorial-only warm keys."
+  },
+  "ha21_": {
+    "role": "whole_authored_hammer_acting",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_hammer_acting_1021.py",
+    "note": "PixelLab standard black-steel/cyan and corrupted violet/orange Hammerboss acting. Whole body, two arms, one hammer, physical Chromium takeover. Native encounter clocks, damage, HP and visible part/owner flash retain ownership. Fixed256px frames, ship320px padded frames, counter640px at common2.5 scale. Source/selection/export audit in _ART_SOURCES/hammer_acting_1021; Stage5 retains approved native kneeling/death acting."
   }
 }

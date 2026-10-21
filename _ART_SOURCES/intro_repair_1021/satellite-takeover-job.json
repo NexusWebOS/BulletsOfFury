@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 98395602-bffd-412a-9955-0bcc2d4ac4d4\njob_id: 98395602-bffd-412a-9955-0bcc2d4ac4d4\ndescription: Fixed256x256 canvas, stationary128,128 pivot, same hull scale. A real progressive alien-machine corruption: black biomechanical tendrils creep over the stationary satellite from its lower reactor, crawl onto the two rigid side solar decks and three dishes, branch into purple-magenta circuit veins, and ignite the red symbiote heart. Cyan healthy energy turns violet. The satellite does NOT rotate, resize, wobble, shake, translate or morph its underlying panels. Only the invasive cables, growing alien armor and energy move. End at the exact supplied infected pose. No text, no camera movement.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 102106\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"98395602-bffd-412a-9955-0bcc2d4ac4d4\")\nasset_id: 27da9ddd-479b-52d9-86e1-171b0c25019d\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

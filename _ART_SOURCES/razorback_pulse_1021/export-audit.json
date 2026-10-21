@@ -1,0 +1,70 @@
+[
+  {
+    "color": "red",
+    "source": [
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_00.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_01.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_02.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_03.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_04.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_05.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_06.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_07.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_08.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_09.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_10.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_11.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_12.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_13.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_14.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_15.png"
+    ],
+    "frames": 16,
+    "canvas": [
+      128,
+      128
+    ],
+    "pivot": [
+      64,
+      64
+    ],
+    "sourceScale": 1,
+    "alphaExact": true,
+    "luminanceErrorMax": 1,
+    "sha256": "b747a26627f728e18a22e28f39162701158badca750283cae503607b19b66700"
+  },
+  {
+    "color": "green",
+    "source": [
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_00.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_01.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_02.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_03.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_04.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_05.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_06.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_07.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_08.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_09.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_10.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_11.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_12.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_13.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_14.png",
+      "assets/game/shared/combat/playthrough_1011/sonic_pulse_15.png"
+    ],
+    "frames": 16,
+    "canvas": [
+      128,
+      128
+    ],
+    "pivot": [
+      64,
+      64
+    ],
+    "sourceScale": 1,
+    "alphaExact": true,
+    "luminanceErrorMax": 1,
+    "sha256": "71bd45d3460726f340e3fe55b6cdd8b6905a65e18bdcc3d52425dc53aa2f390f"
+  }
+]

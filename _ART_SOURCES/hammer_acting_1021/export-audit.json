@@ -1,0 +1,2441 @@
+{
+  "banks": [
+    {
+      "bank": "blue_beam_empty",
+      "frames": 17,
+      "source": "blue_beam_empty",
+      "bytes": 18640
+    },
+    {
+      "bank": "blue_beam_empty_armor",
+      "frames": 17,
+      "source": "blue_beam_empty",
+      "bytes": 18160,
+      "registrationTranslations": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ]
+    },
+    {
+      "bank": "blue_cast",
+      "frames": 17,
+      "source": "blue_cast",
+      "bytes": 50236
+    },
+    {
+      "bank": "blue_cast_armor",
+      "frames": 17,
+      "source": "blue_cast",
+      "bytes": 47722,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "bank": "blue_cast_empty",
+      "frames": 17,
+      "source": "blue_cast_empty",
+      "bytes": 21112
+    },
+    {
+      "bank": "blue_cast_empty_armor",
+      "frames": 17,
+      "source": "blue_cast_empty",
+      "bytes": 20574,
+      "registrationTranslations": [
+        [
+          2,
+          2
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -6,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -9,
+          2
+        ]
+      ]
+    },
+    {
+      "bank": "blue_chromium",
+      "frames": 17,
+      "source": "blue_chromium",
+      "bytes": 51986,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "bank": "blue_from_ship",
+      "frames": 17,
+      "source": "blue_from_ship",
+      "bytes": 69518,
+      "registrationTranslations": [
+        [
+          1,
+          -27
+        ],
+        [
+          0,
+          -31
+        ],
+        [
+          0,
+          -31
+        ],
+        [
+          0,
+          -21
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "bank": "blue_hold",
+      "frames": 17,
+      "source": "blue_hold",
+      "bytes": 52312
+    },
+    {
+      "bank": "blue_hold_armor",
+      "frames": 17,
+      "source": "blue_hold",
+      "bytes": 50202,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bank": "blue_jump",
+      "frames": 17,
+      "source": "blue_jump",
+      "bytes": 66232
+    },
+    {
+      "bank": "blue_jump_armor",
+      "frames": 17,
+      "source": "blue_jump",
+      "bytes": 63760,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          -4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          10,
+          -11
+        ],
+        [
+          3,
+          -4
+        ],
+        [
+          12,
+          -2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          -7,
+          -13
+        ],
+        [
+          9,
+          -13
+        ],
+        [
+          -19,
+          -17
+        ],
+        [
+          -8,
+          4
+        ],
+        [
+          -8,
+          4
+        ],
+        [
+          -8,
+          4
+        ],
+        [
+          -8,
+          4
+        ],
+        [
+          -8,
+          4
+        ],
+        [
+          -8,
+          4
+        ],
+        [
+          -8,
+          4
+        ]
+      ]
+    },
+    {
+      "bank": "blue_rage",
+      "frames": 17,
+      "source": "blue_rage",
+      "bytes": 86566
+    },
+    {
+      "bank": "blue_rage_armor",
+      "frames": 17,
+      "source": "blue_rage",
+      "bytes": 83302,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          -7,
+          -1
+        ],
+        [
+          -7,
+          0
+        ],
+        [
+          -7,
+          -1
+        ],
+        [
+          -7,
+          -2
+        ],
+        [
+          -8,
+          -3
+        ],
+        [
+          -8,
+          -8
+        ],
+        [
+          -5,
+          -9
+        ],
+        [
+          -7,
+          -8
+        ],
+        [
+          -5,
+          -9
+        ],
+        [
+          -7,
+          -8
+        ],
+        [
+          -5,
+          -9
+        ],
+        [
+          -8,
+          -6
+        ],
+        [
+          -7,
+          -3
+        ],
+        [
+          -7,
+          -2
+        ],
+        [
+          -7,
+          -1
+        ]
+      ]
+    },
+    {
+      "bank": "blue_rage_empty",
+      "frames": 17,
+      "source": "blue_rage_empty",
+      "bytes": 45242
+    },
+    {
+      "bank": "blue_rage_empty_armor",
+      "frames": 17,
+      "source": "blue_rage_empty",
+      "bytes": 44280,
+      "registrationTranslations": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          0,
+          16
+        ],
+        [
+          0,
+          16
+        ],
+        [
+          0,
+          16
+        ],
+        [
+          -4,
+          5
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          3,
+          -6
+        ],
+        [
+          4,
+          -5
+        ],
+        [
+          4,
+          -5
+        ],
+        [
+          4,
+          -5
+        ]
+      ]
+    },
+    {
+      "bank": "blue_side",
+      "frames": 17,
+      "source": "blue_side",
+      "bytes": 85074
+    },
+    {
+      "bank": "blue_side_left",
+      "frames": 17,
+      "source": "blue_side",
+      "bytes": 85172
+    },
+    {
+      "bank": "blue_side_armor",
+      "frames": 17,
+      "source": "blue_side",
+      "bytes": 81768,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          -7,
+          5
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          -3,
+          4
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          -4,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          11,
+          5
+        ]
+      ]
+    },
+    {
+      "bank": "blue_counter_right",
+      "frames": 16,
+      "source": "blue_side",
+      "scale": 2.5,
+      "bytes": 131394
+    },
+    {
+      "bank": "blue_counter_right_armor",
+      "frames": 16,
+      "source": "blue_side",
+      "scale": 2.5,
+      "bytes": 125944
+    },
+    {
+      "bank": "blue_counter_left",
+      "frames": 16,
+      "source": "blue_side",
+      "scale": 2.5,
+      "bytes": 131058
+    },
+    {
+      "bank": "blue_counter_left_armor",
+      "frames": 16,
+      "source": "blue_side",
+      "scale": 2.5,
+      "bytes": 126850
+    },
+    {
+      "bank": "blue_slam",
+      "frames": 17,
+      "source": "blue_slam",
+      "bytes": 62890
+    },
+    {
+      "bank": "blue_idle",
+      "frames": 1,
+      "source": "blue_slam",
+      "bytes": 20130
+    },
+    {
+      "bank": "blue_slam_armor",
+      "frames": 17,
+      "source": "blue_slam",
+      "bytes": 60424,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          -1,
+          12
+        ],
+        [
+          -13,
+          1
+        ],
+        [
+          -13,
+          1
+        ],
+        [
+          -13,
+          1
+        ],
+        [
+          -13,
+          1
+        ],
+        [
+          -13,
+          1
+        ],
+        [
+          -2,
+          9
+        ],
+        [
+          -6,
+          -3
+        ],
+        [
+          -6,
+          2
+        ],
+        [
+          -6,
+          3
+        ],
+        [
+          -6,
+          3
+        ],
+        [
+          -6,
+          3
+        ],
+        [
+          -6,
+          3
+        ]
+      ]
+    },
+    {
+      "bank": "blue_spin",
+      "frames": 17,
+      "source": "blue_spin",
+      "bytes": 83554
+    },
+    {
+      "bank": "blue_spin_armor",
+      "frames": 17,
+      "source": "blue_spin",
+      "bytes": 78726,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          -10,
+          6
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          -17,
+          3
+        ],
+        [
+          -7,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          -12,
+          2
+        ],
+        [
+          -8,
+          1
+        ],
+        [
+          -5,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "bank": "blue_throw",
+      "frames": 17,
+      "source": "blue_throw",
+      "bytes": 88010
+    },
+    {
+      "bank": "blue_throw_armor",
+      "frames": 17,
+      "source": "blue_throw",
+      "bytes": 84646,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          14,
+          -4
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          -10,
+          -8
+        ],
+        [
+          -10,
+          -8
+        ],
+        [
+          9,
+          20
+        ],
+        [
+          -4,
+          -7
+        ],
+        [
+          -14,
+          -8
+        ],
+        [
+          -9,
+          10
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "bank": "blue_to_ball",
+      "frames": 17,
+      "source": "blue_to_ball",
+      "bytes": 84914,
+      "registrationTranslations": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          -3
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          -1,
+          5
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          -1,
+          5
+        ],
+        [
+          -1,
+          5
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_beam_empty",
+      "frames": 17,
+      "source": "corrupt_beam_empty",
+      "bytes": 13910,
+      "registrationTranslations": [
+        [
+          -4,
+          0
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_cast",
+      "frames": 17,
+      "source": "corrupt_cast",
+      "bytes": 34384,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          21
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_chromium",
+      "frames": 17,
+      "source": "corrupt_chromium",
+      "bytes": 42652,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          -3,
+          5
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -4,
+          10
+        ],
+        [
+          -4,
+          7
+        ],
+        [
+          -4,
+          9
+        ],
+        [
+          -9,
+          2
+        ],
+        [
+          -4,
+          9
+        ],
+        [
+          -4,
+          10
+        ],
+        [
+          -4,
+          0
+        ],
+        [
+          -3,
+          6
+        ],
+        [
+          -3,
+          6
+        ],
+        [
+          -3,
+          6
+        ],
+        [
+          -3,
+          6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -3,
+          5
+        ],
+        [
+          -4,
+          -2
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_from_ship",
+      "frames": 17,
+      "source": "corrupt_from_ship",
+      "bytes": 57072,
+      "registrationTranslations": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_hold",
+      "frames": 17,
+      "source": "corrupt_hold",
+      "bytes": 36260,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_jump",
+      "frames": 17,
+      "source": "corrupt_jump",
+      "bytes": 37248,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          -5
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          1,
+          -13
+        ],
+        [
+          3,
+          -5
+        ],
+        [
+          -7,
+          10
+        ],
+        [
+          -11,
+          -5
+        ],
+        [
+          -10,
+          -3
+        ],
+        [
+          -10,
+          -3
+        ],
+        [
+          -10,
+          -3
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_rage",
+      "frames": 17,
+      "source": "corrupt_rage",
+      "bytes": 58710,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          5,
+          -1
+        ],
+        [
+          6,
+          -5
+        ],
+        [
+          1,
+          -8
+        ],
+        [
+          1,
+          -8
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          -3,
+          -5
+        ],
+        [
+          -5,
+          -5
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          -5,
+          -5
+        ],
+        [
+          5,
+          -5
+        ],
+        [
+          5,
+          -5
+        ],
+        [
+          5,
+          -5
+        ],
+        [
+          -4,
+          -4
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          4,
+          -4
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_rage_empty",
+      "frames": 17,
+      "source": "corrupt_rage_empty",
+      "bytes": 56378,
+      "registrationTranslations": [
+        [
+          -4,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          17
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          17
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          7,
+          -2
+        ],
+        [
+          7,
+          -2
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_side",
+      "frames": 17,
+      "source": "corrupt_side",
+      "bytes": 44656
+    },
+    {
+      "bank": "corrupt_side_left",
+      "frames": 17,
+      "source": "corrupt_side",
+      "bytes": 44818,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          -4
+        ],
+        [
+          -3,
+          -6
+        ],
+        [
+          7,
+          -5
+        ],
+        [
+          -5,
+          8
+        ],
+        [
+          -4,
+          7
+        ],
+        [
+          -4,
+          -1
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          -12,
+          4
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_slam",
+      "frames": 17,
+      "source": "corrupt_slam",
+      "bytes": 35018
+    },
+    {
+      "bank": "corrupt_idle",
+      "frames": 1,
+      "source": "corrupt_slam",
+      "bytes": 2938,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -4,
+          11
+        ],
+        [
+          -5,
+          12
+        ],
+        [
+          -5,
+          -7
+        ],
+        [
+          -2,
+          7
+        ],
+        [
+          -2,
+          6
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          -8,
+          -3
+        ],
+        [
+          1,
+          -5
+        ],
+        [
+          1,
+          -5
+        ],
+        [
+          1,
+          -5
+        ],
+        [
+          -7,
+          -2
+        ],
+        [
+          1,
+          -5
+        ],
+        [
+          1,
+          -5
+        ],
+        [
+          1,
+          -5
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_spin",
+      "frames": 17,
+      "source": "corrupt_spin",
+      "bytes": 41002,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          -4,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          4,
+          -14
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          -2,
+          -5
+        ],
+        [
+          2,
+          -5
+        ],
+        [
+          5,
+          -4
+        ],
+        [
+          -18,
+          -10
+        ],
+        [
+          -7,
+          21
+        ],
+        [
+          -4,
+          20
+        ],
+        [
+          -1,
+          20
+        ],
+        [
+          -10,
+          4
+        ],
+        [
+          -6,
+          -2
+        ],
+        [
+          0,
+          -1
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_stun",
+      "frames": 17,
+      "source": "corrupt_stun",
+      "bytes": 33916,
+      "registrationTranslations": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_throw",
+      "frames": 17,
+      "source": "corrupt_throw",
+      "bytes": 50600,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -6,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          -7
+        ],
+        [
+          -18,
+          -3
+        ],
+        [
+          -3,
+          -6
+        ],
+        [
+          -3,
+          -5
+        ],
+        [
+          -15,
+          0
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          5,
+          -3
+        ],
+        [
+          -6,
+          -3
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "bank": "corrupt_to_ball",
+      "frames": 17,
+      "source": "corrupt_to_ball",
+      "bytes": 42770,
+      "registrationTranslations": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -5,
+          -5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          -6,
+          -3
+        ],
+        [
+          -3,
+          -4
+        ],
+        [
+          -3,
+          -4
+        ]
+      ]
+    }
+  ],
+  "geometry": "Fixed256x256 chest128,112; ship transforms320x320 with shared32px padding/chest160,144; counters640x640 chest320,280/common2.5 scale. No per-frame silhouette fit.",
+  "outputs": [
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_beam_empty.webp",
+      "sha256": "aa11c4dc29d8411c36bd69048dd6e228f3a2ac1b59f147622f5ee3b95dcaa35d"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_beam_empty_armor.webp",
+      "sha256": "7d9b45df86fe8139cfaa40c396c91f7d27780f8a26f96502dedf0cfd445f7e10"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_cast.webp",
+      "sha256": "41bb609160787fdad2041dccc80c5a43172f10df71d30747e901ac0df4baabe8"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_cast_armor.webp",
+      "sha256": "b6578d6c6958bd4e0aaf2dad200b1e0c9a88c92ba0854587590132f68b0634de"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_cast_empty.webp",
+      "sha256": "b28ad01ed1fd88968281d827bc7334deca395f3d59dc041f057b6ce37415a3eb"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_cast_empty_armor.webp",
+      "sha256": "fd28468a833152e5a9c113db55bb7c650fe607b8aad2ff74d5bee19e6f59e448"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_chromium.webp",
+      "sha256": "790e1f6dd710c06d95e2b36802b17774c188f1d339b21f6440833f9e5d6204a4"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_from_ship.webp",
+      "sha256": "652b2a838e70a5e1a7d1972f87257a69cfb9a836a7d552020f484d013bca014a"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_hold.webp",
+      "sha256": "ecfe815e47c76e2d22bcb833920b0f48c0f39d55698f499964471af2dfa35e31"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_hold_armor.webp",
+      "sha256": "ae7c28de7750ef0ac8c0c848f9f316c3cb39b350fc01ff654f0e32ad56dbd8ea"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_jump.webp",
+      "sha256": "8cea60a58c088c171763c0ec7bf878fc5140c27464530877b5eaa11d993f9fa6"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_jump_armor.webp",
+      "sha256": "ab1f60788593377495743b8a04c133f8a90fb55c65c29dd0add3ddf1afc0e0d2"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_rage.webp",
+      "sha256": "6db559f3c1f2785ab0b26bbe683e9ae3cb9914c92316f37d0ed269a921bde636"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_rage_armor.webp",
+      "sha256": "009a4fb0a327fb7f5241badf586f92e0b15f1f316ab15141c29a094d7b510079"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_rage_empty.webp",
+      "sha256": "3ec96a8b933035c05d13796e5e49319a144b74e5b4c8fd6e877192861f5e37e5"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_rage_empty_armor.webp",
+      "sha256": "6479231dc77acc014b6e38b9bcc88493444e3cc558200d1a06578f22671f880b"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_side.webp",
+      "sha256": "8f291db820e0da40e6dc34bccc25b64f2294d688b971699dd70de3652e2898c4"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_side_left.webp",
+      "sha256": "98036ed9b36e9b759742d4f3c97c457f4b796b7985fc88103f38706e653ba059"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_side_armor.webp",
+      "sha256": "9714c40103b9af8e42801b78e8db8359fe407027c3ecf15cf70f2b8a7b18faa8"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_counter_right.webp",
+      "sha256": "171fe6f5e0c45dc4010f3794f144ccda1a826019cb89384d42fe5cc3cf68b84a"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_counter_right_armor.webp",
+      "sha256": "b6011ab44dba520140ff0bb2f497ace76a23cd41afe11c07459c3519cabc9732"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_counter_left.webp",
+      "sha256": "7f52c346c3245fad56376c916d06aca71f2b7b2b63a78785cbb645bc99488ced"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_counter_left_armor.webp",
+      "sha256": "bf997086fea5cd3e86cfb78313b33f39f2fbe20b7fd61fbf02ff42056479d3eb"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_slam.webp",
+      "sha256": "7376209949aac21b59803b6b7011a0232758ae49c610164533ea16dc5e3fc775"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_idle.webp",
+      "sha256": "b6f02b118e63ffe2d873e5f009517e1e952ef7c6097bffe72c7bd22a9b1b0207"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_slam_armor.webp",
+      "sha256": "4e6ac14b8aa1a84f86edec1ab836749e297ebde40b7ea9c144facc94860f8dc0"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_spin.webp",
+      "sha256": "21098d393bb35b3282c40f6c04082190cd3d446f1c93cd13bd7f996edca137ef"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_spin_armor.webp",
+      "sha256": "d3417b49efbfe760aeafe0d6d272d03d52cc6e07ee875af484cc47bea7efea8b"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_throw.webp",
+      "sha256": "b5242b946e0578e8dd56f0c4e20ca272089c0a1df3944c9338910752d520fa07"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_throw_armor.webp",
+      "sha256": "14156b50bd0c9d2606b69380711d39a9824fe38055daf3e96cbb73ce42ef8ef6"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_to_ball.webp",
+      "sha256": "4965c37187d3cfd8d0a7f773cee9e5338a453e36290d6aeecea8610ddf301c54"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_beam_empty.webp",
+      "sha256": "43196810645fc67e888e67cf91889253b394cc483ea45db938d1b10e11e451c2"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_cast.webp",
+      "sha256": "88a42c0a3192a2a0c1bd138ea5af3baad9cdbd6ec78cc347b01138b443e43b47"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_chromium.webp",
+      "sha256": "65231e06feb003335100739ab89acd0f5912da67a8ccc7941d559c627b6eb0d3"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_from_ship.webp",
+      "sha256": "a79f3453343ace781bf952d569030bb0ef4108e9891e7ede29cbee95f044b517"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_hold.webp",
+      "sha256": "b8aebbe2385e98f50a110f4e2ddb2e7f4a647993179af269d9a13137741ef48a"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_jump.webp",
+      "sha256": "d3f815cf4a9fce7ce4adb47de8228c867564c67c4cfa3d315795c3f3307e506a"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_rage.webp",
+      "sha256": "e8684e39e7f55b9a542f7d99ad8b684dd63ce9024b87acfcebd368767fdb0b5c"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_rage_empty.webp",
+      "sha256": "60871c98dfb849139aacedd3c1fd18075d14035848a0447ce3754bcdd3927d63"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_side.webp",
+      "sha256": "7e9282950e0f5041fa647195f441cb6e589e6c19c9b50499dfed4052f404ca00"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_side_left.webp",
+      "sha256": "5f46909d69857edc8a5e1346ff89c462034ca71eebe8ba4e94da752b4c3ab503"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_slam.webp",
+      "sha256": "4db7e821fcbc00e3f5f3a136d043def30558725f1af9d3ed0fa8fef8c1a03430"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_idle.webp",
+      "sha256": "d8c1cee7bc2ab45ae5800485582d5a64885fa4447924fd67d538874bd2a8f6a5"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_spin.webp",
+      "sha256": "a6035579d81002b4acca9f01d53a5d228ef2c02bd9d26494fad2aeffb94255da"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_stun.webp",
+      "sha256": "6d6bcae1a51526555c0d4098381e3bb737ac9661e9182627151afbe0b5422f3e"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_throw.webp",
+      "sha256": "a2fde1c99c019e72cc3ced4fee9aa06f75ab7403adebac4c400f1cb7ab2e202d"
+    },
+    {
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_to_ball.webp",
+      "sha256": "e777a7a62b4a6f81d30c6849be2326d42852ca4426a97d823ebb0383072bed81"
+    }
+  ]
+}

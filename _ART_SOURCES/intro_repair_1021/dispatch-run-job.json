@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 0759cde1-2c7b-4634-b154-c1091b7f5e08\njob_id: 0759cde1-2c7b-4634-b154-c1091b7f5e08\nmodel: pro\ndescription: FRAME FORMAT512x288 pixel cinematic with fixed camera, complete full-body characters. Continue the supplied dispatch tower scene: the SAME Lizzie and Decker have abandoned their seats and are sprinting urgently toward the open flight-deck doorway on the RIGHT, to reach their jets beyond the frame. Lizzie leads, curly auburn hair, yellow jacket over black top and black utility trousers. Decker follows, swept blond hair, black rectangular glasses, black jacket with yellow piping, black utility trousers. Show expressive running arms and knees, black boots, red emergency lamps, cyan abandoned consoles at LEFT and a lit open hangar-access door at RIGHT. Preserve their exact faces and outfits. Only two people; no visible aircraft, gunfire, written words, captions or UI frame. Detailed Bullets of Fury arcade pixel art matching the supplied scene.\nsize: 512x288px\ntransparent: False\ncandidates: 1\nreferences: 3\nseed: 102109\nasset_id: e9447596-7452-584e-b08f-b67baff049e4\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0759cde1-2c7b-4634-b154-c1091b7f5e08\")"
+    }
+  ],
+  "isError": false
+}

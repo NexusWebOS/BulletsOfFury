@@ -1,0 +1,642 @@
+[
+  {
+    "key": "so21_bullet_green",
+    "path": "assets/game/shared/combat/sonic_original_1021/bullet_green.webp",
+    "sourceKey": "rzb_sonic_bullet",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_bullet.png",
+    "job": "f75906da-2e22-412a-843a-1da0fa4083b9",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_bullet.png",
+    "sourceSha256": "f1e14860b7abdea5f511c3590b5f531eee7f2292cbbefd9fb8e6ff9ef2750f4f",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "b1f4eeffe77ec6e288d2d19ce84b194672224b0a0613d1c015dccd4abc69dd17"
+  },
+  {
+    "key": "so21_wave_green",
+    "path": "assets/game/shared/combat/sonic_original_1021/wave_green.webp",
+    "sourceKey": "rzb_sonic_wave",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_wave.png",
+    "job": "1f70b1ae-897b-4726-b770-1ab605c7feaa",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_wave.png",
+    "sourceSha256": "38af79b7ff4d44b09aa410cf6a11e869cd7a655948df7c4a7e9dfc51a0208b60",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "74ce33b028a4a014ca6ef1953fa28c65253884f0d4a74174e2fed74ba86b6a9c"
+  },
+  {
+    "key": "so21_ring_green",
+    "path": "assets/game/shared/combat/sonic_original_1021/ring_green.webp",
+    "sourceKey": "rzb_sonic_ring",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_ring.png",
+    "job": "490e16d6-6634-43c5-9d1d-f35ed686d8ba",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_ring.png",
+    "sourceSha256": "fa175a939c7bcffd93a9f7fb329cfbda2094791f963e43fd9569de510a66269a",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "285e7965ed8b2caec96e709df6d316d0b00173057bdfa26d0684399747ae6931"
+  },
+  {
+    "key": "so21_charge_green",
+    "path": "assets/game/shared/combat/sonic_original_1021/charge_green.webp",
+    "sourceKey": "rzb_sonic_charge",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_charge.png",
+    "job": "1b5d7453-5a7d-4471-abed-a91950cb0071",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_charge.png",
+    "sourceSha256": "63c54f2e5d4393400ec36b274110527d6eea0efcca58284c4c1a74fd4530b303",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "02389f5759a5712c4a701ca133987cf638726960016cfb3bfb05284b017e4630"
+  },
+  {
+    "key": "so21_bullet_red",
+    "path": "assets/game/shared/combat/sonic_original_1021/bullet_red.webp",
+    "sourceKey": "rzbf_sonic_bullet",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+    "job": "610106a5-6540-4e74-b7f8-eccaa2aa7091",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+    "sourceSha256": "a053a47f9ee832f0bd2eed8097fd7208389e10799afa5fc029e31e58d4d00914",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "36ead3f0209712290a28f4704c8345eaab554741b1c5fb1046f607fa50460d20"
+  },
+  {
+    "key": "so21_wave_red",
+    "path": "assets/game/shared/combat/sonic_original_1021/wave_red.webp",
+    "sourceKey": "rzbf_sonic_wave",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_wave.png",
+    "job": "a28b4bc3-0307-40e9-ab26-10afd8ded7b4",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_wave.png",
+    "sourceSha256": "f55233fb93300bd24bad7fae7df7fb05fd393a464c17675c0521a6be5f86a646",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "8fcabfb147c587f8ee3260619b560966b7dd159d0bcffba162d58d07a25c8992"
+  },
+  {
+    "key": "so21_ring_red",
+    "path": "assets/game/shared/combat/sonic_original_1021/ring_red.webp",
+    "sourceKey": "rzbf_sonic_ring",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_ring.png",
+    "job": "3b4a8336-fe75-4641-91c9-d032786be478",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_ring.png",
+    "sourceSha256": "da5025184e7a46914cf789970e203e31ef69ff9de21776deec8298c12f517533",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "23d1115c9be64179a1c8e053e26356e9a1255995ae3ed1522d2d9cce6dab15dd"
+  },
+  {
+    "key": "so21_charge_red",
+    "path": "assets/game/shared/combat/sonic_original_1021/charge_red.webp",
+    "sourceKey": "rzbf_sonic_charge",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "frames": 9,
+    "fps": 18,
+    "cells": [
+      [
+        0,
+        0,
+        256,
+        256
+      ],
+      [
+        256,
+        0,
+        256,
+        256
+      ],
+      [
+        512,
+        0,
+        256,
+        256
+      ],
+      [
+        768,
+        0,
+        256,
+        256
+      ],
+      [
+        1024,
+        0,
+        256,
+        256
+      ],
+      [
+        0,
+        256,
+        256,
+        256
+      ],
+      [
+        256,
+        256,
+        256,
+        256
+      ],
+      [
+        512,
+        256,
+        256,
+        256
+      ],
+      [
+        768,
+        256,
+        256,
+        256
+      ]
+    ],
+    "source": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_charge.png",
+    "job": "1b5d7453-5a7d-4471-abed-a91950cb0071",
+    "motionSource": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_charge.png",
+    "sourceSha256": "999df0dc7d9de547ea9a3c077d8b7e7b6bc5caf0613adc9aabd66768dcdb93b7",
+    "firstFrameExact": true,
+    "lastFrameExact": true,
+    "allRGBExact": true,
+    "allSilhouettesExact": true,
+    "minimumAlphaGain": 0.72,
+    "unique": 8,
+    "sha256": "3672cb83cd90b48da2759e5a3328af34b916a2b5c6054612d6758473cab0e8fb"
+  }
+]

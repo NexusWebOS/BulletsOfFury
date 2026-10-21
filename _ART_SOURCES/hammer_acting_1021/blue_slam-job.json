@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 128ed526-8627-4a52-a6c5-813ab133a19d\njob_id: 128ed526-8627-4a52-a6c5-813ab133a19d\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. With both hands gripping the long hammer shaft, lift the entire hammer high ABOVE the head, hold briefly with its head clearly visible above the helmet, then swing the hammer forcefully straight DOWN in front, ending with its head extended well below the knees at ground impact. The hammer must project well outside the body silhouette. Feet planted, whole shaft visible. No spin, no extra hammer, no detached weapon. End in the low impact pose.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212100\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"128ed526-8627-4a52-a6c5-813ab133a19d\")\nasset_id: 087d18de-d449-539a-a611-43b2359a40ce\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

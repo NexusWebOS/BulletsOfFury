@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 99d9918f-ba8f-4717-8e4a-ed8701f080a1\njob_id: 99d9918f-ba8f-4717-8e4a-ed8701f080a1\naction: FRAME FORMAT: 256x256 transparent pixels, same common body scale and fixed chest pivot128,112. Exact same black steel/cyan humanoid with TWO EMPTY HANDS. Begin with the supplied forward-leaning open-hands follow-through. Relax shoulders and draw both EMPTY arms back beside the torso, ending in the supplied unarmed ready stance. Keep the exact same armor, helmet and blue lights. Feet planted throughout; same whole body on transparency, absolutely empty surrounding space. Only body motion, no other objects or energy effects.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 10215001\nasset_id: 042bd748-b03e-5395-9e22-661404630c68\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"99d9918f-ba8f-4717-8e4a-ed8701f080a1\")"
+    }
+  ],
+  "isError": false
+}

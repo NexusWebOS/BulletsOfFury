@@ -10,17 +10,17 @@
    - During an unlock cinematic the jet flies to the new flag first. The cinematic holds in 'wait'
      until the jet arrives, so the ding and unfurl happen in view with the jet beside the flag.
    - The camera follows the jet, leading toward its destination, at a close zoom.
-   - The boot sequence, Stage X / Rebel cinematics, the rift return and the
-     progression-bar overview keep their existing cameras. */
+   - The boot sequence now stays close for the HQ approach. Stage X / Rebel
+     cinematics, rift return and progression-bar overview keep their cameras. */
 const CF9={base:{cam:cmap2CameraTick,ship:sselShipUpdate,reset:cmap2Reset},
  lead:.35,                      // camera leads from the jet toward its destination
- zoom:()=>Math.min(1.10,(CM2_BAND_BOT-CM2_BAND_TOP)/(cmap2Size(sselUnlockCine?.stage||sselCursor)*.38)),
+ zoom:()=>Math.min(1.65,(CM2_BAND_BOT-CM2_BAND_TOP)/(cmap2Size(sselUnlockCine?.stage||sselCursor)*.25)),
  detail:0,cineHold:0};
 
 // Markers used to cancel out camera zoom entirely. Give the selected flag
 // enough pixels for its Roman numeral while the actual pilot hull stays clear.
-function cf9FlagHeight(st){return 28+(st===(sselUnlockCine?.stage||sselCursor)?28*CF9.detail:0);}
-function cf9ShipSize(){return 40+12*CF9.detail;}
+function cf9FlagHeight(st){return 28+(st===(sselUnlockCine?.stage||sselCursor)?44*CF9.detail:0);}
+function cf9ShipSize(){return 40+28*CF9.detail;}
 
 function cf9Fresh(){const r=campaign.rank||{};
  return !Object.keys(r).some(k=>r[k]&&r[k]!=='incomplete');}
@@ -28,12 +28,12 @@ function cf9Fresh(){const r=campaign.rank||{};
 function cf9Dest(){const cine=sselUnlockCine;
  return cine&&!cine.done?sselFlagXY(cine.stage):sselFlagXY(sselCursor);}
 function cf9Standard(){
- return !(sselBoot>0||s9MapCine||riftReturn||Rival24.flying||Rival24.mapFocused||MAP4E.xPreview||
+ return !(s9MapCine||riftReturn||Rival24.flying||Rival24.mapFocused||MAP4E.xPreview||
   cmap2.focus==='bar'||(typeof map4hXFocused==='function'&&map4hXFocused()));
 }
 
-sselShipUpdate=function(dt){
- if(sselBoot>0||!cf9Standard())return CF9.base.ship.apply(this,arguments);
+function cf9ShipTick(dt){
+ if(!cf9Standard())return CF9.base.ship.apply(this,arguments);
  const cine=sselUnlockCine,dest=cf9Dest();if(!dest)return CF9.base.ship.apply(this,arguments);
  if(!sselShip){
   const hq=cf9Fresh()?cmap2World('hq'):null,from=hq?{x:hq.x,y:hq.y+40}:dest;
@@ -54,10 +54,17 @@ sselShipUpdate=function(dt){
    life:rnd(.18,.36),t:0,r:rnd(1,2.2),color:d>90?'#ffd27a':'#8fd0ff'});}
  // Hold the unlock cinematic until the jet has reached the new flag.
  if(cine&&(cine.phase==null||cine.phase==='wait')&&d>8)cine.t=0;
+}
+sselShipUpdate=function(dt){
+ if(CF9.shipEarly){CF9.shipEarly=false;return;}
+ return cf9ShipTick(dt);
 };
 
 cmap2CameraTick=function(dt,cine,selected){
  const close=cf9Standard();CF9.detail+=((close?1:0)-CF9.detail)*(1-Math.exp(-Math.max(0,dt)*6));
+ // Native map drawing updates the jet after applying its camera. Step it
+ // once before the camera instead, so both use the same visible position.
+ CF9.shipEarly=false;if(close){cf9ShipTick(dt);CF9.shipEarly=true;}
  if(!close||!sselShip)return CF9.base.cam.apply(this,arguments);
  map4eWarm();
  const sh=sselShip,dest=cf9Dest()||sh,z=CF9.zoom();
@@ -66,11 +73,17 @@ cmap2CameraTick=function(dt,cine,selected){
  const t=cmap2Clamp({x:sh.x+leadX,y:sh.y+leadY-12/z},z),c=cmap2.cam;
  const kp=1-Math.exp(-Math.max(0,dt)*(sh.moving?12:10)),kz=1-Math.exp(-Math.max(0,dt)*4);
  c.x+=(t.x-c.x)*kp;c.y+=(t.y-c.y)*kp;c.z+=(z-c.z)*kz;
+ // A close camera cannot lag a fast north/south hop behind the briefing or
+ // top bar. Bound the full visible hull after easing, while retaining lead.
+ const pad=cf9ShipSize()/2+4;
+ c.y=clamp(c.y,sh.y-(CM2_BAND_BOT-pad-CM2_VCY)/c.z,sh.y-(CM2_BAND_TOP+pad-CM2_VCY)/c.z);
+ c.x=clamp(c.x,sh.x-(VW+campaignViewOffset()-pad-CM2_VCX)/c.z,
+  sh.x-(-campaignViewOffset()+pad-CM2_VCX)/c.z);
 };
 
 // Returning from a stage opens already zoomed in on the cursor's flag, where the jet will be.
 cmap2Reset=function(opts){const r=CF9.base.reset.apply(this,arguments);
- CF9.detail=!opts?.boot&&cf9Standard()?1:0;
- if(!opts?.boot&&cf9Standard()){const p=sselFlagXY(sselCursor),z=CF9.zoom();
+ CF9.detail=cf9Standard()?1:0;
+ if(cf9Standard()){const p=opts?.boot&&cf9Fresh()?cmap2World('hq'):sselFlagXY(sselCursor),z=CF9.zoom();
   if(p){const t=cmap2Clamp({x:p.x,y:p.y-12/z},z);Object.assign(cmap2.cam,{x:t.x,y:t.y,z});}}
  return r;};

@@ -1,0 +1,123 @@
+[
+  {
+    "key": "cin_federation_station_1",
+    "path": "_ART_SOURCES/intro_repair_1021/references/cin_federation_station_1.png",
+    "sha256": "6e1ba4645aa9cbddd02d5917d8fde3a663621bf2ce8a8019ec544ee0cf507a7a",
+    "w": 256,
+    "h": 256,
+    "source": [
+      256,
+      256
+    ]
+  },
+  {
+    "key": "cin_origin_radio",
+    "path": "_ART_SOURCES/intro_repair_1021/references/cin_origin_radio.png",
+    "sha256": "6f89ad8b44fe401288db2157d40c4ee71989d23f1314ee886505c6426f03da1a",
+    "w": 1942,
+    "h": 810,
+    "source": [
+      1942,
+      809
+    ]
+  },
+  {
+    "key": "cin_origin_tower",
+    "path": "_ART_SOURCES/intro_repair_1021/references/cin_origin_tower.png",
+    "sha256": "9092c370ceaa9805987558dedb2fc6a51d111a9a2fbfe379d10619bc7c961a3a",
+    "w": 1672,
+    "h": 942,
+    "source": [
+      1672,
+      941
+    ]
+  },
+  {
+    "key": "cin_origin_hq_iso",
+    "path": "_ART_SOURCES/intro_repair_1021/references/cin_origin_hq_iso.png",
+    "sha256": "64113c94e2dd729d4e6759a7598927b949cf655402756fe6a5e46600a3b86a5b",
+    "w": 1672,
+    "h": 942,
+    "source": [
+      1672,
+      941
+    ]
+  },
+  {
+    "key": "cin_pilot_lizzie_open",
+    "path": "_ART_SOURCES/intro_repair_1021/references/cin_pilot_lizzie_open.png",
+    "sha256": "1d54bd863c29afe3c1f38e8e88d7296742a8f03d5cfab1e1e7dcfd61f02bd207",
+    "w": 1536,
+    "h": 1024,
+    "source": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "key": "cin_pilot_decker_open",
+    "path": "_ART_SOURCES/intro_repair_1021/references/cin_pilot_decker_open.png",
+    "sha256": "66820525a40bee3075a12d25e387fe1675b870b24151c03e76c04164f5888e3a",
+    "w": 1536,
+    "h": 1024,
+    "source": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "key": "ship_yuri",
+    "path": "_ART_SOURCES/intro_repair_1021/references/ship_yuri.png",
+    "sha256": "eb4f26b54bea025d8ea3f8a3578524bbff4db533899721bd306e2feaa5a9ce7e",
+    "w": 210,
+    "h": 230,
+    "source": [
+      209,
+      229
+    ]
+  },
+  {
+    "key": "ship_decker",
+    "path": "_ART_SOURCES/intro_repair_1021/references/ship_decker.png",
+    "sha256": "2253f894714799d66446aa73ddcc5e0fbfdd9ba4475f711454be1e681e8661c4",
+    "w": 200,
+    "h": 230,
+    "source": [
+      200,
+      230
+    ]
+  },
+  {
+    "key": "ship_lizzie",
+    "path": "_ART_SOURCES/intro_repair_1021/references/ship_lizzie.png",
+    "sha256": "c5ecde383523643809f6ed8eba803166a9bafd1afddf359999f98574e143ea68",
+    "w": 224,
+    "h": 244,
+    "source": [
+      224,
+      243
+    ]
+  },
+  {
+    "key": "nbl_logo_0916",
+    "path": "_ART_SOURCES/intro_repair_1021/references/nbl_logo_0916.png",
+    "sha256": "f8103e7fdcfb19d5a48de2ff43bbf42bc29c07b366377a67b974a4f98bc4fbcd",
+    "w": 1506,
+    "h": 748,
+    "source": [
+      1506,
+      747
+    ]
+  },
+  {
+    "key": "dp20_dracodia_portrait",
+    "path": "_ART_SOURCES/intro_repair_1021/references/dp20_dracodia_portrait.png",
+    "sha256": "680fc85fedf0df0e908c0e1eef4bbefd1064daef8e438cdb49dd58541ed1839c",
+    "w": 512,
+    "h": 512,
+    "source": [
+      512,
+      512
+    ]
+  }
+]

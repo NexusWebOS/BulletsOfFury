@@ -52,8 +52,8 @@ rebelSquadTick=function(b,dt){const r=AF21.base.tick.apply(this,arguments);for(c
 wm26Emit=function(owner){if(owner&&AF21.aliases.has(owner.type||owner.key))owner._af21FireAt=efxClock;return AF21.base.muzzle.apply(this,arguments);};
 XART.get=function(key){const im=AF21.base.get.apply(this,arguments);if(im)AF21.tags.set(im,{key});return im;};
 xartTint=function(key,color){const im=AF21.base.tint.apply(this,arguments);if(im)AF21.tags.set(im,{key,color});return im;};
-drawEnemy=function(e){const model=AF21.aliases.get(e.type);if(!model||e.dead||e._dyingT!=null)return AF21.base.enemy.apply(this,arguments);
- const now=efxClock;if(Number.isFinite(e.fireCd)&&e.fireCd>(e._af21LastCd??e.fireCd)+.04)e._af21FireAt=now;e._af21LastCd=e.fireCd;
+drawEnemy=function(e){const model=AF21.aliases.get(e.type);if(!model||e._bob20||e.dead||e._dyingT!=null)return AF21.base.enemy.apply(this,arguments);
+ const now=efxClock;if(!e._tut&&Number.isFinite(e.fireCd)&&e.fireCd>(e._af21LastCd??e.fireCd)+.04)e._af21FireAt=now;e._af21LastCd=e.fireCd;
  const request=e._air13Motion,roll=request?.kind==='roll'||e._barrelT>0,somer=request?.kind==='somer',kind=roll?'roll':somer?'somer':now-(e._af21FireAt??-999)<.4?'attack':Math.abs(e.vx||0)>.15||Math.abs(e.spin||0)>.08?'drift':'idle';
  const phase=roll||somer?(request?request.t/request.dur:1-e._barrelT/.72):kind==='attack'?(now-e._af21FireAt)/.4:now/1.15,p=af21Pose(e.type,kind,phase);
  if(!p)return AF21.base.enemy.apply(this,arguments);const original=ctx.drawImage;let replaced=false;

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 95061669-c563-481a-9821-22ce4ccd0ed7\njob_id: 95061669-c563-481a-9821-22ce4ccd0ed7\ndescription: FRAME FORMAT256x128, stationary pivot128,64, identical canvas/scale. Animate ONLY the cyan-white electrical branches and orange sparks around the empty logo-shaped center. A quick horizontal flash races across, bright impact flare, arcs curl outwards and flicker, small sparks scatter and dim until the flare dissipates. No letters, logo, objects, camera shake or zoom. Preserve transparent backdrop and unclipped edges. Real distinct pixel-art effect poses.\nframes: 32\nsize: 256x128px\ntransparent: True\nseed: 102105\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"95061669-c563-481a-9821-22ce4ccd0ed7\")\nasset_id: 5133cb0d-8bf3-5cb4-95f6-46e1ddc524bb\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

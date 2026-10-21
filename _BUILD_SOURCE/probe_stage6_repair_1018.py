@@ -36,7 +36,7 @@ try:
    p.evaluate('''()=>{s6Opening=null;story=fb2Talk=fb2Intro=null;BOFCinematicDirector.cancel();AP10_X.intro=null;P2M.active=null;H3.ending=null;H3.release=false;stagePlan=[];warnT=0;warnKind=null;
     VP12.next=CP12.next=EP13.next=SEWER17.next=999999;B._be=null;B.enter=false;B._phaseInvuln=0;player.x=worldWidth()/2;player.y=VH-65;player.invuln=0;playerHit=()=>{};run.shield=0;run.spaceMode=false;
     s6WingInit();s6Wing.beats=99;s6Wing.all=true;s6Wing.fakeDone=true;s6Wing.route='left';subBossTriggered=aminiTriggered=true;
-    for(const k of ['j','k','y','a','d','w','s'])Input.keys[k]=false;S6R18.events=[];s6Art=[];s6Jets=[];s6HiveShots=[];__bofFit();}''')
+    for(const k of ['j','k','y','a','d','w','s'])Input.keys[k]=false;S6R18.events=[];s6Art=[];s6Jets=[];s6HiveShots=[];window.s6RadioDrawStart=UI20.draws;__bofFit();}''')
    frames(210)
   def mg(frames_count,which):
    p.evaluate('''()=>{window.mgPreviousSpecial={sonic:run.sonicT,dk:run.dkT};run.sonicT=run.dkT=0;special=thunderStorm=null;weaponFormSelect(7,{kind:'primary1003b',id:'mg'});chaingunUnlocked=false;run._earnedUnlocks={...(run._earnedUnlocks||{}),chaingun:false};run.weapon=0;run.wvars[0]=null;run.forge={};run.forgeForms={};run.infusion=null;run.loadout=[0];run.wlevels[0]=run.wlevel=0;powerups=[];player.fireCd=0;Input.keys.j=true;player._mgMuzT=0;retinaScanClear();retina.target=null;retina.phase=null;}''')
@@ -45,8 +45,11 @@ try:
    frames(frames_count,'powerups=[];enemies=[];'+which);p.evaluate('Input.keys.j=false')
   for diff in ['normal','hard','furious']:
    setup(True,diff)
-   row=p.evaluate('''()=>({kind:B.kind,gunCount:B._cargo13.guns.length,line:s6Wing.line,t:s6Wing.line?.t,held:!!S6Q13.held,radio:S6R18.draws.radio,paused:!!story,mode:B._cargo13.mode})''')
-   check(diff+' miniboss combat captions draw and age without parking the wing',not row['held'] and row['t']>.5 and row['radio']>0 and not row['paused'] and 'SIX' in row['line']['full'],row)
+   row=p.evaluate('''()=>({kind:B.kind,gunCount:B._cargo13.guns.length,line:s6Wing.line,t:s6Wing.line?.t,held:!!S6Q13.held,radio:S6R18.draws.radio,currentRadio:UI20.radio,currentPages:s6r18Pages(s6Wing.line).map(p=>p.rows.join(' ')),currentDraws:UI20.draws-s6RadioDrawStart,paused:!!story,mode:B._cargo13.mode})''')
+   # Command UI deliberately disables the older s6r18RadioDraw owner. Verify
+   # its live replacement renders a real page of the current combat line.
+   radio=row['radio']>0 or row['currentDraws']>0 and row['currentRadio'] and row['currentRadio']['who']==row['line']['who'] and row['currentRadio']['text'] in row['currentPages']
+   check(diff+' miniboss combat captions draw and age without parking the wing',not row['held'] and row['t']>.5 and radio and not row['paused'] and 'SIX' in row['line']['full'],row)
    if diff=='normal':snap('mini-live-dialogue')
    p.evaluate('window.targetGun=B._cargo13.guns[0];window.gunHP=targetGun.hp')
    mg(65,"{const m=sc13Mount(B,targetGun.id);player.x=m.x;player.y=m.y+155;}")
@@ -75,7 +78,7 @@ try:
    setup(False,diff);frames(180)
    row=p.evaluate('''()=>{const b=B,C=b._carrier17,targets=retinaBossTargets(b);return{scale:C.hullScale,width:b.w,height:b.h,view:viewW(),zoom:viewZoom(),parts:C.parts.length,pool:b.hp,expected:C.parts.reduce((n,p)=>n+p.hp,0),core:'reactor' in C,targets:targets.map(t=>t.kind),aligned:C.parts.every(p=>{const m=roster17Mount(b,p),t=targets.find(t=>t.name==='harrier '+p.id||t._retinaId?.endsWith(p.id));return roster17At(b,m.x,m.y)===p.id&&targets.some(t=>Math.abs(t.x-m.x)<.01&&Math.abs(t.y-m.y)<.01&&Math.abs(t.w-p.w*C.hullScale)<.01);})};}''')
    check(diff+' carrier is 45 percent larger with a module-only health budget and unchanged FOV',row['scale']==1.45 and row['width']>660 and row['height']>370 and row['view']==480 and row['zoom']==1 and row['pool']==row['expected'] and not row['core'] and 'reactor' not in row['targets'],row)
-   check(diff+' all eight enlarged modules share hit and Retina geometry',row['aligned'] and row['parts']==8,row)
+   check(diff+' ten modules include four native hull guns and share hit/Retina geometry',row['aligned'] and row['parts']==10,row)
    row=p.evaluate('''()=>({phase:B._carrier17.phase,bay:B._s6r18.bay,open:B._whv.doorOpen,jets:s6Jets.length,live:s6Jets.filter(e=>!e.dead).length,art:s6Jets.map(e=>e.type),events:S6R18.events.filter(q=>q.event==='jet-launch')})''')
    check(diff+' physical bay opens and launches real elite fighter actors',row['jets']>=4 and all(q=='xelite_hivewing' for q in row['art']) and len(row['events'])>=4,row)
    if diff=='normal':snap('harrier-bay-launched-jets')
@@ -100,7 +103,7 @@ try:
    row=p.evaluate('''()=>{const b=B,C=b._carrier17,W=b._whv;function fx(){s6Art=[];s6r18FanDraw(b,C);return s6Art.filter(q=>/^nsd_chim_|^nxp_upward_/.test(q.key));}const a=fx();b.x+=64;b.y+=27;roster17Sync(b);const c=fx();const result={count:a.length,attached:a.every((q,i)=>c[i]&&Math.abs(c[i].x-q.x-64)<.01&&Math.abs(c[i].y-q.y-27)<.01)};b.x-=64;b.y-=27;roster17Sync(b);return result;}''')
    check(diff+' fire and smoke follow the actual fan after hull translation',row['count']>=4 and row['attached'],row)
    row=p.evaluate('''()=>{const C=B._carrier17;for(const p of C.parts.filter(p=>p.kind==='laser')){C.direct=p.id;warhiveDamage(B,1e6);}return{parts:C.parts.filter(p=>!p.dead).map(p=>p.id),targets:retinaBossTargets(B).map(t=>t.kind),opening:B._s6r18.opening,core:'reactor' in C};}''')
-   check(diff+' destroying the lasers leaves only real fan and rack targets, no core',not row['core'] and not row['opening'] and 'reactor' not in row['targets'] and len(row['parts'])==3,row)
+   check(diff+' destroying the lasers leaves native hull guns, fan and racks without a core',not row['core'] and not row['opening'] and 'reactor' not in row['targets'] and set(row['parts'])=={'R','hullGun0','hullGun1','hullGun2','hullGun3','rackL','rackR'},row)
    p.evaluate('''()=>{const C=B._carrier17;for(const p of C.parts.filter(p=>!p.dead&&p.id!=='rackR')){C.direct=p.id;warhiveDamage(B,1e6);}window.lastPart=C.parts.find(p=>!p.dead);window.lastHP=lastPart.hp;enemies=[];B._whv.jets=[];powerups=[];window.coreDraws=S6R18.draws.reactor;}''')
    mg(65,"{const m=roster17Mount(B,lastPart);player.x=m.x;player.y=m.y+155;}")
    row=p.evaluate('''()=>({damage:lastHP-lastPart.hp,alive:!!B._carrier17&&lastPart.hp>0,pool:B.hp,expected:lastPart.hp,weapon:run.weapon,previousSpecial:mgPreviousSpecial})''')

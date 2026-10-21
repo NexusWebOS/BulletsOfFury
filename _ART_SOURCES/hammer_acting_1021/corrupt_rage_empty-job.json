@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 91fa95f5-ab7b-4ba7-aeb5-e54d8d62ef72\njob_id: 91fa95f5-ab7b-4ba7-aeb5-e54d8d62ef72\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. UNARMED version of this exact robot. The hammer has been destroyed: absolutely NO hammer, shaft, gun or extra weapon. Exactly TWO arms. Clench BOTH EMPTY fists, pull shoulders back and roar furiously, chest reactor and existing armor lights flare, then finish leaning forward in a threatening unarmed combat stance.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212707\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"91fa95f5-ab7b-4ba7-aeb5-e54d8d62ef72\")\nasset_id: 2d60d159-4e5d-55aa-b2f3-c4e16e069966\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

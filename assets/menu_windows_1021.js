@@ -24,7 +24,7 @@ tutAskDraw=function(dt){const A=tutAsk;if(!A){setState(GS.TITLE);return;}A.t+=dt
  ui20Text(ctx,'TRAINING FLIGHT',VW/2,48,24,VW-30,'center','#f2f7ff');
  const w=VW-24,h=286,x=12,y=91,r=mw21Window('l',x,y,w,h);
  if(r){mw21Text('BEFORE YOU DEPLOY',r.header,13,'#ffd47d');
-  MW21.prompt=mw21Text('BULLETS OF FURY MIXES ARCADE SHOOTING WITH DODGE ROLLS, LOCK-ON MISSILES, PILOT SPECIALS AND ELEMENTS. LEARN THE CONTROLS IN STORMGLASS ACADEMY.',{x:x+38,y:y+65,w:w-76,h:91},13);
+  MW21.prompt=mw21Text('Bullets of Fury mixes Arcade shooter action with Dodge rolls, Lock-On Missile targeting systems, Warning Systems, Special Abilities per Pilot & More. It is STRONGLY recommended you try the tutorial in the exclusive level: Stormglass.',{x:x+38,y:y+65,w:w-76,h:91},13);
   ui20Text(ctx,A.seen?'REFRESH YOUR FLIGHT SKILLS':'RECOMMENDED FOR NEW PILOTS',VW/2,y+169,12,w-64,'center','#ffd47d');
   const rows=['YES - FLY STORMGLASS ACADEMY',run.mode==='campaign'?'NO - START THE CAMPAIGN':'NO - STRAIGHT TO STAGE 1'];
   const moved=Input.consumeMouseMoved(),click=Input.mouse.down&&!A.md;A.md=!!Input.mouse.down;

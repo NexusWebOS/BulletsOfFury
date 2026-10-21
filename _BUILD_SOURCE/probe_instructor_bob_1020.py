@@ -33,7 +33,7 @@ try:
   p.goto(f'http://127.0.0.1:{port}/index.html');p.wait_for_function('window.__bofFrames>4&&typeof ht27Stop==="function"');p.evaluate(shoot.TRAP_RAF)
   p.evaluate(old.SETUP,dict(pilot='cole',mode='arcade',clear=True));p.evaluate('startRun(1)');step(p,60)
   p.wait_for_function('XART.rdy("ic20_neutral")');step(p,30);shot(p,'01-instructor-invitation')
-  ck('Tutorial invite uses framed Instructor Cole',p.evaluate('state===GS.TUTASK&&!!XART.get("ic20_neutral")'))
+  ck('Tutorial invite uses framed Instructor Cole',p.evaluate('state===GS.TUTASK&&UI20.dialogue?.portrait==="comm_cole_idle"'))
   p.evaluate('Input.injectTap("j")');step(p,5);p.wait_for_function('BOFINSTRUCTOR.artReady');p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(1)}')
   m=until(p,lambda m:m['state']=='play' and m['lesson']=='move',12000);p.evaluate(driver)
   seen={};foreign=0;lives=p.evaluate('run.lives');minlives=lives;hits=[]
@@ -57,9 +57,10 @@ try:
   p.evaluate('()=>{TD=null;for(const k of Object.keys(Input.keys))Input.keys[k]=false;TUT.i=TUT_LESSONS.findIndex(d=>d.id==="exam")-1;tutNext();TUT.L.wave=2;sg20ExamWave(TUT.L);TUT.typed=10000;}')
   for difficulty in ['easy','normal','hard','furious']:
    out=p.evaluate('''key=>{diffKey=key;DIFF=difficultyForRun('arcade',key);tutClearField();TUT.L.wave=2;sg20ExamWave(TUT.L);const G=TUT.L.bob,core=G.parts.core;_dmgBullet={kind:'mg'};_dmgSrc=null;const h=core.hp;hitEnemy(core,10);const protectedHp=core.hp;killEnemy(G.parts.missile);killEnemy(G.parts.cannon);_dmgBullet={kind:'mg',_inf:'fire'};hitEnemy(core,10);const fire=h-core.hp;_dmgBullet={kind:'mg',_inf:'ice'};const a=core.hp;hitEnemy(core,10);const ice=a-core.hp;_dmgBullet={kind:'missile'};_dmgSrc='missile';const c=core.hp;hitEnemy(core,10);const missile=c-core.hp;_dmgBullet=null;_dmgSrc=null;return{protectedHp,h,fire,ice,missile,hps:Object.values(G.parts).map(e=>e.maxhp),flash:core.flash};}''',difficulty)
-   ck(difficulty+' native shield, elements and reactor missile bonus',out['protectedHp']==out['h'] and out['fire']==15 and out['ice']==5 and out['missile']==20 and out['hps']==[90,110,240] and out['flash']>0,out)
+   published=dict(easy=[90,110,240],normal=[120,145,300],hard=[165,195,410],furious=[210,250,540])[difficulty]
+   ck(difficulty+' native shield, elements and reactor missile bonus',out['protectedHp']==out['h'] and out['fire']==15 and out['ice']==5 and out['missile']==20 and out['hps']==published and out['flash']>0,out)
    armor=p.evaluate('''()=>{tutClearField();TUT.L.wave=2;sg20ExamWave(TUT.L);for(let i=0;i<30;i++)updatePlay(1/60);const G=TUT.L.bob;return{hps:Object.values(G.parts).map(e=>e.maxhp),extra:eBullets.length};}''')
-   ck(difficulty+' modules retain their published armor after native AI updates',armor['hps']==[90,110,240] and armor['extra']==0,armor)
+   ck(difficulty+' modules retain their published armor after native AI updates',armor['hps']==published and armor['extra']==0,armor)
   p.evaluate('()=>{tutClearField();TUT.L.wave=2;sg20ExamWave(TUT.L);TUT.say="";TUT.typed=10000;}')
   fb=p.evaluate('''()=>{const G=TUT.L.bob,paint=()=>{ctx.setTransform(SS,0,0,SS,0,0);ctx.clearRect(0,0,VW,VH);ctx.save();ctx.translate(-camX,0);Object.values(G.parts).forEach(drawEnemy);ctx.restore();return Array.from(ctx.getImageData(0,0,cv.width,cv.height).data);};return Object.values(G.parts).map(e=>{Object.values(G.parts).forEach(q=>q.flash=0);const a=paint();hitEnemy(e,1);const b=paint();e.flash=0;const c=paint();let changed=0,restored=0;for(let i=0;i<a.length;i+=4){if(a[i]!==b[i]||a[i+1]!==b[i+1]||a[i+2]!==b[i+2])changed++;if(a[i]!==c[i]||a[i+1]!==c[i+1]||a[i+2]!==c[i+2])restored++;}return{id:e._bob20.id,changed,restored};});}''')
   ck('Every authored module visibly flashes, including shield absorption, and restores',all(q['changed']>20 and q['restored']==0 for q in fb),fb)
@@ -67,8 +68,8 @@ try:
   ck('Module hit flash expires on the native simulation clock',expiry<=0,expiry)
   cancel=p.evaluate('''()=>{const e=TUT.L.bob.parts.missile,q=bob20Ground(e);killEnemy(e);return{dead:q.dead,moduleDead:e.dead};}''')
   ck('Destroying launcher cancels its pending warning',cancel['dead'] and cancel['moduleDead'],cancel)
-  for phase,t in [('green',.3),('yellow',1.5),('red',2.8)]:
-   p.evaluate('''t=>{const L=TUT.L,G=L.bob;G.cycle={type:'lane',t,x:player.x,fired:0};TUT.say='';TUT.typed=10000;ctx.setTransform(SS,0,0,SS,0,0);drawWorld(0);tutOverlayDraw();}''',t);shot(p,'bob-fov-'+phase)
+  for phase,t in [('green',.15),('yellow',.5),('red',.9)]:
+   p.evaluate('''t=>{const L=TUT.L,G=L.bob;G.cycle={type:'lane',t:t*G.tuning.tell,warn:G.tuning.tell,x:player.x,fired:0};TUT.say='';TUT.typed=10000;ctx.setTransform(SS,0,0,SS,0,0);drawWorld(0);tutOverlayDraw();}''',t);shot(p,'bob-fov-'+phase)
   p.evaluate('()=>{TUT.i=TUT_LESSONS.findIndex(d=>d.id==="bob_card")-1;tutNext();TUT.typed=10000;}');step(p,100);shot(p,'dossier-whole')
   p.evaluate('Input.injectTap("s")');step(p,2);shot(p,'dossier-missile')
   ck('Dossier selects actual authored part',p.evaluate('IC20.cardFrame.part==="missile"'),p.evaluate('IC20.cardFrame'))

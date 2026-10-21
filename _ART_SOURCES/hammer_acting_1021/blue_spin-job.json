@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: e493fdd1-b3ba-4773-845d-090b44f88348\njob_id: e493fdd1-b3ba-4773-845d-090b44f88348\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Spin the complete same humanoid body around its upright chest axis while gripping the long hammer shaft in both hands with arms extended. Show actual front, side, back, opposite side and front views in one full turn. The solid hammer HEAD must sweep a full circle OUTSIDE the body silhouette on its long handle. Exactly one hammer and two arms, no detached spinning head, no energy spiral substituting for the body. Return to the original front-facing pose.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212109\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e493fdd1-b3ba-4773-845d-090b44f88348\")\nasset_id: 145d03e1-30d6-577c-b101-17e0fd7156f2\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

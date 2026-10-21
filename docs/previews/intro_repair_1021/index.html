@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury — opening</title>
+<link rel="icon" type="image/png" href="../../../extensions/bof-field-manual/art/icon512.png">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#000;color:#e8edf4;font:14px system-ui}
+header{min-height:44px;display:flex;align-items:center;gap:10px;padding:6px 12px;flex-wrap:wrap;background:#111820}
+select,button{font:inherit;color:inherit;background:#263341;border:1px solid #66809a;padding:4px 8px;border-radius:3px}
+label{display:flex;align-items:center;gap:6px}#status{color:#a3c7dc;font-size:12px}
+iframe{width:100%;height:calc(100dvh - 44px);display:block;border:0;background:#000}
+@media(max-width:700px){header{height:88px;gap:6px}iframe{height:calc(100dvh - 88px)}#status{display:none}}
+</style>
+<header>
+ <strong>Campaign opening</strong>
+ <label>Pilot <select id="pilot"></select></label>
+ <label>Scene <select id="scene">
+  <option value="full">Full opening</option><option value="satellite">Satellite corruption</option>
+  <option value="dispatch">Dispatch</option><option value="turn">Turn and escape</option>
+  <option value="cockpit">Pilot cockpit</option><option value="flight">Fast flyover</option>
+  <option value="launch">Logo and launch</option><option value="mission">Mission and map</option>
+ </select></label>
+ <button id="replay" disabled>Replay</button><button id="full">Full screen</button>
+ <span id="status">Loading the game…</span>
+</header>
+<iframe id="game" title="Actual Bullets of Fury campaign opening" allow="autoplay; fullscreen" src="../../../index.html?revision=campaign-flight-1021"></iframe>
+<script>
+const frame=document.querySelector('#game'),pilot=document.querySelector('#pilot'),scene=document.querySelector('#scene'),replay=document.querySelector('#replay'),status=document.querySelector('#status');
+const pilots=['yuri','axel','lizzie','decker','freezer','falva','maverick','cole','juggernaut'];
+for(const key of pilots){const o=document.createElement('option');o.value=key;o.textContent=key[0].toUpperCase()+key.slice(1);pilot.append(o);}
+const params=new URLSearchParams(location.search);
+if(pilots.includes(params.get('pilot')))pilot.value=params.get('pilot');
+if([...scene.options].some(o=>o.value===params.get('scene')))scene.value=params.get('scene');
+function play(){
+ const w=frame.contentWindow;
+ const p=pilots.includes(pilot.value)?pilot.value:'yuri',s=scene.value;
+ w.eval('run.pilot='+JSON.stringify(p)+';run.mode="campaign";Audio.init();campaignIntroStart();campaignIntroWarm();');
+ const ip=w.BOF_INTRO_REPAIR;
+ let at=0;
+ if(s==='satellite')at=ip.beats.find(b=>b.federation).at;
+ if(s==='dispatch'||s==='turn')at=ip.beats.find(b=>b.dispatch===s).at;
+ if(s==='cockpit')at=ip.beats.find(b=>b.pilotCam===p).at;
+ if(s==='flight')at=ip.beats.find(b=>b.comic).at;
+ if(s==='launch')at=ip.beats.find(b=>b.pilotLine==='resolve').at;
+ if(s==='mission')at=ip.finaleAt+2.8;
+ w.eval('campaignIntro.t='+at+';Input.clearTaps();');
+ status.textContent='Playing the actual game';
+ frame.focus();
+}
+replay.onclick=play;scene.onchange=play;pilot.onchange=play;
+document.querySelector('#full').onclick=()=>frame.requestFullscreen();
+const timer=setInterval(()=>{
+ try{const w=frame.contentWindow;if(!w.BOF_INTRO_REPAIR||!w.eval('ASSETS.ready&&window.__bofFrames>4'))return;clearInterval(timer);replay.disabled=false;play();}
+ catch(e){status.textContent='Waiting for game assets…';}
+},150);
+</script>
+</html>

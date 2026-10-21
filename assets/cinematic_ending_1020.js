@@ -221,12 +221,16 @@ BOFCinematicDirector.draw=function(){
  const W=cutsceneViewWidth(),H=VH,pk=b.who.toLowerCase(),person=CE20.pilots.includes(pk),
   selected=hl10Pilot(run.pilot),contact=selected==='decker'?'cole':'decker';
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.fillStyle='#030711';ctx.fillRect(0,0,W,H);
- const bg=b._ce20Approach?'cinend_deep_space':b.bg||'cin_story_lab_empty';ce20Cover(bg,W,H,s.t,1+Math.min(s.t,8)*.002);
+ const bg=b._ce20Approach?'cinend_deep_space':b.bg||'cin_story_lab_empty';ce20Cover(bg,W,H,s.t,1);
  if(b._ce20Hug&&XART.rdy(b.art)){
   const im=XART.get(b.art),src=[0,0,im.width,Math.floor(im.height*.60)],k=Math.min(W*.78/src[2],H*.66/src[3]),w=src[2]*k,h=src[3]*k;
   ctx.drawImage(im,...src,(W-w)/2,H*.02,w,h);CE20.draws[b.art]=(CE20.draws[b.art]||0)+1;
  }else if(b._ce20Reveal){ce20Body(s.t,W*.5,H*.36,Math.min(W*.55,H*.77),false);ce20Label('FOREIGN SIGNAL / MACHINE HOST',W*.5,H*.10,Math.min(W*.025,H*.026),'#e4c2ff');}
- else if(person&&!b.bg){ce20Pilot(pk===contact?selected:contact,W*.23,H*.69,H*.53,s.t);ce20Pilot(pk,W*.72,H*.69,H*.57,s.t+.4);}
+ else if(person&&!b.bg){
+  // These authored portraits end at the thighs. Bury that source edge behind
+  // the opaque dialogue panel, keeping the complete heads above it.
+  CE20.storyCast=[ce20Pilot(pk===contact?selected:contact,W*.23,H*.91,H*.75,s.t),ce20Pilot(pk,W*.72,H*.91,H*.79,s.t+.4)];
+ }
  else if(b._ce20Approach){dr21Art('symbiote',s.t,W*.5,H*.36,H*.34,.88);}
  else if(b.bg&&/deep_space|city_descent|river|sewer|topdown|stage07|stage08/.test(b.bg)){
   const front=/stage08/.test(b.bg),view=front?'front':'rear';hc10StaticShip(selected,view,W*.5,H*(.45-.06*clamp(s.t/8,0,1)),H*.25);

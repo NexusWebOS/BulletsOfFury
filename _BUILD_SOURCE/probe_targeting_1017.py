@@ -32,7 +32,7 @@ try:
     else:route.continue_()
    for path in overrides:p.route('**'+path+'*',candidate_route)
   p.goto(f'http://127.0.0.1:{port}/index.html');p.wait_for_function('window.__bofFrames>4&&typeof target17Tick==="function"');p.evaluate(shoot.TRAP_RAF)
-  p.evaluate('''()=>{window.targetArt={};const draw=ctx.drawImage;ctx.drawImage=function(im){const t=PXG.tags.get(im);if(t?.key&&/^(pt11_sonic_pulse_|l23fx_inferno_mg_|bfx_cryo_[pm]_|retm_|retmb_|nsw_)/.test(t.key))targetArt[t.key]=(targetArt[t.key]||0)+1;return draw.apply(this,arguments)};
+  p.evaluate('''()=>{window.targetArt={};const draw=ctx.drawImage;ctx.drawImage=function(im){const t=im?._so21||PXG.tags.get(im);if(t?.key&&/^(rp21_pulse_|pt11_sonic_pulse_|l23fx_inferno_mg_|bfx_cryo_[pm]_|retm_|retmb_|nsw_)/.test(t.key))targetArt[t.key]=(targetArt[t.key]||0)+1;return draw.apply(this,arguments)};
    window.targetBeeps=0;const s=Audio.SFX.lockon;Audio.SFX.lockon=function(){targetBeeps++;return s?.apply(this,arguments)};}''')
   def setup(stage,kind=None,mini=False,diff='hard'):
    p.evaluate(SETUP,dict(stage=stage,kind=kind,mini=mini,pilot='cole',diff=diff))
@@ -76,7 +76,7 @@ try:
     setup(stage,kind,True,diff);frames(660)
     row=p.evaluate('''()=>({events:TARGET17.events.filter(e=>e.type==='weapon-shot'),locked:TARGET17.events.filter(e=>e.type==='target-locked'),beeps:targetBeeps,art:Object.keys(targetArt),shots:eBullets.filter(q=>q._target17Owner===B).map(q=>({port:q._target17Port,kind:q.kind,art:q._target17Art,element:enemyOrdnanceElement(q),shootable:q._shootable,proof:q._weaponProof,mg:q.mg}))})''')
     check(str(stage)+' '+diff+' tracks, beeps and releases from its weapon mounts',len(row['events'])>0 and len(row['locked'])>0 and row['beeps']>3,row)
-    prefix={'sonic':'pt11_sonic_pulse_','fire':'l23fx_inferno_mg_','ice':'bfx_cryo_p_'}[element]
+    prefix={'sonic':'rp21_pulse_','fire':'l23fx_inferno_mg_','ice':'bfx_cryo_p_'}[element]
     check(str(stage)+' '+diff+' native renderer draws authored '+element+' projectile frames',any(k.startswith(prefix) for k in row['art']) and any(k.startswith('retm_') for k in row['art']) and any(k.startswith('retmb_') for k in row['art']),row['art'])
     if stage in [2,3]:check(str(stage)+' '+diff+' gun bullets retain native interception rules',any(q.get('mg') for q in row['shots']) and all(not q.get('shootable') and q.get('proof') for q in row['shots'] if q.get('mg')),row['shots'][:6])
     if stage==3:check(diff+' ice miniboss fires gun bullets and rack missiles',any(not q['rocket'] for q in row['events']) and any(q['rocket'] for q in row['events']),row['events'][:6])

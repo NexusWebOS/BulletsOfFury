@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: a6066b74-c9cb-4fc2-89be-d7baa115fdf8\njob_id: a6066b74-c9cb-4fc2-89be-d7baa115fdf8\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Wind the long hammer to the left across the shoulder, rotate the torso into a powerful horizontal SIDE SWING to the right, and extend both arms fully. At the impact pose the shaft is almost horizontal and the entire massive hammer HEAD sticks out far to the RIGHT beyond the body silhouette. Hold that extended impact pose, then recover. Exactly two arms and one hammer, not a swirling energy ribbon.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212102\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a6066b74-c9cb-4fc2-89be-d7baa115fdf8\")\nasset_id: e62d6932-906f-56ed-84a7-f37b914c4225\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

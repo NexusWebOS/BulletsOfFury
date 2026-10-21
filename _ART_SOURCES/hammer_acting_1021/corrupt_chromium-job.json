@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 6c5ceb9b-6991-4ec5-a421-84a1393ded3b\njob_id: 6c5ceb9b-6991-4ec5-a421-84a1393ded3b\ndescription: FRAME FORMAT: 256 x 256 transparent pixels per frame. Identical canvas, one common proportional scale and fixed CHEST pivot128,112 in EVERY frame. Keep the current body scale and view. Reserve transparent margins for the full extended hammer; keep limbs and weapon unclipped. Crisp arcade pixel art, no scenery, text, UI, extra limbs, duplicate weapons, camera zoom or perspective changes. Charge with arms and hammer raised, then reflective CHROMIUM armor physically plates over the existing shoulders, torso, arms and legs in a clear takeover transformation. Finish as the exact same humanoid and hammer wearing brilliant reflective silver chromium armor with sharp white metal highlights and the ORIGINAL colored chest core, armor lights and hammer. Chromium is real solid plated armor, not a translucent aura, not a giant circular shield. Keep same size and limbs; hold the complete transformed armored pose for final half.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 10212208\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"6c5ceb9b-6991-4ec5-a421-84a1393ded3b\")\nasset_id: b2d8fd81-2154-566e-ba5e-4801585ee785\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}
