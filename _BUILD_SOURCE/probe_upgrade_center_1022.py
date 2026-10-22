@@ -86,7 +86,7 @@ def main():
         press('w'); real(3); press('j'); real(3)
         ok(ev("() => UC22.open") and state() == 'stagesel' and not ev("() => !!window.sselCommitted"), 'FIRE enters the center and deploys nothing (%s)' % state())
         rows = ev("() => UC22_ROWS.slice()")
-        ok(rows == ['THE FORGE', 'SELECT YOUR LOADOUT', 'LEAVE'], 'Decker offers %s' % rows)
+        ok(rows == ['THE FORGE', 'SELECT YOUR LOADOUT', 'RE-SPEC A WEAPON', 'LEAVE'], 'Decker offers %s' % rows)
         real(4); shot('decker_screen')
         # 4. the Forge
         before = ev("() => { run.forgeCombos=1; run.forgeRespecs=0; return [run.forgeCombos, run.forgeRespecs]; }")
@@ -107,7 +107,7 @@ def main():
             if ev("() => UC22.open"): break
             real(1)
         ok(state() == 'stagesel' and ev("() => UC22.open"), 'loadout START comes back to Decker (%s)' % state())
-        ev("() => { UC22.sel=2; UC22.t=1; }"); press('j'); real(2)
+        ev("() => { UC22.sel=3; UC22.t=1; }"); press('j'); real(2)
         ok(not ev("() => UC22.open") and ev("() => UC22.focus") and state() == 'stagesel', 'LEAVE closes the screen, the jet still parked there')
         # 6. the mouse
         press('s'); real(3)

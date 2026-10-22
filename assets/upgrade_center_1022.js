@@ -24,7 +24,7 @@
 const UC22_ART='uc22_island';
 XART._src[UC22_ART]='assets/game/shared/campaign/campaign_0930/northern_hq_island.png';
 const UC22_GOLD='#ffd24a';
-const UC22_ROWS=['THE FORGE','SELECT YOUR LOADOUT','LEAVE'];
+const UC22_ROWS=['THE FORGE','SELECT YOUR LOADOUT','RE-SPEC A WEAPON','LEAVE'];   // RE-SPEC: respec_1022.js
 const UC22={pos:{x:880,y:300},size:330,focus:false,open:false,pending:false,frame:null,
             sel:0,t:0,md:false,mapMd:false,lift:0,msg:'',msgT:0};
 
@@ -187,17 +187,18 @@ function uc22OpenNow(){
   const cv=document.getElementById('screen'), c=document.createElement('canvas');
   c.width=cv?cv.width:1; c.height=cv?cv.height:1;
   try{ if(cv) c.getContext('2d').drawImage(cv,0,0); }catch(_e){}
-  UC22.frame=c; UC22.open=true; UC22.sel=0; UC22.t=0; UC22.msg=''; UC22.msgT=0;
+  UC22.frame=c; UC22.open=true; UC22.sel=0; UC22.t=0; UC22.msg=''; UC22.msgT=0; UC22.rs=null;
   UC22.md=!!(Input.mouse&&Input.mouse.down); uc22Warm(); Input.clearTaps();
 }
-function uc22Close(){ UC22.open=false; UC22.frame=null; Input.clearTaps(); try{ Audio.SFX.blip(); }catch(_b){} }
+function uc22Close(){ UC22.rs=null; UC22.open=false; UC22.frame=null; Input.clearTaps(); try{ Audio.SFX.blip(); }catch(_b){} }
 /* each screen comes back to the map with the jet still parked here and Decker's menu up again */
 function uc22Return(){
   if(typeof openStageSelect==='function') openStageSelect(run.stage,{}); else setState(GS.STAGESEL);
   UC22.focus=true; UC22.pending=true;
 }
 function uc22Choose(i){
-  if(i===2){ uc22Close(); return; }
+  if(i===3){ uc22Close(); return; }
+  if(i===2){ UC22.rs={sel:0,t0:UC22.t}; UC22.msg=''; UC22.msgT=0; Input.clearTaps(); try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_s){} return; }
   try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_s){}
   UC22.open=false; UC22.frame=null; Input.clearTaps();
   if(i===0){
@@ -247,8 +248,9 @@ function uc22Draw(dt){
   /* what this stage still allows */
   const combos=Math.max(0,run.forgeCombos|0), respecs=Math.max(0,run.forgeRespecs|0);
   msgText('UPGRADES LEFT '+combos+'     RE-SPECS LEFT '+respecs,VW/2,py+ph+20,11,'#d8c890',0,1,.06);
+  if(P.rs){ uc22RespecDraw(py+ph); ctx.restore(); return; }
   /* the choices */
-  const m=Input.mouse||{}, w=Math.min(300,VW-96), h=34, gap=48, y0=py+ph+64;
+  const m=Input.mouse||{}, w=Math.min(300,VW-96), h=34, gap=42, y0=py+ph+62;
   let clicked=-1;
   if(P.t>.2){ let ch=0; if(Input.menuDown()) ch=1; if(Input.menuUp()) ch=-1;
     if(ch){ P.sel=(P.sel+ch+UC22_ROWS.length)%UC22_ROWS.length; try{ Audio.SFX.blip(); }catch(_b){} } }
@@ -276,6 +278,55 @@ function uc22Draw(dt){
   if(P.t>.6 && Input.menuConfirm()) uc22Choose(P.sel);
 }
 
+/* RE-SPEC A WEAPON (Mike, 2026-10-22: "the option to actually re-spec ... in this new menu during
+   the map"). Every loadout weapon and every weapon carrying a forged upgrade, LEFT / RIGHT to pick,
+   FIRE once to arm and again to re-spec (respecPress, respec_1022.js), B back to Decker's rows. */
+function uc22RespecWeapons(){
+  const out=((run&&run.loadout&&run.loadout.length)?run.loadout:(typeof forgeLoadoutSync==='function'?forgeLoadoutSync():[])).slice();
+  for(const k of Object.keys((run&&run.forgeForms)||{})){ const w=+k; if(out.indexOf(w)<0&&Object.keys(run.forgeForms[k]||{}).length) out.push(w); }
+  return out;
+}
+function uc22RespecDraw(top){
+  const P=UC22, R=P.rs, list=uc22RespecWeapons(), m=Input.mouse||{}, mx=sm22MouseX(), my=sm22MouseY();
+  R.sel=clamp(R.sel|0,0,Math.max(0,list.length-1));
+  const n=list.length, pitch=Math.min(66,(VW-60)/Math.max(1,n)), ih=40, iy=top+64, x0=VW/2-pitch*(n-1)/2;
+  let clicked=-1, pressBtn=false;
+  const click=m.down&&!P.md&&P.t-R.t0>.3;
+  for(let i=0;i<n;i++){
+    const w=list[i], cx=x0+i*pitch, key=(typeof forgeSlotKey==='function')?forgeSlotKey(w):null, sel=i===R.sel;
+    const has=typeof respecInfo==='function'&&respecInfo(w).forms.length>0;
+    if(key) XART.rdy(key);
+    ctx.save(); ctx.fillStyle=sel?'#2a2416':'#14141c'; ctx.globalAlpha=.88; ctx.fillRect(cx-pitch*.46,iy-ih*.62,pitch*.92,ih*1.24); ctx.restore();
+    if(key&&typeof forgeIconFit==='function') forgeIconFit(key,cx,iy,ih,0,has?1:.42);
+    if(sel){ ctx.save(); ctx.globalAlpha=.7+.3*Math.sin(P.t*9); ctx.strokeStyle=UC22_GOLD; ctx.lineWidth=2;
+      ctx.strokeRect(cx-pitch*.46,iy-ih*.62,pitch*.92,ih*1.24); ctx.restore(); }
+    if(click&&Math.abs(mx-cx)<=pitch*.46&&Math.abs(my-iy)<=ih*.62) clicked=i;
+  }
+  const w=list[R.sel], I=(w!=null&&typeof respecInfo==='function')?respecInfo(w):null;
+  if(w!=null){
+    msgText((typeof respecLabel==='function')?respecLabel(w):WEAPONS[w],VW/2,iy+44,13,UC22_GOLD,0,1,.08);
+    const line=I&&I.forms.length?'FORGED  '+I.names.join(' + '):'BASE FORM  -  NOTHING TO RE-SPEC';
+    msgText(line,VW/2,iy+64,10,I&&I.forms.length?'#9fd6ff':'#8a96a8',0,1,.05);
+  } else msgText('NO WEAPONS YET',VW/2,iy+44,12,'#8a96a8',0,1,.06);
+  const armed=w!=null&&typeof rs22Armed==='function'&&rs22Armed(R,w,P.t), by=iy+104, bw=Math.min(260,VW-120), bh=34;
+  uc22ButtonArt(VW/2,by,bw,bh,true);
+  campText(armed?'CONFIRM RE-SPEC':'RE-SPEC',VW/2,by+(typeof PAUSE_LABEL_DY==='number'?PAUSE_LABEL_DY:-2),12,armed?'#ff6a52':'#fff4d2');
+  if(armed){ ctx.save(); ctx.globalAlpha=.6+.4*Math.sin(P.t*14); ctx.strokeStyle='#ff4a3a'; ctx.lineWidth=2; ctx.strokeRect(VW/2-bw/2+2,by-bh/2+1,bw-4,bh-2); ctx.restore(); }
+  if(click&&Math.abs(mx-VW/2)<=bw/2&&Math.abs(my-by)<bh/2) pressBtn=true;
+  if(P.msgT>0) msgText(P.msg,VW/2,by+34,10,'#ffffff',0,1,.05);
+  P.md=!!m.down;
+  if(P.t-R.t0<.25) return;
+  const mL=Input.menuLeft(), mR=Input.menuRight();
+  if(Input.menuBack()){ P.rs=null; P.sel=2; try{ Audio.SFX.blip(); }catch(_b){} return; }
+  if(sm22StartTap()){ uc22Close(); return; }
+  if(n&&(mL||mR)){ R.sel=(R.sel+(mL?-1:1)+n)%n; R._rsArm=null; try{ Audio.SFX.blip(); }catch(_b){} }
+  if(clicked>=0&&clicked!==R.sel){ R.sel=clicked; R._rsArm=null; try{ Audio.SFX.blip(); }catch(_b){} return; }
+  if(pressBtn||clicked===R.sel||Input.menuConfirm()){
+    const q=respecPress(R,w,P.t); P.msg=q.msg; P.msgT=q.r==='armed'?RS22_ARM_T:2.6;
+    try{ const s=rs22SfxFor(q.r); Audio.SFX[s]&&Audio.SFX[s](); }catch(_s){}
+  }
+}
+
 const UC22_SCENE=drawScene;
 drawScene=function(dt){
   if(UC22.open){
@@ -295,7 +346,7 @@ menuControlFooter=function(){
     const F=sm22Field();
     ctx.save(); ctx.setTransform(F.k,0,0,F.k,F.ox,F.oy);
     ctx.fillStyle='rgba(0,0,0,.88)'; ctx.fillRect(-F.ox/F.k,VH-34,F.W/F.k,34+F.oy/F.k);
-    controlHintRow([['pad_dpad','CHOOSE'],['pad_a','SELECT'],['pad_b','LEAVE']]);
+    controlHintRow(UC22.rs?[['pad_dpad','WEAPON'],['pad_a','RE-SPEC'],['pad_b','BACK']]:[['pad_dpad','CHOOSE'],['pad_a','SELECT'],['pad_b','LEAVE']]);
     ctx.restore(); return;
   }
   return UC22_FOOT.apply(this,arguments);
