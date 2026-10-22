@@ -119,16 +119,21 @@ def main():
         settle(30); shot('map_save'); press('j')
         saved = ev("() => !!localStorage.getItem('bof_campaign_slot0')")
         ok(saved and ev("() => SM22.mode") == 'root', 'it writes slot 1 and comes back to the menu (%s)' % ev("() => SM22.msg"))
-        # FORGE / LOADOUT without refilling the stage's upgrades
+        # FORGE / LOADOUT opens Decker's Upgrade Center (upgrade_center_1022.js); its Forge keeps the stage budget
         before = ev("() => { run.forgeCombos=0; run.forgeRespecs=1; return [run.forgeCombos, run.forgeRespecs]; }")
-        ev("() => { SM22.sel=4; }"); press('j')
+        ev("() => { SM22.sel=4; }"); press('j'); settle(60)
+        ok(ev("() => UC22.open") and state() == 'stagesel', 'FORGE / LOADOUT opens Decker\'s Upgrade Center')
+        ev("() => { UC22.sel=0; UC22.t=1; }"); press('j')
         after = ev("() => [state, run.forgeCombos, run.forgeRespecs]")
-        ok(after[0] == 'forge' and after[1:] == before, 'FORGE / LOADOUT opens the Forge and keeps the stage budget %s (%s)' % (before, after))
+        ok(after[0] == 'forge' and after[1:] == before, 'its FORGE opens the Forge and keeps the stage budget %s (%s)' % (before, after))
         settle(40); shot('forge_from_map')
-        press('p'); settle(40)
-        ok(state() == 'loadout', 'Forge START goes on to the loadout (%s)' % state())
-        press('p'); settle(120)
+        press('p'); settle(160)
+        ok(state() == 'stagesel' and ev("() => UC22.open"), 'Forge START comes back to the map and Decker (%s)' % state())
+        ev("() => { UC22.sel=1; UC22.t=1; }"); press('j'); settle(40)
+        ok(state() == 'loadout', 'its LOADOUT opens the loadout (%s)' % state())
+        press('p'); settle(160)
         ok(state() == 'stagesel', 'loadout START comes back to the map (%s)' % state())
+        ev("() => { UC22.open=false; UC22.focus=false; }")
 
         # ---- LOAD from pilot select
         go('pilot', 'arcade'); press('p'); settle(60)
