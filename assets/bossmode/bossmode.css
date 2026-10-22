@@ -241,3 +241,26 @@ table.t input.n{width:60px}
 .run{display:flex;gap:10px;font-size:11px;padding:3px 6px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--dim)}
 .run b{color:#cfd6e0;min-width:210px}
 .run .w{color:#8de23a}.run .l{color:var(--bad)}.run .nb{color:#ffd25a;font-weight:bold}.run .as{color:var(--mute)}
+
+/* ---- scene stations (1021b): drag the boss onto the field, pick what he does there ---- */
+#sc-bosschip{display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 4px;border:1px dashed var(--ok);border-radius:6px;background:#141a12;color:var(--ok);font-size:9.5px;font-weight:700;letter-spacing:.08em;line-height:1.15;cursor:var(--cur-grab);user-select:none}
+#sc-bosschip:hover{background:#1b2416;border-style:solid}
+#sc-bosschip canvas{width:44px;height:34px;image-rendering:pixelated;background:#0b0d12;border-radius:3px}
+#sc-wrap{position:relative}
+#sc-picker{position:absolute;z-index:20;width:600px;max-height:calc(100% - 8px);overflow:auto;background:rgba(16,19,25,.97);border:1px solid var(--hot);border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.6);padding:8px}
+#sc-picker .pk-h{font-weight:700;letter-spacing:.12em;color:var(--hot2);font-size:11px;display:flex;justify-content:space-between;margin-bottom:4px}
+#sc-picker .pk-h .x{cursor:var(--cur-link);color:var(--dim);padding:0 4px}
+#sc-picker .pk-cat{color:var(--dim);font-size:10px;letter-spacing:.1em;margin:8px 0 4px}
+#sc-picker .pk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.pk-card{display:grid;grid-template-columns:30px 1fr;grid-template-rows:auto auto auto;column-gap:6px;text-align:left;background:var(--panel2);border:1px solid var(--line2);border-radius:6px;padding:5px;color:var(--ink)}
+.pk-card:hover{border-color:var(--hot);background:#22262f}
+.pk-card.on{border-color:var(--ok);background:#18210f}
+.pk-card .pk{grid-row:1/4;align-self:center;transform:scale(.85);transform-origin:left center}
+.pk-card b{font-size:10.5px;letter-spacing:.06em;color:#fff}
+.pk-card i{font-style:normal;font-size:9.5px;color:var(--ink);opacity:.85;line-height:1.25}
+.pk-card u{text-decoration:none;font-size:9px;color:var(--mute);font-family:Consolas,monospace}
+.st-sec .say{background:#11151c;border-left:3px solid var(--hot);padding:5px 8px;margin-bottom:6px;color:var(--ink);font-size:12px}
+.st-list{margin:2px 0 6px 18px;padding:0}
+.st-list li{padding:3px 4px;border-radius:4px;cursor:var(--cur-link);font-size:11.5px}
+.st-list li:hover{background:#1c212b}
+.st-list li.on{background:#2a2216;color:var(--hot2)}

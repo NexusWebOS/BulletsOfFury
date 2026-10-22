@@ -15887,6 +15887,7 @@ require('./test_hammer_finish_1019.cjs')(vm,ctxv,ok);
 require('./test_soul_bomb_1019.cjs')(vm,ctxv,ok);
 require('./test_boss_redesign_1020.cjs')(vm,ctxv,ok);
 require('./test_debug_tools_1021.cjs')(vm,ctxv,ok);
+require('./test_scene_handoff_1021b.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

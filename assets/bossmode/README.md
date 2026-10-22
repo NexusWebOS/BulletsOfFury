@@ -73,6 +73,14 @@ game, the debug menu's **F4 EDITOR OVERRIDES** arms them for the session.
 `rec.{start,stop,active,last}`. `BOSSMODE_ONREC(clip)` on the host window is called when a
 recording finishes.
 
+## Stations and starter bosses (1021b)
+
+SCENE tab: drag the **BOSS chip** onto the field (or the STATION tool, key `3`) and pick what he does there
+from a picker of 17 actions, each with a name, a plain sentence and the engine term. He visits the
+numbered stations in order. **STARTER BOSS** loads THE GATEKEEPER, THE CHARGER or THE TURRET KING to edit.
+A looping phase now hands over when a later phase's HP trigger fires. Read
+[docs/BOSS_STATIONS_1021B.md](../../docs/BOSS_STATIONS_1021B.md).
+
 ## The test toolkit (1021)
 
 GOD, a real SPEED scale (0.1-2.0), FREEZE / STEP, RESTART, phase-jump buttons, an ENGINE HUD toggle,

@@ -22,7 +22,7 @@ def main():
         if c: n_ok[0]+=1; print('  ok  ',m)
         else: fails.append(m); print('  FAIL',m)
     with sync_playwright() as p:
-        b=p.chromium.launch(args=['--disable-gpu','--no-sandbox','--mute-audio'])
+        b=p.chromium.launch(executable_path='/opt/pw-browsers/chromium', args=['--disable-gpu','--no-sandbox','--mute-audio'])
         pg=b.new_page(viewport={'width':1600,'height':1000})
         pg.on('pageerror', lambda e: errs.append('pageerror: '+str(e)[:200]))
         pg.on('console', lambda m: errs.append('console.error: '+m.text[:200]) if m.type=='error' else None)
@@ -30,13 +30,13 @@ def main():
         pg.goto(f'http://127.0.0.1:{port}/bossmode.html', wait_until='load', timeout=60000)
         pg.wait_for_function("() => document.getElementById('boot').classList.contains('gone')", timeout=60000)
         pg.wait_for_timeout(600)
-        pg.evaluate("() => { const li=[...document.querySelectorAll('#list-groups .li')].find(e=>e.textContent.includes('MAGMA WARD')); li.click(); }")
+        pg.evaluate("() => { const li=[...document.querySelectorAll('#list-groups .li')].find(e=>e.textContent.includes('INFERNO REAVER')); li.click(); }")
         pg.wait_for_timeout(300)
         # a clean slate: any scene left in the store from a previous run must not leak in
         pg.evaluate("() => { const d=BM.state.doc; d.scene=null; BM.hooks.onDoc(d); }")
         pg.click('#tabs .tab[data-tab=scene]'); pg.wait_for_timeout(600)
         ok(pg.evaluate("() => document.getElementById('pane-scene').classList.contains('on') && !!document.getElementById('sc-cv')"), 'SCENE tab opens with the field canvas')
-        ok(pg.evaluate("() => document.querySelectorAll('#sc-toolbtns .scb').length===6 && document.querySelectorAll('#sc-paths [data-path]').length>=12 && document.querySelectorAll('#sc-paths [data-man]').length>=8"), 'tools, path presets and maneuver presets are on the bar')
+        ok(pg.evaluate("() => document.querySelectorAll('#sc-toolbtns .scb').length===7 && document.querySelectorAll('#sc-paths [data-path]').length>=12 && document.querySelectorAll('#sc-paths [data-man]').length>=8"), 'tools, path presets and maneuver presets are on the bar')
         pg.screenshot(path=os.path.join(a.out,'01_scene_empty.png'))
         # geometry: the canvas maps tiles
         g=pg.evaluate("() => { const c=document.getElementById('sc-cv'); const r=c.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height, scale:c.width/480}; }")
@@ -77,16 +77,16 @@ def main():
         pg.screenshot(path=os.path.join(a.out,'02_scene_authored.png'))
         # the scene rides the patch, and APPLY lays it on the engine row
         pg.click('#e-apply'); pg.wait_for_timeout(250)
-        ov=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.get('infernoreaver')")
+        ov=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.get(BM.state.doc.kind)")
         ok(ov and ov.get('scene') and len(ov['scene']['tracks'][0]['keys'])==5 and len(ov['scene']['zones'])==2, 'APPLY put the scene on the override (5 keys, 2 zones)')
-        ok(pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.live('infernoreaver').scene.tracks[0].keys.length===5"), 'and the live SHIPBOSS row carries it')
+        ok(pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.live(BM.state.doc.kind).scene.tracks[0].keys.length===5"), 'and the live SHIPBOSS row carries it')
         # PLAY TEST: the engine attaches it at spawn and flies it
         pg.click('#b-play')
-        pg.wait_for_function("() => { const s=document.getElementById('host').contentWindow.BOSSMODE.snapshot(); return s.bossActive && s.boss && !s.boss.enter && s.scene; }", timeout=25000)
+        pg.wait_for_function("() => { const s=document.getElementById('host').contentWindow.BOSSMODE.snapshot(); return (s.bossActive||s.subBossActive) && s.boss && !s.boss.enter && s.scene; }", timeout=25000)
         ok(True, 'PLAY TEST spawned the boss with the scene attached at init (snapshot.scene present)')
         pg.wait_for_timeout(2600)
         s=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.snapshot()")
-        ok(s['scene']['trackName']=='track 1' and s['scene']['kf']>=1, 'the director is walking the track in the real fight: key %s, t %.1fs' % (s['scene']['kf']+1, s['scene']['t']))
+        ok(s['scene']['trackName']=='Phase 1' and s['scene']['kf']>=1, 'the director is walking the track in the real fight: key %s, t %.1fs' % (s['scene']['kf']+1, s['scene']['t']))
         pg.screenshot(path=os.path.join(a.out,'03_playtest_overlay.png'))
         ovpx=pg.evaluate("() => { const c=document.getElementById('stage-overlay'); if(c.width<10) return 0; const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data; let n=0; for(let i=3;i<d.length;i+=4) if(d[i]>0) n++; return n; }")
         ok(ovpx>800, 'the STAGE overlay draws the path and zones over the live fight (%d px)' % ovpx)
@@ -101,7 +101,7 @@ def main():
         ok(j.get('scene') and j['scene']['schema']=='bof-bossscene/1' and len(j['scene']['tracks'][0]['keys'])==5, 'EXPORT writes the scene into the fight document')
         # CANCEL reverts the row and clears the scene from the engine
         pg.click('#e-cancel'); pg.wait_for_timeout(200)
-        ok(pg.evaluate("() => !document.getElementById('host').contentWindow.BOSSMODE.override.live('infernoreaver').scene"), 'CANCEL reverts: the shipped row has no scene')
+        ok(pg.evaluate("() => !document.getElementById('host').contentWindow.BOSSMODE.override.live(BM.state.doc.kind).scene"), 'CANCEL reverts: the shipped row has no scene')
         b.close()
     stop()
     if missing:
