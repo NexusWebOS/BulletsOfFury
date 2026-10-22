@@ -53,3 +53,10 @@ The in-game pause during play is unchanged.
 `_BUILD_SOURCE/probe_start_menu_1022.py` (real Chromium, real key/pad presses): **31/0, 0 page or console errors**,
 with a busted arm (`SM22_OFF=1` lets B leave pilot select again). `probe_menu_confirm_0918f.py` 9/0 after its back
 check moved from difficulty to credits. Proof frames: `docs/proofs/start_menu_1022/`.
+
+## Red buttons (2026-10-22, later)
+
+Mike: *"palette swap the buttons to red"*. `sm22ButtonArt` draws the pause plate through `xartPalette('pause_button_0915',
+'#ff2a2a')` - a `'color'` composite, so the plate keeps its own luminance, bevels and rivets - with the same 3-slice as
+`playPauseButtonArt`, a red glow on the selected row and the red selection arrows (`menuSelMark(...,'red')`). The
+fallback fill, labels and slot list follow. The in-game pause during play keeps its green plate. Probe still 31/0.

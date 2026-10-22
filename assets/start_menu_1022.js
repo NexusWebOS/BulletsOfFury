@@ -192,13 +192,28 @@ function sm22Field(){
   const W=cv?cv.width:VW*SS, H=cv?cv.height:VH*SS, k=Math.min(W/VW,H/VH);
   return {W,H,k,ox:(W-VW*k)/2,oy:(H-VH*k)/2};
 }
+/* Mike: "palette swap the buttons to red". The pause plate through xartPalette ('color' composite: the plate's own
+   luminance, so its bevels and rivets survive) and the same 3-slice as playPauseButtonArt. The in-game pause keeps
+   its green plate. */
+const SM22_RED='#ff2a2a';
+function sm22ButtonArt(cx,cy,w,h,selected){
+  const im=(typeof xartPalette==='function')?xartPalette('pause_button_0915',SM22_RED):null;
+  if(!im) return false;
+  const r=PAUSE_BUTTON_RECT, cap=Math.min(r[3]*.65,r[2]/3), dc=Math.min(h*.65,w/3);
+  ctx.save(); ctx.globalAlpha*=selected?1:.72;
+  if(selected){ ctx.shadowColor=SM22_RED; ctx.shadowBlur=9; }
+  ctx.drawImage(im,r[0],r[1],cap,r[3],cx-w/2,cy-h/2,dc,h);
+  ctx.drawImage(im,r[0]+cap,r[1],r[2]-cap*2,r[3],cx-w/2+dc,cy-h/2,w-dc*2,h);
+  ctx.drawImage(im,r[0]+r[2]-cap,r[1],cap,r[3],cx+w/2-dc,cy-h/2,dc,h);
+  ctx.restore(); return true;
+}
 function sm22DrawRoot(dt){
   const P=SM22, m=Input.mouse||{};
   if(P.t>.25){
     let ch=0; if(Input.menuDown()) ch=1; if(Input.menuUp()) ch=-1;
     if(ch){ P.sel=(P.sel+ch+SM22_ROWS.length)%SM22_ROWS.length; try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_b){} }
   }
-  msgText('MENU',VW/2,58,28,'#2aff5a',0,1,.12);
+  msgText('MENU',VW/2,58,28,SM22_RED,0,1,.12);
   const w=Math.min(300,VW-96),h=34,gap=48,y0=118;
   let clicked=-1;
   for(let i=0;i<SM22_ROWS.length;i++){
@@ -206,12 +221,12 @@ function sm22DrawRoot(dt){
     if(i>=P.shown){ P.shown=i+1; try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_b){} }
     const y=y0+i*gap-(1-k)*(1-k)*VH*.75, sel=i===P.sel, off=!!sm22Why(i);
     ctx.save(); ctx.globalAlpha=k*(off?.5:1);
-    if(!(typeof playPauseButtonArt==='function' && playPauseButtonArt(VW/2,y,w,h,sel))){
-      octFill(VW/2-w/2,y-h/2,w,h,7,sel?'#133623':'#141b19');
-      ctx.strokeStyle=sel?'#2aff5a':'#3c5550'; ctx.lineWidth=sel?2:1; ctx.strokeRect(VW/2-w/2+4,y-h/2+3,w-8,h-6);
+    if(!sm22ButtonArt(VW/2,y,w,h,sel)){
+      octFill(VW/2-w/2,y-h/2,w,h,7,sel?'#3a1313':'#1b1414');
+      ctx.strokeStyle=sel?SM22_RED:'#553c3c'; ctx.lineWidth=sel?2:1; ctx.strokeRect(VW/2-w/2+4,y-h/2+3,w-8,h-6);
     }
-    campText(SM22_ROWS[i],VW/2,y+(typeof PAUSE_LABEL_DY==='number'?PAUSE_LABEL_DY:-2),12,sel?'#dfffe9':'#a0b2a8');
-    if(sel && typeof menuSelMark==='function') menuSelMark(VW/2,y,w/2,'green');
+    campText(SM22_ROWS[i],VW/2,y+(typeof PAUSE_LABEL_DY==='number'?PAUSE_LABEL_DY:-2),12,sel?'#ffe4e4':'#b8a2a2');
+    if(sel && typeof menuSelMark==='function') menuSelMark(VW/2,y,w/2,'red');
     ctx.restore();
     const mx=sm22MouseX(), my=sm22MouseY();
     if(k===1 && m.inside && Math.abs(mx-VW/2)<=w/2 && Math.abs(my-y)<h/2){
@@ -222,7 +237,7 @@ function sm22DrawRoot(dt){
   P.md=!!m.down;
   const why=sm22Why(P.sel);
   if(P.msgT>0) campText(P.msg,VW/2,VH-50,10,'#ff7474');
-  else if(why) campText(why,VW/2,VH-50,10,'#8fa79a');
+  else if(why) campText(why,VW/2,VH-50,10,'#b89a9a');
   if(Input.menuBack() || sm22StartTap()){ try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_b){} sm22Close(); return; }
   if(clicked>=0){ P.sel=clicked; sm22Choose(clicked); return; }
   if(P.t>.85 && Input.menuConfirm()) sm22Choose(P.sel);
@@ -235,7 +250,7 @@ function sm22DrawSlots(dt){
   const P=SM22.slot; if(!P) return;
   P.t+=dt; P.msgT=Math.max(0,(P.msgT||0)-dt);
   const count=CAMP_SLOTS+(P.mode==='load'?1:0), per=4, page=Math.floor(P.sel/per), start=page*per, n=Math.min(per,count-start);
-  msgText(P.mode==='save'?'SAVE GAME':'LOAD GAME',VW/2,40,22,'#2aff5a',0,1,.12);
+  msgText(P.mode==='save'?'SAVE GAME':'LOAD GAME',VW/2,40,22,SM22_RED,0,1,.12);
   campText('PAGE '+(page+1)+' / '+Math.ceil(count/per)+'   LEFT / RIGHT',VW/2,66,9,'#8fbad2');
   const rw=390, rh=82, gap=6, x=(VW-rw)/2, y0=80;
   for(let i=0;i<n;i++){
@@ -243,7 +258,7 @@ function sm22DrawSlots(dt){
     /* the load list puts the AUTO SAVE first, the way the map's own load page does */
     const slot=P.mode==='load'?(idx===0?CAMP_SLOTS:idx-1):idx;
     if(typeof map4hSlotDraw==='function') map4hSlotDraw(slot,r,idx===P.sel,P.mode);
-    else { ctx.fillStyle=idx===P.sel?'#1b3a28':'#12181a'; ctx.fillRect(r.x,r.y,r.w,r.h); campText((slot===CAMP_SLOTS?'AUTO':'SLOT '+(slot+1)),VW/2,r.y+r.h/2,12,'#dfffe9'); }
+    else { ctx.fillStyle=idx===P.sel?'#3a1b1b':'#1a1212'; ctx.fillRect(r.x,r.y,r.w,r.h); campText((slot===CAMP_SLOTS?'AUTO':'SLOT '+(slot+1)),VW/2,r.y+r.h/2,12,'#ffe4e4'); }
   }
   if(P.msgT>0) campText(P.msg,VW/2,VH-50,10,'#ffe082');
   if(Input.menuLeft()){ P.sel=Math.max(0,P.sel-per); try{ Audio.SFX.blip(); }catch(_b){} }
