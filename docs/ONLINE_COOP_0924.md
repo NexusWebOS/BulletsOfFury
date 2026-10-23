@@ -39,3 +39,24 @@ gameplay verifier.
 Supabase references: [JavaScript browser installation](https://supabase.com/docs/reference/javascript/installing),
 [anonymous sign-ins](https://supabase.com/docs/guides/auth/auth-anonymous),
 [Realtime authorization](https://supabase.com/docs/guides/realtime/authorization).
+
+## Live project (2026-10-22)
+
+Project **ColeForgeProductions**, ref `oobdbhdsvcsjnwpvjuyg` (us-east-1, org NexusWebOS). It is
+separate from the Nexus II project. `assets/online-config.js` carries its URL and publishable key.
+The CLI is linked from this folder (`supabase/config.toml`). The database password is in
+`supabase/.secrets/db_password.txt`, which is git-ignored.
+
+- Steps 1, 2, 4 and 5 above are done. Anonymous sign-in was pushed with `supabase config push`.
+  `config.toml` mirrors the remote's other auth values, so a push changes nothing else.
+- `20261023000000_bof_join_room_fix.sql`: `bof_join_room`'s `on conflict (room_id,user_id)` was
+  ambiguous with the function's own OUT column `room_id` (error 42702), so no wingman could ever
+  join. It now names the `bof_room_members_pkey` constraint.
+- Verified: a REST smoke test of 16 checks with only the publishable key (scores, cooldown,
+  ownership, announcements, rooms, signaling). Then two browser origins (localhost and 127.0.0.1)
+  ran a real host + join and both showed WINGMAN CONTROLS LIVE.
+- A brand-new project's Realtime first answered `MissingPartition` and cleared up after about
+  20 seconds.
+- **Still open: step 3**, turning off public Realtime access, is a dashboard toggle (Realtime ->
+  Settings). The game only opens `private:true` channels, so room RLS already applies to its own
+  traffic.
