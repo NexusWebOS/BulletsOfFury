@@ -1,3 +1,292 @@
+## October23 — Furious live boss bot and30 full recordings
+
+Test-only invulnerable Cole input bot; real RAF/engine/render/audio, native
+enemy HP/phases/deaths, no forced damage.30 encounters/72.2min, including
+Harrier+ace, Stage6/StageX rebels, all Dracodia forms, tutorial/bonus/alternates.
+All30 saved videos fully decoded with audio. Native regression4/4; required
+core BUILD OK/0errors/actual exit0. Fixed false Chromium announcement on a
+declined activation and broken-chaingun stationary-fan stall, retaining native
+cooling/Furious rage gate. Clean Chronos run confirms both. Runtime archives
+and cache versions synced. Bot not loaded by shipping index. Reusable source
+_BUILD_SOURCE/furious_bot_1023; gallery _shots/furious_bot_1023/index.html;
+docs/FURIOUS_BOT_RECORDINGS_1023.md. Harrier summary recovery and variable native
+FPS explicitly documented. No commit/push.
+
+## October23 — Neural Archon face follows body, charge glow and16-frame lasers
+
+Mike spotted a frozen rectangular eye patch. Removed the seed face paste from
+all9 idle poses; whole PixelLab faces now move naturally. Each idle/charge/focus
+cell has measured eyes, shared by visible laser origins and actual-pixel contact.
+New PixelLab8-pose whole-brain eye/socket/brow charge,3 bright focus poses and
+reverse recovery; authored white hit partners. New16-frame beam flow at24fps
+through6 baked expansion widths. Warning fields sit behind the charged actor.
+179 even cells/22 sheets. No runtime visual glow/tint/scale/rotation/fade added.
+Cloud/geysers/timing/HP/Retina/native forms/death unchanged. Native39/0,
+zero page/asset errors; face-source pixels compared, emitter alignment, actual
+charge/beam blits, hit expiry and decoded audio verified. Focused native movie
+saved. Full required core BUILD OK/0errors/actual exit0. Credits4.16->4.10USD.
+Owning rebuild scripts repaired and archived. docs/DRACODIA_EYES_1023.md,
+qa JSON, _shots/dracodia_eyes_1023/index.html. No commit/push.
+
+## October23 — Dracodia Neural Archon replaces Harrier copy
+
+Mike replaced only Stage8 slot6 with a PixelLab mechanical/code/alien brain.
+Whole384px actor; fixed evil eye sockets; lobe/circuit/tendril loop; expanding
+eye lasers with6 baked widths;3/4/5 warned code geysers N/H/F; finite timed
+cloud shield and vulnerable recovery. Actual beam/plume pixels own contact.
+Generated digital assembly/dissolve, white hit frames, native Retina/core HP
+save, copy-death and single final death/reward retained. Standalone Stage6
+Harrier, Hammer, helicopter and volcano unchanged.71 even cells/18 sheets.
+Native31/0 +continuity4/0; no page/asset errors; decoded audio and native
+movie captured. Full required core BUILD OK/0 errors/actual exit0. PixelLab
+displayed4.44->4.16USD. Sources/builders/probes preserved, no commit/push.
+docs/DRACODIA_NEURAL_ARCHON_1023.md, qa JSON, _shots/dracodia_brain_1023/index.html.
+
+## October23 — Chronos named, independent rotary chaingun and fan book
+
+Visible name CHRONOS throughout Stage5 dialogue/story. User-approved exception:
+whole body + separate rotary chaingun + foreground grip. Native separate gun HP,
+actual alpha hit mask/Retina point and measured muzzle. Rev/8 phases/coast; down
+rakes alternate with centered fan5/7/9 on N/H/F. Ordinary bullets stay unshootable;
+fixed authored FOV/direction cells, native one-partner audio and warning clocks.
+Breaking gun stops fire/target; existing arsenal/death/salvage continues. Gun
+transition owns its pickup; Chromium retains it. Salvage radio defers to portrait
+dialogue and no duplicate floating head is added for announcements.
+PixelLab barrel/grip accepted; arm-drifting motion and changing muzzle topology
+rejected. Exact approved five-bore rotor8 baked phases.68 exports/19 sheets.
+Native32 +handoff33 pass,0 page/asset errors. Full required core0errors/exit0;
+2 stale old-name assertions updated. docs/CHRONOS_MODULAR_1023.md, qa JSON and
+_shots/chronos_modular_1023/index.html. No commit/push.
+
+## October23 — Hammer icon-box, live Chromium and portrait announcement correction
+
+Mike rejected the physical chest: restored the original exclusive chaingun icon
+box and its PixelLab opening animation. Fixed the actually active H22 override
+armor sheets (missed by the prior16-sheet pass);20 sheets now preserve dark
+outlines/seams. Replaced patchy activation with16 approved HF22 poses + hit cells.
+Armor/shield/recharge/taunt lines use Chrome Hammer's protected portrait dialogue.
+Native clocks resume via auto/A/Start; flash expiry continues during speech.
+21 correction +33 tactical native checks pass; no page/asset errors. Required
+full core BUILD OK/0errors/exit0. docs/HAMMER_CORRECTION_1023.md and corresponding
+qa JSON; video _shots/hammer_correction_1023/index.html. No commit/push.
+
+## October23 — Hammer armored edges and real tactical handoff
+
+Stage5 now strikes a physical animated crate, throws the canonical glowing
+hammer up/offscreen, receives the ejected gun with articulated catch poses,
+then uses a new tactical firing bank.121 fixed exports, common body unit and
+per-bank pivots; bad firing FX take and2 clipped catch frames rejected.
+16 old Chromium sheets preserve dark silhouette/seams; activation edge pixels
+corrected and plated idle baked at native unit. Native hit flash retained.
+Fixed Chromium's forced hammer-state return: acquired gun stays equipped and
+resumes chain_warn. Native HP, attack/damage/death/projectile/FOV/audio owners
+retained. Shared bossShootGraphic uses Stage6 nwarn_shoot; plain SHOOT text/
+Retina substitute removed. Rule in engine header, AGENTS.md and CLAUDE.md.
+
+Native tactical probe passed,0 page/asset errors; report docs/qa/hammer_tactical_1023.json.
+Actual video/proof _shots/hammer_tactical_1023/index.html. Full core BUILD OK/
+0 errors/actual exit0. Sources/rejections/rebuild owners retained under
+_ART_SOURCES/hammer_tactical_1023 and _BUILD_SOURCE; registry/taxonomy updated.
+docs/HAMMER_TACTICAL_1023.md. Existing local work preserved; no commit/push.
+
+## October23 — Generated HQ / Forge services and full-build Re-Spec
+
+PixelLab HQ and Forge icons now occupy fixed adjacent campaign-map anchors.
+Imported Claude's specific Start/Upgrade Center routes from a59a2e0704476aa3bf794bd5c11ff5da0d2192a1;
+did not import unrelated incoming debug/combat changes. Preserved local boss,
+animation and ordinary-bullet fixes. Native keyboard/mouse/controller entry.
+
+Decker's generated avatar-free Re-Spec window/button reset ALL current-run
+element forms for300 Furious Points, defaulting to Cancel. Basic weapon unlocks,
+stage progress, score and discovered elements remain. Restores exactly2 points
+per distinct completed stage: beforeStage6=10, clear6=12, clear7=14.
+Remaining points accumulate, persist and cannot refill from visits/retries.
+NG+ purchased recipes don't reappear after reset in the same run. Failed profile
+or campaign writes roll back both build and payment; respec debit survives reload.
+Service saves retain the campaign destination instead of its Stage1 entry flag.
+
+Four PixelLab jobs,14 authored fixed assets; raw art, IDs/hashes/provenance retained.
+Runtime assets/hq_forge_1023.js, art owner assets/hq_forge_art_1023.js;
+_BUILD_SOURCE/build_hq_forge_1023.py and probe_hq_forge_1023.py.
+Native36/36 including actual mouse/controller input, storage rollbacks, reassignment,
+save/load, all entry routes and390/1100/1920px layouts;0 console/page errors.
+Required syntax and complete test_fl BUILD OK/0errors, actual process exit0.
+game.js LF/test_fl CRLF retained. No commit/push. docs/HQ_FORGE_RESPEC_1023.md;
+review _shots/hq_forge_1023/index.html, report docs/qa/hq_forge_1023.json.
+
+## October23 — Ordinary bullets cannot be shot down
+
+Mike requested all ordinary bullets, including Stage1 boat spread, survive
+player fire. Normal gun collisions already enforce this. Fixed two bypasses
+in game.js: chromeMirror and updateRollers now both require the shared
+enemyOrdnanceCanIntercept policy, including before new rounds receive their
+per-frame flags. Physical missile and dedicated elemental-ordnance shootdown
+remain native. Defensive bomb/shield/respawn owners are unchanged.
+Native baseline264pass/24fail -> final288/288 across Easy/Normal/Hard/Furious,
+five gun/beam/missile/flame/ice paths, fresh Chromium/roller contacts, physical
+missile/fireball controls,117 campaign variants and actual Stage1 boat spread.
+Zero page/console errors. Required syntax/full core BUILD OK/0errors/exit0.
+game.js LF/test_fl CRLF retained; index cache query bullet-proof-1023.
+docs/BULLET_INTERCEPTION_1023.html and docs/qa/bullet_proof_1023.json;
+_BUILD_SOURCE/probe_bullet_proof_1023.py. No art generation or commit/push.
+
+## October23 — Completed PixelLab animation audit and native video review
+
+Exact approved purple/chromium hammer remains one .13-unit prop baked offline
+into accepted PixelLab bodies: 56 new Stage8 overhead/side purple+red frames.
+Two failed side attempts rejected. All69 Stage5 art files byte-identical.
+Fixed Stage4 crop, Stage6 bomber NaN dimensions, invisible Stage8 fleet aliases;
+640 readable stored needle directions; 68 heavy-ship charge/recoil frames.
+Four ship types use measured ports and correct primary/follow-up warnings.
+Native16/16 heavy cases,148/148 releases; Stage5/8 hammer53/53; authored106/106.
+Campaign enemy1240 cases/0page+geometry errors,117 projectile variants,
+miniboss36,modular53,BOB20,current rebels32/32,Harrier22/22,air908frames.
+Conservative raw flags resolved with native map/part/blink fixtures; evidence
+retained. Full required core BUILD OK/0errors/exit0 after final runtime edit.
+Three actual game MP4s with native music/SFX and36 selectable chapters:
+_shots/animation_audit_1023/review/index.html. docs/ANIMATION_AUDIT_1023.html.
+Sources, receipts, fixed pivots/units and rebuild owners preserved under
+_ART_SOURCES and _BUILD_SOURCE; owning asset indexes updated. Stage8 preload
+skips8 superseded sheets (175MiB decoded). No commit/push. Tests are controlled
+native encounters, not complete human campaign or balance-playthrough proof.
+
+## October23 — Stage8 single physical hammer, Stage5 retained
+
+One fixed purple/chromium prop and measured hand rig replaces inconsistent
+Stage8 generated/legacy armed poses; same shape/unit for throws and red rage.
+Whole pre-baked actors/white flash; ball tell cannot restore the old weapon.
+All69 Stage5 art files and original HF22 runtime byte-identical. Native53/53;
+core BUILD OK/0errors,exit0. Sources/owner hammer_consistency_1023;
+docs/HAMMER_CONSISTENCY_1023.md and native GIF gallery. No commit/push.
+
+## GPT Hammer frames - difficulty combos, throw and red rage
+
+Normal1 downward hit, Hard2, Furious2 plus left/right two-handed sweeps,
+both Stage5/8 and charged Stage5 phase. Physical release, orbit and return;
+permanent crimson/code rage and luminous red hammers. Native40/40;
+official core BUILD OK/0 errors. Sources/manifest hammer_furious_1022;
+docs/HAMMER_FURIOUS_1022.md and native GIF gallery. No commit/push.
+Exclusive Hama/other donor owners retained; legacy render paths scoped out.
+
+## October22 - Jumping Hammer windups, double slams and permanent light
+
+Stage5 adopts Stage8 straight-down end-cap slam; behind-head windups and
+jumping approach. Both gain Hama-rhythm warned double slams using their own
+current bodies, permanent authored light, Chromium/white flash frames.
+Native 24/24; official core BUILD OK/0 errors. Sources/receipts and
+manifest hammer_jump_1022; docs/HAMMER_JUMP_1022.md and native GIF review.
+No commit/push. Unrelated legacy transformations remain outside this scope.
+
+## October22 — Verified retired artwork cleanup installed
+
+135 retired runtime files archived;19 superseded atlas cells removed. Three atlases rebuilt; retired Cole pose atlas dropped while six names alias current body art. Runtime saving19.22MB. Originals and rollback snapshots: UNUSED_ASSETS/retired_art_1022. Development-only archive resolver preserves historical integrity checks; exclude archive/build tools from shipping. Gameplay/timing/audio unchanged. Official core8943/0, exit0; native9stage starts/109alias pixel hashes clean;220retained atlas cells pixel-identical. See docs/ARTWORK_CLEANUP_1022.md and archive installation.json. No commit/push.
+
+## October22 - Straight-down Hammer slams supersede diagonal slams
+
+Both Hammer variants land end-face first directly between the feet on the
+body centreline. Vertical source jobs/selection in vertical-jobs.json;
+native centreline, impact, crate and flash checks40/40. Earlier diagonal
+end-face slams are archived and retired from live slam/recovery banks.
+
+## October22 - Hammer end-face impact regeneration
+
+Both bosses now strike with the lower circular hammer end-cap, with upright
+head and angled shaft. New PixelLab down/recovery clips; old flat-barrel
+impact clips retired from the live slam banks. Measured cap contacts retain
+native targets, damage, flash and exclusive crate strike ownership.
+
+## October22 - Hammer correction and native helicopter restoration
+
+Stage5 extended straight-down and side swings; Stage8 clean re-authored Hammer
+27banks/265cells. Native hit/landing/crate checks39/39; helicopter original
+Overlord controller restored,5/5 checks. See docs/HAMMER_CORRECTION_1022.md
+and docs/previews/hammer_correction_1022/index.html. No commit/push.
+
+## October22 - Stage6/7 pressure and Herald predator
+
+Stage6 has three alternating-side Dasher waves, turbo/exit explosions, warned
+bomb/gun-rain/charge flybys and ally radio. Stage7 airborne/magic slots now use
+coherent toxic jets/drones; original entrance scroll and ground fixtures kept.
+Stage8 Herald gains animated native wing/head modules, talon dives, diagonal
+swoops, soul feathers and separately warned low-HP double passes. Native
+flashes, part targets, evasions, shared audio and explosion owners verified.
+201cells/29WebP sheets. Core8943/0, native report docs/qa/pressure_1022/native.json.
+Source/receipts _ART_SOURCES/pressure_1022; owning build_pressure_1022.py,
+probe_pressure_1022.py. Review docs/previews/pressure_1022/index.html.
+PixelLab used about$1.38 (9.99->8.61). No commit/push.
+
+## October22 - Stage2/6/9 PixelLab biome fleet
+
+Nine new models/45 complete banks/365 hull cells,12 effects/60 cells. Stage2
+small/heavy magma jets; Stage6 white/gray/teal small/medium/heavy wind jets;
+Stage9 water-tech spacecraft/drone roster, existing void arena retained by Mike.
+Stage-scoped alias/hull/launcher hooks preserve native AI, HP, FOV, audio,
+collision, shields and death/explosion owners. Hit flashes visibly verified.
+73/73 Chromium checks; full core8943/0; syntax clean.57 sheets total539240 bytes.
+Sources/receipts: _ART_SOURCES/biome_fleet_1022. Owner build_biome_fleet_1022.py.
+See docs/BIOME_FLEET_1022.md and docs/previews/biome_fleet_1022/index.html.
+PixelLab final balance -$0.01,2 daily bonus generations; no more jobs queued.
+Local only. No commit/push requested. Prior cinematic/mountain/Overdrive work retained.
+
+## October21 - cinematic pilot colours and identities across all affected shots
+
+Six plates corrected: regroup, Forge, alarm, river, launch generator and power cell.
+Freezer jacket is purple (HQ/river); alarm/legacy purple already correct. Cole has
+consistent green hood/silver harness and reference-matched front/rear haircut.
+Maverick has olive open collar, fuller beard and his actual portrait's green aviators,
+including three native report/horror/standing variants with original mouths/bodies.
+Opening/ending reuse those plates.35 images total; all nine banks/93 cells unchanged.
+PixelLab exact masks/ramp swaps retain luminance/alpha/unselected pixels and rails.
+Three paid jobs/$0.24, balance4.09; palette tool edits free.32 native +33 export checks
+pass; actual decoded/drawn pixels and screenshots inspected, no browser errors.
+Cinematic owner/registry syntax clean; no gameplay mechanics changed, prior8943/0
+core baseline retained. See docs/CINEMATIC_PILOT_CONSISTENCY_1021.md and archived
+_ART_SOURCES/cinema_story_1021/consistency_1021. Cole likeness still for Mike's review.
+Local only, no commit/push requested. Existing mixed document line endings retained.
+
+## October21 - HQ Cole/Maverick likeness correction
+
+Targeted PixelLab correction to hq_regroup: far-left Cole now has reference-matched
+face/hair, green hood/silver harness; adjacent leaning Maverick retains his own
+fuller beard, olive open collar/eagle patch. Four jobs/$0.32, balance4.33. Original
+plate preserved, other pilots/right-side nine-cell HQ animation pixel-identical.
+Owning builder emits a content-hashed art URL. Seven focused native checks passed;
+actual decoded source/drawImage pixels and screenshot inspected, no browser errors.
+Source/provenance _ART_SOURCES/cinema_story_1021/likeness_correction. Gameplay/story
+unchanged; prior8943/0 full suite baseline retained, not rerun for this art correction.
+Cole likeness still subject to Mike's review. No commit/push requested.
+
+## October21 - PixelLab cinematic story and dimensional views
+
+New isolated cinema_story_1021 owner/registry: 23 HD16-bit scene plates, nine
+individual fronts generated from the actual native so6 aircraft references,
+nine animation banks/93 cells, 1,832,200 runtime bytes. GPT batch front views
+were rejected and never activated. Original combat hulls/weapon stats retained.
+After3 comms/HQ circle briefing and Cole-only private prototypes; after4 electrical
+cell restores launch generator and reveals satellite takeover; after5 .50-chaingun
+salvage, alarm, eligible base defenders, selected-pilot boarding and direct native
+Stage6 card; after6 HQ return and river/bridge/sewer signal. Opening run 4.1->1.65s.
+Final data erasure3.25-4.2s, native rupture4.2s, code/plasma debris and original
+10.2s blue portal handoff; new machine-wiring skull/scream and dimensional invasion.
+47 completed PixelLab jobs, credits9.58->4.65. Native77 + flow22 + three-browser21
+checks passed, inspected actual pixels (including portraits and native death/portal),
+no page/console errors. Required core suite completed with BUILD OK/0errors.
+Live review: docs/previews/cinema_story_1021/index.html (also _shots mirror).
+Source/job receipts, builders, export hashes and QA archived under cinema_story_1021.
+Earlier MP4 films predate this rebuild. No commit/push requested.
+
+## October21 - Stage 2 complete mountain-to-lava transition
+
+Fixed the boss-arena join sliding a screen crop whose top sliced through the
+mountain. The existing join clock now carries the remaining authored source
+rows out of view; native 1:1 art, ground coordinates, timing and animated lava
+remain. Four difficulties / two camera modes / 360 native whole-source pixel
+comparisons pass; ten native check groups, zero browser errors. Required full
+suite 8943 passing / zero errors / exit0 and core syntax clean. See
+docs/STAGE2_MOUNTAIN_1021.md and docs/qa/stage2_peak_1021.json. Matched before/after
+review _shots/stage2_peak_1021/review.html. Safely synchronized completed upstream
+06f413a3c first; separate Overdrive changes preserved. Local fix only, no push.
+
 ## October21 — complete standard/corrupted Hammerboss acting and requested GitHub publication
 
 Mike requested new PixelLab acting for both existing Hammerboss designs, then upload to GitHub. Added47 registered banks/763 cells/2,752,730 lossless WebP bytes: overhead/jump/side strikes, raised-hammer hold, empty-handed throw follow-through, armed/unarmed casting/rage, body-only laser posture, solid Chromium takeover/action palettes, whole-body spin and actual ship/ball transformations. Native ship and ball identities were exported/inspected as references. Original standard kneel/get-up/death retained; corrupted stun uses a new deep unarmed kneel/hold/reversed get-up. Rejected baked beam/matte, extra props, duplicate hammers and circular armor overlays. PixelLab displayed11.05->9.58USD (1.47 used), no active jobs/top-up.
@@ -4399,3 +4688,8 @@ See docs/REQUEST_COMPLETION_1021.md and _shots/request_completion_1021/review.ht
 ## October21 — selected Holoscan dossier
 
 Mike selected concept02. The new native tutorial dossier is live: generated cyan frame, actual exploded modular turntables, shared BOB20_SPEC, DOM text/compact layout, native scan/deploy/pause/skip and buffer retirement.104 UI checks across Edge/Chrome/Firefox (including every turntable pose at thumbnail/detail edges),27 combat/lesson checks,8 interactive-review checks; full8943/0/exit0. See docs/HOLOSCAN_1021.md and _shots/holoscan_1021/review.html. Cole still needs review; other8 cinematic banks stay on hold. No push requested.
+
+
+## October 24 — encounter review corrections
+
+See `docs/ENCOUNTER_REVIEW_1023.md` for the current player-requested modular HP, reachable rear weapons, Chronos live-dialogue/hammer rules, Dredger/Herald attacks and Dracodia teleport/rebirth sequence. Runtime owners are `encounter_revision_1023.js` and `dracodia_rebirth_1023.js`, loaded after their art manifest and prior encounter owners. Sources/provenance: `_BUILD_SOURCE/encounter_revision_1023/`. Full core suite: zero errors; native contract, authored-bank, live-render and twelve-film playback checks passed. Never restore Chronos dialogue pauses or make sonic pressure waves interceptable. Preserve the canonical Stage 5 / corrupted hammer designs.

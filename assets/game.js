@@ -3,6 +3,8 @@
 /* ============================================================
    BULLETS OF FURY  —  lost 16/32-bit top-down rail shooter
    single self-contained file · ColeForge Studios
+   ENGINE ART RULE — every boss SHOOT! header uses Stage6's authored SHOOT graphic
+   through bossShootGraphic, never a substitute bitmap-text/reticle combination.
    ENGINE ART RULE — player lasers and ordinary enemy/boss lasers use the authored
    circular laser muzzle flash, palette-matched to their attack and anchored to the
    live attacker hardpoint. Held/curved lasers keep it visible throughout firing;
@@ -74,6 +76,7 @@ if(typeof window!=='undefined' && window.BOFX && BOFX.img){
   for(let i=0;i<8;i++){ BOFX.img['whv_ace_br'+i]='assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br'+i+'.png'; BOFX.img['whv_ace_so'+i]='assets/game/levels/stage_06/boss/bosses/skycarrier/ace_so'+i+'.png'; }
 }
 
+/* Boss SHOOT! headers: use bossShootGraphic / the authored Stage6 sign. */
 const VW = 480, VH = 512;                 // internal virtual resolution (camera window)
 // Horizontal-scroll support: some stages (the 800px jungle level) have a play field wider than the camera.
 // WORLD_W is the logical play width; camX is the camera's left edge, following the player.
@@ -2095,6 +2098,7 @@ const XART=(function(){
   for(let state=0;state<2;state++)for(let f=0;f<5;f++)X._src['furyboat_turret_'+state+'_'+f]='assets/game/shared/ships/fury_fleet_0922/boat_turret_'+state+'_'+f+'.png';
 
   X._src['s4_chase_0915']='assets/game/levels/stage_04/stage/stage4_highway_0915.png';
+  X._src['boss_shoot_prompt']='assets/game/shared/ui/shoot_prompt_1023.png';
   X._src['pause_button_0915']='assets/game/shared/ui/ui/pause_0915/button.png';
   X._src['mode_life_up_0915']='assets/game/shared/ui/ui/pickups_0915/life_up_wings.png';
   X._src['mode_continue_up_0915']='assets/game/shared/ui/ui/pickups_0915/continue_up.png';
@@ -5448,7 +5452,11 @@ function drawLevelMaster(dt){
      tile bed from the top until the field is fully open lava. No one-frame background swap. */
   if(run.stage===2&&(_realBossRun||_arenaHold)){
     drawLevelMaster._l2Join=Math.min(winH,(drawLevelMaster._l2Join||0)+dt*210);
-    _floorDy=drawLevelMaster._l2Join;
+    /* Travel past the remaining authored terrain, not just the old screen crop.
+       Otherwise a boss reached before srcY=0 exposes a straight cut through the
+       mountain as that cropped rectangle slides down. Keep the same join clock;
+       reveal the source rows above the crop at their native 1:1 scale. */
+    _floorDy=drawLevelMaster._l2Join*(srcY+winH)/winH;
   }else if(run.stage===2)drawLevelMaster._l2Join=0;
   /* Stage 4's boss is a chase, not a roadblock. Loop the clean upper-highway kilometre at more
      than four times the stage cruise speed until the boss dies. Restricting the source window to
@@ -5531,7 +5539,15 @@ function drawLevelMaster(dt){
   const _srcYPub = srcY - _floorDy - _winTop;
   _masterSrcY = _srcYPub;
   _groundPublish(srcY);
-  ctx.drawImage(img, 0, srcY, drawW, winH, 0, _floorDy + _winTop, drawW, winH);
+  if(run.stage===2 && _floorDy>0){
+    // Crop to the viewport only; the terrain's own top edge is master row zero.
+    const revealY=Math.max(0,srcY-_floorDy);
+    const revealDy=Math.max(0,_floorDy-srcY);
+    const revealH=Math.max(0,winH-revealDy);
+    if(revealH>0)ctx.drawImage(img,0,revealY,drawW,revealH,0,_winTop+revealDy,drawW,revealH);
+  }else{
+    ctx.drawImage(img, 0, srcY, drawW, winH, 0, _floorDy + _winTop, drawW, winH);
+  }
   /* WIDE LIQUID FALLS sit ABOVE the terrain and below the player — the handoff's layer order:
      lower terrain, liquid flat, fall overlay, then player. Drawn after the master so the curtain
      covers the shelf edge rather than being hidden behind it. */
@@ -8506,7 +8522,7 @@ function ensureForgeForms(){
   }
   /* Only New Game+ carries purchased profile recipes into a fresh run. Ordinary
      Arcade/password encounters use their own acquired forms, just like Campaign. */
-  if(run.ngplus)for(const id of Object.keys(achievementState.owned||{})){
+  if(run.ngplus&&!run._respecBase23)for(const id of Object.keys(achievementState.owned||{})){
     const m=/^forge_([a-z]+)_([0-9])_C$/.exec(id); if(!m||!INFUSIONS[m[1]]) continue;
     const w=+m[2], elem=m[1]; if(!run.forgeForms[w]) run.forgeForms[w]={};
     if(!run.forgeForms[w][elem]) run.forgeForms[w][elem]={elem:elem,lv:forgeOwnedLevel(elem,w)};
@@ -8868,7 +8884,7 @@ function geyserTick(dt){
    that cannot be reflected (beams, lock-bound missiles that are already dead) are left alone. */
 function chromeMirror(x,y,R,lv){
   let n=0; const R2=R*R;
-  for(const q of eBullets){ if(!q||q.dead||(typeof enemyDefensiveProof==='function'?enemyDefensiveProof(q):q._weaponProof)||q.kind==='beam'||q._beam) continue;
+  for(const q of eBullets){ if(!q||q.dead||(typeof enemyDefensiveProof==='function'?enemyDefensiveProof(q):q._weaponProof)||(typeof enemyOrdnanceCanIntercept==='function'&&!enemyOrdnanceCanIntercept(q))||q.kind==='beam'||q._beam) continue;
     if(dist2(q.x,q.y,x,y)>R2) continue;
     q.dead=true; n++;
     const sp=7+lv;
@@ -9126,7 +9142,7 @@ function achievementNormalize(v){
   if(v.fp&&typeof v.fp==='object'){
     out.fp={carry:Math.max(0,v.fp.carry|0),levels:[],supplies:[]};
     if(Array.isArray(v.fp.supplies))for(const q of v.fp.supplies){
-      if(q&&['life','continue'].includes(q.kind)&&Number.isSafeInteger(q.cost)&&q.cost>0)out.fp.supplies.push({kind:q.kind,cost:q.cost,at:Number(q.at)||0});
+      if(q&&['life','continue','respec'].includes(q.kind)&&Number.isSafeInteger(q.cost)&&q.cost>0)out.fp.supplies.push({kind:q.kind,cost:q.cost,at:Number(q.at)||0});
     }
     if(Array.isArray(v.fp.levels)) for(const e of v.fp.levels){ if(e&&Number.isFinite(e.fp)) out.fp.levels.push({stage:e.stage|0,score:e.score|0,fp:e.fp|0,at:e.at|0}); }
   }
@@ -31236,8 +31252,8 @@ function updateRollers(dt){
         b.vx=Math.cos(a)*sp; b.vy=Math.sin(a)*sp; shake=Math.max(shake,6);
       }
     }
-    // it also shreds enemy bullets it rolls over
-    for(const eb of eBullets){ if(!eb.dead && !eb._weaponProof && dist2(eb.x,eb.y,b.x,b.y)<(b.r+6)*(b.r+6)) eb.dead=true; }
+    // Only interceptable ordnance can be shredded; ordinary bullets pass through.
+    for(const eb of eBullets){ if(!eb.dead && !eb._weaponProof && (typeof enemyOrdnanceCanIntercept!=='function'||enemyOrdnanceCanIntercept(eb)) && dist2(eb.x,eb.y,b.x,b.y)<(b.r+6)*(b.r+6)) eb.dead=true; }
     if(b.life<=0){
       b.dead=true;
       explode(b.x,b.y,b.full?34:20,'red');
@@ -38088,7 +38104,7 @@ function hammerLaserHit(b,p,hx,hy){
     Math.abs(-dx*Math.sin(a)+dy*Math.cos(a))<=b.w/2+Math.min(hx,hy);
 }
 function hammerBossInit(b){
-  b.name='CHROME HAMMER';b.w=154;b.h=168;b.y=VH+130;b.ty=VH*.35;
+  b.name='CHRONOS';b.w=154;b.h=168;b.y=VH+130;b.ty=VH*.35;
   b._hammer={state:'flyby',t:0,cycle:0,attackCycle:0,rage:0,shotCd:1,angle:0,vx:0,vy:0};
   b._noHit=true;b.enter=true;
   for(const k of ['ship','ball','leap','charge','reticle','boomerang_body','boomerang_hammer'])XART.rdy('hammer_'+k);
@@ -38572,7 +38588,7 @@ function archEffectBlit(cell,x,y,size,rot,alpha){
   ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.globalCompositeOperation='lighter';ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,sx,sy,cw,ch,-size/2,-size/2,size,size);ctx.restore();return true;
 }
 function hammerBossInit(b){
-  b.name='CHROME HAMMER ARCHMAGE';b.w=158;b.h=176;b.y=VH+145;b.ty=VH*.34;
+  b.name='CHRONOS';b.w=158;b.h=176;b.y=VH+145;b.ty=VH*.34;
   const mul=(DIFF&&DIFF.eHp)||1;b._hammer={state:'flyby',t:0,cycle:0,attackCycle:0,rage:0,shotCd:.4,angle:0,vx:0,vy:0,mode:'hammer',hammerHP:Math.ceil(70*mul),hammerMax:Math.ceil(70*mul),chainHP:Math.ceil(95*mul),chainMax:Math.ceil(95*mul),hammerDestroyed:false,chainDestroyed:false,bombs:[],pillars:[],hitCd:0};
   b._noHit=true;b.enter=true;for(const k of Object.keys(ARCH_FRAMES))XART.rdy('arch_'+k);for(const family of ['body','gun','fx'])for(let f=0;f<8;f++)XART.rdy('arch_blaster_'+family+'_'+f);XART.rdy('arch_effects');XART.rdy('hammer_reticle');XART.rdy('arch_pilot_eradication');XART.rdy('arch_leap_shock');XART.rdy('arch_combat_0923');for(const k of ['storm_charge','hammer_throw','hammer_flight','hammer_lightning','chromium_spike','hammer_overhead'])XART.rdy('arch_'+k+'_0926');XART.rdy('arch_stun_static_0926');XART.rdy('arch_arsenal_cast_0926');XART.rdy('arch_whirlwind_0926');XART.rdy('arch_orbital_sweep_0926');XART.rdy('arch_chromium_beam_0926');
   for(const c of ['green','yellow','red'])XART.rdy('bmfx_badge_'+c);
@@ -51553,6 +51569,7 @@ function drawBullets(){
   for(const b of eBullets){
     if(b._v24Kind&&typeof vile24DrawProjectile==='function'&&vile24DrawProjectile(b))continue;
     if(ovSonicProjectileDraw(b))continue;
+    if(b._ch23Round&&typeof ch23BulletDraw==='function'&&ch23BulletDraw(b))continue;
     if(b._archBlaster){const k='arch_blaster_fx_'+(4+(((b._ph||0)+Math.floor((stateT||0)*18))&1));if(XART.rdy(k)){ctx.drawImage(XART.get(k),b.x-6,b.y-14,12,28);continue;}}
     if(b._hammerLaser){hammerLaserDraw(b);continue;}
     if(b._frostNoseLaser){frostNoseLaserDraw(b);continue;}
@@ -55545,6 +55562,12 @@ function drawIncomingWarnings(){
   }
 }
 /* Big centred callouts built from Mike's warning art: yield / alert / SHOOT!. */
+/* ENGINE HEADER RULE: every boss SHOOT! objective uses Stage6's authored
+   nwarn_shoot sign through bossShootGraphic. No substitute text/reticle boxes. */
+function bossShootGraphic(x,y){
+ const key='boss_shoot_prompt';if(!XART.rdy(key))return false;
+ ctx.drawImage(XART.get(key),Math.round(x-40),Math.round(y-70));return true;
+}
 let hudCallout=null;
 function showCallout(kind, life){ hudCallout={k:'nwarn_'+kind, t:0, life:life||1.1}; }
 function drawCallout(dt){
@@ -77250,10 +77273,10 @@ function drawForge(dt){
     const pitch=EW/disc.length;
     disc.forEach(function(el,i){const cx=EX+pitch*(i+.5),h=Math.min(EH*.72,pitch*.70);ctx.save();ctx.globalAlpha=i===F.esel?1:.48;iconBlit(ctx,'inf_'+el,cx,EY+EH*.48,h,true);ctx.restore();if(i===F.esel)forgeHexPointer('inf_'+el,cx,EY+EH*.48,h,INFUSIONS[el].glow);});
   }else if(art){
-    let msg=F.msgT>0?F.msg:(selW==null?'NO WEAPON SELECTED':(forgeEntry(selW)?forgeName(selW)+'  -  CHARGE RE-SPECS':'FIRE OPENS EVERY BOSS ELEMENT FOR THIS WEAPON'));
+    let msg=F.msgT>0?F.msg:(selW==null?'NO WEAPON SELECTED':(forgeEntry(selW)?forgeName(selW)+'  -  CHARGE OPENS RE-SPEC':'FIRE OPENS EVERY BOSS ELEMENT FOR THIS WEAPON'));
     stageText(art,msg,W/2,EY+EH*.50,Math.min(13,stageFitH(art,msg,EW*.92,13,7,.05)),F.msgT>0?'#fff':'#9fd6ff',.82,A(.3),.05);
   }
-  if(art){const rs='X'+(run.forgeRespecs|0);stageText(art,rs,W*.705,H*.883,13,'#ffd24a',.9,A(.25),.05);}
+  if(art){const rs='PTS '+(run.forgeCombos|0);stageText(art,rs,W*.79,H*.883,11,'#ffd24a',.9,A(.25),.05);}
   if(F.row===1 && selW!=null && disc.length) forgeRecipeDraw(F,selW,disc,dt,W,H,art);
   /* ---- input. EVERY consuming reader is read ONCE into a local (CLAUDE.md: menuLeft()||menuRight()
      always resolves to +1 because the second call was eaten by the first). ---- */
@@ -78112,7 +78135,7 @@ function drawLoadout(dt){
     L.formRects.push({x:W*.08,y:H*.22,w:W*.44,h:H*.57,index:L.psel});
   }
   if(L.row===0&&art)stageText(art,'SELECT WEAPON  /  DOWN FOR FORMS',B[0]+B[2]/2,B[1]+B[3]/2,9,'#cfeaff',.85,1,.04);
-  if(art&&L.row!==2)stageText(art,'RE-SPECS '+(run.forgeRespecs|0),W*.5,H*.89,10,'#ffd24a',.9,1,.05);
+  if(art&&L.row!==2)stageText(art,'PTS '+(run.forgeCombos|0),W*.79,H*.89,10,'#ffd24a',.9,1,.05);
   controlHintRow(L.row===1?[['pad_dpad','L/R WEAPON U/D ELEMENT'],['pad_a','EQUIP'],['pad_b','BACK'],['pad_start','NEXT']]:
     L.row===2?[['pad_dpad','L/R TYPE  U/D FORM'],['pad_a','EQUIP'],['pad_b','BACK']]:
     [['pad_dpad','WEAPON'],['pad_a','FORMS'],['pad_start','NEXT']],H*.925,W/2,W-24);

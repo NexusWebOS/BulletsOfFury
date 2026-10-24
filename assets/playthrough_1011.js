@@ -267,10 +267,10 @@ drawPowerups=function(){const all=powerups,parts=all.filter(p=>p.kind==='pt11cha
  try{PT11.base.powerDraw.apply(this,arguments);}finally{powerups=all;}
  for(const p of parts)iconDraw('micon_chaingun_1',p.x,p.y,38,true);
 };
-updatePlay=function(dt){const r=PT11.base.play.apply(this,arguments);if(PT11.radio){PT11.radio.t+=dt;if(PT11.radio.t>5.5)PT11.radio=null;}return r;};
+updatePlay=function(dt){const r=PT11.base.play.apply(this,arguments);if(PT11.radio&&!BOFCinematicDirector.live){PT11.radio.t+=dt;if(PT11.radio.t>5.5)PT11.radio=null;}return r;};
 beginStage=function(){PT11.radio=null;return PT11.base.begin.apply(this,arguments);};
 drawWorld=function(dt){const r=PT11.base.world.apply(this,arguments),q=PT11.radio;
- if(q&&run.stage===5&&state===GS.PLAY)dlgBox({who:'DECKER',portrait:'decker',full:q.text,shown:q.text.slice(0,Math.floor(q.t*34)),forceShown:true,
+ if(q&&run.stage===5&&state===GS.PLAY&&!BOFCinematicDirector.live)dlgBox({who:'DECKER',portrait:'decker',full:q.text,shown:q.text.slice(0,Math.floor(q.t*34)),forceShown:true,
   tint:'#d9e8ff',fade:Math.min(1,q.t*4,(5.5-q.t)*3),pw:VW*.94,ph:VH*.20,x:VW*.03,y:VH*.68,screenSpace:true});return r;
 };
 

@@ -1,3 +1,53 @@
+## October23 — Furious live boss bot and30 full recordings
+
+Test-only invulnerable Cole input bot; real RAF/engine/render/audio, native
+enemy HP/phases/deaths, no forced damage.30 encounters/72.2min, including
+Harrier+ace, Stage6/StageX rebels, all Dracodia forms, tutorial/bonus/alternates.
+All30 saved videos fully decoded with audio. Native regression4/4; required
+core BUILD OK/0errors/actual exit0. Fixed false Chromium announcement on a
+declined activation and broken-chaingun stationary-fan stall, retaining native
+cooling/Furious rage gate. Clean Chronos run confirms both. Runtime archives
+and cache versions synced. Bot not loaded by shipping index. Reusable source
+_BUILD_SOURCE/furious_bot_1023; gallery _shots/furious_bot_1023/index.html;
+docs/FURIOUS_BOT_RECORDINGS_1023.md. Harrier summary recovery and variable native
+FPS explicitly documented. No commit/push.
+
+## October23 — Neural Archon face follows body, charge glow and16-frame lasers
+
+Mike spotted a frozen rectangular eye patch. Removed the seed face paste from
+all9 idle poses; whole PixelLab faces now move naturally. Each idle/charge/focus
+cell has measured eyes, shared by visible laser origins and actual-pixel contact.
+New PixelLab8-pose whole-brain eye/socket/brow charge,3 bright focus poses and
+reverse recovery; authored white hit partners. New16-frame beam flow at24fps
+through6 baked expansion widths. Warning fields sit behind the charged actor.
+179 even cells/22 sheets. No runtime visual glow/tint/scale/rotation/fade added.
+Cloud/geysers/timing/HP/Retina/native forms/death unchanged. Native39/0,
+zero page/asset errors; face-source pixels compared, emitter alignment, actual
+charge/beam blits, hit expiry and decoded audio verified. Focused native movie
+saved. Full required core BUILD OK/0errors/actual exit0. Credits4.16->4.10USD.
+Owning rebuild scripts repaired and archived. docs/DRACODIA_EYES_1023.md,
+qa JSON, _shots/dracodia_eyes_1023/index.html. No commit/push.
+
+## October23 — Dracodia Neural Archon replaces Harrier copy
+
+Mike replaced only Stage8 slot6 with a PixelLab mechanical/code/alien brain.
+Whole384px actor; fixed evil eye sockets; lobe/circuit/tendril loop; expanding
+eye lasers with6 baked widths;3/4/5 warned code geysers N/H/F; finite timed
+cloud shield and vulnerable recovery. Actual beam/plume pixels own contact.
+Generated digital assembly/dissolve, white hit frames, native Retina/core HP
+save, copy-death and single final death/reward retained. Standalone Stage6
+Harrier, Hammer, helicopter and volcano unchanged.71 even cells/18 sheets.
+Native31/0 +continuity4/0; no page/asset errors; decoded audio and native
+movie captured. Full required core BUILD OK/0 errors/actual exit0. PixelLab
+displayed4.44->4.16USD. Sources/builders/probes preserved, no commit/push.
+docs/DRACODIA_NEURAL_ARCHON_1023.md, qa JSON, _shots/dracodia_brain_1023/index.html.
+
+
+## Hammer tactical transition and shared SHOOT header (October23)
+
+- Every boss SHOOT! objective/header uses Stage6's authored nwarn_shoot graphic through bossShootGraphic. Preload boss_shoot_prompt; never replace it with plain text, a Retina ring or a custom warning box.
+- Stage5 chaingun handoff: strike the exclusive chaingun icon box (never a chest), throw the canonical glowing hammer upward until offscreen, eject the actual gun, catch with articulated arms, then enter tactical gunfire. Native Chromium activation must retain the acquired gun and return to chain_warn, never respawn a held hammer.
+- Preserve dark armor outlines/seams, fixed body unit/pivots, visible white hit flash, matched red rage weapon variants, native emitter/FOV socket agreement and existing attack/death owners. See docs/HAMMER_TACTICAL_1023.md.
 ## October21 — complete standard/corrupted Hammerboss acting and requested GitHub publication
 
 Mike requested new PixelLab acting for both existing Hammerboss designs, then upload to GitHub. Added47 registered banks/763 cells/2,752,730 lossless WebP bytes: overhead/jump/side strikes, raised-hammer hold, empty-handed throw follow-through, armed/unarmed casting/rage, body-only laser posture, solid Chromium takeover/action palettes, whole-body spin and actual ship/ball transformations. Native ship and ball identities were exported/inspected as references. Original standard kneel/get-up/death retained; corrupted stun uses a new deep unarmed kneel/hold/reversed get-up. Rejected baked beam/matte, extra props, duplicate hammers and circular armor overlays. PixelLab displayed11.05->9.58USD (1.47 used), no active jobs/top-up.
@@ -7799,3 +7849,23 @@ The built-in image generator supplied the charcoal/black steel and red lamp trea
 
 Native UI verification:41/41, four card selections at390x844,1366x768,1920x1080,768x1024; all10 text blocks centered and bounded, model/title and card/prompts clear, all lesson text fits, all4 portrait states decoded, actual selection/deploy controls. No browser errors. During testing, repaired the existing locked-pilot hover font guard (`typeof _pilotFace` before access); no other core changes. Required full regression8940/0/exit0 and syntax clean. Core game LF and test harness CRLF preserved. Cache instructor-bob-fit-black-red-1020. Updated review `_shots/instructor_fit_1020/review.html`; previous instructor review redirects here. No GitHub push requested.
 
+
+## Chronos modular chaingun (October23)
+
+- Canonical visible name is CHRONOS. Preserve legacy cronos asset/function IDs.
+- Mike explicitly approved one separate chaingun module for Stage5 Chronos:
+  whole authored body + independent rotary gun + foreground grip, not new limbs.
+  Eight source-preserving rotor poses rev before firing and coast during rest.
+- Preserve the native gun HP/Retina target and actual alpha hit mask/muzzle.
+  Gun break stops its rounds/target; Chronos continues his native arsenal.
+- Alternate straight-down rakes and centered fan volleys (Normal5/Hard7/Furious9).
+  Keep warning reaction windows, dodge gaps and all3 authored FOV colors loaded.
+  Rounds remain ordinary unshootable bullets; one audible native launcher per fan.
+- The pickup/throw/catch owns its complete transition. Retain acquired gun through
+  Chromium. Salvage radio waits during portrait dialogue instead of covering it.
+- Sources/selection and rebuild ownership: docs/CHRONOS_MODULAR_1023.md.
+
+
+## October 24 — encounter review corrections
+
+See `docs/ENCOUNTER_REVIEW_1023.md` for the current player-requested modular HP, reachable rear weapons, Chronos live-dialogue/hammer rules, Dredger/Herald attacks and Dracodia teleport/rebirth sequence. Runtime owners are `encounter_revision_1023.js` and `dracodia_rebirth_1023.js`, loaded after their art manifest and prior encounter owners. Sources/provenance: `_BUILD_SOURCE/encounter_revision_1023/`. Full core suite: zero errors; native contract, authored-bank, live-render and twelve-film playback checks passed. Never restore Chronos dialogue pauses or make sonic pressure waves interceptable. Preserve the canonical Stage 5 / corrupted hammer designs.

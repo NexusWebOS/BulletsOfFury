@@ -6,8 +6,8 @@ fb2IntroStart=function(b){if(b?._hammer)b._hammer.intro1002=true;return IN1003_I
 fb2HammerIntroScript=function(lead,dispatcher,campaign){
  const lines=IN1003_SCRIPT.apply(this,arguments);
  if(campaign)lines.splice(lines.length-1,0,
-  {who:'CRONOS',kind:'boss',text:'Coming up here was merely a trap. The Legion has already launched its attack down on Earth.'},
-  {who:'CRONOS',kind:'boss',text:'Such a foolish mortal. This is the fate of the one who dances to their death. Now, let us dance!'});
+  {who:'CHRONOS',kind:'boss',text:'Coming up here was merely a trap. The Legion has already launched its attack down on Earth.'},
+  {who:'CHRONOS',kind:'boss',text:'Such a foolish mortal. This is the fate of the one who dances to their death. Now, let us dance!'});
  return lines;
 };
 fb2IntroEnd=function(){

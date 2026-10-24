@@ -1,4 +1,10 @@
 {
+  "bf22_": {
+    "role": "stage_2_magma_stage_6_wind_stage_9_water_fleet",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_biome_fleet_1022.py",
+    "note": "Nine PixelLab aircraft/drone designs,45 banks/365 fixed128 cells,12 independent64-cell weapon effects/60 frames. Fixed pivots, one shared master scale, disjoint exact module unions and measured cannon sockets. Stage-scoped aliases preserve lance identity and Stage9 void arena; native AI/HP/FOV/audio/collision/shields/destruction owners retained. Sources, receipts and audits in _ART_SOURCES/biome_fleet_1022."
+  },
   "rp21_": {
     "role": "razorback_targeted_sonic_pulse",
     "sheet": null,
@@ -1010,5 +1016,76 @@
     "sheet": null,
     "owner": "_BUILD_SOURCE/build_hammer_acting_1021.py",
     "note": "PixelLab standard black-steel/cyan and corrupted violet/orange Hammerboss acting. Whole body, two arms, one hammer, physical Chromium takeover. Native encounter clocks, damage, HP and visible part/owner flash retain ownership. Fixed256px frames, ship320px padded frames, counter640px at common2.5 scale. Source/selection/export audit in _ART_SOURCES/hammer_acting_1021; Stage5 retains approved native kneeling/death acting."
+  },
+  "c22_": {
+    "role": "hd16_cinematic_story_and_dimensional_views",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_cinema_rebuild.py",
+    "note": "PixelLab23 scene plates, nine native-front cinematic aircraft and three Maverick aviator pose variants (35 images). Nine even-cell animation banks/93 frames. Six plates maintain Cole green hood, Maverick olive/aviators and Freezer purple. Original pose mouths/bodies, story/mixer and native final-death clocks retained. Owning build_cinema_rebuild.py; sources/decisions and native QA archived."
+  },
+  "cp22_": {
+    "role": "stage6_7_pressure_fleet_and_stage8_herald_motion",
+    "owner": "_BUILD_SOURCE/build_pressure_1022.py",
+    "manifest": "assets/pressure_art_1022.js",
+    "note": "Four PixelLab craft/20banks/144hull cells, original modular Herald wings/head27cells, six FX30cells. Fixed even canvases and pivots; launcher sockets, native damage flashes, warnings, audio, collision and explosion owners. Sources/receipts/selection in _ART_SOURCES/pressure_1022. Stage7 former magic slots now coherent toxic craft. No stock explosion replacement."
+  },
+  "ha21_h22_": {
+    "role": "corrected_stage5_and_reauthored_corrupted_hammer",
+    "owner": "_BUILD_SOURCE/build_hammer_correction_1022.py",
+    "note": "27 banks/250 fixed cells, source receipts and rejected candidates archived; measured physical end-face contacts and gun mounts."
+  },
+  "ha21_hj22_": {
+    "role": "stage5_stage8_jump_windup_impact_recovery",
+    "owner": "_BUILD_SOURCE/build_hammer_jump_1022.py",
+    "note": "Fixed units, blue Chromium and authored white flashes; current identity retained for Hama-rhythm double."
+  },
+  "hj22_": {
+    "role": "hammer_permanent_corona_and_followup_warnings",
+    "owner": "_BUILD_SOURCE/build_hammer_jump_1022.py",
+    "note": "Two five-frame authored light loops and fixed green/yellow/red FOV/reticle cells."
+  },
+  "ha21_hf22_": {
+    "role": "gpt_hammer_combo_throw_red_rage_and_palette_frames",
+    "owner": "_BUILD_SOURCE/build_hammer_furious_1022.py",
+    "note": "Normal1/Hard2/Furious2+left+right; source rig metadata preserved, authored flashes and fixed new frame units."
+  },
+  "hf22_": {
+    "role": "detached_hammer_pre_rendered_spin_and_hit_frames",
+    "owner": "_BUILD_SOURCE/build_hammer_furious_1022.py",
+    "note": "Stored32 orientations, luminous normal/red heads, physical native head pivot; survives actor suppression."
+  },
+  "ha21_hc23_": {
+    "role": "stage8_fixed_physical_hammer_actor_and_hit_frames",
+    "owner": "_BUILD_SOURCE/build_hammer_consistency_1023.py",
+    "note": "One prop/source unit; whole baked actors, measured hands and impact contacts. Stage5 untouched."
+  },
+  "hf22_corrupt_tool": {
+    "role": "stage8_fixed_physical_hammer_and_hit_frames",
+    "owner": "_BUILD_SOURCE/build_hammer_consistency_1023.py",
+    "note": "Same prop as held poses,32 authored orientations, same head unit/pivot, normal/red/white."
+  },
+  "hf23_": {
+    "role": "fury_hq_forge_map_landmarks_and_paid_full_build_respec",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_hq_forge_1023.py",
+    "note": "Four PixelLab generations: HQ, Forge, avatar-free service window, Re-Spec button. Fixed256 map landmarks, exact-size authored menu/button states. Live measured bitmap apertures. Two upgrade points per distinct completed stage;300FP full reset preserves stages/base weapon unlocks and refunds all earned points. Generated source IDs and hashes in _ART_SOURCES/hq_forge_1023/manifest.json."
+  },
+  "ht23_": {
+    "role": "stage5_tactical_handoff_and_clean_chromium",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_hammer_tactical_1023.py",
+    "note": "Exclusive original chaingun icon box restored with generated opening. Articulated toss/catch/fire and canonical glowing hammer retained.20 corrected armor sheets cover HA21, live H22 overrides and HF22;16 clean activation poses/white-hit partners from approved HF22 windup preserve dark outlines/seams. Fixed unit/pivots, binary alpha and native hit feedback. Real Chrome Hammer portrait announcements use the protected cinematic director; combat pauses, visual hit-flash expiry continues. See docs/HAMMER_CORRECTION_1023.md."
+  },
+  "ch23_": {
+    "role": "chronos_separate_rotary_chaingun",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_chronos_modular_1023.py",
+    "note": "Mike approved Stage5 Chronos modular exception: whole body + independent rotary chaingun + foreground hands. Native separate gun HP/Retina target, measured alpha damage mask/muzzle, rev/coast, alternating down rake/fan5/7/9, fixed authored warning/round direction cells.68 exports/19 sheets. Rejected arm drift and changing muzzle topology; exact source rotor8 phases. Native pickup, Chromium gun retention, death and arsenal preserved. docs/CHRONOS_MODULAR_1023.md."
+  },
+  "nb23_": {
+    "role": "dracodia_neural_archon",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_dracodia_brain_1023.py",
+    "note": "Whole-frame PixelLab idle/charge/focus preserve moving face; each body cell has measured eyes. New16-frame laser flow at6 baked expansion widths. Authored white hit partners and progressive eye/brow glow; no live visual effects. Sources _ART_SOURCES/dracodia_brain_1023 and dracodia_eyes_1023.179 cells/22 sheets; final39 native checks. See docs/DRACODIA_EYES_1023.md."
   }
 }

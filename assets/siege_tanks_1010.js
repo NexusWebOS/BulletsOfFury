@@ -165,7 +165,7 @@ function sg10Release(b,A,i){
  const missile=unit==='deviator',k=unit==='sonic'?(A.charged?.66:.28):unit==='devastator'?.27:.28;
  const q={kind:missile?'sg10missile':'sg10pressure',x:p.x,y:p.y,vx:Math.cos(angle)*speed/60,vy:Math.sin(angle)*speed/60,
   spd:speed/60,ang:angle,w:A.charged?22:missile?10:14,h:A.charged?28:missile?18:18,t:0,dmg:1,
-  hp:missile?(diffKey==='furious'?3:2):undefined,_shootable:missile,_energyOrdnance:true,homing:false,
+  hp:missile?(diffKey==='furious'?3:2):undefined,_shootable:missile,_weaponProof:!missile,_s3kOriginalProof:!missile,_energyOrdnance:missile,homing:false,
   _sg10Owner:b,_sg10Unit:unit,_sg10K:k,_sg10Charged:A.charged,_sg10Target:{x:p.x+Math.cos(angle)*Math.hypot(tx-p.x,ty-p.y),y:p.y+Math.sin(angle)*Math.hypot(tx-p.x,ty-p.y)},_sg10Done:false};
  eBullets.push(q);sg10Burst(unit,'impact',p.x,p.y,.10,.30);sg10Sfx(b,missile?'razorbackRocket':'razorbackPressure',.11);sg10Log('shot',{unit,charged:A.charged});
 }

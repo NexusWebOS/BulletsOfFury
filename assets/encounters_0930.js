@@ -9,6 +9,12 @@ function enc30Warm(stage){
  if(stage===6)for(let i=0;i<8;i++)XART.rdy('nthr_blue_'+i);
 }
 function enc30Cell(name,f,x,y,w,h,tint){
+ // The refitted hull is a complete 128-cell, not this retired 120x144 atlas.
+ // Route its normal and flash layers through the same authored pose owner.
+ if(name==='jet'&&typeof AF21!=='undefined'&&AF21.currentEnemy&&AF21.requestPose){
+  const e=AF21.currentEnemy,p=AF21.requestPose,d=AIR13.aliases.get(e.type),span=Math.max(e.w||32,e.h||32)*(d?.nativeRatios?.[e.type]||1);
+  return af21Draw(p,x,y,span,1,tint||(e.flash>0?hitFlashColor(e):null));
+ }
  const a=ENC30_ART[name];if(!a||!XART.rdy(a.key))return false;
  const r=a.frames[((f|0)%a.frames.length+a.frames.length)%a.frames.length];
  const im=tint?xartPalette(a.key,tint):XART.get(a.key);if(!im)return false;

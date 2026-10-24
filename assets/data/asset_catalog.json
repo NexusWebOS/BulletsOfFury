@@ -131356,6 +131356,4082 @@
       "path": "assets/game/shared/campaign/campaign_controls_1004h/slot_flash.png",
       "owner": "shared/campaign",
       "cell": null
+    },
+    {
+      "key": "hf23_hq",
+      "root": "hf23_hq",
+      "path": "assets/game/shared/ui/hq_forge_1023/hq.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "key": "hf23_forge",
+      "root": "hf23_forge",
+      "path": "assets/game/shared/ui/hq_forge_1023/forge.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 256,
+        "height": 256
+      }
+    },
+    {
+      "key": "hf23_row_idle",
+      "root": "hf23_row_idle",
+      "path": "assets/game/shared/ui/hq_forge_1023/row_idle.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 324,
+        "height": 40
+      }
+    },
+    {
+      "key": "hf23_row_selected",
+      "root": "hf23_row_selected",
+      "path": "assets/game/shared/ui/hq_forge_1023/row_selected.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 324,
+        "height": 40
+      }
+    },
+    {
+      "key": "hf23_row_disabled",
+      "root": "hf23_row_disabled",
+      "path": "assets/game/shared/ui/hq_forge_1023/row_disabled.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 324,
+        "height": 40
+      }
+    },
+    {
+      "key": "hf23_small_idle",
+      "root": "hf23_small_idle",
+      "path": "assets/game/shared/ui/hq_forge_1023/small_idle.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 160,
+        "height": 30
+      }
+    },
+    {
+      "key": "hf23_small_selected",
+      "root": "hf23_small_selected",
+      "path": "assets/game/shared/ui/hq_forge_1023/small_selected.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 160,
+        "height": 30
+      }
+    },
+    {
+      "key": "hf23_small_disabled",
+      "root": "hf23_small_disabled",
+      "path": "assets/game/shared/ui/hq_forge_1023/small_disabled.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 160,
+        "height": 30
+      }
+    },
+    {
+      "key": "hf23_start_idle",
+      "root": "hf23_start_idle",
+      "path": "assets/game/shared/ui/hq_forge_1023/start_idle.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 300,
+        "height": 34
+      }
+    },
+    {
+      "key": "hf23_start_selected",
+      "root": "hf23_start_selected",
+      "path": "assets/game/shared/ui/hq_forge_1023/start_selected.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 300,
+        "height": 34
+      }
+    },
+    {
+      "key": "hf23_start_disabled",
+      "root": "hf23_start_disabled",
+      "path": "assets/game/shared/ui/hq_forge_1023/start_disabled.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 300,
+        "height": 34
+      }
+    },
+    {
+      "key": "hf23_menu",
+      "root": "hf23_menu",
+      "path": "assets/game/shared/ui/hq_forge_1023/menu.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 456,
+        "height": 340
+      }
+    },
+    {
+      "key": "hf23_workshop",
+      "root": "hf23_workshop",
+      "path": "assets/game/shared/ui/hq_forge_1023/workshop.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 456,
+        "height": 366
+      }
+    },
+    {
+      "key": "hf23_backdrop",
+      "root": "hf23_backdrop",
+      "path": "assets/game/shared/ui/hq_forge_1023/backdrop.webp",
+      "owner": "shared/ui/hq_forge_1023",
+      "cell": {
+        "width": 480,
+        "height": 512
+      }
+    },
+    {
+      "key": "nca_ht23_toss",
+      "root": "nca_ht23_toss",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/toss.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_toss_armor",
+      "root": "nca_ht23_toss_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/toss_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_toss_red",
+      "root": "nca_ht23_toss_red",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/toss_red.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_toss_hit",
+      "root": "nca_ht23_toss_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/toss_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_catch",
+      "root": "nca_ht23_catch",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/catch.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_catch_armor",
+      "root": "nca_ht23_catch_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/catch_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_catch_red",
+      "root": "nca_ht23_catch_red",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/catch_red.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_catch_hit",
+      "root": "nca_ht23_catch_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/catch_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_fire",
+      "root": "nca_ht23_fire",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/fire.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_fire_armor",
+      "root": "nca_ht23_fire_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/fire_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_fire_red",
+      "root": "nca_ht23_fire_red",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/fire_red.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_fire_hit",
+      "root": "nca_ht23_fire_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/fire_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_tool",
+      "root": "nca_ht23_tool",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/tool.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_tool_red",
+      "root": "nca_ht23_tool_red",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/tool_red.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_crate",
+      "root": "nca_ht23_crate",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/crate.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_gun_prop",
+      "root": "nca_ht23_gun_prop",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/gun_prop.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_gun_prop_red",
+      "root": "nca_ht23_gun_prop_red",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/gun_prop_red.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "boss_shoot_prompt",
+      "root": "boss_shoot_prompt",
+      "path": "assets/game/shared/ui/shoot_prompt_1023.png",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "ht23_shoot",
+      "root": "ht23_shoot",
+      "path": "assets/game/shared/ui/shoot_prompt_1023.png",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "ht23_plated_idle",
+      "root": "ht23_plated_idle",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/plated_idle.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "ht23_plated_idle_hit",
+      "root": "ht23_plated_idle_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/plated_idle_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_beam_empty_armor",
+      "root": "nca_ha21_blue_beam_empty_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_beam_empty_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_cast_armor",
+      "root": "nca_ha21_blue_cast_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_cast_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_cast_empty_armor",
+      "root": "nca_ha21_blue_cast_empty_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_cast_empty_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_hold_armor",
+      "root": "nca_ha21_blue_hold_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_hold_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_jump_armor",
+      "root": "nca_ha21_blue_jump_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_jump_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_rage_armor",
+      "root": "nca_ha21_blue_rage_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_rage_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_rage_empty_armor",
+      "root": "nca_ha21_blue_rage_empty_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_rage_empty_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_side_armor",
+      "root": "nca_ha21_blue_side_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_side_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_counter_right_armor",
+      "root": "nca_ha21_blue_counter_right_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_counter_right_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_counter_left_armor",
+      "root": "nca_ha21_blue_counter_left_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_counter_left_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_slam_armor",
+      "root": "nca_ha21_blue_slam_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_slam_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_spin_armor",
+      "root": "nca_ha21_blue_spin_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_spin_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ha21_blue_throw_armor",
+      "root": "nca_ha21_blue_throw_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_throw_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_hf22_blue_jump_armor",
+      "root": "nca_hf22_blue_jump_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/hf_blue_jump_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_hf22_blue_sides_armor",
+      "root": "nca_hf22_blue_sides_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/hf_blue_sides_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_hf22_blue_throw_armor",
+      "root": "nca_hf22_blue_throw_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/hf_blue_throw_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_h22_blue_slam_armor",
+      "root": "nca_h22_blue_slam_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_slam_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_h22_blue_side_armor",
+      "root": "nca_h22_blue_side_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_side_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_h22_blue_counter_right_armor",
+      "root": "nca_h22_blue_counter_right_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_counter_right_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_h22_blue_counter_left_armor",
+      "root": "nca_h22_blue_counter_left_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_counter_left_armor.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_activation",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ht23_activation_hit",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": null
+    },
+    {
+      "key": "ht23_activation_0",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_0",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_1",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_1",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_2",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_2",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_3",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_3",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        0,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_4",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_4",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_5",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_5",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_6",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_6",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_7",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_7",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        448,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_8",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_8",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_9",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_9",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_10",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_10",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_11",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_11",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        896,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_12",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_12",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        0,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_13",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_13",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        448,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_14",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_14",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        896,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_15",
+      "root": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "ht23_activation_hit_15",
+      "root": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "owner": "shared/combat/hammer_tactical_1023",
+      "cell": [
+        1344,
+        1344,
+        448,
+        448
+      ]
+    },
+    {
+      "key": "nca_ch23_body",
+      "root": "nca_ch23_body",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_body_armor",
+      "root": "nca_ch23_body_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_body_red",
+      "root": "nca_ch23_body_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_body_hit",
+      "root": "nca_ch23_body_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_barrel",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_barrel_armor",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_barrel_red",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_barrel_hit",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_hands",
+      "root": "nca_ch23_hands",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_hands_armor",
+      "root": "nca_ch23_hands_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_hands_red",
+      "root": "nca_ch23_hands_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_hands_hit",
+      "root": "nca_ch23_hands_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_round",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_warn_fan_green",
+      "root": "nca_ch23_warn_fan_green",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_green.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_warn_down_green",
+      "root": "nca_ch23_warn_down_green",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_green.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_warn_fan_yellow",
+      "root": "nca_ch23_warn_fan_yellow",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_yellow.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_warn_down_yellow",
+      "root": "nca_ch23_warn_down_yellow",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_yellow.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_warn_fan_red",
+      "root": "nca_ch23_warn_fan_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_ch23_warn_down_red",
+      "root": "nca_ch23_warn_down_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": null
+    },
+    {
+      "key": "ch23_body_0",
+      "root": "nca_ch23_body",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_body_armor_0",
+      "root": "nca_ch23_body_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_body_red_0",
+      "root": "nca_ch23_body_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_body_hit_0",
+      "root": "nca_ch23_body_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_barrel_0",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_1",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_2",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_3",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_4",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_5",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_6",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_7",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_8",
+      "root": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        416,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_0",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_1",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_2",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_3",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_4",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_5",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_6",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_7",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_armor_8",
+      "root": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        416,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_0",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_1",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_2",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_3",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_4",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_5",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_6",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_7",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_red_8",
+      "root": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        416,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_0",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_1",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_2",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_3",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_4",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_5",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        104,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_6",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        208,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_7",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        312,
+        208,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_barrel_hit_8",
+      "root": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        416,
+        104,
+        208
+      ]
+    },
+    {
+      "key": "ch23_hands_0",
+      "root": "nca_ch23_hands",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_hands_armor_0",
+      "root": "nca_ch23_hands_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_armor.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_hands_red_0",
+      "root": "nca_ch23_hands_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_hands_hit_0",
+      "root": "nca_ch23_hands_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_hit.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ]
+    },
+    {
+      "key": "ch23_round_0",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_1",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        40,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_2",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        80,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_3",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        120,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_4",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_5",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        40,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_6",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        80,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_7",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        120,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_8",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        80,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_9",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        40,
+        80,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_10",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        80,
+        80,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_11",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        120,
+        80,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_12",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        120,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_13",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        40,
+        120,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_14",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        80,
+        120,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_15",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        120,
+        120,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_16",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        160,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_round_17",
+      "root": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        40,
+        160,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ch23_warn_fan_green_0",
+      "root": "nca_ch23_warn_fan_green",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_green.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        448,
+        528
+      ]
+    },
+    {
+      "key": "ch23_warn_down_green_0",
+      "root": "nca_ch23_warn_down_green",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_green.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        200,
+        528
+      ]
+    },
+    {
+      "key": "ch23_warn_fan_yellow_0",
+      "root": "nca_ch23_warn_fan_yellow",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_yellow.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        448,
+        528
+      ]
+    },
+    {
+      "key": "ch23_warn_down_yellow_0",
+      "root": "nca_ch23_warn_down_yellow",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_yellow.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        200,
+        528
+      ]
+    },
+    {
+      "key": "ch23_warn_fan_red_0",
+      "root": "nca_ch23_warn_fan_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        448,
+        528
+      ]
+    },
+    {
+      "key": "ch23_warn_down_red_0",
+      "root": "nca_ch23_warn_down_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_red.webp",
+      "owner": "shared/combat/chronos_modular_1023",
+      "cell": [
+        0,
+        0,
+        200,
+        528
+      ]
+    },
+    {
+      "key": "nca_nb23_brain",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_brain_hit",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_charge",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_charge_hit",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_focus",
+      "root": "nca_nb23_focus",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_focus_hit",
+      "root": "nca_nb23_focus_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_cloud",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_cloud_open",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_geyser",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_morph",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_beam_0",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_beam_1",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_beam_2",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_beam_3",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_beam_4",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_beam_5",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_warn_laser_green",
+      "root": "nca_nb23_warn_laser_green",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_laser_green.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_warn_geyser_green",
+      "root": "nca_nb23_warn_geyser_green",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_geyser_green.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_warn_laser_yellow",
+      "root": "nca_nb23_warn_laser_yellow",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_laser_yellow.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_warn_geyser_yellow",
+      "root": "nca_nb23_warn_geyser_yellow",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_geyser_yellow.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_warn_laser_red",
+      "root": "nca_nb23_warn_laser_red",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_laser_red.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nca_nb23_warn_geyser_red",
+      "root": "nca_nb23_warn_geyser_red",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_geyser_red.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": null
+    },
+    {
+      "key": "nb23_brain_0",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_1",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_2",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_3",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_4",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_5",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_6",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_7",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_8",
+      "root": "nca_nb23_brain",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        768,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_0",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_1",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_2",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_3",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_4",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_5",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_6",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_7",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_brain_hit_8",
+      "root": "nca_nb23_brain_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/brain_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        768,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_0",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_1",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_2",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_3",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_4",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_5",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_6",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_7",
+      "root": "nca_nb23_charge",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_0",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_1",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_2",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_3",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_4",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_5",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_6",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_charge_hit_7",
+      "root": "nca_nb23_charge_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/charge_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_0",
+      "root": "nca_nb23_focus",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_1",
+      "root": "nca_nb23_focus",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_2",
+      "root": "nca_nb23_focus",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_3",
+      "root": "nca_nb23_focus",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_hit_0",
+      "root": "nca_nb23_focus_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_hit_1",
+      "root": "nca_nb23_focus_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_hit_2",
+      "root": "nca_nb23_focus_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_focus_hit_3",
+      "root": "nca_nb23_focus_hit",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/focus_hit.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_0",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_1",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_2",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_3",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_4",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_5",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_6",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_7",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_8",
+      "root": "nca_nb23_cloud",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        768,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_0",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_1",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_2",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_3",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_4",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_5",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_6",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_7",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_cloud_open_8",
+      "root": "nca_nb23_cloud_open",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/cloud_open.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        768,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_geyser_0",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_geyser_1",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        144,
+        0,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_geyser_2",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        288,
+        0,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_geyser_3",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        432,
+        0,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_geyser_4",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        208,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_geyser_5",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        144,
+        208,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_geyser_6",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        288,
+        208,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_geyser_7",
+      "root": "nca_nb23_geyser",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/geyser.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        432,
+        208,
+        144,
+        208
+      ]
+    },
+    {
+      "key": "nb23_morph_0",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_1",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_2",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_3",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_4",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_5",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        384,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_6",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        768,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_7",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        1152,
+        384,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_morph_8",
+      "root": "nca_nb23_morph",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/morph.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        768,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "nb23_beam_0_0",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_1",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_2",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_3",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_4",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_5",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_6",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_7",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_8",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_9",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_10",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_11",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_12",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_13",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_14",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_0_15",
+      "root": "nca_nb23_beam_0",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_0.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_0",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_1",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_2",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_3",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_4",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_5",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_6",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_7",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_8",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_9",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_10",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_11",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_12",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_13",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_14",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_1_15",
+      "root": "nca_nb23_beam_1",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_1.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_0",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_1",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_2",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_3",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_4",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_5",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_6",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_7",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_8",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_9",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_10",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_11",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_12",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_13",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_14",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_2_15",
+      "root": "nca_nb23_beam_2",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_2.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_0",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_1",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_2",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_3",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_4",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_5",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_6",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_7",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_8",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_9",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_10",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_11",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_12",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_13",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_14",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_3_15",
+      "root": "nca_nb23_beam_3",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_3.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_0",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_1",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_2",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_3",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_4",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_5",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_6",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_7",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_8",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_9",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_10",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_11",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_12",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_13",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_14",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_4_15",
+      "root": "nca_nb23_beam_4",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_4.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_0",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_1",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_2",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_3",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        0,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_4",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_5",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_6",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_7",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        624,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_8",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_9",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_10",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_11",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1248,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_12",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_13",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        104,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_14",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        208,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_beam_5_15",
+      "root": "nca_nb23_beam_5",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/beam_5.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        312,
+        1872,
+        104,
+        624
+      ]
+    },
+    {
+      "key": "nb23_warn_laser_green_0",
+      "root": "nca_nb23_warn_laser_green",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_laser_green.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        128,
+        624
+      ]
+    },
+    {
+      "key": "nb23_warn_geyser_green_0",
+      "root": "nca_nb23_warn_geyser_green",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_geyser_green.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nb23_warn_laser_yellow_0",
+      "root": "nca_nb23_warn_laser_yellow",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_laser_yellow.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        128,
+        624
+      ]
+    },
+    {
+      "key": "nb23_warn_geyser_yellow_0",
+      "root": "nca_nb23_warn_geyser_yellow",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_geyser_yellow.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nb23_warn_laser_red_0",
+      "root": "nca_nb23_warn_laser_red",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_laser_red.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        128,
+        624
+      ]
+    },
+    {
+      "key": "nb23_warn_geyser_red_0",
+      "root": "nca_nb23_warn_geyser_red",
+      "path": "assets/game/levels/stage_08/boss/neural_archon_1023/warn_geyser_red.webp",
+      "owner": "levels/stage_08/boss/neural_archon_1023",
+      "cell": [
+        0,
+        0,
+        80,
+        192
+      ]
     }
   ],
   "textures": {

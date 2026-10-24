@@ -8152,6 +8152,182 @@
       "path": "assets/game/levels/stage_08/effects/hardcorps_1007/cast_7.png",
       "owner": "levels/stage_08",
       "cell": null
+    },
+    {
+      "key": "aq23_s8leech",
+      "root": "aq23_s8leech",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8leech.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8leech_hit",
+      "root": "aq23_s8leech_hit",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8leech_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8hunter",
+      "root": "aq23_s8hunter",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8hunter.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8hunter_hit",
+      "root": "aq23_s8hunter_hit",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8hunter_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8deathorb",
+      "root": "aq23_s8deathorb",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8deathorb.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8deathorb_hit",
+      "root": "aq23_s8deathorb_hit",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8deathorb_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8carrier",
+      "root": "aq23_s8carrier",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8carrier.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8carrier_hit",
+      "root": "aq23_s8carrier_hit",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8carrier_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8tentacle",
+      "root": "aq23_s8tentacle",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8tentacle.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8tentacle_hit",
+      "root": "aq23_s8tentacle_hit",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8tentacle_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8bomber",
+      "root": "aq23_s8bomber",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8bomber.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8bomber_hit",
+      "root": "aq23_s8bomber_hit",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8bomber_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8solar",
+      "root": "aq23_s8solar",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8solar.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "aq23_s8solar_hit",
+      "root": "aq23_s8solar_hit",
+      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8solar_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8deathorb",
+      "root": "at23_s8deathorb",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8deathorb.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8deathorb_hit",
+      "root": "at23_s8deathorb_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8deathorb_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8bomber",
+      "root": "at23_s8bomber",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8bomber.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8bomber_hit",
+      "root": "at23_s8bomber_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8bomber_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8carrier",
+      "root": "at23_s8carrier",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8carrier.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8carrier_hit",
+      "root": "at23_s8carrier_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8carrier_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8tentacle",
+      "root": "at23_s8tentacle",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8tentacle.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    },
+    {
+      "key": "at23_s8tentacle_hit",
+      "root": "at23_s8tentacle_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8tentacle_hit.webp",
+      "owner": "levels/stage_08",
+      "cell": null,
+      "manifest": "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
     }
   ],
   "files": [
@@ -11071,5 +11247,13 @@
     "nca_fx_debris"
   ],
   "audioDescription": "Level music and stage-specific sounds are in audio/. Common music and reusable sounds are registered in BOFA and stored once in shared/audio.",
-  "copiedForms": "Final copied forms additionally use donor-stage roots selected by warmStage."
+  "copiedForms": "Final copied forms additionally use donor-stage roots selected by warmStage.",
+  "animationAudit1023": {
+    "manifests": [
+      "assets/game/levels/stage_08/enemies/animation_feedback_1023/manifest.json",
+      "assets/game/levels/stage_08/enemies/realm_attacks_1023/manifest.json"
+    ],
+    "authoredFrames": true,
+    "runtimeImageGeneration": false
+  }
 }

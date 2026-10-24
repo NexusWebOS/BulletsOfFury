@@ -62,7 +62,7 @@ ap10StealthDraw=function(e){
  const A=e._fb2Stealth||e._mission29||e._s6Strike||{},role=e._fb2Stealth?.role||(e._mission29?fb2MissionRole(A):null)||'blue',dir=A.direction||'south';
  if(p2StealthActorPose(e,role,A))return AIR13_STEALTH.apply(this,arguments);
  const p=air13Pose('stealth_'+role,'heading',{south:Math.PI/2,east:0,west:Math.PI,north:-Math.PI/2}[dir]);if(!p)return AIR13_STEALTH.apply(this,arguments);
- const size=e._s67Draw||((e._mission29||e._fb2Stealth)?104:Math.max(64,e._drawH||e.h||64));air13Blit(p,e.x,e.y,size*p.d.referenceRatio,1,e.flash>0?hitFlashColor(e):null);
+ const size=e._s67Draw||((e._mission29||e._fb2Stealth)?104:Math.max(64,e._drawH||e.h||64));air13Blit(p,e.x,e.y,size*(Number.isFinite(p.d.referenceRatio)?p.d.referenceRatio:1),1,e.flash>0?hitFlashColor(e):null);
  e._p2StealthKey=P2_STEALTH.get(role+'|idle').key;e._sm10Facing=dir;e._ap10Palette=role;e._drawW=e._drawH=size;e._air13RenderedKey=p.key;e._air13Frame=p.f;return true;
 };
 /* Native renderer retains weapons, warning lanes, exhaust and damage skins. Only its

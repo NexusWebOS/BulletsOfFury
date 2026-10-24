@@ -21,8 +21,7 @@ ht27Tick=function(b,dt){const d=b._hammerTime;if(d?.shield){d.cp12Sound=Math.max
  d.reflections=[];}return cp12TimeTick.apply(this,arguments);};
 hammerBossDamage=function(b,dmg){if(hm10WallActive(b)&&b._hammer?.recovery?.status!=='charging'){b._hammer.cp12Hit=.18;if((b._hammer.cp12Sound||0)<=0){b._hammer.cp12Sound=.09;Audio.SFX.shieldHitCombat?.();}return 0;}return CP12.base.damage.apply(this,arguments);};
 hammerBossDraw=function(b){CP12.base.draw.apply(this,arguments);if(b.dead)return;const h=b._hammer;
- if(h.recovery?.status==='charging'){const q=hammerHeadPoint(b),x=clamp(q.x,camLeftX()+45,camRightX()-45),y=clamp(q.y-40,PLAY.y+65,PLAY.y+PLAY.h-50);ctx.save();ctx.globalAlpha=.55+.45*Math.sin((h.chromiumT||0)*12)**2;
-  ph8Icon(ctx,'retm_0',x,y,36);bmfDrawOn(ctx,window.BOF_UI_FACE||'game','SHOOT!',x,y-25,14,'center');ctx.restore();}
+ if(h.recovery?.status==='charging'){const q=hammerHeadPoint(b),x=clamp(q.x,camLeftX()+45,camRightX()-45),y=clamp(q.y-40,PLAY.y+65,PLAY.y+PLAY.h-50);bossShootGraphic(x,y+14);}
  if(h.cp12Caption?.t>0){ctx.save();const x=clamp(b.x,camLeftX()+150,camRightX()-150),y=Math.max(PLAY.y+26,b.y-125);ctx.fillStyle='rgba(3,8,17,.9)';ctx.fillRect(x-148,y-17,296,31);bmfDrawOn(ctx,window.BOF_UI_FACE||'game',h.cp12Caption.text.toUpperCase(),x,y-6,10,'center');ctx.restore();}
 };
 /* Owned flame recording: override the later chip alias and stretched chip variants. */

@@ -1,4 +1,4 @@
-# Bullets of Fury — Codex project guide
+# Bullets of Fury â€” Codex project guide
 
 Read `HANDOFF_CODEX.md`, then the opening rules and latest relevant drop notes in
 `CLAUDE.md`. Read `docs/CODEX_TAKEOVER_0913.md` for the measured takeover baseline.
@@ -41,16 +41,23 @@ current Git state and runtime before relying on them.
 - Preserve authored stage biomes. Palette changes must retain luminance, outlines,
   and the authored colors of ordnance.
 - Bosses remain whole authored plates. The approved Furnace Tyrant head phase
-  and Mike's October18 PixelLab Stage8 phase1–3 modular redesign are named
+  and Mike's October18 PixelLab Stage8 phase1â€“3 modular redesign are named
   exceptions. Stage8 phase3 has its main body plus exactly Hammerboss, helicopter,
-  Harrier and volcano forms. Approved miniboss aperture mechanics and the two
+  Neural Archon brain and volcano forms (October23 user replacement of Harrier). Approved miniboss aperture mechanics and the two
   independent Tempest ships are separate encounter designs.
-- Player death remains hit, anchored burning spin through 540–900 degrees, crash,
+- Player death remains hit, anchored burning spin through 540â€“900 degrees, crash,
   then shock ring and explosions. Space deaths use the spaceship.
 - Read `docs/ATLAS_REPACK_0903.md` before editing an atlas. Register sheet and cell
   changes together; generated manifests require their owning build workflow.
 
 ## Combat warnings and audio
+
+- Ordinary enemy bullets, including boat spread fire, cannot be intercepted by
+  player weapons. Use `enemyOrdnanceCanIntercept` for offensive cancellation,
+  including Chromium and rollers; `_weaponProof` alone is insufficient before
+  a new round receives its first update. Preserve physical missile interception
+  and separate authored defensive clears.
+
 
 - Bosses and minibosses use authored green/yellow/red FOV warnings. Do not add
   muzzle-anchored arrow boxes or duplicate floating hazard signs. Keep impact
@@ -106,3 +113,42 @@ keys and the game context's own `drawImage`; cached canvases have no reliable
 - Menu confirmation/training prompts use the avatar-free S/M/L/XL `MW21` family, its measured text apertures and proportional corner-preserving renderer. Cinematic pilot dialogue stays separate. Never stretch a cinematic portrait plate into a tall menu window.
 - Mike selected concept02, Holoscan / Exploded View, on October21. Its live owner is `assets/holoscan_dossier_1021.js`: actual authored turntables, shared BOB20_SPEC stats, readable responsive text and native tutorial input/clocks. Preserve the selected cyan/black material, fixed frame pivots and all four part views. Do not reintroduce the Overdrive card or concept-only weapon/size statistics.
 - BARBIE is a protected account unlock after a real Falva/Lizzie final win (including co-op), never a debug victory. Chrome Heart stays scoped to its secret arena, with native dodge/death/audio ownership, absorbing shields, real hit flashes and its own post-fight result. See `docs/MENU_HEART_1021.md`.
+
+## HQ / Forge / Re-Spec (October23)
+
+- Decker Re-Spec resets the entire current-run elemental build for300 Furious Points. Preserve stage/base weapon unlocks and score; restore exactly two upgrade points per distinct completed stage. Stage6 before clear=10, after6=12, after7=14. Never refill on menu visits or retries.
+- Preserve the completion ledger, remaining points and NG+ import suppression in saves. Payment must roll back if profile or campaign storage fails. Profile normalization must retain respec spend records. Confirmation defaults to Cancel.
+- HQ/Forge landmarks and menu/button states belong to hf23_ and their authored builder. See docs/HQ_FORGE_RESPEC_1023.md; preserve native keyboard/mouse/controller routes.
+
+## Hammer tactical transition and shared SHOOT header (October23)
+
+- Every boss SHOOT! objective/header uses Stage6's authored nwarn_shoot graphic through bossShootGraphic. Preload boss_shoot_prompt; never replace it with plain text, a Retina ring or a custom warning box.
+- Stage5 chaingun handoff: strike the exclusive chaingun icon box (never a chest), throw the canonical glowing hammer upward until offscreen, eject the actual gun, catch with articulated arms, then enter tactical gunfire. Native Chromium activation must retain the acquired gun and return to chain_warn, never respawn a held hammer.
+- Preserve dark armor outlines/seams, fixed body unit/pivots, visible white hit flash, matched red rage weapon variants, native emitter/FOV socket agreement and existing attack/death owners. See docs/HAMMER_TACTICAL_1023.md.
+
+## Chronos modular chaingun (October23)
+
+- Canonical visible name is CHRONOS. Preserve legacy cronos asset/function IDs.
+- Mike explicitly approved one separate chaingun module for Stage5 Chronos:
+  whole authored body + independent rotary gun + foreground grip, not new limbs.
+  Eight source-preserving rotor poses rev before firing and coast during rest.
+- Preserve the native gun HP/Retina target and actual alpha hit mask/muzzle.
+  Gun break stops its rounds/target; Chronos continues his native arsenal.
+- Alternate straight-down rakes and centered fan volleys (Normal5/Hard7/Furious9).
+  Keep warning reaction windows, dodge gaps and all3 authored FOV colors loaded.
+  Rounds remain ordinary unshootable bullets; one audible native launcher per fan.
+- The pickup/throw/catch owns its complete transition. Retain acquired gun through
+  Chromium. Salvage radio waits during portrait dialogue instead of covering it.
+- Sources/selection and rebuild ownership: docs/CHRONOS_MODULAR_1023.md.
+
+## Furious recording regressions (October23)
+
+- Announce Chromium activation only after a real activation; a declined opening-jump attempt queues no dialogue.
+- Destroyed chainguns retain native chain_cool so Furious final recovery/rage checks run, never a stationary broken-gun fan.
+
+
+## October 24 encounter rules
+
+- Chronos speech is a live combat overlay: preserve movement, projectiles, new input taps and vulnerability. His non-missile spike-ball response is the explicit authored **red** hit-feedback exception.
+- Siege-tank sonic waves are never offensive interception targets. Dracodia first-body arms each own 33.3% HP; the 33.4% core stays protected until both arms are destroyed.
+- Read `docs/ENCOUNTER_REVIEW_1023.md` before rebuilding these encounters. Preserve the portal entrance and symbiote rebirth into the final arena.

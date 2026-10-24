@@ -70,7 +70,7 @@ h3EndingDraw=function(){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.draw.
  const c=sm10Core(e.boss);if(Q.phase==='lock'||Q.phase==='missile')drawBossRetina(e.boss,c.x,c.y,Q.phase==='lock'?(1-clamp(Q.t/.9,0,1))*TAU:0,1);
  if(Q.phase==='missile')sm10Missile(Q,e.boss);ctx.restore();
  if(['words','portraitWhite','windowOut'].includes(Q.phase)){const line=SM10_LAST_WORDS[Q.line];ctx.globalAlpha=Q.window;
-  dlgBox({who:'CHROME HAMMER',portrait:false,portraitKey:'sm10_hammer_portrait',full:line,shown:line.slice(0,Q.shown),forceShown:true,screenSpace:false,fade:1,tint:'#96c8ff',pw:VW*.94,ph:VH*.26,x:VW*.03,y:VH*.67});}
+  dlgBox({who:'CHRONOS',portrait:false,portraitKey:'sm10_hammer_portrait',full:line,shown:line.slice(0,Q.shown),forceShown:true,screenSpace:false,fade:1,tint:'#96c8ff',pw:VW*.94,ph:VH*.26,x:VW*.03,y:VH*.67});}
  ctx.restore();};
 /* Replace random death pops with individually timed, seated authored blasts.
    Rings shatter into authored electric fragments; sprite cells remain opaque. */

@@ -92,7 +92,7 @@ const BOFCinematicDirector=(()=>{
    return [L(p,'The ice relay is finished. I recovered its last transmission.'),L(c,'The coordinates lead to a missile airbase. Its launch batteries are protecting an uplink to orbit.'),...U,...privateLab,L(c,'Silence those batteries and recover the electrical core. I need that power to decode the satellite recording.'),L(p,'Then we take the airbase. No missiles reach the cities.')];}
   if(stage===4)return [L(p,'The airbase is ours. Tell me that core was worth the trouble.'),...U,L(c,'It was. The last orbital frame is finally clear. This is what touched our satellite.',{location:'lab'}),
    L('FURY RECORDING','ORBITAL RELAY: FOREIGN INTELLIGENCE CONFIRMED.',{bg:'cin_war_symbiote_reveal'}),L(p,'That is what has been steering every machine down here?'),L(c,'It is the source of the transmission we traced. The Federation hull can get your fighter into orbit. We need answers before it sends anything else down.'),L(p,'Fit the space systems. I am going up.')];
-  if(stage===5)return [L(p,'Cronos is down. Recover anything we can use, then disengage the Federation hull.',{bg:'bg_stage05_loop_0923'}),L(c,'His local signal is gone. That does not prove the infection on Earth is gone with it.'),...U,
+  if(stage===5)return [L(p,'Chronos is down. Recover anything we can use, then disengage the Federation hull.',{bg:'bg_stage05_loop_0923'}),L(c,'His local signal is gone. That does not prove the infection on Earth is gone with it.'),...U,
    L(p,'Fury HQ in sight. Bringing the hull down. It is good to be home.',{bg:'hq10_background_00',duration:7}),
    L('cole','Incoming fighters! They followed us home. Decker, keep the radar alive. Axel, cover the hangars!',{bg:'hq10_background_01',duration:7}),
    L('decker','Red contacts everywhere! Fury flight, scramble! We cannot let them reach the command center.',{bg:'hq10_background_02',duration:15,interactive:'hq-radar'}),
@@ -110,12 +110,12 @@ const BOFCinematicDirector=(()=>{
   return [];
  }
  function cronos(p=lead()) {return [
-  line('cronos','Leave now, pilot, and I promise I will not hurt you. I have no quarrel with one small ship.'),
+  line('chronos','Leave now, pilot, and I promise I will not hurt you. I have no quarrel with one small ship.'),
   line(p,'Then why attack us? Who are you, and what do you want?'),
-  line('cronos','I am Cronos. An artificial intelligence from another dimension. The details are not important.'),
+  line('chronos','I am Chronos. An artificial intelligence from another dimension. The details are not important.'),
   line(p,'You turned our machines against us. Those details matter to everyone on our planet.'),
-  line('cronos','Your planet is precisely what interests me. Soon enough, I will control everything from the palm of my hands.'),
-  line(p,'You are not getting past me.'),line('cronos','A generous offer, refused. Very well. Show me how long your defiance lasts.')
+  line('chronos','Your planet is precisely what interests me. Soon enough, I will control everything from the palm of my hands.'),
+  line(p,'You are not getting past me.'),line('chronos','A generous offer, refused. Very well. Show me how long your defiance lasts.')
  ];}
  function routeScript(side,p=lead()) {const c=contact(p);return side==='left'?[
   line(c,'The Harrier is heading left. That carrier can keep launching fighters until we bring it down.'),line(p,'I am taking the carrier. Keep the rebels on radar.'),line(c,'If they escape this fight, we can pursue their Stage X contacts at the central core. Choose two wingmen when you go.'),line(p,'Understood. Fury flight, split formation. Left wing, on me.')]:[
@@ -128,7 +128,7 @@ const BOFCinematicDirector=(()=>{
  function artFor(b){
   if(b.art)return b.art;
   const p=b.who.toLowerCase();
-  if(p==='cronos')return 'cin30_cronos';
+  if(p==='cronos'||p==='chronos')return 'cin30_cronos';
   if(pilots.includes(p))return 'cin_pilot_'+p+'_open';
   if(['voss','nyx','rook','kaia','jace'].includes(p))return 'rr_portrait_'+p;
   return null;
@@ -136,14 +136,14 @@ const BOFCinematicDirector=(()=>{
  function warm(b){let ready=true;for(const k of [artFor(b),b.bg||'cin_story_lab_empty','dlg_window'])if(k&&!XART.rdy(k))ready=false;bmfReady('dialogue');return ready;}
  function play(id,beats,done,live=false){
   if(scene||!beats.length)return false;
-  scene={id,beats,i:0,t:0,shown:0,age:0,readyWait:0,done,live,md:!!Input.mouse.down};
-  if(live){eBullets.length=0;pBullets.length=0;}
+  scene={id,beats,i:0,t:0,shown:0,age:0,readyWait:0,done,live,combatLive:live&&(id==='cronos'||id.startsWith('ht23-announcement-')||beats.some(b=>/^chronos$/i.test(b.who||''))),md:!!Input.mouse.down};
+  if(live&&!beats.some(b=>/^chronos$/i.test(b.who||''))&&id!=='cronos'&&!id.startsWith('ht23-announcement-')){eBullets.length=0;pBullets.length=0;}
   for(const b of beats)warm(b);
-  Input.clearTaps();
+  if(!scene.combatLive)Input.clearTaps();
   if(!live){hqMode='director0930';hqSc={beats};hqDone=null;Audio.startMusic('cinematics');setState(GS.CUTSCENE);}
   return true;
  }
- function finish(){if(!scene)return;const s=scene;scene=null;Input.clearTaps();Input.mouse.down=false;
+ function finish(){if(!scene)return;const s=scene;scene=null;if(!s.combatLive){Input.clearTaps();Input.mouse.down=false;}
   if(!s.live){hqSc=null;hqDone=null;Audio.startMusic('neonvelocity');}
   if(s.done)s.done();else if(!s.live)setState(GS.CAMPHUB);
  }
@@ -154,12 +154,12 @@ const BOFCinematicDirector=(()=>{
  function tick(dt){
   if(!scene)return;const s=scene;s.age+=dt;s.frameDt=dt;
   // Read Start before menuConfirm, which includes Start in the shared input API.
-  if(s.age>.15&&Input.menuStart()){finish();return;}
+  if(!s.combatLive&&s.age>.15&&Input.menuStart()){finish();return;}
   const b=s.beats[s.i];s.readyWait+=dt;const ready=warm(b);
   const surface=b.interactive&&typeof cinematicSurfaceInput==='function'?cinematicSurfaceInput(b,s,dt):false;
   if(surface==='next'){advance();return;}
   const click=Input.mouse.down&&!s.md;s.md=!!Input.mouse.down;
-  if(s.age>.15&&!surface&&(Input.menuConfirm()||click)){advance();return;}
+  if(!s.combatLive&&s.age>.15&&!surface&&(Input.menuConfirm()||click)){advance();return;}
   if(!ready&&s.readyWait<4)return; // missing art never traps Start/A or the campaign
   s.t+=dt;const n=Math.min(b.text.length,Math.floor(s.t*38));dialogueLetterTicks(b.text,s.shown,n);s.shown=Math.max(s.shown,n);
   if(s.t>=Math.max(b.text.length/38+2.7,b.duration||0)){s.shown=b.text.length;advance();}
@@ -167,11 +167,11 @@ const BOFCinematicDirector=(()=>{
  function fit(key,x,y,w,h){if(!key||!XART.rdy(key))return false;const im=XART.get(key),k=Math.min(w/im.width,h/im.height),dw=im.width*k,dh=im.height*k;ctx.drawImage(im,Math.round(x+(w-dw)/2),Math.round(y+(h-dh)/2),Math.round(dw),Math.round(dh));return true;}
  function draw(){if(!scene)return;const s=scene,b=s.beats[s.i],W=s.live?VW:cutsceneViewWidth(),H=VH,key=artFor(b);
   ctx.save();ctx.imageSmoothingEnabled=false;
-  if(s.live){worldXformEscape();ctx.fillStyle='rgba(2,5,14,.40)';ctx.fillRect(0,0,W,H);}
+  if(s.live){worldXformEscape();}
   else{
    ctx.fillStyle='#030912';ctx.fillRect(0,0,W,H);
    const cockpit=key&&key.startsWith('cin_pilot_')&&!b.bg;
-   const bg=cockpit?key:(b.bg||(b.who==='CRONOS'?'bg_stage05_loop_0923':'cin_story_lab_empty'));
+   const bg=cockpit?key:(b.bg||(b.who==='CHRONOS'?'bg_stage05_loop_0923':'cin_story_lab_empty'));
    // Anchor cockpit crops at the top so a wide display never trims a pilot's head.
    if(XART.rdy(bg))cinCover(bg,W,H,.5,cockpit?1:0);
    if(!cockpit){ctx.fillStyle='rgba(2,6,12,.24)';ctx.fillRect(0,0,W,H);}
@@ -179,13 +179,13 @@ const BOFCinematicDirector=(()=>{
    // New transparent busts retain their complete head and shoulders over the lab.
    if(key&&!cockpit&&!b.bg)fit(key,W*.08,H*.035,W*.84,H*.655);
   }
-  const pw=s.live?W*.94:Math.min(W*.92,1020),ph=s.live?H*.29:H*.245,x=(W-pw)/2,y=s.live?H*.64:H*.70;
+  const pw=s.live?W*.94:Math.min(W*.92,1020),ph=s.combatLive?H*.20:s.live?H*.29:H*.245,x=(W-pw)/2,y=s.combatLive?H*.075:s.live?H*.64:H*.70;
   const pk=b.who.toLowerCase(),hasPilot=pilots.includes(pk),portrait=hasPilot?pk:false;
   // dlgBox's legacy wall-clock typing must not restart when A reveals a new line.
   dlgBox._tw={key:String(state)+'|'+b.who+'|'+b.text,count:s.shown,at:performance.now(),auto:false};
-  dlgBox({who:b.who,portrait,portraitKey:!hasPilot?key:undefined,full:b.text,shown:b.text.slice(0,s.shown),fade:1,tint:b.who==='CRONOS'?'#c6a6ff':'#a9dcfa',pw,ph,x,y,maxBottom:H*.94,screenSpace:false});
-  if(s.live&&b.who==='CRONOS')fit(key,W*.67,H*.27,W*.30,H*.34);
-  msgFaceUse('dialogue');controlHintRow([['pad_a',s.shown<b.text.length?'REVEAL':'NEXT'],['pad_start','SKIP SCENE']],H*.972,W/2,W*.92,16);msgFaceUse(null);ctx.restore();
+  dlgBox({who:b.who,portrait,portraitKey:!hasPilot?key:undefined,full:b.text,shown:b.text.slice(0,s.shown),fade:1,tint:b.who==='CHRONOS'?'#c6a6ff':'#a9dcfa',pw,ph,x,y,maxBottom:H*.94,screenSpace:false});
+  if(s.live&&s.id==='cronos'&&b.who==='CHRONOS')fit(key,W*.67,H*.27,W*.30,H*.34);
+  msgFaceUse('dialogue');if(!s.combatLive)controlHintRow([['pad_a',s.shown<b.text.length?'REVEAL':'NEXT'],['pad_start','SKIP SCENE']],H*.972,W/2,W*.92,16);msgFaceUse(null);ctx.restore();
  }
  function start(stage,done){if(run.mode!=='campaign')return false;return play('post-'+stage,script(stage),done);}
  function cancel(){scene=null;}
@@ -221,7 +221,7 @@ drawCutsceneState=function(dt){
  return CIN30_CUT(dt);
 };
 const CIN30_PLAY=updatePlay;
-updatePlay=function(dt){if(BOFCinematicDirector.live){BOFCinematicDirector.tick(dt);return;}return CIN30_PLAY(dt);};
+updatePlay=function(dt){if(BOFCinematicDirector.live){const s=BOFCinematicDirector.current,chronos=s.id==='cronos'||s.id.startsWith('ht23-announcement-')||s.beats.some(b=>/^chronos$/i.test(b.who||''));BOFCinematicDirector.tick(dt);if(!chronos)return;}return CIN30_PLAY(dt);};
 const CIN30_WORLD=drawWorld;
 drawWorld=function(dt){const r=CIN30_WORLD(BOFCinematicDirector.live?0:dt);if(BOFCinematicDirector.live)BOFCinematicDirector.draw();return r;};
 // Keep the Stage 6 sky moving throughout contact dialogue; only combat waits.
@@ -236,7 +236,7 @@ fr27ChooseRoute=function(W,route){if(run.mode!=='campaign')return CIN30_ROUTE(W,
 const CIN30_HAMMER=hammerBossTick;
 hammerBossTick=function(b,dt){
  if(run.mode==='campaign'&&!b._hammerTime&&!b._cin30Spoke&&b._hammer.state==='unfold'&&b._hammer.t>=.6){
-  b._cin30Spoke=true;b.name='CRONOS';storySkip();
+  b._cin30Spoke=true;b.name='CHRONOS';storySkip();
   BOFCinematicDirector.play('cronos',BOFCinematicDirector.cronos(),()=>{},true);return;
  }
  return CIN30_HAMMER(b,dt);

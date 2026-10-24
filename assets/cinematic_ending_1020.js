@@ -217,7 +217,7 @@ function ce20Story(s){if(!s||CE20.scenes.has(s))return;CE20.scenes.add(s);
 BOFCinematicDirector.tick=function(dt){ce20Story(BOFCinematicDirector.current);return CE20.base.directorTick.call(this,dt);};
 BOFCinematicDirector.draw=function(){
  const s=BOFCinematicDirector.current;if(!s)return;ce20Story(s);const b=s.beats[s.i];
- if(s.live||b.interactive||b.who==='CRONOS')return CE20.base.directorDraw.call(this);
+ if(s.live||b.interactive||b.who==='CHRONOS')return CE20.base.directorDraw.call(this);
  const W=cutsceneViewWidth(),H=VH,pk=b.who.toLowerCase(),person=CE20.pilots.includes(pk),
   selected=hl10Pilot(run.pilot),contact=selected==='decker'?'cole':'decker';
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.fillStyle='#030711';ctx.fillRect(0,0,W,H);

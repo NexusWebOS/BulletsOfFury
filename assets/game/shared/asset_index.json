@@ -74487,6 +74487,102 @@
       "path": "assets/game/shared/campaign/campaign_controls_1004h/slot_flash.png",
       "owner": "shared/campaign",
       "cell": null
+    },
+    {
+      "key": "nca_ma23_corrupt_jump",
+      "root": "nca_ma23_corrupt_jump",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "nca_ma23_corrupt_jump_hit",
+      "root": "nca_ma23_corrupt_jump_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump_hit.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "nca_ma23_corrupt_jump_red",
+      "root": "nca_ma23_corrupt_jump_red",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump_red.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "nca_ma23_corrupt_jump_red_hit",
+      "root": "nca_ma23_corrupt_jump_red_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump_red_hit.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "nca_ma23_corrupt_sides",
+      "root": "nca_ma23_corrupt_sides",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "nca_ma23_corrupt_sides_hit",
+      "root": "nca_ma23_corrupt_sides_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides_hit.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "nca_ma23_corrupt_sides_red",
+      "root": "nca_ma23_corrupt_sides_red",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides_red.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "nca_ma23_corrupt_sides_red_hit",
+      "root": "nca_ma23_corrupt_sides_red_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides_red_hit.webp",
+      "owner": "shared",
+      "cell": null,
+      "manifest": "assets/game/shared/combat/pixellab_hammer_1023/manifest.json"
+    },
+    {
+      "key": "aq23_readable_sky",
+      "root": "aq23_readable_sky",
+      "path": "assets/game/shared/combat/readable_needle_1023/sky.webp",
+      "owner": "shared",
+      "cell": 32,
+      "manifest": "assets/game/shared/combat/readable_needle_1023/manifest.json"
+    },
+    {
+      "key": "aq23_readable_toxic",
+      "root": "aq23_readable_toxic",
+      "path": "assets/game/shared/combat/readable_needle_1023/toxic.webp",
+      "owner": "shared",
+      "cell": 32,
+      "manifest": "assets/game/shared/combat/readable_needle_1023/manifest.json"
+    },
+    {
+      "key": "aq23_readable_water",
+      "root": "aq23_readable_water",
+      "path": "assets/game/shared/combat/readable_needle_1023/water.webp",
+      "owner": "shared",
+      "cell": 32,
+      "manifest": "assets/game/shared/combat/readable_needle_1023/manifest.json"
+    },
+    {
+      "key": "aq23_readable_magma",
+      "root": "aq23_readable_magma",
+      "path": "assets/game/shared/combat/readable_needle_1023/magma.webp",
+      "owner": "shared",
+      "cell": 32,
+      "manifest": "assets/game/shared/combat/readable_needle_1023/manifest.json"
     }
   ],
   "files": [
@@ -92315,5 +92411,13 @@
       "hammerTime": "assets/game/shared/audio/music/HammerTime.mp3",
       "hama": "assets/game/shared/audio/music/HAMA.mp3"
     }
+  },
+  "animationAudit1023": {
+    "manifests": [
+      "assets/game/shared/combat/pixellab_hammer_1023/manifest.json",
+      "assets/game/shared/combat/readable_needle_1023/manifest.json"
+    ],
+    "authoredFrames": true,
+    "runtimeImageGeneration": false
   }
 }

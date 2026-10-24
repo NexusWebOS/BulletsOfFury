@@ -152,14 +152,14 @@ function fb2Dispatcher(rand){
  return 'axel';
 }
 function fb2HammerIntroScript(lead,disp,campaign){
- const P=lead.toUpperCase(),D=disp.toUpperCase()+' - HQ',B=campaign?'CRONOS':'???';
+ const P=lead.toUpperCase(),D=disp.toUpperCase()+' - HQ',B=campaign?'CHRONOS':'???';
  const L=(who,text,kind)=>({who,text,kind});
  const out=[
   L(P,'...Who are you?','pilot'),
   L('???','.........','boss'),
   L(D,P+', talk to me. What are you looking at? That signature is not in any Federation file.','hq'),
   L(P,'I don’t know. It’s not moving... it’s just staring at me.','pilot')];
- if(campaign)out.push(L(B,'I am Cronos. Your planet is precisely what interests me. Leave now, pilot.','boss'));
+ if(campaign)out.push(L(B,'I am Chronos. Your planet is precisely what interests me. Leave now, pilot.','boss'));
  else out.push(L('???','.........','boss'));
  out.push(L(D,'Its core is spiking! Snap out of it - get your hands back on the stick, NOW!','hq'));
  return out.map(l=>({...l,text:l.text.replace(/’/g,"'")}));
@@ -170,7 +170,7 @@ function fb2IntroActive(){return !!(fb2Intro&&!fb2Intro.done&&run&&run.stage===5
 function fb2IntroStart(b){
  const lead=fb2SeatPilots()[0],disp=fb2Dispatcher();
  fb2Intro={boss:b,lead,disp,lines:fb2HammerIntroScript(lead,disp,run.mode==='campaign'),i:0,t:0,shown:0,age:0,done:false,dim:0,noHit:b._noHit};
- b._noHit=true;eBullets.length=0;storySkip&&storySkip();Input.clearTaps&&Input.clearTaps();
+ storySkip&&storySkip();Input.clearTaps&&Input.clearTaps();
  for(const k of ['fb2_hammer_avatar','fb2_dispatch_'+disp,'dlg_window'])try{XART.rdy(k);}catch(_w){}
  if(Audio.SFX.alertDanger)Audio.SFX.alertDanger();
 }
@@ -182,9 +182,9 @@ function fb2IntroTick(dt){
  const I=fb2Intro;if(!I)return;
  if(I.done){I.dim=Math.max(0,I.dim-dt*1.6);if(I.dim<=0)fb2Intro=null;return;}
  if(!fb2IntroActive()){fb2IntroEnd();return;}
- I.age+=dt;I.dim=Math.min(1,I.dim+dt*2);eBullets.length=0;
+ I.age+=dt;I.dim=0;
  const L=I.lines[I.i],cps=38,full=L.text.length;
- if(I.age>.35&&(Input.tapAny?Input.tapAny(keybind.fire):Input.menuConfirm())){
+ if(I.interactive&&I.age>.35&&(Input.tapAny?Input.tapAny(keybind.fire):Input.menuConfirm())){
   if(I.shown<full){I.shown=full;I.t=Math.max(I.t,full/cps);}else{I.i++;I.t=0;I.shown=0;}
  }else{
   I.t+=dt;const n=Math.min(full,Math.floor(I.t*cps));if(typeof dialogueLetterTicks==='function')dialogueLetterTicks(L.text,I.shown,n);I.shown=Math.max(I.shown,n);
@@ -199,12 +199,12 @@ hammerBossTick=function(b,dt){
  b._cin30Spoke=true;                   // the 0930 live (pausing) scene never fires now
  if(!b._fb2IntroSeen&&h.state==='unfold'&&h.t>=FB2_HOLD_T-.05){b._fb2IntroSeen=true;fb2IntroStart(b);}
  if(fb2Intro&&!fb2Intro.done&&fb2Intro.boss===b){
-  if(h.state==='unfold'){h.t=Math.min(h.t,FB2_HOLD_T);b._noHit=true;return;}   // hold the unfolded plate
+  // Dialogue continues while unfolding and combat advance normally.   // hold the unfolded plate
  }
  return FB2_HTICK.apply(this,arguments);
 };
 const FB2_CTRL=s6OpeningControlsLocked;
-s6OpeningControlsLocked=function(){return fb2IntroActive()||FB2_CTRL.apply(this,arguments);};
+s6OpeningControlsLocked=function(){return FB2_CTRL.apply(this,arguments);};
 const FB2_UPD=updatePlay;
 updatePlay=function(dt){const r=FB2_UPD.apply(this,arguments);if(fb2Intro)fb2IntroTick(dt||0);return r;};
 const FB2_BG=drawBG;
@@ -233,15 +233,15 @@ function fb2IntroDraw(){
  if(!fb2IntroActive())return;const I=fb2Intro,L=I.lines[I.i];if(!L)return;
  const portraitKey=L.kind==='boss'?'fb2_hammer_avatar':L.kind==='hq'?'fb2_dispatch_'+I.disp:undefined;
  const tint=L.kind==='boss'?'#c6a6ff':L.kind==='hq'?dialogueNameColor(I.disp,'#a9dcfa'):dialogueNameColor(L.who,'#cfd6e6');
- const pw=Math.round(VW*.92),ph=Math.round(VH*.25),x=Math.round((VW-pw)/2),y=Math.round(VH*.43);
+ const pw=Math.round(VW*.92),ph=Math.round(VH*.20),x=Math.round((VW-pw)/2),y=Math.round(VH*.075);
  dlgBox._tw={key:String(state)+'|'+L.who+'|'+L.text,count:I.shown,at:performance.now(),auto:false};
  dlgBox({who:L.who,portrait:L.kind==='pilot'?I.lead:false,portraitKey,full:L.text,shown:L.text.slice(0,I.shown),fade:1,tint,pw,ph,x,y,emo:L.kind==='pilot'&&I.i===0?'idle':undefined});
 }
 // the fight clock counts the fight, not the conversation (it already skips the entry the same way)
 const FB2_CLOCK=encounterClockTick;
-encounterClockTick=function(b,active,dt){if(b&&fb2IntroActive()&&b===fb2Intro.boss)return;return FB2_CLOCK.apply(this,arguments);};
+encounterClockTick=function(b,active,dt){return FB2_CLOCK.apply(this,arguments);};
 const FB2_WORLD=drawWorld;
-drawWorld=function(dt){const r=FB2_WORLD.apply(this,arguments);if(fb2IntroActive()){fb2StunDraw();fb2IntroDraw();}return r;};
+drawWorld=function(dt){const r=FB2_WORLD.apply(this,arguments);if(fb2IntroActive()){fb2IntroDraw();}return r;};
 
 /* ---------------------------------------------------------------------------------------------
    C. STAGE 6 - THE STEALTH FLIGHTS REPLACE THE BOMBERS
@@ -642,7 +642,7 @@ s6WingTick=function(dt){
 const FB2_CTRL2=s6OpeningControlsLocked;
 s6OpeningControlsLocked=function(){return fb2TalkActive()||FB2_CTRL2.apply(this,arguments);};
 const FB2_PHIT=playerHit;
-playerHit=function(){if(fb2TalkActive()||fb2IntroActive())return;return FB2_PHIT.apply(this,arguments);};
+playerHit=function(){if(fb2TalkActive())return;return FB2_PHIT.apply(this,arguments);};
 const FB2_UPD4=updatePlay;
 updatePlay=function(dt){const r=FB2_UPD4.apply(this,arguments);if(fb2Talk&&state===GS.PLAY)fb2TalkTick(dt||0);return r;};
 const FB2_WORLD2=drawWorld;

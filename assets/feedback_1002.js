@@ -274,10 +274,10 @@ hammerBossDamage=function(b,dmg){
 retinaMissileDamage=function(t,dmg,q){if(t?.kind==='hammer'&&hammerMissile(q)&&!fb1002Guided(q))return false;return FB1002_BASE.retinaDamage(t,dmg,q);};
 spaceVolleyLocks=function(){return FB1002_BASE.volley.apply(this,arguments).filter(t=>t?.kind!=='hammer');};
 function fb1002HammerDialogue(b){
- const h=b._hammer;h.intro1002=true;b._noHit=true;b.enter=false;
+ const h=b._hammer;h.intro1002=true;b.enter=false;
  BOFCinematicDirector.play('hammer-trap1002',[
-  {who:'CHROME HAMMER',art:'fb1002_hammer_portrait',text:'Coming up here was merely a trap. The Legion has already launched its attack down on Earth.'},
-  {who:'CHROME HAMMER',art:'fb1002_hammer_portrait',text:'Such a foolish mortal. This is the fate of the one who dances to their death. Now, let us dance!'}
+  {who:'CHRONOS',art:'fb1002_hammer_portrait',text:'Coming up here was merely a trap. The Legion has already launched its attack down on Earth.'},
+  {who:'CHRONOS',art:'fb1002_hammer_portrait',text:'Such a foolish mortal. This is the fate of the one who dances to their death. Now, let us dance!'}
  ],()=>{if(b!==boss||b.dead)return;b._noHit=false;hammerTarget(b);hammerState(b,'warn');Input.clearTaps();},true);
 }
 hammerBossTick=function(b,dt){

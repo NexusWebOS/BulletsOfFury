@@ -148,7 +148,7 @@ h3EndingDraw=function(){const e=H3.ending,F=e?.hf17;if(!F)return HF17.base.draw.
  if(['lock','missile'].includes(F.phase))drawBossRetina(e.boss,F.core.x,F.core.y,F.phase==='lock'?(1-clamp(F.t/1.15,0,1))*TAU:0,1);
  if(F.phase==='missile')hf17Missile(F);ctx.restore();
  if(F.phase==='drain'){
-  const line=SM10_LAST_WORDS[F.line];dlgBox({who:'CHROME HAMMER',portrait:false,portraitKey:'fb1002_hammer_portrait',
+  const line=SM10_LAST_WORDS[F.line];dlgBox({who:'CHRONOS',portrait:false,portraitKey:'fb1002_hammer_portrait',
    full:line,shown:line.slice(0,F.shown),forceShown:true,screenSpace:false,fade:1,tint:'#96c8ff',pw:VW*.94,ph:VH*.26,x:VW*.03,y:VH*.67});
  }
  ctx.restore();
