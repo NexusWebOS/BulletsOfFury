@@ -70092,10 +70092,14 @@ function drawDebugMenu(dt, inert){
       ctx.save(); ctx.font='bold 9px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle';
       ctx.fillStyle=c?'#ff8a7a':'#8fd0ff'; ctx.fillText(c?'BOSS':'MINI', x+6, y+h/2+1);
       ctx.fillStyle=F?(sel?'#ffffff':'#cfd6e0'):'#4a4d55';
-      let nm=F?F.name:'- NONE -'; if(nm.length>24) nm=nm.slice(0,23)+'…';
-      ctx.fillText(nm, x+38, y+h/2+1); ctx.restore();
+      const _best=(F&&typeof debugBestLabel==='function')?debugBestLabel(S.n,role):'';
+      let nm=F?F.name:'- NONE -'; const _cap=_best?18:24; if(nm.length>_cap) nm=nm.slice(0,_cap-1)+'…';
+      ctx.fillText(nm, x+38, y+h/2+1);
+      if(_best){ ctx.textAlign='right'; ctx.fillStyle='#ffd25a'; ctx.font='bold 8px "BOFmil", monospace'; ctx.fillText(_best, x+w-5, y+h/2+1); }
+      ctx.restore();
     }
   }
+  if(typeof dbgToolsMenuDraw==='function'){ try{ dbgToolsMenuDraw(dt); }catch(_dtm){} }   // last result + toolkit toggles (1021)
   // footer
   ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic'; ctx.font='9px "BOFmil", monospace';
   const ov=Object.keys(BOSSMODE_OVERRIDES).length;
@@ -70113,13 +70117,13 @@ function drawDebugMenu(dt, inert){
   // ---- input ----
   if(hover && Input.consumeMouseMoved()){ M.row=hover.row; M.col=hover.col; }
   const click=!!(m && m.down && !drawDebugMenu._md); drawDebugMenu._md=!!(m&&m.down);
-  if(click&&m.y>=64&&m.y<83){M.row=-2;const ds=['easy','normal','hard','furious'];diffKey=ds[(ds.indexOf(diffKey)+1)%ds.length];}
+  if(click&&m.y>=64&&m.y<83){M.row=-2;const ds=DIFF_KEYS;diffKey=ds[(ds.indexOf(diffKey)+1)%ds.length];}   // INSANITY included: debug skips the shop
   if(Input.menuUp()){ M.row=Math.max(-2,M.row-1); try{Audio.SFX.blip();}catch(_e){} }
   if(Input.menuDown()){ M.row=Math.min(nStages-1,M.row+1); try{Audio.SFX.blip();}catch(_e){} }
   const _ml=Input.menuLeft(), _mr=Input.menuRight();   // read once each: taps are consumed
   if(_ml||_mr){
     const d=_ml?-1:1;
-    if(M.row===-2){const ds=['easy','normal','hard','furious'];diffKey=ds[(ds.indexOf(diffKey)+d+ds.length)%ds.length];}
+    if(M.row===-2){const ds=DIFF_KEYS;diffKey=ds[(ds.indexOf(diffKey)+d+ds.length)%ds.length];}
     else if(M.row===-1){ M.pilot=(M.pilot+d+PILOTS.length)%PILOTS.length; }
     else M.col=1-M.col;
     try{Audio.SFX.blip();}catch(_e){}
@@ -70327,6 +70331,10 @@ function sceneTrackReady(b, S, tr, i){
     default:          return true;
   }
 }
+function sceneHandsOver(b, S, tr, i){
+  const T=tr&&tr.trigger; if(!T || (T.type!=='hp' && T.type!=='phase') || !tr.keys || !tr.keys.length) return false;
+  return sceneTrackReady(b, S, tr, i);
+}
 function sceneEase(kind, p){
   if(kind==='in') return p*p;
   if(kind==='out') return 1-(1-p)*(1-p);
@@ -70344,7 +70352,9 @@ function sceneDirectorTick(b, dt){
     const trs=S.def.tracks||[];
     for(let i=0;i<trs.length;i++){
       if(trs[i]&&trs[i].keys&&trs[i].keys.length&&sceneTrackReady(b,S,trs[i],i)){
-        S.track=trs[i]; S.ti=i; S.kf=0; S.kt=0; S.dir=1; S.fired={}; S.hold=0; S.from=null; S.loops=0; break;
+        S.track=trs[i]; S.ti=i; S.kf=0; S.kt=0; S.dir=1; S.fired={}; S.hold=0; S.from=null; S.loops=0;
+        S.pre={}; for(let j=i+1;j<trs.length;j++){ if(sceneHandsOver(b,S,trs[j],j)) S.pre[j]=true; }   // already-true triggers do not cut this track short
+        break;
       }
     }
   }
@@ -70369,6 +70379,10 @@ function sceneDirectorTick(b, dt){
     S.hold-=dt;
     if(S.hold<=0){
       S.from={x:tx, y:ty, rot:trot, sx:tsx, sy:tsy}; S.kt=0;
+      /* 1021b: a LOOPING phase used to own the hull for ever, so a later phase keyed to HP or the boss's
+         phase could never start. At each key boundary, a later track whose hp/phase trigger has BECOME
+         true (it was false when this one started) takes over. */
+      { const trs=S.def.tracks||[]; for(let j=S.ti+1;j<trs.length;j++){ if(!S.done[j] && !(S.pre&&S.pre[j]) && sceneHandsOver(b,S,trs[j],j)){ S.done[S.ti]=true; S.track=null; S.rot=trot; return true; } } }
       let n=S.kf+S.dir;
       if(n>=keys.length || n<0){
         S.loops++;

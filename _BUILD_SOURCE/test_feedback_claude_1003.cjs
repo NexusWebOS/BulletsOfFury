@@ -37,7 +37,7 @@ module.exports=function(vm,ctxv,ok){
    coopOn=false;
    const sA=fb2HammerIntroScript('cole','decker',false),sC=fb2HammerIntroScript('cole','decker',true);
    o.introFirst=sA[0].text;o.introSecond=sA[1].text;o.introHQ=sA.some(l=>l.kind==='hq'&&/DECKER - HQ/.test(l.who));
-   o.arcadeSilent=sA.filter(l=>l.kind==='boss').every(l=>/^\\.+$/.test(l.text));o.campaignCronos=sC.some(l=>l.who==='CRONOS');
+   o.arcadeSilent=sA.filter(l=>l.kind==='boss').every(l=>/^\\.+$/.test(l.text));o.campaignChronos=sC.some(l=>l.who==='CHRONOS');
    o.holdT=FB2_HOLD_T;
    /* C - roles, replacements */
    o.roleBomb=fb2MissionRole({kind:'bomb',direction:'south'});o.roleSide=fb2MissionRole({kind:'lane',direction:'east'});
@@ -75,7 +75,7 @@ module.exports=function(vm,ctxv,ok){
  }
  ok(out.introFirst==='...Who are you?'&&out.introSecond==='.........','1002 B: the pilot asks "...Who are you?" and the hammer answers "........."');
  ok(out.introHQ,'1002 B: HQ chimes in under the dispatcher\'s own name');
- ok(out.arcadeSilent&&out.campaignCronos,'1002 B: arcade keeps him silent; the campaign keeps the Cronos reveal');
+ ok(out.arcadeSilent&&out.campaignChronos,'1002 B: arcade keeps him silent; the campaign keeps the Chronos reveal');
  ok(out.holdT<2,'1002 B: he holds the unfolded plate below 2.0 s, where the base makes him hittable');
  for(const f of ['hammer_avatar','dispatch_cole','dispatch_decker','dispatch_axel','dispatch_lizzie','dispatch_falva']){
   const s=png('assets/game/shared/combat/dispatch_1002/'+f+'.png');ok(s[0]>=126&&s[0]<=128&&s[1]>=122&&s[1]<=128,'1002 B: '+f+' is a comm-box sized plate ('+s.join('x')+')');}

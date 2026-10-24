@@ -17,7 +17,7 @@ module.exports=function(vm,ctxv,ok){
   o['Harrier aftermath opens optional Stage X while rebel aftermath closes pursuit']=left.includes('Stage X is optional')&&right.includes('no Stage X pursuit');
   o['lost expansion pilots stay missing, not declared dead']=left.includes('HotWire and Phoenix')&&left.includes('Still missing');
   const words=D.cronos('axel').map(b=>b.text).join(' ');
-  o['Cronos identifies himself and the other dimension, offers mercy, targets Earth']=words.includes('Cronos')&&words.includes('another dimension')&&words.includes('will not hurt you')&&words.includes('Your planet')&&words.includes('palm of my hands');
+  o['Chronos identifies himself and the other dimension, offers mercy, targets Earth']=words.includes('Chronos')&&words.includes('another dimension')&&words.includes('will not hurt you')&&words.includes('Your planet')&&words.includes('palm of my hands');
   o['Stage X Nyx dialogue is specific to Nyx']=D.rebelScript('axel','nyx').some(b=>b.who==='NYX')&&!D.rebelScript('axel','nyx').some(b=>b.who==='VOSS');
   let done=0;const before=JSON.stringify({forge:run.forge,lives:run.lives,score:run.score});
   D.play('test',[{who:'AXEL',text:'Hello there.'},{who:'DECKER',text:'Second line.'}],()=>done++,true);

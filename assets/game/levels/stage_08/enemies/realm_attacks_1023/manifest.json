@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "owner": "_BUILD_SOURCE/build_realm_attacks_1023.py",
+  "models": {
+    "s8deathorb": {
+      "key": "at23_s8deathorb",
+      "white": "at23_s8deathorb_hit",
+      "frames": 17,
+      "cell": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "unit": 1.8604651162790697,
+      "nativeSpan": 160.0,
+      "sockets": [
+        [
+          33,
+          91
+        ],
+        [
+          93,
+          91
+        ]
+      ],
+      "job": "1558d1c2-eb9a-4e8b-b4ac-1337e4670edc",
+      "family": "deathorb"
+    },
+    "s8bomber": {
+      "key": "at23_s8bomber",
+      "white": "at23_s8bomber_hit",
+      "frames": 17,
+      "cell": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "unit": 2.2474418604651163,
+      "nativeSpan": 193.28,
+      "sockets": [
+        [
+          33,
+          91
+        ],
+        [
+          93,
+          91
+        ]
+      ],
+      "job": "1558d1c2-eb9a-4e8b-b4ac-1337e4670edc",
+      "family": "deathorb"
+    },
+    "s8carrier": {
+      "key": "at23_s8carrier",
+      "white": "at23_s8carrier_hit",
+      "frames": 17,
+      "cell": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "unit": 2.4409302325581397,
+      "nativeSpan": 209.92000000000002,
+      "sockets": [
+        [
+          33,
+          86
+        ],
+        [
+          94,
+          86
+        ]
+      ],
+      "job": "3d5c0b49-dde8-425c-acb1-a2719c0672a4",
+      "family": "carrier"
+    },
+    "s8tentacle": {
+      "key": "at23_s8tentacle",
+      "white": "at23_s8tentacle_hit",
+      "frames": 17,
+      "cell": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "unit": 2.0093023255813955,
+      "nativeSpan": 172.8,
+      "sockets": [
+        [
+          33,
+          86
+        ],
+        [
+          94,
+          86
+        ]
+      ],
+      "job": "3d5c0b49-dde8-425c-acb1-a2719c0672a4",
+      "family": "carrier"
+    }
+  },
+  "sheets": {
+    "at23_s8deathorb": {
+      "key": "at23_s8deathorb",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8deathorb.webp",
+      "sha256": "ec85c95ae78c725a8ac97c09647480e008fd7cdab12a52815153b834bae9ece9"
+    },
+    "at23_s8deathorb_hit": {
+      "key": "at23_s8deathorb_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8deathorb_hit.webp",
+      "sha256": "72c1201b7b14d1591d5c74ddd550b17b0db62e02b9121fc7adac0f8c7f66251b"
+    },
+    "at23_s8bomber": {
+      "key": "at23_s8bomber",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8bomber.webp",
+      "sha256": "ee43aeb14091fff6bc81a03245cc10fadba1bb6705804b12ef2793ee6fc657b5"
+    },
+    "at23_s8bomber_hit": {
+      "key": "at23_s8bomber_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8bomber_hit.webp",
+      "sha256": "891117c4b1945978bf69c3578a9a282a06cca306189d3f66a9f70b0e7aaee953"
+    },
+    "at23_s8carrier": {
+      "key": "at23_s8carrier",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8carrier.webp",
+      "sha256": "6f83573ee3bbd316f9115bded43946016a87dcf8ca938223121570aa7afe0543"
+    },
+    "at23_s8carrier_hit": {
+      "key": "at23_s8carrier_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8carrier_hit.webp",
+      "sha256": "db30ee9e2d6ec9fc51c7392a0a5104d51b2cef9f58a124e1311d83561c6d8061"
+    },
+    "at23_s8tentacle": {
+      "key": "at23_s8tentacle",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8tentacle.webp",
+      "sha256": "bf8bd5709df9ae64eadbf3b479b70fa5e96844e0036ca1172ca80039aa909871"
+    },
+    "at23_s8tentacle_hit": {
+      "key": "at23_s8tentacle_hit",
+      "path": "assets/game/levels/stage_08/enemies/realm_attacks_1023/s8tentacle_hit.webp",
+      "sha256": "ecdd4a237a9a7ed9f29bf99291a970e41adc420d51fa513bced0022002ed1e67"
+    }
+  },
+  "generatedBeamsRemoved": true,
+  "framesPerSequence": 17
+}

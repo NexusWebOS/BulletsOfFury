@@ -11,7 +11,9 @@ module.exports=function(vm,c,ok){
   s3kOrdnanceRules(q);out[q.kind+' can be intercepted']=!q._weaponProof&&q._shootable;
  }
  const pellet={kind:'mg',x:240,y:300,vx:0,vy:2,w:4,h:14};s3kOrdnanceRules(pellet);eBullets=[pellet];pBullets=[];
- out['gunfire stays reflectable by the original chrome defense']=!enemyDefensiveProof(pellet)&&chromeMirror(240,300,30,1)===1;
+ out['ordinary gunfire survives Chromium without becoming player fire']=!enemyDefensiveProof(pellet)&&chromeMirror(240,300,30,1)===0&&!pellet.dead&&pBullets.length===0;
+ const chromeMissile={kind:'emissile',x:240,y:300,vx:0,vy:2,w:12,h:24};s3kOrdnanceRules(chromeMissile);eBullets=[chromeMissile];pBullets=[];
+ out['Chromium still intercepts physical missiles']=chromeMirror(240,300,30,1)===1&&chromeMissile.dead&&pBullets.length===1;
  const bombPellet={kind:'mg',x:240,y:300,vx:0,vy:2};s3kOrdnanceRules(bombPellet);eBullets=[bombPellet];enemies=[];boss=null;bossActive=false;
  detonateBomb({x:240,y:300});out['bombs retain their original gunfire clear']=!eBullets.includes(bombPellet);
  spawnBoss('cryospear');const b=boss;b.enter=false;b._be=null;b.x=worldWidth()/2;b.y=b._er26.home;b._drawY=b.y;

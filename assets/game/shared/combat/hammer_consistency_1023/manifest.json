@@ -1,0 +1,275 @@
+{
+  "owner": "_BUILD_SOURCE/build_hammer_consistency_1023.py",
+  "source": "_ART_SOURCES/hammer_consistency_1023",
+  "unit": 0.13,
+  "weaponHeadPivot": [
+    43,
+    57
+  ],
+  "banks": {
+    "corrupt_jump": 11,
+    "corrupt_jump_red": 11,
+    "corrupt_sides": 16,
+    "corrupt_sides_red": 16,
+    "corrupt_throw": 8,
+    "corrupt_throw_red": 8,
+    "corrupt_rage": 10,
+    "corrupt_tool": 32,
+    "corrupt_tool_red": 32,
+    "corrupt_hold": 1,
+    "corrupt_hold_red": 1,
+    "corrupt_spin_fixed": 15,
+    "corrupt_spin_fixed_red": 15,
+    "corrupt_break_fixed": 9,
+    "corrupt_break_fixed_red": 9
+  },
+  "sources": {
+    "combo.png": "7543eb321a61765cba07daffb8dacf718d98c37e554c731e0c75f2ba3b1e966c",
+    "rage.png": "d664df3dd1974e7ebcc5eb4bdd4a5b95e156a2227407d1fe1110e514f16a3189",
+    "sides.png": "2f3982d2337f9ab7f2a128c7f14d0873093da181ccca2b8e1f0e674897f75bbb",
+    "throw.png": "62e6f7a5e056a8051e1cfa8f488451ba60edc5963d57ee41a4053f6bb841df1b",
+    "weapon-master.png": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  "sheets": [
+    {
+      "key": "nca_hc23_corrupt_jump",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_jump.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "13cd6fda4a738c4795be17dc9d6f1a08e6403225284bacf5c7368cc6a9750c46"
+    },
+    {
+      "key": "nca_hc23_corrupt_jump_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_jump_hit.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "591866c17510ad14354f6e3bcf0fe7ed88ecf5f76b42d95af29354e165d1a2a7"
+    },
+    {
+      "key": "nca_hc23_corrupt_jump_red",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_jump_red.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "0f2e322b6b023688db44bb38f73d107f63584bd92364bf310d1144298f024ef1"
+    },
+    {
+      "key": "nca_hc23_corrupt_jump_red_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_jump_red_hit.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "591866c17510ad14354f6e3bcf0fe7ed88ecf5f76b42d95af29354e165d1a2a7"
+    },
+    {
+      "key": "nca_hc23_corrupt_sides",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_sides.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "8d4d04e7be06a86b9382f130fda7f8cefe13d14dca42824bbf37855dbd775512"
+    },
+    {
+      "key": "nca_hc23_corrupt_sides_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_sides_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "49e352781f7ca5f8775a54674c881adf43ef090ae5f2f4f653a9fffab4f20127"
+    },
+    {
+      "key": "nca_hc23_corrupt_sides_red",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_sides_red.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "d83591a6035efb19cefcc7ddbf3b3692df1633a1a751bb814e39e27608243e7f"
+    },
+    {
+      "key": "nca_hc23_corrupt_sides_red_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_sides_red_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "49e352781f7ca5f8775a54674c881adf43ef090ae5f2f4f653a9fffab4f20127"
+    },
+    {
+      "key": "nca_hc23_corrupt_throw",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_throw.webp",
+      "w": 2560,
+      "h": 1280,
+      "legacy": false,
+      "sha256": "6d657d912d0f542886a0e7c581cdcd9b715bbcb04c2893f2da4e899730bc8df9"
+    },
+    {
+      "key": "nca_hc23_corrupt_throw_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_throw_hit.webp",
+      "w": 2560,
+      "h": 1280,
+      "legacy": false,
+      "sha256": "2f99a9f8ed0d0bac5f136f4dbae6b33577911eb0f7a92f3579b0a4aa0e1f5251"
+    },
+    {
+      "key": "nca_hc23_corrupt_throw_red",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_throw_red.webp",
+      "w": 2560,
+      "h": 1280,
+      "legacy": false,
+      "sha256": "fee006449e7dd9c35fc9ffde1694f96a16168b27965e30fd4160d996433d72d9"
+    },
+    {
+      "key": "nca_hc23_corrupt_throw_red_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_throw_red_hit.webp",
+      "w": 2560,
+      "h": 1280,
+      "legacy": false,
+      "sha256": "2f99a9f8ed0d0bac5f136f4dbae6b33577911eb0f7a92f3579b0a4aa0e1f5251"
+    },
+    {
+      "key": "nca_hc23_corrupt_rage",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_rage.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "7926cf9c7ba95f46e07768f436e5c4f0135020e73367e05df9957240efb8edb9"
+    },
+    {
+      "key": "nca_hc23_corrupt_rage_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_rage_hit.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "3b4370e4a78f288067fb59f0ce9b4bda08406093ead87bd4134cf4abb3d04988"
+    },
+    {
+      "key": "nca_hc23_corrupt_tool",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_tool.webp",
+      "w": 2560,
+      "h": 5120,
+      "legacy": false,
+      "sha256": "05d99d1049dc0b598b8685ab2325858c9f868812ebcb5101613bb0f57610e60a"
+    },
+    {
+      "key": "nca_hc23_corrupt_tool_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_tool_hit.webp",
+      "w": 2560,
+      "h": 5120,
+      "legacy": false,
+      "sha256": "5ef47461673be022cd2db74448e86d10bc2b931af8c2a3175f571fb3edd3bf41"
+    },
+    {
+      "key": "nca_hc23_corrupt_tool_red",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_tool_red.webp",
+      "w": 2560,
+      "h": 5120,
+      "legacy": false,
+      "sha256": "f0be4d7ad380dcf23fbd7aed6699560ae149c702aeadc1a3e1b9431a6d67b062"
+    },
+    {
+      "key": "nca_hc23_corrupt_tool_red_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_tool_red_hit.webp",
+      "w": 2560,
+      "h": 5120,
+      "legacy": false,
+      "sha256": "5ef47461673be022cd2db74448e86d10bc2b931af8c2a3175f571fb3edd3bf41"
+    },
+    {
+      "key": "nca_hc23_corrupt_hold",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_hold.webp",
+      "w": 2560,
+      "h": 640,
+      "legacy": false,
+      "sha256": "24cd9e28f8bffe014d3b66bd075caa2a6cb2a9a393810c6649fdcfa45631ce2b"
+    },
+    {
+      "key": "nca_hc23_corrupt_hold_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_hold_hit.webp",
+      "w": 2560,
+      "h": 640,
+      "legacy": false,
+      "sha256": "cdc4c3af6e54c087082f02628f7ca849a7f9cb1cb83f6a4f3334cee46c4eed0d"
+    },
+    {
+      "key": "nca_hc23_corrupt_hold_red",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_hold_red.webp",
+      "w": 2560,
+      "h": 640,
+      "legacy": false,
+      "sha256": "8db94f32833ca22c910c8a5cfb5a4983edf24504afe83ff47f148decf950bc43"
+    },
+    {
+      "key": "nca_hc23_corrupt_hold_red_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_hold_red_hit.webp",
+      "w": 2560,
+      "h": 640,
+      "legacy": false,
+      "sha256": "cdc4c3af6e54c087082f02628f7ca849a7f9cb1cb83f6a4f3334cee46c4eed0d"
+    },
+    {
+      "key": "nca_hc23_corrupt_spin_fixed",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_spin_fixed.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "2b9c2679c6f93372d59a876eb1db7878857dac3e9ec5fbb641265e6bffde5887"
+    },
+    {
+      "key": "nca_hc23_corrupt_spin_fixed_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_spin_fixed_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "c2ccfdabbd6cb82be74e0733b540343d93862377d78806cc3d3f6a8fe8ad57dc"
+    },
+    {
+      "key": "nca_hc23_corrupt_spin_fixed_red",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_spin_fixed_red.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "c9a94317142576fb1faac7d02618cebac8ad31df99ba0230fbe7104da2828db4"
+    },
+    {
+      "key": "nca_hc23_corrupt_spin_fixed_red_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_spin_fixed_red_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "c2ccfdabbd6cb82be74e0733b540343d93862377d78806cc3d3f6a8fe8ad57dc"
+    },
+    {
+      "key": "nca_hc23_corrupt_break_fixed",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_break_fixed.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "ca2ec4e2b37cc7e1c998e3a3f37e5314186178fabc81711712e386fb06fbc5ab"
+    },
+    {
+      "key": "nca_hc23_corrupt_break_fixed_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_break_fixed_hit.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "e349284bce0391e542a85956b12062463d9211dc554e1a4591ec4b0571e465df"
+    },
+    {
+      "key": "nca_hc23_corrupt_break_fixed_red",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_break_fixed_red.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "3ff034efe4392e9209f437615eeebb8b1a4845967933cf67a15fbeddbead83f8"
+    },
+    {
+      "key": "nca_hc23_corrupt_break_fixed_red_hit",
+      "path": "assets/game/shared/combat/hammer_consistency_1023/corrupt_break_fixed_red_hit.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "e349284bce0391e542a85956b12062463d9211dc554e1a4591ec4b0571e465df"
+    }
+  ]
+}

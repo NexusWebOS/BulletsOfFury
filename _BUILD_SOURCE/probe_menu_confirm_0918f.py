@@ -32,7 +32,7 @@ PAD = """() => {
 def main():
     port, stop = sh.serve(sh.GAME)
     with sync_playwright() as pw:
-        br = pw.chromium.launch(args=['--disable-gpu', '--no-sandbox', '--mute-audio'])
+        br = pw.chromium.launch(executable_path='/opt/pw-browsers/chromium', args=['--disable-gpu', '--no-sandbox', '--mute-audio'])
         pg = br.new_page(viewport={'width': 1000, 'height': 1100}); errs = []
         pg.on('pageerror', lambda e: errs.append('page:' + str(e)[:200]))
         pg.on('console', lambda m: errs.append('console:' + m.text[:200]) if m.type == 'error' else None)
@@ -88,8 +88,9 @@ def main():
         # ---- 5. back still works
         backs = {}
         for name, act in (('b1', lambda: btn(1)), ('escape', lambda: press('escape')), ('k', lambda: press('k'))):
-            go('diff'); act(); backs[name] = state()
-        ok(all(v not in ('diff', 'pilot') for v in backs.values()), 'B (b1), Escape and K still go BACK off difficulty (%s)' % backs)
+            go('credits'); act(); backs[name] = state()
+        # 1022: a game-mode screen (difficulty, pilot, map) no longer has a BACK - credits still does
+        ok(all(v == 'title' for v in backs.values()), 'B (b1), Escape and K still go BACK off credits (%s)' % backs)
 
         real = [e for e in errs if 'favicon' not in e and 'AudioContext encountered an error' not in e]
         ok(not real, 'page/console errors: %d %s' % (len(real), real[:3]))

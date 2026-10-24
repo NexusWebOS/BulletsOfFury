@@ -95,7 +95,7 @@ function hostTick(){
   try{
     const f=$('#host'); host.win=f.contentWindow; host.api=host.win&&host.win.BOSSMODE||null;
     host.ready=!!(host.api&&host.api.ready&&host.api.state!=='boot'&&host.api.state!=='loading');
-    if(host.api&&!host._hooked){ host._hooked=true; host.win.BOSSMODE_ONREC=onClip; }
+    if(host.api&&!host._hooked){ host._hooked=true; host.win.BOSSMODE_ONREC=onClip; window.BOSSMODE_ONRESULT=onResult; }
   }catch(e){ host.err=String(e.message||e); host.ready=false; }
   return host.ready;
 }
@@ -435,6 +435,7 @@ function tick(){
   const rec=$('#tf-rec'); rec.textContent=s.recording?'● REC':''; rec.classList.toggle('on',!!s.recording);
   $('#t-rec').classList.toggle('on', !!s.recording); $('#t-pause').classList.toggle('on', s.state==='paused');
   $('#b-stop').classList.toggle('dis', !s.fight);
+  syncTools();
   drawOverlay(s);
 }
 function phaseOf(b){ const d=state.doc; const n=d&&d.actions.pats.length||1; const fr=b.maxhp?b.hp/b.maxhp:1; let i=Math.floor((1-fr)*n); if(i<0)i=0; if(i>n-1)i=n-1; return (i+1)+'/'+n+(d&&d.actions.pats[i]?(' '+d.actions.pats[i]):''); }
@@ -463,11 +464,40 @@ function onHostReady(){
   $('#t-weapon').innerHTML=C.weapons.map((name,i)=>'<option value="'+i+'">'+name+'</option>').join('');
   $('#t-element').innerHTML='<option value="">BARE</option>'+C.elements.map(e=>'<option value="'+e+'">'+e.toUpperCase()+'</option>').join('');
   $('#t-variant').innerHTML='<option value="">AUTO</option>'+C.variants.map(v=>'<option value="'+v+'">'+v.toUpperCase()+'</option>').join('');
-  renderList();
+  renderList(); renderRuns();
   const b=$('#boot'); $('#boot-bar-fill').style.width='97%'; $('#boot-bar-txt').textContent='READY'; setTimeout(()=>b.classList.add('gone'), 500);
   msg('engine ready · '+fights().length+' fights on the table');
   if(!state.doc){ const f=fights().find(x=>x.role==='boss'&&x.stage===2)||fights()[0]; if(f) openFight(f.kind,f.role,f.stage); }
 }
+/* ---- the debug toolkit (1021): god, speed, freeze, restart, phase jumps, fight stats ---- */
+function tools(){ return host.api&&host.api.tools||null; }
+function fmtT(t){ if(!(t>=0)) return '--:--'; const m=Math.floor(t/60), s=t-m*60; return m+':'+(s<10?'0':'')+s.toFixed(1); }
+function syncTools(){
+  const T=tools(); if(!T) return;
+  $('#t-invuln').classList.toggle('on', !!T.god); state.inv=!!T.god;
+  $('#t-freeze').classList.toggle('on', !!T.frozen); $('#t-step').disabled=!T.frozen;
+  $('#t-hud').checked=!!T.hud;
+  const sp=$('#t-speed'); if(document.activeElement!==sp && Math.abs(+sp.value-T.speed)>1e-6){ sp.value=T.speed; $('#t-speed-v').textContent=(+T.speed).toFixed(2); }
+  const S=T.stats();
+  $('#tf-fight').textContent=S?('T '+fmtT(S.t)+(S.killed?' ✓':'')+'  DPS '+S.dps.toFixed(1)+'  HITS '+S.hits+'  DEATHS '+S.deaths+(S.best?('  BEST '+fmtT(S.best.t)):'')+(S.assisted?'  ASSISTED':'')):'';
+}
+function onResult(R){
+  state.runs=state.runs||[]; state.runs.unshift(R); if(state.runs.length>80) state.runs.pop(); renderRuns();
+  msg((R.won?'WIN ':'LOST ')+R.name+' '+fmtT(R.t)+(R.newBest?'  ★ NEW BEST':'')+(R.assisted?'  (assisted: '+R.assists.join(', ')+')':''), !R.won);
+}
+function renderRuns(){
+  const el=$('#runs-list'); if(!el) return; const L=state.runs||[];
+  el.innerHTML=L.length?'':'<div class="hint">play a fight - each result lands here with its time, hits and deaths</div>';
+  L.forEach(R=>{ const e=document.createElement('div'); e.className='run';
+    e.innerHTML='<b>S'+R.stage+' '+(R.role==='boss'?'BOSS':'MINI')+' '+R.name+'</b><span class="'+(R.won?'w':'l')+'">'+(R.won?'WIN':'LOST')+' '+fmtT(R.t)+'</span>'+
+      '<span>'+String(R.diff).toUpperCase()+' · '+String(R.pilot).toUpperCase()+'</span><span>HITS '+R.hits+' · DEATHS '+R.deaths+' · DEALT '+R.dealt+'</span>'+
+      (R.newBest?'<span class="nb">★ BEST</span>':'')+(R.assisted?'<span class="as">assisted: '+R.assists.join(', ')+'</span>':'');
+    el.appendChild(e); });
+}
+function toolRestart(){ const T=tools(); if(!T) return; if(!state.snap||!state.snap.fight) return playTest(); T.restart(); msg('fight restarted'); }
+function toolFreeze(){ const T=tools(); if(T) T.freeze(!T.frozen); }
+function toolStep(){ const T=tools(); if(T&&T.frozen) T.step(1); }
+function toolGod(){ const T=tools(); if(!T) return; host.api.setInvuln(!T.god); }
 /* ---- clips ---- */
 function onClip(rec){ state.clips.unshift({name:rec.name, url:rec.url, size:rec.size, dur:rec.dur, t:Date.now()}); $('#clip-n').textContent='('+state.clips.length+')'; renderClips(); msg('clip saved: '+rec.name); }
 function renderClips(){
@@ -541,7 +571,12 @@ function wire(){
   $('#gfx-reset').onclick=()=>{ if(!state.doc)return; pushUndo(); state.doc.artFx={hue:0,saturation:100,flipX:false,flipY:false,rotate:0,spin:0,invert:false,glow:0,glowColor:'#ff8a1e'}; syncArtFx(); if(state.gfxSel)bigGfx(state.gfxSel); renderPlate(); if(hooks.scene&&hooks.scene.draw)hooks.scene.draw(); renderJSON(); };
   $('#j-apply').onclick=applyJSONText; $('#j-copy').onclick=()=>{ navigator.clipboard&&navigator.clipboard.writeText($('#json').value); msg('copied'); }; $('#j-bundle').onclick=fileBundle;
   $('#t-rec').onclick=()=>{ if(!host.ready) return; const s=state.snap; if(s&&s.fight){ if(s.recording) host.api.rec.stop(); else host.api.rec.start(); } else { $('#t-rec').classList.toggle('arm'); msg($('#t-rec').classList.contains('arm')?'REC armed: the next PLAY TEST records from its first frame':'REC disarmed'); } };
-  $('#t-invuln').onclick=()=>{ if(!host.ready) return; state.inv=!state.inv; host.api.setInvuln(state.inv); $('#t-invuln').classList.toggle('on', state.inv); };
+  $('#t-invuln').onclick=()=>{ if(!host.ready) return; toolGod(); };
+  $('#t-freeze').onclick=()=>{ if(host.ready) toolFreeze(); };
+  $('#t-step').onclick=()=>{ if(host.ready) toolStep(); };
+  $('#t-restart').onclick=()=>{ if(host.ready) toolRestart(); };
+  $('#t-hud').onchange=e=>{ const T=tools(); if(T) T.setHud(e.target.checked); };
+  $$('[data-hpj]').forEach(b=>b.onclick=()=>{ const T=tools(); if(!T) return; const ok=T.setHpFrac(+b.dataset.hpj); msg(ok?('BOSS HP '+Math.round(+b.dataset.hpj*100)+'%'):'no live boss', !ok); });
   $('#t-speed').oninput=e=>{ $('#t-speed-v').textContent=(+e.target.value).toFixed(2); if(host.ready) host.api.setTimeScale(+e.target.value); };
   $('#t-pause').onclick=()=>{ if(!host.ready) return; host.api.pause(host.api.state!=='paused'); };
   $('#t-kill').onclick=()=>{ if(host.ready) host.api.kill(); };
@@ -555,7 +590,11 @@ function wire(){
     else if(e.key==='F11'||e.key==='t'||e.key==='T'){ e.preventDefault(); toggleTheater(); }
     else if(e.key==='Tab'){ e.preventDefault(); toggleDock(); }
     else if(e.key==='l'||e.key==='L'){ toggleDrawer(); }
-    else if(e.key==='F6'){ e.preventDefault(); stopTest(); } });
+    else if(e.key==='F6'){ e.preventDefault(); stopTest(); }
+    else if(e.key==='F9'){ e.preventDefault(); toolGod(); }
+    else if(e.key==='F10'){ e.preventDefault(); toolRestart(); }
+    else if(e.key==='['){ toolFreeze(); }
+    else if(e.key===']'){ toolStep(); } });
   window.addEventListener('resize', ()=>{ if(state.tab==='plate') renderPlate(); });
   plateMouse();
 }

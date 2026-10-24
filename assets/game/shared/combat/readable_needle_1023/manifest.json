@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "owner": "_BUILD_SOURCE/build_readable_needle_1023.py",
+  "unit": 0.25,
+  "angles": 32,
+  "cell": 32,
+  "banks": {
+    "sky": {
+      "key": "aq23_readable_sky",
+      "path": "assets/game/shared/combat/readable_needle_1023/sky.webp",
+      "frames": 5,
+      "fps": 20,
+      "stage": 6,
+      "source": "assets/game/shared/enemies/biome_fleet_1022/sky_needle.webp",
+      "sha256": "82f833192cb01dd0cc387844619a60aa18ee1073af89c0dfc7cb6ba08dc548fd"
+    },
+    "toxic": {
+      "key": "aq23_readable_toxic",
+      "path": "assets/game/shared/combat/readable_needle_1023/toxic.webp",
+      "frames": 5,
+      "fps": 20,
+      "stage": 7,
+      "source": "assets/game/shared/enemies/pressure_1022/toxic_needle.webp",
+      "sha256": "4dec991639108860c78908995d777ed402e9c48247d71f26d2dc4237c21e4c14"
+    },
+    "water": {
+      "key": "aq23_readable_water",
+      "path": "assets/game/shared/combat/readable_needle_1023/water.webp",
+      "frames": 5,
+      "fps": 20,
+      "stage": 9,
+      "source": "assets/game/shared/enemies/biome_fleet_1022/water_needle.webp",
+      "sha256": "a055eef96373177aebf9f94c664bc16cf4da955b3ce7789cf8043fb12b3505b5"
+    },
+    "magma": {
+      "key": "aq23_readable_magma",
+      "path": "assets/game/shared/combat/readable_needle_1023/magma.webp",
+      "frames": 5,
+      "fps": 20,
+      "stage": 2,
+      "source": "assets/game/shared/enemies/biome_fleet_1022/magma_needle.webp",
+      "sha256": "d82771422cf9462fb78b878ea247702f9a80941c2ee4f992aceed6f1c1ee3abb"
+    }
+  }
+}
