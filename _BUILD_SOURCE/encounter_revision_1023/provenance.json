@@ -1,0 +1,35 @@
+{
+  "creditsUsedUSD": 0.63,
+  "bonusGenerationsUsed": 3,
+  "lastObservedBalanceUSD": 3.47,
+  "accepted": {
+    "blue_charge": "7d4165af-ccc0-4738-904e-6a65c25d3ddb",
+    "corrupt_charge": "a1b6093d-08bb-4de9-9f8e-b738f95fbee8",
+    "fold": "c45f6399-3d1b-4399-9ed8-7eeb791f479c",
+    "rolling_core_24": "1f4fcdb0-a803-44ca-b240-a72ad8b92c99",
+    "symbiote_24": "63a1c6cd-9a7d-4202-97c3-22dfb202bc93",
+    "fusion": "51d40edf-8f45-4c56-8fee-c0a37553ed89",
+    "stun": "77ef4175-1978-4dd7-99bf-27c62c5d2ccb"
+  },
+  "rejectedOrSuperseded": {
+    "7ac7f889-6463-4fc0-a3dd-147277ea3ab1": "hammer changed during charging",
+    "ae7dc7d7-1aa4-4875-bb08-85db1d15ed3f": "fold did not reach the intended ball silhouette",
+    "3ede2bef-973b-4334-937d-15daa3636728": "swayed instead of showing genuine changing views",
+    "4d930f7b-53e7-45d7-a183-f3ba7e434714": "superseded by 24-frame changing-view matter loop"
+  },
+  "existingArtReused": [
+    "canonical HF22 hammer designs",
+    "approved FV21 PixelLab shield wall",
+    "NB23 animated laser flow",
+    "D20 lightning/portal effects",
+    "PT11 Frost Cruiser turret plates"
+  ],
+  "offlineVariants": [
+    "49 fixed-pivot turret angles per mount, with hit plates",
+    "chromium/red charge palettes",
+    "red eye and eye-charge plates",
+    "four laser directions",
+    "24 red spike-ball counter angles",
+    "black/white dither curtain tiles"
+  ]
+}

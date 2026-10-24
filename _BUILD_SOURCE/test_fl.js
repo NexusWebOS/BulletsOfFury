@@ -1,3 +1,4 @@
+require(require('path').join(process.env.BOF_RETIREMENT_TOOLS||__dirname,'retired_art_archive_1022.cjs'));
 /* Headless integrity + behaviour harness for the Falva/Lizzie pass.
    Boots assets/manifest.js + assets/game.js in a vm with mocked DOM/canvas/audio,
    then drives the two new specials and asserts on real engine state. */
