@@ -1,0 +1,12 @@
+Generator: built-in ImageGen
+Identity reference: _ART_SOURCES/playthrough_1011/references/cf_logo.png
+Final asset: coleforge_productions_steam_avatar.png
+
+Use case: logo-brand.
+Asset type: finished square Steam profile avatar, 1024x1024 pixels.
+Primary request: Create a striking COLEFORGE PRODUCTIONS avatar, adapted from the supplied existing ColeForge crest reference. Deliver one complete square image, not a presentation or mockup.
+Input image: the referenced local cf_logo.png is the brand identity reference. Use its bold orange/red CF initials, silver steel edging, dark charcoal and subtle olive mechanical framing, small silver star and phoenix-wing motif as the visual identity. Recompose the wide engine logo into a compact square studio insignia.
+Composition: a large, immediately readable CF monogram is the dominant central feature. Fit a compact symmetrical pair of ember phoenix wings around the central steel crest. Below it, integrate a substantial clean nameplate reading exactly COLEFORGE, with PRODUCTIONS on its own line immediately below. Large lettering, strong spacing and thick strokes. Keep all important elements comfortably inside the square with safe margins. The silhouette and CF must remain distinct when viewed as a tiny profile icon.
+Style: premium authored arcade emblem with crisp pixel-art-informed beveled edges and restrained metallic texture, confident bold design. Preserve the reference's orange-to-deep-red lettering, silver highlights and dark interior. Subtle forge glow behind the crest on a near-black background; the background supports rather than competes with the badge.
+Text (verbatim): "CF", "COLEFORGE", "PRODUCTIONS".
+Constraints: preserve brand identity and spell every word exactly. No PHOENIX ENGINE, ENGINE, RPG, slogan, date, Steam logo, watermark, extraneous text, characters, vehicles, decorative scene or surrounding interface. No busy effects that obscure the lettering. Opaque square background.

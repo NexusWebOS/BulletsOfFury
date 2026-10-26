@@ -1,0 +1,1100 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Intact gun stays firing for 16 seconds without casting or cooldown",
+        "passed": true,
+        "data": [
+          {
+            "state": "chaingun",
+            "rate": 0.02700000000000002,
+            "gunTime": 0.35,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.07766666666666666,
+            "gunTime": 1.35,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.04625000000000007,
+            "gunTime": 2.3499999999999965,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.06408333333333344,
+            "gunTime": 3.349999999999993,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.11475000000000014,
+            "gunTime": 4.34999999999999,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.034083333333333535,
+            "gunTime": 5.349999999999986,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.035500000000000254,
+            "gunTime": 6.349999999999983,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.053333333333333635,
+            "gunTime": 7.349999999999979,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.02191666666666676,
+            "gunTime": 8.349999999999994,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.011666666666666652,
+            "gunTime": 9.350000000000044,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.011666666666666652,
+            "gunTime": 10.350000000000094,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.011666666666666652,
+            "gunTime": 11.350000000000144,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.011666666666666652,
+            "gunTime": 12.350000000000193,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.011666666666666652,
+            "gunTime": 13.350000000000243,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.011666666666666652,
+            "gunTime": 14.350000000000293,
+            "hp": 1000
+          },
+          {
+            "state": "chaingun",
+            "rate": 0.011666666666666652,
+            "gunTime": 15.350000000000342,
+            "hp": 1000
+          }
+        ]
+      },
+      {
+        "name": "Minigun accelerates from .18 toward .045 seconds between shots",
+        "passed": true,
+        "data": {
+          "first": [
+            0.17975,
+            0.177,
+            0.17425
+          ],
+          "last": [
+            0.044999999999999984,
+            0.044999999999999984,
+            0.044999999999999984
+          ],
+          "shots": 211
+        }
+      },
+      {
+        "name": "Health bar is positioned above the actual gun",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Retina acquires the gun and its missile damages gun HP",
+        "passed": true,
+        "data": {
+          "target": true,
+          "valid": true,
+          "before": 1000,
+          "after": 970
+        }
+      },
+      {
+        "name": "Actual gun hit destroys only its module and enters gun-break stun",
+        "passed": true,
+        "data": {
+          "hit": true,
+          "state": "c29_break",
+          "dead": true,
+          "reason": "gun",
+          "armed": false,
+          "hp": -1030
+        }
+      },
+      {
+        "name": "Destroyed gun is immediately removed from Retina targets",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Gun-break damage flash expires in the live game clock",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Gun break recovers to held hammer, not casting",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Chromium depletion enters an energy-break stun",
+        "passed": true,
+        "data": {
+          "hp": 0,
+          "state": "c29_break",
+          "reason": "armor",
+          "damage": 199
+        }
+      },
+      {
+        "name": "Armor break recovery remains regular armor",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Shield uses original two-handed overhead pose with visible hammer",
+        "passed": true,
+        "data": {
+          "state": "storm_raise",
+          "pose": "c29_hold_chrome",
+          "head": {
+            "x": 308.5,
+            "y": 150
+          },
+          "top": 0
+        }
+      },
+      {
+        "name": "Transformation plays distinct body acting before permanent red armor",
+        "passed": true,
+        "data": [
+          "c30_power_regular_1",
+          "c30_power_regular_2",
+          "c30_power_regular_3",
+          "c30_power_regular_5",
+          "c30_power_regular_6",
+          "c30_power_red_7",
+          "c30_power_red_8",
+          "c30_power_red_10",
+          "c30_power_red_11",
+          "c30_power_red_12"
+        ]
+      },
+      {
+        "name": "Red armor latches only after full charge",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rage permanently discards hammer and retreats into depth",
+        "passed": true,
+        "data": {
+          "state": "c30_retreat",
+          "hammer": true,
+          "scale": 0.8116142965122557,
+          "pose": "c30_cast"
+        }
+      },
+      {
+        "name": "Rage uses whole unarmed gather, thrust, wave and recovery",
+        "passed": true,
+        "data": [
+          {
+            "state": "c30_retreat",
+            "scale": 0.5464417489511968,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_1",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_thrust",
+            "scale": 0.41999999999999993,
+            "key": "c30_thrust_6",
+            "weapon": false,
+            "beam": null
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_6",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 2
+            }
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_5",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 4
+            }
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_6",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 2
+            }
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_6",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_recover",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_7",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_recover",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_7",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_retreat",
+            "scale": 0.41999999999999993,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_retreat",
+            "scale": 0.42,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_retreat",
+            "scale": 0.42,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_2",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_thrust",
+            "scale": 0.42,
+            "key": "c30_thrust_2",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 234.4,
+                "y": 158.4
+              },
+              "to": {
+                "x": 378.08955223880594,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.42,
+            "key": "c30_cast_6",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 153.5290227440143,
+              "frame": 1
+            }
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.42,
+            "key": "c30_cast_6",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 5
+            }
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.42,
+            "key": "c30_cast_5",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 3
+            }
+          },
+          {
+            "state": "c30_beam",
+            "scale": 0.42,
+            "key": "c30_cast_6",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 5
+            }
+          },
+          {
+            "state": "c30_recover",
+            "scale": 0.42,
+            "key": "c30_cast_7",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_recover",
+            "scale": 0.42,
+            "key": "c30_cast_7",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_retreat",
+            "scale": 0.42,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_retreat",
+            "scale": 0.42,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_retreat",
+            "scale": 0.42,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_retreat",
+            "scale": 0.42,
+            "key": "c30_cast_0",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_1",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          },
+          {
+            "state": "c30_gather",
+            "scale": 0.42,
+            "key": "c30_cast_3",
+            "weapon": false,
+            "beam": {
+              "from": {
+                "x": 445.59999999999997,
+                "y": 158.4
+              },
+              "to": {
+                "x": 301.91044776119406,
+                "y": 596
+              },
+              "width": 76,
+              "length": 460.58706823204295,
+              "frame": 6
+            }
+          }
+        ]
+      },
+      {
+        "name": "Background casting reaches .42 scale and renders a committed wave",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Fixed hand pose and 16 physical rotating barrel phases",
+        "passed": true,
+        "data": {
+          "fixed": 0,
+          "frames": 17,
+          "slugs": [
+            {
+              "w": 10,
+              "h": 24,
+              "x": 289.81759259259263,
+              "y": 460.8278354432
+            },
+            {
+              "w": 10,
+              "h": 24,
+              "x": 273.37870370370376,
+              "y": 376.183013632
+            }
+          ]
+        }
+      },
+      {
+        "name": "Native minigun emits visible slug-sized projectiles",
+        "passed": true,
+        "data": {
+          "fixed": 0,
+          "frames": 17,
+          "slugs": [
+            {
+              "w": 10,
+              "h": 24,
+              "x": 289.81759259259263,
+              "y": 460.8278354432
+            },
+            {
+              "w": 10,
+              "h": 24,
+              "x": 273.37870370370376,
+              "y": 376.183013632
+            }
+          ]
+        }
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "pixels": {
+    "checks": [
+      {
+        "name": "Live clock completes charge, latches red and discards hammer",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Scaled red actor takes real pixel hits and flashes without ghost hammer",
+        "passed": true,
+        "data": {
+          "hit": true,
+          "before": 330,
+          "after": 322,
+          "flash": 0.12,
+          "point": {
+            "x": 222.43,
+            "y": 139.71
+          },
+          "weapon": false
+        }
+      },
+      {
+        "name": "Red hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Committed energy wave reaches native player damage",
+        "passed": true,
+        "data": {
+          "before": null,
+          "after": null,
+          "invuln": 0,
+          "hit": 1,
+          "dead": true
+        }
+      },
+      {
+        "name": "Native background jump restores landing FOV before impact",
+        "passed": true,
+        "data": [
+          {
+            "state": "giant_idle",
+            "warn": null
+          },
+          {
+            "state": "giant_windup",
+            "warn": null
+          },
+          {
+            "state": "giant_windup",
+            "warn": null
+          },
+          {
+            "state": "giant_rise",
+            "warn": null
+          },
+          {
+            "state": "giant_rise",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_drop",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_drop",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_drop",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_land",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_jump",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_jump",
+            "warn": null
+          },
+          {
+            "state": "giant_warn",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_warn"
+            }
+          },
+          {
+            "state": "giant_warn",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_warn"
+            }
+          },
+          {
+            "state": "giant_dive",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "giant_dive",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          }
+        ]
+      },
+      {
+        "name": "All sixteen muzzle faces contain different rotational pixels",
+        "passed": true,
+        "data": 16
+      },
+      {
+        "name": "Slug renderer draws visible authored projectile pixels",
+        "passed": true,
+        "data": 180
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "delivery": {
+    "checks": [
+      {
+        "name": "Delivered MP4 contains decoded audible sound",
+        "passed": true,
+        "data": {
+          "peak": 0.388031005859375,
+          "rms": 0.0751831713451888
+        }
+      },
+      {
+        "name": "Native recording has no page or console errors",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Recording includes gun break, landing warning, red charge and energy wave",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review plays the actual 56-second MP4 with audio enabled",
+        "passed": true,
+        "data": {
+          "time": 0.514513,
+          "duration": 56.184833,
+          "muted": false,
+          "paused": false
+        }
+      },
+      {
+        "name": "Rotary, charge and two-handed thrust previews display authored pixels",
+        "passed": true,
+        "data": [
+          22934,
+          24167,
+          29939
+        ]
+      },
+      {
+        "name": "Review page has no console or page errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

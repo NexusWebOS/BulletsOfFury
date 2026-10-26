@@ -1,0 +1,1306 @@
+{
+  "sources": [
+    {
+      "bank": "black_drift",
+      "output": 0,
+      "source": "black_drift",
+      "frame": 0,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 1,
+      "source": "black_drift",
+      "frame": 1,
+      "measuredEye": [
+        128,
+        126
+      ],
+      "translation": [
+        32,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        46,
+        256,
+        278
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 2,
+      "source": "black_drift",
+      "frame": 2,
+      "measuredEye": [
+        127,
+        126
+      ],
+      "translation": [
+        33,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        65,
+        46,
+        257,
+        278
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 3,
+      "source": "black_drift",
+      "frame": 3,
+      "measuredEye": [
+        127,
+        126
+      ],
+      "translation": [
+        33,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        65,
+        46,
+        257,
+        278
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 4,
+      "source": "black_drift",
+      "frame": 4,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 5,
+      "source": "black_drift",
+      "frame": 3,
+      "measuredEye": [
+        127,
+        126
+      ],
+      "translation": [
+        33,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        65,
+        46,
+        257,
+        278
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 6,
+      "source": "black_drift",
+      "frame": 2,
+      "measuredEye": [
+        127,
+        126
+      ],
+      "translation": [
+        33,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        65,
+        46,
+        257,
+        278
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 7,
+      "source": "black_drift",
+      "frame": 1,
+      "measuredEye": [
+        128,
+        126
+      ],
+      "translation": [
+        32,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        46,
+        256,
+        278
+      ]
+    },
+    {
+      "bank": "black_drift",
+      "output": 8,
+      "source": "black_drift",
+      "frame": 0,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 0,
+      "source": "black_spin",
+      "frame": 0,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 1,
+      "source": "black_spin",
+      "frame": 1,
+      "measuredEye": [
+        127,
+        126
+      ],
+      "translation": [
+        33,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        70,
+        48,
+        261,
+        275
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 2,
+      "source": "black_spin",
+      "frame": 2,
+      "measuredEye": [
+        125,
+        126
+      ],
+      "translation": [
+        35,
+        34
+      ],
+      "scale": 1,
+      "ink": [
+        81,
+        52,
+        266,
+        270
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 3,
+      "source": "black_spin",
+      "frame": 3,
+      "measuredEye": [
+        124,
+        124
+      ],
+      "translation": [
+        36,
+        36
+      ],
+      "scale": 1,
+      "ink": [
+        90,
+        60,
+        271,
+        269
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 4,
+      "source": "black_spin",
+      "frame": 4,
+      "measuredEye": [
+        122,
+        122
+      ],
+      "translation": [
+        38,
+        38
+      ],
+      "scale": 1,
+      "ink": [
+        92,
+        74,
+        273,
+        267
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 5,
+      "source": "black_spin",
+      "frame": 5,
+      "measuredEye": [
+        121,
+        118
+      ],
+      "translation": [
+        39,
+        42
+      ],
+      "scale": 1,
+      "ink": [
+        98,
+        95,
+        274,
+        269
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 6,
+      "source": "black_spin",
+      "frame": 6,
+      "measuredEye": [
+        119,
+        114
+      ],
+      "translation": [
+        41,
+        46
+      ],
+      "scale": 1,
+      "ink": [
+        99,
+        122,
+        270,
+        271
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 7,
+      "source": "black_spin",
+      "frame": 7,
+      "measuredEye": [
+        122,
+        113
+      ],
+      "translation": [
+        38,
+        47
+      ],
+      "scale": 1,
+      "ink": [
+        85,
+        130,
+        262,
+        276
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 8,
+      "source": "black_spin",
+      "frame": 8,
+      "measuredEye": [
+        131,
+        112
+      ],
+      "translation": [
+        29,
+        48
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        130,
+        242,
+        275
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 9,
+      "source": "black_spin",
+      "frame": 9,
+      "measuredEye": [
+        137,
+        114
+      ],
+      "translation": [
+        23,
+        46
+      ],
+      "scale": 1,
+      "ink": [
+        52,
+        128,
+        222,
+        271
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 10,
+      "source": "black_spin",
+      "frame": 10,
+      "measuredEye": [
+        135,
+        119
+      ],
+      "translation": [
+        25,
+        41
+      ],
+      "scale": 1,
+      "ink": [
+        46,
+        107,
+        221,
+        268
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 11,
+      "source": "black_spin",
+      "frame": 11,
+      "measuredEye": [
+        133,
+        122
+      ],
+      "translation": [
+        27,
+        38
+      ],
+      "scale": 1,
+      "ink": [
+        48,
+        86,
+        228,
+        268
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 12,
+      "source": "black_spin",
+      "frame": 12,
+      "measuredEye": [
+        131,
+        123
+      ],
+      "translation": [
+        29,
+        37
+      ],
+      "scale": 1,
+      "ink": [
+        49,
+        69,
+        223,
+        269
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 13,
+      "source": "black_spin",
+      "frame": 13,
+      "measuredEye": [
+        130,
+        125
+      ],
+      "translation": [
+        30,
+        35
+      ],
+      "scale": 1,
+      "ink": [
+        53,
+        58,
+        233,
+        271
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 14,
+      "source": "black_spin",
+      "frame": 14,
+      "measuredEye": [
+        129,
+        127
+      ],
+      "translation": [
+        31,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        57,
+        49,
+        245,
+        270
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 15,
+      "source": "black_spin",
+      "frame": 15,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        61,
+        47,
+        251,
+        275
+      ]
+    },
+    {
+      "bank": "black_spin",
+      "output": 16,
+      "source": "black_spin",
+      "frame": 16,
+      "measuredEye": [
+        127,
+        127
+      ],
+      "translation": [
+        33,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        66,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 0,
+      "source": "black_charge_clean",
+      "frame": 0,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 1,
+      "source": "black_charge_clean",
+      "frame": 1,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 2,
+      "source": "black_charge_clean",
+      "frame": 2,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 3,
+      "source": "black_charge_clean",
+      "frame": 3,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 4,
+      "source": "black_charge_clean",
+      "frame": 4,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 5,
+      "source": "black_charge_clean",
+      "frame": 5,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 6,
+      "source": "black_charge_clean",
+      "frame": 6,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 7,
+      "source": "black_charge_clean",
+      "frame": 7,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "black_charge",
+      "output": 8,
+      "source": "black_charge_clean",
+      "frame": 8,
+      "measuredEye": [
+        128,
+        127
+      ],
+      "translation": [
+        32,
+        33
+      ],
+      "scale": 1,
+      "ink": [
+        64,
+        45,
+        256,
+        277
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 0,
+      "source": "warp_motion",
+      "frame": 0,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 1,
+      "source": "warp_motion",
+      "frame": 1,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 2,
+      "source": "warp_motion",
+      "frame": 2,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 3,
+      "source": "warp_motion",
+      "frame": 3,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 4,
+      "source": "warp_motion",
+      "frame": 4,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 5,
+      "source": "warp_motion",
+      "frame": 5,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 6,
+      "source": "warp_motion",
+      "frame": 6,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 7,
+      "source": "warp_motion",
+      "frame": 7,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 8,
+      "source": "warp_motion",
+      "frame": 8,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 9,
+      "source": "warp_motion",
+      "frame": 9,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 10,
+      "source": "warp_motion",
+      "frame": 10,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 11,
+      "source": "warp_motion",
+      "frame": 11,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 12,
+      "source": "warp_motion",
+      "frame": 12,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 13,
+      "source": "warp_motion",
+      "frame": 13,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 14,
+      "source": "warp_motion",
+      "frame": 14,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 15,
+      "source": "warp_motion",
+      "frame": 15,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 16,
+      "source": "warp_motion",
+      "frame": 16,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 17,
+      "source": "warp_motion",
+      "frame": 17,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 18,
+      "source": "warp_motion",
+      "frame": 18,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 19,
+      "source": "warp_motion",
+      "frame": 19,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 20,
+      "source": "warp_motion",
+      "frame": 20,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 21,
+      "source": "warp_motion",
+      "frame": 21,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 22,
+      "source": "warp_motion",
+      "frame": 22,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 23,
+      "source": "warp_motion",
+      "frame": 23,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "bank": "warp_motion",
+      "output": 24,
+      "source": "warp_motion",
+      "frame": 24,
+      "measuredEye": [
+        128,
+        128
+      ],
+      "translation": [
+        0,
+        0
+      ],
+      "scale": 1,
+      "ink": [
+        0,
+        0,
+        256,
+        256
+      ]
+    }
+  ],
+  "rejections": [
+    "warp: first Pro still reads as a mechanical corridor; superseded by liquid/foam warp_water.",
+    "black_charge: expanding rings, gray blobs and external sparks rejected; replaced by source-preserving lens-only composite.",
+    "black_drift frames5/6/7: invented colored sparks; use accepted0..4 and reverse instead."
+  ],
+  "outputs": [
+    {
+      "path": "assets/game/shared/combat/stage59_1024/black_drift.webp",
+      "bytes": 44480,
+      "sha256": "fb9e4bb55c83cd92dad09a4ea7763cd6a6377c93a93fe5020dd951fa20dd8279"
+    },
+    {
+      "path": "assets/game/shared/combat/stage59_1024/black_drift_hit.webp",
+      "bytes": 5414,
+      "sha256": "66a07c9928e7512790660d3a952fd2d77e4c8782e2129394a80b2a343c0f9662"
+    },
+    {
+      "path": "assets/game/shared/combat/stage59_1024/black_spin.webp",
+      "bytes": 118442,
+      "sha256": "857551d50ad9cbb38712cd9391af27b6050fcdf1da01780b6fcf86d83b86a938"
+    },
+    {
+      "path": "assets/game/shared/combat/stage59_1024/black_spin_hit.webp",
+      "bytes": 11092,
+      "sha256": "016d5541c5267325d8048582036be9f45638b2dc70f93aee85782c6f697812cf"
+    },
+    {
+      "path": "assets/game/shared/combat/stage59_1024/black_charge.webp",
+      "bytes": 19904,
+      "sha256": "867abb6366649e8a834c034505f5a3af3486c2fa2535d49a81c5d637c0839c5b"
+    },
+    {
+      "path": "assets/game/shared/combat/stage59_1024/black_charge_hit.webp",
+      "bytes": 2036,
+      "sha256": "2a3930bc3341865e45e7f6a55108b534c685113d9f000eb80e23a7a56f30ca89"
+    },
+    {
+      "path": "assets/game/shared/combat/stage59_1024/warp_motion.webp",
+      "bytes": 713312,
+      "sha256": "5a4fa2e9f4388103f688d0c3587822b2dbe7dfc338a55305dfeb59c91c1026e0"
+    }
+  ]
+}

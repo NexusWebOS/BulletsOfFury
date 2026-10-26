@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 331916c9-ddee-4adb-b394-694d606d2403\njob_id: 331916c9-ddee-4adb-b394-694d606d2403\ndescription: FRAME FORMAT:256x256 per frame, shared reactor pivot128,116, common proportional scale, transparent margins. Fixed camera and body scale; animate joint motion around stable torso center. Preserve the same robot identity and armor. The tiny magenta dot is a fist registration mark: keep it centered on that same closed fist throughout. NO HAMMER, NO SHAFT, NO NEW OBJECTS; the real weapon is attached later. No detached anatomy, no camera movement, no zoom, no body fading. Turn the WHOLE ROBOT strongly toward screen RIGHT into the supplied side-profile endpoint. Twist hips, feet, torso, helmet and shoulders together. Sweep the same marked weapon fist outward through a broad rightward strike arc, keeping the other hand separate. Clear anticipation then forceful follow-through.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025005\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"331916c9-ddee-4adb-b394-694d606d2403\")\nasset_id: ca6664aa-8c0e-5749-b835-2e974f75c964\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

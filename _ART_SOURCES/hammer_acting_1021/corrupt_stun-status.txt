@@ -1,0 +1,10 @@
+status: completed
+id: ad8a1efd-f66c-45e3-8a92-645a56a1b69f
+job_id: ad8a1efd-f66c-45e3-8a92-645a56a1b69f
+frame: 16 of 17
+asset_id: 329324d0-c4d4-553e-92c8-d46c8aebe7ca
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0454 in credits
+download: https://api.pixellab.ai/mcp/images/ad8a1efd-f66c-45e3-8a92-645a56a1b69f/download?index=16

@@ -1,0 +1,198 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Rage charge completes before the first volley",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native rage fires palm volleys in foreground and background",
+        "passed": true,
+        "data": {
+          "count": 72,
+          "depths": [
+            "foreground",
+            "background"
+          ]
+        }
+      },
+      {
+        "name": "Foreground reaches1.08 and background reaches.42 scale",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every volley group alternates hands and includes dual palm bursts",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The original red-white energy wave remains in the rage rotation",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No hammer is targetable during the volley rotation",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Each group has an authored warning before firing",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native projectiles leave the measured palms",
+        "passed": true,
+        "data": [
+          {
+            "type": "palm-shot",
+            "time": 6.683333333333315,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 0,
+            "hand": 0,
+            "pose": 0,
+            "x": 267.34468749999996,
+            "y": 188.4559375,
+            "angle": 1.445724391932431
+          },
+          {
+            "type": "palm-shot",
+            "time": 6.816666666666648,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 1,
+            "hand": 1,
+            "pose": 8,
+            "x": 416.3340625,
+            "y": 186.6165625,
+            "angle": 1.825337959713538
+          },
+          {
+            "type": "palm-shot",
+            "time": 6.949999999999981,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 2,
+            "hand": 0,
+            "pose": 9,
+            "x": 266.425,
+            "y": 191.215,
+            "angle": 1.2081435310517197
+          },
+          {
+            "type": "palm-shot",
+            "time": 6.949999999999981,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 2,
+            "hand": 1,
+            "pose": 9,
+            "x": 411.735625,
+            "y": 191.215,
+            "angle": 1.6939151835717328
+          }
+        ]
+      },
+      {
+        "name": "Whole volley actor takes real pixel hits and flashes",
+        "passed": true,
+        "data": {
+          "hit": true,
+          "before": 330,
+          "after": 326,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Volley actor hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Palm bolts use the native oriented laser hit box",
+        "passed": true,
+        "data": {
+          "found": true,
+          "inside": true,
+          "outside": false
+        }
+      },
+      {
+        "name": "Live palm projectile reaches native player damage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Defeated boss cannot launch queued volleys",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "delivery": {
+    "checks": [
+      {
+        "name": "Delivered MP4 contains decoded audible sound",
+        "passed": true,
+        "data": {
+          "peak": 0.41632080078125,
+          "rms": 0.08162519155696421
+        }
+      },
+      {
+        "name": "Native recording has no page or console errors",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Recording includes red charge, palm volleys and energy wave",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recorded volleys fire from both foreground and background",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Shared alien laser cue decodes with audible waveform",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review plays the actual 32-second MP4 with audio enabled",
+        "passed": true,
+        "data": {
+          "time": 0.514204,
+          "duration": 32.079675,
+          "muted": false,
+          "paused": false
+        }
+      },
+      {
+        "name": "Foreground, background and dual palm previews display authored pixels",
+        "passed": true,
+        "data": [
+          41854,
+          6278,
+          47005
+        ]
+      },
+      {
+        "name": "Review page has no console or page errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 644fa1bf-6374-4843-9179-a460cef00092\njob_id: 644fa1bf-6374-4843-9179-a460cef00092\ndescription: FRAME FORMAT:256x256 per frame, shared reactor pivot128,116, common proportional scale, transparent margins. Fixed camera and body scale; animate joint motion around stable torso center. Preserve the same robot identity and armor. The tiny magenta dot is a fist registration mark: keep it centered on that same closed fist throughout. NO HAMMER, NO SHAFT, NO NEW OBJECTS; the real weapon is attached later. No detached anatomy, no camera movement, no zoom, no body fading. Unfold the tucked legs from an airborne jump and absorb a landing into a low crouch. Keep the marked closed weapon fist low outside the hip. Smooth knees, hips and torso weight transfer.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025001\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"644fa1bf-6374-4843-9179-a460cef00092\")\nasset_id: 7ffdacc8-f243-576f-9d10-1cd7f4bfdc79\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

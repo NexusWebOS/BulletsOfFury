@@ -1,0 +1,10 @@
+status: completed
+id: 491ca45e-ad76-47a4-a757-2a57e4fd6abb
+job_id: 491ca45e-ad76-47a4-a757-2a57e4fd6abb
+frame: 24 of 25
+asset_id: 6eb0942e-eccd-52c8-a8fd-d21d4fa81d6b
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0891 in credits
+download: https://api.pixellab.ai/mcp/images/491ca45e-ad76-47a4-a757-2a57e4fd6abb/download?index=24

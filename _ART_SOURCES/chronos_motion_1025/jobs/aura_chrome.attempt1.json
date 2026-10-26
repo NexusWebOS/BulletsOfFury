@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "1 validation error for call[animate_image_pixminimax]\ndescription\n  String should have at most 1000 characters [type=string_too_long, input_value='FRAME FORMAT:256x256 per...tch final powered pose.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_too_long"
+    }
+  ],
+  "isError": true
+}

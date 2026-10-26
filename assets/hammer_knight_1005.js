@@ -166,7 +166,7 @@ gd4Tick=function(b,dt){const J=j3State(b);if(!hk5Own(b))return HK5_BASE.donor.ap
 modularHit=function(dmg){const b=boss,J=j3State(b);if(J?.mimic!==8||!r30Live(b))return HK5_BASE.hit.apply(this,arguments);
  if(!Number.isFinite(dmg)||dmg<=0)return;const D=gd4Create(b,8),p=D.p,h=p._hammer;p.hp=b.hp;p.maxhp=b.maxhp;
  p._hammerModuleHit=b._lastPart?.id==='hammer'?'hammer':null;const dealt=hammerBossDamage(p,dmg);b.hp=Math.max(0,p.hp-dealt);p.hp=b.hp;
- const module=b.parts.find(q=>q.id==='hammer');module.hp=h.hammerHP;module.destroyed=!!h.hammerDestroyed;module.flash=.12;markHit(b,.12);stageStats.dmgDealt+=dealt;
+ const module=b.parts.find(q=>q.id==='hammer');module.hp=h.hammerHP;module.destroyed=!!h.hammerDestroyed;markHit(module,.12);markHit(b,.12);stageStats.dmgDealt+=dealt;
  j3Health(b,b.hp,b.maxhp);j3Save(b);if(!b.hp)r30Break(b);return dealt;
 };
 retinaBossTargets=function(b){if(j3State(b)?.mimic!==8)return HK5_BASE.targets.apply(this,arguments);if(!r30Live(b)||b._noHit)return[];

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 8f57489e-3bb4-45fe-9d46-5ee3d7e15663\njob_id: 8f57489e-3bb4-45fe-9d46-5ee3d7e15663\ndescription: FRAME FORMAT256x256 transparent, reactor128,116, same scale/camera and robot. All anatomy connected. Tiny magenta mark tracks the same closed fist. NO WEAPON, shaft or new objects; real hammer attached later. No zoom or fade. Explosive anime super-warrior power transformation. Start hunched with both fists clenched and knees wide. Body trembles under strain; head lifts, shoulders brace, chest reactor surges. An enormous golden-white flame aura ERUPTS and streams violently UPWARD around him, cyan lightning lashes between plates, pressure ripples pulse outward. Flames must FLOW and flicker continuously, not crossfade a still aura. Keep robot solid and readable and all anatomy connected. Marked weapon fist stays low outside hip; never raise it. Match final powered pose.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025007\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8f57489e-3bb4-45fe-9d46-5ee3d7e15663\")\nasset_id: 4df6ab55-1b6f-5d90-9be1-7b49dc0486ef\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

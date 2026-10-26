@@ -25,7 +25,13 @@ function ui20Icon(g,key,x,y,size){g.save();g.beginPath();g.rect(0,0,0,0);g.clip(
 function ui20Fill(g,r,f,color){const q=clamp(Number(f)||0,0,1);if(!q)return;const [x,y,w,h]=r;
  const grad=g.createLinearGradient(0,y,0,y+h);grad.addColorStop(0,'#f2ffe5');grad.addColorStop(.2,color);grad.addColorStop(.75,color);grad.addColorStop(1,'#13201b');g.fillStyle=grad;g.fillRect(x,y,Math.floor(w*q),h);g.fillStyle='#ffffff70';g.fillRect(x,y,Math.floor(w*q),Math.max(1,h*.12));}
 function ui20Lines(g,s,x,y,h,w,step){let words=String(s).split(/\s+/),rows=[],line='';for(const word of words){const next=line?line+' '+word:word;if(line&&bmfMeasure(window.BOF_UI_FACE||'game',next,h)>w){rows.push(line);line=word;}else line=next;}if(line)rows.push(line);rows.forEach((v,i)=>ui20Text(g,v,x,y+i*step,h,w));return rows.length;}
-function ui20Radio(){if(state!==GS.PLAY)return null;if(run.stage===6&&s6WingRadioVisible()&&s6Wing?.line){const L=s6Wing.line,pages=s6r18Pages(L);let age=L.t,i=0;while(i<pages.length-1&&age>=pages[i].dur)age-=pages[i++].dur;return {who:L.who,text:pages[i].rows.join(' '),age,duration:pages[i].dur};}if(sa14Storm(boss)&&bossActive&&boss?._st18?.radio){const q=boss._st18.radio;return {who:q.who,text:q.text,age:q.t,duration:q.duration};}return null;}
+function ui20Radio(){if(state!==GS.PLAY)return null;
+ // Use the director's current beat and clock, including the trap intro, pilot
+ // replies and tactical announcements. Both HUD layouts stay outside the field.
+ const s=BOFCinematicDirector.current,b=s?.beats[s.i];
+ if(s?.live&&s.combatLive&&b)return {who:b.who,text:b.text,age:s.t,duration:Math.max(b.text.length/38+2.7,b.duration||0)};
+ if(fb2IntroActive()){const I=fb2Intro,L=I.lines[I.i];if(L)return {who:L.who,text:L.text,age:I.t,duration:L.text.length/38+(L.text.replace(/\./g,'').length?1.7:1.25)};}
+ if(run.stage===6&&s6WingRadioVisible()&&s6Wing?.line){const L=s6Wing.line,pages=s6r18Pages(L);let age=L.t,i=0;while(i<pages.length-1&&age>=pages[i].dur)age-=pages[i++].dur;return {who:L.who,text:pages[i].rows.join(' '),age,duration:pages[i].dur};}if(sa14Storm(boss)&&bossActive&&boss?._st18?.radio){const q=boss._st18.radio;return {who:q.who,text:q.text,age:q.t,duration:q.duration};}return null;}
 function ui20RadioRows(q,width,size,count){const words=(q.who.toUpperCase()+': '+q.text).toUpperCase().split(/\s+/),rows=[];let row='';for(const word of words){const next=row?row+' '+word:word;if(row&&bmfMeasure(window.BOF_UI_FACE||'game',next,size)>width){rows.push(row);row=word;}else row=next;}if(row)rows.push(row);const pages=Math.max(1,Math.ceil(rows.length/count)),page=clamp(Math.floor((q.age||0)/Math.max(.01,q.duration/pages)),0,pages-1);return rows.slice(page*count,page*count+count);}
 function ui20Seat(seat){return withSeat(seat,()=>{
  const v=ph8Values(),active=specialActive()&&special.pilot===v.pilot;v.ship='ship_'+v.pilot;
@@ -104,7 +110,7 @@ dlgBox=function(o){if(!XART.rdy('ui20_dialogue-a'))return UI20.base.dlg.apply(th
  const pk=String(o.portrait||who).toLowerCase(),talking=shown.length<full.length&&(!o.emo||o.emo==='idle'),port=o.portraitKey||(o.portrait!==false&&UI20.pilot(pk)?commPortrait(pk,talking?'talk':o.emo||'idle'):null),inPlay=state===GS.PLAY,viewW=(state===GS.CAMPAIGNINTRO||state===GS.CUTSCENE)?cutsceneViewWidth():VW;
  const w=Math.min(viewW-20,o.pw||(inPlay?VW*.72:viewW-20)),maxHeight=VH*(inPlay?.34:.44),x=o.x??(inPlay?PLAY.x+8:(viewW-w)/2),bottom=Math.min(VH-10,o.maxBottom??VH-10);let h=Math.min(maxHeight,Math.max(o.ph||126,90));msgFaceUse(o.face||'dialogue');
  // Fit the complete sentence before revealing characters, so typing never shifts rows.
- const sizeKey=['dialogue-height',full,x,w,h,maxHeight,!!port,o.face||'dialogue',bmfReady(o.face||'dialogue')].join('|');if(UI20.cache.has(sizeKey))h=UI20.cache.get(sizeKey);else{
+ const sizeKey=['dialogue-height',full,x,w,h,maxHeight,!!port,o.face||'dialogue',bmfReady(o.face||'dialogue')].join('|');if(o.fixedHeight===true){/* Caller owns a uniform cinematic window; text fits its aperture. */}else if(UI20.cache.has(sizeKey))h=UI20.cache.get(sizeKey);else{
   for(;h<maxHeight;h=Math.min(maxHeight,h+2)){const t=ui20PanelLayout(x,0,w,h,port).text;if(msgBlockLayout(full,t.w,1000,14,14,1.25).height<=t.h)break;}
   if(UI20.cache.size>240)UI20.cache.delete(UI20.cache.keys().next().value);UI20.cache.set(sizeKey,h);
  }

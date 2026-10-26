@@ -1,0 +1,110 @@
+{
+  "owner": "build_orbital_takeover_1024.py",
+  "art": {
+    "satellite": {
+      "key": "ot24_satellite",
+      "path": "assets/game/shared/cinematics/orbital_takeover_1024/satellite.webp",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        256
+      ],
+      "sourceScale": 1,
+      "sha256": "c35b82f96a100e4966904cc03c9ef8ca56faaa8680fd49dd88162ccc08b0195c"
+    },
+    "infected": {
+      "key": "ot24_infected",
+      "path": "assets/game/shared/cinematics/orbital_takeover_1024/infected.webp",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        256
+      ],
+      "sourceScale": 1,
+      "sha256": "15a27a9c58eb355d33f62665cbbdae367e42110b1c2fa4420fdae29bfbd7d20a"
+    },
+    "signal": {
+      "key": "ot24_signal",
+      "path": "assets/game/shared/cinematics/orbital_takeover_1024/signal.webp",
+      "w": 64,
+      "h": 256,
+      "pivot": [
+        32,
+        0
+      ],
+      "sourceScale": 1,
+      "sha256": "d455ec5c11e06e6c8d95235257c8ffc5a09c4ed9fa062b0f7aa50327ba7e3dcf"
+    },
+    "fluid": {
+      "key": "ot24_fluid",
+      "path": "assets/game/shared/cinematics/orbital_takeover_1024/fluid.webp",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "sourceScale": 1,
+      "frames": 20,
+      "columns": 8,
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "sourceFrameIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "sha256": "f82ea272205791c93e555149393aeed5119ce79d3cb8348fdee696a2696189e4",
+      "sheetWidth": 1024,
+      "sheetHeight": 384
+    },
+    "takeover": {
+      "key": "ot24_takeover",
+      "path": "assets/game/shared/cinematics/orbital_takeover_1024/takeover.webp",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "sourceScale": 1,
+      "frames": 41,
+      "columns": 8,
+      "cellWidth": 256,
+      "cellHeight": 256,
+      "sha256": "f73c05bc7f7a3c453d3bfcb4cd85e990477f4091e34838ce314c61756c15216b",
+      "sheetWidth": 2048,
+      "sheetHeight": 1536
+    },
+    "earth": {
+      "key": "ot24_earth",
+      "path": "assets/game/shared/cinematics/homecoming_1010/earth.png",
+      "w": 1672,
+      "h": 942,
+      "pivot": [
+        836,
+        471
+      ],
+      "sourceScale": 1
+    }
+  }
+}

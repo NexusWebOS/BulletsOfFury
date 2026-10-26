@@ -23,8 +23,8 @@ function rb23Arms(b){return b.parts.filter(p=>p.id!=='core'&&!p.destroyed&&p.hp>
 v18Enter=function(b,n,form=0){const r=RB23.base.enter.apply(this,arguments);if(n===0){b._r30.v18.rb23Budget=null;rb23Budget(b);}return r;};
 modularHit=function(dmg){const b=boss;if(!rb23Host(b))return RB23.base.hit.apply(this,arguments);if(!r30Live(b)||b._noHit||!(dmg>0))return;
  rb23Budget(b);const p=b.parts.includes(b._lastPart)?b._lastPart:b.parts[0];if(!p||p.destroyed)return;
- if(p.id==='core'&&rb23Arms(b).length){p.flash=.12;weaponHitSfx('shield');return;}
- const d=Math.min(dmg,p.hp);p.hp-=d;p.flash=.16;stageStats.dmgDealt+=d;
+ if(p.id==='core'&&rb23Arms(b).length){markHit(p,.12);weaponHitSfx('shield');return;}
+ const d=Math.min(dmg,p.hp);p.hp-=d;markHit(p,.16);stageStats.dmgDealt+=d;
  if(p.hp<=0&&p.id!=='core'){v18Rupture(b,p);p.destroyed=true;b._r30.v18.beams=b._r30.v18.beams.filter(L=>L.module!==p.id);r30Sound('combatModule0927');rb23Log('arm-destroyed',{id:p.id});
   if(!rb23Arms(b).length){v18Clear(b);b._r30.cd=.4;rb23Log('rolling-core-exposed');}}
  b.hp=b.parts.reduce((n,q)=>n+Math.max(0,q.hp),0);if(b.hp<=0)r30Break(b);
@@ -39,7 +39,7 @@ retinaBossTargets=function(b){if(!rb23Host(b))return RB23.base.targets.apply(thi
  return parts.map(p=>retinaDynamicPiece(b,'rb23-'+p.id,p.id==='core'?'exposed rolling core':'arm',()=>{const q=rb23PartPoint(b,p);return {...q,hp:p.hp,dead:p.destroyed||!rb23Host(b)||b.dead};},d=>{b._lastPart=p;hitBoss(d);},70,100));
 };
 function rb23PartPoint(b,p,muzzle=false){const a=v18Frame(b)[p.id],k=v18Size(b)/320,r=a.bounds;return{x:b.x+((r[0]+r[2])/2-160)*k,y:b.y+((muzzle?r[3]-12:(r[1]+r[3])/2)-160)*k};}
-function rb23Eye(b){const m=V18_ART.models.infused,f=Math.floor(b._r30.clock*m.fps)%m.frames.length,p=ER23_ART.hostEyes[f],k=v18Size(b)/320;return {x:b.x+(p[0]-160)*k,y:b.y+(p[1]-160)*k};}
+function rb23Eye(b){const m=V18_ART.models.infused,f=b._r30.v18._bi24Frame??Math.floor(b._r30.clock*m.fps)%m.frames.length,p=ER23_ART.hostEyes[f],k=v18Size(b)/320;return {x:b.x+(p[0]-160)*k,y:b.y+(p[1]-160)*k};}
 function rb23Path(b,n){const left=camLeftX()+110,right=camRightX()-110,top=viewTopY()+140,bot=VH-130,mid=(left+right)/2;
  if(n%4===0)return [{x:left,y:top+60},{x:right,y:top+60},{x:left,y:bot},{x:right,y:bot}];
  if(n%4===1)return [{x:mid,y:top},{x:mid,y:bot},{x:left,y:top},{x:right,y:bot}];
@@ -75,7 +75,7 @@ v18AttackTick=function(b,dt){const P=b?._r30?.v18?.attack;if(!rb23Host(b)||!P?.t
 };
 v18Body=function(b){if(!rb23Host(b))return RB23.base.body.apply(this,arguments);const P=b._r30.v18.attack;
  if(!rb23Arms(b).length&&P?.type==='rb23-roll')return er23DrawBank(P.t<P.tell?'fold':'roll',P.t<P.tell?Math.min(8,Math.floor(P.t/P.tell*9)):Math.floor((P.t-P.tell)*24)%ER23_ART.banks.roll.count,b.x,b.y,b.parts[0].flash>0);
- const frame=v18Frame(b),n=Math.floor(b._r30.clock*V18_ART.models.infused.fps)%16;
+ const frame=v18Frame(b),n=b._r30.v18._bi24Frame??Math.floor(b._r30.clock*V18_ART.models.infused.fps)%16;
  for(const p of b.parts){if(p.destroyed)continue;let a=frame[p.id];
   if(p.id==='core'&&P?.type==='rb23-eye'&&P.t<P.tell){const phase=Math.min(2,Math.floor(P.t/P.tell*3)),q=ER23_ART.images['er23_host_core_'+n+'_charge'+phase];if(q)a={...a,key:q.key};}
   v18Cell(a,b.x,b.y,v18Size(b));if(p.flash>0)v18Cell(a,b.x,b.y,v18Size(b),1,true);
@@ -106,7 +106,7 @@ function rb23SceneTick(b,dt){const S=b._r30,N=S.v18,D=dr5State(b);dr5Protect(b,d
  if(t>=4&&!R.line1){R.line1=true;dr5Say(b,run.pilot.toUpperCase(),'What the heck was that?');rb23Log('pilot-question');}
  if(t>=6.4&&!R.line2){R.line2=true;dr5Say(b,run.pilot.toUpperCase(),"Uhh, what's going on...?");}
  if(t>=10.4&&!R.silence){R.silence=true;dr5Say(b,run.pilot.toUpperCase(),'...');r30Sound('combatAlien0927');rb23Log('symbiote-heart-rise');}
- if(t>=14&&!R.fuse){R.fuse=true;D.radio=null;r30Sound('teleportIn');rb23Log('matter-fusion');}
+ if(t>=14&&!R.fuse){R.fuse=true;D.radio=null;r30Sound('combatEnergy0927');rb23Log('matter-fusion');}
  if(t>=17&&t<23){const u=(t-17)/6,n=Math.min(24,Math.floor(24*Math.pow(u,1.65)));
   while(R.bolts<n){R.bolts++;r30Sound('combatBeam0927');rb23Log('corrupted-lightning',{number:R.bolts});}R.boltPhase=(24*Math.pow(u,1.65))%1;}
  if(t>=23&&R.bolts<24){R.bolts=24;rb23Log('corrupted-lightning',{number:24});r30Sound('bossWeaponCharge');}

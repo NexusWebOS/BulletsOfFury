@@ -1,0 +1,52 @@
+[
+  {
+    "asset_id": "cf26878d-9f75-49be-89db-499eb5566ad0",
+    "sha12": "b741ece769bb",
+    "label": "frontL native identity"
+  },
+  {
+    "asset_id": "34d47f14-48a2-4581-bac6-e8839c66c48f",
+    "sha12": "5d09587cb004",
+    "label": "frontL eight-pose walk source"
+  },
+  {
+    "asset_id": "19b3d58b-1788-4973-afe0-788b6fa36dbc",
+    "sha12": "21d053184333",
+    "label": "frontR native identity"
+  },
+  {
+    "asset_id": "752ecc8b-4792-421b-9899-44319c6590db",
+    "sha12": "41fbe5520154",
+    "label": "frontR eight-pose walk source"
+  },
+  {
+    "asset_id": "1af53861-9256-4803-80a9-028d035b63d2",
+    "sha12": "b3c85a738a6e",
+    "label": "rearL native identity"
+  },
+  {
+    "asset_id": "d448e591-796c-4edf-8a9f-d68c87bff97a",
+    "sha12": "aa223c145cc8",
+    "label": "rearL eight-pose walk source"
+  },
+  {
+    "asset_id": "469adbb9-2875-4ceb-81dd-61394c757fe1",
+    "sha12": "8f079e6d705c",
+    "label": "rearR native identity"
+  },
+  {
+    "asset_id": "7c9b9c27-731a-45cb-a528-4700a0081506",
+    "sha12": "f4a6450bcc6b",
+    "label": "rearR eight-pose walk source"
+  },
+  {
+    "asset_id": "97389be6-208b-4b71-b0c7-e7b843d12899",
+    "sha12": "9f5d1106ce4f",
+    "label": "red eye aperture source"
+  },
+  {
+    "asset_id": "6dd5142b-3d0c-41d9-91e3-4279c140c094",
+    "sha12": "7379c52cd75c",
+    "label": "eight-pose red eye laser flare"
+  }
+]

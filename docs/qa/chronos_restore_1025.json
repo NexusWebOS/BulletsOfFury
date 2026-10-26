@@ -1,0 +1,321 @@
+{
+  "checks": [
+    {
+      "name": "Chrome native depth attack includes second overhead, left and right",
+      "passed": true,
+      "data": [
+        {
+          "type": "depth-phase",
+          "time": 0.4666666666666666,
+          "state": "giant_windup",
+          "x": 340,
+          "y": 260,
+          "scale": 1
+        },
+        {
+          "type": "depth-phase",
+          "time": 1.016666666666668,
+          "state": "giant_rise",
+          "x": 340,
+          "y": 260,
+          "scale": 1
+        },
+        {
+          "type": "depth-phase",
+          "time": 1.9666666666666646,
+          "state": "giant_bg_drop",
+          "x": 340,
+          "y": -210,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 2.716666666666662,
+          "state": "giant_bg_land",
+          "x": 340,
+          "y": 180,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 3.016666666666661,
+          "state": "giant_bg_jump",
+          "x": 340,
+          "y": 180,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 3.866666666666658,
+          "state": "giant_warn",
+          "x": 340,
+          "y": 125,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 4.466666666666656,
+          "state": "giant_dive",
+          "x": 340,
+          "y": 125,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 5.116666666666654,
+          "state": "giant_sweep",
+          "x": 365.1527864785839,
+          "y": 176.5318777650515,
+          "scale": 1.65
+        },
+        {
+          "type": "double-and-sides-start",
+          "time": 5.33333333333332
+        },
+        {
+          "type": "second-down",
+          "time": 5.999999999999984
+        },
+        {
+          "type": "left-swing",
+          "time": 6.516666666666649
+        },
+        {
+          "type": "right-swing",
+          "time": 7.0833333333333135
+        },
+        {
+          "type": "depth-phase",
+          "time": 7.516666666666645,
+          "state": "giant_recover",
+          "x": 419.53577426128055,
+          "y": 621.2371061396673,
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "name": "Chrome displays distinct overhead and both twist banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Red native depth attack includes second overhead, left and right",
+      "passed": true,
+      "data": [
+        {
+          "type": "depth-phase",
+          "time": 8.800000000000017,
+          "state": "giant_windup",
+          "x": 340,
+          "y": 260,
+          "scale": 1
+        },
+        {
+          "type": "depth-phase",
+          "time": 9.083333333333364,
+          "state": "giant_rise",
+          "x": 340,
+          "y": 260,
+          "scale": 1
+        },
+        {
+          "type": "depth-phase",
+          "time": 9.566666666666721,
+          "state": "giant_bg_drop",
+          "x": 340,
+          "y": -210,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 9.950000000000074,
+          "state": "giant_bg_land",
+          "x": 340,
+          "y": 180,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 10.100000000000081,
+          "state": "giant_bg_jump",
+          "x": 340,
+          "y": 180,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 10.533333333333436,
+          "state": "giant_warn",
+          "x": 340,
+          "y": 125,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 10.833333333333451,
+          "state": "giant_dive",
+          "x": 340,
+          "y": 125,
+          "scale": 0.36
+        },
+        {
+          "type": "depth-phase",
+          "time": 11.166666666666801,
+          "state": "giant_sweep",
+          "x": 365.1527864785839,
+          "y": 176.5318777650515,
+          "scale": 1.65
+        },
+        {
+          "type": "double-and-sides-start",
+          "time": 11.283333333333474
+        },
+        {
+          "type": "second-down",
+          "time": 11.616666666666823
+        },
+        {
+          "type": "left-swing",
+          "time": 11.883333333333503
+        },
+        {
+          "type": "right-swing",
+          "time": 12.16666666666685
+        },
+        {
+          "type": "depth-phase",
+          "time": 12.383333333333528,
+          "state": "giant_recover",
+          "x": 419.53577426128055,
+          "y": 621.2371061396673,
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "name": "Red displays distinct overhead and both twist banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rage hammer sequence runs at twice attack speed",
+      "passed": true,
+      "data": {
+        "normal": 515,
+        "rage": 261
+      }
+    },
+    {
+      "name": "Ball phase fires no lasers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Projectile flashes red in actual ball pixels",
+      "passed": true,
+      "data": {
+        "red": 4832,
+        "white": 0,
+        "flash": 0.16
+      }
+    },
+    {
+      "name": "Missile flashes white in actual ball pixels",
+      "passed": true,
+      "data": {
+        "red": 0,
+        "white": 4542,
+        "flash": 0.12
+      }
+    },
+    {
+      "name": "Ball hit flash expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Raised healing hammer is above body, visible and missile-counterable",
+      "passed": true,
+      "data": {
+        "key": "c27_windup_chrome_16",
+        "head": {
+          "x": 265.4829964714492,
+          "y": 159.99999999999997
+        },
+        "body": 412.28760337301844,
+        "open": true,
+        "prompt": {
+          "x": 265.4829964714492,
+          "y": 53.59941520467834,
+          "bottom": 99.09941520467834,
+          "hammerTop": 109.09941520467834
+        }
+      }
+    },
+    {
+      "name": "Ordinary shot cannot interrupt healing",
+      "passed": true,
+      "data": {
+        "charging": "charging",
+        "knock": false
+      }
+    },
+    {
+      "name": "Missile on overhead hammer cancels healing and knocks tool away",
+      "passed": true,
+      "data": {
+        "charging": "cancelled",
+        "knock": true
+      }
+    },
+    {
+      "name": "Raised healing hammer is above body, visible and missile-counterable",
+      "passed": true,
+      "data": {
+        "key": "c27_windup_red_16",
+        "head": {
+          "x": 265.4829964714492,
+          "y": 159.99999999999997
+        },
+        "body": 412.28760337301844,
+        "open": true,
+        "prompt": {
+          "x": 265.4829964714492,
+          "y": 53.59941520467834,
+          "bottom": 99.09941520467834,
+          "hammerTop": 109.09941520467834
+        }
+      }
+    },
+    {
+      "name": "Ordinary shot cannot interrupt healing",
+      "passed": true,
+      "data": {
+        "charging": "charging",
+        "knock": false
+      }
+    },
+    {
+      "name": "Missile on overhead hammer cancels healing and knocks tool away",
+      "passed": true,
+      "data": {
+        "charging": "cancelled",
+        "knock": true
+      }
+    },
+    {
+      "name": "Rage charge selects red animated transformation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page/console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "passed": 17,
+  "failed": 0
+}

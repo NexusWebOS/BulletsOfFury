@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 3662910b-b978-4976-89fd-786159e78921\njob_id: 3662910b-b978-4976-89fd-786159e78921\ndescription: FRAME FORMAT256x256, same camera/scale, all anatomy connected, no scenery, no fading, no parts separated. Rotate the WHOLE connected robot CLOCKWISE through left profile into the rear view. His ONE weapon arm stays FULLY EXTENDED STRAIGHT at shoulder height throughout; the long hammer points OUTWARD beyond his straight elbow. Helmet, shoulders, hips, knees and boots all visibly turn together through a 180-degree half spin. Maintain rigid weapon geometry; no wrist-only circle and no bending the arm across his body. Smooth airborne combat turn, no walking. Finish in exact rear pose.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025250\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3662910b-b978-4976-89fd-786159e78921\")\nasset_id: 5e98d241-e114-5e98-b5af-6efdfe11d02f\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

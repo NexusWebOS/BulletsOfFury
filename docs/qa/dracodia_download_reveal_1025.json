@@ -1,0 +1,99 @@
+{
+  "scope": "Authored turning symbiote carrier downloads the actual live Dracodia final form with continuous pose, scale and pixels",
+  "native": {
+    "passed": 17,
+    "failed": 0,
+    "report": "_shots/dracodia_download_reveal_1025/probe/report.json",
+    "pixelChecks": [
+      {
+        "name": "The completed body enters speech without a position jump",
+        "passed": true,
+        "data": {
+          "before": [
+            340,
+            212.7153523047101
+          ],
+          "after": [
+            340,
+            212.7153523047101
+          ]
+        }
+      },
+      {
+        "name": "Completed download pixels match the actual native final-form renderer",
+        "passed": true,
+        "data": {
+          "different": 0,
+          "opaque": 245760
+        }
+      },
+      {
+        "name": "Download begins with the same authored turning carrier pixels",
+        "passed": true,
+        "data": {
+          "different": 0,
+          "opaque": 245760
+        }
+      }
+    ]
+  },
+  "video": {
+    "path": "_shots/dracodia_transformation_1025/take-4835283b/dracodia-final-transformation.mp4",
+    "seconds": 36.10940000000596,
+    "decodedPeakDb": -5.1,
+    "nativeFps": 58.87663600058846,
+    "checks": {
+      "noPageOrConsoleErrors": true,
+      "noAssetErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true,
+      "nativeDamageStartsCheckpoint": true,
+      "all24LightningBeats": true,
+      "downloadCompletes": true,
+      "finalArenaRevealed": true,
+      "nativeLightningAudioPlayed": true,
+      "nativeFinalBodyDownloaded": true,
+      "downloadEnergyReplacesTeleportCue": true
+    },
+    "chapters": {
+      "collapse": 1.7006333333452543,
+      "symbiote": 12.300633333345253,
+      "download": 16.200633333345255,
+      "lightning": 20.900633333345255,
+      "storm": 25.800633333345257,
+      "complete": 26.920633333345254,
+      "reveal": 31.300633333345257
+    },
+    "report": "_shots/dracodia_transformation_1025/take-4835283b/report.json"
+  },
+  "playback": {
+    "url": "http://127.0.0.1:53746/_shots/dracodia_transformation_1025/take-4835283b/dracodia-final-transformation.mp4",
+    "checks": {
+      "decodes1280x800": true,
+      "lightningPlaysWithAudio": true,
+      "stormPlaysWithAudio": true,
+      "revealPlaysWithAudio": true,
+      "byteRangeSeeking": true,
+      "noBrowserErrors": true
+    },
+    "errors": []
+  },
+  "syntax": {
+    "assets/game.js": 0,
+    "assets/dracodia_rebirth_1023.js": 0,
+    "assets/dracodia_download_reveal_1025.js": 0
+  },
+  "requiredSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "reason": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs aborts before assertions."
+  },
+  "sourceHashes": {
+    "assets/dracodia_download_reveal_1025.js": "6ab1ed9de3d54c67315703fab4fca4ec065bb8b21594184b37c6b2516f788811",
+    "assets/dracodia_rebirth_1023.js": "df7bb030356acf516071e2beeedf6e2b934ecc8889a512c7bfb07a65e6e9a084",
+    "index.html": "5b46b0c95b764cbb4b16565d0c813edfa27a71a02450d0285ed3a99441f2fca2"
+  },
+  "method": "Native Chromium loop and actual drawImage pixels. Explicit native-damage checkpoint starts the continuous recorded rebirth. No animation timers or phases skipped. Native speech finishes naturally before the separate damage fixture."
+}

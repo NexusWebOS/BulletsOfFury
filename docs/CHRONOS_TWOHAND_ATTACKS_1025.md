@@ -1,0 +1,6 @@
+## October25 — Restore original two-handed hammer attacks
+
+Mike requires the original two-handed attack poses. Restored whole H22 blue_slam and blue_counter_left/right banks into C27 windup, strike, retract, takeoff, land and left/right owners, regular/chromium only. 238 normalized samples, fixed448 cells/chest pivot, one proportional scale per bank; original tip coordinates transformed with the same geometry. No separate held tool or generation. Original spin remains; held spell charge now uses the existing two-handed charge pose. Permanent red rage stays unarmed. Owning build_chronos_final_1025.py calls restore_chronos_twohand_attacks_1025.py last, preventing rebuild regression.
+
+Native attack checks16/16 and current spin/contact/dodge/recoil/flash/rage contract14/14. Original obsolete probe reports15/1 because it expects red rage to hold a hammer; retained as historical and superseded by probe_chronos_twohand_spin_1025.py. Actual native regular/chromium overhead/side screenshots inspected at _shots/hammer_twohand_1025/contact.png. Syntax passes; required test_fl exits1 before assertions/final summary due missing retired_art_archive_1022.cjs. Existing full-fight video predates this repair. No commit/push.
+

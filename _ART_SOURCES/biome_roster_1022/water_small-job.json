@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: bba38874-7fc4-4756-8e84-6d7d063fed0e\njob_id: bba38874-7fc4-4756-8e84-6d7d063fed0e\nmodel: pro\ndescription: FRAME FORMAT: 192 x192 transparent pixels. Fixed fuselage center pivot96,96, one common proportional scale, reserve at least20 pixels clear transparent margin on all sides. Crisp detailed 16/32-bit arcade pixel art, clean single-pixel outlines, sharp metallic shading. STRICT ORTHOGRAPHIC TOP VIEW looking directly down onto aircraft. Nose points straight DOWN toward bottom edge, rear engines at top. Symmetrical wings, never diagonal or isometric. One complete aircraft centered and uncropped, no background or shadow plate, no text, no external bullets or muzzle flash. Small WATER RIPTIDE interceptor jet, manta-like swept wings but clearly a mechanical aircraft. Deep navy armor, azure cobalt panels, aqua cyan glowing channels, pale pearl highlights. Two forward water-pressure cannon ports, twin rear aqua engine nozzles. Sleek narrow nose. Aquatic powered fighter, no purple void effects, no stone, no tank treads.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 10222005\nasset_id: 85e0208b-07ae-5051-9688-23c1ccf2658a\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"bba38874-7fc4-4756-8e84-6d7d063fed0e\")"
+    }
+  ],
+  "isError": false
+}

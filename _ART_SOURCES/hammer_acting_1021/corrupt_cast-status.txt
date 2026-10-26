@@ -1,0 +1,10 @@
+status: completed
+id: a96fe63a-b334-4911-932c-6095ddb719cb
+job_id: a96fe63a-b334-4911-932c-6095ddb719cb
+frame: 16 of 17
+asset_id: d689f914-de5a-5f6f-b0a6-643eee346bb6
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0283 in credits
+download: https://api.pixellab.ai/mcp/images/a96fe63a-b334-4911-932c-6095ddb719cb/download?index=16

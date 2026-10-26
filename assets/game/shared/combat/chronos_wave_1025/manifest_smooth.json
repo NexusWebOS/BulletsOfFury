@@ -1,0 +1,17 @@
+{
+  "image": "wave_smooth.png",
+  "width": 2560,
+  "height": 2560,
+  "columns": 8,
+  "rows": 4,
+  "frameWidth": 320,
+  "frameHeight": 640,
+  "pivot": [
+    160,
+    24
+  ],
+  "frames": 28,
+  "sustainFrames": 24,
+  "fps": 24,
+  "pixellabJob": "a99208a6-648c-4232-99fd-fd2dd53f0386"
+}

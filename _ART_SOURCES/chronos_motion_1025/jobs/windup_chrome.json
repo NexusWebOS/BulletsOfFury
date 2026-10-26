@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 1dbad181-a3a3-4cb5-aecc-71dfc505b01e\njob_id: 1dbad181-a3a3-4cb5-aecc-71dfc505b01e\ndescription: FRAME FORMAT:256x256 per frame, shared reactor pivot128,116, common proportional scale, transparent margins. Fixed camera and body scale; animate joint motion around stable torso center. Preserve the same robot identity and armor. The tiny magenta dot is a fist registration mark: keep it centered on that same closed fist throughout. NO HAMMER, NO SHAFT, NO NEW OBJECTS; the real weapon is attached later. No detached anatomy, no camera movement, no zoom, no body fading. Spring from the crouch into a second jump, bend the knees airborne, then lift the ONE marked weapon fist up and back above the shoulder into a powerful overhead windup. Twist hips and shoulders; free hand balances separately. Do not clasp both hands together.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025010\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"1dbad181-a3a3-4cb5-aecc-71dfc505b01e\")\nasset_id: 20001fb2-d5ff-50ce-859a-ba412acd1dfa\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

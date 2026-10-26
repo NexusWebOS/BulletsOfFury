@@ -1,0 +1,10 @@
+status: completed
+id: c512226f-f377-4222-a9fa-c1fef92b5878
+job_id: c512226f-f377-4222-a9fa-c1fef92b5878
+frame: 16 of 17
+asset_id: 7ff25f48-8012-58ca-9cf8-c39c868f5159
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0542 in credits
+download: https://api.pixellab.ai/mcp/images/c512226f-f377-4222-a9fa-c1fef92b5878/download?index=16

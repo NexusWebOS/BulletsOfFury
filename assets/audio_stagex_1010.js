@@ -29,7 +29,7 @@ updatePlay=function(dt){const wasIntro=h3RebelIntro(),r=AP10_X.base.play.apply(t
 };
 drawWorld=function(dt){const r=AP10_X.base.world.apply(this,arguments),I=AP10_X.intro;if(!I)return r;
  ctx.save();worldXformEscape();ctx.imageSmoothingEnabled=false;
- if(XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),w=VW*.63,h=w*im.height/im.width;
+ if(!cc21Live()&&XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),w=VW*.63,h=w*im.height/im.width;
   ctx.drawImage(im,(VW-w)/2,VH*.22-h/2,w,h);}
  campText(I.route==='left'?'HARRIER PURSUIT':'REBEL FURY',VW/2,VH*.37,17,'#e8edf8');
  const full=I.route==='left'?'Fury flight, all five ships accounted for. The Harrier is ahead.':'Five against five. Fury flight, form up. We finish this together.';

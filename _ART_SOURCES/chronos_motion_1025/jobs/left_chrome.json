@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 2bf3c092-4552-4348-95c9-8ab0996029ea\njob_id: 2bf3c092-4552-4348-95c9-8ab0996029ea\ndescription: FRAME FORMAT256x256 transparent, reactor128,116, same scale/camera and robot. All anatomy connected. Tiny magenta mark tracks the same closed fist. NO WEAPON, shaft or new objects; real hammer attached later. No zoom or fade. Turn the WHOLE ROBOT strongly toward screen LEFT into the supplied side-profile endpoint. Twist hips, planted feet, torso, helmet and shoulders together, not just the arm. Sweep the marked closed weapon fist outward from its low side guard through a broad leftward strike arc. Clear anticipation then powerful follow-through.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025012\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2bf3c092-4552-4348-95c9-8ab0996029ea\")\nasset_id: b884e542-e61e-5367-8fc3-31c4c59331b7\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

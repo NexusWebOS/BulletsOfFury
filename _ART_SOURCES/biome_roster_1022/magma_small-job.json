@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 71c9cb7a-df34-427d-933e-5d07ea5c9fca\njob_id: 71c9cb7a-df34-427d-933e-5d07ea5c9fca\nmodel: pro\ndescription: FRAME FORMAT: 192 x192 transparent pixels. Fixed fuselage center pivot96,96, one common proportional scale, reserve at least20 pixels clear transparent margin on all sides. Crisp detailed 16/32-bit arcade pixel art, clean single-pixel outlines, sharp metallic shading. STRICT ORTHOGRAPHIC TOP VIEW looking directly down onto aircraft. Nose points straight DOWN toward bottom edge, rear engines at top. Symmetrical wings, never diagonal or isometric. One complete aircraft centered and uncropped, no background or shadow plate, no text, no external bullets or muzzle flash. Small agile MAGMA INTERCEPTOR jet. Obsidian black basalt armor, glowing orange molten fissures INSIDE the metal armor, deep crimson wing edges, white-hot small thrusters. Sharp compact swept wings, pointed nose, two clearly visible nose cannon ports. This is a lava-powered military aircraft, not a creature or loose flame.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 10222000\nasset_id: 61ce7a1c-2846-55b2-9b32-a55db8a6105c\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"71c9cb7a-df34-427d-933e-5d07ea5c9fca\")"
+    }
+  ],
+  "isError": false
+}

@@ -15,7 +15,7 @@ wm26Draw=function(g,family,x,y,angle,progress,size,color){
 };
 function s3kOwns(b){return !!b&&run.stage===3&&['frostcruiser','cryospear'].includes(b._ship);}
 function enemyOrdnanceElement(q){
-  if(!q||q._coldTracer1002||q.mg||/shard|lance|beam|laser|pellet|slug/i.test(q.kind||'')&&!q._s3LaserBall)return null;
+  if(!q||/bullet/i.test(q.kind||'')||q._coldTracer1002||q.mg||/shard|lance|beam|laser|pellet|slug/i.test(q.kind||'')&&!q._s3LaserBall)return null;
   if(q._er26Art==='fire'||q._er26Art==='ice')return q._er26Art;
   if(q._tb28&&['magma','ice','fire'].includes(q._tb28.art))return q._tb28.art==='ice'?'ice':'fire';
   if(q._s3LaserBall)return q._s3ThermoArt==='fire'?'fire':'ice';

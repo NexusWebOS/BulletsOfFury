@@ -1,0 +1,10 @@
+status: completed
+id: f3f89ad8-67e4-4141-ae06-1e7857cf19b3
+job_id: f3f89ad8-67e4-4141-ae06-1e7857cf19b3
+frame: 8 of 9
+asset_id: c81ea62a-dce7-5505-ab6f-96c504ae0fe1
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: 1 generation
+download: https://api.pixellab.ai/mcp/images/f3f89ad8-67e4-4141-ae06-1e7857cf19b3/download?index=8

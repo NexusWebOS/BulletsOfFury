@@ -54,3 +54,6 @@ _ART_SOURCES/rotation5_0930/*.png
 
 # Local archived source/prototype assets; excluded from playable builds.
 UNUSED_ASSETS/
+
+# Local Storyroom save history (kept on disk, not shipped).
+_ART_SOURCES/storyboard_1024/backups/

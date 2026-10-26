@@ -1,0 +1,417 @@
+{
+  "attacks": {
+    "checks": [
+      {
+        "name": "regular windup original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "regular strike original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "regular retract original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "regular takeoff original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "regular land original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "regular left original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "regular right original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome windup original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome strike original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome retract original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome takeoff original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome land original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome left original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "chrome right original two-handed frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native depth strike selects two-handed source with live hit flash",
+        "passed": true,
+        "data": {
+          "source": "ha21_h22_blue_slam_armor_11",
+          "hands": 2,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "No browser errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "spin": {
+    "checks": [
+      {
+        "name": "regular uses all eight complete original two-handed frames",
+        "passed": true,
+        "data": [
+          {
+            "pixels": 18734,
+            "atHead": 121,
+            "key": "c27_spin_regular_0",
+            "tip": {
+              "x": 82.15204678362574,
+              "y": 285.5204678362573
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 0
+          },
+          {
+            "pixels": 18191,
+            "atHead": 121,
+            "key": "c27_spin_regular_1",
+            "tip": {
+              "x": 92.81871345029239,
+              "y": 284.0233918128655
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 1
+          },
+          {
+            "pixels": 15428,
+            "atHead": 121,
+            "key": "c27_spin_regular_2",
+            "tip": {
+              "x": 102.76023391812868,
+              "y": 282.22222222222223
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 2
+          },
+          {
+            "pixels": 16456,
+            "atHead": 121,
+            "key": "c27_spin_regular_3",
+            "tip": {
+              "x": 102.5029239766082,
+              "y": 286.7134502923977
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 3
+          },
+          {
+            "pixels": 17514,
+            "atHead": 121,
+            "key": "c27_spin_regular_4",
+            "tip": {
+              "x": 403.2514619883041,
+              "y": 284.15204678362574
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 4
+          },
+          {
+            "pixels": 16884,
+            "atHead": 121,
+            "key": "c27_spin_regular_5",
+            "tip": {
+              "x": 388.98245614035085,
+              "y": 284.15204678362574
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 5
+          },
+          {
+            "pixels": 14249,
+            "atHead": 121,
+            "key": "c27_spin_regular_6",
+            "tip": {
+              "x": 383.0175438596491,
+              "y": 284.15204678362574
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 6
+          },
+          {
+            "pixels": 18923,
+            "atHead": 121,
+            "key": "c27_spin_regular_7",
+            "tip": {
+              "x": 400.1637426900585,
+              "y": 283.2631578947368
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 7
+          }
+        ]
+      },
+      {
+        "name": "regular measured head is on real rendered hammer pixels",
+        "passed": true,
+        "data": [
+          121,
+          121,
+          121,
+          121,
+          121,
+          121,
+          121,
+          121
+        ]
+      },
+      {
+        "name": "regular whole body and held hammer retain real hit flash",
+        "passed": true,
+        "data": {
+          "white": 12226,
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "chrome uses all eight complete original two-handed frames",
+        "passed": true,
+        "data": [
+          {
+            "pixels": 18813,
+            "atHead": 121,
+            "key": "c27_spin_chrome_0",
+            "tip": {
+              "x": 82.15204678362574,
+              "y": 285.5204678362573
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 0
+          },
+          {
+            "pixels": 18251,
+            "atHead": 121,
+            "key": "c27_spin_chrome_1",
+            "tip": {
+              "x": 92.81871345029239,
+              "y": 284.0233918128655
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 1
+          },
+          {
+            "pixels": 15455,
+            "atHead": 121,
+            "key": "c27_spin_chrome_2",
+            "tip": {
+              "x": 102.76023391812868,
+              "y": 282.22222222222223
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 2
+          },
+          {
+            "pixels": 16478,
+            "atHead": 121,
+            "key": "c27_spin_chrome_3",
+            "tip": {
+              "x": 102.5029239766082,
+              "y": 286.7134502923977
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 3
+          },
+          {
+            "pixels": 17532,
+            "atHead": 121,
+            "key": "c27_spin_chrome_4",
+            "tip": {
+              "x": 403.2514619883041,
+              "y": 284.15204678362574
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 4
+          },
+          {
+            "pixels": 16924,
+            "atHead": 121,
+            "key": "c27_spin_chrome_5",
+            "tip": {
+              "x": 388.98245614035085,
+              "y": 284.15204678362574
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 5
+          },
+          {
+            "pixels": 14291,
+            "atHead": 121,
+            "key": "c27_spin_chrome_6",
+            "tip": {
+              "x": 383.0175438596491,
+              "y": 284.15204678362574
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 6
+          },
+          {
+            "pixels": 19004,
+            "atHead": 121,
+            "key": "c27_spin_chrome_7",
+            "tip": {
+              "x": 400.1637426900585,
+              "y": 283.2631578947368
+            },
+            "whole": true,
+            "hands": 2,
+            "frame": 7
+          }
+        ]
+      },
+      {
+        "name": "chrome measured head is on real rendered hammer pixels",
+        "passed": true,
+        "data": [
+          121,
+          121,
+          121,
+          121,
+          121,
+          121,
+          121,
+          121
+        ]
+      },
+      {
+        "name": "chrome whole body and held hammer retain real hit flash",
+        "passed": true,
+        "data": {
+          "white": 11849,
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "Shooting held hammer recoils the whole two-handed turn without detaching or stunning",
+        "passed": true,
+        "data": {
+          "hit": true,
+          "spinBefore": 0,
+          "spinAfter": -0.7,
+          "back": 0.48,
+          "state": "whirlwind",
+          "destroyed": false,
+          "knock": false,
+          "throw": false
+        }
+      },
+      {
+        "name": "Hit flash expires during the native moving spin",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Actual original hammer path damages the ship on contact",
+        "passed": true,
+        "data": {
+          "shield": 2,
+          "events": [
+            {
+              "kind": "contact",
+              "label": "Chronos extended hammer rotation",
+              "seat": 1
+            }
+          ],
+          "head": {
+            "x": 176.40538011695907,
+            "y": 299.5204678362573
+          },
+          "player": {
+            "x": 182.15204678362574,
+            "y": 299.5204678362573
+          }
+        }
+      },
+      {
+        "name": "Moving away from the hammer path avoids spin contact",
+        "passed": true,
+        "data": 3
+      },
+      {
+        "name": "HAMMER entrance and dance keep their original owner",
+        "passed": true,
+        "data": {
+          "dance": null,
+          "intro": null
+        }
+      },
+      {
+        "name": "Native spin draws one intact actor and zero detached-tool overlays",
+        "passed": true,
+        "data": [
+          "c27_spin_chrome_0"
+        ]
+      },
+      {
+        "name": "Permanent red rage remains unarmed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "passed": 14,
+    "failed": 0
+  }
+}

@@ -165,7 +165,8 @@ const BOFCinematicDirector=(()=>{
   if(s.t>=Math.max(b.text.length/38+2.7,b.duration||0)){s.shown=b.text.length;advance();}
  }
  function fit(key,x,y,w,h){if(!key||!XART.rdy(key))return false;const im=XART.get(key),k=Math.min(w/im.width,h/im.height),dw=im.width*k,dh=im.height*k;ctx.drawImage(im,Math.round(x+(w-dw)/2),Math.round(y+(h-dh)/2),Math.round(dw),Math.round(dh));return true;}
- function draw(){if(!scene)return;const s=scene,b=s.beats[s.i],W=s.live?VW:cutsceneViewWidth(),H=VH,key=artFor(b);
+ function draw(){if(!scene||scene.combatLive)return; // Live Chronos lines belong to the external Command HUD radio.
+  const s=scene,b=s.beats[s.i],W=s.live?VW:cutsceneViewWidth(),H=VH,key=artFor(b);
   ctx.save();ctx.imageSmoothingEnabled=false;
   if(s.live){worldXformEscape();}
   else{
@@ -223,7 +224,7 @@ drawCutsceneState=function(dt){
 const CIN30_PLAY=updatePlay;
 updatePlay=function(dt){if(BOFCinematicDirector.live){const s=BOFCinematicDirector.current,chronos=s.id==='cronos'||s.id.startsWith('ht23-announcement-')||s.beats.some(b=>/^chronos$/i.test(b.who||''));BOFCinematicDirector.tick(dt);if(!chronos)return;}return CIN30_PLAY(dt);};
 const CIN30_WORLD=drawWorld;
-drawWorld=function(dt){const r=CIN30_WORLD(BOFCinematicDirector.live?0:dt);if(BOFCinematicDirector.live)BOFCinematicDirector.draw();return r;};
+drawWorld=function(dt){const s=BOFCinematicDirector.current;const r=CIN30_WORLD(s?.live&&!s.combatLive?0:dt);if(BOFCinematicDirector.live)BOFCinematicDirector.draw();return r;};
 // Keep the Stage 6 sky moving throughout contact dialogue; only combat waits.
 const CIN30_BG=drawBG;
 drawBG=function(dt){return CIN30_BG(BOFCinematicDirector.live&&run.stage===6?(BOFCinematicDirector.current.frameDt||0):dt);};

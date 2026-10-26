@@ -1,0 +1,17 @@
+{
+  "image": "wave.png",
+  "width": 1280,
+  "height": 1280,
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 320,
+  "frameHeight": 640,
+  "pivot": [
+    160,
+    24
+  ],
+  "frames": 8,
+  "source": "Generated broad electrical wave, normalized uniformly from 1254 square",
+  "palette": "blue-white, runtime red-white mapping",
+  "animation": "0-1 launch; 2-5 sustain; 6-7 fragment release"
+}

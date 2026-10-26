@@ -1,0 +1,888 @@
+{
+  "owner": "_BUILD_SOURCE/build_dracodia_dna_1026.py",
+  "runtime": "assets/dracodia_dna_1026.js",
+  "generatedCredits": 0,
+  "sourceCount": 44,
+  "codeCrop": [
+    149,
+    96,
+    64,
+    256
+  ],
+  "fragmentCell": [
+    64,
+    64
+  ],
+  "skinCanvas": [
+    256,
+    256
+  ],
+  "normalization": "Native even source canvases, common crop, proportional transforms only. Original canvases/crops preserved; two isolated palette-only sheets, no shared atlas edits or per-pose fitting.",
+  "timing": {
+    "start": 6.2,
+    "skeleton": 7,
+    "absorb": 13.8,
+    "finished": 15.8
+  },
+  "source": [
+    {
+      "key": "aa5_code_0",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_0.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "5cf0b85d78304ba597caf032af5e7de1d76570caeec46a38b57b5c6c911336c1",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_1",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_1.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "07aa5b3b119ba3f00885098a2b4875c8aa3924c61a22f891787547957e130a82",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_2",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_2.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "e564e0d6994e190551ceb9837acf3a1afd492ed34ea6a1dfb202884048107b4e",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_3",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_3.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "f2dd042be7dd809085a591b212f3f0f51aa4aa6331d9a879ac12f14d3fdfdd36",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_4",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_4.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "24a6d1813abe6ccfb1e45d51d11246cb05c6d9f7ae5f177be6cb1f6472ee7dea",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_5",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_5.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "8fbdbfe9765e819e312b54e5db0e746c777fd1b9e82d496d665bd470b8002465",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_6",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_6.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "732248a5d01389c50d85ee96fd5a2eb6f26ff1189caf7604dd5e8148c92e8c1d",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_7",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_7.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "f46c6bbda31a31278bc428d85a09228d2ffc6c20e56c4f33a3a2820c26904303",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_8",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_8.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "bb812316476d2e3a48525a8c078cde81c50c6f6535b2c17f18e5f488c2ed43ef",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_9",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_9.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "9086efdbf0c5b218cd9264ffc1fab24aaed884c45980c7f2067bf101c91834e8",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_10",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_10.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "d89ed333d87af082f5b3e5314afa665cd7eaa90a2125a68062a8e74284b9b995",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "aa5_code_11",
+      "path": "assets/game/levels/stage_08/stage/alien_arena_1005/code_11.png",
+      "size": [
+        362,
+        362
+      ],
+      "sha256": "baf34df4da98d594c9a5d28d050d8e5f0e14edaee4a774c4c14caeeb9e0e487c",
+      "role": "authored binary strand"
+    },
+    {
+      "key": "sv10_crawl_00",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_00.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "c5a62296bb76433c0cc308dcc509272c631d307e15b35d53097657086e36a938",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_01",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_01.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "906a12ae6ac9bc6913b7c977650de01fbd794e39377a95d478fc2dddbf002aa6",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_02",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_02.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "a5440fa0aeadf40b178a3a49e54d996dafada02c6a891290089933f472512263",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_03",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_03.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "1596b0373f75e44347a64fd61b8863bd06b3cb88a5c008ff2fcb010af34e1352",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_04",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_04.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "f3567037e5348c5bfccd7ab8e0bbac84e9ad30d319a4a47e5a058f2aceb1d45a",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_05",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_05.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "8f14e887eec0e75c889344e2eb825d4aa1d0132f22eb539d2dac67bd8b2a6ced",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_06",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_06.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "1d6c63cb19eb04530812e685bb097d5f204722d74693a845c61631d184d2c9d4",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_07",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_07.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "b391dabb44cb271109712f4c4041028ed00a03d06656a9149b9b5532ca54806f",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_08",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_08.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "e98de606179e1116459e5bf5b8f5ad082257f659fd46fd7440c9577c50df2254",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_09",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_09.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "a737c3ca595e967776e1bbe292e80c3a4ad157315f5f1852a594c265e7491316",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_10",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_10.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "1f3012716f5dc114a6866dc34b85f950081733be2a40128dc67d3b9277e6bd7f",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_11",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_11.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "c04188ae0f2ffb5a8349a44d3c72534b314d1dd74173657512c8585c447ee0fb",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_12",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_12.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "a642ba87a4240bc5db1a4ec068f52f4a1abd1c5a22df83d0982debc4be16d782",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_13",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_13.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "edca5925eda6680dfb731575a1b315ff204708375438620e0915070bb9f9075d",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_14",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_14.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "e0f5044e0690f22fa8ad78c02dcf1cb5d3b3ede7296de56134c3b5c102b0badf",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_15",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_15.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "04fb565640cab10490330ae9f70b7f64e2859d46b456a5702401a5660acb3132",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_16",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_16.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "817ea0d6dcebce3b074642c0d56baf968f692d1516b7e248dffdf4af102594f1",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_17",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_17.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "cb674da7a38a2424d571568327377d463dd3122ab390eb22081f03b4070d25ab",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_18",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_18.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "46469511a577b9cf734b5b7bcc811b2664effad12e6a0c629d826acb0a44cc64",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_19",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_19.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "4c2215863f20f0e5a35956d9d353eeb2182bce7dbfdbbae4bc025b7c2840b87a",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_20",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_20.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "8388450b327482753749200ce41b399e33224bfc4bca8faf652b32129df93638",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_21",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_21.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "df938eea5f4bcb6ea29b70fe2cfb9c4ffd77ad4e0fb46c82ea822b941bf0434b",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_22",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_22.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "bd6cd816ab38e8a4fef64fba223ccb919e1f790373c320be5d1218bba11633b4",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_23",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_23.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "2da3bf11a16f9e16aa9d601ccb2c05506bf5e6fce43ef0737a0b97ab6c384f0e",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_24",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_24.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "0fcb3512a2ff74fe1071bc6da51e18d4436f6faeb57d0090d3e0c1f30b4db750",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_25",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_25.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "644759c709b3871f7d1184b608da8bafed53e16f6ed828c6fbfdaff999150d75",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_26",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_26.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "e820040c529fd33b056c412d539ecf0be52737f83c7fed848404ba30b2ba0868",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_27",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_27.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "9ddae23d2be9e9b4d6a922de3b19208a9728c30a03d5ee6b18a6663f6ee0df1c",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_28",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_28.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "91d90dafa936197d6bcd67db0026c1277607880c342081ad3f802538eb76c115",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_29",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_29.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "b5b37360f730315cb912388f4a42162903b2ce363c9064f3b2fc285a2723bebf",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_30",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_30.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "5f2f241d56f17d87d9f13b16b2226785a6ab65d36832cd8ef5c299ab4291bffc",
+      "role": "authored liquid symbiote lobe"
+    },
+    {
+      "key": "sv10_crawl_31",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_31.png",
+      "size": [
+        384,
+        384
+      ],
+      "sha256": "85f5e645e7d3271ba1fd286e61084133597051335d455dc64b6f828399b8dcb2",
+      "role": "authored liquid symbiote lobe"
+    }
+  ],
+  "palette": {
+    "stops": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        24.0,
+        9.0,
+        40.0
+      ],
+      [
+        80.0,
+        25.0,
+        117.0
+      ],
+      [
+        177.0,
+        33.0,
+        157.0
+      ],
+      [
+        242.0,
+        62.0,
+        139.0
+      ],
+      [
+        255.0,
+        163.0,
+        205.0
+      ],
+      [
+        255.0,
+        236.0,
+        248.0
+      ],
+      [
+        255.0,
+        255.0,
+        255.0
+      ]
+    ],
+    "banks": {
+      "code": {
+        "key": "rd28p_code",
+        "path": "assets/game/levels/stage_08/boss/dracodia_dna_1026/code-palette.webp",
+        "w": 362,
+        "h": 362,
+        "cols": 4,
+        "count": 12,
+        "sha256": "4bc7a85e4e9011ee9ea7be622b7157e14cb89c321398867e4c2f147cd0464c90"
+      },
+      "fluid": {
+        "key": "rd28p_fluid",
+        "path": "assets/game/levels/stage_08/boss/dracodia_dna_1026/fluid-palette.webp",
+        "w": 384,
+        "h": 384,
+        "cols": 8,
+        "count": 32,
+        "sha256": "beec0e9b2909fb5ec2e6b6ae7917602bdcf27d7fdf83886694eb9b96852dd3b8"
+      }
+    },
+    "metrics": [
+      {
+        "key": "aa5_code_0",
+        "changedPixels": 34433,
+        "maxLuminanceError": 0.4894000000000034,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4894000000000034
+      },
+      {
+        "key": "aa5_code_1",
+        "changedPixels": 34975,
+        "maxLuminanceError": 0.4858000000000047,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4858000000000047
+      },
+      {
+        "key": "aa5_code_2",
+        "changedPixels": 34884,
+        "maxLuminanceError": 0.4858000000000047,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4858000000000047
+      },
+      {
+        "key": "aa5_code_3",
+        "changedPixels": 35175,
+        "maxLuminanceError": 0.49100000000000676,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.49100000000000676
+      },
+      {
+        "key": "aa5_code_4",
+        "changedPixels": 35427,
+        "maxLuminanceError": 0.48859999999999815,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.48859999999999815
+      },
+      {
+        "key": "aa5_code_5",
+        "changedPixels": 36057,
+        "maxLuminanceError": 0.49340000000000117,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.49340000000000117
+      },
+      {
+        "key": "aa5_code_6",
+        "changedPixels": 35487,
+        "maxLuminanceError": 0.48699999999999477,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.48699999999999477
+      },
+      {
+        "key": "aa5_code_7",
+        "changedPixels": 36662,
+        "maxLuminanceError": 0.49100000000000676,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.49100000000000676
+      },
+      {
+        "key": "aa5_code_8",
+        "changedPixels": 35112,
+        "maxLuminanceError": 0.48380000000000223,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.48380000000000223
+      },
+      {
+        "key": "aa5_code_9",
+        "changedPixels": 36394,
+        "maxLuminanceError": 0.48340000000000316,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.48340000000000316
+      },
+      {
+        "key": "aa5_code_10",
+        "changedPixels": 35288,
+        "maxLuminanceError": 0.4858000000000047,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4858000000000047
+      },
+      {
+        "key": "aa5_code_11",
+        "changedPixels": 36682,
+        "maxLuminanceError": 0.49340000000000117,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.49340000000000117
+      },
+      {
+        "key": "sv10_crawl_00",
+        "changedPixels": 2593,
+        "maxLuminanceError": 0.468999999999987,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.468999999999987
+      },
+      {
+        "key": "sv10_crawl_01",
+        "changedPixels": 2507,
+        "maxLuminanceError": 0.4731999999999985,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4731999999999985
+      },
+      {
+        "key": "sv10_crawl_02",
+        "changedPixels": 2502,
+        "maxLuminanceError": 0.4888000000000048,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4888000000000048
+      },
+      {
+        "key": "sv10_crawl_03",
+        "changedPixels": 2482,
+        "maxLuminanceError": 0.4760000000000062,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4760000000000062
+      },
+      {
+        "key": "sv10_crawl_04",
+        "changedPixels": 2517,
+        "maxLuminanceError": 0.4788000000000068,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4788000000000068
+      },
+      {
+        "key": "sv10_crawl_05",
+        "changedPixels": 2558,
+        "maxLuminanceError": 0.4660000000000082,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4660000000000082
+      },
+      {
+        "key": "sv10_crawl_06",
+        "changedPixels": 2500,
+        "maxLuminanceError": 0.4896000000000029,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4896000000000029
+      },
+      {
+        "key": "sv10_crawl_07",
+        "changedPixels": 2568,
+        "maxLuminanceError": 0.46059999999999945,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.46059999999999945
+      },
+      {
+        "key": "sv10_crawl_08",
+        "changedPixels": 2356,
+        "maxLuminanceError": 0.4486000000000061,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4486000000000061
+      },
+      {
+        "key": "sv10_crawl_09",
+        "changedPixels": 2573,
+        "maxLuminanceError": 0.48560000000000514,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.48560000000000514
+      },
+      {
+        "key": "sv10_crawl_10",
+        "changedPixels": 2269,
+        "maxLuminanceError": 0.4911999999999992,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4911999999999992
+      },
+      {
+        "key": "sv10_crawl_11",
+        "changedPixels": 2633,
+        "maxLuminanceError": 0.4883999999999986,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4883999999999986
+      },
+      {
+        "key": "sv10_crawl_12",
+        "changedPixels": 2327,
+        "maxLuminanceError": 0.48400000000000176,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.48400000000000176
+      },
+      {
+        "key": "sv10_crawl_13",
+        "changedPixels": 2323,
+        "maxLuminanceError": 0.4736000000000047,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4736000000000047
+      },
+      {
+        "key": "sv10_crawl_14",
+        "changedPixels": 2470,
+        "maxLuminanceError": 0.490000000000002,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.490000000000002
+      },
+      {
+        "key": "sv10_crawl_15",
+        "changedPixels": 2527,
+        "maxLuminanceError": 0.4883999999999986,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4883999999999986
+      },
+      {
+        "key": "sv10_crawl_16",
+        "changedPixels": 2569,
+        "maxLuminanceError": 0.46059999999999945,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.46059999999999945
+      },
+      {
+        "key": "sv10_crawl_17",
+        "changedPixels": 2669,
+        "maxLuminanceError": 0.4795999999999978,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4795999999999978
+      },
+      {
+        "key": "sv10_crawl_18",
+        "changedPixels": 2578,
+        "maxLuminanceError": 0.4761999999999915,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4761999999999915
+      },
+      {
+        "key": "sv10_crawl_19",
+        "changedPixels": 2359,
+        "maxLuminanceError": 0.47859999999999303,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.47859999999999303
+      },
+      {
+        "key": "sv10_crawl_20",
+        "changedPixels": 2525,
+        "maxLuminanceError": 0.46179999999998955,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.46179999999998955
+      },
+      {
+        "key": "sv10_crawl_21",
+        "changedPixels": 2400,
+        "maxLuminanceError": 0.4814000000000007,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4814000000000007
+      },
+      {
+        "key": "sv10_crawl_22",
+        "changedPixels": 2550,
+        "maxLuminanceError": 0.47179999999999467,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.47179999999999467
+      },
+      {
+        "key": "sv10_crawl_23",
+        "changedPixels": 2360,
+        "maxLuminanceError": 0.4748000000000019,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4748000000000019
+      },
+      {
+        "key": "sv10_crawl_24",
+        "changedPixels": 2576,
+        "maxLuminanceError": 0.4756,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4756
+      },
+      {
+        "key": "sv10_crawl_25",
+        "changedPixels": 2610,
+        "maxLuminanceError": 0.49159999999999826,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.49159999999999826
+      },
+      {
+        "key": "sv10_crawl_26",
+        "changedPixels": 2478,
+        "maxLuminanceError": 0.48399999999999466,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.48399999999999466
+      },
+      {
+        "key": "sv10_crawl_27",
+        "changedPixels": 2653,
+        "maxLuminanceError": 0.4761999999999915,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4761999999999915
+      },
+      {
+        "key": "sv10_crawl_28",
+        "changedPixels": 2553,
+        "maxLuminanceError": 0.4883999999999986,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4883999999999986
+      },
+      {
+        "key": "sv10_crawl_29",
+        "changedPixels": 2388,
+        "maxLuminanceError": 0.4823999999999984,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4823999999999984
+      },
+      {
+        "key": "sv10_crawl_30",
+        "changedPixels": 2528,
+        "maxLuminanceError": 0.4800000000000111,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4800000000000111
+      },
+      {
+        "key": "sv10_crawl_31",
+        "changedPixels": 2416,
+        "maxLuminanceError": 0.4865999999999957,
+        "alphaPreserved": true,
+        "decodedAlphaPreserved": true,
+        "decodedMaxLuminanceError": 0.4865999999999957
+      }
+    ],
+    "note": "Dracodia violet/red-magenta energy and pale highlights. Green-biased pixels only; native alpha, luminance and dark metallic outlines retained."
+  }
+}

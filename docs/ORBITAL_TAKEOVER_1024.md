@@ -1,0 +1,16 @@
+## October24 — Attached symbiote, native purple portal and angled downlink
+
+Mike requested no symbiote fade, an angled satellite and the existing purple PixelLab portal. Removed liquid alpha fades: emergence is a portal-plane reveal; the same full-opacity fluid remains anchored at the hull through takeover and on the rotated satellite during Earth transmission. Native PL11 amethyst_gate form/loop/close replaces C22 void swirl, all portal keys prewarmed. Satellite and liquid share one rotated local coordinate system; transmission starts at the measured lower emitter and follows its angle to Earth. Satellite moved below the header with full visible silhouette. No new art generation/credits.
+
+Refreshed native storyboard and21sec video: docs/previews/opening_storyboard_1024/dracodia-attached-purple-downlink.mp4. Inspected portal/attached takeover/angled Earth pixels. Native opening15/0 plus attachment/portal/alignment/shared crackle decode/play8/0; no page/console errors. Syntax passes. Required full suite exits1 before assertions due existing absent retired_art_archive_1022.cjs. No commit/push.
+
+## October24 — Faceless symbiote orbital takeover and Earth downlink
+
+Mike rejected the face-bearing remnant and choppy satellite animation, then requested a better satellite and transmission to Earth. orbital_takeover_1024.js supersedes only opening replay shots: 8sec portal/faceless fluid approach, 8sec matched-hull infection spreading from attachment, 5sec visible downward data pulses to authored Earth, then original HQ blackout/pilot sequence. No demon face, old remnant or morphing satellite animation bank used. Blank dialogue frames omitted only for silent replay shots. Native music/progression/actual pilot aircraft unchanged; Storyroom snapshots this baseline before user edits.
+
+Built-in image generation supplied a matched detailed clean/infected satellite pair (archived full source; exported common512px canvases). PixelLab supplied faceless128px liquid and64x256 signal, plus41 motion frames. Inspected all41: rejected shrink/disappearance frames20 onward; exported stable0..19 at common128px canvas/pivot and ping-pong playback. Infection reveals matching plate without rescaling metalwork. Authored Earth from homecoming owner. Builder owns losslessWebP sheets, geometry, hashes, JS registration and taxonomy. No atlas loader changes.
+
+PixelLab stalled512Pro job cancelled. Credit balance0.79->0.65USD, no top-up; completed jobs saved in source jobs.json. Built-in satellite generation separate. Final MP4 is docs/previews/opening_storyboard_1024/dracodia-symbiote-downlink.mp4 (21sec,820x512, video only). Native Chromium renderer output encoded directly through bundled imageio-ffmpeg; decoded late frame inspected independently. Browser playback has no media error. Existing video.html and storyboard updated.
+
+Verification: native opening15/0 (all9 aircraft, order, completiononce, shared beep decode/play, no page/console errors), Storyroom runtime8/0. Source frame contact sheet and native/decoded frames inspected. Syntax passes. Required full test_fl.js still exits1 before assertions/finalsummary because retired_art_archive_1022.cjs is absent from downloaded build. No full-suite pass claimed. No commit/push; previous work retained.
+

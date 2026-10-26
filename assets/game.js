@@ -3,6 +3,14 @@
 /* ============================================================
    BULLETS OF FURY  —  lost 16/32-bit top-down rail shooter
    single self-contained file · ColeForge Studios
+   ENGINE ROTATION RULE — all players, enemies, projectiles, bullet-hell attacks,
+   bosses, minibosses and final bosses use authored directional/rotation frames.
+   Select actual frames by heading; never rotate a static sprite through HTML/CSS
+   or canvas transforms as a substitute. Keep common pivots and proportional scale.
+   ENGINE INTERCEPTION RULE — ordinary enemy bullets, including boat spread fire,
+   cannot be shot down by any player weapon, from their first live frame onward.
+   Use enemyOrdnanceCanIntercept; magma/ice balls and physical missiles retain
+   their explicit interception rules. Authored defensive clears remain separate.
    ENGINE ART RULE — every boss SHOOT! header uses Stage6's authored SHOOT graphic
    through bossShootGraphic, never a substitute bitmap-text/reticle combination.
    ENGINE ART RULE — player lasers and ordinary enemy/boss lasers use the authored
@@ -2070,6 +2078,7 @@ const XART=(function(){
   X._src.arch_leap_shock=_archRoot+'fx_0923/hammer_leap_shock.png';
   for(const family of ['body','gun','fx'])for(let f=0;f<8;f++)X._src['arch_blaster_'+family+'_'+f]=_archRoot+'blaster_0922/'+family+'_'+f+'.png';
   X._src.arsenal_frame_0922='assets/game/shared/ui/ui/arsenal_0922/frame.png';
+  X._src.alert_critical_1024='assets/game/shared/ui/approach_alert_1024/critical_enemy.webp';
   for(let i=1;i<=5;i++)X._src['micon_chaingun_'+i]=_archRoot+'chaingun_icon_'+i+'.png';
   /* THE FORGE'S OWN ICONS (0917): one badge per element x forgeable slot, generated against the
      authored badge strip (docs/proofs/forge_icons_0917). Loose files under NEW keys - a cell beats
@@ -27281,7 +27290,7 @@ function hitSubBoss(dmg, hx, hy){
   if(b._rzb && typeof razorbackHit==='function'){ const _rd=razorbackHit(b,dmg,hx,hy); if(!(_rd>0)) return; dmg=_rd; }
   /* the Tempest Leviathan routes a round into an aperture pool or the hull, clamped at its phase gate (0913b) */
   if(b._tlv && typeof tempestHit==='function'){ const _td=tempestHit(b,dmg,hx,hy); if(!(_td>0)) return; dmg=_td; }
-  b.hp-=dmg; if(!(_mrPiece&&_mrPiece!=='core'))b.flash=0.18;   // 1017: a modular piece flashes alone
+  b.hp-=dmg; if(!(_mrPiece&&_mrPiece!=='core'))markHit(b,.18);   // 1017: a modular piece flashes alone
   weaponHitSfx('normal');
   /* ⚠ THIS LINE WAS INSIDE THE COMMENT ABOVE (drop 0810l). The `//` ran on past "visually" and
      swallowed it whole, so no sub-boss damage has EVER reached the stats screen — the miniboss
@@ -33010,31 +33019,19 @@ function drawRetina(){
 }
 function drawWarning(){
   if(warnT<=0) return;
-  const a=Math.min(1, warnT>2.0 ? (2.4-warnT)/0.4 : (warnT<0.4? warnT/0.4 : 1));   // fade in/out only
+  drawApproachAlert(Math.max(0,2.4-warnT),warnT);
+}
+function drawApproachAlert(elapsed,remaining,cy=VH*.42){
+  // The new emblem includes Mike's warning copy in its authored metal panel.
+  if(typeof XART==='undefined'||!XART.rdy('alert_critical_1024')) return;
+  const im=XART.get('alert_critical_1024'), iw=im.naturalWidth||im.width, ih=im.naturalHeight||im.height;
+  if(!iw||!ih) return;
+  const a=clamp(Math.min(elapsed/.25,remaining/.30),0,1);
+  const w=Math.min(360,VW*.74),h=w*ih/iw;
   ctx.save();
-  ctx.globalAlpha=a;
-  /* A MINIBOSS GETS THE APPROACH GRAPHIC (drop 0801fq). Mike: "When a miniboss
-     approaches, use the enemy approaching graphic."
-
-     Both the sub-boss and the main boss raised the same alert_up banner, so the
-     two arrivals read identically. enemy_approaching was registered and only ever
-     used in the rival cutscene. The boss keeps alert_up - it is the bigger event
-     and should stay the louder sign. */
-  const _wk = (typeof warnKind!=='undefined' && warnKind==='sub'
-               && typeof XART!=='undefined' && XART.rdy('enemy_approaching'))
-              ? 'enemy_approaching' : 'alert_up';
-  if(typeof XART!=='undefined' && XART.rdy(_wk)){
-    const im=XART.get(_wk);
-    const w=VW*(_wk==='enemy_approaching'?0.56:0.5), h=w*(im.naturalHeight/im.naturalWidth);
-    ctx.shadowColor='#ff2a1a'; ctx.shadowBlur=18;
-    ctx.drawImage(im, VW/2-w/2, VH*0.42-h/2, w, h);
-    ctx.shadowBlur=0;
-    // (subtitle text under the alert box removed per Mike)
-  } else {
-    ctx.textAlign='center'; ctx.shadowColor='#ff2a1a'; ctx.shadowBlur=16;
-    ctx.fillStyle='#ff4030'; ctx.font='bold 30px "BOFmil", monospace';
-    ctx.fillText('W A R N I N G', VW/2, VH*0.42);
-  }
+  ctx.globalAlpha=a*(.92+.08*Math.cos(elapsed*Math.PI*4));
+  ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,VW/2-w/2,cy-h/2,w,h);
   ctx.restore();
 }
 function drawSpecialHUD(){
@@ -33361,7 +33358,7 @@ function _stageLoadDecode(im){
 function stageLoadBegin(n,keys){
   if(typeof XART==='undefined'||!XART.raw)return 0;
   const seen={},roots=[];
-  for(const logical of (keys||[])){
+  for(const logical of ['alert_critical_1024',...(keys||[])]){
     const root=(XART.root?XART.root(logical):logical);
     if(!root||seen[root]||!XART._src[root])continue;
     /* Archived prototype cells remain available to local art tools. Broad legacy prefix lists
@@ -35266,7 +35263,8 @@ function updatePlay(dt){
     if(SB && _sbScrollOK && _sbWaveOK && !subBossTriggered && !subBossDone && stageTimer>=curStage.length*SB.at && _sbLive<=9){
       subBossTriggered=true; warnT=2.4; warnKind='sub';
         (Audio.SFX.alertDanger||Audio.SFX.bossAlarm)();
-      if(typeof storyPlay==='function') storyPlay(run.stage,'miniboss'); if(Audio.SFX.enemyApproach) Audio.SFX.enemyApproach(); shake=Math.max(shake,4);
+      story=null;_bossCard=null;
+      if(Audio.SFX.enemyApproach) Audio.SFX.enemyApproach(); shake=Math.max(shake,4);
     }
     if(warnT>0){
       const _pw=warnT; warnT-=dt;
@@ -35305,8 +35303,7 @@ function updatePlay(dt){
       /* the new klaxon, with bossAlarm behind it. 2.60s TAME gate - a warning that can retrigger
          is not a warning. */
       (Audio.SFX.alertBossIncoming||Audio.SFX.bossAlarm)(); shake=Math.max(shake,4);
-      if(typeof arcStageCard==='function'){ const _bw=arcStageCard(run.stage,'boss_warning'); if(_bw) _bossCard={lines:_bw,t:0}; }
-      if(typeof storyPlay==='function') storyPlay(run.stage,'boss');   // one line at a time, no box
+      story=null;_bossCard=null;
       /* Clear anything still driving down at the dam. On stage 1 the level halts at the wall, so a
          tank that spawned a moment earlier would keep rolling out of the concrete. */
       if(run.stage===1){
@@ -39346,7 +39343,7 @@ function hammerBossTick(b,dt){
   h.chainMuzzle=Math.max(0,(h.chainMuzzle||0)-dt);h.chainDebrisT=Math.max(0,(h.chainDebrisT||0)-dt);h.chainSfxCd=Math.max(0,(h.chainSfxCd||0)-dt);if(h.state==='chaingun')h.chainSpin=(h.chainSpin||0)+dt*(10+36*(h.chainHeat||0));if(h.leapFx)h.leapFx=Math.min(.56,h.leapFx+dt);
   h.whirlHitCd=Math.max(0,(h.whirlHitCd||0)-dt);
   h.t+=dt;h.shotCd-=dt;h.hitCd=Math.max(0,(h.hitCd||0)-dt);const homeX=(camLeftX()+camRightX())/2,homeY=VH*.34,fur=hammerFurious(),hp=b.hp/(b.maxhp||1);
-  if(h.mode==='hammer'&&hp<=.5)h.phasePending=true;
+  if(h.mode==='hammer'&&!h.chainDestroyed&&hp<=.5&&!(run.stage===5&&h._hf22Red&&!b._gp4Host&&!b._hammerTime?.hama))h.phasePending=true;
   if(h.phasePending&&['hammer','leap_reset','shield'].includes(h.state)&&h.ballSeen){if(!h.whirlSeen)hammerWhirlStart(b);else hammerPhaseTwoStart(b);}
   else if(h.phasePending&&!h.ballSeen&&['hammer','leap_reset','shield'].includes(h.state)){hammerBallArm(b);hammerState(b,'curl');}
   if(hammerStormTick(b,dt))return;
@@ -39398,9 +39395,9 @@ function hammerBossTick(b,dt){
 
   else if(h.state==='mega_charge'){b.x=h.hkMegaX??b.x;combatWarningTick(b,'archmage-fused-wave',h.t,1.65);if(h.t>1.65){h.beamHit=false;h.shotCd=.48;hammerState(b,'mega_beam');}}
   else if(h.state==='mega_beam'){
-    if(h.shotCd<=0){h.shotCd=.58;const side=Math.random()<.5?-1:1;hammerEnergyBomb(b.x+side*48,b.y+18,Math.PI/2+side*rnd(.18,.55),3.5);}
+    if(h.shotCd<=0&&!(typeof c25Own==='function'&&c25Own(b))){h.shotCd=.58;const side=Math.random()<.5?-1:1;hammerEnergyBomb(b.x+side*48,b.y+18,Math.PI/2+side*rnd(.18,.55),3.5);}
     const w=hammerChromiumWidth(h.t,hammerEradDuration(),hammerEradWidth());
-    if(h.t<hammerEradDuration()&&player.y>=b.y-20&&player.y<=PLAY.y+PLAY.h&&Math.abs(player.x-b.x)<w*.5&&!player.dead&&h.hitCd<=0){h.hitCd=.8;playerHit();if(player.dead){player._hammerEvap=.01;player._eradicated=true;}}
+    if(h.t<hammerEradDuration()&&player.y>=b.y-20&&player.y<=PLAY.y+PLAY.h&&(typeof c41Hit==='function'&&c25Own(b)?c41Hit({x:b.x,y:b.y-20},{x:b.x,y:PLAY.y+PLAY.h},h.t,hammerEradDuration(),player):Math.abs(player.x-b.x)<w*.5)&&!player.dead&&h.hitCd<=0){h.hitCd=.8;playerHit();if(player.dead){player._hammerEvap=.01;player._eradicated=true;}}
     if(h.t>=hammerEradDuration()){if(h.mode==='chaingun')hammerChainStart(b);else hammerStormStart(b);}
   }
   else if(h.state==='spell'){
@@ -40254,7 +40251,7 @@ function whvLaunchJet(b){
 }
 function whvPartDamage(b,id,dmg){
   const W=b._whv, p=W.parts[id]; if(!p||p.dead)return 0;
-  p.hp-=dmg; p.fl=0.14;
+  p.hp-=dmg; if(typeof gp4FlashRequest!=='function'||gp4FlashRequest(p,'fl',.14))p.fl=0.14;
   if(p.hp<=0){
     p.hp=0; p.dead=true; const q=whvPartPos(b,id), big=id==='door'?70:96;
     if(typeof d27ModuleRupture==='function')d27ModuleRupture(b,p,{...q,w:big,h:big},'red');
@@ -40569,7 +40566,7 @@ function warhiveDamage(b,dmg){
   b._whvHit=null;
   if(id==='L'||id==='R'||id==='door'){ markHit(b); if(typeof weaponHitSfx==='function')weaponHitSfx('normal'); whvPartDamage(b,id,dmg);
     if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg; }
-  else if(id==='hull'){W.core=Math.max(0,W.core-dmg);b.flash=.14;markHit(b);weaponHitSfx('normal');if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;}
+  else if(id==='hull'){W.core=Math.max(0,W.core-dmg);markHit(b,.14);weaponHitSfx('normal');if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;}
   b.hp=Math.max(0,W.core)+Object.values(W.parts).reduce((sum,p)=>sum+Math.max(0,p.hp),0);
   return 0;
 }
@@ -47040,7 +47037,7 @@ function s5GateOutDraw(){
 }
 function s5RunTick(dt){
   if(typeof run==='undefined' || !run || run.stage!==5 || run._s9taken){ s5run=null; return; }
-  if(typeof bossActive!=='undefined' && bossActive) return;
+  if(bossActive || warnKind==='boss' || debugFight?.role==='boss') return;
   const len=(curStage && curStage.length) ? curStage.length : 56;
   if(!s5run && stageTimer > len*S5R_START) s5RunInit();
   if(!s5run || s5run.done) return;
@@ -47301,6 +47298,7 @@ function wdDriveBackDraw(){
 }
 /* SCREEN SPACE, after drawWorld's restore: the pass flash and the gate counter */
 function s5RunHudDraw(){
+  if(bossActive || warnKind==='boss' || (boss?._hammer && run.stage===5) || debugFight?.stage===5&&debugFight.role==='boss') return;
   if(wdrive.flash>0){
     ctx.save(); ctx.globalCompositeOperation='lighter';
     ctx.fillStyle='rgba(180,236,255,'+(Math.min(1,wdrive.flash)*0.40).toFixed(3)+')'; ctx.fillRect(0,0,VW,VH);
@@ -47348,6 +47346,7 @@ function s9WarpCarry(dt){
   }catch(_s9c){ if(player){ player.x=sx; player.y=W.gone ? -4000 : sy; } }
 }
 function s5RunDraw(){
+  if(bossActive || warnKind==='boss' || (boss?._hammer && run.stage===5) || debugFight?.stage===5&&debugFight.role==='boss') return;
   if(!s5run || typeof XART==='undefined') return;
   /* 0912v: the refraction pass that lived here ran INSIDE the camera and re-drew the background up to
      200px sideways - the jank. The drive draws in screen space now, from the scenery hook (wdDriveBackDraw). */
@@ -47392,6 +47391,7 @@ function s5RunDraw(){
 /* The main gate is scenery behind the craft. Draw only its thick near/lower rim after the
    player so crossing the opening has real 3/4 occlusion instead of looking like a flat decal. */
 function s5RunForegroundDraw(){
+  if(bossActive || warnKind==='boss' || (boss?._hammer && run.stage===5) || debugFight?.stage===5&&debugFight.role==='boss') return;
   if(!s5run || typeof XART==='undefined') return;
   for(const g of s5run.gates){
     if(g.y < -96 || g.y > VH+96) continue;
@@ -69924,12 +69924,12 @@ function debugJump(entry){
     stageTimer=9999;
     mapScroll=entry.stage===1?Math.max(0,levelScrollRange()-220):(DEBUG_BOSS_SCROLL[entry.stage]||0);
     bossWarned=true; warnT=2.4; warnKind='boss';
-    try{ if(typeof arcStageCard==='function'&&typeof _bossCard!=='undefined'){ const _bw=arcStageCard(run.stage,'boss_warning'); if(_bw) _bossCard={lines:_bw,t:0}; } }catch(_e){}
   }
+  story=null;_bossCard=null;
   try{ Audio.SFX.bossAlarm(); }catch(_e){}
   shake=Math.max(shake,4);
   player.invuln=Math.max(player.invuln||0, 2.5);       // long enough to see where you are
-  floatText(VW/2, 120, 'DEBUG: '+entry.name, '#8de23a');
+  // The debug menu identifies the fight; its approach uses the same sign-only alert.
 }
 /* every exit a stage can take, while a debug fight is live, lands back on the menu */
 var _DBG_EXITS={};
@@ -74423,17 +74423,14 @@ function drawWorld(dt){
   hammerStormHudHazardDraw();
   drawSpecialHUD();
   ctx.restore();
-  s6WingRadioDraw();
+  if(warnT<=0)s6WingRadioDraw();
   /* RADIO. Drawn last so it sits over the HUD, ducked automatically while a boss is alive so a
      line never competes with a bullet pattern (delivery rule 5). */
-  if(typeof storyTick==='function'){ storyTick(1/60); if(bossActive) storyDuck(); storyDraw(); }
-  if(typeof s7WardenRadioDraw==='function')s7WardenRadioDraw();
-  if(run.stage===6){s6OpeningRadioDraw();s6WingChoiceDraw();}
-  /* the BOSS WARNING card rides the alert, then clears itself */
-  if(_bossCard){ _bossCard.t+=1/60;
-    if(_bossCard.t>3.2) _bossCard=null;
-    else if(typeof arcDraw==='function') arcDraw(_bossCard.lines, VW/2, VH*0.30, 13,
-      clamp(_bossCard.t/1.2,0,1), '#ff6b4a'); }
+  if(typeof storyTick==='function'){ storyTick(1/60); if(bossActive) storyDuck(); if(warnT<=0)storyDraw(); }
+  if(warnT<=0&&typeof s7WardenRadioDraw==='function')s7WardenRadioDraw();
+  if(warnT<=0&&run.stage===6){s6OpeningRadioDraw();s6WingChoiceDraw();}
+  // Approach warnings are sign-only; discard any legacy queued title card.
+  _bossCard=null;
   if(typeof drawIncomingWarnings==='function') drawIncomingWarnings();
   if(typeof drawCallout==='function') drawCallout(dt);
   // bomb white flash
@@ -74909,14 +74906,7 @@ function drawRivalSeq(dt){
       break;
     case 'banner': {
       if(!rival._raVO){ rival._raVO=true; if(Audio.SFX&&Audio.SFX.restrictedarea)Audio.SFX.restrictedarea(); }
-      const a=Math.min(1, rival.t>1.6?(2.0-rival.t)/0.4:1);
-      ctx.save(); ctx.globalAlpha=Math.max(0,a);
-      if(typeof XART!=='undefined' && XART.rdy('enemy_approaching')){
-        const im=XART.get('enemy_approaching'); const w=VW*0.52, h=w*(im.naturalHeight/im.naturalWidth);
-        ctx.shadowColor='#ff2a1a'; ctx.shadowBlur=18;
-        ctx.drawImage(im,VW/2-w/2,VH*0.4-h/2,w,h);
-      } else { ctx.textAlign='center'; ctx.fillStyle='#ff4030'; ctx.font='bold 26px "BOFmil", monospace'; ctx.fillText('ENEMY APPROACHING',VW/2,VH*0.4); }
-      ctx.restore();
+      drawApproachAlert(rival.t,2.2-rival.t,VH*.4);
       // rival comes up from behind and INCHES toward the player's side while the banner shows
       if(rival.y<-40){ rival.x=psx-70; rival.y=VH+50; }
       rival.y=lerp(rival.y, psy, 0.03);          // slowly rise alongside

@@ -1,0 +1,41 @@
+{
+  "source_job": "1b12770a-6007-4ae8-8750-06309aad112b",
+  "resolution": [
+    128,
+    32
+  ],
+  "frame": {
+    "key": "bet24_elite_frame",
+    "w": 110,
+    "h": 10,
+    "path": "assets/game/shared/ui/beta_elite_1024/frame.png",
+    "sha256": "e667765c5c6691f22d0b28a1927d6773cde147127e5296c2e708f69fee84d488"
+  },
+  "fill": {
+    "key": "bet24_elite_fill",
+    "w": 100,
+    "h": 4,
+    "path": "assets/game/shared/ui/beta_elite_1024/fill.png",
+    "sha256": "f83d88061b75e24154074aa9ec2bb2aef088d64259109b8efbf4d152c9b34439"
+  },
+  "aperture": [
+    5,
+    2,
+    100,
+    4
+  ],
+  "source_crops": {
+    "frame": [
+      9,
+      3,
+      110,
+      10
+    ],
+    "fill_tile": [
+      30,
+      20,
+      2,
+      4
+    ]
+  }
+}

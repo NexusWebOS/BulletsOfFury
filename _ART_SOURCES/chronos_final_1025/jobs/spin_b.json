@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: d8fa34f8-07f2-48d7-b584-7a9bb88ec591\njob_id: d8fa34f8-07f2-48d7-b584-7a9bb88ec591\ndescription: FRAME FORMAT256x256, same camera/scale, all anatomy connected, no scenery, no fading, no parts separated. Continue the WHOLE robot CLOCKWISE from rear view through right profile back to front view. ONE weapon arm remains FULLY EXTENDED STRAIGHT at shoulder height, its long hammer points OUTWARD beyond his fist. Helmet, shoulders, hips, knees and boots turn TOGETHER through remaining180degrees. Finish EXACT supplied original front pose for seamless combat spin. No wrist-only rotation, no hammer crossing his chest, no walking.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025251\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d8fa34f8-07f2-48d7-b584-7a9bb88ec591\")\nasset_id: 4eb9b00b-a9b3-5e45-af60-b5b74c760a7c\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

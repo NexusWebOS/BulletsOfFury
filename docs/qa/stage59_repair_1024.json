@@ -1,0 +1,906 @@
+{
+  "combat": {
+    "passed": 13,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "normal native space laser damages last right turret",
+        "passed": true,
+        "data": {
+          "damage": 10,
+          "targets": [
+            {
+              "id": "bomber-laserR",
+              "valid": true
+            }
+          ],
+          "marks": 1,
+          "kind": "spaceImpact"
+        }
+      },
+      {
+        "name": "normal Retina exposes only surviving right turret",
+        "passed": true,
+        "data": {
+          "damage": 10,
+          "targets": [
+            {
+              "id": "bomber-laserR",
+              "valid": true
+            }
+          ],
+          "marks": 1,
+          "kind": "spaceImpact"
+        }
+      },
+      {
+        "name": "normal held beam reaches right turret and native final exhaustion wins",
+        "passed": true,
+        "data": {
+          "damage": 4,
+          "dead": true,
+          "hp": 0,
+          "pool": 0,
+          "live": 0
+        }
+      },
+      {
+        "name": "hard native space laser damages last right turret",
+        "passed": true,
+        "data": {
+          "damage": 10,
+          "targets": [
+            {
+              "id": "bomber-laserR",
+              "valid": true
+            }
+          ],
+          "marks": 1,
+          "kind": "spaceImpact"
+        }
+      },
+      {
+        "name": "hard Retina exposes only surviving right turret",
+        "passed": true,
+        "data": {
+          "damage": 10,
+          "targets": [
+            {
+              "id": "bomber-laserR",
+              "valid": true
+            }
+          ],
+          "marks": 1,
+          "kind": "spaceImpact"
+        }
+      },
+      {
+        "name": "hard held beam reaches right turret and native final exhaustion wins",
+        "passed": true,
+        "data": {
+          "damage": 4,
+          "dead": true,
+          "hp": 0,
+          "pool": 0,
+          "live": 0
+        }
+      },
+      {
+        "name": "furious native space laser damages last right turret",
+        "passed": true,
+        "data": {
+          "damage": 10,
+          "targets": [
+            {
+              "id": "bomber-laserR",
+              "valid": true
+            }
+          ],
+          "marks": 1,
+          "kind": "spaceImpact"
+        }
+      },
+      {
+        "name": "furious Retina exposes only surviving right turret",
+        "passed": true,
+        "data": {
+          "damage": 10,
+          "targets": [
+            {
+              "id": "bomber-laserR",
+              "valid": true
+            }
+          ],
+          "marks": 1,
+          "kind": "spaceImpact"
+        }
+      },
+      {
+        "name": "furious held beam reaches right turret and native final exhaustion wins",
+        "passed": true,
+        "data": {
+          "damage": 4,
+          "dead": true,
+          "hp": 0,
+          "pool": 0,
+          "live": 0
+        }
+      },
+      {
+        "name": "normal black horizon moves and uses all four warned eye attacks",
+        "passed": true,
+        "data": {
+          "modes": [
+            "entry",
+            "aimed",
+            "orbit",
+            "sweep",
+            "spin"
+          ],
+          "movement": 155.08315905901628,
+          "warnings": 37,
+          "shots": 71,
+          "allFromEye": true,
+          "finite": true,
+          "width": 248,
+          "height": 284
+        }
+      },
+      {
+        "name": "hard black horizon moves and uses all four warned eye attacks",
+        "passed": true,
+        "data": {
+          "modes": [
+            "entry",
+            "aimed",
+            "orbit",
+            "sweep",
+            "spin"
+          ],
+          "movement": 195.36150105768684,
+          "warnings": 46,
+          "shots": 85,
+          "allFromEye": true,
+          "finite": true,
+          "width": 248,
+          "height": 284
+        }
+      },
+      {
+        "name": "furious black horizon moves and uses all four warned eye attacks",
+        "passed": true,
+        "data": {
+          "modes": [
+            "entry",
+            "aimed",
+            "orbit",
+            "sweep",
+            "spin"
+          ],
+          "movement": 195.264360407676,
+          "warnings": 39,
+          "shots": 96,
+          "allFromEye": true,
+          "finite": true,
+          "width": 248,
+          "height": 284
+        }
+      },
+      {
+        "name": "No page/console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "pixels": {
+    "passed": 5,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Actual authored Retina pixels draw over the last live turret",
+        "passed": true,
+        "data": {
+          "marks": [
+            {
+              "phase": "locked",
+              "id": "bomber-laserR",
+              "x": 391.6,
+              "y": 134.016
+            }
+          ],
+          "seen": [
+            {
+              "key": "native-retina-renderer",
+              "a": [
+                -29,
+                -29,
+                58,
+                58
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Black hull shows actual white hit pixels and natural expiry",
+        "passed": true,
+        "data": {
+          "before": 1,
+          "hit": 33802,
+          "after": 1,
+          "timer": 0
+        }
+      },
+      {
+        "name": "Stage9 shields are bounded and hull metadata matches rendered fleet",
+        "passed": true,
+        "data": {
+          "records": [
+            {
+              "name": "shield_void",
+              "size": 133.65,
+              "alpha": 0.38
+            },
+            {
+              "name": "shield_void",
+              "size": 112.05000000000001,
+              "alpha": 0.38
+            },
+            {
+              "name": "shield_void",
+              "size": 144,
+              "alpha": 0.38
+            },
+            {
+              "name": "shield_void",
+              "size": 136.35000000000002,
+              "alpha": 0.38
+            },
+            {
+              "name": "shield_void",
+              "size": 129.60000000000002,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s9interceptor",
+              "span": 117.00000000000001,
+              "w": 117.00000000000001,
+              "h": 117.00000000000001
+            },
+            {
+              "type": "s9ring",
+              "span": 91.00000000000001,
+              "w": 91.00000000000001,
+              "h": 91.00000000000001
+            },
+            {
+              "type": "s9gunship",
+              "span": 122,
+              "w": 122,
+              "h": 122
+            },
+            {
+              "type": "s9prism",
+              "span": 121,
+              "w": 121,
+              "h": 121
+            },
+            {
+              "type": "s9beacon",
+              "span": 109,
+              "w": 109,
+              "h": 109
+            }
+          ]
+        }
+      },
+      {
+        "name": "Repeated native space hits keep one compact spark per area",
+        "passed": true,
+        "data": {
+          "visible": 1,
+          "max": 20,
+          "lifetimes": [
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.14
+          ]
+        }
+      },
+      {
+        "name": "No page/console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "portal_audio": {
+    "passed": 6,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "All60 authored cells render through native drawImage and animate",
+        "passed": true,
+        "data": {
+          "count": 60,
+          "changed": 56
+        }
+      },
+      {
+        "name": "Native eye volleys play decoded approved mixer audio",
+        "passed": true,
+        "data": {
+          "playing": [
+            {
+              "cue": "enemyElectricBolt",
+              "ready": 4,
+              "volume": 0.264
+            },
+            {
+              "cue": "combatOrb0927",
+              "ready": 4,
+              "volume": 0.328
+            }
+          ],
+          "calls": [
+            {
+              "cue": "enemyElectricBolt",
+              "accepted": true
+            }
+          ],
+          "peak": 0.20672278106212616,
+          "context": "running"
+        }
+      },
+      {
+        "name": "Silent volley partners do not stack gun reports",
+        "passed": true,
+        "data": {
+          "playing": [
+            {
+              "cue": "enemyElectricBolt",
+              "ready": 4,
+              "volume": 0.264
+            },
+            {
+              "cue": "combatOrb0927",
+              "ready": 4,
+              "volume": 0.328
+            }
+          ],
+          "calls": [
+            {
+              "cue": "enemyElectricBolt",
+              "accepted": true
+            }
+          ],
+          "peak": 0.20672278106212616,
+          "context": "running"
+        }
+      },
+      {
+        "name": "Animated water covers all viewport corners during travel",
+        "passed": true,
+        "data": {
+          "pixels": {
+            "bright": 5,
+            "width": 480,
+            "height": 512,
+            "phase": "draw",
+            "age": 1.0000000000000013
+          },
+          "overlay": {
+            "visible": true,
+            "w": 1280,
+            "h": 900,
+            "rw": 1280,
+            "rh": 900
+          }
+        }
+      },
+      {
+        "name": "Native portal completes protected travel and map handoff",
+        "passed": true,
+        "data": {
+          "warp": false,
+          "phase": null,
+          "age": null,
+          "state": "stagesel"
+        }
+      },
+      {
+        "name": "No page/console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "preview": {
+    "passed": 6,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "bomber",
+        "passed": true,
+        "status": "Live native encounter \u00b7 GOD enabled"
+      },
+      {
+        "name": "last",
+        "passed": true,
+        "status": "Live native encounter \u00b7 GOD enabled"
+      },
+      {
+        "name": "fleet",
+        "passed": true,
+        "status": "Live native encounter \u00b7 GOD enabled"
+      },
+      {
+        "name": "horizon",
+        "passed": true,
+        "status": "Live native encounter \u00b7 GOD enabled"
+      },
+      {
+        "name": "warp",
+        "passed": true,
+        "status": "Live native encounter \u00b7 GOD enabled"
+      },
+      {
+        "name": "No page errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "baseline": {
+    "rows": [
+      {
+        "diff": "normal",
+        "kind": "spacebomber",
+        "space": true,
+        "mode": "entry",
+        "parts": [
+          {
+            "id": "core",
+            "cell": 0,
+            "x": 340,
+            "y": 138.24,
+            "w": 240,
+            "h": 199.2,
+            "pool": null
+          },
+          {
+            "id": "engineL",
+            "cell": 3,
+            "x": 307.6,
+            "y": 207.95999999999998,
+            "w": 43.199999999999996,
+            "h": 47.80799999999999,
+            "pool": {
+              "id": "engineL",
+              "hp": 250,
+              "max": 250,
+              "flash": 0,
+              "maxhp": 250
+            }
+          },
+          {
+            "id": "engineR",
+            "cell": 3,
+            "x": 372.4,
+            "y": 207.95999999999998,
+            "w": 43.199999999999996,
+            "h": 47.80799999999999,
+            "pool": {
+              "id": "engineR",
+              "hp": 250,
+              "max": 250,
+              "flash": 0,
+              "maxhp": 250
+            }
+          },
+          {
+            "id": "laserL",
+            "cell": 2,
+            "x": 288.4,
+            "y": 134.256,
+            "w": 27.6,
+            "h": 143.42399999999998,
+            "pool": {
+              "id": "laserL",
+              "hp": 250,
+              "max": 250,
+              "flash": 0,
+              "maxhp": 250
+            }
+          },
+          {
+            "id": "laserR",
+            "cell": 2,
+            "x": 391.6,
+            "y": 134.256,
+            "w": 27.6,
+            "h": 143.42399999999998,
+            "pool": {
+              "id": "laserR",
+              "hp": 250,
+              "max": 250,
+              "flash": 0,
+              "maxhp": 250
+            }
+          }
+        ],
+        "targets": [
+          {
+            "id": "bomber-core",
+            "x": 340,
+            "y": 138.24,
+            "hp": 1050,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-engineL",
+            "x": 307.6,
+            "y": 207.95999999999998,
+            "hp": 250,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-engineR",
+            "x": 372.4,
+            "y": 207.95999999999998,
+            "hp": 250,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-laserL",
+            "x": 288.4,
+            "y": 134.256,
+            "hp": 250,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-laserR",
+            "x": 391.6,
+            "y": 134.256,
+            "hp": 250,
+            "dead": false,
+            "valid": true
+          }
+        ]
+      },
+      {
+        "diff": "hard",
+        "kind": "spacebomber",
+        "space": true,
+        "mode": "entry",
+        "parts": [
+          {
+            "id": "core",
+            "cell": 1,
+            "x": 340,
+            "y": 138.24,
+            "w": 240,
+            "h": 199.2,
+            "pool": null
+          },
+          {
+            "id": "engineL",
+            "cell": 3,
+            "x": 307.6,
+            "y": 207.95999999999998,
+            "w": 43.199999999999996,
+            "h": 47.80799999999999,
+            "pool": {
+              "id": "engineL",
+              "hp": 295,
+              "max": 295,
+              "flash": 0,
+              "maxhp": 295
+            }
+          },
+          {
+            "id": "engineR",
+            "cell": 3,
+            "x": 372.4,
+            "y": 207.95999999999998,
+            "w": 43.199999999999996,
+            "h": 47.80799999999999,
+            "pool": {
+              "id": "engineR",
+              "hp": 295,
+              "max": 295,
+              "flash": 0,
+              "maxhp": 295
+            }
+          },
+          {
+            "id": "laserL",
+            "cell": 2,
+            "x": 288.4,
+            "y": 134.256,
+            "w": 27.6,
+            "h": 143.42399999999998,
+            "pool": {
+              "id": "laserL",
+              "hp": 295,
+              "max": 295,
+              "flash": 0,
+              "maxhp": 295
+            }
+          },
+          {
+            "id": "laserR",
+            "cell": 2,
+            "x": 391.6,
+            "y": 134.256,
+            "w": 27.6,
+            "h": 143.42399999999998,
+            "pool": {
+              "id": "laserR",
+              "hp": 295,
+              "max": 295,
+              "flash": 0,
+              "maxhp": 295
+            }
+          }
+        ],
+        "targets": [
+          {
+            "id": "bomber-core",
+            "x": 340,
+            "y": 138.24,
+            "hp": 1239,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-engineL",
+            "x": 307.6,
+            "y": 207.95999999999998,
+            "hp": 295,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-engineR",
+            "x": 372.4,
+            "y": 207.95999999999998,
+            "hp": 295,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-laserL",
+            "x": 288.4,
+            "y": 134.256,
+            "hp": 295,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-laserR",
+            "x": 391.6,
+            "y": 134.256,
+            "hp": 295,
+            "dead": false,
+            "valid": true
+          }
+        ]
+      },
+      {
+        "diff": "furious",
+        "kind": "spacebomber",
+        "space": true,
+        "mode": "entry",
+        "parts": [
+          {
+            "id": "core",
+            "cell": 1,
+            "x": 340,
+            "y": 138.24,
+            "w": 240,
+            "h": 199.2,
+            "pool": null
+          },
+          {
+            "id": "engineL",
+            "cell": 3,
+            "x": 307.6,
+            "y": 207.95999999999998,
+            "w": 43.199999999999996,
+            "h": 47.80799999999999,
+            "pool": {
+              "id": "engineL",
+              "hp": 338,
+              "max": 338,
+              "flash": 0,
+              "maxhp": 338
+            }
+          },
+          {
+            "id": "engineR",
+            "cell": 3,
+            "x": 372.4,
+            "y": 207.95999999999998,
+            "w": 43.199999999999996,
+            "h": 47.80799999999999,
+            "pool": {
+              "id": "engineR",
+              "hp": 338,
+              "max": 338,
+              "flash": 0,
+              "maxhp": 338
+            }
+          },
+          {
+            "id": "laserL",
+            "cell": 2,
+            "x": 288.4,
+            "y": 134.256,
+            "w": 27.6,
+            "h": 143.42399999999998,
+            "pool": {
+              "id": "laserL",
+              "hp": 338,
+              "max": 338,
+              "flash": 0,
+              "maxhp": 338
+            }
+          },
+          {
+            "id": "laserR",
+            "cell": 2,
+            "x": 391.6,
+            "y": 134.256,
+            "w": 27.6,
+            "h": 143.42399999999998,
+            "pool": {
+              "id": "laserR",
+              "hp": 338,
+              "max": 338,
+              "flash": 0,
+              "maxhp": 338
+            }
+          }
+        ],
+        "targets": [
+          {
+            "id": "bomber-core",
+            "x": 340,
+            "y": 138.24,
+            "hp": 1418,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-engineL",
+            "x": 307.6,
+            "y": 207.95999999999998,
+            "hp": 338,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-engineR",
+            "x": 372.4,
+            "y": 207.95999999999998,
+            "hp": 338,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-laserL",
+            "x": 288.4,
+            "y": 134.256,
+            "hp": 338,
+            "dead": false,
+            "valid": true
+          },
+          {
+            "id": "bomber-laserR",
+            "x": 391.6,
+            "y": 134.256,
+            "hp": 338,
+            "dead": false,
+            "valid": true
+          }
+        ]
+      },
+      {
+        "lastRight": 338,
+        "before": 338,
+        "hit": "bomber-core",
+        "targets": [
+          {
+            "id": "bomber-core",
+            "dead": true,
+            "valid": false
+          },
+          {
+            "id": "bomber-engineL",
+            "dead": true,
+            "valid": false
+          },
+          {
+            "id": "bomber-engineR",
+            "dead": true,
+            "valid": false
+          },
+          {
+            "id": "bomber-laserL",
+            "dead": true,
+            "valid": false
+          },
+          {
+            "id": "bomber-laserR",
+            "dead": false,
+            "valid": true
+          }
+        ],
+        "marks": [
+          "bomber-laserR"
+        ]
+      },
+      {
+        "black": 0,
+        "size": [
+          164,
+          199
+        ],
+        "k": 1.1658291457286432
+      },
+      {
+        "black": 3,
+        "size": [
+          164,
+          199
+        ],
+        "k": 1.1658291457286432
+      },
+      {
+        "black": 6,
+        "size": [
+          164,
+          199
+        ],
+        "k": 1.1658291457286432
+      }
+    ],
+    "errors": []
+  },
+  "core": {
+    "exit_code": 1,
+    "assertions_run": 0,
+    "final_summary_reached": false,
+    "missing_helper": "_BUILD_SOURCE/retired_art_archive_1022.cjs",
+    "same_pre_change_blocker": true
+  },
+  "art": {
+    "visible_cells": 60,
+    "white_hit_cells": 35,
+    "sheets": 7,
+    "bytes": 914680,
+    "pixel_lab_start_usd": 3.47,
+    "pixel_lab_end_usd": 3.16,
+    "active_jobs": 0
+  }
+}

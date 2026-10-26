@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: e923c4d9-4e72-4a84-991d-64d2733c8c50\njob_id: e923c4d9-4e72-4a84-991d-64d2733c8c50\nmodel: pro\ndescription: FRAME FORMAT: 192 x192 transparent pixels. Fixed fuselage center pivot96,96, one common proportional scale, reserve at least20 pixels clear transparent margin on all sides. Crisp detailed 16/32-bit arcade pixel art, clean single-pixel outlines, sharp metallic shading. STRICT ORTHOGRAPHIC TOP VIEW looking directly down onto aircraft. Nose points straight DOWN toward bottom edge, rear engines at top. Symmetrical wings, never diagonal or isometric. One complete aircraft centered and uncropped, no background or shadow plate, no text, no external bullets or muzzle flash. Large SKY TEMPEST bomber jet. White ceramic, light and dark gray armor panels, TEAL trim and engine lights. Huge broad swept wings, four circular wind turbine engines and a thick central fuselage, two heavy forward cannon barrels and paired missile pods. Same fleet family as smaller sky dart/gale, substantial mechanical aircraft, no yellow, red or royal blue.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 10222004\nasset_id: 1b1fe35a-6844-5e85-9c9b-56adfb10f7f6\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"e923c4d9-4e72-4a84-991d-64d2733c8c50\")"
+    }
+  ],
+  "isError": false
+}

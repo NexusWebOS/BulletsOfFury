@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "name": "unfold uses approved complete original hammer plate",
+      "passed": true,
+      "data": {
+        "key": "ha21_h22_blue_slam_0",
+        "kind": "blue_slam"
+      }
+    },
+    {
+      "name": "hammer uses approved complete original hammer plate",
+      "passed": true,
+      "data": {
+        "key": "ha21_h22_blue_slam_0",
+        "kind": "blue_slam"
+      }
+    },
+    {
+      "name": "storm_idle uses approved complete original hammer plate",
+      "passed": true,
+      "data": {
+        "key": "ha21_h22_blue_slam_armor_0",
+        "kind": "blue_slam_armor"
+      }
+    },
+    {
+      "name": "giant_idle uses approved complete original hammer plate",
+      "passed": true,
+      "data": {
+        "key": "ha21_h22_blue_slam_armor_0",
+        "kind": "blue_slam_armor"
+      }
+    },
+    {
+      "name": "No browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

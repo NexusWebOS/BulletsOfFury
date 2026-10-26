@@ -1,0 +1,2585 @@
+{
+  "request": "Physical left/right twists, one-handed low guard, full depth jump, fixed original hammer, PixelLab aura/chromium takeover",
+  "nativeFocusedPassed": 71,
+  "nativeFocusedFailed": 0,
+  "results": {
+    "motion": {
+      "checks": [
+        {
+          "name": "All 445 complete PixelLab-derived frames decode and paint real pixels on even cells",
+          "passed": true,
+          "data": [
+            {
+              "bank": "takeoff_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "land_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "windup_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "strike_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "retract_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "left_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "right_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "palm_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "aura_regular",
+              "frames": 25,
+              "minPixels": 245760
+            },
+            {
+              "bank": "takeoff_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "land_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "windup_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "strike_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "retract_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "left_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "right_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "palm_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "aura_chrome",
+              "frames": 25,
+              "minPixels": 245760
+            },
+            {
+              "bank": "activation",
+              "frames": 25,
+              "minPixels": 245760
+            },
+            {
+              "bank": "spin_regular",
+              "frames": 32,
+              "minPixels": 245760
+            },
+            {
+              "bank": "throw_empty_regular",
+              "frames": 17,
+              "minPixels": 245760
+            },
+            {
+              "bank": "spin_chrome",
+              "frames": 32,
+              "minPixels": 245760
+            },
+            {
+              "bank": "throw_empty_chrome",
+              "frames": 17,
+              "minPixels": 245760
+            }
+          ]
+        },
+        {
+          "name": "Every hammer and aura remains within the common padded canvas",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "regular side guard keeps one hand low with the unchanged hammer extended outward",
+          "passed": true,
+          "data": {
+            "guard": [
+              145.87687211633096,
+              420.7913404575851
+            ],
+            "grip": [
+              270.9707602339181,
+              405.7076023391813
+            ],
+            "pivot": [
+              335.34502923976606,
+              377.2631578947368
+            ],
+            "left": [
+              178.8811537576295,
+              409.4697234353529
+            ],
+            "right": [
+              490.31182869851085,
+              409.4697234353529
+            ],
+            "reach": 125.99999999999999
+          }
+        },
+        {
+          "name": "regular opposite whole-body twists produce opposite physical hammer strikes",
+          "passed": true,
+          "data": {
+            "guard": [
+              145.87687211633096,
+              420.7913404575851
+            ],
+            "grip": [
+              270.9707602339181,
+              405.7076023391813
+            ],
+            "pivot": [
+              335.34502923976606,
+              377.2631578947368
+            ],
+            "left": [
+              178.8811537576295,
+              409.4697234353529
+            ],
+            "right": [
+              490.31182869851085,
+              409.4697234353529
+            ],
+            "reach": 125.99999999999999
+          }
+        },
+        {
+          "name": "chrome side guard keeps one hand low with the unchanged hammer extended outward",
+          "passed": true,
+          "data": {
+            "guard": [
+              135.39733995258828,
+              426.77964455115233
+            ],
+            "grip": [
+              260.49122807017545,
+              411.69590643274853
+            ],
+            "pivot": [
+              335.34502923976606,
+              377.2631578947368
+            ],
+            "left": [
+              171.13541259312404,
+              442.4053959499728
+            ],
+            "right": [
+              497.9333066357783,
+              442.26929812966443
+            ],
+            "reach": 126.00000000000001
+          }
+        },
+        {
+          "name": "chrome opposite whole-body twists produce opposite physical hammer strikes",
+          "passed": true,
+          "data": {
+            "guard": [
+              135.39733995258828,
+              426.77964455115233
+            ],
+            "grip": [
+              260.49122807017545,
+              411.69590643274853
+            ],
+            "pivot": [
+              335.34502923976606,
+              377.2631578947368
+            ],
+            "left": [
+              171.13541259312404,
+              442.4053959499728
+            ],
+            "right": [
+              497.9333066357783,
+              442.26929812966443
+            ],
+            "reach": 126.00000000000001
+          }
+        },
+        {
+          "name": "Native jump route exits, drops into background, lands, jumps again, winds up and strikes in order",
+          "passed": true,
+          "data": [
+            "giant_idle",
+            "giant_windup",
+            "giant_rise",
+            "giant_bg_drop",
+            "giant_bg_land",
+            "giant_bg_jump",
+            "giant_warn",
+            "giant_dive",
+            "giant_sweep",
+            "giant_recover",
+            "hammer"
+          ]
+        },
+        {
+          "name": "Full-size actor exits completely before small top-of-screen background reentry",
+          "passed": true,
+          "data": {
+            "riseEnd": {
+              "state": "giant_rise",
+              "t": 0.9333333333333346,
+              "x": 340,
+              "y": -470,
+              "k": 1,
+              "key": "c27_takeoff_chrome_16",
+              "top": -574.7953216374269,
+              "bottom": -380.17543859649123
+            },
+            "dropStart": {
+              "state": "giant_bg_drop",
+              "t": 0,
+              "x": 340,
+              "y": -210,
+              "k": 0.36,
+              "key": "c27_land_chrome_0",
+              "top": -247.7263157894737,
+              "bottom": -177.66315789473686
+            }
+          }
+        },
+        {
+          "name": "Second background jump has real windup frames and upward travel",
+          "passed": true,
+          "data": {
+            "keys": 16
+          }
+        },
+        {
+          "name": "Depth attack reaches the committed ship with its displayed head",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Counter head and SHOOT stay visible above the unchanged side-held hammer",
+          "passed": true,
+          "data": {
+            "key": "c27_palm_chrome_16",
+            "objective": {
+              "x": 135.56108264264677,
+              "y": 104.0994152046784,
+              "bottom": 174.0994152046784,
+              "hammerTop": 184.0994152046784
+            },
+            "head": {
+              "x": 135.56108264264677,
+              "y": 235
+            },
+            "open": true
+          }
+        },
+        {
+          "name": "New complete material plate visibly flashes on real damaged pixels",
+          "passed": true,
+          "data": 19378
+        },
+        {
+          "name": "New material hit flash expires",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No Chromium page or console errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "passed": 14,
+      "failed": 0,
+      "errors": []
+    },
+    "counter": {
+      "checks": [
+        {
+          "name": "Gunfire and missiles during attacks never disarm or stun Chronos",
+          "passed": true,
+          "data": [
+            {
+              "before": "warn",
+              "after": "warn",
+              "destroyed": false,
+              "pending": false,
+              "flash": 0.16
+            },
+            {
+              "before": "spin",
+              "after": "spin",
+              "destroyed": false,
+              "pending": false,
+              "flash": 0.16
+            },
+            {
+              "before": "whirlwind",
+              "after": "whirlwind",
+              "destroyed": false,
+              "pending": false,
+              "flash": 0.16
+            },
+            {
+              "before": "fr_twirl",
+              "after": "fr_twirl",
+              "destroyed": false,
+              "pending": false,
+              "flash": 0.16
+            },
+            {
+              "before": "storm_warn",
+              "after": "storm_warn",
+              "destroyed": false,
+              "pending": false,
+              "flash": 0.16
+            }
+          ]
+        },
+        {
+          "name": "A missile into the body cannot trigger the hammer counter",
+          "passed": true,
+          "data": {
+            "hit": true,
+            "part": null,
+            "state": "storm_raise",
+            "hp": 11220,
+            "armor": 8415
+          }
+        },
+        {
+          "name": "Even heavy ordinary fire into the glowing hammer cannot stun him",
+          "passed": true,
+          "data": {
+            "hit": true,
+            "part": "hammer",
+            "state": "storm_raise",
+            "hp": 11220,
+            "armor": 8415
+          }
+        },
+        {
+          "name": "One whole armored actor appears behind exactly one transparent foreground shield",
+          "passed": true,
+          "data": {
+            "calls": [
+              "c27_palm_chrome_16_hit",
+              "er23_shield_wall_hit"
+            ],
+            "pose": "c27_palm_chrome_16",
+            "frame": 16
+          }
+        },
+        {
+          "name": "Passive homing missiles cannot trigger the deliberate counter",
+          "passed": true,
+          "data": "storm_raise"
+        },
+        {
+          "name": "One deliberate raised-hammer missile cancels charging and drops the shield",
+          "passed": true,
+          "data": {
+            "hit": true,
+            "part": "hammer",
+            "state": "fr_stun",
+            "hp": 11220,
+            "armor": 8415,
+            "knock": {
+              "t": 0,
+              "from": {
+                "x": 135.56108264264677,
+                "y": 235
+              },
+              "away": {
+                "x": 160,
+                "y": 30
+              }
+            },
+            "wall": false
+          }
+        },
+        {
+          "name": "Hammer visibly shrinks into space then grows back during magnetic recall",
+          "passed": true,
+          "data": [
+            0.676923076923077,
+            0.16000000000000003,
+            0.4159822222222224,
+            0.9892977777777778
+          ]
+        },
+        {
+          "name": "Empty-handed chromium recovery frames remain selected throughout stun",
+          "passed": true,
+          "data": [
+            "c25_empty_armor",
+            "c25_empty_armor",
+            "c25_empty_armor",
+            "c25_empty_armor"
+          ]
+        },
+        {
+          "name": "Armored kneeling actor visibly flashes when hit",
+          "passed": true,
+          "data": {
+            "white": 10978,
+            "flash": 0.16
+          }
+        },
+        {
+          "name": "Real hit flash expires while stunned",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Magnetic catch restores the held weapon and combat without another heal",
+          "passed": true,
+          "data": {
+            "state": "hammer",
+            "empty": false,
+            "destroyed": false
+          }
+        },
+        {
+          "name": "Native recharge moves the raised hammer inside the visible counter window",
+          "passed": true,
+          "data": {
+            "open": true,
+            "head": {
+              "x": 135.56108264264677,
+              "y": 235
+            },
+            "y": 188.47766539036814
+          }
+        },
+        {
+          "name": "A real launched manual missile reaches the glowing hammer through the body lane",
+          "passed": true,
+          "data": {
+            "knock": true,
+            "state": "fr_stun",
+            "events": 2,
+            "log": [
+              {
+                "d": 24,
+                "hit": "hammer",
+                "q": {
+                  "kind": "gmiss",
+                  "x": 135.56108264264677,
+                  "y": 273.60000000000025
+                },
+                "open": true
+              }
+            ],
+            "shots": [],
+            "head": {
+              "x": 277.7,
+              "y": 271.0776653903681
+            },
+            "rocket": {
+              "dead": true,
+              "x": 135.56108264264677,
+              "y": 273.60000000000025,
+              "t": 0.36666666666666664
+            },
+            "launch": {
+              "result": true,
+              "count": 1,
+              "ap": false,
+              "h3": false,
+              "release": false,
+              "dead": false,
+              "bombs": 1,
+              "shots": [
+                {
+                  "kind": "gmiss",
+                  "x": 135.56108264264677,
+                  "y": 432
+                }
+              ]
+            },
+            "cp": [
+              {
+                "event": "caption",
+                "text": "Gotta Recharge!"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Death uses the same whole chromium kneeling identity",
+          "passed": true,
+          "data": "c25_empty_armor"
+        },
+        {
+          "name": "Depth entry renders no FOV warnings",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "Ordinary casting columns keep authored FOV lanes after ground reticles are removed",
+          "passed": true,
+          "data": 2
+        },
+        {
+          "name": "No route portal or foreground portal rim survives during the boss fight",
+          "passed": true,
+          "data": []
+        },
+        {
+          "name": "Armor activation visibly conducts authored energy into the hammer and armor",
+          "passed": true,
+          "data": [
+            {
+              "key": "arch_hammer_lightning_0926",
+              "args": [
+                1230,
+                48,
+                228,
+                416,
+                -18,
+                0,
+                36,
+                364.4934298008595
+              ]
+            },
+            {
+              "key": "arch_hammer_lightning_0926",
+              "args": [
+                1230,
+                560,
+                228,
+                416,
+                -13,
+                0,
+                26,
+                286.32976263067866
+              ]
+            },
+            {
+              "key": "arch_hammer_lightning_0926",
+              "args": [
+                1230,
+                48,
+                228,
+                416,
+                -9,
+                0,
+                18,
+                46.529560496527374
+              ]
+            }
+          ]
+        },
+        {
+          "name": "The authored Stage9 route portal still renders outside boss encounters",
+          "passed": true,
+          "data": [
+            "fv21_portal_20",
+            "nfx_s5gate96_0"
+          ]
+        },
+        {
+          "name": "Coincident magnetic recall endpoints never draw a zero-size energy canvas",
+          "passed": true,
+          "data": []
+        },
+        {
+          "name": "No page or console errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "passed": 21,
+      "failed": 0,
+      "errors": []
+    },
+    "melee": {
+      "checks": [
+        {
+          "name": "slam actually damages a ship in the authored hammer path",
+          "passed": true,
+          "data": {
+            "hits": [
+              {
+                "clock": 0.6666666666666671,
+                "label": "Hammer second downward slam",
+                "distance": 0,
+                "r": 62,
+                "head": {
+                  "x": 220,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220,
+                  "y": 420
+                },
+                "accepted": true
+              }
+            ],
+            "calls": [
+              {
+                "clock": 0.6666666666666671,
+                "label": "Hammer second downward slam",
+                "distance": 0,
+                "r": 62,
+                "head": {
+                  "x": 220,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220,
+                  "y": 420
+                },
+                "accepted": true
+              },
+              {
+                "clock": 1.183333333333334,
+                "label": "Hammer left sweep",
+                "distance": 15.709838108275765,
+                "r": 30,
+                "head": {
+                  "x": 214.02268119890257,
+                  "y": 405.47172848070767
+                },
+                "to": {
+                  "x": 214.02268119890257,
+                  "y": 405.47172848070767
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2000000000000006,
+                "label": "Hammer left sweep",
+                "distance": 15.709838108275765,
+                "r": 30,
+                "head": {
+                  "x": 214.02268119890257,
+                  "y": 405.47172848070767
+                },
+                "to": {
+                  "x": 214.02268119890257,
+                  "y": 405.47172848070767
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2166666666666672,
+                "label": "Hammer left sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 220,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220,
+                  "y": 420
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2333333333333338,
+                "label": "Hammer left sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 220,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220,
+                  "y": 420
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2500000000000004,
+                "label": "Hammer left sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 237.0206100147768,
+                  "y": 401.48440298155765
+                },
+                "to": {
+                  "x": 237.0206100147768,
+                  "y": 401.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.266666666666667,
+                "label": "Hammer left sweep",
+                "distance": 25.150119248712745,
+                "r": 30,
+                "head": {
+                  "x": 237.0206100147768,
+                  "y": 401.48440298155765
+                },
+                "to": {
+                  "x": 237.0206100147768,
+                  "y": 401.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2833333333333337,
+                "label": "Hammer left sweep",
+                "distance": 25.150119248712745,
+                "r": 30,
+                "head": {
+                  "x": 236.85823425403782,
+                  "y": 387.8878462938125
+                },
+                "to": {
+                  "x": 236.85823425403782,
+                  "y": 387.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3000000000000003,
+                "label": "Hammer left sweep",
+                "distance": 36.268312309974185,
+                "r": 30,
+                "head": {
+                  "x": 236.85823425403782,
+                  "y": 387.8878462938125
+                },
+                "to": {
+                  "x": 236.85823425403782,
+                  "y": 387.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3166666666666669,
+                "label": "Hammer left sweep",
+                "distance": 34.1931886182976,
+                "r": 30,
+                "head": {
+                  "x": 243.95218138556032,
+                  "y": 395.59780430453657
+                },
+                "to": {
+                  "x": 243.95218138556032,
+                  "y": 395.59780430453657
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3333333333333335,
+                "label": "Hammer left sweep",
+                "distance": 34.1931886182976,
+                "r": 30,
+                "head": {
+                  "x": 243.95218138556032,
+                  "y": 395.59780430453657
+                },
+                "to": {
+                  "x": 243.95218138556032,
+                  "y": 395.59780430453657
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7499999999999987,
+                "label": "Hammer right sweep",
+                "distance": 2.0097183471152322e-14,
+                "r": 30,
+                "head": {
+                  "x": 220.00000000000003,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220.00000000000003,
+                  "y": 420
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7666666666666653,
+                "label": "Hammer right sweep",
+                "distance": 2.842170943040401e-14,
+                "r": 30,
+                "head": {
+                  "x": 220.00000000000003,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220.00000000000003,
+                  "y": 420
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7833333333333319,
+                "label": "Hammer right sweep",
+                "distance": 2.842170943040401e-14,
+                "r": 30,
+                "head": {
+                  "x": 286.60908848463936,
+                  "y": 384.399029123462
+                },
+                "to": {
+                  "x": 286.60908848463936,
+                  "y": 384.399029123462
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7999999999999985,
+                "label": "Hammer right sweep",
+                "distance": 75.52615306042419,
+                "r": 30,
+                "head": {
+                  "x": 286.60908848463936,
+                  "y": 384.399029123462
+                },
+                "to": {
+                  "x": 286.60908848463936,
+                  "y": 384.399029123462
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.816666666666665,
+                "label": "Hammer right sweep",
+                "distance": 75.52615306042419,
+                "r": 30,
+                "head": {
+                  "x": 541.3361906433188,
+                  "y": 436.2075855934403
+                },
+                "to": {
+                  "x": 541.3361906433188,
+                  "y": 436.2075855934403
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8333333333333317,
+                "label": "Hammer right sweep",
+                "distance": 321.7446708928184,
+                "r": 30,
+                "head": {
+                  "x": 541.3361906433188,
+                  "y": 436.2075855934403
+                },
+                "to": {
+                  "x": 541.3361906433188,
+                  "y": 436.2075855934403
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8499999999999983,
+                "label": "Hammer right sweep",
+                "distance": 321.7446708928184,
+                "r": 30,
+                "head": {
+                  "x": 541.5361585183001,
+                  "y": 510.9741965909311
+                },
+                "to": {
+                  "x": 541.5361585183001,
+                  "y": 510.9741965909311
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.866666666666665,
+                "label": "Hammer right sweep",
+                "distance": 334.15835419763306,
+                "r": 30,
+                "head": {
+                  "x": 541.5361585183001,
+                  "y": 510.9741965909311
+                },
+                "to": {
+                  "x": 541.5361585183001,
+                  "y": 510.9741965909311
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8833333333333315,
+                "label": "Hammer right sweep",
+                "distance": 323.9398039516627,
+                "r": 30,
+                "head": {
+                  "x": 509.522077554155,
+                  "y": 565.3064458066729
+                },
+                "to": {
+                  "x": 509.522077554155,
+                  "y": 565.3064458066729
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8999999999999981,
+                "label": "Hammer right sweep",
+                "distance": 323.9398039516627,
+                "r": 30,
+                "head": {
+                  "x": 509.522077554155,
+                  "y": 565.3064458066729
+                },
+                "to": {
+                  "x": 509.522077554155,
+                  "y": 565.3064458066729
+                },
+                "accepted": false
+              }
+            ],
+            "cues": [
+              {
+                "key": "hammerImpact",
+                "clock": 0.6666666666666671
+              },
+              {
+                "key": "hammerThrow",
+                "clock": 1.183333333333334
+              },
+              {
+                "key": "hammerThrow",
+                "clock": 1.7499999999999987
+              }
+            ],
+            "shield": 2,
+            "target": {
+              "x": 220,
+              "y": 420
+            },
+            "left": {
+              "x": 220,
+              "y": 420
+            },
+            "right": {
+              "x": 220,
+              "y": 420
+            },
+            "duration": 2.18
+          }
+        },
+        {
+          "name": "Second slam targets the current player instead of the first impact",
+          "passed": true,
+          "data": {
+            "x": 220,
+            "y": 420
+          }
+        },
+        {
+          "name": "slam collision endpoints match the actually rendered hammer",
+          "passed": true,
+          "data": {
+            "samples": 20
+          }
+        },
+        {
+          "name": "left actually damages a ship in the authored hammer path",
+          "passed": true,
+          "data": {
+            "hits": [
+              {
+                "clock": 1.183333333333334,
+                "label": "Hammer left sweep",
+                "distance": 15.709838108275775,
+                "r": 30,
+                "head": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "to": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "accepted": true
+              }
+            ],
+            "calls": [
+              {
+                "clock": 0.6666666666666671,
+                "label": "Hammer second downward slam",
+                "distance": 170.29386365926402,
+                "r": 62,
+                "head": {
+                  "x": 220,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220,
+                  "y": 420
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.183333333333334,
+                "label": "Hammer left sweep",
+                "distance": 15.709838108275775,
+                "r": 30,
+                "head": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "to": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "accepted": true
+              },
+              {
+                "clock": 1.2000000000000006,
+                "label": "Hammer left sweep",
+                "distance": 15.709838108275775,
+                "r": 30,
+                "head": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "to": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2166666666666672,
+                "label": "Hammer left sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2333333333333338,
+                "label": "Hammer left sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2500000000000004,
+                "label": "Hammer left sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "to": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.266666666666667,
+                "label": "Hammer left sweep",
+                "distance": 25.150119248712762,
+                "r": 30,
+                "head": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "to": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2833333333333337,
+                "label": "Hammer left sweep",
+                "distance": 25.150119248712762,
+                "r": 30,
+                "head": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "to": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3000000000000003,
+                "label": "Hammer left sweep",
+                "distance": 36.268312309974185,
+                "r": 30,
+                "head": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "to": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3166666666666669,
+                "label": "Hammer left sweep",
+                "distance": 34.1931886182976,
+                "r": 30,
+                "head": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "to": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3333333333333335,
+                "label": "Hammer left sweep",
+                "distance": 34.1931886182976,
+                "r": 30,
+                "head": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "to": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7499999999999987,
+                "label": "Hammer right sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7666666666666653,
+                "label": "Hammer right sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7833333333333319,
+                "label": "Hammer right sweep",
+                "distance": 0,
+                "r": 30,
+                "head": {
+                  "x": 456.60908848463936,
+                  "y": 374.399029123462
+                },
+                "to": {
+                  "x": 456.60908848463936,
+                  "y": 374.399029123462
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7999999999999985,
+                "label": "Hammer right sweep",
+                "distance": 75.52615306042419,
+                "r": 30,
+                "head": {
+                  "x": 456.60908848463936,
+                  "y": 374.399029123462
+                },
+                "to": {
+                  "x": 456.60908848463936,
+                  "y": 374.399029123462
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.816666666666665,
+                "label": "Hammer right sweep",
+                "distance": 75.52615306042419,
+                "r": 30,
+                "head": {
+                  "x": 711.3361906433188,
+                  "y": 426.2075855934403
+                },
+                "to": {
+                  "x": 711.3361906433188,
+                  "y": 426.2075855934403
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8333333333333317,
+                "label": "Hammer right sweep",
+                "distance": 321.7446708928184,
+                "r": 30,
+                "head": {
+                  "x": 711.3361906433188,
+                  "y": 426.2075855934403
+                },
+                "to": {
+                  "x": 711.3361906433188,
+                  "y": 426.2075855934403
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8499999999999983,
+                "label": "Hammer right sweep",
+                "distance": 321.7446708928184,
+                "r": 30,
+                "head": {
+                  "x": 711.5361585183001,
+                  "y": 500.9741965909311
+                },
+                "to": {
+                  "x": 711.5361585183001,
+                  "y": 500.9741965909311
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.866666666666665,
+                "label": "Hammer right sweep",
+                "distance": 334.15835419763306,
+                "r": 30,
+                "head": {
+                  "x": 711.5361585183001,
+                  "y": 500.9741965909311
+                },
+                "to": {
+                  "x": 711.5361585183001,
+                  "y": 500.9741965909311
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8833333333333315,
+                "label": "Hammer right sweep",
+                "distance": 323.9398039516627,
+                "r": 30,
+                "head": {
+                  "x": 679.522077554155,
+                  "y": 555.3064458066729
+                },
+                "to": {
+                  "x": 679.522077554155,
+                  "y": 555.3064458066729
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8999999999999981,
+                "label": "Hammer right sweep",
+                "distance": 323.9398039516627,
+                "r": 30,
+                "head": {
+                  "x": 679.522077554155,
+                  "y": 555.3064458066729
+                },
+                "to": {
+                  "x": 679.522077554155,
+                  "y": 555.3064458066729
+                },
+                "accepted": false
+              }
+            ],
+            "cues": [
+              {
+                "key": "hammerImpact",
+                "clock": 0.6666666666666671
+              },
+              {
+                "key": "hammerThrow",
+                "clock": 1.183333333333334
+              },
+              {
+                "key": "hammerThrow",
+                "clock": 1.7499999999999987
+              }
+            ],
+            "shield": 2,
+            "target": {
+              "x": 220,
+              "y": 420
+            },
+            "left": {
+              "x": 390,
+              "y": 410
+            },
+            "right": {
+              "x": 390,
+              "y": 410
+            },
+            "duration": 2.18
+          }
+        },
+        {
+          "name": "left collision endpoints match the actually rendered hammer",
+          "passed": true,
+          "data": {
+            "samples": 20
+          }
+        },
+        {
+          "name": "Side-swing warning commits its aim instead of following the player",
+          "passed": true,
+          "data": {
+            "x": 390,
+            "y": 410
+          }
+        },
+        {
+          "name": "Native Furious combo completes faster with both side cues retained",
+          "passed": true,
+          "data": [
+            {
+              "key": "hammerImpact",
+              "clock": 0.6666666666666671
+            },
+            {
+              "key": "hammerThrow",
+              "clock": 1.183333333333334
+            },
+            {
+              "key": "hammerThrow",
+              "clock": 1.7499999999999987
+            }
+          ]
+        },
+        {
+          "name": "right actually damages a ship in the authored hammer path",
+          "passed": true,
+          "data": {
+            "hits": [
+              {
+                "clock": 1.7499999999999987,
+                "label": "Hammer right sweep",
+                "distance": 2.0097183471152322e-14,
+                "r": 30,
+                "head": {
+                  "x": 150.00000000000003,
+                  "y": 415
+                },
+                "to": {
+                  "x": 150.00000000000003,
+                  "y": 415
+                },
+                "accepted": true
+              }
+            ],
+            "calls": [
+              {
+                "clock": 0.6666666666666671,
+                "label": "Hammer second downward slam",
+                "distance": 170.29386365926402,
+                "r": 62,
+                "head": {
+                  "x": 220,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220,
+                  "y": 420
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.183333333333334,
+                "label": "Hammer left sweep",
+                "distance": 232.50180814867943,
+                "r": 30,
+                "head": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "to": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2000000000000006,
+                "label": "Hammer left sweep",
+                "distance": 234.83604643251508,
+                "r": 30,
+                "head": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "to": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2166666666666672,
+                "label": "Hammer left sweep",
+                "distance": 234.83604643251508,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2333333333333338,
+                "label": "Hammer left sweep",
+                "distance": 240.05207768315609,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2500000000000004,
+                "label": "Hammer left sweep",
+                "distance": 240.05207768315609,
+                "r": 30,
+                "head": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "to": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.266666666666667,
+                "label": "Hammer left sweep",
+                "distance": 258.09412483724185,
+                "r": 30,
+                "head": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "to": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2833333333333337,
+                "label": "Hammer left sweep",
+                "distance": 258.09412483724185,
+                "r": 30,
+                "head": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "to": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3000000000000003,
+                "label": "Hammer left sweep",
+                "distance": 259.52546013216863,
+                "r": 30,
+                "head": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "to": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3166666666666669,
+                "label": "Hammer left sweep",
+                "distance": 259.52546013216863,
+                "r": 30,
+                "head": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "to": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3333333333333335,
+                "label": "Hammer left sweep",
+                "distance": 265.58471938330723,
+                "r": 30,
+                "head": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "to": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7499999999999987,
+                "label": "Hammer right sweep",
+                "distance": 2.0097183471152322e-14,
+                "r": 30,
+                "head": {
+                  "x": 150.00000000000003,
+                  "y": 415
+                },
+                "to": {
+                  "x": 150.00000000000003,
+                  "y": 415
+                },
+                "accepted": true
+              },
+              {
+                "clock": 1.7666666666666653,
+                "label": "Hammer right sweep",
+                "distance": 2.842170943040401e-14,
+                "r": 30,
+                "head": {
+                  "x": 150.00000000000003,
+                  "y": 415
+                },
+                "to": {
+                  "x": 150.00000000000003,
+                  "y": 415
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7833333333333319,
+                "label": "Hammer right sweep",
+                "distance": 2.842170943040401e-14,
+                "r": 30,
+                "head": {
+                  "x": 216.60908848463936,
+                  "y": 379.399029123462
+                },
+                "to": {
+                  "x": 216.60908848463936,
+                  "y": 379.399029123462
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.7999999999999985,
+                "label": "Hammer right sweep",
+                "distance": 75.52615306042419,
+                "r": 30,
+                "head": {
+                  "x": 216.60908848463936,
+                  "y": 379.399029123462
+                },
+                "to": {
+                  "x": 216.60908848463936,
+                  "y": 379.399029123462
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.816666666666665,
+                "label": "Hammer right sweep",
+                "distance": 75.52615306042419,
+                "r": 30,
+                "head": {
+                  "x": 471.3361906433188,
+                  "y": 431.2075855934403
+                },
+                "to": {
+                  "x": 471.3361906433188,
+                  "y": 431.2075855934403
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8333333333333317,
+                "label": "Hammer right sweep",
+                "distance": 321.7446708928184,
+                "r": 30,
+                "head": {
+                  "x": 471.3361906433188,
+                  "y": 431.2075855934403
+                },
+                "to": {
+                  "x": 471.3361906433188,
+                  "y": 431.2075855934403
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8499999999999983,
+                "label": "Hammer right sweep",
+                "distance": 321.7446708928184,
+                "r": 30,
+                "head": {
+                  "x": 471.5361585183001,
+                  "y": 505.9741965909311
+                },
+                "to": {
+                  "x": 471.5361585183001,
+                  "y": 505.9741965909311
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.866666666666665,
+                "label": "Hammer right sweep",
+                "distance": 334.15835419763306,
+                "r": 30,
+                "head": {
+                  "x": 471.5361585183001,
+                  "y": 505.9741965909311
+                },
+                "to": {
+                  "x": 471.5361585183001,
+                  "y": 505.9741965909311
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8833333333333315,
+                "label": "Hammer right sweep",
+                "distance": 323.9398039516627,
+                "r": 30,
+                "head": {
+                  "x": 439.522077554155,
+                  "y": 560.3064458066729
+                },
+                "to": {
+                  "x": 439.522077554155,
+                  "y": 560.3064458066729
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.8999999999999981,
+                "label": "Hammer right sweep",
+                "distance": 323.9398039516627,
+                "r": 30,
+                "head": {
+                  "x": 439.522077554155,
+                  "y": 560.3064458066729
+                },
+                "to": {
+                  "x": 439.522077554155,
+                  "y": 560.3064458066729
+                },
+                "accepted": false
+              }
+            ],
+            "cues": [
+              {
+                "key": "hammerImpact",
+                "clock": 0.6666666666666671
+              },
+              {
+                "key": "hammerThrow",
+                "clock": 1.183333333333334
+              },
+              {
+                "key": "hammerThrow",
+                "clock": 1.7499999999999987
+              }
+            ],
+            "shield": 2,
+            "target": {
+              "x": 220,
+              "y": 420
+            },
+            "left": {
+              "x": 390,
+              "y": 410
+            },
+            "right": {
+              "x": 150,
+              "y": 415
+            },
+            "duration": 2.18
+          }
+        },
+        {
+          "name": "right collision endpoints match the actually rendered hammer",
+          "passed": true,
+          "data": {
+            "samples": 20
+          }
+        },
+        {
+          "name": "Moving out of the committed warning lets the player evade",
+          "passed": true,
+          "data": {
+            "hits": [],
+            "calls": [
+              {
+                "clock": 0.6666666666666671,
+                "label": "Hammer second downward slam",
+                "distance": 170.29386365926402,
+                "r": 62,
+                "head": {
+                  "x": 220,
+                  "y": 420
+                },
+                "to": {
+                  "x": 220,
+                  "y": 420
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.183333333333334,
+                "label": "Hammer left sweep",
+                "distance": 300.48237266348957,
+                "r": 30,
+                "head": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "to": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2000000000000006,
+                "label": "Hammer left sweep",
+                "distance": 315.52835024868256,
+                "r": 30,
+                "head": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "to": {
+                  "x": 384.02268119890255,
+                  "y": 395.47172848070767
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2166666666666672,
+                "label": "Hammer left sweep",
+                "distance": 315.52835024868256,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2333333333333338,
+                "label": "Hammer left sweep",
+                "distance": 330,
+                "r": 30,
+                "head": {
+                  "x": 390,
+                  "y": 410
+                },
+                "to": {
+                  "x": 390,
+                  "y": 410
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2500000000000004,
+                "label": "Hammer left sweep",
+                "distance": 311.9490895419516,
+                "r": 30,
+                "head": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "to": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.266666666666667,
+                "label": "Hammer left sweep",
+                "distance": 311.9490895419516,
+                "r": 30,
+                "head": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "to": {
+                  "x": 407.0206100147768,
+                  "y": 391.48440298155765
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.2833333333333337,
+                "label": "Hammer left sweep",
+                "distance": 298.36449023255113,
+                "r": 30,
+                "head": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "to": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3000000000000003,
+                "label": "Hammer left sweep",
+                "distance": 298.36449023255113,
+                "r": 30,
+                "head": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "to": {
+                  "x": 406.8582342540378,
+                  "y": 377.8878462938125
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3166666666666669,
+                "label": "Hammer left sweep",
+                "distance": 298.36449023255113,
+                "r": 30,
+                "head": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "to": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "accepted": false
+              },
+              {
+                "clock": 1.3333333333333335,
+                "label": "Hammer left sweep",
+                "distance": 306.5350306064229,
+                "r": 30,
+                "head": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "to": {
+                  "x": 413.9521813855603,
+                  "y": 385.59780430453657
+                },
+                "accepted": false
+              }
+            ],
+            "cues": [
+              {
+                "key": "hammerImpact",
+                "clock": 0.6666666666666671
+              },
+              {
+                "key": "hammerThrow",
+                "clock": 1.183333333333334
+              }
+            ],
+            "shield": 3,
+            "target": {
+              "x": 220,
+              "y": 420
+            },
+            "left": {
+              "x": 390,
+              "y": 410
+            },
+            "right": null,
+            "duration": 2.18
+          }
+        },
+        {
+          "name": "dodge-left collision endpoints match the actually rendered hammer",
+          "passed": true,
+          "data": {
+            "samples": 10
+          }
+        },
+        {
+          "name": "Boss retains actual white damaged pixels during the moving combo",
+          "passed": true,
+          "data": {
+            "white": 11837,
+            "flash": 0.16
+          }
+        },
+        {
+          "name": "Native boss hit flash expires",
+          "passed": true,
+          "data": 0
+        },
+        {
+          "name": "Hard and corrupted-hammer cadence stay unchanged",
+          "passed": true,
+          "data": {
+            "hard": 1.72,
+            "corrupt": 3.55
+          }
+        },
+        {
+          "name": "No page or console errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "passed": 15,
+      "failed": 0,
+      "errors": []
+    },
+    "intro": {
+      "checks": [
+        {
+          "name": "arcade-normal no attacks or armor during opening dialogue",
+          "passed": true,
+          "data": {
+            "states": [
+              "flyby",
+              "fr_activation",
+              "hammer",
+              "return",
+              "unfold",
+              "warn"
+            ],
+            "introSamples": 157,
+            "violations": []
+          }
+        },
+        {
+          "name": "arcade-normal dialogue finishes before armor begins",
+          "passed": true,
+          "data": {
+            "activations": [
+              {
+                "to": "fr_activation",
+                "time": 23.183333333333298,
+                "intro": false,
+                "done": false,
+                "armor": false,
+                "hp": 6069,
+                "maxhp": 6069
+              }
+            ],
+            "introEnds": [
+              23.149999999999967
+            ]
+          }
+        },
+        {
+          "name": "arcade-normal full visible armor animation completes before first attack",
+          "passed": true,
+          "data": {
+            "attack": {
+              "time": 27.083333333333076,
+              "state": "warn",
+              "t": 0,
+              "intro": false,
+              "introDone": false,
+              "beat": null,
+              "bullets": 0,
+              "armor": true,
+              "activated": true,
+              "armorMax": 1820.7,
+              "maxhp": 6069,
+              "scroll": 9768.000000000007,
+              "x": 408.2343999999998,
+              "bx": 408.2343999999997,
+              "by": 174.08,
+              "frame": "c27_windup_chrome_0"
+            },
+            "frames": [
+              "c27_activation_0",
+              "c27_activation_1",
+              "c27_activation_2",
+              "c27_activation_3",
+              "c27_activation_4",
+              "c27_activation_5",
+              "c27_activation_6",
+              "c27_activation_7",
+              "c27_activation_8",
+              "c27_activation_9",
+              "c27_activation_10",
+              "c27_activation_11",
+              "c27_activation_12",
+              "c27_activation_13",
+              "c27_activation_14",
+              "c27_activation_15",
+              "c27_activation_16",
+              "c27_activation_17",
+              "c27_activation_18",
+              "c27_activation_19",
+              "c27_activation_20",
+              "c27_activation_21",
+              "c27_activation_22",
+              "c27_activation_23"
+            ],
+            "chargeSamples": 29,
+            "dialogueEnd": 23.183333333333298
+          }
+        },
+        {
+          "name": "arcade-normal world scroll and player movement continue during dialogue",
+          "passed": true,
+          "data": {
+            "before": {
+              "time": 7.183333333333313,
+              "state": "unfold",
+              "t": 1.95,
+              "intro": true,
+              "introDone": false,
+              "beat": 0,
+              "bullets": 0,
+              "armor": false,
+              "activated": false,
+              "armorMax": null,
+              "maxhp": 1700,
+              "scroll": 2604.0000000000673,
+              "x": 340,
+              "bx": 340,
+              "by": 174.08,
+              "frame": "c27_takeoff_regular_0"
+            },
+            "after": {
+              "x": 408.2343999999998,
+              "scroll": 2712.0000000000755
+            }
+          }
+        },
+        {
+          "name": "arcade-normal preserves difficulty-scaled armor budget",
+          "passed": true,
+          "data": {
+            "actual": 1820.7,
+            "expected": 1820.7
+          }
+        },
+        {
+          "name": "arcade-hard no attacks or armor during opening dialogue",
+          "passed": true,
+          "data": {
+            "states": [
+              "flyby",
+              "fr_activation",
+              "hammer",
+              "return",
+              "unfold",
+              "warn"
+            ],
+            "introSamples": 157,
+            "violations": []
+          }
+        },
+        {
+          "name": "arcade-hard dialogue finishes before armor begins",
+          "passed": true,
+          "data": {
+            "activations": [
+              {
+                "to": "fr_activation",
+                "time": 50.266666666665095,
+                "intro": false,
+                "done": false,
+                "armor": false,
+                "hp": 8287.5,
+                "maxhp": 8287.5
+              }
+            ],
+            "introEnds": [
+              50.233333333331764
+            ]
+          }
+        },
+        {
+          "name": "arcade-hard full visible armor animation completes before first attack",
+          "passed": true,
+          "data": {
+            "attack": {
+              "time": 53.88333333333156,
+              "state": "warn",
+              "t": 0.06666666666666667,
+              "intro": false,
+              "introDone": false,
+              "beat": null,
+              "bullets": 0,
+              "armor": true,
+              "activated": true,
+              "armorMax": 4972.5,
+              "maxhp": 8287.5,
+              "scroll": 9647.999999998936,
+              "x": 408.2343999999998,
+              "bx": 408.2343999999997,
+              "by": 174.08,
+              "frame": "c27_windup_chrome_0"
+            },
+            "frames": [
+              "c27_activation_0",
+              "c27_activation_1",
+              "c27_activation_2",
+              "c27_activation_3",
+              "c27_activation_4",
+              "c27_activation_5",
+              "c27_activation_6",
+              "c27_activation_7",
+              "c27_activation_8",
+              "c27_activation_9",
+              "c27_activation_10",
+              "c27_activation_11",
+              "c27_activation_12",
+              "c27_activation_13",
+              "c27_activation_14",
+              "c27_activation_15",
+              "c27_activation_16",
+              "c27_activation_17",
+              "c27_activation_18",
+              "c27_activation_19",
+              "c27_activation_20",
+              "c27_activation_21",
+              "c27_activation_22",
+              "c27_activation_23"
+            ],
+            "chargeSamples": 29,
+            "dialogueEnd": 50.28333333333176
+          }
+        },
+        {
+          "name": "arcade-hard world scroll and player movement continue during dialogue",
+          "passed": true,
+          "data": {
+            "before": {
+              "time": 34.28333333333267,
+              "state": "unfold",
+              "t": 1.95,
+              "intro": true,
+              "introDone": false,
+              "beat": 0,
+              "bullets": 0,
+              "armor": false,
+              "activated": false,
+              "armorMax": null,
+              "maxhp": 1950,
+              "scroll": 2591.999999999611,
+              "x": 340,
+              "bx": 340,
+              "by": 174.08,
+              "frame": "c27_takeoff_regular_0"
+            },
+            "after": {
+              "x": 408.2343999999998,
+              "scroll": 2699.999999999595
+            }
+          }
+        },
+        {
+          "name": "arcade-hard preserves difficulty-scaled armor budget",
+          "passed": true,
+          "data": {
+            "actual": 4972.5,
+            "expected": 4972.5
+          }
+        },
+        {
+          "name": "arcade-furious no attacks or armor during opening dialogue",
+          "passed": true,
+          "data": {
+            "states": [
+              "flyby",
+              "fr_activation",
+              "hammer",
+              "return",
+              "unfold",
+              "warn"
+            ],
+            "introSamples": 157,
+            "violations": []
+          }
+        },
+        {
+          "name": "arcade-furious dialogue finishes before armor begins",
+          "passed": true,
+          "data": {
+            "activations": [
+              {
+                "to": "fr_activation",
+                "time": 77.06666666666358,
+                "intro": false,
+                "done": false,
+                "armor": false,
+                "hp": 11220,
+                "maxhp": 11220
+              }
+            ],
+            "introEnds": [
+              77.03333333333025
+            ]
+          }
+        },
+        {
+          "name": "arcade-furious full visible armor animation completes before first attack",
+          "passed": true,
+          "data": {
+            "attack": {
+              "time": 80.38333333333006,
+              "state": "warn",
+              "t": 0.03333333333333333,
+              "intro": false,
+              "introDone": false,
+              "beat": null,
+              "bullets": 0,
+              "armor": true,
+              "activated": true,
+              "armorMax": 8415,
+              "maxhp": 11220,
+              "scroll": 9540.000000002876,
+              "x": 408.2343999999998,
+              "bx": 389.4999999999995,
+              "by": 174.08,
+              "frame": "c27_windup_chrome_0"
+            },
+            "frames": [
+              "c27_activation_0",
+              "c27_activation_1",
+              "c27_activation_2",
+              "c27_activation_3",
+              "c27_activation_4",
+              "c27_activation_5",
+              "c27_activation_6",
+              "c27_activation_7",
+              "c27_activation_8",
+              "c27_activation_9",
+              "c27_activation_10",
+              "c27_activation_11",
+              "c27_activation_12",
+              "c27_activation_13",
+              "c27_activation_14",
+              "c27_activation_15",
+              "c27_activation_16",
+              "c27_activation_17",
+              "c27_activation_18",
+              "c27_activation_19",
+              "c27_activation_20",
+              "c27_activation_21",
+              "c27_activation_22",
+              "c27_activation_23"
+            ],
+            "chargeSamples": 29,
+            "dialogueEnd": 77.08333333333024
+          }
+        },
+        {
+          "name": "arcade-furious world scroll and player movement continue during dialogue",
+          "passed": true,
+          "data": {
+            "before": {
+              "time": 61.08333333333115,
+              "state": "unfold",
+              "t": 1.95,
+              "intro": true,
+              "introDone": false,
+              "beat": 0,
+              "bullets": 0,
+              "armor": false,
+              "activated": false,
+              "armorMax": null,
+              "maxhp": 2200,
+              "scroll": 2592.0000000007703,
+              "x": 340,
+              "bx": 340,
+              "by": 174.08,
+              "frame": "c27_takeoff_regular_0"
+            },
+            "after": {
+              "x": 408.2343999999998,
+              "scroll": 2700.000000000803
+            }
+          }
+        },
+        {
+          "name": "arcade-furious preserves difficulty-scaled armor budget",
+          "passed": true,
+          "data": {
+            "actual": 8415,
+            "expected": 8415.0
+          }
+        },
+        {
+          "name": "campaign-furious no attacks or armor during opening dialogue",
+          "passed": true,
+          "data": {
+            "states": [
+              "flyby",
+              "fr_activation",
+              "hammer",
+              "return",
+              "unfold",
+              "warn"
+            ],
+            "introSamples": 262,
+            "violations": []
+          }
+        },
+        {
+          "name": "campaign-furious dialogue finishes before armor begins",
+          "passed": true,
+          "data": {
+            "activations": [
+              {
+                "to": "fr_activation",
+                "time": 114.08333333332814,
+                "intro": false,
+                "done": false,
+                "armor": false,
+                "hp": 11220,
+                "maxhp": 11220
+              }
+            ],
+            "introEnds": [
+              114.04999999999481
+            ]
+          }
+        },
+        {
+          "name": "campaign-furious full visible armor animation completes before first attack",
+          "passed": true,
+          "data": {
+            "attack": {
+              "time": 117.38333333332795,
+              "state": "warn",
+              "t": 0.016666666666666666,
+              "intro": false,
+              "introDone": false,
+              "beat": null,
+              "bullets": 0,
+              "armor": true,
+              "activated": true,
+              "armorMax": 8415,
+              "maxhp": 11220,
+              "scroll": 13320.000000004022,
+              "x": 408.2343999999998,
+              "bx": 389.4999999999995,
+              "by": 174.08,
+              "frame": "c27_windup_chrome_0"
+            },
+            "frames": [
+              "c27_activation_0",
+              "c27_activation_1",
+              "c27_activation_2",
+              "c27_activation_3",
+              "c27_activation_4",
+              "c27_activation_5",
+              "c27_activation_6",
+              "c27_activation_7",
+              "c27_activation_8",
+              "c27_activation_9",
+              "c27_activation_10",
+              "c27_activation_11",
+              "c27_activation_12",
+              "c27_activation_13",
+              "c27_activation_14",
+              "c27_activation_15",
+              "c27_activation_16",
+              "c27_activation_17",
+              "c27_activation_18",
+              "c27_activation_19",
+              "c27_activation_20",
+              "c27_activation_21",
+              "c27_activation_22",
+              "c27_activation_23"
+            ],
+            "chargeSamples": 29,
+            "dialogueEnd": 114.08333333332814
+          }
+        },
+        {
+          "name": "campaign-furious world scroll and player movement continue during dialogue",
+          "passed": true,
+          "data": {
+            "before": {
+              "time": 87.58333333332965,
+              "state": "unfold",
+              "t": 1.95,
+              "intro": true,
+              "introDone": false,
+              "beat": 0,
+              "bullets": 0,
+              "armor": false,
+              "activated": false,
+              "armorMax": null,
+              "maxhp": 2200,
+              "scroll": 2592.0000000007703,
+              "x": 340,
+              "bx": 340,
+              "by": 174.08,
+              "frame": "c27_takeoff_regular_0"
+            },
+            "after": {
+              "x": 408.2343999999998,
+              "scroll": 2700.000000000803
+            }
+          }
+        },
+        {
+          "name": "campaign-furious preserves difficulty-scaled armor budget",
+          "passed": true,
+          "data": {
+            "actual": 8415,
+            "expected": 8415.0
+          }
+        },
+        {
+          "name": "No page or console errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "passed": 21,
+      "failed": 0,
+      "errors": []
+    },
+    "catalog": {
+      "passed": true,
+      "errors": [],
+      "duration": 98,
+      "motionPixelsChange": true
+    },
+    "media": {
+      "checks": {
+        "gameplay full AV decode": true,
+        "gameplay audible decoded track": true,
+        "armor actually appears in continuous gameplay": true,
+        "recharge actually appears in continuous gameplay": true,
+        "counter actually appears in continuous gameplay": true,
+        "native music and dialogue ticks are recorded": true,
+        "native charge / strike / throw / magnet cues play": true,
+        "native God mode stays enabled and no player deaths occur": true,
+        "no capture or console errors": true,
+        "real missile triggers counter then magnetic catch in continuous run": true,
+        "three volley leaders occur before each physical unfold": true,
+        "native laser audio decodes and plays": true
+      },
+      "passed": 12,
+      "failed": 0,
+      "audio": [
+        {
+          "file": "_shots\\chronos_motion_1025\\gameplay\\stage5-furious-with-audio.mp4",
+          "seconds": 150.613375,
+          "peak": 0.8605590462684631,
+          "rms": 0.15369783341884613,
+          "nonzero": 0.988510316563851
+        }
+      ]
+    },
+    "gameplayPreview": {
+      "passed": true,
+      "errors": [],
+      "duration": 150.598
+    }
+  },
+  "coreSuite": {
+    "exit": 1,
+    "reachedSummary": false,
+    "reason": "Missing _BUILD_SOURCE/retired_art_archive_1022.cjs before assertions; pre-existing blocker."
+  },
+  "syntax": "game.js and both Chronos owners pass",
+  "video": "_shots/chronos_motion_1025/catalog/all-animations-both-forms.mp4",
+  "gameplay": "_shots/chronos_motion_1025/gameplay/stage5-furious-with-audio.mp4"
+}

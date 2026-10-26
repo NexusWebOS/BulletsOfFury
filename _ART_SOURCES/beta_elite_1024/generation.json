@@ -1,0 +1,14 @@
+{
+  "accepted_job": "1b12770a-6007-4ae8-8750-06309aad112b",
+  "model": "pixen",
+  "canvas": [
+    128,
+    32
+  ],
+  "charged_usd": 0.0082,
+  "cancelled_stalled_job": "173e74a1-dda7-43b3-ae3c-6da78bf36d10",
+  "cancelled_reason": "Pro remained at64percent for more than ten minutes; Pixen produced the accepted simple UI kit.",
+  "balance_before": 3.16,
+  "balance_after": 3.15,
+  "no_topup": true
+}

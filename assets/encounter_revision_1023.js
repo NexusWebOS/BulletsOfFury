@@ -234,7 +234,9 @@ hm10WallActive=function(b){return !b.dead&&b?._hammer?.recovery?.status==='charg
 hammerHeadPoint=function(b){const h=b?._hammer;
  if(h&&!h.throw&&['spin','revenge_charge'].includes(h.state)){const q=ha21Blue(b);if(q?.a?.tip)return hb20World(q.a,q.a.tip,b,1,0);}
  if(h&&!h.throw&&h.recovery?.status==='charging'&&ER23_ART.chargeTips?.blue){const a=ER23_ART.banks.blue_charge,p=ER23_ART.chargeTips.blue;return{x:b.x+p[0]-a.pivot[0],y:b.y+p[1]-a.pivot[1]};}
- if(h&&['whirlwind','whirl_turn','fr_twirl'].includes(h.state)){const angle=(h.whirl?.reel||h.t*20);return{x:b.x+Math.cos(angle)*105,y:b.y+Math.sin(angle)*50};}
+ // Stage5's original whirlwind already contains both hands and the hammer.
+ // Its authored head landmark owns contact; an independent orbit detaches it.
+ if(h&&run.stage!==5&&['whirlwind','whirl_turn','fr_twirl'].includes(h.state)){const angle=(h.whirl?.reel||h.t*20);return{x:b.x+Math.cos(angle)*105,y:b.y+Math.sin(angle)*50};}
  return ER23.base.head.apply(this,arguments);
 };
 hammerStrikeCommitted=function(b){return !!b?._hammer?.er23DepthCombo||ER23.base.committed.apply(this,arguments);};
@@ -243,7 +245,7 @@ hammerBossTick=function(b,dt){const h=b?._hammer;if(!h)return ER23.base.hammerTi
   if(P.clock>=hf22PairDuration(P)){delete h.er23DepthCombo;hammerState(b,'giant_recover');}return;
  }
  const before=h.state,r=ER23.base.hammerTick.apply(this,arguments);
- if(before==='giant_sweep'&&h.state==='giant_recover'&&!b.dead&&['hard','furious'].includes(diffKey)){
+ if(before==='giant_sweep'&&h.state==='giant_recover'&&!b.dead&&!(typeof c25Own==='function'&&c25Own(b))&&['hard','furious'].includes(diffKey)){
   h.er23DepthCombo=hj22Pair(b,'blue',{x:h.tx,y:h.ty});hammerState(b,'er23_depth_combo');er23Log('depth-second-down-and-sweeps',{difficulty:diffKey});
  }
  return r;
@@ -254,12 +256,14 @@ hammerBossDraw=function(b){const h=b?._hammer;if(!h)return ER23.base.hammerDraw.
   hammerBossAtmosphereDraw(b);er23DrawBank(hf22Red(b)?'stun_red':'stun',Math.floor((b.dead?(b.dying||0):h.t)*12)%8,b.x,b.y,b.flash>0);hammerStunEffectsDraw(b);hammerRecoveryBurstDraw(b);return;
  }
  const r=ER23.base.hammerDraw.apply(this,arguments);
- if(!b.dead&&h.recovery?.status==='charging')hm10WallDraw(b);
+ // HA21 paints the wall once, after its whole actor.
  if(h.er23DepthCombo)hj22PairDraw(b,h.er23DepthCombo);
  if(!b.dead&&['spin','revenge_charge'].includes(h.state)){
   const at=hammerHeadPoint(b);hj22Light('blue',at);combatWarningDraw(b,{x:b.x,y:b.y-120,ex:b.x,ey:b.y,progress:clamp(h.t/(h.state==='spin'?HAMMER_SPIN_TIME:2),0,1),alertOnly:true,alertX:b.x,alertY:b.y-120});
  }
- if(!b.dead&&['whirlwind','whirl_turn','fr_twirl'].includes(h.state)){const at=hammerHeadPoint(b);hf22Tool(b,at,h.whirl?.reel||h.t*20);}
+ // Keep the held hammer inside the whole Stage5 plate, including HAMA. Only a
+ // deliberate throw/counter release may invoke the detached-weapon owner.
+ if(!b.dead&&run.stage!==5&&!(typeof c25Own==='function'&&c25Own(b))&&['whirlwind','whirl_turn','fr_twirl'].includes(h.state)){const at=hammerHeadPoint(b);hf22Tool(b,at,h.whirl?.reel||h.t*20);}
  return r;
 };
 ER23.base.spinDraw=hammerBoomerangSpinDraw;

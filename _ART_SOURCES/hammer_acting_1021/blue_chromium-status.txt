@@ -1,0 +1,10 @@
+status: completed
+id: 36a968a1-0512-47cb-b114-ab388e2e650f
+job_id: 36a968a1-0512-47cb-b114-ab388e2e650f
+frame: 16 of 17
+asset_id: 9fd87c58-3188-53c2-9339-cba6d1421e08
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0554 in credits
+download: https://api.pixellab.ai/mcp/images/36a968a1-0512-47cb-b114-ab388e2e650f/download?index=16

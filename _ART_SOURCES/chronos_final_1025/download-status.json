@@ -1,0 +1,14 @@
+[
+  {
+    "bank": "spin_a",
+    "state": "downloaded"
+  },
+  {
+    "bank": "spin_b",
+    "state": "downloaded"
+  },
+  {
+    "bank": "overhead_activation",
+    "state": "downloaded"
+  }
+]

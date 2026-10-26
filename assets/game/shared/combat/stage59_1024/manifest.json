@@ -1,0 +1,1052 @@
+{
+  "sheets": {
+    "s5924_sheet_black_drift": {
+      "key": "nca_s5924_sheet_black_drift",
+      "path": "assets/game/shared/combat/stage59_1024/black_drift.webp",
+      "w": 1600,
+      "h": 640
+    },
+    "s5924_sheet_black_drift_hit": {
+      "key": "nca_s5924_sheet_black_drift_hit",
+      "path": "assets/game/shared/combat/stage59_1024/black_drift_hit.webp",
+      "w": 1600,
+      "h": 640
+    },
+    "s5924_sheet_black_spin": {
+      "key": "nca_s5924_sheet_black_spin",
+      "path": "assets/game/shared/combat/stage59_1024/black_spin.webp",
+      "w": 1600,
+      "h": 1280
+    },
+    "s5924_sheet_black_spin_hit": {
+      "key": "nca_s5924_sheet_black_spin_hit",
+      "path": "assets/game/shared/combat/stage59_1024/black_spin_hit.webp",
+      "w": 1600,
+      "h": 1280
+    },
+    "s5924_sheet_black_charge": {
+      "key": "nca_s5924_sheet_black_charge",
+      "path": "assets/game/shared/combat/stage59_1024/black_charge.webp",
+      "w": 1600,
+      "h": 640
+    },
+    "s5924_sheet_black_charge_hit": {
+      "key": "nca_s5924_sheet_black_charge_hit",
+      "path": "assets/game/shared/combat/stage59_1024/black_charge_hit.webp",
+      "w": 1600,
+      "h": 640
+    },
+    "s5924_sheet_warp_motion": {
+      "key": "nca_s5924_sheet_warp_motion",
+      "path": "assets/game/shared/combat/stage59_1024/warp_motion.webp",
+      "w": 1280,
+      "h": 1280
+    }
+  },
+  "banks": {
+    "black_drift": {
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "fps": 14,
+      "frames": [
+        {
+          "key": "s5924_black_drift_0",
+          "hit": "s5924_black_drift_0_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_1",
+          "hit": "s5924_black_drift_1_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            320,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_2",
+          "hit": "s5924_black_drift_2_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            640,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_3",
+          "hit": "s5924_black_drift_3_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            960,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_4",
+          "hit": "s5924_black_drift_4_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            1280,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_5",
+          "hit": "s5924_black_drift_5_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            0,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_6",
+          "hit": "s5924_black_drift_6_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_7",
+          "hit": "s5924_black_drift_7_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            640,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_drift_8",
+          "hit": "s5924_black_drift_8_hit",
+          "sheet": "s5924_sheet_black_drift",
+          "hitSheet": "s5924_sheet_black_drift_hit",
+          "cell": [
+            960,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        }
+      ]
+    },
+    "black_spin": {
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "fps": 14,
+      "frames": [
+        {
+          "key": "s5924_black_spin_0",
+          "hit": "s5924_black_spin_0_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_1",
+          "hit": "s5924_black_spin_1_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            320,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_2",
+          "hit": "s5924_black_spin_2_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            640,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_3",
+          "hit": "s5924_black_spin_3_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            960,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_4",
+          "hit": "s5924_black_spin_4_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            1280,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_5",
+          "hit": "s5924_black_spin_5_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            0,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_6",
+          "hit": "s5924_black_spin_6_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_7",
+          "hit": "s5924_black_spin_7_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            640,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_8",
+          "hit": "s5924_black_spin_8_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            960,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_9",
+          "hit": "s5924_black_spin_9_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            1280,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_10",
+          "hit": "s5924_black_spin_10_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            0,
+            640,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_11",
+          "hit": "s5924_black_spin_11_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            320,
+            640,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_12",
+          "hit": "s5924_black_spin_12_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            640,
+            640,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_13",
+          "hit": "s5924_black_spin_13_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            960,
+            640,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_14",
+          "hit": "s5924_black_spin_14_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            1280,
+            640,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_15",
+          "hit": "s5924_black_spin_15_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            0,
+            960,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_spin_16",
+          "hit": "s5924_black_spin_16_hit",
+          "sheet": "s5924_sheet_black_spin",
+          "hitSheet": "s5924_sheet_black_spin_hit",
+          "cell": [
+            320,
+            960,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        }
+      ]
+    },
+    "black_charge": {
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "fps": 14,
+      "frames": [
+        {
+          "key": "s5924_black_charge_0",
+          "hit": "s5924_black_charge_0_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_1",
+          "hit": "s5924_black_charge_1_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            320,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_2",
+          "hit": "s5924_black_charge_2_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            640,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_3",
+          "hit": "s5924_black_charge_3_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            960,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_4",
+          "hit": "s5924_black_charge_4_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            1280,
+            0,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_5",
+          "hit": "s5924_black_charge_5_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            0,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_6",
+          "hit": "s5924_black_charge_6_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_7",
+          "hit": "s5924_black_charge_7_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            640,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        },
+        {
+          "key": "s5924_black_charge_8",
+          "hit": "s5924_black_charge_8_hit",
+          "sheet": "s5924_sheet_black_charge",
+          "hitSheet": "s5924_sheet_black_charge_hit",
+          "cell": [
+            960,
+            320,
+            320,
+            320
+          ],
+          "pivot": [
+            160,
+            160
+          ]
+        }
+      ]
+    },
+    "warp_motion": {
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "fps": 20,
+      "frames": [
+        {
+          "key": "s5924_warp_motion_0",
+          "hit": "s5924_warp_motion_0_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_1",
+          "hit": "s5924_warp_motion_1_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_2",
+          "hit": "s5924_warp_motion_2_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_3",
+          "hit": "s5924_warp_motion_3_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_4",
+          "hit": "s5924_warp_motion_4_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            1024,
+            0,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_5",
+          "hit": "s5924_warp_motion_5_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_6",
+          "hit": "s5924_warp_motion_6_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_7",
+          "hit": "s5924_warp_motion_7_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_8",
+          "hit": "s5924_warp_motion_8_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_9",
+          "hit": "s5924_warp_motion_9_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            1024,
+            256,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_10",
+          "hit": "s5924_warp_motion_10_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_11",
+          "hit": "s5924_warp_motion_11_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_12",
+          "hit": "s5924_warp_motion_12_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_13",
+          "hit": "s5924_warp_motion_13_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_14",
+          "hit": "s5924_warp_motion_14_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            1024,
+            512,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_15",
+          "hit": "s5924_warp_motion_15_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_16",
+          "hit": "s5924_warp_motion_16_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_17",
+          "hit": "s5924_warp_motion_17_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_18",
+          "hit": "s5924_warp_motion_18_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_19",
+          "hit": "s5924_warp_motion_19_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            1024,
+            768,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_20",
+          "hit": "s5924_warp_motion_20_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_21",
+          "hit": "s5924_warp_motion_21_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_22",
+          "hit": "s5924_warp_motion_22_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_23",
+          "hit": "s5924_warp_motion_23_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        },
+        {
+          "key": "s5924_warp_motion_24",
+          "hit": "s5924_warp_motion_24_hit",
+          "sheet": "s5924_sheet_warp_motion",
+          "hitSheet": "s5924_sheet_warp_motion_hit",
+          "cell": [
+            1024,
+            1024,
+            256,
+            256
+          ],
+          "pivot": [
+            128,
+            128
+          ]
+        }
+      ]
+    }
+  }
+}

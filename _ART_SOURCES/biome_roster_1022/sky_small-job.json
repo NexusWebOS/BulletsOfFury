@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 4db47301-0262-4750-b4de-17a4cf3e408a\njob_id: 4db47301-0262-4750-b4de-17a4cf3e408a\nmodel: pro\ndescription: FRAME FORMAT: 192 x192 transparent pixels. Fixed fuselage center pivot96,96, one common proportional scale, reserve at least20 pixels clear transparent margin on all sides. Crisp detailed 16/32-bit arcade pixel art, clean single-pixel outlines, sharp metallic shading. STRICT ORTHOGRAPHIC TOP VIEW looking directly down onto aircraft. Nose points straight DOWN toward bottom edge, rear engines at top. Symmetrical wings, never diagonal or isometric. One complete aircraft centered and uncropped, no background or shadow plate, no text, no external bullets or muzzle flash. Small agile SKY DART interceptor. White ceramic and cool light gray alloy hull, TEAL trim and teal engine lights. Sharp narrow swept wings, compact elegant fuselage, two small forward guns, two rear turbine exhausts. Wind-powered aircraft, crisp military mechanical structure. No yellow, red, royal blue or black-ice livery.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 10222002\nasset_id: f97a178e-f81c-5711-b5b2-1c52ad7511c4\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"4db47301-0262-4750-b4de-17a4cf3e408a\")"
+    }
+  ],
+  "isError": false
+}

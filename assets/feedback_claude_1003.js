@@ -182,6 +182,9 @@ function fb2IntroTick(dt){
  const I=fb2Intro;if(!I)return;
  if(I.done){I.dim=Math.max(0,I.dim-dt*1.6);if(I.dim<=0)fb2Intro=null;return;}
  if(!fb2IntroActive()){fb2IntroEnd();return;}
+ // Tactical barks briefly own the shared HUD radio. Preserve this line's read
+ // time underneath them; the encounter and background continue independently.
+ if(BOFCinematicDirector.current?.combatLive)return;
  I.age+=dt;I.dim=0;
  const L=I.lines[I.i],cps=38,full=L.text.length;
  if(I.interactive&&I.age>.35&&(Input.tapAny?Input.tapAny(keybind.fire):Input.menuConfirm())){
@@ -199,7 +202,9 @@ hammerBossTick=function(b,dt){
  b._cin30Spoke=true;                   // the 0930 live (pausing) scene never fires now
  if(!b._fb2IntroSeen&&h.state==='unfold'&&h.t>=FB2_HOLD_T-.05){b._fb2IntroSeen=true;fb2IntroStart(b);}
  if(fb2Intro&&!fb2Intro.done&&fb2Intro.boss===b){
-  // Dialogue continues while unfolding and combat advance normally.   // hold the unfolded plate
+  // Only Chronos waits: keep his complete arrival pose on screen until the
+  // conversation ends. World scrolling, player controls and radio clocks run.
+  b._noHit=true;b.enter=false;h.t=FB2_HOLD_T;return;
  }
  return FB2_HTICK.apply(this,arguments);
 };
@@ -230,12 +235,7 @@ function fb2StunDraw(){
  ctx.restore();
 }
 function fb2IntroDraw(){
- if(!fb2IntroActive())return;const I=fb2Intro,L=I.lines[I.i];if(!L)return;
- const portraitKey=L.kind==='boss'?'fb2_hammer_avatar':L.kind==='hq'?'fb2_dispatch_'+I.disp:undefined;
- const tint=L.kind==='boss'?'#c6a6ff':L.kind==='hq'?dialogueNameColor(I.disp,'#a9dcfa'):dialogueNameColor(L.who,'#cfd6e6');
- const pw=Math.round(VW*.92),ph=Math.round(VH*.20),x=Math.round((VW-pw)/2),y=Math.round(VH*.075);
- dlgBox._tw={key:String(state)+'|'+L.who+'|'+L.text,count:I.shown,at:performance.now(),auto:false};
- dlgBox({who:L.who,portrait:L.kind==='pilot'?I.lead:false,portraitKey,full:L.text,shown:L.text.slice(0,I.shown),fade:1,tint,pw,ph,x,y,emo:L.kind==='pilot'&&I.i===0?'idle':undefined});
+ // Command HUD renders the live arrival conversation outside the playfield.
 }
 // the fight clock counts the fight, not the conversation (it already skips the entry the same way)
 const FB2_CLOCK=encounterClockTick;

@@ -1,0 +1,194 @@
+{
+  "checks": [
+    {
+      "name": "boss native approach has no title or radio",
+      "passed": true,
+      "data": {
+        "warnT": 1.8666666666666685,
+        "warnKind": "boss",
+        "story": false,
+        "card": false
+      }
+    },
+    {
+      "name": "boss real alert draws authored sign and no added lettering",
+      "passed": true,
+      "data": {
+        "calls": [
+          "alert_critical_1024"
+        ],
+        "text": []
+      }
+    },
+    {
+      "name": "boss countdown still spawns its encounter",
+      "passed": true,
+      "data": {
+        "warnT": -7.28583859910259e-16,
+        "kind": "chromehammer",
+        "mini": false,
+        "sub": false
+      }
+    },
+    {
+      "name": "miniboss native approach has no title or radio",
+      "passed": true,
+      "data": {
+        "warnT": 1.8333333333333353,
+        "warnKind": "sub",
+        "story": false,
+        "card": false
+      }
+    },
+    {
+      "name": "miniboss real alert draws authored sign and no added lettering",
+      "passed": true,
+      "data": {
+        "calls": [
+          "alert_critical_1024"
+        ],
+        "text": []
+      }
+    },
+    {
+      "name": "miniboss countdown still spawns its encounter",
+      "passed": true,
+      "data": {
+        "warnT": -7.28583859910259e-16,
+        "kind": null,
+        "mini": true,
+        "sub": true
+      }
+    },
+    {
+      "name": "natural-mini native approach has no title or radio",
+      "passed": true,
+      "data": {
+        "warnT": 2.35,
+        "warnKind": "sub",
+        "story": false,
+        "card": false
+      }
+    },
+    {
+      "name": "natural-mini real alert draws authored sign and no added lettering",
+      "passed": true,
+      "data": {
+        "calls": [
+          "alert_critical_1024"
+        ],
+        "text": []
+      }
+    },
+    {
+      "name": "natural-mini countdown still spawns its encounter",
+      "passed": true,
+      "data": {
+        "warnT": -7.28583859910259e-16,
+        "kind": null,
+        "mini": true,
+        "sub": true
+      }
+    },
+    {
+      "name": "natural-boss native approach has no title or radio",
+      "passed": true,
+      "data": {
+        "warnT": 2.3666666666666667,
+        "warnKind": "boss",
+        "story": false,
+        "card": false
+      }
+    },
+    {
+      "name": "natural-boss real alert draws authored sign and no added lettering",
+      "passed": true,
+      "data": {
+        "calls": [
+          "alert_critical_1024"
+        ],
+        "text": []
+      }
+    },
+    {
+      "name": "natural-boss countdown still spawns its encounter",
+      "passed": true,
+      "data": {
+        "warnT": -7.28583859910259e-16,
+        "kind": "chromehammer",
+        "mini": false,
+        "sub": false
+      }
+    },
+    {
+      "name": "harrier native approach has no title or radio",
+      "passed": true,
+      "data": {
+        "warnT": 2.3666666666666667,
+        "warnKind": "boss",
+        "story": false,
+        "card": false
+      }
+    },
+    {
+      "name": "harrier real alert draws authored sign and no added lettering",
+      "passed": true,
+      "data": {
+        "calls": [
+          "alert_critical_1024"
+        ],
+        "text": []
+      }
+    },
+    {
+      "name": "harrier countdown still spawns its encounter",
+      "passed": true,
+      "data": {
+        "warnT": -7.28583859910259e-16,
+        "kind": "warhive",
+        "mini": false,
+        "sub": false
+      }
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "passed": 16,
+  "failed": 0,
+  "art": {
+    "key": "alert_critical_1024",
+    "path": "assets/game/shared/ui/approach_alert_1024/critical_enemy.webp",
+    "resolution": [
+      768,
+      640
+    ],
+    "pivot": [
+      384,
+      320
+    ],
+    "text": "Warning: Critical Enemy Approaching!",
+    "source": "_ART_SOURCES/approach_alert_1024/critical-enemy-source.png",
+    "source_resolution": [
+      1374,
+      1145
+    ],
+    "proportional_scale": 0.5589519650655022,
+    "offset": [
+      0,
+      0
+    ],
+    "alpha_preserved": true,
+    "sha256": "28b294b272fd792a3b8b9d86570c41ed41238e37a3be667d21b32106ed12a731",
+    "owner": "_BUILD_SOURCE/build_approach_alert_1024.py"
+  },
+  "core_suite": {
+    "exit": 1,
+    "final_summary": false,
+    "blocker": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs before assertions"
+  },
+  "syntax": "node --check assets/game.js passed"
+}

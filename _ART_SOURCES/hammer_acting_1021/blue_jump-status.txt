@@ -1,0 +1,10 @@
+status: completed
+id: 78f29ead-96b6-4a8e-baa5-0f7d1a3ea47e
+job_id: 78f29ead-96b6-4a8e-baa5-0f7d1a3ea47e
+frame: 16 of 17
+asset_id: b077a2e2-820f-5c5c-b1ce-1116def2c68c
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0397 in credits
+download: https://api.pixellab.ai/mcp/images/78f29ead-96b6-4a8e-baa5-0f7d1a3ea47e/download?index=16

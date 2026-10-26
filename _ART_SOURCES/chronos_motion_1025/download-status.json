@@ -1,0 +1,86 @@
+[
+  {
+    "bank": "takeoff_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "land_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "windup_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "strike_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "retract_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "left_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "right_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "shield_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "palm_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "aura_regular",
+    "state": "downloaded"
+  },
+  {
+    "bank": "takeoff_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "land_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "windup_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "strike_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "retract_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "left_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "right_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "shield_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "palm_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "aura_chrome",
+    "state": "downloaded"
+  },
+  {
+    "bank": "activation",
+    "state": "downloaded"
+  }
+]

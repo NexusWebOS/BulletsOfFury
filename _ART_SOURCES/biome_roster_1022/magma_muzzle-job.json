@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: dd8df493-f47e-4379-a6ce-bc311c223d70\njob_id: dd8df493-f47e-4379-a6ce-bc311c223d70\nmodel: pro\ndescription: FRAME FORMAT:192 x192 transparent pixels, fixed physical pivot96,96, generous32pixel transparent margin, one common scale, crisp 16/32-bit arcade pixel-art special effect with distinct outlined pixels, absolutely no scenery or background plate. Molten lava energy: brilliant ivory white-hot center, saturated orange and deep red flame lobes with tiny dark basalt sparks. Crisp arcade pixels. A single circular energy MUZZLE FLASH viewed directly face-on, concentric expanding rings around an empty tiny center. Centered exactly96,96. Round compact symmetrical burst, effects only, no barrel, aircraft, weapon or symbols.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nseed: 10222100\nasset_id: cc68b7ff-ecc5-57d8-8ee1-d42cc65ee366\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"dd8df493-f47e-4379-a6ce-bc311c223d70\")"
+    }
+  ],
+  "isError": false
+}

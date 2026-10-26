@@ -1,0 +1,388 @@
+{
+  "scope": "Accelerating continuous depth loops, complete body concealed until peak flash, cinematic strikes across the playfield, and installed Boss Cinematics skill",
+  "native": {
+    "passed": 30,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Native portal entrance reaches the original first host",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The existing authored 24-pose carrier and final plates are ready",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native core exhaustion starts one protected rebirth",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rear and foreground electric helices visibly wrap the native body",
+        "passed": true,
+        "data": {
+          "rd25UnderEffects": 2464,
+          "rd25OverEffects": 3218,
+          "rd25Lightning": 47713
+        }
+      },
+      {
+        "name": "Overhead lightning visibly strikes down through the scene",
+        "passed": true,
+        "data": {
+          "rd25UnderEffects": 2464,
+          "rd25OverEffects": 3218,
+          "rd25Lightning": 47713
+        }
+      },
+      {
+        "name": "Distant cinematic strikes visibly change native scene pixels",
+        "passed": true,
+        "data": {
+          "changed": 51957
+        }
+      },
+      {
+        "name": "The turning carrier keeps animating throughout the partial download",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Generated side and back views animate through the complete depth turntable",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Forming body stays upright while its actual depth poses turn",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Electric wrap retains separate front and rear depth layers",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All main strikes travel downward from above the boss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rotation accelerates continuously without a final settling pause",
+        "passed": true,
+        "data": {
+          "firstRate": 0.8408333333333751,
+          "lastRate": 2.5733333333333075
+        }
+      },
+      {
+        "name": "Late fast loops keep traversing front side and back poses",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Complete final body remains withheld until peak whiteout",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Cinematic lightning reaches all nine screen lanes",
+        "passed": true,
+        "data": {
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      },
+      {
+        "name": "Actual preflash renderer retains partial bands and never draws native complete body",
+        "passed": true,
+        "data": [
+          {
+            "t": 24.7,
+            "calls": 0,
+            "bands": 111,
+            "full": false
+          },
+          {
+            "t": 25.22,
+            "calls": 0,
+            "bands": 111,
+            "full": false
+          },
+          {
+            "t": 25.59,
+            "calls": 0,
+            "bands": 111,
+            "full": false
+          }
+        ]
+      },
+      {
+        "name": "Rendered profile narrows in depth and back art differs from the front",
+        "passed": true,
+        "data": [
+          {
+            "frame": 0,
+            "ink": 16044,
+            "width": 237,
+            "hash": 21071699
+          },
+          {
+            "frame": 5,
+            "ink": 8453,
+            "width": 106,
+            "hash": 9223502
+          },
+          {
+            "frame": 8,
+            "ink": 13274,
+            "width": 225,
+            "hash": 14904239
+          },
+          {
+            "frame": 11,
+            "ink": 8453,
+            "width": 106,
+            "hash": 9223502
+          }
+        ]
+      },
+      {
+        "name": "Native final-form data progressively fills the same rotating assembly",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The assembled form stays protected and exposes no premature Retina target",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All five native final-form health budgets survive the complete download",
+        "passed": true,
+        "data": {
+          "host": 5945,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            4510,
+            0,
+            4920
+          ],
+          "forms": [
+            0,
+            8,
+            1,
+            6,
+            2
+          ]
+        }
+      },
+      {
+        "name": "Exactly 24 native lightning beats precede the final arena",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The native reveal enters final speech once",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Download completes upright at the native combat scale",
+        "passed": true,
+        "data": {
+          "x": 339.385,
+          "y": 212.0930979366745,
+          "dx": -0.6149999999999869,
+          "dy": -3.818124999999987,
+          "size": 410,
+          "k": 1.28125,
+          "progress": 1,
+          "angle": 0,
+          "frame": 11,
+          "t": 25.23333333333318,
+          "body": {
+            "x": 340,
+            "y": 215.91122293667448
+          },
+          "depth": true,
+          "yaw": 3.090454506503962,
+          "depthFrame": 7,
+          "nativeBlend": 0,
+          "fullForm": false,
+          "materialProgress": 0.86,
+          "rotationTurns": 30.49186111111073,
+          "rotationRate": 2.5183333333333104,
+          "extent": 512,
+          "bands": 111,
+          "bolts": 24,
+          "source": "native-colossus",
+          "carrier": "er23_symbiote",
+          "protected": true
+        }
+      },
+      {
+        "name": "The completed body enters speech without a position jump",
+        "passed": true,
+        "data": {
+          "before": [
+            340,
+            212.81320720217624
+          ],
+          "after": [
+            340,
+            212.81320720217624
+          ]
+        }
+      },
+      {
+        "name": "Completed download pixels match the actual native final-form renderer",
+        "passed": true,
+        "data": {
+          "different": 62,
+          "opaque": 245760
+        }
+      },
+      {
+        "name": "Download begins with the same authored turning carrier pixels",
+        "passed": true,
+        "data": {
+          "different": 0,
+          "opaque": 245760
+        }
+      },
+      {
+        "name": "Final form resumes native combat and visibly flashes on a real hit",
+        "passed": true,
+        "data": {
+          "white": 17455,
+          "mode": "fight",
+          "state": "play",
+          "t": 0.13333333333333333
+        }
+      },
+      {
+        "name": "Native final-form hit flash expires normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Download energy uses an approved audible mixer cue",
+        "passed": true,
+        "data": {
+          "peak": 0.7848029732704163,
+          "duration": 0.7975
+        }
+      },
+      {
+        "name": "Native renderer has no page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "report": "_shots/dracodia_climax_1026/probe/report.json"
+  },
+  "video": {
+    "path": "_shots/dracodia_climax_1026/video/take-f72285dd/dracodia-final-transformation.mp4",
+    "seconds": 36.180199999988076,
+    "decodedPeakDb": -4.6,
+    "nativeFps": 59.01017683707397,
+    "checks": {
+      "noPageOrConsoleErrors": true,
+      "noAssetErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true,
+      "nativeDamageStartsCheckpoint": true,
+      "all24LightningBeats": true,
+      "downloadCompletes": true,
+      "finalArenaRevealed": true,
+      "nativeLightningAudioPlayed": true,
+      "nativeFinalBodyDownloaded": true,
+      "downloadEnergyReplacesTeleportCue": true,
+      "actualDepthPoses": true,
+      "uprightFormingBody": true,
+      "swirlAndDownwardStrikes": true,
+      "acceleratingUntilFlash": true,
+      "noFullBodyBeforeFlash": true,
+      "fullBodyAfterPeakFlash": true,
+      "strikesAcrossScreen": true
+    },
+    "chapters": {
+      "collapse": 1.627633333315452,
+      "symbiote": 12.227633333315453,
+      "download": 16.12763333331545,
+      "lightning": 20.82763333331545,
+      "storm": 25.727633333315453,
+      "complete": 26.84763333331545,
+      "reveal": 31.227633333315453,
+      "peak-flash": 27.37763333331545,
+      "clearing-light": 28.82763333331545
+    },
+    "report": "_shots/dracodia_climax_1026/video/take-f72285dd/report.json"
+  },
+  "playback": {
+    "url": "http://127.0.0.1:53746/_shots/dracodia_climax_1026/video/take-f72285dd/dracodia-final-transformation.mp4",
+    "checks": {
+      "decodes1280x800": true,
+      "lightningPlaysWithAudio": true,
+      "stormPlaysWithAudio": true,
+      "revealPlaysWithAudio": true,
+      "byteRangeSeeking": true,
+      "noBrowserErrors": true
+    },
+    "errors": []
+  },
+  "skill": {
+    "name": "Boss Cinematics",
+    "skill": "boss-cinematics",
+    "path": "C:\\Users\\Mdogg\\.codex\\skills\\boss-cinematics",
+    "validated": true,
+    "files": {
+      "SKILL.md": "4b3160c175a36da6b9a7a45b84346a4c9eb8db7763e3b7cbec0a7c084449e8ca",
+      "agents/openai.yaml": "06bea416f8e038820fe23062ea291946102869a967477a734adcb7db640af859",
+      "references/bullets-of-fury.md": "320269ee984373e823cf7e15d8bd6702aa3325e1604d4db146981b89401c793c"
+    }
+  },
+  "newGenerationCredits": 0,
+  "syntax": {
+    "assets/game.js": 0,
+    "assets/dracodia_depth_1026.js": 0
+  },
+  "sharedSourceHashesPreserved": {
+    "assets\\game.js": "7e720920e308da7934b2f9197af330aafadee03463e585eafa684068a918d007",
+    "_BUILD_SOURCE\\test_fl.js": "9cad55805d66713500634997c95a71974771c0947981562c798370b8d307bc8e"
+  },
+  "sourceHashes": {
+    "assets/dracodia_depth_1026.js": "39be5bf5350411717eb3e72bae9ff5a9be03e303383bad18677e0608de0da418",
+    "assets/dracodia_download_reveal_1025.js": "776e16fefd19acaafc755832fda0300aeca6da93cdc16253645de45261d7de6f",
+    "index.html": "e3bdd5e904a0367c698ac9ba39cf3e9eba39a80c069857104eaf71c7142ffbd7",
+    "_BUILD_SOURCE/probe_dracodia_download_reveal_1025.py": "7701dfce09f77525c83400502af604627394405fcdaee39fcfaa323905c711bf",
+    "_BUILD_SOURCE/record_dracodia_transformation_1025.py": "d160e29d804e8736e81c895235478c4fb25f4bd76fd8c3294af1d2425ad7cd5c",
+    "_BUILD_SOURCE/check_dracodia_transformation_video_1025.py": "d8632a3b55d5ac83a2e9445e10f89204b278032de5b15fafd46198faade58b42"
+  },
+  "requiredSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "log": "_shots/dracodia_climax_1026/required-suite.log",
+    "reason": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs aborts before assertions."
+  },
+  "method": "Native Chromium, actual drawImage pixels, separate native-damage checkpoint, continuous audible recording with no phase/timer skips, decoded frame inspection and Chromium playback/seeking."
+}

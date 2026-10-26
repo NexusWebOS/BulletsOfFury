@@ -1,4 +1,49 @@
 {
+  "rd29_": {
+    "role": "drone_native_magenta_pixel_glow",
+    "owner": "_BUILD_SOURCE/build_drone_rework_1026.py",
+    "manifest": "assets/game/levels/stage_08/boss/drone_rework_1026/manifest.json",
+    "note": "Mike Oct26: source-derived 256x256 own-pixel emission with fixed pivot and hard rings; six stepped 1015 charge levels, original drone unchanged."
+  },
+  "rd28p_": {
+    "role": "dracodia_living_dna_final_form_palette",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_dracodia_dna_1026.py",
+    "manifest": "_BUILD_SOURCE/dracodia_dna_1026/source-manifest.json",
+    "note": "Mike October26: isolated violet/red-magenta DNA code12 and liquid32 palette sheets retain native cells, alpha, luminance, dark outlines and highlights. Original green sources and other scenes stay unchanged."
+  },
+  "rd26_": {
+    "role": "dracodia_forming_depth_turntable",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_dracodia_depth_1026.py",
+    "manifest": "assets/game/levels/stage_08/boss/dracodia_depth_1026/manifest.json",
+    "note": "Mike October26: one referenced SpriteCook depth animation;16 selected/reflected upright whole-body views on fixed512 cells, common chest pivot and one proportional scale. Matching source-derived wire. Protected rebirth only; settles into actual native final form before the unchanged whiteout/speech. Native HP, hit feedback and24 lightning beats remain. Runtime dracodia_depth_1026.js separates overhead strikes and front/rear helical lightning."
+  },
+  "hb25_": {
+    "role": "herald_red_chaos_energy",
+    "owner": "_BUILD_SOURCE/build_herald_chaos_1025.py",
+    "manifest": "assets/herald_chaos_art_1025.js",
+    "note": "Mike Oct25: visible round red chaos from living Herald claws, including bomber drops. Eight authored bpfx_proj_void source frames, red chroma variant only; source alpha, neutral dark metal and bright glints unchanged. Fixed128x128 cells/pivot64,64, one common scale. Native damage/death owners remain. Complete hashes/recipe in game/levels/stage_08/miniboss/herald_chaos_1025/manifest.json."
+  },
+  "wt25_": {
+    "role": "tidal_sovereign_whole_hull_animated_liquid",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_warden_tidal_1025.py",
+    "manifest": "assets/warden_tidal_art_1025.js",
+    "note": "Mike October25: restore the water inside the existing whole Tidal hull. Three native damage states, each32 fixed320x256 frames/common160,128 pivot; armor, seams, outline and alpha remain byte-identical. Only measured liquid apertures use source-preserving spiral rotation and the approved32-pose blue ocean. The two water circles and lower cannon tips own flood, geyser, mortar, mist, cutter/torpedo and maelstrom attacks in warden_tidal_1025.js. Native sentinel convergence, complete6500 Furious water pool, real hit flashes, death and rewards remain owned by the encounter."
+  },
+  "r25_": {
+    "role": "warden_walking_dracodia_first_host_download",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_stage78_review_1025.py",
+    "note": "Mike October25: four eight-pose authored modular leg walks, fixed256 cells/common hip pivots/one scale; planted diagonal stance, actual alpha hit regions and opaque toe targets. Complete512 connected first-host plates retain original pixels; measured arm/core masks support explicit exploding breakaway arms. Animated measured-eye flare, native claw projectiles/physical rockets/muzzles, continuous ball/code bombs, living original arena and protected24-beat digital reconstruction. Original branching lightning replaces the rejected pinwheel. Native HP/portal/rewards/copies remain owned by their existing encounter."
+  },
+  "c27_": {
+    "role": "chronos_whole_actor_pixellab_motion",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_chronos_motion_1025.py",
+    "note": "GPT whole-body keys plus pinned PixelLab motion. Uniform448x448 cells, common224,252 pivot and512/342 world scale. October25 correction replaces wrist spin with complete extended-arm torso/hip/leg turns, including left/right sweeps in regular/chromium/red materials. New24-step overhead electrical chromium activation keeps the canonical tool baked to inspected fist sockets. New turn poses contain their complete authored cylindrical plasma hammer; measured head sockets drive collisions. Original canonical detached tool remains the throw/recall owner. The15%-HP rage charge now raises the actual held hammer through regular/chromium-to-red windup poses. The old baked flame/rage image is archived and not selected. A bounded native alpha stencil traces each current authored pose for the aura, following its exact pivot, rotation and depth scale. No runtime body sections. Build_chronos_final_1025.py is chained last by the owning motion compiler."
+  },
   "bf22_": {
     "role": "stage_2_magma_stage_6_wind_stage_9_water_fleet",
     "sheet": null,
@@ -183,7 +228,7 @@
   "ap10_wind_icon_": {
     "role": "wind_projectile_upgrade_menu_badges",
     "sheet": null,
-    "note": "October11 Wind follow-up:45 drawn weapon badges I\u2013V now use emerald borders with white Roman tags and silver projectile interiors. All128x128, pivot64,64. Original silver sheets and new built-in border edits retained in _ART_SOURCES/wind_icons_1011. Owning build_audio_fx_1010.py invokes wind_icon_art_1011.py and updates pixels plus audio_fx_art_1010.js together. Loose assets/game/shared/ui/wind_icons_1011. Native Forge, upgrade-menu and Stage6 reward checks pass. Separate gust reward symbol remains ap10_wind_symbol. See docs/feedback/WIND_PROJECTILES_1011.md."
+    "note": "October11 Wind follow-up:45 drawn weapon badges I–V now use emerald borders with white Roman tags and silver projectile interiors. All128x128, pivot64,64. Original silver sheets and new built-in border edits retained in _ART_SOURCES/wind_icons_1011. Owning build_audio_fx_1010.py invokes wind_icon_art_1011.py and updates pixels plus audio_fx_art_1010.js together. Loose assets/game/shared/ui/wind_icons_1011. Native Forge, upgrade-menu and Stage6 reward checks pass. Separate gust reward symbol remains ap10_wind_symbol. See docs/feedback/WIND_PROJECTILES_1011.md."
   },
   "ap10_wind_symbol": {
     "role": "wind_elemental_reward_and_selector_symbol",
@@ -375,7 +420,7 @@
     "sheet": null,
     "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/shared/effects/fx_burn_0922/provenance.json."
   },
-  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u00e2\u20ac\u201d look it up here, and if it is not here, render it and ask.",
+  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again â€” look it up here, and if it is not here, render it and ask.",
   "?": {
     "role": "boot",
     "sheet": "boot",
@@ -485,7 +530,7 @@
     "role": "miniboss",
     "sheet": "miniboss_stage4"
   },
-  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set \u00e2\u20ac\u201d pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr \u00e2\u20ac\u201d blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
+  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set â€” pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr â€” blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
   "n6": {
     "role": "enemy",
     "sheet": "stage6roster"
@@ -501,7 +546,7 @@
   "nxp_": {
     "role": "explosions",
     "sheet": "explosions",
-    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail \u00e2\u20ac\u201d my sampler's fault, not his."
+    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail â€” my sampler's fault, not his."
   },
   "nbs_": {
     "role": "bossbarfill",
@@ -581,14 +626,14 @@
   "ndk_": {
     "role": "deckerweapon",
     "sheet": "playerprojectiles",
-    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker \u00e2\u20ac\u201d the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
+    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker â€” the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
   },
   "nthp_": {
     "role": "pilotthrusters",
     "sheet": "playerships",
-    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs \u00e2\u20ac\u201d he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
+    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs â€” he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
   },
-  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail \u00e2\u20ac\u201d the sampler took the first frame of each reel, which for an effect is a 4px spark.",
+  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail â€” the sampler took the first frame of each reel, which for an effect is a 4px spark.",
   "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index.",
   "rr_ship_": {
     "role": "enemyship_master",
@@ -818,7 +863,7 @@
   "map4f_": {
     "role": "campaign_marker",
     "sheet": null,
-    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated I\u00e2\u20ac\u201cIX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
+    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated Iâ€“IX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
   },
   "map4e_region_hub": {
     "role": "campaign_landmark",
@@ -918,7 +963,7 @@
   "pxv17_": {
     "role": "pixellab_stage7_stage8_portal_lifecycles_three_void_arenas_and_compact_wind_rounds",
     "sheet": null,
-    "note": "Four separate16\u201332-pose form/loop/close portal families, three512x512 open dark arenas,16 authored code-parallax poses and three16-pose compact Wind round families. Actual PixelLab frames on even320x320,256x256 and64x64 canvases, fixed center pivots, one common proportional scale per animation. Runtime pixellab_void_1017; owning exporter build_pixellab_void_1017.py. No reversed closure, per-frame stretching or combat changes."
+    "note": "Four separate16–32-pose form/loop/close portal families, three512x512 open dark arenas,16 authored code-parallax poses and three16-pose compact Wind round families. Actual PixelLab frames on even320x320,256x256 and64x64 canvases, fixed center pivots, one common proportional scale per animation. Runtime pixellab_void_1017; owning exporter build_pixellab_void_1017.py. No reversed closure, per-frame stretching or combat changes."
   },
   "sk19_": {
     "role": "optical_stealth_refraction_form_loop_dissipate",
@@ -1077,15 +1122,92 @@
     "note": "Exclusive original chaingun icon box restored with generated opening. Articulated toss/catch/fire and canonical glowing hammer retained.20 corrected armor sheets cover HA21, live H22 overrides and HF22;16 clean activation poses/white-hit partners from approved HF22 windup preserve dark outlines/seams. Fixed unit/pivots, binary alpha and native hit feedback. Real Chrome Hammer portrait announcements use the protected cinematic director; combat pauses, visual hit-flash expiry continues. See docs/HAMMER_CORRECTION_1023.md."
   },
   "ch23_": {
-    "role": "chronos_separate_rotary_chaingun",
+    "role": "chronos_approved_rotary_gun_and_whole_recoil_body",
     "sheet": null,
-    "owner": "_BUILD_SOURCE/build_chronos_modular_1023.py",
-    "note": "Mike approved Stage5 Chronos modular exception: whole body + independent rotary chaingun + foreground hands. Native separate gun HP/Retina target, measured alpha damage mask/muzzle, rev/coast, alternating down rake/fan5/7/9, fixed authored warning/round direction cells.68 exports/19 sheets. Rejected arm drift and changing muzzle topology; exact source rotor8 phases. Native pickup, Chromium gun retention, death and arsenal preserved. docs/CHRONOS_MODULAR_1023.md."
+    "owner": "_BUILD_SOURCE/build_chronos_aura_gun_1025.py",
+    "note": "October25 selected PixelLab whole-body recoil poses0,1,2,6,7,8; rejects3-5 with invented side grip. Original receiver/handles/alpha silhouette stay fixed; selected moving barrel interiors use the original metallic tonal range. Six whole body poses, eight rotating barrel phases plus rest, matching foreground grips and white hits in regular/chromium/red. Existing native gun HP, alpha target and actual recoiling muzzle retained."
   },
   "nb23_": {
     "role": "dracodia_neural_archon",
     "sheet": null,
     "owner": "_BUILD_SOURCE/build_dracodia_brain_1023.py",
     "note": "Whole-frame PixelLab idle/charge/focus preserve moving face; each body cell has measured eyes. New16-frame laser flow at6 baked expansion widths. Authored white hit partners and progressive eye/brow glow; no live visual effects. Sources _ART_SOURCES/dracodia_brain_1023 and dracodia_eyes_1023.179 cells/22 sheets; final39 native checks. See docs/DRACODIA_EYES_1023.md."
+  },
+  "s5924_": {
+    "role": "black_horizon_eye_registered_acting_and_water_warp",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_stage59_1024.py",
+    "note": "Inspected PixelLab black hull drift/spin, original armor plus generated lens-only charge, white hit partners and opaque animated water tunnel. Common scales, fixed measured-eye pivots, even shared cells; no generated external rings or props."
+  },
+  "beta_elite_1024": {
+    "owner": "_BUILD_SOURCE/build_beta_elite_1024.py",
+    "manifest": "assets/game/shared/ui/beta_elite_1024/manifest.json",
+    "purpose": "PixelLab ordinary shielded elite health gauge, separate empty frame and fill"
+  },
+  "ot24_": {
+    "owner": "_BUILD_SOURCE/build_orbital_takeover_1024.py",
+    "manifest": "assets/game/shared/cinematics/orbital_takeover_1024/manifest.json",
+    "purpose": "Paired 512px stable satellite plates; faceless animated liquid symbiote and authored Earth downlink packets. No face-bearing remnant, no warped hull frames."
+  },
+  "bi24_": {
+    "owner": "_BUILD_SOURCE/build_boss_integrity_1024.py",
+    "manifest": "assets/game/shared/combat/boss_integrity_1024/manifest.json",
+    "purpose": "Whole connected GPT Phoenix/Dracodia/Chronos keyposes interpolated in PixelLab, fixed core pivots and actual white hit banks; no cropped-body debris."
+  },
+  "alert_critical_1024": {
+    "owner": "_BUILD_SOURCE/build_approach_alert_1024.py",
+    "manifest": "assets/game/shared/ui/approach_alert_1024/manifest.json",
+    "purpose": "New generated steel/red/amber alert emblem and integrated exact critical-enemy copy; boss, miniboss and rival approach UI."
+  },
+  "c25_": {
+    "owner": "_BUILD_SOURCE/build_chronos_contract_1025.py",
+    "manifest": "assets/game/shared/combat/chronos_contract_1025/manifest.json",
+    "purpose": "Intact empty-handed Chronos kneel, hit and recovery/death identity; uniform448 cells/224,258 pivot, real white hit banks."
+  },
+  "c26_": {
+    "owner": "_BUILD_SOURCE/build_chronos_frames_1025.py",
+    "manifest": "assets/game/shared/combat/chronos_frames_1025/manifest.json",
+    "purpose": "64 GPT whole-actor Chronos frames: distinct regular/chromium spin, jump/strike/retreat, shield, unfolding, and physical armor activation. Fixed576 cells/288,328 pivot; measured hammer anchors; white hit banks. Permanent rage adds an alpha-identical red unfolding/ball bank via build_chronos_rage_ball_1025.py."
+  },
+  "c27_spin_": {
+    "role": "original_two_handed_whole_actor_whirlwind",
+    "owner": "_BUILD_SOURCE/restore_chronos_original_spin_1025.py",
+    "manifest": "assets/game/shared/combat/chronos_motion_1025/manifest.json",
+    "source": "assets/game/levels/stage_05/boss/stage5_archmage_0916/combat_0926/whirlwind_v2.png",
+    "note": "Mike October25: use the original HAMMER/HAMA two-handed spin. Eight complete authored views, no modular held tool or arm assembly. Regular source pixels and palette-only chromium/red variants, common even448 canvas/pivot, measured original head anchors. HAMA keeps original native reel; Stage5 independent orbit/extra held hammer disabled."
+  },
+  "ht23_crate_": {
+    "role": "chronos_exclusive_chaingun_box_opening",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_chronos_aura_gun_1025.py",
+    "note": "Nine80x80 fixed-pivot PixelLab frames: exact original icon box cracks, opens into empty dark compartment, then its actual gun prop ejects toward the two-handed catch. Native impact event aligns to the held hammer; shell drops only after gun departure."
+  },
+  "c29_": {
+    "owner": "_BUILD_SOURCE/build_chronos_commitment_1025.py",
+    "manifest": "assets/chronos_commitment_art_1025.js",
+    "role": "chronos_whole_actor_commitment_and_recovery",
+    "note": "Original H22 whole two-handed hammer raise/hold; GPT plus PixelLab whole-actor stun, raised-hand recall and actual power-up acting. Fixed even256/448 cells, common pivots and proportional scales. Regular/chrome/red plus exact alpha white hit masks. No modular held hammer."
+  },
+  "c30_": {
+    "role": "chronos_rotary_gun_and_whole_unarmed_rage",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_chronos_beam_1025.py",
+    "note": "October25 latest direction supersedes red hammer combat. GPT whole unarmed actor keys and wave FX; PixelLab actual16-phase rotating muzzle cluster and9-frame thrust. Fixed receiver/grip; even104x208 rotor,256x256 actor,192x384 wave. Charge alpha cleanup, permanent15% red aura and background wave casts. Native alpha hit flashes/targets, shared audio and FOV. See docs/CHRONOS_BEAM_1025.md."
+  },
+  "c31_rotor_": {
+    "role": "chronos_exact_rotary_authored_pixel_transform",
+    "sheet": null,
+    "owner": "assets/chronos_rotor_art_1025.js",
+    "note": "Native canvas transforms of c30_rotor_0:36 angles, complete projected muzzle-disk360 turn and cylindrical texture transport. Fixed104x208 canvas/pivot54,46, fixed housing/grips, generated white alpha hit variants. No new procedural sprite or replacement character. Runtime chronos_rotor_1025.js also palettes the authored animated wave red/white and native slug gold. See docs/CHRONOS_ROTOR_1025.md."
+  },
+  "c32_": {
+    "role": "chronos_whole_red_rage_palm_volleys",
+    "sheet": null,
+    "owner": "_BUILD_SOURCE/build_chronos_volley_1025.py",
+    "note": "GPT whole left/right/dual/guard poses, PixelLab nine-frame alternating palm transition.11 fixed256x256 cells, common128,90 pivot,218/256 scale and measured per-pose palms. No modular limbs. Foreground/background barrage and existing wave rotation, native flash variants and laser damage. See docs/CHRONOS_VOLLEY_1025.md."
+  },
+  "chronos_storm_1025": {
+    "role": "chronos_red_wave_storm_and_elevenlabs_audio",
+    "note": "C33 uses existing arch_hammer_lightning_0926 eight-frame reel in red/white, proportional scaling and downward clipping; no atlas edits. Five ElevenLabs cues, shared mixer and owner gates. See docs/CHRONOS_STORM_1025.md."
   }
 }

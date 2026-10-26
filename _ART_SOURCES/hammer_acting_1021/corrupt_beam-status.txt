@@ -1,0 +1,10 @@
+status: completed
+id: a8d9ae30-5f93-4935-85bb-924392fac8cd
+job_id: a8d9ae30-5f93-4935-85bb-924392fac8cd
+frame: 16 of 17
+asset_id: bd814793-dc2e-553d-871c-00fa35dcdb89
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0346 in credits
+download: https://api.pixellab.ai/mcp/images/a8d9ae30-5f93-4935-85bb-924392fac8cd/download?index=16

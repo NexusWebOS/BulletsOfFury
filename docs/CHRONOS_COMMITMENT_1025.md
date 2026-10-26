@@ -1,0 +1,29 @@
+# Chronos commitment, armor rupture and recovery — October 25
+
+Mike's latest contract: the original blue cylindrical plasma hammer remains the identity reference; keep the acquired minigun in its firing pose until its own HP is exhausted. Give it a visible bar and Retina target. Accelerate firing continuously. Destroying it causes a visible stun, recovery and raised-hand magnetic hammer recall. Chromium loss causes an energy burst, stun and return to regular armor. Raise the original hammer with both hands behind a larger shield. The permanent red transformation starts at 15% body HP and uses actual power-up acting with the existing close silhouette aura.
+
+## Owners and art
+
+`assets/chronos_commitment_1025.js` is the final Stage5-only controller. It preserves other encounters, the native gun HP/component damage, shared audio, original spin and native hammer attack clocks. Minigun intervals ramp from .18s to .045s on Furious over nine seconds, with a continuous lateral sweep. Timed arsenal/casting exits are suppressed while the acquired gun is intact. Armor breaking with an intact gun retains the held gun and resumes it after the stun. The module only disappears after actual destruction. Gun damage/Retina and existing module flash ownership remain native.
+
+Original H22 whole two-handed slam frames 0–8 provide the raise/hold, with canonical tool and measured tip preserved. No independent held hammer. Shield scale changes from .95 to1.15 and sits lower; actual hammer-to-body authored lightning conducts energy during healing. Raised-hammer missile counters remain separate from gun-break/armor-break stuns. Recovery and rage temporarily throw/recall the existing canonical tool; the shaft approaches the raised palm horizontally so it remains visible above dialogue and below the HUD.
+
+GPT built-in image generation created two whole-actor eight-key sheets, then PixelLab animated the crouch-to-explosive-flex and kneel-to-raised-open-hand transitions. Source sheets/keys and nine-frame PixelLab reels are saved in `_ART_SOURCES/chronos_commitment_1025`. Jobs: recovery `8bad8963-9aea-4287-aa9a-666dbaeb38f8`, power-up `4989563a-654b-479f-99f3-a67f875383f5`. Inspected all returned frames. One proportional scale and fixed pivot per bank, even256/448 cells, authored neutral/blue colors preserved; chrome/red are luminance-preserving metal variants. Every frame has its exact white alpha hit mask. Builder `_BUILD_SOURCE/build_chronos_commitment_1025.py` registers cells and sheets together in `assets/chronos_commitment_art_1025.js`. Export: `assets/game/shared/combat/chronos_commitment_1025/`.
+
+The new acting replaces the old jumping/attack windup used as the red charge. The charge lasts4.8s and latches red permanently; existing doubled hammer clocks and traced aura continue. A queued15% change waits for the acquired gun's destruction rather than abandoning that gun.
+
+## Generation prompt set
+
+Built-in GPT reference for both: `_ART_SOURCES/chronos_aura_gun_1025/body-reference.png`, actual original black steel Chronos, cyan chest and joint lights. Transparent full-actor sheets, eight256x256 target cells in4x2 layout; same character, scale, outfit proportions, facing, no scenery, labels or detached sections. Returned1774x887 source sheets preserved; crops padded consistently and normalized to even256 cells.
+
+Recovery: impact recoil with shoulders flung back; drop to one knee; kneel stunned head down; lift head; push up; stand raising right arm; extend open empty hand overhead; hold raised hand to call the hammer. No gun/hammer/effects baked into the empty recovery actor. PixelLab: smoothly rise from the kneeling key to the overhead open-hand key, unfolding shoulder/elbow/fingers, no morphing, fading, invented objects or effects.
+
+Power-up: braced stance, fists low and head bowed; deeper knee bend and hunched shoulders; contracted torso; hard torso straightening; head thrown back, chest thrust out; explosive arms-down/out flex; widened powerful stance; settle with fists low. No jump or attack, no weapons or giant flame background. PixelLab interpolates the contracted key into the explosive flex, preserving the original metal, helmet and blue emitters. Native pose-traced aura and metal palette transition supply the red transformation, rather than a static flame plate.
+
+## Review and validation
+
+`docs/previews/chronos_frames_1025/index.html` now contains the62-second audible native Furious review, with invulnerability and clearly labeled checkpoints: pickup/continuous gun0–20s, gun destruction20s, chromium depletion27s, shield34s,15% charge42s, red spin49s and its native depth attacks. Not a full-fight clear. Actual video under `_shots/chronos_commitment_1025/video/chronos-commitment.mp4`. Old preview preserved as `silhouette-pickup-review.html`.
+
+Native checks cover sustained gun ownership, acceleration, bar placement, real gun hit and Retina missile damage, target removal, live flash expiry, stun/recall, armor rupture/recovery, original overhead pose, distinct transformation and permanent red. Original two-handed spin regression retains sixteen passing checks: real head pixels, hit/expiry, recoil, contact/dodge, intact actor and HAMMER music route. Delivery verification decodes the audio and exercises playback, chapter seeking and every bank in all three materials. No game page/console errors. Local HTTP metadata request cancellation may log a server-side connection reset when preparing the seekable video buffer; it is not a game/browser error.
+
+`node --check assets/game.js` and changed JavaScript checks pass. Required `node _BUILD_SOURCE/test_fl.js` still exits1 before assertions/final summary because `_BUILD_SOURCE/retired_art_archive_1022.cjs` is absent. No assertions ran; no green full-suite claim. No commit/push. No edits to assets/game.js or test_fl.js this turn.

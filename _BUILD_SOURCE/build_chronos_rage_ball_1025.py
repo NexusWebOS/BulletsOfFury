@@ -1,0 +1,6 @@
+"""Permanent-rage ball/unfold material; identical geometry and hit mask."""
+from pathlib import Path
+from PIL import Image
+import json,copy,numpy as np
+R=Path(__file__).resolve().parents[1];D=R/'assets/game/shared/combat/chronos_frames_1025';p=D/'manifest.json';a=json.loads(p.read_text());name='unfold_regular';new='unfold_red';im=Image.open(R/a['sheets'][name]['path']).convert('RGBA');v=np.array(im);rgb=v[:,:,:3].astype(float);hi=rgb.max(2);lo=rgb.min(2);lum=rgb@np.array([.2126,.7152,.0722]);amount=np.where(hi-lo>25,0,.76)*np.clip((245-hi)/65,0,1)*np.clip((lum-12)/30,0,1);target=np.stack([np.minimum(255,np.maximum(hi,lum*1.8)),lum*.22,lum*.28],2);v[:,:,:3]=np.clip(rgb*(1-amount[:,:,None])+target*amount[:,:,None],0,255).astype('uint8');out=D/(new+'.webp');Image.fromarray(v).save(out,lossless=True);a['sheets'][new]={'key':'nca_c26_'+new,'path':out.relative_to(R).as_posix()};a['sheets'][new+'_hit']={**a['sheets'][name+'_hit'],'key':'nca_c26_'+new+'_hit'};a['banks'][new]=copy.deepcopy(a['banks'][name]);a['banks'][new]['sheet']='c26_'+new
+p.write_text(json.dumps(a,indent=2)+'\n',encoding='utf8');(R/'assets/chronos_frames_art_1025.js').write_text('"use strict";\nconst C26_ART='+json.dumps(a,separators=(',',':'))+';\n',encoding='utf8',newline='\n');print('Registered permanent-rage unfold bank')

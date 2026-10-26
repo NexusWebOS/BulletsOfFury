@@ -1,0 +1,16 @@
+Generator: built-in ImageGen
+Edit target: coleforge_productions_phoenix_avatar_v2.png
+Style reference: C:/Users/Mdogg/Desktop/Phoenix Engine2.png
+Final asset: coleforge_productions_phoenix_avatar_v3_16bit.png
+
+Use case: style-transfer.
+Asset type: final square COLEFORGE PRODUCTIONS Steam avatar.
+Edit target: Image 1, the current ColeForge Productions phoenix avatar. Image 2, the user's original small Phoenix Engine2 logo, is the reference for authentic 16-bit pixel art treatment.
+User revision: "more 16-bit, no crystals."
+Change only the rendering style and remove every crystal/gem ornament. Preserve the recognizable phoenix identity, head facing left, broad raised wings, dark circular crest, silver metal COLEFORGE wordmark and PRODUCTIONS subline, fiery orange/red/gold palette, black background and compact square arrangement.
+Style: authentic hand-pixelled 16-bit console / early-1990s arcade title-screen logo. Deliberately draw at a conceptual native resolution of 256x256 and enlarge cleanly to a 1024x1024 final image using a consistent four-by-four pixel grid. Confident visible square pixel clusters, stair-stepped silhouettes, bold near-black outlines, hand-placed highlights, palette ramps and sparse ordered dithering. Use a restrained palette of approximately 24-32 colors. It must look like carefully authored SNES / Mega Drive era pixel art, not detailed painted art with a pixelation filter.
+Simplify the phoenix into strong legible flame-feather shapes with clean gold highlights, orange midtones and deep red shadow clusters. Pixel flames and sparse square sparks only, crisp and controlled. The steel framing and gothic letter bevels use a few distinct gray/silver tones with amber trim, no photorealistic metal texture. Large high-contrast lettering remains perfectly readable.
+Remove ALL faceted red diamonds, crystals, gemstones, jewels and glowing gem sockets from the top, bottom, left and right. Join those areas into ordinary continuous stepped steel frame segments with a few plain small round rivets. No diamond ornaments, ornamental stones or replacement symbols.
+Text verbatim: "COLEFORGE" on the primary plate, "PRODUCTIONS" beneath. Spell exactly. Do not add PHOENIX ENGINE or CF.
+Composition: one complete finished square avatar, centered, about 6 percent clear black margin around every edge; wing tips and text entirely inside the canvas.
+Avoid: crystals, gems, diamonds, jewels, smooth gradients, antialiasing, blurry edges, soft bloom, photorealistic fire, hairlike feathers, noisy microtexture, 3D render, magenta, mockup, UI, extra text, watermark. Keep opaque black background.

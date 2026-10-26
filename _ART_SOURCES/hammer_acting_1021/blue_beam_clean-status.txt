@@ -1,0 +1,10 @@
+status: completed
+id: faaa3964-60c1-428e-a845-76edea116e88
+job_id: faaa3964-60c1-428e-a845-76edea116e88
+frame: 16 of 17
+asset_id: 24069bef-03f6-528c-af2e-96677658f700
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0335 in credits
+download: https://api.pixellab.ai/mcp/images/faaa3964-60c1-428e-a845-76edea116e88/download?index=16

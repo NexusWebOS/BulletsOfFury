@@ -179,13 +179,14 @@ d20Download=function(e,erasing=false){const A=e._d20,M=d20Model(A.kind);if(!M)re
  else{ctx.save();ctx.globalAlpha=erasing?1-progress:progress;d20Art(M.full,e.x,e.y,size);ctx.restore();}dr21Art('download',A.t,e.x,e.y,size*1.3);if(!erasing)groundTargetReticleDraw(e.x,e.y,size*.7,progress,.5);
 };
 d20Fx=function(name,t,x,y,size,angle=0,alpha=1,loop=true){if(name==='transfer_loop')return dr21Art('download',t,x,y,size,alpha);return DR21.base.fx.apply(this,arguments);};
+// Capture the live Furyship and pilot palette, never the retired space atlas.
 // Exact currently equipped aircraft, captured once at death, is the victim.
 // Shields, iframe checks, life accounting and respawn stay with playerHit.
 function dr21DeathKind(source){const s=String(source||'').toLowerCase();if(/shadow eradication|spectral soul bomb|death.?ball/.test(s))return 'shadow';if(/machine grab/.test(s))return 'throw';if(/ice|cryo|frost|freez/.test(s))return 'ice';if(/laser|beam/.test(s))return 'laser';if(/fire|flame|burn|magma|^s2/.test(s))return 'burn';return null;}
 function dr21ProjectileDeathSource(q){return q._frostNoseLaser||q._s3ice?'ice':q._hammerLaser?'laser':q._pt11Wave?'firewall':String(q.kind||'');}
 v18Shot=function(b){const q=DR21.base.shot.apply(this,arguments);if(q&&b?._r30?.v18?.attack?.type==='armOrbs')q._dr21Orb=true;return q;};
 drawCombatFinalProjectile=function(q){if(q?._dr21Orb){dr21Art('ball',q.t||0,q.x,q.y,72);return true;}if(q?._v19Symbiote){dr21Art('symbiote',q.t||0,q.x,q.y,(q.w||16)*3);return true;}return DR21.base.projectile.apply(this,arguments);};
-function dr21Hull(){let im=spaceShipActive()?spaceAtlasCanvas('ship_base',_pilotKey()):XART.rdy('ship_'+_pilotKey()+'_sp0')?XART.get('ship_'+_pilotKey()+'_sp0'):null;if(!im)return null;
+function dr21Hull(){let im=spaceShipActive()?furyShipCanvas('base',_pilotKey()):XART.rdy('ship_'+_pilotKey()+'_sp0')?XART.get('ship_'+_pilotKey()+'_sp0'):null;if(!im)return null;
  const c=document.createElement('canvas');c.width=c.height=192;const g=c.getContext('2d'),k=120/Math.max(im.width,im.height);g.imageSmoothingEnabled=false;g.drawImage(im,96-im.width*k/2,96-im.height*k/2,im.width*k,im.height*k);return c;}
 playerHit=function(source){const kind=dr21DeathKind(source),was=player.dead,hull=kind&&!was?dr21Hull():null;if(!was)player._dr21Death=null;const out=DR21.base.playerHit.apply(this,arguments);
  if(kind&&!was&&player.dead&&hull){if(kind==='ice'){const g=hull.getContext('2d');g.globalCompositeOperation='source-atop';g.fillStyle='rgba(150,225,255,.75)';g.fillRect(0,0,192,192);g.globalCompositeOperation='source-over';}const ball=boss?._r30?.v18?.attack,foreground=kind==='shadow'&&ball?.type==='shadowAscension'?Math.max(300,ball.projectedSize||0):300;player._dr21Death={kind,t:0,life:kind==='shadow'?1.7:1.5,x:player.x,y:player.y,image:hull,foreground,ballTime:kind==='shadow'&&ball?.type==='shadowAscension'?ball.t:0};player._spin=null;player._voidDeath=null;player.deathT=player._dr21Death.life+.4;dr21Cue(kind==='ice'?'enemyIceBolt':kind==='burn'?'flameThrowerStart':'fireIceOrbImpact');}return out;

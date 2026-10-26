@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "native_laser_kills": true,
+    "captured_current_hull": true,
+    "current_fury_pixels_drawn": true,
+    "no_legacy_eradication": true,
+    "laser_sequence_completed": true,
+    "no_browser_errors": true
+  },
+  "errors": [],
+  "keys": [
+    "fury_thrusters_04",
+    "fury_base",
+    "fury_base_blue"
+  ]
+}

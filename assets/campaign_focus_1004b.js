@@ -35,10 +35,19 @@ scLeaveStage=function(R){
   drawStageClear._init=false;drawStageClear._res=null;Audio.stopMusic();campSuspend();openStageSelect(dest,{});return;
  }
  const route=s6Wing?.route;
- if(route){campaign.stageX1004={route:route==='left'?'right':'left',done:false};campaign.rivalScattered=false;CF4.flight=0;}
- const result=CF4_BASE.leave.apply(this,arguments);
- // Retire the old five isolated duels for this new pending full encounter.
- if(route){campaign.rivalScattered=false;campAutoAfterClear(6,7,R.rank);campSuspend();}return result;
+ if(route&&!campaign.stageX1004){campaign.stageX1004={route:route==='left'?'right':'left',done:false};campaign.rivalScattered=false;CF4.flight=0;}
+ // One post-6 owner: settle results once, then offer the earned pursuit on
+ // the map. Do not delegate to an older cinematic continuation that can launch7.
+ if(R._beta24Settled)return;R._beta24Settled=true;
+ run.score=(run.score|0)+(R.bonus||0);run.lives=clamp(run.lives,0,9);
+ if(R.seats){run2.score=(run2.score|0)+(R.seats[1].bonus||0);run2.lives=clamp(run2.lives,0,9);}
+ drawStageClear._init=false;drawStageClear._res=null;Audio.stopMusic();
+ campaign.unlockedMax=Math.max(campaign.unlockedMax||1,7);
+ const offer=()=>{openStageSelect(7,{unlock:7});
+  CF4.flight=3.3;CF4.previous=7;CF4.focus=!!cf4Pending();
+  if(CF4.focus){MAP4E.xPreview=false;cmap2.focus='map';}
+  campAutoAfterClear(6,7,R.rank);campSuspend();};
+ if(!BOFCinematicDirector.start(6,offer))offer();
 };
 Rival24.save=function(){return{...CF4_BASE.save(),stageX1004:campaign.stageX1004?{...campaign.stageX1004}:null};};
 Rival24.load=function(s){CF4_BASE.load(s);campaign.stageX1004=s?.stageX1004&&['left','right'].includes(s.stageX1004.route)?{...s.stageX1004}:null;CF4.focus=false;CF4.flight=3.3;};

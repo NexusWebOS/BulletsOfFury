@@ -1,0 +1,10 @@
+status: completed
+id: 778a932b-91d2-4b72-8ca0-980cdf12bd11
+job_id: 778a932b-91d2-4b72-8ca0-980cdf12bd11
+frame: 16 of 17
+asset_id: 30d0a906-231b-5847-9329-c26a39ed4730
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0294 in credits
+download: https://api.pixellab.ai/mcp/images/778a932b-91d2-4b72-8ca0-980cdf12bd11/download?index=16

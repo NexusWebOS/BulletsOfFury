@@ -1,0 +1,10 @@
+status: completed
+id: fdace704-ffa8-4457-b950-1ef4760919a6
+job_id: fdace704-ffa8-4457-b950-1ef4760919a6
+frame: 16 of 17
+asset_id: 86e8d358-6e9f-5015-87ca-fa62440ed431
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0269 in credits
+download: https://api.pixellab.ai/mcp/images/fdace704-ffa8-4457-b950-1ef4760919a6/download?index=16

@@ -88,7 +88,7 @@ function ht27Summon(d,full){
 }
 function ht27HelperHit(q,dmg){
  const d=ht27Data();if(!d||ht27Locked()||!hammerHard()||q.dead||q.spawn<1)return;
- q.hp-=dmg;q.flash=.12;weaponHitSfx('normal');
+ q.hp-=dmg;markHit(q,.12);weaponHitSfx('normal');
  if(q.hp<=0){q.dead=true;q.aim=null;q.burst=null;explode(q.x,q.y,45,'blue');spawnShockRing(q.x,q.y,36,'comet');Audio.SFX.expSmall();}
 }
 function ht27HelperFire(q,angle,count){

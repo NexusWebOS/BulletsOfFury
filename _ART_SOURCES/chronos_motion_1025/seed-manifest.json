@@ -1,0 +1,434 @@
+{
+  "motion_regular_0": {
+    "hand": [
+      85,
+      160
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      60,
+      159,
+      307,
+      558
+    ],
+    "flip": false
+  },
+  "motion_regular_1": {
+    "hand": [
+      73,
+      157
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      382,
+      259,
+      694,
+      554
+    ],
+    "flip": false
+  },
+  "motion_regular_2": {
+    "hand": [
+      60,
+      146
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      702,
+      111,
+      1077,
+      452
+    ],
+    "flip": false
+  },
+  "motion_regular_3": {
+    "hand": [
+      61,
+      141
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      1054,
+      291,
+      1394,
+      558
+    ],
+    "flip": false
+  },
+  "motion_regular_4": {
+    "hand": [
+      54,
+      120
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      14,
+      631,
+      343,
+      1055
+    ],
+    "flip": false
+  },
+  "motion_regular_5": {
+    "hand": [
+      128,
+      59
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      379,
+      605,
+      702,
+      1075
+    ],
+    "flip": false
+  },
+  "motion_regular_6": {
+    "hand": [
+      152,
+      162
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      713,
+      737,
+      1055,
+      1075
+    ],
+    "flip": false
+  },
+  "motion_regular_7": {
+    "hand": [
+      83,
+      103
+    ],
+    "reactor": [
+      127,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      1072,
+      691,
+      1392,
+      1073
+    ],
+    "flip": true
+  },
+  "power_regular_0": {
+    "hand": [
+      75,
+      162
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.32,
+    "sourceBox": [
+      120,
+      82,
+      526,
+      582
+    ],
+    "flip": false
+  },
+  "power_regular_1": {
+    "hand": [
+      80,
+      162
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.32,
+    "sourceBox": [
+      695,
+      84,
+      1206,
+      582
+    ],
+    "flip": false
+  },
+  "power_regular_2": {
+    "hand": [
+      60,
+      159
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.32,
+    "sourceBox": [
+      96,
+      692,
+      599,
+      1177
+    ],
+    "flip": false
+  },
+  "power_regular_3": {
+    "hand": [
+      63,
+      159
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.32,
+    "sourceBox": [
+      601,
+      531,
+      1250,
+      1189
+    ],
+    "flip": false
+  },
+  "motion_chrome_0": {
+    "hand": [
+      78,
+      164
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      45,
+      165,
+      301,
+      565
+    ],
+    "flip": false
+  },
+  "motion_chrome_1": {
+    "hand": [
+      64,
+      139
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      367,
+      281,
+      675,
+      563
+    ],
+    "flip": false
+  },
+  "motion_chrome_2": {
+    "hand": [
+      60,
+      148
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      700,
+      145,
+      1062,
+      471
+    ],
+    "flip": false
+  },
+  "motion_chrome_3": {
+    "hand": [
+      66,
+      148
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      1048,
+      298,
+      1388,
+      565
+    ],
+    "flip": false
+  },
+  "motion_chrome_4": {
+    "hand": [
+      53,
+      99
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      16,
+      646,
+      368,
+      1039
+    ],
+    "flip": false
+  },
+  "motion_chrome_5": {
+    "hand": [
+      111,
+      50
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      411,
+      594,
+      699,
+      1025
+    ],
+    "flip": false
+  },
+  "motion_chrome_6": {
+    "hand": [
+      93,
+      161
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      696,
+      698,
+      1047,
+      1073
+    ],
+    "flip": false
+  },
+  "motion_chrome_7": {
+    "hand": [
+      78,
+      125
+    ],
+    "reactor": [
+      127,
+      116
+    ],
+    "scale": 0.4,
+    "sourceBox": [
+      1071,
+      688,
+      1388,
+      1072
+    ],
+    "flip": true
+  },
+  "power_chrome_0": {
+    "hand": [
+      80,
+      159
+    ],
+    "reactor": [
+      127,
+      116
+    ],
+    "scale": 0.335,
+    "sourceBox": [
+      171,
+      54,
+      577,
+      541
+    ],
+    "flip": true
+  },
+  "power_chrome_1": {
+    "hand": [
+      75,
+      162
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.335,
+    "sourceBox": [
+      793,
+      71,
+      1243,
+      537
+    ],
+    "flip": false
+  },
+  "power_chrome_2": {
+    "hand": [
+      68,
+      160
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.335,
+    "sourceBox": [
+      130,
+      661,
+      631,
+      1101
+    ],
+    "flip": false
+  },
+  "power_chrome_3": {
+    "hand": [
+      67,
+      167
+    ],
+    "reactor": [
+      128,
+      116
+    ],
+    "scale": 0.335,
+    "sourceBox": [
+      698,
+      508,
+      1349,
+      1100
+    ],
+    "flip": false
+  }
+}

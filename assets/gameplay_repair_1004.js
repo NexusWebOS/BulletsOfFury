@@ -91,9 +91,15 @@ stage4ShieldTick=function(b,dt){GP4_BASE.shield.apply(this,arguments);const H=b?
  if(!H.active){H.overloadAge=0;return;}H.overloadAge=(H.overloadAge||0)+dt;
  if(H.overloadAge>=18){H.active=false;H.exposedFor=8;H.overloadAge=0;H.breakT=.8;stage4WarfareSound('shieldBreak','bossPhase');floatText(b.x,b.y+b.h*.4,'GENERATOR OVERLOAD','#7feaff');}
 };
+// Refresh gates preserve each accepted native flash's full lifetime, followed
+// by a readable palette interval; damage/audio continue on every impact.
+function gp4FlashRequest(t,key,duration){
+ const next='_gp4Next_'+key,now=GP4.clock;
+ if(now<(t[next]||0))return false;t[next]=now+Math.max(.34,duration+.16);return true;
+}
 markHit=function(t,f){
- if(t&&(t===boss||t===subBoss||t._mr27||t._r30)){
-  const now=GP4.clock;if(now<(t._gp4FlashNext||0))return;t._gp4FlashNext=now+.14;f=Math.max(f||.16,.12);
+ if(t&&(t===boss||t===subBoss||t._mr27||t._r30||t.spec||t.id&&Number.isFinite(t.hp))){
+  const now=GP4.clock;if(now<(t._gp4FlashNext||0))return t;t._gp4FlashNext=now+Math.max(.34,(f||.16)+.16);f=Math.max(f||.16,.12);
  }
  return GP4_BASE.hit(t,f);
 };

@@ -154,16 +154,11 @@ function fb9BomberTick(e,dt){
  }
 }
 
-/* 3) "Two jets coming off the side of the screen... a half circle motion coming from the left and
-      right side, circling down and trying to fly off the screen vertically south. Somersaults,
-      machine gun rounds or missiles."
-      fb9SwoopPair() launches one delta from each side. Each flies in level, carves a smooth turn
-      onto a southbound heading, and dives off the bottom edge. One of the pair loops a somersault
-      at the top of its turn; the other fires an unguided missile at the pilot's position on the
-      way out. Both fire short machine-gun bursts down their nose during the turn. Drawn with the
-      authored delta plate rotated to the flight heading (a pitch squash sells the somersault). */
+/* Stage1 paired entrance: mirrored curves settle into a brief southbound row,
+   then peel outward while aiming native machine-gun bursts at the player. */
 function fb9SwoopPair(){
  if(run.stage!==1||state!==GS.PLAY)return;
+ XART.rdy('air13_s1_s1jetdelta_heading');
  const loopSide=Math.random()<.5?-1:1;
  for(const side of [-1,1]){
   const e=spawnEnemy('s1jetdelta',side<0?camLeftX()-34:camRightX()+34,VH*(side<0?.15:.21),{route:'straight'});
@@ -177,52 +172,33 @@ function fb9SwoopPair(){
 }
 function fb9SwoopTick(e,dt){
  const S=e._fb9Swoop;S.t+=dt;
- const fwd=()=>[Math.cos(S.head),Math.sin(S.head)];
- let along=S.speed;
- if(S.phase==='in'){
-  if(S.side<0?e.x>=S.turnAt:e.x<=S.turnAt)S.phase='turn';
- }else if(S.phase==='turn'){
-  const want=Math.PI/2,turn=S.speed/S.R*dt,d=Math.atan2(Math.sin(want-S.head),Math.cos(want-S.head));
-  if(S.loop&&!S.looped&&Math.abs(d)<Math.PI/4){S.phase='loop';S.k=0;if(Audio.SFX.whip)Audio.SFX.whip();}
-  else{S.head+=clamp(d,-turn,turn);if(Math.abs(d)<.01){S.head=want;S.phase='exit';}}
- }else if(S.phase==='loop'){
-  // a somersault seen from above: climb toward the camera, flip over the top, come back down
-  S.k+=dt/.95;along=S.speed*.9*Math.cos(S.k*TAU);
-  if(S.k>=1){S.k=0;S.looped=true;S.phase='turn';}
- }else{
-  along=S.speed*Math.min(1.45,1+(S.t-2)*.12);
-  if(S.missile&&!S.fired&&e.y>VH*.30){S.fired=true;
-   const T=targetShip(e.x,e.y),a=Math.atan2(T.y-e.y,T.x-e.x);
-   const q=eShootT(e.x,e.y+18,a,3.4,'emissile',{w:11,h:18});if(q){q.homing=false;q._committed=true;q.turn=0;}}
- }
- const [fx,fy]=fwd();e.x+=fx*along*dt;e.y+=fy*along*dt;e.vx=fx*along/60;e.spin=0;
- // machine-gun bursts down the nose while the turn brings it across the field
+ if(!S.route){const L=camLeftX(),R=camRightX(),mid=(L+R)/2,gap=Math.max(92,Math.max(e.w,e.h)*.8);
+  S.route={start:{x:e.x,y:e.y},row:{x:mid+S.side*gap,y:PLAY.y+150},exit:{x:S.side<0?L-115:R+115,y:PLAY.y+380}};}
+ const P=S.route,enter=1.45,row=.48,leave=1.6;
+ const curve=(a,b,c,d,u)=>{const v=1-u;return {x:v*v*v*a.x+3*v*v*u*b.x+3*v*u*u*c.x+u*u*u*d.x,y:v*v*v*a.y+3*v*v*u*b.y+3*v*u*u*c.y+u*u*u*d.y,dx:3*v*v*(b.x-a.x)+6*v*u*(c.x-b.x)+3*u*u*(d.x-c.x),dy:3*v*v*(b.y-a.y)+6*v*u*(c.y-b.y)+3*u*u*(d.y-c.y)};};
+ let q;
+ if(S.t<enter){S.phase='in';q=curve(P.start,{x:P.row.x,y:P.start.y},{x:P.row.x,y:P.row.y-29},P.row,S.t/enter);}
+ else if(S.t<enter+row){S.phase='row';q={x:P.row.x,y:P.row.y+(S.t-enter)*60,dx:0,dy:60};}
+ else{S.phase='exit';const start={x:P.row.x,y:P.row.y+row*60};q=curve(start,{x:start.x,y:start.y+32},{x:P.exit.x-S.side*90,y:P.exit.y-30},P.exit,clamp((S.t-enter-row)/leave,0,1));}
+ const oldX=e.x;e.x=q.x;e.y=q.y;S.head=Math.atan2(q.dy,q.dx);e.vx=(e.x-oldX)/Math.max(dt,.001)/60;e.spin=0;
  S.shotCd-=dt;
- if((S.phase==='turn'||S.phase==='exit')&&e.y>PLAY.y+16&&e.y<VH*.72&&e.x>camLeftX()+8&&e.x<camRightX()-8){
-  if(S.burst>0&&S.shotCd<=0){S.burst--;S.shotCd=S.burst>0?.11:.85;
-   const n=[Math.cos(S.head),Math.sin(S.head)],p=[-n[1],n[0]];
-   for(const s of [-1,1])eShootT(e.x+n[0]*24+p[0]*s*9,e.y+n[1]*24+p[1]*s*9,S.head,4.4,'s1bullet',{silent:s>0});
-   if(Audio.SFX.enemyMachineGun)Audio.SFX.enemyMachineGun();}
-  else if(S.burst<=0&&S.shotCd<=0)S.burst=4;
+ if(S.phase!=='in'&&S.shotCd<=0&&e.x>camLeftX()+12&&e.x<camRightX()-12){
+  const n=[Math.cos(S.head),Math.sin(S.head)],p=[-n[1],n[0]],T=targetShip(e.x,e.y);
+  for(const side of [-1,1]){const x=e.x+n[0]*24+p[0]*side*9,y=e.y+n[1]*24+p[1]*side*9;eShootT(x,y,Math.atan2(T.y-y,T.x-x),4.4,'s1bullet',{silent:side>0});}
+  if(Audio.SFX.enemyMachineGun)Audio.SFX.enemyMachineGun();S.burst=(S.burst+1)%4;S.shotCd=S.burst?.11:.65;
  }
- if(e.y>VH+90||e.x<camLeftX()-140||e.x>camRightX()+140||S.t>12)e.dead=true;
+ if(S.t>=enter+row+leave)e.dead=true;
 }
+
 function fb9SwoopDraw(e){
- const S=e._fb9Swoop,v=Math.max(0,furyJetVariant(e)),key='furyjet_'+v+'_bank_0';
- if(!XART.rdy(key))return false;
- const im=furyJetGreenFrame(key,v,XART.get(key)),size=Math.max(e.w,e.h)*1.10;
- // A turning jet stays a solid authored plate. Negative Y scales made its
- // southbound pass flip north, and the lift scale made its hull visibly pump.
- const pitch=1,lift=1;
- e._drawW=size;e._drawH=size;
- ctx.save();ctx.imageSmoothingEnabled=false;
- const shadow=xartTint(key,'#000000',1);
- if(shadow){ctx.save();ctx.globalAlpha=.25;ctx.translate(e.x+10*lift,e.y+18*lift);ctx.rotate(S.head-Math.PI/2);ctx.scale(1,pitch);
-  ctx.drawImage(shadow,-size/2,-size/2,size,size);ctx.restore();}
- ctx.translate(e.x,e.y);ctx.rotate(S.head-Math.PI/2);ctx.scale(lift,lift*pitch);
- ctx.drawImage(im,-size/2,-size/2,size,size);
- const tint=tintColor(e);if(tint){const hit=xartTint(key,tint,tint==='#ffffff'?.9:.55);if(hit)ctx.drawImage(hit,-size/2,-size/2,size,size);}
- ctx.restore();return true;
+ const p=air13Pose('s1jetdelta','heading',e._fb9Swoop.head);
+ if(!p)return true; // Never substitute a rotated static hull while the bank loads.
+ const span=Math.max(e.w,e.h)*1.10*86/128;
+ e._drawW=e._drawH=span;e._air13RenderedKey=p.key;e._air13Frame=p.f;
+ air13Blit(p,e.x+10,e.y+18,span,.25,'#000000');
+ air13Blit(p,e.x,e.y,span);
+ const tint=tintColor(e);if(tint)air13Blit(p,e.x,e.y,span,1,tint);
+ return true;
 }
 jetTick=function(e,dt){
  if(e&&e._fb9Swoop&&!e.dead)return fb9SwoopTick(e,dt);

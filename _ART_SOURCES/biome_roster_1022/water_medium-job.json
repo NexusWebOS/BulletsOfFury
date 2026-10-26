@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: bdb9c9f1-4985-453b-a29c-fb4f92df4ee6\njob_id: bdb9c9f1-4985-453b-a29c-fb4f92df4ee6\nmodel: pro\ndescription: FRAME FORMAT: 192 x192 transparent pixels. Fixed fuselage center pivot96,96, one common proportional scale, reserve at least20 pixels clear transparent margin on all sides. Crisp detailed 16/32-bit arcade pixel art, clean single-pixel outlines, sharp metallic shading. STRICT ORTHOGRAPHIC TOP VIEW looking directly down onto aircraft. Nose points straight DOWN toward bottom edge, rear engines at top. Symmetrical wings, never diagonal or isometric. One complete aircraft centered and uncropped, no background or shadow plate, no text, no external bullets or muzzle flash. Medium WATER UNDERTOW fighter jet, clearly mechanical ocean-powered aircraft with broad hydrofoil-shaped wings and a circular aqua pressure turbine in the fuselage. Navy and cobalt blue armor, cyan water channels, pearl white highlights. Two forward cannons, two rear aqua nozzles, distinct readable metal silhouette. No purple void, no ground treads.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 10222006\nasset_id: 01d619c8-ad85-5fa4-b99f-fbfc00ee90e3\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"bdb9c9f1-4985-453b-a29c-fb4f92df4ee6\")"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,2 @@
+'use strict';
+const RD28_PALETTE={"code":{"key":"rd28p_code","path":"assets/game/levels/stage_08/boss/dracodia_dna_1026/code-palette.webp","w":362,"h":362,"cols":4,"count":12,"sha256":"4bc7a85e4e9011ee9ea7be622b7157e14cb89c321398867e4c2f147cd0464c90"},"fluid":{"key":"rd28p_fluid","path":"assets/game/levels/stage_08/boss/dracodia_dna_1026/fluid-palette.webp","w":384,"h":384,"cols":8,"count":32,"sha256":"beec0e9b2909fb5ec2e6b6ae7917602bdcf27d7fdf83886694eb9b96852dd3b8"}};

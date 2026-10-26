@@ -73,7 +73,7 @@ function mr27HullAt(b,x,y){
 }
 function mr27Damage(b,dmg,x,y){
   const id=mr27At(b,x??b.x,y??b.y),p=mr27Part(b,id);if(!p)return dmg;
-  const actual=Math.min(p.hp,dmg);p.hp-=actual;p.flash=.2;
+  const actual=Math.min(p.hp,dmg);p.hp-=actual;markHit(p,.2);
   if(p.hp<=0){p.dead=true;const q=mr27Shape(b,id);q.debrisImage=mr27Cell(b._mr27.skin,q.cell);b._mr27.breaks.push(id);if(typeof d27ModuleRupture==='function')d27ModuleRupture(b,p,q,'blue');b._mr27.stun=diffKey==='easy'?1.8:diffKey==='normal'?1.4:1.05;
     unitDeathFX({x:q.x,y:q.y,w:q.w,h:q.h},'turret','blue');explode(q.x,q.y,48,'blue');
     b._l23Beam=null;b._smz=null;polishLanes=polishLanes.filter(w=>w.owner!==b);groundTargetingCancel(b);

@@ -1,0 +1,10 @@
+status: completed
+id: 99d9918f-ba8f-4717-8e4a-ed8701f080a1
+job_id: 99d9918f-ba8f-4717-8e4a-ed8701f080a1
+frame: 8 of 9
+asset_id: 042bd748-b03e-5395-9e22-661404630c68
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0344 in credits
+download: https://api.pixellab.ai/mcp/images/99d9918f-ba8f-4717-8e4a-ed8701f080a1/download?index=8

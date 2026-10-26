@@ -1,0 +1,299 @@
+{
+  "checks": [
+    {
+      "name": "Actual trap introduction reaches external radio",
+      "passed": true,
+      "data": {
+        "id": "hammer-trap1002",
+        "live": true,
+        "radio": {
+          "who": "CHRONOS",
+          "text": "Coming up here was merely a trap. The Legion has already launched its attack down on Earth.",
+          "age": 1.0000000000000013,
+          "duration": 5.094736842105263
+        },
+        "clock": 407.99999999998545,
+        "pose": "blue_chromium_clean",
+        "mode": "sides"
+      }
+    },
+    {
+      "name": "Live dialogue changes zero playfield pixels",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Starfield scroll and combat clocks continue during speech",
+      "passed": true,
+      "data": {
+        "before": {
+          "scroll": 407.99999999998545,
+          "t": 1.0000000000000013,
+          "efx": 1.0833333333333344,
+          "x": 340
+        },
+        "after": {
+          "scroll": 587.9999999999786,
+          "t": 1.4999999999999996,
+          "efx": 1.5833333333333326,
+          "x": 453.7239999999997
+        }
+      }
+    },
+    {
+      "name": "Native movement input works during speech",
+      "passed": true,
+      "data": {
+        "before": 340,
+        "after": 453.7239999999997
+      }
+    },
+    {
+      "name": "Trap intro finishes into native fight and clears radio",
+      "passed": true,
+      "data": {
+        "active": false,
+        "radio": null,
+        "noHit": false,
+        "state": "play",
+        "hammer": "recover"
+      }
+    },
+    {
+      "name": "desktop cronos radio is outside the entire playfield",
+      "passed": true,
+      "data": {
+        "mode": "sides",
+        "outside": true,
+        "radio": {
+          "who": "CHRONOS",
+          "text": "Fury flight. You will never break my chromium armor.",
+          "age": 0.49999999999999994,
+          "duration": 4.068421052631579
+        },
+        "field": {
+          "x": 265,
+          "y": 0,
+          "w": 750,
+          "h": 800
+        },
+        "hud": {
+          "x": 6,
+          "y": 55.484375,
+          "w": 253,
+          "h": 689.015625
+        }
+      }
+    },
+    {
+      "name": "desktop cronos both speakers finish once without stale radio",
+      "passed": true,
+      "data": {
+        "active": false,
+        "radio": null,
+        "done": 1
+      }
+    },
+    {
+      "name": "desktop ht23-announcement-review radio is outside the entire playfield",
+      "passed": true,
+      "data": {
+        "mode": "sides",
+        "outside": true,
+        "radio": {
+          "who": "CHRONOS",
+          "text": "Fury flight. You will never break my chromium armor.",
+          "age": 0.49999999999999994,
+          "duration": 4.068421052631579
+        },
+        "field": {
+          "x": 265,
+          "y": 0,
+          "w": 750,
+          "h": 800
+        },
+        "hud": {
+          "x": 6,
+          "y": 55.484375,
+          "w": 253,
+          "h": 689.015625
+        }
+      }
+    },
+    {
+      "name": "desktop ht23-announcement-review both speakers finish once without stale radio",
+      "passed": true,
+      "data": {
+        "active": false,
+        "radio": null,
+        "done": 1
+      }
+    },
+    {
+      "name": "compact cronos radio is outside the entire playfield",
+      "passed": true,
+      "data": {
+        "mode": "compact",
+        "outside": true,
+        "radio": {
+          "who": "CHRONOS",
+          "text": "Fury flight. You will never break my chromium armor.",
+          "age": 0.49999999999999994,
+          "duration": 4.068421052631579
+        },
+        "field": {
+          "x": 0,
+          "y": 46,
+          "w": 480,
+          "h": 512
+        },
+        "hud": {
+          "x": 0,
+          "y": 558,
+          "w": 480,
+          "h": 196
+        }
+      }
+    },
+    {
+      "name": "compact cronos both speakers finish once without stale radio",
+      "passed": true,
+      "data": {
+        "active": false,
+        "radio": null,
+        "done": 1
+      }
+    },
+    {
+      "name": "compact ht23-announcement-review radio is outside the entire playfield",
+      "passed": true,
+      "data": {
+        "mode": "compact",
+        "outside": true,
+        "radio": {
+          "who": "CHRONOS",
+          "text": "Fury flight. You will never break my chromium armor.",
+          "age": 0.49999999999999994,
+          "duration": 4.068421052631579
+        },
+        "field": {
+          "x": 0,
+          "y": 46,
+          "w": 480,
+          "h": 512
+        },
+        "hud": {
+          "x": 0,
+          "y": 558,
+          "w": 480,
+          "h": 196
+        }
+      }
+    },
+    {
+      "name": "compact ht23-announcement-review both speakers finish once without stale radio",
+      "passed": true,
+      "data": {
+        "active": false,
+        "radio": null,
+        "done": 1
+      }
+    },
+    {
+      "name": "Native tactical queue uses the same HUD radio",
+      "passed": true,
+      "data": {
+        "id": "ht23-announcement-6",
+        "radio": {
+          "who": "CHRONOS",
+          "text": "Chromium armor, activated!",
+          "age": 0.18333333333333332,
+          "duration": 3.3842105263157896
+        }
+      }
+    },
+    {
+      "name": "desktop historical arrival owner also leaves playfield pixels untouched",
+      "passed": true,
+      "data": {
+        "changed": 0,
+        "radio": {
+          "who": "COLE",
+          "text": "...Who are you?",
+          "age": 0,
+          "duration": 2.094736842105263
+        },
+        "outside": true
+      }
+    },
+    {
+      "name": "compact historical arrival owner also leaves playfield pixels untouched",
+      "passed": true,
+      "data": {
+        "changed": 0,
+        "radio": {
+          "who": "COLE",
+          "text": "...Who are you?",
+          "age": 0,
+          "duration": 2.094736842105263
+        },
+        "outside": true
+      }
+    },
+    {
+      "name": "Tactical interruption preserves arrival reading time while scrolling continues",
+      "passed": true,
+      "data": {
+        "before": {
+          "text": 0.016666666666666666,
+          "scroll": 20280.000000000022
+        },
+        "after": {
+          "text": 0.016666666666666666,
+          "scroll": 20460.000000000022
+        }
+      }
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Captured starfield pixels visibly move during speech",
+      "passed": true,
+      "data": 17215
+    }
+  ],
+  "errors": [],
+  "passed": 19,
+  "failed": 0,
+  "recording": {
+    "duration": 65.3191797999898,
+    "rawDuration": 76.72,
+    "trimStart": 11.400820200010202,
+    "video": "_shots\\chronos_radio_1024\\stage5-chronos-speaking.mp4",
+    "audio": "Video only; native browser recorder does not capture audio.",
+    "difficulty": "furious",
+    "pilot": "cole",
+    "invulnerability": true,
+    "route": "Native debug Stage5 boss encounter; no pose/attack/dialogue injections.",
+    "checks": {
+      "native Stage5 encounter": true,
+      "Chronos speaks in recording": true,
+      "radio outside playfield for all speech samples": true,
+      "no dialogue box drawn over the field in any recorded frame": true,
+      "native arrival conversation also recorded": true,
+      "scroll advances throughout speech": true,
+      "no page or console errors": true
+    },
+    "errors": []
+  },
+  "syntax": "Passed game.js, feedback_claude_1003.js and command_ui_1020.js",
+  "core": {
+    "exit": 1,
+    "summaryReached": false,
+    "blocker": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs before assertions"
+  },
+  "visualReview": "Decoded MP4 frames at9/10/17 seconds inspected; full HUD included, Chronos is unobstructed, native radio text visible. Separate legacy arrival owner also checked in desktop/compact."
+}

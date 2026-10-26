@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 87b14209-2feb-4811-87fa-d80b4e043a36\njob_id: 87b14209-2feb-4811-87fa-d80b4e043a36\ndescription: FRAME FORMAT:256x256 transparent pixels, fixed central cyan EYE pivot128,128 throughout, common proportional scale and full-wing transparent margins. Exact supplied BLACK/dark charcoal mechanical flying eye, same black crescent wings, long pointed spine, cyan circular central eye, crisp authored pixels and dark metal highlights. One whole identical aircraft, no new parts, no additional effects or projectiles. The central cyan EYE brightens and charges a tightly contained white-cyan light INSIDE its lens while mechanical eyelid panels open slightly, wings brace outward subtly. Hold a visibly charged eye then relax. No laser ray baked into the sprite, no external aura or circles.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 10224024\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"87b14209-2feb-4811-87fa-d80b4e043a36\")\nasset_id: 58bfd9c0-5ff0-5f5d-bf4d-1bcecf39bf6c\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: f682c31d-5f45-40ba-959c-0d8646565f2e\njob_id: f682c31d-5f45-40ba-959c-0d8646565f2e\ndescription: FRAME FORMAT256x256 transparent, reactor128,116, same scale/camera and robot. All anatomy connected. Tiny magenta mark tracks the same closed fist. NO WEAPON, shaft or new objects; real hammer attached later. No zoom or fade. Animate ONLY this robot extending its empty free arm from its chest to the supplied open-palm endpoint. Deliberate smooth elbow extension and wrist opening, with a small shoulder turn and planted legs. The OTHER marked closed fist stays low outside the hip. Every frame contains ONLY the robot on transparent background. NO circles, discs, fields, particles, glow, floor, scenery or effects. Do not add any object. Finish with the exact supplied open palm. Keep its original dark metal or silver material.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025008\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f682c31d-5f45-40ba-959c-0d8646565f2e\")\nasset_id: 2032b1a2-8a1e-53dc-882b-5f63b640b4b1\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

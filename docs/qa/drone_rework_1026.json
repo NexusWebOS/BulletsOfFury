@@ -1,0 +1,92 @@
+{
+  "owner": "assets/drone_rework_1026.js",
+  "request": "warp/palette-darken current background; fade new arena; authored purple gate/drone; synthetic code/1015 charge; covering flash; reveal first host",
+  "probe": {
+    "path": "_shots/drone_rework_1026/probe/report.json",
+    "passed": 22,
+    "failed": 0
+  },
+  "laterTransformationRegression": {
+    "path": "_shots/dracodia_palette_1026/probe/report.json",
+    "passed": 48,
+    "failed": 0
+  },
+  "recording": {
+    "path": "_shots/drone_rework_1026/video/take-3b2096b2/drone-to-dracodia-phase1.mp4",
+    "report": "_shots/drone_rework_1026/video/take-3b2096b2/report.json",
+    "checks": {
+      "nativeEntryFromTimeZero": true,
+      "droneArrivalShown": true,
+      "completeNativeConversionShown": true,
+      "nativePhase1Starts": true,
+      "fullNativeFightHealth": true,
+      "nativeConversionDialogue": true,
+      "audibleNativeConversion": true,
+      "fullDecode": true,
+      "realTimeFrames": true,
+      "noPageConsoleOrAssetErrors": true,
+      "fullReworkedConversion": true,
+      "gateAndCodeVisible": true,
+      "hostCoveredBeforeReveal": true
+    },
+    "seconds": 23.06709999999404,
+    "peakDb": -6.2,
+    "nativeFps": 59.43529962588944,
+    "chapters": {
+      "background-warp": 1.2,
+      "palette-darkening": 2.8,
+      "arena-fade": 4.4,
+      "purple-gate": 6.4,
+      "drone-arrival": 8.061166666666667,
+      "conversion-middle": 11.481766666660707,
+      "charge": 13.281766666660708,
+      "whiteout": 14.881766666660708,
+      "host-reveal": 16.38176666666071,
+      "phase1-fight": 18.42459999999404
+    }
+  },
+  "playback": {
+    "url": "http://127.0.0.1:53746/_shots/drone_rework_1026/video/take-3b2096b2/drone-to-dracodia-phase1.mp4",
+    "checks": {
+      "decoded1280x800": true,
+      "background-warpPlaysWithAudio": true,
+      "purple-gatePlaysWithAudio": true,
+      "drone-arrivalPlaysWithAudio": true,
+      "conversion-middlePlaysWithAudio": true,
+      "chargePlaysWithAudio": true,
+      "whiteoutPlaysWithAudio": true,
+      "host-revealPlaysWithAudio": true,
+      "phase1-fightPlaysWithAudio": true,
+      "byteRangeSeeking": true,
+      "noBrowserErrors": true
+    },
+    "errors": []
+  },
+  "visualReview": [
+    "native current scenery warp/palette darkening",
+    "native authored gate and real drone",
+    "native actual code skin/front-back strands and own-pixel glow",
+    "native full whiteout covers pilot",
+    "native first-host reveal",
+    "decoded warp, charge, host reveal frames"
+  ],
+  "syntax": "passed assets/game.js and all changed runtime/art JS",
+  "requiredSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "blocker": "Missing _BUILD_SOURCE/retired_art_archive_1022.cjs before assertions",
+    "log": "_shots/drone_rework_1026/required-suite.log"
+  },
+  "sourceHashes": {
+    "assets/drone_rework_1026.js": "8bf7ee52d17bf39d2d02504cca769ac0c101b85f3ecef514b99d17e62544ff1b",
+    "assets/drone_rework_art_1026.js": "c6e7c1bddf90c93689b6c5cf029f05fcbd2e1d6eab5a7138dc8fdaac127250d2",
+    "assets/dracodia_dna_1026.js": "2e82ed9a0598bd662e4c7c85644cca71ed60c0aadcbbc90d262dbaefdd4368e2",
+    "_BUILD_SOURCE/build_drone_rework_1026.py": "aecc8ce179d92f52484fc28dcc101d55428bed8426be7b7100a80c4afa117500",
+    "_BUILD_SOURCE/probe_drone_rework_1026.py": "3573b1448de7a86d0cb9318f6eeaceb20c06488a1d90540225658fa31e4003c5",
+    "_BUILD_SOURCE/record_drone_host_1026.py": "8602edfd629bda316db8fbf2450ca610b43d0f2697b8520afdf26ff65b99a827",
+    "_BUILD_SOURCE/check_drone_host_video_1026.py": "e9f60cfe15e78c82c42bd4ec96aee67532e9cba6095eb1c679e41ebb8f1f73cd"
+  },
+  "newGenerationCredits": 0,
+  "committed": false,
+  "pushed": false
+}

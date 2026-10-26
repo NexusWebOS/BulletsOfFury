@@ -1,0 +1,12 @@
+{
+  "frameWidth": 64,
+  "frameHeight": 256,
+  "frames": 8,
+  "animationJob": "066c261e-0c5c-43e4-9a7c-581b8244f4f0",
+  "sourceJob": "aa53bb75-123c-4a80-b8d1-a0451c3c6b4c",
+  "fps": 12,
+  "pivot": [
+    32,
+    0
+  ]
+}

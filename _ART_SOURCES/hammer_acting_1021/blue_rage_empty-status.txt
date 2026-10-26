@@ -1,0 +1,10 @@
+status: completed
+id: cbf8fada-7c3b-4c20-bde2-6874ca1f7018
+job_id: cbf8fada-7c3b-4c20-bde2-6874ca1f7018
+frame: 16 of 17
+asset_id: eea5f7b5-dc2f-5a0a-b509-6cade453ec80
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0367 in credits
+download: https://api.pixellab.ai/mcp/images/cbf8fada-7c3b-4c20-bde2-6874ca1f7018/download?index=16

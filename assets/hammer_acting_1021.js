@@ -74,7 +74,8 @@ hammerBossDraw=function(b){const q=ha21Blue(b);if(!q)return HA21.base.draw.apply
  if(front)ha21Body(b,q); // Native laser and detached hammer paint in front of the torso.
  const draw=ctx.drawImage;ctx.drawImage=function(im,...args){const key=HA21.tags.get(im);if(key&&(HA21_ACTOR.test(key)||HA21_RECOVERY_KEYS.has(key))){HA21.suppressed++;return;}return draw.call(this,im,...args);};
  try{HA21.base.draw.apply(this,arguments);}finally{ctx.drawImage=draw;HA21.painting=old;}
- if(!front)ha21Body(b,q);else ha21Flash(b,q); // White hit feedback wins over the colored warning field.
+ if(!front)ha21Body(b,q);else ha21Flash(b,q);
+ if(HA21.deferredWall===b){HA21.deferredWall=null;hm10WallDraw(b);} // White hit feedback wins over the colored warning field.
 };
 hammerChromiumDraw=function(x,y,...args){const b=HA21.painting;
  if(b&&b._hammer.state==='mega_beam'&&Math.abs(x-b.x)<1&&Math.abs(y-(b.y-20))<1)y=b.y;

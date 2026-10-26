@@ -1,0 +1,26 @@
+{
+  "key": "alert_critical_1024",
+  "path": "assets/game/shared/ui/approach_alert_1024/critical_enemy.webp",
+  "resolution": [
+    768,
+    640
+  ],
+  "pivot": [
+    384,
+    320
+  ],
+  "text": "Warning: Critical Enemy Approaching!",
+  "source": "_ART_SOURCES/approach_alert_1024/critical-enemy-source.png",
+  "source_resolution": [
+    1374,
+    1145
+  ],
+  "proportional_scale": 0.5589519650655022,
+  "offset": [
+    0,
+    0
+  ],
+  "alpha_preserved": true,
+  "sha256": "28b294b272fd792a3b8b9d86570c41ed41238e37a3be667d21b32106ed12a731",
+  "owner": "_BUILD_SOURCE/build_approach_alert_1024.py"
+}

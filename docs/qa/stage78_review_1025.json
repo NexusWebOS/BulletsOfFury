@@ -1,0 +1,71 @@
+{
+  "created": "2026-10-25T22:24:13.037826+00:00",
+  "nativePassed": 36,
+  "nativeFailed": 0,
+  "nativeErrors": [],
+  "clips": [
+    {
+      "stage": 7,
+      "video": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\stage78_review_1025\\full\\stage7-180723\\stage7-furious.mp4",
+      "duration": 236.46,
+      "defeatSeconds": 224.296,
+      "mediaChecks": {
+        "fullDecode": true,
+        "audioStream": true,
+        "audibleDecodedAudio": true,
+        "durationMatches": true,
+        "noPageErrors": true,
+        "noConsoleErrors": true,
+        "noAssetErrors": true,
+        "nativeDefeat": true,
+        "zeroPlayerDeaths": true
+      },
+      "allFurious": true,
+      "allNativeGod": true,
+      "sourceFPS": 59.09,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": []
+    },
+    {
+      "stage": 8,
+      "video": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\stage78_review_1025\\full\\stage8\\stage8-furious.mp4",
+      "duration": 734.03,
+      "defeatSeconds": 734.023,
+      "mediaChecks": {
+        "fullDecode": true,
+        "audioStream": true,
+        "audibleDecodedAudio": true,
+        "durationMatches": true,
+        "noPageErrors": true,
+        "noConsoleErrors": true,
+        "noAssetErrors": true,
+        "nativeDefeat": true,
+        "zeroPlayerDeaths": true
+      },
+      "allFurious": true,
+      "allNativeGod": true,
+      "sourceFPS": 59.48,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": []
+    }
+  ],
+  "browserChecks": true,
+  "findingJumpsToOriginal": true,
+  "browserErrors": [],
+  "runtimeHashes": {
+    "assets/game.js": "56a7210be858013a24b3fceedceba7af2472229da19982556d50092ddcf82a64",
+    "assets/stage78_review_1025.js": "6777f4dae92c1d703dcafc4f3bfeb9fd94209b5b6353540971a9f0658a25a964",
+    "assets/stage78_review_art_1025.js": "6f31d77348413338e1e00d2d9435b2c87967e1f611f30462abe06c4e1cd40d18",
+    "assets/dracodia_rebirth_1023.js": "5bd0495c2fec9124a3039c21100e437e0843e327ac77b20664441d9a6880d906",
+    "assets/boss_integrity_1024.js": "0c95b7378a13ed209642e2e86286ab1c64987e45cf21e9546586a9fb7826b08e"
+  },
+  "gameJsMatchesOriginalCapture": true,
+  "fullSuite": {
+    "exitCode": 1,
+    "reachedSummary": false,
+    "reason": "Pre-existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs"
+  },
+  "review": "http://127.0.0.1:59154/docs/previews/stage78_review_1025/index.html"
+}

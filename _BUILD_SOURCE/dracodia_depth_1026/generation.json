@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-26",
+  "source_asset_id": "f2f2d956-f64b-444c-8bb3-c495f7b43e74",
+  "animation_asset_id": "f6a6647c-3094-4e1d-a634-7c4af5598e80",
+  "job_id": "b86c6abb-b05f-4e57-9679-e77e16c59fab",
+  "model": "pixel-engine-v1.5",
+  "reference": "native-reference.png",
+  "requested_frame_size": [320, 320],
+  "actual_generated_frame_size": [286, 286],
+  "export_frame_size": [512, 512],
+  "requested_frames": 12,
+  "colors": 64,
+  "edge_margin": 8,
+  "vertical_align": "center",
+  "credits_used": 26,
+  "prompt": "Resolution first: fixed even 320 by 320 transparent canvas, one constant proportional character scale, stable chest and crown registration. Animate this exact floating demonic machine boss as an upright 3D turntable. He rotates smoothly one complete 360-degree revolution around his VERTICAL spine: front, right three-quarter, right profile, his armored back, left profile, left three-quarter, then the identical starting front pose. The camera stays fixed and his body remains upright at the same centre and distance throughout. Show the actual changing volume and depth of the crown, skull, ribbed purple metal torso, heavy shoulder plates and long crescent blade claws; keep the red chest reactor and dark metallic outlines faithful to the reference. His arms retain the same relaxed claw pose and his lower body remains the hanging taper of dark mechanical tendrils. This is rotation in depth, never a flat spinning or rolling picture. No camera orbit, translation, new equipment, background, captions or lightning; effects and digital assembly will be layered by the game. Use crisp detailed 16-bit pixel art with the existing silver highlights and purple/red palette. The final frame completes the turn in the original frontal orientation for a clean loop."
+}

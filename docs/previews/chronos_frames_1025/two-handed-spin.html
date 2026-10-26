@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Chronos — original two-handed spin</title>
+<style>
+body{margin:0;background:#0b111b;color:#e7efff;font:16px system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:24px}h1{font-size:27px;margin:0 0 10px}h2{font-size:21px}p{color:#bac9dc;line-height:1.5}video{display:block;width:100%;background:#000;border:1px solid #34506d;border-radius:8px}button{font:inherit;padding:9px 14px;background:#203248;border:1px solid #4c738b;color:#effaff;border-radius:5px;cursor:pointer}nav{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:14px 0}.pair{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}figure{margin:0;background:#111d2c;border:1px solid #33495e;border-radius:8px;overflow:hidden}figcaption{padding:10px 14px;color:#83e8ed}canvas{display:block;width:100%;image-rendering:pixelated}.reference{width:100%;image-rendering:pixelated;background:#111d2c;border:1px solid #33495e}a{color:#86d9ff}small{color:#afc0d6}@media(max-width:650px){.pair{grid-template-columns:1fr}main{padding:12px}}
+</style>
+<main><h1>Chronos — original two-handed spin</h1>
+<p>The original HAMMER/HAMA whirlwind: both hands grip the shaft as his body turns. The body, hands and hammer remain together in every frame.</p>
+<video id="fight" controls playsinline preload="metadata" poster="../../../_shots/chronos_original_1025/chrome-whole-0.png" src="../../../_shots/chronos_original_1025/video/two-handed-spin-review.mp4"></video>
+<nav><button onclick="playAt(0)">Play with sound</button><button onclick="playAt(0)">Regular</button><button onclick="playAt(7.3)">Chromium</button><button onclick="playAt(14.5)">Red rage</button><button id="slow" onclick="fight.playbackRate=fight.playbackRate===1?.5:1;this.textContent=fight.playbackRate===1?'Half speed':'Normal speed'">Half speed</button></nav>
+<p id="status"><small>Focused Furious review with invulnerability and game audio. Each labeled segment starts a spin checkpoint; the fight then runs normally. Red armor is selected for comparison here—the live fight still charges into rage at 15% HP.</small></p>
+<h2>Inspect the grip through the complete turn</h2>
+<nav><button id="toggle">Pause frames</button><button id="back">Previous frame</button><button id="next">Next frame</button><span id="frame">Loading frames…</span></nav>
+<div class="pair"><figure><figcaption>Regular</figcaption><canvas id="regular" width="448" height="448"></canvas></figure><figure><figcaption>Chromium</figcaption><canvas id="chrome" width="448" height="448"></canvas></figure><figure><figcaption>Red rage</figcaption><canvas id="red" width="448" height="448"></canvas></figure></div>
+<h2>The original authored reference</h2>
+<p>These are the eight original whirlwind views used by HAMA. The restored spin retains these complete poses; chromium and red change the armor palette.</p>
+<a href="../../../assets/game/levels/stage_05/boss/stage5_archmage_0916/combat_0926/whirlwind_v2.png"><img class="reference" alt="Original eight-frame two-handed hammer whirlwind, front, side and back views" src="../../../assets/game/levels/stage_05/boss/stage5_archmage_0916/combat_0926/whirlwind_v2.png"></a>
+<p><a href="../../../index.html?revision=original-two-hands-1025b">Open the updated game</a> · <a href="index.html?revision=original-two-hands-1025b#banks">Other current animation banks</a></p></main>
+<script>
+let art,images={},running=true,clock=0,last=0,prepared=false,preparing;
+async function prepare(){if(prepared)return;if(preparing)return preparing;preparing=(async()=>{const b=await(await fetch(fight.getAttribute('src'))).blob();fight.src=URL.createObjectURL(b);await new Promise((ok,fail)=>{fight.addEventListener('loadedmetadata',ok,{once:true});fight.addEventListener('error',fail,{once:true});fight.load()});prepared=true})();return preparing;}
+async function playAt(t){await prepare();fight.currentTime=t;fight.muted=false;await fight.play();}
+function paint(){if(!art)return;const f=((Math.floor(clock)%8)+8)%8;for(const material of ['regular','chrome','red']){const g=document.getElementById(material).getContext('2d');g.clearRect(0,0,448,448);g.imageSmoothingEnabled=false;g.drawImage(images[material],f%4*448,Math.floor(f/4)*448,448,448,0,0,448,448);}document.querySelector('#frame').textContent='Original frame '+(f+1)+' / 8';}
+function draw(t){const dt=last?(t-last)/1000:0;last=t;if(running)clock+=dt*8;paint();requestAnimationFrame(draw);}
+function pause(){running=false;document.querySelector('#toggle').textContent='Play frames';}
+document.querySelector('#toggle').onclick=()=>{running=!running;document.querySelector('#toggle').textContent=running?'Pause frames':'Play frames'};
+document.querySelector('#back').onclick=()=>{pause();clock=Math.floor(clock)-1;paint()};document.querySelector('#next').onclick=()=>{pause();clock=Math.floor(clock)+1;paint()};
+async function load(){art=await(await fetch('../../../assets/game/shared/combat/chronos_motion_1025/manifest.json',{cache:'no-store'})).json();await Promise.all(['regular','chrome','red'].map(async m=>{const im=new Image();im.src='../../../'+art.sheets['spin_'+m].path+'?v=original-two-hands-1025b';await im.decode();images[m]=im}));requestAnimationFrame(draw);}
+load().catch(e=>document.querySelector('#frame').textContent=String(e));
+</script></html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Chronos — aura and chaingun review</title>
+<style>
+body{margin:0;background:#0b111b;color:#e7efff;font:16px system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:24px}h1{font-size:28px;margin:0 0 10px}h2{font-size:21px;margin-top:30px}p{color:#bac9dc;line-height:1.55}video{display:block;width:100%;background:#000;border:1px solid #34506d;border-radius:8px}button,select{font:inherit;padding:9px 14px;background:#203248;border:1px solid #4c738b;color:#effaff;border-radius:5px;cursor:pointer}button:hover{background:#304965}nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}.pair{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}figure{margin:0;background:#142234;border:1px solid #33495e;border-radius:8px;overflow:hidden}figcaption{padding:12px;color:#83e8ed}canvas{display:block;width:100%;image-rendering:pixelated}a{color:#86d9ff}#status{font-size:14px;min-height:23px}.note{border-left:3px solid #68cdd3;padding-left:15px}details{margin-top:24px}summary{cursor:pointer;color:#b7ddea}@media(max-width:650px){.pair{grid-template-columns:1fr}main{padding:12px}}
+</style>
+<main><h1>Chronos — the corrected handoff and aura</h1>
+<p>He strikes the chaingun box open, throws his hammer upward, catches the gun, then braces and fires with a spinning barrel. His red aura now traces the pose he is actually holding and sheds short pulses of energy from that outline.</p>
+<video id="fight" controls playsinline preload="metadata" poster="../../../_shots/chronos_aura_gun_1025/video/0-chaingun.png" src="../../../_shots/chronos_aura_gun_1025/video/chronos-aura-chaingun.mp4"></video>
+<nav><button id="play" onclick="playAt(0)">Play with sound</button><button onclick="playAt(0)">Box → throw → catch</button><button onclick="playChapter('chaingun')">Spin-up and firing</button><button onclick="playAt(12.1)">Fan volleys</button><button onclick="playAt(23.1)">15% HP transformation</button><button onclick="playAt(28)">Aura during two-handed spin</button><button onclick="playChapter('giant_rise')">Aura during depth jump</button></nav>
+<nav><label>Playback <select id="speed" onchange="fight.playbackRate=Number(this.value)"><option value="1">Normal</option><option value=".5">Half speed</option><option value=".25">Quarter speed</option></select></label><button onclick="stepVideo(-1)">Previous video frame</button><button onclick="stepVideo(1)">Next video frame</button></nav>
+<p id="status">Furious, Cole, invulnerability on. Music and combat sounds are included.</p>
+<p class="note">Focused gameplay review with labeled checkpoints: the native pickup and gun phase first; the native 15% HP charge at 23 seconds; the original two-handed spin at 28 seconds, followed by his native background jump and strikes.</p>
+<h2>Current gun animation in all three armors</h2><p>The body absorbs recoil while the barrel turns. The original casing, handles, barrel length and six-barrel shape remain consistent.</p>
+<nav><button id="toggle">Pause frames</button><button id="previous">Previous pose</button><button id="next">Next pose</button><span id="frame"></span></nav>
+<div class="pair"><figure><figcaption>Regular</figcaption><canvas id="regular" width="384" height="360"></canvas></figure><figure><figcaption>Chromium</figcaption><canvas id="chrome" width="384" height="360"></canvas></figure><figure><figcaption>Red rage</figcaption><canvas id="red" width="384" height="360"></canvas></figure></div>
+<p><a href="two-handed-spin.html?revision=original-two-hands-1025b">Inspect the restored original two-handed spin</a> · <a href="../../../index.html?revision=silhouette-pickup-1025">Open the updated game</a></p>
+<details><summary>Earlier review</summary><p><a href="combat-review-before-aura.html">Earlier full-fight recording</a> — this predates the current aura, pickup and firing corrections.</p></details>
+</main>
+<script>
+const fight=document.querySelector('#fight');let preparing,prepared=false,report;
+async function prepare(){if(prepared)return;if(preparing)return preparing;preparing=(async()=>{const b=await(await fetch(fight.getAttribute('src'))).blob();fight.src=URL.createObjectURL(b);await new Promise((ok,fail)=>{fight.addEventListener('loadedmetadata',ok,{once:true});fight.addEventListener('error',fail,{once:true});fight.load()});prepared=true})();return preparing;}
+async function playAt(t){document.querySelector('#status').textContent='Loading the recording…';await prepare();fight.currentTime=t;fight.muted=false;fight.playbackRate=Number(document.querySelector('#speed').value);await fight.play();document.querySelector('#status').textContent='Furious gameplay — sound on. Checkpoints are labeled in the recording.';}
+async function playChapter(state){report=report||await(await fetch('../../../_shots/chronos_aura_gun_1025/video/review.json')).json();const q=report.timeline.find(q=>q.state===state);if(q)playAt(Math.max(0,q.videoSeconds-.35));}
+async function stepVideo(dir){await prepare();fight.pause();fight.currentTime=Math.max(0,Math.min(fight.duration,fight.currentTime+dir/30));}
+let art,images={},running=true,clock=0,last=0;
+async function load(){const data=await(await fetch('../../../assets/game/shared/combat/chronos_aura_gun_1025/manifest.json',{cache:'no-store'})).json();art=data.chaingun;const used=new Set();for(const bank of ['body','hands','barrel'])for(const suffix of ['','_armor','_red'])used.add(art.banks[bank+suffix][0].sheet);await Promise.all([...used].map(async k=>{const im=new Image();im.src='../../../'+art.sheets[k].path+'?v=silhouette-pickup-1025';await im.decode();images[k]=im}));requestAnimationFrame(draw);}
+function blit(g,a,x,y){g.drawImage(images[a.sheet],...a.cell,x-a.pivot[0],y-a.pivot[1],a.w,a.h);}
+function draw(t){const dt=last?(t-last)/1000:0;last=t;if(running)clock+=dt;const pose=Math.floor(clock*18)%art.banks.body.length,rotor=1+Math.floor(clock*24)%8;
+ for(const [id,suffix]of [['regular',''],['chrome','_armor'],['red','_red']]){const g=document.querySelector('#'+id).getContext('2d');g.clearRect(0,0,384,360);g.imageSmoothingEnabled=false;blit(g,art.banks['body'+suffix][pose],192,132);blit(g,art.banks['barrel'+suffix][rotor],192,180);blit(g,art.banks['hands'+suffix][pose],192,132);}
+ document.querySelector('#frame').textContent='Body pose '+(pose+1)+' / '+art.banks.body.length+' · rotor '+rotor+' / 8';requestAnimationFrame(draw);}
+function toggle(){running=!running;document.querySelector('#toggle').textContent=running?'Pause frames':'Play frames';}
+document.querySelector('#toggle').onclick=toggle;function step(dir){if(running)toggle();clock=Math.max(0,clock+dir/18);}
+document.querySelector('#previous').onclick=()=>step(-1);document.querySelector('#next').onclick=()=>step(1);load().catch(e=>document.querySelector('#status').textContent=String(e));
+</script></html>

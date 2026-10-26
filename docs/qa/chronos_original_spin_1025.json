@@ -1,0 +1,76 @@
+{
+  "nativeSpin": {
+    "passed": 16,
+    "failed": 0,
+    "source": "_shots/chronos_original_1025/results.json"
+  },
+  "passwordAudit": {
+    "errors": [],
+    "hama": {
+      "keys": [
+        "arch_whirlwind_0926"
+      ],
+      "actual": {
+        "x": 461.0799999999999,
+        "y": 397.5
+      },
+      "expected": {
+        "x": 461.0799999999999,
+        "y": 397.5
+      }
+    },
+    "hammerDanceScreenshot": "_shots/chronos_original_1025/after/hammer-break-hammer.png"
+  },
+  "fullSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exit": 1,
+    "summaryReached": false,
+    "blocker": "Pre-existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs"
+  },
+  "recording": {
+    "path": "_shots/chronos_original_1025/video/two-handed-spin-review.mp4",
+    "fullDecode": true,
+    "method": "Three explicitly labeled spin checkpoints, native simulation and game audio, invulnerable observer; not a full boss playthrough."
+  },
+  "review": {
+    "duration": 19.6,
+    "playing": true,
+    "muted": false,
+    "peak": 0.3424220085144043,
+    "frames": 8,
+    "source": "arch_whirlwind_0926",
+    "errors": [],
+    "frameStepChangesPixels": true,
+    "frameBefore": "Original frame 6 / 8",
+    "frameAfter": "Original frame 7 / 8",
+    "passed": true
+  },
+  "palette": {
+    "chrome": {
+      "sameAlpha": true,
+      "headColorsPreserved": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "red": {
+      "sameAlpha": true,
+      "headColorsPreserved": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "body": {
+    "accepted": [
+      0,
+      1,
+      2,
+      6,
+      7,
+      8
+    ],
+    "rejected": [
+      3,
+      4,
+      5
+    ],
+    "reason": "Generated side grip was inconsistent with the original front-mounted gun. Whole connected recoil poses retained."
+  },
+  "barrel": {
+    "preserve": "Original receiver, handles, alpha silhouette, total dimensions, muzzle anchor and metallic tonal range.",
+    "selected": "PixelLab rotating interior from all eight generated rotor phases; static original end frame remains the loop seam."
+  },
+  "crate": {
+    "accepted": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "reason": "Visible crack and opening shutters reveal empty compartment before actual gun ejection."
+  },
+  "aura": {
+    "source": "Exact current native authored plate alpha",
+    "effect": "Close contour traces and bounded upward echoes; no standalone flame art.",
+    "cacheLimit": 32
+  }
+}

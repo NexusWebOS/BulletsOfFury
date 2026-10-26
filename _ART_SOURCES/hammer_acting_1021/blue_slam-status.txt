@@ -1,0 +1,10 @@
+status: completed
+id: 128ed526-8627-4a52-a6c5-813ab133a19d
+job_id: 128ed526-8627-4a52-a6c5-813ab133a19d
+frame: 16 of 17
+asset_id: 087d18de-d449-539a-a611-43b2359a40ce
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0342 in credits
+download: https://api.pixellab.ai/mcp/images/128ed526-8627-4a52-a6c5-813ab133a19d/download?index=16

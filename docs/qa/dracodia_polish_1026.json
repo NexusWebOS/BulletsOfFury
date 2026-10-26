@@ -1,0 +1,745 @@
+{
+  "scope": "Cyclic subframes, 24-step skeleton fade, rising audible strike gain, single final speech roar, and intact first-host body after arm breaks and during its fall",
+  "native": {
+    "passed": 41,
+    "checks": [
+      {
+        "name": "Native portal entrance reaches the original first host",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The existing authored 24-pose carrier and final plates are ready",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All ninety revised arm targets overlap native opaque arm pixels",
+        "passed": true,
+        "data": {
+          "n": 90,
+          "bad": []
+        }
+      },
+      {
+        "name": "First-host crown and full-width shoulders remain intact after actual arm destruction",
+        "passed": true,
+        "data": {
+          "different": 0,
+          "ink": 5577,
+          "arms": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "name": "Native core exhaustion starts one protected rebirth",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Falling first host retains the same complete authored body after core exhaustion",
+        "passed": true,
+        "data": {
+          "different": 0,
+          "ink": 22205
+        }
+      },
+      {
+        "name": "Rear and foreground electric helices visibly wrap the native body",
+        "passed": true,
+        "data": {
+          "rd25UnderEffects": 14082,
+          "rd25OverEffects": 3126,
+          "rd25Lightning": 68773
+        }
+      },
+      {
+        "name": "Overhead lightning visibly strikes down through the scene",
+        "passed": true,
+        "data": {
+          "rd25UnderEffects": 14082,
+          "rd25OverEffects": 3126,
+          "rd25Lightning": 68773
+        }
+      },
+      {
+        "name": "Distant cinematic strikes visibly change native scene pixels",
+        "passed": true,
+        "data": {
+          "changed": 53740
+        }
+      },
+      {
+        "name": "The turning carrier keeps animating throughout the partial download",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Generated side and back views animate through the complete depth turntable",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Forming body stays upright while its actual depth poses turn",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Electric wrap retains separate front and rear depth layers",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All main strikes travel downward from above the boss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rotation accelerates continuously without a final settling pause",
+        "passed": true,
+        "data": {
+          "firstRate": 0.8408333333333751,
+          "lastRate": 2.5733333333333075
+        }
+      },
+      {
+        "name": "Late fast loops keep traversing front side and back poses",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Complete final body remains withheld until peak whiteout",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Cinematic lightning reaches all nine screen lanes",
+        "passed": true,
+        "data": {
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      },
+      {
+        "name": "Downward strike positions stay fixed while the boss keeps rotating",
+        "passed": true,
+        "data": {
+          "out": [
+            {
+              "yaw": 2.0559201992640603,
+              "geometry": [
+                {
+                  "kind": "core",
+                  "from": {
+                    "x": 312,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 321,
+                    "y": 174.08
+                  },
+                  "to": {
+                    "x": 305,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "core",
+                  "from": {
+                    "x": 376,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 367,
+                    "y": 174.08
+                  },
+                  "to": {
+                    "x": 383,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "ambient",
+                  "from": {
+                    "x": 172.6,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 190.6,
+                    "y": 241.68
+                  },
+                  "to": {
+                    "x": 177.1,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "ambient",
+                  "from": {
+                    "x": 449.59999999999997,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 441.59999999999997,
+                    "y": 241.68
+                  },
+                  "to": {
+                    "x": 447.59999999999997,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "ambient",
+                  "from": {
+                    "x": 486.40000000000003,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 510.40000000000003,
+                    "y": 241.68
+                  },
+                  "to": {
+                    "x": 492.40000000000003,
+                    "y": 536
+                  }
+                }
+              ]
+            },
+            {
+              "yaw": 2.3310961823156284,
+              "geometry": [
+                {
+                  "kind": "core",
+                  "from": {
+                    "x": 312,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 321,
+                    "y": 174.08
+                  },
+                  "to": {
+                    "x": 305,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "core",
+                  "from": {
+                    "x": 376,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 367,
+                    "y": 174.08
+                  },
+                  "to": {
+                    "x": 383,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "ambient",
+                  "from": {
+                    "x": 172.6,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 190.6,
+                    "y": 241.68
+                  },
+                  "to": {
+                    "x": 177.1,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "ambient",
+                  "from": {
+                    "x": 449.59999999999997,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 441.59999999999997,
+                    "y": 241.68
+                  },
+                  "to": {
+                    "x": 447.59999999999997,
+                    "y": 536
+                  }
+                },
+                {
+                  "kind": "ambient",
+                  "from": {
+                    "x": 486.40000000000003,
+                    "y": -30
+                  },
+                  "chest": {
+                    "x": 510.40000000000003,
+                    "y": 241.68
+                  },
+                  "to": {
+                    "x": 492.40000000000003,
+                    "y": 536
+                  }
+                }
+              ]
+            }
+          ],
+          "rates": [
+            5,
+            11,
+            17,
+            20.54
+          ],
+          "quiet": 0.9000000000000004
+        }
+      },
+      {
+        "name": "Ending strike cadence accelerates independently to over twenty per second",
+        "passed": true,
+        "data": [
+          5,
+          11,
+          17,
+          20.54
+        ]
+      },
+      {
+        "name": "Separate strike pulses have a release interval",
+        "passed": true,
+        "data": 0.9000000000000004
+      },
+      {
+        "name": "Surrounding spiral appears only in the final storm",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Actual preflash renderer retains partial bands and never draws native complete body",
+        "passed": true,
+        "data": [
+          {
+            "t": 24.7,
+            "calls": 0,
+            "bands": 111,
+            "full": false
+          },
+          {
+            "t": 25.22,
+            "calls": 0,
+            "bands": 111,
+            "full": false
+          },
+          {
+            "t": 25.59,
+            "calls": 0,
+            "bands": 111,
+            "full": false
+          }
+        ]
+      },
+      {
+        "name": "Rendered profile narrows in depth and back art differs from the front",
+        "passed": true,
+        "data": [
+          {
+            "frame": 0,
+            "ink": 16044,
+            "width": 237,
+            "hash": 21071699
+          },
+          {
+            "frame": 5,
+            "ink": 8453,
+            "width": 106,
+            "hash": 9223502
+          },
+          {
+            "frame": 8,
+            "ink": 13274,
+            "width": 225,
+            "hash": 14904239
+          },
+          {
+            "frame": 11,
+            "ink": 8453,
+            "width": 106,
+            "hash": 9223502
+          }
+        ]
+      },
+      {
+        "name": "Native final-form data progressively fills the same rotating assembly",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The assembled form stays protected and exposes no premature Retina target",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All five native final-form health budgets survive the complete download",
+        "passed": true,
+        "data": {
+          "host": 5945,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            4510,
+            0,
+            4920
+          ],
+          "forms": [
+            0,
+            8,
+            1,
+            6,
+            2
+          ]
+        }
+      },
+      {
+        "name": "Exactly 24 native lightning beats precede the final arena",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The native reveal enters final speech once",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Download completes upright at the native combat scale",
+        "passed": true,
+        "data": {
+          "x": 339.385,
+          "y": 208.1669258447011,
+          "dx": -0.6149999999999869,
+          "dy": -3.818124999999987,
+          "size": 410,
+          "k": 1.28125,
+          "progress": 1,
+          "angle": 0,
+          "frame": 11,
+          "t": 25.23333333333318,
+          "body": {
+            "x": 340,
+            "y": 211.98505084470108
+          },
+          "depth": true,
+          "yaw": 3.090454506503962,
+          "depthFrame": 7,
+          "nativeBlend": 0,
+          "fullForm": false,
+          "materialProgress": 0.86,
+          "rotationTurns": 30.49186111111073,
+          "rotationRate": 2.5183333333333104,
+          "extent": 512,
+          "bands": 111,
+          "bolts": 24,
+          "source": "native-colossus",
+          "carrier": "er23_symbiote",
+          "protected": true
+        }
+      },
+      {
+        "name": "The completed body enters speech without a position jump",
+        "passed": true,
+        "data": {
+          "before": [
+            340,
+            216.7042293515575
+          ],
+          "after": [
+            340,
+            216.7042293515575
+          ]
+        }
+      },
+      {
+        "name": "Completed download pixels match the actual native final-form renderer",
+        "passed": true,
+        "data": {
+          "different": 42,
+          "opaque": 245760
+        }
+      },
+      {
+        "name": "Download begins with the same authored turning carrier pixels",
+        "passed": true,
+        "data": {
+          "different": 0,
+          "opaque": 245760
+        }
+      },
+      {
+        "name": "Skeleton gains visibility through all24 stepped opacity frames before lightning",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Carrier material and wire have pixel-continuous cyclic frame seams",
+        "passed": true,
+        "data": [
+          {
+            "kind": "carrier",
+            "diff": 0
+          },
+          {
+            "kind": "body",
+            "diff": 0
+          },
+          {
+            "kind": "wire",
+            "diff": 0
+          }
+        ]
+      },
+      {
+        "name": "Each native and ending lightning beat receives increasing mixer gain",
+        "passed": true,
+        "data": {
+          "out": [
+            {
+              "kind": "carrier",
+              "diff": 0
+            },
+            {
+              "kind": "body",
+              "diff": 0
+            },
+            {
+              "kind": "wire",
+              "diff": 0
+            }
+          ],
+          "gains": [
+            0.19999999999999998,
+            0.21999999999999997,
+            0.24,
+            0.26,
+            0.28,
+            0.3,
+            0.32,
+            0.33999999999999997,
+            0.36,
+            0.38,
+            0.39999999999999997,
+            0.42,
+            0.43999999999999995,
+            0.46,
+            0.48,
+            0.49999999999999994,
+            0.52,
+            0.54,
+            0.5599999999999999,
+            0.5800000000000001,
+            0.6,
+            0.6199999999999999,
+            0.64,
+            0.66,
+            0.6703030303030303,
+            0.6806060606060607,
+            0.6909090909090909,
+            0.7012121212121213,
+            0.7115151515151515,
+            0.7218181818181819,
+            0.7321212121212122,
+            0.7424242424242424,
+            0.7527272727272728,
+            0.7630303030303031,
+            0.7733333333333334,
+            0.7836363636363637,
+            0.793939393939394,
+            0.8042424242424243,
+            0.8145454545454546,
+            0.8248484848484849,
+            0.8351515151515152,
+            0.8454545454545455,
+            0.8557575757575758,
+            0.8660606060606061,
+            0.8763636363636365,
+            0.8866666666666667,
+            0.896969696969697,
+            0.9072727272727273,
+            0.9175757575757576,
+            0.927878787878788,
+            0.9381818181818182,
+            0.9484848484848485,
+            0.9587878787878789,
+            0.9690909090909091,
+            0.9793939393939395,
+            0.9896969696969697,
+            1
+          ],
+          "ending": 34
+        }
+      },
+      {
+        "name": "Only the last speech line performs one native roar and arm lift",
+        "passed": true,
+        "data": {
+          "screams": 1,
+          "faces": [
+            3,
+            4,
+            0,
+            4,
+            3,
+            0,
+            4,
+            5
+          ],
+          "mode": "fight"
+        }
+      },
+      {
+        "name": "Final form resumes native combat and visibly flashes on a real hit",
+        "passed": true,
+        "data": {
+          "white": 17609,
+          "mode": "fight",
+          "state": "play",
+          "t": 0.13333333333333333
+        }
+      },
+      {
+        "name": "Native final-form hit flash expires normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Download energy uses an approved audible mixer cue",
+        "passed": true,
+        "data": {
+          "peak": 0.7848029732704163,
+          "duration": 0.7975
+        }
+      },
+      {
+        "name": "Native renderer has no page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "report": "_shots/dracodia_polish_1026/probe/report.json"
+  },
+  "video": {
+    "video": "_shots/dracodia_polish_1026/video/take-6c1b7f70/dracodia-final-transformation.mp4",
+    "checks": {
+      "noPageOrConsoleErrors": true,
+      "noAssetErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true,
+      "nativeDamageStartsCheckpoint": true,
+      "all24LightningBeats": true,
+      "downloadCompletes": true,
+      "finalArenaRevealed": true,
+      "nativeLightningAudioPlayed": true,
+      "nativeFinalBodyDownloaded": true,
+      "downloadEnergyReplacesTeleportCue": true,
+      "actualDepthPoses": true,
+      "uprightFormingBody": true,
+      "swirlAndDownwardStrikes": true,
+      "acceleratingUntilFlash": true,
+      "noFullBodyBeforeFlash": true,
+      "fullBodyAfterPeakFlash": true,
+      "strikesAcrossScreen": true,
+      "strikeCadenceAcceleratesIndependently": true,
+      "spiralOnlyDuringEnding": true,
+      "audibleGainIncreasesEachStrike": true,
+      "everyStrikeMixerReleaseAccepted": true,
+      "steppedSkeletonVisibility": true,
+      "singleClosingRoar": true
+    },
+    "chapters": {
+      "collapse": 2.9268000000119208,
+      "symbiote": 13.52680000001192,
+      "download": 17.42680000001192,
+      "lightning": 22.12680000001192,
+      "storm": 27.02680000001192,
+      "complete": 28.14680000001192,
+      "reveal": 32.526800000011924,
+      "peak-flash": 28.67680000001192,
+      "clearing-light": 30.12680000001192,
+      "left-arm-break": 1.45,
+      "right-arm-break": 2.65,
+      "closing-roar": 60.04010000002384
+    },
+    "decodedPeakDb": -3.7
+  },
+  "seconds": 61.72740000000596,
+  "nativeFps": 59.34155658588644,
+  "audio": {
+    "beats": 57,
+    "allAccepted": true,
+    "firstGain": 0.19999999999999998,
+    "lastGain": 1,
+    "strictlyIncreasing": true
+  },
+  "playback": {
+    "url": "http://127.0.0.1:53746/_shots/dracodia_polish_1026/video/take-6c1b7f70/dracodia-final-transformation.mp4",
+    "checks": {
+      "decodes1280x800": true,
+      "lightningPlaysWithAudio": true,
+      "stormPlaysWithAudio": true,
+      "revealPlaysWithAudio": true,
+      "left-arm-breakPlaysWithAudio": true,
+      "closing-roarPlaysWithAudio": true,
+      "byteRangeSeeking": true,
+      "noBrowserErrors": true
+    },
+    "errors": []
+  },
+  "newGenerationCredits": 0,
+  "skill": {
+    "path": "C:\\Users\\Mdogg\\.codex\\skills\\boss-cinematics",
+    "validated": true,
+    "hashes": {
+      "SKILL.md": "748fe16374f1d9f78e8858c2fba38a8588c320a885b621f0d6d1da16504d23c4",
+      "agents/openai.yaml": "06bea416f8e038820fe23062ea291946102869a967477a734adcb7db640af859",
+      "references/bullets-of-fury.md": "6ebbc00fb14c6ddcbe1800b1c387b625c31d5a44718b95c310d263a2a153e2b8"
+    }
+  },
+  "sourceHashes": {
+    "assets/dracodia_polish_1026.js": "d4d9ac3a56dcd9aab5ef1b67e00bb48ace885016e00af48ff380774ea518432b",
+    "assets/dracodia_depth_1026.js": "c8874ef5cb91de55e1180dc11a8dead6b17f261086a6fab61ee87159bdd7dc3d",
+    "assets/stage78_review_1025.js": "abe674d9d229092e1be4924d6efd07142610e079fa5e40956d32e2397488dd65",
+    "assets/stage78_review_art_1025.js": "9585dd5bc13f6bb13e6f7e71c2fd8d798081b8015ce0d8627cecf7ca5181f9df",
+    "_BUILD_SOURCE/build_stage78_review_1025.py": "bb507ec0d1dfe5ccdde308246a4475fed44e10422be57cd0f86dc8fb2fc61d67",
+    "index.html": "6dcb0509188040092e9b9828b337c77ac29d00383e0873ebc7400bdb8935fd4d",
+    "_BUILD_SOURCE/probe_dracodia_download_reveal_1025.py": "3b8c6f44075565e759c901027a4127e38ac562ae42b7acbed2f12fb98f27e5a7",
+    "_BUILD_SOURCE/record_dracodia_transformation_1025.py": "1f405b984e1a947e6a19ceef73b0a2112712d61201e25a6a47085159a05814a6",
+    "_BUILD_SOURCE/check_dracodia_transformation_video_1025.py": "23c48ee69bdcbab5ef34b7681ed87e2722f4a7ea5571e87b12ae27f8af41c879"
+  },
+  "syntax": {
+    "assets/dracodia_polish_1026.js": 0,
+    "assets/dracodia_depth_1026.js": 0,
+    "assets/stage78_review_1025.js": 0,
+    "assets/stage78_review_art_1025.js": 0
+  },
+  "requiredSuite": {
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "reason": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs",
+    "log": "_shots/dracodia_polish_1026/required-suite.log"
+  }
+}

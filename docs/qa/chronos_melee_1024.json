@@ -1,0 +1,1490 @@
+{
+  "checks": [
+    {
+      "name": "slam actually damages a ship in the authored hammer path",
+      "passed": true,
+      "data": {
+        "hits": [
+          {
+            "clock": 0.6666666666666671,
+            "label": "Hammer second downward slam",
+            "distance": 0,
+            "r": 62,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": true
+          }
+        ],
+        "calls": [
+          {
+            "clock": 0.6666666666666671,
+            "label": "Hammer second downward slam",
+            "distance": 0,
+            "r": 62,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": true
+          },
+          {
+            "clock": 1.183333333333334,
+            "label": "Hammer left sweep",
+            "distance": 122.9882492077345,
+            "r": 30,
+            "head": {
+              "x": 353,
+              "y": 440
+            },
+            "to": {
+              "x": 353,
+              "y": 440
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2000000000000006,
+            "label": "Hammer left sweep",
+            "distance": 134.4953530795767,
+            "r": 30,
+            "head": {
+              "x": 353,
+              "y": 440
+            },
+            "to": {
+              "x": 353,
+              "y": 440
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2166666666666672,
+            "label": "Hammer left sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2333333333333338,
+            "label": "Hammer left sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2500000000000004,
+            "label": "Hammer left sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 178,
+              "y": 400
+            },
+            "to": {
+              "x": 178,
+              "y": 400
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.266666666666667,
+            "label": "Hammer left sweep",
+            "distance": 46.518813398452025,
+            "r": 30,
+            "head": {
+              "x": 178,
+              "y": 400
+            },
+            "to": {
+              "x": 178,
+              "y": 400
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2833333333333337,
+            "label": "Hammer left sweep",
+            "distance": 46.518813398452025,
+            "r": 30,
+            "head": {
+              "x": 146,
+              "y": 419
+            },
+            "to": {
+              "x": 146,
+              "y": 419
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3000000000000003,
+            "label": "Hammer left sweep",
+            "distance": 74.00675644831357,
+            "r": 30,
+            "head": {
+              "x": 146,
+              "y": 419
+            },
+            "to": {
+              "x": 146,
+              "y": 419
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3166666666666669,
+            "label": "Hammer left sweep",
+            "distance": 60.68927056328525,
+            "r": 30,
+            "head": {
+              "x": 186,
+              "y": 478
+            },
+            "to": {
+              "x": 186,
+              "y": 478
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3333333333333335,
+            "label": "Hammer left sweep",
+            "distance": 67.23094525588644,
+            "r": 30,
+            "head": {
+              "x": 186,
+              "y": 478
+            },
+            "to": {
+              "x": 186,
+              "y": 478
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7499999999999987,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7666666666666653,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7833333333333319,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 330,
+              "y": 386
+            },
+            "to": {
+              "x": 330,
+              "y": 386
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7999999999999985,
+            "label": "Hammer right sweep",
+            "distance": 115.13470371699404,
+            "r": 30,
+            "head": {
+              "x": 330,
+              "y": 386
+            },
+            "to": {
+              "x": 330,
+              "y": 386
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.816666666666665,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 278,
+              "y": 413
+            },
+            "to": {
+              "x": 278,
+              "y": 413
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8333333333333317,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 278,
+              "y": 413
+            },
+            "to": {
+              "x": 278,
+              "y": 413
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8499999999999983,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 335,
+              "y": 416
+            },
+            "to": {
+              "x": 335,
+              "y": 416
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.866666666666665,
+            "label": "Hammer right sweep",
+            "distance": 115.06954418958998,
+            "r": 30,
+            "head": {
+              "x": 335,
+              "y": 416
+            },
+            "to": {
+              "x": 335,
+              "y": 416
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8833333333333315,
+            "label": "Hammer right sweep",
+            "distance": 109.1146186356347,
+            "r": 30,
+            "head": {
+              "x": 329,
+              "y": 425
+            },
+            "to": {
+              "x": 329,
+              "y": 425
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8999999999999981,
+            "label": "Hammer right sweep",
+            "distance": 109.1146186356347,
+            "r": 30,
+            "head": {
+              "x": 329,
+              "y": 425
+            },
+            "to": {
+              "x": 329,
+              "y": 425
+            },
+            "accepted": false
+          }
+        ],
+        "cues": [
+          {
+            "key": "hammerImpact",
+            "clock": 0.6666666666666671
+          },
+          {
+            "key": "hammerThrow",
+            "clock": 1.183333333333334
+          },
+          {
+            "key": "hammerThrow",
+            "clock": 1.7499999999999987
+          }
+        ],
+        "shield": 2,
+        "target": {
+          "x": 220,
+          "y": 420
+        },
+        "left": {
+          "x": 220,
+          "y": 420
+        },
+        "right": {
+          "x": 220,
+          "y": 420
+        },
+        "duration": 2.18
+      }
+    },
+    {
+      "name": "Second slam targets the current player instead of the first impact",
+      "passed": true,
+      "data": {
+        "x": 220,
+        "y": 420
+      }
+    },
+    {
+      "name": "slam collision endpoints match the actually rendered hammer",
+      "passed": true,
+      "data": {
+        "samples": 20
+      }
+    },
+    {
+      "name": "left actually damages a ship in the authored hammer path",
+      "passed": true,
+      "data": {
+        "hits": [
+          {
+            "clock": 1.2166666666666672,
+            "label": "Hammer left sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": true
+          }
+        ],
+        "calls": [
+          {
+            "clock": 0.6666666666666671,
+            "label": "Hammer second downward slam",
+            "distance": 170.29386365926402,
+            "r": 62,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.183333333333334,
+            "label": "Hammer left sweep",
+            "distance": 122.9882492077345,
+            "r": 30,
+            "head": {
+              "x": 523,
+              "y": 430
+            },
+            "to": {
+              "x": 523,
+              "y": 430
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2000000000000006,
+            "label": "Hammer left sweep",
+            "distance": 134.4953530795767,
+            "r": 30,
+            "head": {
+              "x": 523,
+              "y": 430
+            },
+            "to": {
+              "x": 523,
+              "y": 430
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2166666666666672,
+            "label": "Hammer left sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": true
+          },
+          {
+            "clock": 1.2333333333333338,
+            "label": "Hammer left sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2500000000000004,
+            "label": "Hammer left sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 348,
+              "y": 390
+            },
+            "to": {
+              "x": 348,
+              "y": 390
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.266666666666667,
+            "label": "Hammer left sweep",
+            "distance": 46.518813398452025,
+            "r": 30,
+            "head": {
+              "x": 348,
+              "y": 390
+            },
+            "to": {
+              "x": 348,
+              "y": 390
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2833333333333337,
+            "label": "Hammer left sweep",
+            "distance": 46.518813398452025,
+            "r": 30,
+            "head": {
+              "x": 316,
+              "y": 409
+            },
+            "to": {
+              "x": 316,
+              "y": 409
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3000000000000003,
+            "label": "Hammer left sweep",
+            "distance": 74.00675644831357,
+            "r": 30,
+            "head": {
+              "x": 316,
+              "y": 409
+            },
+            "to": {
+              "x": 316,
+              "y": 409
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3166666666666669,
+            "label": "Hammer left sweep",
+            "distance": 60.68927056328525,
+            "r": 30,
+            "head": {
+              "x": 356,
+              "y": 468
+            },
+            "to": {
+              "x": 356,
+              "y": 468
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3333333333333335,
+            "label": "Hammer left sweep",
+            "distance": 67.23094525588644,
+            "r": 30,
+            "head": {
+              "x": 356,
+              "y": 468
+            },
+            "to": {
+              "x": 356,
+              "y": 468
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7499999999999987,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7666666666666653,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7833333333333319,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 500,
+              "y": 376
+            },
+            "to": {
+              "x": 500,
+              "y": 376
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7999999999999985,
+            "label": "Hammer right sweep",
+            "distance": 115.13470371699404,
+            "r": 30,
+            "head": {
+              "x": 500,
+              "y": 376
+            },
+            "to": {
+              "x": 500,
+              "y": 376
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.816666666666665,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 448,
+              "y": 403
+            },
+            "to": {
+              "x": 448,
+              "y": 403
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8333333333333317,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 448,
+              "y": 403
+            },
+            "to": {
+              "x": 448,
+              "y": 403
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8499999999999983,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 505,
+              "y": 406
+            },
+            "to": {
+              "x": 505,
+              "y": 406
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.866666666666665,
+            "label": "Hammer right sweep",
+            "distance": 115.06954418958998,
+            "r": 30,
+            "head": {
+              "x": 505,
+              "y": 406
+            },
+            "to": {
+              "x": 505,
+              "y": 406
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8833333333333315,
+            "label": "Hammer right sweep",
+            "distance": 109.1146186356347,
+            "r": 30,
+            "head": {
+              "x": 499,
+              "y": 415
+            },
+            "to": {
+              "x": 499,
+              "y": 415
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8999999999999981,
+            "label": "Hammer right sweep",
+            "distance": 109.1146186356347,
+            "r": 30,
+            "head": {
+              "x": 499,
+              "y": 415
+            },
+            "to": {
+              "x": 499,
+              "y": 415
+            },
+            "accepted": false
+          }
+        ],
+        "cues": [
+          {
+            "key": "hammerImpact",
+            "clock": 0.6666666666666671
+          },
+          {
+            "key": "hammerThrow",
+            "clock": 1.183333333333334
+          },
+          {
+            "key": "hammerThrow",
+            "clock": 1.7499999999999987
+          }
+        ],
+        "shield": 2,
+        "target": {
+          "x": 220,
+          "y": 420
+        },
+        "left": {
+          "x": 390,
+          "y": 410
+        },
+        "right": {
+          "x": 390,
+          "y": 410
+        },
+        "duration": 2.18
+      }
+    },
+    {
+      "name": "left collision endpoints match the actually rendered hammer",
+      "passed": true,
+      "data": {
+        "samples": 20
+      }
+    },
+    {
+      "name": "Side-swing warning commits its aim instead of following the player",
+      "passed": true,
+      "data": {
+        "x": 390,
+        "y": 410
+      }
+    },
+    {
+      "name": "Native Furious combo completes faster with both side cues retained",
+      "passed": true,
+      "data": [
+        {
+          "key": "hammerImpact",
+          "clock": 0.6666666666666671
+        },
+        {
+          "key": "hammerThrow",
+          "clock": 1.183333333333334
+        },
+        {
+          "key": "hammerThrow",
+          "clock": 1.7499999999999987
+        }
+      ]
+    },
+    {
+      "name": "right actually damages a ship in the authored hammer path",
+      "passed": true,
+      "data": {
+        "hits": [
+          {
+            "clock": 1.7499999999999987,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 150,
+              "y": 415
+            },
+            "to": {
+              "x": 150,
+              "y": 415
+            },
+            "accepted": true
+          }
+        ],
+        "calls": [
+          {
+            "clock": 0.6666666666666671,
+            "label": "Hammer second downward slam",
+            "distance": 170.29386365926402,
+            "r": 62,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.183333333333334,
+            "label": "Hammer left sweep",
+            "distance": 357.73314076277586,
+            "r": 30,
+            "head": {
+              "x": 523,
+              "y": 430
+            },
+            "to": {
+              "x": 523,
+              "y": 430
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2000000000000006,
+            "label": "Hammer left sweep",
+            "distance": 373.3014867369269,
+            "r": 30,
+            "head": {
+              "x": 523,
+              "y": 430
+            },
+            "to": {
+              "x": 523,
+              "y": 430
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2166666666666672,
+            "label": "Hammer left sweep",
+            "distance": 240.05207768315609,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2333333333333338,
+            "label": "Hammer left sweep",
+            "distance": 240.05207768315609,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2500000000000004,
+            "label": "Hammer left sweep",
+            "distance": 199.5720421301541,
+            "r": 30,
+            "head": {
+              "x": 348,
+              "y": 390
+            },
+            "to": {
+              "x": 348,
+              "y": 390
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.266666666666667,
+            "label": "Hammer left sweep",
+            "distance": 199.5720421301541,
+            "r": 30,
+            "head": {
+              "x": 348,
+              "y": 390
+            },
+            "to": {
+              "x": 348,
+              "y": 390
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2833333333333337,
+            "label": "Hammer left sweep",
+            "distance": 166.10839834276894,
+            "r": 30,
+            "head": {
+              "x": 316,
+              "y": 409
+            },
+            "to": {
+              "x": 316,
+              "y": 409
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3000000000000003,
+            "label": "Hammer left sweep",
+            "distance": 166.10839834276894,
+            "r": 30,
+            "head": {
+              "x": 316,
+              "y": 409
+            },
+            "to": {
+              "x": 316,
+              "y": 409
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3166666666666669,
+            "label": "Hammer left sweep",
+            "distance": 166.10839834276894,
+            "r": 30,
+            "head": {
+              "x": 356,
+              "y": 468
+            },
+            "to": {
+              "x": 356,
+              "y": 468
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3333333333333335,
+            "label": "Hammer left sweep",
+            "distance": 212.70872102478546,
+            "r": 30,
+            "head": {
+              "x": 356,
+              "y": 468
+            },
+            "to": {
+              "x": 356,
+              "y": 468
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7499999999999987,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 150,
+              "y": 415
+            },
+            "to": {
+              "x": 150,
+              "y": 415
+            },
+            "accepted": true
+          },
+          {
+            "clock": 1.7666666666666653,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 150,
+              "y": 415
+            },
+            "to": {
+              "x": 150,
+              "y": 415
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7833333333333319,
+            "label": "Hammer right sweep",
+            "distance": 0,
+            "r": 30,
+            "head": {
+              "x": 260,
+              "y": 381
+            },
+            "to": {
+              "x": 260,
+              "y": 381
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.7999999999999985,
+            "label": "Hammer right sweep",
+            "distance": 115.13470371699404,
+            "r": 30,
+            "head": {
+              "x": 260,
+              "y": 381
+            },
+            "to": {
+              "x": 260,
+              "y": 381
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.816666666666665,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 208,
+              "y": 408
+            },
+            "to": {
+              "x": 208,
+              "y": 408
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8333333333333317,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 208,
+              "y": 408
+            },
+            "to": {
+              "x": 208,
+              "y": 408
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8499999999999983,
+            "label": "Hammer right sweep",
+            "distance": 58.420886675914126,
+            "r": 30,
+            "head": {
+              "x": 265,
+              "y": 411
+            },
+            "to": {
+              "x": 265,
+              "y": 411
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.866666666666665,
+            "label": "Hammer right sweep",
+            "distance": 115.06954418958998,
+            "r": 30,
+            "head": {
+              "x": 265,
+              "y": 411
+            },
+            "to": {
+              "x": 265,
+              "y": 411
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8833333333333315,
+            "label": "Hammer right sweep",
+            "distance": 109.1146186356347,
+            "r": 30,
+            "head": {
+              "x": 259,
+              "y": 420
+            },
+            "to": {
+              "x": 259,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.8999999999999981,
+            "label": "Hammer right sweep",
+            "distance": 109.1146186356347,
+            "r": 30,
+            "head": {
+              "x": 259,
+              "y": 420
+            },
+            "to": {
+              "x": 259,
+              "y": 420
+            },
+            "accepted": false
+          }
+        ],
+        "cues": [
+          {
+            "key": "hammerImpact",
+            "clock": 0.6666666666666671
+          },
+          {
+            "key": "hammerThrow",
+            "clock": 1.183333333333334
+          },
+          {
+            "key": "hammerThrow",
+            "clock": 1.7499999999999987
+          }
+        ],
+        "shield": 2,
+        "target": {
+          "x": 220,
+          "y": 420
+        },
+        "left": {
+          "x": 390,
+          "y": 410
+        },
+        "right": {
+          "x": 150,
+          "y": 415
+        },
+        "duration": 2.18
+      }
+    },
+    {
+      "name": "right collision endpoints match the actually rendered hammer",
+      "passed": true,
+      "data": {
+        "samples": 20
+      }
+    },
+    {
+      "name": "Moving out of the committed warning lets the player evade",
+      "passed": true,
+      "data": {
+        "hits": [],
+        "calls": [
+          {
+            "clock": 0.6666666666666671,
+            "label": "Hammer second downward slam",
+            "distance": 170.29386365926402,
+            "r": 62,
+            "head": {
+              "x": 220,
+              "y": 420
+            },
+            "to": {
+              "x": 220,
+              "y": 420
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.183333333333334,
+            "label": "Hammer left sweep",
+            "distance": 299.16216338300535,
+            "r": 30,
+            "head": {
+              "x": 523,
+              "y": 430
+            },
+            "to": {
+              "x": 523,
+              "y": 430
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2000000000000006,
+            "label": "Hammer left sweep",
+            "distance": 374.4182153688573,
+            "r": 30,
+            "head": {
+              "x": 523,
+              "y": 430
+            },
+            "to": {
+              "x": 523,
+              "y": 430
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2166666666666672,
+            "label": "Hammer left sweep",
+            "distance": 330,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2333333333333338,
+            "label": "Hammer left sweep",
+            "distance": 330,
+            "r": 30,
+            "head": {
+              "x": 390,
+              "y": 410
+            },
+            "to": {
+              "x": 390,
+              "y": 410
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2500000000000004,
+            "label": "Hammer left sweep",
+            "distance": 312.8322234041755,
+            "r": 30,
+            "head": {
+              "x": 348,
+              "y": 390
+            },
+            "to": {
+              "x": 348,
+              "y": 390
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.266666666666667,
+            "label": "Hammer left sweep",
+            "distance": 312.8322234041755,
+            "r": 30,
+            "head": {
+              "x": 348,
+              "y": 390
+            },
+            "to": {
+              "x": 348,
+              "y": 390
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.2833333333333337,
+            "label": "Hammer left sweep",
+            "distance": 312.8322234041755,
+            "r": 30,
+            "head": {
+              "x": 316,
+              "y": 409
+            },
+            "to": {
+              "x": 316,
+              "y": 409
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3000000000000003,
+            "label": "Hammer left sweep",
+            "distance": 337.2195130771646,
+            "r": 30,
+            "head": {
+              "x": 316,
+              "y": 409
+            },
+            "to": {
+              "x": 316,
+              "y": 409
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3166666666666669,
+            "label": "Hammer left sweep",
+            "distance": 337.2195130771646,
+            "r": 30,
+            "head": {
+              "x": 356,
+              "y": 468
+            },
+            "to": {
+              "x": 356,
+              "y": 468
+            },
+            "accepted": false
+          },
+          {
+            "clock": 1.3333333333333335,
+            "label": "Hammer left sweep",
+            "distance": 389.48684188300894,
+            "r": 30,
+            "head": {
+              "x": 356,
+              "y": 468
+            },
+            "to": {
+              "x": 356,
+              "y": 468
+            },
+            "accepted": false
+          }
+        ],
+        "cues": [
+          {
+            "key": "hammerImpact",
+            "clock": 0.6666666666666671
+          },
+          {
+            "key": "hammerThrow",
+            "clock": 1.183333333333334
+          }
+        ],
+        "shield": 3,
+        "target": {
+          "x": 220,
+          "y": 420
+        },
+        "left": {
+          "x": 390,
+          "y": 410
+        },
+        "right": null,
+        "duration": 2.18
+      }
+    },
+    {
+      "name": "dodge-left collision endpoints match the actually rendered hammer",
+      "passed": true,
+      "data": {
+        "samples": 10
+      }
+    },
+    {
+      "name": "Boss retains actual white damaged pixels during the moving combo",
+      "passed": true,
+      "data": {
+        "white": 10877,
+        "flash": 0.16
+      }
+    },
+    {
+      "name": "Native boss hit flash expires",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Hard and corrupted-hammer cadence stay unchanged",
+      "passed": true,
+      "data": {
+        "hard": 1.72,
+        "corrupt": 3.55
+      }
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "passed": 15,
+  "failed": 0,
+  "beforeGeometry": {
+    "Hammer second downward slam": {
+      "samples": 4,
+      "overlaps": 0,
+      "nearest": 215.857
+    },
+    "Hammer left sweep": {
+      "samples": 92,
+      "overlaps": 0,
+      "nearest": 150.977
+    },
+    "Hammer right sweep": {
+      "samples": 92,
+      "overlaps": 0,
+      "nearest": 140.985
+    }
+  },
+  "finalGeometry": {
+    "Hammer second downward slam": {
+      "samples": 5,
+      "overlaps": 0,
+      "nearest": 151.632
+    },
+    "Hammer left sweep": {
+      "samples": 20,
+      "overlaps": 1,
+      "nearest": 8.568
+    },
+    "Hammer right sweep": {
+      "samples": 10,
+      "overlaps": 0,
+      "nearest": 56.929
+    }
+  },
+  "video": {
+    "duration": 100.36075659999915,
+    "rawDuration": 113.08,
+    "trimStart": 12.719243400000849,
+    "video": "_shots\\chronos_melee_1024\\final\\stage5-chronos-speaking.mp4",
+    "audio": "Video only; native browser recorder does not capture audio.",
+    "difficulty": "furious",
+    "pilot": "cole",
+    "invulnerability": true,
+    "route": "Native debug Stage5 boss encounter; no pose/attack/dialogue injections.",
+    "checks": {
+      "native Stage5 encounter": true,
+      "Chronos speaks in recording": true,
+      "radio outside playfield for all speech samples": true,
+      "no dialogue box drawn over the field in any recorded frame": true,
+      "native arrival conversation also recorded": true,
+      "scroll advances throughout speech": true,
+      "no page or console errors": true
+    },
+    "errors": []
+  },
+  "introRegression": {
+    "passed": 21,
+    "failed": 0
+  },
+  "audio": {
+    "context": "running",
+    "playing": [
+      {
+        "cue": "hammerImpact",
+        "decoded": 4,
+        "volume": 0.32000000000000006
+      },
+      {
+        "cue": "hammerThrow",
+        "decoded": 4,
+        "volume": 0.272
+      }
+    ],
+    "calls": [
+      {
+        "cue": "hammerImpact",
+        "accepted": true
+      },
+      {
+        "cue": "hammerThrow",
+        "accepted": true
+      }
+    ],
+    "peak": 0.2301924079656601,
+    "errors": [],
+    "passed": true
+  },
+  "core": {
+    "exit": 1,
+    "summaryReached": false,
+    "blocker": "Existing missing retired_art_archive_1022.cjs before assertions"
+  },
+  "reviewTimestamps": {
+    "firstCombo": 27.43927272727273,
+    "sideContact": 36.801161290322575
+  }
+}

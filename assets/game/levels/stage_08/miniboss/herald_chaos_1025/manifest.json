@@ -1,0 +1,100 @@
+{
+  "art": {
+    "key": "hb25_chaos_orb",
+    "path": "assets/game/levels/stage_08/miniboss/herald_chaos_1025/chaos_orb.webp",
+    "w": 128,
+    "h": 128,
+    "frames": 8,
+    "fps": 18,
+    "pivot": [
+      64,
+      64
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        128,
+        128
+      ],
+      [
+        128,
+        0,
+        128,
+        128
+      ],
+      [
+        256,
+        0,
+        128,
+        128
+      ],
+      [
+        384,
+        0,
+        128,
+        128
+      ],
+      [
+        512,
+        0,
+        128,
+        128
+      ],
+      [
+        640,
+        0,
+        128,
+        128
+      ],
+      [
+        768,
+        0,
+        128,
+        128
+      ],
+      [
+        896,
+        0,
+        128,
+        128
+      ]
+    ],
+    "sha256": "221f969e31342af709aaee6e6ae1328b5b185f8fcfbc3b27c7fd01a7588e1495"
+  },
+  "sources": [
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_0.png",
+      "sha256": "48b118ba8ef3de0ac377590bf4b0a6f3c17eb6bd049efa522650b28b6e95695c"
+    },
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_1.png",
+      "sha256": "cb6eb6869e382263924e6177fe38eb4555a28decfca0377f3e7b1277041de4bb"
+    },
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_2.png",
+      "sha256": "61bf5da8f0becc26574b89310dcc189328104e7963b339b1ec2dbfe06f0e052c"
+    },
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_3.png",
+      "sha256": "5d4aae6523f8c52268b7841369a250ad5af63e611c3fe742ec03f301820b7876"
+    },
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_4.png",
+      "sha256": "45ffa1318e4776588f4c7ab16a8ea1a5463f009d828b2a84f323b6856c1c393f"
+    },
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_5.png",
+      "sha256": "d894a22b12e0c53ed073e09e93c16d3fa36535b456db9dda13a8329361d80f25"
+    },
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_6.png",
+      "sha256": "a803f962e2410ca9f99eaedc717732ece6e10a1783d3fb58c461fc1756eb52dc"
+    },
+    {
+      "path": "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_void_7.png",
+      "sha256": "d6553c7969a9a3682a65bed4c733df96e4c528c3c9823b53be8431e1995745e9"
+    }
+  ],
+  "recipe": "Red palette of the existing authored eight-frame void orb; no new silhouette.\n\nKeep every alpha, outline, neutral metal and white glint. One128px canvas and\n64,64 pivot across the complete bank. This builder owns its sheet AND registry.\n"
+}

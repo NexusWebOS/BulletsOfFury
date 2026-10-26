@@ -1,0 +1,629 @@
+{
+  "passed": 22,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "The actual hammer head reaches the crate before its impact event",
+      "passed": true,
+      "data": {
+        "type": "crate-struck",
+        "t": 1.7833333333333319,
+        "head": {
+          "x": 340,
+          "y": 403.75
+        },
+        "box": {
+          "x": 340,
+          "y": 403.75
+        }
+      }
+    },
+    {
+      "name": "Released hammer leaves the screen before the gun catch",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Impact, upward throw, ejection, catch, and firing readiness are ordered",
+      "passed": true,
+      "data": {
+        "crate-struck": 1.7833333333333319,
+        "hammer-released-up": 2.466666666666663,
+        "gun-ejected": 3.0666666666666607,
+        "gun-caught": 3.5499999999999923,
+        "tactical-ready": 4.733333333333322
+      }
+    },
+    {
+      "name": "All nine crate frames show a physical opening into an empty shell",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rotor accelerates visibly during the warning before any rounds",
+      "passed": true,
+      "data": [
+        {
+          "state": "chain_warn",
+          "frame": 0,
+          "rev": 0,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 0,
+          "rev": 0.02564102564102564,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.05128205128205128,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.07692307692307693,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.10256410256410256,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.1282051282051282,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.15384615384615383,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.17948717948717946,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.20512820512820512,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.23076923076923075,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.2564102564102564,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 1,
+          "rev": 0.28205128205128205,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 2,
+          "rev": 0.30769230769230765,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 2,
+          "rev": 0.3333333333333333,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 2,
+          "rev": 0.3589743589743589,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 2,
+          "rev": 0.3846153846153846,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 2,
+          "rev": 0.41025641025641024,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 3,
+          "rev": 0.43589743589743585,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 3,
+          "rev": 0.4615384615384615,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 3,
+          "rev": 0.4871794871794871,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 3,
+          "rev": 0.5128205128205128,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 3,
+          "rev": 0.5384615384615384,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 4,
+          "rev": 0.5641025641025641,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 4,
+          "rev": 0.5897435897435896,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 4,
+          "rev": 0.6153846153846153,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 4,
+          "rev": 0.641025641025641,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 5,
+          "rev": 0.6666666666666666,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 5,
+          "rev": 0.6923076923076922,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 5,
+          "rev": 0.7179487179487178,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 6,
+          "rev": 0.7435897435897435,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 6,
+          "rev": 0.7692307692307692,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 6,
+          "rev": 0.7948717948717947,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 7,
+          "rev": 0.8205128205128205,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 7,
+          "rev": 0.8461538461538461,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 7,
+          "rev": 0.8717948717948719,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 8,
+          "rev": 0.8974358974358976,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 8,
+          "rev": 0.9230769230769234,
+          "bullets": 0
+        },
+        {
+          "state": "chain_warn",
+          "frame": 8,
+          "rev": 0.9487179487179491,
+          "bullets": 0
+        }
+      ]
+    },
+    {
+      "name": "regular has six distinct native rendered whole-body recoil poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "chrome has six distinct native rendered whole-body recoil poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red has six distinct native rendered whole-body recoil poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All eight rotating barrel phases change actual native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every barrel frame keeps the muzzle on the gun and inside its alpha target",
+      "passed": true,
+      "data": [
+        {
+          "hash": "0e30f1522c65b173fa6a7c4feb4f91037d157994fbbb67699f445420ff3a2c8e",
+          "lit": 75,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        },
+        {
+          "hash": "ea195c8101bb9bc5cedceac45ff29ee47af9b73a457226144128c6cf438ef559",
+          "lit": 97,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        },
+        {
+          "hash": "8eb77e5503b5b857fd463eb249496d31ee8c880cd000fe62c25e0f4606243b0f",
+          "lit": 81,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        },
+        {
+          "hash": "2ba5b926e9b64d10f0a1d5a0d5102a560c339896ebc6b4996708ec25cc8887f6",
+          "lit": 81,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        },
+        {
+          "hash": "e65d40a7dbeba9ba6dd1e3272091ca2b688293eb6e447900480bef3eb8a5c6a2",
+          "lit": 107,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        },
+        {
+          "hash": "b5350abe3df6f84ff7f77691d81b3350f2f1088feb635641b94372bd41555b4f",
+          "lit": 70,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        },
+        {
+          "hash": "f1d46ea7760ef12e5eaa9cc3c5bfc8bbc0ff5877c2b54bcc90f96ec6e8c4d847",
+          "lit": 81,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        },
+        {
+          "hash": "801af95fe26ac142c35060f53df0c5a463e474b42bfd444fba4292a804e0beba",
+          "lit": 56,
+          "hit": true,
+          "muzzle": 392.44444444444446
+        }
+      ]
+    },
+    {
+      "name": "Nine Furious fan rounds originate at the recoiling visible muzzle",
+      "passed": true,
+      "data": {
+        "muzzle": {
+          "x": 240,
+          "y": 390.5
+        },
+        "rounds": [
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          },
+          {
+            "x": 240,
+            "y": 390.5,
+            "proof": true
+          }
+        ],
+        "recoil": -3.5
+      }
+    },
+    {
+      "name": "Shooting the actual gun damages its native HP and flashes its rendered pixels",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "before": 1000,
+        "after": 990,
+        "flash": 0.12,
+        "white": 23015
+      }
+    },
+    {
+      "name": "Gun hit flash expires under its existing owner",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Destroyed gun stops its target and rounds and enters native recovery",
+      "passed": true,
+      "data": {
+        "newRounds": 0,
+        "armed": false,
+        "state": "chain_cool"
+      }
+    },
+    {
+      "name": "Barrel coasts through changing frames then stops during rest",
+      "passed": true,
+      "data": {
+        "frames": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rev": 0
+      }
+    },
+    {
+      "name": "Chromium activation with the acquired gun returns to its armed warning",
+      "passed": true,
+      "data": {
+        "entered": {
+          "gun": true,
+          "state": "fr_activation"
+        },
+        "state": "chain_warn",
+        "mode": "chaingun",
+        "destroyed": true,
+        "armed": true,
+        "pose": null
+      }
+    },
+    {
+      "name": "Aura follows pose0 at scale1 with moving close contours",
+      "passed": true,
+      "data": {
+        "pixels": 15663,
+        "distance99": 12.057346108817129,
+        "animatedPixels": 22252
+      }
+    },
+    {
+      "name": "Aura follows pose4 at scale1 with moving close contours",
+      "passed": true,
+      "data": {
+        "pixels": 15701,
+        "distance99": 12.649110640673518,
+        "animatedPixels": 22562
+      }
+    },
+    {
+      "name": "Aura follows pose0 at scale0.36 with moving close contours",
+      "passed": true,
+      "data": {
+        "pixels": 1997,
+        "distance99": 5.0,
+        "animatedPixels": 2866
+      }
+    },
+    {
+      "name": "Aura follows pose4 at scale0.36 with moving close contours",
+      "passed": true,
+      "data": {
+        "pixels": 2025,
+        "distance99": 5.0,
+        "animatedPixels": 2887
+      }
+    },
+    {
+      "name": "15 percent charge uses the held-hammer actor and traced aura, not the old flame plate",
+      "passed": true,
+      "data": {
+        "state": "hf22_rage_charge",
+        "pose": "c27_windup_red",
+        "draws": [
+          "c27_windup_red_16"
+        ],
+        "auraDraws": 21
+      }
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "regressions": {
+    "priorCombat": {
+      "passed": 17,
+      "failed": 0
+    },
+    "originalTwoHandedSpin": {
+      "passed": 16,
+      "failed": 0
+    }
+  },
+  "coreSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "reason": "Pre-existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs prevents test_fl.js from starting; no assertions ran."
+  },
+  "videoValidation": {
+    "checks": {
+      "full video/audio decode": true,
+      "audible decoded track": true,
+      "impact throw pickup and chaingun decoded playback": true,
+      "no capture/page/console errors": true,
+      "all six native recoil frames appear": true,
+      "all eight barrel phases appear": true,
+      "native red charge completes and stays red": true,
+      "native follow-through includes spin depth and double/side combo": true,
+      "invulnerable review stays alive": true
+    },
+    "passed": 9,
+    "failed": 0,
+    "audio": {
+      "seconds": 47.061375,
+      "peak": 0.5100337862968445,
+      "rms": 0.0992288738489151,
+      "nonzero": 0.9835374550786075
+    },
+    "playing": {
+      "lvl3-alt": 1,
+      "bossWeaponCharge": 6,
+      "bossAlarm": 1,
+      "expSmall": 1,
+      "hammerImpact": 7,
+      "hammerThrow": 7,
+      "weapon": 2,
+      "bossPhase": 2,
+      "av3_target_acquire": 8,
+      "alertLockon": 8,
+      "enemyMachineGunLight": 15,
+      "hammerChaingun": 3,
+      "dialogueLetter": 24,
+      "explosionElectrical": 1,
+      "shadowCharge": 1,
+      "hammerLeap": 5,
+      "expBig": 2,
+      "laserShot": 1,
+      "combatBeam0927": 1,
+      "hammerSpin": 2,
+      "hammerMagnet": 1,
+      "combatServo0927": 1,
+      "hammerCatch": 1
+    }
+  },
+  "reviewPlayback": {
+    "duration": 47.100333,
+    "playing": true,
+    "muted": false,
+    "peak": 0.37311363220214844,
+    "bodyFrames": 6,
+    "barrelFrames": 9,
+    "errors": [],
+    "frameStepChangesPixels": true,
+    "passed": true
+  }
+}

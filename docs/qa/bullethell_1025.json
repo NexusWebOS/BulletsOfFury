@@ -1,0 +1,218 @@
+{
+  "created": "2026-10-25T23:19:20.132755+00:00",
+  "nativePassed": 69,
+  "nativeFailed": 0,
+  "nativeErrors": [],
+  "matrixPassed": 45,
+  "pixelPassed": 24,
+  "browserPassed": 50,
+  "browserErrors": [],
+  "clips": [
+    {
+      "stage": 7,
+      "role": "boss",
+      "video": "_shots/bullethell_1025/video/7-boss-190530/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.1555,
+      "sourceFps": 60.13738636831064,
+      "decodedPeakDb": -9.0,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 8,
+      "role": "boss",
+      "video": "_shots/bullethell_1025/video/8-boss-190559/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.09109999999404,
+      "sourceFps": 60.623102943517246,
+      "decodedPeakDb": -8.5,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 8,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/8-mini-190643/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.04609999999404,
+      "sourceFps": 60.185454213426645,
+      "decodedPeakDb": -8.5,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 8,
+      "role": "final",
+      "video": "_shots/bullethell_1025/video/8-final/barrage.mp4",
+      "method": "Native final-form fixture selected with v18Enter; native HP retained, real-time invulnerable input bot.",
+      "seconds": 12.081200000017882,
+      "sourceFps": 60.17614144281396,
+      "decodedPeakDb": -9.7,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 1,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/1-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.10630000001192,
+      "sourceFps": 59.968776587337594,
+      "decodedPeakDb": -7.7,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 2,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/2-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.25559999999404,
+      "sourceFps": 60.05417931397548,
+      "decodedPeakDb": -8.3,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 3,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/3-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.082800000011922,
+      "sourceFps": 59.58883702447194,
+      "decodedPeakDb": -6.7,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 4,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/4-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.123299999982118,
+      "sourceFps": 59.55474169583076,
+      "decodedPeakDb": -8.8,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 5,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/5-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.249799999982118,
+      "sourceFps": 60.08261359377904,
+      "decodedPeakDb": -12.9,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 6,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/6-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.15779999998212,
+      "sourceFps": 59.96150619364294,
+      "decodedPeakDb": -8.2,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 7,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/7-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.0875,
+      "sourceFps": 60.22750775594622,
+      "decodedPeakDb": -8.4,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    },
+    {
+      "stage": 9,
+      "role": "mini",
+      "video": "_shots/bullethell_1025/video/9-mini/barrage.mp4",
+      "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+      "seconds": 12.1165,
+      "sourceFps": 60.165889489539055,
+      "decodedPeakDb": -9.2,
+      "checks": {
+        "nativeSectionComplete": true,
+        "noErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true
+      }
+    }
+  ],
+  "runtimeHashes": {
+    "assets/game.js": "56a7210be858013a24b3fceedceba7af2472229da19982556d50092ddcf82a64",
+    "assets/bullethell_1025.js": "bffb681bdcb04b3ef4a89f23e565cb17b92809fef5e9752f82c8e38f38112f42",
+    "assets/stage78_review_1025.js": "6777f4dae92c1d703dcafc4f3bfeb9fd94209b5b6353540971a9f0658a25a964",
+    "assets/dracodia_rebirth_1023.js": "5bd0495c2fec9124a3039c21100e437e0843e327ac77b20664441d9a6880d906",
+    "assets/boss_integrity_1024.js": "0c95b7378a13ed209642e2e86286ab1c64987e45cf21e9546586a9fb7826b08e"
+  },
+  "gameJsMatchesOriginalCapture": true,
+  "fullSuite": {
+    "exitCode": 1,
+    "reachedFinalSummary": false,
+    "preexistingMissing": "_BUILD_SOURCE/retired_art_archive_1022.cjs"
+  },
+  "review": "docs/previews/bullethell_1025/index.html"
+}

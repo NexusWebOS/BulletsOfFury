@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 27bc15a7-7991-4dc3-a545-dbf069fe4323\njob_id: 27bc15a7-7991-4dc3-a545-dbf069fe4323\ndescription: FRAME FORMAT:256x256 per frame, shared reactor pivot128,116, common proportional scale, transparent margins. Fixed camera and body scale; animate joint motion around stable torso center. Preserve the same robot identity and armor. The tiny magenta dot is a fist registration mark: keep it centered on that same closed fist throughout. NO HAMMER, NO SHAFT, NO NEW OBJECTS; the real weapon is attached later. No detached anatomy, no camera movement, no zoom, no body fading. Brace the planted legs and extend the FREE OPEN PALM forward to project a shield. The marked closed weapon fist remains lowered OUTSIDE its hip, perfectly stable, holding its imaginary grip. Animate only connected arm joints, torso bracing and the free open palm. No energy shield is drawn in this body clip.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025006\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"27bc15a7-7991-4dc3-a545-dbf069fe4323\")\nasset_id: f1ba0aca-3208-5621-8bb8-3f294143b766\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

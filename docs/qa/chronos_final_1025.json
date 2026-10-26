@@ -1,0 +1,59 @@
+{
+  "suites": [
+    {
+      "suite": "latest behavior",
+      "source": "_shots/chronos_final_1025/results.json",
+      "passed": 17,
+      "failed": 0,
+      "errors": []
+    },
+    {
+      "suite": "restored contract",
+      "source": "_shots/chronos_restore_1025/results.json",
+      "passed": 17,
+      "failed": 0,
+      "errors": []
+    },
+    {
+      "suite": "melee",
+      "source": "_shots/chronos_melee_1024/contact-results.json",
+      "passed": 15,
+      "failed": 0,
+      "errors": []
+    },
+    {
+      "suite": "counter",
+      "source": "_shots/chronos_contract_1025/contract-results.json",
+      "passed": 21,
+      "failed": 0,
+      "errors": []
+    }
+  ],
+  "fullSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exit": 1,
+    "summaryReached": false,
+    "blocker": "Pre-existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs"
+  },
+  "sources": "_ART_SOURCES/chronos_final_1025",
+  "review": "docs/previews/chronos_frames_1025/index.html",
+  "nativePassed": 70,
+  "nativeFailed": 0,
+  "recording": "_shots/chronos_final_1025/gameplay/final-reviewed.mp4",
+  "recordingMethod": "150 seconds of native gameplay plus a labeled late-chaingun 16%-to-15% HP checkpoint; normal movement, native simulation/renderer/audio, invulnerability enabled.",
+  "reviewPlayback": {
+    "seekable": [
+      [
+        0,
+        196.036
+      ]
+    ],
+    "duration": 196.036,
+    "playing": true,
+    "muted": false,
+    "time": 7.88,
+    "peak": 0.2907293140888214,
+    "errors": [],
+    "passed": true
+  }
+}

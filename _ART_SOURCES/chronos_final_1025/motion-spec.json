@@ -1,0 +1,23 @@
+[
+  {
+    "name": "spin_a",
+    "first": "spin-0",
+    "last": "spin-3",
+    "frames": 16,
+    "action": "Rotate the WHOLE connected robot CLOCKWISE through left profile into the rear view. His ONE weapon arm stays FULLY EXTENDED STRAIGHT at shoulder height throughout; the long hammer points OUTWARD beyond his straight elbow. Helmet, shoulders, hips, knees and boots all visibly turn together through a 180-degree half spin. Maintain rigid weapon geometry; no wrist-only circle and no bending the arm across his body. Smooth airborne combat turn, no walking. Finish in exact rear pose."
+  },
+  {
+    "name": "spin_b",
+    "first": "spin-3",
+    "last": "spin-0",
+    "frames": 16,
+    "action": "Continue the WHOLE robot CLOCKWISE from rear view through right profile back to front view. ONE weapon arm remains FULLY EXTENDED STRAIGHT at shoulder height, its long hammer points OUTWARD beyond his fist. Helmet, shoulders, hips, knees and boots turn TOGETHER through remaining180degrees. Finish EXACT supplied original front pose for seamless combat spin. No wrist-only rotation, no hammer crossing his chest, no walking."
+  },
+  {
+    "name": "overhead_activation",
+    "first": "raised-regular",
+    "last": "raised-chrome",
+    "frames": 24,
+    "action": "The robot HOLDS HIS MARKED WEAPON FIST STRAIGHT UP ABOVE HIS HEAD throughout the full charge. Keep the fist continuously raised. Electrical blue-white energy pours into his raised fist and travels down arm into chest; reflective SILVER CHROMIUM armor spreads progressively from shoulders over torso then arms and legs. He braces and trembles under power. Animate crawling blue electricity, metallic plates locking in order, actual physical movement. NO yellow/gold/red flames, no Super Saiyan aura. Preserve fixed pose/camera/scale and close with fully chrome armor and same raised fist. NO HAMMER or new weapon: actual hammer is baked into frames later."
+  }
+]

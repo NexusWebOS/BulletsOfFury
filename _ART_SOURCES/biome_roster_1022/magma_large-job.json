@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 479b6916-95db-456b-97b3-4b63602d53a5\njob_id: 479b6916-95db-456b-97b3-4b63602d53a5\nmodel: pro\ndescription: FRAME FORMAT: 192 x192 transparent pixels. Fixed fuselage center pivot96,96, one common proportional scale, reserve at least20 pixels clear transparent margin on all sides. Crisp detailed 16/32-bit arcade pixel art, clean single-pixel outlines, sharp metallic shading. STRICT ORTHOGRAPHIC TOP VIEW looking directly down onto aircraft. Nose points straight DOWN toward bottom edge, rear engines at top. Symmetrical wings, never diagonal or isometric. One complete aircraft centered and uncropped, no background or shadow plate, no text, no external bullets or muzzle flash. Large heavy MAGMA BOMBER jet. Broad obsidian black armored swept wings, two huge cylindrical molten-orange reactors, crimson armored engine housings, white-hot exhaust at the rear, visibly substantial cannon barrels at the front and two missile launch bays. Heavy lava-powered military aircraft, broad and imposing, coherent with the small magma interceptor.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 10222001\nasset_id: 201e39f2-e2d9-57c7-aa41-b64c3b403b7e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"479b6916-95db-456b-97b3-4b63602d53a5\")"
+    }
+  ],
+  "isError": false
+}

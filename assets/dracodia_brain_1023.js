@@ -46,7 +46,7 @@ retinaBossTargets=function(b){if(!nb23Own(b))return NB23.base.targets.apply(this
 function nb23Shield(b){const P=b?._r30?.v18?.attack;return nb23Own(b)&&b._r30.mode==='fight'&&P?._nb23&&P.type==='cloudAegis'&&P.t>=P.tell+.25&&P.t<P.tell+P.active&&P.shield>0?P:null;}
 bossShieldFrac=function(b){const P=nb23Shield(b);return nb23Own(b)?P?P.shield/P.maxShield:0:NB23.base.shield.apply(this,arguments);};
 modularHit=function(dmg){const b=boss;if(!nb23Own(b))return NB23.base.hit.apply(this,arguments);if(!r30Live(b)||b._noHit||!(dmg>0)||b.parts[0].destroyed)return;
- const P=nb23Shield(b),p=b.parts[0];markHit(b,.12);p.flash=.12;
+ const P=nb23Shield(b),p=b.parts[0];markHit(b,.12);markHit(p,.12);
  if(P){P.shield=Math.max(0,P.shield-dmg);r30Sound(P.shield?'shieldHitHeavy':'shieldBreakCombat');nb23Log('shield-absorb',{remaining:P.shield});if(!P.shield)P.brokenAt=P.t;return;}
  const dealt=Math.min(dmg,b.hp);b.hp-=dealt;p.hp=b.hp;stageStats.dmgDealt+=dealt;j3Save(b);if(b.hp<=0){p.destroyed=true;r30Break(b);}
 };

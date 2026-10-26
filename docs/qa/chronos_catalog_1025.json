@@ -1,0 +1,669 @@
+{
+  "chapters": [
+    {
+      "id": 0,
+      "name": "Arrival / unfolding",
+      "duration": 4,
+      "note": "Shared entrance \u2014 chromium is not active yet",
+      "start": 0
+    },
+    {
+      "id": 1,
+      "name": "Idle / hammer guard",
+      "duration": 3,
+      "note": "Current regular and chromium guard plates",
+      "start": 4
+    },
+    {
+      "id": 2,
+      "name": "Chromium armor activation",
+      "duration": 4,
+      "note": "Shared transition \u2014 energy strike, conduction and plating",
+      "start": 7
+    },
+    {
+      "id": 3,
+      "name": "Jump / overhead strike",
+      "duration": 4,
+      "note": "Wind-up, airborne strike, impact and recovery",
+      "start": 11
+    },
+    {
+      "id": 4,
+      "name": "Furious double slam / side swings",
+      "duration": 5,
+      "note": "Current Furious follow-up sequence",
+      "start": 15
+    },
+    {
+      "id": 5,
+      "name": "Depth jump / giant strike",
+      "duration": 6,
+      "note": "Native depth scaling and whole-body strike poses",
+      "start": 20
+    },
+    {
+      "id": 6,
+      "name": "Backward retreat / braking",
+      "duration": 4,
+      "note": "Current recoil, retreat and landing poses",
+      "start": 26
+    },
+    {
+      "id": 7,
+      "name": "Extended hammer rotation",
+      "duration": 4,
+      "note": "Forward spin followed by shoot-response backspin",
+      "start": 30
+    },
+    {
+      "id": 8,
+      "name": "Hammer throw / flight / catch",
+      "duration": 6,
+      "note": "Current throwing plates and independent flying hammer",
+      "start": 34
+    },
+    {
+      "id": 9,
+      "name": "Shield formation",
+      "duration": 4,
+      "note": "Whole actor with the authored shield forming in front",
+      "start": 40
+    },
+    {
+      "id": 10,
+      "name": "Shielded recharge",
+      "duration": 4,
+      "note": "Raised hammer, energy and foreground SHOOT objective",
+      "start": 44
+    },
+    {
+      "id": 11,
+      "name": "Ball / three laser volleys / unfolding",
+      "duration": 8,
+      "note": "Native ball plates, laser projectiles and glow unfolding",
+      "start": 48
+    },
+    {
+      "id": 12,
+      "name": "Nova charge / release",
+      "duration": 4,
+      "note": "Current charge and release animation routing",
+      "start": 56
+    },
+    {
+      "id": 13,
+      "name": "Spell casting",
+      "duration": 4,
+      "note": "Current casting and release plates",
+      "start": 60
+    },
+    {
+      "id": 14,
+      "name": "Laser charge / beam",
+      "duration": 5,
+      "note": "Current beam posture and native chromium beam",
+      "start": 64
+    },
+    {
+      "id": 15,
+      "name": "Arsenal pickup / hammer release",
+      "duration": 6,
+      "note": "Current crate strike, tool toss and weapon catch",
+      "start": 69
+    },
+    {
+      "id": 16,
+      "name": "Chaingun draw / firing / cooling",
+      "duration": 5,
+      "note": "Current tactical body and native muzzle flashes",
+      "start": 75
+    },
+    {
+      "id": 17,
+      "name": "Rage charge / rage",
+      "duration": 4,
+      "note": "Current installed rage banks, including older frames",
+      "start": 80
+    },
+    {
+      "id": 18,
+      "name": "Hit flash",
+      "duration": 3,
+      "note": "Native white damage feedback on both armor materials",
+      "start": 84
+    },
+    {
+      "id": 19,
+      "name": "Stun / magnetic hammer recall",
+      "duration": 6,
+      "note": "Empty-hand kneeling, departure, recall and recovery",
+      "start": 87
+    },
+    {
+      "id": 20,
+      "name": "Death / kneeling",
+      "duration": 4,
+      "note": "Current death pose uses the same kneeling identity",
+      "start": 93
+    }
+  ],
+  "duration": 97,
+  "route": "Staged animation catalog using current ha21Blue/hammerBossDraw and native effects; both material states; no gameplay edits.",
+  "video": "_shots\\chronos_catalog_1025\\all-animations-both-forms.mp4",
+  "validation": [
+    {
+      "chapter": "Arrival / unfolding",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Idle / hammer guard",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Chromium armor activation",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Jump / overhead strike",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Furious double slam / side swings",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Depth jump / giant strike",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Backward retreat / braking",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Extended hammer rotation",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Hammer throw / flight / catch",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Shield formation",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Shielded recharge",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Ball / three laser volleys / unfolding",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Nova charge / release",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Spell casting",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Laser charge / beam",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Arsenal pickup / hammer release",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Chaingun draw / firing / cooling",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Rage charge / rage",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Hit flash",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Stun / magnetic hammer recall",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    },
+    {
+      "chapter": "Death / kneeling",
+      "rightLaneAlphaPixels": 409600,
+      "passed": true
+    }
+  ],
+  "selectedFrames": {
+    "0:0": [
+      "ha21_blue_from_ship_0",
+      "c26_shield_regular_0"
+    ],
+    "0:1": [
+      "ha21_blue_from_ship_0",
+      "c26_shield_regular_0"
+    ],
+    "1:0": [
+      "c26_shield_regular_0"
+    ],
+    "1:1": [
+      "c26_shield_chrome_0"
+    ],
+    "2:0": [
+      "c26_activation_regular_0",
+      "c26_activation_regular_3",
+      "c26_activation_regular_6",
+      "c26_activation_regular_4",
+      "c26_activation_regular_1",
+      "c26_activation_regular_2",
+      "c26_activation_regular_5",
+      "c26_activation_regular_7"
+    ],
+    "2:1": [
+      "c26_activation_regular_0",
+      "c26_activation_regular_3",
+      "c26_activation_regular_6",
+      "c26_activation_regular_4",
+      "c26_activation_regular_1",
+      "c26_activation_regular_2",
+      "c26_activation_regular_5",
+      "c26_activation_regular_7"
+    ],
+    "3:0": [
+      "c26_jump_regular_0",
+      "c26_jump_regular_4",
+      "c26_jump_regular_6",
+      "c26_jump_regular_1",
+      "c26_jump_regular_2",
+      "c26_jump_regular_3",
+      "c26_jump_regular_5"
+    ],
+    "3:1": [
+      "c26_jump_chrome_0",
+      "c26_jump_chrome_4",
+      "c26_jump_chrome_6",
+      "c26_jump_chrome_1",
+      "c26_jump_chrome_2",
+      "c26_jump_chrome_3",
+      "c26_jump_chrome_5"
+    ],
+    "4:0": [
+      "c26_jump_regular_2",
+      "c26_spin_regular_0",
+      "c26_spin_regular_4",
+      "c26_jump_regular_4",
+      "c26_jump_regular_0",
+      "c26_jump_regular_1",
+      "c26_jump_regular_3",
+      "c26_spin_regular_1",
+      "c26_spin_regular_2",
+      "c26_spin_regular_3"
+    ],
+    "4:1": [
+      "c26_jump_chrome_2",
+      "c26_spin_chrome_0",
+      "c26_spin_chrome_4",
+      "c26_jump_chrome_4",
+      "c26_jump_chrome_0",
+      "c26_jump_chrome_1",
+      "c26_jump_chrome_3",
+      "c26_spin_chrome_1",
+      "c26_spin_chrome_2",
+      "c26_spin_chrome_3"
+    ],
+    "5:0": [
+      "c26_jump_regular_2",
+      "c26_jump_regular_6",
+      "c26_jump_regular_4",
+      "c26_jump_regular_0",
+      "c26_jump_regular_1",
+      "c26_jump_regular_3",
+      "c26_jump_regular_5",
+      "c26_jump_regular_7"
+    ],
+    "5:1": [
+      "c26_jump_chrome_2",
+      "c26_jump_chrome_6",
+      "c26_jump_chrome_4",
+      "c26_jump_chrome_0",
+      "c26_jump_chrome_1",
+      "c26_jump_chrome_3",
+      "c26_jump_chrome_5",
+      "c26_jump_chrome_7"
+    ],
+    "6:0": [
+      "c26_jump_regular_5",
+      "c26_jump_regular_7",
+      "c26_jump_regular_6"
+    ],
+    "6:1": [
+      "c26_jump_chrome_5",
+      "c26_jump_chrome_7",
+      "c26_jump_chrome_6"
+    ],
+    "7:0": [
+      "c26_spin_regular_5",
+      "c26_spin_regular_7",
+      "c26_spin_regular_2",
+      "c26_spin_regular_0",
+      "c26_spin_regular_1",
+      "c26_spin_regular_3",
+      "c26_spin_regular_4",
+      "c26_spin_regular_6"
+    ],
+    "7:1": [
+      "c26_spin_chrome_5",
+      "c26_spin_chrome_7",
+      "c26_spin_chrome_2",
+      "c26_spin_chrome_0",
+      "c26_spin_chrome_1",
+      "c26_spin_chrome_3",
+      "c26_spin_chrome_4",
+      "c26_spin_chrome_6"
+    ],
+    "8:0": [
+      "ha21_hf22_blue_throw_2",
+      "ha21_hf22_blue_throw_7",
+      "c26_shield_regular_0",
+      "ha21_hf22_blue_throw_0",
+      "ha21_hf22_blue_throw_1",
+      "ha21_hf22_blue_throw_3",
+      "ha21_hf22_blue_throw_5",
+      "ha21_hf22_blue_throw_6"
+    ],
+    "8:1": [
+      "ha21_hf22_blue_throw_armor_2",
+      "ha21_hf22_blue_throw_armor_7",
+      "c26_shield_chrome_0",
+      "ha21_hf22_blue_throw_armor_0",
+      "ha21_hf22_blue_throw_armor_1",
+      "ha21_hf22_blue_throw_armor_3",
+      "ha21_hf22_blue_throw_armor_5",
+      "ha21_hf22_blue_throw_armor_6"
+    ],
+    "9:0": [
+      "c26_shield_regular_2",
+      "c26_shield_regular_7",
+      "c26_shield_regular_5",
+      "c26_shield_regular_0",
+      "c26_shield_regular_1",
+      "c26_shield_regular_3",
+      "c26_shield_regular_4",
+      "c26_shield_regular_6"
+    ],
+    "9:1": [
+      "c26_shield_chrome_2",
+      "c26_shield_chrome_7",
+      "c26_shield_chrome_5",
+      "c26_shield_chrome_0",
+      "c26_shield_chrome_1",
+      "c26_shield_chrome_3",
+      "c26_shield_chrome_4",
+      "c26_shield_chrome_6"
+    ],
+    "10:0": [
+      "c26_shield_regular_2",
+      "c26_shield_regular_7",
+      "c26_shield_regular_0",
+      "c26_shield_regular_1",
+      "c26_shield_regular_3",
+      "c26_shield_regular_4",
+      "c26_shield_regular_5",
+      "c26_shield_regular_6"
+    ],
+    "10:1": [
+      "c26_shield_chrome_2",
+      "c26_shield_chrome_7",
+      "c26_shield_chrome_0",
+      "c26_shield_chrome_1",
+      "c26_shield_chrome_3",
+      "c26_shield_chrome_4",
+      "c26_shield_chrome_5",
+      "c26_shield_chrome_6"
+    ],
+    "11:0": [
+      "c26_unfold_regular_1",
+      "c26_unfold_regular_0",
+      "c26_unfold_regular_3",
+      "c26_unfold_regular_2"
+    ],
+    "11:1": [
+      "c26_unfold_chrome_1",
+      "c26_unfold_chrome_0",
+      "c26_unfold_chrome_3",
+      "c26_unfold_chrome_2"
+    ],
+    "12:0": [
+      "bi24_chronos_hold_4",
+      "bi24_chronos_hold_16",
+      "bi24_chronos_hold_5",
+      "bi24_chronos_hold_0",
+      "bi24_chronos_hold_1",
+      "bi24_chronos_hold_2",
+      "bi24_chronos_hold_3",
+      "bi24_chronos_hold_6",
+      "bi24_chronos_hold_7",
+      "bi24_chronos_hold_8",
+      "bi24_chronos_hold_9",
+      "bi24_chronos_hold_10",
+      "bi24_chronos_hold_11",
+      "bi24_chronos_hold_12",
+      "bi24_chronos_hold_13",
+      "bi24_chronos_hold_14",
+      "bi24_chronos_hold_15"
+    ],
+    "12:1": [
+      "bi24_chronos_hold_armor_4",
+      "bi24_chronos_hold_armor_16",
+      "bi24_chronos_hold_armor_5",
+      "bi24_chronos_hold_armor_0",
+      "bi24_chronos_hold_armor_1",
+      "bi24_chronos_hold_armor_2",
+      "bi24_chronos_hold_armor_3",
+      "bi24_chronos_hold_armor_6",
+      "bi24_chronos_hold_armor_7",
+      "bi24_chronos_hold_armor_8",
+      "bi24_chronos_hold_armor_9",
+      "bi24_chronos_hold_armor_10",
+      "bi24_chronos_hold_armor_11",
+      "bi24_chronos_hold_armor_12",
+      "bi24_chronos_hold_armor_13",
+      "bi24_chronos_hold_armor_14",
+      "bi24_chronos_hold_armor_15"
+    ],
+    "13:0": [
+      "bi24_chronos_cast_5",
+      "bi24_chronos_cast_12",
+      "bi24_chronos_cast_0",
+      "bi24_chronos_cast_1",
+      "bi24_chronos_cast_2",
+      "bi24_chronos_cast_3",
+      "bi24_chronos_cast_4",
+      "bi24_chronos_cast_6",
+      "bi24_chronos_cast_7",
+      "bi24_chronos_cast_8",
+      "bi24_chronos_cast_9",
+      "bi24_chronos_cast_10",
+      "bi24_chronos_cast_11"
+    ],
+    "13:1": [
+      "bi24_chronos_cast_armor_5",
+      "bi24_chronos_cast_armor_12",
+      "bi24_chronos_cast_armor_0",
+      "bi24_chronos_cast_armor_1",
+      "bi24_chronos_cast_armor_2",
+      "bi24_chronos_cast_armor_3",
+      "bi24_chronos_cast_armor_4",
+      "bi24_chronos_cast_armor_6",
+      "bi24_chronos_cast_armor_7",
+      "bi24_chronos_cast_armor_8",
+      "bi24_chronos_cast_armor_9",
+      "bi24_chronos_cast_armor_10",
+      "bi24_chronos_cast_armor_11"
+    ],
+    "14:0": [
+      "ha21_blue_beam_empty_5",
+      "ha21_blue_beam_empty_15",
+      "ha21_blue_beam_empty_14",
+      "ha21_blue_beam_empty_12",
+      "ha21_blue_beam_empty_0",
+      "ha21_blue_beam_empty_1",
+      "ha21_blue_beam_empty_2",
+      "ha21_blue_beam_empty_3",
+      "ha21_blue_beam_empty_4",
+      "ha21_blue_beam_empty_6",
+      "ha21_blue_beam_empty_7",
+      "ha21_blue_beam_empty_8",
+      "ha21_blue_beam_empty_9",
+      "ha21_blue_beam_empty_10",
+      "ha21_blue_beam_empty_11",
+      "ha21_blue_beam_empty_13",
+      "ha21_blue_beam_empty_16"
+    ],
+    "14:1": [
+      "ha21_blue_beam_empty_armor_5",
+      "ha21_blue_beam_empty_armor_15",
+      "ha21_blue_beam_empty_armor_14",
+      "ha21_blue_beam_empty_armor_12",
+      "ha21_blue_beam_empty_armor_0",
+      "ha21_blue_beam_empty_armor_1",
+      "ha21_blue_beam_empty_armor_2",
+      "ha21_blue_beam_empty_armor_3",
+      "ha21_blue_beam_empty_armor_4",
+      "ha21_blue_beam_empty_armor_6",
+      "ha21_blue_beam_empty_armor_7",
+      "ha21_blue_beam_empty_armor_8",
+      "ha21_blue_beam_empty_armor_9",
+      "ha21_blue_beam_empty_armor_10",
+      "ha21_blue_beam_empty_armor_11",
+      "ha21_blue_beam_empty_armor_13",
+      "ha21_blue_beam_empty_armor_16"
+    ],
+    "15:0": [
+      "c26_shield_regular_0",
+      "c26_jump_regular_0"
+    ],
+    "15:1": [
+      "c26_shield_chrome_0",
+      "c26_jump_chrome_0"
+    ],
+    "16:0": [
+      "ht23_fire_0",
+      "ht23_fire_5",
+      "ht23_fire_6",
+      "ht23_fire_1",
+      "ht23_fire_2",
+      "ht23_fire_3",
+      "ht23_fire_4",
+      "ht23_fire_7",
+      "ht23_fire_8"
+    ],
+    "16:1": [
+      "ht23_fire_armor_0",
+      "ht23_fire_armor_5",
+      "ht23_fire_armor_6",
+      "ht23_fire_armor_1",
+      "ht23_fire_armor_2",
+      "ht23_fire_armor_3",
+      "ht23_fire_armor_4",
+      "ht23_fire_armor_7",
+      "ht23_fire_armor_8"
+    ],
+    "17:0": [
+      "ha21_hf22_blue_rage_0",
+      "c26_shield_regular_0",
+      "ha21_hf22_blue_rage_1"
+    ],
+    "17:1": [
+      "ha21_hf22_blue_rage_0",
+      "c26_shield_chrome_0",
+      "ha21_hf22_blue_rage_1"
+    ],
+    "18:0": [
+      "c26_shield_regular_0"
+    ],
+    "18:1": [
+      "c26_shield_chrome_0"
+    ],
+    "19:0": [
+      "c25_empty_1",
+      "c25_empty_0",
+      "c25_empty_4",
+      "c25_empty_7",
+      "c25_empty_6",
+      "c25_empty_5",
+      "c25_empty_3",
+      "c25_empty_2",
+      "c25_empty_8"
+    ],
+    "19:1": [
+      "c25_empty_armor_1",
+      "c25_empty_armor_0",
+      "c25_empty_armor_4",
+      "c25_empty_armor_7",
+      "c25_empty_armor_6",
+      "c25_empty_armor_5",
+      "c25_empty_armor_3",
+      "c25_empty_armor_2",
+      "c25_empty_armor_8"
+    ],
+    "20:0": [
+      "c25_empty_6",
+      "c25_empty_2",
+      "c25_empty_0",
+      "c25_empty_1",
+      "c25_empty_7",
+      "c25_empty_5",
+      "c25_empty_4",
+      "c25_empty_3"
+    ],
+    "20:1": [
+      "c25_empty_armor_6",
+      "c25_empty_armor_2",
+      "c25_empty_armor_0",
+      "c25_empty_armor_1",
+      "c25_empty_armor_7",
+      "c25_empty_armor_5",
+      "c25_empty_armor_4",
+      "c25_empty_armor_3"
+    ]
+  },
+  "errors": [],
+  "decoded": true,
+  "reviewValidation": {
+    "duration": 97,
+    "width": 1280,
+    "height": 800,
+    "playing": true,
+    "time": 93,
+    "chapters": 21,
+    "seekable": 97,
+    "motionPixelsChange": true,
+    "errors": [],
+    "passed": true
+  }
+}

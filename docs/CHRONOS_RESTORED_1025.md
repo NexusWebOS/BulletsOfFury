@@ -1,0 +1,8 @@
+## October25 — Restore Chronos combat contract and red rage
+
+Mike corrected the combat design: overhead double strike plus left/right swings; physical ball with red gun-hit/white missile-hit feedback and NO ball lasers; red rage transformation, red armor and persistent authored red aura; 2x hammer attack clock; raised overhead missile-only healing hammer behind a lower-body foreground shield.
+
+Root causes: C27 depth sweep bypassed the native second-hit/side continuation; C26 ball wrapper explicitly added three laser volleys; C26/C27 material routing ignored red rage, and C27 suppressed the aura. Corrected in existing owners. Depth now retains its impact scale through second-down/left/right before continuous retreat. Full current twist banks drive side poses and native measured head contacts. Shared Stage8 paths preserved. Red 235 frames are palette-only derivatives with identical alpha, pivots, even cells and weapon landmarks; original hammer geometry and blue energy preserved. Build source chains build_chronos_red_1025.py after the motion compiler. Rage doubles hammer attack clocks, not dialogue, healing, ball, or stun. SHOOT prompt proportionally scaled above the overhead head. Ball uses existing native alpha hit masks and mixer owns all attack sounds.
+
+Verification: native restoration17/0, melee contact/dodge15/0, launched-missile/armor/counter21/0. No page/console errors. Palette geometry check235/235. Syntax passes. Full test_fl exits1 before summary because pre-existing retired_art_archive_1022.cjs is missing. Focused artifacts _shots/chronos_restore_1025; corrected review docs/previews/chronos_frames_1025/index.html. No commit/push; unrelated work preserved.
+

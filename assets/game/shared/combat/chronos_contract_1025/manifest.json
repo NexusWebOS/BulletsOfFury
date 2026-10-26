@@ -1,0 +1,100 @@
+{
+  "banks": {
+    "empty": {
+      "sheet": "c25_empty",
+      "w": 448,
+      "h": 448,
+      "pivot": [
+        224,
+        258
+      ],
+      "count": 9,
+      "cols": 4,
+      "scale": 1
+    },
+    "empty_armor": {
+      "sheet": "c25_empty_armor",
+      "w": 448,
+      "h": 448,
+      "pivot": [
+        224,
+        258
+      ],
+      "count": 9,
+      "cols": 4,
+      "scale": 1
+    },
+    "empty_red": {
+      "sheet": "c25_empty_red",
+      "w": 448,
+      "h": 448,
+      "pivot": [
+        224,
+        258
+      ],
+      "count": 9,
+      "cols": 4,
+      "scale": 1
+    },
+    "intro": {
+      "sheet": "c25_intro",
+      "w": 448,
+      "h": 448,
+      "pivot": [
+        224,
+        258
+      ],
+      "count": 1,
+      "cols": 1,
+      "scale": 1,
+      "tip": [
+        139,
+        338
+      ]
+    }
+  },
+  "sheets": {
+    "empty": {
+      "key": "nca_c25_empty",
+      "path": "assets/game/shared/combat/chronos_contract_1025/empty.webp",
+      "sha256": "3b434687ae112844b98546827a41960295cdbf72fe98744d42afc03abe328065"
+    },
+    "empty_hit": {
+      "key": "nca_c25_empty_hit",
+      "path": "assets/game/shared/combat/chronos_contract_1025/empty_hit.webp",
+      "sha256": "7d438e07a6a73747b5aa7310a1847b3d39aa02dbe9fbf0b38ad9f33fd33c868a"
+    },
+    "empty_armor": {
+      "key": "nca_c25_empty_armor",
+      "path": "assets/game/shared/combat/chronos_contract_1025/empty_armor.webp",
+      "sha256": "3bbc258fd98fb43cb6182f4637f4253758c2cb6cabcf36a9ef3fc0274048f540"
+    },
+    "empty_armor_hit": {
+      "key": "nca_c25_empty_armor_hit",
+      "path": "assets/game/shared/combat/chronos_contract_1025/empty_armor_hit.webp",
+      "sha256": "7d438e07a6a73747b5aa7310a1847b3d39aa02dbe9fbf0b38ad9f33fd33c868a"
+    },
+    "empty_red": {
+      "key": "nca_c25_empty_red",
+      "path": "assets/game/shared/combat/chronos_contract_1025/empty_red.webp",
+      "sha256": "671c9b43e346197305cfd6eb2e34dd2622a8e3aa0e11a0e8274bf32fb0f3d45b"
+    },
+    "empty_red_hit": {
+      "key": "nca_c25_empty_red_hit",
+      "path": "assets/game/shared/combat/chronos_contract_1025/empty_red_hit.webp",
+      "sha256": "7d438e07a6a73747b5aa7310a1847b3d39aa02dbe9fbf0b38ad9f33fd33c868a"
+    },
+    "intro": {
+      "key": "nca_c25_intro",
+      "path": "assets/game/shared/combat/chronos_contract_1025/intro.webp",
+      "sha256": "98a1efb5b2b1d61a36b22dcc82eeb96b3c1f097ec7afd7a1d5dd85263c58a63f"
+    },
+    "intro_hit": {
+      "key": "nca_c25_intro_hit",
+      "path": "assets/game/shared/combat/chronos_contract_1025/intro_hit.webp",
+      "sha256": "72b7fa91eb416e2d29f635a4c42431d9583caf30b9241b60c786d2d0581ba6f0"
+    }
+  },
+  "source": "GPT kneel/stand -> PixelLab pinned 639ea9e8-d9c6-4f45-8474-55a17c937be1",
+  "rejected": "Unpinned793fba39 frames5+ invented a weapon; never registered."
+}

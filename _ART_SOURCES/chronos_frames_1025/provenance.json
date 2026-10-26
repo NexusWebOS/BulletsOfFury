@@ -1,0 +1,24 @@
+{
+  "source": "OpenAI built-in GPT image generation",
+  "approvedIdentity": "_ART_SOURCES/hammer_1010/reference/idle.png",
+  "outputs": [
+    "activation.png",
+    "jump_chrome.png",
+    "jump_regular.png",
+    "shield_chrome.png",
+    "shield_regular.png",
+    "spin_chrome.png",
+    "spin_regular.png",
+    "unfold.png"
+  ],
+  "normalization": "_BUILD_SOURCE/build_chronos_frames_1025.py",
+  "canvas": [
+    576,
+    576
+  ],
+  "pivot": [
+    288,
+    328
+  ],
+  "notes": "Complete connected actors; independent whole strips per action/material, actual plated silver chromium; no sectioned anatomy. Source strips1774x887 receive transparent bottom padding for even888 high source canvases. One fixed scale per bank; measured source reactor and head pivots in builder."
+}

@@ -1,6 +1,6 @@
 "use strict";
-/* Reconcile the independently authored Oct 2 campaign layers. Claude owns the
-   live arrival; retain Mike's trap taunt and the immediate opening jump. */
+/* Arrival order: dialogue, native chromium charge/lock, then combat. The
+   live radio never stops world scrolling or player controls. */
 const IN1003_INTRO_START=fb2IntroStart,IN1003_INTRO_END=fb2IntroEnd,IN1003_SCRIPT=fb2HammerIntroScript;
 fb2IntroStart=function(b){if(b?._hammer)b._hammer.intro1002=true;return IN1003_INTRO_START.apply(this,arguments);};
 fb2HammerIntroScript=function(lead,dispatcher,campaign){
@@ -13,24 +13,16 @@ fb2HammerIntroScript=function(lead,dispatcher,campaign){
 fb2IntroEnd=function(){
  const b=fb2Intro?.boss,first=fb2Intro&&!fb2Intro.done;
  const result=IN1003_INTRO_END.apply(this,arguments);
- if(first&&b&&!b.dead&&b._hammer&&b._hammer.state==='unfold'){
-  b.enter=false;b._noHit=false;b._hammer.intro1002=true;b._hammer.openingJump1003=true;hammerTarget(b);hammerState(b,'warn');
+ if(first&&b===boss&&!b.dead&&b._hammer&&b._hammer.state==='unfold'){
+  b.enter=false;b._noHit=false;b._hammer.intro1002=true;b._hammer.openingJump1003=false;
+  // Let the native idle tick establish the difficulty-scaled health budget.
+  // Its next tick begins fr_activation before any attack can be selected.
+  hammerState(b,'hammer');
  }
  return result;
 };
-// Chromium's first activation must not replace the promised post-dialogue jump.
-// Let the ordinary warned leap, landing recovery and return finish, then activate.
-const IN1003_ARMOR_BEGIN=fr27BeginArmor,IN1003_HAMMER_TICK=hammerBossTick;
+const IN1003_ARMOR_BEGIN=fr27BeginArmor;
 fr27BeginArmor=function(b){
- const h=b?._hammer;
- if(h?.openingJump1003){
-  if(['warn','leap','recover','back'].includes(h.state))return null;
-  h.openingJump1003=false;
- }
+ if(fb2IntroActive()&&fb2Intro.boss===b)return null;
  return IN1003_ARMOR_BEGIN.apply(this,arguments);
-};
-hammerBossTick=function(b,dt){
- const h=b?._hammer;
- if(h?.openingJump1003&&h.state==='recover'){h.followCount=5;h.comboPending=false;}
- return IN1003_HAMMER_TICK.apply(this,arguments);
 };

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "magma_small",
+    "key": "overhaul_stage2_fire_jet_01",
+    "source": [
+      256,
+      256
+    ],
+    "scale": 0.640625
+  },
+  {
+    "name": "magma_large",
+    "key": "overhaul_stage2_fire_jet_02",
+    "source": [
+      256,
+      256
+    ],
+    "scale": 0.640625
+  },
+  {
+    "name": "sky_small",
+    "key": "overhaul_stage6_storm_drone_01",
+    "source": [
+      256,
+      256
+    ],
+    "scale": 0.640625
+  },
+  {
+    "name": "sky_medium",
+    "key": "overhaul_stage6_storm_drone_01",
+    "source": [
+      256,
+      256
+    ],
+    "scale": 0.640625
+  },
+  {
+    "name": "sky_large",
+    "key": "overhaul_stage6_storm_drone_01",
+    "source": [
+      256,
+      256
+    ],
+    "scale": 0.640625
+  },
+  {
+    "name": "water_small",
+    "key": "overhaul_stage9_water_jet_01",
+    "source": [
+      128,
+      128
+    ],
+    "scale": 1.28125
+  },
+  {
+    "name": "water_medium",
+    "key": "overhaul_stage9_water_drone_01",
+    "source": [
+      256,
+      256
+    ],
+    "scale": 0.640625
+  },
+  {
+    "name": "water_large",
+    "key": "overhaul_stage9_water_alien_01",
+    "source": [
+      128,
+      128
+    ],
+    "scale": 1.28125
+  }
+]

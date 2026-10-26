@@ -1,0 +1,10 @@
+status: completed
+id: 29749896-7d12-4035-a484-adab2204511e
+job_id: 29749896-7d12-4035-a484-adab2204511e
+frame: 16 of 17
+asset_id: c5152c38-c69e-5a7d-834b-cf301972080e
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0359 in credits
+download: https://api.pixellab.ai/mcp/images/29749896-7d12-4035-a484-adab2204511e/download?index=16

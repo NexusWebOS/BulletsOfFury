@@ -1,0 +1,23 @@
+{
+  "jobs": {
+    "barrel": "1c84e602-231b-4ea2-b4a4-437ecce28111",
+    "body": "ba480b8c-4766-4829-b6a4-09fa2f0b19c8",
+    "crate": "60e4376d-e3fe-41b1-8ea3-f054383ed819"
+  },
+  "frames": 9,
+  "format": {
+    "body": [
+      192,
+      256
+    ],
+    "barrel": [
+      128,
+      224
+    ],
+    "crate": [
+      80,
+      80
+    ]
+  },
+  "source": "Current authored CH23 whole body/rotary gun and HT23 exclusive chaingun icon crate; first-frame sources preserved beside jobs."
+}

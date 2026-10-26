@@ -2,6 +2,8 @@
 /* Stage5 whole-actor tactical handoff. Authored pixels only; native combat owns
    HP, destruction, projectiles, warnings, music, and their established timing. */
 const HT23={base:{draw:hammerBossDraw,blue:ha21Blue,tick:hb20PickupTick,pickupDraw:hb20PickupDraw,mount:hammerBlasterMount,load:stageLoadBegin,head:hammerHeadPoint},events:[],draws:{}};
+// Give the impact a visible held beat before the upward throw and gun catch.
+const HT23_PICKUP={hit:1.78,toss:1.98,release:2.46,eject:3.06,catch:3.54,ready:4.72};
 for(const s of Object.values(HT23_ART.sheets))XART._src[s.key]=s.path;
 for(const rows of Object.values(HT23_ART.banks))for(const a of rows)BOFX.cells[a.key]=[a.sheet,...a.cell];
 XART._src.ht23_shoot=HT23_ART.shoot.path;
@@ -26,29 +28,32 @@ ha21Blue=function(b){
  return q;};
 hb20PickupTick=function(b,C,dt){if(C.corrupt||!ht23Own(b))return HT23.base.tick.apply(this,arguments);
  C.t+=dt;const u=v19Ease(Math.min(1,C.t/.8));b.x=lerp(C.origin.x,C.station.x,u);b.y=lerp(C.origin.y,C.station.y,u);
- if(!C.hit&&C.t>=1.78){C.hit=true;explode(C.box.x,C.box.y,54,'blue');b20Cue('hammerImpact');HT23.events.push({type:'crate-struck',t:C.t});}
- if(!C.released&&C.t>=2.26){C.released=true;C.release={x:b.x-75,y:b.y-172};b._hammer.hammerDestroyed=true;b20Cue('hammerThrow');HT23.events.push({type:'hammer-released-up',t:C.t});}
- if(!C.opened&&C.t>=2.86){C.opened=true;b20Cue('pickup');HT23.events.push({type:'gun-ejected',t:C.t});}
- if(!C.obtained&&C.t>=4.05){C.obtained=true;b20Cue('pickup');HT23.events.push({type:'gun-caught',t:C.t});}
- if(C.t>=4.5&&!C.ht23Done){C.ht23Done=true;HT23.events.push({type:'tactical-ready',t:C.t});}
- return C.t>=4.5;
+ if(!C.hit&&C.t>=HT23_PICKUP.hit){C.hit=true;explode(C.box.x,C.box.y,20,'blue');b20Cue('hammerImpact');HT23.events.push({type:'crate-struck',t:C.t,head:hammerHeadPoint(b),box:{...C.box}});}
+ if(!C.released&&C.t>=HT23_PICKUP.release){C.released=true;C.release={x:b.x+HT23_ART.heldHammer[3][0],y:b.y+HT23_ART.heldHammer[3][1]};b._hammer.hammerDestroyed=true;b20Cue('hammerThrow');HT23.events.push({type:'hammer-released-up',t:C.t});}
+ if(!C.opened&&C.t>=HT23_PICKUP.eject){C.opened=true;b20Cue('pickup');HT23.events.push({type:'gun-ejected',t:C.t});}
+ if(!C.obtained&&C.t>=HT23_PICKUP.catch){C.obtained=true;b20Cue('pickup');HT23.events.push({type:'gun-caught',t:C.t});}
+ if(C.t>=HT23_PICKUP.ready&&!C.ht23Done){C.ht23Done=true;HT23.events.push({type:'tactical-ready',t:C.t});}
+ return C.t>=HT23_PICKUP.ready;
 };
 hb20PickupDraw=function(b,C,corrupt){if(corrupt||!ht23Own(b))return HT23.base.pickupDraw.apply(this,arguments);
- const rows=HT23_ART.banks.crate,frame=C.t<1.78?0:Math.min(rows.length-1,Math.floor((C.t-1.78)/.8*rows.length));ht23DrawCell(rows[frame],C.box.x,C.box.y);
+ const rows=HT23_ART.banks.crate,frame=C.t<HT23_PICKUP.hit?0:Math.min(rows.length-1,1+Math.floor((C.t-HT23_PICKUP.hit)/.75*(rows.length-1)));
+ // The empty shell drops out only after the real gun has left it.
+ const drop=Math.max(0,C.t-HT23_PICKUP.eject);ht23DrawCell(rows[frame],C.box.x,C.box.y+drop*drop*280);
 };
-hammerHeadPoint=function(b){const C=b?._hammer?.hb20Pickup;if(ht23Own(b)&&C&&C.t>=1.78){if(C.released)return{x:C.release.x,y:C.release.y-(C.t-2.26)*650};const f=Math.max(0,Math.min(3,Math.floor((C.t-1.78)/1.08*9))),p=HT23_ART.heldHammer[f];return{x:b.x+p[0],y:b.y+p[1]};}return HT23.base.head.apply(this,arguments);};
+function ht23PickupHead(b,C){if(C.released)return{x:C.release.x,y:C.release.y-(C.t-HT23_PICKUP.release)*650};const f=Math.max(0,Math.min(3,Math.floor((C.t-HT23_PICKUP.toss)/1.08*9))),p=HT23_ART.heldHammer[f];return{x:b.x+p[0],y:b.y+p[1]};}
+hammerHeadPoint=function(b){const C=b?._hammer?.hb20Pickup;if(ht23Own(b)&&C&&C.t>=HT23_PICKUP.toss)return ht23PickupHead(b,C);return HT23.base.head.apply(this,arguments);};
 hammerBlasterMount=function(b){if(ht23Own(b)&&['chain_warn','chaingun','chain_cool'].includes(b._hammer.state)){
  const a=ht23GunPose(b),x=b.x+a.muzzle[0]-a.pivot[0],muzzleY=b.y+a.muzzle[1]-a.pivot[1],y=b.y+40;return{x,y,muzzleY,left:x-40,top:y-20,scale:1};
  }return HT23.base.mount.apply(this,arguments);};
 hammerBossDraw=function(b){const C=b?._hammer?.hb20Pickup,h=b?._hammer;
- if(!ht23Own(b)||C&&C.t<1.78||!C&&!['chain_warn','chaingun','chain_cool'].includes(h.state)&&!h._ht23ArmorGun)return HT23.base.draw.apply(this,arguments);
+ if(!ht23Own(b)||C&&C.t<HT23_PICKUP.toss||!C&&!['chain_warn','chaingun','chain_cool'].includes(h.state)&&!h._ht23ArmorGun)return HT23.base.draw.apply(this,arguments);
  hammerBossAtmosphereDraw(b);hf22Aura(b);ctx.save();ctx.imageSmoothingEnabled=false;
  if(C){
   hb20PickupDraw(b,C,false);
-  const toss=C.t<2.86,bank=toss?'toss':'catch',u=toss?(C.t-1.78)/1.08:(C.t-2.86)/1.44,f=Math.min(8,Math.floor(Math.max(0,u)*9));
+  const toss=C.t<HT23_PICKUP.eject,bank=toss?'toss':'catch',u=toss?(C.t-HT23_PICKUP.toss)/1.08:(C.t-HT23_PICKUP.eject)/1.44,f=Math.min(8,Math.floor(Math.max(0,u)*9));
   ht23DrawCell(ht23Row(b,bank,f),b.x,b.y,Math.max(b.flash||0,b._lastPart?.flash||0));
-  if(C.released){const p=hammerHeadPoint(b);if(p.y+180>viewTopY())ht23DrawCell(ht23Row(b,'tool',0),p.x,p.y);}
-  if(C.t>=2.86&&f<3&&!toss){const u=Math.min(1,(C.t-2.86)/.48),x=lerp(C.box.x,b.x-15,u),y=lerp(C.box.y,b.y+120,u)-Math.sin(u*Math.PI)*22;ht23DrawCell(ht23Row(b,'gun_prop',0),x,y);}
+  if(C.released){const p=ht23PickupHead(b,C);if(p.y+180>viewTopY()){if(typeof c35Tool==='function'&&c25Own(b))c35Tool(p,Math.PI/2);else ht23DrawCell(ht23Row(b,'tool',0),p.x,p.y);}}
+  if(C.t>=HT23_PICKUP.eject&&f<3&&!toss){const u=Math.min(1,(C.t-HT23_PICKUP.eject)/.48),x=lerp(C.box.x,b.x-15,u),y=lerp(C.box.y,b.y+120,u)-Math.sin(u*Math.PI)*22;ht23DrawCell(ht23Row(b,'gun_prop',0),x,y);}
  }else{
   const a=ht23GunPose(b),m=hammerBlasterMount(b);ht23DrawCell(a,b.x,b.y,Math.max(b.flash||0,b._lastPart?.flash||0));
   if(h.state==='chain_warn'){const warm=hammerFurious()?.65:hammerHard()?.75:.85;combatWarningDraw(b,{x:m.x,y:m.muzzleY,ex:m.x,ey:PLAY.y+PLAY.h,progress:clamp(h.t/warm,0,1),width:44,alertX:b.x,alertY:b.y-80});}

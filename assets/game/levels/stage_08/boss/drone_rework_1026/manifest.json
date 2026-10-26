@@ -1,0 +1,31 @@
+{
+  "key": "rd29_drone_glow",
+  "path": "assets/game/levels/stage_08/boss/drone_rework_1026/drone-pixel-glow.webp",
+  "w": 256,
+  "h": 256,
+  "pivot": [
+    128,
+    128
+  ],
+  "source": {
+    "key": "v18_drone",
+    "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_drone.png",
+    "w": 256,
+    "h": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "bounds": [
+      64,
+      63,
+      192,
+      193
+    ],
+    "sha256": "5d66e47703ea24623b250d53480df6c3df686fb04e8f213c37a712f78697be55"
+  },
+  "sourceSha256": "5d66e47703ea24623b250d53480df6c3df686fb04e8f213c37a712f78697be55",
+  "owner": "_BUILD_SOURCE/build_drone_rework_1026.py",
+  "sha256": "62eaa5341cab0b11e93e502c9dd16bd0a65344a8e28053f14c4bbfec83610524",
+  "method": "Own emissive pixels and 1-3px hard rings; PXG_STEPS driver, no radial overlay or blur."
+}

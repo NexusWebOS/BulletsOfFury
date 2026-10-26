@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 80a57e73-9126-4c14-9341-9689f54bdda0\njob_id: 80a57e73-9126-4c14-9341-9689f54bdda0\ndescription: FRAME FORMAT:256x256 transparent pixels, fixed central cyan EYE pivot128,128 throughout, common proportional scale and full-wing transparent margins. Exact supplied BLACK/dark charcoal mechanical flying eye, same black crescent wings, long pointed spine, cyan circular central eye, crisp authored pixels and dark metal highlights. One whole identical aircraft, no new parts, no additional effects or projectiles. A complete fluid 360-degree clockwise spin around the fixed central eye in the image plane. The whole black crescent-wing aircraft turns through every orientation and returns to its exact supplied upright pose. Preserve the exact silhouette, no morphing, no vanishing, no extra objects.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 10224030\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"80a57e73-9126-4c14-9341-9689f54bdda0\")\nasset_id: 1954809c-01e9-5ad7-bbef-ce737c826f99\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

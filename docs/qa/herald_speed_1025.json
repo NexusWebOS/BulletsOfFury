@@ -1,0 +1,77 @@
+{
+  "scope": "Herald bomber matches corner-flight speed and rapidly drops red energy from both living claws",
+  "native": {
+    "passed": 41,
+    "failed": 0,
+    "report": "_shots/herald_speed_1025/probe/report.json"
+  },
+  "browser": {
+    "passed": 34,
+    "failed": 0,
+    "report": "_shots/barrage_revision_1025/browser/report.json"
+  },
+  "measurements": {
+    "oldFuriousPassSeconds": 4.6,
+    "currentFuriousPassSeconds": 0.9695451710508485,
+    "speedMultiplier": 4.744492714057104,
+    "oldDropsPerPass": [
+      3,
+      3
+    ],
+    "currentDropsPerPass": [
+      11,
+      11
+    ],
+    "waveSeconds": 0.07,
+    "peakLive": 43
+  },
+  "film": {
+    "report": "_shots/barrage_revision_1025/video/herald-220000/report.json",
+    "video": "_shots/barrage_revision_1025/video/herald-220000/herald.mp4",
+    "seconds": 52.27269999998808,
+    "decodedPeakDb": -9.0,
+    "checks": {
+      "noPageOrConsoleErrors": true,
+      "noAssetErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true,
+      "requestedCheckpoint": true,
+      "completeBomber": true
+    },
+    "observedPlayback": {
+      "bossfireVileexistence": 15,
+      "bossWeaponCharge": 10,
+      "jetDash": 8,
+      "combatOrb0927": 4
+    },
+    "chapters": {
+      "warning": 17.122062499996275,
+      "attack": 18.562194376020226,
+      "peak": 19.249185714291677,
+      "recovery": 23.488237500000746
+    }
+  },
+  "syntax": [
+    {
+      "path": "assets/game.js",
+      "exitCode": 0
+    },
+    {
+      "path": "assets/herald_bomber_1025.js",
+      "exitCode": 0
+    }
+  ],
+  "requiredSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "reason": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs aborts before assertions.",
+    "log": "_shots/herald_speed_1025/full-suite.log"
+  },
+  "sourceHashes": {
+    "assets/herald_bomber_1025.js": "699eb173052ed571ce9ded617d9112632d2c8322292d86486f15530a95bbe3b4",
+    "index.html": "3dd795ed14664653f21ad3f522541f000d775679e04017298da48c228b03d3af"
+  },
+  "method": "Real Chromium via shoot.py native loop. Continuous invulnerable Furious film, weapons withheld, native enemy HP and attack-book progress. Explicit damage fixtures are separate."
+}

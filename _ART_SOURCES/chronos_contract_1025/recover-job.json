@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 793fba39-5c41-4dfa-b647-35312c19d3b9\njob_id: 793fba39-5c41-4dfa-b647-35312c19d3b9\ndescription: FRAME FORMAT256x256 transparent, fixed common canvas and same robot scale. The whole connected robot recovers from this empty-handed kneel. He lifts his head, straightens his torso, lifts his planted hand from the ground, then slowly stands up into a broad combat stance with BOTH EMPTY hands, right arm ready to catch his hammer from above. Feet stay planted at same baseline. Smooth weight transfer through knees and hips, coherent arms and fingers. No hammer or weapon in any frame, no new objects, no magic, no circles, no glow outside the robot, no rotation, zoom, camera movement or fade. Exact same chromium armored robot identity throughout.\nframes: 16\nsize: 256x256px\ntransparent: True\nseed: 1022501\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"793fba39-5c41-4dfa-b647-35312c19d3b9\")\nasset_id: 8395a1fe-9da9-53aa-8d0c-9be1345e07d1\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

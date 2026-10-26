@@ -79,7 +79,7 @@ modularHit=function(dmg){
  if(S.shield>0){S.shield=Math.max(0,S.shield-dmg);S.shieldFlash=.12;if(!S.shield){r30FX(b,b.x,b.y,b.w,'shield');r30Sound('shieldBreakCombat');}return;}
  // Transformations retain the same shared life pool; no free HP from changing shapes.
  let left=dmg,first=p.destroyed?b.parts.find(q=>!q.destroyed):p;
- for(const q of [first,...b.parts.filter(q=>q!==first)]){if(!q||q.destroyed||left<=0)continue;const take=Math.min(q.hp,left);q.hp-=take;left-=take;q.flash=.12;
+ for(const q of [first,...b.parts.filter(q=>q!==first)]){if(!q||q.destroyed||left<=0)continue;const take=Math.min(q.hp,left);q.hp-=take;left-=take;markHit(q,.12);
   if(q.hp<=0){q.destroyed=true;const v=r30Parts(b).find(v=>v.p===q);r30FX(b,v?.x||b.x,v?.y||b.y,q.id==='core'?150:90);r30Sound('expBig');}}
  b.hp=b.parts.reduce((v,p)=>v+Math.max(0,p.hp),0);stageStats.dmgDealt+=dmg-left;if(b.hp<=.001)r30Break(b);
 };

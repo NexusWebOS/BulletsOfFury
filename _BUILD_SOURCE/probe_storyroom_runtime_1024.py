@@ -1,0 +1,24 @@
+from pathlib import Path
+import json
+from playwright.sync_api import sync_playwright
+R=Path(__file__).resolve().parents[1];O=R/'_shots/storyroom_1024';checks=[];errors=[]
+def ck(n,ok,data=None):checks.append(dict(name=n,passed=bool(ok),data=data));print(('PASS 'if ok else'FAIL ')+n,flush=True)
+with sync_playwright()as pw:
+ br=pw.chromium.launch(channel='msedge');p=br.new_page(viewport={'width':1280,'height':900});p.set_default_timeout(180000);p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error'else None)
+ p.goto('http://127.0.0.1:8795/index.html?storyroom-runtime-qa=1');p.wait_for_function('!!window.BOF_STORYBOARD');p.evaluate("()=>{window.mk24=(id,pilot='yuri')=>BOF_STORYBOARD.native(id,pilot).map((b,i)=>({id:'qa-'+i,source:i,fields:b,edited:[],enabled:true}));}")
+ row=p.evaluate("""()=>{const rows=mk24('opening'),i=rows.findIndex(c=>c.fields.pilotLine==='report');rows[i].fields.text='Custom pilot report.';rows[i].edited=['text'];const d={version:1,overrides:{opening:{yuri:rows}},triggers:{},order:[]};BOF_STORYBOARD.setData(d);run.pilot='yuri';sb24InstallIntro('yuri');return{line:ip21Line(IP21.beats[i],{pilot:'yuri'}),identity:IP21.beats[i].pilotLine,ordered:IP21.beats.every((b,i)=>i===0||b.at===IP21.beats[i-1].to),duration:IP21.end-IP21.finaleAt};}""")
+ ck('Opening edits retain native pilot flight identity and continuous timing',row['line']=='Custom pilot report.' and row['identity']=='report' and row['ordered'] and abs(row['duration']-6)<1e-9,row)
+ row=p.evaluate("""()=>{const rows=mk24('dracodia-monologue');rows[0].fields.text='Custom Dracodia line.';rows[0].fields.expression=5;rows[0].edited=['text','expression'];BOF_STORYBOARD.setData({version:1,overrides:{'dracodia-monologue':{yuri:rows}},triggers:{},order:[]});sb24InstallIntro('yuri');return{line:DR5.intro[0],length:DR5.intro.length};}""")
+ ck('Dracodia speech edits retain selected expression',row['line']==['Custom Dracodia line.',5],row)
+ row=p.evaluate("""()=>{BOF_STORYBOARD.setData({version:1,overrides:{'dracodia-monologue':{yuri:[]}},triggers:{},order:[]});sb24InstallIntro('yuri');return DR5.intro;}""")
+ ck('An empty monologue safely preserves the native handoff owner',len(row)==1 and row[0][0]=='',row)
+ row=p.evaluate("""()=>{const rows=mk24('dracodia-rebirth');[rows[0],rows[1]]=[rows[1],rows[0]];rows[0].fields.text='Reordered rebirth response.';rows[0].edited=['text'];BOF_STORYBOARD.setData({version:1,overrides:{'dracodia-rebirth':{yuri:rows}},triggers:{},order:[]});const old=SB24.base.say;let capture;SB24.base.say=(b,who,text)=>capture={who,text};try{dr5Say(null,'YURI','What the heck was that?');}finally{SB24.base.say=old;}return capture;}""")
+ ck('Event-bound response order changes dialogue without replacing its event',row['text']=='Reordered rebirth response.',row)
+ row=p.evaluate("""()=>{const rows=mk24('ending');[rows[0],rows[1]]=[rows[1],rows[0]];rows[0].fields.text='The saved ending is reordered.';rows[0].fields.duration=9;rows[0].edited=['text','duration'];BOF_STORYBOARD.setData({version:1,overrides:{ending:{yuri:rows}},triggers:{},order:[]});run.pilot='yuri';setState(GS.VICTORY);const oldBlock=SB24.base.block;let drawnText,seenText=[];SB24.base.block=function(o){seenText.push(o.text);if(o.text.toLowerCase()==='the saved ending is reordered.')drawnText=o.text;return oldBlock.apply(this,arguments)};try{inv20Draw(26.8,VW,VH,{})}finally{SB24.base.block=oldBlock;}return{shot:INV20.last.scene,text:drawnText,seenText,end:INV20.end,expected:26.4+rows.reduce((n,c)=>n+(c.fields.duration||5),0)};}""")
+ ck('Ending reorder uses its actual authored shot, custom caption and adjusted end time',row['shot']=='relief' and row.get('text','').lower()=='the saved ending is reordered.' and abs(row['end']-row['expected'])<.001,row)
+ row=p.evaluate("""()=>{const rows=mk24('post-1');rows.forEach(c=>c.enabled=false);BOF_STORYBOARD.setData({version:1,overrides:{'post-1':{yuri:rows}},triggers:{},order:[]});BOFCinematicDirector.cancel();let calls=0;BOFCinematicDirector.play('post-1',BOFCinematicDirector.script(1,'yuri'),()=>calls++);return{calls,current:!!BOFCinematicDirector.current};}""")
+ ck('A skipped director scene calls its original continuation once',row['calls']==1 and not row['current'],row)
+ row=p.evaluate("""()=>{BOF_STORYBOARD.setData({version:1,overrides:{},triggers:{},order:[]});return{intro:DR5.intro[0][0]===SB24.dr5[0][0],ending:INV20.end===SB24.end,pilotLine:IP21.beats.some(b=>b.pilotLine==='report')};}""")
+ ck('Resetting the project restores authored runtime data',all(row.values()),row)
+ ck('No native runtime errors',not errors,errors);br.close()
+out=dict(passed=sum(c['passed']for c in checks),failed=sum(not c['passed']for c in checks),checks=checks,errors=errors);(O/'runtime.json').write_text(json.dumps(out,indent=2)+'\n');print('SUMMARY',out['passed'],out['failed']);raise SystemExit(bool(out['failed']))

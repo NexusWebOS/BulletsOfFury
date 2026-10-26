@@ -1,0 +1,468 @@
+{
+  "source_asset_id": "f2f2d956-f64b-444c-8bb3-c495f7b43e74",
+  "animation_asset_id": "f6a6647c-3094-4e1d-a634-7c4af5598e80",
+  "job_id": "b86c6abb-b05f-4e57-9679-e77e16c59fab",
+  "model": "pixel-engine-v1.5",
+  "requested_frames": 12,
+  "generated_frames": 12,
+  "runtime_frames": 16,
+  "credits_used": 26,
+  "credits_remaining_after_job": 4,
+  "source": "_BUILD_SOURCE/dracodia_depth_1026/turntable-source.webp",
+  "source_sha256": "67a4597467fa5833b8af05b32058ee641f7c93c567dbe2f871d901ae36e0a237",
+  "reference": "_BUILD_SOURCE/dracodia_depth_1026/native-reference.png",
+  "reference_sha256": "168a8c1bda00dea686d8210e849dca3f90ccf72e8ae42742e32114d8dff0751a",
+  "source_chest": [
+    142.4140127388535,
+    135.60509554140128
+  ],
+  "common_translation": [
+    113,
+    117
+  ],
+  "uniform_scale": 1,
+  "normalization": "One fixed512 canvas and shared chest pivot. Source0..8 front-to-back; reflected7..1 forms the opposite half, avoiding the generated late back-to-front jump. No per-frame scale or bounding-box fitting.",
+  "frame_details": [
+    {
+      "cell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_frame": 0,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        138,
+        136,
+        375,
+        382
+      ]
+    },
+    {
+      "cell": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_frame": 1,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        144,
+        136,
+        376,
+        383
+      ]
+    },
+    {
+      "cell": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "source_frame": 2,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        160,
+        136,
+        370,
+        382
+      ]
+    },
+    {
+      "cell": [
+        1536,
+        0,
+        512,
+        512
+      ],
+      "source_frame": 3,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        181,
+        136,
+        352,
+        382
+      ]
+    },
+    {
+      "cell": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_frame": 4,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        207,
+        136,
+        318,
+        382
+      ]
+    },
+    {
+      "cell": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_frame": 5,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        207,
+        137,
+        313,
+        383
+      ]
+    },
+    {
+      "cell": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "source_frame": 6,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        199,
+        137,
+        339,
+        383
+      ]
+    },
+    {
+      "cell": [
+        1536,
+        512,
+        512,
+        512
+      ],
+      "source_frame": 7,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        176,
+        137,
+        360,
+        382
+      ]
+    },
+    {
+      "cell": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "source_frame": 8,
+      "mirrored": false,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        148,
+        137,
+        373,
+        380
+      ]
+    },
+    {
+      "cell": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "source_frame": 7,
+      "mirrored": true,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        152,
+        137,
+        336,
+        382
+      ]
+    },
+    {
+      "cell": [
+        1024,
+        1024,
+        512,
+        512
+      ],
+      "source_frame": 6,
+      "mirrored": true,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        173,
+        137,
+        313,
+        383
+      ]
+    },
+    {
+      "cell": [
+        1536,
+        1024,
+        512,
+        512
+      ],
+      "source_frame": 5,
+      "mirrored": true,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        199,
+        137,
+        305,
+        383
+      ]
+    },
+    {
+      "cell": [
+        0,
+        1536,
+        512,
+        512
+      ],
+      "source_frame": 4,
+      "mirrored": true,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        194,
+        136,
+        305,
+        382
+      ]
+    },
+    {
+      "cell": [
+        512,
+        1536,
+        512,
+        512
+      ],
+      "source_frame": 3,
+      "mirrored": true,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        160,
+        136,
+        331,
+        382
+      ]
+    },
+    {
+      "cell": [
+        1024,
+        1536,
+        512,
+        512
+      ],
+      "source_frame": 2,
+      "mirrored": true,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        142,
+        136,
+        352,
+        382
+      ]
+    },
+    {
+      "cell": [
+        1536,
+        1536,
+        512,
+        512
+      ],
+      "source_frame": 1,
+      "mirrored": true,
+      "pivot": [
+        256,
+        256
+      ],
+      "bounds": [
+        136,
+        136,
+        368,
+        383
+      ]
+    }
+  ],
+  "art": {
+    "w": 512,
+    "h": 512,
+    "logicalSize": 320,
+    "pivot": [
+      256,
+      256
+    ],
+    "frames": 16,
+    "fps": 13.333333333333334,
+    "cells": [
+      [
+        0,
+        0,
+        512,
+        512
+      ],
+      [
+        512,
+        0,
+        512,
+        512
+      ],
+      [
+        1024,
+        0,
+        512,
+        512
+      ],
+      [
+        1536,
+        0,
+        512,
+        512
+      ],
+      [
+        0,
+        512,
+        512,
+        512
+      ],
+      [
+        512,
+        512,
+        512,
+        512
+      ],
+      [
+        1024,
+        512,
+        512,
+        512
+      ],
+      [
+        1536,
+        512,
+        512,
+        512
+      ],
+      [
+        0,
+        1024,
+        512,
+        512
+      ],
+      [
+        512,
+        1024,
+        512,
+        512
+      ],
+      [
+        1024,
+        1024,
+        512,
+        512
+      ],
+      [
+        1536,
+        1024,
+        512,
+        512
+      ],
+      [
+        0,
+        1536,
+        512,
+        512
+      ],
+      [
+        512,
+        1536,
+        512,
+        512
+      ],
+      [
+        1024,
+        1536,
+        512,
+        512
+      ],
+      [
+        1536,
+        1536,
+        512,
+        512
+      ]
+    ],
+    "body": {
+      "key": "rd26_body",
+      "path": "assets/game/levels/stage_08/boss/dracodia_depth_1026/forming-turntable.webp"
+    },
+    "wire": {
+      "key": "rd26_wire",
+      "path": "assets/game/levels/stage_08/boss/dracodia_depth_1026/forming-wire.webp"
+    }
+  },
+  "files": {
+    "forming-turntable.webp": "4646c352a746ebe4fc162fbd7cd30fefc7749cd201a8a29198d9deaac609109b",
+    "forming-wire.webp": "48282d916b50d586df0ba503abb34a36862dd05b1b8cc336b8ac9bb57091bcc6"
+  }
+}

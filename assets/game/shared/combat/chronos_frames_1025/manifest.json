@@ -1,0 +1,2116 @@
+{
+  "resolution": [
+    576,
+    576
+  ],
+  "pivot": [
+    288,
+    328
+  ],
+  "banks": {
+    "activation_regular": {
+      "sheet": "c26_activation_regular",
+      "count": 8,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.86,
+      "frames": [
+        {
+          "tip": [
+            195,
+            122
+          ],
+          "bounds": [
+            147,
+            70,
+            408,
+            432
+          ],
+          "sourceBounds": [
+            86,
+            25,
+            390,
+            446
+          ],
+          "sourcePivot": [
+            250,
+            278
+          ],
+          "sourceTip": [
+            142,
+            85
+          ]
+        },
+        {
+          "tip": [
+            204,
+            119
+          ],
+          "bounds": [
+            150,
+            70,
+            412,
+            431
+          ],
+          "sourceBounds": [
+            516,
+            26,
+            821,
+            446
+          ],
+          "sourcePivot": [
+            676,
+            280
+          ],
+          "sourceTip": [
+            578,
+            84
+          ]
+        },
+        {
+          "tip": [
+            197,
+            122
+          ],
+          "bounds": [
+            149,
+            49,
+            409,
+            433
+          ],
+          "sourceBounds": [
+            959,
+            0,
+            1261,
+            447
+          ],
+          "sourcePivot": [
+            1121,
+            278
+          ],
+          "sourceTip": [
+            1015,
+            85
+          ]
+        },
+        {
+          "tip": [
+            199,
+            122
+          ],
+          "bounds": [
+            149,
+            71,
+            407,
+            433
+          ],
+          "sourceBounds": [
+            1395,
+            26,
+            1695,
+            447
+          ],
+          "sourcePivot": [
+            1557,
+            278
+          ],
+          "sourceTip": [
+            1453,
+            85
+          ]
+        },
+        {
+          "tip": [
+            200,
+            131
+          ],
+          "bounds": [
+            151,
+            84,
+            416,
+            438
+          ],
+          "sourceBounds": [
+            92,
+            455,
+            400,
+            867
+          ],
+          "sourcePivot": [
+            251,
+            692
+          ],
+          "sourceTip": [
+            149,
+            510
+          ]
+        },
+        {
+          "tip": [
+            205,
+            131
+          ],
+          "bounds": [
+            156,
+            82,
+            411,
+            438
+          ],
+          "sourceBounds": [
+            524,
+            452,
+            821,
+            866
+          ],
+          "sourcePivot": [
+            677,
+            692
+          ],
+          "sourceTip": [
+            580,
+            510
+          ]
+        },
+        {
+          "tip": [
+            201,
+            130
+          ],
+          "bounds": [
+            147,
+            80,
+            414,
+            437
+          ],
+          "sourceBounds": [
+            955,
+            452,
+            1265,
+            867
+          ],
+          "sourcePivot": [
+            1119,
+            694
+          ],
+          "sourceTip": [
+            1018,
+            510
+          ]
+        },
+        {
+          "tip": [
+            205,
+            130
+          ],
+          "bounds": [
+            157,
+            81,
+            416,
+            438
+          ],
+          "sourceBounds": [
+            1401,
+            453,
+            1702,
+            868
+          ],
+          "sourcePivot": [
+            1553,
+            694
+          ],
+          "sourceTip": [
+            1457,
+            510
+          ]
+        }
+      ]
+    },
+    "spin_regular": {
+      "sheet": "c26_spin_regular",
+      "count": 8,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.78,
+      "frames": [
+        {
+          "tip": [
+            92,
+            299
+          ],
+          "bounds": [
+            42,
+            213,
+            407,
+            447
+          ],
+          "sourceBounds": [
+            15,
+            122,
+            483,
+            422
+          ],
+          "sourcePivot": [
+            330,
+            218
+          ],
+          "sourceTip": [
+            79,
+            232
+          ]
+        },
+        {
+          "tip": [
+            140,
+            339
+          ],
+          "bounds": [
+            81,
+            215,
+            370,
+            447
+          ],
+          "sourceBounds": [
+            510,
+            124,
+            880,
+            422
+          ],
+          "sourcePivot": [
+            775,
+            218
+          ],
+          "sourceTip": [
+            585,
+            284
+          ]
+        },
+        {
+          "tip": [
+            130,
+            335
+          ],
+          "bounds": [
+            74,
+            212,
+            380,
+            447
+          ],
+          "sourceBounds": [
+            897,
+            121,
+            1289,
+            422
+          ],
+          "sourcePivot": [
+            1172,
+            218
+          ],
+          "sourceTip": [
+            970,
+            278
+          ]
+        },
+        {
+          "tip": [
+            453,
+            325
+          ],
+          "bounds": [
+            188,
+            212,
+            498,
+            445
+          ],
+          "sourceBounds": [
+            1357,
+            123,
+            1755,
+            422
+          ],
+          "sourcePivot": [
+            1485,
+            220
+          ],
+          "sourceTip": [
+            1697,
+            267
+          ]
+        },
+        {
+          "tip": [
+            508,
+            297
+          ],
+          "bounds": [
+            180,
+            213,
+            554,
+            452
+          ],
+          "sourceBounds": [
+            30,
+            519,
+            510,
+            826
+          ],
+          "sourcePivot": [
+            169,
+            615
+          ],
+          "sourceTip": [
+            451,
+            627
+          ]
+        },
+        {
+          "tip": [
+            422,
+            228
+          ],
+          "bounds": [
+            205,
+            177,
+            473,
+            456
+          ],
+          "sourceBounds": [
+            538,
+            471,
+            882,
+            829
+          ],
+          "sourcePivot": [
+            645,
+            613
+          ],
+          "sourceTip": [
+            817,
+            536
+          ]
+        },
+        {
+          "tip": [
+            142,
+            233
+          ],
+          "bounds": [
+            96,
+            190,
+            363,
+            454
+          ],
+          "sourceBounds": [
+            939,
+            494,
+            1281,
+            832
+          ],
+          "sourcePivot": [
+            1185,
+            619
+          ],
+          "sourceTip": [
+            998,
+            548
+          ]
+        },
+        {
+          "tip": [
+            163,
+            249
+          ],
+          "bounds": [
+            116,
+            196,
+            413,
+            453
+          ],
+          "sourceBounds": [
+            1349,
+            502,
+            1730,
+            832
+          ],
+          "sourcePivot": [
+            1570,
+            620
+          ],
+          "sourceTip": [
+            1410,
+            570
+          ]
+        }
+      ]
+    },
+    "spin_chrome": {
+      "sheet": "c26_spin_chrome",
+      "count": 8,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.78,
+      "frames": [
+        {
+          "tip": [
+            76,
+            268
+          ],
+          "bounds": [
+            24,
+            187,
+            424,
+            458
+          ],
+          "sourceBounds": [
+            16,
+            80,
+            529,
+            427
+          ],
+          "sourcePivot": [
+            355,
+            210
+          ],
+          "sourceTip": [
+            83,
+            185
+          ]
+        },
+        {
+          "tip": [
+            127,
+            295
+          ],
+          "bounds": [
+            73,
+            183,
+            393,
+            463
+          ],
+          "sourceBounds": [
+            511,
+            76,
+            921,
+            435
+          ],
+          "sourcePivot": [
+            787,
+            211
+          ],
+          "sourceTip": [
+            580,
+            220
+          ]
+        },
+        {
+          "tip": [
+            128,
+            313
+          ],
+          "bounds": [
+            74,
+            180,
+            379,
+            454
+          ],
+          "sourceBounds": [
+            915,
+            88,
+            1306,
+            439
+          ],
+          "sourcePivot": [
+            1190,
+            227
+          ],
+          "sourceTip": [
+            985,
+            259
+          ]
+        },
+        {
+          "tip": [
+            458,
+            298
+          ],
+          "bounds": [
+            180,
+            177,
+            502,
+            455
+          ],
+          "sourceBounds": [
+            1349,
+            78,
+            1762,
+            435
+          ],
+          "sourcePivot": [
+            1488,
+            220
+          ],
+          "sourceTip": [
+            1706,
+            233
+          ]
+        },
+        {
+          "tip": [
+            522,
+            275
+          ],
+          "bounds": [
+            180,
+            186,
+            573,
+            461
+          ],
+          "sourceBounds": [
+            60,
+            481,
+            564,
+            833
+          ],
+          "sourcePivot": [
+            198,
+            612
+          ],
+          "sourceTip": [
+            498,
+            595
+          ]
+        },
+        {
+          "tip": [
+            398,
+            235
+          ],
+          "bounds": [
+            169,
+            187,
+            445,
+            469
+          ],
+          "sourceBounds": [
+            546,
+            479,
+            900,
+            840
+          ],
+          "sourcePivot": [
+            699,
+            608
+          ],
+          "sourceTip": [
+            840,
+            540
+          ]
+        },
+        {
+          "tip": [
+            145,
+            212
+          ],
+          "bounds": [
+            95,
+            162,
+            384,
+            468
+          ],
+          "sourceBounds": [
+            932,
+            453,
+            1302,
+            845
+          ],
+          "sourcePivot": [
+            1180,
+            614
+          ],
+          "sourceTip": [
+            997,
+            517
+          ]
+        },
+        {
+          "tip": [
+            360,
+            211
+          ],
+          "bounds": [
+            164,
+            166,
+            410,
+            466
+          ],
+          "sourceBounds": [
+            1411,
+            463,
+            1726,
+            848
+          ],
+          "sourcePivot": [
+            1570,
+            620
+          ],
+          "sourceTip": [
+            1662,
+            521
+          ]
+        }
+      ]
+    },
+    "jump_regular": {
+      "sheet": "c26_jump_regular",
+      "count": 8,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.78,
+      "frames": [
+        {
+          "tip": [
+            152,
+            369
+          ],
+          "bounds": [
+            100,
+            212,
+            412,
+            420
+          ],
+          "sourceBounds": [
+            67,
+            242,
+            467,
+            509
+          ],
+          "sourcePivot": [
+            308,
+            340
+          ],
+          "sourceTip": [
+            133,
+            444
+          ]
+        },
+        {
+          "tip": [
+            150,
+            137
+          ],
+          "bounds": [
+            91,
+            88,
+            359,
+            455
+          ],
+          "sourceBounds": [
+            514,
+            16,
+            857,
+            487
+          ],
+          "sourcePivot": [
+            766,
+            273
+          ],
+          "sourceTip": [
+            589,
+            80
+          ]
+        },
+        {
+          "tip": [
+            159,
+            166
+          ],
+          "bounds": [
+            113,
+            118,
+            356,
+            439
+          ],
+          "sourceBounds": [
+            941,
+            30,
+            1252,
+            442
+          ],
+          "sourcePivot": [
+            1165,
+            248
+          ],
+          "sourceTip": [
+            999,
+            92
+          ]
+        },
+        {
+          "tip": [
+            419,
+            428
+          ],
+          "bounds": [
+            134,
+            206,
+            465,
+            479
+          ],
+          "sourceBounds": [
+            1338,
+            157,
+            1762,
+            507
+          ],
+          "sourcePivot": [
+            1535,
+            262
+          ],
+          "sourceTip": [
+            1703,
+            442
+          ]
+        },
+        {
+          "tip": [
+            149,
+            358
+          ],
+          "bounds": [
+            98,
+            209,
+            425,
+            408
+          ],
+          "sourceBounds": [
+            84,
+            599,
+            503,
+            854
+          ],
+          "sourcePivot": [
+            328,
+            700
+          ],
+          "sourceTip": [
+            150,
+            790
+          ]
+        },
+        {
+          "tip": [
+            162,
+            244
+          ],
+          "bounds": [
+            103,
+            196,
+            357,
+            429
+          ],
+          "sourceBounds": [
+            543,
+            512,
+            869,
+            811
+          ],
+          "sourcePivot": [
+            780,
+            630
+          ],
+          "sourceTip": [
+            618,
+            573
+          ]
+        },
+        {
+          "tip": [
+            144,
+            230
+          ],
+          "bounds": [
+            96,
+            187,
+            396,
+            413
+          ],
+          "sourceBounds": [
+            941,
+            529,
+            1326,
+            819
+          ],
+          "sourcePivot": [
+            1187,
+            659
+          ],
+          "sourceTip": [
+            1003,
+            584
+          ]
+        },
+        {
+          "tip": [
+            178,
+            390
+          ],
+          "bounds": [
+            124,
+            215,
+            356,
+            489
+          ],
+          "sourceBounds": [
+            1360,
+            512,
+            1658,
+            863
+          ],
+          "sourcePivot": [
+            1570,
+            605
+          ],
+          "sourceTip": [
+            1429,
+            736
+          ]
+        }
+      ]
+    },
+    "jump_chrome": {
+      "sheet": "c26_jump_chrome",
+      "count": 8,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.78,
+      "frames": [
+        {
+          "tip": [
+            171,
+            391
+          ],
+          "bounds": [
+            113,
+            200,
+            455,
+            446
+          ],
+          "sourceBounds": [
+            52,
+            190,
+            491,
+            505
+          ],
+          "sourcePivot": [
+            276,
+            303
+          ],
+          "sourceTip": [
+            126,
+            435
+          ]
+        },
+        {
+          "tip": [
+            369,
+            137
+          ],
+          "bounds": [
+            214,
+            85,
+            446,
+            459
+          ],
+          "sourceBounds": [
+            578,
+            4,
+            875,
+            484
+          ],
+          "sourcePivot": [
+            673,
+            264
+          ],
+          "sourceTip": [
+            777,
+            70
+          ]
+        },
+        {
+          "tip": [
+            432,
+            218
+          ],
+          "bounds": [
+            210,
+            136,
+            481,
+            439
+          ],
+          "sourceBounds": [
+            927,
+            23,
+            1275,
+            412
+          ],
+          "sourcePivot": [
+            1027,
+            218
+          ],
+          "sourceTip": [
+            1212,
+            128
+          ]
+        },
+        {
+          "tip": [
+            407,
+            440
+          ],
+          "bounds": [
+            126,
+            190,
+            458,
+            490
+          ],
+          "sourceBounds": [
+            1324,
+            99,
+            1750,
+            483
+          ],
+          "sourcePivot": [
+            1532,
+            225
+          ],
+          "sourceTip": [
+            1685,
+            420
+          ]
+        },
+        {
+          "tip": [
+            198,
+            362
+          ],
+          "bounds": [
+            141,
+            201,
+            464,
+            415
+          ],
+          "sourceBounds": [
+            34,
+            587,
+            448,
+            862
+          ],
+          "sourcePivot": [
+            222,
+            699
+          ],
+          "sourceTip": [
+            107,
+            794
+          ]
+        },
+        {
+          "tip": [
+            213,
+            223
+          ],
+          "bounds": [
+            157,
+            178,
+            376,
+            453
+          ],
+          "sourceBounds": [
+            570,
+            492,
+            851,
+            844
+          ],
+          "sourcePivot": [
+            738,
+            633
+          ],
+          "sourceTip": [
+            642,
+            550
+          ]
+        },
+        {
+          "tip": [
+            355,
+            315
+          ],
+          "bounds": [
+            91,
+            214,
+            401,
+            476
+          ],
+          "sourceBounds": [
+            923,
+            508,
+            1321,
+            844
+          ],
+          "sourcePivot": [
+            1175,
+            603
+          ],
+          "sourceTip": [
+            1261,
+            638
+          ]
+        },
+        {
+          "tip": [
+            159,
+            370
+          ],
+          "bounds": [
+            105,
+            201,
+            419,
+            490
+          ],
+          "sourceBounds": [
+            1349,
+            503,
+            1752,
+            873
+          ],
+          "sourcePivot": [
+            1584,
+            614
+          ],
+          "sourceTip": [
+            1418,
+            719
+          ]
+        }
+      ]
+    },
+    "shield_regular": {
+      "sheet": "c26_shield_regular",
+      "count": 8,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.86,
+      "frames": [
+        {
+          "tip": [
+            158,
+            399
+          ],
+          "bounds": [
+            112,
+            214,
+            395,
+            446
+          ],
+          "sourceBounds": [
+            47,
+            179,
+            376,
+            449
+          ],
+          "sourcePivot": [
+            252,
+            265
+          ],
+          "sourceTip": [
+            101,
+            394
+          ]
+        },
+        {
+          "tip": [
+            403,
+            164
+          ],
+          "bounds": [
+            172,
+            101,
+            465,
+            440
+          ],
+          "sourceBounds": [
+            514,
+            43,
+            855,
+            437
+          ],
+          "sourcePivot": [
+            649,
+            261
+          ],
+          "sourceTip": [
+            783,
+            117
+          ]
+        },
+        {
+          "tip": [
+            349,
+            135
+          ],
+          "bounds": [
+            174,
+            76,
+            413,
+            441
+          ],
+          "sourceBounds": [
+            958,
+            14,
+            1236,
+            438
+          ],
+          "sourcePivot": [
+            1090,
+            260
+          ],
+          "sourceTip": [
+            1161,
+            82
+          ]
+        },
+        {
+          "tip": [
+            293,
+            115
+          ],
+          "bounds": [
+            176,
+            71,
+            400,
+            436
+          ],
+          "sourceBounds": [
+            1414,
+            14,
+            1675,
+            438
+          ],
+          "sourcePivot": [
+            1544,
+            266
+          ],
+          "sourceTip": [
+            1550,
+            65
+          ]
+        },
+        {
+          "tip": [
+            266,
+            141
+          ],
+          "bounds": [
+            168,
+            94,
+            462,
+            446
+          ],
+          "sourceBounds": [
+            93,
+            448,
+            435,
+            857
+          ],
+          "sourcePivot": [
+            232,
+            674
+          ],
+          "sourceTip": [
+            206,
+            503
+          ]
+        },
+        {
+          "tip": [
+            279,
+            138
+          ],
+          "bounds": [
+            184,
+            93,
+            437,
+            445
+          ],
+          "sourceBounds": [
+            529,
+            448,
+            823,
+            857
+          ],
+          "sourcePivot": [
+            650,
+            675
+          ],
+          "sourceTip": [
+            639,
+            500
+          ]
+        },
+        {
+          "tip": [
+            267,
+            138
+          ],
+          "bounds": [
+            184,
+            93,
+            427,
+            452
+          ],
+          "sourceBounds": [
+            979,
+            447,
+            1262,
+            864
+          ],
+          "sourcePivot": [
+            1100,
+            674
+          ],
+          "sourceTip": [
+            1076,
+            500
+          ]
+        },
+        {
+          "tip": [
+            274,
+            143
+          ],
+          "bounds": [
+            188,
+            94,
+            437,
+            460
+          ],
+          "sourceBounds": [
+            1414,
+            445,
+            1703,
+            870
+          ],
+          "sourcePivot": [
+            1530,
+            671
+          ],
+          "sourceTip": [
+            1514,
+            502
+          ]
+        }
+      ]
+    },
+    "shield_chrome": {
+      "sheet": "c26_shield_chrome",
+      "count": 8,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.86,
+      "frames": [
+        {
+          "tip": [
+            199,
+            405
+          ],
+          "bounds": [
+            138,
+            206,
+            418,
+            472
+          ],
+          "sourceBounds": [
+            100,
+            139,
+            425,
+            448
+          ],
+          "sourcePivot": [
+            274,
+            234
+          ],
+          "sourceTip": [
+            171,
+            370
+          ]
+        },
+        {
+          "tip": [
+            187,
+            207
+          ],
+          "bounds": [
+            127,
+            157,
+            432,
+            471
+          ],
+          "sourceBounds": [
+            521,
+            86,
+            876,
+            451
+          ],
+          "sourcePivot": [
+            708,
+            238
+          ],
+          "sourceTip": [
+            590,
+            144
+          ]
+        },
+        {
+          "tip": [
+            161,
+            162
+          ],
+          "bounds": [
+            104,
+            103,
+            393,
+            451
+          ],
+          "sourceBounds": [
+            924,
+            43,
+            1260,
+            448
+          ],
+          "sourcePivot": [
+            1138,
+            258
+          ],
+          "sourceTip": [
+            990,
+            112
+          ]
+        },
+        {
+          "tip": [
+            249,
+            119
+          ],
+          "bounds": [
+            174,
+            66,
+            404,
+            453
+          ],
+          "sourceBounds": [
+            1386,
+            0,
+            1653,
+            450
+          ],
+          "sourcePivot": [
+            1519,
+            258
+          ],
+          "sourceTip": [
+            1474,
+            61
+          ]
+        },
+        {
+          "tip": [
+            230,
+            137
+          ],
+          "bounds": [
+            155,
+            94,
+            437,
+            460
+          ],
+          "sourceBounds": [
+            89,
+            448,
+            417,
+            873
+          ],
+          "sourcePivot": [
+            244,
+            674
+          ],
+          "sourceTip": [
+            177,
+            498
+          ]
+        },
+        {
+          "tip": [
+            233,
+            144
+          ],
+          "bounds": [
+            163,
+            102,
+            424,
+            461
+          ],
+          "sourceBounds": [
+            539,
+            454,
+            842,
+            871
+          ],
+          "sourcePivot": [
+            684,
+            670
+          ],
+          "sourceTip": [
+            620,
+            502
+          ]
+        },
+        {
+          "tip": [
+            248,
+            140
+          ],
+          "bounds": [
+            178,
+            96,
+            418,
+            459
+          ],
+          "sourceBounds": [
+            972,
+            448,
+            1251,
+            870
+          ],
+          "sourcePivot": [
+            1100,
+            671
+          ],
+          "sourceTip": [
+            1054,
+            499
+          ]
+        },
+        {
+          "tip": [
+            252,
+            138
+          ],
+          "bounds": [
+            174,
+            93,
+            411,
+            459
+          ],
+          "sourceBounds": [
+            1394,
+            446,
+            1670,
+            871
+          ],
+          "sourcePivot": [
+            1527,
+            673
+          ],
+          "sourceTip": [
+            1485,
+            498
+          ]
+        }
+      ]
+    },
+    "unfold_regular": {
+      "sheet": "c26_unfold_regular",
+      "count": 4,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.62,
+      "frames": [
+        {
+          "tip": [
+            288,
+            288
+          ],
+          "bounds": [
+            174,
+            174,
+            402,
+            384
+          ],
+          "sourceBounds": [
+            42,
+            106,
+            409,
+            444
+          ],
+          "sourcePivot": [
+            226,
+            290
+          ],
+          "sourceTip": [
+            226,
+            290
+          ]
+        },
+        {
+          "tip": [
+            288,
+            288
+          ],
+          "bounds": [
+            157,
+            157,
+            415,
+            399
+          ],
+          "sourceBounds": [
+            431,
+            45,
+            847,
+            435
+          ],
+          "sourcePivot": [
+            643,
+            257
+          ],
+          "sourceTip": [
+            643,
+            257
+          ]
+        },
+        {
+          "tip": [
+            193,
+            354
+          ],
+          "bounds": [
+            139,
+            182,
+            393,
+            416
+          ],
+          "sourceBounds": [
+            869,
+            73,
+            1279,
+            451
+          ],
+          "sourcePivot": [
+            1109,
+            244
+          ],
+          "sourceTip": [
+            956,
+            351
+          ]
+        },
+        {
+          "tip": [
+            204,
+            395
+          ],
+          "bounds": [
+            150,
+            211,
+            406,
+            452
+          ],
+          "sourceBounds": [
+            1319,
+            69,
+            1732,
+            458
+          ],
+          "sourcePivot": [
+            1542,
+            193
+          ],
+          "sourceTip": [
+            1406,
+            366
+          ]
+        }
+      ]
+    },
+    "unfold_chrome": {
+      "sheet": "c26_unfold_chrome",
+      "count": 4,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.62,
+      "frames": [
+        {
+          "tip": [
+            288,
+            288
+          ],
+          "bounds": [
+            174,
+            172,
+            402,
+            384
+          ],
+          "sourceBounds": [
+            42,
+            518,
+            409,
+            860
+          ],
+          "sourcePivot": [
+            226,
+            705
+          ],
+          "sourceTip": [
+            226,
+            705
+          ]
+        },
+        {
+          "tip": [
+            288,
+            288
+          ],
+          "bounds": [
+            160,
+            167,
+            416,
+            402
+          ],
+          "sourceBounds": [
+            433,
+            464,
+            846,
+            843
+          ],
+          "sourcePivot": [
+            640,
+            659
+          ],
+          "sourceTip": [
+            640,
+            659
+          ]
+        },
+        {
+          "tip": [
+            191,
+            345
+          ],
+          "bounds": [
+            139,
+            178,
+            394,
+            406
+          ],
+          "sourceBounds": [
+            866,
+            488,
+            1277,
+            856
+          ],
+          "sourcePivot": [
+            1106,
+            665
+          ],
+          "sourceTip": [
+            950,
+            757
+          ]
+        },
+        {
+          "tip": [
+            207,
+            400
+          ],
+          "bounds": [
+            150,
+            212,
+            407,
+            449
+          ],
+          "sourceBounds": [
+            1318,
+            478,
+            1732,
+            861
+          ],
+          "sourcePivot": [
+            1540,
+            600
+          ],
+          "sourceTip": [
+            1410,
+            780
+          ]
+        }
+      ]
+    },
+    "unfold_red": {
+      "sheet": "c26_unfold_red",
+      "count": 4,
+      "cols": 4,
+      "w": 576,
+      "h": 576,
+      "pivot": [
+        288,
+        328
+      ],
+      "scale": 0.62,
+      "frames": [
+        {
+          "tip": [
+            288,
+            288
+          ],
+          "bounds": [
+            174,
+            174,
+            402,
+            384
+          ],
+          "sourceBounds": [
+            42,
+            106,
+            409,
+            444
+          ],
+          "sourcePivot": [
+            226,
+            290
+          ],
+          "sourceTip": [
+            226,
+            290
+          ]
+        },
+        {
+          "tip": [
+            288,
+            288
+          ],
+          "bounds": [
+            157,
+            157,
+            415,
+            399
+          ],
+          "sourceBounds": [
+            431,
+            45,
+            847,
+            435
+          ],
+          "sourcePivot": [
+            643,
+            257
+          ],
+          "sourceTip": [
+            643,
+            257
+          ]
+        },
+        {
+          "tip": [
+            193,
+            354
+          ],
+          "bounds": [
+            139,
+            182,
+            393,
+            416
+          ],
+          "sourceBounds": [
+            869,
+            73,
+            1279,
+            451
+          ],
+          "sourcePivot": [
+            1109,
+            244
+          ],
+          "sourceTip": [
+            956,
+            351
+          ]
+        },
+        {
+          "tip": [
+            204,
+            395
+          ],
+          "bounds": [
+            150,
+            211,
+            406,
+            452
+          ],
+          "sourceBounds": [
+            1319,
+            69,
+            1732,
+            458
+          ],
+          "sourcePivot": [
+            1542,
+            193
+          ],
+          "sourceTip": [
+            1406,
+            366
+          ]
+        }
+      ]
+    }
+  },
+  "sheets": {
+    "activation_regular": {
+      "key": "nca_c26_activation_regular",
+      "path": "assets/game/shared/combat/chronos_frames_1025/activation_regular.webp"
+    },
+    "activation_regular_hit": {
+      "key": "nca_c26_activation_regular_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/activation_regular_hit.webp"
+    },
+    "spin_regular": {
+      "key": "nca_c26_spin_regular",
+      "path": "assets/game/shared/combat/chronos_frames_1025/spin_regular.webp"
+    },
+    "spin_regular_hit": {
+      "key": "nca_c26_spin_regular_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/spin_regular_hit.webp"
+    },
+    "spin_chrome": {
+      "key": "nca_c26_spin_chrome",
+      "path": "assets/game/shared/combat/chronos_frames_1025/spin_chrome.webp"
+    },
+    "spin_chrome_hit": {
+      "key": "nca_c26_spin_chrome_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/spin_chrome_hit.webp"
+    },
+    "jump_regular": {
+      "key": "nca_c26_jump_regular",
+      "path": "assets/game/shared/combat/chronos_frames_1025/jump_regular.webp"
+    },
+    "jump_regular_hit": {
+      "key": "nca_c26_jump_regular_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/jump_regular_hit.webp"
+    },
+    "jump_chrome": {
+      "key": "nca_c26_jump_chrome",
+      "path": "assets/game/shared/combat/chronos_frames_1025/jump_chrome.webp"
+    },
+    "jump_chrome_hit": {
+      "key": "nca_c26_jump_chrome_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/jump_chrome_hit.webp"
+    },
+    "shield_regular": {
+      "key": "nca_c26_shield_regular",
+      "path": "assets/game/shared/combat/chronos_frames_1025/shield_regular.webp"
+    },
+    "shield_regular_hit": {
+      "key": "nca_c26_shield_regular_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/shield_regular_hit.webp"
+    },
+    "shield_chrome": {
+      "key": "nca_c26_shield_chrome",
+      "path": "assets/game/shared/combat/chronos_frames_1025/shield_chrome.webp"
+    },
+    "shield_chrome_hit": {
+      "key": "nca_c26_shield_chrome_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/shield_chrome_hit.webp"
+    },
+    "unfold_regular": {
+      "key": "nca_c26_unfold_regular",
+      "path": "assets/game/shared/combat/chronos_frames_1025/unfold_regular.webp"
+    },
+    "unfold_regular_hit": {
+      "key": "nca_c26_unfold_regular_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/unfold_regular_hit.webp"
+    },
+    "unfold_chrome": {
+      "key": "nca_c26_unfold_chrome",
+      "path": "assets/game/shared/combat/chronos_frames_1025/unfold_chrome.webp"
+    },
+    "unfold_chrome_hit": {
+      "key": "nca_c26_unfold_chrome_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/unfold_chrome_hit.webp"
+    },
+    "unfold_red": {
+      "key": "nca_c26_unfold_red",
+      "path": "assets/game/shared/combat/chronos_frames_1025/unfold_red.webp"
+    },
+    "unfold_red_hit": {
+      "key": "nca_c26_unfold_red_hit",
+      "path": "assets/game/shared/combat/chronos_frames_1025/unfold_regular_hit.webp"
+    }
+  },
+  "sources": {
+    "activation_regular": {
+      "path": "_ART_SOURCES/chronos_frames_1025/activation.png",
+      "sha256": "71e9131c539a83636b30e93291dd37161330b75ed24a6365418e24fee96e614a",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "spin_regular": {
+      "path": "_ART_SOURCES/chronos_frames_1025/spin_regular.png",
+      "sha256": "49728140f8f95eadd1a02705fb1e5c8a153dab3d7574f15581518bd87eaf612e",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "spin_chrome": {
+      "path": "_ART_SOURCES/chronos_frames_1025/spin_chrome.png",
+      "sha256": "a52efc42783b777399181f1067b99baf279b59da89fbb7499667a4654809b188",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "jump_regular": {
+      "path": "_ART_SOURCES/chronos_frames_1025/jump_regular.png",
+      "sha256": "557069f242c9aae9b74a0eb5a1b7c394d3e80a8ef48356e55954788caed7e59e",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "jump_chrome": {
+      "path": "_ART_SOURCES/chronos_frames_1025/jump_chrome.png",
+      "sha256": "2e51d8a4a078e88e21f2ec3a788fd7dd6b766204d0ba9180df020b5da6153c27",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "shield_regular": {
+      "path": "_ART_SOURCES/chronos_frames_1025/shield_regular.png",
+      "sha256": "db301033b22c5dac51367eabff254a078b4d1a87785b98dc8c101fc62cee7b88",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "shield_chrome": {
+      "path": "_ART_SOURCES/chronos_frames_1025/shield_chrome.png",
+      "sha256": "a1421cd62a3f444b1718125539cc7545c9eb1a242ae1a18fce4533d68204de21",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "unfold": {
+      "path": "_ART_SOURCES/chronos_frames_1025/unfold.png",
+      "sha256": "eb9dec93c464593f934d63d35f60f60ecda3522f3c51a836316ab52aad96f7a3",
+      "canvas": [
+        1774,
+        888
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  }
+}

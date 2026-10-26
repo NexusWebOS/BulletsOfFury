@@ -1,0 +1,1990 @@
+{
+  "boss": {
+    "checks": [
+      {
+        "name": "normal dracodia whole actor actually drawn",
+        "passed": true,
+        "data": {
+          "bank": "nca_bi24_dracodia_recover",
+          "size": 360,
+          "parts": 3,
+          "targets": 2,
+          "hp": 3770
+        }
+      },
+      {
+        "name": "normal dracodia module break produces no PNG body tile",
+        "passed": true,
+        "data": {
+          "before": 0,
+          "after": 0,
+          "dead": true,
+          "hp": 0,
+          "live": 1,
+          "events": [
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "left"
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal dracodia disabled module burns out without cutting hull alpha",
+        "passed": true,
+        "data": {
+          "alpha": 0,
+          "color": 28120
+        }
+      },
+      {
+        "name": "normal phoenix whole actor actually drawn",
+        "passed": true,
+        "data": {
+          "bank": "nca_bi24_phoenix_recover",
+          "size": 360,
+          "parts": 8,
+          "targets": 2,
+          "hp": 2600
+        }
+      },
+      {
+        "name": "normal phoenix module break produces no PNG body tile",
+        "passed": true,
+        "data": {
+          "before": 0,
+          "after": 0,
+          "dead": true,
+          "hp": 0,
+          "live": 1,
+          "events": [
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "left"
+            },
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "cannonL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal phoenix disabled module burns out without cutting hull alpha",
+        "passed": true,
+        "data": {
+          "alpha": 0,
+          "color": 3838
+        }
+      },
+      {
+        "name": "hard dracodia whole actor actually drawn",
+        "passed": true,
+        "data": {
+          "bank": "nca_bi24_dracodia_recover",
+          "size": 360,
+          "parts": 3,
+          "targets": 2,
+          "hp": 4785
+        }
+      },
+      {
+        "name": "hard dracodia module break produces no PNG body tile",
+        "passed": true,
+        "data": {
+          "before": 0,
+          "after": 0,
+          "dead": true,
+          "hp": 0,
+          "live": 1,
+          "events": [
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "cannonL"
+            },
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "left"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard dracodia disabled module burns out without cutting hull alpha",
+        "passed": true,
+        "data": {
+          "alpha": 0,
+          "color": 28120
+        }
+      },
+      {
+        "name": "hard phoenix whole actor actually drawn",
+        "passed": true,
+        "data": {
+          "bank": "nca_bi24_phoenix_recover",
+          "size": 360,
+          "parts": 8,
+          "targets": 2,
+          "hp": 3300
+        }
+      },
+      {
+        "name": "hard phoenix module break produces no PNG body tile",
+        "passed": true,
+        "data": {
+          "before": 0,
+          "after": 0,
+          "dead": true,
+          "hp": 0,
+          "live": 1,
+          "events": [
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "left"
+            },
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "cannonL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard phoenix disabled module burns out without cutting hull alpha",
+        "passed": true,
+        "data": {
+          "alpha": 0,
+          "color": 3838
+        }
+      },
+      {
+        "name": "furious dracodia whole actor actually drawn",
+        "passed": true,
+        "data": {
+          "bank": "nca_bi24_dracodia_recover",
+          "size": 360,
+          "parts": 3,
+          "targets": 2,
+          "hp": 5945
+        }
+      },
+      {
+        "name": "furious dracodia module break produces no PNG body tile",
+        "passed": true,
+        "data": {
+          "before": 0,
+          "after": 0,
+          "dead": true,
+          "hp": 0,
+          "live": 1,
+          "events": [
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "cannonL"
+            },
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "left"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious dracodia disabled module burns out without cutting hull alpha",
+        "passed": true,
+        "data": {
+          "alpha": 0,
+          "color": 28120
+        }
+      },
+      {
+        "name": "furious phoenix whole actor actually drawn",
+        "passed": true,
+        "data": {
+          "bank": "nca_bi24_phoenix_recover",
+          "size": 360,
+          "parts": 8,
+          "targets": 2,
+          "hp": 4100
+        }
+      },
+      {
+        "name": "furious phoenix module break produces no PNG body tile",
+        "passed": true,
+        "data": {
+          "before": 0,
+          "after": 0,
+          "dead": true,
+          "hp": 0,
+          "live": 1,
+          "events": [
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "left"
+            },
+            {
+              "type": "connected-actor-module-disabled",
+              "part": "cannonL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious phoenix disabled module burns out without cutting hull alpha",
+        "passed": true,
+        "data": {
+          "alpha": 0,
+          "color": 3838
+        }
+      },
+      {
+        "name": "dracodia native damaged pixels visibly flash",
+        "passed": true,
+        "data": {
+          "white": 16065,
+          "flash": 0
+        }
+      },
+      {
+        "name": "dracodia native flash expires",
+        "passed": true,
+        "data": 0
+      },
+      {
+        "name": "phoenix native damaged pixels visibly flash",
+        "passed": true,
+        "data": {
+          "white": 14974,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "phoenix native flash expires",
+        "passed": true,
+        "data": 0
+      },
+      {
+        "name": "dracodia full health budget gates one native progression",
+        "passed": true,
+        "data": {
+          "total": 5945,
+          "dealt": 3958,
+          "alive": 1987,
+          "still": "fight",
+          "next": "dr5er23rebirth",
+          "hp": 0,
+          "after": 0,
+          "core": 0,
+          "debris": 0
+        }
+      },
+      {
+        "name": "phoenix full health budget gates one native progression",
+        "passed": true,
+        "data": {
+          "total": 4100,
+          "dealt": 1476,
+          "alive": 2624,
+          "still": "fight",
+          "next": "v19copyDeath",
+          "hp": 0,
+          "after": 0,
+          "core": 0,
+          "debris": 0
+        }
+      },
+      {
+        "name": "Every new actor/hit cell decodes and draws",
+        "passed": true,
+        "data": 209
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "passed": 26,
+    "failed": 0
+  },
+  "chronos": {
+    "checks": [
+      {
+        "name": "blue storm_raise real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_hold",
+          "head": {
+            "x": 363,
+            "y": 48
+          },
+          "expected": {
+            "x": 363,
+            "y": 48
+          },
+          "white": 13165,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_21",
+            "bi24_chronos_hold_12",
+            "np5_ast_2",
+            "fury_thrusters_04",
+            "fury_thrusters_04",
+            "nfx_s5gate96_2",
+            "eh7_stage_05"
+          ]
+        }
+      },
+      {
+        "name": "blue storm_raise hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 363,
+          "y": 48
+        }
+      },
+      {
+        "name": "blue spell real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_cast",
+          "head": {
+            "x": 276,
+            "y": 148
+          },
+          "expected": {
+            "x": 276,
+            "y": 148
+          },
+          "white": 15684,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_28",
+            "bi24_chronos_cast_9",
+            "np5_ast_2",
+            "fury_thrusters_05",
+            "fury_thrusters_05",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "blue spell hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 276,
+          "y": 148
+        }
+      },
+      {
+        "name": "blue hammer_stun real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_kneel",
+          "head": {
+            "x": 283,
+            "y": 291
+          },
+          "expected": {
+            "x": 283,
+            "y": 291
+          },
+          "white": 14752,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_2",
+            "bi24_chronos_kneel_16",
+            "arch_stun_static_0926",
+            "np5_ast_2",
+            "fury_thrusters_05",
+            "fury_thrusters_05",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "blue hammer_stun hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 283,
+          "y": 291
+        }
+      },
+      {
+        "name": "red storm_raise real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_hold_red",
+          "head": {
+            "x": 363,
+            "y": 48
+          },
+          "expected": {
+            "x": 363,
+            "y": 48
+          },
+          "white": 11190,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_9",
+            "bi24_chronos_hold_red_12",
+            "np5_ast_2",
+            "fury_thrusters_04",
+            "fury_thrusters_04",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "red storm_raise hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 363,
+          "y": 48
+        }
+      },
+      {
+        "name": "red spell real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_cast_red",
+          "head": {
+            "x": 276,
+            "y": 148
+          },
+          "expected": {
+            "x": 276,
+            "y": 148
+          },
+          "white": 15754,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_15",
+            "ha21_hf22_blue_aura_3",
+            "bi24_chronos_cast_red_9",
+            "np5_ast_2",
+            "np5_ast_0",
+            "fury_thrusters_05",
+            "fury_thrusters_05",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "red spell hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 276,
+          "y": 148
+        }
+      },
+      {
+        "name": "red hammer_stun real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_kneel_red",
+          "head": {
+            "x": 283,
+            "y": 291
+          },
+          "expected": {
+            "x": 283,
+            "y": 291
+          },
+          "white": 14748,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_21",
+            "bi24_chronos_kneel_red_16",
+            "arch_stun_static_0926",
+            "np5_ast_2",
+            "np5_ast_0",
+            "fury_thrusters_04",
+            "fury_thrusters_04",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "red hammer_stun hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 283,
+          "y": 291
+        }
+      },
+      {
+        "name": "armor storm_raise real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_hold_armor",
+          "head": {
+            "x": 363,
+            "y": 48
+          },
+          "expected": {
+            "x": 363,
+            "y": 48
+          },
+          "white": 11261,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_28",
+            "bi24_chronos_hold_armor_12",
+            "np5_ast_2",
+            "np5_ast_0",
+            "fury_thrusters_05",
+            "fury_thrusters_05",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "bmbar_fill_grey",
+            "bmbar_fill_grey",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "armor storm_raise hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 363,
+          "y": 48
+        }
+      },
+      {
+        "name": "armor spell real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_cast_armor",
+          "head": {
+            "x": 276,
+            "y": 148
+          },
+          "expected": {
+            "x": 276,
+            "y": 148
+          },
+          "white": 15754,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_2",
+            "bi24_chronos_cast_armor_9",
+            "np5_ast_2",
+            "np5_ast_0",
+            "fury_thrusters_05",
+            "fury_thrusters_05",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "bmbar_fill_grey",
+            "bmbar_fill_grey",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "armor spell hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 276,
+          "y": 148
+        }
+      },
+      {
+        "name": "armor hammer_stun real new body pixels and flash",
+        "passed": true,
+        "data": {
+          "kind": "bi24_chronos_kneel_armor",
+          "head": {
+            "x": 283,
+            "y": 291
+          },
+          "expected": {
+            "x": 283,
+            "y": 291
+          },
+          "white": 13909,
+          "keys": [
+            "bg_stage05_loop_0923",
+            "fv21_portal_9",
+            "bi24_chronos_kneel_armor_16",
+            "arch_stun_static_0926",
+            "np5_ast_2",
+            "np5_ast_0",
+            "fury_thrusters_04",
+            "fury_thrusters_04",
+            "nfx_s5gate96_2",
+            "eh7_stage_05",
+            "bmbar_fill_grey",
+            "bmbar_fill_grey",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "ui20_dialogue-a",
+            "fb1002_hammer_portrait"
+          ]
+        }
+      },
+      {
+        "name": "armor hammer_stun hammer head follows displayed pose",
+        "passed": true,
+        "data": {
+          "x": 283,
+          "y": 291
+        }
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "timeline": [
+      {
+        "state": null,
+        "pose": null,
+        "hp": null,
+        "t": 7.1666666666666465,
+        "seconds": 0.0
+      },
+      {
+        "state": "flyby",
+        "pose": "blue_from_ship",
+        "hp": 2200,
+        "t": 9.166666666666702,
+        "seconds": 2.0
+      },
+      {
+        "state": "return",
+        "pose": "blue_from_ship",
+        "hp": 2200,
+        "t": 10.666666666666776,
+        "seconds": 3.5
+      },
+      {
+        "state": "unfold",
+        "pose": "blue_from_ship",
+        "hp": 2200,
+        "t": 12.16666666666685,
+        "seconds": 5.0
+      },
+      {
+        "state": "fr_activation",
+        "pose": "blue_chromium_clean",
+        "hp": 11220,
+        "t": 14.16666666666695,
+        "seconds": 7.0
+      },
+      {
+        "state": "hammer",
+        "pose": "blue_charge_armor",
+        "hp": 11220,
+        "t": 16.666666666667002,
+        "seconds": 9.5
+      },
+      {
+        "state": "warn",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 17.166666666666973,
+        "seconds": 10.0
+      },
+      {
+        "state": "leap",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 17.666666666666945,
+        "seconds": 10.5
+      },
+      {
+        "state": "recover",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 18.166666666666917,
+        "seconds": 11.0
+      },
+      {
+        "state": "recover",
+        "pose": "blue_sides_armor",
+        "hp": 11220,
+        "t": 19.66666666666683,
+        "seconds": 12.5
+      },
+      {
+        "state": "back",
+        "pose": "blue_chromium_clean",
+        "hp": 11220,
+        "t": 21.666666666666718,
+        "seconds": 14.5
+      },
+      {
+        "state": "shield",
+        "pose": "blue_charge_armor",
+        "hp": 11220,
+        "t": 22.16666666666669,
+        "seconds": 15.0
+      },
+      {
+        "state": "curl",
+        "pose": "blue_to_ball",
+        "hp": 11220,
+        "t": 23.166666666666632,
+        "seconds": 16.0
+      },
+      {
+        "state": "ball",
+        "pose": "blue_to_ball",
+        "hp": 11220,
+        "t": 24.166666666666575,
+        "seconds": 17.0
+      },
+      {
+        "state": "uncurl",
+        "pose": "blue_to_ball",
+        "hp": 11220,
+        "t": 39.166666666665726,
+        "seconds": 32.0
+      },
+      {
+        "state": "nova_charge",
+        "pose": "bi24_chronos_hold_armor",
+        "hp": 11220,
+        "t": 40.66666666666564,
+        "seconds": 33.5
+      },
+      {
+        "state": "nova_release",
+        "pose": "bi24_chronos_hold_armor",
+        "hp": 11220,
+        "t": 42.166666666665556,
+        "seconds": 35.0
+      },
+      {
+        "state": "hammer",
+        "pose": "blue_charge_armor",
+        "hp": 11220,
+        "t": 44.16666666666544,
+        "seconds": 37.0
+      },
+      {
+        "state": "spin",
+        "pose": "blue_throw_armor",
+        "hp": 11220,
+        "t": 44.666666666665414,
+        "seconds": 37.5
+      },
+      {
+        "state": "throw",
+        "pose": "blue_throw_armor",
+        "hp": 11220,
+        "t": 46.16666666666533,
+        "seconds": 39.0
+      },
+      {
+        "state": "hammer_catch",
+        "pose": "blue_throw_armor",
+        "hp": 11220,
+        "t": 51.166666666665044,
+        "seconds": 44.0
+      },
+      {
+        "state": "giant_idle",
+        "pose": "blue_chromium_clean",
+        "hp": 11220,
+        "t": 52.16666666666499,
+        "seconds": 45.0
+      },
+      {
+        "state": "giant_windup",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 52.66666666666496,
+        "seconds": 45.5
+      },
+      {
+        "state": "giant_rise",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 53.16666666666493,
+        "seconds": 46.0
+      },
+      {
+        "state": "giant_warn",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 54.166666666664874,
+        "seconds": 47.0
+      },
+      {
+        "state": "giant_dive",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 55.66666666666479,
+        "seconds": 48.5
+      },
+      {
+        "state": "giant_sweep",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 56.16666666666476,
+        "seconds": 49.0
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 56.66666666666473,
+        "seconds": 49.5
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_sides_armor",
+        "hp": 11220,
+        "t": 57.666666666664675,
+        "seconds": 50.5
+      },
+      {
+        "state": "giant_recover",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 60.16666666666453,
+        "seconds": 53.0
+      },
+      {
+        "state": "giant_idle",
+        "pose": "blue_chromium_clean",
+        "hp": 11220,
+        "t": 60.666666666664504,
+        "seconds": 53.5
+      },
+      {
+        "state": "giant_windup",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 61.166666666664476,
+        "seconds": 54.0
+      },
+      {
+        "state": "giant_rise",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 61.66666666666445,
+        "seconds": 54.5
+      },
+      {
+        "state": "giant_warn",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 62.66666666666439,
+        "seconds": 55.5
+      },
+      {
+        "state": "giant_dive",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 63.666666666664334,
+        "seconds": 56.5
+      },
+      {
+        "state": "giant_sweep",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 64.16666666666431,
+        "seconds": 57.0
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 64.66666666666428,
+        "seconds": 57.5
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_sides_armor",
+        "hp": 11220,
+        "t": 66.1666666666642,
+        "seconds": 59.0
+      },
+      {
+        "state": "giant_recover",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 68.16666666666409,
+        "seconds": 61.0
+      },
+      {
+        "state": "leap_reset",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 69.16666666666403,
+        "seconds": 62.0
+      },
+      {
+        "state": "hammer",
+        "pose": "blue_charge_armor",
+        "hp": 11220,
+        "t": 71.16666666666391,
+        "seconds": 64.0
+      },
+      {
+        "state": "whirl_warn",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 71.66666666666389,
+        "seconds": 64.5
+      },
+      {
+        "state": "whirlwind",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 72.66666666666383,
+        "seconds": 65.5
+      },
+      {
+        "state": "whirl_turn",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 74.16666666666374,
+        "seconds": 67.0
+      },
+      {
+        "state": "whirlwind",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 75.16666666666369,
+        "seconds": 68.0
+      },
+      {
+        "state": "whirl_turn",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 76.6666666666636,
+        "seconds": 69.5
+      },
+      {
+        "state": "whirlwind",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 77.66666666666355,
+        "seconds": 70.5
+      },
+      {
+        "state": "whirl_turn",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 79.16666666666346,
+        "seconds": 72.0
+      },
+      {
+        "state": "whirlwind",
+        "pose": "blue_spin_armor",
+        "hp": 11220,
+        "t": 80.1666666666634,
+        "seconds": 73.0
+      },
+      {
+        "state": "giant_idle",
+        "pose": "blue_chromium_clean",
+        "hp": 11220,
+        "t": 81.16666666666335,
+        "seconds": 74.0
+      },
+      {
+        "state": "giant_windup",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 81.66666666666332,
+        "seconds": 74.5
+      },
+      {
+        "state": "giant_rise",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 82.16666666666329,
+        "seconds": 75.0
+      },
+      {
+        "state": "giant_warn",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 83.16666666666323,
+        "seconds": 76.0
+      },
+      {
+        "state": "giant_dive",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 84.16666666666318,
+        "seconds": 77.0
+      },
+      {
+        "state": "giant_sweep",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 84.66666666666315,
+        "seconds": 77.5
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 85.16666666666312,
+        "seconds": 78.0
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_sides_armor",
+        "hp": 11220,
+        "t": 86.66666666666303,
+        "seconds": 79.5
+      },
+      {
+        "state": "giant_recover",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 88.66666666666292,
+        "seconds": 81.5
+      },
+      {
+        "state": "giant_idle",
+        "pose": "blue_chromium_clean",
+        "hp": 11220,
+        "t": 89.66666666666286,
+        "seconds": 82.5
+      },
+      {
+        "state": "giant_windup",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 90.16666666666283,
+        "seconds": 83.0
+      },
+      {
+        "state": "giant_rise",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 90.6666666666628,
+        "seconds": 83.5
+      },
+      {
+        "state": "giant_warn",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 91.66666666666275,
+        "seconds": 84.5
+      },
+      {
+        "state": "giant_dive",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 92.66666666666269,
+        "seconds": 85.5
+      },
+      {
+        "state": "giant_sweep",
+        "pose": "blue_slam_armor",
+        "hp": 11220,
+        "t": 93.16666666666266,
+        "seconds": 86.0
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_jump_armor",
+        "hp": 11220,
+        "t": 93.66666666666264,
+        "seconds": 86.5
+      },
+      {
+        "state": "er23_depth_combo",
+        "pose": "blue_sides_armor",
+        "hp": 11220,
+        "t": 95.16666666666255,
+        "seconds": 88.0
+      }
+    ],
+    "errors": []
+  },
+  "phases": {
+    "checks": [
+      {
+        "name": "ghost native plate stays connected and visibly flashes",
+        "passed": true,
+        "data": {
+          "draws": 5,
+          "white": 12999,
+          "rig": [
+            {
+              "rot": 0,
+              "anchor": [
+                160,
+                160
+              ]
+            },
+            {
+              "rot": 0,
+              "anchor": [
+                160,
+                160
+              ]
+            },
+            {
+              "rot": 0,
+              "anchor": [
+                160,
+                160
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "dracodia-final native plate stays connected and visibly flashes",
+        "passed": true,
+        "data": {
+          "draws": 5,
+          "white": 17642,
+          "rig": [
+            {
+              "rot": 0,
+              "anchor": [
+                160,
+                160
+              ]
+            },
+            {
+              "rot": 0,
+              "anchor": [
+                160,
+                160
+              ]
+            },
+            {
+              "rot": 0,
+              "anchor": [
+                160,
+                160
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Phoenix native cannons exhaust into swoop without body tiles",
+        "passed": true,
+        "data": {
+          "stage": "swoon",
+          "pods": [
+            {
+              "id": "cannonL",
+              "dead": true
+            },
+            {
+              "id": "cannonR",
+              "dead": true
+            }
+          ],
+          "muzzle": {
+            "x": 276.8453125,
+            "y": 236.6375
+          },
+          "hit": "cannonL",
+          "debris": 0
+        }
+      },
+      {
+        "name": "Phoenix displayed barrel overlaps its native damage target",
+        "passed": true,
+        "data": {
+          "stage": "swoon",
+          "pods": [
+            {
+              "id": "cannonL",
+              "dead": true
+            },
+            {
+              "id": "cannonR",
+              "dead": true
+            }
+          ],
+          "muzzle": {
+            "x": 276.8453125,
+            "y": 236.6375
+          },
+          "hit": "cannonL",
+          "debris": 0
+        }
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "records": [
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 0.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "ghostTeleport",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 2.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 7.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "soulBomb",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 8.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 10.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "downloadRitual",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 11.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 16.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "codeAegis",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 17.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 21.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "voidWells",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 22.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 25.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "ghostTeleport",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "ghost",
+        "seconds": 26.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 0.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "shadowAscension",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 2.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "downloadRitual",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 8.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 13.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "ghostTeleport",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 14.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "codeAegis",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 20.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 24.0
+      },
+      {
+        "mode": "fight",
+        "form": 0,
+        "attack": "spiralLightning",
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "dracodia-final",
+        "seconds": 25.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": null,
+        "pose": "corrupt_jump",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 0.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "skystrike",
+        "pose": "corrupt_jump",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 1.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "skystrike",
+        "pose": "corrupt_sides",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 4.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "shield",
+        "pose": "corrupt_charge",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 8.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": null,
+        "pose": "corrupt_jump",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 11.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "side",
+        "pose": "corrupt_sides",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 12.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": null,
+        "pose": "corrupt_jump",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 14.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "throw",
+        "pose": "corrupt_throw",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 15.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": null,
+        "pose": "corrupt_jump",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 21.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "ball",
+        "pose": "corrupt_jump",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 22.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "ball",
+        "pose": "corrupt_ball",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 23.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": null,
+        "pose": "corrupt_jump",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 26.0
+      },
+      {
+        "mode": "fight",
+        "form": 8,
+        "attack": null,
+        "action": "charge",
+        "pose": "corrupt_charge",
+        "scale": 1,
+        "clip": "corrupt-hammer",
+        "seconds": 27.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "phoenix-swoop",
+        "seconds": 0.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "recede",
+        "pose": null,
+        "scale": 0.28470588235294036,
+        "clip": "phoenix-swoop",
+        "seconds": 1.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "dive",
+        "pose": null,
+        "scale": 1.046762362086949,
+        "clip": "phoenix-swoop",
+        "seconds": 2.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "corner",
+        "pose": null,
+        "scale": 0.28,
+        "clip": "phoenix-swoop",
+        "seconds": 3.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "return",
+        "pose": null,
+        "scale": 0.41679113956205865,
+        "clip": "phoenix-swoop",
+        "seconds": 6.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "phoenix-swoop",
+        "seconds": 7.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "recede",
+        "pose": null,
+        "scale": 0.46352941176470563,
+        "clip": "phoenix-swoop",
+        "seconds": 8.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "corner",
+        "pose": null,
+        "scale": 0.28,
+        "clip": "phoenix-swoop",
+        "seconds": 9.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "dive",
+        "pose": null,
+        "scale": 0.8567552444970836,
+        "clip": "phoenix-swoop",
+        "seconds": 13.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "phoenix-swoop",
+        "seconds": 14.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "recede",
+        "pose": null,
+        "scale": 0.6423529411764706,
+        "clip": "phoenix-swoop",
+        "seconds": 15.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "corner",
+        "pose": null,
+        "scale": 0.28,
+        "clip": "phoenix-swoop",
+        "seconds": 16.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "dive",
+        "pose": null,
+        "scale": 0.9220959992776765,
+        "clip": "phoenix-swoop",
+        "seconds": 19.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "dive",
+        "pose": null,
+        "scale": 1.1617439271383865,
+        "clip": "phoenix-swoop",
+        "seconds": 20.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "return",
+        "pose": null,
+        "scale": 0.9440888076004678,
+        "clip": "phoenix-swoop",
+        "seconds": 21.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "recede",
+        "pose": null,
+        "scale": 0.8211764705882353,
+        "clip": "phoenix-swoop",
+        "seconds": 22.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "corner",
+        "pose": null,
+        "scale": 0.28,
+        "clip": "phoenix-swoop",
+        "seconds": 23.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "dive",
+        "pose": null,
+        "scale": 0.9823706786883268,
+        "clip": "phoenix-swoop",
+        "seconds": 25.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "dive",
+        "pose": null,
+        "scale": 1.1313921323071616,
+        "clip": "phoenix-swoop",
+        "seconds": 26.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "corner",
+        "pose": null,
+        "scale": 0.28,
+        "clip": "phoenix-swoop",
+        "seconds": 27.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": "return",
+        "pose": null,
+        "scale": 0.7751267591322462,
+        "clip": "phoenix-swoop",
+        "seconds": 28.0
+      },
+      {
+        "mode": "fight",
+        "form": 2,
+        "attack": null,
+        "action": null,
+        "pose": null,
+        "scale": 1,
+        "clip": "phoenix-swoop",
+        "seconds": 29.0
+      }
+    ],
+    "errors": []
+  },
+  "core_suite": {
+    "exit": 1,
+    "reached_final_summary": false,
+    "blocker": "Missing _BUILD_SOURCE/retired_art_archive_1022.cjs before assertions"
+  },
+  "syntax": "passed",
+  "recordings": "Native Chromium, Furious, invulnerable; silent 10fps. Stage5 90s native entrance/combat. Stage8 30s per explicit phase checkpoint. No continuous victory claimed.",
+  "video_review": {
+    "clips": [
+      {
+        "src": "../../../_shots/boss_integrity_1024/chronos-after.mp4",
+        "duration": 90,
+        "width": 960,
+        "height": 600,
+        "lit": 15380
+      },
+      {
+        "src": "../../../_shots/boss_integrity_1024/dracodia-after.mp4",
+        "duration": 30,
+        "width": 960,
+        "height": 600,
+        "lit": 7185
+      },
+      {
+        "src": "../../../_shots/boss_integrity_1024/phoenix-after.mp4",
+        "duration": 30,
+        "width": 960,
+        "height": 600,
+        "lit": 18845
+      },
+      {
+        "src": "../../../_shots/boss_integrity_1024/phoenix-swoop-after.mp4",
+        "duration": 30,
+        "width": 960,
+        "height": 600,
+        "lit": 19191
+      },
+      {
+        "src": "../../../_shots/boss_integrity_1024/dracodia-final-after.mp4",
+        "duration": 30,
+        "width": 960,
+        "height": 600,
+        "lit": 10696
+      },
+      {
+        "src": "../../../_shots/boss_integrity_1024/ghost-after.mp4",
+        "duration": 30,
+        "width": 960,
+        "height": 600,
+        "lit": 7248
+      },
+      {
+        "src": "../../../_shots/boss_integrity_1024/corrupt-hammer-after.mp4",
+        "duration": 30,
+        "width": 960,
+        "height": 600,
+        "lit": 11458
+      }
+    ],
+    "errors": [],
+    "passed": true
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "status": "complete",
+  "runtime": "assets/dracodia_forms_1026.js",
+  "nativeProbe": [
+    {
+      "name": "Base HP and every piece resist lethal hits while copies remain",
+      "passed": true,
+      "data": {
+        "white": 17588,
+        "hp": 5330,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "mode": "fight",
+        "targets": 0,
+        "shield": 1
+      }
+    },
+    {
+      "name": "Protected base gives actual visible hit feedback and shield state",
+      "passed": true,
+      "data": {
+        "white": 17588,
+        "hp": 5330,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "mode": "fight",
+        "targets": 0,
+        "shield": 1
+      }
+    },
+    {
+      "name": "Direct defeat routes also preserve the protected final life",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Protected-base hit flash expires on native clock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native form 8 animates and retains its full health",
+      "passed": true,
+      "data": {
+        "form": 8,
+        "mode": "fight",
+        "hp": 4920,
+        "parts": 3,
+        "glows": 26
+      }
+    },
+    {
+      "name": "Native form 1 animates and retains its full health",
+      "passed": true,
+      "data": {
+        "form": 1,
+        "mode": "fight",
+        "hp": 3690,
+        "parts": 3,
+        "glows": 48
+      }
+    },
+    {
+      "name": "Native form 6 animates and retains its full health",
+      "passed": true,
+      "data": {
+        "form": 6,
+        "mode": "fight",
+        "hp": 4510,
+        "parts": 1,
+        "glows": 48
+      }
+    },
+    {
+      "name": "Native form 2 animates and retains its full health",
+      "passed": true,
+      "data": {
+        "form": 2,
+        "mode": "fight",
+        "hp": 4100,
+        "parts": 8,
+        "glows": 48
+      }
+    },
+    {
+      "name": "Donor-follow effects expire across helicopter-to-brain switch",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Source-pixel charge and eye muzzle effects visibly alter native pixels",
+      "passed": true,
+      "data": 17360
+    },
+    {
+      "name": "Code fusion completes through its native clocks",
+      "passed": true,
+      "data": {
+        "mode": "fight",
+        "marks": [
+          "build",
+          "covered",
+          "out",
+          "preflash",
+          "reveal"
+        ]
+      }
+    },
+    {
+      "name": "Full copied body appears only under the covering flash",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Transform keeps a continuous anchor and intact health pools",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Scythe uses the authored strike bank and finite recovery",
+      "passed": true,
+      "data": 26
+    },
+    {
+      "name": "Four native copy pools exhaust without touching final base life",
+      "passed": true,
+      "data": [
+        {
+          "form": 8,
+          "hp": 0,
+          "base": 5330,
+          "mode": "v19copyDeath"
+        },
+        {
+          "form": 1,
+          "hp": 0,
+          "base": 5330,
+          "mode": "v19copyDeath"
+        },
+        {
+          "form": 6,
+          "hp": 0,
+          "base": 5330,
+          "mode": "v19copyDeath"
+        },
+        {
+          "form": 2,
+          "hp": 0,
+          "base": 5330,
+          "mode": "v19copyDeath"
+        }
+      ]
+    },
+    {
+      "name": "Last copy naturally hands off to a full vulnerable final life",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Base arm breaks and shatters only on the final life",
+      "passed": true,
+      "data": {
+        "hp": 4049,
+        "broken": true,
+        "shards": 6,
+        "baseAlive": true
+      }
+    },
+    {
+      "name": "Final-life flash expires with remaining body intact",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exhausted final base enters existing finale once",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "New energy rejects offensive interception before first update",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, update or draw errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "regressions": {
+    "entrance": {
+      "passed": 22,
+      "failed": 0,
+      "log": "_shots/dracodia_forms_1026/entrance-regression.log"
+    },
+    "download": {
+      "passed": 48,
+      "failed": 0,
+      "log": "_shots/dracodia_forms_1026/rebirth-regression.log"
+    }
+  },
+  "requiredSuite": {
+    "exitCode": 1,
+    "reachedFinalSummary": false,
+    "blocker": "Missing _BUILD_SOURCE/retired_art_archive_1022.cjs",
+    "log": "_shots/dracodia_forms_1026/required-suite.log"
+  },
+  "syntax": [
+    "assets/game.js",
+    "assets/dracodia_forms_1026.js"
+  ],
+  "skill": "C:/Users/Mdogg/.codex/skills/boss-cinematics",
+  "skillValidation": "passed",
+  "recording": {
+    "checks": {
+      "Full fight reaches native defeat": true,
+      "No game, browser, bot or asset errors": true,
+      "Furious input-only observer and native audio": true,
+      "Early base health and both arms stay intact": true,
+      "Copy 8 fights and dies through native input": true,
+      "Copy 1 fights and dies through native input": true,
+      "Copy 6 fights and dies through native input": true,
+      "Copy 2 fights and dies through native input": true,
+      "Final life opens only after every copied pool is empty": true,
+      "Final life is played down to zero": true,
+      "Arms cannot break before the final life": true,
+      "Native animation averages at least 55fps": true,
+      "Entire movie decodes cleanly": true,
+      "Recorded audio is audible without clipping": true,
+      "Film contains full captured duration at 1280x800": true,
+      "hammer seeks and plays with audio": true,
+      "helicopter seeks and plays with audio": true,
+      "neural-archon seeks and plays with audio": true,
+      "phoenix seeks and plays with audio": true,
+      "final-life seeks and plays with audio": true,
+      "first-host seeks and plays with audio": true,
+      "dna-rise seeks and plays with audio": true,
+      "lightning-download seeks and plays with audio": true,
+      "copy-fusion seeks and plays with audio": true,
+      "entrance seeks and plays with audio": true,
+      "defeat seeks and plays with audio": true,
+      "Byte-range seeking": true,
+      "Playback has no browser errors": true
+    },
+    "passed": 28,
+    "failed": 0,
+    "chapters": {
+      "entrance": 8,
+      "first-host": 22.07,
+      "dna-rise": 143.63,
+      "lightning-download": 154.63,
+      "copy-fusion": 257.431,
+      "hammer": 261.444,
+      "helicopter": 343.365,
+      "neural-archon": 416.114,
+      "phoenix": 458.723,
+      "final-life": 948.578,
+      "defeat": 995.215
+    },
+    "fps": 59.614569785126044,
+    "peakDb": -0.3,
+    "metadata": {
+      "w": 1280,
+      "h": 800,
+      "duration": 1018.481
+    },
+    "video": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\dracodia_forms_1026\\full\\stage8\\stage8-furious.mp4",
+    "url": "http://127.0.0.1:53746/_shots/dracodia_forms_1026/full/stage8/stage8-furious.mp4",
+    "errors": []
+  },
+  "recordingReport": "_shots/dracodia_forms_1026/full/stage8/report.json",
+  "nativeChecksPassed": 91,
+  "recordingChecksPassed": 28,
+  "runtimeHashes": {
+    "assets/dracodia_forms_1026.js": "fbe3bd42ad3938c82091cd679b5837c8ef2cf7ec000e5eab5877b5a5cd62b924",
+    "assets/drone_rework_1026.js": "8bf7ee52d17bf39d2d02504cca769ac0c101b85f3ecef514b99d17e62544ff1b",
+    "assets/dracodia_depth_1026.js": "c8874ef5cb91de55e1180dc11a8dead6b17f261086a6fab61ee87159bdd7dc3d",
+    "assets/dracodia_polish_1026.js": "d4d9ac3a56dcd9aab5ef1b67e00bb48ace885016e00af48ff380774ea518432b",
+    "assets/dracodia_dna_1026.js": "2e82ed9a0598bd662e4c7c85644cca71ed60c0aadcbbc90d262dbaefdd4368e2"
+  },
+  "reviewPage": {
+    "time": 948.716533,
+    "buttons": 11,
+    "duration": 1018.481,
+    "overflow": false,
+    "errors": []
+  }
+}

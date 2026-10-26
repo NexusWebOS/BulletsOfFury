@@ -1,0 +1,31 @@
+{
+  "satellite": "335f2184-ceff-4b44-98e2-b03ccd07b586",
+  "symbiote": "8f59101d-6b5c-4f53-8ee2-47eca4ad91fe",
+  "signal": "03ebd242-c683-4861-8461-1741a2c6c3b3",
+  "fluid": "45bb4067-4b33-40ee-ae2f-8717696329f8",
+  "satellite_status": "cancelled_stalled",
+  "satellite_pair": "built-in image_gen: exec-d7e5638f-4126-45db-b6e4-5db12569f1da.png",
+  "accepted_fluid_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "physical_takeover": "f0274aa1-4b6b-433e-aa24-b95b997bcca9"
+}

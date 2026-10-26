@@ -1,0 +1,10 @@
+status: completed
+id: 46300d3f-f08a-4a71-adb6-cf5fc7d4afd8
+job_id: 46300d3f-f08a-4a71-adb6-cf5fc7d4afd8
+frame: 16 of 17
+asset_id: 74fbba47-f626-5d62-ac06-c041f5079ff5
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0520 in credits
+download: https://api.pixellab.ai/mcp/images/46300d3f-f08a-4a71-adb6-cf5fc7d4afd8/download?index=16

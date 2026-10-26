@@ -1,0 +1,246 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Live clock completes charge, latches red and discards hammer",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Scaled red actor takes real pixel hits and flashes without ghost hammer",
+        "passed": true,
+        "data": {
+          "hit": true,
+          "before": 330,
+          "after": 322,
+          "flash": 0.12,
+          "point": {
+            "x": 222.43,
+            "y": 139.71
+          },
+          "weapon": false
+        }
+      },
+      {
+        "name": "Red hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Committed energy wave reaches native player damage",
+        "passed": true,
+        "data": {
+          "before": null,
+          "after": null,
+          "invuln": 0,
+          "hit": 1,
+          "dead": true
+        }
+      },
+      {
+        "name": "Native background jump restores landing FOV before impact",
+        "passed": true,
+        "data": [
+          {
+            "state": "giant_idle",
+            "warn": null
+          },
+          {
+            "state": "giant_windup",
+            "warn": null
+          },
+          {
+            "state": "giant_windup",
+            "warn": null
+          },
+          {
+            "state": "giant_rise",
+            "warn": null
+          },
+          {
+            "state": "giant_rise",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_drop",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_drop",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_drop",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_land",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_jump",
+            "warn": null
+          },
+          {
+            "state": "giant_bg_jump",
+            "warn": null
+          },
+          {
+            "state": "giant_warn",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_warn"
+            }
+          },
+          {
+            "state": "giant_warn",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_warn"
+            }
+          },
+          {
+            "state": "giant_dive",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "giant_dive",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          },
+          {
+            "state": "c27_depth_combo",
+            "warn": {
+              "x": 340,
+              "y": 441,
+              "state": "giant_dive"
+            }
+          }
+        ]
+      },
+      {
+        "name": "All sixteen muzzle faces contain different rotational pixels",
+        "passed": true,
+        "data": 16
+      },
+      {
+        "name": "Slug renderer draws visible authored projectile pixels",
+        "passed": true,
+        "data": 134
+      },
+      {
+        "name": "Full 360-degree rotation returns to the same authored pixels",
+        "passed": true,
+        "data": 0
+      },
+      {
+        "name": "Native firing draws the larger muzzle flash at the bore plane",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wave has red energy and a white core, with no blue energy pixels",
+        "passed": true,
+        "data": {
+          "red": 33105,
+          "blue": 0,
+          "white": 8494
+        }
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "delivery": {
+    "checks": [
+      {
+        "name": "Delivered MP4 contains decoded audible sound",
+        "passed": true,
+        "data": {
+          "peak": 0.406341552734375,
+          "rms": 0.07522221873966019
+        }
+      },
+      {
+        "name": "Native recording has no page or console errors",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Recording includes gun break, landing warning, red charge and energy wave",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review plays the actual 56-second MP4 with audio enabled",
+        "passed": true,
+        "data": {
+          "time": 0.509947,
+          "duration": 56.121833,
+          "muted": false,
+          "paused": false
+        }
+      },
+      {
+        "name": "Full-turn rotor, red wave and two-handed thrust previews display authored pixels",
+        "passed": true,
+        "data": [
+          22186,
+          6452,
+          30483
+        ]
+      },
+      {
+        "name": "Review page has no console or page errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

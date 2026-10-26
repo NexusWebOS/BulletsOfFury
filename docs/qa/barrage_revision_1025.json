@@ -1,0 +1,143 @@
+{
+  "scope": "Stage3 scenery contrast; Stage6 reactor-only barrage; Dredger physical launchers and dorsal lobs; Herald red chaos, corner swoops and claw bombing",
+  "native": {
+    "passed": 48,
+    "failed": 0,
+    "reports": [
+      "_shots/barrage_revision_1025/probe/report.json",
+      "_shots/barrage_revision_1025/sockets/report.json"
+    ]
+  },
+  "browser": {
+    "passed": 34,
+    "failed": 0,
+    "report": "_shots/barrage_revision_1025/browser/report.json"
+  },
+  "films": [
+    {
+      "case": "frost",
+      "video": "_shots/barrage_revision_1025/video/frost-210050/frost.mp4",
+      "seconds": 14.222699999988079,
+      "decodedPeakDb": -8.1,
+      "checks": {
+        "noPageOrConsoleErrors": true,
+        "noAssetErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true,
+        "requestedCheckpoint": true,
+        "completeBomber": true
+      }
+    },
+    {
+      "case": "battery",
+      "video": "_shots/barrage_revision_1025/video/battery-210157/battery.mp4",
+      "seconds": 14.2425,
+      "decodedPeakDb": -8.0,
+      "checks": {
+        "noPageOrConsoleErrors": true,
+        "noAssetErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true,
+        "requestedCheckpoint": true,
+        "completeBomber": true,
+        "noBatteryBulletHell": true
+      }
+    },
+    {
+      "case": "reactor",
+      "video": "_shots/barrage_revision_1025/video/reactor-210235/reactor.mp4",
+      "seconds": 15.068,
+      "decodedPeakDb": -6.7,
+      "checks": {
+        "noPageOrConsoleErrors": true,
+        "noAssetErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true,
+        "requestedCheckpoint": true,
+        "completeBomber": true,
+        "reactorOnly": true
+      }
+    },
+    {
+      "case": "turrets",
+      "video": "_shots/barrage_revision_1025/video/turrets-210318/turrets.mp4",
+      "seconds": 15.259099999994039,
+      "decodedPeakDb": -8.5,
+      "checks": {
+        "noPageOrConsoleErrors": true,
+        "noAssetErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true,
+        "requestedCheckpoint": true,
+        "completeBomber": true
+      }
+    },
+    {
+      "case": "dorsal",
+      "video": "_shots/barrage_revision_1025/video/dorsal-210349/dorsal.mp4",
+      "seconds": 17.23080000001192,
+      "decodedPeakDb": -8.4,
+      "checks": {
+        "noPageOrConsoleErrors": true,
+        "noAssetErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true,
+        "requestedCheckpoint": true,
+        "completeBomber": true
+      }
+    },
+    {
+      "case": "herald",
+      "video": "_shots/barrage_revision_1025/video/herald-210426/herald.mp4",
+      "seconds": 52.13219999998808,
+      "decodedPeakDb": -8.5,
+      "checks": {
+        "noPageOrConsoleErrors": true,
+        "noAssetErrors": true,
+        "fullDecode": true,
+        "audible": true,
+        "realTimeFrames": true,
+        "requestedCheckpoint": true,
+        "completeBomber": true
+      }
+    }
+  ],
+  "syntax": [
+    {
+      "file": "assets/game.js",
+      "exitCode": 0
+    },
+    {
+      "file": "assets/bullethell_1025.js",
+      "exitCode": 0
+    },
+    {
+      "file": "assets/herald_bomber_1025.js",
+      "exitCode": 0
+    },
+    {
+      "file": "assets/herald_chaos_art_1025.js",
+      "exitCode": 0
+    }
+  ],
+  "requiredSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "reason": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs; aborts at first require before assertions.",
+    "log": "_shots/barrage_revision_1025/full-suite.log"
+  },
+  "review": "docs/previews/barrage_revision_1025/index.html",
+  "sourceHashes": {
+    "assets/game.js": "7e720920e308da7934b2f9197af330aafadee03463e585eafa684068a918d007",
+    "assets/bullethell_1025.js": "b354d90d90ef13c48789b7e6fb4d0594b76f94bf1336064b0db87619d20d9a1a",
+    "assets/herald_bomber_1025.js": "e41819020444c484e3be786eb7d4239812c78024e914cba8cc9e501c840f0a0c",
+    "assets/herald_chaos_art_1025.js": "1a99306ad5d0ea8dbd2a22b34d4716cbeac151136c1dea04eabfae8f820c7a6f"
+  },
+  "method": "Native observation clips use an invulnerable input bot with no enemy HP or phase writes. Isolated damage/cancellation fixtures are labelled in the probes. This pass did not edit game.js or test_fl.js."
+}

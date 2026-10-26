@@ -1,0 +1,4955 @@
+[
+  {
+    "bank": "takeoff_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      87.47619047619048,
+      161.52380952380952
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      89.0909090909091,
+      162.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      89.80952380952381,
+      162.85714285714286
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      68.3076923076923,
+      156.23076923076923
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      60.0,
+      150.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      59.91304347826087,
+      149.2173913043478
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      60.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      59.91304347826087,
+      146.2173913043478
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      60.0,
+      146.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      60.0,
+      146.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      60.125,
+      143.66666666666666
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      60.0,
+      140.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      60.0,
+      134.70833333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      60.0,
+      129.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      60.0,
+      125.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      60.5,
+      125.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      61.592592592592595,
+      127.74074074074075
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      60.958333333333336,
+      137.29166666666666
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      60.95454545454545,
+      140.13636363636363
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      61.96,
+      142.4
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      62.91304347826087,
+      143.2173913043478
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      63.1,
+      143.05
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      63.1,
+      143.05
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      63.1,
+      143.05
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      61.95454545454545,
+      142.3181818181818
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      61.0,
+      141.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      61.0,
+      141.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      63.1578947368421,
+      137.1578947368421
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      68.5,
+      131.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      71.14285714285714,
+      100.80952380952381
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      71.13636363636364,
+      98.31818181818181
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      71.14285714285714,
+      97.19047619047619
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      71.13636363636364,
+      99.68181818181819
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      65.0,
+      116.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      63.86363636363637,
+      99.31818181818181
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      105.21052631578948,
+      58.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      97.5,
+      75.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      99.33333333333333,
+      79.91666666666667
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      116.28571428571429,
+      79.42857142857143
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      114.0,
+      63.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      128.13636363636363,
+      58.95454545454545
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      128.1304347826087,
+      58.82608695652174
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      127.88888888888889,
+      58.888888888888886
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      128.0,
+      59.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      130.95652173913044,
+      58.26086956521739
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      131.13636363636363,
+      58.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      96.04761904761905,
+      37.61904761904762
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      146.9090909090909,
+      171.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      162.0,
+      167.70833333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      158.70833333333334,
+      166.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      155.9090909090909,
+      163.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      156.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      155.9090909090909,
+      163.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      156.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      156.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      156.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      156.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      156.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      154.0,
+      163.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      152.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      152.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      63.75,
+      104.5625
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      63.08695652173913,
+      104.78260869565217
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      63.08695652173913,
+      104.78260869565217
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      63.08695652173913,
+      104.78260869565217
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      62.958333333333336,
+      104.75
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      63.08695652173913,
+      104.78260869565217
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      63.08695652173913,
+      104.78260869565217
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      63.08695652173913,
+      104.78260869565217
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      62.958333333333336,
+      104.75
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      62.958333333333336,
+      104.75
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      61.27272727272727,
+      111.95454545454545
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      72.78260869565217,
+      124.08695652173913
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      84.95833333333333,
+      129.66666666666666
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      85.0,
+      137.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      85.0,
+      145.70833333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      85.28571428571429,
+      157.89285714285714
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      67.08,
+      157.8
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 7,
+    "marker": false,
+    "hand": [
+      84.125,
+      135.0625
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      70.27272727272727,
+      114.04545454545455
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      78.73913043478261,
+      103.08695652173913
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      78.79166666666667,
+      103.125
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      78.83333333333333,
+      103.125
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      78.69565217391305,
+      103.08695652173913
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      78.73913043478261,
+      103.08695652173913
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      78.73913043478261,
+      103.08695652173913
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      80.91666666666667,
+      102.91666666666667
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      83.0,
+      103.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      85.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      79.60714285714286,
+      156.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      73.625,
+      149.70833333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      69.88,
+      140.2
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      69.0,
+      132.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      210.63333333333333,
+      134.33333333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      196.96,
+      120.6
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      190.13636363636363,
+      113.68181818181819
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      185.8095238095238,
+      108.04761904761905
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      182.875,
+      105.33333333333333
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      179.08695652173913,
+      102.95652173913044
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      176.0,
+      103.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      172.0,
+      103.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      76.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      80.0909090909091,
+      162.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      75.0909090909091,
+      161.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      75.9090909090909,
+      161.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      77.25,
+      161.25
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      82.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      80.27272727272727,
+      161.8181818181818
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      80.0,
+      161.70833333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      79.0,
+      161.14285714285714
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      78.27272727272727,
+      160.95454545454547
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      78.17391304347827,
+      161.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      77.9090909090909,
+      161.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      78.0,
+      161.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      78.0909090909091,
+      161.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      79.27272727272727,
+      161.8181818181818
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_regular",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      80.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      60.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      60.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      60.27777777777778,
+      159.11111111111111
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      60.10526315789474,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      59.95,
+      159.1
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      60.1578947368421,
+      159.05263157894737
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      60.27777777777778,
+      158.88888888888889
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 7,
+    "marker": false,
+    "hand": [
+      60.87499999999999,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 8,
+    "marker": false,
+    "hand": [
+      61.00000000000001,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      60.733333333333334,
+      159.26666666666668
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 10,
+    "marker": false,
+    "hand": [
+      61.24999999999999,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      62.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 12,
+    "marker": false,
+    "hand": [
+      61.5,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 13,
+    "marker": false,
+    "hand": [
+      61.625,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      63.333333333333336,
+      159.33333333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 15,
+    "marker": false,
+    "hand": [
+      61.875,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 16,
+    "marker": false,
+    "hand": [
+      62.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 17,
+    "marker": false,
+    "hand": [
+      62.125,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 18,
+    "marker": false,
+    "hand": [
+      62.25,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 19,
+    "marker": false,
+    "hand": [
+      62.375,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 20,
+    "marker": false,
+    "hand": [
+      62.5,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 21,
+    "marker": false,
+    "hand": [
+      62.625,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 22,
+    "marker": false,
+    "hand": [
+      62.75,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 23,
+    "marker": false,
+    "hand": [
+      62.875,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_regular",
+    "frame": 24,
+    "marker": false,
+    "hand": [
+      63.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      85.08,
+      163.8
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      89.63157894736842,
+      162.73684210526315
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      91.19047619047619,
+      162.14285714285714
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      81.45,
+      158.9
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      66.29166666666667,
+      151.04166666666666
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      60.08695652173913,
+      148.7826086956522
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      60.125,
+      148.66666666666666
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      60.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      60.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      60.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      60.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      60.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "takeoff_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      60.04347826086956,
+      148.2608695652174
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      60.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      60.0,
+      146.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      60.0,
+      145.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      59.90909090909091,
+      143.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      64.18181818181819,
+      138.3181818181818
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      67.47826086956522,
+      136.69565217391303
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      66.38461538461539,
+      144.84615384615384
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      66.1304347826087,
+      148.2173913043478
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      66.0,
+      149.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "land_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      66.0,
+      148.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      66.0909090909091,
+      148.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      66.0909090909091,
+      148.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      66.30434782608695,
+      139.30434782608697
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      69.625,
+      129.33333333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      77.06896551724138,
+      125.17241379310344
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      101.28,
+      78.8
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      111.0,
+      42.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      110.95652173913044,
+      44.73913043478261
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      111.0909090909091,
+      47.09090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      111.0909090909091,
+      48.09090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      111.0,
+      50.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      111.0,
+      50.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      111.0,
+      50.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      111.0,
+      49.86363636363637
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      111.0,
+      49.86363636363637
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "windup_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      111.0,
+      50.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      111.0,
+      50.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      124.37037037037037,
+      41.074074074074076
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      209.32,
+      179.12
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      204.78571428571428,
+      177.53571428571428
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      203.71428571428572,
+      175.89285714285714
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      207.67857142857142,
+      174.67857142857142
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      207.67857142857142,
+      174.67857142857142
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      207.67857142857142,
+      174.67857142857142
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      207.67857142857142,
+      174.67857142857142
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      207.58620689655172,
+      174.6206896551724
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      207.58620689655172,
+      174.6206896551724
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      203.57142857142858,
+      176.03571428571428
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      162.3846153846154,
+      165.07692307692307
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      100.53846153846153,
+      142.53846153846155
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      128.24,
+      163.04
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      91.875,
+      160.95833333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "strike_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      93.0,
+      161.125
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      93.0,
+      161.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      210.46153846153845,
+      174.30769230769232
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      212.66666666666666,
+      154.125
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      207.91304347826087,
+      145.43478260869566
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      207.91304347826087,
+      145.43478260869566
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      167.95238095238096,
+      154.1904761904762
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      72.75,
+      139.33333333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      64.4,
+      128.28
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      64.56,
+      128.32
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      64.43478260869566,
+      128.2608695652174
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      64.43478260869566,
+      128.2608695652174
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      85.16666666666667,
+      147.75
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      66.0,
+      163.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "retract_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      84.2,
+      142.5
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      77.95238095238095,
+      125.19047619047619
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      77.9090909090909,
+      125.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      77.82608695652173,
+      125.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      77.82608695652173,
+      125.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "left_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      77.82608695652173,
+      125.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      78.0,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      76.36,
+      163.76
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      69.82608695652173,
+      158.56521739130434
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      60.21739130434783,
+      143.1304347826087
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      52.34615384615385,
+      134.34615384615384
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      61.0,
+      137.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      183.17391304347825,
+      137.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      179.57142857142858,
+      130.04761904761904
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      178.0909090909091,
+      126.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      177.0909090909091,
+      124.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      177.0909090909091,
+      124.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "right_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      177.0909090909091,
+      124.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      80.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      79.0,
+      162.70833333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "shield_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      80.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      80.0909090909091,
+      159.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      80.0909090909091,
+      159.0909090909091
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      78.3913043478261,
+      158.56521739130434
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      84.22222222222223,
+      165.05555555555554
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      72.75,
+      161.85
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      74.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "palm_chrome",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      75.0,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      68.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      68.05,
+      159.9
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      67.95238095238095,
+      159.8095238095238
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      67.9,
+      159.95
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      68.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      67.9,
+      159.95
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      67.9,
+      159.95
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      68.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 8,
+    "marker": true,
+    "hand": [
+      68.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 9,
+    "marker": true,
+    "hand": [
+      67.94736842105263,
+      159.8421052631579
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      67.95238095238095,
+      159.8095238095238
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 11,
+    "marker": true,
+    "hand": [
+      68.0,
+      160.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      67.5,
+      166.72727272727272
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      67.4090909090909,
+      166.63636363636363
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      67.4,
+      166.8
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 15,
+    "marker": true,
+    "hand": [
+      67.14285714285714,
+      166.8095238095238
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 16,
+    "marker": false,
+    "hand": [
+      67.33333333333333,
+      164.66666666666669
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 17,
+    "marker": false,
+    "hand": [
+      67.29166666666667,
+      164.95833333333331
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 18,
+    "marker": true,
+    "hand": [
+      67.6,
+      166.8
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 19,
+    "marker": false,
+    "hand": [
+      67.20833333333333,
+      165.54166666666666
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 20,
+    "marker": true,
+    "hand": [
+      67.125,
+      166.75
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 21,
+    "marker": true,
+    "hand": [
+      67.0,
+      167.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 22,
+    "marker": true,
+    "hand": [
+      67.05263157894737,
+      166.78947368421052
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 23,
+    "marker": true,
+    "hand": [
+      68.2,
+      166.9
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "aura_chrome",
+    "frame": 24,
+    "marker": true,
+    "hand": [
+      67.25,
+      168.25
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 0,
+    "marker": true,
+    "hand": [
+      60.0,
+      159.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 1,
+    "marker": true,
+    "hand": [
+      60.9,
+      159.95
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 2,
+    "marker": true,
+    "hand": [
+      60.9,
+      159.95
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 3,
+    "marker": true,
+    "hand": [
+      59.92,
+      157.56
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 4,
+    "marker": true,
+    "hand": [
+      59.56521739130435,
+      153.34782608695653
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 5,
+    "marker": true,
+    "hand": [
+      57.80952380952381,
+      148.04761904761904
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 6,
+    "marker": true,
+    "hand": [
+      56.958333333333336,
+      147.33333333333334
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 7,
+    "marker": true,
+    "hand": [
+      59.13636363636363,
+      149.3181818181818
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 8,
+    "marker": false,
+    "hand": [
+      62.33333333333334,
+      161.66666666666669
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 9,
+    "marker": false,
+    "hand": [
+      62.625,
+      162.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 10,
+    "marker": true,
+    "hand": [
+      56.80769230769231,
+      147.57692307692307
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 11,
+    "marker": false,
+    "hand": [
+      63.20833333333334,
+      162.66666666666669
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 12,
+    "marker": true,
+    "hand": [
+      57.05882352941177,
+      147.41176470588235
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 13,
+    "marker": true,
+    "hand": [
+      66.5,
+      166.21428571428572
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 14,
+    "marker": true,
+    "hand": [
+      66.875,
+      167.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 15,
+    "marker": false,
+    "hand": [
+      64.375,
+      164.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 16,
+    "marker": true,
+    "hand": [
+      67.0909090909091,
+      166.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 17,
+    "marker": true,
+    "hand": [
+      66.95652173913044,
+      166.91304347826087
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 18,
+    "marker": true,
+    "hand": [
+      67.0,
+      167.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 19,
+    "marker": true,
+    "hand": [
+      67.0909090909091,
+      166.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 20,
+    "marker": true,
+    "hand": [
+      67.0909090909091,
+      166.9090909090909
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 21,
+    "marker": true,
+    "hand": [
+      67.1,
+      166.9
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 22,
+    "marker": true,
+    "hand": [
+      67.14285714285714,
+      167.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 23,
+    "marker": false,
+    "hand": [
+      66.70833333333334,
+      166.66666666666669
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  },
+  {
+    "bank": "activation",
+    "frame": 24,
+    "marker": true,
+    "hand": [
+      67.0,
+      167.0
+    ],
+    "reactorShift": [
+      0,
+      0
+    ]
+  }
+]

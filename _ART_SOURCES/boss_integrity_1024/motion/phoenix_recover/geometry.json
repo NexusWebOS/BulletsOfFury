@@ -1,0 +1,37 @@
+[
+  {
+    "frame": "00.png",
+    "translation": [
+      -5,
+      -2
+    ]
+  },
+  {
+    "frame": "01.png",
+    "translation": [
+      -6,
+      -1
+    ]
+  },
+  {
+    "frame": "02.png",
+    "translation": [
+      -5,
+      -1
+    ]
+  },
+  {
+    "frame": "01.png",
+    "translation": [
+      -6,
+      -1
+    ]
+  },
+  {
+    "frame": "00.png",
+    "translation": [
+      -5,
+      -2
+    ]
+  }
+]

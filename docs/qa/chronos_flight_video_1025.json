@@ -1,0 +1,795 @@
+{
+  "recording": {
+    "difficulty": "furious",
+    "invulnerable": true,
+    "loadout": "level5 Fusion start",
+    "route": "Continuous native encounter from alert/dialogue, no HP or phase injections. Invulnerable input-driven capture.",
+    "defeated": true,
+    "errors": [],
+    "video": "_shots\\chronos_flight_1025\\video\\chronos-full-fight.mp4",
+    "audio": {
+      "playing": {
+        "lvl3-alt": 1,
+        "bossAlarm": 1,
+        "boss5": 4,
+        "combatServo0927": 9,
+        "dialogueLetter": 802,
+        "alertDanger": 1,
+        "bossWeaponCharge": 29,
+        "c33_charge": 13,
+        "explosionElectrical": 7,
+        "loop": 74,
+        "shieldUp": 1,
+        "av3_target_acquire": 25,
+        "alertLockon": 19,
+        "spaceShadowRelease": 69,
+        "expSmall": 146,
+        "hit": 396,
+        "expBig": 105,
+        "hammerLeap": 23,
+        "hammerImpact": 36,
+        "laserShot": 19,
+        "combatBeam0927": 52,
+        "hammerThrow": 34,
+        "hammerSpin": 8,
+        "hammerMagnet": 20,
+        "hammerCatch": 5,
+        "nsp_asteroid_break": 63,
+        "powerup": 14,
+        "missile": 12,
+        "missileHit": 11,
+        "shieldBreakCombat": 5,
+        "combatStun0927": 4,
+        "weapon": 8,
+        "spaceVolleyLaunch": 218,
+        "spaceLaserCannon": 629,
+        "spaceLaserHit": 528,
+        "spaceVolleyHit": 334,
+        "av3_impact_metal": 267,
+        "c33_thunder": 5,
+        "retinaCharge": 3,
+        "death": 1,
+        "shieldBossAbsorb": 14,
+        "bossPhase": 4,
+        "enemyMachineGunLight": 49,
+        "hammerChaingun": 5,
+        "blip": 1,
+        "select": 1,
+        "combatModule0927": 1,
+        "hammerEradBlast": 1,
+        "shadowCharge": 1,
+        "c33_rage": 1,
+        "c33_palm": 66,
+        "c33_wave": 1,
+        "laserBeamEnd": 1,
+        "achievement": 1,
+        "expBoss": 1,
+        "cinematics": 1,
+        "bossShieldStatic": 5,
+        "retinaLockBeep": 6
+      },
+      "peak": 1.5313146114349365,
+      "tapped": 137,
+      "cues": [
+        {
+          "cue": "charge",
+          "time": 23.183333333333298,
+          "state": "fr_activation"
+        },
+        {
+          "cue": "thunder",
+          "time": 113.58333333332817,
+          "state": "c29_break"
+        },
+        {
+          "cue": "rage",
+          "time": 292.4500000000627,
+          "state": "hf22_rage_charge"
+        },
+        {
+          "cue": "thunder",
+          "time": 295.18333333339353,
+          "state": "hf22_rage_charge"
+        },
+        {
+          "cue": "charge",
+          "time": 298.0166666667243,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 298.8666666667235,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 299.00000000005673,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 299.13333333338994,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 299.26666666672315,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 299.40000000005637,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 299.5166666667229,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 299.8333333333893,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 300.4166666667221,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 300.5500000000553,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 300.68333333338853,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 300.81666666672174,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 300.95000000005496,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 301.0666666667215,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 301.3833333333879,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 301.9666666667207,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 302.1000000000539,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 302.2333333333871,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 302.36666666672033,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 302.50000000005355,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 302.6166666667201,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 305.0500000000512,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 305.90000000005045,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 306.03333333338367,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 306.1666666667169,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 306.3000000000501,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 306.4333333333833,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 306.55000000004986,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 306.86666666671624,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 307.45000000004904,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 307.58333333338226,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 307.71666666671547,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 307.8500000000487,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 307.9833333333819,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 308.10000000004845,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 308.41666666671483,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 309.00000000004763,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 309.13333333338085,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 309.26666666671406,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 309.40000000004727,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 309.5333333333805,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 309.65000000004704,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 311.3166666667122,
+          "state": "c30_gather"
+        },
+        {
+          "cue": "wave",
+          "time": 313.40000000004363,
+          "state": "c30_beam"
+        },
+        {
+          "cue": "thunder",
+          "time": 313.40000000004363,
+          "state": "c30_beam"
+        },
+        {
+          "cue": "thunder",
+          "time": 313.95000000004313,
+          "state": "c30_beam"
+        },
+        {
+          "cue": "thunder",
+          "time": 314.50000000004263,
+          "state": "c30_beam"
+        },
+        {
+          "cue": "charge",
+          "time": 317.016666666707,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 317.86666666670624,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 318.00000000003945,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 318.13333333337266,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 318.2666666667059,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 318.4000000000391,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 318.51666666670565,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 318.833333333372,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 319.4166666667048,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 319.55000000003804,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 319.68333333337125,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 319.81666666670446,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 319.9500000000377,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 320.06666666670424,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 320.3833333333706,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 320.9666666667034,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 321.10000000003663,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 321.23333333336984,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 321.36666666670305,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 321.50000000003627,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 321.6166666667028,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 324.05000000003395,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 324.9000000000332,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 325.0333333333664,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 325.1666666666996,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 325.3000000000328,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 325.433333333366,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 325.5500000000326,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "charge",
+          "time": 325.86666666669896,
+          "state": "c30_volley_warn"
+        },
+        {
+          "cue": "palm",
+          "time": 326.45000000003176,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 326.583333333365,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 326.7166666666982,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 326.8500000000314,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 326.9833333333646,
+          "state": "c30_volley_fire"
+        },
+        {
+          "cue": "palm",
+          "time": 327.1000000000312,
+          "state": "c30_volley_fire"
+        }
+      ],
+      "god": true,
+      "deaths": 1,
+      "dialogue": [
+        {
+          "type": "portrait-announcement",
+          "text": "Chromium Armor, Activated!",
+          "t": 23.183333333333298
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Dodge THIS!",
+          "t": 31.499999999999492
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Gotta Recharge!",
+          "t": 96.41666666666248
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Dodge THIS!",
+          "t": 103.78333333332873
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Dodge THIS!",
+          "t": 112.08333333332826
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Dodge THIS!",
+          "t": 180.11666666670214
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Gotta Recharge!",
+          "t": 187.23333333337447
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Dodge THIS!",
+          "t": 229.05000000007442
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Dodge THIS!",
+          "t": 237.35000000008102
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Gotta Recharge!",
+          "t": 244.46666666675335
+        },
+        {
+          "type": "crate-struck",
+          "t": 1.7833333333333319,
+          "head": {
+            "x": 432.01809999999944,
+            "y": 414.15
+          },
+          "box": {
+            "x": 432.01809999999944,
+            "y": 414.15
+          }
+        },
+        {
+          "type": "hammer-released-up",
+          "t": 2.466666666666663
+        },
+        {
+          "type": "gun-ejected",
+          "t": 3.0666666666666607
+        },
+        {
+          "type": "gun-caught",
+          "t": 3.5499999999999923
+        },
+        {
+          "type": "tactical-ready",
+          "t": 4.733333333333322
+        },
+        {
+          "type": "portrait-announcement",
+          "text": "Gotta Recharge!",
+          "t": 269.88333333341654
+        }
+      ]
+    },
+    "chapters": [
+      [
+        "Opening dialogue",
+        6.8
+      ],
+      [
+        "Chromium activation",
+        23.13759999999404
+      ],
+      [
+        "Two-handed overhead",
+        26.972400000005962
+      ],
+      [
+        "Two-handed depth strike",
+        44.20340000000596
+      ],
+      [
+        "Side-swing FOV",
+        45.371799999982116
+      ],
+      [
+        "Two-handed spin",
+        58.65759999999404
+      ],
+      [
+        "Electric chromium laser volleys",
+        92.59019999998807
+      ],
+      [
+        "Armor break",
+        114.01079999998211
+      ],
+      [
+        "Minigun pickup",
+        252.14379999998212
+      ],
+      [
+        "Minigun firing",
+        257.6015
+      ],
+      [
+        "Minigun destroyed",
+        264.3111999999881
+      ],
+      [
+        "Rage transformation",
+        293.4385
+      ],
+      [
+        "Foreground palms",
+        299.83340000000595
+      ],
+      [
+        "Flight into background",
+        304.5961999999881
+      ],
+      [
+        "Background palms",
+        306.90719999998805
+      ],
+      [
+        "Red lightning wave",
+        314.3041999999881
+      ],
+      [
+        "Return to foreground",
+        316.6486999999881
+      ],
+      [
+        "Defeat",
+        326.8001999999881
+      ]
+    ]
+  },
+  "focused": {
+    "checks": [
+      {
+        "name": "Gun protection at 0",
+        "passed": true,
+        "data": {
+          "hp": 1000,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Gun protection at 2",
+        "passed": true,
+        "data": {
+          "hp": 1000,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Gun protection at 4.99",
+        "passed": true,
+        "data": {
+          "hp": 1000,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Gun protection at 5.01",
+        "passed": true,
+        "data": {
+          "hp": 900,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Gun hit flash expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Depth flight 0.35",
+        "passed": true,
+        "data": {
+          "y": 80,
+          "scale": 1.08,
+          "top": 0
+        }
+      },
+      {
+        "name": "Depth flight 0.7",
+        "passed": true,
+        "data": {
+          "y": -340,
+          "scale": 0.42,
+          "top": 0
+        }
+      },
+      {
+        "name": "Depth flight 1",
+        "passed": true,
+        "data": {
+          "y": -63.87543252595157,
+          "scale": 0.42,
+          "top": 0
+        }
+      },
+      {
+        "name": "Depth flight 1.55",
+        "passed": true,
+        "data": {
+          "y": 135,
+          "scale": 0.42,
+          "top": 0
+        }
+      },
+      {
+        "name": "Return changes scale only offscreen",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wave plays both authored terminal frames",
+        "passed": true,
+        "data": [
+          6,
+          7
+        ]
+      },
+      {
+        "name": "No browser errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "delivery": {
+    "checks": {
+      "defeat": true,
+      "opening_dialogue": true,
+      "all_new_cues_played": true,
+      "no_game_errors": true,
+      "audible_video": true,
+      "review_plays": true,
+      "chapter_seeks": true,
+      "no_review_errors": true
+    },
+    "audio": [
+      {
+        "part": "dialogue",
+        "peak": 0.4351160526275635,
+        "rms": 0.11513686707568518
+      },
+      {
+        "part": "wave",
+        "peak": 0.5187119245529175,
+        "rms": 0.12524933253707707
+      }
+    ],
+    "errors": []
+  },
+  "observedGunProtectionSeconds": 5.1164,
+  "suite": {
+    "exitCode": 1,
+    "reachedFinalSummary": false,
+    "blocker": "missing _BUILD_SOURCE/retired_art_archive_1022.cjs"
+  }
+}

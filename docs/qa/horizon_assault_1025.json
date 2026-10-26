@@ -1,0 +1,60 @@
+{
+  "scope": "Stage9 Event Horizon miniboss: faster spin, vertical flight and charged eye energy bomb",
+  "native": {
+    "passed": 34,
+    "failed": 0,
+    "report": "_shots/horizon_assault_1025/probe/report.json"
+  },
+  "browser": {
+    "passed": 11,
+    "failed": 0,
+    "report": "_shots/horizon_assault_1025/browser/report.json"
+  },
+  "film": {
+    "video": "_shots/horizon_assault_1025/video/213245/event-horizon-furious.mp4",
+    "seconds": 45.22119999998808,
+    "decodedPeakDb": -8.5,
+    "checks": {
+      "noPageOrConsoleErrors": true,
+      "noAssetErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true,
+      "nativeHpUnchanged": true,
+      "twoCompleteEnergyBombs": true,
+      "verticalFlight": true,
+      "eyeChargeLaunchAndImpactAudible": true
+    },
+    "chapters": {
+      "spin": 16.7675,
+      "vertical": 8.09529999998212,
+      "charge": 9.357643749982117,
+      "launch": 9.98558000000119,
+      "impact": 10.901593749990687
+    }
+  },
+  "syntax": [
+    {
+      "path": "assets/game.js",
+      "exitCode": 0
+    },
+    {
+      "path": "assets/horizon_assault_1025.js",
+      "exitCode": 0
+    }
+  ],
+  "requiredSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "reason": "Existing missing _BUILD_SOURCE/retired_art_archive_1022.cjs aborts before assertions.",
+    "log": "_shots/horizon_assault_1025/full-suite.log"
+  },
+  "sourceHashes": {
+    "assets/game.js": "7e720920e308da7934b2f9197af330aafadee03463e585eafa684068a918d007",
+    "assets/horizon_assault_1025.js": "91e1debb708c39b65148996ad684fb1d13e7ddadd475761bb60cdba4fd19d049",
+    "index.html": "45fc2aec52676af90aeb95ddca3b816b9de49df27128a0c3ffce31e56d47d55c"
+  },
+  "review": "docs/previews/horizon_assault_1025/index.html",
+  "method": "Native whole-hull art and health retained. Continuous invulnerable movement-bot demonstration with weapons withheld and no enemy HP/phase writes. Explicit damage/defensive-clear fixtures are separate."
+}

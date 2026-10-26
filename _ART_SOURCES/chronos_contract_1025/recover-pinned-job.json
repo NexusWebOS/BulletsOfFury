@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 639ea9e8-d9c6-4f45-8474-55a17c937be1\njob_id: 639ea9e8-d9c6-4f45-8474-55a17c937be1\naction: Interpolate ONLY the whole empty-handed robot from kneeling to upright standing. FRAME FORMAT256x256 transparent, fixed feet baseline215, common scale. Lift the head and chest, extend the knees and hips and lift the planted hand. The right hand opens gradually as he stands. Smooth weight transfer, all armor remains connected to the torso. Both hands stay EMPTY in every frame, no weapon, no floating object, no shaft, no energy. DO NOT introduce any hammer or other object. Match provided final standing pose exactly. No camera movement, no resizing, no palette change, no fading.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 1022502\nasset_id: 2c4b16b7-5da5-536e-a1e9-852a899a8b2a\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"639ea9e8-d9c6-4f45-8474-55a17c937be1\")"
+    }
+  ],
+  "isError": false
+}

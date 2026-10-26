@@ -25,19 +25,65 @@ b20Image=function(a,x,y,k=1,rot=0,flash=0,pivot=a?.pivot){
 };
 ha21Flash=function(b,q){if(q?.a?._hf22){if(q.a._hf22Legacy){const flash=Math.max(b.flash||0,b._lastPart?.flash||0);if(flash>0)return b20Image(q.a,b.x,b.y,q.k,q.rot,flash);}else return hf22Cell(q.a,b.x,b.y,Math.max(b.flash||0,b._lastPart?.flash||0));return;}return HF22.base.flash.apply(this,arguments);};
 function hf22Phase(kind,u,phase){const M=HF22_ART.phases[kind],rows=HF22_ART.banks[kind+'_jump'];return phase==='wind'?lerp(0,M.windEnd,clamp(u,0,1)):phase==='strike'?lerp(M.windEnd,M.strikeEnd,clamp(u,0,1)):lerp(M.strikeEnd,rows.length-1,clamp(u,0,1));}
-function hf22PairDuration(P){return P.difficulty==='furious'?3.55:1.72;}
-function hf22PairPose(b,P){const t=P.clock,kind=P.kind,M=HF22_ART.phases[kind];if(t<.12)return hf22Pose(b,kind+'_jump',M.strikeEnd);if(t<.85)return hf22Pose(b,kind+'_jump',hf22Phase(kind,(t-.12)/.73,'wind'));if(t<1.2)return hf22Pose(b,kind+'_jump',hf22Phase(kind,(t-.85)/.35,'strike'));
+const HF22_FURIOUS_COMBO={brace:.08,lock:.46,impact:.66,left:{start:.78,hit:1.18,end:1.34},right:{start:1.34,hit:1.74,end:1.90},end:2.18};
+HF22.base.plane=hammerOnPlayerPlane;
+hammerOnPlayerPlane=function(b){const h=b?._hammer,P=h?._hj22Pair||h?._hf22StormPair||h?.er23DepthCombo;
+ // The approach is a telegraph. Only the authored hammer path can damage a
+ // ship during this combo; a moving torso must not consume its dodge window.
+ return P?.furiousMelee24?false:HF22.base.plane.apply(this,arguments);};
+function hf22PairDuration(P){return P.furiousMelee24?HF22_FURIOUS_COMBO.end:P.difficulty==='furious'?3.55:1.72;}
+function hf22FuriousPose(b,P){const T=HF22_FURIOUS_COMBO,t=P.clock,M=HF22_ART.phases.blue,S=HF22_ART.sides.blue;
+ if(t<T.brace)return hf22Pose(b,'blue_jump',M.strikeEnd);
+ if(t<T.lock)return hf22Pose(b,'blue_jump',hf22Phase('blue',(t-T.brace)/(T.lock-T.brace),'wind'));
+ if(t<T.impact)return hf22Pose(b,'blue_jump',hf22Phase('blue',(t-T.lock)/(T.impact-T.lock),'strike'));
+ if(t<T.left.start)return hf22Pose(b,'blue_jump',M.strikeEnd);
+ for(const [side,offset]of [['left',0],['right',S.left]]){const q=T[side];if(t<q.end)return hf22Pose(b,'blue_sides',t<q.hit?offset+clamp((t-q.start)/(q.hit-q.start),0,.999)*2:offset+2+clamp((t-q.hit)/(q.end-q.hit),0,.999)*5);}
+ return hf22Pose(b,'blue_sides',S.ready);
+}
+function hf22PairPose(b,P){if(P.furiousMelee24)return hf22FuriousPose(b,P);const t=P.clock,kind=P.kind,M=HF22_ART.phases[kind];if(t<.12)return hf22Pose(b,kind+'_jump',M.strikeEnd);if(t<.85)return hf22Pose(b,kind+'_jump',hf22Phase(kind,(t-.12)/.73,'wind'));if(t<1.2)return hf22Pose(b,kind+'_jump',hf22Phase(kind,(t-.85)/.35,'strike'));
  if(P.difficulty!=='furious')return hf22Pose(b,kind+'_jump',hf22Phase(kind,(t-1.2)/.52,'recover'));
  const S=HF22_ART.sides[kind];if(t<1.36)return hf22Pose(b,kind+'_jump',M.strikeEnd);if(t<2.14)return hf22Pose(b,kind+'_sides',lerp(0,S.left-1,clamp((t-1.36)/.78,0,1)));if(t<2.92)return hf22Pose(b,kind+'_sides',lerp(S.left,S.left+S.right-1,clamp((t-2.14)/.78,0,1)));return hf22Pose(b,kind+'_sides',S.ready);
 }
-hj22Pair=function(b,kind,target){return{...HF22.base.pair(b,kind,target),difficulty:diffKey,leftHit:new Set(),rightHit:new Set()};};
-hj22PairTick=function(b,P){const a=hf22Row(P.kind+'_jump',HF22_ART.phases[P.kind].strikeEnd),end={x:P.target.x-(a.tip[0]-a.pivot[0]),y:P.target.y-(a.tip[1]-a.pivot[1])},u=clamp(P.clock/1.2,0,1);b.x=lerp(P.origin.x,end.x,u);b.y=lerp(P.origin.y,end.y,u)-Math.sin(u*Math.PI)*(P.kind==='blue'?70:110);b._drawY=b.y;
+hj22Pair=function(b,kind,target){const P={...HF22.base.pair(b,kind,target),difficulty:diffKey,leftHit:new Set(),rightHit:new Set()};
+ if(kind==='blue'&&run.stage===5&&diffKey==='furious'&&!b._gp4Host&&!b._hammerTime?.hama){const ship=targetShip(b.x,b.y);P.furiousMelee24=true;P.target={x:ship.x,y:ship.y};P.track={ship,x:ship.x,y:ship.y,t:0,vx:0,vy:0};}
+ return P;};
+function hf22FuriousSide(b,P,side){const T=HF22_FURIOUS_COMBO[side],offset=side==='left'?0:HF22_ART.sides.blue.left;
+ if(!P[side+'Aim']){const p=P.track,aim={x:clamp(p.x+p.vx*.18,camLeftX()+22,camRightX()-22),y:clamp(p.y+p.vy*.18,PLAY.y+30,PLAY.y+PLAY.h-24)},a=hf22Row('blue_sides',offset+(typeof c25Own==='function'&&c25Own(b)?3:side==='left'?3:2));
+  P[side+'Aim']=aim;P[side+'Origin']={x:b.x,y:b.y};P[side+'End']={x:aim.x-a.tip[0]+a.pivot[0],y:aim.y-a.tip[1]+a.pivot[1]};
+ }
+ const origin=P[side+'Origin'],end=P[side+'End'],u=clamp((P.clock-T.start)/(T.hit-T.start),0,1),ease=u*u*(3-2*u);
+ b.x=lerp(origin.x,end.x,ease);b.y=lerp(origin.y,end.y,ease);b._drawY=b.y;
+ if(P.clock<T.hit){combatWarningTick(P,'hammer-furious-'+side,P.clock-T.start,T.hit-T.start);return;}
+ const q=hf22FuriousPose(b,P);if(!q?.a)return;const at=hb20World(q.a,q.a.tip,b,1,0);
+ // Seed with the last wind-up head so the first fast strike frame cannot
+ // tunnel past a ship. Contact always follows the displayed authored hammer.
+ const first=hf22Row('blue_sides',offset+1),prev=P[side+'Prev']||hb20World(first,first.tip,b,1,0);P[side+'Prev']=at;
+ b20HitSegment(b,prev,at,30,'Hammer '+side+' sweep',P[side+'Hit']);
+ if(!P[side+'Cue']){P[side+'Cue']=true;b20Cue('hammerThrow');HF22.events.push({type:side+'-swing',kind:P.kind});}
+}
+function hf22FuriousTick(b,P){const T=HF22_FURIOUS_COMBO,t=P.clock,p=P.track,ship=targetShip(b.x,b.y),dt=t-p.t;
+ if(dt>0){p.vx=ship===p.ship?clamp((ship.x-p.x)/dt,-320,320):0;p.vy=ship===p.ship?clamp((ship.y-p.y)/dt,-320,320):0;p.ship=ship;p.x=ship.x;p.y=ship.y;p.t=t;}
+ if(t<T.left.start){const a=hf22Row('blue_jump',HF22_ART.phases.blue.strikeEnd),end={x:P.target.x-a.tip[0]+a.pivot[0],y:P.target.y-a.tip[1]+a.pivot[1]},u=clamp(t/T.impact,0,1);
+  b.x=lerp(P.origin.x,end.x,u);b.y=lerp(P.origin.y,end.y,u)-Math.sin(u*Math.PI)*70;b._drawY=b.y;
+  if(t<T.impact)combatWarningTick(P,'hammer-second-down',Math.min(t,T.lock),T.lock);
+  if(t>=T.impact&&!P.impact){P.impact=true;b20HitSegment(b,P.target,P.target,62,'Hammer second downward slam',P.hit);explode(P.target.x,P.target.y,70,'blue');shake=Math.max(shake,10);b20Cue('hammerImpact');HF22.events.push({type:'second-down',kind:'blue'});}
+ }else if(t<T.left.end)hf22FuriousSide(b,P,'left');else if(t<T.right.end)hf22FuriousSide(b,P,'right');
+}
+hj22PairTick=function(b,P){if(P.furiousMelee24)return hf22FuriousTick(b,P);const a=hf22Row(P.kind+'_jump',HF22_ART.phases[P.kind].strikeEnd),end={x:P.target.x-(a.tip[0]-a.pivot[0]),y:P.target.y-(a.tip[1]-a.pivot[1])},u=clamp(P.clock/1.2,0,1);b.x=lerp(P.origin.x,end.x,u);b.y=lerp(P.origin.y,end.y,u)-Math.sin(u*Math.PI)*(P.kind==='blue'?70:110);b._drawY=b.y;
  if(P.clock<=1.2)combatWarningTick(P,'hammer-second-down',Math.min(P.clock,.85),.85);
  if(P.clock>=1.2&&!P.impact){P.impact=true;b20HitSegment(b,P.target,P.target,P.kind==='blue'?62:46,'Hammer second downward slam',P.hit);if(P.kind==='corrupt')hb20Wave(b,hb20State(b),P.target);explode(P.target.x,P.target.y,70,P.kind==='blue'?'blue':'purple');shake=Math.max(shake,10);b20Cue('hammerImpact');HF22.events.push({type:'second-down',kind:P.kind});}
  if(P.difficulty==='furious')for(const [side,start,active,endTime]of[['left',1.36,1.76,2.14],['right',2.14,2.54,2.92]]){if(P.clock>=start&&P.clock<active)combatWarningTick(P,'hammer-furious-'+side,P.clock-start,active-start);if(P.clock>=active&&P.clock<=endTime){const q=hf22PairPose(b,P);if(!q?.a)continue;const at=hb20World(q.a,q.a.tip,b,1,0),prev=P[side+'Prev']||at;P[side+'Prev']=at;b20HitSegment(b,prev,at,30,'Hammer '+side+' sweep',P[side+'Hit']);if(!P[side+'Cue']){P[side+'Cue']=true;b20Cue('hammerThrow');HF22.events.push({type:side+'-swing',kind:P.kind});}}}
 };
 function hf22Warning(at,u,dir='down'){const f=u<1/3?0:u<2/3?1:2,a=hf22Row('warning_'+dir,f);if(a)hf22Cell(a,at.x,at.y);}
-hj22PairDraw=function(b,P){if(b.dead)return;if(P.clock<1.2){hf22Warning(P.target,clamp(P.clock/.85,0,1));const r=hj22Frame('warning_reticle',P.clock/.85<1/3?0:P.clock/.85<2/3?1:2);if(r&&XART.rdy(r.key))ctx.drawImage(XART.get(r.key),Math.round(P.target.x-r.pivot[0]),Math.round(P.target.y-r.pivot[1]));}
+hj22PairDraw=function(b,P){if(b.dead)return;
+ if(P.furiousMelee24){const T=HF22_FURIOUS_COMBO,t=P.clock;
+  if(t<T.impact){const u=clamp(t/T.lock,0,1),r=hj22Frame('warning_reticle',u<1/3?0:u<2/3?1:2);if(!(typeof c25Own==='function'&&c25Own(b))&&r&&XART.rdy(r.key))ctx.drawImage(XART.get(r.key),Math.round(P.target.x-r.pivot[0]),Math.round(P.target.y-r.pivot[1]));const at=hammerHeadPoint(b);combatWarningDraw(P,{x:at.x,y:at.y,ex:P.target.x,ey:P.target.y,progress:u,width:124,fieldOnly:true,len:Math.hypot(at.x-P.target.x,at.y-P.target.y)});}
+  for(const [side,offset]of [['left',0],['right',HF22_ART.sides.blue.left]]){const q=T[side],end=P[side+'End'];if(!end||t<q.start||t>=q.hit)continue;
+   const points=Array.from({length:6},(_,i)=>{const a=hf22Row('blue_sides',offset+i+1);return hb20World(a,a.tip,end,1,0);}),xs=points.map(p=>p.x),ys=points.map(p=>p.y),lo=Math.min(...xs)-30,hi=Math.max(...xs)+30,y=(Math.min(...ys)+Math.max(...ys))/2,width=Math.max(...ys)-Math.min(...ys)+60;
+   combatWarningDraw(P,{x:side==='left'?hi:lo,y,ex:side==='left'?lo:hi,ey:y,progress:(t-q.start)/(q.hit-q.start),width,fieldOnly:true,len:hi-lo});}
+  return;
+ }
+ if(P.clock<1.2){hf22Warning(P.target,clamp(P.clock/.85,0,1));const r=hj22Frame('warning_reticle',P.clock/.85<1/3?0:P.clock/.85<2/3?1:2);if(r&&XART.rdy(r.key))ctx.drawImage(XART.get(r.key),Math.round(P.target.x-r.pivot[0]),Math.round(P.target.y-r.pivot[1]));}
  if(P.difficulty==='furious'){if(P.clock>=1.36&&P.clock<1.76)hf22Warning({x:b.x,y:b.y-15},(P.clock-1.36)/.4,'left');if(P.clock>=2.14&&P.clock<2.54)hf22Warning({x:b.x,y:b.y-15},(P.clock-2.14)/.4,'right');}
 };
 hammerRecoverDuration=function(){const P=boss?._hammer?._hj22Pair;return P?hf22PairDuration(P):HF22.base.recovery.apply(this,arguments);};

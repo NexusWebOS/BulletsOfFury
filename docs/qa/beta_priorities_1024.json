@@ -1,0 +1,1124 @@
+{
+  "pass": "beta_priorities_1024",
+  "native_checks": 31,
+  "failed": 0,
+  "shield_campaign_elite": {
+    "passed": 20,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Stage6 left offers opposite pursuit before Stage7",
+        "passed": true,
+        "data": {
+          "state": "stagesel",
+          "stage": 6,
+          "score": 223,
+          "route": {
+            "route": "right",
+            "done": false
+          },
+          "focus": true,
+          "flight": 3.3,
+          "snap": {
+            "scattered": false,
+            "defeated": [],
+            "stageX1004": {
+              "route": "right",
+              "done": false
+            }
+          },
+          "auto": {
+            "v": 1,
+            "t": 1792868525818,
+            "pilot": "axel",
+            "pilotIndex": 0,
+            "diff": "normal",
+            "stage": 7,
+            "score": 223,
+            "lives": 3,
+            "ngplus": false,
+            "bombs": 2,
+            "missileTier": "standard",
+            "missileUpgrade": null,
+            "missileWaveSerial": 0,
+            "retinaScan": false,
+            "shield": 0,
+            "megaShield": false,
+            "contUsed": 0,
+            "contBonus": 0,
+            "weapon": 0,
+            "wlevel": 1,
+            "wlevels": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "wvars": [],
+            "mavBeamUnlocked": false,
+            "thunderStormUnlocked": false,
+            "thunderCeremonyShown": false,
+            "earnedUnlocks": {},
+            "forge": {},
+            "forgeForms": {},
+            "forgeElems": {},
+            "loadout": null,
+            "unlockedMax": 7,
+            "rank": {
+              "6": "A"
+            },
+            "bonusUnlocked": false,
+            "mapStageX": true,
+            "rival24": {
+              "scattered": false,
+              "defeated": [],
+              "stageX1004": {
+                "route": "right",
+                "done": false
+              }
+            },
+            "unlocks": {
+              "bomber": false,
+              "cole": false,
+              "legacySpaceShip": false
+            },
+            "freezerL2Cleared": false,
+            "primary1003b": "chain",
+            "coleLaserTier": null,
+            "coleLaserUnlocked": 0,
+            "forgeCombos": 12,
+            "forgeRespecs": 0,
+            "rs22Serial": 0,
+            "forgeBudget23": {
+              "v": 1,
+              "cleared": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "spent": 0,
+              "reset": 0
+            },
+            "respecBase23": false,
+            "mode": "campaign",
+            "completed": false
+          }
+        }
+      },
+      {
+        "name": "Pending pursuit survives save/load left",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Saved pursuit can be declined and launched with native confirm left",
+        "passed": true,
+        "data": {
+          "restored": true,
+          "pending": true,
+          "once": true,
+          "declined": true,
+          "launched": true,
+          "rewardOnce": true,
+          "completed": true,
+          "revisit": true
+        }
+      },
+      {
+        "name": "Stage6 right offers opposite pursuit before Stage7",
+        "passed": true,
+        "data": {
+          "state": "stagesel",
+          "stage": 6,
+          "score": 223,
+          "route": {
+            "route": "left",
+            "done": false
+          },
+          "focus": true,
+          "flight": 3.3,
+          "snap": {
+            "scattered": false,
+            "defeated": [],
+            "stageX1004": {
+              "route": "left",
+              "done": false
+            }
+          },
+          "auto": {
+            "v": 1,
+            "t": 1792868527515,
+            "pilot": "axel",
+            "pilotIndex": 0,
+            "diff": "normal",
+            "stage": 7,
+            "score": 223,
+            "lives": 4,
+            "ngplus": false,
+            "bombs": 14,
+            "missileTier": "super",
+            "missileUpgrade": {
+              "next": "ultra",
+              "ready": false,
+              "readyAfter": 1
+            },
+            "missileWaveSerial": 0,
+            "retinaScan": false,
+            "shield": 0,
+            "megaShield": false,
+            "contUsed": 0,
+            "contBonus": 0,
+            "weapon": 7,
+            "wlevel": 1,
+            "wlevels": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "wvars": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "mavBeamUnlocked": false,
+            "thunderStormUnlocked": false,
+            "thunderCeremonyShown": false,
+            "earnedUnlocks": {
+              "chaingun": true
+            },
+            "forge": {},
+            "forgeForms": {},
+            "forgeElems": {},
+            "loadout": [
+              7,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "unlockedMax": 7,
+            "rank": {
+              "6": "A"
+            },
+            "bonusUnlocked": false,
+            "mapStageX": true,
+            "rival24": {
+              "scattered": false,
+              "defeated": [],
+              "stageX1004": {
+                "route": "left",
+                "done": false
+              }
+            },
+            "unlocks": {
+              "bomber": false,
+              "cole": false,
+              "legacySpaceShip": false
+            },
+            "freezerL2Cleared": true,
+            "primary1003b": "chain",
+            "coleLaserTier": null,
+            "coleLaserUnlocked": 1,
+            "modeProof": {
+              "stages": [
+                6
+              ]
+            },
+            "forgeCombos": 13,
+            "forgeRespecs": 0,
+            "rs22Serial": 0,
+            "forgeBudget23": {
+              "v": 1,
+              "cleared": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "spent": 0,
+              "reset": 0
+            },
+            "respecBase23": false,
+            "mode": "campaign",
+            "completed": false
+          }
+        }
+      },
+      {
+        "name": "Pending pursuit survives save/load right",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Saved pursuit can be declined and launched with native confirm right",
+        "passed": true,
+        "data": {
+          "restored": true,
+          "pending": true,
+          "once": true,
+          "declined": true,
+          "launched": true,
+          "rewardOnce": true,
+          "completed": true,
+          "revisit": true
+        }
+      },
+      {
+        "name": "Sustained shared hit route retains normal palette windows",
+        "passed": true,
+        "data": {
+          "lit": 60,
+          "total": 120
+        }
+      },
+      {
+        "name": "Stage 1 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 1,
+          "seen": [
+            {
+              "size": 61.425000000000004,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s1jet",
+              "hull": {
+                "w": 45.5,
+                "h": 45.5
+              },
+              "size": 61.425000000000004,
+              "max": 1
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 2 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 2,
+          "seen": [
+            {
+              "size": 100.996875,
+              "alpha": 0.38
+            },
+            {
+              "size": 99.58235294117648,
+              "alpha": 0.38
+            },
+            {
+              "size": 106.22117647058823,
+              "alpha": 0.38
+            },
+            {
+              "size": 113.85749999999999,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "ash",
+              "hull": {
+                "w": 74.8125,
+                "h": 74.8125
+              },
+              "size": 100.996875,
+              "max": 4
+            },
+            {
+              "type": "skim",
+              "hull": {
+                "w": 73.76470588235294,
+                "h": 73.76470588235294
+              },
+              "size": 99.58235294117648,
+              "max": 4
+            },
+            {
+              "type": "eye",
+              "hull": {
+                "w": 78.68235294117646,
+                "h": 78.68235294117646
+              },
+              "size": 106.22117647058823,
+              "max": 4
+            },
+            {
+              "type": "disc",
+              "hull": {
+                "w": 84.33888888888887,
+                "h": 84.33888888888887
+              },
+              "size": 113.85749999999999,
+              "max": 4
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 3 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 3,
+          "seen": [
+            {
+              "size": 61.425000000000004,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s1jet",
+              "hull": {
+                "w": 45.5,
+                "h": 45.5
+              },
+              "size": 61.425000000000004,
+              "max": 1
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 4 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 4,
+          "seen": [
+            {
+              "size": 61.425000000000004,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s1jet",
+              "hull": {
+                "w": 45.5,
+                "h": 45.5
+              },
+              "size": 61.425000000000004,
+              "max": 1
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 5 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 5,
+          "seen": [
+            {
+              "size": 61.425000000000004,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s1jet",
+              "hull": {
+                "w": 45.5,
+                "h": 45.5
+              },
+              "size": 61.425000000000004,
+              "max": 1
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 6 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 6,
+          "seen": [
+            {
+              "size": 72.9,
+              "alpha": 0.38
+            },
+            {
+              "size": 72.9,
+              "alpha": 0.38
+            },
+            {
+              "size": 125.55000000000001,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s6dart",
+              "hull": {
+                "w": 54,
+                "h": 54
+              },
+              "size": 72.9,
+              "max": 12
+            },
+            {
+              "type": "s6mine",
+              "hull": {
+                "w": 54,
+                "h": 54
+              },
+              "size": 72.9,
+              "max": 12
+            },
+            {
+              "type": "s6probe",
+              "hull": {
+                "w": 93,
+                "h": 93
+              },
+              "size": 125.55000000000001,
+              "max": 12
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 7 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 7,
+          "seen": [
+            {
+              "size": 50.894999999999996,
+              "alpha": 0.38
+            },
+            {
+              "size": 50.894999999999996,
+              "alpha": 0.38
+            },
+            {
+              "size": 50.894999999999996,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "cp22slime",
+              "hull": {
+                "w": 37.699999999999996,
+                "h": 37.699999999999996
+              },
+              "size": 50.894999999999996,
+              "max": 1
+            },
+            {
+              "type": "cp22drone",
+              "hull": {
+                "w": 37.699999999999996,
+                "h": 37.699999999999996
+              },
+              "size": 50.894999999999996,
+              "max": 1
+            },
+            {
+              "type": "cp22relay",
+              "hull": {
+                "w": 37.699999999999996,
+                "h": 37.699999999999996
+              },
+              "size": 50.894999999999996,
+              "max": 1
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 8 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 8,
+          "seen": [
+            {
+              "size": 61.425000000000004,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s1jet",
+              "hull": {
+                "w": 45.5,
+                "h": 45.5
+              },
+              "size": 61.425000000000004,
+              "max": 1
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stage 9 shields follow hulls",
+        "passed": true,
+        "data": {
+          "stage": 9,
+          "seen": [
+            {
+              "size": 157.95000000000002,
+              "alpha": 0.38
+            },
+            {
+              "size": 140.4,
+              "alpha": 0.38
+            },
+            {
+              "size": 108,
+              "alpha": 0.38
+            },
+            {
+              "size": 83.7,
+              "alpha": 0.38
+            }
+          ],
+          "units": [
+            {
+              "type": "s9interceptor",
+              "hull": {
+                "w": 117.00000000000001,
+                "h": 117.00000000000001
+              },
+              "size": 157.95000000000002,
+              "max": 30
+            },
+            {
+              "type": "s9comet",
+              "hull": {
+                "w": 104,
+                "h": 104
+              },
+              "size": 140.4,
+              "max": 28
+            },
+            {
+              "type": "wskim",
+              "hull": {
+                "w": 80,
+                "h": 80
+              },
+              "size": 108,
+              "max": 22
+            },
+            {
+              "type": "pneedle",
+              "hull": {
+                "w": 62,
+                "h": 62
+              },
+              "size": 83.7,
+              "max": 18
+            }
+          ]
+        }
+      },
+      {
+        "name": "Native half-health elite fill pixels stage 2",
+        "passed": true,
+        "data": {
+          "seen": [
+            [
+              0,
+              0,
+              50,
+              4,
+              178.1818181818182,
+              253.27897727272727,
+              21.818181818181817,
+              1.7454545454545454
+            ],
+            [
+              0,
+              0,
+              50,
+              4,
+              298.1818181818182,
+              372.75508021390374,
+              21.818181818181817,
+              1.7454545454545454
+            ],
+            [
+              0,
+              0,
+              50,
+              4,
+              418.1818181818182,
+              255.2139037433155,
+              21.818181818181817,
+              1.7454545454545454
+            ]
+          ],
+          "bars": 22,
+          "units": [
+            {
+              "type": "ash",
+              "hp": 2,
+              "max": 4,
+              "size": 100.996875
+            },
+            {
+              "type": "skim",
+              "hp": 2,
+              "max": 4,
+              "size": 99.58235294117648
+            },
+            {
+              "type": "eye",
+              "hp": 2,
+              "max": 4,
+              "size": 106.22117647058823
+            }
+          ]
+        }
+      },
+      {
+        "name": "Native half-health elite fill pixels stage 6",
+        "passed": true,
+        "data": {
+          "seen": [
+            [
+              0,
+              0,
+              50,
+              4,
+              178.1818181818182,
+              242.94303977272727,
+              21.818181818181817,
+              1.7454545454545454
+            ],
+            [
+              0,
+              0,
+              50,
+              4,
+              298.1818181818182,
+              362.9430397727273,
+              21.818181818181817,
+              1.7454545454545454
+            ]
+          ],
+          "bars": 24,
+          "units": [
+            {
+              "type": "s6dart",
+              "hp": 6,
+              "max": 12,
+              "size": 73.08984375
+            },
+            {
+              "type": "s6mine",
+              "hp": 6,
+              "max": 12,
+              "size": 73.08984375
+            }
+          ]
+        }
+      },
+      {
+        "name": "Native half-health elite fill pixels stage 9",
+        "passed": true,
+        "data": {
+          "seen": [
+            [
+              0,
+              0,
+              50,
+              4,
+              178.1818181818182,
+              274.3727272727273,
+              21.818181818181817,
+              1.7454545454545454
+            ],
+            [
+              0,
+              0,
+              50,
+              4,
+              298.1818181818182,
+              387.8727272727273,
+              21.818181818181817,
+              1.7454545454545454
+            ],
+            [
+              0,
+              0,
+              50,
+              4,
+              418.1818181818182,
+              255.87272727272727,
+              21.818181818181817,
+              1.7454545454545454
+            ]
+          ],
+          "bars": 27,
+          "units": [
+            {
+              "type": "s9interceptor",
+              "hp": 15,
+              "max": 30,
+              "size": 157.95000000000002
+            },
+            {
+              "type": "s9comet",
+              "hp": 14,
+              "max": 28,
+              "size": 140.4
+            },
+            {
+              "type": "wskim",
+              "hp": 11,
+              "max": 22,
+              "size": 108
+            }
+          ]
+        }
+      },
+      {
+        "name": "No page/console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "boss_pixels_radio": {
+    "passed": 11,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "chromehammer native damage gives visible hit pixels and palette recovery",
+        "passed": true,
+        "data": {
+          "damage": 12.000000000043656,
+          "min": 716,
+          "max": 24116,
+          "expired": 716,
+          "samples": [
+            24116,
+            24116,
+            24116,
+            716,
+            716,
+            716,
+            716,
+            24116,
+            24116,
+            24116,
+            716,
+            716,
+            716,
+            716,
+            24116,
+            24116,
+            24116,
+            716,
+            716,
+            716,
+            716,
+            24116,
+            24116,
+            24116,
+            716,
+            716,
+            716,
+            716,
+            24116,
+            24116,
+            24116,
+            716,
+            716,
+            716,
+            716,
+            24116,
+            24116,
+            24116,
+            716,
+            716
+          ],
+          "normalFrames": 72
+        }
+      },
+      {
+        "name": "warhive native damage gives visible hit pixels and palette recovery",
+        "passed": true,
+        "data": {
+          "damage": 11.999999999999318,
+          "min": 15,
+          "max": 3229,
+          "expired": 15,
+          "samples": [
+            3229,
+            3229,
+            17,
+            17,
+            15,
+            15,
+            15,
+            3229,
+            3229,
+            17,
+            17,
+            15,
+            15,
+            15,
+            3229,
+            3229,
+            17,
+            17,
+            15,
+            15,
+            15,
+            3229,
+            3229,
+            17,
+            17,
+            15,
+            15,
+            15,
+            3229,
+            3229,
+            17,
+            17,
+            15,
+            15,
+            15,
+            3229,
+            3229,
+            17,
+            17,
+            15
+          ],
+          "normalFrames": 120
+        }
+      },
+      {
+        "name": "heralddeath native damage gives visible hit pixels and palette recovery",
+        "passed": true,
+        "data": {
+          "damage": 14.399999999986903,
+          "min": 522,
+          "max": 33879,
+          "expired": 522,
+          "samples": [
+            33879,
+            11456,
+            1337,
+            559,
+            522,
+            522,
+            522,
+            33879,
+            11456,
+            1337,
+            559,
+            522,
+            522,
+            522,
+            33879,
+            11456,
+            1337,
+            559,
+            522,
+            522,
+            522,
+            33879,
+            11456,
+            1337,
+            559,
+            522,
+            522,
+            522,
+            33879,
+            11456,
+            1337,
+            559,
+            522,
+            522,
+            522,
+            33879,
+            11456,
+            1337,
+            559,
+            522
+          ],
+          "normalFrames": 78
+        }
+      },
+      {
+        "name": "Dracodia form 0 damage and native palette recovery",
+        "passed": true,
+        "data": {
+          "form": 0,
+          "damage": 11.999999999989086,
+          "normal": 72,
+          "min": 2707,
+          "max": 5596
+        }
+      },
+      {
+        "name": "Dracodia form 8 damage and native palette recovery",
+        "passed": true,
+        "data": {
+          "form": 8,
+          "damage": 11.999999999989086,
+          "normal": 72,
+          "min": 1322,
+          "max": 36520
+        }
+      },
+      {
+        "name": "Dracodia form 1 damage and native palette recovery",
+        "passed": true,
+        "data": {
+          "form": 1,
+          "damage": 11.999999999989086,
+          "normal": 72,
+          "min": 588,
+          "max": 7298
+        }
+      },
+      {
+        "name": "Dracodia form 6 damage and native palette recovery",
+        "passed": true,
+        "data": {
+          "form": 6,
+          "damage": 11.999999999989086,
+          "normal": 72,
+          "min": 824,
+          "max": 34989
+        }
+      },
+      {
+        "name": "Dracodia form 2 damage and native palette recovery",
+        "passed": true,
+        "data": {
+          "form": 2,
+          "damage": 11.999999999989086,
+          "normal": 72,
+          "min": 185,
+          "max": 1496
+        }
+      },
+      {
+        "name": "Compact Chronos radio stays combat-live at 1280",
+        "passed": true,
+        "data": {
+          "live": true,
+          "delta": 0.24999999999999997,
+          "ui": {
+            "x": 8,
+            "y": 34,
+            "w": 393.59999999999997,
+            "h": 68
+          },
+          "W": 480,
+          "H": 512
+        }
+      },
+      {
+        "name": "Compact Chronos radio stays combat-live at 480",
+        "passed": true,
+        "data": {
+          "live": true,
+          "delta": 0.24999999999999997,
+          "ui": {
+            "x": 8,
+            "y": 34,
+            "w": 393.59999999999997,
+            "h": 68
+          },
+          "W": 480,
+          "H": 512
+        }
+      },
+      {
+        "name": "No page/console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "syntax": "passed",
+  "full_suite": {
+    "exit": 1,
+    "assertions": 0,
+    "summary_reached": false,
+    "blocker": "MODULE_NOT_FOUND retired_art_archive_1022.cjs; existing downloaded build issue"
+  },
+  "art": {
+    "source_job": "1b12770a-6007-4ae8-8750-06309aad112b",
+    "resolution": [
+      128,
+      32
+    ],
+    "frame": {
+      "key": "bet24_elite_frame",
+      "w": 110,
+      "h": 10,
+      "path": "assets/game/shared/ui/beta_elite_1024/frame.png",
+      "sha256": "e667765c5c6691f22d0b28a1927d6773cde147127e5296c2e708f69fee84d488"
+    },
+    "fill": {
+      "key": "bet24_elite_fill",
+      "w": 100,
+      "h": 4,
+      "path": "assets/game/shared/ui/beta_elite_1024/fill.png",
+      "sha256": "f83d88061b75e24154074aa9ec2bb2aef088d64259109b8efbf4d152c9b34439"
+    },
+    "aperture": [
+      5,
+      2,
+      100,
+      4
+    ],
+    "source_crops": {
+      "frame": [
+        9,
+        3,
+        110,
+        10
+      ],
+      "fill_tile": [
+        30,
+        20,
+        2,
+        4
+      ]
+    }
+  },
+  "remaining": [
+    "BETA-05 armor/body/objective HUD distinction",
+    "BETA-06 turret FX isolation",
+    "BETA-07 completion metadata audit",
+    "allied-fire and human fairness review"
+  ]
+}

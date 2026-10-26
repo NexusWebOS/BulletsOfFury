@@ -1,0 +1,10 @@
+status: completed
+id: b2b9f17f-44f4-400c-876e-0c57357e70ad
+job_id: b2b9f17f-44f4-400c-876e-0c57357e70ad
+frame: 16 of 17
+asset_id: fdf19e58-827c-503f-be9b-b65b570ecf9c
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0323 in credits
+download: https://api.pixellab.ai/mcp/images/b2b9f17f-44f4-400c-876e-0c57357e70ad/download?index=16

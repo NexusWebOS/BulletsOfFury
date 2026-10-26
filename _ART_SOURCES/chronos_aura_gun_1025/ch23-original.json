@@ -1,0 +1,1735 @@
+{
+  "sheets": {
+    "ch23_body": {
+      "key": "nca_ch23_body",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "aebc582f0969a6dc9d8ec05c1678b3e592a119dc4e229cd68fe2f329a6caf9f6"
+    },
+    "ch23_body_armor": {
+      "key": "nca_ch23_body_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_armor.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "4ff8a463024cfa071957bc177eaf692178356b73bb55146099e8a8c444de3376"
+    },
+    "ch23_body_red": {
+      "key": "nca_ch23_body_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_red.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "bd06f4dc263e2cb9a5ec747759dffa49a4b36f667d0fd740f0128d3c5a034208"
+    },
+    "ch23_body_hit": {
+      "key": "nca_ch23_body_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/body_hit.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "74496fdd7dfc2458e11cf1cb1141a59c282400d499c84b46b47af36c895e4356"
+    },
+    "ch23_barrel": {
+      "key": "nca_ch23_barrel",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel.webp",
+      "w": 416,
+      "h": 624,
+      "sha256": "18f34f2f60e713de2f2d30190b284e4f0b002e54ff778f3cb63f2add58c088c7"
+    },
+    "ch23_barrel_armor": {
+      "key": "nca_ch23_barrel_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_armor.webp",
+      "w": 416,
+      "h": 624,
+      "sha256": "3d2bcb8ab28f7f9a8fddf7341199e858fbecbde3f8c34fab9337c388b4f29945"
+    },
+    "ch23_barrel_red": {
+      "key": "nca_ch23_barrel_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_red.webp",
+      "w": 416,
+      "h": 624,
+      "sha256": "36054261f2b23501e008cec65d1e1b4d7c5a8c7aaceaaf935d7f85c2339c4da2"
+    },
+    "ch23_barrel_hit": {
+      "key": "nca_ch23_barrel_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/barrel_hit.webp",
+      "w": 416,
+      "h": 624,
+      "sha256": "e7840645d6a795df27c10157afc658e7213549e2350f0f67858f2970d2e8258f"
+    },
+    "ch23_hands": {
+      "key": "nca_ch23_hands",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "6364a41745f5de36b67d63125d2fc6f89ba5cdc081d67f9a1266d076e06a6d03"
+    },
+    "ch23_hands_armor": {
+      "key": "nca_ch23_hands_armor",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_armor.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "804752dd93d6f46ac3b999fe57d6326fcb3e4eba7d4f34a175bc19b9bc629d9e"
+    },
+    "ch23_hands_red": {
+      "key": "nca_ch23_hands_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_red.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "46b1907207de126adf4e75de2dfa366c879acc067040097bce93318bb80cd6c3"
+    },
+    "ch23_hands_hit": {
+      "key": "nca_ch23_hands_hit",
+      "path": "assets/game/shared/combat/chronos_modular_1023/hands_hit.webp",
+      "w": 1536,
+      "h": 512,
+      "sha256": "444b5cb14b38e16bf5545944dbfbec01cce83ae85f25f72a7c04231c9237cc42"
+    },
+    "ch23_round": {
+      "key": "nca_ch23_round",
+      "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+      "w": 160,
+      "h": 200,
+      "sha256": "c39dce11facbe47a4cf295633350b261e150e1a0e3cd1d518dcefe1bbbc79afd"
+    },
+    "ch23_warn_fan_green": {
+      "key": "nca_ch23_warn_fan_green",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_green.webp",
+      "w": 448,
+      "h": 528,
+      "sha256": "ce1a7786f2fd21a4e71e637d394909716ad4de55606d09fafefbf3e6074957fc"
+    },
+    "ch23_warn_down_green": {
+      "key": "nca_ch23_warn_down_green",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_green.webp",
+      "w": 200,
+      "h": 528,
+      "sha256": "043d086e1e60cae1409610ed2dc5d80717fa4c9ab008d0ed1c9c02fb620b9fdd"
+    },
+    "ch23_warn_fan_yellow": {
+      "key": "nca_ch23_warn_fan_yellow",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_yellow.webp",
+      "w": 448,
+      "h": 528,
+      "sha256": "4f129b62f2a48db596eb56b5467b18e01386f46ab18801b64d0398fb70f087a4"
+    },
+    "ch23_warn_down_yellow": {
+      "key": "nca_ch23_warn_down_yellow",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_yellow.webp",
+      "w": 200,
+      "h": 528,
+      "sha256": "40d2e7e4e835f9e7d0092dab71fe5f1384059565382b01be80902d50411d9a8c"
+    },
+    "ch23_warn_fan_red": {
+      "key": "nca_ch23_warn_fan_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_red.webp",
+      "w": 448,
+      "h": 528,
+      "sha256": "abb88f3913292ac00313132a8afcb0b0c93d92d655c4f1b0abcdc569bd7c8942"
+    },
+    "ch23_warn_down_red": {
+      "key": "nca_ch23_warn_down_red",
+      "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_red.webp",
+      "w": 200,
+      "h": 528,
+      "sha256": "a019aa8d71dcd945dde9580838f40fba2adb257f85a134b50e4d0b32d4b67f45"
+    }
+  },
+  "banks": {
+    "body": [
+      {
+        "key": "ch23_body_0",
+        "sheet": "ch23_body",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          105,
+          171,
+          292,
+          380
+        ],
+        "white": "ch23_body_hit_0"
+      }
+    ],
+    "body_armor": [
+      {
+        "key": "ch23_body_armor_0",
+        "sheet": "ch23_body_armor",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          105,
+          171,
+          292,
+          380
+        ],
+        "white": "ch23_body_hit_0"
+      }
+    ],
+    "body_red": [
+      {
+        "key": "ch23_body_red_0",
+        "sheet": "ch23_body_red",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          105,
+          171,
+          292,
+          380
+        ],
+        "white": "ch23_body_hit_0"
+      }
+    ],
+    "body_hit": [
+      {
+        "key": "ch23_body_hit_0",
+        "sheet": "ch23_body_hit",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          105,
+          171,
+          292,
+          380
+        ]
+      }
+    ],
+    "barrel": [
+      {
+        "key": "ch23_barrel_0",
+        "sheet": "ch23_barrel",
+        "cell": [
+          0,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_0"
+      },
+      {
+        "key": "ch23_barrel_1",
+        "sheet": "ch23_barrel",
+        "cell": [
+          104,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_1"
+      },
+      {
+        "key": "ch23_barrel_2",
+        "sheet": "ch23_barrel",
+        "cell": [
+          208,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_2"
+      },
+      {
+        "key": "ch23_barrel_3",
+        "sheet": "ch23_barrel",
+        "cell": [
+          312,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_3"
+      },
+      {
+        "key": "ch23_barrel_4",
+        "sheet": "ch23_barrel",
+        "cell": [
+          0,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_4"
+      },
+      {
+        "key": "ch23_barrel_5",
+        "sheet": "ch23_barrel",
+        "cell": [
+          104,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ],
+        "white": "ch23_barrel_hit_5"
+      },
+      {
+        "key": "ch23_barrel_6",
+        "sheet": "ch23_barrel",
+        "cell": [
+          208,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ],
+        "white": "ch23_barrel_hit_6"
+      },
+      {
+        "key": "ch23_barrel_7",
+        "sheet": "ch23_barrel",
+        "cell": [
+          312,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_7"
+      },
+      {
+        "key": "ch23_barrel_8",
+        "sheet": "ch23_barrel",
+        "cell": [
+          0,
+          416,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_8"
+      }
+    ],
+    "barrel_armor": [
+      {
+        "key": "ch23_barrel_armor_0",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          0,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_0"
+      },
+      {
+        "key": "ch23_barrel_armor_1",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          104,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_1"
+      },
+      {
+        "key": "ch23_barrel_armor_2",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          208,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_2"
+      },
+      {
+        "key": "ch23_barrel_armor_3",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          312,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_3"
+      },
+      {
+        "key": "ch23_barrel_armor_4",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          0,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_4"
+      },
+      {
+        "key": "ch23_barrel_armor_5",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          104,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ],
+        "white": "ch23_barrel_hit_5"
+      },
+      {
+        "key": "ch23_barrel_armor_6",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          208,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ],
+        "white": "ch23_barrel_hit_6"
+      },
+      {
+        "key": "ch23_barrel_armor_7",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          312,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_7"
+      },
+      {
+        "key": "ch23_barrel_armor_8",
+        "sheet": "ch23_barrel_armor",
+        "cell": [
+          0,
+          416,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_8"
+      }
+    ],
+    "barrel_red": [
+      {
+        "key": "ch23_barrel_red_0",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          0,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_0"
+      },
+      {
+        "key": "ch23_barrel_red_1",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          104,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_1"
+      },
+      {
+        "key": "ch23_barrel_red_2",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          208,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_2"
+      },
+      {
+        "key": "ch23_barrel_red_3",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          312,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ],
+        "white": "ch23_barrel_hit_3"
+      },
+      {
+        "key": "ch23_barrel_red_4",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          0,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_4"
+      },
+      {
+        "key": "ch23_barrel_red_5",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          104,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ],
+        "white": "ch23_barrel_hit_5"
+      },
+      {
+        "key": "ch23_barrel_red_6",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          208,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ],
+        "white": "ch23_barrel_hit_6"
+      },
+      {
+        "key": "ch23_barrel_red_7",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          312,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_7"
+      },
+      {
+        "key": "ch23_barrel_red_8",
+        "sheet": "ch23_barrel_red",
+        "cell": [
+          0,
+          416,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ],
+        "white": "ch23_barrel_hit_8"
+      }
+    ],
+    "barrel_hit": [
+      {
+        "key": "ch23_barrel_hit_0",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          0,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_1",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          104,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_2",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          208,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_3",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          312,
+          0,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          187
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_4",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          0,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_5",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          104,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_6",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          208,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          185
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_7",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          312,
+          208,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ]
+      },
+      {
+        "key": "ch23_barrel_hit_8",
+        "sheet": "ch23_barrel_hit",
+        "cell": [
+          0,
+          416,
+          104,
+          208
+        ],
+        "w": 104,
+        "h": 208,
+        "pivot": [
+          54,
+          46
+        ],
+        "bounds": [
+          11,
+          11,
+          96,
+          186
+        ]
+      }
+    ],
+    "hands": [
+      {
+        "key": "ch23_hands_0",
+        "sheet": "ch23_hands",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          157,
+          258,
+          233,
+          304
+        ],
+        "white": "ch23_hands_hit_0"
+      }
+    ],
+    "hands_armor": [
+      {
+        "key": "ch23_hands_armor_0",
+        "sheet": "ch23_hands_armor",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          157,
+          258,
+          233,
+          304
+        ],
+        "white": "ch23_hands_hit_0"
+      }
+    ],
+    "hands_red": [
+      {
+        "key": "ch23_hands_red_0",
+        "sheet": "ch23_hands_red",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          157,
+          258,
+          233,
+          304
+        ],
+        "white": "ch23_hands_hit_0"
+      }
+    ],
+    "hands_hit": [
+      {
+        "key": "ch23_hands_hit_0",
+        "sheet": "ch23_hands_hit",
+        "cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "w": 384,
+        "h": 512,
+        "pivot": [
+          192,
+          230
+        ],
+        "bounds": [
+          157,
+          258,
+          233,
+          304
+        ]
+      }
+    ],
+    "round": [
+      {
+        "key": "ch23_round_0",
+        "sheet": "ch23_round",
+        "cell": [
+          0,
+          0,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          14,
+          10,
+          26,
+          30
+        ]
+      },
+      {
+        "key": "ch23_round_1",
+        "sheet": "ch23_round",
+        "cell": [
+          40,
+          0,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          18,
+          17,
+          26,
+          30
+        ]
+      },
+      {
+        "key": "ch23_round_2",
+        "sheet": "ch23_round",
+        "cell": [
+          80,
+          0,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          15,
+          10,
+          25,
+          30
+        ]
+      },
+      {
+        "key": "ch23_round_3",
+        "sheet": "ch23_round",
+        "cell": [
+          120,
+          0,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          18,
+          17,
+          25,
+          30
+        ]
+      },
+      {
+        "key": "ch23_round_4",
+        "sheet": "ch23_round",
+        "cell": [
+          0,
+          40,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          18,
+          14,
+          23,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_5",
+        "sheet": "ch23_round",
+        "cell": [
+          40,
+          40,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          18,
+          17,
+          23,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_6",
+        "sheet": "ch23_round",
+        "cell": [
+          80,
+          40,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          18,
+          9,
+          22,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_7",
+        "sheet": "ch23_round",
+        "cell": [
+          120,
+          40,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          19,
+          17,
+          22,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_8",
+        "sheet": "ch23_round",
+        "cell": [
+          0,
+          80,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          19,
+          9,
+          21,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_9",
+        "sheet": "ch23_round",
+        "cell": [
+          40,
+          80,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          19,
+          17,
+          21,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_10",
+        "sheet": "ch23_round",
+        "cell": [
+          80,
+          80,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          18,
+          9,
+          21,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_11",
+        "sheet": "ch23_round",
+        "cell": [
+          120,
+          80,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          18,
+          17,
+          21,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_12",
+        "sheet": "ch23_round",
+        "cell": [
+          0,
+          120,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          17,
+          9,
+          23,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_13",
+        "sheet": "ch23_round",
+        "cell": [
+          40,
+          120,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          17,
+          17,
+          21,
+          31
+        ]
+      },
+      {
+        "key": "ch23_round_14",
+        "sheet": "ch23_round",
+        "cell": [
+          80,
+          120,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          15,
+          10,
+          24,
+          30
+        ]
+      },
+      {
+        "key": "ch23_round_15",
+        "sheet": "ch23_round",
+        "cell": [
+          120,
+          120,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          15,
+          17,
+          22,
+          30
+        ]
+      },
+      {
+        "key": "ch23_round_16",
+        "sheet": "ch23_round",
+        "cell": [
+          0,
+          160,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          14,
+          10,
+          25,
+          30
+        ]
+      },
+      {
+        "key": "ch23_round_17",
+        "sheet": "ch23_round",
+        "cell": [
+          40,
+          160,
+          40,
+          40
+        ],
+        "w": 40,
+        "h": 40,
+        "pivot": [
+          20,
+          20
+        ],
+        "bounds": [
+          14,
+          17,
+          21,
+          30
+        ]
+      }
+    ],
+    "warn_fan_green": [
+      {
+        "key": "ch23_warn_fan_green_0",
+        "sheet": "ch23_warn_fan_green",
+        "cell": [
+          0,
+          0,
+          448,
+          528
+        ],
+        "w": 448,
+        "h": 528,
+        "pivot": [
+          224,
+          20
+        ],
+        "bounds": [
+          15,
+          8,
+          433,
+          520
+        ]
+      }
+    ],
+    "warn_down_green": [
+      {
+        "key": "ch23_warn_down_green_0",
+        "sheet": "ch23_warn_down_green",
+        "cell": [
+          0,
+          0,
+          200,
+          528
+        ],
+        "w": 200,
+        "h": 528,
+        "pivot": [
+          100,
+          20
+        ],
+        "bounds": [
+          27,
+          8,
+          173,
+          520
+        ]
+      }
+    ],
+    "warn_fan_yellow": [
+      {
+        "key": "ch23_warn_fan_yellow_0",
+        "sheet": "ch23_warn_fan_yellow",
+        "cell": [
+          0,
+          0,
+          448,
+          528
+        ],
+        "w": 448,
+        "h": 528,
+        "pivot": [
+          224,
+          20
+        ],
+        "bounds": [
+          15,
+          8,
+          433,
+          520
+        ]
+      }
+    ],
+    "warn_down_yellow": [
+      {
+        "key": "ch23_warn_down_yellow_0",
+        "sheet": "ch23_warn_down_yellow",
+        "cell": [
+          0,
+          0,
+          200,
+          528
+        ],
+        "w": 200,
+        "h": 528,
+        "pivot": [
+          100,
+          20
+        ],
+        "bounds": [
+          27,
+          8,
+          173,
+          520
+        ]
+      }
+    ],
+    "warn_fan_red": [
+      {
+        "key": "ch23_warn_fan_red_0",
+        "sheet": "ch23_warn_fan_red",
+        "cell": [
+          0,
+          0,
+          448,
+          528
+        ],
+        "w": 448,
+        "h": 528,
+        "pivot": [
+          224,
+          20
+        ],
+        "bounds": [
+          15,
+          8,
+          433,
+          520
+        ]
+      }
+    ],
+    "warn_down_red": [
+      {
+        "key": "ch23_warn_down_red_0",
+        "sheet": "ch23_warn_down_red",
+        "cell": [
+          0,
+          0,
+          200,
+          528
+        ],
+        "w": 200,
+        "h": 528,
+        "pivot": [
+          100,
+          20
+        ],
+        "bounds": [
+          27,
+          8,
+          173,
+          520
+        ]
+      }
+    ]
+  },
+  "gunSocket": [
+    0,
+    48
+  ],
+  "gunPivot": [
+    54,
+    46
+  ],
+  "muzzle": [
+    54,
+    172
+  ],
+  "angles": [
+    -0.48,
+    -0.36,
+    -0.24,
+    -0.12,
+    0,
+    0.12,
+    0.24,
+    0.36,
+    0.48
+  ],
+  "owner": "_BUILD_SOURCE/build_chronos_modular_1023.py",
+  "jobs": {
+    "barrel": "82cdddc4-d026-43b0-a12b-ff08d7bd1757",
+    "body": "39117169-f35c-4fbe-b669-b19f24d64f37",
+    "grip": "d9c920f4-e2aa-4059-a655-54b6fb335abb"
+  }
+}

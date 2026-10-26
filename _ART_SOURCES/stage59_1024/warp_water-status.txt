@@ -1,0 +1,10 @@
+status: completed
+id: 866963b1-248e-43d5-8bce-4273d238a2ad
+job_id: 866963b1-248e-43d5-8bce-4273d238a2ad
+frame: 0 of 1
+asset_id: 8448186e-b84d-59df-b543-af7081f200b2
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0800 in credits
+download: https://api.pixellab.ai/mcp/images/866963b1-248e-43d5-8bce-4273d238a2ad/download?index=0

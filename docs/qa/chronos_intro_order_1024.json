@@ -1,0 +1,510 @@
+{
+  "checks": [
+    {
+      "name": "arcade-normal no attacks or armor during opening dialogue",
+      "passed": true,
+      "data": {
+        "states": [
+          "flyby",
+          "fr_activation",
+          "hammer",
+          "return",
+          "unfold",
+          "warn"
+        ],
+        "introSamples": 157,
+        "violations": []
+      }
+    },
+    {
+      "name": "arcade-normal dialogue finishes before armor begins",
+      "passed": true,
+      "data": {
+        "activations": [
+          {
+            "to": "fr_activation",
+            "time": 23.183333333333298,
+            "intro": false,
+            "done": false,
+            "armor": false,
+            "hp": 6069,
+            "maxhp": 6069
+          }
+        ],
+        "introEnds": [
+          23.149999999999967
+        ]
+      }
+    },
+    {
+      "name": "arcade-normal full visible armor animation completes before first attack",
+      "passed": true,
+      "data": {
+        "attack": {
+          "time": 27.083333333333076,
+          "state": "warn",
+          "t": 0,
+          "intro": false,
+          "introDone": false,
+          "beat": null,
+          "bullets": 0,
+          "armor": true,
+          "activated": true,
+          "armorMax": 1820.7,
+          "maxhp": 6069,
+          "scroll": 9768.000000000024,
+          "x": 408.2343999999998,
+          "bx": 408.2343999999997,
+          "by": 174.08,
+          "frame": "ha21_hf22_blue_jump_armor_0"
+        },
+        "frames": [
+          "ht23_activation_0",
+          "ht23_activation_1",
+          "ht23_activation_2",
+          "ht23_activation_3",
+          "ht23_activation_4",
+          "ht23_activation_5",
+          "ht23_activation_6",
+          "ht23_activation_7",
+          "ht23_activation_8",
+          "ht23_activation_9",
+          "ht23_activation_10",
+          "ht23_activation_11",
+          "ht23_activation_12",
+          "ht23_activation_13",
+          "ht23_activation_14",
+          "ht23_activation_15"
+        ],
+        "chargeSamples": 29,
+        "dialogueEnd": 23.183333333333298
+      }
+    },
+    {
+      "name": "arcade-normal world scroll and player movement continue during dialogue",
+      "passed": true,
+      "data": {
+        "before": {
+          "time": 7.183333333333313,
+          "state": "unfold",
+          "t": 1.95,
+          "intro": true,
+          "introDone": false,
+          "beat": 0,
+          "bullets": 0,
+          "armor": false,
+          "activated": false,
+          "armorMax": null,
+          "maxhp": 1700,
+          "scroll": 2604.000000000018,
+          "x": 340,
+          "bx": 340,
+          "by": 174.08,
+          "frame": "ha21_blue_from_ship_16"
+        },
+        "after": {
+          "x": 408.2343999999998,
+          "scroll": 2712.0000000000264
+        }
+      }
+    },
+    {
+      "name": "arcade-normal preserves difficulty-scaled armor budget",
+      "passed": true,
+      "data": {
+        "actual": 1820.7,
+        "expected": 1820.7
+      }
+    },
+    {
+      "name": "arcade-hard no attacks or armor during opening dialogue",
+      "passed": true,
+      "data": {
+        "states": [
+          "flyby",
+          "fr_activation",
+          "hammer",
+          "return",
+          "unfold",
+          "warn"
+        ],
+        "introSamples": 157,
+        "violations": []
+      }
+    },
+    {
+      "name": "arcade-hard dialogue finishes before armor begins",
+      "passed": true,
+      "data": {
+        "activations": [
+          {
+            "to": "fr_activation",
+            "time": 50.266666666665095,
+            "intro": false,
+            "done": false,
+            "armor": false,
+            "hp": 8287.5,
+            "maxhp": 8287.5
+          }
+        ],
+        "introEnds": [
+          50.233333333331764
+        ]
+      }
+    },
+    {
+      "name": "arcade-hard full visible armor animation completes before first attack",
+      "passed": true,
+      "data": {
+        "attack": {
+          "time": 53.88333333333156,
+          "state": "warn",
+          "t": 0.06666666666666667,
+          "intro": false,
+          "introDone": false,
+          "beat": null,
+          "bullets": 0,
+          "armor": true,
+          "activated": true,
+          "armorMax": 4972.5,
+          "maxhp": 8287.5,
+          "scroll": 9647.999999998805,
+          "x": 408.2343999999998,
+          "bx": 408.2343999999997,
+          "by": 174.08,
+          "frame": "ha21_hf22_blue_jump_armor_0"
+        },
+        "frames": [
+          "ht23_activation_0",
+          "ht23_activation_1",
+          "ht23_activation_2",
+          "ht23_activation_3",
+          "ht23_activation_4",
+          "ht23_activation_5",
+          "ht23_activation_6",
+          "ht23_activation_7",
+          "ht23_activation_8",
+          "ht23_activation_9",
+          "ht23_activation_10",
+          "ht23_activation_11",
+          "ht23_activation_12",
+          "ht23_activation_13",
+          "ht23_activation_14",
+          "ht23_activation_15"
+        ],
+        "chargeSamples": 29,
+        "dialogueEnd": 50.28333333333176
+      }
+    },
+    {
+      "name": "arcade-hard world scroll and player movement continue during dialogue",
+      "passed": true,
+      "data": {
+        "before": {
+          "time": 34.28333333333267,
+          "state": "unfold",
+          "t": 1.95,
+          "intro": true,
+          "introDone": false,
+          "beat": 0,
+          "bullets": 0,
+          "armor": false,
+          "activated": false,
+          "armorMax": null,
+          "maxhp": 1950,
+          "scroll": 2591.999999999611,
+          "x": 340,
+          "bx": 340,
+          "by": 174.08,
+          "frame": "ha21_blue_from_ship_16"
+        },
+        "after": {
+          "x": 408.2343999999998,
+          "scroll": 2699.999999999595
+        }
+      }
+    },
+    {
+      "name": "arcade-hard preserves difficulty-scaled armor budget",
+      "passed": true,
+      "data": {
+        "actual": 4972.5,
+        "expected": 4972.5
+      }
+    },
+    {
+      "name": "arcade-furious no attacks or armor during opening dialogue",
+      "passed": true,
+      "data": {
+        "states": [
+          "flyby",
+          "fr_activation",
+          "hammer",
+          "return",
+          "unfold",
+          "warn"
+        ],
+        "introSamples": 157,
+        "violations": []
+      }
+    },
+    {
+      "name": "arcade-furious dialogue finishes before armor begins",
+      "passed": true,
+      "data": {
+        "activations": [
+          {
+            "to": "fr_activation",
+            "time": 77.06666666666358,
+            "intro": false,
+            "done": false,
+            "armor": false,
+            "hp": 11220,
+            "maxhp": 11220
+          }
+        ],
+        "introEnds": [
+          77.03333333333025
+        ]
+      }
+    },
+    {
+      "name": "arcade-furious full visible armor animation completes before first attack",
+      "passed": true,
+      "data": {
+        "attack": {
+          "time": 80.38333333333006,
+          "state": "warn",
+          "t": 0.03333333333333333,
+          "intro": false,
+          "introDone": false,
+          "beat": null,
+          "bullets": 0,
+          "armor": true,
+          "activated": true,
+          "armorMax": 8415,
+          "maxhp": 11220,
+          "scroll": 9540.000000002876,
+          "x": 408.2343999999998,
+          "bx": 389.4999999999995,
+          "by": 174.08,
+          "frame": "ha21_hf22_blue_jump_armor_0"
+        },
+        "frames": [
+          "ht23_activation_0",
+          "ht23_activation_1",
+          "ht23_activation_2",
+          "ht23_activation_3",
+          "ht23_activation_4",
+          "ht23_activation_5",
+          "ht23_activation_6",
+          "ht23_activation_7",
+          "ht23_activation_8",
+          "ht23_activation_9",
+          "ht23_activation_10",
+          "ht23_activation_11",
+          "ht23_activation_12",
+          "ht23_activation_13",
+          "ht23_activation_14",
+          "ht23_activation_15"
+        ],
+        "chargeSamples": 29,
+        "dialogueEnd": 77.08333333333024
+      }
+    },
+    {
+      "name": "arcade-furious world scroll and player movement continue during dialogue",
+      "passed": true,
+      "data": {
+        "before": {
+          "time": 61.08333333333115,
+          "state": "unfold",
+          "t": 1.95,
+          "intro": true,
+          "introDone": false,
+          "beat": 0,
+          "bullets": 0,
+          "armor": false,
+          "activated": false,
+          "armorMax": null,
+          "maxhp": 2200,
+          "scroll": 2592.0000000007703,
+          "x": 340,
+          "bx": 340,
+          "by": 174.08,
+          "frame": "ha21_blue_from_ship_16"
+        },
+        "after": {
+          "x": 408.2343999999998,
+          "scroll": 2700.000000000803
+        }
+      }
+    },
+    {
+      "name": "arcade-furious preserves difficulty-scaled armor budget",
+      "passed": true,
+      "data": {
+        "actual": 8415,
+        "expected": 8415.0
+      }
+    },
+    {
+      "name": "campaign-furious no attacks or armor during opening dialogue",
+      "passed": true,
+      "data": {
+        "states": [
+          "flyby",
+          "fr_activation",
+          "hammer",
+          "return",
+          "unfold",
+          "warn"
+        ],
+        "introSamples": 262,
+        "violations": []
+      }
+    },
+    {
+      "name": "campaign-furious dialogue finishes before armor begins",
+      "passed": true,
+      "data": {
+        "activations": [
+          {
+            "to": "fr_activation",
+            "time": 114.08333333332814,
+            "intro": false,
+            "done": false,
+            "armor": false,
+            "hp": 11220,
+            "maxhp": 11220
+          }
+        ],
+        "introEnds": [
+          114.04999999999481
+        ]
+      }
+    },
+    {
+      "name": "campaign-furious full visible armor animation completes before first attack",
+      "passed": true,
+      "data": {
+        "attack": {
+          "time": 117.38333333332795,
+          "state": "warn",
+          "t": 0.016666666666666666,
+          "intro": false,
+          "introDone": false,
+          "beat": null,
+          "bullets": 0,
+          "armor": true,
+          "activated": true,
+          "armorMax": 8415,
+          "maxhp": 11220,
+          "scroll": 13320.000000004022,
+          "x": 408.2343999999998,
+          "bx": 389.4999999999995,
+          "by": 174.08,
+          "frame": "ha21_hf22_blue_jump_armor_0"
+        },
+        "frames": [
+          "ht23_activation_0",
+          "ht23_activation_1",
+          "ht23_activation_2",
+          "ht23_activation_3",
+          "ht23_activation_4",
+          "ht23_activation_5",
+          "ht23_activation_6",
+          "ht23_activation_7",
+          "ht23_activation_8",
+          "ht23_activation_9",
+          "ht23_activation_10",
+          "ht23_activation_11",
+          "ht23_activation_12",
+          "ht23_activation_13",
+          "ht23_activation_14",
+          "ht23_activation_15"
+        ],
+        "chargeSamples": 29,
+        "dialogueEnd": 114.08333333332814
+      }
+    },
+    {
+      "name": "campaign-furious world scroll and player movement continue during dialogue",
+      "passed": true,
+      "data": {
+        "before": {
+          "time": 87.58333333332965,
+          "state": "unfold",
+          "t": 1.95,
+          "intro": true,
+          "introDone": false,
+          "beat": 0,
+          "bullets": 0,
+          "armor": false,
+          "activated": false,
+          "armorMax": null,
+          "maxhp": 2200,
+          "scroll": 2592.0000000007703,
+          "x": 340,
+          "bx": 340,
+          "by": 174.08,
+          "frame": "ha21_blue_from_ship_16"
+        },
+        "after": {
+          "x": 408.2343999999998,
+          "scroll": 2700.000000000803
+        }
+      }
+    },
+    {
+      "name": "campaign-furious preserves difficulty-scaled armor budget",
+      "passed": true,
+      "data": {
+        "actual": 8415,
+        "expected": 8415.0
+      }
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "passed": 21,
+  "failed": 0,
+  "recording": {
+    "duration": 65.69523669999035,
+    "rawDuration": 77.48,
+    "trimStart": 11.784763300009658,
+    "video": "_shots\\chronos_intro_order_1024\\stage5-chronos-speaking.mp4",
+    "audio": "Video only; native browser recorder does not capture audio.",
+    "difficulty": "furious",
+    "pilot": "cole",
+    "invulnerability": true,
+    "route": "Native debug Stage5 boss encounter; no pose/attack/dialogue injections.",
+    "checks": {
+      "native Stage5 encounter": true,
+      "Chronos speaks in recording": true,
+      "radio outside playfield for all speech samples": true,
+      "no dialogue box drawn over the field in any recorded frame": true,
+      "native arrival conversation also recorded": true,
+      "scroll advances throughout speech": true,
+      "no page or console errors": true,
+      "Chronos waits throughout the beginning dialogue": true,
+      "visible armor charge follows dialogue and precedes first attack": true
+    },
+    "errors": []
+  },
+  "timestamps": {
+    "dialogue": 7.399,
+    "charge": 24.092,
+    "firstAttack": 27.612
+  },
+  "syntax": "Passed game.js, feedback_claude_1003.js and build_integration_1003.js",
+  "core": {
+    "exit": 1,
+    "summaryReached": false,
+    "blocker": "Existing missing retired_art_archive_1022.cjs before assertions"
+  }
+}

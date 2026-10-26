@@ -1,0 +1,10 @@
+status: completed
+id: f5b66177-286c-4e99-b200-11f73bd686f0
+job_id: f5b66177-286c-4e99-b200-11f73bd686f0
+frame: 16 of 17
+asset_id: bb5b1698-3734-59b8-8192-cbdef133842c
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0848 in credits
+download: https://api.pixellab.ai/mcp/images/f5b66177-286c-4e99-b200-11f73bd686f0/download?index=16

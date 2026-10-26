@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 3795f4df-38e7-47a7-b962-b37fd0fb5a0d\njob_id: 3795f4df-38e7-47a7-b962-b37fd0fb5a0d\ndescription: FRAME FORMAT256x256 transparent, reactor128,116, same scale/camera and robot. All anatomy connected. Tiny magenta mark tracks the same closed fist. NO WEAPON, shaft or new objects; real hammer attached later. No zoom or fade. Actual explosive armor takeover: dark robot braces wide, fists clenched low, trembles and strains upward like a super-warrior charging power. A golden-white flame aura builds from his boots then ERUPTS upward, with animated cyan lightning. Reflective SILVER CHROMIUM plating physically spreads over shoulders, chest, forearms and shins as he straightens into the supplied final plated form. Clear progressive material takeover and moving flame tongues, not an alpha fade or static glow. Marked weapon fist remains low OUTSIDE the same hip throughout. All body parts stay connected. No face, helmet, scale or weapon changes.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 1025016\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3795f4df-38e7-47a7-b962-b37fd0fb5a0d\")\nasset_id: 09c86fd4-db50-54d9-8a9e-ced4a05a3dc4\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

@@ -82,7 +82,7 @@ function roster17Damage(b,dmg){const C=b._carrier17;if(!roster17Ready(b)||!(dmg>
  }
  if(id==null&&!shot)id=C.parts.find(p=>!p.dead)?.id;
  {const p=C.parts.find(p=>p.id===id);if(!p||p.dead)return 0;
-  p.hp=Math.max(0,p.hp-dmg);markHit(p);p.fl=.18;
+  p.hp=Math.max(0,p.hp-dmg);markHit(p);if(gp4FlashRequest(p,'fl',.18))p.fl=.18;
   if(p.hp<=0){p.dead=true;p.phase='dead';const q=roster17Mount(b,p);unitDeathFX({...q,w:p.w*k,h:p.h*k},'turret','blue');Audio.SFX.expBig?.();}
  }
  weaponHitSfx('normal');if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;roster17Sync(b);

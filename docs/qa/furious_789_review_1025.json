@@ -1,0 +1,247 @@
+{
+  "timeBasis": "Elapsed MP4 time in the original Oct25 recordings; not the BOSS HUD clock.",
+  "method": "All three continuous native Furious recordings inspected in chronological 2-second frame samples, targeted sub-second sequences, and source-owner audit. Cole invulnerability/input aiming enabled: footage does not prove dodge difficulty or player lethality.",
+  "reference": "https://youtu.be/1oj6zi1ZfNw?t=172",
+  "issues": [
+    {
+      "id": "S7-01",
+      "stage": 7,
+      "start": 33.4,
+      "end": 36.3,
+      "priority": "P1",
+      "category": "Gait",
+      "finding": "Legs swing as rigid plates; toes slide with the chassis instead of planting, pushing, lifting and stepping.",
+      "status": "Implemented: four eight-pose leg banks, alternating diagonal support and planted world-space toes; native alpha targets verified."
+    },
+    {
+      "id": "S7-02",
+      "stage": 7,
+      "start": 36.3,
+      "end": 43.0,
+      "priority": "P2",
+      "category": "Body rotation",
+      "finding": "Swipes and gun bracing tilt the entire top-down actor; the feet do not establish a new support stance. This reads as rocking a card.",
+      "status": "Implemented: bounded continuous steering; body, native melee tips, guns, projectiles and warnings share one transform."
+    },
+    {
+      "id": "S7-03",
+      "stage": 7,
+      "start": 42.9,
+      "end": 308.9,
+      "priority": "P2",
+      "category": "Attack repetition",
+      "finding": "21 jump states occupy 79.3 seconds. Dedicated chase/crawl states total only 8.5 seconds, so the spider spends little of this recording visibly walking.",
+      "status": "Implemented: walking between groups and fewer automatic swipe-to-jump continuations; native HP and warning windows retained."
+    },
+    {
+      "id": "S7-04",
+      "stage": 7,
+      "start": 134.7,
+      "end": 296.4,
+      "priority": "P2",
+      "category": "Damaged stance",
+      "finding": "After the first front leg breaks at 02:14.7, the chassis leans while the surviving legs keep the same sliding gait. Front pair ends at 03:39.5; rear pair ends at 04:56.3.",
+      "status": "Implemented: surviving legs retain the planted gait; destroyed parts remain absent from rendering and native targets."
+    },
+    {
+      "id": "S7-05",
+      "stage": 7,
+      "start": 308.9,
+      "end": 351.0,
+      "priority": "P1",
+      "category": "Hit readability",
+      "finding": "Sustained hits refresh the core white overlay almost continuously, hiding the faceplate and attack detail. HP is still decreasing.",
+      "status": "Implemented: visible white hit pulses with authored color returning between sustained-hit pulses; native timers and expiry retained."
+    },
+    {
+      "id": "S8-06",
+      "stage": 8,
+      "start": 7.0,
+      "end": 138.4,
+      "priority": "P2",
+      "category": "Living arena",
+      "finding": "The organic background reads as a still picture. Existing very slow drift and faint code layers do not make its veins feel alive.",
+      "status": "Implemented: moving organic tissue bands, brightness pulses and native code layers on an independent clock."
+    },
+    {
+      "id": "S8-07",
+      "stage": 8,
+      "start": 14.3,
+      "end": 16.7,
+      "priority": "P1",
+      "category": "Eye beam",
+      "finding": "The thin red beam does not fill the red eye aperture. The final socket override uses boss center rather than the visible eye in the current pose.",
+      "status": "Implemented: measured eye sockets in all 45 poses and an eight-frame red/white flare covering the eye, rooted to the native animated laser."
+    },
+    {
+      "id": "S8-08",
+      "stage": 8,
+      "start": 17.5,
+      "end": 21.3,
+      "priority": "P1",
+      "category": "Claw warnings and shots",
+      "finding": "Claw FOV starts at a previous pose while shots use the moving raised claws. No distinct claw muzzle flash links each release to the arm. Repeats throughout the first host.",
+      "status": "Implemented: raised claw pose, exact shared FOV/muzzle sockets, visible native muzzle flashes and alternating shootable physical rockets/ordinary projectiles."
+    },
+    {
+      "id": "S8-09",
+      "stage": 8,
+      "start": 70.3,
+      "end": 104.6,
+      "priority": "P1",
+      "category": "Arm destruction",
+      "finding": "Destroyed right arm stays attached and darkened at 01:10.3; left arm at 01:44.2. Neither breaks off or shatters.",
+      "status": "Implemented per Mike's new approval: arms explode, break away and shatter into actual authored alpha fragments. Native part HP and protected core retained."
+    },
+    {
+      "id": "S8-10",
+      "stage": 8,
+      "start": 104.6,
+      "end": 138.4,
+      "priority": "P1",
+      "category": "Ball traversal",
+      "finding": "Ball movement stops during every horizontal beam tell/fire. Its route clock advances only while moving, leaving much of its four-point route unfinished before recovery. First active movement also jumps to the path start.",
+      "status": "Implemented: continuous full-field paths, smooth start, one permanent fold and no stopped horizontal beam cycles."
+    },
+    {
+      "id": "S8-11",
+      "stage": 8,
+      "start": 104.6,
+      "end": 138.4,
+      "priority": "P2",
+      "category": "Code bomb pressure",
+      "finding": "Bombs only appear after every second stopped laser cycle. This yields sparse aimed bombs instead of the requested trail left by a moving ball.",
+      "status": "Implemented: regularly dropped native shootable code bombs, four-active cap, 112-unit target spacing and native 1.8-second Furious reaction time."
+    },
+    {
+      "id": "S8-12",
+      "stage": 8,
+      "start": 14.6,
+      "end": 137.5,
+      "priority": "P1",
+      "category": "Host hit flash",
+      "finding": "Whole humanoid/ball becomes a solid white silhouette under repeated shots, masking pose, dead-arm state and attack details.",
+      "status": "Implemented: damaged arm/core pixels flash separately; ball pulses retain detail between hits. Native timers are preserved."
+    },
+    {
+      "id": "S8-13",
+      "stage": 8,
+      "start": 138.4,
+      "end": 142.4,
+      "priority": "P2",
+      "category": "Falling host explosion",
+      "finding": "The falling explosion works, but the body produces no recognizable armor fragments moving away from it.",
+      "status": "Implemented: preserve the loved falling explosion and supplement it with opaque authored armor fragments; final native destruction also gets fragments."
+    },
+    {
+      "id": "S8-14",
+      "stage": 8,
+      "start": 152.4,
+      "end": 164.0,
+      "priority": "P1",
+      "category": "Download transformation",
+      "finding": "The rebirth resolves into a fully solid held pose before the reveal. There is no visible accumulating data reconstruction or completion beat.",
+      "status": "Implemented: actual fusion plate reconstructs in digital scan bands while spinning, shows increasing download completion and settles upright at 100% before native whiteout/reveal."
+    },
+    {
+      "id": "S8-15",
+      "stage": 8,
+      "start": 155.4,
+      "end": 164.0,
+      "priority": "P1",
+      "category": "Lightning identity",
+      "finding": "The alleged lightning is a curved blue pinwheel/ring, including the same shapes in Mike's screenshots. It does not read as branching electrical bolts.",
+      "status": "Implemented: inspected authored branching blue bolts replace the rejected wheel in rebirth; exactly 24 accelerating native beats remain."
+    },
+    {
+      "id": "S8-16",
+      "stage": 8,
+      "start": 196.7,
+      "end": 256.5,
+      "priority": "P2",
+      "category": "Final form hit readability",
+      "finding": "White whole-body hit plates also hide the final main form during attack tells. Copied Hammer, helicopter, brain and Volcano forms exhibit the same problem later.",
+      "status": "Partly improved: final main plate and Volcano now use readable hit pulses. Hammer, helicopter and brain native hit/effect composition remains a documented follow-up."
+    },
+    {
+      "id": "S8-17",
+      "stage": 8,
+      "start": 203.0,
+      "end": 215.7,
+      "priority": "P2",
+      "category": "Effect congestion",
+      "finding": "Portal, duplicate silhouettes, download helpers, FOV and large pickup labels overlap the main actor. 03:29\u201303:33 is a clear example.",
+      "status": "Visual/readability follow-up; authored final-form attack composition retained in this pass."
+    },
+    {
+      "id": "S8-18",
+      "stage": 8,
+      "start": 470.0,
+      "end": 538.0,
+      "priority": "P1",
+      "category": "Volcano visibility",
+      "finding": "Repeated corner passes leave the Volcano mostly beyond the screen edge while large diagonal FOV fields remain visible. Examples: 07:51, 08:07\u201308:15, 08:27\u201308:29 and 08:49\u201308:59.",
+      "status": "Confirmed visually; separate later-form choreography issue, outside Mike's first-host/rebirth redesign."
+    },
+    {
+      "id": "S8-19",
+      "stage": 8,
+      "start": 571.0,
+      "end": 573.5,
+      "priority": "P2",
+      "category": "Hammer copy aura",
+      "finding": "The Hammer copy's red rage aura forms a hard rectangular-looking field around the body at 09:31. It obscures the silhouette.",
+      "status": "Confirmed visually; Stage8 copy retains its independent native owner; Stage5 fixes do not automatically apply here."
+    },
+    {
+      "id": "S9-20",
+      "stage": 9,
+      "start": 3.0,
+      "end": 85.2,
+      "priority": "P2",
+      "category": "Twin progress readability",
+      "finding": "No health display during the entire twins fight. The first disabled sentinel dims but remains present; progress is difficult to judge amid the nebula and supply drops.",
+      "status": "Intentional source contract: health appears only after fusion, disabled twins wait at 1 HP. Readability proposal, not a stuck/immortal-boss bug."
+    },
+    {
+      "id": "S9-21",
+      "stage": 9,
+      "start": 27.0,
+      "end": 43.0,
+      "priority": "P2",
+      "category": "Projectile contrast",
+      "finding": "Purple sentinel rounds compete with bright purple nebula branches and glowing supply drops; several shot lanes are hard to read at normal size.",
+      "status": "Visual/readability finding; a human dodge test is still needed before making a balance claim."
+    },
+    {
+      "id": "S9-22",
+      "stage": 9,
+      "start": 85.2,
+      "end": 87.7,
+      "priority": "P3",
+      "category": "Fusion presentation",
+      "finding": "Fusion succeeds and both sentinels converge, but supply crates remain in front of the reveal. The center crate competes with the new hull.",
+      "status": "Confirmed visually; presentation polish proposal, native fusion logic works."
+    },
+    {
+      "id": "S9-23",
+      "stage": 9,
+      "start": 93.0,
+      "end": 135.0,
+      "priority": "P2",
+      "category": "Final-form staging",
+      "finding": "Tidal Sovereign spends most of its approximately 50-second fight near upper center; volleys change more than body choreography. Pickup labels repeatedly cover the attack field.",
+      "status": "Visual/design finding; no evidence of a stalled state machine."
+    },
+    {
+      "id": "S9-24",
+      "stage": 9,
+      "start": 3.0,
+      "end": 85.2,
+      "priority": "P3",
+      "category": "Rotated hit overlay",
+      "finding": "Twin base hull is rotated by w.spin, but its blue hit overlay is drawn axis-aligned in the draw owner. This can create offset edges.",
+      "status": "Implemented: native blue overlay now shares hull rotation, fusion scale and disabled opacity; hidden twin HP and fusion rules remain intact."
+    }
+  ]
+}

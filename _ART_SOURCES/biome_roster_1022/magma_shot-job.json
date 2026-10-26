@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: acde4373-0b4a-4f0f-b319-89abddcfb6e8\njob_id: acde4373-0b4a-4f0f-b319-89abddcfb6e8\nmodel: pro\ndescription: FRAME FORMAT:192 x192 transparent pixels, fixed physical pivot96,96, generous32pixel transparent margin, one common scale, crisp 16/32-bit arcade pixel-art special effect with distinct outlined pixels, absolutely no scenery or background plate. Molten lava energy: brilliant ivory white-hot center, saturated orange and deep red flame lobes with tiny dark basalt sparks. Crisp arcade pixels. One compact elongated pointed ENERGY PROJECTILE facing DOWN, narrow tip at bottom, short clean tapering wake above. Center96,96. No circles around it, no huge trail, no ship or gun. Unambiguous bright projectile silhouette.\nsize: 192x192px\ntransparent: True\ncandidates: 1\nseed: 10222101\nasset_id: ab6c645e-e59f-514d-9e71-bce4d9594598\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"acde4373-0b4a-4f0f-b319-89abddcfb6e8\")"
+    }
+  ],
+  "isError": false
+}

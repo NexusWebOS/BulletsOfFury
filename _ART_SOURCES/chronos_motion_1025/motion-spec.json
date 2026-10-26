@@ -1,0 +1,149 @@
+[
+  {
+    "name": "takeoff_regular",
+    "first": "motion_regular_0",
+    "last": "motion_regular_2",
+    "frames": 16,
+    "action": "Bend both knees deeply, compress the hips, push off, tuck both knees into an upward jump. Keep the marked closed weapon fist low and OUTSIDE the same hip, with a balancing free arm. No raising the weapon arm."
+  },
+  {
+    "name": "land_regular",
+    "first": "motion_regular_2",
+    "last": "motion_regular_3",
+    "frames": 16,
+    "action": "Unfold the tucked legs from an airborne jump and absorb a landing into a low crouch. Keep the marked closed weapon fist low outside the hip. Smooth knees, hips and torso weight transfer."
+  },
+  {
+    "name": "windup_regular",
+    "first": "motion_regular_3",
+    "last": "motion_regular_5",
+    "frames": 16,
+    "action": "Spring from the crouch into a second jump, bend the knees airborne, then lift the ONE marked weapon fist up and back above the shoulder into a powerful overhead windup. Twist hips and shoulders; free hand balances separately. Do not clasp both hands together."
+  },
+  {
+    "name": "strike_regular",
+    "first": "motion_regular_5",
+    "last": "motion_regular_6",
+    "frames": 16,
+    "action": "Swing the marked weapon fist FORCEFULLY DOWN from behind the head across the body to knee height. Rotate shoulders and hips, pitch the torso forward, extend then brace the knees. One continuous connected heavy overhead strike, visible whole body rotation and recoil."
+  },
+  {
+    "name": "retract_regular",
+    "first": "motion_regular_6",
+    "last": "motion_regular_0",
+    "frames": 16,
+    "action": "Recover from the low overhead strike into the supplied one-handed side guard. Pull the marked weapon fist back toward its outside hip, straighten the knees, uncoil the torso and brace into a stable hovering return pose. Smooth connected arm and leg motion with no jumping pose swaps."
+  },
+  {
+    "name": "left_regular",
+    "first": "motion_regular_0",
+    "last": "motion_regular_7",
+    "frames": 16,
+    "action": "Turn the WHOLE ROBOT strongly toward screen LEFT into the supplied side-profile endpoint. Twist hips, planted feet, torso, helmet and shoulders together, not just the arm. Sweep the marked closed weapon fist outward from its low side guard through a broad leftward strike arc. Clear anticipation then powerful follow-through."
+  },
+  {
+    "name": "right_regular",
+    "first": "motion_regular_0",
+    "last": "right_regular",
+    "frames": 16,
+    "action": "Turn the WHOLE ROBOT strongly toward screen RIGHT into the supplied side-profile endpoint. Twist hips, feet, torso, helmet and shoulders together. Sweep the same marked weapon fist outward through a broad rightward strike arc, keeping the other hand separate. Clear anticipation then forceful follow-through."
+  },
+  {
+    "name": "shield_regular",
+    "first": "power_regular_0",
+    "last": "power_regular_1",
+    "frames": 16,
+    "action": "Brace the planted legs and extend the FREE OPEN PALM forward to project a shield. The marked closed weapon fist remains lowered OUTSIDE its hip, perfectly stable, holding its imaginary grip. Animate only connected arm joints, torso bracing and the free open palm. No energy shield is drawn in this body clip."
+  },
+  {
+    "name": "palm_regular",
+    "first": "power_regular_0",
+    "last": "power_regular_1",
+    "frames": 16,
+    "action": "Animate ONLY this robot extending its empty free arm from its chest to the supplied open-palm endpoint. Deliberate smooth elbow extension and wrist opening, with a small shoulder turn and planted legs. The OTHER marked closed fist stays low outside the hip. Every frame contains ONLY the robot on transparent background. NO circles, discs, fields, particles, glow, floor, scenery or effects. Do not add any object. Finish with the exact supplied open palm. Keep its original dark metal or silver material."
+  },
+  {
+    "name": "aura_regular",
+    "first": "power_regular_2",
+    "last": "power_regular_3",
+    "frames": 24,
+    "action": "Explosive anime super-warrior power transformation. Start hunched with both fists clenched and knees wide. Body trembles under strain; head lifts, shoulders brace, chest reactor surges. An enormous golden-white flame aura ERUPTS and streams violently UPWARD around him, cyan lightning lashes between plates, pressure ripples pulse outward. Flames must FLOW and flicker continuously, not crossfade a still aura. Keep robot solid and readable and all anatomy connected. Marked weapon fist stays low outside hip; never raise it. Match final powered pose."
+  },
+  {
+    "name": "takeoff_chrome",
+    "first": "motion_chrome_0",
+    "last": "motion_chrome_2",
+    "frames": 16,
+    "action": "Bend both knees deeply, compress the hips, push off, tuck both knees into an upward jump. Keep the marked closed weapon fist low and OUTSIDE the same hip, with a balancing free arm. No raising the weapon arm."
+  },
+  {
+    "name": "land_chrome",
+    "first": "motion_chrome_2",
+    "last": "motion_chrome_3",
+    "frames": 16,
+    "action": "Unfold the tucked legs from an airborne jump and absorb a landing into a low crouch. Keep the marked closed weapon fist low outside the hip. Smooth knees, hips and torso weight transfer."
+  },
+  {
+    "name": "windup_chrome",
+    "first": "motion_chrome_3",
+    "last": "motion_chrome_5",
+    "frames": 16,
+    "action": "Spring from the crouch into a second jump, bend the knees airborne, then lift the ONE marked weapon fist up and back above the shoulder into a powerful overhead windup. Twist hips and shoulders; free hand balances separately. Do not clasp both hands together."
+  },
+  {
+    "name": "strike_chrome",
+    "first": "motion_chrome_5",
+    "last": "motion_chrome_6",
+    "frames": 16,
+    "action": "Swing the marked weapon fist FORCEFULLY DOWN from behind the head across the body to knee height. Rotate shoulders and hips, pitch the torso forward, extend then brace the knees. One continuous connected heavy overhead strike, visible whole body rotation and recoil."
+  },
+  {
+    "name": "retract_chrome",
+    "first": "motion_chrome_6",
+    "last": "motion_chrome_0",
+    "frames": 16,
+    "action": "Recover from the low overhead strike into the supplied one-handed side guard. Pull the marked weapon fist back toward its outside hip, straighten the knees, uncoil the torso and brace into a stable hovering return pose. Smooth connected arm and leg motion with no jumping pose swaps."
+  },
+  {
+    "name": "left_chrome",
+    "first": "motion_chrome_0",
+    "last": "motion_chrome_7",
+    "frames": 16,
+    "action": "Turn the WHOLE ROBOT strongly toward screen LEFT into the supplied side-profile endpoint. Twist hips, planted feet, torso, helmet and shoulders together, not just the arm. Sweep the marked closed weapon fist outward from its low side guard through a broad leftward strike arc. Clear anticipation then powerful follow-through."
+  },
+  {
+    "name": "right_chrome",
+    "first": "motion_chrome_0",
+    "last": "right_chrome",
+    "frames": 16,
+    "action": "Turn the WHOLE ROBOT strongly toward screen RIGHT into the supplied side-profile endpoint. Twist hips, feet, torso, helmet and shoulders together. Sweep the same marked weapon fist outward through a broad rightward strike arc, keeping the other hand separate. Clear anticipation then forceful follow-through."
+  },
+  {
+    "name": "shield_chrome",
+    "first": "power_chrome_0",
+    "last": "power_chrome_1",
+    "frames": 16,
+    "action": "Brace the planted legs and extend the FREE OPEN PALM forward to project a shield. The marked closed weapon fist remains lowered OUTSIDE its hip, perfectly stable, holding its imaginary grip. Animate only connected arm joints, torso bracing and the free open palm. No energy shield is drawn in this body clip."
+  },
+  {
+    "name": "palm_chrome",
+    "first": "power_chrome_0",
+    "last": "power_chrome_1",
+    "frames": 16,
+    "action": "Animate ONLY this robot extending its empty free arm from its chest to the supplied open-palm endpoint. Deliberate smooth elbow extension and wrist opening, with a small shoulder turn and planted legs. The OTHER marked closed fist stays low outside the hip. Every frame contains ONLY the robot on transparent background. NO circles, discs, fields, particles, glow, floor, scenery or effects. Do not add any object. Finish with the exact supplied open palm. Keep its original dark metal or silver material."
+  },
+  {
+    "name": "aura_chrome",
+    "first": "power_chrome_2",
+    "last": "power_chrome_3",
+    "frames": 24,
+    "action": "Explosive anime super-warrior power transformation. Start hunched with both fists clenched and knees wide. Body trembles under strain; head lifts, shoulders brace, chest reactor surges. An enormous golden-white flame aura ERUPTS and streams violently UPWARD around him, cyan lightning lashes between plates, pressure ripples pulse outward. Flames must FLOW and flicker continuously, not crossfade a still aura. Keep robot solid and readable and all anatomy connected. Marked weapon fist stays low outside hip; never raise it. Match final powered pose."
+  },
+  {
+    "name": "activation",
+    "first": "power_regular_2",
+    "last": "power_chrome_3",
+    "frames": 24,
+    "action": "Actual explosive armor takeover: dark robot braces wide, fists clenched low, trembles and strains upward like a super-warrior charging power. A golden-white flame aura builds from his boots then ERUPTS upward, with animated cyan lightning. Reflective SILVER CHROMIUM plating physically spreads over shoulders, chest, forearms and shins as he straightens into the supplied final plated form. Clear progressive material takeover and moving flame tongues, not an alpha fade or static glow. Marked weapon fist remains low OUTSIDE the same hip throughout. All body parts stay connected. No face, helmet, scale or weapon changes."
+  }
+]

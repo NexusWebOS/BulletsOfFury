@@ -152,3 +152,96 @@ keys and the game context's own `drawImage`; cached canvases have no reliable
 - Chronos speech is a live combat overlay: preserve movement, projectiles, new input taps and vulnerability. His non-missile spike-ball response is the explicit authored **red** hit-feedback exception.
 - Siege-tank sonic waves are never offensive interception targets. Dracodia first-body arms each own 33.3% HP; the 33.4% core stays protected until both arms are destroyed.
 - Read `docs/ENCOUNTER_REVIEW_1023.md` before rebuilding these encounters. Preserve the portal entrance and symbiote rebirth into the final arena.
+
+## October 25 Warden / first-host review
+
+- Mike approved actual spider walking for Stage7: distance-driven diagonal support,
+  planted toes, bent-knee recovery and stable steering using the existing authored
+  modular anatomy. Keep the measured alpha masks and opaque Retina targets.
+- Mike explicitly replaced first-host arm darkening with exploding breakaway arms
+  and actual alpha-bearing shatter fragments. This exception is scoped to the
+  infused first host; all four final copies retain their separate native owners.
+- Preserve the33.3/33.3/33.4 protected-core budget, native portal entrance and24
+  rebirth beats. Ball form travels continuously and drops warned code bombs;
+  digital reconstruction completes before its whiteout/final-arena reveal.
+- Current owner, rebuilds, source IDs and verification:
+  `docs/STAGE78_REVIEW_1025.md` and `assets/stage78_review_1025.js`.
+
+## October25 bullet hell sections
+
+- assets/bullethell_1025.js owns the new Warden/Dracodia and nine campaign miniboss barrages. Preserve native HP/form pools, original attack-book progress, authored projectile art, part flashes, committed openings and finite recovery.
+- New ordinary barrage rounds reject offensive interception before their first update, while retaining native defensive clears. Physical missiles keep their native rules. Broken wings/claws/guns cancel their warnings and rounds.
+- Preserve the escort, archive-army and Warden shield-counter interlocks. First-body Dracodia raises the real claws before committing warnings and uses those same sockets for release. See docs/BULLETHELL_1025.md.
+
+## October25 grounded Warden and Tidal water arsenal
+
+- Warden gait counts actual chassis motion relative to retreating terrain. Never scroll the retreat floor without live walking legs; braced barrages and exhausted legs stop that scroll. Keep fixed gun trunnions and the same connected claws throughout swipe windup/strike/return.
+- Tidal remains one whole authored hull with96 fixed320x256 liquid frames. Keep armor/alpha unchanged, exact circle/cannon sockets, visible native hit flash/expiry and the complete6500 Furious water pool from its first live frame.
+- assets/warden_tidal_1025.js owns coordinated flood, geyser, circle-mortar, turret-mist, cutter/torpedo and maelstrom turns. Preserve committed escape windows, ordinary-energy interception rules, physical torpedoes, defensive clears, shared cues, targeter interlock, native convergence/portal/death/rewards and owner cleanup. See docs/WARDEN_TIDAL_1025.md.
+
+
+## October25 barrage corrections
+
+- Stage3 lighting dims scenery only; retain native projectile, FOV, aircraft and HUD brightness.
+- Stage6 Siege Fortress battery guns have no added bullet hell. The exposed core may use it after the native all-six-batteries gate.
+- Caustic Dredger barrages leave measured turret barrel mouths with attached muzzle flashes, or arc from the top liquid opening into warned outward splashes. Never restore the generic gap/bottom launch point.
+- Herald uses visible round red chaos energy, warned Phoenix-style corner flights and bomber passes dropping from surviving claws with energy muzzle flashes. Preserve native module damage, hit feedback, cancellation and breakup. See docs/BARRAGE_READABILITY_1025.md.
+
+
+## October25 Event Horizon assault
+
+- assets/horizon_assault_1025.js owns the Stage9 miniboss fast spin, vertical flight and charged eye bomb. Keep the authored whole plates and common eye pivot; do not stretch the spin bank over the barrage duration.
+- Keep the live core, eye, hull, warnings and release aligned during vertical passes. Settle upright for charge, preserve the committed reaction window, ordinary-energy interception rules, defensive clears, hit flash and native complete HP/defeat ownership. Native defeat cancels pending bombs. See docs/HORIZON_ASSAULT_1025.md.
+
+- Herald bomber passes match corner-flight world speed; commit the whole drop carpet before the rapid paired-claw releases. Keep the visible red energy, muzzle flashes, escape opening and broken-claw cancellation. See docs/HERALD_SPEED_1025.md.
+
+## October25 Dracodia rotating download
+
+- Use the authored turning carrier to download the actual live final-form body through one measured chest anchor and native scale. Preserve continuous carrier/build/speech positions, completed pixels, all24 lightning beats and native HP/reveal/death ownership. Fusion uses combatEnergy0927; do not reintroduce a small fusion snapshot, teleport pop or teleport cue for this beat. See docs/DRACODIA_DOWNLOAD_REVEAL_1025.md.
+
+## October26 Dracodia depth download
+
+- assets/dracodia_depth_1026.js supersedes flat rolling during the protected download: upright front/profile/back poses, one shared chest pivot/scale, native final-body handoff. Keep the skeletal carrier in unbuilt bands, separate rear/front electric helices and overhead downward strikes, all 24 native beats/audio and native health/reveal/death owners. Rebuild the source-derived 512-cell art through _BUILD_SOURCE/build_dracodia_depth_1026.py. See docs/DRACODIA_DEPTH_1026.md.
+
+## October26 Dracodia accelerating flash reveal
+
+- Mike's latest revision supersedes preflash settling: keep depth rotation accelerating and cyclic through peak whiteout, retain incomplete carrier/wire scan bands until full cover, and show the complete native body only as the flash clears. Preserve rear/front surrounding electricity, additional downward strikes across the playfield, all 24 native audible beats and native gameplay owners. Boss Cinematics is the personal reusable skill; current implementation/evidence: docs/DRACODIA_CLIMAX_1026.md.
+
+## October26 independent Dracodia lightning
+
+- Only the surrounding ending lightning spirals. Downward channels remain fixed per strike, independent of boss yaw; their separate cadence accelerates through the climax with release intervals. Preserve nine distant lanes, native audible beats and the flash-covered final-body reveal. Current notes: docs/DRACODIA_STRIKES_1026.md.
+
+## October26 engine-wide rotation and bullet rules
+
+- All players, enemies, projectiles, bullet hell, bosses, minibosses and final bosses use actual authored directional/rotation frames, never HTML/CSS or canvas rotation of a static sprite as a substitute. Keep common pivots and proportional scale. Apply this to new and revised rendering; existing owners require explicit migration and pixel verification.
+- Ordinary enemy bullets, including boat spread fire, are never offensive interception targets, even before their first update. Magma/ice balls and physical missiles retain their explicit rules; authored defensive clears remain separate.
+
+## October26 Dracodia loop/fade/speech/body polish
+
+- RD27 preserves cyclic interpolated carrier/material/wire frames and 24-step 25%-100% skeleton visibility before lightning. Strike beats increase shared-mixer gain; only the closing speech line owns the roar/arm lift. Keep full-width first-host body pixels after arms break and the same authored recovery body during its fall, with 90 registered opaque arm targets across 45 poses. Use the stage78 owning builder; preserve native budgets, hit feedback and cinematic progression. Current evidence: docs/DRACODIA_POLISH_1026.md.
+
+## October26 Dracodia living DNA-code formation
+
+- The initial skeletal rise has its own living green DNA-code formation from 6.2 to 15.8s: authored code/liquid lobes, rear/front helix, binary cross-links and code inside the actual carrier mask. It wraps the stepped skeletal fade, then converges into download before lightning. This material spiral is separate from the blue ending electricity. Preserve native dialogue, protection and all later fixes. Current owner/evidence: docs/DRACODIA_DNA_1026.md; source manifest owner build_dracodia_dna_1026.py.
+
+## October26 DNA final-form palette
+
+- RD28 DNA uses Dracodia violet/red-magenta energy and pale highlights through two local palette sheets. Preserve native luminance, alpha, outlines and original green sources; regenerate through build_dracodia_dna_1026.py. The current drone-to-phase1 film records the unchanged native conversion for review. See docs/DRACODIA_PALETTE_DRONE_1026.md.
+
+## October26 first-host entrance replacement
+
+- Mike explicitly replaced the former void/player entry and dragon overlay with
+  scenery scanline warp/palette darkening, living-arena fade, authored PixelLab
+  amethyst gate and actual V18 drone emergence. The pilot stays in place.
+- assets/drone_rework_1026.js owns the protected native intro. Final-form magenta
+  synthetic code wraps and downloads the drone with rising rumble and 1015
+  own-pixel glow; reveal the complete first host only under full whiteout,
+  then clear to native phase1. Preserve all later cinematic/combat/HP owners.
+  Source-derived glow builder, proof and recording: docs/DRONE_REWORK_1026.md.
+
+
+## October26 Dracodia copied forms and protected final life
+
+- assets/dracodia_forms_1026.js protects the final base HP and arms until Hammer, helicopter, Neural Archon and Phoenix/volcano pools are all exhausted. Preserve early hit/shield feedback, native pools and one final defeat owner. The infused drone host keeps its separate arm/core destruction.
+- Use actual source pixels, continuous anchors, magenta DNA and flash-covered assembly for copy changes. Keep cyclic fixed-pivot loops and measured sockets together; the authored whole-body scythe pose owns its visible contact and recovery. Donor muzzle callbacks expire with their original form.
+- Preserve the advancing native attack book, archive/helper interlocks, ordinary-energy interception rules, defensive clears, physical missiles, native cues and hit flash expiry. Full-fight evidence must use native inputs without enemy HP/phase/timer writes. See docs/DRACODIA_FORMS_1026.md.

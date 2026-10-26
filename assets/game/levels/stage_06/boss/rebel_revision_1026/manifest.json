@@ -1,0 +1,30 @@
+{
+  "format": "even, fixed canvas, proportional scale",
+  "wall_box": {
+    "size": [
+      128,
+      128
+    ],
+    "job": "aacea785-8b66-4236-bb22-4019c4555a1e",
+    "generator": "PixelLab Pixen"
+  },
+  "wall": {
+    "size": [
+      384,
+      160
+    ],
+    "job": "eb66ba27-7e06-4fbf-8f5e-34542a49fdfd",
+    "generator": "PixelLab Pixen"
+  },
+  "runtime": "assets/rebel_revision_1026.js",
+  "cloak": "24 indexed opacity steps plus 16Hz background refraction clipped by existing authored heading alpha",
+  "wall_glow": {
+    "size": [
+      384,
+      160
+    ],
+    "builder": "_BUILD_SOURCE/build_rebel_wall_glow_1026.py",
+    "algorithm": "pixel_glow_1015 emissive/rings, cyan-grid inclusion",
+    "emissive_pixels": 6453
+  }
+}

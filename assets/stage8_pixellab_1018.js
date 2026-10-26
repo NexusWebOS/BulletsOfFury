@@ -78,7 +78,7 @@ retinaBossTargets=function(b){if(!v18Owned(b))return V18.base.targets.apply(this
 function v18Rupture(b,p){const v=v18Rig(b).find(v=>v.p===p);if(!v)return;const q=v.a.bounds,c=document.createElement('canvas');c.width=q[2]-q[0];c.height=q[3]-q[1];
  c.getContext('2d').drawImage(XART.get(v.key),q[0],q[1],c.width,c.height,0,0,c.width,c.height);d27ModuleRupture(b,p,{...v,debrisImage:c},'purple');v18Log(b,'module-broken',{module:p.id});}
 modularHit=function(dmg){const b=boss;if(!v18Owned(b))return V18.base.hit.apply(this,arguments);if(!r30Live(b)||b._noHit||!Number.isFinite(dmg)||dmg<=0)return;
- const p=b.parts.includes(b._lastPart)&&!b._lastPart.destroyed?b._lastPart:b.parts[0],dealt=Math.min(dmg,b.hp);b.hp-=dealt;p.flash=.12;markHit(b,.12);stageStats.dmgDealt+=dealt;
+ const p=b.parts.includes(b._lastPart)&&!b._lastPart.destroyed?b._lastPart:b.parts[0],dealt=Math.min(dmg,b.hp);b.hp-=dealt;markHit(p,.12);markHit(b,.12);stageStats.dmgDealt+=dealt;
  if(p.id!=='core'){p.hp=Math.max(0,p.hp-dmg);if(p.hp<=0){v18Rupture(b,p);p.destroyed=true;b._r30.v18.beams=b._r30.v18.beams.filter(L=>L.module!==p.id);r30Sound('combatModule0927');}}
  b.parts[0].hp=b.hp;j3Save(b);if(b.hp<=0)r30Break(b);};
 r30Break=function(b){if(!v18Owned(b))return V18.base.break.apply(this,arguments);if(!r30Live(b))return;

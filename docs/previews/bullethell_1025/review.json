@@ -1,0 +1,254 @@
+[
+  {
+    "id": "7-boss",
+    "name": "Stage 7 \u00b7 Warden",
+    "pattern": "Toxic flowers",
+    "description": "Rotating acid rings from the main emitter, with a moving opening.",
+    "src": "/_shots/bullethell_1025/video/7-boss-190530/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/7-boss-190530/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.1555,
+    "peakDb": -9.0,
+    "maxLive": 69,
+    "firstRelease": 1.1499999999999346,
+    "recovery": 4.649999999999736,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "8-boss",
+    "name": "Stage 8 \u00b7 Dracodia, first body",
+    "pattern": "Claw braids",
+    "description": "The raised claws alternate committed fans. Broken arms stop firing.",
+    "src": "/_shots/bullethell_1025/video/8-boss-190559/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/8-boss-190559/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.09109999999404,
+    "peakDb": -8.5,
+    "maxLive": 42,
+    "firstRelease": 1.8666666666665606,
+    "recovery": 5.366666666666362,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "8-final",
+    "name": "Stage 8 \u00b7 Dracodia, final body",
+    "pattern": "Code flowers",
+    "description": "Rotating code rings before the army download; native form pools remain finite.",
+    "src": "/_shots/bullethell_1025/video/8-final/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/8-final/decoded-3.png",
+    "method": "Native final-form fixture selected with v18Enter; native HP retained, real-time invulnerable input bot.",
+    "seconds": 12.081200000017882,
+    "peakDb": -9.7,
+    "maxLive": 70,
+    "firstRelease": 1.149999999999996,
+    "recovery": 4.649999999999984,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "1-mini",
+    "name": "Stage 1 \u00b7 Razorback",
+    "pattern": "Sonic rake",
+    "description": "Offset artillery fans with a moving dodge lane.",
+    "src": "/_shots/bullethell_1025/video/1-mini/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/1-mini/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.10630000001192,
+    "peakDb": -7.7,
+    "maxLive": 46,
+    "firstRelease": 1.1500000000000572,
+    "recovery": 4.650000000000116,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "2-mini",
+    "name": "Stage 2 \u00b7 Inferno Reaver",
+    "pattern": "Cinder flowers",
+    "description": "Staggered rotating rings from surviving gun modules.",
+    "src": "/_shots/bullethell_1025/video/2-mini/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/2-mini/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.25559999999404,
+    "peakDb": -8.3,
+    "maxLive": 79,
+    "firstRelease": 1.1833333333333922,
+    "recovery": 4.683333333333545,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "3-mini",
+    "name": "Stage 3 \u00b7 Frost Cruiser",
+    "pattern": "Gun braids",
+    "description": "Alternating gun fans with a committed opening.",
+    "src": "/_shots/bullethell_1025/video/3-mini/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/3-mini/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.082800000011922,
+    "peakDb": -6.7,
+    "maxLive": 43,
+    "firstRelease": 1.1666666666667247,
+    "recovery": 4.666666666666899,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "4-mini",
+    "name": "Stage 4 \u00b7 Olive Warden",
+    "pattern": "Gun rakes",
+    "description": "Relay fans wait for the escort attack to finish.",
+    "src": "/_shots/bullethell_1025/video/4-mini/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/4-mini/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.123299999982118,
+    "peakDb": -8.8,
+    "maxLive": 39,
+    "firstRelease": 1.1333333333333897,
+    "recovery": 4.633333333333564,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "5-mini",
+    "name": "Stage 5 \u00b7 Eclipse Siege Bomber",
+    "pattern": "Cannon braid",
+    "description": "Staggered fans from surviving cannon modules.",
+    "src": "/_shots/bullethell_1025/video/5-mini/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/5-mini/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.249799999982118,
+    "peakDb": -12.9,
+    "maxLive": 47,
+    "firstRelease": 1.1500000000000572,
+    "recovery": 4.649999999999903,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "6-mini",
+    "name": "Stage 6 \u00b7 Warhive Siege Fortress",
+    "pattern": "Battery relay",
+    "description": "Electric orb fans travel through the six battery sockets.",
+    "src": "/_shots/bullethell_1025/video/6-mini/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/6-mini/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.15779999998212,
+    "peakDb": -8.2,
+    "maxLive": 53,
+    "firstRelease": 1.1166666666666032,
+    "recovery": 4.616666666666404,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "7-mini",
+    "name": "Stage 7 \u00b7 Caustic Dredger",
+    "pattern": "Toxic braids",
+    "description": "Alternating cannon fans with clear openings.",
+    "src": "/_shots/bullethell_1025/video/7-mini/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/7-mini/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.0875,
+    "peakDb": -8.4,
+    "maxLive": 36,
+    "firstRelease": 1.1500000000000572,
+    "recovery": 4.649999999999965,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "8-mini",
+    "name": "Stage 8 \u00b7 Herald of Death",
+    "pattern": "Feather vortex",
+    "description": "Rotating feather rings; a destroyed wing loses its volleys.",
+    "src": "/_shots/bullethell_1025/video/8-mini-190643/barrage.mp4",
+    "poster": "/_shots/bullethell_1025/video/8-mini-190643/decoded-3.png",
+    "method": "Short audible checkpoints reached by native simulation; no HP/phase writes.\nEach checkpoint then runs at real speed with an explicitly invulnerable input bot.\n",
+    "seconds": 12.04609999999404,
+    "peakDb": -8.5,
+    "maxLive": 69,
+    "firstRelease": 1.1833333333333176,
+    "recovery": 4.683333333333119,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  },
+  {
+    "id": "9-mini",
+    "name": "Stage 9 \u00b7 Event Horizon",
+    "pattern": "Fast spin, vertical flight and eye bomb",
+    "description": "Current October25 revision: faster whole-hull spins, large vertical passes and a charged energy bomb from the eye.",
+    "src": "/_shots/horizon_assault_1025/video/213245/event-horizon-furious.mp4",
+    "poster": "/_shots/horizon_assault_1025/video/213245/decoded-4.png",
+    "method": "Continuous audible Furious Event Horizon review; native HP, phases and inputs. Only player damage is ignored; weapons are withheld for the full demonstration.",
+    "seconds": 45.22119999998808,
+    "peakDb": -8.5,
+    "maxLive": null,
+    "firstRelease": 9.98558000000119,
+    "recovery": 11.601593749990686,
+    "checks": {
+      "nativeSectionComplete": true,
+      "noErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true
+    }
+  }
+]

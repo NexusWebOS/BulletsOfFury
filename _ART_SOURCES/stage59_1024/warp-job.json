@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 8f25dae2-4405-47f5-823c-224b26cfce5d\njob_id: 8f25dae2-4405-47f5-823c-224b26cfce5d\nmodel: pro\ndescription: FRAME FORMAT:256x256 pixels, one common scale and fixed vanishing point128,128. Full-frame opaque cinematic WATER WARP SPEED tunnel for a premium 16/32-bit arcade space shooter. Flying at extreme speed down the center of a deep navy and cobalt water vortex through a portal. Intense cyan white foam streaks rush from a small bright distant central vanishing point toward every outer edge; spiral liquid walls form concentric curling wave ribs, tiny bubbles and refracted aquamarine light. Strong depth and spectacular watery hyperspace speed, crisp authored pixel-art texture with rich metallic-arcade shading, no ship, characters, text, black border, horizon or stars. Entire square filled by the rushing underwater warp tunnel, all four edges carry streaming watery light.\nsize: 256x256px\ntransparent: False\ncandidates: 1\nseed: 10224001\nasset_id: d5b4019f-b9f4-5822-9c51-9375e5741d68\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"8f25dae2-4405-47f5-823c-224b26cfce5d\")"
+    }
+  ],
+  "isError": false
+}

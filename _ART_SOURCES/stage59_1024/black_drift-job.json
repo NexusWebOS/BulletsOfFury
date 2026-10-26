@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: f3f89ad8-67e4-4141-ae06-1e7857cf19b3\njob_id: f3f89ad8-67e4-4141-ae06-1e7857cf19b3\ndescription: FRAME FORMAT:256x256 transparent pixels, fixed central cyan EYE pivot128,128 throughout, common proportional scale and full-wing transparent margins. Exact supplied BLACK/dark charcoal mechanical flying eye, same black crescent wings, long pointed spine, cyan circular central eye, crisp authored pixels and dark metal highlights. One whole identical aircraft, no new parts, no additional effects or projectiles. Subtle controlled banking left then right while flying; wings pitch in depth around the unmoving central eye, the visible armor stays exactly the same. Begin/end with supplied front pose, no translation or zoom.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 10224023\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f3f89ad8-67e4-4141-ae06-1e7857cf19b3\")\nasset_id: c81ea62a-dce7-5505-ab6f-96c504ae0fe1\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

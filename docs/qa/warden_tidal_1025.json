@@ -1,0 +1,620 @@
+{
+  "nativeChecks": [
+    {
+      "name": "Retreating floor drives walking even with a stationary screen chassis",
+      "passed": true
+    },
+    {
+      "name": "Stance feet travel with the actual retreating floor",
+      "passed": true
+    },
+    {
+      "name": "Backward recovery uses leg motion on every moving update",
+      "passed": true
+    },
+    {
+      "name": "Both turret trunnions stay fixed in every firing and recoil pose",
+      "passed": true
+    },
+    {
+      "name": "Turrets change firing angle without changing hull socket",
+      "passed": true
+    },
+    {
+      "name": "Both live claws retain actual visible pixels throughout all swipe returns",
+      "passed": true
+    },
+    {
+      "name": "Warden braces for its barrage and does not scroll the floor",
+      "passed": true
+    },
+    {
+      "name": "No retreat scroll remains after the actual leg budget is exhausted",
+      "passed": true
+    },
+    {
+      "name": "Warp sentinels keep their native pre-fusion state",
+      "passed": true
+    },
+    {
+      "name": "Native damage to both sentinels begins their convergence",
+      "passed": true
+    },
+    {
+      "name": "The first live water frame exposes its complete final HP pool once",
+      "passed": true
+    },
+    {
+      "name": "Native convergence enters the complete Tidal Sovereign owner",
+      "passed": true
+    },
+    {
+      "name": "Native water HP budget and portal collapse clock are retained",
+      "passed": true
+    },
+    {
+      "name": "All 96 even fixed-canvas liquid hull frames decode in the native context",
+      "passed": true
+    },
+    {
+      "name": "Liquid pixels actually animate while the whole hull alpha stays fixed",
+      "passed": true
+    },
+    {
+      "name": "Native shipBossDraw displays moving liquid pixels",
+      "passed": true
+    },
+    {
+      "name": "Circle launchers and lower cannon sockets follow the displayed hull",
+      "passed": true
+    },
+    {
+      "name": "Measured water sockets overlap actual authored opaque blue pixels",
+      "passed": true
+    },
+    {
+      "name": "Supplemental targeting cannot create a second water attack owner",
+      "passed": true
+    },
+    {
+      "name": "Native flood collision leaves the visible opening safe",
+      "passed": true
+    },
+    {
+      "name": "Native geyser collision matches the visible spire and leaves side space",
+      "passed": true
+    },
+    {
+      "name": "A defensive mortar clear cancels its pending eruption",
+      "passed": true
+    },
+    {
+      "name": "Repeated draws cannot advance the water animation or hazard clock",
+      "passed": true
+    },
+    {
+      "name": "Normal and Hard retain fewer flood rows and longer reaction windows",
+      "passed": true
+    },
+    {
+      "name": "The complete authored water hull stays visible at both camera edges",
+      "passed": true
+    },
+    {
+      "name": "Native scheduler completes flood and leaves recovery",
+      "passed": true
+    },
+    {
+      "name": "Native scheduler completes geysers and leaves recovery",
+      "passed": true
+    },
+    {
+      "name": "Native scheduler completes mortars and leaves recovery",
+      "passed": true
+    },
+    {
+      "name": "Native scheduler completes mist and leaves recovery",
+      "passed": true
+    },
+    {
+      "name": "Native scheduler completes undertow and leaves recovery",
+      "passed": true
+    },
+    {
+      "name": "Native scheduler completes maelstrom and leaves recovery",
+      "passed": true
+    },
+    {
+      "name": "Water attacks keep finite wall and bullet budgets",
+      "passed": true
+    },
+    {
+      "name": "Water energy remains ordinary unshootable ordnance with defensive clears",
+      "passed": true
+    },
+    {
+      "name": "Water laser mortars launch from both measured circles",
+      "passed": true
+    },
+    {
+      "name": "Mist pressure lasers fire from both lower turrets",
+      "passed": true
+    },
+    {
+      "name": "Native Tidal damage changes actual armor pixels to white",
+      "passed": true
+    },
+    {
+      "name": "Tidal hit flash expires through its native timer",
+      "passed": true
+    },
+    {
+      "name": "First-frame ordinary water cannot be intercepted; real torpedoes can",
+      "passed": true
+    },
+    {
+      "name": "All six water cues decode as audible native audio",
+      "passed": true
+    },
+    {
+      "name": "Water release plays through the shared mixer",
+      "passed": true
+    },
+    {
+      "name": "Native owner loss cancels all pending water hazards and releases",
+      "passed": true
+    },
+    {
+      "name": "No page, console or failed asset responses",
+      "passed": true
+    }
+  ],
+  "browserChecks": [
+    {
+      "name": "Warden, full Stage9 and all six water chapters are available",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "warden decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 0.434756,
+          "width": 1280,
+          "height": 800,
+          "frames": 22,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 5.924544,
+          "width": 1280,
+          "height": 800,
+          "frames": 205,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 2.818707,
+          "width": 1280,
+          "height": 800,
+          "frames": 295,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "warden attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 18.52175,
+        "after": 18.555083
+      }
+    },
+    {
+      "name": "warden slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "warden supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-full decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 0.432942,
+          "width": 1280,
+          "height": 800,
+          "frames": 12,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 107.908171,
+          "width": 1280,
+          "height": 800,
+          "frames": 245,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 210.045808,
+          "width": 1280,
+          "height": 800,
+          "frames": 292,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "stage9-full attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 110.02125,
+        "after": 110.054583
+      }
+    },
+    {
+      "name": "stage9-full slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-full supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "flood decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 106.103306,
+          "width": 1280,
+          "height": 800,
+          "frames": 342,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 107.843762,
+          "width": 1280,
+          "height": 800,
+          "frames": 573,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 112.380667,
+          "width": 1280,
+          "height": 800,
+          "frames": 690,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "flood attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 110.02125,
+        "after": 110.054583
+      }
+    },
+    {
+      "name": "flood slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "flood supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "geysers decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 114.194755,
+          "width": 1280,
+          "height": 800,
+          "frames": 327,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 116.035397,
+          "width": 1280,
+          "height": 800,
+          "frames": 554,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 118.492301,
+          "width": 1280,
+          "height": 800,
+          "frames": 604,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "geysers attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 115.810178,
+        "after": 115.843511
+      }
+    },
+    {
+      "name": "geysers slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "geysers supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mortars decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 120.305196,
+          "width": 1280,
+          "height": 800,
+          "frames": 194,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 121.9259,
+          "width": 1280,
+          "height": 800,
+          "frames": 347,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 124.46447,
+          "width": 1280,
+          "height": 800,
+          "frames": 576,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "mortars attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 123.171296,
+        "after": 123.204629
+      }
+    },
+    {
+      "name": "mortars slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mortars supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mist decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 126.266006,
+          "width": 1280,
+          "height": 800,
+          "frames": 51,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 128.009799,
+          "width": 1280,
+          "height": 800,
+          "frames": 137,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 129.846792,
+          "width": 1280,
+          "height": 800,
+          "frames": 278,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "mist attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 128.083,
+        "after": 128.116333
+      }
+    },
+    {
+      "name": "mist slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mist supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "undertow decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 131.641659,
+          "width": 1280,
+          "height": 800,
+          "frames": 374,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 133.392226,
+          "width": 1280,
+          "height": 800,
+          "frames": 621,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 137.00045,
+          "width": 1280,
+          "height": 800,
+          "frames": 726,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "undertow attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 133.962785,
+        "after": 133.996118
+      }
+    },
+    {
+      "name": "undertow slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "undertow supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maelstrom decodes, plays and seeks with audio enabled",
+      "passed": true,
+      "data": [
+        {
+          "time": 138.796042,
+          "width": 1280,
+          "height": 800,
+          "frames": 304,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 140.543169,
+          "width": 1280,
+          "height": 800,
+          "frames": 516,
+          "muted": false,
+          "error": null
+        },
+        {
+          "time": 145.651742,
+          "width": 1280,
+          "height": 800,
+          "frames": 631,
+          "muted": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "maelstrom attack jump and single-frame advance work",
+      "passed": true,
+      "data": {
+        "before": 141.468142,
+        "after": 141.501475
+      }
+    },
+    {
+      "name": "maelstrom slow motion works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maelstrom supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No review page, console or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "stage9Video": {
+    "stage": 9,
+    "video": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\warden_tidal_1025\\full\\stage9-201438\\stage9-furious.mp4",
+    "duration": 220.2,
+    "sizeBytes": 175643936,
+    "decodedPeakDb": -2.6,
+    "decodedMeanDb": -19.0,
+    "checks": {
+      "fullDecode": true,
+      "audioStream": true,
+      "audibleDecodedAudio": true,
+      "durationMatches": true,
+      "noPageErrors": true,
+      "noConsoleErrors": true,
+      "noAssetErrors": true,
+      "nativeDefeat": true,
+      "zeroPlayerDeaths": true
+    },
+    "decodeErrors": [],
+    "contactSheet": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\warden_tidal_1025\\full\\stage9-201438\\decoded-contact.jpg"
+  },
+  "wardenVideo": {
+    "path": "/_shots/warden_tidal_1025/walk/203104/warden-walking.mp4",
+    "checks": {
+      "noErrors": true,
+      "audible": true,
+      "fullDecode": true,
+      "realTime": true,
+      "nativeChase": true,
+      "nativeSwipe": true,
+      "nativeBattery": true
+    },
+    "sourceFps": 59.89335090914289
+  },
+  "sha256": {
+    "assets/game.js": "56a7210be858013a24b3fceedceba7af2472229da19982556d50092ddcf82a64",
+    "assets/stage78_review_1025.js": "45874a1b4ae08574b22df98aba84ac6e7c399ff7fa266fee9767e93a5e4d4ede",
+    "assets/bullethell_1025.js": "99bf3e4f72a91eca47dc9eefcb339575b7bd7b681400171a67d0aa0f50b1f50d",
+    "assets/warden_tidal_1025.js": "8b8ad8a0c3f2bf3e4c374998207a3093abaa3ce2639524c20d673c0d5f03d0b2",
+    "assets/warden_tidal_art_1025.js": "3ba99bbe5b05fa26fe459dc989c8ab55d39c94d1ba914aa9cdb0157eabe31f64",
+    "_BUILD_SOURCE/build_warden_tidal_1025.py": "d9f33f5f7d7a940bfb0d679cfba5e808ba9ffd56b915a326bd5436a02b4f5b1a",
+    "index.html": "de139339cb8e0615f352aa89e7b3e27173946a1add274e3175c69ae2ddd9b65b"
+  },
+  "reviewUrl": "http://127.0.0.1:54219/docs/previews/warden_tidal_1025/index.html",
+  "nativeReport": "_shots/warden_tidal_1025/probe/report.json",
+  "browserReport": "_shots/warden_tidal_1025/browser/report.json",
+  "fullSuite": {
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "reason": "Missing pre-existing _BUILD_SOURCE/retired_art_archive_1022.cjs; suite stops at its first require before assertions."
+  },
+  "method": "Native Furious full fight, with a deliberate input-only observation turn.\nThe bot defeats both sentinels, observes all six water attacks, then resumes fire.\nNo enemy HP/phase writes. GOD prevents player damage. Real RAF and audible audio.\n"
+}

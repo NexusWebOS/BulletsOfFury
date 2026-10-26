@@ -1,0 +1,2872 @@
+{
+  "chaingun": {
+    "sheets": {
+      "ch23_body": {
+        "key": "nca_ch23_body",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_body.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "5f07f1484be5b9c8c935281a7af3b6ed505e7c31b4581d3c0ee4e4427bb2bc4c"
+      },
+      "ch23_body_armor": {
+        "key": "nca_ch23_body_armor",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_body_armor.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "411c68a24c76d00a077f6dd89368400d920304a6687939b6dcaa33bd31f5ac7a"
+      },
+      "ch23_body_red": {
+        "key": "nca_ch23_body_red",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_body_red.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "3e90a75e0957392dd3b3040d5e7e6848bb1b688eb031bf333c1097ea620fed9b"
+      },
+      "ch23_body_hit": {
+        "key": "nca_ch23_body_hit",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_body_hit.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "cef5ddcf0a7e7abc4a4f9e5af7089448628f805099d12b78cd320b5193cbaa5b"
+      },
+      "ch23_barrel": {
+        "key": "nca_ch23_barrel",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_barrel.webp",
+        "w": 416,
+        "h": 624,
+        "sha256": "0ef365a4f3e58aa6d653b5fd24b88170d26d35b7552d716e6826c8f68cdd9013"
+      },
+      "ch23_barrel_armor": {
+        "key": "nca_ch23_barrel_armor",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_barrel_armor.webp",
+        "w": 416,
+        "h": 624,
+        "sha256": "c25edac9d67b2491b422e7d64bb880fad87947b8a4df364bf0e3a4e18208f6e5"
+      },
+      "ch23_barrel_red": {
+        "key": "nca_ch23_barrel_red",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_barrel_red.webp",
+        "w": 416,
+        "h": 624,
+        "sha256": "a5971a06bc8c63c3d65d71f05e73ee0e7c000749e1e81d670261bf9782a10255"
+      },
+      "ch23_barrel_hit": {
+        "key": "nca_ch23_barrel_hit",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_barrel_hit.webp",
+        "w": 416,
+        "h": 624,
+        "sha256": "e2897ae1f423cfb0d35e08aea627e3526010de3c03fb810016960614b0290883"
+      },
+      "ch23_hands": {
+        "key": "nca_ch23_hands",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_hands.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "8f7e341da67283ab3623981b745ec6c017e07edb69593f939d34c608bc314558"
+      },
+      "ch23_hands_armor": {
+        "key": "nca_ch23_hands_armor",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_hands_armor.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "975259a9ee33e3ada42c7d016167ca3757a7a9440c2e617c754503d43ffe075f"
+      },
+      "ch23_hands_red": {
+        "key": "nca_ch23_hands_red",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_hands_red.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "99eb8748e9cc9e51bc0331dc14f34757e74efa1fdd54f86703c007b82a404d63"
+      },
+      "ch23_hands_hit": {
+        "key": "nca_ch23_hands_hit",
+        "path": "assets/game/shared/combat/chronos_aura_gun_1025/ch23_hands_hit.webp",
+        "w": 1536,
+        "h": 1024,
+        "sha256": "6ae6ec33285f36de0d12bdc2dffdd7c3b1a6a608da7abffc1b55bf8e34a85f78"
+      },
+      "ch23_round": {
+        "key": "nca_ch23_round",
+        "path": "assets/game/shared/combat/chronos_modular_1023/round.webp",
+        "w": 160,
+        "h": 200,
+        "sha256": "c39dce11facbe47a4cf295633350b261e150e1a0e3cd1d518dcefe1bbbc79afd"
+      },
+      "ch23_warn_fan_green": {
+        "key": "nca_ch23_warn_fan_green",
+        "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_green.webp",
+        "w": 448,
+        "h": 528,
+        "sha256": "ce1a7786f2fd21a4e71e637d394909716ad4de55606d09fafefbf3e6074957fc"
+      },
+      "ch23_warn_down_green": {
+        "key": "nca_ch23_warn_down_green",
+        "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_green.webp",
+        "w": 200,
+        "h": 528,
+        "sha256": "043d086e1e60cae1409610ed2dc5d80717fa4c9ab008d0ed1c9c02fb620b9fdd"
+      },
+      "ch23_warn_fan_yellow": {
+        "key": "nca_ch23_warn_fan_yellow",
+        "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_yellow.webp",
+        "w": 448,
+        "h": 528,
+        "sha256": "4f129b62f2a48db596eb56b5467b18e01386f46ab18801b64d0398fb70f087a4"
+      },
+      "ch23_warn_down_yellow": {
+        "key": "nca_ch23_warn_down_yellow",
+        "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_yellow.webp",
+        "w": 200,
+        "h": 528,
+        "sha256": "40d2e7e4e835f9e7d0092dab71fe5f1384059565382b01be80902d50411d9a8c"
+      },
+      "ch23_warn_fan_red": {
+        "key": "nca_ch23_warn_fan_red",
+        "path": "assets/game/shared/combat/chronos_modular_1023/warn_fan_red.webp",
+        "w": 448,
+        "h": 528,
+        "sha256": "abb88f3913292ac00313132a8afcb0b0c93d92d655c4f1b0abcdc569bd7c8942"
+      },
+      "ch23_warn_down_red": {
+        "key": "nca_ch23_warn_down_red",
+        "path": "assets/game/shared/combat/chronos_modular_1023/warn_down_red.webp",
+        "w": 200,
+        "h": 528,
+        "sha256": "a019aa8d71dcd945dde9580838f40fba2adb257f85a134b50e4d0b32d4b67f45"
+      }
+    },
+    "banks": {
+      "body": [
+        {
+          "key": "ch23_body_0",
+          "sheet": "ch23_body",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            170,
+            292,
+            380
+          ],
+          "white": "ch23_body_hit_0"
+        },
+        {
+          "key": "ch23_body_1",
+          "sheet": "ch23_body",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            168,
+            292,
+            380
+          ],
+          "white": "ch23_body_hit_1"
+        },
+        {
+          "key": "ch23_body_2",
+          "sheet": "ch23_body",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            160,
+            286,
+            380
+          ],
+          "white": "ch23_body_hit_2"
+        },
+        {
+          "key": "ch23_body_3",
+          "sheet": "ch23_body",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            152,
+            286,
+            378
+          ],
+          "white": "ch23_body_hit_3"
+        },
+        {
+          "key": "ch23_body_4",
+          "sheet": "ch23_body",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            158,
+            290,
+            380
+          ],
+          "white": "ch23_body_hit_4"
+        },
+        {
+          "key": "ch23_body_5",
+          "sheet": "ch23_body",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            172,
+            290,
+            380
+          ],
+          "white": "ch23_body_hit_5"
+        }
+      ],
+      "body_armor": [
+        {
+          "key": "ch23_body_armor_0",
+          "sheet": "ch23_body_armor",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            170,
+            292,
+            380
+          ],
+          "white": "ch23_body_hit_0"
+        },
+        {
+          "key": "ch23_body_armor_1",
+          "sheet": "ch23_body_armor",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            168,
+            292,
+            380
+          ],
+          "white": "ch23_body_hit_1"
+        },
+        {
+          "key": "ch23_body_armor_2",
+          "sheet": "ch23_body_armor",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            160,
+            286,
+            380
+          ],
+          "white": "ch23_body_hit_2"
+        },
+        {
+          "key": "ch23_body_armor_3",
+          "sheet": "ch23_body_armor",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            152,
+            286,
+            378
+          ],
+          "white": "ch23_body_hit_3"
+        },
+        {
+          "key": "ch23_body_armor_4",
+          "sheet": "ch23_body_armor",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            158,
+            290,
+            380
+          ],
+          "white": "ch23_body_hit_4"
+        },
+        {
+          "key": "ch23_body_armor_5",
+          "sheet": "ch23_body_armor",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            172,
+            290,
+            380
+          ],
+          "white": "ch23_body_hit_5"
+        }
+      ],
+      "body_red": [
+        {
+          "key": "ch23_body_red_0",
+          "sheet": "ch23_body_red",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            170,
+            292,
+            380
+          ],
+          "white": "ch23_body_hit_0"
+        },
+        {
+          "key": "ch23_body_red_1",
+          "sheet": "ch23_body_red",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            168,
+            292,
+            380
+          ],
+          "white": "ch23_body_hit_1"
+        },
+        {
+          "key": "ch23_body_red_2",
+          "sheet": "ch23_body_red",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            160,
+            286,
+            380
+          ],
+          "white": "ch23_body_hit_2"
+        },
+        {
+          "key": "ch23_body_red_3",
+          "sheet": "ch23_body_red",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            152,
+            286,
+            378
+          ],
+          "white": "ch23_body_hit_3"
+        },
+        {
+          "key": "ch23_body_red_4",
+          "sheet": "ch23_body_red",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            158,
+            290,
+            380
+          ],
+          "white": "ch23_body_hit_4"
+        },
+        {
+          "key": "ch23_body_red_5",
+          "sheet": "ch23_body_red",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            172,
+            290,
+            380
+          ],
+          "white": "ch23_body_hit_5"
+        }
+      ],
+      "body_hit": [
+        {
+          "key": "ch23_body_hit_0",
+          "sheet": "ch23_body_hit",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            170,
+            292,
+            380
+          ]
+        },
+        {
+          "key": "ch23_body_hit_1",
+          "sheet": "ch23_body_hit",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            168,
+            292,
+            380
+          ]
+        },
+        {
+          "key": "ch23_body_hit_2",
+          "sheet": "ch23_body_hit",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            160,
+            286,
+            380
+          ]
+        },
+        {
+          "key": "ch23_body_hit_3",
+          "sheet": "ch23_body_hit",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            152,
+            286,
+            378
+          ]
+        },
+        {
+          "key": "ch23_body_hit_4",
+          "sheet": "ch23_body_hit",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            158,
+            290,
+            380
+          ]
+        },
+        {
+          "key": "ch23_body_hit_5",
+          "sheet": "ch23_body_hit",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            104,
+            172,
+            290,
+            380
+          ]
+        }
+      ],
+      "barrel": [
+        {
+          "key": "ch23_barrel_0",
+          "sheet": "ch23_barrel",
+          "cell": [
+            0,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_0"
+        },
+        {
+          "key": "ch23_barrel_1",
+          "sheet": "ch23_barrel",
+          "cell": [
+            104,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_1"
+        },
+        {
+          "key": "ch23_barrel_2",
+          "sheet": "ch23_barrel",
+          "cell": [
+            208,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_2"
+        },
+        {
+          "key": "ch23_barrel_3",
+          "sheet": "ch23_barrel",
+          "cell": [
+            312,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_3"
+        },
+        {
+          "key": "ch23_barrel_4",
+          "sheet": "ch23_barrel",
+          "cell": [
+            0,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_4"
+        },
+        {
+          "key": "ch23_barrel_5",
+          "sheet": "ch23_barrel",
+          "cell": [
+            104,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_5"
+        },
+        {
+          "key": "ch23_barrel_6",
+          "sheet": "ch23_barrel",
+          "cell": [
+            208,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_6"
+        },
+        {
+          "key": "ch23_barrel_7",
+          "sheet": "ch23_barrel",
+          "cell": [
+            312,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_7"
+        },
+        {
+          "key": "ch23_barrel_8",
+          "sheet": "ch23_barrel",
+          "cell": [
+            0,
+            416,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_8"
+        }
+      ],
+      "barrel_armor": [
+        {
+          "key": "ch23_barrel_armor_0",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            0,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_0"
+        },
+        {
+          "key": "ch23_barrel_armor_1",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            104,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_1"
+        },
+        {
+          "key": "ch23_barrel_armor_2",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            208,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_2"
+        },
+        {
+          "key": "ch23_barrel_armor_3",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            312,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_3"
+        },
+        {
+          "key": "ch23_barrel_armor_4",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            0,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_4"
+        },
+        {
+          "key": "ch23_barrel_armor_5",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            104,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_5"
+        },
+        {
+          "key": "ch23_barrel_armor_6",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            208,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_6"
+        },
+        {
+          "key": "ch23_barrel_armor_7",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            312,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_7"
+        },
+        {
+          "key": "ch23_barrel_armor_8",
+          "sheet": "ch23_barrel_armor",
+          "cell": [
+            0,
+            416,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_8"
+        }
+      ],
+      "barrel_red": [
+        {
+          "key": "ch23_barrel_red_0",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            0,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_0"
+        },
+        {
+          "key": "ch23_barrel_red_1",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            104,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_1"
+        },
+        {
+          "key": "ch23_barrel_red_2",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            208,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_2"
+        },
+        {
+          "key": "ch23_barrel_red_3",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            312,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_3"
+        },
+        {
+          "key": "ch23_barrel_red_4",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            0,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_4"
+        },
+        {
+          "key": "ch23_barrel_red_5",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            104,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_5"
+        },
+        {
+          "key": "ch23_barrel_red_6",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            208,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_6"
+        },
+        {
+          "key": "ch23_barrel_red_7",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            312,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_7"
+        },
+        {
+          "key": "ch23_barrel_red_8",
+          "sheet": "ch23_barrel_red",
+          "cell": [
+            0,
+            416,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ],
+          "white": "ch23_barrel_hit_8"
+        }
+      ],
+      "barrel_hit": [
+        {
+          "key": "ch23_barrel_hit_0",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            0,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_1",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            104,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_2",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            208,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_3",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            312,
+            0,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_4",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            0,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_5",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            104,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_6",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            208,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_7",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            312,
+            208,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        },
+        {
+          "key": "ch23_barrel_hit_8",
+          "sheet": "ch23_barrel_hit",
+          "cell": [
+            0,
+            416,
+            104,
+            208
+          ],
+          "w": 104,
+          "h": 208,
+          "pivot": [
+            54,
+            46
+          ],
+          "bounds": [
+            11,
+            11,
+            96,
+            187
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "key": "ch23_hands_0",
+          "sheet": "ch23_hands",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_0"
+        },
+        {
+          "key": "ch23_hands_1",
+          "sheet": "ch23_hands",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_1"
+        },
+        {
+          "key": "ch23_hands_2",
+          "sheet": "ch23_hands",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ],
+          "white": "ch23_hands_hit_2"
+        },
+        {
+          "key": "ch23_hands_3",
+          "sheet": "ch23_hands",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ],
+          "white": "ch23_hands_hit_3"
+        },
+        {
+          "key": "ch23_hands_4",
+          "sheet": "ch23_hands",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_4"
+        },
+        {
+          "key": "ch23_hands_5",
+          "sheet": "ch23_hands",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_5"
+        }
+      ],
+      "hands_armor": [
+        {
+          "key": "ch23_hands_armor_0",
+          "sheet": "ch23_hands_armor",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_0"
+        },
+        {
+          "key": "ch23_hands_armor_1",
+          "sheet": "ch23_hands_armor",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_1"
+        },
+        {
+          "key": "ch23_hands_armor_2",
+          "sheet": "ch23_hands_armor",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ],
+          "white": "ch23_hands_hit_2"
+        },
+        {
+          "key": "ch23_hands_armor_3",
+          "sheet": "ch23_hands_armor",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ],
+          "white": "ch23_hands_hit_3"
+        },
+        {
+          "key": "ch23_hands_armor_4",
+          "sheet": "ch23_hands_armor",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_4"
+        },
+        {
+          "key": "ch23_hands_armor_5",
+          "sheet": "ch23_hands_armor",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_5"
+        }
+      ],
+      "hands_red": [
+        {
+          "key": "ch23_hands_red_0",
+          "sheet": "ch23_hands_red",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_0"
+        },
+        {
+          "key": "ch23_hands_red_1",
+          "sheet": "ch23_hands_red",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_1"
+        },
+        {
+          "key": "ch23_hands_red_2",
+          "sheet": "ch23_hands_red",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ],
+          "white": "ch23_hands_hit_2"
+        },
+        {
+          "key": "ch23_hands_red_3",
+          "sheet": "ch23_hands_red",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ],
+          "white": "ch23_hands_hit_3"
+        },
+        {
+          "key": "ch23_hands_red_4",
+          "sheet": "ch23_hands_red",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_4"
+        },
+        {
+          "key": "ch23_hands_red_5",
+          "sheet": "ch23_hands_red",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ],
+          "white": "ch23_hands_hit_5"
+        }
+      ],
+      "hands_hit": [
+        {
+          "key": "ch23_hands_hit_0",
+          "sheet": "ch23_hands_hit",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ]
+        },
+        {
+          "key": "ch23_hands_hit_1",
+          "sheet": "ch23_hands_hit",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ]
+        },
+        {
+          "key": "ch23_hands_hit_2",
+          "sheet": "ch23_hands_hit",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ]
+        },
+        {
+          "key": "ch23_hands_hit_3",
+          "sheet": "ch23_hands_hit",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            308
+          ]
+        },
+        {
+          "key": "ch23_hands_hit_4",
+          "sheet": "ch23_hands_hit",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ]
+        },
+        {
+          "key": "ch23_hands_hit_5",
+          "sheet": "ch23_hands_hit",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "w": 384,
+          "h": 512,
+          "pivot": [
+            192,
+            230
+          ],
+          "bounds": [
+            151,
+            252,
+            240,
+            307
+          ]
+        }
+      ],
+      "round": [
+        {
+          "key": "ch23_round_0",
+          "sheet": "ch23_round",
+          "cell": [
+            0,
+            0,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            14,
+            10,
+            26,
+            30
+          ]
+        },
+        {
+          "key": "ch23_round_1",
+          "sheet": "ch23_round",
+          "cell": [
+            40,
+            0,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            18,
+            17,
+            26,
+            30
+          ]
+        },
+        {
+          "key": "ch23_round_2",
+          "sheet": "ch23_round",
+          "cell": [
+            80,
+            0,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            15,
+            10,
+            25,
+            30
+          ]
+        },
+        {
+          "key": "ch23_round_3",
+          "sheet": "ch23_round",
+          "cell": [
+            120,
+            0,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            18,
+            17,
+            25,
+            30
+          ]
+        },
+        {
+          "key": "ch23_round_4",
+          "sheet": "ch23_round",
+          "cell": [
+            0,
+            40,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            18,
+            14,
+            23,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_5",
+          "sheet": "ch23_round",
+          "cell": [
+            40,
+            40,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            18,
+            17,
+            23,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_6",
+          "sheet": "ch23_round",
+          "cell": [
+            80,
+            40,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            18,
+            9,
+            22,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_7",
+          "sheet": "ch23_round",
+          "cell": [
+            120,
+            40,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            19,
+            17,
+            22,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_8",
+          "sheet": "ch23_round",
+          "cell": [
+            0,
+            80,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            19,
+            9,
+            21,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_9",
+          "sheet": "ch23_round",
+          "cell": [
+            40,
+            80,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            19,
+            17,
+            21,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_10",
+          "sheet": "ch23_round",
+          "cell": [
+            80,
+            80,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            18,
+            9,
+            21,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_11",
+          "sheet": "ch23_round",
+          "cell": [
+            120,
+            80,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            18,
+            17,
+            21,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_12",
+          "sheet": "ch23_round",
+          "cell": [
+            0,
+            120,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            17,
+            9,
+            23,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_13",
+          "sheet": "ch23_round",
+          "cell": [
+            40,
+            120,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            17,
+            17,
+            21,
+            31
+          ]
+        },
+        {
+          "key": "ch23_round_14",
+          "sheet": "ch23_round",
+          "cell": [
+            80,
+            120,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            15,
+            10,
+            24,
+            30
+          ]
+        },
+        {
+          "key": "ch23_round_15",
+          "sheet": "ch23_round",
+          "cell": [
+            120,
+            120,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            15,
+            17,
+            22,
+            30
+          ]
+        },
+        {
+          "key": "ch23_round_16",
+          "sheet": "ch23_round",
+          "cell": [
+            0,
+            160,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            14,
+            10,
+            25,
+            30
+          ]
+        },
+        {
+          "key": "ch23_round_17",
+          "sheet": "ch23_round",
+          "cell": [
+            40,
+            160,
+            40,
+            40
+          ],
+          "w": 40,
+          "h": 40,
+          "pivot": [
+            20,
+            20
+          ],
+          "bounds": [
+            14,
+            17,
+            21,
+            30
+          ]
+        }
+      ],
+      "warn_fan_green": [
+        {
+          "key": "ch23_warn_fan_green_0",
+          "sheet": "ch23_warn_fan_green",
+          "cell": [
+            0,
+            0,
+            448,
+            528
+          ],
+          "w": 448,
+          "h": 528,
+          "pivot": [
+            224,
+            20
+          ],
+          "bounds": [
+            15,
+            8,
+            433,
+            520
+          ]
+        }
+      ],
+      "warn_down_green": [
+        {
+          "key": "ch23_warn_down_green_0",
+          "sheet": "ch23_warn_down_green",
+          "cell": [
+            0,
+            0,
+            200,
+            528
+          ],
+          "w": 200,
+          "h": 528,
+          "pivot": [
+            100,
+            20
+          ],
+          "bounds": [
+            27,
+            8,
+            173,
+            520
+          ]
+        }
+      ],
+      "warn_fan_yellow": [
+        {
+          "key": "ch23_warn_fan_yellow_0",
+          "sheet": "ch23_warn_fan_yellow",
+          "cell": [
+            0,
+            0,
+            448,
+            528
+          ],
+          "w": 448,
+          "h": 528,
+          "pivot": [
+            224,
+            20
+          ],
+          "bounds": [
+            15,
+            8,
+            433,
+            520
+          ]
+        }
+      ],
+      "warn_down_yellow": [
+        {
+          "key": "ch23_warn_down_yellow_0",
+          "sheet": "ch23_warn_down_yellow",
+          "cell": [
+            0,
+            0,
+            200,
+            528
+          ],
+          "w": 200,
+          "h": 528,
+          "pivot": [
+            100,
+            20
+          ],
+          "bounds": [
+            27,
+            8,
+            173,
+            520
+          ]
+        }
+      ],
+      "warn_fan_red": [
+        {
+          "key": "ch23_warn_fan_red_0",
+          "sheet": "ch23_warn_fan_red",
+          "cell": [
+            0,
+            0,
+            448,
+            528
+          ],
+          "w": 448,
+          "h": 528,
+          "pivot": [
+            224,
+            20
+          ],
+          "bounds": [
+            15,
+            8,
+            433,
+            520
+          ]
+        }
+      ],
+      "warn_down_red": [
+        {
+          "key": "ch23_warn_down_red_0",
+          "sheet": "ch23_warn_down_red",
+          "cell": [
+            0,
+            0,
+            200,
+            528
+          ],
+          "w": 200,
+          "h": 528,
+          "pivot": [
+            100,
+            20
+          ],
+          "bounds": [
+            27,
+            8,
+            173,
+            520
+          ]
+        }
+      ]
+    },
+    "gunSocket": [
+      0,
+      48
+    ],
+    "gunPivot": [
+      54,
+      46
+    ],
+    "muzzle": [
+      54,
+      172
+    ],
+    "angles": [
+      -0.48,
+      -0.36,
+      -0.24,
+      -0.12,
+      0,
+      0.12,
+      0.24,
+      0.36,
+      0.48
+    ],
+    "owner": "_BUILD_SOURCE/build_chronos_aura_gun_1025.py",
+    "jobs": {
+      "barrel": "82cdddc4-d026-43b0-a12b-ff08d7bd1757",
+      "body": "39117169-f35c-4fbe-b669-b19f24d64f37",
+      "grip": "d9c920f4-e2aa-4059-a655-54b6fb335abb"
+    },
+    "recoilFrames": [
+      0,
+      1,
+      2,
+      6,
+      7,
+      8
+    ],
+    "jobs1025": {
+      "barrel": "1c84e602-231b-4ea2-b4a4-437ecce28111",
+      "body": "ba480b8c-4766-4829-b6a4-09fa2f0b19c8",
+      "crate": "60e4376d-e3fe-41b1-8ea3-f054383ed819"
+    }
+  },
+  "crate": [
+    {
+      "key": "ht23_crate_0",
+      "sheet": "ht23_crate",
+      "cell": [
+        0,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_1",
+      "sheet": "ht23_crate",
+      "cell": [
+        80,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_2",
+      "sheet": "ht23_crate",
+      "cell": [
+        160,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_3",
+      "sheet": "ht23_crate",
+      "cell": [
+        240,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_4",
+      "sheet": "ht23_crate",
+      "cell": [
+        0,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_5",
+      "sheet": "ht23_crate",
+      "cell": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_6",
+      "sheet": "ht23_crate",
+      "cell": [
+        160,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_7",
+      "sheet": "ht23_crate",
+      "cell": [
+        240,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_8",
+      "sheet": "ht23_crate",
+      "cell": [
+        0,
+        160,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    }
+  ],
+  "sources": {
+    "bodyFrames": [
+      0,
+      1,
+      2,
+      6,
+      7,
+      8
+    ],
+    "rotor": "PixelLab moving interior; original receiver/handles/alpha and measured muzzle preserved",
+    "aura": "Native current-plate silhouette stencil; exact frame/pivot/scale, bounded short contour echoes"
+  }
+}

@@ -1,0 +1,10 @@
+status: completed
+id: 1405850f-c35f-442a-b0ee-e1629e516173
+job_id: 1405850f-c35f-442a-b0ee-e1629e516173
+frame: 16 of 17
+asset_id: 21d88766-27f0-5e53-b669-a6019652e755
+asset_type: image
+asset_status: saved
+gallery: saved to your PixelLab gallery (pixellab.ai/create)
+charged: $0.0364 in credits
+download: https://api.pixellab.ai/mcp/images/1405850f-c35f-442a-b0ee-e1629e516173/download?index=16

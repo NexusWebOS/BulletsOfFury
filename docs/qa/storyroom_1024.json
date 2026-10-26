@@ -1,0 +1,259 @@
+{
+  "pass": "storyroom_1024",
+  "passed": 37,
+  "failed": 0,
+  "checks": {
+    "editor": {
+      "passed": 19,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Native scene catalog and nine pilot versions load",
+          "passed": true,
+          "data": {
+            "scenes": 27,
+            "pilots": 9,
+            "shots": 25
+          }
+        },
+        {
+          "name": "Storyboard cards visibly contain their dialogue",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Dialogue edits update their storyboard card",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Move shot changes actual source order",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Undo restores the earlier order",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Redo restores the edited order",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Native drag and drop reorders storyboard cards",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Other pilot version remains untouched",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Native cinematic rehearsal uses edited order and dialogue",
+          "passed": true,
+          "data": [
+            "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+            "Storyroom QA: the ice relay is silent.",
+            "Fury HQ in sight. Bringing the squad home to regroup."
+          ]
+        },
+        {
+          "name": "Export produces the editable project",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Invalid imports do not replace the draft",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "JSON imports preserve editable shot notes",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Local draft recovers after reopening the editor",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Apply persists real runtime data",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Fresh game loads saved edits and preserves callback once",
+          "passed": true,
+          "data": [
+            "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+            "Storyroom QA: the ice relay is silent.",
+            "Fury HQ in sight. Bringing the squad home to regroup."
+          ]
+        },
+        {
+          "name": "Scene game-event reassignment selects correct native sequence",
+          "passed": true,
+          "data": {
+            "actual": "Airbase secured. We have the electrical power cell.",
+            "expected": "Airbase secured. We have the electrical power cell."
+          }
+        },
+        {
+          "name": "Editor fits 1100px without horizontal overflow",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Narrow editor remains accessible",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No page/console errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "runtime": {
+      "passed": 8,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Opening edits retain native pilot flight identity and continuous timing",
+          "passed": true,
+          "data": {
+            "line": "Custom pilot report.",
+            "identity": "report",
+            "ordered": true,
+            "duration": 14
+          }
+        },
+        {
+          "name": "Dracodia speech edits retain selected expression",
+          "passed": true,
+          "data": {
+            "line": [
+              "Custom Dracodia line.",
+              5
+            ],
+            "length": 8
+          }
+        },
+        {
+          "name": "An empty monologue safely preserves the native handoff owner",
+          "passed": true,
+          "data": [
+            [
+              "",
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Event-bound response order changes dialogue without replacing its event",
+          "passed": true,
+          "data": {
+            "who": "YURI",
+            "text": "Reordered rebirth response."
+          }
+        },
+        {
+          "name": "Ending reorder uses its actual authored shot, custom caption and adjusted end time",
+          "passed": true,
+          "data": {
+            "shot": "relief",
+            "text": "THE SAVED ENDING IS REORDERED.",
+            "seenText": [
+              "THE SAVED ENDING IS REORDERED."
+            ],
+            "end": 149,
+            "expected": 149
+          }
+        },
+        {
+          "name": "A skipped director scene calls its original continuation once",
+          "passed": true,
+          "data": {
+            "calls": 1,
+            "current": false
+          }
+        },
+        {
+          "name": "Resetting the project restores authored runtime data",
+          "passed": true,
+          "data": {
+            "intro": true,
+            "ending": true,
+            "pilotLine": true
+          }
+        },
+        {
+          "name": "No native runtime errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "server": {
+      "passed": 10,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "Exclusive port prevents duplicate editor servers",
+          "passed": true
+        },
+        {
+          "name": "Reopening the launcher reuses the running editor",
+          "passed": true
+        },
+        {
+          "name": "New project reads as empty native overrides",
+          "passed": true
+        },
+        {
+          "name": "Foreign origin cannot write",
+          "passed": true
+        },
+        {
+          "name": "Valid project writes canonical JSON and runtime script",
+          "passed": true
+        },
+        {
+          "name": "Unknown executable fields are rejected without mutation",
+          "passed": true
+        },
+        {
+          "name": "Invalid duration is rejected",
+          "passed": true
+        },
+        {
+          "name": "Null dialogue is rejected",
+          "passed": true
+        },
+        {
+          "name": "Apply preserves a backup of the previous saved project",
+          "passed": true
+        },
+        {
+          "name": "Atomic writes leave no temporary files",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "syntax": "passed",
+  "full_suite": {
+    "exit": 1,
+    "assertions": 0,
+    "summary_reached": false,
+    "blocker": "Missing retired_art_archive_1022.cjs in downloaded build"
+  },
+  "saved_game_overrides": "empty; original QA project restored"
+}
