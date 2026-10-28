@@ -1,0 +1,16 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "pivot": [
+    32,
+    32
+  ],
+  "frames": 16,
+  "columns": 4,
+  "fps": 24,
+  "source_job": "31f5eecb-3fa3-4612-97c0-2374a9db84d0",
+  "source": "Jace nhxsb_g_2",
+  "builder": "_BUILD_SOURCE/build_jace_tactical_1028.py"
+}

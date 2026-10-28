@@ -1,4 +1,7 @@
 {
+  "vs41_": {"role":"voss_twin_blaster_overhead_turbo","owner":"_BUILD_SOURCE/build_voss_turbo_1028.py","manifest":"assets/game/levels/stage_06/boss/voss_turbo_1028/manifest.json","note":"80 fixed192 source-preserving whole plates, 1015 outer/inner companions, exact alpha shadows/white hits,8 fixed128 red-orange palette frames from native florb. Native HP/module ownership remains."},
+  "dc40_": {"role":"dredger_treads_twin_turrets_warning","owner":"_BUILD_SOURCE/build_dredger_assault_1028.py","manifest":"assets/game/levels/stage_07/miniboss/dredger_assault_1028/manifest.json","note":"October28 source-pixel treads, 64 fixed trunnion headings and shot-linked recoil, two barrels per turret, actual sockets/white hit alpha, top 1015 glow, native-palette north-facing circular FOV. Native hull and HP preserved."},
+  "wl39_": {"role":"warden_rear_leg_push","owner":"_BUILD_SOURCE/build_warden_lunge_1028.py","manifest":"assets/game/levels/stage_07/boss/warden_lunge_1028/manifest.json","note":"October28: 48 rigid source-pixel hinge poses, 320 cells, shared hip pivots, actual alpha targets and native hit flashes. Front/claw/body/HP ownership unchanged."},
   "rd29_": {
     "role": "drone_native_magenta_pixel_glow",
     "owner": "_BUILD_SOURCE/build_drone_rework_1026.py",

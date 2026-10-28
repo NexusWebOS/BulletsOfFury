@@ -45,9 +45,12 @@ ra4Gun=function(q,G,dt){if(rbal19Off()||!G?.arsenal1004c)return RBAL19.base.gun.
  if(!M._rbal19Gun){if(!selected||M.gunCd>0)return;const target=ra4Target(q,M.gunN),ref=target.ref,side=(M.gunN+1)%2?1:-1;
   M._rbal19Gun={t:0,warm:C.tell,side,tx:ref.x,ty:ref.y,target:target.key};rbal19Log('gun-tell',q,{warm:C.tell,target:target.key});return;}
  const T=M._rbal19Gun;T.t+=dt;if(T.t<T.warm)return;
+ if(q.key==='jace'&&q.evadeT>0)return; // Release from a visible barrel after the evasive bank settles.
  const a=Math.atan2(T.ty-q.y-28,T.tx-q.x-T.side*18),z=rg4Round({x:q.x+T.side*18,y:q.y},a,C.speed,'s6tracer',{_ra4Gun:true,_ra4Slug:q.key==='rook',owner:q,_rbal19:true});
  M.gunN++;M.gunCd=C.cd;M._rbal19Gun=null;q._ra4GunFlash=.1;
- wm26Emit?.(q,z.x,z.y-12,a,q.key==='rook'?'chaingun':'mg',null,{size:20,life:.1});
+ if(q.key==='jace'&&z.dead)return;
+ const jace=q.key==='jace',shotAngle=jace?Math.atan2(z.vy,z.vx):a;
+ wm26Emit?.(q,z.x,jace?z.y:z.y-12,shotAngle,jace?'orb':q.key==='rook'?'chaingun':'mg',jace?'#ff7035':null,{size:20,life:.1,...(jace?{follow:()=>{const p=jr36Turret(q,z._jr36Side);return p&&p.side===z._jr36Side?{...p,angle:shotAngle}:null;}}:{})});
  (q.key==='rook'?Audio.SFX.enemyMachineGunHeavy:Audio.SFX.enemyShoot)?.();rbal19Log('gun-release',q,{warm:T.warm,speed:C.speed,target:T.target});
 };
 rg4Attack=function(q,R,G){const before=q.rg4?.act,r=RBAL19.base.attack.apply(this,arguments),A=q.rg4?.act;

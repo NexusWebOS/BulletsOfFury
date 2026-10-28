@@ -1,16 +1,27 @@
 "use strict";
 /* On-hull laser batteries -> every module down -> exposed burning hull.
    Native carrier fall, detonation and Nightwing handoff remain the exit. */
-const HC32={drawing:null,cells:new Map(),events:[],last:null,base:{init:warhiveInit,sync:roster17Sync,budget:roster17Budget,at:roster17At,damage:warhiveDamage,targets:warhiveRetinaTargets,die:bossDie,tick:warhiveTick,draw:roster17Draw,overlay:s6r18CarrierOverlay,get:XART.get,fan:s6r18FanDraw,load:stageLoadBegin}};
+// Source-space wing panels between the central hull and the fan nacelles.
+// Native part mounts also own the turret art, muzzle, FOV, hit and Retina paths.
+const HC32_LASER_MOUNTS=[{id:'laser0',source:[152,164]},{id:'laser3',source:[360,164]}];
+const HC32={drawing:null,cells:new Map(),wrecks:new Map(),events:[],last:null,base:{init:warhiveInit,sync:roster17Sync,budget:roster17Budget,at:roster17At,damage:warhiveDamage,targets:warhiveRetinaTargets,die:bossDie,tick:warhiveTick,draw:roster17Draw,overlay:s6r18CarrierOverlay,get:XART.get,fan:s6r18FanDraw,fanTick:s6r18FanTick,load:stageLoadBegin,muzzle:roster17Muzzle}};
 for(const a of Object.values(HC32_ART.banks))XART._src[a.key]=a.path;
 function hc32Own(b){return run.stage===6&&!run._gp4StageX&&!!(b?._carrier17||b?._s6CarrierFall);}
-function hc32State(b){return b._hc32||(b._hc32={coreMax:Math.ceil(b._carrier17.parts.reduce((n,p)=>n+p.maxhp,0)*HC32_ART.hullRatio),core:0,initialized:false,exposed:false,t:0,flash:0,next:0,n:0,final:false});}
+function hc32State(b){return b._hc32||(b._hc32={coreMax:Math.ceil(b._carrier17.parts.reduce((n,p)=>n+p.maxhp,0)*HC32_ART.hullRatio),core:0,initialized:false,exposed:false,t:0,flash:0,next:0,n:0,final:false,fanMask:0,impact:0,motionT:0,motion:null});}
 function hc32Log(b,event,data={}){HC32.events.push({event,time:b.t,...data});if(HC32.events.length>160)HC32.events.shift();}
 function hc32Cell(name,f){const a=HC32_ART.banks[name];if(!a||!XART.rdy(a.key))return null;const id=name+':'+f;if(HC32.cells.has(id))return HC32.cells.get(id);
  const c=document.createElement('canvas');c.width=a.cw;c.height=a.ch;c.getContext('2d').drawImage(HC32.base.get.call(XART,a.key),f%a.cols*a.cw,Math.floor(f/a.cols)*a.ch,a.cw,a.ch,0,0,a.cw,a.ch);HC32.cells.set(id,c);return c;}
 function hc32Warm(){let ready=true;for(const a of Object.values(HC32_ART.banks))ready=XART.rdy(a.key)&&ready;if(ready)for(const name of['closed','open'])for(let f=0;f<17;f++)hc32Cell(name,f);return ready;}
+function hc32HeatFrame(b){const S=b?._hc32;if(!S?.exposed)return null;if(S.flash>0)return 16;return Math.floor(S.t*6)%2===0?12+Math.floor(S.t*16)%4:-1;}
+function hc32Wreck(white){const key=white?'white':'red';if(HC32.wrecks.has(key))return HC32.wrecks.get(key);if(!XART.rdy('whv_twreck'))return null;
+ const im=HC32.base.get.call(XART,'whv_twreck'),w=im?.naturalWidth||im?.width,h=im?.naturalHeight||im?.height;if(!w||!h)return null;
+ const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.drawImage(im,0,0);g.globalCompositeOperation=white?'source-in':'color';g.fillStyle=white?'#ffffff':'#ff182b';g.fillRect(0,0,w,h);
+ if(!white){g.globalCompositeOperation='destination-in';g.drawImage(im,0,0);}g.globalCompositeOperation='source-over';HC32.wrecks.set(key,c);return c;}
 stageLoadBegin=function(n,keys){return HC32.base.load.call(this,n,n===6?[...(keys||[]),...Object.values(HC32_ART.banks).map(a=>a.key)]:keys);};
-warhiveInit=function(b){const result=HC32.base.init.apply(this,arguments);if(hc32Own(b)&&b._carrier17)for(const mount of HC32_ART.laserMounts){const p=b._carrier17.parts.find(p=>p.id===mount.id);if(p){p.dx=mount.dx;p.dy=mount.dy;}}return result;};
+warhiveInit=function(b){const result=HC32.base.init.apply(this,arguments);if(hc32Own(b)&&b._carrier17)for(const mount of HC32_LASER_MOUNTS){const p=b._carrier17.parts.find(p=>p.id===mount.id);if(p){p.dx=mount.source[0]-256;p.dy=mount.source[1]-144;}}return result;};
+roster17Muzzle=function(b,p){const C=b?._carrier17;if(!hc32Own(b)||p?.kind!=='laser'||!C||C.depth||C.scale!==1)return HC32.base.muzzle.apply(this,arguments);
+ const a=p.muzzleAge<.14&&Number.isFinite(p.muzzleAngle)?p.muzzleAngle:p.er28Bearing??p.angle??Math.PI/2,f=er28Dir(a-Math.PI/2)+(p.phase==='fire'?Math.floor((p.t||0)*30)%4:0)*64,s=HC32_LASER_SOCKETS.muzzles[f],q=roster17Mount(b,p);
+ return{x:Math.round(q.x-36)+s[0],y:Math.round(q.y-4.1875*1.45-36)+s[1]};};
 roster17Sync=function(b){const result=HC32.base.sync.apply(this,arguments);if(!hc32Own(b)||!b._carrier17)return result;const C=b._carrier17,S=hc32State(b);if(!S.initialized){S.core=S.coreMax;S.initialized=true;}
  b.hp+=S.core;b.maxhp=C.parts.reduce((n,p)=>n+p.maxhp,0)+S.coreMax;return result;};
 roster17Budget=function(b){const result=HC32.base.budget.apply(this,arguments);if(hc32Own(b)&&b._carrier17)roster17Sync(b);return result;};
@@ -39,7 +50,14 @@ function hc32Cook(b,dt){const S=b._hc32;if(!S?.exposed)return;S.t+=dt;S.flash=Ma
 warhiveTick=function(b,dt){if(hc32Own(b)&&b._carrier17&&b._hc32?.exposed){const C=b._carrier17,W=b._whv;dt=clamp(dt,0,.05);b.t+=dt;b.flash=Math.max(0,b.flash-dt);C.age+=dt;C.t+=dt;
  b.x=camLeftX()+viewW()/2+Math.sin(C.age*.36)*8;b.y=roster17Home(b)+Math.sin(C.age*.55)*10;s6r18FanTick(b,C,dt);roster17FlashTick(C,dt);roster17Sync(b);hc32Cook(b,dt);return;}
  const result=HC32.base.tick.apply(this,arguments);if(hc32Own(b)&&b._s6CarrierFall)hc32Cook(b,clamp(dt,0,.05));return result;};
-XART.get=function(key){const b=HC32.drawing,S=b?._hc32,name=HC32_ART.aliases[key];if(name&&S?.exposed){const f=S.flash>0?16:S.t<2.4?Math.min(11,Math.floor(S.t/.2)):12+Math.floor(S.t*8)%4,c=hc32Cell(name,f);if(c){HC32.last={key,name,frame:f,exposed:S.exposed};return c;}}return HC32.base.get.apply(this,arguments);};
+s6r18FanTick=function(b,C,dt){const result=HC32.base.fanTick.apply(this,arguments);if(!hc32Own(b))return result;const S=hc32State(b),fans=C.parts.filter(p=>p.kind==='fan'),mask=fans.reduce((n,p)=>n|(p.dead?(p.id==='L'?1:2):0),0),down=(mask&1?1:0)+(mask&2?1:0),fresh=mask&~S.fanMask;
+ S.motionT=(S.motionT||0)+dt;S.impact=Math.max(0,(S.impact||0)-dt*1.4);if(fresh){S.impact=1;hc32Log(b,'fan-turbulence',{mask,down});}S.fanMask=mask;
+ S.motion={down,dx:0,dy:0};if(down&&C.phase==='fight'&&!C.depth){const t=S.motionT,a=down===2?10:4,hit=S.impact*S.impact,side=mask===1?1:mask===2?-1:0;
+  const dx=(Math.sin(t*13.7)*.62+Math.sin(t*31.3)*.38)*a+side*hit*7,dy=(Math.sin(t*10.9+.7)*.65+Math.sin(t*23.1)*.35)*a*.75+Math.sin(t*37)*hit*(down===2?10:6);
+  b.x+=dx;b.y+=dy;S.motion={down,dx,dy};shake=Math.max(shake,(down===2?2.4:1.1)+hit*(down===2?8:5));
+ }return result;};
+XART.get=function(key){const b=HC32.drawing,S=b?._hc32,name=HC32_ART.aliases[key],f=hc32HeatFrame(b);if(name&&S?.exposed){HC32.last={key,name,frame:f,exposed:true};if(f>=0){const c=hc32Cell(name,f);if(c)return c;}}
+ if(key==='whv_twreck'&&S?.exposed&&f>=0){const c=hc32Wreck(f===16);if(c)return c;}return HC32.base.get.apply(this,arguments);};
 roster17Draw=function(b){const old=HC32.drawing;if(hc32Own(b))HC32.drawing=b;try{return HC32.base.draw.apply(this,arguments);}finally{HC32.drawing=old;}};
 s6r18CarrierOverlay=function(b){const old=HC32.drawing;if(hc32Own(b))HC32.drawing=b;try{return HC32.base.overlay.apply(this,arguments);}finally{HC32.drawing=old;}};
 s6r18FanDraw=function(b,C){const result=HC32.base.fan.apply(this,arguments);if(!hc32Own(b)||!b._hc32?.exposed)return result;const a=HC32_ART.banks.smoke;if(!XART.rdy(a.key))return result;

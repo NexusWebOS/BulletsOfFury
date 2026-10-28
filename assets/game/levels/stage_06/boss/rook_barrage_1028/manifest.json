@@ -1,0 +1,43 @@
+{
+  "slugs": {
+    "cell": [
+      48,
+      48
+    ],
+    "pivot": [
+      24,
+      24
+    ],
+    "columns": 8,
+    "headings": 32,
+    "phases": 2,
+    "sourceCrop": [
+      88,
+      16,
+      48,
+      224
+    ]
+  },
+  "spinSymbol": {
+    "cell": [
+      64,
+      64
+    ],
+    "pivot": [
+      32,
+      32
+    ],
+    "job": "7ecfa71c-5e04-478e-b98c-ca60e138ff6b"
+  },
+  "hullGlow": {
+    "source": "rr33_flight_rook",
+    "cell": [
+      192,
+      192
+    ],
+    "pivot": [
+      96,
+      96
+    ]
+  }
+}

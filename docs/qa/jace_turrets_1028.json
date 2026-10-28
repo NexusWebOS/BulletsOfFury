@@ -1,0 +1,982 @@
+{
+  "request": "Small Jace fireballs emit from his actual wing turrets.",
+  "native": {
+    "checks": [
+      {
+        "name": "Both small fireballs begin exactly at their visible wing turret sockets",
+        "passed": true,
+        "data": [
+          {
+            "side": -1,
+            "p": {
+              "x": 302.8839364518976,
+              "y": 157.06972639011474,
+              "side": -1,
+              "key": "af21_jace_idle",
+              "frame": 0
+            },
+            "x": 302.8839364518976,
+            "y": 157.06972639011474,
+            "proof": true,
+            "ordinary": true,
+            "asterisk": null,
+            "angle": 1.4403566951786682,
+            "expected": 1.4403566951786682
+          },
+          {
+            "side": 1,
+            "p": {
+              "x": 373.581200353045,
+              "y": 157.06972639011474,
+              "side": 1,
+              "key": "af21_jace_idle",
+              "frame": 0
+            },
+            "x": 373.581200353045,
+            "y": 157.06972639011474,
+            "proof": true,
+            "ordinary": true,
+            "asterisk": null,
+            "angle": 1.6889343681896172,
+            "expected": 1.6889343681896172
+          }
+        ]
+      },
+      {
+        "name": "Release uses the wide wing turrets rather than the old center offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Actual launch direction reaches the committed target from the new muzzle",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Small orbs remain dodge-only and have no projectile asterisk",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Each heading selects the same authored frame for art and muzzle anchors",
+        "passed": true,
+        "data": [
+          {
+            "i": 0,
+            "side": -1,
+            "key": "af21_jace_idle",
+            "frame": 0,
+            "rendered": "af21_jace_idle",
+            "pixels": 29
+          },
+          {
+            "i": 0,
+            "side": 1,
+            "key": "af21_jace_idle",
+            "frame": 0,
+            "rendered": "af21_jace_idle",
+            "pixels": 17
+          },
+          {
+            "i": 1,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 1,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 15
+          },
+          {
+            "i": 1,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 1,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 14
+          },
+          {
+            "i": 2,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 2,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 22
+          },
+          {
+            "i": 2,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 2,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 8
+          },
+          {
+            "i": 3,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 3,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 17
+          },
+          {
+            "i": 3,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 3,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 11
+          },
+          {
+            "i": 4,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 4,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 16
+          },
+          {
+            "i": 4,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 4,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 19
+          },
+          {
+            "i": 5,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 5,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 18
+          },
+          {
+            "i": 5,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 5,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 24
+          },
+          {
+            "i": 6,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 6,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 16
+          },
+          {
+            "i": 6,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 6,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 7
+          },
+          {
+            "i": 7,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 7,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 21
+          },
+          {
+            "i": 7,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 7,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 29
+          }
+        ]
+      },
+      {
+        "name": "All sixteen heading sockets meet actual native hull/turret pixels",
+        "passed": true,
+        "data": [
+          {
+            "i": 0,
+            "side": -1,
+            "key": "af21_jace_idle",
+            "frame": 0,
+            "rendered": "af21_jace_idle",
+            "pixels": 29
+          },
+          {
+            "i": 0,
+            "side": 1,
+            "key": "af21_jace_idle",
+            "frame": 0,
+            "rendered": "af21_jace_idle",
+            "pixels": 17
+          },
+          {
+            "i": 1,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 1,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 15
+          },
+          {
+            "i": 1,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 1,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 14
+          },
+          {
+            "i": 2,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 2,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 22
+          },
+          {
+            "i": 2,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 2,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 8
+          },
+          {
+            "i": 3,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 3,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 17
+          },
+          {
+            "i": 3,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 3,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 11
+          },
+          {
+            "i": 4,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 4,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 16
+          },
+          {
+            "i": 4,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 4,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 19
+          },
+          {
+            "i": 5,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 5,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 18
+          },
+          {
+            "i": 5,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 5,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 24
+          },
+          {
+            "i": 6,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 6,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 16
+          },
+          {
+            "i": 6,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 6,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 7
+          },
+          {
+            "i": 7,
+            "side": -1,
+            "key": "air13_s6_jace_heading",
+            "frame": 7,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 21
+          },
+          {
+            "i": 7,
+            "side": 1,
+            "key": "air13_s6_jace_heading",
+            "frame": 7,
+            "rendered": "air13_s6_jace_heading",
+            "pixels": 29
+          }
+        ]
+      },
+      {
+        "name": "Native gun controller attaches its orange muzzle flash to the fireball mouth",
+        "passed": true,
+        "data": {
+          "z": {
+            "x": 302.8839364518976,
+            "y": 157.06972639011474
+          },
+          "calls": [
+            {
+              "x": 302.8839364518976,
+              "y": 157.06972639011474,
+              "a": 1.4403566951786682,
+              "family": "orb",
+              "color": "#ff7035",
+              "follow": {
+                "x": 302.8839364518976,
+                "y": 157.06972639011474,
+                "side": -1,
+                "key": "af21_jace_idle",
+                "frame": 0,
+                "angle": 1.4403566951786682
+              }
+            }
+          ],
+          "pending": null,
+          "cooldown": 1.5
+        }
+      },
+      {
+        "name": "Native tell, release and cooldown ownership remain intact",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Ready turret fire waits through an evasive roll then releases visibly",
+        "passed": true,
+        "data": {
+          "waiting": true,
+          "released": true
+        }
+      },
+      {
+        "name": "Pre-shot charge light uses that same turret mouth",
+        "passed": true,
+        "data": {
+          "p": {
+            "x": 373.581200353045,
+            "y": 157.06972639011474,
+            "side": 1,
+            "key": "af21_jace_idle",
+            "frame": 0
+          },
+          "calls": [
+            {
+              "x": 373.581200353045,
+              "y": 157.06972639011474
+            }
+          ]
+        }
+      },
+      {
+        "name": "Destroyed wing turrets cannot emit or keep their orphaned rounds",
+        "passed": true,
+        "data": {
+          "single": true,
+          "quiet": true,
+          "cancel": true
+        }
+      },
+      {
+        "name": "Large ranged helix and its independent native origin remain unchanged",
+        "passed": true,
+        "data": {
+          "large": true,
+          "hp": 6,
+          "r": 28,
+          "x": 340.000145,
+          "y": 197.999905
+        }
+      },
+      {
+        "name": "No browser, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "regression": {
+    "checks": {
+      "box_no_scene": true,
+      "decker_shoots_box": true,
+      "wall_cast_duration": true,
+      "centered": true,
+      "reflect_multi": true,
+      "ship_block": true,
+      "friendly_reflection": true,
+      "beam_stopped": true,
+      "pixel_glow": true,
+      "return_damage": true,
+      "helix_counter": true,
+      "energy_instead_of_bullet": true,
+      "heading_frames": true,
+      "distributed_retinas": true,
+      "missile_volley": true,
+      "missile_retina_no_fov": true,
+      "lock_beep": true,
+      "north_south": true,
+      "visible_hit_and_expiry": true,
+      "kaia_burst": true,
+      "kaia_animated_glow_pixels": true,
+      "kaia_straight": true,
+      "kaia_shootable": true,
+      "rook_chain": true,
+      "voss_dash_return": true,
+      "voss_cruise": true,
+      "jace_bullets_dodge_only": true,
+      "jace_no_dash": true,
+      "jace_hull_glow": true,
+      "jace_ranged_release": true,
+      "jace_spin_pixels": true,
+      "jace_player_intercepts_counterblast": true,
+      "jace_native_hit_flash_expiry": true,
+      "returned_shot_hurts_player": true,
+      "no_errors": true
+    },
+    "errors": [],
+    "events": [
+      {
+        "kind": "wall-box",
+        "t": 0
+      },
+      {
+        "kind": "wall-deployed",
+        "t": 0
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "voss"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "nyx"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "rook"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "kaia"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "jace"
+      },
+      {
+        "kind": "wall-block",
+        "t": 0,
+        "pilot": "player"
+      },
+      {
+        "kind": "wall-block",
+        "t": 0,
+        "pilot": "voss"
+      },
+      {
+        "kind": "friendly-reflected",
+        "t": 0,
+        "weapon": "mg"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "voss"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "nyx"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "rook"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "kaia"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "jace"
+      },
+      {
+        "kind": "helix-counterburst",
+        "t": 0,
+        "hit": 5
+      },
+      {
+        "kind": "energy-launch",
+        "t": 0,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "dialogue",
+        "t": 0.016666666666666666,
+        "who": "decker",
+        "text": "TEAM, GIVE ME A SECOND. I BROUGHT SOMETHING NEW."
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 1.816666666666665
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.1499999999999972
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.449999999999996
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.716666666666662
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.9499999999999944
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.1666666666666603
+      },
+      {
+        "kind": "dialogue",
+        "t": 3.2333333333333267,
+        "who": "decker",
+        "text": "WALL UP! HOLD FIRE - IT REFLECTS BOTH WAYS!"
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.349999999999993
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.516666666666659
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.6666666666666585
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.7999999999999914
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.9166666666666576
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.033333333333324
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.149999999999991
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.266666666666657
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.383333333333323
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.499999999999989
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.616666666666656
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.733333333333322
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.849999999999988
+      },
+      {
+        "kind": "dialogue",
+        "t": 6.299999999999983,
+        "who": "voss",
+        "text": "OUR SHOTS ARE COMING BACK! BREAK FORMATION!"
+      },
+      {
+        "kind": "north-south-return",
+        "t": 8.349999999999994
+      },
+      {
+        "kind": "dialogue",
+        "t": 9.366666666666712,
+        "who": "cole",
+        "text": "HA! YOU BUILT THAT AND NEVER TOLD US?"
+      },
+      {
+        "kind": "energy-launch",
+        "t": 9.850000000000069,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 10.016000000000076
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 0
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 1
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 2
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 3
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 4
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 5
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 6
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 7
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 8
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 9
+      },
+      {
+        "kind": "rook-chain-release",
+        "t": 10.216000000000086,
+        "caught": true
+      },
+      {
+        "kind": "voss-dash-release",
+        "t": 10.216000000000086,
+        "caught": true
+      },
+      {
+        "kind": "voss-north-return",
+        "t": 10.216000000000086
+      },
+      {
+        "kind": "helix-counterburst",
+        "t": 10.216000000000086,
+        "hit": 5
+      },
+      {
+        "kind": "dialogue",
+        "t": 10.232666666666754,
+        "who": "decker",
+        "text": "I WAS SAVING IT FOR A GOOD FIRST IMPRESSION."
+      },
+      {
+        "kind": "friendly-reflected",
+        "t": 10.416000000000096,
+        "weapon": "mg"
+      }
+    ]
+  },
+  "film": {
+    "method": "Focused native gun-controller checkpoint. Normal and heavy gun selector slots opened; special selection held. Native combat feedback remains visible. Normal gun tell/cooldown unchanged.",
+    "video": "_shots/jace_turrets_1028/video/131419/jace-turrets.mp4",
+    "errors": [],
+    "checks": {
+      "noErrors": true,
+      "decoded": true,
+      "audible": true,
+      "unclipped": true,
+      "realTime": true,
+      "bothTurrets": true,
+      "repeatedNativeFire": true
+    },
+    "decodedPeakDb": -2.3,
+    "seconds": 14.1365,
+    "sound": {
+      "peak": 1.4224176406860352,
+      "tapped": 36,
+      "playing": {
+        "stagex": 1,
+        "enemyMachineGunLight": 72,
+        "av3_impact_metal": 63,
+        "expSmall": 91,
+        "enemyShoot": 6,
+        "missile": 1,
+        "teleportIn": 2,
+        "hit": 6,
+        "combatOrb0927": 15,
+        "arcBarrelRoll": 5,
+        "dash": 4,
+        "retinaLockBeep": 5,
+        "av3_target_acquire": 1,
+        "combatBeam0927": 11,
+        "expBig": 1
+      },
+      "tapErrors": [],
+      "frames": 789
+    },
+    "muzzles": [
+      {
+        "seconds": 1.4524000000003725,
+        "x": 465.3824922085876,
+        "y": 124.11693550323115,
+        "side": 1,
+        "key": "af21_jace_idle",
+        "frame": 0
+      },
+      {
+        "seconds": 3.6374000000003726,
+        "x": 470.27050124260074,
+        "y": 148.74011292868957,
+        "side": -1,
+        "key": "af21_jace_idle",
+        "frame": 0
+      },
+      {
+        "seconds": 5.806300000000745,
+        "x": 556.4845777180824,
+        "y": 122.83009717171977,
+        "side": 1,
+        "key": "af21_jace_idle",
+        "frame": 0
+      },
+      {
+        "seconds": 7.975099999999627,
+        "x": 457.3793959092023,
+        "y": 149.72358025987108,
+        "side": -1,
+        "key": "af21_jace_idle",
+        "frame": 0
+      },
+      {
+        "seconds": 10.1655,
+        "x": 521.7539160824407,
+        "y": 122.1615159040335,
+        "side": 1,
+        "key": "af21_jace_idle",
+        "frame": 0
+      },
+      {
+        "seconds": 12.379599999999627,
+        "x": 481.63393645189774,
+        "y": 150.0694472878899,
+        "side": -1,
+        "key": "af21_jace_idle",
+        "frame": 0
+      }
+    ],
+    "game": {
+      "state": "play",
+      "arsenal": true,
+      "scene": null,
+      "age": 13.450000000000248,
+      "intro": {
+        "done": true
+      },
+      "act": null,
+      "gun": {
+        "t": 0.19999999999999998,
+        "warm": 0.65,
+        "side": 1,
+        "tx": 340,
+        "ty": 402,
+        "target": "cole"
+      },
+      "dead": false,
+      "hp": 703.8000000000006,
+      "heading": 1.4174832653857823
+    },
+    "events": [
+      {
+        "event": "gun-tell",
+        "pilot": "jace",
+        "time": 0.016666666666666666,
+        "warm": 0.65,
+        "target": "yuri"
+      },
+      {
+        "event": "gun-release",
+        "pilot": "jace",
+        "time": 0.9000000000000011,
+        "warm": 0.65,
+        "speed": 3.3,
+        "target": "yuri"
+      },
+      {
+        "event": "gun-tell",
+        "pilot": "jace",
+        "time": 2.416666666666663,
+        "warm": 0.65,
+        "target": "cole"
+      },
+      {
+        "event": "gun-release",
+        "pilot": "jace",
+        "time": 3.0666666666666607,
+        "warm": 0.65,
+        "speed": 3.3,
+        "target": "cole"
+      },
+      {
+        "event": "gun-tell",
+        "pilot": "jace",
+        "time": 4.583333333333322,
+        "warm": 0.65,
+        "target": "axel"
+      },
+      {
+        "event": "gun-release",
+        "pilot": "jace",
+        "time": 5.23333333333332,
+        "warm": 0.65,
+        "speed": 3.3,
+        "target": "axel"
+      },
+      {
+        "event": "gun-tell",
+        "pilot": "jace",
+        "time": 6.749999999999981,
+        "warm": 0.65,
+        "target": "decker"
+      },
+      {
+        "event": "gun-release",
+        "pilot": "jace",
+        "time": 7.399999999999979,
+        "warm": 0.65,
+        "speed": 3.3,
+        "target": "decker"
+      },
+      {
+        "event": "gun-tell",
+        "pilot": "jace",
+        "time": 8.91666666666669,
+        "warm": 0.65,
+        "target": "falva"
+      },
+      {
+        "event": "gun-release",
+        "pilot": "jace",
+        "time": 9.566666666666721,
+        "warm": 0.65,
+        "speed": 3.3,
+        "target": "falva"
+      },
+      {
+        "event": "gun-tell",
+        "pilot": "jace",
+        "time": 11.083333333333464,
+        "warm": 0.65,
+        "target": "yuri"
+      },
+      {
+        "event": "gun-release",
+        "pilot": "jace",
+        "time": 11.733333333333496,
+        "warm": 0.65,
+        "speed": 3.3,
+        "target": "yuri"
+      },
+      {
+        "event": "gun-tell",
+        "pilot": "jace",
+        "time": 13.250000000000238,
+        "warm": 0.65,
+        "target": "cole"
+      }
+    ]
+  },
+  "sourceHashes": {
+    "assets/jace_tactical_1028.js": "1994f62461072d046e005e75e0d125375f76ef05ed7cefb4b11bf9e79165ed58",
+    "assets/jace_turret_sockets_1028.js": "ae4ad1d6a932e537729290dd189eb4a9b104fbd896c2e7f70e293dbc6a4b9782",
+    "assets/rebel_balance_1019.js": "77a9b88bf1adc4b29150001469e239c461d0940e0e2abe19c2d388fa5154f401"
+  },
+  "fullSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "reason": "Existing missing UNUSED_ASSETS/retired_art_1022/manifest.json"
+  },
+  "review": "docs/previews/jace_tactical_1028/index.html",
+  "playback": {
+    "checks": {
+      "completeFilmLoaded": true,
+      "allDecodedStillsLoaded": true,
+      "nativeControlsPlayVideo": true,
+      "bothTurretChaptersSeek": true,
+      "desktopFits": true,
+      "mobileFits": true,
+      "noVideoError": true,
+      "noBrowserErrors": true
+    },
+    "chapters": [
+      {
+        "label": "Left turret",
+        "requested": 3.1374000000003726,
+        "time": 3.144958
+      },
+      {
+        "label": "Right turret",
+        "requested": 0.9524000000003725,
+        "time": 0.962115
+      }
+    ],
+    "errors": []
+  }
+}

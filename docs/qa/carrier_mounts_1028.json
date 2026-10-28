@@ -1,0 +1,2198 @@
+{
+  "request": "Move both Carrier laser turrets onto the user-selected left/right metal wing panels.",
+  "mounts": [
+    {
+      "id": "laser0",
+      "source": [
+        152,
+        164
+      ],
+      "dx": -104,
+      "dy": 20
+    },
+    {
+      "id": "laser3",
+      "source": [
+        360,
+        164
+      ],
+      "dx": 104,
+      "dy": 20
+    }
+  ],
+  "native": {
+    "method": "Measured Carrier wing mounts, native render/flash checks and focused replay.\n\nFixture selects two native laser launchers once. Other weapons and bay flight\nare held for this mounting review; no part HP/attack timers are written during\nthe real-time recording. This is a visual checkpoint, not a complete fight.\n",
+    "checks": [
+      {
+        "name": "Both complete turret bases rest on opaque closed metal panels",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both complete turret bases rest on opaque open metal panels",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All256 measured rotation/recoil mouths touch actual authored barrel pixels",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Two outward mounts keep their original independent hit IDs and vacate the old sockets",
+        "passed": true,
+        "data": [
+          {
+            "id": "laser0",
+            "dx": -104,
+            "dy": 20,
+            "mount": {
+              "x": 212.01766895618525,
+              "y": 241.08150780941568
+            },
+            "hit": "laser0",
+            "old": null
+          },
+          {
+            "id": "laser3",
+            "dx": 104,
+            "dy": 20,
+            "mount": {
+              "x": 483.4576689561852,
+              "y": 241.08150780941568
+            },
+            "hit": "laser3",
+            "old": null
+          }
+        ]
+      },
+      {
+        "name": "Actual authored turret cells draw at both new native pivots",
+        "passed": true,
+        "data": {
+          "out": [
+            {
+              "args": [
+                0,
+                0,
+                72,
+                72,
+                176,
+                199,
+                72,
+                72
+              ],
+              "transform": [
+                1,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "args": [
+                0,
+                0,
+                72,
+                72,
+                447,
+                199,
+                72,
+                72
+              ],
+              "transform": [
+                1,
+                1,
+                0,
+                0
+              ]
+            }
+          ],
+          "expected": [
+            {
+              "x": 212.01766895618525,
+              "y": 241.08150780941568
+            },
+            {
+              "x": 483.4576689561852,
+              "y": 241.08150780941568
+            }
+          ]
+        }
+      },
+      {
+        "name": "Both native tell origins coincide with their relocated cannon mouths",
+        "passed": true,
+        "data": {
+          "rows": [
+            {
+              "id": "laser0",
+              "x": 205.285,
+              "y": 264.079
+            },
+            {
+              "id": "laser3",
+              "x": 488.549,
+              "y": 264.245
+            }
+          ],
+          "ports": [
+            {
+              "x": 205.285,
+              "y": 264.079
+            },
+            {
+              "x": 488.549,
+              "y": 264.245
+            }
+          ]
+        }
+      },
+      {
+        "name": "Both native fire origins coincide with their relocated cannon mouths",
+        "passed": true,
+        "data": {
+          "rows": [
+            {
+              "x": 206.051,
+              "y": 267.345
+            },
+            {
+              "x": 488.949,
+              "y": 267.345
+            }
+          ],
+          "ports": [
+            {
+              "x": 206.051,
+              "y": 267.345
+            },
+            {
+              "x": 488.949,
+              "y": 267.345
+            }
+          ]
+        }
+      },
+      {
+        "name": "Relocated laser takes native damage and visibly flashes white then expires",
+        "passed": true,
+        "data": {
+          "before": {
+            "white": 0,
+            "hp": 165,
+            "flash": 0
+          },
+          "hit": {
+            "white": 804,
+            "hp": 162,
+            "flash": 0.16
+          },
+          "after": {
+            "white": 0,
+            "hp": 162,
+            "flash": 0
+          }
+        }
+      },
+      {
+        "name": "Muzzle and native Retina follow the moved hull without detaching",
+        "passed": true,
+        "data": {
+          "dx": 31,
+          "dy": 13,
+          "target": {
+            "x": 250.41479607765692,
+            "y": 253.1585695400524
+          },
+          "mount": {
+            "x": 250.41479607765692,
+            "y": 253.1585695400524
+          }
+        }
+      },
+      {
+        "name": "Focused film retains native launcher HP throughout",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both relocated native lasers charge and fire during the replay",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Replay fully decodes with audible unclipped native sound",
+        "passed": true,
+        "data": {
+          "peak": -12.9
+        }
+      },
+      {
+        "name": "Real-time capture and game have no browser/asset/audio errors",
+        "passed": true,
+        "data": {
+          "fps": 59.84487578251698,
+          "errors": []
+        }
+      }
+    ],
+    "errors": [],
+    "video": "_shots/carrier_mounts_1028/143124/carrier-wing-mounts.mp4",
+    "timeline": [
+      {
+        "seconds": 0.2621999999992549,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 0.09999999999999999,
+            "hp": 165,
+            "mount": {
+              "x": 218.79505809514856,
+              "y": 240.31526514928694
+            },
+            "muzzle": {
+              "x": 224.549,
+              "y": 263.245
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 0.09999999999999999,
+            "hp": 165,
+            "mount": {
+              "x": 490.2350580951486,
+              "y": 240.31526514928694
+            },
+            "muzzle": {
+              "x": 483.285,
+              "y": 263.079
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 0.514300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 0.35,
+            "hp": 165,
+            "mount": {
+              "x": 219.8455282698961,
+              "y": 239.47149723297846
+            },
+            "muzzle": {
+              "x": 236.139,
+              "y": 258.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 0.35,
+            "hp": 165,
+            "mount": {
+              "x": 491.2855282698961,
+              "y": 239.47149723297846
+            },
+            "muzzle": {
+              "x": 473.861,
+              "y": 257.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 0.7723999999985098,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 0.6000000000000002,
+            "hp": 165,
+            "mount": {
+              "x": 220.00257600174004,
+              "y": 238.48707126644516
+            },
+            "muzzle": {
+              "x": 236.139,
+              "y": 257.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 0.6000000000000002,
+            "hp": 165,
+            "mount": {
+              "x": 491.44257600174,
+              "y": 238.48707126644516
+            },
+            "muzzle": {
+              "x": 473.861,
+              "y": 256.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 1.03189999999851,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 0.8333333333333343,
+            "hp": 165,
+            "mount": {
+              "x": 219.97739680389836,
+              "y": 237.45772677989765
+            },
+            "muzzle": {
+              "x": 236.139,
+              "y": 256.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 0.8333333333333343,
+            "hp": 165,
+            "mount": {
+              "x": 491.4173968038983,
+              "y": 237.45772677989765
+            },
+            "muzzle": {
+              "x": 473.861,
+              "y": 255.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 1.305699999999255,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 1.1166666666666676,
+            "hp": 165,
+            "mount": {
+              "x": 219.85142363102077,
+              "y": 236.08931797351067
+            },
+            "muzzle": {
+              "x": 236.139,
+              "y": 255.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 1.1166666666666676,
+            "hp": 165,
+            "mount": {
+              "x": 491.29142363102073,
+              "y": 236.08931797351067
+            },
+            "muzzle": {
+              "x": 473.861,
+              "y": 254.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 1.570300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "fire",
+            "t": 0.24999999999999997,
+            "hp": 165,
+            "mount": {
+              "x": 219.65511517344433,
+              "y": 234.7106874507498
+            },
+            "muzzle": {
+              "x": 236.139,
+              "y": 253.958
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "fire",
+            "t": 0.24999999999999997,
+            "hp": 165,
+            "mount": {
+              "x": 491.09511517344436,
+              "y": 234.7106874507498
+            },
+            "muzzle": {
+              "x": 473.861,
+              "y": 253.458
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 1.822300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "fire",
+            "t": 0.49999999999999994,
+            "hp": 165,
+            "mount": {
+              "x": 219.40688135748158,
+              "y": 233.36516970982382
+            },
+            "muzzle": {
+              "x": 235.139,
+              "y": 249.708
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "fire",
+            "t": 0.49999999999999994,
+            "hp": 165,
+            "mount": {
+              "x": 490.8468813574816,
+              "y": 233.36516970982382
+            },
+            "muzzle": {
+              "x": 476.861,
+              "y": 250.708
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 2.076800000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 0.016666666666666666,
+            "hp": 165,
+            "mount": {
+              "x": 219.0988827640949,
+              "y": 231.99425989765504
+            },
+            "muzzle": {
+              "x": 235.139,
+              "y": 251.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 0.016666666666666666,
+            "hp": 165,
+            "mount": {
+              "x": 490.53888276409486,
+              "y": 231.99425989765504
+            },
+            "muzzle": {
+              "x": 473.861,
+              "y": 250.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 2.331,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 0.2833333333333333,
+            "hp": 165,
+            "mount": {
+              "x": 218.70734197524635,
+              "y": 230.53312704443303
+            },
+            "muzzle": {
+              "x": 235.139,
+              "y": 249.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 0.2833333333333333,
+            "hp": 165,
+            "mount": {
+              "x": 490.1473419752464,
+              "y": 230.53312704443303
+            },
+            "muzzle": {
+              "x": 472.861,
+              "y": 248.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 2.5825,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 0.5333333333333333,
+            "hp": 165,
+            "mount": {
+              "x": 218.2843464585961,
+              "y": 229.19172511897503
+            },
+            "muzzle": {
+              "x": 234.139,
+              "y": 248.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 0.5333333333333333,
+            "hp": 165,
+            "mount": {
+              "x": 489.7243464585961,
+              "y": 229.19172511897503
+            },
+            "muzzle": {
+              "x": 472.861,
+              "y": 247.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 2.847300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 0.8000000000000008,
+            "hp": 165,
+            "mount": {
+              "x": 217.77743914184848,
+              "y": 227.8203446231431
+            },
+            "muzzle": {
+              "x": 234.139,
+              "y": 247.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 0.8000000000000008,
+            "hp": 165,
+            "mount": {
+              "x": 489.21743914184844,
+              "y": 227.8203446231431
+            },
+            "muzzle": {
+              "x": 471.861,
+              "y": 246.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 3.109300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.0500000000000012,
+            "hp": 165,
+            "mount": {
+              "x": 217.25404681298775,
+              "y": 226.6160427767674
+            },
+            "muzzle": {
+              "x": 233.139,
+              "y": 246.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.0500000000000012,
+            "hp": 165,
+            "mount": {
+              "x": 488.6940468129877,
+              "y": 226.6160427767674
+            },
+            "muzzle": {
+              "x": 471.861,
+              "y": 245.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 3.373300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.3166666666666669,
+            "hp": 165,
+            "mount": {
+              "x": 216.64926067805644,
+              "y": 225.44441137481581
+            },
+            "muzzle": {
+              "x": 233.139,
+              "y": 244.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.3166666666666669,
+            "hp": 165,
+            "mount": {
+              "x": 488.08926067805646,
+              "y": 225.44441137481581
+            },
+            "muzzle": {
+              "x": 470.861,
+              "y": 243.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 3.63910000000149,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.5833333333333326,
+            "hp": 165,
+            "mount": {
+              "x": 216.00193354975343,
+              "y": 224.41397481311594
+            },
+            "muzzle": {
+              "x": 232.139,
+              "y": 243.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.5833333333333326,
+            "hp": 165,
+            "mount": {
+              "x": 487.44193354975346,
+              "y": 224.41397481311594
+            },
+            "muzzle": {
+              "x": 469.861,
+              "y": 242.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 3.90260000000149,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.8499999999999983,
+            "hp": 165,
+            "mount": {
+              "x": 215.3180266149462,
+              "y": 223.54685922120717
+            },
+            "muzzle": {
+              "x": 231.139,
+              "y": 242.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.8499999999999983,
+            "hp": 165,
+            "mount": {
+              "x": 486.7580266149462,
+              "y": 223.54685922120717
+            },
+            "muzzle": {
+              "x": 469.861,
+              "y": 241.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 4.16860000000149,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 0.24999999999999997,
+            "hp": 165,
+            "mount": {
+              "x": 214.60383792086193,
+              "y": 222.86168380635112
+            },
+            "muzzle": {
+              "x": 231.139,
+              "y": 242.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 0.24999999999999997,
+            "hp": 165,
+            "mount": {
+              "x": 486.04383792086196,
+              "y": 222.86168380635112
+            },
+            "muzzle": {
+              "x": 468.861,
+              "y": 241.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 4.434300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 0.5166666666666666,
+            "hp": 165,
+            "mount": {
+              "x": 213.86594437711622,
+              "y": 222.3731610511496
+            },
+            "muzzle": {
+              "x": 230.139,
+              "y": 241.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 0.5166666666666666,
+            "hp": 165,
+            "mount": {
+              "x": 485.30594437711625,
+              "y": 222.3731610511496
+            },
+            "muzzle": {
+              "x": 467.861,
+              "y": 240.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 4.69889999999851,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 0.7833333333333341,
+            "hp": 165,
+            "mount": {
+              "x": 213.11114118948532,
+              "y": 222.09178079861317
+            },
+            "muzzle": {
+              "x": 229.139,
+              "y": 241.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 0.7833333333333341,
+            "hp": 165,
+            "mount": {
+              "x": 484.5511411894853,
+              "y": 222.09178079861317
+            },
+            "muzzle": {
+              "x": 467.861,
+              "y": 240.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 4.962300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "tell",
+            "t": 1.0333333333333345,
+            "hp": 165,
+            "mount": {
+              "x": 212.39433567880283,
+              "y": 222.02155069997994
+            },
+            "muzzle": {
+              "x": 228.139,
+              "y": 241.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "tell",
+            "t": 1.0333333333333345,
+            "hp": 165,
+            "mount": {
+              "x": 483.83433567880286,
+              "y": 222.02155069997994
+            },
+            "muzzle": {
+              "x": 466.861,
+              "y": 240.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 5.216,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "fire",
+            "t": 0.16666666666666666,
+            "hp": 165,
+            "mount": {
+              "x": 211.62663278137686,
+              "y": 222.15463260277596
+            },
+            "muzzle": {
+              "x": 230.139,
+              "y": 243.375
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "fire",
+            "t": 0.16666666666666666,
+            "hp": 165,
+            "mount": {
+              "x": 483.0666327813768,
+              "y": 222.15463260277596
+            },
+            "muzzle": {
+              "x": 464.861,
+              "y": 243.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 5.479699999999255,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "fire",
+            "t": 0.41666666666666663,
+            "hp": 165,
+            "mount": {
+              "x": 210.91014908904842,
+              "y": 222.47190362326882
+            },
+            "muzzle": {
+              "x": 227.139,
+              "y": 241.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "fire",
+            "t": 0.41666666666666663,
+            "hp": 165,
+            "mount": {
+              "x": 482.3501490890484,
+              "y": 222.47190362326882
+            },
+            "muzzle": {
+              "x": 464.861,
+              "y": 240.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 5.744699999999255,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "fire",
+            "t": 0.6833333333333338,
+            "hp": 165,
+            "mount": {
+              "x": 210.15602944862107,
+              "y": 223.0087733462744
+            },
+            "muzzle": {
+              "x": 226.139,
+              "y": 242.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "fire",
+            "t": 0.6833333333333338,
+            "hp": 165,
+            "mount": {
+              "x": 481.59602944862104,
+              "y": 223.0087733462744
+            },
+            "muzzle": {
+              "x": 464.861,
+              "y": 241.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 6.009199999999255,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 0.21666666666666665,
+            "hp": 165,
+            "mount": {
+              "x": 209.4191644899926,
+              "y": 223.73913733730214
+            },
+            "muzzle": {
+              "x": 225.139,
+              "y": 243.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 0.21666666666666665,
+            "hp": 165,
+            "mount": {
+              "x": 480.8591644899926,
+              "y": 223.73913733730214
+            },
+            "muzzle": {
+              "x": 463.861,
+              "y": 242.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 6.27260000000149,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 0.4833333333333333,
+            "hp": 165,
+            "mount": {
+              "x": 208.7063399467759,
+              "y": 224.64731279851944
+            },
+            "muzzle": {
+              "x": 225.139,
+              "y": 244.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 0.4833333333333333,
+            "hp": 165,
+            "mount": {
+              "x": 480.1463399467759,
+              "y": 224.64731279851944
+            },
+            "muzzle": {
+              "x": 462.861,
+              "y": 243.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 6.53960000000149,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 0.7500000000000007,
+            "hp": 165,
+            "mount": {
+              "x": 208.02412016621875,
+              "y": 225.7137988614146
+            },
+            "muzzle": {
+              "x": 224.139,
+              "y": 245.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 0.7500000000000007,
+            "hp": 165,
+            "mount": {
+              "x": 479.4641201662188,
+              "y": 225.7137988614146
+            },
+            "muzzle": {
+              "x": 461.861,
+              "y": 244.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 6.804300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.016666666666668,
+            "hp": 165,
+            "mount": {
+              "x": 207.37878765862663,
+              "y": 226.9156953207186
+            },
+            "muzzle": {
+              "x": 223.139,
+              "y": 246.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.016666666666668,
+            "hp": 165,
+            "mount": {
+              "x": 478.81878765862666,
+              "y": 226.9156953207186
+            },
+            "muzzle": {
+              "x": 461.861,
+              "y": 245.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 7.069300000000745,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.2833333333333337,
+            "hp": 165,
+            "mount": {
+              "x": 206.77628524220123,
+              "y": 228.2271943608512
+            },
+            "muzzle": {
+              "x": 223.139,
+              "y": 247.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.2833333333333337,
+            "hp": 165,
+            "mount": {
+              "x": 478.21628524220125,
+              "y": 228.2271943608512
+            },
+            "muzzle": {
+              "x": 460.861,
+              "y": 246.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 7.33460000000149,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.5499999999999994,
+            "hp": 165,
+            "mount": {
+              "x": 206.22216131607755,
+              "y": 229.6201347162562
+            },
+            "muzzle": {
+              "x": 222.139,
+              "y": 249.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.5499999999999994,
+            "hp": 165,
+            "mount": {
+              "x": 477.6621613160776,
+              "y": 229.6201347162562
+            },
+            "muzzle": {
+              "x": 460.861,
+              "y": 248.375
+            }
+          }
+        ]
+      },
+      {
+        "seconds": 7.5991999999992546,
+        "parts": [
+          {
+            "id": "laser0",
+            "phase": "rest",
+            "t": 1.7999999999999985,
+            "hp": 165,
+            "mount": {
+              "x": 205.75115224978512,
+              "y": 230.97340043227902
+            },
+            "muzzle": {
+              "x": 222.139,
+              "y": 250.041
+            }
+          },
+          {
+            "id": "laser3",
+            "phase": "rest",
+            "t": 1.7999999999999985,
+            "hp": 165,
+            "mount": {
+              "x": 477.1911522497851,
+              "y": 230.97340043227902
+            },
+            "muzzle": {
+              "x": 459.861,
+              "y": 249.375
+            }
+          }
+        ]
+      }
+    ],
+    "decodedPeakDb": -12.9,
+    "seconds": 7.619699999999255,
+    "sound": {
+      "peak": 0.41558539867401123,
+      "tapped": 7,
+      "playing": {
+        "av3_target_acquire": 2,
+        "alertLockon": 2,
+        "enemyHeavyLaser": 2,
+        "bossWeaponCharge": 1
+      },
+      "tapErrors": [],
+      "frames": 456
+    },
+    "hp": [
+      {
+        "id": "L",
+        "hp": 206,
+        "max": 206
+      },
+      {
+        "id": "R",
+        "hp": 206,
+        "max": 206
+      },
+      {
+        "id": "laser0",
+        "hp": 165,
+        "max": 165
+      },
+      {
+        "id": "laser3",
+        "hp": 165,
+        "max": 165
+      },
+      {
+        "id": "hullGun0",
+        "hp": 83,
+        "max": 83
+      },
+      {
+        "id": "hullGun1",
+        "hp": 82,
+        "max": 82
+      },
+      {
+        "id": "hullGun2",
+        "hp": 83,
+        "max": 83
+      },
+      {
+        "id": "hullGun3",
+        "hp": 82,
+        "max": 82
+      },
+      {
+        "id": "rackL",
+        "hp": 185,
+        "max": 185
+      },
+      {
+        "id": "rackR",
+        "hp": 185,
+        "max": 185
+      }
+    ]
+  },
+  "regression": {
+    "checks": [
+      {
+        "name": "All new cells are even and textures fit 4096px",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1188,
+          "max": 1188,
+          "sum": 950,
+          "core": 238,
+          "coreMax": 238,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "easy HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1188,
+          "max": 1188,
+          "sum": 950,
+          "core": 238,
+          "coreMax": 238,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "easy both laser bases mount on the user-selected metal wing panels and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -104,
+            "dy": 20,
+            "hit": "laser0"
+          },
+          {
+            "dx": 104,
+            "dy": 20,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "easy direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 238,
+          "hp": 1188,
+          "initialCore": 238,
+          "initialHP": 1188
+        }
+      },
+      {
+        "name": "easy hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 238,
+          "core": 238,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 238
+        }
+      },
+      {
+        "name": "normal hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1393,
+          "max": 1393,
+          "sum": 1114,
+          "core": 279,
+          "coreMax": 279,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1393,
+          "max": 1393,
+          "sum": 1114,
+          "core": 279,
+          "coreMax": 279,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal both laser bases mount on the user-selected metal wing panels and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -104,
+            "dy": 20,
+            "hit": "laser0"
+          },
+          {
+            "dx": 104,
+            "dy": 20,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "normal direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 279,
+          "hp": 1393,
+          "initialCore": 279,
+          "initialHP": 1393
+        }
+      },
+      {
+        "name": "normal hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 279,
+          "core": 279,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 279
+        }
+      },
+      {
+        "name": "hard hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1598,
+          "max": 1598,
+          "sum": 1278,
+          "core": 320,
+          "coreMax": 320,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1598,
+          "max": 1598,
+          "sum": 1278,
+          "core": 320,
+          "coreMax": 320,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard both laser bases mount on the user-selected metal wing panels and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -104,
+            "dy": 20,
+            "hit": "laser0"
+          },
+          {
+            "dx": 104,
+            "dy": 20,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "hard direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 320,
+          "hp": 1598,
+          "initialCore": 320,
+          "initialHP": 1598
+        }
+      },
+      {
+        "name": "hard hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 320,
+          "core": 320,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 320
+        }
+      },
+      {
+        "name": "furious hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1803,
+          "max": 1803,
+          "sum": 1442,
+          "core": 361,
+          "coreMax": 361,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1803,
+          "max": 1803,
+          "sum": 1442,
+          "core": 361,
+          "coreMax": 361,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -104,
+              "dy": 20,
+              "hit": "laser0"
+            },
+            {
+              "dx": 104,
+              "dy": 20,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious both laser bases mount on the user-selected metal wing panels and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -104,
+            "dy": 20,
+            "hit": "laser0"
+          },
+          {
+            "dx": 104,
+            "dy": 20,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "furious direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 361,
+          "hp": 1803,
+          "initialCore": 361,
+          "initialHP": 1803
+        }
+      },
+      {
+        "name": "furious hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "furious final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 361,
+          "core": 361,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 361
+        }
+      },
+      {
+        "name": "Native hull selects authored edges frames",
+        "passed": true,
+        "data": {
+          "key": "er28_clean_whv_closed_w",
+          "name": "closed",
+          "frame": 0,
+          "exposed": true
+        }
+      },
+      {
+        "name": "Native hull selects authored spreading frames",
+        "passed": true,
+        "data": {
+          "key": "er28_clean_whv_closed_w",
+          "name": "closed",
+          "frame": 6,
+          "exposed": true
+        }
+      },
+      {
+        "name": "Native hull selects authored red-flash frames",
+        "passed": true,
+        "data": {
+          "key": "er28_clean_whv_closed_w",
+          "name": "closed",
+          "frame": 14,
+          "exposed": true
+        }
+      },
+      {
+        "name": "Eight bounded smoke columns cover the hull while both fans burn/smoke",
+        "passed": true,
+        "data": {
+          "smoke": 8,
+          "fans": 2,
+          "events": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "shoot": 4
+        }
+      },
+      {
+        "name": "Cookoff starts north, east, west, south before spreading",
+        "passed": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "A stale destroyed module target cannot damage the exposed hull",
+        "passed": true,
+        "data": {
+          "hp": 361,
+          "after": 361
+        }
+      },
+      {
+        "name": "A real native machine-gun bullet damages the newly exposed hull",
+        "passed": true,
+        "data": {
+          "before": 361,
+          "after": 354,
+          "dead": true,
+          "flash": 0.16,
+          "ticks": 7
+        }
+      },
+      {
+        "name": "Accepted hull hit visibly flashes the entire actual hull white",
+        "passed": true,
+        "data": {
+          "drawn": 1,
+          "lit": 93813,
+          "whitePixels": 93813,
+          "frame": 16
+        }
+      },
+      {
+        "name": "Hatch overlay uses the same whole-hull white hit frame",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native hull hit flash expires and returns to red cookoff animation",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Held beam reaches exposed hull through its actual opaque column",
+        "passed": true,
+        "data": {
+          "before": 354,
+          "after": 351
+        }
+      },
+      {
+        "name": "Hull exhaustion starts the original opaque carrier fall exactly once",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Red glow, hull smoke and fan fires persist during native fall",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native Nightwing entrance/combat still receives its original life",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "A real centerline bullet passes untouched through the protected hull",
+        "passed": true,
+        "data": {
+          "core": 361,
+          "after": 361,
+          "dead": null,
+          "y": -0.6376432107284131,
+          "point": null,
+          "test": false
+        }
+      },
+      {
+        "name": "Fans remain passive after mounted-turret and hull changes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sustained hits retain native white flashes AND visible red palette intervals",
+        "passed": true,
+        "data": {
+          "white": 24,
+          "red": 24
+        }
+      },
+      {
+        "name": "Other stages do not enter the new hull owner",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or HTTP asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "sourceSha256": "099983a6da864890a156398a01ab6d602b3da40e466ebebd883cc262b9a27f8b",
+  "syntax": "passed",
+  "fullSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "reason": "Existing missing UNUSED_ASSETS/retired_art_1022/manifest.json"
+  },
+  "playback": {
+    "checks": {
+      "nativeFilmLoaded": true,
+      "bothNativeStillsLoaded": true,
+      "playbackAdvances": true,
+      "seekToLastVolley": true,
+      "desktopFits": true,
+      "mobileFits": true,
+      "noVideoBrowserOrAssetErrors": true
+    },
+    "errors": []
+  },
+  "sourceHashes": {
+    "assets/carrier_hull_1028.js": "099983a6da864890a156398a01ab6d602b3da40e466ebebd883cc262b9a27f8b",
+    "assets/carrier_turret_sockets_1028.js": "6b40b57f2940270eee8ad1e27c9693b0f69b356e5f6559cde6cbf44feb34edb8",
+    "_BUILD_SOURCE/build_carrier_mounts_1028.py": "800f7860666241cb889f1d03b355266e0dfb17a28fd5d2bc214028f6430a194f"
+  }
+}

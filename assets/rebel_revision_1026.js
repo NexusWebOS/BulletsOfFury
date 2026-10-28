@@ -25,7 +25,7 @@ rg4Round=function(q,a,speed,kind,extra={}){const G=rg4State();if(!G)return RR26.
  if(!owner)return RR26.base.round.apply(this,arguments);
  if(['kaia','rook'].includes(owner.key))return {dead:true,x:q.x,y:q.y+32};
  if(G.age<(owner._rr26RoundAt||0))return {x:q.x,y:q.y+32,vx:0,vy:0,dead:true};
- owner._rr26RoundAt=G.age+.65;return rr26Energy(owner,G,a,false,q.x,q.y+32);
+ owner._rr26RoundAt=G.age+.65;if(owner.key==='jace')return rr36Bullet(owner,q.x,q.y+32,a,speed);return rr26Energy(owner,G,a,false,q.x,q.y+32);
 };
 for(const C of Object.values(RBAL19.cfg)){C.slots=1;C.heavySlots=0;C.tell=Math.max(.65,C.tell);C.cd=Math.max(1.5,C.cd);}
 rg4Attack=function(q,R,G,forced){const kind=forced||q.rg4.armed;
@@ -77,7 +77,7 @@ function rr26BlockShips(G){const W=G?.rr26?.wall;if(!W||W.t<(W.cast??0)+(W.build
   const limit=side<0?r.y-radius:r.y+r.h+radius;if(side<0?q.y>limit:q.y<limit){q.y=limit;q.vy=0;if(q._drawY!=null)q._drawY=q.y;W.blocks=(W.blocks||0)+1;if(G.age>=(q._rr26BlockLog||0)){q._rr26BlockLog=G.age+.5;rr26Log('wall-block',{pilot:q.key||'player'});}}};
  for(const seat of seatList())withSeat(seat,()=>block(player,true,SHIP_DRAW_H*.42));
  for(const q of s6Wing?.ships||[])block(q,true,SHIP_DRAW_H*.42);
- for(const q of boss?._rebels?.ships||[])block(q,false,SHIP_DRAW_H*.65*(q._rd21Scale||1));
+ for(const q of boss?._rebels?.ships||[]){if(typeof vs41Safe==='function'&&vs41Safe(q))continue;block(q,false,SHIP_DRAW_H*.65*(q._rd21Scale||1));}
 }
 function rr26WallTick(G,dt){const S=rr26State(G),W=S.wall;if(W){W.t+=dt;W.pulse=Math.max(0,(W.pulse||0)-dt);rr26WallContact(G,dt);
  if(Snd.pools.helixCharge){Snd.pools.rr26WallHum??=Snd.pools.helixCharge;Snd.loopOn('rr26WallHum',.30);}
@@ -195,23 +195,21 @@ rg4AttackTick=function(q,R,G,dt){const A=q.rg4?.act;if(A?.kind!=='rr26roller')re
  if(!rd21Live(q)){q.rg4.act=null;return;}
  A.t+=Math.min(.05,dt);
  if(A.phase==='charge'){combatWarningTick(A,'kaia-roller',Math.min(A.t,A.warm),A.warm);
-  if(A.t<A.warm)return;A.phase='fire';A.t=0;A.cd=0;
+  if(A.t<A.warm)return;A.phase='fire';A.t=0;A.cd=0;A.launch=rr26Socket(q,0);A.launchAngle=A.a;
  }
  if(A.phase==='fire'){A.cd-=dt;if(A.cd<=0){
-  const a=A.a+[-.10,0,.10,0][A.shot%4],socket=rr26Socket(q,0),v=[175,195,210,225][rd21Rank()];
+  const a=A.launchAngle,socket=A.launch,v=[175,195,210,225][rd21Rank()];
   G.ord.push({kind:'roller',_rr26KaiaRoller:true,owner:q,x:socket.x,y:socket.y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,r:16,hp:3,max:3,t:0,life:4,bounces:0,split:true,flash:0});
   q._rr26Kick=.12;wm26Emit?.(q,socket.x,socket.y,a,'orb','#39e6c5',{size:32,life:.16,follow:()=>rr26Socket(q,0)});
-  Audio.SFX.falvaRelease?.();rr26Log('kaia-roller',{shot:A.shot});A.shot++;A.cd=.12;
-  if(A.shot>=[8,12,14,16][rd21Rank()]){A.phase='recover';A.t=0;}
+  Audio.SFX.falvaRelease?.();rr26Log('kaia-roller',{shot:A.shot});A.shot++;A.cd=.20;
+  if(A.shot>=10){A.phase='recover';A.t=0;}
  }}else if(A.phase==='recover'&&A.t>1.4)rd21Finish(q,G,5);
 };
 const rr26KaiaWarning=rg4Warning;
 rg4Warning=function(q,A){if(A?.kind==='rr26roller'){if(A.phase==='charge')rd21Fov(A,q.x,q.y+43,A.a,90,A.t/A.warm);return;}return rr26KaiaWarning.apply(this,arguments);};
 const rr26KaiaDraw=rg4OrdnanceDraw;
 rg4OrdnanceDraw=function(o,G){if(!o._rr26KaiaRoller)return rr26KaiaDraw.apply(this,arguments);
- const key='nfrb_'+Math.floor(o.t*20)%4;if(!XART.rdy(key))return;
- const im=o.flash>0?xartTint(key,'#ffffff',1):xartPalette(key,'#39e6c5'),d=40;
- ctx.drawImage(im,o.x-d/2,o.y-d/2,d,d);
+ rr35RollerDraw(o.x,o.y,48,o.t,o.flash,.7);
 };
 // Retire Kaia's old attached cannon plates, without changing her hull or modules.
 const rr26KaiaShip=fr27RebelDrawShip,rr26KaiaReel=ra4Reel;
@@ -310,7 +308,21 @@ const rr26PolishShip=fr27RebelDrawShip;
 fr27RebelDrawShip=function(q){const A=q.rg4?.act,dy=q._rr26Kick?Math.sin(q._rr26Kick/.12*Math.PI)*2.5:0;
  ctx.save();ctx.translate(0,-dy);let r;try{r=rr26PolishShip.apply(this,arguments);}finally{ctx.restore();}
  if(!q.dead&&A?.kind==='rr26roller'&&['charge','fire'].includes(A.phase)){const p=rr26Socket(q),f=Math.floor((q.t||0)*20)%4;
-  const k=A.phase==='charge'?clamp(A.t/A.warm,0,1):clamp(A.cd/.12,0,1);rr26Effect('nfrb_'+f,p.x,p.y,12+24*k,.85,'#39e6c5');}
+  const k=A.phase==='charge'?clamp(A.t/A.warm,0,1):clamp(A.cd/.20,0,1);rr35RollerDraw(p.x,p.y,16+32*k,q.t||A.t,0,.2+.75*k);}
  return r;
 };
 for(const id of REBEL_KEYS)for(const kind of ['idle','attack']){const B=AF21_ART.models[id]?.banks[kind];if(B)XART.rdy(B.key);}
+
+// Kaia's source-referenced PixelLab rotation and own-pixel 1015 ring light.
+XART._src.rr35_roller='assets/game/levels/stage_06/boss/kaia_roller_1028/spin.png';
+PXG_SHEETS.rr35_roller={glow:'assets/game/levels/stage_06/boss/kaia_roller_1028/spin_glow.png',size:[256,256],n:1,st:[6]};
+XART._src.pxg_rr35_roller_glow=PXG_SHEETS.rr35_roller.glow;
+for(const key of ['rr35_roller','pxg_rr35_roller_glow'])XART.rdy(key);
+function rr35RollerDraw(x,y,d,t,flash,energy){
+ if(!XART.rdy('rr35_roller'))return;
+ const f=Math.floor(t*24)%16,im=flash>0?xartTint('rr35_roller','#ffffff',1):xartPalette('rr35_roller','#39e6c5');
+ const pulse=PXG_STEPS[Math.floor(t*24)%10<6?Math.floor(t*24)%10:10-Math.floor(t*24)%10];
+ pxgWindow({lights:flash>0?0:energy*(.45+.55*pulse),core:0,alpha:1},()=>ctx.drawImage(im,(f%4)*64,Math.floor(f/4)*64,64,64,x-d/2,y-d/2,d,d),null,[]);
+}
+const rr35Impact=pw5Impact;
+pw5Impact=function(p){if(p?._rr26KaiaRoller)return null;return rr35Impact.apply(this,arguments);};

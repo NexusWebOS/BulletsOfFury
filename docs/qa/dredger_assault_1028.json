@@ -1,0 +1,1016 @@
+{
+  "request": "Fast Dredger ram/reverse; moving treads; top 1015 glow and circular FOV; separated twin-barrel toxic MGs with recoil.",
+  "native": {
+    "checks": [
+      {
+        "name": "All fixed cells have even dimensions, stable pivots and matching hit banks",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native two-gun/core health budget is unchanged",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Authored moving tread frames visibly change native rendered pixels",
+        "passed": true,
+        "data": {
+          "changed": 4311,
+          "phase": 1.1666666666633319,
+          "old": 0,
+          "travelled": 13.75
+        }
+      },
+      {
+        "name": "Tread phase follows real chassis travel and stops while braced",
+        "passed": true,
+        "data": {
+          "start": 1.1666666666633319,
+          "moving": 3.166666666659694,
+          "stopped": 3.166666666659694
+        }
+      },
+      {
+        "name": "Twin turret hulls never overlap through extreme cross-screen aim",
+        "passed": true,
+        "data": [
+          {
+            "tx": 0,
+            "overlap": 0,
+            "mounts": [
+              [
+                -43,
+                66
+              ],
+              [
+                43,
+                66
+              ]
+            ],
+            "angles": [
+              0.6872233929727672,
+              0.09817477042468103
+            ]
+          },
+          {
+            "tx": 100,
+            "overlap": 0,
+            "mounts": [
+              [
+                -43,
+                66
+              ],
+              [
+                43,
+                66
+              ]
+            ],
+            "angles": [
+              0.6872233929727672,
+              0.09817477042468103
+            ]
+          },
+          {
+            "tx": 340,
+            "overlap": 0,
+            "mounts": [
+              [
+                -43,
+                66
+              ],
+              [
+                43,
+                66
+              ]
+            ],
+            "angles": [
+              -0.09817477042468103,
+              0.09817477042468103
+            ]
+          },
+          {
+            "tx": 580,
+            "overlap": 0,
+            "mounts": [
+              [
+                -43,
+                66
+              ],
+              [
+                43,
+                66
+              ]
+            ],
+            "angles": [
+              -0.09817477042468103,
+              -0.6872233929727672
+            ]
+          },
+          {
+            "tx": 680,
+            "overlap": 0,
+            "mounts": [
+              [
+                -43,
+                66
+              ],
+              [
+                43,
+                66
+              ]
+            ],
+            "angles": [
+              -0.09817477042468103,
+              -0.6872233929727672
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Both physical trunnions remain fixed for every aim",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All four measured muzzle mouths touch actual authored barrel alpha",
+        "passed": true,
+        "data": [
+          {
+            "id": "gunL",
+            "barrel": 0,
+            "opaque": true,
+            "x": 277.73,
+            "y": 322.65999999999997
+          },
+          {
+            "id": "gunL",
+            "barrel": 1,
+            "opaque": true,
+            "x": 316.27,
+            "y": 322.65999999999997
+          },
+          {
+            "id": "gunR",
+            "barrel": 0,
+            "opaque": true,
+            "x": 363.73,
+            "y": 322.65999999999997
+          },
+          {
+            "id": "gunR",
+            "barrel": 1,
+            "opaque": true,
+            "x": 402.27,
+            "y": 322.65999999999997
+          }
+        ]
+      },
+      {
+        "name": "Native player beams reach the exposed turret alpha from the south",
+        "passed": true,
+        "data": [
+          {
+            "id": "gunL",
+            "impact": {
+              "x": 277.73,
+              "y": 322,
+              "id": "gunL"
+            }
+          },
+          {
+            "id": "gunR",
+            "impact": {
+              "x": 402.27,
+              "y": 322,
+              "id": "gunR"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Each turret fires exactly two slugs rather than balls",
+        "passed": true,
+        "data": {
+          "changed": 633,
+          "count": 4,
+          "proof": true,
+          "recoil": [
+            1,
+            1
+          ],
+          "rest": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "name": "Shot-linked recoil changes pixels and returns to rest",
+        "passed": true,
+        "data": {
+          "changed": 633,
+          "count": 4,
+          "proof": true,
+          "recoil": [
+            1,
+            1
+          ],
+          "rest": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "name": "Committed fast ram reaches player contact within 0.42 seconds",
+        "passed": true,
+        "data": {
+          "duration": 0.31666666666666643,
+          "blocks": 1
+        }
+      },
+      {
+        "name": "Reverse movement actually runs the tread animation backward",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Mid-screen opening lasts 1.65 seconds, stays vulnerable and does not fire",
+        "passed": true,
+        "data": {
+          "frames": 99,
+          "y": 235.52
+        }
+      },
+      {
+        "name": "Ram returns to the advancing native attack book",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Top cannon gains visible own-pixel 1015 light during charge",
+        "passed": true,
+        "data": [
+          183,
+          138,
+          164
+        ]
+      },
+      {
+        "name": "Circular FOV uses all three native warning phases",
+        "passed": true,
+        "data": [
+          "green",
+          "yellow",
+          "red"
+        ]
+      },
+      {
+        "name": "Committed 300-degree barrage leaves its warned south escape sector",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Top cannon releases three finite slug waves from its own opening",
+        "passed": true,
+        "data": {
+          "count": 60,
+          "all": true,
+          "round": 3,
+          "mode": "dc40-circle"
+        }
+      },
+      {
+        "name": "Actual turret damage flashes native white pixels and expires",
+        "passed": true,
+        "data": {
+          "base": 9,
+          "hit": 1902,
+          "end": 9,
+          "hp": 427,
+          "before": 429,
+          "flash": 0,
+          "cancelled": true,
+          "targetRemoved": true
+        }
+      },
+      {
+        "name": "Destroyed gun cancels its rounds and native Retina target",
+        "passed": true,
+        "data": {
+          "base": 9,
+          "hit": 1902,
+          "end": 9,
+          "hp": 427,
+          "before": 429,
+          "flash": 0,
+          "cancelled": true,
+          "targetRemoved": true
+        }
+      },
+      {
+        "name": "Broken turret uses the actual twin-barrel bank under native debris flight",
+        "passed": true,
+        "data": {
+          "owned": true,
+          "staticImage": null,
+          "frame": 0
+        }
+      },
+      {
+        "name": "Native death cancels pending firing and all owned rounds",
+        "passed": true,
+        "data": {
+          "cancel": true,
+          "pending": null,
+          "health": 1599,
+          "parts": [
+            0,
+            429
+          ]
+        }
+      },
+      {
+        "name": "Spent core removes its Retina while the full surviving gun budget remains live",
+        "passed": true,
+        "data": {
+          "start": 2028,
+          "core": {
+            "hp": 0,
+            "total": 858,
+            "guns": 858,
+            "mode": "recover",
+            "targets": [
+              "gunL",
+              "gunR"
+            ]
+          },
+          "fighting": 16,
+          "one": true,
+          "dead": true,
+          "allHP": 0
+        }
+      },
+      {
+        "name": "Surviving turrets keep attacking after core exhaustion",
+        "passed": true,
+        "data": {
+          "start": 2028,
+          "core": {
+            "hp": 0,
+            "total": 858,
+            "guns": 858,
+            "mode": "recover",
+            "targets": [
+              "gunL",
+              "gunR"
+            ]
+          },
+          "fighting": 16,
+          "one": true,
+          "dead": true,
+          "allHP": 0
+        }
+      },
+      {
+        "name": "One native defeat starts only after the complete health budget is exhausted",
+        "passed": true,
+        "data": {
+          "start": 2028,
+          "core": {
+            "hp": 0,
+            "total": 858,
+            "guns": 858,
+            "mode": "recover",
+            "targets": [
+              "gunL",
+              "gunR"
+            ]
+          },
+          "fighting": 16,
+          "one": true,
+          "dead": true,
+          "allHP": 0
+        }
+      },
+      {
+        "name": "Warden scope and source owner remain separate",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "events": [
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-guns",
+        "x": 340,
+        "y": 65
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-guns",
+        "x": 340,
+        "y": 220
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-guns",
+        "x": 340,
+        "y": 220
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunL",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunR",
+        "barrels": 2
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-ram",
+        "x": 340,
+        "y": 145
+      },
+      {
+        "event": "ram-release",
+        "t": 0.016666666666666666,
+        "from": {
+          "x": 340,
+          "y": 145
+        },
+        "to": {
+          "x": 340,
+          "y": 397
+        },
+        "duration": 0.33157894736842103
+      },
+      {
+        "event": "reverse-start",
+        "t": 0.016666666666666666
+      },
+      {
+        "event": "mid-screen-opening",
+        "t": 0.016666666666666666,
+        "seconds": 1.65,
+        "y": 235.52
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-ram",
+        "x": 340,
+        "y": 145
+      },
+      {
+        "event": "ram-release",
+        "t": 0.016666666666666666,
+        "from": {
+          "x": 340,
+          "y": 145
+        },
+        "to": {
+          "x": 340,
+          "y": 397
+        },
+        "duration": 0.33157894736842103
+      },
+      {
+        "event": "reverse-start",
+        "t": 0.016666666666666666
+      },
+      {
+        "event": "mid-screen-opening",
+        "t": 0.016666666666666666,
+        "seconds": 1.65,
+        "y": 235.52
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-circle",
+        "x": 340,
+        "y": 210
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-circle",
+        "x": 340,
+        "y": 210
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-circle",
+        "x": 340,
+        "y": 210
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-circle",
+        "x": 340,
+        "y": 210
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-circle",
+        "x": 340,
+        "y": 210
+      },
+      {
+        "event": "top-cannon-wave",
+        "t": 0.016666666666666666,
+        "round": 1,
+        "count": 20
+      },
+      {
+        "event": "top-cannon-wave",
+        "t": 0.016666666666666666,
+        "round": 2,
+        "count": 20
+      },
+      {
+        "event": "top-cannon-wave",
+        "t": 0.016666666666666666,
+        "round": 3,
+        "count": 20
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-guns",
+        "x": 340,
+        "y": 220
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunL",
+        "barrels": 2
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-circle",
+        "x": 340,
+        "y": 220
+      },
+      {
+        "event": "top-cannon-wave",
+        "t": 0.016666666666666666,
+        "round": 1,
+        "count": 20
+      },
+      {
+        "event": "core-exhausted-guns-live",
+        "t": 0.016666666666666666,
+        "remaining": 858
+      },
+      {
+        "event": "attack-start",
+        "t": 0.016666666666666666,
+        "mode": "dc40-guns",
+        "x": 340,
+        "y": 180
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunL",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunR",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunL",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunR",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunL",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunR",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunL",
+        "barrels": 2
+      },
+      {
+        "event": "twin-turret-burst",
+        "t": 0.016666666666666666,
+        "id": "gunR",
+        "barrels": 2
+      }
+    ]
+  },
+  "art": {
+    "checks": {
+      "evenFixedCanvases": true,
+      "restHullMatchesActualExport": true,
+      "OnlyTreadPixelsMove": true,
+      "TrackPhasesAreDistinct": true,
+      "hitCompanionsRetainExactAlpha": true,
+      "topPreservesActualSourcePixels": true,
+      "NoHeadingOrRecoilIsClipped": true,
+      "FourDistinctMuzzleChannels": true,
+      "SourcesMatchRecordedHashes": true,
+      "OwningBuilderReproducesAllOutputs": true
+    },
+    "minimumTransparentMargin": 12
+  },
+  "wardenRegression": {
+    "checks": [
+      {
+        "name": "Native body and health budget retained",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rear drive moves the chassis into real melee range",
+        "passed": true,
+        "data": 125
+      },
+      {
+        "name": "Native swept claw contact actually reaches the stationary player",
+        "passed": true,
+        "data": 12
+      },
+      {
+        "name": "Rear source frames visibly brace and extend",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rear feet plant through the main push",
+        "passed": true,
+        "data": {
+          "samples": 26,
+          "max": 2.872894753318292
+        }
+      },
+      {
+        "name": "Swat emits no bullets and does not scroll the floor",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Strike has finite recovery to the original ground position",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Escaping after commitment avoids the real claw path",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rear Retina target overlaps the rendered alpha in the push pose",
+        "passed": true,
+        "data": [
+          {
+            "id": "rearL",
+            "at": "rearL"
+          },
+          {
+            "id": "rearR",
+            "at": "rearR"
+          }
+        ]
+      },
+      {
+        "name": "Actual claw damage flashes native white pixels then expires",
+        "passed": true,
+        "data": {
+          "base": 70,
+          "hit": 1829,
+          "end": 80,
+          "hp": 786,
+          "before": 787,
+          "flash": 0
+        }
+      },
+      {
+        "name": "Face volleys, acid rounds and face bullet hell are retired",
+        "passed": true,
+        "data": {
+          "suppressed": true,
+          "mapped": "er28-mortar",
+          "guns": 2,
+          "mortars": 5,
+          "barrage": false
+        }
+      },
+      {
+        "name": "Both native turrets and dorsal mortars still launch",
+        "passed": true,
+        "data": {
+          "suppressed": true,
+          "mapped": "er28-mortar",
+          "guns": 2,
+          "mortars": 5,
+          "barrage": false
+        }
+      },
+      {
+        "name": "Toxic explosion frames play faster",
+        "passed": true,
+        "data": {
+          "original": 0.8,
+          "now": 0.496
+        }
+      },
+      {
+        "name": "Portal approach has a rapid dense explosion cadence",
+        "passed": true,
+        "data": {
+          "serial": 26,
+          "live": 26,
+          "t": 3.4166666666666594,
+          "finite": true
+        }
+      },
+      {
+        "name": "Native portal and finale clocks remain unchanged",
+        "passed": true,
+        "data": {
+          "t": 12.133333333333516,
+          "end": 12.133333333333322,
+          "finished": true,
+          "dead": true
+        }
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "events": [
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-thrust",
+        "t": 0.016666666666666666,
+        "from": 235,
+        "to": 360
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-thrust",
+        "t": 0.016666666666666666,
+        "from": 235,
+        "to": 360
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-thrust",
+        "t": 0.016666666666666666,
+        "from": 235,
+        "to": 360
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-thrust",
+        "t": 0.016666666666666666,
+        "from": 235,
+        "to": 360
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-thrust",
+        "t": 0.016666666666666666,
+        "from": 235,
+        "to": 360
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-thrust",
+        "t": 0.016666666666666666,
+        "from": 235,
+        "to": 360
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      },
+      {
+        "event": "rear-leg-thrust",
+        "t": 0.016666666666666666,
+        "from": 235,
+        "to": 360
+      },
+      {
+        "event": "rear-leg-brace",
+        "t": 0.016666666666666666,
+        "mode": "swipeX"
+      }
+    ]
+  },
+  "film": {
+    "path": "_shots/dredger_assault_1028/video/123215/dredger-furious.mp4",
+    "method": "Complete native Furious Dredger life; native inputs, HP, attack book and death.\nAn explicitly labelled invulnerable observer waits for the revised moves, then\nuses native aiming/fire/missile inputs. No enemy HP, phase or timer writes.\n",
+    "duration": 112.5983999999985,
+    "fps": 59.28148179725545,
+    "decodedPeakDb": -3.1,
+    "checks": {
+      "noErrors": true,
+      "audible": true,
+      "unclipped": true,
+      "fullDecode": true,
+      "realTime": true,
+      "nativeDefeat": true,
+      "entireGunBudget": true,
+      "ram": true,
+      "reverse": true,
+      "opening": true,
+      "twins": true,
+      "topBarrage": true
+    },
+    "errors": [],
+    "soundCues": {
+      "bossWeaponCharge": 16,
+      "av3_target_acquire": 27,
+      "alertLockon": 26,
+      "enemyToxicSpit": 103,
+      "jetDash": 9,
+      "lockon": 30,
+      "enemyHeavyLaser": 24,
+      "expBig": 130,
+      "enemyMachineGunHeavy": 33,
+      "missile": 45,
+      "hit": 16,
+      "heavyMachineGun": 581,
+      "expSmall": 554,
+      "missileHit": 45,
+      "av3_impact_energy": 284,
+      "powerup": 5,
+      "combatModule0927": 3,
+      "stageclear": 1,
+      "statTick": 3
+    },
+    "chapters": [
+      [
+        0,
+        "Arrival"
+      ],
+      [
+        4.2729333333329595,
+        "Circular cannon warning"
+      ],
+      [
+        7.800366666665922,
+        "Fast ram & reverse"
+      ],
+      [
+        9.663199999999259,
+        "Mid-screen opening"
+      ],
+      [
+        35.549599999999636,
+        "Twin toxic turrets"
+      ],
+      [
+        101.05023333333185,
+        "Surviving turrets"
+      ],
+      [
+        106.0312999999989,
+        "Final defeat"
+      ]
+    ]
+  },
+  "sourceHashes": {
+    "assets/dredger_assault_1028.js": "02a1cd8f1307ccca67d729c8e837bc2191feef65a0d99573999834e4fa01d5ff",
+    "assets/dredger_assault_art_1028.js": "9dbcb3ca4088eaa736d9fea5f91dd7c4da8e383c3d6845d3ed15da3c12cf236a",
+    "_BUILD_SOURCE/build_dredger_assault_1028.py": "71f376069c269f58f66ec17971a7041158a141bd6bc1178dd1f839935b18245c"
+  },
+  "fullSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "reason": "Existing missing UNUSED_ASSETS/retired_art_1022/manifest.json",
+    "log": "_shots/dredger-full-suite-1028.log"
+  },
+  "syntax": {
+    "game": true,
+    "dredger": true
+  },
+  "review": "docs/previews/dredger_assault_1028/index.html",
+  "playback": {
+    "checks": {
+      "completeFilmLoaded": true,
+      "allDecodedStillsLoaded": true,
+      "nativeControlsPlayVideo": true,
+      "allSevenChaptersSeek": true,
+      "desktopFits": true,
+      "mobileFits": true,
+      "noVideoError": true,
+      "noBrowserErrors": true
+    },
+    "chapters": [
+      {
+        "label": "Arrival",
+        "requested": 0.0,
+        "time": 0.012269
+      },
+      {
+        "label": "Circular cannon warning",
+        "requested": 4.273,
+        "time": 4.275576
+      },
+      {
+        "label": "Fast ram & reverse",
+        "requested": 7.8,
+        "time": 7.815911
+      },
+      {
+        "label": "Mid-screen opening",
+        "requested": 9.663,
+        "time": 9.675285
+      },
+      {
+        "label": "Twin toxic turrets",
+        "requested": 35.55,
+        "time": 35.560786
+      },
+      {
+        "label": "Surviving turrets",
+        "requested": 101.05,
+        "time": 101.059881
+      },
+      {
+        "label": "Final defeat",
+        "requested": 106.031,
+        "time": 106.036704
+      }
+    ],
+    "errors": []
+  }
+}

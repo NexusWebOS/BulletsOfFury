@@ -119,8 +119,9 @@ s7mTick=function(b,dt){const M=b?._s7mod;if(!M)return SW28.base.tick.apply(this,
   }result=true;
  }
  if(!custom)for(const p of M.er28Canisters||[])p.flash=Math.max(0,(p.flash||0)-dt);
- if(!M.tank){const G=r25Gait(b);G.yaw=0;M.lean=0;if(M.mode!=='er28-bounce'){b.x=worldWidth()/2;b.y=clamp(b.y,235,VH*.64);}
-  b._drawY=b.y+M.drop-M.height;}
+ if(!M.tank&&!M.frExit&&M.mode!=='dead'){const G=r25Gait(b);G.yaw=0;M.lean=0;if(M.mode!=='er28-bounce'){b.x=worldWidth()/2;b.y=clamp(b.y,235,VH*.64);}}
+ // The native escape owns the wreck's floor position; combat bounds must not pull it back onscreen.
+ if(!M.tank)b._drawY=M.frExit?b.y:b.y+M.drop-M.height;
  return result;};
 s7mWarnings=function(front){const out=SW28.base.warnings.apply(this,arguments);
  for(const b of[boss,subBoss]){const M=b?._s7mod;if(M?.mode==='er28-bounce'){const q=M.er28?.landing||{x:worldWidth()/2,y:b.y+54};groundTargetReticleDraw(q.x,q.y,100,M.t<M.warn?M.t/M.warn:((M.t-M.warn)%.82)/.82,.7);}}

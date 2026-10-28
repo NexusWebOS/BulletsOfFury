@@ -1,3 +1,51 @@
+## 2026-10-28 — Current Nightwing frames in the Carrier review player
+
+Mike's normal/banked versus white-hit mismatch came from the older stage6-carrier release film's retired Part2 bank. Installed source-locked identity/flight banks are correct. 28 new source/native-render checks +20 combat regressions verify matching hit silhouettes, real damage/expiry and removed-fin collision. No hull art or gameplay edits.
+
+Fresh complete134.74s native Furious GOD/input Nightwing life at58.39fps, audible unclipped sound and9 film checks pass. Existing local GitHub gallery Carrier/Nightwing/turn/wind cards now use current local films; earlier media and release links are preserved. Review docs/previews/nightwing_current_1028/index.html; docs/NIGHTWING_CURRENT_REVIEW_1028.md and docs/qa/nightwing_current_1028.json. Full suite exits1 before summary on missing archive manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Whole Carrier red pulses and fan-loss turbulence
+
+Mike requested full-frame red flashing and stronger turbulence after either/both side losses. assets/carrier_hull_1028.js now selects complete red heat cells with coordinated bay/wreck palettes, three red/metal pulses per second and unchanged white hit priority/expiry. Native fan breaks add bounded whole-boss jolts; both sides have over twice the settled movement. Actual mounts/FOV/targets follow the position; all HP, native smoke/audio/depth/fall/detonation/Nightwing owners remain. No new raster/rotation/HP pool.
+
+16 focused +44 hull regressions pass. Complete108.76s native Furious GOD/input film at58.45fps, audible unclipped sound, all10 film checks and no game errors. Replay docs/previews/carrier_turbulence_1028/index.html; docs/CARRIER_TURBULENCE_1028.md and docs/qa/carrier_turbulence_1028.json. Required suite exits1 before summary on missing archive manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Carrier turrets on outer metal wing panels
+
+Mike selected the lower metal wing panel for both Carrier laser batteries. HC32_LASER_MOUNTS in assets/carrier_hull_1028.js owns source152,164 /360,164 (dx±104,dy20). All256 barrel mouths are measured from the unchanged native directional/recoil pixels by build_carrier_mounts_1028.py; FOV/beam collision uses those registered sockets. Native part/HP/Retina/hit/death owners retained. Actual33px-square metal footprints are opaque in open/closed art. No raster changes.
+
+13 focused native/source/movie checks +44 hull regressions pass. Fresh7.62s native mounting checkpoint at59.84fps, audible unclipped audio and no errors. Replay docs/previews/carrier_mounts_1028/index.html; docs/CARRIER_MOUNTS_1028.md and docs/qa/carrier_mounts_1028.json. Full suite exits1 before summary on the existing missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Voss twin blasters and safe overhead turbo
+
+Voss now owns a top perch/twin cannon volley, own-pixel1015 outer+inner turbo charge and continuous south/north U-turn flight above players, with source-alpha ground shadows and proportional depth. No center charge sphere or legacy auxiliary cast; red-white native florb palette retains alpha/luminance/2HP. Actual mouths, native FOV/cues/hit feedback/HP/module/death remain. High passes are harmless and clear the center wall; normal ships/players remain blocked. Owner assets/voss_turbo_1028.js; builder build_voss_turbo_1028.py.
+
+19 native +8 art/rebuild +35 team regression checks pass. Current 15.24s native Furious checkpoint: 59.46fps, -14.8dB,11 film checks, no game errors;8 playback/layout checks pass. Replay docs/previews/voss_turbo_1028/index.html; details docs/VOSS_TURBO_1028.md; QA docs/qa/voss_turbo_1028.json. Full suite remains exit1 before summary on missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Jace fireballs use wing turret mouths
+
+JR36 now resolves the actual idle/attack/heading art socket for Jace's two wing pods; charge light, orange muzzle flash and small dodge-only fireballs share it. Banked frames have individually measured mouths; ready fire waits through evasive motion and broken wings stop their own rounds. Native cadence/audio/large helix/HP/hit feedback remain. 13 new native and35 existing Jace/team checks pass. Focused audible native-controller replay refreshed at docs/previews/jace_tactical_1028/index.html; fixture details/evidence in docs/REBEL_REVISION_1026.md and docs/qa/jace_turrets_1028.json. Full suite still exits1 on missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Dredger ram, reverse and twin toxic turrets
+
+Mike's Dredger revision is owned by assets/dredger_assault_1028.js: fast committed ram, reverse to mid-screen and1.65s exposed opening; actual distance-driven tread banks; fixed non-overlapping two-barrel turrets,64 authored headings/shot recoil, four measured native toxic-slug sockets; own-pixel1015 top light and native G/Y/R north-facing circular barrage FOV. Correct exposed beam targets and native source-matched turret break flight retained. Tank-only composite handoff fixes premature core death while guns have HP; all original pools/native final defeat and rewards remain.
+
+27 focused native +10 art/rebuild +16 Warden regression checks pass. Final 112.60s complete native Furious film: 59.28fps, -3.1dB, all12 film checks, no game errors or enemy HP/phase/timer writes. Review docs/previews/dredger_assault_1028/index.html; details docs/DREDGER_ASSAULT_1028.md; QA docs/qa/dredger_assault_1028.json. Full suite still exits1 before summary on missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Warden wreck stays on the floor
+
+The sewer combat owner's post-tick center/height clamp was pulling the dead Warden back into the arena after the native escape moved it with the floor. assets/sewer_revision_1027.js now excludes dead/frExit states from that clamp and aligns the draw anchor to the native wreck position. Nine full-loop/native-render checks pass; the wreck scrolls behind and stops drawing offscreen while the original portal/end/reward remain. New12-second focused escape clip: docs/previews/warden_wreck_1028/index.html. Details and QA: docs/WARDEN_LUNGE_1028.md and docs/qa/warden_wreck_1028.json. Full suite still exits1 on missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Warden airborne shadow
+
+The Stage7 Warden now casts an actual body-alpha ground shadow during native jumps/hops. assets/warden_lunge_1028.js and its owning builder register sixteen fixed168x190 source-matched shadow cells, draw one layer behind the body and vary proportional scale/opacity by height. Native jump physics, damage and landing/portal/death owners remain. Eight native checks plus a clean59.83fps jump checkpoint pass. Review docs/previews/warden_shadow_1028/index.html; details docs/WARDEN_LUNGE_1028.md; evidence docs/qa/warden_shadow_1028.json. Prior complete fight predates the shadow addition. Full suite still exits1 on missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Warden rear-leg-driven swats and portal cookoff
+
+Mike requested real swat reach, no ordinary face bullets and faster/denser explosions near the portal. Final owner assets/warden_lunge_1028.js loads after the sewer owner. Forty-eight fixed320-cell rear-leg hinge poses per side use rigid authored R25 source pixels; planted push, connected claw FOV/collision/alpha targets and native hit flash are verified. Face decisions use dorsal mortars; native turrets remain. Supplemental portal blasts follow current S7P portalOn/closeT/portalYNow rather than legacy exit timestamps; native protection/dialogue/flight/finish/rewards remain.
+
+16 focused checks pass. Fresh complete162.42s Furious input-bot film reaches native defeat and escape with no enemy HP/phase/timer writes, 58.85fps, audible unclipped audio and no game errors. Playback/seeking pass. Review docs/previews/warden_lunge_1028/index.html; notes docs/WARDEN_LUNGE_1028.md; evidence docs/qa/warden_lunge_1028.json. Required suite exits1 before summary on missing UNUSED_ASSETS/retired_art_1022/manifest.json. No game.js/test_fl.js edits, commit or push.
+
 ## 2026-10-28 — Nightwing persistent shadows and true banked turning cells
 
 Mike requested a shadow beneath Nightwing and proper rotational swerve frames. The wind builder now supplies exact-pose56%-alpha authored shadows for all live hull/headings/depth and aimed guns. NW30 draws one shadow behind exhaust/hull, with no hidden-phase remnants or runtime graphic transforms. Heading angles increase32→64 per bank; drift24→48 cells with smooth0→28→0-degree source-pixel banking, native tangent/yaw and existing depth curve. NF29 uses owning updated metadata for playback/collision. Canonical hull, gusts/charge/rings/guns/thrusters and all combat timing/path/HP rules remain.
@@ -5275,3 +5323,11 @@ October26 wall correction: narrow center divider, ship crossing blocked, two-way
 
 
 October26 rebel animation correction: authored forward attack/evasion frames, matched projectile sockets/muzzles, Rook chaingun art/recoil, Kaia charge/release, eased Voss dash/return, and Decker cast/build/10-second wall/fade. Owner assets/rebel_revision_1026.js; evidence docs/REBEL_REVISION_1026.md. No game.js or atlas changes. Required suite remains blocked by missing retired_art_archive_1022.cjs.
+
+## October28 fresh Stage6–9 fights / GitHub preview publication
+
+Mike requested fresh full recordings of all updated Stage6–9 encounters and a GitHub source/video update. Nine continuous native Furious/GOD/input-bot films total about30minutes, with24 chapter jumps into those same films. Both Stage6 routes, Carrier into Nightwing, complete first-host/Dracodia rebirth/copied-form/final-life progression and Sentinel-to-Tidal progression reach their native defeats. All9 pass decode, audible/unclipped audio, native pacing, before/after runtime stability and game/asset/network error checks. Failed earlier squad takes remain local and are excluded from publication.
+
+The full squad recording exposed Nyx/Rook entry-frame reads before attack state exists and personal-book starvation. Optional entry guards preserve actual hull pixels; assets/rebel_dispatch_1028.js schedules the least-served ready Stage6 pilot through the existing attack owners and heavy/formation interlocks. All5 books and Rook dash/spin appear in the final native film. Six native scheduling/entry checks,42 shared squad checks,50 Rook checks and69 local video/gallery checks pass. Legacy Voss expectations in the Nyx/Rook probes now verify his approved overhead turbo and full-scale return. No game.js/test_fl.js changes.
+
+Owners/reproduction/publication: docs/STAGE6_9_REFRESH_1028.md and docs/qa/stage6_9_refresh_1028.json. Source branch codex/build-2026-10-26; new media tag bof-stage6-9-updated-2026-10-28; public watch gallery https://nexuswebos.github.io/BulletsOfFury/. Existing _shots/github_review_1028/index.html is refreshed without deleting historical media. Pages uses a separate temporary index, preserving the active checkout and unrelated work. Full core suite still exits1 before assertions/final summary on the missing ignored UNUSED_ASSETS/retired_art_1022/manifest.json; no bypass or fake manifest. Dark weapon pass remains deferred.

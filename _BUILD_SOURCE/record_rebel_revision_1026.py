@@ -3,7 +3,7 @@ import ast,json,time,base64,subprocess
 import imageio_ffmpeg
 from playwright.sync_api import sync_playwright
 import shoot
-R=Path(__file__).resolve().parents[1];O=R/'_shots/rebel_wall_1026/animation_video';O.mkdir(parents=True,exist_ok=True)
+R=Path(__file__).resolve().parents[1];O=R/'_shots/rebel_wall_1026/stunt_video';O.mkdir(parents=True,exist_ok=True)
 def strings(file):
  return [n.value for n in ast.walk(ast.parse((R/file).read_text(encoding='utf8'))) if isinstance(n,ast.Constant) and isinstance(n.value,str)]
 SETUP=next(s for s in strings('_BUILD_SOURCE/probe_feedback_1002.py') if s.startswith('c=>{ht27Stop'))

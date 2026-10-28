@@ -1,367 +1,422 @@
 [
   {
-    "id": "rough-riders-evasion",
-    "stage": 6,
-    "title": "Rough Riders \u2014 Evasion",
-    "seconds": 12.52,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-evasion.mp4",
-    "poster": "posters/rough-riders-evasion.jpg",
-    "note": "Focused native behavior demonstration; see the full current encounter above.",
-    "segments": []
-  },
-  {
-    "id": "rough-riders-formations",
-    "stage": 6,
-    "title": "Rough Riders \u2014 Formations",
-    "seconds": 38.2,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-formations.mp4",
-    "poster": "posters/rough-riders-formations.jpg",
-    "note": "Focused native behavior demonstration; see the full current encounter above.",
-    "segments": []
-  },
-  {
-    "id": "rough-riders-jace",
-    "stage": 6,
-    "title": "Rough Riders \u2014 Jace",
-    "seconds": 29.56,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-jace.mp4",
-    "poster": "posters/rough-riders-jace.jpg",
-    "note": "Focused native behavior demonstration; see the full current encounter above.",
-    "segments": []
-  },
-  {
-    "id": "rough-riders-kaia",
-    "stage": 6,
-    "title": "Rough Riders \u2014 Kaia",
-    "seconds": 19.2,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-kaia.mp4",
-    "poster": "posters/rough-riders-kaia.jpg",
-    "note": "Focused native behavior demonstration; see the full current encounter above.",
-    "segments": []
-  },
-  {
-    "id": "rough-riders-nyx",
-    "stage": 6,
-    "title": "Rough Riders \u2014 Nyx",
-    "seconds": 24.58,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-nyx.mp4",
-    "poster": "posters/rough-riders-nyx.jpg",
-    "note": "Focused native behavior demonstration; see the full current encounter above.",
-    "segments": []
-  },
-  {
-    "id": "rough-riders-rook",
-    "stage": 6,
-    "title": "Rough Riders \u2014 Rook",
-    "seconds": 23.39,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-rook.mp4",
-    "poster": "posters/rough-riders-rook.jpg",
-    "note": "Focused native behavior demonstration; see the full current encounter above.",
-    "segments": []
-  },
-  {
-    "id": "rough-riders-voss",
-    "stage": 6,
-    "title": "Rough Riders \u2014 Voss",
-    "seconds": 29.56,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-voss.mp4",
-    "poster": "posters/rough-riders-voss.jpg",
-    "note": "Focused native behavior demonstration; see the full current encounter above.",
-    "segments": []
-  },
-  {
-    "id": "stage6-carrier",
-    "stage": 6,
-    "title": "Harrier \u2014 mounted lasers, hull cookoff and destruction",
-    "seconds": 52.68,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage6-carrier.mp4",
-    "poster": "posters/stage6-carrier.jpg",
-    "note": "Carrier life through native destruction and Nightwing handoff.",
-    "segments": []
-  },
-  {
     "id": "stage6-miniboss",
     "stage": 6,
-    "title": "Eclipse Siege Bomber \u2014 current four-part hull gate",
-    "seconds": 67.63,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage6-miniboss.mp4",
+    "title": "Warhive Siege Fortress",
+    "seconds": 54.12,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-miniboss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-miniboss/stage6-furious.mp4",
     "poster": "posters/stage6-miniboss.jpg",
-    "note": "",
-    "segments": []
+    "note": "Native six-battery encounter and exposed reactor.",
+    "sha256": "78a25502781e3da8dff06bb2a12306ceafe2ef708e168d850dbc8ea83a33079b",
+    "bytes": 54949394
   },
   {
-    "id": "stage6-nightwing",
+    "id": "stage6-carrier-nightwing",
     "stage": 6,
-    "title": "Nightwing \u2014 complete fight, wind gusts and shadows",
-    "seconds": 179.7,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage6-nightwing.mp4",
-    "poster": "posters/stage6-nightwing.jpg",
-    "note": "Full native clear. An early capture hitch occurred during concurrent validation; see the clean flight preview for the turn.",
-    "segments": []
-  },
-  {
-    "id": "stage6-nightwing-shadow-turn",
-    "stage": 6,
-    "title": "Nightwing \u2014 shadow and banked swerve preview",
-    "seconds": 11.0,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage6-nightwing-shadow-turn.mp4",
-    "poster": "posters/stage6-nightwing-shadow-turn.jpg",
-    "note": "Normal-speed excerpt from a separate clean flight-only take.",
-    "segments": []
-  },
-  {
-    "id": "stage6-nightwing-wind",
-    "stage": 6,
-    "title": "Nightwing \u2014 animated wind-gust volley",
-    "seconds": 11.0,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage6-nightwing-wind.mp4",
-    "poster": "posters/stage6-nightwing-wind.jpg",
-    "note": "",
-    "segments": []
+    "title": "Harrier Carrier → Nightwing · complete fight",
+    "seconds": 194.77,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-carrier-nightwing.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/stage6-furious.mp4",
+    "poster": "posters/stage6-carrier-nightwing.jpg",
+    "note": "Continuous Carrier destruction and Nightwing arrival, current aircraft frames and wind attacks.",
+    "sha256": "6eb05b2af4a6c2848d3ef7aae3e0db046b63403555379899b414ba44e03615b1",
+    "bytes": 241001559
   },
   {
     "id": "stage6-rough-riders",
     "stage": 6,
-    "title": "The Rough Riders \u2014 current entrance and full fight",
-    "seconds": 152.65,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage6-rough-riders.mp4",
+    "title": "The Rough Riders · complete squad fight",
+    "seconds": 295.82,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
     "poster": "posters/stage6-rough-riders.jpg",
-    "note": "",
-    "segments": []
+    "note": "Current airshow entrance, team locks, individual attacks and native squad defeat.",
+    "sha256": "603ef056c22afb3f2fd06bd57815f7c961208a58fda9b251200759e46b6fd83a",
+    "bytes": 369722289
   },
   {
-    "id": "stage7-boss",
-    "stage": 7,
-    "title": "Toxic Warden",
-    "seconds": 128.23,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage7-boss.mp4",
-    "poster": "posters/stage7-boss.jpg",
-    "note": "",
-    "segments": []
+    "id": "stage6-carrier",
+    "parent": "stage6-carrier-nightwing",
+    "stage": 6,
+    "title": "Carrier · hull, turbulence and destruction",
+    "start": 0,
+    "end": 64.42,
+    "seconds": 64.42,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-carrier-nightwing.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/stage6-furious.mp4",
+    "poster": "posters/stage6-carrier.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "stage6-nightwing",
+    "parent": "stage6-carrier-nightwing",
+    "stage": 6,
+    "title": "Nightwing · arrival through defeat",
+    "start": 64.42,
+    "end": 194.77,
+    "seconds": 130.35,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-carrier-nightwing.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/stage6-furious.mp4",
+    "poster": "posters/stage6-nightwing.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "stage6-nightwing-shadow-turn",
+    "parent": "stage6-carrier-nightwing",
+    "stage": 6,
+    "title": "Nightwing · current turns and wind attacks",
+    "start": 69.42,
+    "end": 104.42,
+    "seconds": 35.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-carrier-nightwing.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/stage6-furious.mp4",
+    "poster": "posters/stage6-nightwing-shadow-turn.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "stage6-nightwing-flight",
+    "parent": "stage6-carrier-nightwing",
+    "stage": 6,
+    "title": "Nightwing · arrival and flight",
+    "start": 64.42,
+    "end": 84.42,
+    "seconds": 20.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-carrier-nightwing.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/stage6-furious.mp4",
+    "poster": "posters/stage6-nightwing-flight.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "stage6-nightwing-wind",
+    "parent": "stage6-carrier-nightwing",
+    "stage": 6,
+    "title": "Nightwing · wind arsenal",
+    "start": 62.42,
+    "end": 89.42,
+    "seconds": 27.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-carrier-nightwing.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/stage6-furious.mp4",
+    "poster": "posters/stage6-nightwing-wind.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "rough-riders-formations",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Rough Riders · airshow entrance",
+    "start": 0,
+    "end": 40,
+    "seconds": 40,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-formations.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "rough-riders-team-locks",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Rough Riders · team lock and missile volley",
+    "start": 70.72,
+    "end": 87.72,
+    "seconds": 17.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-team-locks.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "rough-riders-evasion",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Rough Riders · formation stunt flight",
+    "start": 73.5,
+    "end": 85.5,
+    "seconds": 12.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-evasion.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "rough-riders-kaia",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Kaia · live squad attack",
+    "start": 151.04,
+    "end": 177.04,
+    "seconds": 26.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-kaia.jpg",
+    "note": "A continuous chapter of the full squad fight; other pilots and allies remain active."
+  },
+  {
+    "id": "rough-riders-jace",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Jace · live squad attack",
+    "start": 65.64,
+    "end": 91.64,
+    "seconds": 26.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-jace.jpg",
+    "note": "A continuous chapter of the full squad fight; other pilots and allies remain active."
+  },
+  {
+    "id": "rough-riders-nyx",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Nyx · live squad attack",
+    "start": 79.11,
+    "end": 105.11,
+    "seconds": 26.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-nyx.jpg",
+    "note": "A continuous chapter of the full squad fight; other pilots and allies remain active."
+  },
+  {
+    "id": "rough-riders-rook",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Rook · live squad attack",
+    "start": 115.78,
+    "end": 141.78,
+    "seconds": 26.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-rook.jpg",
+    "note": "A continuous chapter of the full squad fight; other pilots and allies remain active."
+  },
+  {
+    "id": "rough-riders-voss",
+    "parent": "stage6-rough-riders",
+    "stage": 6,
+    "title": "Voss · live squad attack",
+    "start": 52.14,
+    "end": 78.14,
+    "seconds": 26.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage6-164709/stage6-furious.mp4",
+    "poster": "posters/rough-riders-voss.jpg",
+    "note": "A continuous chapter of the full squad fight; other pilots and allies remain active."
   },
   {
     "id": "stage7-miniboss",
     "stage": 7,
     "title": "Caustic Dredger",
-    "seconds": 68.22,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage7-miniboss.mp4",
+    "seconds": 86.98,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage7-miniboss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage7-miniboss/stage7-furious.mp4",
     "poster": "posters/stage7-miniboss.jpg",
-    "note": "",
-    "segments": []
+    "note": "Fast ram and reverse recovery, moving tracks, twin toxic machine guns and charged top cannon.",
+    "sha256": "050d02c96220264faa96cda9bcd13355b4d517cdaed9c4d928107d73ef3122d9",
+    "bytes": 50468730
   },
   {
-    "id": "s8-code-hammer",
-    "stage": 8,
-    "title": "Code Hammer",
-    "seconds": 60.47,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-code-hammer.mp4",
-    "poster": "posters/s8-code-hammer.jpg",
-    "note": "",
-    "segments": [
-      {
-        "start": 253.322,
-        "end": 313.774
-      }
-    ]
-  },
-  {
-    "id": "s8-dracodia",
-    "stage": 8,
-    "title": "Dracodia \u00b7 Base form and final life",
-    "seconds": 359.95,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-dracodia.mp4",
-    "poster": "posters/s8-dracodia.jpg",
-    "note": "Joined visits to this form; cuts skip other forms.",
-    "segments": [
-      {
-        "start": 131.86599999999999,
-        "end": 253.67200000000003
-      },
-      {
-        "start": 313.424,
-        "end": 338.524
-      },
-      {
-        "start": 385.438,
-        "end": 412.09700000000004
-      },
-      {
-        "start": 431.658,
-        "end": 456.884
-      },
-      {
-        "start": 510.71799999999996,
-        "end": 535.8
-      },
-      {
-        "start": 555.032,
-        "end": 597.0939999999999
-      },
-      {
-        "start": 618.585,
-        "end": 643.641
-      },
-      {
-        "start": 651.298,
-        "end": 720.159
-      }
-    ]
-  },
-  {
-    "id": "s8-final-life",
-    "stage": 8,
-    "title": "Final life, digital destruction and victory",
-    "seconds": 69.11,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-final-life.mp4",
-    "poster": "posters/s8-final-life.jpg",
-    "note": "",
-    "segments": [
-      {
-        "start": 651.098,
-        "end": 720.21
-      }
-    ]
-  },
-  {
-    "id": "s8-formation",
-    "stage": 8,
-    "title": "Destruction, download and final-form formation",
-    "seconds": 34.8,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-formation.mp4",
-    "poster": "posters/s8-formation.jpg",
-    "note": "",
-    "segments": [
-      {
-        "start": 102.394,
-        "end": 137.166
-      }
-    ]
-  },
-  {
-    "id": "s8-helicopter",
-    "stage": 8,
-    "title": "Helicopter",
-    "seconds": 47.63,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-helicopter.mp4",
-    "poster": "posters/s8-helicopter.jpg",
-    "note": "",
-    "segments": [
-      {
-        "start": 338.174,
-        "end": 385.788
-      }
-    ]
-  },
-  {
-    "id": "s8-neural-archon",
-    "stage": 8,
-    "title": "Neural Archon \u00b7 Alien brain",
-    "seconds": 48.59,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-neural-archon.mp4",
-    "poster": "posters/s8-neural-archon.jpg",
-    "note": "Joined visits to this form; cuts skip other forms.",
-    "segments": [
-      {
-        "start": 411.747,
-        "end": 432.00800000000004
-      },
-      {
-        "start": 535.45,
-        "end": 555.382
-      },
-      {
-        "start": 643.291,
-        "end": 651.6479999999999
-      }
-    ]
-  },
-  {
-    "id": "s8-phase1",
-    "stage": 8,
-    "title": "Phase 1 \u00b7 Infused Host",
-    "seconds": 106.41,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-phase1.mp4",
-    "poster": "posters/s8-phase1.jpg",
-    "note": "",
-    "segments": [
-      {
-        "start": 0,
-        "end": 106.394
-      }
-    ]
-  },
-  {
-    "id": "s8-phase2",
-    "stage": 8,
-    "title": "Complete Phase 2 \u00b7 All forms and ending",
-    "seconds": 613.82,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-phase2.mp4",
-    "poster": "posters/s8-phase2.jpg",
-    "note": "",
-    "segments": [
-      {
-        "start": 106.394,
-        "end": 720.21
-      }
-    ]
-  },
-  {
-    "id": "s8-phoenix-volcano",
-    "stage": 8,
-    "title": "Phoenix / Volcano",
-    "seconds": 76.78999999999999,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/s8-phoenix-volcano.mp4",
-    "poster": "posters/s8-phoenix-volcano.jpg",
-    "note": "Joined visits to this form; cuts skip other forms.",
-    "segments": [
-      {
-        "start": 456.534,
-        "end": 511.068
-      },
-      {
-        "start": 596.744,
-        "end": 618.935
-      }
-    ]
-  },
-  {
-    "id": "stage8-final",
-    "stage": 8,
-    "title": "Dracodia - Complete Encounter",
-    "seconds": 720.21,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage8-final.mp4",
-    "poster": "posters/stage8-final.jpg",
-    "note": "",
-    "segments": []
+    "id": "stage7-boss",
+    "stage": 7,
+    "title": "Toxic Portal Warden",
+    "seconds": 130.93,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage7-boss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage7-boss/stage7-furious.mp4",
+    "poster": "posters/stage7-boss.jpg",
+    "note": "Connected rear-leg lunge, airborne shadow, portal explosions and native wreck departure.",
+    "sha256": "75a7f5a84eab7baa26636f914306d516ad492ac6f3ea6bdcf6aedddb9be5c582",
+    "bytes": 116115662
   },
   {
     "id": "stage8-miniboss",
     "stage": 8,
     "title": "Herald of Death",
-    "seconds": 153.01,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage8-miniboss.mp4",
+    "seconds": 75.74,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-miniboss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-miniboss/stage8-furious.mp4",
     "poster": "posters/stage8-miniboss.jpg",
-    "note": "",
-    "segments": []
+    "note": "Current warned flights, bomber passes and complete native ending.",
+    "sha256": "57a99f1fa269f05e9130b278c66d5ea1d2ecad3bd0284fc183a6d38fa06e01bd",
+    "bytes": 84974050
   },
   {
-    "id": "stage9-boss",
-    "stage": 9,
-    "title": "Warp Sentinels and Tidal Fusion",
-    "seconds": 131.35,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage9-boss.mp4",
-    "poster": "posters/stage9-boss.jpg",
-    "note": "",
-    "segments": []
+    "id": "stage8-final",
+    "stage": 8,
+    "title": "Dracodia · first host through final victory",
+    "seconds": 685.91,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/stage8-final.jpg",
+    "note": "Uncut first-host fight, rebirth/download, copied forms, protected final life and ending.",
+    "sha256": "26a75b9cd4a13f6ad184ab7912d828eec1d7ccbfde22c74d4fc13182a762c991",
+    "bytes": 651428898
+  },
+  {
+    "id": "s8-phase1",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Dracodia · infused first host",
+    "start": 0,
+    "end": 100.75,
+    "seconds": 100.75,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-phase1.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-formation",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Dracodia · rebirth and final-form download",
+    "start": 100.75,
+    "end": 159.43,
+    "seconds": 58.68,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-formation.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-phase2",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Dracodia · complete final-form battle",
+    "start": 159.43,
+    "end": 685.91,
+    "seconds": 526.48,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-phase2.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-dracodia",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Dracodia base · first native visit",
+    "start": 159.43,
+    "end": 215.33,
+    "seconds": 55.9,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-dracodia.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-code-hammer",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Code Hammer · first native visit",
+    "start": 216.7,
+    "end": 254.12,
+    "seconds": 37.42,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-code-hammer.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-helicopter",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Helicopter · first native visit",
+    "start": 279.22,
+    "end": 316.64,
+    "seconds": 37.42,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-helicopter.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-neural-archon",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Neural Archon · first native visit",
+    "start": 342.5,
+    "end": 360.37,
+    "seconds": 17.87,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-neural-archon.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-phoenix-volcano",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Phoenix / Volcano · first native visit",
+    "start": 385.07,
+    "end": 434.4,
+    "seconds": 49.33,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-phoenix-volcano.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "s8-final-life",
+    "parent": "stage8-final",
+    "stage": 8,
+    "title": "Dracodia · final life and ending",
+    "start": 620.68,
+    "end": 685.91,
+    "seconds": 65.23,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage8-final/stage8-furious.mp4",
+    "poster": "posters/s8-final-life.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
   },
   {
     "id": "stage9-miniboss",
     "stage": 9,
     "title": "Event Horizon",
-    "seconds": 135.13,
-    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/stage9-miniboss.mp4",
+    "seconds": 91.92,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage9-miniboss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage9-miniboss/stage9-furious.mp4",
     "poster": "posters/stage9-miniboss.jpg",
-    "note": "",
-    "segments": []
+    "note": "Current directional flight, fast spin and charged eye attack.",
+    "sha256": "bdc4fc1019f8b605e7fd957e700cc4b9a3cf7f1331d6718ae3a3ccd99a0b7000",
+    "bytes": 66626535
+  },
+  {
+    "id": "stage9-boss",
+    "stage": 9,
+    "title": "Warp Sentinels → Tidal Sovereign",
+    "seconds": 190.54,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage9-boss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage9-boss/stage9-furious.mp4",
+    "poster": "posters/stage9-boss.jpg",
+    "note": "Native sentinel gate, convergence, current water arsenal and final defeat.",
+    "sha256": "f838c24fd0e6b45030e2a5c2ebf183bb3b085f669350de7e2abe35ee288ec589",
+    "bytes": 159565564
+  },
+  {
+    "id": "stage9-sentinels",
+    "parent": "stage9-boss",
+    "stage": 9,
+    "title": "Warp Sentinels · native gate and convergence",
+    "start": 0,
+    "end": 125.0,
+    "seconds": 125.0,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage9-boss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage9-boss/stage9-furious.mp4",
+    "poster": "posters/stage9-sentinels.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
+  },
+  {
+    "id": "stage9-tidal",
+    "parent": "stage9-boss",
+    "stage": 9,
+    "title": "Tidal Sovereign · water arsenal and defeat",
+    "start": 125.0,
+    "end": 190.54,
+    "seconds": 65.54,
+    "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage9-boss.mp4",
+    "localSrc": "/_shots/stage6_9_refresh_1028/155531/stage9-boss/stage9-furious.mp4",
+    "poster": "posters/stage9-tidal.jpg",
+    "note": "Chapter from the same continuous native full-fight recording."
   }
 ]

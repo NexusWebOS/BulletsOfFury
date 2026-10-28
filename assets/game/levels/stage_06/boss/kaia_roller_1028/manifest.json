@@ -1,0 +1,16 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "pivot": [
+    32,
+    32
+  ],
+  "frames": 16,
+  "columns": 4,
+  "fps": 24,
+  "source_job": "844ae6ba-7005-4880-99be-dbe891009d3b",
+  "source": "Falva nfrb_3",
+  "builder": "_BUILD_SOURCE/build_kaia_rollers_1028.py"
+}

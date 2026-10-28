@@ -1,0 +1,1913 @@
+{
+  "request": "1015 outer/inner charge; no charging sphere; red-orange twin blasters from top; safe continuous south/north scaled turbo with shadows.",
+  "native": {
+    "checks": [
+      {
+        "name": "Complete native Voss health and module pools retained",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All authored body/effect cells use fixed even canvases",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Cannon charge occurs at the very top in a south-facing pose",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "1015 charge draws own hull outer and inner light without a surrounding orb",
+        "passed": true,
+        "data": [
+          "vs41_shadow",
+          "vs41_shadow",
+          "vs41_shadow",
+          "vs41_hull",
+          "vs41_hull",
+          "vs41_hull",
+          "vs41_outer",
+          "vs41_outer",
+          "vs41_outer",
+          "vs41_inner",
+          "vs41_inner",
+          "vs41_inner",
+          "bmfx_fov_red_tall",
+          "bmfx_fov_red_tall",
+          "bmfx_fov_red_tall",
+          "bmfx_fov_red_tall"
+        ]
+      },
+      {
+        "name": "Both native FOVs begin at the same two physical cannon mouths",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "x": 305.5,
+              "y": 122.5,
+              "angle": 1.9083039486148687,
+              "k": 0.7530864197530873
+            },
+            {
+              "x": 374.5,
+              "y": 122.5,
+              "angle": 2.0366417344548085,
+              "k": 0.7530864197530873
+            }
+          ],
+          "ports": [
+            {
+              "x": 305.5,
+              "y": 122.5,
+              "side": -1,
+              "angle": 1.5707963267948966
+            },
+            {
+              "x": 374.5,
+              "y": 122.5,
+              "side": 1,
+              "angle": 1.5707963267948966
+            }
+          ]
+        }
+      },
+      {
+        "name": "Both measured muzzle mouths touch the actual native cannon pixels",
+        "passed": true,
+        "data": [
+          27,
+          21
+        ]
+      },
+      {
+        "name": "Twin cannons release five pairs of the preserved two-HP heavy orb",
+        "passed": true,
+        "data": {
+          "count": 10,
+          "top": true,
+          "sides": [
+            -1,
+            1
+          ],
+          "hp": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "tag": true,
+          "phase": "turbocharge"
+        }
+      },
+      {
+        "name": "Heavy blaster orbs keep native shot damage, flash and destruction",
+        "passed": true,
+        "data": {
+          "flash": true,
+          "dead": true
+        }
+      },
+      {
+        "name": "All directional reversals travel continuously with no teleport",
+        "passed": true,
+        "data": 32.513038548751865
+      },
+      {
+        "name": "Turbo passes south and re-enters north through the screen",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Depth scale varies continuously and authored headings turn at each end",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Finite native recovery restores the starting anchor and scale",
+        "passed": true,
+        "data": true
+      },
+      {
+        "name": "Overhead body contact cannot hurt player seats or allied ships",
+        "passed": true,
+        "data": {
+          "contacts": 0,
+          "dead": false,
+          "allies": true
+        }
+      },
+      {
+        "name": "Overhead flight draws the exact current authored alpha shadow",
+        "passed": true,
+        "data": [
+          "vs41_shadow",
+          "vs41_shadow",
+          "vs41_shadow"
+        ]
+      },
+      {
+        "name": "Native ground shadow draws before players and overhead hull draws after them",
+        "passed": true,
+        "data": [
+          "shadow",
+          "shadow",
+          "shadow",
+          "player",
+          "hull",
+          "hull",
+          "hull"
+        ]
+      },
+      {
+        "name": "Native Voss damage visibly flashes the real hull white and expires",
+        "passed": true,
+        "data": {
+          "base": 127,
+          "hit": 3180,
+          "end": 55,
+          "hp": 743,
+          "before": 742,
+          "flash": 0
+        }
+      },
+      {
+        "name": "Superseded Voss center cast cannot emit during the new arsenal",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "High overhead flight clears the wall while ordinary ships remain blocked",
+        "passed": true,
+        "data": {
+          "air": true,
+          "ground": true,
+          "rejoined": true
+        }
+      },
+      {
+        "name": "No browser, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "events": [
+      {
+        "event": "perch-start",
+        "t": 0,
+        "kind": "turbo"
+      },
+      {
+        "event": "charge",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "fire",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 1
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 2
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 3
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 4
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 5
+      },
+      {
+        "event": "turbocharge",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "perch-start",
+        "t": 0,
+        "kind": "turbo"
+      },
+      {
+        "event": "charge",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "fire",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 1
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 2
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 3
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 4
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 5
+      },
+      {
+        "event": "turbocharge",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "dash",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "turn-north",
+        "t": 0,
+        "x": 340,
+        "y": 622
+      },
+      {
+        "event": "north",
+        "t": 0,
+        "x": 270,
+        "y": 622
+      },
+      {
+        "event": "turn-south",
+        "t": 0,
+        "x": 270,
+        "y": -69
+      },
+      {
+        "event": "dash",
+        "t": 0,
+        "x": 340,
+        "y": -69
+      },
+      {
+        "event": "turn-north",
+        "t": 0,
+        "x": 340,
+        "y": 622
+      },
+      {
+        "event": "north",
+        "t": 0,
+        "x": 270,
+        "y": 622
+      },
+      {
+        "event": "turn-south",
+        "t": 0,
+        "x": 270,
+        "y": -69
+      },
+      {
+        "event": "approach",
+        "t": 0,
+        "x": 340,
+        "y": -69
+      },
+      {
+        "event": "recover",
+        "t": 0,
+        "x": 340,
+        "y": 150
+      },
+      {
+        "event": "perch-start",
+        "t": 0,
+        "kind": "turbo"
+      },
+      {
+        "event": "perch-start",
+        "t": 0,
+        "kind": "turbo"
+      },
+      {
+        "event": "charge",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "fire",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 1
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 2
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 3
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 4
+      },
+      {
+        "event": "twin-cannon",
+        "t": 0,
+        "count": 2,
+        "round": 5
+      },
+      {
+        "event": "turbocharge",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "dash",
+        "t": 0,
+        "x": 340,
+        "y": 111
+      },
+      {
+        "event": "perch-start",
+        "t": 0,
+        "kind": "turbo"
+      },
+      {
+        "event": "perch-start",
+        "t": 0.21666666666666665,
+        "kind": "turbo"
+      },
+      {
+        "event": "perch-start",
+        "t": 0.2333333333333333,
+        "kind": "turbo"
+      }
+    ]
+  },
+  "art": {
+    "checks": {
+      "actual72PlatesPreserved": true,
+      "southBoostKeepsFixedPivot": true,
+      "sameAlphaForHitAndShadow": true,
+      "evenRegisteredCells": true,
+      "paletteAlphaUnchanged": true,
+      "paletteLuminancePreserved": true,
+      "sourcesRetained": true,
+      "deterministicRebuild": true
+    },
+    "maxLuminanceError": 0.490799999999993
+  },
+  "teamRegression": {
+    "checks": {
+      "box_no_scene": true,
+      "decker_shoots_box": true,
+      "wall_cast_duration": true,
+      "centered": true,
+      "reflect_multi": true,
+      "ship_block": true,
+      "friendly_reflection": true,
+      "beam_stopped": true,
+      "pixel_glow": true,
+      "return_damage": true,
+      "helix_counter": true,
+      "energy_instead_of_bullet": true,
+      "heading_frames": true,
+      "distributed_retinas": true,
+      "missile_volley": true,
+      "missile_retina_no_fov": true,
+      "lock_beep": true,
+      "north_south": true,
+      "visible_hit_and_expiry": true,
+      "kaia_burst": true,
+      "kaia_animated_glow_pixels": true,
+      "kaia_straight": true,
+      "kaia_shootable": true,
+      "rook_chain": true,
+      "voss_dash_return": true,
+      "voss_cruise": true,
+      "jace_bullets_dodge_only": true,
+      "jace_no_dash": true,
+      "jace_hull_glow": true,
+      "jace_ranged_release": true,
+      "jace_spin_pixels": true,
+      "jace_player_intercepts_counterblast": true,
+      "jace_native_hit_flash_expiry": true,
+      "returned_shot_hurts_player": true,
+      "no_errors": true
+    },
+    "errors": [],
+    "events": [
+      {
+        "kind": "wall-box",
+        "t": 0
+      },
+      {
+        "kind": "wall-deployed",
+        "t": 0
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "voss"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "nyx"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "rook"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "kaia"
+      },
+      {
+        "kind": "wall-reflect",
+        "t": 0,
+        "target": "jace"
+      },
+      {
+        "kind": "wall-block",
+        "t": 0,
+        "pilot": "player"
+      },
+      {
+        "kind": "wall-block",
+        "t": 0,
+        "pilot": "voss"
+      },
+      {
+        "kind": "friendly-reflected",
+        "t": 0,
+        "weapon": "mg"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "voss"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "nyx"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "rook"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "kaia"
+      },
+      {
+        "kind": "reflection-hit",
+        "t": 0,
+        "target": "jace"
+      },
+      {
+        "kind": "helix-counterburst",
+        "t": 0,
+        "hit": 5
+      },
+      {
+        "kind": "energy-launch",
+        "t": 0,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "dialogue",
+        "t": 0.016666666666666666,
+        "who": "decker",
+        "text": "TEAM, GIVE ME A SECOND. I BROUGHT SOMETHING NEW."
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 1.816666666666665
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.1499999999999972
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.449999999999996
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.716666666666662
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 2.9499999999999944
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.1666666666666603
+      },
+      {
+        "kind": "dialogue",
+        "t": 3.2333333333333267,
+        "who": "decker",
+        "text": "WALL UP! HOLD FIRE - IT REFLECTS BOTH WAYS!"
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.349999999999993
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.516666666666659
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.6666666666666585
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.7999999999999914
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 3.9166666666666576
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.033333333333324
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.149999999999991
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.266666666666657
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.383333333333323
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.499999999999989
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.616666666666656
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.733333333333322
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 4.849999999999988
+      },
+      {
+        "kind": "dialogue",
+        "t": 6.299999999999983,
+        "who": "voss",
+        "text": "OUR SHOTS ARE COMING BACK! BREAK FORMATION!"
+      },
+      {
+        "kind": "north-south-return",
+        "t": 8.349999999999994
+      },
+      {
+        "kind": "dialogue",
+        "t": 9.366666666666712,
+        "who": "cole",
+        "text": "HA! YOU BUILT THAT AND NEVER TOLD US?"
+      },
+      {
+        "kind": "missile-lock-beep",
+        "t": 10.016000000000076
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 0
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 1
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 2
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 3
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 4
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 5
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 6
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 7
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 8
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 10.216000000000086,
+        "shot": 9
+      },
+      {
+        "kind": "rook-chain-release",
+        "t": 10.216000000000086,
+        "caught": true
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 10.216000000000086,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "helix-counterburst",
+        "t": 10.216000000000086,
+        "hit": 5
+      },
+      {
+        "kind": "dialogue",
+        "t": 10.232666666666754,
+        "who": "decker",
+        "text": "I WAS SAVING IT FOR A GOOD FIRST IMPRESSION."
+      },
+      {
+        "kind": "friendly-reflected",
+        "t": 10.416000000000096,
+        "weapon": "mg"
+      }
+    ]
+  },
+  "film": {
+    "method": "Native Stage6 scene and one selected Voss attack cycle. Invulnerable observer;\nother special selections and allied autofire held for this focused animation\nreview. No Voss HP, phase or timer writes after selection.\n",
+    "video": "_shots/voss_turbo_1028/video/141228/voss-turbo.mp4",
+    "errors": [],
+    "checks": {
+      "noErrors": true,
+      "decoded": true,
+      "audible": true,
+      "unclipped": true,
+      "realTime": true,
+      "bothCannons": true,
+      "charge": true,
+      "northReturn": true,
+      "continuousTurns": true,
+      "recovery": true,
+      "liveNativeScene": true
+    },
+    "decodedPeakDb": -14.8,
+    "timeline": [
+      {
+        "seconds": 0.31909999999776484,
+        "clock": 0.31666666666666665,
+        "phase": "position",
+        "kind": "turbo",
+        "x": 244,
+        "y": 160.99592916751476,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 55,
+        "safe": false,
+        "orbs": 0,
+        "frames": 18,
+        "playerDead": false
+      },
+      {
+        "seconds": 0.6258999999985099,
+        "clock": 0.6166666666666669,
+        "phase": "position",
+        "kind": "turbo",
+        "x": 244,
+        "y": 125.60411154081007,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 54,
+        "safe": false,
+        "orbs": 0,
+        "frames": 36,
+        "playerDead": false
+      },
+      {
+        "seconds": 0.9327999999970198,
+        "clock": 0.9333333333333346,
+        "phase": "charge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 54,
+        "safe": false,
+        "orbs": 0,
+        "frames": 55,
+        "playerDead": false
+      },
+      {
+        "seconds": 1.239599999997765,
+        "clock": 1.2333333333333338,
+        "phase": "charge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 53,
+        "safe": false,
+        "orbs": 0,
+        "frames": 73,
+        "playerDead": false
+      },
+      {
+        "seconds": 1.5505999999977649,
+        "clock": 1.5499999999999994,
+        "phase": "charge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 53,
+        "safe": false,
+        "orbs": 0,
+        "frames": 92,
+        "playerDead": false
+      },
+      {
+        "seconds": 1.8568999999985099,
+        "clock": 1.8499999999999983,
+        "phase": "charge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 52,
+        "safe": false,
+        "orbs": 0,
+        "frames": 110,
+        "playerDead": false
+      },
+      {
+        "seconds": 2.168599999997765,
+        "clock": 2.166666666666664,
+        "phase": "charge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 51,
+        "safe": false,
+        "orbs": 0,
+        "frames": 129,
+        "playerDead": false
+      },
+      {
+        "seconds": 2.48029999999702,
+        "clock": 2.4833333333333294,
+        "phase": "fire",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 51,
+        "safe": false,
+        "orbs": 2,
+        "frames": 148,
+        "playerDead": false
+      },
+      {
+        "seconds": 2.792099999997765,
+        "clock": 2.7833333333333283,
+        "phase": "fire",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 50,
+        "safe": false,
+        "orbs": 4,
+        "frames": 166,
+        "playerDead": false
+      },
+      {
+        "seconds": 3.1035,
+        "clock": 3.099999999999994,
+        "phase": "fire",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 50,
+        "safe": false,
+        "orbs": 6,
+        "frames": 185,
+        "playerDead": false
+      },
+      {
+        "seconds": 3.415599999997765,
+        "clock": 3.4166666666666594,
+        "phase": "fire",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 49,
+        "safe": false,
+        "orbs": 8,
+        "frames": 204,
+        "playerDead": false
+      },
+      {
+        "seconds": 3.72789999999851,
+        "clock": 3.7166666666666583,
+        "phase": "fire",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 49,
+        "safe": false,
+        "orbs": 10,
+        "frames": 222,
+        "playerDead": false
+      },
+      {
+        "seconds": 4.03689999999851,
+        "clock": 4.033333333333324,
+        "phase": "turbocharge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 48,
+        "safe": false,
+        "orbs": 10,
+        "frames": 241,
+        "playerDead": false
+      },
+      {
+        "seconds": 4.345599999997765,
+        "clock": 4.333333333333323,
+        "phase": "turbocharge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 55,
+        "safe": false,
+        "orbs": 10,
+        "frames": 259,
+        "playerDead": false
+      },
+      {
+        "seconds": 4.657599999997765,
+        "clock": 4.649999999999989,
+        "phase": "turbocharge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 55,
+        "safe": false,
+        "orbs": 10,
+        "frames": 278,
+        "playerDead": false
+      },
+      {
+        "seconds": 4.96639999999851,
+        "clock": 4.966666666666654,
+        "phase": "turbocharge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 55,
+        "safe": false,
+        "orbs": 8,
+        "frames": 297,
+        "playerDead": false
+      },
+      {
+        "seconds": 5.27689999999851,
+        "clock": 5.266666666666653,
+        "phase": "turbocharge",
+        "kind": "turbo",
+        "x": 244,
+        "y": 111,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 54,
+        "safe": false,
+        "orbs": 6,
+        "frames": 315,
+        "playerDead": false
+      },
+      {
+        "seconds": 5.590599999997765,
+        "clock": 5.583333333333319,
+        "phase": "dash",
+        "kind": "turbo",
+        "x": 244,
+        "y": 129.53968253968253,
+        "scale": 1.0399092970521542,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 77,
+        "safe": true,
+        "orbs": 4,
+        "frames": 334,
+        "playerDead": false
+      },
+      {
+        "seconds": 5.90379999999702,
+        "clock": 5.899999999999984,
+        "phase": "dash",
+        "kind": "turbo",
+        "x": 244,
+        "y": 322.1785714285714,
+        "scale": 1.297551020408163,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 77,
+        "safe": true,
+        "orbs": 2,
+        "frames": 353,
+        "playerDead": false
+      },
+      {
+        "seconds": 6.21739999999851,
+        "clock": 6.21666666666665,
+        "phase": "turn-north",
+        "kind": "turbo",
+        "x": 250.08164289894017,
+        "y": 641.7162020322268,
+        "scale": 1.42,
+        "heading": 0.9723977261111265,
+        "hp": 1424,
+        "frame": 5,
+        "safe": true,
+        "orbs": 0,
+        "frames": 372,
+        "playerDead": false
+      },
+      {
+        "seconds": 6.529099999997765,
+        "clock": 6.516666666666649,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": 608.4509803921569,
+        "scale": 1.419203172233907,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 68,
+        "safe": true,
+        "orbs": 0,
+        "frames": 390,
+        "playerDead": false
+      },
+      {
+        "seconds": 6.83979999999702,
+        "clock": 6.833333333333314,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": 351.01960784313724,
+        "scale": 1.181479370679452,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 67,
+        "safe": true,
+        "orbs": 0,
+        "frames": 409,
+        "playerDead": false
+      },
+      {
+        "seconds": 7.156199999999255,
+        "clock": 7.14999999999998,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": 93.58823529411734,
+        "scale": 0.8180256462446567,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 67,
+        "safe": true,
+        "orbs": 0,
+        "frames": 428,
+        "playerDead": false
+      },
+      {
+        "seconds": 7.46889999999851,
+        "clock": 7.4666666666666455,
+        "phase": "turn-south",
+        "kind": "turbo",
+        "x": 296.5,
+        "y": -99.31088913245534,
+        "scale": 0.72,
+        "heading": -2.6179938779914944,
+        "hp": 1424,
+        "frame": 19,
+        "safe": true,
+        "orbs": 0,
+        "frames": 447,
+        "playerDead": false
+      },
+      {
+        "seconds": 7.7775,
+        "clock": 7.766666666666644,
+        "phase": "dash",
+        "kind": "turbo",
+        "x": 244,
+        "y": -62.73242630385487,
+        "scale": 0.737838246409675,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 74,
+        "safe": true,
+        "orbs": 0,
+        "frames": 465,
+        "playerDead": false
+      },
+      {
+        "seconds": 8.087599999997765,
+        "clock": 8.083333333333314,
+        "phase": "dash",
+        "kind": "turbo",
+        "x": 244,
+        "y": 138.22165532879814,
+        "scale": 1.119848828420257,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 73,
+        "safe": true,
+        "orbs": 0,
+        "frames": 484,
+        "playerDead": false
+      },
+      {
+        "seconds": 8.40379999999702,
+        "clock": 8.399999999999997,
+        "phase": "turn-north",
+        "kind": "turbo",
+        "x": 244,
+        "y": 622,
+        "scale": 1.42,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 49,
+        "safe": true,
+        "orbs": 0,
+        "frames": 503,
+        "playerDead": false
+      },
+      {
+        "seconds": 8.7175,
+        "clock": 8.700000000000012,
+        "phase": "turn-north",
+        "kind": "turbo",
+        "x": 310.5339103765847,
+        "y": 637.1859308691145,
+        "scale": 1.42,
+        "heading": -1.121997376282069,
+        "hp": 1424,
+        "frame": 26,
+        "safe": true,
+        "orbs": 0,
+        "frames": 521,
+        "playerDead": false
+      },
+      {
+        "seconds": 9.027699999999255,
+        "clock": 9.016666666666694,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": 405.21568627450984,
+        "scale": 1.256539490844396,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 64,
+        "safe": true,
+        "orbs": 0,
+        "frames": 540,
+        "playerDead": false
+      },
+      {
+        "seconds": 9.337699999999256,
+        "clock": 9.333333333333377,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": 147.78431372549005,
+        "scale": 0.8834605091556036,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 64,
+        "safe": true,
+        "orbs": 0,
+        "frames": 559,
+        "playerDead": false
+      },
+      {
+        "seconds": 9.645199999999255,
+        "clock": 9.633333333333391,
+        "phase": "turn-south",
+        "kind": "turbo",
+        "x": 312.4450482025149,
+        "y": -79.31643110438165,
+        "scale": 0.72,
+        "heading": -1.8699956271367817,
+        "hp": 1424,
+        "frame": 22,
+        "safe": true,
+        "orbs": 0,
+        "frames": 577,
+        "playerDead": false
+      },
+      {
+        "seconds": 9.95439999999851,
+        "clock": 9.950000000000074,
+        "phase": "dash",
+        "kind": "turbo",
+        "x": 244,
+        "y": -69,
+        "scale": 0.72,
+        "heading": 1.5707963267948968,
+        "hp": 1424,
+        "frame": 78,
+        "safe": true,
+        "orbs": 0,
+        "frames": 596,
+        "playerDead": false
+      },
+      {
+        "seconds": 10.258199999999254,
+        "clock": 10.250000000000089,
+        "phase": "dash",
+        "kind": "turbo",
+        "x": 244,
+        "y": 57.91836734693881,
+        "scale": 0.9955102040816326,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 78,
+        "safe": true,
+        "orbs": 0,
+        "frames": 614,
+        "playerDead": false
+      },
+      {
+        "seconds": 10.56789999999851,
+        "clock": 10.550000000000104,
+        "phase": "dash",
+        "kind": "turbo",
+        "x": 244,
+        "y": 438.67346938775546,
+        "scale": 1.3812244897959185,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 77,
+        "safe": true,
+        "orbs": 0,
+        "frames": 632,
+        "playerDead": false
+      },
+      {
+        "seconds": 10.875699999999254,
+        "clock": 10.866666666666786,
+        "phase": "turn-north",
+        "kind": "turbo",
+        "x": 291.78693585282383,
+        "y": 654.5805812025471,
+        "scale": 1.42,
+        "heading": -0.3739991254273564,
+        "hp": 1424,
+        "frame": 30,
+        "safe": true,
+        "orbs": 0,
+        "frames": 651,
+        "playerDead": false
+      },
+      {
+        "seconds": 11.18279999999702,
+        "clock": 11.166666666666801,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": 486.5098039215686,
+        "scale": 1.3498158325229361,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 68,
+        "safe": true,
+        "orbs": 0,
+        "frames": 669,
+        "playerDead": false
+      },
+      {
+        "seconds": 11.4915,
+        "clock": 11.483333333333483,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": 229.07843137254906,
+        "scale": 0.9983936796556377,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 67,
+        "safe": true,
+        "orbs": 0,
+        "frames": 688,
+        "playerDead": false
+      },
+      {
+        "seconds": 11.802599999997765,
+        "clock": 11.783333333333498,
+        "phase": "north",
+        "kind": "turbo",
+        "x": 314,
+        "y": -14.803921568628084,
+        "scale": 0.7322426517704349,
+        "heading": -1.5707963267948966,
+        "hp": 1424,
+        "frame": 66,
+        "safe": true,
+        "orbs": 0,
+        "frames": 706,
+        "playerDead": false
+      },
+      {
+        "seconds": 12.11039999999851,
+        "clock": 12.10000000000018,
+        "phase": "turn-south",
+        "kind": "turbo",
+        "x": 257.1778569349443,
+        "y": -96.36410188638105,
+        "scale": 0.72,
+        "heading": 2.4683942278205517,
+        "hp": 1424,
+        "frame": 13,
+        "safe": true,
+        "orbs": 0,
+        "frames": 723,
+        "playerDead": false
+      },
+      {
+        "seconds": 12.41829999999702,
+        "clock": 12.36666666666686,
+        "phase": "approach",
+        "kind": "turbo",
+        "x": 244,
+        "y": -53.52152377772213,
+        "scale": 0.7373358933689512,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 48,
+        "safe": true,
+        "orbs": 0,
+        "frames": 737,
+        "playerDead": false
+      },
+      {
+        "seconds": 12.7275,
+        "clock": 12.683333333333543,
+        "phase": "approach",
+        "kind": "turbo",
+        "x": 244,
+        "y": 33.38403316915711,
+        "scale": 0.8346701171494559,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 48,
+        "safe": true,
+        "orbs": 0,
+        "frames": 756,
+        "playerDead": false
+      },
+      {
+        "seconds": 13.040599999997765,
+        "clock": 13.000000000000226,
+        "phase": "approach",
+        "kind": "turbo",
+        "x": 244,
+        "y": 135.35762584522936,
+        "scale": 0.9488805409466569,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 48,
+        "safe": true,
+        "orbs": 0,
+        "frames": 775,
+        "playerDead": false
+      },
+      {
+        "seconds": 13.348099999997764,
+        "clock": 13.30000000000024,
+        "phase": "recover",
+        "kind": "turbo",
+        "x": 244,
+        "y": 181,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 55,
+        "safe": false,
+        "orbs": 0,
+        "frames": 793,
+        "playerDead": false
+      },
+      {
+        "seconds": 13.660599999997764,
+        "clock": 13.616666666666923,
+        "phase": "recover",
+        "kind": "turbo",
+        "x": 244,
+        "y": 181,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 54,
+        "safe": false,
+        "orbs": 0,
+        "frames": 812,
+        "playerDead": false
+      },
+      {
+        "seconds": 13.97179999999702,
+        "clock": 13.916666666666938,
+        "phase": "recover",
+        "kind": "turbo",
+        "x": 244,
+        "y": 181,
+        "scale": 1,
+        "heading": 1.5707963267948966,
+        "hp": 1424,
+        "frame": 54,
+        "safe": false,
+        "orbs": 0,
+        "frames": 830,
+        "playerDead": false
+      },
+      {
+        "seconds": 14.28179999999702,
+        "clock": 14.23333333333362,
+        "phase": null,
+        "kind": null,
+        "x": 239.16666666666669,
+        "y": 177.83333333333331,
+        "scale": 1,
+        "heading": 1.721647967007541,
+        "hp": 1424,
+        "frame": 9,
+        "safe": null,
+        "orbs": 0,
+        "frames": 849,
+        "playerDead": false
+      },
+      {
+        "seconds": 14.59529999999702,
+        "clock": 14.550000000000303,
+        "phase": null,
+        "kind": null,
+        "x": 193.2500000000002,
+        "y": 147.7499999999998,
+        "scale": 1,
+        "heading": 1.6649733485320626,
+        "hp": 1424,
+        "frame": 8,
+        "safe": null,
+        "orbs": 0,
+        "frames": 868,
+        "playerDead": false
+      },
+      {
+        "seconds": 14.904699999999256,
+        "clock": 14.850000000000318,
+        "phase": null,
+        "kind": null,
+        "x": 163.32532306429394,
+        "y": 142.05436532673707,
+        "scale": 1,
+        "heading": 1.580284178664487,
+        "hp": 1424,
+        "frame": 52,
+        "safe": null,
+        "orbs": 0,
+        "frames": 886,
+        "playerDead": false
+      },
+      {
+        "seconds": 15.2155,
+        "clock": 15.166666666667,
+        "phase": null,
+        "kind": null,
+        "x": 167.60740680444184,
+        "y": 138.62270695092042,
+        "scale": 1,
+        "heading": 1.4882146563466252,
+        "hp": 1424,
+        "frame": 52,
+        "safe": null,
+        "orbs": 0,
+        "frames": 905,
+        "playerDead": false
+      }
+    ],
+    "shots": [
+      {
+        "phase": "charge",
+        "name": "cannon-charge",
+        "time": 1.5505999999977649
+      },
+      {
+        "phase": "fire",
+        "name": "twin-cannons",
+        "time": 3.1035
+      },
+      {
+        "phase": "turbocharge",
+        "name": "turbo-power",
+        "time": 4.657599999997765
+      },
+      {
+        "phase": "dash",
+        "name": "overhead-south",
+        "time": 8.087599999997765
+      },
+      {
+        "phase": "north",
+        "name": "north-return",
+        "time": 9.337699999999256
+      },
+      {
+        "phase": "approach",
+        "name": "formation-return",
+        "time": 12.7275
+      }
+    ],
+    "seconds": 15.23789999999851,
+    "sound": {
+      "peak": 0.35613346099853516,
+      "tapped": 12,
+      "playing": {
+        "bossWeaponCharge": 2,
+        "av3_target_acquire": 2,
+        "alertLockon": 1,
+        "enemyBossCannon": 4,
+        "juggernautRamLaunch": 1,
+        "jetDash": 4
+      },
+      "tapErrors": [],
+      "frames": 906
+    },
+    "events": [
+      {
+        "event": "perch-start",
+        "t": 0.016666666666666666,
+        "kind": "turbo"
+      },
+      {
+        "event": "charge",
+        "t": 0.8666666666666677,
+        "x": 244,
+        "y": 111
+      },
+      {
+        "event": "fire",
+        "t": 2.2166666666666637,
+        "x": 244,
+        "y": 111
+      },
+      {
+        "event": "twin-cannon",
+        "t": 2.2333333333333303,
+        "count": 2,
+        "round": 1
+      },
+      {
+        "event": "twin-cannon",
+        "t": 2.549999999999996,
+        "count": 2,
+        "round": 2
+      },
+      {
+        "event": "twin-cannon",
+        "t": 2.8666666666666614,
+        "count": 2,
+        "round": 3
+      },
+      {
+        "event": "twin-cannon",
+        "t": 3.183333333333327,
+        "count": 2,
+        "round": 4
+      },
+      {
+        "event": "twin-cannon",
+        "t": 3.4999999999999925,
+        "count": 2,
+        "round": 5
+      },
+      {
+        "event": "turbocharge",
+        "t": 3.8333333333333246,
+        "x": 244,
+        "y": 111
+      },
+      {
+        "event": "dash",
+        "t": 5.449999999999986,
+        "x": 244,
+        "y": 111
+      },
+      {
+        "event": "turn-north",
+        "t": 6.1499999999999835,
+        "x": 244,
+        "y": 622
+      },
+      {
+        "event": "north",
+        "t": 6.499999999999982,
+        "x": 314,
+        "y": 622
+      },
+      {
+        "event": "turn-south",
+        "t": 7.349999999999979,
+        "x": 314,
+        "y": -69
+      },
+      {
+        "event": "dash",
+        "t": 7.699999999999978,
+        "x": 244,
+        "y": -69
+      },
+      {
+        "event": "turn-north",
+        "t": 8.399999999999997,
+        "x": 244,
+        "y": 622
+      },
+      {
+        "event": "north",
+        "t": 8.750000000000014,
+        "x": 314,
+        "y": 622
+      },
+      {
+        "event": "turn-south",
+        "t": 9.600000000000056,
+        "x": 314,
+        "y": -69
+      },
+      {
+        "event": "dash",
+        "t": 9.950000000000074,
+        "x": 244,
+        "y": -69
+      },
+      {
+        "event": "turn-north",
+        "t": 10.650000000000109,
+        "x": 244,
+        "y": 622
+      },
+      {
+        "event": "north",
+        "t": 11.000000000000126,
+        "x": 314,
+        "y": 622
+      },
+      {
+        "event": "turn-south",
+        "t": 11.850000000000168,
+        "x": 314,
+        "y": -69
+      },
+      {
+        "event": "approach",
+        "t": 12.200000000000186,
+        "x": 244,
+        "y": -69
+      },
+      {
+        "event": "recover",
+        "t": 13.30000000000024,
+        "x": 244,
+        "y": 181
+      }
+    ]
+  },
+  "chapters": [
+    [
+      0,
+      "Start"
+    ],
+    [
+      0.9327999999970198,
+      "Twin-cannon charge"
+    ],
+    [
+      2.48029999999702,
+      "Red-white blaster volley"
+    ],
+    [
+      4.03689999999851,
+      "1015 turbo power"
+    ],
+    [
+      5.590599999997765,
+      "Overhead south pass"
+    ],
+    [
+      6.529099999997765,
+      "Northbound return"
+    ],
+    [
+      12.41829999999702,
+      "Formation return"
+    ]
+  ],
+  "sourceHashes": {
+    "assets/voss_turbo_1028.js": "71d06908e8ebdbcc6805310d34eb1a3975797de52ec1fc348a6604c11e794c0e",
+    "assets/voss_turbo_art_1028.js": "d68d675b62f0a6e93a76580b45dce282e2fe46945ff4a222f6b386f9ab06f668",
+    "_BUILD_SOURCE/build_voss_turbo_1028.py": "960482bed5d705298eb9702f3252522bdc0acf70d72f86efeb6863c8ac490fa5"
+  },
+  "fullSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "reason": "Existing missing UNUSED_ASSETS/retired_art_1022/manifest.json"
+  },
+  "syntax": {
+    "game": true,
+    "voss": true
+  },
+  "playback": {
+    "checks": {
+      "completeFilmLoaded": true,
+      "allDecodedStillsLoaded": true,
+      "nativeControlsPlayVideo": true,
+      "allSevenChaptersSeek": true,
+      "desktopFits": true,
+      "mobileFits": true,
+      "noVideoError": true,
+      "noBrowserErrors": true
+    },
+    "chapters": [
+      {
+        "label": "Start",
+        "requested": 0.0,
+        "time": 0.012126
+      },
+      {
+        "label": "Twin-cannon charge",
+        "requested": 0.933,
+        "time": 0.940611
+      },
+      {
+        "label": "Red-white blaster volley",
+        "requested": 2.48,
+        "time": 2.495006
+      },
+      {
+        "label": "1015 turbo power",
+        "requested": 4.037,
+        "time": 4.049332
+      },
+      {
+        "label": "Overhead south pass",
+        "requested": 5.591,
+        "time": 5.599252
+      },
+      {
+        "label": "Northbound return",
+        "requested": 6.529,
+        "time": 6.534163
+      },
+      {
+        "label": "Formation return",
+        "requested": 12.418,
+        "time": 12.428999
+      }
+    ],
+    "errors": []
+  }
+}

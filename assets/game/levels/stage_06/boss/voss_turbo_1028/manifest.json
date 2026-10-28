@@ -1,0 +1,124 @@
+{
+  "banks": {
+    "hull": {
+      "key": "vs41_hull",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/hull.png",
+      "cw": 192,
+      "ch": 192,
+      "cols": 8,
+      "frames": 80,
+      "pivot": [
+        96,
+        96
+      ]
+    },
+    "hull_hit": {
+      "key": "vs41_hull_hit",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/hull_hit.png",
+      "cw": 192,
+      "ch": 192,
+      "cols": 8,
+      "frames": 80,
+      "pivot": [
+        96,
+        96
+      ]
+    },
+    "shadow": {
+      "key": "vs41_shadow",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/shadow.png",
+      "cw": 192,
+      "ch": 192,
+      "cols": 8,
+      "frames": 80,
+      "pivot": [
+        96,
+        96
+      ]
+    },
+    "outer": {
+      "key": "vs41_outer",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/outer.png",
+      "cw": 192,
+      "ch": 192,
+      "cols": 8,
+      "frames": 80,
+      "pivot": [
+        96,
+        96
+      ]
+    },
+    "inner": {
+      "key": "vs41_inner",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/inner.png",
+      "cw": 192,
+      "ch": 192,
+      "cols": 8,
+      "frames": 80,
+      "pivot": [
+        96,
+        96
+      ]
+    },
+    "orb": {
+      "key": "vs41_orb",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/orb.png",
+      "cw": 128,
+      "ch": 128,
+      "cols": 4,
+      "frames": 8,
+      "pivot": [
+        64,
+        64
+      ]
+    },
+    "orb_glow": {
+      "key": "vs41_orb_glow",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/orb_glow.png",
+      "cw": 128,
+      "ch": 128,
+      "cols": 4,
+      "frames": 8,
+      "pivot": [
+        64,
+        64
+      ]
+    },
+    "orb_hit": {
+      "key": "vs41_orb_hit",
+      "path": "assets/game/levels/stage_06/boss/voss_turbo_1028/orb_hit.png",
+      "cw": 128,
+      "ch": 128,
+      "cols": 4,
+      "frames": 8,
+      "pivot": [
+        64,
+        64
+      ]
+    }
+  },
+  "unit": 1.15,
+  "sockets": [
+    [
+      66,
+      106
+    ],
+    [
+      126,
+      106
+    ]
+  ],
+  "builder": "_BUILD_SOURCE/build_voss_turbo_1028.py",
+  "sources": {
+    "florb_0": "6f6e6fcc87c69dc63effb31dade605a923cf4ac7e49e91224083c24a26ca6250",
+    "florb_1": "1c70e8c520ac1652eb09eaa64646975e47a4983f15242635165579475fa524ae",
+    "florb_2": "2b5afc3e9d186dd6d151e39f01d37d8ee08c4101783d4e9da554623c318e3ff4",
+    "florb_3": "973da5851bac6d7687210a3f3d3706fb61ca10fc7840cd496b76e086f1528066",
+    "florb_4": "266b6b71a498d1cc946bfc7a0e69f43b8005ca3b00c7398695924dd7e57337f7",
+    "florb_5": "b70bcd05aabdbb75ccb185b286fa4626b776d3f4b08e1f482bffda3f4bb17768",
+    "florb_6": "77fa8d03a82677bb9d8c256b771ddb3f740b5f36b467c64b45885dc55e61a7ca",
+    "florb_7": "09ed767ebc3ec347477a5ee36e579a9b55faf800ec7297916857cd06ef8718e0"
+  },
+  "hullSource": "assets\\game\\levels\\stage_06\\boss\\rough_riders_1028\\flight_voss.png",
+  "hullHash": "b84fa9831a068e2b16dda35d64e0c7e43046dcf992113510036b827934e45533"
+}

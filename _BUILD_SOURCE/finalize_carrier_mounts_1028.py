@@ -1,0 +1,35 @@
+from pathlib import Path
+import json,hashlib
+R=Path(__file__).resolve().parents[1];O=R/'_shots/carrier_mounts_1028'
+F=R/json.loads((O/'latest.json').read_text())['folder'];report=json.loads((F/'report.json').read_text())
+reg=json.loads((R/'_shots/carrier_hull_1028/checks.json').read_text())
+assert all(q['passed']for q in report['checks'])and all(q['passed']for q in reg['checks'])
+src=F.relative_to(R).as_posix()
+page='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Carrier — hull-mounted turrets</title><style>*{box-sizing:border-box}body{background:#0b1017;color:#e9eef6;font:16px/1.5 system-ui;margin:0}main{max-width:1300px;padding:24px;margin:auto}h1{font-size:clamp(26px,4vw,36px);margin:0 0 8px}p{color:#c4cdd8}video,img{display:block;width:100%;background:#000}video{aspect-ratio:16/10;border:1px solid #526478}.shots{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}figure{margin:0}figcaption{padding-top:6px;color:#c4cdd8}.note{font-size:14px}@media(max-width:700px){main{padding:14px}.shots{grid-template-columns:1fr}}</style></head><body><main><h1>Carrier — turrets mounted on the metal hull</h1><p>Both laser batteries sit farther left and right, on the solid metal wing panels beside the fan nacelles. Their targeting, muzzle flashes and beams follow those same mounts.</p><video id="v" controls loop playsinline preload="auto" poster="../../../FOLDER/fire.png" data-src="../../../FOLDER/carrier-wing-mounts.mp4"></video><div class="shots"><figure><img src="../../../FOLDER/tell.png" alt="Both turrets mounted on the metal wing panels, charging"><figcaption>Left and right metal panels — charging</figcaption></figure><figure><img src="../../../FOLDER/fire.png" alt="Red beams leaving the two mounted turrets"><figcaption>Both cannon mouths — red laser fire</figcaption></figure></div><p class="note">Focused native Furious checkpoint with an invulnerable observer. Two native laser launchers start once; other weapons and bay flight are held for clarity. This clip shows the mounting change.</p><p id="status" class="note">Loading replay…</p></main><script>let mediaURL;fetch(v.dataset.src).then(r=>{if(!r.ok)throw Error('Replay load failed');return r.blob()}).then(b=>{mediaURL=URL.createObjectURL(b);v.src=mediaURL;v.load();document.querySelector('#status').textContent='Replay ready — press Play.'}).catch(e=>document.querySelector('#status').textContent=e.message);addEventListener('beforeunload',()=>{if(mediaURL)URL.revokeObjectURL(mediaURL)});</script></body></html>'''.replace('FOLDER',src)
+P=R/'docs/previews/carrier_mounts_1028';P.mkdir(parents=True,exist_ok=True);(P/'index.html').write_text(page,encoding='utf8')
+qa=dict(request='Move both Carrier laser turrets onto the user-selected left/right metal wing panels.',mounts=[dict(id='laser0',source=[152,164],dx=-104,dy=20),dict(id='laser3',source=[360,164],dx=104,dy=20)],native=report,regression=reg,sourceSha256=hashlib.sha256((R/'assets/carrier_hull_1028.js').read_bytes()).hexdigest(),syntax='passed',fullSuite=dict(exit=1,reachedFinalSummary=False,reason='Existing missing UNUSED_ASSETS/retired_art_1022/manifest.json'))
+(R/'docs/qa/carrier_mounts_1028.json').write_text(json.dumps(qa,indent=2))
+fps=report['sound']['frames']/report['seconds']
+notes=f'''# Carrier outer wing turret mounts — October 28
+
+Mike requested the two laser turrets farther left and right on the metal hull, then supplied an exact panel crop. The crop matches the QA layout at277,306 and selects the lower wing panel near source152,164. `HC32_LASER_MOUNTS` in `assets/carrier_hull_1028.js` now owns source-space [152,164] / [360,164], relative to the unchanged [256,144] hull pivot: dx ±104, dy20. They move24 source pixels outward and4 upward from the prior wing-root mounts. Both full33×33 base regions are opaque in the actual open/closed hull art.
+
+The existing two part objects retain their IDs, HP, native directional/recoil art, damage/white flash, sounds and destruction. `roster17Mount` propagates their new positions to drawing, aimed muzzle, FOV, beam collision and Retina. The existing72px turret bank was already exported at display scale; the former nominal muzzle reach applied hull scale again and left a visible gap. `build_carrier_mounts_1028.py` measures all256 actual barrel mouths into `carrier_turret_sockets_1028.js`, and the native renderer, FOV and beam collision now use that same registered pose. No raster/atlas changes or new HP pools. Passive fans, full module/hull gate, red cookoff and original Nightwing handoff remain.
+
+{len(report['checks'])} focused source/native/movie checks and{len(reg['checks'])} existing hull regression checks pass. Actual native turret pixels, both warning/beam mouths, hit/old-location routing, real damaged white pixels/expiry and hull-motion/Retina attachment are verified in Chromium. Focused native movie: {report['seconds']:.2f}s, {fps:.2f}fps, decoded peak{report['decodedPeakDb']:.1f}dB, no game/browser/asset/audio errors. Movie setup is explicit in the report: two native launchers selected once, other weapons/flight held, invulnerable observer; no HP/phase/timer writes during the capture.
+
+Replay `docs/previews/carrier_mounts_1028/index.html`; film `{report['video']}`; evidence `docs/qa/carrier_mounts_1028.json`; portable verification `_BUILD_SOURCE/probe_carrier_mounts_1028.py`. The older GitHub film remains historical. Syntax passes. Required full suite exits1 before summary on the existing missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+'''
+(R/'docs/CARRIER_MOUNTS_1028.md').write_text(notes,encoding='utf8')
+h=R/'HANDOFF_CODEX.md';raw=h.read_bytes();title='## 2026-10-28 — Carrier turrets on outer metal wing panels'
+if title.encode()in raw:
+ start=raw.index(title.encode());end=raw.find(b'\n## ',start+1);raw=raw[:start]+(raw[end+1:]if end>=0 else b'')
+note=f'''{title}
+
+Mike selected the lower metal wing panel for both Carrier laser batteries. HC32_LASER_MOUNTS in assets/carrier_hull_1028.js owns source152,164 /360,164 (dx±104,dy20). All256 barrel mouths are measured from the unchanged native directional/recoil pixels by build_carrier_mounts_1028.py; FOV/beam collision uses those registered sockets. Native part/HP/Retina/hit/death owners retained. Actual33px-square metal footprints are opaque in open/closed art. No raster changes.
+
+{len(report['checks'])} focused native/source/movie checks +{len(reg['checks'])} hull regressions pass. Fresh{report['seconds']:.2f}s native mounting checkpoint at{fps:.2f}fps, audible unclipped audio and no errors. Replay docs/previews/carrier_mounts_1028/index.html; docs/CARRIER_MOUNTS_1028.md and docs/qa/carrier_mounts_1028.json. Full suite exits1 before summary on the existing missing retired-art manifest. No game.js/test_fl.js edits, commit or push.
+
+'''
+h.write_bytes(note.replace('\n','\r\n').encode()+raw)
+print(json.dumps(dict(video=report['video'],checks=len(report['checks']),regression=len(reg['checks']),fps=fps)))

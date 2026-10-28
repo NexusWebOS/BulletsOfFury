@@ -63,3 +63,42 @@ drawLevelMaster=function(dt){return RR33.base.bg.call(this,Math.max(0,dt||0)*rr3
 drawClouds=function(dt){return RR33.base.clouds.call(this,Math.max(0,dt||0)*rr33Scroll());};
 drawWorld=function(dt){const r=RR33.base.world.apply(this,arguments),S=boss?._rebels?.rough33;if(rr33Protected()&&S&&['settle','dialogue'].includes(S.phase)){ctx.save();worldXformEscape();rr33Text(RR33.name,VW/2,61,'chrome');ctx.restore();}return r;};
 globalThis.BOF_ROUGH_RIDERS_1028=RR33;
+
+// Combat airshow: separated curved fan-out, overhead loops, then a south-facing settle.
+function rr34Point(q,u){const left=camLeftX(),w=viewW(),home={x:left+(q.i+.5)*w/5,y:PLAY.y+100+(q.i%2)*60},side=q.i<2?-1:q.i>2?1:(q.i%2?1:-1);
+ const radius=38+q.i*5,angle=u*TAU,spread=Math.sin(Math.PI*u);
+ return{x:home.x+side*radius*spread+Math.sin(angle)*18,y:home.y-115*Math.sin(Math.PI*u)+Math.sin(angle)*22};}
+const rr34FleetBase=rd21Fleet;
+rd21Fleet=function(b,G,D,dt){const F=D.fleet;if(!F)return;const live=b._rebels.ships.filter(rd21Live);G.releaseAt=G.age+2;
+ F.t+=dt;
+ if(F.phase==='assemble'){
+  const u=clamp(F.t/1.8,0,1),v=u*u*(3-2*u);for(const q of live){const h=rr34Point(q,0);q.x=lerp(q._rd21From.x,h.x,v);q.y=lerp(q._rd21From.y,h.y,v);q.rfHeading=Math.PI/2;q.evadeT=0;}
+  if(u===1){F.phase='tell';F.t=0;const targets=ra4Targets();live.forEach((q,i)=>{const target=targets[i%targets.length]||{ref:player};q._rd21Volley={t:0,warm:2.1,locked:true,target,shot:0,_rr34:true,a:Math.PI/2};});Audio.SFX.retinaCharge?.();}
+ }else if(F.phase==='tell'||F.phase==='volley'){
+  for(const q of live){const A=q._rd21Volley;if(!A)continue;A.t=F.phase==='tell'?F.t:A.warm;A.a=Math.atan2(A.target.ref.y-q.y,A.target.ref.x-q.x);}
+  if(F.phase==='tell'&&F.t>=2.1){F.phase='volley';F.t=0;F.salvo=0;}
+  if(F.phase==='volley'&&F.t>=F.salvo*.24&&F.salvo<3){for(const q of live){const A=q._rd21Volley;if(!A)continue;ra4Rocket(q,G,A);A.shot++;}F.salvo++;}
+  if(F.phase==='volley'&&F.t>1){for(const q of live)q._rd21Volley=null;F.phase='stunt';F.t=0;}
+ }else{
+  const u=clamp(F.t/3.4,0,1);for(const q of live){const p=rr34Point(q,u),next=rr34Point(q,Math.min(1,u+.003)),a=u>.94?Math.PI/2:Math.atan2(next.y-p.y,next.x-p.x);q.x=p.x;q.y=p.y;q.rfHeading=a;q._rd21Scale=1;q.evadeT=0;
+   q._rr34Frame=u>.94?48+Math.floor(F.t*24)%8:Math.round((a+TAU)%TAU/TAU*32)%32;}
+  if(u===1){for(const q of live){delete q._rr34Frame;q.rfHeading=Math.PI/2;q.rg4.cd=Math.max(2,q.rg4.cd);}D.fleet=null;D.next=G.age+11;rr26Log('north-south-return');}
+ }
+};
+// Draw all five independently coloured locks at their actual victims, above combat art.
+const rr34World=drawWorld;
+drawWorld=function(dt){const r=rr34World.apply(this,arguments);if(state!==GS.PLAY||!boss?._rebels)return r;
+ ctx.save();const z=viewZoom();if(z!==1){ctx.scale(z,z);ctx.translate(0,VH*(1-z)/z);}if(worldWidth()>viewW())ctx.translate(-camX,0);
+ for(const q of boss._rebels.ships){const A=q._rd21Volley;if(rd21Live(q)&&A?._rr34)ra4LockWarning(A,q.key);}ctx.restore();return r;};
+const rr34Ship=fr27RebelDrawShip;
+fr27RebelDrawShip=function(q){if(q._rr34Frame==null||q.dead)return rr34Ship.apply(this,arguments);
+ const a=RR33_ART.banks[RR33_ART.models[q.key]?.bank];if(!a||!XART.rdy(a.key))return rr34Ship.apply(this,arguments);
+ const f=q._rr34Frame,im=q.flash>0?xartTint(a.key,'#ffffff',1):XART.get(a.key),mods=fr27RebelModules(q),w=SHIP_DRAW_H*1.5;
+ for(const [lo,hi,id] of [[-.5,-.17,'left'],[-.17,.17,null],[.17,.5,'right']]){if(id&&mods.find(m=>m.id===id)?.hp<=0)continue;ctx.save();ctx.beginPath();ctx.rect(q.x+(lo===-.5?-a.cw:lo*w),q.y-a.ch,lo===-.5?a.cw+hi*w:hi===.5?a.cw-lo*w:(hi-lo)*w,a.ch*2);ctx.clip();ctx.drawImage(im,f%a.cols*a.cw,Math.floor(f/a.cols)*a.ch,a.cw,a.ch,q.x-a.pivot[0],q.y-a.pivot[1],a.cw,a.ch);ctx.restore();}return true;
+};
+// Prioritise the physical missile locked onto each ally; ordinary bullets are excluded.
+const rr34Navigate=s6WingNavigate;
+s6WingNavigate=function(q,W,dt){const supply=rr34Navigate.apply(this,arguments);if(supply||q.hp<=0||q.phase!=='fight')return supply;
+ const m=eBullets.filter(m=>m._ra4Rocket&&!m.dead&&m.hp>0&&m.lock?.ref===q&&m.y<q.y-24).sort((a,b)=>Math.hypot(a.x-q.x,a.y-q.y)-Math.hypot(b.x-q.x,b.y-q.y))[0];
+ if(m){q.target=m;q._rd21Intercept=m;q.gx=clamp(m.x,camLeftX()+34,camRightX()-34);q.fireCd=Math.min(q.fireCd||0,.08);}return supply;
+};

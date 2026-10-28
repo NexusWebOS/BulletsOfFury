@@ -74,7 +74,11 @@ function nw30GustFrame(name,angle,t){const a=NW30_ART.banks[name],d=((Math.round
 WM26_REELS.nw30wind={key:NW30_ART.banks.wind_muzzle.key,n:NW30_ART.banks.wind_muzzle.phaseFrames,size:32,pivot:.5};
 const nw30WindMuzzleDraw=wm26Draw;
 wm26Draw=function(g,family,x,y,angle,progress){if(family!=='nw30wind')return nw30WindMuzzleDraw.apply(this,arguments);nw30Blit('wind_muzzle',nw30GustFrame('wind_muzzle',angle,clamp(progress,0,.999)),x,y,g);return true;};
-drawCombatFinalProjectile=function(q){if(!q?._nw30Wind)return NW30.base.projectile.apply(this,arguments);const angle=Math.atan2(q.vy,q.vx);nw30Blit('wind_bullet',nw30GustFrame('wind_bullet',angle,(q.t||0)*24/NW30_ART.banks.wind_bullet.phaseFrames),q.x,q.y);return true;};
+drawCombatFinalProjectile=function(q){if(!q?._nw30Owner)return NW30.base.projectile.apply(this,arguments);const angle=Math.atan2(q.vy,q.vx),a=NW30_ART.banks.wind_bullet,f=nw30GustFrame('wind_bullet',angle,(q.t||0)*24/a.phaseFrames);if(q._nw30Wind)nw30Blit('wind_bullet',f,q.x,q.y);else if(XART.rdy(a.key)){const d=32;ctx.drawImage(XART.get(a.key),f%a.cols*a.cw,Math.floor(f/a.cols)*a.ch,a.cw,a.ch,q.x-d/2,q.y-d/2,d,d);}return true;};
 enemyOrdnanceCanIntercept=function(q){return q?._nw30Owner?false:NW30.base.intercept.apply(this,arguments);};
-enemyOrdnanceElement=function(q){return q?._nw30Wind?'wind':NW30.base.element.apply(this,arguments);};
+enemyOrdnanceElement=function(q){return q?._nw30Owner?'wind':NW30.base.element.apply(this,arguments);};
 globalThis.BOF_NIGHTWING_WIND_1028=NW30;
+
+// Mike: Nightwing's visible wind rounds need no attached collision asterisks.
+const nw30ImpactBase=pw5Impact;
+pw5Impact=function(p){if(p?._nw30Owner)return null;return nw30ImpactBase.apply(this,arguments);};

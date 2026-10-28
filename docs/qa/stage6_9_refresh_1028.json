@@ -1,0 +1,621 @@
+{
+  "recorded": "2026-10-28",
+  "release": "bof-stage6-9-updated-2026-10-28",
+  "method": "Native encounter spawn; Furious, Cole level5 Laser/40 missiles, invulnerable input-only bot. No enemy health, phase or timer writes after spawn.",
+  "recordings": [
+    {
+      "id": "stage6-miniboss",
+      "nativeName": "WARHIVE SIEGE FORTRESS",
+      "seconds": 54.123,
+      "nativeFPS": 58.38552925743215,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -6.0,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true
+      },
+      "nativeDefeatSeconds": 48.024,
+      "expectedMediaCancellations": 3,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "78a25502781e3da8dff06bb2a12306ceafe2ef708e168d850dbc8ea83a33079b",
+      "bytes": 54949394
+    },
+    {
+      "id": "stage6-carrier-nightwing",
+      "nativeName": "WARHIVE HARRIER",
+      "seconds": 194.769,
+      "nativeFPS": 58.94161801929465,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -5.6,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true,
+        "carrierAndNightwingSeen": true
+      },
+      "nativeDefeatSeconds": 187.741,
+      "expectedMediaCancellations": 15,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "6eb05b2af4a6c2848d3ef7aae3e0db046b63403555379899b414ba44e03615b1",
+      "bytes": 241001559
+    },
+    {
+      "id": "stage6-rough-riders",
+      "nativeName": "THE ROUGH RIDERS",
+      "seconds": 295.825,
+      "nativeFPS": 59.66703287416547,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -4.0,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true,
+        "allFiveNativePilotsSeen": true,
+        "allFivePersonalBooksSeen": true,
+        "rookDashAndSpinSeen": true
+      },
+      "nativeDefeatSeconds": 288.788,
+      "expectedMediaCancellations": 14,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "603ef056c22afb3f2fd06bd57815f7c961208a58fda9b251200759e46b6fd83a",
+      "bytes": 369722289
+    },
+    {
+      "id": "stage7-miniboss",
+      "nativeName": "CAUSTIC SIEGE TANK",
+      "seconds": 86.983,
+      "nativeFPS": 58.90806249497028,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -7.2,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true
+      },
+      "nativeDefeatSeconds": 80.933,
+      "expectedMediaCancellations": 18,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "050d02c96220264faa96cda9bcd13355b4d517cdaed9c4d928107d73ef3122d9",
+      "bytes": 50468730
+    },
+    {
+      "id": "stage7-boss",
+      "nativeName": "TOXIC PORTAL WARDEN",
+      "seconds": 130.928,
+      "nativeFPS": 59.09354759868019,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -8.7,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true
+      },
+      "nativeDefeatSeconds": 123.851,
+      "expectedMediaCancellations": 15,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "75a7f5a84eab7baa26636f914306d516ad492ac6f3ea6bdcf6aedddb9be5c582",
+      "bytes": 116115662
+    },
+    {
+      "id": "stage8-miniboss",
+      "nativeName": "HERALD OF DEATH",
+      "seconds": 75.743,
+      "nativeFPS": 58.909734232866406,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -8.1,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true
+      },
+      "nativeDefeatSeconds": 69.537,
+      "expectedMediaCancellations": 17,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "57a99f1fa269f05e9130b278c66d5ea1d2ecad3bd0284fc183a6d38fa06e01bd",
+      "bytes": 84974050
+    },
+    {
+      "id": "stage8-final",
+      "nativeName": "THE INFUSED ORBITAL HOST",
+      "seconds": 685.91,
+      "nativeFPS": 59.61131926929189,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -4.6,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true,
+        "nativeFormLedgerSeen": true
+      },
+      "nativeDefeatSeconds": 685.91,
+      "expectedMediaCancellations": 31,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "26a75b9cd4a13f6ad184ab7912d828eec1d7ccbfde22c74d4fc13182a762c991",
+      "bytes": 651428898
+    },
+    {
+      "id": "stage9-miniboss",
+      "nativeName": "BLACK EVENT HORIZON",
+      "seconds": 91.918,
+      "nativeFPS": 59.20494353663047,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -7.9,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true
+      },
+      "nativeDefeatSeconds": 85.768,
+      "expectedMediaCancellations": 74,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "bdc4fc1019f8b605e7fd957e700cc4b9a3cf7f1331d6718ae3a3ccd99a0b7000",
+      "bytes": 66626535
+    },
+    {
+      "id": "stage9-boss",
+      "nativeName": "WARP SENTINELS",
+      "seconds": 190.542,
+      "nativeFPS": 59.50394138825036,
+      "encodedFPS": 30,
+      "width": 1280,
+      "height": 800,
+      "audioPeakDb": -7.3,
+      "checks": {
+        "nativeComplete": true,
+        "decoded": true,
+        "audibleUnclipped": true,
+        "realTime": true,
+        "sourceStable": true,
+        "noGameErrors": true
+      },
+      "nativeDefeatSeconds": 183.088,
+      "expectedMediaCancellations": 88,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "failedRequests": [],
+      "sha256": "f838c24fd0e6b45030e2a5c2ebf183bb3b085f669350de7e2abe35ee288ec589",
+      "bytes": 159565564
+    }
+  ],
+  "chapterCount": 24,
+  "posterSources": {
+    "stage6-miniboss": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-miniboss/frame-0008.png",
+      "seconds": 8.0
+    },
+    "stage6-carrier-nightwing": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/frame-0008.png",
+      "seconds": 8.0
+    },
+    "stage6-rough-riders": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0048.png",
+      "seconds": 48.0
+    },
+    "stage7-miniboss": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage7-miniboss/phase-00025.png",
+      "seconds": 12.087
+    },
+    "stage7-boss": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage7-boss/phase-00064.png",
+      "seconds": 30.603
+    },
+    "stage8-miniboss": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-miniboss/phase-00042.png",
+      "seconds": 20.043
+    },
+    "stage8-final": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/phase-00037.png",
+      "seconds": 17.423
+    },
+    "stage9-miniboss": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage9-miniboss/frame-0008.png",
+      "seconds": 8.0
+    },
+    "stage9-boss": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage9-boss/frame-0048.png",
+      "seconds": 48.0
+    },
+    "stage6-carrier": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/frame-0008.png",
+      "seconds": 8.0
+    },
+    "stage6-nightwing": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/frame-0088.png",
+      "seconds": 88.0
+    },
+    "stage6-nightwing-shadow-turn": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/frame-0088.png",
+      "seconds": 88.0
+    },
+    "stage6-nightwing-flight": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/frame-0088.png",
+      "seconds": 88.0
+    },
+    "stage6-nightwing-wind": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-carrier-nightwing/frame-0088.png",
+      "seconds": 88.0
+    },
+    "rough-riders-formations": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0008.png",
+      "seconds": 8.0
+    },
+    "rough-riders-team-locks": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0088.png",
+      "seconds": 88.0
+    },
+    "rough-riders-evasion": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0088.png",
+      "seconds": 88.0
+    },
+    "rough-riders-kaia": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0168.png",
+      "seconds": 168.0
+    },
+    "rough-riders-jace": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0088.png",
+      "seconds": 88.0
+    },
+    "rough-riders-nyx": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0088.png",
+      "seconds": 88.0
+    },
+    "rough-riders-rook": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0128.png",
+      "seconds": 128.0
+    },
+    "rough-riders-voss": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage6-164709/frame-0048.png",
+      "seconds": 48.0
+    },
+    "s8-phase1": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/frame-0008.png",
+      "seconds": 8.0
+    },
+    "s8-formation": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/phase-00216.png",
+      "seconds": 100.753
+    },
+    "s8-phase2": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/frame-0168.png",
+      "seconds": 168.0
+    },
+    "s8-dracodia": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/frame-0168.png",
+      "seconds": 168.0
+    },
+    "s8-code-hammer": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/phase-00467.png",
+      "seconds": 217.703
+    },
+    "s8-helicopter": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/frame-0288.png",
+      "seconds": 288.0
+    },
+    "s8-neural-archon": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/phase-00736.png",
+      "seconds": 343.5
+    },
+    "s8-phoenix-volcano": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/phase-00827.png",
+      "seconds": 386.068
+    },
+    "s8-final-life": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage8-final/phase-01336.png",
+      "seconds": 623.503
+    },
+    "stage9-sentinels": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage9-boss/frame-0008.png",
+      "seconds": 8.0
+    },
+    "stage9-tidal": {
+      "source": "_shots/stage6_9_refresh_1028/155531/stage9-boss/frame-0128.png",
+      "seconds": 128.0
+    }
+  },
+  "regressionSuite": "node _BUILD_SOURCE/test_fl.js exits 1 before assertions: missing ignored UNUSED_ASSETS/retired_art_1022/manifest.json. No harness bypass or fabricated archive.",
+  "gameJSChanged": false,
+  "testHarnessChanged": false,
+  "galleryPlayback": {
+    "checks": {
+      "allNativePostersDecode": true,
+      "allExpectedCards": true,
+      "nineFullRecordings": true,
+      "stage6-minibossDimensions": true,
+      "stage6-minibossDuration": true,
+      "stage6-minibossPlays": true,
+      "stage6-minibossSeeksToEnding": true,
+      "stage6-carrier-nightwingDimensions": true,
+      "stage6-carrier-nightwingDuration": true,
+      "stage6-carrier-nightwingPlays": true,
+      "stage6-carrier-nightwingSeeksToEnding": true,
+      "stage6-rough-ridersDimensions": true,
+      "stage6-rough-ridersDuration": true,
+      "stage6-rough-ridersPlays": true,
+      "stage6-rough-ridersSeeksToEnding": true,
+      "stage7-minibossDimensions": true,
+      "stage7-minibossDuration": true,
+      "stage7-minibossPlays": true,
+      "stage7-minibossSeeksToEnding": true,
+      "stage7-bossDimensions": true,
+      "stage7-bossDuration": true,
+      "stage7-bossPlays": true,
+      "stage7-bossSeeksToEnding": true,
+      "stage8-minibossDimensions": true,
+      "stage8-minibossDuration": true,
+      "stage8-minibossPlays": true,
+      "stage8-minibossSeeksToEnding": true,
+      "stage8-finalDimensions": true,
+      "stage8-finalDuration": true,
+      "stage8-finalPlays": true,
+      "stage8-finalSeeksToEnding": true,
+      "stage9-minibossDimensions": true,
+      "stage9-minibossDuration": true,
+      "stage9-minibossPlays": true,
+      "stage9-minibossSeeksToEnding": true,
+      "stage9-bossDimensions": true,
+      "stage9-bossDuration": true,
+      "stage9-bossPlays": true,
+      "stage9-bossSeeksToEnding": true,
+      "stage6-carrierChapterSeek": true,
+      "stage6-nightwingChapterSeek": true,
+      "stage6-nightwing-shadow-turnChapterSeek": true,
+      "stage6-nightwing-flightChapterSeek": true,
+      "stage6-nightwing-windChapterSeek": true,
+      "rough-riders-formationsChapterSeek": true,
+      "rough-riders-team-locksChapterSeek": true,
+      "rough-riders-evasionChapterSeek": true,
+      "rough-riders-kaiaChapterSeek": true,
+      "rough-riders-jaceChapterSeek": true,
+      "rough-riders-nyxChapterSeek": true,
+      "rough-riders-rookChapterSeek": true,
+      "rough-riders-vossChapterSeek": true,
+      "s8-phase1ChapterSeek": true,
+      "s8-formationChapterSeek": true,
+      "s8-phase2ChapterSeek": true,
+      "s8-dracodiaChapterSeek": true,
+      "s8-code-hammerChapterSeek": true,
+      "s8-helicopterChapterSeek": true,
+      "s8-neural-archonChapterSeek": true,
+      "s8-phoenix-volcanoChapterSeek": true,
+      "s8-final-lifeChapterSeek": true,
+      "stage9-sentinelsChapterSeek": true,
+      "stage9-tidalChapterSeek": true,
+      "fullFightReturn": true,
+      "latestSelectionWins": true,
+      "desktopFits": true,
+      "mobileFits": true,
+      "noBrowserErrors": true,
+      "allMoviesHaveDecodedPixels": true
+    },
+    "errors": [],
+    "decodedPixelSamples": [
+      {
+        "clip": "stage6-miniboss",
+        "lit": 24944,
+        "min": 0,
+        "max": 254.66666666666666
+      },
+      {
+        "clip": "stage6-carrier-nightwing",
+        "lit": 45122,
+        "min": 0,
+        "max": 254
+      },
+      {
+        "clip": "stage6-rough-riders",
+        "lit": 45396,
+        "min": 0,
+        "max": 254
+      },
+      {
+        "clip": "stage7-miniboss",
+        "lit": 43778,
+        "min": 0,
+        "max": 255
+      },
+      {
+        "clip": "stage7-boss",
+        "lit": 42680,
+        "min": 0,
+        "max": 253.33333333333334
+      },
+      {
+        "clip": "stage8-miniboss",
+        "lit": 26415,
+        "min": 0,
+        "max": 252.66666666666666
+      },
+      {
+        "clip": "stage8-final",
+        "lit": 29413,
+        "min": 0,
+        "max": 251.66666666666666
+      },
+      {
+        "clip": "stage9-miniboss",
+        "lit": 15419,
+        "min": 0,
+        "max": 253.66666666666666
+      },
+      {
+        "clip": "stage9-boss",
+        "lit": 17430,
+        "min": 0,
+        "max": 254
+      }
+    ],
+    "url": "http://127.0.0.1:55647/docs/previews/stage6_9_github_1028/index.html"
+  },
+  "squadChecks": {
+    "checks": {
+      "allFiveEntryRenderersBeforeAttackState": true,
+      "allFiveNativeBooksStart": true,
+      "rookDashAndSpinReachNativeSchedule": true,
+      "noOverlappingHeavySpecials": true,
+      "allPilotsRemainNativeLive": true,
+      "noRendererOrBrowserErrors": true
+    },
+    "sharedSquadRegression": {
+      "box_no_scene": true,
+      "decker_shoots_box": true,
+      "wall_cast_duration": true,
+      "centered": true,
+      "reflect_multi": true,
+      "ship_block": true,
+      "friendly_reflection": true,
+      "beam_stopped": true,
+      "pixel_glow": true,
+      "return_damage": true,
+      "helix_counter": true,
+      "energy_instead_of_bullet": true,
+      "heading_frames": true,
+      "distributed_retinas": true,
+      "missile_volley": true,
+      "missile_retina_no_fov": true,
+      "lock_beep": true,
+      "north_south": true,
+      "visible_hit_and_expiry": true,
+      "kaia_burst": true,
+      "kaia_animated_glow_pixels": true,
+      "kaia_straight": true,
+      "kaia_shootable": true,
+      "rook_chain": true,
+      "voss_turbo_return": true,
+      "voss_cruise": true,
+      "jace_bullets_dodge_only": true,
+      "jace_no_dash": true,
+      "jace_hull_glow": true,
+      "jace_ranged_release": true,
+      "jace_spin_pixels": true,
+      "jace_player_intercepts_counterblast": true,
+      "jace_native_hit_flash_expiry": true,
+      "nyx_close_reveal_mine": true,
+      "nyx_two_turret_warnings": true,
+      "nyx_twin_lasers": true,
+      "nyx_exit_return_cloak": true,
+      "nyx_mine_proximity": true,
+      "nyx_wave_dodge_and_finite_reach": true,
+      "nyx_native_hit_flash_expiry": true,
+      "returned_shot_hurts_player": true,
+      "no_errors": true
+    },
+    "rookRegression": {
+      "box_no_scene": true,
+      "decker_shoots_box": true,
+      "wall_cast_duration": true,
+      "centered": true,
+      "reflect_multi": true,
+      "ship_block": true,
+      "friendly_reflection": true,
+      "beam_stopped": true,
+      "pixel_glow": true,
+      "return_damage": true,
+      "helix_counter": true,
+      "energy_instead_of_bullet": true,
+      "heading_frames": true,
+      "distributed_retinas": true,
+      "missile_volley": true,
+      "missile_retina_no_fov": true,
+      "lock_beep": true,
+      "north_south": true,
+      "visible_hit_and_expiry": true,
+      "kaia_burst": true,
+      "kaia_animated_glow_pixels": true,
+      "kaia_straight": true,
+      "kaia_shootable": true,
+      "rook_chain": true,
+      "voss_turbo_return": true,
+      "voss_cruise": true,
+      "jace_bullets_dodge_only": true,
+      "jace_no_dash": true,
+      "jace_hull_glow": true,
+      "jace_ranged_release": true,
+      "jace_spin_pixels": true,
+      "jace_player_intercepts_counterblast": true,
+      "jace_native_hit_flash_expiry": true,
+      "nyx_close_reveal_mine": true,
+      "nyx_two_turret_warnings": true,
+      "nyx_twin_lasers": true,
+      "nyx_exit_return_cloak": true,
+      "nyx_mine_proximity": true,
+      "nyx_wave_dodge_and_finite_reach": true,
+      "nyx_native_hit_flash_expiry": true,
+      "rook_dual_turret_fov": true,
+      "rook_dash_somersault_home": true,
+      "rook_900_degree_barrage": true,
+      "rook_1080_hard_barrage": true,
+      "rook_cinematic_orange_pixels": true,
+      "rook_missile_window_and_unique_hits": true,
+      "rook_stun_recovery": true,
+      "rook_native_hit_flash_expiry": true,
+      "returned_shot_hurts_player": true,
+      "no_errors": true
+    }
+  }
+}

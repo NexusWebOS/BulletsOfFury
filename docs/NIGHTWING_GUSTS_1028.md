@@ -23,3 +23,7 @@ PixelLab keyframe job `b5986218-1399-4445-be0c-cf08ba36f449`, candidate 4. Anima
 - All 32 PNG banks / 3144 cells plus registry rebuild byte-identically. Syntax passes. Full suite finishes with the same five baseline failures, exit1: single-hit flash duration; opening-jump dialogue warning; jump return before Chromium; opposite StageX route persistence; StageX right full encounter.
 
 Review: http://127.0.0.1:64935/. Local evidence: `C:/Users/Mike/Documents/New project/BOF-Nightwing-Gusts-1028/`. Portable native probe: `_BUILD_SOURCE/probe_nightwing_gusts_1028.py`; recording helper: `_BUILD_SOURCE/record_nightwing_gusts_1028.py`. Aggregate checks: `docs/qa/nightwing_gusts_1028.json`.
+
+
+## October28 — Remove bullet markers / teal Wind gunfire
+Mike removed Nightwing projectile collision asterisks. pw5Impact now excludes only NW30-owned rounds. Normal turret bullets use the existing authored directional teal Wind-gust animation at32px; heavy gusts retain64px rendering. All NW30 rounds classify as Wind and remain unshootable. Prelaunch tells and unrelated projectile alerts remain with their original owners.18 native checks pass; actual marker-free teal bullet pixels inspected. Syntax passes; full suite exits1 before summary because UNUSED_ASSETS/retired_art_1022/manifest.json is missing locally. Previously downloaded review movies are historical and unchanged.

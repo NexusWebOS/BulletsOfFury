@@ -1,0 +1,298 @@
+{
+  "probe": {
+    "checks": [
+      {
+        "name": "Actual native dark shadow pixels render beneath the airborne body",
+        "passed": true,
+        "data": {
+          "added": 11954,
+          "changedBody": 0,
+          "pose": {
+            "x": 340,
+            "y": 322,
+            "scale": 0.74,
+            "alpha": 0.30000000000000004,
+            "frame": 0
+          }
+        }
+      },
+      {
+        "name": "Shadow stays behind the authored opaque body pixels",
+        "passed": true,
+        "data": 0
+      },
+      {
+        "name": "Altitude changes size and opacity while the shadow stays on the ground",
+        "passed": true,
+        "data": [
+          {
+            "height": 5,
+            "x": 340,
+            "y": 322,
+            "scale": 0.9526666666666667,
+            "alpha": 0.5126666666666667,
+            "frame": 0
+          },
+          {
+            "height": 50,
+            "x": 340,
+            "y": 322,
+            "scale": 0.8866666666666666,
+            "alpha": 0.44666666666666666,
+            "frame": 0
+          },
+          {
+            "height": 100,
+            "x": 340,
+            "y": 322,
+            "scale": 0.8133333333333332,
+            "alpha": 0.37333333333333335,
+            "frame": 0
+          },
+          {
+            "height": 150,
+            "x": 340,
+            "y": 322,
+            "scale": 0.74,
+            "alpha": 0.30000000000000004,
+            "frame": 0
+          }
+        ]
+      },
+      {
+        "name": "All16 even shadow cells preserve actual body alpha",
+        "passed": true,
+        "data": {
+          "mismatch": 0,
+          "rgb": 0,
+          "even": true,
+          "frames": 16
+        }
+      },
+      {
+        "name": "High jumps have one authored shadow rather than an additional ellipse",
+        "passed": true,
+        "data": 0
+      },
+      {
+        "name": "Landing, hidden states and the portal escape leave no floating shadow",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native jump animation carries the shadow on its moving ground position",
+        "passed": true,
+        "data": [
+          {
+            "mode": "er28-bounce",
+            "height": 0,
+            "ground": 322,
+            "shadow": null
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 0,
+            "ground": 322,
+            "shadow": null
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 0,
+            "ground": 322,
+            "shadow": null
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 0,
+            "ground": 322,
+            "shadow": null
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 0,
+            "ground": 322,
+            "shadow": null
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 5.742222527209333e-13,
+            "ground": 321.99999999999994,
+            "shadow": {
+              "x": 340.00000000000074,
+              "y": 321.99999999999994,
+              "scale": 0.9599999999999991,
+              "alpha": 0.5199999999999991,
+              "frame": 1
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 89.40297070018107,
+            "ground": 313.86991869918694,
+            "shadow": {
+              "x": 431.88848579952503,
+              "y": 313.86991869918694,
+              "scale": 0.8288756429730677,
+              "alpha": 0.38887564297306776,
+              "frame": 4
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 143.57575906175748,
+            "ground": 305.73983739837394,
+            "shadow": {
+              "x": 393.20725306157635,
+              "y": 305.73983739837394,
+              "scale": 0.7494222200427556,
+              "alpha": 0.3094222200427557,
+              "frame": 8
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 141.1710071969342,
+            "ground": 297.609756097561,
+            "shadow": {
+              "x": 278.9207255366502,
+              "y": 297.609756097561,
+              "scale": 0.7529491894444965,
+              "alpha": 0.31294918944449657,
+              "frame": 11
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 83.13633290871394,
+            "ground": 289.479674796748,
+            "shadow": {
+              "x": 251.42530797246548,
+              "y": 289.479674796748,
+              "scale": 0.8380667117338861,
+              "alpha": 0.39806671173388625,
+              "frame": 14
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 7.6590890861920045,
+            "ground": 282.35527972523215,
+            "shadow": {
+              "x": 349.7908457494151,
+              "y": 282.35527972523215,
+              "scale": 0.9487666693402517,
+              "alpha": 0.5087666693402517,
+              "frame": 1
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 95.43636634898326,
+            "ground": 286.7962762906347,
+            "shadow": {
+              "x": 434.24399871969786,
+              "y": 286.7962762906347,
+              "scale": 0.8200266626881578,
+              "alpha": 0.3800266626881579,
+              "frame": 5
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 145.60593816444714,
+            "ground": 291.2372728560372,
+            "shadow": {
+              "x": 384.7803472110842,
+              "y": 291.2372728560372,
+              "scale": 0.7464446240254775,
+              "alpha": 0.30644462402547756,
+              "frame": 8
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 138.3979562930231,
+            "ground": 295.6782694214397,
+            "shadow": {
+              "x": 271.6856838244647,
+              "y": 295.6782694214397,
+              "scale": 0.7570163307702328,
+              "alpha": 0.31701633077023283,
+              "frame": 11
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 76.65280191706826,
+            "ground": 300.1192659868422,
+            "shadow": {
+              "x": 255.6628239125483,
+              "y": 300.1192659868422,
+              "scale": 0.8475758905216332,
+              "alpha": 0.40757589052163323,
+              "frame": 15
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 15.298196483459988,
+            "ground": 302.32613552123496,
+            "shadow": {
+              "x": 359.4795853434915,
+              "y": 302.32613552123496,
+              "scale": 0.937562645157592,
+              "alpha": 0.497562645157592,
+              "frame": 2
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 101.22077941475834,
+            "ground": 292.80383814282436,
+            "shadow": {
+              "x": 435.61666576330737,
+              "y": 292.80383814282436,
+              "scale": 0.8115428568583544,
+              "alpha": 0.3715428568583544,
+              "frame": 5
+            }
+          },
+          {
+            "mode": "er28-bounce",
+            "height": 147.25624799952766,
+            "ground": 283.2815407644137,
+            "shadow": {
+              "x": 375.8864388967174,
+              "y": 283.2815407644137,
+              "scale": 0.7440241696006927,
+              "alpha": 0.3040241696006928,
+              "frame": 9
+            }
+          }
+        ]
+      },
+      {
+        "name": "No browser or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "film": {
+    "video": "_shots/warden_shadow_1028/video/114037/warden-shadow.mp4",
+    "checks": {
+      "noErrors": true,
+      "audible": true,
+      "fullDecode": true,
+      "realTime": true,
+      "nativeHop": true
+    },
+    "peakDb": -10.2,
+    "fps": 59.82821924993626
+  },
+  "suite": {
+    "exitCode": 1,
+    "blocker": "UNUSED_ASSETS/retired_art_1022/manifest.json missing before summary"
+  }
+}

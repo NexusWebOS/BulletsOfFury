@@ -67,7 +67,7 @@ function rs1004DemoDraw(R){const S=R.h3Intro?.showcase;if(!S)return;const D=S.cu
  if(q&&D.kind==='turbo'&&!D.released){ra4Reel('dash',Math.floor(D.t*16)%6,q.x,q.y+25,110,38,-Math.PI/2);cf1004Cell('muzzle',D.t,q.x,q.y-12,34,55);}
  for(const f of S.fx){if(f.kind==='ball')rs1004Ball(f.x,f.y,f.w,f.t);
   else if(f.kind==='dash')ra4Reel('dash',Math.floor(f.t*30)%6,f.x,f.y,f.w,f.h,f.a);
-  else if(f.kind==='slug')chaingunRoundDraw({x:f.x,y:f.y,vx:f.vx,vy:f.vy,t:f.t,lv:5});
+  else if(f.kind==='slug')drawCombatFinalProjectile({_rr26Rook:true,x:f.x,y:f.y,vx:f.vx,vy:f.vy,t:f.t,lv:5});
  }
  RS1004.draws.demo=(RS1004.draws.demo||0)+1;
 }

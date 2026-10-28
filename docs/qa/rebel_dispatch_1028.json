@@ -1,0 +1,525 @@
+{
+  "checks": {
+    "allFiveEntryRenderersBeforeAttackState": true,
+    "allFiveNativeBooksStart": true,
+    "rookDashAndSpinReachNativeSchedule": true,
+    "noOverlappingHeavySpecials": true,
+    "allPilotsRemainNativeLive": true,
+    "noRendererOrBrowserErrors": true
+  },
+  "errors": [],
+  "final": {
+    "probe": {
+      "ticks": 18000,
+      "seen": {
+        "voss:turbo": 1.4,
+        "nyx:nx37ambush": 25.033333333333335,
+        "rook:rr26chain": 61.85,
+        "jace:jr36helix": 89.71666666666667,
+        "rook:rk38dash": 93.03333333333333,
+        "kaia:rr26roller": 96.88333333333334,
+        "rook:rk38spin": 150.28333333333333
+      },
+      "overlaps": 0
+    },
+    "events": [
+      {
+        "pilot": "voss",
+        "kind": "turbo",
+        "time": 1.4,
+        "turn": 1
+      },
+      {
+        "pilot": "nyx",
+        "kind": "nx37ambush",
+        "time": 25.033333333333193,
+        "turn": 2
+      },
+      {
+        "pilot": "voss",
+        "kind": "turbo",
+        "time": 38.21666666666578,
+        "turn": 3
+      },
+      {
+        "pilot": "rook",
+        "kind": "rr26chain",
+        "time": 61.84999999999777,
+        "turn": 4
+      },
+      {
+        "pilot": "nyx",
+        "kind": "nx37ambush",
+        "time": 66.18333333333086,
+        "turn": 5
+      },
+      {
+        "pilot": "jace",
+        "kind": "jr36helix",
+        "time": 89.71666666666286,
+        "turn": 6
+      },
+      {
+        "pilot": "rook",
+        "kind": "rk38dash",
+        "time": 93.03333333332934,
+        "turn": 7
+      },
+      {
+        "pilot": "kaia",
+        "kind": "rr26roller",
+        "time": 96.88333333332912,
+        "turn": 8
+      },
+      {
+        "pilot": "voss",
+        "kind": "turbo",
+        "time": 100.18333333332893,
+        "turn": 9
+      },
+      {
+        "pilot": "nyx",
+        "kind": "nx37ambush",
+        "time": 123.81666666666092,
+        "turn": 10
+      },
+      {
+        "pilot": "voss",
+        "kind": "turbo",
+        "time": 137.00000000000117,
+        "turn": 11
+      },
+      {
+        "pilot": "rook",
+        "kind": "rk38spin",
+        "time": 150.28333333334507,
+        "turn": 12
+      },
+      {
+        "pilot": "nyx",
+        "kind": "nx37ambush",
+        "time": 157.51666666668416,
+        "turn": 13
+      },
+      {
+        "pilot": "rook",
+        "kind": "rr26chain",
+        "time": 170.70000000002798,
+        "turn": 14
+      },
+      {
+        "pilot": "jace",
+        "kind": "jr36helix",
+        "time": 185.31666666670628,
+        "turn": 15
+      },
+      {
+        "pilot": "nyx",
+        "kind": "nx37ambush",
+        "time": 188.65000000004227,
+        "turn": 16
+      },
+      {
+        "pilot": "rook",
+        "kind": "rk38dash",
+        "time": 201.8333333333861,
+        "turn": 17
+      },
+      {
+        "pilot": "jace",
+        "kind": "jr36helix",
+        "time": 205.61666666672244,
+        "turn": 18
+      },
+      {
+        "pilot": "kaia",
+        "kind": "rr26roller",
+        "time": 219.28333333339998,
+        "turn": 19
+      },
+      {
+        "pilot": "rook",
+        "kind": "rk38spin",
+        "time": 222.5833333334026,
+        "turn": 20
+      },
+      {
+        "pilot": "voss",
+        "kind": "turbo",
+        "time": 240.16666666674993,
+        "turn": 21
+      },
+      {
+        "pilot": "rook",
+        "kind": "rr26chain",
+        "time": 253.45000000009384,
+        "turn": 22
+      },
+      {
+        "pilot": "nyx",
+        "kind": "nx37ambush",
+        "time": 268.06666666675153,
+        "turn": 23
+      },
+      {
+        "pilot": "voss",
+        "kind": "turbo",
+        "time": 281.2500000000729,
+        "turn": 24
+      }
+    ],
+    "hp": [
+      {
+        "key": "voss",
+        "hp": 1431,
+        "cd": -18.766666666666882,
+        "armed": null
+      },
+      {
+        "key": "nyx",
+        "hp": 1431,
+        "cd": -5.416666666666653,
+        "armed": null
+      },
+      {
+        "key": "rook",
+        "hp": 1431,
+        "cd": -5.466666666666653,
+        "armed": null
+      },
+      {
+        "key": "kaia",
+        "hp": 1431,
+        "cd": -5.449999999999986,
+        "armed": null
+      },
+      {
+        "key": "jace",
+        "hp": 1431,
+        "cd": -5.433333333333319,
+        "armed": null
+      }
+    ]
+  },
+  "samples": [
+    {
+      "ticks": 900,
+      "seen": {
+        "voss:turbo": 1.4
+      },
+      "overlaps": 0,
+      "events": [
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 1.4,
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "ticks": 2700,
+      "seen": {
+        "voss:turbo": 1.4,
+        "nyx:nx37ambush": 25.033333333333335
+      },
+      "overlaps": 0,
+      "events": [
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 1.4,
+          "turn": 1
+        },
+        {
+          "pilot": "nyx",
+          "kind": "nx37ambush",
+          "time": 25.033333333333193,
+          "turn": 2
+        },
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 38.21666666666578,
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "ticks": 5400,
+      "seen": {
+        "voss:turbo": 1.4,
+        "nyx:nx37ambush": 25.033333333333335,
+        "rook:rr26chain": 61.85,
+        "jace:jr36helix": 89.71666666666667
+      },
+      "overlaps": 0,
+      "events": [
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 1.4,
+          "turn": 1
+        },
+        {
+          "pilot": "nyx",
+          "kind": "nx37ambush",
+          "time": 25.033333333333193,
+          "turn": 2
+        },
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 38.21666666666578,
+          "turn": 3
+        },
+        {
+          "pilot": "rook",
+          "kind": "rr26chain",
+          "time": 61.84999999999777,
+          "turn": 4
+        },
+        {
+          "pilot": "nyx",
+          "kind": "nx37ambush",
+          "time": 66.18333333333086,
+          "turn": 5
+        },
+        {
+          "pilot": "jace",
+          "kind": "jr36helix",
+          "time": 89.71666666666286,
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "ticks": 10800,
+      "seen": {
+        "voss:turbo": 1.4,
+        "nyx:nx37ambush": 25.033333333333335,
+        "rook:rr26chain": 61.85,
+        "jace:jr36helix": 89.71666666666667,
+        "rook:rk38dash": 93.03333333333333,
+        "kaia:rr26roller": 96.88333333333334,
+        "rook:rk38spin": 150.28333333333333
+      },
+      "overlaps": 0,
+      "events": [
+        {
+          "pilot": "rook",
+          "kind": "rk38dash",
+          "time": 93.03333333332934,
+          "turn": 7
+        },
+        {
+          "pilot": "kaia",
+          "kind": "rr26roller",
+          "time": 96.88333333332912,
+          "turn": 8
+        },
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 100.18333333332893,
+          "turn": 9
+        },
+        {
+          "pilot": "nyx",
+          "kind": "nx37ambush",
+          "time": 123.81666666666092,
+          "turn": 10
+        },
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 137.00000000000117,
+          "turn": 11
+        },
+        {
+          "pilot": "rook",
+          "kind": "rk38spin",
+          "time": 150.28333333334507,
+          "turn": 12
+        },
+        {
+          "pilot": "nyx",
+          "kind": "nx37ambush",
+          "time": 157.51666666668416,
+          "turn": 13
+        },
+        {
+          "pilot": "rook",
+          "kind": "rr26chain",
+          "time": 170.70000000002798,
+          "turn": 14
+        }
+      ]
+    },
+    {
+      "ticks": 18000,
+      "seen": {
+        "voss:turbo": 1.4,
+        "nyx:nx37ambush": 25.033333333333335,
+        "rook:rr26chain": 61.85,
+        "jace:jr36helix": 89.71666666666667,
+        "rook:rk38dash": 93.03333333333333,
+        "kaia:rr26roller": 96.88333333333334,
+        "rook:rk38spin": 150.28333333333333
+      },
+      "overlaps": 0,
+      "events": [
+        {
+          "pilot": "rook",
+          "kind": "rk38dash",
+          "time": 201.8333333333861,
+          "turn": 17
+        },
+        {
+          "pilot": "jace",
+          "kind": "jr36helix",
+          "time": 205.61666666672244,
+          "turn": 18
+        },
+        {
+          "pilot": "kaia",
+          "kind": "rr26roller",
+          "time": 219.28333333339998,
+          "turn": 19
+        },
+        {
+          "pilot": "rook",
+          "kind": "rk38spin",
+          "time": 222.5833333334026,
+          "turn": 20
+        },
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 240.16666666674993,
+          "turn": 21
+        },
+        {
+          "pilot": "rook",
+          "kind": "rr26chain",
+          "time": 253.45000000009384,
+          "turn": 22
+        },
+        {
+          "pilot": "nyx",
+          "kind": "nx37ambush",
+          "time": 268.06666666675153,
+          "turn": 23
+        },
+        {
+          "pilot": "voss",
+          "kind": "turbo",
+          "time": 281.2500000000729,
+          "turn": 24
+        }
+      ]
+    }
+  ],
+  "sharedSquadRegression": {
+    "checks": {
+      "box_no_scene": true,
+      "decker_shoots_box": true,
+      "wall_cast_duration": true,
+      "centered": true,
+      "reflect_multi": true,
+      "ship_block": true,
+      "friendly_reflection": true,
+      "beam_stopped": true,
+      "pixel_glow": true,
+      "return_damage": true,
+      "helix_counter": true,
+      "energy_instead_of_bullet": true,
+      "heading_frames": true,
+      "distributed_retinas": true,
+      "missile_volley": true,
+      "missile_retina_no_fov": true,
+      "lock_beep": true,
+      "north_south": true,
+      "visible_hit_and_expiry": true,
+      "kaia_burst": true,
+      "kaia_animated_glow_pixels": true,
+      "kaia_straight": true,
+      "kaia_shootable": true,
+      "rook_chain": true,
+      "voss_turbo_return": true,
+      "voss_cruise": true,
+      "jace_bullets_dodge_only": true,
+      "jace_no_dash": true,
+      "jace_hull_glow": true,
+      "jace_ranged_release": true,
+      "jace_spin_pixels": true,
+      "jace_player_intercepts_counterblast": true,
+      "jace_native_hit_flash_expiry": true,
+      "nyx_close_reveal_mine": true,
+      "nyx_two_turret_warnings": true,
+      "nyx_twin_lasers": true,
+      "nyx_exit_return_cloak": true,
+      "nyx_mine_proximity": true,
+      "nyx_wave_dodge_and_finite_reach": true,
+      "nyx_native_hit_flash_expiry": true,
+      "returned_shot_hurts_player": true,
+      "no_errors": true
+    },
+    "errors": []
+  },
+  "rookRegression": {
+    "checks": {
+      "box_no_scene": true,
+      "decker_shoots_box": true,
+      "wall_cast_duration": true,
+      "centered": true,
+      "reflect_multi": true,
+      "ship_block": true,
+      "friendly_reflection": true,
+      "beam_stopped": true,
+      "pixel_glow": true,
+      "return_damage": true,
+      "helix_counter": true,
+      "energy_instead_of_bullet": true,
+      "heading_frames": true,
+      "distributed_retinas": true,
+      "missile_volley": true,
+      "missile_retina_no_fov": true,
+      "lock_beep": true,
+      "north_south": true,
+      "visible_hit_and_expiry": true,
+      "kaia_burst": true,
+      "kaia_animated_glow_pixels": true,
+      "kaia_straight": true,
+      "kaia_shootable": true,
+      "rook_chain": true,
+      "voss_turbo_return": true,
+      "voss_cruise": true,
+      "jace_bullets_dodge_only": true,
+      "jace_no_dash": true,
+      "jace_hull_glow": true,
+      "jace_ranged_release": true,
+      "jace_spin_pixels": true,
+      "jace_player_intercepts_counterblast": true,
+      "jace_native_hit_flash_expiry": true,
+      "nyx_close_reveal_mine": true,
+      "nyx_two_turret_warnings": true,
+      "nyx_twin_lasers": true,
+      "nyx_exit_return_cloak": true,
+      "nyx_mine_proximity": true,
+      "nyx_wave_dodge_and_finite_reach": true,
+      "nyx_native_hit_flash_expiry": true,
+      "rook_dual_turret_fov": true,
+      "rook_dash_somersault_home": true,
+      "rook_900_degree_barrage": true,
+      "rook_1080_hard_barrage": true,
+      "rook_cinematic_orange_pixels": true,
+      "rook_missile_window_and_unique_hits": true,
+      "rook_stun_recovery": true,
+      "rook_native_hit_flash_expiry": true,
+      "returned_shot_hurts_player": true,
+      "no_errors": true
+    },
+    "errors": []
+  }
+}

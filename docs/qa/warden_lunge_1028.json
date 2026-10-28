@@ -1,0 +1,152 @@
+{
+  "owner": "assets/warden_lunge_1028.js",
+  "artOwner": "_BUILD_SOURCE/build_warden_lunge_1028.py",
+  "checks": [
+    {
+      "name": "Native body and health budget retained",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rear drive moves the chassis into real melee range",
+      "passed": true,
+      "data": 125
+    },
+    {
+      "name": "Native swept claw contact actually reaches the stationary player",
+      "passed": true,
+      "data": 12
+    },
+    {
+      "name": "Rear source frames visibly brace and extend",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rear feet plant through the main push",
+      "passed": true,
+      "data": {
+        "samples": 26,
+        "max": 2.872894753318292
+      }
+    },
+    {
+      "name": "Swat emits no bullets and does not scroll the floor",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Strike has finite recovery to the original ground position",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Escaping after commitment avoids the real claw path",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rear Retina target overlaps the rendered alpha in the push pose",
+      "passed": true,
+      "data": [
+        {
+          "id": "rearL",
+          "at": "rearL"
+        },
+        {
+          "id": "rearR",
+          "at": "rearR"
+        }
+      ]
+    },
+    {
+      "name": "Actual claw damage flashes native white pixels then expires",
+      "passed": true,
+      "data": {
+        "base": 70,
+        "hit": 1829,
+        "end": 80,
+        "hp": 786,
+        "before": 787,
+        "flash": 0
+      }
+    },
+    {
+      "name": "Face volleys, acid rounds and face bullet hell are retired",
+      "passed": true,
+      "data": {
+        "suppressed": true,
+        "mapped": "er28-mortar",
+        "guns": 2,
+        "mortars": 5,
+        "barrage": false
+      }
+    },
+    {
+      "name": "Both native turrets and dorsal mortars still launch",
+      "passed": true,
+      "data": {
+        "suppressed": true,
+        "mapped": "er28-mortar",
+        "guns": 2,
+        "mortars": 5,
+        "barrage": false
+      }
+    },
+    {
+      "name": "Toxic explosion frames play faster",
+      "passed": true,
+      "data": {
+        "original": 0.8,
+        "now": 0.496
+      }
+    },
+    {
+      "name": "Portal approach has a rapid dense explosion cadence",
+      "passed": true,
+      "data": {
+        "serial": 26,
+        "live": 26,
+        "t": 3.4166666666666594,
+        "finite": true
+      }
+    },
+    {
+      "name": "Native portal and finale clocks remain unchanged",
+      "passed": true,
+      "data": {
+        "t": 12.133333333333516,
+        "end": 12.133333333333322,
+        "finished": true,
+        "dead": true
+      }
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "film": {
+    "fullDecode": true,
+    "peakDb": -2.1,
+    "nativeFramesPerSec": 58.84526331346372,
+    "completed": true,
+    "errors": []
+  },
+  "recordingMethod": "Native boss-mode entry, real RAF, input-only aiming; no enemy HP/phase writes.",
+  "video": "_shots/warden_lunge_1028/fight/stage7/stage7-furious.mp4",
+  "suite": {
+    "exitCode": 1,
+    "blocker": "UNUSED_ASSETS/retired_art_1022/manifest.json missing before assertion summary"
+  },
+  "playback": {
+    "duration": 162.417,
+    "time": 153.981982,
+    "ready": 4,
+    "error": null,
+    "advanced": true,
+    "errors": []
+  }
+}

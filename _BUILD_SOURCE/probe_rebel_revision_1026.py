@@ -39,9 +39,13 @@ try:
   p.evaluate("()=>{for(const q of R.ships)q.flash=0;const q=R.ships.find(q=>q.key==='nyx');q._rr26Fade=1;q._rd21Cloak=true;}");snap('cloak')
   checks['heading_frames']=p.evaluate("()=>{const q=R.ships[0],frames=new Set();for(let i=0;i<8;i++){q.rfHeading=Math.PI/2+i*TAU/8;air13DrawRebel(q);frames.add(q._air13Frame);}return frames.size===8;}")
   p.evaluate("()=>{G.rr26.wall=null;G.rr26.returns=[];rd21FleetStart(B,G,G.rd21);}")
-  for i in range(420):
+  for i in range(600):
    p.evaluate('()=>{rebelSquadTick(B,1/60);}')
    if i in [150,300,390]:snap('flight-'+str(i))
+   if i==150:
+    checks['distributed_retinas']=p.evaluate("()=>{const L=R.ships.filter(q=>q._rd21Volley);return L.length===5&&new Set(L.map(q=>q._rd21Volley.target.ref)).size===5;}")
+   if i==285:
+    checks['missile_volley']=p.evaluate("()=>eBullets.filter(q=>q._ra4Rocket).length>=15")
   checks['missile_retina_no_fov']=p.evaluate("""()=>{const q=R.ships[0],A={t:.6,warm:1.35,locked:true,target:{ref:player},a:Math.PI/2,shot:0};q._rd21Volley=A;let lanes=0,retinas=0;const f=combatWarningDraw,l=ra4LockWarning;combatWarningDraw=function(){lanes++;};ra4LockWarning=function(){retinas++;return l.apply(this,arguments);};try{q.rg4.act=null;q.rg4._rbal19Gun=null;fr27RebelDrawShip(q);return lanes===0&&retinas>0;}finally{combatWarningDraw=f;ra4LockWarning=l;q._rd21Volley=null;}}""")
   p.evaluate("()=>{const q=R.ships[0];q._rd21Volley={t:.6,warm:1.35,locked:true,target:{ref:player},a:Math.PI/2,shot:0};}");snap('missile-retina')
   checks['lock_beep']=p.evaluate("()=>{const n=RR26.events.filter(e=>e.kind==='missile-lock-beep').length;rebelSquadTick(B,.016);R.ships[0]._rd21Volley=null;return RR26.events.filter(e=>e.kind==='missile-lock-beep').length>n;}")
@@ -50,13 +54,18 @@ try:
    function pixels(){ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);ctx.restore();air13DrawRebel(q);const a=ctx.getTransform(),d=ctx.getImageData(Math.max(0,Math.floor(a.a*(q.x-70)+a.e)),Math.max(0,Math.floor(a.d*(q.y-70)+a.f)),Math.floor(140*a.a),Math.floor(140*a.d)).data;let n=0;for(let i=0;i<d.length;i+=4)if(d[i]>235&&d[i+1]>235&&d[i+2]>235&&d[i+3]>100)n++;return n;}
    const base=pixels();rr26Damage(q,1);const hit=pixels();for(let i=0;i<12;i++)rebelSquadTick(B,1/60);q.x=x;q.y=y;q.rfHeading=Math.PI/2;const end=pixels();return hit>base+50&&q.flash<=0&&end<hit;}""")
   p.wait_for_function("()=>[0,1,2,3].every(i=>XART.rdy('nfrb_'+i))")
-  checks['kaia_burst']=p.evaluate("""()=>{G.ord=[];G.rd21.fleet=null;for(const q of R.ships)q.rg4.act=null;const q=R.ships.find(q=>q.key==='kaia');q.x=camLeftX()+viewW()/2;q.y=PLAY.y+110;rg4Attack(q,R,G,'rockets');if(q.rg4.act?.kind!=='rr26roller')return false;for(let i=0;i<170;i++)rg4AttackTick(q,R,G,1/60);return G.ord.filter(o=>o._rr26KaiaRoller).length===12&&q.rg4.act.phase==='recover';}""")
-  p.evaluate("()=>{G.rr26.wall=null;G.rr26.radio=null;G.ord.forEach((o,i)=>{o.y+=40+i*18;o.x+=(i%3-1)*32;});}");snap('kaia-rollers')
+  checks['kaia_burst']=p.evaluate("""()=>{G.ord=[];G.rd21.fleet=null;for(const q of R.ships)q.rg4.act=null;const q=R.ships.find(q=>q.key==='kaia');q.x=camLeftX()+viewW()/2;q.y=PLAY.y+110;rg4Attack(q,R,G,'rockets');if(q.rg4.act?.kind!=='rr26roller')return false;for(let i=0;i<215;i++)rg4AttackTick(q,R,G,1/60);return G.ord.filter(o=>o._rr26KaiaRoller).length===10&&q.rg4.act.phase==='recover';}""")
+  p.evaluate("()=>{G.rr26.wall=null;G.rr26.radio=null;G.ord.forEach((o,i)=>{o.y+=40+i*24;});}");snap('kaia-rollers')
+  p.wait_for_function("()=>XART.rdy('rr35_roller')&&XART.rdy('pxg_rr35_roller_glow')")
+  checks['kaia_animated_glow_pixels']=p.evaluate("""()=>{const frames=new Set(),glowBefore=PXG.log.pxg_rr35_roller_glow||0;
+   function pixels(t,flash){ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,128,128);rr35RollerDraw(64,64,64,t,flash,.95);const data=ctx.getImageData(0,0,128,128).data;let hash=0,white=0;for(let i=0;i<data.length;i+=4){hash=(Math.imul(hash,31)+data[i]+data[i+1]*3+data[i+2]*7)|0;if(data[i]>235&&data[i+1]>235&&data[i+2]>235&&data[i+3]>100)white++;}ctx.restore();return {hash,white};}
+   for(let i=0;i<16;i++)frames.add(pixels(i/24,0).hash);const base=pixels(0,0),hit=pixels(0,.1),end=pixels(0,0);return frames.size===16&&hit.white>base.white+100&&base.hash===end.hash&&(PXG.log.pxg_rr35_roller_glow||0)>glowBefore;}""")
+  checks['kaia_straight']=p.evaluate("()=>{const a=G.ord.filter(o=>o._rr26KaiaRoller);return a.length===10&&new Set(a.map(o=>o.vx+','+o.vy)).size===1&&new Set(a.map(o=>o.x)).size===1&&a.every(o=>pw5Impact(o,player,1)===null);}")
   checks['kaia_shootable']=p.evaluate("()=>{const o=G.ord.find(o=>o._rr26KaiaRoller);rg4OrdnanceHit(G,o,1);const flashed=o.flash>0;rg4OrdnanceHit(G,o,4);return flashed&&o.dead;}")
   checks['rook_chain']=p.evaluate("""()=>{for(const q of R.ships)q.rg4.act=null;G.rd21.fleet=null;G.rr26.wall=null;eBullets=[];const q=R.ships.find(q=>q.key==='rook');q.x=camLeftX()+viewW()/2;q.y=PLAY.y+95;rg4Attack(q,R,G,'slug');const A=q.rg4.act;if(A?.kind!=='rr26chain')return false;A.target={ref:player};const x=q.x,y=q.y;for(let i=0;i<100;i++)rg4AttackTick(q,R,G,1/60);return q.x===x&&q.y===y&&eBullets.some(z=>z._rr26Rook&&z._rr26Track===player&&!enemyOrdnanceCanIntercept(z));}""")
   p.evaluate("()=>{G.ord=[];const q=R.ships.find(q=>q.key==='rook');q.rg4.act.phase='charge';q.rg4.act.t=1.4;}");snap('rook-chain')
   p.evaluate("()=>{R.ships.find(q=>q.key==='rook').rg4.act=null;}")
-  checks['voss_dash_return']=p.evaluate("""()=>{for(const q of R.ships)q.rg4.act=null;const q=R.ships.find(q=>q.key==='voss');q.x=camLeftX()+viewW()/2;q.y=PLAY.y+100;rg4Attack(q,R,G,'fusion');if(q.rg4.act?.kind!=='rr26dash')return false;let off=false,north=false;for(let i=0;i<450&&q.rg4.act;i++){rg4AttackTick(q,R,G,1/60);off ||=q.y>VH||q.x<camLeftX()||q.x>camRightX();north ||=q.rg4.act?.phase==='north'&&q.y<PLAY.y;}return off&&north&&!q.rg4.act;}""")
+  checks['voss_dash_return']=p.evaluate("""()=>{for(const q of R.ships)q.rg4.act=null;const q=R.ships.find(q=>q.key==='voss');q.x=camLeftX()+viewW()/2;q.y=PLAY.y+100;rg4Attack(q,R,G,'fusion');if(q.rg4.act?.kind!=='rr26dash')return false;let off=false,north=false;for(let i=0;i<1200&&q.rg4.act;i++){rg4AttackTick(q,R,G,1/60);off ||=q.y>VH||q.x<camLeftX()||q.x>camRightX();north ||=q.rg4.act?.phase==='north'&&q.y<PLAY.y;}return off&&north&&!q.rg4.act;}""")
   p.evaluate("()=>{const q=R.ships.find(q=>q.key==='voss');rg4Attack(q,R,G,'fusion');q.rg4.act.t=1.25;}");snap('voss-charge')
   p.evaluate("()=>{R.ships.find(q=>q.key==='voss').rg4.act=null;}")
   checks['voss_cruise']=p.evaluate("()=>{const q=R.ships.find(q=>q.key==='voss');rg4Attack(q,R,G,'turbo');return q.rg4.act?.kind==='turbo';}")
