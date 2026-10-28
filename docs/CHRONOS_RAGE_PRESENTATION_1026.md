@@ -1,0 +1,11 @@
+# Chronos rage presentation — 26 October 2026
+
+The scenery progressively darkens as Chronos charges. A16-step authored64px alpha-tile bank reaches75% darkness and settles at45% during Rage Form. The layer is drawn over scenery, before actors, warnings, ordnance and HUD. New rendering uses stored-alpha source-over tile blits; no runtime alpha animation or filter.
+
+The two gray comet shock rings at the final strike now use32 source-derived authored frames (16 per radius). Fixed416/624 cells, centered pivots,0.42s native lifetime, nearest-neighbor source sampling and the actual transformation palette: warm white, pale gold, orange and red. Their growth and opacity are baked offline, with no runtime size/blend/fade effect. Original atlas is untouched. The native packed-cell nca_ aliases are registered with the sheet metadata.
+
+The health bar refills during native charge progress and becomes saturated red. Rage Form displays its existing remaining health as a separate full pool: actual hp/maxhp values are never healed or rewritten. This prevents a display change from adding another entire boss life. Normal damage drains the new red fraction; source HUD alpha and pixels outside measured HP apertures remain identical. Other stages, secret Chrome Heart and copied Dracodia forms keep their owners.
+
+21 native checks include actual ring/gauge pixels, scenery luminance, refill progression, half-pool tracking, unchanged HP/score, fixed effect lifetimes, draw-clock safety, cleanup, retry and other-stage isolation. A fresh24.48s live checkpoint recording verifies actual effects, a full red bar, dark scenery and unchanged HP, retaining the approved original minus2/reverb audio. Original body, aura, lightning and combat owners remain. Required suite result and exact baseline comparison are in verification.json.
+
+Capture/probe limitation: the downloaded build lacks optional stop_empty.png; those sessions use its existing native C29 recovery fallback. This pass does not replace that missing production sheet. Sources, source hashes and frame metadata: _ART_SOURCES/chronos_rage_presentation_1026/manifest.json. Builder: _BUILD_SOURCE/build_chronos_rage_presentation_1026.py. No commit, GitHub push or external generation.

@@ -1,0 +1,255 @@
+[
+  {
+    "stage": 1,
+    "role": "mini",
+    "kind": "razorback",
+    "name": "RAZORBACK SIEGE TANK",
+    "id": "s01_mini_razorback",
+    "limit": 600
+  },
+  {
+    "stage": 1,
+    "role": "boss",
+    "kind": "damkeeper",
+    "name": "JUNGLE OVERLORD-X",
+    "id": "s01_boss_damkeeper",
+    "limit": 600
+  },
+  {
+    "stage": 2,
+    "role": "mini",
+    "kind": "magmaward",
+    "name": "INFERNO REAVER",
+    "id": "s02_mini_magmaward",
+    "limit": 600
+  },
+  {
+    "stage": 2,
+    "role": "boss",
+    "kind": "infernoreaver",
+    "name": "FURNACE TYRANT",
+    "id": "s02_boss_infernoreaver",
+    "limit": 600
+  },
+  {
+    "stage": 3,
+    "role": "mini",
+    "kind": "frostcruiser",
+    "name": "FROST CRUISER",
+    "id": "s03_mini_frostcruiser",
+    "limit": 600
+  },
+  {
+    "stage": 3,
+    "role": "boss",
+    "kind": "cryospear",
+    "name": "RIME WALL",
+    "id": "s03_boss_cryospear",
+    "limit": 600
+  },
+  {
+    "stage": 4,
+    "role": "mini",
+    "kind": "olivewarden",
+    "name": "OLIVE WARDEN",
+    "id": "s04_mini_olivewarden",
+    "limit": 600
+  },
+  {
+    "stage": 4,
+    "role": "boss",
+    "kind": "stormsovereign",
+    "name": "STORM SOVEREIGN MK II",
+    "id": "s04_boss_stormsovereign",
+    "limit": 600
+  },
+  {
+    "stage": 5,
+    "role": "mini",
+    "kind": "siegebomber",
+    "name": "ECLIPSE SIEGE BOMBER",
+    "id": "s05_mini_siegebomber",
+    "limit": 600
+  },
+  {
+    "stage": 5,
+    "role": "boss",
+    "kind": "chromehammer",
+    "name": "CHROMIUM HAMMER",
+    "id": "s05_boss_chromehammer",
+    "limit": 1500
+  },
+  {
+    "stage": 6,
+    "role": "mini",
+    "kind": "siegefortress17",
+    "name": "SIEGEFORTRESS17",
+    "id": "s06_mini_siegefortress17",
+    "limit": 600
+  },
+  {
+    "stage": 6,
+    "role": "boss",
+    "kind": "warhive",
+    "name": "WARHIVE CARRIER",
+    "id": "s06_boss_warhive",
+    "limit": 600
+  },
+  {
+    "stage": 7,
+    "role": "mini",
+    "kind": "dualscoopdredger",
+    "name": "DUAL SCOOP DREDGER",
+    "id": "s07_mini_dualscoopdredger",
+    "limit": 600
+  },
+  {
+    "stage": 7,
+    "role": "boss",
+    "kind": "sludgeemperor",
+    "name": "TOXIC PORTAL WARDEN",
+    "id": "s07_boss_sludgeemperor",
+    "limit": 600
+  },
+  {
+    "stage": 8,
+    "role": "mini",
+    "kind": "heralddeath",
+    "name": "HERALD OF DEATH",
+    "id": "s08_mini_heralddeath",
+    "limit": 600
+  },
+  {
+    "stage": 8,
+    "role": "boss",
+    "kind": "vileexistence",
+    "name": "BLACK COCOON",
+    "id": "s08_boss_vileexistence",
+    "limit": 1200
+  },
+  {
+    "stage": 9,
+    "role": "mini",
+    "kind": "voidhorizon",
+    "name": "EVENT HORIZON",
+    "id": "s09_mini_voidhorizon",
+    "limit": 600
+  },
+  {
+    "stage": 9,
+    "role": "boss",
+    "kind": "tidalfusion",
+    "name": "WARP SENTINELS",
+    "id": "s09_boss_tidalfusion",
+    "limit": 600
+  },
+  {
+    "id": "s06_rebel_fighters",
+    "stage": 6,
+    "role": "boss",
+    "kind": "rebelsquad",
+    "name": "REBEL FIGHTERS",
+    "route": "right",
+    "limit": 900
+  },
+  {
+    "id": "sx_harrier",
+    "stage": 6,
+    "role": "boss",
+    "kind": "warhive",
+    "name": "STAGE X HARRIER",
+    "route": "left",
+    "stageX": true,
+    "limit": 900
+  },
+  {
+    "id": "sx_rebel_fighters",
+    "stage": 6,
+    "role": "boss",
+    "kind": "rebelsquad",
+    "name": "STAGE X REBEL FIGHTERS",
+    "route": "right",
+    "stageX": true,
+    "limit": 900
+  },
+  {
+    "id": "s02_elite_caldera",
+    "stage": 2,
+    "role": "elite",
+    "kind": "caldera",
+    "name": "CALDERA",
+    "limit": 180,
+    "level": 1
+  },
+  {
+    "id": "s03_elite_frostbite",
+    "stage": 3,
+    "role": "elite",
+    "kind": "frostbite",
+    "name": "FROSTBITE",
+    "limit": 180,
+    "level": 1
+  },
+  {
+    "id": "s04_elite_dambreaker",
+    "stage": 4,
+    "role": "elite",
+    "kind": "dambreaker",
+    "name": "DAMBREAKER",
+    "limit": 180,
+    "level": 1
+  },
+  {
+    "id": "tutorial_bob",
+    "stage": 1,
+    "role": "tutorial",
+    "kind": "bob",
+    "name": "B.O.B.",
+    "limit": 360
+  },
+  {
+    "id": "secret_chrome_heart",
+    "stage": 5,
+    "role": "boss",
+    "kind": "chromehammer",
+    "name": "CHROME HEART",
+    "heart": true,
+    "limit": 600
+  },
+  {
+    "id": "alt3_rimewall",
+    "stage": 3,
+    "role": "mini",
+    "kind": "rimewall",
+    "name": "ALTERNATE RIMEWALL",
+    "limit": 600,
+    "alternate": true
+  },
+  {
+    "id": "alt6_blacksteel",
+    "stage": 6,
+    "role": "mini",
+    "kind": "blacksteel",
+    "name": "ALTERNATE BLACKSTEEL",
+    "limit": 600,
+    "alternate": true
+  },
+  {
+    "id": "secret_hammer_time",
+    "stage": 5,
+    "role": "boss",
+    "kind": "chromehammer",
+    "name": "HAMMER TIME",
+    "song": "hammer",
+    "limit": 1200
+  },
+  {
+    "id": "secret_hama",
+    "stage": 5,
+    "role": "boss",
+    "kind": "chromehammer",
+    "name": "HAMA",
+    "song": "hama",
+    "limit": 1200
+  }
+]

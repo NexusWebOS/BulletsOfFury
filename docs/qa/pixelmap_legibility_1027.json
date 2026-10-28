@@ -1,0 +1,3118 @@
+{
+  "summary": {
+    "fontBanks": 27,
+    "glyphsPerBank": 95,
+    "palettes": 8,
+    "rStrokesConnectedInAllBanks": true,
+    "zeroAndEightCountersIntactInAllBanks": true,
+    "numericAdvancesStableInAllBanks": true,
+    "paletteAlphaIdentical": true,
+    "menuChecksPassed": 20,
+    "nativeNumericChecksPassed": 6,
+    "numericRunsFit": 45,
+    "speakerNamesFit": 5,
+    "viewports": [
+      [
+        1280,
+        800
+      ],
+      [
+        960,
+        720
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "browserErrors": [],
+    "fullSuiteExit": 1,
+    "unchangedFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "glyphs": [
+    {
+      "bank": "command_6",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_7",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_8",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_9",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_10",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_11",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_12",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_14",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_18",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_21",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_24",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_28",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_35",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_42",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_8",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_10",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_12",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_14",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_16",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_18",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_20",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_22",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_24",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_26",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_28",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "fury_strike_32",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    },
+    {
+      "bank": "command_narrow_8",
+      "zeroCounter": 1,
+      "eightCounters": 2,
+      "rConnected": true,
+      "digitsStable": true,
+      "inkBounds": true
+    }
+  ],
+  "menu": {
+    "checks": [
+      {
+        "name": "Title wraps upward to Exit",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Title wraps back to New Game",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "New Game opens mode selection through native confirmation",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Campaign opens campaign hub",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Campaign New Game opens difficulty",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Difficulty moves exactly one row",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Difficulty confirmation opens pilot selection",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Arcade opens difficulty without inventing an NG+ unlock",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Co-op opens Local / Online text choices",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Co-op choice moves to Online",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Local Co-op preserves second-player setup",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Returning to solo clears co-op flag",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Boss Rush remains locked without campaign completion",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "B cancels Co-op submenu",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Mouse activates Arcade text row",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Mouse selects Furious and opens pilot selection",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "All pilot biographies fit above stats",
+        "pass": true,
+        "value": [
+          {
+            "pilot": "axel",
+            "height": 9,
+            "lines": 4,
+            "available": 74.36000000000001,
+            "used": 42
+          },
+          {
+            "pilot": "decker",
+            "height": 9,
+            "lines": 6,
+            "available": 74.36000000000001,
+            "used": 64
+          },
+          {
+            "pilot": "maverick",
+            "height": 9,
+            "lines": 4,
+            "available": 74.36000000000001,
+            "used": 42
+          },
+          {
+            "pilot": "freezer",
+            "height": 9,
+            "lines": 6,
+            "available": 74.36000000000001,
+            "used": 64
+          },
+          {
+            "pilot": "juggernaut",
+            "height": 9,
+            "lines": 6,
+            "available": 74.36000000000001,
+            "used": 64
+          },
+          {
+            "pilot": "yuri",
+            "height": 9,
+            "lines": 3,
+            "available": 74.36000000000001,
+            "used": 31
+          },
+          {
+            "pilot": "lizzie",
+            "height": 8,
+            "lines": 5,
+            "available": 52.360000000000014,
+            "used": 48
+          },
+          {
+            "pilot": "falva",
+            "height": 8,
+            "lines": 4,
+            "available": 52.360000000000014,
+            "used": 38
+          },
+          {
+            "pilot": "cole",
+            "height": 7,
+            "lines": 5,
+            "available": 52.360000000000014,
+            "used": 43
+          }
+        ]
+      },
+      {
+        "name": "Long dialogue names fit the 68px name plate",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "Original typography remains available for comparison",
+        "pass": true,
+        "value": true
+      },
+      {
+        "name": "New typography default keeps graphic menus until concept selected",
+        "pass": true,
+        "value": true
+      }
+    ],
+    "errors": []
+  },
+  "numeric": {
+    "checks": {
+      "allSpeakerInkInside68x12": true,
+      "all45NumericRunsFitTheirApertures": true,
+      "armorClearOfGaugeHousing": true,
+      "speedClearOfGaugeHousing": true,
+      "weaponLevelClearOfRightBorder": true,
+      "noBrowserErrors": true
+    },
+    "results": {
+      "names": [
+        {
+          "s": "COLE",
+          "bounds": [
+            39,
+            24,
+            82,
+            36
+          ],
+          "fits": true
+        },
+        {
+          "s": "MAVERICK",
+          "bounds": [
+            37,
+            26,
+            84,
+            34
+          ],
+          "fits": true
+        },
+        {
+          "s": "JUGGERNAUT",
+          "bounds": [
+            31,
+            26,
+            90,
+            34
+          ],
+          "fits": true
+        },
+        {
+          "s": "DRACODIA",
+          "bounds": [
+            37,
+            26,
+            84,
+            34
+          ],
+          "fits": true
+        },
+        {
+          "s": "CHRONOS",
+          "bounds": [
+            29,
+            25,
+            91,
+            35
+          ],
+          "fits": true
+        }
+      ],
+      "numbers": [
+        {
+          "s": "0",
+          "width": 88,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "0",
+          "width": 110,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "0",
+          "width": 152,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "0",
+          "width": 256,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "0",
+          "width": 290,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "8",
+          "width": 88,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "8",
+          "width": 110,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "8",
+          "width": 152,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "8",
+          "width": 256,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "8",
+          "width": 290,
+          "ink": [
+            186,
+            215
+          ],
+          "fits": true
+        },
+        {
+          "s": "0123456789",
+          "width": 88,
+          "ink": [
+            156,
+            244
+          ],
+          "fits": true
+        },
+        {
+          "s": "0123456789",
+          "width": 110,
+          "ink": [
+            146,
+            255
+          ],
+          "fits": true
+        },
+        {
+          "s": "0123456789",
+          "width": 152,
+          "ink": [
+            131,
+            270
+          ],
+          "fits": true
+        },
+        {
+          "s": "0123456789",
+          "width": 256,
+          "ink": [
+            81,
+            319
+          ],
+          "fits": true
+        },
+        {
+          "s": "0123456789",
+          "width": 290,
+          "ink": [
+            62,
+            338
+          ],
+          "fits": true
+        },
+        {
+          "s": "9,999,999",
+          "width": 88,
+          "ink": [
+            161,
+            239
+          ],
+          "fits": true
+        },
+        {
+          "s": "9,999,999",
+          "width": 110,
+          "ink": [
+            147,
+            254
+          ],
+          "fits": true
+        },
+        {
+          "s": "9,999,999",
+          "width": 152,
+          "ink": [
+            129,
+            271
+          ],
+          "fits": true
+        },
+        {
+          "s": "9,999,999",
+          "width": 256,
+          "ink": [
+            76,
+            324
+          ],
+          "fits": true
+        },
+        {
+          "s": "9,999,999",
+          "width": 290,
+          "ink": [
+            58,
+            343
+          ],
+          "fits": true
+        },
+        {
+          "s": "987,654,321",
+          "width": 88,
+          "ink": [
+            158,
+            243
+          ],
+          "fits": true
+        },
+        {
+          "s": "987,654,321",
+          "width": 110,
+          "ink": [
+            153,
+            248
+          ],
+          "fits": true
+        },
+        {
+          "s": "987,654,321",
+          "width": 152,
+          "ink": [
+            125,
+            276
+          ],
+          "fits": true
+        },
+        {
+          "s": "987,654,321",
+          "width": 256,
+          "ink": [
+            82,
+            319
+          ],
+          "fits": true
+        },
+        {
+          "s": "987,654,321",
+          "width": 290,
+          "ink": [
+            60,
+            341
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 99",
+          "width": 88,
+          "ink": [
+            159,
+            241
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 99",
+          "width": 110,
+          "ink": [
+            146,
+            255
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 99",
+          "width": 152,
+          "ink": [
+            146,
+            255
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 99",
+          "width": 256,
+          "ink": [
+            146,
+            255
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 99",
+          "width": 290,
+          "ink": [
+            146,
+            255
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 999",
+          "width": 88,
+          "ink": [
+            156,
+            244
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 999",
+          "width": 110,
+          "ink": [
+            147,
+            253
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 999",
+          "width": 152,
+          "ink": [
+            130,
+            271
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 999",
+          "width": 256,
+          "ink": [
+            130,
+            271
+          ],
+          "fits": true
+        },
+        {
+          "s": "X 999",
+          "width": 290,
+          "ink": [
+            130,
+            271
+          ],
+          "fits": true
+        },
+        {
+          "s": "LEVEL 08",
+          "width": 88,
+          "ink": [
+            160,
+            241
+          ],
+          "fits": true
+        },
+        {
+          "s": "LEVEL 08",
+          "width": 110,
+          "ink": [
+            148,
+            252
+          ],
+          "fits": true
+        },
+        {
+          "s": "LEVEL 08",
+          "width": 152,
+          "ink": [
+            126,
+            274
+          ],
+          "fits": true
+        },
+        {
+          "s": "LEVEL 08",
+          "width": 256,
+          "ink": [
+            82,
+            319
+          ],
+          "fits": true
+        },
+        {
+          "s": "LEVEL 08",
+          "width": 290,
+          "ink": [
+            82,
+            319
+          ],
+          "fits": true
+        },
+        {
+          "s": "ARMOR 5 / 5",
+          "width": 88,
+          "ink": [
+            159,
+            241
+          ],
+          "fits": true
+        },
+        {
+          "s": "ARMOR 5 / 5",
+          "width": 110,
+          "ink": [
+            150,
+            251
+          ],
+          "fits": true
+        },
+        {
+          "s": "ARMOR 5 / 5",
+          "width": 152,
+          "ink": [
+            125,
+            275
+          ],
+          "fits": true
+        },
+        {
+          "s": "ARMOR 5 / 5",
+          "width": 256,
+          "ink": [
+            78,
+            323
+          ],
+          "fits": true
+        },
+        {
+          "s": "ARMOR 5 / 5",
+          "width": 290,
+          "ink": [
+            69,
+            331
+          ],
+          "fits": true
+        }
+      ],
+      "1280": {
+        "mode": "sides",
+        "score": 987654321,
+        "lives": 99,
+        "missiles": 99,
+        "values": [
+          {
+            "score": 987654321,
+            "lives": 99,
+            "missiles": 99
+          }
+        ]
+      },
+      "960": {
+        "mode": "compact",
+        "score": 987654321,
+        "lives": 99,
+        "missiles": 99,
+        "values": [
+          {
+            "score": 987654321,
+            "lives": 99,
+            "missiles": 99
+          }
+        ]
+      },
+      "390": {
+        "mode": "compact",
+        "score": 987654321,
+        "lives": 99,
+        "missiles": 99,
+        "values": [
+          {
+            "score": 987654321,
+            "lives": 99,
+            "missiles": 99
+          }
+        ]
+      },
+      "hudBounds": [
+        {
+          "s": "LEVEL 01",
+          "ink": [
+            178,
+            746,
+            310,
+            767
+          ]
+        },
+        {
+          "s": "SPEED",
+          "ink": [
+            69,
+            810,
+            187,
+            835
+          ]
+        },
+        {
+          "s": "ARMOR",
+          "ink": [
+            69,
+            897,
+            187,
+            922
+          ]
+        }
+      ]
+    },
+    "errors": []
+  },
+  "capture": {
+    "modes": [
+      {
+        "name": "CAMPAIGN",
+        "mode": "campaign",
+        "open": true
+      },
+      {
+        "name": "ARCADE",
+        "mode": "arcade",
+        "open": true
+      },
+      {
+        "name": "CO-OP",
+        "mode": "coop",
+        "open": true
+      },
+      {
+        "name": "BOSS RUSH",
+        "mode": "bossrush",
+        "open": false
+      },
+      {
+        "name": "TIME ATTACK",
+        "mode": "timeattack",
+        "open": false
+      }
+    ],
+    "pilotPortrait": {
+      "card": {
+        "pilot": "axel",
+        "body": [
+          28,
+          90,
+          170.24,
+          749
+        ],
+        "ship": [
+          210.24,
+          90,
+          253.76,
+          190
+        ],
+        "info": [
+          210.24,
+          290,
+          241.76,
+          549
+        ],
+        "key": "ship_axel_pv2"
+      },
+      "copy": {
+        "pilot": "axel",
+        "height": 9,
+        "lines": 6,
+        "available": 400,
+        "used": 64
+      }
+    },
+    "dialogue": {
+      "who": "COLE",
+      "w": 460,
+      "h": 84,
+      "x": 12,
+      "y": 300,
+      "port": "comm_cole_idle",
+      "layout": {
+        "H": 10,
+        "lines": [
+          "STAY CLEAR OF THE INCOMING SHIPS! ROLL",
+          "THROUGH THE FIRST WAVE. SAVE YOUR",
+          "SOMERSAULT FOR THE SECOND VOLLEY."
+        ],
+        "step": 13,
+        "height": 36
+      },
+      "page": {
+        "index": 0,
+        "count": 1,
+        "text": "STAY CLEAR OF THE INCOMING SHIPS! ROLL THROUGH THE FIRST WAVE. SAVE YOUR SOMERSAULT FOR THE SECOND VOLLEY."
+      }
+    },
+    "events": [
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "- INSERT COIN -",
+        "family": "fury_strike",
+        "height": 26,
+        "palette": "gold",
+        "width": 343,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "MENU",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 35,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "SELECT",
+        "family": "command",
+        "height": 11,
+        "palette": "chrome",
+        "width": 53,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "NEW GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "gold",
+        "width": 148,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "PASSWORD",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 158,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "OPTIONS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "HELP",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 78,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ARMORY",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 118,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "ACHIEVEMENTS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 238,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "CREDITS",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 138,
+        "available": null
+      },
+      {
+        "state": "title",
+        "text": "EXIT GAME",
+        "family": "fury_strike",
+        "height": 20,
+        "palette": "chrome",
+        "width": 168,
+        "available": null
+      }
+    ],
+    "rows": {
+      "title": [
+        {
+          "x": 162,
+          "y": 152,
+          "w": 156,
+          "h": 30,
+          "pmText": "NEW GAME",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 167
+        },
+        {
+          "x": 157,
+          "y": 190,
+          "w": 166,
+          "h": 30,
+          "pmText": "PASSWORD",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 205
+        },
+        {
+          "x": 167,
+          "y": 228,
+          "w": 146,
+          "h": 30,
+          "pmText": "OPTIONS",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 243
+        },
+        {
+          "x": 197,
+          "y": 266,
+          "w": 86,
+          "h": 30,
+          "pmText": "HELP",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 281
+        },
+        {
+          "x": 177,
+          "y": 304,
+          "w": 126,
+          "h": 30,
+          "pmText": "ARMORY",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 319
+        },
+        {
+          "x": 117,
+          "y": 342,
+          "w": 246,
+          "h": 30,
+          "pmText": "ACHIEVEMENTS",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 357
+        },
+        {
+          "x": 167,
+          "y": 380,
+          "w": 146,
+          "h": 30,
+          "pmText": "CREDITS",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 395
+        },
+        {
+          "x": 152,
+          "y": 418,
+          "w": 176,
+          "h": 30,
+          "pmText": "EXIT GAME",
+          "pmH": 20,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 433
+        }
+      ],
+      "mode": [
+        {
+          "x": 149.5,
+          "y": 124,
+          "w": 181,
+          "h": 32,
+          "pmText": "CAMPAIGN",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 140
+        },
+        {
+          "x": 171.5,
+          "y": 180,
+          "w": 137,
+          "h": 32,
+          "pmText": "ARCADE",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 196
+        },
+        {
+          "x": 182.5,
+          "y": 236,
+          "w": 115,
+          "h": 32,
+          "pmText": "CO-OP",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 252
+        },
+        {
+          "x": 144,
+          "y": 292,
+          "w": 192,
+          "h": 32,
+          "pmText": "BOSS RUSH",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 308
+        },
+        {
+          "x": 122,
+          "y": 348,
+          "w": 236,
+          "h": 32,
+          "pmText": "TIME ATTACK",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 364
+        }
+      ],
+      "hub": [
+        {
+          "x": 155,
+          "y": 184,
+          "w": 170,
+          "h": 32,
+          "pmText": "NEW GAME",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 200
+        },
+        {
+          "x": 144,
+          "y": 238,
+          "w": 192,
+          "h": 32,
+          "pmText": "LOAD GAME",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 254
+        },
+        {
+          "x": 144,
+          "y": 292,
+          "w": 192,
+          "h": 32,
+          "pmText": "SAVE GAME",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 308
+        }
+      ],
+      "choice": [
+        {
+          "x": 147,
+          "y": 193,
+          "w": 186,
+          "h": 34,
+          "pmText": "NEW GAME",
+          "pmH": 24,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 210
+        },
+        {
+          "x": 130.5,
+          "y": 273,
+          "w": 219,
+          "h": 34,
+          "pmText": "NEW GAME +",
+          "pmH": 24,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 290
+        }
+      ],
+      "diff": [
+        {
+          "x": 193.5,
+          "y": 106,
+          "w": 93,
+          "h": 32,
+          "pmText": "EASY",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 122
+        },
+        {
+          "x": 171.5,
+          "y": 164,
+          "w": 137,
+          "h": 32,
+          "pmText": "NORMAL",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 180
+        },
+        {
+          "x": 193.5,
+          "y": 222,
+          "w": 93,
+          "h": 32,
+          "pmText": "HARD",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 238
+        },
+        {
+          "x": 160.5,
+          "y": 280,
+          "w": 159,
+          "h": 32,
+          "pmText": "FURIOUS",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 296
+        },
+        {
+          "x": 149.5,
+          "y": 338,
+          "w": 181,
+          "h": 32,
+          "pmText": "INSANITY",
+          "pmH": 22,
+          "pmFamily": "fury_strike",
+          "cx": 240,
+          "cy": 354
+        }
+      ]
+    },
+    "draws": 7873,
+    "errors": [],
+    "console": []
+  }
+}

@@ -31,7 +31,7 @@ drawWorld=function(dt){const r=AP10_X.base.world.apply(this,arguments),I=AP10_X.
  ctx.save();worldXformEscape();ctx.imageSmoothingEnabled=false;
  if(!cc21Live()&&XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),w=VW*.63,h=w*im.height/im.width;
   ctx.drawImage(im,(VW-w)/2,VH*.22-h/2,w,h);}
- campText(I.route==='left'?'HARRIER PURSUIT':'REBEL FURY',VW/2,VH*.37,17,'#e8edf8');
+ campText(I.route==='left'?'HARRIER PURSUIT':'ROUGH RIDERS',VW/2,VH*.37,17,'#e8edf8');
  const full=I.route==='left'?'Fury flight, all five ships accounted for. The Harrier is ahead.':'Five against five. Fury flight, form up. We finish this together.';
  const shown=full.slice(0,Math.floor(Math.max(0,I.t-.3)*36));
  dlgBox({who:'COLE',portrait:'cole',full,shown,forceShown:true,fade:clamp(I.t*3,0,1),pw:VW*.92,ph:VH*.22,x:VW*.04,y:VH*.52});

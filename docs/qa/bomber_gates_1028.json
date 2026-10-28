@@ -1,0 +1,1842 @@
+{
+  "stage5": {
+    "checks": [
+      {
+        "name": "easy core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 130
+            },
+            {
+              "id": "engineR",
+              "hp": 130
+            },
+            {
+              "id": "laserL",
+              "hp": 130
+            },
+            {
+              "id": "laserR",
+              "hp": 130
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 546,
+          "coreMax": 546,
+          "beam": null
+        }
+      },
+      {
+        "name": "easy direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 546,
+          "hp": 546,
+          "whole": 1066,
+          "bhp": 1066
+        }
+      },
+      {
+        "name": "easy all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "easy an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 546,
+          "coreAfter": 546,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "easy real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 130,
+            "after": 123,
+            "coreBefore": 546,
+            "coreAfter": 546,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 130,
+            "after": 123,
+            "coreBefore": 546,
+            "coreAfter": 546,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 130,
+            "after": 123,
+            "coreBefore": 546,
+            "coreAfter": 546,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 130,
+            "after": 123,
+            "coreBefore": 546,
+            "coreAfter": 546,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "easy the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 546,
+            "coreAfter": 546,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 546,
+            "coreAfter": 546,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 546,
+            "coreAfter": 546,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 546,
+            "coreAfter": 545,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "easy exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 545,
+          "core": 545,
+          "pool": 545
+        }
+      },
+      {
+        "name": "normal core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 250
+            },
+            {
+              "id": "engineR",
+              "hp": 250
+            },
+            {
+              "id": "laserL",
+              "hp": 250
+            },
+            {
+              "id": "laserR",
+              "hp": 250
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 1050,
+          "coreMax": 1050,
+          "beam": null
+        }
+      },
+      {
+        "name": "normal direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 1050,
+          "hp": 1050,
+          "whole": 2050,
+          "bhp": 2050
+        }
+      },
+      {
+        "name": "normal all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "normal an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 1050,
+          "coreAfter": 1050,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "normal real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 250,
+            "after": 243,
+            "coreBefore": 1050,
+            "coreAfter": 1050,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 250,
+            "after": 243,
+            "coreBefore": 1050,
+            "coreAfter": 1050,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 250,
+            "after": 243,
+            "coreBefore": 1050,
+            "coreAfter": 1050,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 250,
+            "after": 243,
+            "coreBefore": 1050,
+            "coreAfter": 1050,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "normal the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 1050,
+            "coreAfter": 1050,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 1050,
+            "coreAfter": 1050,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 1050,
+            "coreAfter": 1050,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 1050,
+            "coreAfter": 1049,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "normal exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 1049,
+          "core": 1049,
+          "pool": 1049
+        }
+      },
+      {
+        "name": "hard core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 295
+            },
+            {
+              "id": "engineR",
+              "hp": 295
+            },
+            {
+              "id": "laserL",
+              "hp": 295
+            },
+            {
+              "id": "laserR",
+              "hp": 295
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 1239,
+          "coreMax": 1239,
+          "beam": null
+        }
+      },
+      {
+        "name": "hard direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 1239,
+          "hp": 1239,
+          "whole": 2419,
+          "bhp": 2419
+        }
+      },
+      {
+        "name": "hard all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "hard an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 1239,
+          "coreAfter": 1239,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "hard real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 295,
+            "after": 288,
+            "coreBefore": 1239,
+            "coreAfter": 1239,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 295,
+            "after": 288,
+            "coreBefore": 1239,
+            "coreAfter": 1239,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 295,
+            "after": 288,
+            "coreBefore": 1239,
+            "coreAfter": 1239,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 295,
+            "after": 288,
+            "coreBefore": 1239,
+            "coreAfter": 1239,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "hard the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 1239,
+            "coreAfter": 1239,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 1239,
+            "coreAfter": 1239,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 1239,
+            "coreAfter": 1239,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 1239,
+            "coreAfter": 1238,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "hard exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 1238,
+          "core": 1238,
+          "pool": 1238
+        }
+      },
+      {
+        "name": "furious core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 338
+            },
+            {
+              "id": "engineR",
+              "hp": 338
+            },
+            {
+              "id": "laserL",
+              "hp": 338
+            },
+            {
+              "id": "laserR",
+              "hp": 338
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 1418,
+          "coreMax": 1418,
+          "beam": null
+        }
+      },
+      {
+        "name": "furious direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 1418,
+          "hp": 1418,
+          "whole": 2770,
+          "bhp": 2770
+        }
+      },
+      {
+        "name": "furious all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "furious an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 1418,
+          "coreAfter": 1418,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "furious real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 338,
+            "after": 331,
+            "coreBefore": 1418,
+            "coreAfter": 1418,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 338,
+            "after": 331,
+            "coreBefore": 1418,
+            "coreAfter": 1418,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 338,
+            "after": 331,
+            "coreBefore": 1418,
+            "coreAfter": 1418,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 338,
+            "after": 331,
+            "coreBefore": 1418,
+            "coreAfter": 1418,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "furious the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 1418,
+            "coreAfter": 1418,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 1418,
+            "coreAfter": 1418,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 1418,
+            "coreAfter": 1418,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 1418,
+            "coreAfter": 1417,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "furious exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 1417,
+          "core": 1417,
+          "pool": 1417
+        }
+      },
+      {
+        "name": "Live module damage still produces native white pixels and its own HP loss",
+        "pass": true,
+        "data": {
+          "white": 816,
+          "flash": 0.18333333333333335,
+          "hp": 333,
+          "expected": 333
+        }
+      },
+      {
+        "name": "Native module flash still expires",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "Full native module and core exhaustion reaches the original death owner",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "Native miniboss death still completes",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "Stage6 pursuit bomber now uses the same protected core rule",
+        "pass": true,
+        "data": {
+          "closed": true,
+          "before": 1560,
+          "after": 1560
+        }
+      },
+      {
+        "name": "No new errors; only the already-documented optional Chronos preload404 is allowed",
+        "pass": true,
+        "data": {
+          "page": [],
+          "console": [
+            "Failed to load resource: the server responded with a status of 404 (File not found)"
+          ],
+          "knownOptionalAsset": [
+            {
+              "url": "http://127.0.0.1:49678/assets/game/levels/stage_05/boss/chronos_rageform_1026/stop_empty.png",
+              "status": 404
+            }
+          ],
+          "unexpectedHTTP": []
+        }
+      }
+    ],
+    "pageErrors": [],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "HTTPerrors": [
+      {
+        "url": "http://127.0.0.1:49678/assets/game/levels/stage_05/boss/chronos_rageform_1026/stop_empty.png",
+        "status": 404
+      }
+    ]
+  },
+  "stage6": {
+    "checks": [
+      {
+        "name": "easy core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 143
+            },
+            {
+              "id": "engineR",
+              "hp": 143
+            },
+            {
+              "id": "laserL",
+              "hp": 143
+            },
+            {
+              "id": "laserR",
+              "hp": 143
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 601,
+          "coreMax": 601,
+          "beam": null
+        }
+      },
+      {
+        "name": "easy direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 601,
+          "hp": 601,
+          "whole": 1173,
+          "bhp": 1173
+        }
+      },
+      {
+        "name": "easy all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "easy an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 601,
+          "coreAfter": 601,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "easy real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 143,
+            "after": 136,
+            "coreBefore": 601,
+            "coreAfter": 601,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 143,
+            "after": 136,
+            "coreBefore": 601,
+            "coreAfter": 601,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 143,
+            "after": 136,
+            "coreBefore": 601,
+            "coreAfter": 601,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 143,
+            "after": 136,
+            "coreBefore": 601,
+            "coreAfter": 601,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "easy the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 601,
+            "coreAfter": 601,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 601,
+            "coreAfter": 601,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 601,
+            "coreAfter": 601,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 601,
+            "coreAfter": 600,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "easy exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 600,
+          "core": 600,
+          "pool": 600
+        }
+      },
+      {
+        "name": "normal core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 275
+            },
+            {
+              "id": "engineR",
+              "hp": 275
+            },
+            {
+              "id": "laserL",
+              "hp": 275
+            },
+            {
+              "id": "laserR",
+              "hp": 275
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 1155,
+          "coreMax": 1155,
+          "beam": null
+        }
+      },
+      {
+        "name": "normal direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 1155,
+          "hp": 1155,
+          "whole": 2255,
+          "bhp": 2255
+        }
+      },
+      {
+        "name": "normal all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "normal an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 1155,
+          "coreAfter": 1155,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "normal real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 275,
+            "after": 268,
+            "coreBefore": 1155,
+            "coreAfter": 1155,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 275,
+            "after": 268,
+            "coreBefore": 1155,
+            "coreAfter": 1155,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 275,
+            "after": 268,
+            "coreBefore": 1155,
+            "coreAfter": 1155,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 275,
+            "after": 268,
+            "coreBefore": 1155,
+            "coreAfter": 1155,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "normal the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 1155,
+            "coreAfter": 1155,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 1155,
+            "coreAfter": 1155,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 1155,
+            "coreAfter": 1155,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 1155,
+            "coreAfter": 1154,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "normal exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 1154,
+          "core": 1154,
+          "pool": 1154
+        }
+      },
+      {
+        "name": "hard core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 325
+            },
+            {
+              "id": "engineR",
+              "hp": 325
+            },
+            {
+              "id": "laserL",
+              "hp": 325
+            },
+            {
+              "id": "laserR",
+              "hp": 325
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 1363,
+          "coreMax": 1363,
+          "beam": null
+        }
+      },
+      {
+        "name": "hard direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 1363,
+          "hp": 1363,
+          "whole": 2663,
+          "bhp": 2663
+        }
+      },
+      {
+        "name": "hard all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "hard an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 1363,
+          "coreAfter": 1363,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "hard real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 325,
+            "after": 318,
+            "coreBefore": 1363,
+            "coreAfter": 1363,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 325,
+            "after": 318,
+            "coreBefore": 1363,
+            "coreAfter": 1363,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 325,
+            "after": 318,
+            "coreBefore": 1363,
+            "coreAfter": 1363,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 325,
+            "after": 318,
+            "coreBefore": 1363,
+            "coreAfter": 1363,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "hard the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 1363,
+            "coreAfter": 1363,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 1363,
+            "coreAfter": 1363,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 1363,
+            "coreAfter": 1363,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 1363,
+            "coreAfter": 1362,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "hard exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 1362,
+          "core": 1362,
+          "pool": 1362
+        }
+      },
+      {
+        "name": "furious core is absent from point, solid, beam, Retina and space collisions while all4 modules live",
+        "pass": true,
+        "data": {
+          "parts": [
+            {
+              "id": "engineL",
+              "hp": 372
+            },
+            {
+              "id": "engineR",
+              "hp": 372
+            },
+            {
+              "id": "laserL",
+              "hp": 372
+            },
+            {
+              "id": "laserR",
+              "hp": 372
+            }
+          ],
+          "at": null,
+          "solid": false,
+          "targets": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "space": [
+            "bomber-engineL",
+            "bomber-laserL",
+            "bomber-engineR",
+            "bomber-laserR"
+          ],
+          "core": 1560,
+          "coreMax": 1560,
+          "beam": null
+        }
+      },
+      {
+        "name": "furious direct, no-coordinate and stale Retina core damage cannot bypass the gate",
+        "pass": true,
+        "data": {
+          "core": 1560,
+          "hp": 1560,
+          "whole": 3048,
+          "bhp": 3048
+        }
+      },
+      {
+        "name": "furious all4 ordinary bullet lanes and held-beam lanes reach the intended modules through the body",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "point": "engineL",
+            "solid": true,
+            "first": "engineL",
+            "beam": "engineL"
+          },
+          {
+            "id": "laserL",
+            "point": "laserL",
+            "solid": true,
+            "first": "laserL",
+            "beam": "laserL"
+          },
+          {
+            "id": "engineR",
+            "point": "engineR",
+            "solid": true,
+            "first": "engineR",
+            "beam": "engineR"
+          },
+          {
+            "id": "laserR",
+            "point": "laserR",
+            "solid": true,
+            "first": "laserR",
+            "beam": "laserR"
+          }
+        ]
+      },
+      {
+        "name": "furious an actual space pulse crosses the protected body and leaves without an impact",
+        "pass": true,
+        "data": {
+          "coreBefore": 1560,
+          "coreAfter": 1560,
+          "kind": "spaceLaser",
+          "y": -53,
+          "frames": 105
+        }
+      },
+      {
+        "name": "furious real native space pulses damage each of the4 modules while reserving all body HP",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "before": 372,
+            "after": 365,
+            "coreBefore": 1560,
+            "coreAfter": 1560,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserL",
+            "before": 372,
+            "after": 365,
+            "coreBefore": 1560,
+            "coreAfter": 1560,
+            "kind": "spaceImpact",
+            "frames": 39
+          },
+          {
+            "id": "engineR",
+            "before": 372,
+            "after": 365,
+            "coreBefore": 1560,
+            "coreAfter": 1560,
+            "kind": "spaceImpact",
+            "frames": 29
+          },
+          {
+            "id": "laserR",
+            "before": 372,
+            "after": 365,
+            "coreBefore": 1560,
+            "coreAfter": 1560,
+            "kind": "spaceImpact",
+            "frames": 39
+          }
+        ]
+      },
+      {
+        "name": "furious the body stays protected with3,2 or1 surviving modules and opens only after the fourth",
+        "pass": true,
+        "data": [
+          {
+            "id": "engineL",
+            "live": 3,
+            "coreBefore": 1560,
+            "coreAfter": 1560,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-engineR",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "engineR",
+            "live": 2,
+            "coreBefore": 1560,
+            "coreAfter": 1560,
+            "locked": true,
+            "targets": [
+              "bomber-laserL",
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserL",
+            "live": 1,
+            "coreBefore": 1560,
+            "coreAfter": 1560,
+            "locked": true,
+            "targets": [
+              "bomber-laserR"
+            ]
+          },
+          {
+            "id": "laserR",
+            "live": 0,
+            "coreBefore": 1560,
+            "coreAfter": 1559,
+            "locked": false,
+            "targets": [
+              "bomber-core"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "furious exposed body is reachable by every weapon path and preserves the native remaining HP budget",
+        "pass": true,
+        "data": {
+          "at": "core",
+          "solid": true,
+          "beam": "core",
+          "space": [
+            "bomber-core"
+          ],
+          "hp": 1559,
+          "core": 1559,
+          "pool": 1559
+        }
+      },
+      {
+        "name": "Offscreen pursuit still rejects all module/core hits and targets",
+        "pass": true,
+        "data": {
+          "at": null,
+          "beam": null,
+          "targets": 0,
+          "core": 1560,
+          "parts": [
+            372,
+            372,
+            372,
+            372
+          ],
+          "before": [
+            372,
+            372,
+            372,
+            372
+          ],
+          "coreBefore": 1560
+        }
+      },
+      {
+        "name": "Real ground MG bullets pass through hull and damage each module",
+        "pass": true,
+        "data": {
+          "out": [
+            {
+              "id": "engineL",
+              "before": 372,
+              "after": 365,
+              "dead": true,
+              "core": 1560
+            },
+            {
+              "id": "laserL",
+              "before": 372,
+              "after": 365,
+              "dead": true,
+              "core": 1560
+            },
+            {
+              "id": "engineR",
+              "before": 372,
+              "after": 363.6,
+              "dead": true,
+              "core": 1560
+            },
+            {
+              "id": "laserR",
+              "before": 372,
+              "after": 365,
+              "dead": true,
+              "core": 1560
+            }
+          ],
+          "core": 1560,
+          "afterCore": 1560,
+          "centerSurvives": true,
+          "centerY": -6.459417069800509
+        }
+      },
+      {
+        "name": "A ground MG bullet on the protected centerline flies through untouched",
+        "pass": true,
+        "data": {
+          "out": [
+            {
+              "id": "engineL",
+              "before": 372,
+              "after": 365,
+              "dead": true,
+              "core": 1560
+            },
+            {
+              "id": "laserL",
+              "before": 372,
+              "after": 365,
+              "dead": true,
+              "core": 1560
+            },
+            {
+              "id": "engineR",
+              "before": 372,
+              "after": 363.6,
+              "dead": true,
+              "core": 1560
+            },
+            {
+              "id": "laserR",
+              "before": 372,
+              "after": 365,
+              "dead": true,
+              "core": 1560
+            }
+          ],
+          "core": 1560,
+          "afterCore": 1560,
+          "centerSurvives": true,
+          "centerY": -6.459417069800509
+        }
+      },
+      {
+        "name": "Live module damage still produces native white pixels and its own HP loss",
+        "pass": true,
+        "data": {
+          "white": 977,
+          "flash": 0.18333333333333335,
+          "hp": 367,
+          "expected": 367
+        }
+      },
+      {
+        "name": "Native module flash still expires",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "Full native module and core exhaustion reaches the original death owner",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "Native miniboss death still completes",
+        "pass": true,
+        "data": null
+      },
+      {
+        "name": "Stage6 pursuit bomber now uses the same protected core rule",
+        "pass": true,
+        "data": {
+          "closed": true,
+          "before": 1560,
+          "after": 1560
+        }
+      },
+      {
+        "name": "No new errors; only the already-documented optional Chronos preload404 is allowed",
+        "pass": true,
+        "data": {
+          "page": [],
+          "console": [],
+          "knownOptionalAsset": [],
+          "unexpectedHTTP": []
+        }
+      }
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "HTTPerrors": []
+  },
+  "totalPassed": 71,
+  "fullSuite": {
+    "errors": 5,
+    "baselineUnchanged": true
+  }
+}

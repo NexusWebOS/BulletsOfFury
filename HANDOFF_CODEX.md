@@ -1,3 +1,143 @@
+## 2026-10-28 — Nightwing persistent shadows and true banked turning cells
+
+Mike requested a shadow beneath Nightwing and proper rotational swerve frames. The wind builder now supplies exact-pose56%-alpha authored shadows for all live hull/headings/depth and aimed guns. NW30 draws one shadow behind exhaust/hull, with no hidden-phase remnants or runtime graphic transforms. Heading angles increase32→64 per bank; drift24→48 cells with smooth0→28→0-degree source-pixel banking, native tangent/yaw and existing depth curve. NF29 uses owning updated metadata for playback/collision. Canonical hull, gusts/charge/rings/guns/thrusters and all combat timing/path/HP rules remain.
+
+36 new shadow/turn +20 existing native Nightwing checks,4 source/export,13 film and14 playback checks pass.38 banks/4084 cells rebuild exactly; both48-frame editable Aseprite turn sources re-export exactly. Full179.73s Furious GOD/input-bot clear retained (early capture hitch during concurrent validation); separate clean45.39s natural flight proof at54.42fps supplies normal-speed11s preview. No game errors or enemy HP/phase/timer writes. Full suite exit1, same five baseline failures. See docs/NIGHTWING_SHADOW_TURN_1028.md and docs/qa/nightwing_shadow_turn_1028.json. Review http://127.0.0.1:51787/. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Nightwing animated directional wind gusts
+
+Mike rejected the mechanical circular wind bullets. PixelLab candidate4 + 16-frame animation now supply open teal/ivory airflow projectiles and matching anchored barrel gusts: 32 baked directions, 512 travel +256 muzzle cells. Fixed even canvases/pivots; no runtime graphic transforms. Old disc files preserved/inactive; cache-distinct gust URLs. Corrected aircraft, guns, exhausts, charge/dash rings, collision asterisks and combat behavior unchanged. Ordinary Wind rounds remain unshootable.
+
+17 new gust +20 existing native Nightwing checks pass. Fresh 135.64s live Furious GOD/input-bot fight reaches native defeat with four wind attacks, 57.86fps average, audible unclipped audio, no game errors or enemy HP/phase/timer writes. 10 film +14 playback checks pass. All32 banks/3144 cells rebuild exactly; raw source frames and16-frame editable Aseprite source retained. Full suite exit1: same five baseline failures. See docs/NIGHTWING_GUSTS_1028.md and docs/qa/nightwing_gusts_1028.json. Review http://127.0.0.1:64935/. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Nightwing consistent wing/body identity in all flight frames
+
+Mike rejected extra wings/design changes. The wind art builder now replaces legacy Part2 bank/roll/pitch silhouettes with source-pixel attitudes of the regular Nightwing hull, preserving its exact regular teal/royal pixels and canonical planform. All headings/depth/return/death derive from it; white masks and four depth shadows/aliases match. Removed fins no longer produce phantom collision. Fixed authored cells/pivots/nozzle metadata retained; no runtime graphics/AI/weapon/HP/timing changes, no paid generation.
+
+35 new identity/render and20 existing native wind regression checks pass. Fresh102.55s Furious GOD/input-bot Nightwing life reaches native defeat,56.53fps, audible unclipped audio, no game errors, no enemy HP/phase/timer writes;10 film and14 playback checks pass. All31 banks/registry rebuild exactly; corrected editable Aseprite sheet retained. Full suite reaches summary with same five baseline failures, exit1. See docs/NIGHTWING_CONSISTENCY_1028.md and docs/qa/nightwing_consistency_1028.json. Review http://127.0.0.1:61609/. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Rough Riders pilot/flight/attack video field guide
+
+Mike requested a webpage defining all five pilots and previewing their patterns. docs/previews/rough_riders_guide_1028/index.html includes five native portrait/ship dossiers, chaptered Furious move previews, tells/counters, shared evasion/airshow/fleet videos, move-label captions and explicit current-vs-proposed decisions. Seven fresh native-controller GOD-observer clips plus the prior introduction; automatic other-pilot/allied attacks suppressed for clarity, scheduled selection and labelled native reveal/interception events. No combat/runtime changes.
+
+Live inspection confirms Rook hook/ram selections currently collapse to chaingun; Star/Bowling/H/X calls share one combat layout; Kaia is the roller burst; Nyx's shared throttle reduces the intended fan. These are documented rather than silently changed. 58 film and84 page/playback checks pass; native decoded frames/audio and desktop/mobile screenshots inspected, source hashes exact. Review http://127.0.0.1:63068/. Details docs/ROUGH_RIDERS_GUIDE_1028.md and docs/qa/rough_riders_guide_1028.json. Portable builder/capture retained; no game.js/test_fl.js edits, commit or push. Full gameplay suite not rerun for this webpage-only task (prior five-failure baseline retained).
+
+## 2026-10-28 — The Rough Riders official crew identity and airshow entrance
+
+Mike named the five Rebel Fighters The Rough Riders. Native current crew/route/radio labels updated; actual portraits and complete native craft supplied image references for the generated five-pilot/ship group photo and four logos/signs. PixelLab Rough Riders Ignition80-glyph font exported with chrome/crimson/signal palettes, common baseline and padded R/5. Five editable72-frame whole-aircraft banks preserve native designs: headings, true somersaults and anchored cruise/boost plumes.
+
+assets/rough_riders_1028.js owns only full Stage6 protected entrance: northbound catch-up, full turbo exit, crossing two-loop airshow, bowling formation, slow drifting dialogue with allies, then smooth scenery/combat handoff. Original weapons, HP, FOV, cloak, hit flashes, defeat/rewards and StageX/single entrances retained.26 native/art,9 live-film and14 playback checks pass. Fresh59.64s Furious GOD observation film shows natural intro/dialogue release and seven seconds of combat; no enemy HP/phase/timer writes, approximately58.4fps, unclipped audible audio, no game errors.20-bank/registry byte-identical rebuild; Aseprite/source retained. Full suite reaches summary with same five baseline failures, exit1. See docs/ROUGH_RIDERS_1028.md and docs/qa/rough_riders_1028.json. Review http://127.0.0.1:58112/index.html. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 â€” Mounted laser batteries, all-part hull gate and red cookoff
+
+Mike requested lasers on the hull and a real exposed/burning hull phase after every weapon/fan dies. assets/carrier_hull_1028.js moves the two existing lasers onto measured wing-root panels, removes protected hull collision/targets, reserves hull HP in the full bar from spawn, exposes it only after all ten parts break, and preserves native carrier fall/detonation/Nightwing handoff after actual hull exhaustion. Two authored 17-frame whole-hull heat/hit banks spread red 1015-style light inward from four edges, pulse red, and keep the hatch aligned. Eight hull smoke columns, two burning fans and bounded native cardinal cookoff blasts continue through fall. Existing module HP, passive fans, red beam/focused muzzle and wind Nightwing remain.
+
+44 native/art checks on all four difficulties and 14 playback/source checks pass. Byte-identical 3-bank/registry rebuild and 17-frame Aseprite retained. Fresh 52.66s native Furious GOD/input-bot film has 7.63s exposed-hull view, no HP/phase/timer writes, 54.20fps, audible unclipped audio and no game/console/HTTP errors. Source matches. Syntax passes; full suite reaches summary with same five baseline failures, exit 1. See docs/CARRIER_HULL_1028.md and docs/qa/carrier_hull_1028.json. Review: http://127.0.0.1:50075/index.html. No paid generation, game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Red carrier beams, passive fan objectives and anchored smoke
+
+Mike requested red lasers, harmless fan modules and attached smoke on each break. assets/carrier_revision_1028.js guards fans before the old generic firing fallback, preserving native HP/Retina/hull gate/death. Scoped offline red beam + focused muzzle variants retain exact source alpha/geometry; other lasers stay unchanged. Two fixed eight-frame authored smoke columns follow the actual fan sockets through movement/depth/fall. Native weapons, hull explosion and wind Nightwing handoff remain.
+
+15 native/art checks and 10 playback/source checks pass. All 20 PNGs/registry rebuild exactly; editable eight-frame Aseprite retained. Fresh 46.55s Furious GOD/input-bot film reaches native carrier defeat and Nightwing handoff, 50.53fps, audible unclipped audio, no game/console/HTTP errors. Syntax passes; full suite retains five baseline failures (exit 1). See docs/CARRIER_REVISION_1028.md and docs/qa/carrier_revision_1028.json. Review: http://127.0.0.1:63524/index.html. No paid generation, game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Four-part body gate also applies to Stage 6 miniboss
+
+Mike clarified his Stage 5 bomber instruction includes the Stage 6 pursuit miniboss. assets/stage5_bomber_gate_1027.js now scopes to both stages. Protected body/core collision is absent until all four modules are destroyed, so bullets and beams travel through to surviving pieces. Core Retina/direct/stale-target damage stays blocked. Stage 6 hidden pursuit guard remains before the module scan. Native pools, pursuit choreography, flashes, breakup, death/rewards and once-only SHOOT! exposure remain.
+
+71 native checks pass across both stages/four difficulties, including real Stage 6 ground MG traversal/hits, all beam/module routes and hidden protection. Actual renderer screenshots inspected. Syntax passes; full suite retains five baseline failures. See docs/BOMBER_GATES_1028.md and docs/qa/bomber_gates_1028.json. Updated Stage 5 probe and new portable Stage 6 probe retained. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Teal wind Nightwing with anchored thrusters and dual Retina turrets
+
+assets/nightwing_wind_1028.js retains the current whole-flight animation and native life/death while adding a teal/royal palette, measured engine sockets, eight-frame PixelLab cruise/boost/depth plumes, separate aiming/recoil guns, native player Retina tells and paired machine-gun bursts. An exclusive wind charge dims scenery and releases animated unshootable Wind rounds from both turrets; dashes leave generated pressure rings. No independent gun HP/targets. Legacy overlapping center/orb attacks are retired only for this Stage 6 aircraft. Native evasions, depth, damage, carrier destruction and rewards remain.
+
+20 native/art checks pass. All 27 banks/registry rebuild exactly; 2321 even cells, transparent borders, editable Aseprite and PixelLab sources retained. Final 188.23s native Furious GOD/input-bot clear shows all new turns/throttle sizes with original HP/timers, 53.93fps average and audible unclipped charge/release audio. No game errors; source hashes match. Full suite retains five baseline failures. See docs/NIGHTWING_WIND_1028.md and docs/qa/nightwing_wind_1028.json. Review: http://127.0.0.1:55280/index.html. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-27 — Harrier opaque wreck consumed by hull-sized explosions
+
+assets/harrier_destruction_1027.js replaces only the Stage 6 carrier-fall hull fade. Wreck stays fully opaque until a covering hull-sized detonation; finite explosions sweep across/outside both wings and three large smoke rings follow. Reuses native approved explosion/smoke/audio owners. Nightwing life, protected entrance, HP and progression unchanged. 11 native checks pass; fresh input-only Furious GOD recording completes carrier destruction and Nightwing entry. 56.90 native fps through destruction; audible unclipped clip. Syntax passes; full suite retains five baseline failures. See docs/HARRIER_DESTRUCTION_1027.md and docs/qa/harrier_destruction_1027.json. Review: http://127.0.0.1:56521/index.html. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-27 — Royal Harrier escorts and banked Nightwing flyover
+
+Mike requested royal-blue helpers only on Hard (2) and Furious (5), turning corner entry and a large northbound charge/flyover with shadow and shrinking drift. assets/nightwing_flight_1027.js adds a dedicated five-bank royal escort family and native bay caps, 32-heading bank attitudes, curved entry, warned offscreen exit/flyover, 24-frame shrinking turn and 16-frame return. One whole Nightwing HP pool; complete pose-white flashes, alpha hits, foreground protection and native defeat/cues retained. Native bay refill retains those active caps. No new runtime image transforms.
+
+31 native checks pass. Fresh 181.57s Furious GOD/input-bot clear shows both lives/all new movements; 27.36s continuous focus clip. Native 54.44fps average, audible unclipped audio, no game errors. All 20 PNGs/registry rebuild exactly; no clipped tips. Aseprite, builder and portable probe retained. Syntax passes; full suite retains its same five baseline failures. See docs/NIGHTWING_FLIGHT_1027.md and docs/qa/nightwing_flight_1027.json. Review: http://127.0.0.1:56695/index.html. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-27 — South-facing Harrier guns through initial frames
+
+Mike requested the stowed gun housings face south until they become modular. assets/harrier_facing_1027.js now selects matching whole closed/open/broken hulls and well variants; the northbound opening has compensated local-facing art so the guns remain screen-south. Matching pre-modular white masks retained. Each depth-to-fight handover starts the four existing modular guns south before normal aiming. Original hull pixels outside the four apertures and complete alpha are unchanged; all health/weapon/transition owners remain.
+
+30 art/native checks pass, actual native and decoded pixels inspected. Fresh 171.79s Furious GOD/input-bot clear includes both lives, 27 south-facing depth samples and 3 handovers; 12-second excerpt retained. Audible unclipped audio, no game errors. All 13 PNGs/registry rebuild exactly; Aseprite and portable probe retained. Syntax passes; full suite retains the same five known failures. See docs/HARRIER_FACING_1027.md and docs/qa/harrier_facing_1027.json. Review: http://127.0.0.1:49257/index.html. No paid art, game.js/test_fl.js changes, commit or push.
+
+## 2026-10-27 — Stage 5 bomber protected body and clear module bullet lanes
+
+Mike requested the bomber body remain immune until all four modules break. assets/stage5_bomber_gate_1027.js now removes the protected core from point/solid/beam and shared space/Retina collision, and blocks direct/stale core damage. Bullets reach each live module through the hull. The native core opens only after engineL/engineR/laserL/laserR are all dead, with one shared authored SHOOT! prompt. Native HP, white flashes, break/attack/death/reward owners remain; Stage 6 pursuit bomber is unchanged.
+
+33 native gameplay checks pass across all difficulties, plus one explicit baseline-warning check. Actual native pulse travel/module damage, real hit pixels/expiry, protected 3/2/1 transitions, body exposure, normal defeat and Stage 6 isolation verified. No page/draw errors; only the already-documented missing optional Chronos stop_empty.png preload 404 remains, with its native C29 fallback preserved. Syntax passes; full suite retains the same five known failures. See docs/STAGE5_BOMBER_GATE_1027.md, docs/qa/stage5_bomber_gate_1027.json and the portable native probe. No game.js/test_fl.js changes, art generation, commit or push.
+
+## 2026-10-27 — Whole Nightwing and south/north/return entrance
+
+Mike requested one whole Nightwing and a deliberate escape/return after the Harrier falls. assets/nightwing_entrance_1027.js now sends the blue jet south, fully offscreen to a lower corner, vertically north, fully offscreen to the top center, then back facing south before native attacks begin. The protected 4.7-second sequence keeps full native stored HP. Nightwing uses one complete plate per pose, one body pool/Retina target and whole white damage feedback. The Harrier retains its ten modules and corrected guns. Current 107-frame whole bank preserves existing rolls/somersaults/inverted/death via baked views and D27 exhaust; no new runtime transforms or paid art.
+
+17 native checks pass, actual native/decoded pixels inspected. Fresh 2:44 Furious GOD/input-bot film clears both lives; 18-second continuous handoff excerpt retained. Full source events verify all beats; entrance HP untouched. Audible/unclipped audio, no game errors; 52.53 native fps average. Portable build reproduces PNGs/registry exactly; Aseprite and probe retained. Syntax passes; full suite retains the same five known failures. See docs/NIGHTWING_ENTRANCE_1027.md and docs/qa/nightwing_entrance_1027.json. Review: http://127.0.0.1:64044/index.html. No game.js/test_fl.js changes, commit or push.
+
+## 2026-10-27 — Solid modular Harrier gun turrets
+
+Mike caught ghost turrets: ER28 had used HH21 white highlight-only hit masks as complete gun art. assets/harrier_turrets_1027.js and its art registry now use the actual carrier's colored gun pixels with full opaque silhouettes, 64 authored headings x 4 recoil cycles and matching full white hit banks. The four native gun IDs retain independent HP/Retina, attached alternating-bore emission, damage/break/fire-stop rules and unshootable bullets. Original hull/masks and all other encounter owners remain.
+
+17 targeted checks pass, actual native/decoded pixels inspected. Fresh 2:42 Furious GOD/input-bot recording clears Harrier and Nightwing normally, including all four module breaks. Audible unclipped audio, no game errors; 55.16 native fps average. Portable art rebuild is byte-identical; Aseprite and native probe retained. Syntax passes; required suite retains the same five known failures. See docs/HARRIER_TURRETS_1027.md and docs/qa/harrier_turrets_1027.json. Review: http://127.0.0.1:62986/index.html. No paid generation, game.js/test_fl.js changes, commit or push.
+
+## 2026-10-27 — Stage 6 pursuit bomber and bomb-bay attacks
+
+Mike requested bomb drops from the launch bays, harmless thrusters, lateral chase and an offscreen throttle/catch-up barrage. assets/pursuit_bomber_1027.js now owns that Stage 6-only cycle: weave/drop, spool/boost, player-distance pursuit, warned return, missile fan/ground bombs, recovery. Living racks own all ordnance; native engines only propel. Hidden damage/Retina is blocked, rack breaks cancel pending drops, fragments remain unshootable and physical missiles interceptable. Native modular HP, flashes, death/rewards remain. Existing art was authored into fixed-cell door/bomb/directional banks; no credits spent.
+
+47 native checks pass on all difficulties. Fresh 77.76s Furious GOD/input-bot film records four throttle runs and native defeat; audible/unclipped decoded audio, inspected frames, no game errors. Capture averaged 42.16 native fps; invulnerable footage does not establish human balance. Syntax passes; full suite retains the same five known failures. Sources, Aseprite and rebuild/probe retained. See docs/PURSUIT_BOMBER_1027.md and docs/qa/pursuit_bomber_1027.json. No game.js/test_fl.js changes, commit or push in this pass.
+
+## 2026-10-27 — Solid R, square pilot bay and stage/encounter clocks
+
+Mike's HUD correction is live in assets/hud_timers_1027.js. The left header counts full active stage simulation across waves/encounters; the right starts a separate native-actor clock for minibosses/bosses, holds on defeat and resets for the next actor. Pause/menu frames do not count. Result clear time snapshots the full stage clock; original fight telemetry and rank/reward math remain. Clocks sit above HUD columns or above the compact HUD, clear of fullscreen. Generated square bezel fits all nine full portrait boxes; lower right HUD remains exact. Fury R now has a solid double-row top/bowl in every display bank, version solid-r-square-hud-1027d.
+
+41 native browser checks and96 font checks pass; wide/large/compact/co-op screenshots and all nine portraits inspected, no final page/console/HTTP errors. Syntax passes; required full suite reaches its summary with the same five prior failures. Source/editor exports and builder retained under _ART_SOURCES/hud_timers_1027. See docs/HUD_TIMERS_1027.md and docs/qa/hud_timers_1027.json. No commit/push.
+
+## 2026-10-27 — Restore Fury capital/numeral top bars
+
+Mike caught missing R/5 tops in the Fury specimen. Removed the cascading corner-scoring pass: it mutated the top row while testing the next neighbor, erasing whole runs. Authored masters now own complete top silhouettes. Native source fonts, Aseprite exports, runtime banks and ZIP are rebuilt at version glyph-tops-1027c. Glyph review rows no longer overlap their labels.
+
+288 source top rows,192 compiled bar checks and192 actual-renderer checks pass;27-bank topology/spacing checks remain green. Fresh native screenshots report no page/console errors. See docs/PIXELMAP_TOP_BARS_1027.md and docs/qa/pixelmap_top_bars_1027.json. Review: http://127.0.0.1:50240/_shots/pixelmap_fix_1027/index.html?rev=glyph-tops-1027c#r5-tops. Authored font/review correction only; no gameplay behavior, paid generation, commit or push.
+
+## 2026-10-27 — Pixelmap readable glyphs and complete HUD numbers
+
+Mike rejected clipped/hard-to-read R/r and numerals. Pixelmap faces now preserve bright full strokes;0/8 and lowercase r are clearer. Small Fury/Command/narrow sizes are hinted directly from pixel masters, not reduced whole glyph cells. All27 banks preserve connected R/r,0/8 counters and stable digit advances. Exact visible-ink metrics own measuring/fitting/centering. HUD values use solid Command numeric sizes; names are uppercase; tight HUD fields have safe insets. Original fonts, masters, Aseprite sources and builders are refreshed. Version legible-1027b busts old font caches.
+
+27-bank structural checks,20/20 menu checks,45 numeric runs and5 speaker names pass. Native desktop/compact/portrait screenshots inspected, no final browser/console errors. Syntax passes; full389-case suite retains the same five known failures. See docs/PIXELMAP_LEGIBILITY_1027.md and docs/qa/pixelmap_legibility_1027.json. Review: http://127.0.0.1:50240/_shots/pixelmap_fix_1027/index.html. The older menu-review page also has refreshed screenshots. No game.js changes, credits, commit or push.
+
+## 2026-10-27 — Focused blue laser emitters
+
+Mike rejected the Harrier's ice-crown muzzle flash. `assets/laser_muzzles_1027.js` now suppresses the optional crown on the shared blue/ice beam path and draws a compact, direction-matched cyan-white emitter cap. PixelLab VFX Workbench authored16 source phases; three fixed64x64 size banks each contain64 baked directions. Source, recipe and builder are preserved under `_ART_SOURCES/laser_muzzles_1027`. Original beam dimensions, collision, damage, warnings and sound remain; special/non-blue effects and standalone charge art are untouched.
+
+13/13 native browser checks pass, actual Furious twin-emitter before/after screenshots inspected, no page/console/asset errors. Syntax passes; full389-case suite ends with the same five existing failures. See docs/LASER_MUZZLES_1027.md and docs/qa/laser_muzzles_1027.json. Review: http://127.0.0.1:50240/_shots/laser_muzzles_1027/index.html. No generation credits spent, game.js edits, commit or push.
+
+## 2026-10-27 — Approved Pixelmap typography and playable text-menu concept
+
+User approved the new original font family for HUD, dialogue/speaker names, pilot select and detailed text. `assets/pixelmap_ui_1027.js` now enables it by default. `?pixelmap=1` enables the playable text-menu concept across title, modes, Campaign hub, Co-op/Arcade choices and difficulty; `?classicfont=1` restores original typography for comparison. This supersedes the preceding entry's statement that production fonts are unchanged. The normal graphic menu buttons remain available without the concept flag.
+
+The original selector was exported and baked into mirrored/white-sweep banks. Fonts use 21 authored sizes/banks, eight palette rows and baked dim states. Existing 84px chat frames/portraits remain owners; long names use a narrow 8px bank. Pilot bios fit above their actual stat count. Native navigation, saves, unlocks, online route and confirmation timing are preserved. No combat changes in this pass.
+
+20/20 browser navigation/text-fit checks passed, no final browser/console errors, actual wide and portrait screenshots inspected. Both syntax checks pass. Required suite reached all 389 cases and retained exactly the five known baseline failures. See docs/PIXELMAP_UI_CONCEPT_1027.md and docs/qa/pixelmap_ui_1027.json. Review: http://127.0.0.1:50240/_shots/pixelmap_ui_1027/index.html. No commit/push.
+
+## 2026-10-27 — Encounter revision and original Pixelmap font experiment
+
+Stage 6 isolated boss entries now seal spent stage/route timers without removing normal 14/41/52-second arrivals. Allies appear during the Rebel intro; Rook pods and Harrier turrets have baked directional/recoil banks. Carrier helpers weave higher. Stage 7 has rapid dual toxic guns, dorsal mortars, reachable flipped rear legs, real canister health/core protection and a final bouncing state. Herald retains side/corner passes and adds authored red tornado, skull nuke, lightning-rage and coded-sigil attacks. Ordinary new energy bullets remain unshootable. Native HP/rewards and existing NG+ rules remain owners.
+
+New runtime files: assets/encounter_revision_art_1027.js, assets/encounter_revision_1027.js, assets/sewer_revision_1027.js, assets/herald_revision_1027.js. Four optional original font families × eight palettes × 95 ASCII glyphs are under assets/game/shared/ui/pixelmap_fonts_1027; production fonts are unchanged. Sources and editable font atlases are retained under _ART_SOURCES.
+
+Five final native Furious GOD-bot clears passed video/audio/seek checks. Review: http://127.0.0.1:49919/index.html. Fonts: http://127.0.0.1:59944/index.html. Full report: docs/ENCOUNTER_REVISION_1027.md. Last required suite retains exactly the same five known baseline assertion failures; see docs/qa/encounter_revision_1027.json. Human difficulty is not established by invulnerable footage. No commit/push was made for this pass.
+
+## October27 - NG+ dark arsenal and final encounter review
+
+assets/ngplus_1027.js now grants all nine dark Forge recipes in NG+, opens earned late weapon families within native pilot/Gravity restrictions, increases player damage12% (Maverick homing lances excluded), hostile HP25%, and boss/miniboss cooldown/recovery advancement15%. Protected charge/warning/cinematic clocks remain native. Source copy pools retain modular budgets; health aliases cannot double-scale. Existing EA11 projectile pixels are baked offline into9 x16-frame x32-direction fixed72x72 banks, registered by ngplus_art_1027.js. Free recipes do not spend Forge points or create an empty paid Re-Spec. Existing StageX Signature MKII/supply rewards are verified on both routes; the bonus Forge point now survives save/load and Re-Spec.
+
+46 native checks and all16 native-video play/seek/audio checks pass; required suite reaches its summary with the same five baseline failures. Fresh Furious Cole GOD/input-bot footage covers Stage6 Harrier/Nightwing, Rebels and Siege Bomber; Stage7 Dredger/Warden; Herald and Dracodia first host, formation, final base and all four finite copies. Separate per-form videos and the continuous16:53 final take are in the gallery at http://127.0.0.1:54814/index.html. Earlier stalled take retained, excluded from final gallery. Native NG+ opening-wave preview uses Axel. See docs/NGPLUS_FINAL_REVIEW_1027.md, docs/qa/ngplus_final_review_1027.json and reproducible _BUILD_SOURCE/probe_ngplus_1027.py. No commit/push.
+
 ## October26 - Dracodia copied forms, continuous fusion and protected final life
 
 assets/dracodia_forms_1026.js upgrades the base and four copied forms with cyclic authored animation, source-pixel charge light, socket-attached effects, continuous code-fusion changes concealed by full whiteout, and an authored scythe animation whose visible mask owns contact. The base keeps all 5330 Furious HP and intact arms until Hammer, helicopter, Neural Archon and Phoenix/volcano are dead; initial infused-host damage stays separate. Native copy pools, advancing attack book, warnings, archive interlocks, interception/clears, final death and rewards remain. Expired helicopter muzzle callbacks no longer reach another form's socket code.

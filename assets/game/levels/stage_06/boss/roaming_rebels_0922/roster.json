@@ -1,7 +1,7 @@
 {
-  "name": "The Roaming Rebels",
+  "name": "The Rough Riders",
   "alignment": "Independent hostile hacker/militia group; opposes every organization, including Fury HQ.",
-  "status": "Art roster; names are working concepts. Five members including the male leader. Existing Stage 6 three-ship encounter is unchanged.",
+  "status": "Official five-pilot crew identity, named by Mike on October 28. Current Stage 6 encounter and native pilot/ship IDs retained.",
   "pilots": [
     {
       "key": "voss",

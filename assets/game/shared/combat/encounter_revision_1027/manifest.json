@@ -1,0 +1,784 @@
+{
+  "death_ball": {
+    "key": "er28_death_ball",
+    "path": "assets/game/shared/combat/encounter_revision_1027/death_ball.png",
+    "cw": 112,
+    "ch": 112,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      56,
+      56
+    ]
+  },
+  "pentagram": {
+    "key": "er28_pentagram",
+    "path": "assets/game/shared/combat/encounter_revision_1027/pentagram.png",
+    "cw": 108,
+    "ch": 108,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      54,
+      54
+    ]
+  },
+  "tornado": {
+    "key": "er28_tornado",
+    "path": "assets/game/shared/combat/encounter_revision_1027/tornado.png",
+    "cw": 316,
+    "ch": 336,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      158,
+      168
+    ]
+  },
+  "nuke": {
+    "key": "er28_nuke",
+    "path": "assets/game/shared/combat/encounter_revision_1027/nuke.png",
+    "cw": 366,
+    "ch": 346,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      184,
+      172
+    ]
+  },
+  "head_rage": {
+    "key": "er28_head_rage",
+    "path": "assets/game/shared/combat/encounter_revision_1027/head_rage.png",
+    "cw": 62,
+    "ch": 94,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      30,
+      82
+    ]
+  },
+  "head_rage_hit": {
+    "key": "er28_head_rage_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/head_rage_hit.png",
+    "cw": 62,
+    "ch": 94,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      30,
+      82
+    ]
+  },
+  "head_grin": {
+    "key": "er28_head_grin",
+    "path": "assets/game/shared/combat/encounter_revision_1027/head_grin.png",
+    "cw": 58,
+    "ch": 96,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      30,
+      82
+    ]
+  },
+  "head_grin_hit": {
+    "key": "er28_head_grin_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/head_grin_hit.png",
+    "cw": 58,
+    "ch": 96,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      30,
+      82
+    ]
+  },
+  "lightning": {
+    "key": "er28_lightning",
+    "path": "assets/game/shared/combat/encounter_revision_1027/lightning.png",
+    "cw": 72,
+    "ch": 512,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      36,
+      256
+    ]
+  },
+  "code_round": {
+    "key": "er28_code_round",
+    "path": "assets/game/shared/combat/encounter_revision_1027/code_round.png",
+    "cw": 32,
+    "ch": 30,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      16,
+      16
+    ]
+  },
+  "tank_gun": {
+    "key": "er28_tank_gun",
+    "path": "assets/game/shared/combat/encounter_revision_1027/tank_gun.png",
+    "cw": 84,
+    "ch": 84,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      42,
+      42
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "tank_gun_hit": {
+    "key": "er28_tank_gun_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/tank_gun_hit.png",
+    "cw": 84,
+    "ch": 84,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      42,
+      42
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "warden_gun": {
+    "key": "er28_warden_gun",
+    "path": "assets/game/shared/combat/encounter_revision_1027/warden_gun.png",
+    "cw": 92,
+    "ch": 92,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      46,
+      46
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "warden_gun_hit": {
+    "key": "er28_warden_gun_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/warden_gun_hit.png",
+    "cw": 92,
+    "ch": 92,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      46,
+      46
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "rook_pod": {
+    "key": "er28_rook_pod",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rook_pod.png",
+    "cw": 60,
+    "ch": 60,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      30,
+      30
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "rook_pod_hit": {
+    "key": "er28_rook_pod_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rook_pod_hit.png",
+    "cw": 60,
+    "ch": 60,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      30,
+      30
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "carrier_turret": {
+    "key": "er28_carrier_turret",
+    "path": "assets/game/shared/combat/encounter_revision_1027/carrier_turret.png",
+    "cw": 72,
+    "ch": 72,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      36,
+      36
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "carrier_turret_hit": {
+    "key": "er28_carrier_turret_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/carrier_turret_hit.png",
+    "cw": 72,
+    "ch": 72,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      36,
+      36
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "clean_whv_closed_w": {
+    "key": "er28_clean_whv_closed_w",
+    "path": "assets/game/shared/combat/encounter_revision_1027/clean_whv_closed_w.png",
+    "cw": 512,
+    "ch": 288,
+    "cols": 1,
+    "frames": 1,
+    "pivot": [
+      256,
+      144
+    ]
+  },
+  "clean_whv_open_w": {
+    "key": "er28_clean_whv_open_w",
+    "path": "assets/game/shared/combat/encounter_revision_1027/clean_whv_open_w.png",
+    "cw": 512,
+    "ch": 288,
+    "cols": 1,
+    "frames": 1,
+    "pivot": [
+      256,
+      144
+    ]
+  },
+  "hull_gun_0": {
+    "key": "er28_hull_gun_0",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_0.png",
+    "cw": 48,
+    "ch": 48,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      24,
+      24
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "hull_gun_0_hit": {
+    "key": "er28_hull_gun_0_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_0_hit.png",
+    "cw": 48,
+    "ch": 48,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      24,
+      24
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "hull_gun_1": {
+    "key": "er28_hull_gun_1",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_1.png",
+    "cw": 60,
+    "ch": 60,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      30,
+      30
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "hull_gun_1_hit": {
+    "key": "er28_hull_gun_1_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_1_hit.png",
+    "cw": 60,
+    "ch": 60,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      30,
+      30
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "hull_gun_2": {
+    "key": "er28_hull_gun_2",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_2.png",
+    "cw": 60,
+    "ch": 60,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      30,
+      30
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "hull_gun_2_hit": {
+    "key": "er28_hull_gun_2_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_2_hit.png",
+    "cw": 60,
+    "ch": 60,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      30,
+      30
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "hull_gun_3": {
+    "key": "er28_hull_gun_3",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_3.png",
+    "cw": 48,
+    "ch": 48,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      24,
+      24
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "hull_gun_3_hit": {
+    "key": "er28_hull_gun_3_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/hull_gun_3_hit.png",
+    "cw": 48,
+    "ch": 48,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      24,
+      24
+    ],
+    "angles": 64,
+    "cycles": 4
+  },
+  "rearL": {
+    "key": "er28_rearL",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearL.png",
+    "cw": 256,
+    "ch": 256,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      128,
+      128
+    ]
+  },
+  "rearL_hit": {
+    "key": "er28_rearL_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearL_hit.png",
+    "cw": 256,
+    "ch": 256,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      128,
+      128
+    ]
+  },
+  "rearL_fixed": {
+    "key": "er28_rearL_fixed",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearL_fixed.png",
+    "cw": 136,
+    "ch": 144,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      72,
+      78
+    ]
+  },
+  "rearL_fixed_hit": {
+    "key": "er28_rearL_fixed_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearL_fixed_hit.png",
+    "cw": 136,
+    "ch": 144,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      72,
+      78
+    ]
+  },
+  "rearR": {
+    "key": "er28_rearR",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearR.png",
+    "cw": 256,
+    "ch": 256,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      128,
+      128
+    ]
+  },
+  "rearR_hit": {
+    "key": "er28_rearR_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearR_hit.png",
+    "cw": 256,
+    "ch": 256,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      128,
+      128
+    ]
+  },
+  "rearR_fixed": {
+    "key": "er28_rearR_fixed",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearR_fixed.png",
+    "cw": 116,
+    "ch": 144,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      50,
+      74
+    ]
+  },
+  "rearR_fixed_hit": {
+    "key": "er28_rearR_fixed_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/rearR_fixed_hit.png",
+    "cw": 116,
+    "ch": 144,
+    "cols": 4,
+    "frames": 8,
+    "pivot": [
+      50,
+      74
+    ]
+  },
+  "frontL_swat": {
+    "key": "er28_frontL_swat",
+    "path": "assets/game/shared/combat/encounter_revision_1027/frontL_swat.png",
+    "cw": 154,
+    "ch": 160,
+    "cols": 8,
+    "frames": 136,
+    "pivot": [
+      86,
+      74
+    ],
+    "angles": 17,
+    "cycles": 8
+  },
+  "frontL_swat_hit": {
+    "key": "er28_frontL_swat_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/frontL_swat_hit.png",
+    "cw": 154,
+    "ch": 160,
+    "cols": 8,
+    "frames": 136,
+    "pivot": [
+      86,
+      74
+    ],
+    "angles": 17,
+    "cycles": 8
+  },
+  "frontR_swat": {
+    "key": "er28_frontR_swat",
+    "path": "assets/game/shared/combat/encounter_revision_1027/frontR_swat.png",
+    "cw": 146,
+    "ch": 152,
+    "cols": 8,
+    "frames": 136,
+    "pivot": [
+      66,
+      72
+    ],
+    "angles": 17,
+    "cycles": 8
+  },
+  "frontR_swat_hit": {
+    "key": "er28_frontR_swat_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/frontR_swat_hit.png",
+    "cw": 146,
+    "ch": 152,
+    "cols": 8,
+    "frames": 136,
+    "pivot": [
+      66,
+      72
+    ],
+    "angles": 17,
+    "cycles": 8
+  },
+  "core": {
+    "key": "er28_core",
+    "path": "assets/game/shared/combat/encounter_revision_1027/core.png",
+    "cw": 168,
+    "ch": 190,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      84,
+      95
+    ]
+  },
+  "core_hit": {
+    "key": "er28_core_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/core_hit.png",
+    "cw": 168,
+    "ch": 190,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      84,
+      95
+    ]
+  },
+  "canister": {
+    "key": "er28_canister",
+    "path": "assets/game/shared/combat/encounter_revision_1027/canister.png",
+    "cw": 46,
+    "ch": 88,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      23,
+      44
+    ]
+  },
+  "canister_hit": {
+    "key": "er28_canister_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/canister_hit.png",
+    "cw": 46,
+    "ch": 88,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      23,
+      44
+    ]
+  },
+  "toxic_slug": {
+    "key": "er28_toxic_slug",
+    "path": "assets/game/shared/combat/encounter_revision_1027/toxic_slug.png",
+    "cw": 48,
+    "ch": 48,
+    "cols": 8,
+    "frames": 1024,
+    "pivot": [
+      24,
+      24
+    ],
+    "angles": 64,
+    "cycles": 16
+  },
+  "toxic_slug_hit": {
+    "key": "er28_toxic_slug_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/toxic_slug_hit.png",
+    "cw": 48,
+    "ch": 48,
+    "cols": 8,
+    "frames": 1024,
+    "pivot": [
+      24,
+      24
+    ],
+    "angles": 64,
+    "cycles": 16
+  },
+  "toxic_orb": {
+    "key": "er28_toxic_orb",
+    "path": "assets/game/shared/combat/encounter_revision_1027/toxic_orb.png",
+    "cw": 36,
+    "ch": 36,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      18,
+      18
+    ]
+  },
+  "herald_core": {
+    "key": "er28_herald_core",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_core.png",
+    "cw": 104,
+    "ch": 212,
+    "cols": 4,
+    "frames": 1,
+    "pivot": [
+      52,
+      100
+    ],
+    "angleMin": 0,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_core_hit": {
+    "key": "er28_herald_core_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_core_hit.png",
+    "cw": 104,
+    "ch": 212,
+    "cols": 4,
+    "frames": 1,
+    "pivot": [
+      52,
+      100
+    ],
+    "angleMin": 0,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_wingL": {
+    "key": "er28_herald_wingL",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_wingL.png",
+    "cw": 262,
+    "ch": 288,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      168,
+      120
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_wingL_hit": {
+    "key": "er28_herald_wingL_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_wingL_hit.png",
+    "cw": 262,
+    "ch": 288,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      168,
+      120
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_wingR": {
+    "key": "er28_herald_wingR",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_wingR.png",
+    "cw": 244,
+    "ch": 302,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      70,
+      128
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_wingR_hit": {
+    "key": "er28_herald_wingR_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_wingR_hit.png",
+    "cw": 244,
+    "ch": 302,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      70,
+      128
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_gunL": {
+    "key": "er28_herald_gunL",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_gunL.png",
+    "cw": 188,
+    "ch": 146,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      88,
+      26
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_gunL_hit": {
+    "key": "er28_herald_gunL_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_gunL_hit.png",
+    "cw": 188,
+    "ch": 146,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      88,
+      26
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_gunR": {
+    "key": "er28_herald_gunR",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_gunR.png",
+    "cw": 188,
+    "ch": 142,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      98,
+      24
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "herald_gunR_hit": {
+    "key": "er28_herald_gunR_hit",
+    "path": "assets/game/shared/combat/encounter_revision_1027/herald_gunR_hit.png",
+    "cw": 188,
+    "ch": 142,
+    "cols": 4,
+    "frames": 31,
+    "pivot": [
+      98,
+      24
+    ],
+    "angleMin": -0.9,
+    "angleStep": 0.06,
+    "cycles": 1
+  },
+  "dark": {
+    "key": "er28_dark",
+    "path": "assets/game/shared/combat/encounter_revision_1027/dark.png",
+    "cw": 64,
+    "ch": 64,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      32,
+      32
+    ]
+  },
+  "red_flash": {
+    "key": "er28_red_flash",
+    "path": "assets/game/shared/combat/encounter_revision_1027/red_flash.png",
+    "cw": 64,
+    "ch": 64,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      32,
+      32
+    ]
+  }
+}

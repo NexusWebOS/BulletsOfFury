@@ -24,8 +24,8 @@ function rd26Helix(Q){const points=[],count=32,phase=(Q.t-23)*8.5;
   points.push({x:Q.body.x+Math.sin(theta)*r,y:Q.body.y+(u-.5)*Q.size*.72+Math.cos(theta)*12,z:Math.cos(theta)});}
  const arcs=[];for(let i=0;i<count;i++)arcs.push({from:points[i],to:points[i+1],front:(points[i].z+points[i+1].z)>=0,index:i});return arcs;
 }
-function rd26Swirl(Q,front){const warm=clamp((Q.t-23)/.35,0,1),fade=clamp((25.6-Q.t)/.3,0,1);if(!warm||!fade)return;
- for(const a of rd26Helix(Q))if(a.front===front){const alpha=warm*fade*(front?.80:.36)*(.72+.28*Math.sin(Q.t*10-a.index*.55));
+function rd26Swirl(Q,front){const build=clamp((Q.t-14)/9,0,1),warm=Q.t<14?0:.22+.78*build,fade=clamp((25.6-Q.t)/.3,0,1);if(!warm||!fade)return;
+ for(const a of rd26Helix(Q))if(a.front===front&&a.index<Math.ceil(32*(.125+.875*build))){const alpha=warm*fade*(front?.80:.36)*(.72+.28*Math.sin(Q.t*10-a.index*.55));
   r25Bolt(a.from.x,a.from.y,a.to.x,a.to.y,Q.t+a.index*.11,alpha);RD26.fx[front?'front':'back'].push({...a,alpha});}
 }
 function rd26Plate(Q,wire=false){const a=wire?RD26_ART.wire:RD26_ART.body,c=RD26_ART.cells[Q.depthFrame],p=RD26_ART.pivot;
@@ -51,7 +51,7 @@ rd25Body=function(b,Q){if(!Q.depth)return RD26.base.body.apply(this,arguments);
 };
 function rd26StrikeClock(t,R){const u=Math.max(0,t-23),phase=5*u+3*u*u;
  return t>=23?{beat:24+Math.floor(phase),age:phase%1,rate:5+6*u}:{beat:R.bolts,age:R.boltPhase||0,rate:null};}
-rd25Lightning=function(b,Q,R){if(!Q.depth)return RD26.base.lightning.apply(this,arguments);if(Q.t<17||!R.bolts)return;
+rd25Lightning=function(b,Q,R){if(!Q.depth)return RD26.base.lightning.apply(this,arguments);if(Q.t<14||!R.bolts)return;
  const storm=Q.t>=23,clock=rd26StrikeClock(Q.t,R),pulse=.95*clamp(1-clock.age/.72,0,1),count=storm?2:1;
  RD26.fx.clock=clock;
  for(let i=0;i<count;i++){

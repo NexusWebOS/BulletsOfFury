@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "nativeDefeat": true,
+    "fullVideoDecodes": true,
+    "audible": true,
+    "noDecodedClipping": true,
+    "allEightRuntimeHashesMatchApproved": true,
+    "nativePoolPathsMatchApproved": true,
+    "rageChargePlayed": true,
+    "waveChargePlayed": true,
+    "waveBlastPlayed": true,
+    "onlyExpectedMissingArt": true,
+    "noBrowserGameErrors": true
+  },
+  "chapters": {
+    "Hammer combat": 35.46560000002384,
+    "Chromium armor": 27.771100000023843,
+    "Chaingun": 381.0215,
+    "Rage transformation": 450.08540000003575,
+    "Rage charge sound": 452.8148000000119,
+    "Wave charge": 471.5123000000119,
+    "Wave blast": 476.3041999999881,
+    "Defeat": 495.00319999998806
+  },
+  "video": "C:\\Users\\Mike\\Documents\\New project\\BOF-Chronos-Original-Sounds-Fight-1026\\Chronos-Furious-Original-Sounds-Final-Safe.mp4",
+  "peakDb": -2.1,
+  "recordingMasterGain": 0.82,
+  "difficulty": "furious",
+  "pilot": "Cole",
+  "loadout": "Level5 Laser Cannon, maintained after ship conversion",
+  "invulnerable": true,
+  "method": "Continuous real-time native encounter from normal boss-mode entry to native defeat. Normal keyboard aim/fire/Retina/missiles; disclosed max player loadout maintained and player-hit immunity for capture. Fire released during rage/opener tells to hear the native cues. No enemy HP, phase, damage or timer writes during combat. Actual captured game audio; no replacement overlay.",
+  "loadoutVerified": true,
+  "assetLimit": "One existing missing optional stop_empty.png; recording-only existing recovery fallback. Production art untouched.",
+  "approvedAudio": "Original full recordings; minus two semitones, duration preserved, 24% room reverb, peak-safety attenuation only. No added samples, reversed fragments, EQ on dry signal or compression.",
+  "poolSourcePaths": {
+    "rage_charge": [
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/dbz-powerup-minus2-reverb.mp3",
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/dbz-powerup-minus2-reverb.mp3"
+    ],
+    "rage_release": [
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/saiyan-minus2-reverb.mp3",
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/saiyan-minus2-reverb.mp3"
+    ],
+    "wave_charge": [
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/kame_charge-minus2-reverb.mp3",
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/kame_charge-minus2-reverb.mp3"
+    ],
+    "gather_charge": [
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/kame_charge-minus2-reverb.mp3",
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/kame_charge-minus2-reverb.mp3"
+    ],
+    "wave_full": [
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/basicbeam_fire-minus2-reverb.mp3",
+      "assets/game/shared/audio/original_sfx_minus2_reverb_1026/basicbeam_fire-minus2-reverb.mp3"
+    ]
+  },
+  "runtimeHashChecks": {
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/kamehameha.swf-minus2-reverb.mp3": true,
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/basicbeam_fire-minus2-reverb.mp3": true,
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/kame_charge-minus2-reverb.mp3": true,
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/shenlong_effect-minus2-reverb.mp3": true,
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/scouter-minus2-reverb.mp3": true,
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/dbz_teleport-minus2-reverb.mp3": true,
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/saiyan-minus2-reverb.mp3": true,
+    "assets/game/shared/audio/original_sfx_minus2_reverb_1026/dbz-powerup-minus2-reverb.mp3": true
+  },
+  "suite": {
+    "complete": false,
+    "exit": 1,
+    "sameFiveBaselineFailures": true,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  }
+}

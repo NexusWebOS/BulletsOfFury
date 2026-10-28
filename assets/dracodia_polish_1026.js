@@ -30,24 +30,34 @@ v18Body=function(b){if(rb23Host(b)&&b._r30.mode==='dr5er23rebirth'&&b._r30.t<4){
 };
 // Preserve the speech text and faces; only the final exclamation owns the scream.
 for(let i=0;i<DR5.intro.length-1;i++)if(DR5.intro[i][1]===5)DR5.intro[i][1]=4;
+// Dedicated voices keep the formation mix independent of ordinary beam shots.
 function rd27ThunderReady(){const source=Snd.pools.combatBeam0927;if(!source)return false;
- if(!Snd.pools.rd27Lightning){Snd.prepare('combatBeam0927');Snd.pools.rd27Lightning=source;
-  Snd.TAME.rd27Lightning={g:1,...(Snd.TAME.combatBeam0927||{}),min:.025};}
+ if(!Snd.pools.rd27Lightning){if(!source.slots.some(Boolean))void source.list[0];const uri=source.slots.find(Boolean).uri,slots=[],list=[];
+  for(let i=0;i<6;i++)Object.defineProperty(list,i,{enumerable:true,get(){if(!slots[i])slots[i]={el:new window.Audio(),uri,attached:false,used:0};return Snd._touchVoice(slots[i]);}});
+  Snd.pools.rd27Lightning={list,slots,i:0};Snd.TAME.rd27Lightning={g:1.35,native:true,min:0};}
  return true;
 }
+function rd27Thunder(b,beat,kind){if(!rd27ThunderReady())return false;const R=b._r30.v18.rb23Rebirth;if(!R)return false;
+ const seen=R.rd27AudioSeen||(R.rd27AudioSeen=new Set()),id=kind+':'+beat;if(seen.has(id))return false;seen.add(id);RD27.lightningOwner=b;
+ const active=Snd.pools.rd27Lightning.slots.filter(v=>v?.attached&&!v.el.paused&&!v.el.ended).length,
+  strength=.82+.18*clamp((b._r30.t-14)/11.6,0,1),gain=strength/Math.sqrt(1+active*.45),played=Snd.play('rd27Lightning',gain);
+ RD27.audio.push({beat,gain,strength,active,played,t:b._r30.t,kind});return played;
+}
+function rd27ThunderStop(){const pool=Snd.pools.rd27Lightning;if(pool)for(const v of pool.slots)if(v?.el){v.el._bofEpoch=(v.el._bofEpoch||0)+1;try{v.el.pause();v.el.currentTime=0;}catch(_){}}RD27.lightningOwner=null;}
+const rd27Load=stageLoadBegin;stageLoadBegin=function(n){rd27ThunderStop();if(n===8&&rd27ThunderReady())Snd.prepare('rd27Lightning');return rd27Load.apply(this,arguments);};
+const rd27SetState=setState;setState=function(s){if(s!==GS.PLAY&&RD27.lightningOwner)rd27ThunderStop();return rd27SetState.apply(this,arguments);};
 r30Sound=function(key){if(key==='combatBeam0927'&&rd25Own(boss)){
- const beat=boss._r30.v18.rb23Rebirth.bolts,gain=.18+.48*clamp(beat/24,0,1),played=Snd.play(key,gain);
- RD27.audio.push({beat,gain,played,t:boss._r30.t,kind:'native'});return played;
+ return rd27Thunder(boss,boss._r30.v18.rb23Rebirth.bolts,'native');
  }return RD27.base.sound.apply(this,arguments);
 };
 rb23SceneTick=function(b,dt){const out=RD27.base.tick.apply(this,arguments);
  if(rd25Own(b)){const t=b._r30.t,R=b._r30.v18.rb23Rebirth;
   if(t>=23&&t<25.6&&rd27ThunderReady()){
    const beat=rd26StrikeClock(t,R).beat;if(beat!==R.rd27SoundBeat){R.rd27SoundBeat=beat;
-    const gain=.66+.34*clamp((beat-24)/33,0,1),played=Snd.play('rd27Lightning',gain);
-    RD27.audio.push({beat,gain,played,t,kind:'ending'});}
+    rd27Thunder(b,beat,'ending');}
   }
  }
+ if(!rd25Own(b)&&RD27.lightningOwner===b)rd27ThunderStop();
  if(RD27.audio.length>180)RD27.audio.splice(0,RD27.audio.length-180);return out;
 };
 globalThis.BOF_DRACODIA_POLISH_1026=RD27;

@@ -1,0 +1,360 @@
+{
+  "nativeChecks": {
+    "checks": [
+      {
+        "name": "Palette variants preserve exact alpha and source dimensions",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both fans never acquire a target, warning or shot in any former attack phase",
+        "passed": true,
+        "data": {
+          "targets": 0,
+          "shots": 0,
+          "fans": [
+            {
+              "phase": "rest",
+              "aim": null,
+              "angle": null,
+              "hp": 206
+            },
+            {
+              "phase": "rest",
+              "aim": null,
+              "angle": null,
+              "hp": 206
+            }
+          ]
+        }
+      },
+      {
+        "name": "All ten native modules and both fan HP pools remain intact",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Players can still Retina-target both fan objectives",
+        "passed": true,
+        "data": [
+          {
+            "id": "harrier L",
+            "name": "fan harrier L",
+            "hp": 206
+          },
+          {
+            "id": "harrier R",
+            "name": "fan harrier R",
+            "hp": 206
+          },
+          {
+            "id": "harrier laser0",
+            "name": "laser harrier laser0",
+            "hp": 165
+          },
+          {
+            "id": "harrier laser3",
+            "name": "laser harrier laser3",
+            "hp": 165
+          },
+          {
+            "id": "harrier hullGun0",
+            "name": "gun harrier hullGun0",
+            "hp": 83
+          },
+          {
+            "id": "harrier hullGun1",
+            "name": "gun harrier hullGun1",
+            "hp": 82
+          },
+          {
+            "id": "harrier hullGun2",
+            "name": "gun harrier hullGun2",
+            "hp": 83
+          },
+          {
+            "id": "harrier hullGun3",
+            "name": "gun harrier hullGun3",
+            "hp": 82
+          },
+          {
+            "id": "harrier rackL",
+            "name": "missile harrier rackL",
+            "hp": 185
+          },
+          {
+            "id": "harrier rackR",
+            "name": "missile harrier rackR",
+            "hp": 185
+          }
+        ]
+      },
+      {
+        "name": "Protected body ignores damage while fan sockets remain hittable",
+        "passed": true,
+        "data": {
+          "hp": 1442,
+          "after": 1442,
+          "fanCenters": [
+            "L",
+            "R"
+          ]
+        }
+      },
+      {
+        "name": "Actual carrier renderer resolves red beam and focused muzzle sheets",
+        "passed": true,
+        "data": {
+          "keys": [
+            "laser_05",
+            "muzzle_large",
+            "laser_05",
+            "muzzle_large"
+          ],
+          "scope": 0
+        }
+      },
+      {
+        "name": "Blue lasers outside the carrier draw retain their original sources",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Destroyed left fan smoke stays anchored during left carrier position/depth",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "args": [
+                384,
+                0,
+                128,
+                160,
+                90,
+                72,
+                128,
+                160
+              ],
+              "transform": [
+                1.4500000476837158,
+                0,
+                0,
+                1.4500000476837158,
+                -138.12112059287028,
+                -101.313559777318
+              ]
+            }
+          ],
+          "smoke": [
+            {
+              "id": "L",
+              "x": 154.38579485207106,
+              "y": 216.1412264284489,
+              "frame": 3
+            }
+          ],
+          "expected": {
+            "x": 85.73829485207105,
+            "y": 212.0912264284489
+          },
+          "fanDead": true
+        }
+      },
+      {
+        "name": "Destroyed left fan smoke stays anchored during moved carrier position/depth",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "args": [
+                384,
+                0,
+                128,
+                160,
+                132,
+                84,
+                128,
+                160
+              ],
+              "transform": [
+                1.0440000295639038,
+                0,
+                0,
+                1.0440000295639038,
+                -15.353185120591661,
+                -10.434220694902251
+              ]
+            }
+          ],
+          "smoke": [
+            {
+              "id": "L",
+              "x": 196.38579485207106,
+              "y": 228.1412264284489,
+              "frame": 3
+            }
+          ],
+          "expected": {
+            "x": 189.67359485207106,
+            "y": 227.74522642844892
+          },
+          "fanDead": true
+        }
+      },
+      {
+        "name": "Both destroyed fans render separate looping smoke columns",
+        "passed": true,
+        "data": [
+          {
+            "id": "L",
+            "x": 196.4253356256176,
+            "y": 203.33761764909852,
+            "frame": 1
+          },
+          {
+            "id": "R",
+            "x": 501.52533562561763,
+            "y": 203.33761764909852,
+            "frame": 2
+          }
+        ]
+      },
+      {
+        "name": "Live weapon modules retain native damage and white hit timers",
+        "passed": true,
+        "data": {
+          "damage": 1,
+          "flash": 0.16,
+          "id": "laser0"
+        }
+      },
+      {
+        "name": "Fan smoke remains attached to native falling carrier",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Original full-module defeat still reaches native Nightwing entrance/combat",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Fan change is isolated from other encounters",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or HTTP asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "playbackChecks": [
+    {
+      "name": "Range206 supports seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full native film metadata",
+      "passed": true,
+      "data": {
+        "duration": 46.506,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "Moving frames and decoded audio",
+      "passed": true,
+      "data": {
+        "frames": 35,
+        "audio": 5049
+      }
+    },
+    {
+      "name": "Seek 7.0s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Seek 14.2s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Seek 19.9s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Seek 33.6s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Seek 45.5s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review browser has no errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Recorded sources match installed game",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "video": {
+    "completed": true,
+    "reason": "native carrier defeat and Nightwing handoff",
+    "duration": 46.549,
+    "audio": {
+      "meanDb": -17.3,
+      "peakDb": -0.8
+    },
+    "nativeFps": 50.53154113466364,
+    "sourceMatches": true,
+    "passiveFansThroughout": true,
+    "smokeTimes": {
+      "first": 13.159,
+      "both": 18.872,
+      "fall": 31.639
+    },
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "godMode": true,
+    "godBlocks": 182,
+    "botErrors": []
+  },
+  "review": "http://127.0.0.1:63524/index.html",
+  "fullSuite": {
+    "exitCode": 1,
+    "errors": 5,
+    "baselineUnchanged": true,
+    "failures": [
+      "single-hit flash duration",
+      "dialogue ends with opening jump warning",
+      "opening jump returns before Chromium",
+      "opposite Stage X route persists",
+      "Stage X right full encounter"
+    ]
+  },
+  "rebuild": {
+    "pngBanks": 20,
+    "byteIdentical": true,
+    "exactAlpha": true,
+    "smokeFrames": 8,
+    "asepriteFrames": 8
+  }
+}

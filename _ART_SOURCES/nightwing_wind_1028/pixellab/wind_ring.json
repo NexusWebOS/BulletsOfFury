@@ -1,0 +1,235 @@
+{
+ "frames": [
+  {
+   "filename": "bof-nightwing-wind-dash-rings 0.png",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  },
+  {
+   "filename": "bof-nightwing-wind-dash-rings 1.png",
+   "frame": {
+    "x": 138,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  },
+  {
+   "filename": "bof-nightwing-wind-dash-rings 2.png",
+   "frame": {
+    "x": 276,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  },
+  {
+   "filename": "bof-nightwing-wind-dash-rings 3.png",
+   "frame": {
+    "x": 0,
+    "y": 58,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  },
+  {
+   "filename": "bof-nightwing-wind-dash-rings 4.png",
+   "frame": {
+    "x": 138,
+    "y": 58,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  },
+  {
+   "filename": "bof-nightwing-wind-dash-rings 5.png",
+   "frame": {
+    "x": 276,
+    "y": 58,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  },
+  {
+   "filename": "bof-nightwing-wind-dash-rings 6.png",
+   "frame": {
+    "x": 0,
+    "y": 116,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  },
+  {
+   "filename": "bof-nightwing-wind-dash-rings 7.png",
+   "frame": {
+    "x": 138,
+    "y": 116,
+    "w": 138,
+    "h": 58
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 138,
+    "h": 58
+   },
+   "sourceSize": {
+    "w": 138,
+    "h": 58
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "duration": 71
+  }
+ ],
+ "meta": {
+  "app": "PixelLab VFX Creator",
+  "image": "bof-nightwing-wind-dash-rings.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 414,
+   "h": 174
+  },
+  "scale": "1",
+  "anchor": {
+   "kind": "origin",
+   "x": 69,
+   "y": 29
+  },
+  "frameTags": [
+   {
+    "name": "bof-nightwing-wind-dash-rings",
+    "from": 0,
+    "to": 7,
+    "direction": "forward"
+   }
+  ]
+ }
+}

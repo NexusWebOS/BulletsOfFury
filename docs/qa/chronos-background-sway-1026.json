@@ -1,0 +1,36 @@
+{
+  "change": "Background horizontal motion20% slower;1.4s cycle,2.8s strafe, same horizontal span and two complete sweeps. Charge/wave timings unchanged.",
+  "checks": {
+    "nativeSwayRecorded": true,
+    "twoSweepsCrossCenter": true,
+    "longerStrafeObserved": true,
+    "entersChargeCentered": true,
+    "nativeReturnCompleted": true,
+    "hpUnchanged": true,
+    "noNativeErrors": true
+  },
+  "nativeEvidence": {
+    "samples": 13,
+    "centerCrossings": 3,
+    "maxObservedPhaseTime": 2.716666666666662,
+    "chargeStartsAtX": 340
+  },
+  "recording": "Native controlled rage checkpoint; actual game audio and rendering. Existing missing optional recovery-art fallback only in recording session.",
+  "suite": {
+    "complete": true,
+    "exit": 1,
+    "sameFiveBaselineFailures": true,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "playerChecks": {
+    "playsUnmuted": true,
+    "seekRangesSupported": true,
+    "noPageErrors": true
+  }
+}

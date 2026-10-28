@@ -156,7 +156,7 @@ const map4eXFocused=Object.getOwnPropertyDescriptor(Rival24,'mapFocused').get;
 Object.defineProperty(Rival24,'mapFocused',{get(){return MAP4E.xPreview||map4eXFocused.call(Rival24);}});
 Rival24.mapDraw=function(dt){const r=MAP4E_X.draw.apply(this,arguments);
  if(MAP4E.xPreview&&!Rival24.mapAvailable)mapgBriefingDraw({key:'map4f-x-locked',title:'STAGE X',
-  body:'THE CENTRAL CITY. COMPLETE STAGE 6 TO PURSUE THE HARRIER OR CHALLENGE THE REBEL FIGHTERS HERE.'});return r;
+  body:'THE CENTRAL CITY. COMPLETE STAGE 6 TO PURSUE THE HARRIER OR CHALLENGE THE ROUGH RIDERS HERE.'});return r;
 };
 Rival24.mapInput=function(){
  if(Rival24.mapAvailable){MAP4E.xPreview=false;return MAP4E_X.input.apply(this,arguments);}

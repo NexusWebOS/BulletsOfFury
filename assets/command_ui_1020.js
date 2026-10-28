@@ -44,7 +44,7 @@ function ui20Seat(seat){return withSeat(seat,()=>{
  v.secondaryValue=v.pilot==='cole'?(active?'X '+special.strikes:'INACTIVE'):v.pilot==='lizzie'?(lzMount?(lzMount.docked?Math.ceil(lzMount.life)+'S':'DOCKING'):'INACTIVE'):v.pilot==='decker'?((run.dkT||0)>0?Math.ceil(run.dkT)+'S':'INACTIVE'):v.pilot==='freezer'?(orbIsFireIce()?'EQUIPPED':'VIA LOADOUT'):v.pilot==='juggernaut'?(active?'CHARGE '+Math.round(chargeLevel()*100)+'%':'INACTIVE'):(v.lock?'LOCKED':'NO LOCK');
  return v;
  });}
-function ui20Rail(g,side,v){const source=XART.get('ui20_hud-a-'+(side?'right':'left'));g.drawImage(source,0,0,376,1024);const T=(s,x,y,h=26,w=260,a='center',c)=>ui20Text(g,s,x,y,h,w,a,c),I=(k,x,y,h)=>ph8Icon(g,k,x,y,h),pk={yuri:0,falva:1,cole:2,maverick:3,axel:4,juggernaut:5,lizzie:6,decker:7,freezer:8}[v.pilot]??0;
+function ui20Rail(g,side,v){const source=XART.get(side?'hud28_right':'ui20_hud-a-left');g.drawImage(source,0,0,376,1024);const T=(s,x,y,h=26,w=260,a='center',c)=>ui20Text(g,s,x,y,h,w,a,c),I=(k,x,y,h)=>ph8Icon(g,k,x,y,h),pk={yuri:0,falva:1,cole:2,maverick:3,axel:4,juggernaut:5,lizzie:6,decker:7,freezer:8}[v.pilot]??0;
  if(!side){
   for(const [label,y,key,available] of [['ROLL',108,'roll',v.rollAvailable],['SOMERSAULT',268,'somer',v.somerAvailable]]){T(label,188,y,29);ui20Fill(g,[75,y+31,234,21],available?v[key]:0,'#35f837');T(v.dead?'SHIP LOST':!available?'LOCKED':v[key]>=.999?'READY':Math.round(v[key]*100)+'%',188,y+87,30,230,'center',v.dead?'#ff7864':v.color);}
   T('LIVES',107,433,25,126);T('MISSILES',263,433,24,120);ui20Icon(g,v.ship,104,503,74);I('nmi_'+pk,261,503,68);T('X '+Math.max(0,v.lives),108,555,40,119);T('X '+Math.max(0,v.missiles),269,555,40,130);
@@ -52,8 +52,8 @@ function ui20Rail(g,side,v){const source=XART.get('ui20_hud-a-'+(side?'right':'l
   if(UI20.radio){T(v.secondary+' '+v.secondaryValue,188,854,15,260);const rows=ui20RadioRows(UI20.radio,260,15,4);rows.forEach((s,i)=>T(s,188,886+i*18,15,260,'center',i?'#eef2f8':UI20.color(UI20.radio.who)));}
   else{T(v.secondary,188,859,21,260);I(v.pilot==='cole'?'special_icon_cole_nuclear_warheads':v.pilot==='lizzie'?'nsw_icon_lizzie':v.pilot==='decker'?'nsw_icon_decker':'retm_0',96,912,58);T(v.secondaryValue,235,914,30,171,'center',v.color);}
  }else{
-  ui20Portrait(g,v.portrait,{x:48,y:67,w:276,h:256});
-  g.fillStyle=v.color+'35';g.fillRect(57,331,260,35);T((seatList().length>1?'P'+v.seat+' ':'')+v.pilot,188,351,36,246,'center',v.color);
+  ui20Portrait(g,v.portrait,{x:70,y:74,w:228,h:228});
+  g.fillStyle=v.color+'35';g.fillRect(82,329,216,39);T((seatList().length>1?'P'+v.seat+' ':'')+v.pilot,190,351,36,198,'center',v.color);
   T('SCORE',69,417,25,240,'left');T(ph8Score(v.score),188,464,60,278);T('HIGH SCORE',188,531,24);T(ph8Score(Math.max(highScore,v.score)),188,568,39,278);
   T('WEAPON EQUIPPED',188,641,24);if(v.weapon.reel)cf1004Cell(v.weapon.reel,CF1004.clock,104,720,70,100,0,g);else ui20Icon(g,v.weapon.key,105,719,78);
   ui20Lines(g,v.weapon.label,247,700,23,168,27);T('LEVEL '+String(v.weapon.lv).padStart(2,'0'),246,756,22,167);
@@ -108,7 +108,7 @@ dlgBox=function(o){if(!XART.rdy('ui20_dialogue-a'))return UI20.base.dlg.apply(th
  const fade=o.fade??1;if(fade<=0)return;const who=o.who||'',full=o.full||'',key=String(state)+'|'+who+'|'+full,now=performance.now(),prior=dlgBox._tw,first=!prior||prior.key!==key,auto=o.forceShown!==true&&(o.shown==null||(o.shown===full&&(first||prior.auto)));let shown;
  if(auto){const count=first?0:Math.min(full.length,prior.count+(now-prior.at)*.034);shown=full.slice(0,Math.floor(count));dialogueLetterTicks(full,first?0:Math.floor(prior.count),Math.floor(count));dlgBox._tw={key,count,at:now,auto:true};}else{shown=String(o.shown??full);dialogueLetterTicks(full,first?0:Math.min(full.length,Math.floor(prior.count)),shown.length);dlgBox._tw={key,count:shown.length,at:now,auto:false};}
  const pk=String(o.portrait||who).toLowerCase(),talking=shown.length<full.length&&(!o.emo||o.emo==='idle'),port=o.portraitKey||(o.portrait!==false&&UI20.pilot(pk)?commPortrait(pk,talking?'talk':o.emo||'idle'):null),inPlay=state===GS.PLAY,viewW=(state===GS.CAMPAIGNINTRO||state===GS.CUTSCENE)?cutsceneViewWidth():VW;
- const w=Math.min(viewW-20,o.pw||(inPlay?VW*.72:viewW-20)),maxHeight=VH*(inPlay?.34:.44),x=o.x??(inPlay?PLAY.x+8:(viewW-w)/2),bottom=Math.min(VH-10,o.maxBottom??VH-10);let h=Math.min(maxHeight,Math.max(o.ph||126,90));msgFaceUse(o.face||'dialogue');
+ const w=Math.min(viewW-20,o.pw||(inPlay?VW*.72:viewW-20)),maxHeight=VH*(inPlay?.34:.44),x=o.x??(inPlay?PLAY.x+8:(viewW-w)/2),bottom=Math.min(VH-10,o.maxBottom??VH-10);let h=Math.min(maxHeight,o.fixedHeight===true?(o.ph||84):Math.max(o.ph||126,90));msgFaceUse(o.face||'dialogue');
  // Fit the complete sentence before revealing characters, so typing never shifts rows.
  const sizeKey=['dialogue-height',full,x,w,h,maxHeight,!!port,o.face||'dialogue',bmfReady(o.face||'dialogue')].join('|');if(o.fixedHeight===true){/* Caller owns a uniform cinematic window; text fits its aperture. */}else if(UI20.cache.has(sizeKey))h=UI20.cache.get(sizeKey);else{
   for(;h<maxHeight;h=Math.min(maxHeight,h+2)){const t=ui20PanelLayout(x,0,w,h,port).text;if(msgBlockLayout(full,t.w,1000,14,14,1.25).height<=t.h)break;}

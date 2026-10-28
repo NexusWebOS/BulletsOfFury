@@ -1,0 +1,183 @@
+{
+  "change": "Scenery darkens during rage charge; fixed authored rings match the white/gold/orange/red transformation palette; remaining Rage HP owns a refilling red bar.",
+  "health": "Presentation only: snapshot remaining HP as Rage pool maximum. Underlying boss hp/maxhp, damage, attack timing and rewards unchanged.",
+  "darkness": "16 pre-authored64px alpha tiles: ramps to75% darkening, settles to45% in Rage Form. Drawn after scenery and before actors/ordnance/HUD.",
+  "rings": "Two native0.42s shock rings replaced by32 authored frames,16 each, fixed416/624px cells, native pivots, source-over blits only.",
+  "nativeChecks": {
+    "checks": {
+      "barStartsAtRemainingPool": true,
+      "barRefillsDuringCharge": true,
+      "barFullAtRelease": true,
+      "redThemeSelected": true,
+      "sceneryDarkens": true,
+      "maximumDimLevel": true,
+      "twoAuthoredRings": true,
+      "ringsHaveHotPalette": true,
+      "ringsUseFixedFrames": true,
+      "drawDoesNotAdvanceClock": true,
+      "rageStartsFull": true,
+      "actualGaugePixelsRed": true,
+      "hpBudgetUnchanged": true,
+      "rageBarTracksItsOwnPool": true,
+      "rageSceneryStaysDim": true,
+      "ringsExpire": true,
+      "otherStagesKeepTheirTheme": true,
+      "otherStagesKeepTheirHealth": true,
+      "sceneExitCleansRings": true,
+      "newChargeResetsPool": true,
+      "noPageErrors": true
+    },
+    "metrics": {
+      "midFill": 0.5952380952380951,
+      "backgroundRatio": 0.33561067099634884,
+      "ringHotPixels": 4010,
+      "ringWhitePixels": 5270,
+      "gauge": {
+        "theme": "cf50_rage",
+        "variant": "boss",
+        "frac": 1,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39,
+        "well": [
+          44,
+          17,
+          348,
+          11
+        ],
+        "canvas": [
+          480,
+          512
+        ]
+      },
+      "redGaugePixels": 3480,
+      "gaugeRows": [
+        [
+          123,
+          17,
+          13,
+          255
+        ],
+        [
+          254,
+          39,
+          29,
+          255
+        ],
+        [
+          254,
+          40,
+          30,
+          255
+        ],
+        [
+          254,
+          40,
+          30,
+          255
+        ],
+        [
+          253,
+          39,
+          29,
+          255
+        ],
+        [
+          253,
+          39,
+          29,
+          255
+        ],
+        [
+          253,
+          39,
+          29,
+          255
+        ],
+        [
+          253,
+          39,
+          29,
+          255
+        ],
+        [
+          253,
+          39,
+          29,
+          255
+        ],
+        [
+          253,
+          39,
+          29,
+          255
+        ],
+        [
+          33,
+          6,
+          14,
+          255
+        ]
+      ],
+      "armor": null
+    },
+    "errors": []
+  },
+  "recordingChecks": {
+    "redRageGauge": true,
+    "backgroundDarkened": true,
+    "hotRingFramesRendered": true,
+    "hpUnchangedDuringPresentation": true,
+    "energyCuesAllAccepted": true,
+    "chargePlayed": true,
+    "wavePlayed": true,
+    "rageChargePlayed": true,
+    "rageBoltsAllHaveCue": true,
+    "allStrikeCuesAccepted": true,
+    "kameLightningAudible": true,
+    "nativeLightningPlayed": true,
+    "nativeThrowRelease": true,
+    "powerUpCharge": true,
+    "rageRelease": true,
+    "redRageForm": true,
+    "nativeWaveCharge": true,
+    "nativeWaveFiring": true,
+    "nativeReturnComplete": true,
+    "fullDecode": true,
+    "audible": true,
+    "noGameErrors": true,
+    "onlyKnownOptionalAssetMissing": true
+  },
+  "video": {
+    "file": "Chronos-Rage-Presentation.mp4",
+    "seconds": 24.479900000035762,
+    "peakDb": -5.6,
+    "nativeFps": 38.153750628010556,
+    "method": "Native real-time controlled rage checkpoint. Initial15% HP fixture, then native transformation/attacks/audio; HP remains constant during this visual demonstration."
+  },
+  "fixtureNotes": [
+    "Normalized native charge progress is C.t/1.8; CG_SSJ is the7.2s real transformation span. Initial probe timing corrected to native progress.",
+    "The initial palette test found a salmon fill; delivered source uses saturated red and passes actual pixel checks."
+  ],
+  "limits": "One known missing optional stop_empty.png uses the existing native recovery fallback in the recording/probe session only. No production artwork replacement for that sheet.",
+  "suite": {
+    "complete": true,
+    "exit": 1,
+    "sameFiveBaselineFailures": true,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "reviewChecks": {
+    "videoPlaysUnmuted": true,
+    "ringChapterSeeks": true,
+    "rangeSupported": true,
+    "noPageErrors": true
+  }
+}

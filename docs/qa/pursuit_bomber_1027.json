@@ -1,0 +1,424 @@
+{
+  "checks": [
+    {
+      "name": "easy offscreen bomber rejects direct and locked damage",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "easy paused pursuit and both HUD clocks hold",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "easy completes weave, throttle, offscreen pursuit and return barrage",
+      "pass": true,
+      "data": [
+        "ahead",
+        "ambush",
+        "boost",
+        "entry",
+        "reacquire",
+        "recover",
+        "spool",
+        "weave"
+      ]
+    },
+    {
+      "name": "easy visible weaving demands lateral pursuit",
+      "pass": true,
+      "data": 200.80742627547795
+    },
+    {
+      "name": "easy releases actual bombs and physical missile volleys",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "easy every release comes from a live bomb rack or centre bay",
+      "pass": true,
+      "data": 49
+    },
+    {
+      "name": "easy releases never originate at either thruster",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "easy physical missile lanes leave a committed escape corridor",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "easy attack population stays bounded",
+      "pass": true,
+      "data": 55
+    },
+    {
+      "name": "easy offscreen hull has no Retina targets",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal offscreen bomber rejects direct and locked damage",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal paused pursuit and both HUD clocks hold",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal completes weave, throttle, offscreen pursuit and return barrage",
+      "pass": true,
+      "data": [
+        "ahead",
+        "ambush",
+        "boost",
+        "entry",
+        "reacquire",
+        "recover",
+        "spool",
+        "weave"
+      ]
+    },
+    {
+      "name": "normal visible weaving demands lateral pursuit",
+      "pass": true,
+      "data": 205.6007665090284
+    },
+    {
+      "name": "normal releases actual bombs and physical missile volleys",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal every release comes from a live bomb rack or centre bay",
+      "pass": true,
+      "data": 71
+    },
+    {
+      "name": "normal releases never originate at either thruster",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal physical missile lanes leave a committed escape corridor",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal attack population stays bounded",
+      "pass": true,
+      "data": 53
+    },
+    {
+      "name": "normal offscreen hull has no Retina targets",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard offscreen bomber rejects direct and locked damage",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard paused pursuit and both HUD clocks hold",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard completes weave, throttle, offscreen pursuit and return barrage",
+      "pass": true,
+      "data": [
+        "ahead",
+        "ambush",
+        "boost",
+        "entry",
+        "reacquire",
+        "recover",
+        "spool",
+        "weave"
+      ]
+    },
+    {
+      "name": "hard visible weaving demands lateral pursuit",
+      "pass": true,
+      "data": 205.6007665090284
+    },
+    {
+      "name": "hard releases actual bombs and physical missile volleys",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard every release comes from a live bomb rack or centre bay",
+      "pass": true,
+      "data": 92
+    },
+    {
+      "name": "hard releases never originate at either thruster",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard physical missile lanes leave a committed escape corridor",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard attack population stays bounded",
+      "pass": true,
+      "data": 60
+    },
+    {
+      "name": "hard offscreen hull has no Retina targets",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious offscreen bomber rejects direct and locked damage",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious paused pursuit and both HUD clocks hold",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious completes weave, throttle, offscreen pursuit and return barrage",
+      "pass": true,
+      "data": [
+        "ahead",
+        "ambush",
+        "boost",
+        "entry",
+        "reacquire",
+        "recover",
+        "spool",
+        "weave"
+      ]
+    },
+    {
+      "name": "furious visible weaving demands lateral pursuit",
+      "pass": true,
+      "data": 209.94409483558314
+    },
+    {
+      "name": "furious releases actual bombs and physical missile volleys",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious every release comes from a live bomb rack or centre bay",
+      "pass": true,
+      "data": 118
+    },
+    {
+      "name": "furious releases never originate at either thruster",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious physical missile lanes leave a committed escape corridor",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious attack population stays bounded",
+      "pass": true,
+      "data": 71
+    },
+    {
+      "name": "furious offscreen hull has no Retina targets",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Forward pursuit materially shortens the catch-up interval",
+      "pass": true,
+      "data": [
+        3.716666666666667,
+        0.7666666666666667
+      ]
+    },
+    {
+      "name": "New bomb rack visibly flashes through the native module-hit path",
+      "pass": true,
+      "data": {
+        "before": {
+          "before": 173,
+          "x": 366.9079273381959,
+          "y": 130.52217695602232,
+          "hp": 372
+        },
+        "after": {
+          "white": 980,
+          "hp": 352
+        }
+      }
+    },
+    {
+      "name": "Fragments cannot be shot down and physical missiles remain interceptable",
+      "pass": true,
+      "data": {
+        "initial": {
+          "fragment": false,
+          "missile": true
+        },
+        "fragment": {
+          "shootable": false,
+          "proof": true,
+          "hp": null
+        },
+        "missile": {
+          "shootable": true,
+          "proof": false,
+          "hp": 1
+        }
+      }
+    },
+    {
+      "name": "Breaking a rack cancels its pending drops without discarding other HP",
+      "pass": true,
+      "data": {
+        "prior": 1,
+        "remaining": 0,
+        "pool": 2652,
+        "expected": 2652
+      }
+    },
+    {
+      "name": "Native modular exhaustion reaches death and cancels owned hazards",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Native death sequence exits the encounter",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Space bomber is outside this Stage6-only change",
+      "pass": true,
+      "data": null
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "HTTPerrors": [],
+  "video": {
+    "file": "C:\\Users\\Mike\\Documents\\New project\\BOF-Pursuit-Bomber-1027\\pursuit-fight\\stage6-furious.mp4",
+    "bytes": 71547582,
+    "duration": 77.76,
+    "completed": true,
+    "reason": "native defeat",
+    "defeatSeconds": 71.665,
+    "modes": [
+      "ahead",
+      "ambush",
+      "boost",
+      "reacquire",
+      "recover",
+      "spool",
+      "weave"
+    ],
+    "nativeAverageFps": 42.15791620586832,
+    "maxObservationGap": 0.8270000000000053,
+    "audio": {
+      "peakDb": -2.9,
+      "meanDb": -18.9,
+      "tappedSounds": 85
+    },
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "abortedPreloads": 9,
+    "botErrors": [],
+    "sampledEvents": 219,
+    "releaseSources": [
+      "laserL",
+      "laserR"
+    ],
+    "boosts": 4,
+    "nativeGodBlocks": 27,
+    "videoSha256": "161fa85769fd2e1fcc11ca3c7297719283320eae7998574653297e2ab4de07e0"
+  },
+  "recordingMethod": "Native Furious Cole with GOD enabled, real RAF, input-only bot; initial level5 Laser/40 missiles; first35s player fire withheld. Native HP, attacks, damage, modules, AI and defeat; no phase/timer/HP writes.",
+  "baselineFailures": [
+    "single-hit flash duration",
+    "opening jump dialogue end",
+    "opening jump before Chromium",
+    "unchosen StageX right route persistence",
+    "full StageX right branch encounter"
+  ],
+  "playbackChecks": [
+    {
+      "name": "MP4 has working206 byte-range seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser decodes full H264 dimensions and duration",
+      "pass": true,
+      "data": {
+        "duration": 77.761,
+        "width": 1280,
+        "height": 800
+      }
+    },
+    {
+      "name": "Browser plays moving frames and decodes audible audio",
+      "pass": true,
+      "data": {
+        "frames": 35,
+        "audio": 366,
+        "time": 1.008724
+      }
+    },
+    {
+      "name": "Browser seeks to18s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser seeks to29s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser seeks to65s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser seeks to74s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Review page has no browser errors",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "Film source hashes still match current game",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "portableRebuild": {
+    "pass": true,
+    "files": {
+      "assets\\pursuit_bomber_art_1027.js": "4ca619185dd1ca529d0f5f9e5621e4eae1a99b280491063cdc32f24742404bfc",
+      "assets\\game\\levels\\stage_06\\miniboss\\pursuit_1027\\bay.png": "7521b62a0a502cd6c0c5c4af26185eca3069d6c7e25167ff849fbb9fc527220b",
+      "assets\\game\\levels\\stage_06\\miniboss\\pursuit_1027\\bay_hit.png": "578250e589e9ab966cb3b61139608e53161adc094fead2b1c75b2e2361431079",
+      "assets\\game\\levels\\stage_06\\miniboss\\pursuit_1027\\bomb.png": "90ba4a1ed8f9124cb059d1fe75ef3de1df0e2934f335894261f04cbaa4ba7a97",
+      "assets\\game\\levels\\stage_06\\miniboss\\pursuit_1027\\fragment.png": "4cc08c87e1b3d2e79957ebd1fa9786025a51388b9b7ffaa24ff1e349bcd83591",
+      "assets\\game\\levels\\stage_06\\miniboss\\pursuit_1027\\missile.png": "7d837dff883494051a9590a497ec6cbec484dc6ff94eb77d37224be21240805f"
+    }
+  },
+  "reviewUrl": "http://127.0.0.1:56142/index.html"
+}

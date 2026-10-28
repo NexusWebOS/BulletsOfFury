@@ -1,0 +1,105 @@
+{
+  "scope": "Foreground energy mix and continuous charging; full rage included in the review.",
+  "nativeChecks": {
+    "energyCuesAllAccepted": true,
+    "chargePlayed": true,
+    "wavePlayed": true,
+    "rageChargePlayed": true,
+    "rageBoltsAllHaveCue": true,
+    "allStrikeCuesAccepted": true,
+    "kameLightningAudible": true,
+    "nativeLightningPlayed": true,
+    "nativeThrowRelease": true,
+    "powerUpCharge": true,
+    "rageRelease": true,
+    "redRageForm": true,
+    "nativeWaveCharge": true,
+    "nativeWaveFiring": true,
+    "nativeReturnComplete": true,
+    "fullDecode": true,
+    "audible": true,
+    "noGameErrors": true,
+    "onlyKnownOptionalAssetMissing": true
+  },
+  "focusedChecks": {
+    "oncePerCharge": true,
+    "chargeLoopsUntilNativeRelease": true,
+    "musicDucked": true,
+    "activeCueDucksLightning": true,
+    "liveSfxMute": true,
+    "mutedSfxRestoresMusic": true,
+    "liveMasterMute": true,
+    "mixPreferencesRestored": true,
+    "noCueRestoresLightning": true,
+    "musicRestores": true,
+    "obeysMute": true,
+    "openerChargeOnlyOnce": true,
+    "openerWaveOnlyOnce": true,
+    "waveStopsCharge": true,
+    "tailStopsMain": true,
+    "regularChargeOnce": true,
+    "regularWaveOnce": true,
+    "boundedTwoVoices": true,
+    "noCombatMutation": true,
+    "pauseStopsAll": true,
+    "pauseInvalidatesRetries": true
+  },
+  "levels": {
+    "rage_charge": {
+      "foregroundDb": -18.914807017131185,
+      "musicDb": -27.949974376337593,
+      "lightningDb": -35.04291265032041,
+      "overMusicDb": 9.035167359206408,
+      "samples": 60,
+      "activeOutputFraction": 1.0
+    },
+    "wave_charge": {
+      "foregroundDb": -18.739719535292426,
+      "musicDb": -28.41440656575605,
+      "lightningDb": -35.86922647444918,
+      "overMusicDb": 9.674687030463623,
+      "samples": 157,
+      "activeOutputFraction": 0.9872611464968153
+    },
+    "wave_full": {
+      "foregroundDb": -18.992986890627712,
+      "musicDb": -28.925417483667594,
+      "lightningDb": -35.96213139226242,
+      "overMusicDb": 9.932430593039882,
+      "samples": 88,
+      "activeOutputFraction": 0.9886363636363636
+    }
+  },
+  "nativeVideo": {
+    "file": "Chronos-Foreground-Mix-Live.mp4",
+    "seconds": 23.090100000023842,
+    "nativeFps": 39.887224394829346,
+    "peakDb": -6.3
+  },
+  "suite": {
+    "complete": false,
+    "exit": 1,
+    "sameFiveBaselineFailures": true,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "limits": [
+    "Recording-only native recovery fallback for one known missing optional stop_empty.png; no production art change.",
+    "Per-cue output and mix levels were measured; final listening preference remains with Mike.",
+    "The first attempted ducking implementation failed on an out-of-scope helper; the delivered recording is from the corrected code. Failed raw take retained."
+  ],
+  "settings": "Saved music/SFX/master preferences unchanged. Temporary music factor .22; lightning factor .24 only while foreground energy plays; live mute tested.",
+  "reviewChecks": {
+    "allFiveMediaPlay": true,
+    "playersUnmutedFullVolume": true,
+    "blastJumpWorks": true,
+    "rangeSupported": true,
+    "fullProofDecodes": true,
+    "noPageErrors": true
+  }
+}

@@ -1,0 +1,15 @@
+> Superseded correction: the approved chaingun ICON BOX is restored;20 live armor sheets and the activation sequence are repaired. Announcements now use the full portrait dialogue. See [HAMMER_CORRECTION_1023.md](HAMMER_CORRECTION_1023.md).
+
+# Hammer tactical form â€” October23
+
+Replaced the Stage5 phase-two shortcut with a4.5s authored handoff: existing committed crate strike, canonical glowing hammer throw UP and offscreen, physical weapons chest opening, separate chaingun ejection, articulated catch into a braced tactical stance.27 generated body frames before rejection/selection, a9-frame physical crate,121 fixed exports including armor/rage/white-hit variants and props. No runtime sprite rotation, glow, fade or scaling in the new rendering owner. One shared1.75 source unit; common root per bank. Two clipped catch-arrival frames and the effect-heavy first firing take were rejected.
+
+Chromium's old gray-to-white recolor brightened silhouette pixels and dark armor panel gaps.16 existing blue armor sheets now retain their original alpha and dark linework with an interior chromium ramp.8529 neutral edge pixels in the activation sheet regain a dark outline. The new plated idle uses an exact-size authored unit and white-hit partner.
+
+Found and fixed another continuity bug in native play: Chromium activation ended by forcing state hammer, restoring a held hammer immediately after the gun handoff. Only when this acquired tactical form owns the activation, its return now goes to chain_warn with the same gun. Armor HP, activation duration, native shield, damage/death, stage progression, gun cadence and FOV owners are retained. Native bullets now originate at the measured new visible gun muzzle.
+
+Shared engine rule: bossShootGraphic blits the exact Stage6 nwarn_shoot sign at a fixed authored size. The previous Hammer recovery prompt's plain SHOOT text and Retina icon are removed. The rule appears in the engine header, AGENTS.md and CLAUDE.md. Existing general status/radio sentences are not objective headers.
+
+PixelLab jobs and sources: _ART_SOURCES/hammer_tactical_1023, including preserved rejected takes and selection.json. Owner: assets/hammer_tactical_1023.js / hammer_tactical_art_1023.js. Rebuild tools: _BUILD_SOURCE/build_hammer_tactical_1023.py, build_hammer_tactical_armor_1023.py, polish_hammer_tactical_activation_1023.py. Run the armor builder, activation polish, then tactical builder in that order to reproduce the full asset family. Native probe: _BUILD_SOURCE/probe_hammer_tactical_1023.py.
+
+Native tests cover all3 difficulties with/without armor, ordered physical release/ejection/catch, absence of retired blaster sprites, no premature gunfire, native projectile sockets, visible hit flash, retained gun through Chromium, rage prop palettes and actual Stage6 SHOOT pixels. Zero page/asset errors. Controlled encounters and an actual native video are provided; this is not a complete human campaign/balance playthrough. Required full core: BUILD OK/0 errors, actual exit0. No commit/push.

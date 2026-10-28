@@ -60,7 +60,7 @@ const Rival24=(()=>{
     else XART.rdy('fr27_stagex_card');
     drawShips(true);    // and the near side in front of it
     if(mapFocus&&idx.includes(mapCursor))stageXCard(mapCursor);
-    if(flying)campText('REBEL FURY BREAKING FORMATION',VW/2,VH-212,10,'#ffb4a3');
+    if(flying)campText('ROUGH RIDERS BREAKING FORMATION',VW/2,VH-212,10,'#ffb4a3');
     else if(!mapFocus)controlHintRow([['pad_dpad','STAGE X']],VH-212,VW/2,VW-24,20);
     else controlHintRow([['pad_dpad','RIVAL'],['pad_a','FIGHT'],['pad_b','MAP']],stageXCardTop()-86,VW/2,VW-24,20);
   }

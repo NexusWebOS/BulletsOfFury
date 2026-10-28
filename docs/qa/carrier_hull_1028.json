@@ -1,0 +1,1441 @@
+{
+  "legacyRegressions": {
+    "carrier_revision_1028": [
+      {
+        "name": "Palette variants preserve exact alpha and source dimensions",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both fans never acquire a target, warning or shot in any former attack phase",
+        "passed": true,
+        "data": {
+          "targets": 0,
+          "shots": 0,
+          "fans": [
+            {
+              "phase": "rest",
+              "aim": null,
+              "angle": null,
+              "hp": 206
+            },
+            {
+              "phase": "rest",
+              "aim": null,
+              "angle": null,
+              "hp": 206
+            }
+          ]
+        }
+      },
+      {
+        "name": "All ten native modules and both fan HP pools remain intact",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Players can still Retina-target both fan objectives",
+        "passed": true,
+        "data": [
+          {
+            "id": "harrier L",
+            "name": "fan harrier L",
+            "hp": 206
+          },
+          {
+            "id": "harrier R",
+            "name": "fan harrier R",
+            "hp": 206
+          },
+          {
+            "id": "harrier laser0",
+            "name": "laser harrier laser0",
+            "hp": 165
+          },
+          {
+            "id": "harrier laser3",
+            "name": "laser harrier laser3",
+            "hp": 165
+          },
+          {
+            "id": "harrier hullGun0",
+            "name": "gun harrier hullGun0",
+            "hp": 83
+          },
+          {
+            "id": "harrier hullGun1",
+            "name": "gun harrier hullGun1",
+            "hp": 82
+          },
+          {
+            "id": "harrier hullGun2",
+            "name": "gun harrier hullGun2",
+            "hp": 83
+          },
+          {
+            "id": "harrier hullGun3",
+            "name": "gun harrier hullGun3",
+            "hp": 82
+          },
+          {
+            "id": "harrier rackL",
+            "name": "missile harrier rackL",
+            "hp": 185
+          },
+          {
+            "id": "harrier rackR",
+            "name": "missile harrier rackR",
+            "hp": 185
+          }
+        ]
+      },
+      {
+        "name": "Protected body ignores damage while fan sockets remain hittable",
+        "passed": true,
+        "data": {
+          "hp": 1803,
+          "after": 1803,
+          "fanCenters": [
+            "L",
+            "R"
+          ]
+        }
+      },
+      {
+        "name": "Actual carrier renderer resolves red beam and focused muzzle sheets",
+        "passed": true,
+        "data": {
+          "keys": [
+            "laser_05",
+            "muzzle_large",
+            "laser_05",
+            "muzzle_large"
+          ],
+          "scope": 0
+        }
+      },
+      {
+        "name": "Blue lasers outside the carrier draw retain their original sources",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Destroyed left fan smoke stays anchored during left carrier position/depth",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "args": [
+                384,
+                0,
+                128,
+                160,
+                90,
+                72,
+                128,
+                160
+              ],
+              "transform": [
+                1.4500000476837158,
+                0,
+                0,
+                1.4500000476837158,
+                -137.95353787247586,
+                -101.27133794056863
+              ]
+            }
+          ],
+          "smoke": [
+            {
+              "id": "L",
+              "x": 154.01337500088027,
+              "y": 216.04739527688704,
+              "frame": 3
+            }
+          ],
+          "expected": {
+            "x": 85.36587500088027,
+            "y": 211.99739527688703
+          },
+          "fanDead": true
+        }
+      },
+      {
+        "name": "Destroyed left fan smoke stays anchored during moved carrier position/depth",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "args": [
+                384,
+                0,
+                128,
+                160,
+                132,
+                84,
+                128,
+                160
+              ],
+              "transform": [
+                1.0440000295639038,
+                0,
+                0,
+                1.0440000295639038,
+                -15.336799245324073,
+                -10.430092335194786
+              ]
+            }
+          ],
+          "smoke": [
+            {
+              "id": "L",
+              "x": 196.01337500088027,
+              "y": 228.04739527688704,
+              "frame": 3
+            }
+          ],
+          "expected": {
+            "x": 189.30117500088028,
+            "y": 227.65139527688706
+          },
+          "fanDead": true
+        }
+      },
+      {
+        "name": "Both destroyed fans render separate looping smoke columns",
+        "passed": true,
+        "data": [
+          {
+            "id": "L",
+            "x": 196.99369353633688,
+            "y": 203.69280299796893,
+            "frame": 1
+          },
+          {
+            "id": "R",
+            "x": 502.0936935363369,
+            "y": 203.69280299796893,
+            "frame": 2
+          }
+        ]
+      },
+      {
+        "name": "Live weapon modules retain native damage and white hit timers",
+        "passed": true,
+        "data": {
+          "damage": 1,
+          "flash": 0.16,
+          "id": "laser0"
+        }
+      },
+      {
+        "name": "Fan smoke remains attached to native falling carrier",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Original full-module defeat still reaches native Nightwing entrance/combat",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Fan change is isolated from other encounters",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or HTTP asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "harrier_destruction_1027": [
+      {
+        "name": "Wreck stays opaque at 1s",
+        "passed": true,
+        "data": {
+          "t": 1.0000000000000013,
+          "last": {
+            "t": 1.0000000000000013,
+            "hull": true,
+            "alpha": 1
+          },
+          "alpha": [
+            1
+          ],
+          "events": 6,
+          "rings": 0,
+          "mode": "death",
+          "ace": false
+        }
+      },
+      {
+        "name": "Wreck stays opaque at 3.7s",
+        "passed": true,
+        "data": {
+          "t": 3.7166666666666583,
+          "last": {
+            "t": 3.7166666666666583,
+            "hull": true,
+            "alpha": 1
+          },
+          "alpha": [
+            1
+          ],
+          "events": 24,
+          "rings": 1,
+          "mode": "death",
+          "ace": true
+        }
+      },
+      {
+        "name": "Carrier is consumed by detonation instead of fading at 3.95s",
+        "passed": true,
+        "data": {
+          "t": 3.9666666666666575,
+          "last": {
+            "t": 3.9666666666666575,
+            "hull": false,
+            "reason": "hull-sized detonation"
+          },
+          "alpha": [],
+          "events": 25,
+          "rings": 1,
+          "mode": "death",
+          "ace": true
+        }
+      },
+      {
+        "name": "Carrier is consumed by detonation instead of fading at 4.5s",
+        "passed": true,
+        "data": {
+          "t": 4.516666666666656,
+          "last": {
+            "t": 4.516666666666656,
+            "hull": false,
+            "reason": "hull-sized detonation"
+          },
+          "alpha": [],
+          "events": 30,
+          "rings": 3,
+          "mode": "death",
+          "ace": true
+        }
+      },
+      {
+        "name": "Carrier is consumed by detonation instead of fading at 5.3s",
+        "passed": true,
+        "data": {
+          "t": 5.316666666666653,
+          "last": {
+            "t": 5.316666666666653,
+            "hull": false,
+            "reason": "hull-sized detonation"
+          },
+          "alpha": [],
+          "events": 34,
+          "rings": 3,
+          "mode": "death",
+          "ace": true
+        }
+      },
+      {
+        "name": "Exactly one hull-sized covering detonation",
+        "passed": true,
+        "data": [
+          {
+            "event": "hull-detonation",
+            "t": 3.6166666666666587,
+            "x": 347.73766895618525,
+            "y": 372.0653966983044,
+            "width": 668.16,
+            "height": 375.84,
+            "size": 748.3392
+          }
+        ]
+      },
+      {
+        "name": "Explosions spread across both wings and outside the wreck",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Three large smoke rings emit exactly once",
+        "passed": true,
+        "data": [
+          {
+            "event": "smoke-ring",
+            "t": 3.6166666666666587,
+            "size": 501.12
+          },
+          {
+            "event": "smoke-ring",
+            "t": 3.983333333333324,
+            "size": 594.6623999999999
+          },
+          {
+            "event": "smoke-ring",
+            "t": 4.3666666666666565,
+            "size": 688.2048
+          }
+        ]
+      },
+      {
+        "name": "Native Nightwing entrance, life and encounter continue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Destruction stops emitting after its finite sequence",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game/draw errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "nativeChecks": {
+    "checks": [
+      {
+        "name": "All new cells are even and textures fit 4096px",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1188,
+          "max": 1188,
+          "sum": 950,
+          "core": 238,
+          "coreMax": 238,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "easy HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1188,
+          "max": 1188,
+          "sum": 950,
+          "core": 238,
+          "coreMax": 238,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "easy both laser bases mount inside the metal hull and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -80,
+            "dy": 24,
+            "hit": "laser0"
+          },
+          {
+            "dx": 80,
+            "dy": 24,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "easy direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 238,
+          "hp": 1188,
+          "initialCore": 238,
+          "initialHP": 1188
+        }
+      },
+      {
+        "name": "easy hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 238,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 238,
+          "core": 238,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 238
+        }
+      },
+      {
+        "name": "normal hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1393,
+          "max": 1393,
+          "sum": 1114,
+          "core": 279,
+          "coreMax": 279,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1393,
+          "max": 1393,
+          "sum": 1114,
+          "core": 279,
+          "coreMax": 279,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "normal both laser bases mount inside the metal hull and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -80,
+            "dy": 24,
+            "hit": "laser0"
+          },
+          {
+            "dx": 80,
+            "dy": 24,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "normal direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 279,
+          "hp": 1393,
+          "initialCore": 279,
+          "initialHP": 1393
+        }
+      },
+      {
+        "name": "normal hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 279,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 279,
+          "core": 279,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 279
+        }
+      },
+      {
+        "name": "hard hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1598,
+          "max": 1598,
+          "sum": 1278,
+          "core": 320,
+          "coreMax": 320,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1598,
+          "max": 1598,
+          "sum": 1278,
+          "core": 320,
+          "coreMax": 320,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hard both laser bases mount inside the metal hull and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -80,
+            "dy": 24,
+            "hit": "laser0"
+          },
+          {
+            "dx": 80,
+            "dy": 24,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "hard direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 320,
+          "hp": 1598,
+          "initialCore": 320,
+          "initialHP": 1598
+        }
+      },
+      {
+        "name": "hard hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 320,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 320,
+          "core": 320,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 320
+        }
+      },
+      {
+        "name": "furious hull absent from targets/collision while ten modules live",
+        "passed": true,
+        "data": {
+          "hp": 1803,
+          "max": 1803,
+          "sum": 1442,
+          "core": 361,
+          "coreMax": 361,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious HP budget includes the protected hull reserve exactly once",
+        "passed": true,
+        "data": {
+          "hp": 1803,
+          "max": 1803,
+          "sum": 1442,
+          "core": 361,
+          "coreMax": 361,
+          "targets": [
+            "harrier L",
+            "harrier R",
+            "harrier laser0",
+            "harrier laser3",
+            "harrier hullGun0",
+            "harrier hullGun1",
+            "harrier hullGun2",
+            "harrier hullGun3",
+            "harrier rackL",
+            "harrier rackR"
+          ],
+          "point": null,
+          "mounts": [
+            {
+              "dx": -80,
+              "dy": 24,
+              "hit": "laser0"
+            },
+            {
+              "dx": 80,
+              "dy": 24,
+              "hit": "laser3"
+            }
+          ]
+        }
+      },
+      {
+        "name": "furious both laser bases mount inside the metal hull and share hit sockets",
+        "passed": true,
+        "data": [
+          {
+            "dx": -80,
+            "dy": 24,
+            "hit": "laser0"
+          },
+          {
+            "dx": 80,
+            "dy": 24,
+            "hit": "laser3"
+          }
+        ]
+      },
+      {
+        "name": "furious direct and stale hull hits cannot bypass module gate",
+        "passed": true,
+        "data": {
+          "core": 361,
+          "hp": 1803,
+          "initialCore": 361,
+          "initialHP": 1803
+        }
+      },
+      {
+        "name": "furious hull remains protected at every partial destruction step",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "furious final laser break exposes one intact hull pool before any fall",
+        "passed": true,
+        "data": {
+          "result": [
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            },
+            {
+              "dead": true,
+              "core": 361,
+              "exposed": false,
+              "hull": null,
+              "target": false
+            }
+          ],
+          "before": 361,
+          "core": 361,
+          "exposed": true,
+          "fall": false,
+          "live": 0,
+          "targets": [
+            "harrier hull"
+          ],
+          "hp": 361
+        }
+      },
+      {
+        "name": "Native hull selects authored edges frames",
+        "passed": true,
+        "data": {
+          "key": "er28_clean_whv_closed_w",
+          "name": "closed",
+          "frame": 0,
+          "exposed": true
+        }
+      },
+      {
+        "name": "Native hull selects authored spreading frames",
+        "passed": true,
+        "data": {
+          "key": "er28_clean_whv_closed_w",
+          "name": "closed",
+          "frame": 6,
+          "exposed": true
+        }
+      },
+      {
+        "name": "Native hull selects authored red-flash frames",
+        "passed": true,
+        "data": {
+          "key": "er28_clean_whv_closed_w",
+          "name": "closed",
+          "frame": 14,
+          "exposed": true
+        }
+      },
+      {
+        "name": "Eight bounded smoke columns cover the hull while both fans burn/smoke",
+        "passed": true,
+        "data": {
+          "smoke": 8,
+          "fans": 2,
+          "events": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "shoot": 4
+        }
+      },
+      {
+        "name": "Cookoff starts north, east, west, south before spreading",
+        "passed": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "A stale destroyed module target cannot damage the exposed hull",
+        "passed": true,
+        "data": {
+          "hp": 361,
+          "after": 361
+        }
+      },
+      {
+        "name": "A real native machine-gun bullet damages the newly exposed hull",
+        "passed": true,
+        "data": {
+          "before": 361,
+          "after": 354,
+          "dead": true,
+          "flash": 0.16,
+          "ticks": 7
+        }
+      },
+      {
+        "name": "Accepted hull hit visibly flashes the entire actual hull white",
+        "passed": true,
+        "data": {
+          "drawn": 1,
+          "lit": 93813,
+          "whitePixels": 93813,
+          "frame": 16
+        }
+      },
+      {
+        "name": "Hatch overlay uses the same whole-hull white hit frame",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native hull hit flash expires and returns to red cookoff animation",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Held beam reaches exposed hull through its actual opaque column",
+        "passed": true,
+        "data": {
+          "before": 354,
+          "after": 351
+        }
+      },
+      {
+        "name": "Hull exhaustion starts the original opaque carrier fall exactly once",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Red glow, hull smoke and fan fires persist during native fall",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native Nightwing entrance/combat still receives its original life",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "A real centerline bullet passes untouched through the protected hull",
+        "passed": true,
+        "data": {
+          "core": 361,
+          "after": 361,
+          "dead": null,
+          "y": -0.6376432107284131,
+          "point": null,
+          "test": false
+        }
+      },
+      {
+        "name": "Fans remain passive after mounted-turret and hull changes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sustained hits retain native white flashes AND visible red palette intervals",
+        "passed": true,
+        "data": {
+          "white": 24,
+          "red": 24
+        }
+      },
+      {
+        "name": "Other stages do not enter the new hull owner",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or HTTP asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "playbackChecks": [
+    {
+      "name": "shortfilm range206 seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm metadata",
+      "passed": true,
+      "data": {
+        "duration": 14.833333,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "shortfilm moving frames and decoded audio",
+      "passed": true,
+      "data": {
+        "frames": 35,
+        "audio": 26583
+      }
+    },
+    {
+      "name": "shortfilm seek 1.0s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek 4.0s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek 13.8s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm range206 seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm metadata",
+      "passed": true,
+      "data": {
+        "duration": 52.627,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "fullfilm moving frames and decoded audio",
+      "passed": true,
+      "data": {
+        "frames": 32,
+        "audio": 7088
+      }
+    },
+    {
+      "name": "fullfilm seek 8.0s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek 31.1s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek 39.7s",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review browser has no errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Recorded sources match installed game",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "video": {
+    "completed": true,
+    "reason": "native modules, exposed hull, carrier defeat and Nightwing handoff",
+    "duration": 52.665,
+    "audio": {
+      "meanDb": -17.5,
+      "peakDb": -2.4
+    },
+    "nativeFps": 54.200428462245284,
+    "sourceMatches": true,
+    "bodyProtectedThroughoutModules": true,
+    "oneHullTargetAfterward": true,
+    "redPaletteSamples": 6,
+    "decodedRedHullPixels": 216840,
+    "exposedTime": 30.098,
+    "fallTime": 37.731,
+    "shortStart": 29.298,
+    "shortDuration": 14.833000000000004,
+    "hullViewSeconds": 7.633000000000003,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "godMode": true,
+    "godBlocks": 211,
+    "botErrors": []
+  },
+  "review": "http://127.0.0.1:50075/index.html",
+  "fullSuite": {
+    "exitCode": 1,
+    "errors": 5,
+    "baselineUnchanged": true,
+    "failures": [
+      "single-hit flash duration",
+      "dialogue ends with opening jump warning",
+      "opening jump returns before Chromium",
+      "opposite Stage X route persists",
+      "Stage X right full encounter"
+    ]
+  },
+  "art": {
+    "wholeHullBanks": 2,
+    "framesPerBank": 17,
+    "smokeFrames": 8,
+    "byteIdenticalRebuild": true,
+    "editableAsepriteFrames": 17
+  }
+}

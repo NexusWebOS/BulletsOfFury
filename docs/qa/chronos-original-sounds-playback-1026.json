@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "bothVideosPlay": true,
+    "unmuted": true,
+    "fullFightOverEightMinutes": true,
+    "waveChapterSeeks": true,
+    "rangeSupported": true,
+    "noPageErrors": true
+  },
+  "media": [
+    {
+      "src": "Chronos-Furious-Original-Sounds-Final-Safe.mp4",
+      "duration": 504.132333,
+      "advanced": true,
+      "muted": false
+    },
+    {
+      "src": "Chronos-Original-Sounds-Rage-Wave.mp4",
+      "duration": 33.633333,
+      "advanced": true,
+      "muted": false
+    }
+  ],
+  "errors": []
+}

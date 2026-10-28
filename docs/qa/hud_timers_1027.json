@@ -1,0 +1,1193 @@
+{
+  "checks": [
+    {
+      "name": "Stage clock runs during ordinary waves before any boss",
+      "pass": true
+    },
+    {
+      "name": "Pause holds stage time",
+      "pass": true
+    },
+    {
+      "name": "Resume advances the same stage clock",
+      "pass": true
+    },
+    {
+      "name": "Miniboss gets its own clock while stage time continues",
+      "pass": true
+    },
+    {
+      "name": "Pause holds encounter and stage clocks",
+      "pass": true
+    },
+    {
+      "name": "Defeated encounter time is held",
+      "pass": true
+    },
+    {
+      "name": "Boss appearance starts a fresh encounter clock",
+      "pass": true
+    },
+    {
+      "name": "Boss entrance and phase ownership do not reset its clock",
+      "pass": true
+    },
+    {
+      "name": "Stage result snapshots the full completion time",
+      "pass": true
+    },
+    {
+      "name": "Result time stays frozen after later simulation",
+      "pass": true
+    },
+    {
+      "name": "Retry/new stage resets both clocks",
+      "pass": true
+    },
+    {
+      "name": "wide timer stays inside viewport",
+      "pass": true
+    },
+    {
+      "name": "wide timer stays inside viewport",
+      "pass": true
+    },
+    {
+      "name": "wide clocks sit above their HUD columns",
+      "pass": true
+    },
+    {
+      "name": "wide fullscreen button stays above the right clock",
+      "pass": true
+    },
+    {
+      "name": "large timer stays inside viewport",
+      "pass": true
+    },
+    {
+      "name": "large timer stays inside viewport",
+      "pass": true
+    },
+    {
+      "name": "large clocks sit above their HUD columns",
+      "pass": true
+    },
+    {
+      "name": "large fullscreen button stays above the right clock",
+      "pass": true
+    },
+    {
+      "name": "small-wide timer stays inside viewport",
+      "pass": true
+    },
+    {
+      "name": "portrait timer stays inside viewport",
+      "pass": true
+    },
+    {
+      "name": "axel full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "axel name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "decker full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "decker name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "maverick full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "maverick name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "freezer full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "freezer name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "juggernaut full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "juggernaut name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "yuri full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "yuri name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "lizzie full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "lizzie name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "falva full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "falva name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "cole full portrait fits square opening",
+      "pass": true
+    },
+    {
+      "name": "cole name fits the narrow name strip",
+      "pass": true
+    },
+    {
+      "name": "Co-op keeps two native HUD rows and one shared stage clock",
+      "pass": true
+    },
+    {
+      "name": "Menu hides all clock canvases",
+      "pass": true
+    }
+  ],
+  "layouts": [
+    {
+      "name": "wide",
+      "mode": "sides",
+      "headers": [
+        {
+          "x": 10.125,
+          "y": 64,
+          "w": 248.859375,
+          "h": 58.234375,
+          "visible": true
+        },
+        {
+          "x": 1021,
+          "y": 64,
+          "w": 248.859375,
+          "h": 58.234375,
+          "visible": true
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "panels": [
+        {
+          "x": 10.125,
+          "y": 122.234375,
+          "w": 248.859375,
+          "h": 677.75
+        },
+        {
+          "x": 1021,
+          "y": 122.234375,
+          "w": 248.859375,
+          "h": 677.75
+        }
+      ],
+      "fs": {
+        "x": 1220,
+        "y": 12,
+        "w": 48,
+        "h": 48
+      },
+      "field": {
+        "x": 265,
+        "y": 0,
+        "w": 750,
+        "h": 800
+      }
+    },
+    {
+      "name": "large",
+      "mode": "sides",
+      "headers": [
+        {
+          "x": 104.203125,
+          "y": 64,
+          "w": 343.53125,
+          "h": 80.390625,
+          "visible": true
+        },
+        {
+          "x": 1472.25,
+          "y": 64,
+          "w": 343.53125,
+          "h": 80.390625,
+          "visible": true
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "visible": false
+        }
+      ],
+      "panels": [
+        {
+          "x": 104.203125,
+          "y": 144.390625,
+          "w": 343.53125,
+          "h": 935.59375
+        },
+        {
+          "x": 1472.25,
+          "y": 144.390625,
+          "w": 343.53125,
+          "h": 935.59375
+        }
+      ],
+      "fs": {
+        "x": 1860,
+        "y": 12,
+        "w": 48,
+        "h": 48
+      },
+      "field": {
+        "x": 453.75,
+        "y": 0,
+        "w": 1012.5,
+        "h": 1080
+      }
+    },
+    {
+      "name": "small-wide",
+      "mode": "compact",
+      "headers": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "x": 250.203125,
+          "y": 490.203125,
+          "w": 459.5625,
+          "h": 42.125,
+          "visible": true
+        }
+      ],
+      "panels": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
+      ],
+      "fs": {
+        "x": 900,
+        "y": 12,
+        "w": 48,
+        "h": 48
+      },
+      "field": {
+        "x": 250.2127659574468,
+        "y": 0,
+        "w": 459.5744680851064,
+        "h": 490.21276595744683
+      }
+    },
+    {
+      "name": "portrait",
+      "mode": "compact",
+      "headers": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "visible": false
+        },
+        {
+          "x": 0,
+          "y": 532.5,
+          "w": 390,
+          "h": 35.75,
+          "visible": true
+        }
+      ],
+      "panels": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
+      ],
+      "fs": {
+        "x": 330,
+        "y": 12,
+        "w": 48,
+        "h": 48
+      },
+      "field": {
+        "x": 0,
+        "y": 116.5,
+        "w": 390,
+        "h": 416
+      }
+    }
+  ],
+  "portraits": [
+    {
+      "pilot": "axel",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 108
+    },
+    {
+      "pilot": "decker",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 164
+    },
+    {
+      "pilot": "maverick",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 190
+    },
+    {
+      "pilot": "freezer",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 192
+    },
+    {
+      "pilot": "juggernaut",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 198
+    },
+    {
+      "pilot": "yuri",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 108
+    },
+    {
+      "pilot": "lizzie",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 164
+    },
+    {
+      "pilot": "falva",
+      "size": [
+        256,
+        244
+      ],
+      "rect": {
+        "x": 10,
+        "y": 15.34375,
+        "w": 228,
+        "h": 217.3125
+      },
+      "nameWidth": 136
+    },
+    {
+      "pilot": "cole",
+      "size": [
+        256,
+        256
+      ],
+      "rect": {
+        "x": 10,
+        "y": 10,
+        "w": 228,
+        "h": 228
+      },
+      "nameWidth": 108
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "HTTPerrors": [],
+  "fontChecks": [
+    {
+      "height": 8,
+      "palette": "chrome",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 8,
+      "palette": "ice",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 8,
+      "palette": "ember",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 8,
+      "palette": "gold",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 8,
+      "palette": "toxic",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 8,
+      "palette": "rose",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 8,
+      "palette": "signal",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 8,
+      "palette": "corrupt",
+      "topThickness": 2,
+      "minimum": 1,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "chrome",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "ice",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "ember",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "gold",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "toxic",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "rose",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "signal",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 10,
+      "palette": "corrupt",
+      "topThickness": 2,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "chrome",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "ice",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "ember",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "gold",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "toxic",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "rose",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "signal",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 12,
+      "palette": "corrupt",
+      "topThickness": 3,
+      "minimum": 2,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "chrome",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "ice",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "ember",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "gold",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "toxic",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "rose",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "signal",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 14,
+      "palette": "corrupt",
+      "topThickness": 3,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "chrome",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "ice",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "ember",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "gold",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "toxic",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "rose",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "signal",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 16,
+      "palette": "corrupt",
+      "topThickness": 4,
+      "minimum": 3,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "chrome",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "ice",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "ember",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "gold",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "toxic",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "rose",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "signal",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 18,
+      "palette": "corrupt",
+      "topThickness": 4,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "chrome",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "ice",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "ember",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "gold",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "toxic",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "rose",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "signal",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 20,
+      "palette": "corrupt",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "chrome",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "ice",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "ember",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "gold",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "toxic",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "rose",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "signal",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 22,
+      "palette": "corrupt",
+      "topThickness": 5,
+      "minimum": 4,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "chrome",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "ice",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "ember",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "gold",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "toxic",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "rose",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "signal",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 24,
+      "palette": "corrupt",
+      "topThickness": 5,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "chrome",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "ice",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "ember",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "gold",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "toxic",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "rose",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "signal",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 26,
+      "palette": "corrupt",
+      "topThickness": 6,
+      "minimum": 5,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "chrome",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "ice",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "ember",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "gold",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "toxic",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "rose",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "signal",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 28,
+      "palette": "corrupt",
+      "topThickness": 6,
+      "minimum": 6,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "chrome",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "ice",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "ember",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "gold",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "toxic",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "rose",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "signal",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    },
+    {
+      "height": 32,
+      "palette": "corrupt",
+      "topThickness": 7,
+      "minimum": 7,
+      "pass": true
+    }
+  ],
+  "fullSuite": {
+    "exit": 1,
+    "knownFailures": 5,
+    "summaryReached": true
+  },
+  "unchangedLowerHudPixels": true
+}

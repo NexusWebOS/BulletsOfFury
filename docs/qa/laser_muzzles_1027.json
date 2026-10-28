@@ -1,0 +1,455 @@
+{
+  "verification": {
+    "checksPassed": 13,
+    "checks": 13,
+    "banks": 3,
+    "phases": 16,
+    "directions": 64,
+    "cell": [
+      64,
+      64
+    ],
+    "allCellsInsideAlphaBounds": true,
+    "source": "PixelLab VFX Workbench",
+    "effectId": "ba5669e0-cf0d-4acf-9de2-9a14830f7824",
+    "generationCostUSD": 0,
+    "pngBytes": 508757,
+    "decodedBytes": 50331648,
+    "requiredSuiteExit": 1,
+    "sameFiveBaselineFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "checks": {
+    "nativeTwinLasersFired": true,
+    "oldCrownSuppressed": true,
+    "newEmitterDrawsOnBothSockets": true,
+    "comparisonUsesOldIceCrown": true,
+    "directionFollowsBeam": true,
+    "fixedCellSizeAndPivot": true,
+    "otherElementAndSpecialMuzzlesPreserved": true,
+    "all3072FramesBlitAtNativeCell": true,
+    "beamDimensionsTimingAndColorUnchanged": true,
+    "noDetachedMuzzleStateOnStageReset": true,
+    "noPageErrors": true,
+    "noConsoleErrors": true,
+    "noAssetErrors": true
+  },
+  "results": {
+    "waitFrames": 321,
+    "sockets": [
+      {
+        "x": 145.61307980168692,
+        "y": 313.26665563330727,
+        "angle": 0.6665733542027072,
+        "width": 29
+      },
+      {
+        "x": 347.9522176084521,
+        "y": 311.3323808891579,
+        "angle": 2.5309887827398274,
+        "width": 29
+      }
+    ],
+    "canvas": {
+      "w": 480,
+      "h": 512
+    },
+    "combat": {
+      "hp": 1392.7999999999997,
+      "maxhp": 1442,
+      "phase": "fight",
+      "parts": [
+        {
+          "id": "laser0",
+          "phase": "fire",
+          "angle": 0.6665733542027072,
+          "muzzle": {
+            "x": 245.61307980168692,
+            "y": 313.26665563330727
+          }
+        },
+        {
+          "id": "laser3",
+          "phase": "fire",
+          "angle": 2.5309887827398274,
+          "muzzle": {
+            "x": 447.9522176084521,
+            "y": 311.3323808891579
+          }
+        }
+      ]
+    },
+    "history": [
+      {
+        "x": 245.793795643353,
+        "y": 314.3307998862691,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 11,
+        "size": "small",
+        "width": 4.833333333333333,
+        "time": 5.149999999999987
+      },
+      {
+        "x": 448.13293345011823,
+        "y": 312.39652514211974,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 11,
+        "size": "small",
+        "width": 4.833333333333333,
+        "time": 5.149999999999987
+      },
+      {
+        "x": 245.78024467009425,
+        "y": 314.24335072543784,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 11,
+        "size": "small",
+        "width": 9.666666666666666,
+        "time": 5.166666666666654
+      },
+      {
+        "x": 448.1193824768594,
+        "y": 312.30907598128846,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 11,
+        "size": "small",
+        "width": 9.666666666666666,
+        "time": 5.166666666666654
+      },
+      {
+        "x": 245.76641765793408,
+        "y": 314.1556533066969,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 12,
+        "size": "small",
+        "width": 14.5,
+        "time": 5.18333333333332
+      },
+      {
+        "x": 448.10555546469925,
+        "y": 312.2213785625475,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 12,
+        "size": "small",
+        "width": 14.5,
+        "time": 5.18333333333332
+      },
+      {
+        "x": 245.75231510464346,
+        "y": 314.06771499901396,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 12,
+        "size": "medium",
+        "width": 19.333333333333332,
+        "time": 5.199999999999987
+      },
+      {
+        "x": 448.0914529114086,
+        "y": 312.1334402548646,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 12,
+        "size": "medium",
+        "width": 19.333333333333332,
+        "time": 5.199999999999987
+      },
+      {
+        "x": 245.73793751791277,
+        "y": 313.9795431915978,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 13,
+        "size": "large",
+        "width": 24.166666666666664,
+        "time": 5.2166666666666535
+      },
+      {
+        "x": 448.07707532467793,
+        "y": 312.04526844744845,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 13,
+        "size": "large",
+        "width": 24.166666666666664,
+        "time": 5.2166666666666535
+      },
+      {
+        "x": 245.72328541533358,
+        "y": 313.8911452932777,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 13,
+        "size": "large",
+        "width": 28.999999999999996,
+        "time": 5.23333333333332
+      },
+      {
+        "x": 448.0624232220988,
+        "y": 311.9568705491283,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 13,
+        "size": "large",
+        "width": 28.999999999999996,
+        "time": 5.23333333333332
+      },
+      {
+        "x": 245.70835932438,
+        "y": 313.8025287318805,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 13,
+        "size": "large",
+        "width": 29,
+        "time": 5.249999999999987
+      },
+      {
+        "x": 448.0474971311452,
+        "y": 311.8682539877311,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 13,
+        "size": "large",
+        "width": 29,
+        "time": 5.249999999999987
+      },
+      {
+        "x": 245.69315978238967,
+        "y": 313.7137009536068,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 14,
+        "size": "large",
+        "width": 29,
+        "time": 5.266666666666653
+      },
+      {
+        "x": 448.03229758915484,
+        "y": 311.7794262094574,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 14,
+        "size": "large",
+        "width": 29,
+        "time": 5.266666666666653
+      },
+      {
+        "x": 245.67768733654452,
+        "y": 313.6246694224052,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 14,
+        "size": "large",
+        "width": 29,
+        "time": 5.28333333333332
+      },
+      {
+        "x": 448.0168251433097,
+        "y": 311.6903946782558,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 14,
+        "size": "large",
+        "width": 29,
+        "time": 5.28333333333332
+      },
+      {
+        "x": 245.66194254385084,
+        "y": 313.53544161934497,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 15,
+        "size": "large",
+        "width": 29,
+        "time": 5.2999999999999865
+      },
+      {
+        "x": 448.001080350616,
+        "y": 311.6011668751956,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 15,
+        "size": "large",
+        "width": 29,
+        "time": 5.2999999999999865
+      },
+      {
+        "x": 245.6459259711196,
+        "y": 313.44602504198764,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 15,
+        "size": "large",
+        "width": 29,
+        "time": 5.316666666666653
+      },
+      {
+        "x": 447.98506377788476,
+        "y": 311.51175029783826,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 15,
+        "size": "large",
+        "width": 29,
+        "time": 5.316666666666653
+      },
+      {
+        "x": 245.62963819494553,
+        "y": 313.35642720375694,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 15,
+        "size": "large",
+        "width": 29,
+        "time": 5.33333333333332
+      },
+      {
+        "x": 447.9687760017107,
+        "y": 311.42215245960756,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 15,
+        "size": "large",
+        "width": 29,
+        "time": 5.33333333333332
+      },
+      {
+        "x": 245.61307980168692,
+        "y": 313.26665563330727,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 0,
+        "size": "large",
+        "width": 29,
+        "time": 5.349999999999986
+      },
+      {
+        "x": 447.9522176084521,
+        "y": 311.3323808891579,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 0,
+        "size": "large",
+        "width": 29,
+        "time": 5.349999999999986
+      },
+      {
+        "x": 245.5962513874441,
+        "y": 313.1767178738915,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 0,
+        "size": "large",
+        "width": 29,
+        "time": 5.366666666666653
+      },
+      {
+        "x": 447.9353891942093,
+        "y": 311.2424431297421,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 0,
+        "size": "large",
+        "width": 29,
+        "time": 5.366666666666653
+      },
+      {
+        "x": 245.57915355803823,
+        "y": 313.08662148272674,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 1,
+        "size": "large",
+        "width": 29,
+        "time": 5.3833333333333195
+      },
+      {
+        "x": 447.9182913648034,
+        "y": 311.15234673857736,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 1,
+        "size": "large",
+        "width": 29,
+        "time": 5.3833333333333195
+      },
+      {
+        "x": 245.5441521254939,
+        "y": 312.9059831000296,
+        "angle": 0.6665733542027072,
+        "direction": 7,
+        "phase": 1,
+        "size": "large",
+        "width": 29,
+        "time": 5.416666666666653
+      },
+      {
+        "x": 447.8832899322591,
+        "y": 310.9717083558802,
+        "angle": 2.5309887827398274,
+        "direction": 26,
+        "phase": 1,
+        "size": "large",
+        "width": 29,
+        "time": 5.416666666666653
+      }
+    ],
+    "routing": [
+      {
+        "color": "ice",
+        "new": true
+      },
+      {
+        "color": "blue",
+        "new": true
+      },
+      {
+        "color": "cyan",
+        "new": true
+      },
+      {
+        "color": "#34cfff",
+        "new": true
+      },
+      {
+        "color": "red",
+        "new": false
+      },
+      {
+        "color": "fire",
+        "new": false
+      },
+      {
+        "color": "fusion",
+        "new": false
+      },
+      {
+        "color": "helix",
+        "new": false
+      },
+      {
+        "color": "lightning",
+        "new": false
+      },
+      {
+        "color": "void",
+        "new": false
+      }
+    ]
+  },
+  "errors": [],
+  "console": [],
+  "assetErrors": []
+}

@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "allFiveMediaPlay": true,
+    "chapterJumpWorks": true,
+    "rangeSeekSupported": true,
+    "noPageErrors": true
+  },
+  "media": [
+    {
+      "src": "Charge-and-Wave-In-Game.mp4",
+      "seconds": 5.7,
+      "advanced": true
+    },
+    {
+      "src": "Charge-Alone.mp3",
+      "seconds": 2.6,
+      "advanced": true
+    },
+    {
+      "src": "Wave-Alone.mp3",
+      "seconds": 2.45,
+      "advanced": true
+    },
+    {
+      "src": "Rage-Charge-Alone.mp3",
+      "seconds": 3.024,
+      "advanced": true
+    },
+    {
+      "src": "Chronos-Charge-Wave-Live.mp4",
+      "seconds": 25.040333,
+      "advanced": true
+    }
+  ],
+  "errors": []
+}

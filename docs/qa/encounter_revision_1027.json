@@ -1,0 +1,438 @@
+{
+  "date": "2026-10-27",
+  "review": "http://127.0.0.1:49919/index.html",
+  "fontReview": "http://127.0.0.1:59944/index.html",
+  "localEvidenceDirectory": "C:\\Users\\Mike\\Documents\\New project\\BOF-Encounter-Revision-1027",
+  "nativeChecks": {
+    "harrierNoTimedDialogue": true,
+    "rebelAlliesPresent": true,
+    "dredgerRapidBothGuns": true,
+    "dorsalMortars": true,
+    "wardenMiddleLane": true,
+    "coreBlockedUntilBothCans": true,
+    "canisterTargetsReplaceCore": true,
+    "bounceImpactScatter": true,
+    "heraldNuke85": true,
+    "heraldLightningVolleys": true,
+    "heraldPentagramBounces": true,
+    "newOrdnanceUnshootable": true,
+    "noRuntimeErrors": true,
+    "noDrawErrors": true,
+    "noAssetErrors": true
+  },
+  "additionalChecks": {
+    "canister-budget-not-duplicated": true,
+    "ngplus-canisters-scale-once": true,
+    "ngplus-total-hp25": true,
+    "ngplus-ias15-once": true,
+    "canister-local-hit-flash-expires": true,
+    "landings-stay-in-middle": true,
+    "continuous-bounce-no-ground-teleport": true,
+    "normal-stage-before-arrival": true,
+    "normal-stage-first-arrival14": true,
+    "normal-stage-second-arrival41": true,
+    "normal-stage-full-wing52": true,
+    "noRuntimeErrors": true
+  },
+  "ordinaryWeaponAccess": {
+    "fixture": "Native rear-stage fixture. Front/gun HP removed before test; rear HP and later damage are unmodified. Actual player laser input only; no missiles.",
+    "parts": [
+      {
+        "before": {
+          "id": "rearL",
+          "hp": 583,
+          "target": {
+            "x": 212.62162317058562,
+            "y": 116.02547739725486
+          },
+          "center": 340
+        },
+        "after": {
+          "hp": 403,
+          "core": 1748,
+          "cans": [
+            306,
+            306
+          ],
+          "weapon": 3
+        },
+        "ordinaryLaserDamagedLeg": true
+      },
+      {
+        "before": {
+          "id": "rearR",
+          "hp": 583,
+          "target": {
+            "x": 467.211533218845,
+            "y": 115.13589142073988
+          },
+          "center": 340
+        },
+        "after": {
+          "hp": 403,
+          "core": 1748,
+          "cans": [
+            306,
+            306
+          ],
+          "weapon": 3
+        },
+        "ordinaryLaserDamagedLeg": true
+      }
+    ],
+    "canisterShots": [
+      {
+        "id": "canL",
+        "before": 306,
+        "after": 186,
+        "damaged": true
+      },
+      {
+        "id": "canR",
+        "before": 306,
+        "after": 186,
+        "damaged": true
+      }
+    ],
+    "coreStillProtected": true,
+    "jumpMarker": {
+      "mode": "jump",
+      "middle": 340,
+      "x": 340,
+      "markerX": 340,
+      "y": 312.32,
+      "markerY": 367.32
+    },
+    "jumpMarkerMatchesLane": true,
+    "errors": [],
+    "passed": true
+  },
+  "fontCombinations": 96,
+  "artBanks": 59,
+  "artDecodedMiB": 223.124267578125,
+  "knownBaselineAssertions": [
+    "ASSERT FAIL: and the flash is held long enough for a single hit to register",
+    "ASSERT FAIL: dialogue ends with the opening jump warning",
+    "ASSERT FAIL: opening jump lands and returns before chromium activation",
+    "ASSERT FAIL: unchosen right route persists as the opposite Stage X fight",
+    "ASSERT FAIL: Stage X right branch launches a full encounter"
+  ],
+  "films": [
+    {
+      "id": "revised-stage6-harrier",
+      "title": "Stage 6 / Harrier and Nightwing",
+      "video": "revised-stage6-harrier/stage6-furious.mp4",
+      "duration": 165.933,
+      "completed": true,
+      "deaths": 0,
+      "audioPeakPreCaptureGain": 1.6886610984802246,
+      "frames": 9357,
+      "nativeFrames": 9796,
+      "consoleMessages": []
+    },
+    {
+      "id": "revised-stage6-rebels",
+      "title": "Stage 6 / Rebel Fighters",
+      "video": "revised-stage6-rebels/stage6-furious.mp4",
+      "duration": 186.527,
+      "completed": true,
+      "deaths": 0,
+      "audioPeakPreCaptureGain": 1.842323660850525,
+      "frames": 10455,
+      "nativeFrames": 10896,
+      "consoleMessages": [
+        "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+        "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+      ]
+    },
+    {
+      "id": "final-stage7-dredger",
+      "title": "Stage 7 / Caustic Dredger",
+      "video": "final-stage7-dredger/stage7-furious.mp4",
+      "duration": 59.527,
+      "completed": true,
+      "deaths": 0,
+      "audioPeakPreCaptureGain": 1.4027670621871948,
+      "frames": 3340,
+      "nativeFrames": 3837,
+      "consoleMessages": [
+        "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+      ]
+    },
+    {
+      "id": "stage7-warden-final",
+      "title": "Stage 7 / Toxic Warden",
+      "video": "stage7-warden-final/stage7-furious.mp4",
+      "duration": 135.057,
+      "completed": true,
+      "deaths": 0,
+      "audioPeakPreCaptureGain": 1.4021461009979248,
+      "frames": 7699,
+      "nativeFrames": 8198,
+      "consoleMessages": []
+    },
+    {
+      "id": "final-stage8-herald",
+      "title": "Stage 8 / Herald of Death",
+      "video": "final-stage8-herald/stage8-furious.mp4",
+      "duration": 145.351,
+      "completed": true,
+      "deaths": 0,
+      "audioPeakPreCaptureGain": 1.272780418395996,
+      "frames": 7869,
+      "nativeFrames": 9438,
+      "consoleMessages": []
+    }
+  ],
+  "videoChecks": {
+    "clips": [
+      {
+        "id": "revised-stage6-harrier",
+        "video": "revised-stage6-harrier/stage6-furious.mp4",
+        "bytes": 190430105,
+        "frames": [
+          {
+            "time": 8,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 48,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 124.44975,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 156.933,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          }
+        ],
+        "duration": 165.91,
+        "audioPeakDb": -1.5,
+        "audioDecodeOK": true,
+        "rangeSeekOK": true,
+        "browser": {
+          "duration": 165.91,
+          "from": 20,
+          "to": 20.669536,
+          "error": null
+        }
+      },
+      {
+        "id": "revised-stage6-rebels",
+        "video": "revised-stage6-rebels/stage6-furious.mp4",
+        "bytes": 229358518,
+        "frames": [
+          {
+            "time": 8,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 48,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 139.89524999999998,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 177.527,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          }
+        ],
+        "duration": 186.5,
+        "audioPeakDb": -0.6,
+        "audioDecodeOK": true,
+        "rangeSeekOK": true,
+        "browser": {
+          "duration": 186.499,
+          "from": 20,
+          "to": 20.661055,
+          "error": null
+        }
+      },
+      {
+        "id": "final-stage7-dredger",
+        "video": "final-stage7-dredger/stage7-furious.mp4",
+        "bytes": 40516289,
+        "frames": [
+          {
+            "time": 8,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 23.8108,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 44.645250000000004,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 50.527,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          }
+        ],
+        "duration": 59.52,
+        "audioPeakDb": -2.9,
+        "audioDecodeOK": true,
+        "rangeSeekOK": true,
+        "browser": {
+          "duration": 59.52,
+          "from": 20,
+          "to": 20.661028,
+          "error": null
+        }
+      },
+      {
+        "id": "stage7-warden-final",
+        "video": "stage7-warden-final/stage7-furious.mp4",
+        "bytes": 111337136,
+        "frames": [
+          {
+            "time": 8,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 48,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 101.29274999999998,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 126.05699999999999,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          }
+        ],
+        "duration": 135.01,
+        "audioPeakDb": -3.3,
+        "audioDecodeOK": true,
+        "rangeSeekOK": true,
+        "browser": {
+          "duration": 135.01,
+          "from": 20,
+          "to": 20.674727,
+          "error": null
+        }
+      },
+      {
+        "id": "final-stage8-herald",
+        "video": "final-stage8-herald/stage8-furious.mp4",
+        "bytes": 151999973,
+        "frames": [
+          {
+            "time": 8,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 48,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 109.01325,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          },
+          {
+            "time": 136.351,
+            "size": [
+              1280,
+              800
+            ],
+            "fps": 30.0
+          }
+        ],
+        "duration": 145.32999999999998,
+        "audioPeakDb": -3.6,
+        "audioDecodeOK": true,
+        "rangeSeekOK": true,
+        "browser": {
+          "duration": 145.325,
+          "from": 20,
+          "to": 20.661159,
+          "error": null
+        }
+      }
+    ],
+    "pageErrors": [],
+    "checks": "All five final clips decoded at four seek points, contained unclipped audible audio, served byte ranges, and played/seeking succeeded in Chromium."
+  }
+}

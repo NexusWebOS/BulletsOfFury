@@ -1,0 +1,830 @@
+{
+  "focused": {
+    "checks": {
+      "noLightningBeforeDownload": true,
+      "firstStrikeAtZeroPercent": true,
+      "lightningAndWrapVisibleAtZero": true,
+      "firstStrikeHasOwnAudio": true,
+      "formationPoolIsIndependent": true,
+      "formationGainRaised": true,
+      "all24NativeBeatsRetained": true,
+      "eachEarlyStrikePlaysOnce": true,
+      "endingStormStillPlays": true,
+      "wrapBuildsWithDownload": true,
+      "sfxMuteRespected": true,
+      "pauseStopsFormationAudio": true,
+      "noRuntimeErrors": true
+    },
+    "before": {
+      "t": 13.983333333333608,
+      "bolts": 0
+    },
+    "zero": {
+      "t": 14.000000000000275,
+      "progress": 2.458350983098561e-14,
+      "bolts": 1,
+      "strikes": 2,
+      "wrap": 5,
+      "audio": [
+        {
+          "beat": 1,
+          "gain": 0.8200000000000042,
+          "strength": 0.8200000000000042,
+          "active": 0,
+          "played": true,
+          "t": 14.000000000000275,
+          "kind": "native"
+        }
+      ],
+      "ownPool": true,
+      "gain": 1.35,
+      "otherGain": 0.82
+    },
+    "late": {
+      "bolts": 24,
+      "audio": [
+        {
+          "beat": 1,
+          "gain": 0.8200000000000042,
+          "strength": 0.8200000000000042,
+          "active": 0,
+          "played": true,
+          "t": 14.000000000000275,
+          "kind": "native"
+        },
+        {
+          "beat": 2,
+          "gain": 0.8409482758620742,
+          "strength": 0.8409482758620742,
+          "active": 0,
+          "played": true,
+          "t": 15.350000000000342,
+          "kind": "native"
+        },
+        {
+          "beat": 3,
+          "gain": 0.8518103448275919,
+          "strength": 0.8518103448275919,
+          "active": 0,
+          "played": true,
+          "t": 16.05000000000037,
+          "kind": "native"
+        },
+        {
+          "beat": 4,
+          "gain": 0.7149070360512519,
+          "strength": 0.8608620689655224,
+          "active": 1,
+          "played": true,
+          "t": 16.63333333333367,
+          "kind": "native"
+        },
+        {
+          "beat": 5,
+          "gain": 0.7213502198330073,
+          "strength": 0.8686206896551771,
+          "active": 1,
+          "played": true,
+          "t": 17.133333333333642,
+          "kind": "native"
+        },
+        {
+          "beat": 6,
+          "gain": 0.7271490852365871,
+          "strength": 0.8756034482758664,
+          "active": 1,
+          "played": true,
+          "t": 17.583333333333616,
+          "kind": "native"
+        },
+        {
+          "beat": 7,
+          "gain": 0.7325184050547164,
+          "strength": 0.8820689655172453,
+          "active": 1,
+          "played": true,
+          "t": 18.00000000000026,
+          "kind": "native"
+        },
+        {
+          "beat": 8,
+          "gain": 0.7374581792873955,
+          "strength": 0.8880172413793139,
+          "active": 1,
+          "played": true,
+          "t": 18.38333333333357,
+          "kind": "native"
+        },
+        {
+          "beat": 9,
+          "gain": 0.7421831807273495,
+          "strength": 0.8937068965517274,
+          "active": 1,
+          "played": true,
+          "t": 18.750000000000217,
+          "kind": "native"
+        },
+        {
+          "beat": 10,
+          "gain": 0.7466934093745783,
+          "strength": 0.8991379310344858,
+          "active": 1,
+          "played": true,
+          "t": 19.100000000000197,
+          "kind": "native"
+        },
+        {
+          "beat": 11,
+          "gain": 0.7509888652290817,
+          "strength": 0.9043103448275889,
+          "active": 1,
+          "played": true,
+          "t": 19.43333333333351,
+          "kind": "native"
+        },
+        {
+          "beat": 12,
+          "gain": 0.7552843210835852,
+          "strength": 0.9094827586206921,
+          "active": 1,
+          "played": true,
+          "t": 19.766666666666826,
+          "kind": "native"
+        },
+        {
+          "beat": 13,
+          "gain": 0.7593650041453637,
+          "strength": 0.91439655172414,
+          "active": 1,
+          "played": true,
+          "t": 20.083333333333474,
+          "kind": "native"
+        },
+        {
+          "beat": 14,
+          "gain": 0.6667501984847285,
+          "strength": 0.9190517241379329,
+          "active": 2,
+          "played": true,
+          "t": 20.383333333333457,
+          "kind": "native"
+        },
+        {
+          "beat": 15,
+          "gain": 0.6699397923429706,
+          "strength": 0.9234482758620706,
+          "active": 2,
+          "played": true,
+          "t": 20.666666666666774,
+          "kind": "native"
+        },
+        {
+          "beat": 16,
+          "gain": 0.6731293862012127,
+          "strength": 0.9278448275862082,
+          "active": 2,
+          "played": true,
+          "t": 20.95000000000009,
+          "kind": "native"
+        },
+        {
+          "beat": 17,
+          "gain": 0.6763189800594548,
+          "strength": 0.9322413793103459,
+          "active": 2,
+          "played": true,
+          "t": 21.23333333333341,
+          "kind": "native"
+        },
+        {
+          "beat": 18,
+          "gain": 0.679320950749565,
+          "strength": 0.9363793103448285,
+          "active": 2,
+          "played": true,
+          "t": 21.50000000000006,
+          "kind": "native"
+        },
+        {
+          "beat": 19,
+          "gain": 0.6823229214396753,
+          "strength": 0.940517241379311,
+          "active": 2,
+          "played": true,
+          "t": 21.766666666666712,
+          "kind": "native"
+        },
+        {
+          "beat": 20,
+          "gain": 0.6851372689616536,
+          "strength": 0.9443965517241384,
+          "active": 2,
+          "played": true,
+          "t": 22.016666666666698,
+          "kind": "native"
+        },
+        {
+          "beat": 21,
+          "gain": 0.6881392396517638,
+          "strength": 0.9485344827586208,
+          "active": 2,
+          "played": true,
+          "t": 22.28333333333335,
+          "kind": "native"
+        },
+        {
+          "beat": 22,
+          "gain": 0.6909535871737421,
+          "strength": 0.9524137931034482,
+          "active": 2,
+          "played": true,
+          "t": 22.533333333333335,
+          "kind": "native"
+        },
+        {
+          "beat": 23,
+          "gain": 0.6935803115275886,
+          "strength": 0.9560344827586205,
+          "active": 2,
+          "played": true,
+          "t": 22.766666666666655,
+          "kind": "native"
+        },
+        {
+          "beat": 24,
+          "gain": 0.696394659049567,
+          "strength": 0.9599137931034478,
+          "active": 2,
+          "played": true,
+          "t": 23.01666666666664,
+          "kind": "ending"
+        }
+      ],
+      "wrap": 32
+    },
+    "errors": []
+  },
+  "nativeRecording": {
+    "checks": {
+      "noPageOrConsoleErrors": true,
+      "noAssetErrors": true,
+      "fullDecode": true,
+      "audible": true,
+      "realTimeFrames": true,
+      "nativeDamageStartsCheckpoint": true,
+      "all24LightningBeats": true,
+      "downloadCompletes": true,
+      "finalArenaRevealed": true,
+      "nativeLightningAudioPlayed": true,
+      "nativeFinalBodyDownloaded": true,
+      "downloadEnergyReplacesTeleportCue": true,
+      "actualDepthPoses": true,
+      "uprightFormingBody": true,
+      "swirlAndDownwardStrikes": true,
+      "acceleratingUntilFlash": true,
+      "noFullBodyBeforeFlash": true,
+      "fullBodyAfterPeakFlash": true,
+      "strikesAcrossScreen": true,
+      "strikeCadenceAcceleratesIndependently": true,
+      "spiralBuildsFromDownloadStart": true,
+      "formationThunderStrengthBuilds": true,
+      "everyStrikeMixerReleaseAccepted": true,
+      "steppedSkeletonVisibility": true,
+      "singleClosingRoar": true,
+      "livingCodeDuringColesReaction": true,
+      "doubleHelixAndFluidLobes": true,
+      "codeInsideSkeletalSilhouette": true,
+      "codeConvergesIntoDownload": true,
+      "codeClearsAfterItsConvergence": true
+    },
+    "duration": 63.67519999998808,
+    "decodedPeakDb": -4.4,
+    "events": [
+      {
+        "beat": 1,
+        "gain": 0.8200000000000042,
+        "strength": 0.8200000000000042,
+        "active": 0,
+        "played": true,
+        "t": 14.000000000000275,
+        "kind": "native"
+      },
+      {
+        "beat": 2,
+        "gain": 0.8409482758620742,
+        "strength": 0.8409482758620742,
+        "active": 0,
+        "played": true,
+        "t": 15.350000000000342,
+        "kind": "native"
+      },
+      {
+        "beat": 3,
+        "gain": 0.8518103448275919,
+        "strength": 0.8518103448275919,
+        "active": 0,
+        "played": true,
+        "t": 16.05000000000037,
+        "kind": "native"
+      },
+      {
+        "beat": 4,
+        "gain": 0.7149070360512519,
+        "strength": 0.8608620689655224,
+        "active": 1,
+        "played": true,
+        "t": 16.63333333333367,
+        "kind": "native"
+      },
+      {
+        "beat": 5,
+        "gain": 0.7213502198330073,
+        "strength": 0.8686206896551771,
+        "active": 1,
+        "played": true,
+        "t": 17.133333333333642,
+        "kind": "native"
+      },
+      {
+        "beat": 6,
+        "gain": 0.7271490852365871,
+        "strength": 0.8756034482758664,
+        "active": 1,
+        "played": true,
+        "t": 17.583333333333616,
+        "kind": "native"
+      },
+      {
+        "beat": 7,
+        "gain": 0.7325184050547164,
+        "strength": 0.8820689655172453,
+        "active": 1,
+        "played": true,
+        "t": 18.00000000000026,
+        "kind": "native"
+      },
+      {
+        "beat": 8,
+        "gain": 0.7374581792873955,
+        "strength": 0.8880172413793139,
+        "active": 1,
+        "played": true,
+        "t": 18.38333333333357,
+        "kind": "native"
+      },
+      {
+        "beat": 9,
+        "gain": 0.7421831807273495,
+        "strength": 0.8937068965517274,
+        "active": 1,
+        "played": true,
+        "t": 18.750000000000217,
+        "kind": "native"
+      },
+      {
+        "beat": 10,
+        "gain": 0.7466934093745783,
+        "strength": 0.8991379310344858,
+        "active": 1,
+        "played": true,
+        "t": 19.100000000000197,
+        "kind": "native"
+      },
+      {
+        "beat": 11,
+        "gain": 0.7509888652290817,
+        "strength": 0.9043103448275889,
+        "active": 1,
+        "played": true,
+        "t": 19.43333333333351,
+        "kind": "native"
+      },
+      {
+        "beat": 12,
+        "gain": 0.6598081412638486,
+        "strength": 0.9094827586206921,
+        "active": 2,
+        "played": true,
+        "t": 19.766666666666826,
+        "kind": "native"
+      },
+      {
+        "beat": 13,
+        "gain": 0.7593650041453637,
+        "strength": 0.91439655172414,
+        "active": 1,
+        "played": true,
+        "t": 20.083333333333474,
+        "kind": "native"
+      },
+      {
+        "beat": 14,
+        "gain": 0.6667501984847285,
+        "strength": 0.9190517241379329,
+        "active": 2,
+        "played": true,
+        "t": 20.383333333333457,
+        "kind": "native"
+      },
+      {
+        "beat": 15,
+        "gain": 0.6699397923429706,
+        "strength": 0.9234482758620706,
+        "active": 2,
+        "played": true,
+        "t": 20.666666666666774,
+        "kind": "native"
+      },
+      {
+        "beat": 16,
+        "gain": 0.6731293862012127,
+        "strength": 0.9278448275862082,
+        "active": 2,
+        "played": true,
+        "t": 20.95000000000009,
+        "kind": "native"
+      },
+      {
+        "beat": 17,
+        "gain": 0.6763189800594548,
+        "strength": 0.9322413793103459,
+        "active": 2,
+        "played": true,
+        "t": 21.23333333333341,
+        "kind": "native"
+      },
+      {
+        "beat": 18,
+        "gain": 0.679320950749565,
+        "strength": 0.9363793103448285,
+        "active": 2,
+        "played": true,
+        "t": 21.50000000000006,
+        "kind": "native"
+      },
+      {
+        "beat": 19,
+        "gain": 0.6823229214396753,
+        "strength": 0.940517241379311,
+        "active": 2,
+        "played": true,
+        "t": 21.766666666666712,
+        "kind": "native"
+      },
+      {
+        "beat": 20,
+        "gain": 0.6851372689616536,
+        "strength": 0.9443965517241384,
+        "active": 2,
+        "played": true,
+        "t": 22.016666666666698,
+        "kind": "native"
+      },
+      {
+        "beat": 21,
+        "gain": 0.6881392396517638,
+        "strength": 0.9485344827586208,
+        "active": 2,
+        "played": true,
+        "t": 22.28333333333335,
+        "kind": "native"
+      },
+      {
+        "beat": 22,
+        "gain": 0.6909535871737421,
+        "strength": 0.9524137931034482,
+        "active": 2,
+        "played": true,
+        "t": 22.533333333333335,
+        "kind": "native"
+      },
+      {
+        "beat": 23,
+        "gain": 0.6935803115275886,
+        "strength": 0.9560344827586205,
+        "active": 2,
+        "played": true,
+        "t": 22.766666666666655,
+        "kind": "native"
+      },
+      {
+        "beat": 24,
+        "gain": 0.696394659049567,
+        "strength": 0.9599137931034478,
+        "active": 2,
+        "played": true,
+        "t": 23.01666666666664,
+        "kind": "ending"
+      },
+      {
+        "beat": 25,
+        "gain": 0.6982708907308859,
+        "strength": 0.9624999999999995,
+        "active": 2,
+        "played": true,
+        "t": 23.183333333333298,
+        "kind": "ending"
+      },
+      {
+        "beat": 26,
+        "gain": 0.6295528256752827,
+        "strength": 0.965086206896551,
+        "active": 3,
+        "played": true,
+        "t": 23.349999999999955,
+        "kind": "ending"
+      },
+      {
+        "beat": 27,
+        "gain": 0.6309024699643587,
+        "strength": 0.9671551724137922,
+        "active": 3,
+        "played": true,
+        "t": 23.48333333333328,
+        "kind": "ending"
+      },
+      {
+        "beat": 28,
+        "gain": 0.579067653832697,
+        "strength": 0.9689655172413784,
+        "active": 4,
+        "played": true,
+        "t": 23.59999999999994,
+        "kind": "ending"
+      },
+      {
+        "beat": 29,
+        "gain": 0.5801495417980427,
+        "strength": 0.9707758620689644,
+        "active": 4,
+        "played": true,
+        "t": 23.7166666666666,
+        "kind": "ending"
+      },
+      {
+        "beat": 30,
+        "gain": 0.5393503028641683,
+        "strength": 0.9723275862068954,
+        "active": 5,
+        "played": true,
+        "t": 23.816666666666595,
+        "kind": "ending"
+      },
+      {
+        "beat": 31,
+        "gain": 0.540211044547966,
+        "strength": 0.9738793103448263,
+        "active": 5,
+        "played": true,
+        "t": 23.91666666666659,
+        "kind": "ending"
+      },
+      {
+        "beat": 32,
+        "gain": 0.5410717862317637,
+        "strength": 0.9754310344827573,
+        "active": 5,
+        "played": true,
+        "t": 24.016666666666584,
+        "kind": "ending"
+      },
+      {
+        "beat": 33,
+        "gain": 0.5077747004164399,
+        "strength": 0.9767241379310331,
+        "active": 6,
+        "played": true,
+        "t": 24.099999999999913,
+        "kind": "ending"
+      },
+      {
+        "beat": 34,
+        "gain": 0.5084469528883063,
+        "strength": 0.9780172413793089,
+        "active": 6,
+        "played": true,
+        "t": 24.18333333333324,
+        "kind": "ending"
+      },
+      {
+        "beat": 35,
+        "gain": 0.5091192053601726,
+        "strength": 0.9793103448275846,
+        "active": 6,
+        "played": true,
+        "t": 24.26666666666657,
+        "kind": "ending"
+      },
+      {
+        "beat": 36,
+        "gain": 0.509791457832039,
+        "strength": 0.9806034482758604,
+        "active": 6,
+        "played": true,
+        "t": 24.3499999999999,
+        "kind": "ending"
+      },
+      {
+        "beat": 37,
+        "gain": 0.5103292598095321,
+        "strength": 0.981637931034481,
+        "active": 6,
+        "played": true,
+        "t": 24.41666666666656,
+        "kind": "ending"
+      },
+      {
+        "beat": 38,
+        "gain": 0.5108670617870252,
+        "strength": 0.9826724137931017,
+        "active": 6,
+        "played": true,
+        "t": 24.483333333333224,
+        "kind": "ending"
+      },
+      {
+        "beat": 39,
+        "gain": 0.5115393142588917,
+        "strength": 0.9839655172413775,
+        "active": 6,
+        "played": true,
+        "t": 24.566666666666553,
+        "kind": "ending"
+      },
+      {
+        "beat": 40,
+        "gain": 0.5120771162363847,
+        "strength": 0.9849999999999981,
+        "active": 6,
+        "played": true,
+        "t": 24.633333333333216,
+        "kind": "ending"
+      },
+      {
+        "beat": 41,
+        "gain": 0.5126149182138778,
+        "strength": 0.9860344827586187,
+        "active": 6,
+        "played": true,
+        "t": 24.69999999999988,
+        "kind": "ending"
+      },
+      {
+        "beat": 42,
+        "gain": 0.513152720191371,
+        "strength": 0.9870689655172393,
+        "active": 6,
+        "played": true,
+        "t": 24.76666666666654,
+        "kind": "ending"
+      },
+      {
+        "beat": 43,
+        "gain": 0.5136905221688641,
+        "strength": 0.98810344827586,
+        "active": 6,
+        "played": true,
+        "t": 24.833333333333204,
+        "kind": "ending"
+      },
+      {
+        "beat": 44,
+        "gain": 0.514093873651984,
+        "strength": 0.9888793103448255,
+        "active": 6,
+        "played": true,
+        "t": 24.8833333333332,
+        "kind": "ending"
+      },
+      {
+        "beat": 45,
+        "gain": 0.5146316756294771,
+        "strength": 0.9899137931034461,
+        "active": 6,
+        "played": true,
+        "t": 24.949999999999864,
+        "kind": "ending"
+      },
+      {
+        "beat": 46,
+        "gain": 0.5151694776069702,
+        "strength": 0.9909482758620667,
+        "active": 6,
+        "played": true,
+        "t": 25.016666666666527,
+        "kind": "ending"
+      },
+      {
+        "beat": 47,
+        "gain": 0.5155728290900901,
+        "strength": 0.9917241379310322,
+        "active": 6,
+        "played": true,
+        "t": 25.066666666666524,
+        "kind": "ending"
+      },
+      {
+        "beat": 48,
+        "gain": 0.5159761805732098,
+        "strength": 0.9924999999999977,
+        "active": 6,
+        "played": true,
+        "t": 25.11666666666652,
+        "kind": "ending"
+      },
+      {
+        "beat": 49,
+        "gain": 0.5165139825507029,
+        "strength": 0.9935344827586183,
+        "active": 6,
+        "played": true,
+        "t": 25.183333333333184,
+        "kind": "ending"
+      },
+      {
+        "beat": 50,
+        "gain": 0.5169173340338228,
+        "strength": 0.9943103448275838,
+        "active": 6,
+        "played": true,
+        "t": 25.23333333333318,
+        "kind": "ending"
+      },
+      {
+        "beat": 51,
+        "gain": 0.5173206855169427,
+        "strength": 0.9950862068965493,
+        "active": 6,
+        "played": true,
+        "t": 25.28333333333318,
+        "kind": "ending"
+      },
+      {
+        "beat": 52,
+        "gain": 0.5178584874944357,
+        "strength": 0.9961206896551699,
+        "active": 6,
+        "played": true,
+        "t": 25.34999999999984,
+        "kind": "ending"
+      },
+      {
+        "beat": 53,
+        "gain": 0.5182618389775556,
+        "strength": 0.9968965517241354,
+        "active": 6,
+        "played": true,
+        "t": 25.39999999999984,
+        "kind": "ending"
+      },
+      {
+        "beat": 54,
+        "gain": 0.5186651904606754,
+        "strength": 0.9976724137931008,
+        "active": 6,
+        "played": true,
+        "t": 25.449999999999836,
+        "kind": "ending"
+      },
+      {
+        "beat": 55,
+        "gain": 0.5190685419437953,
+        "strength": 0.9984482758620663,
+        "active": 6,
+        "played": true,
+        "t": 25.499999999999833,
+        "kind": "ending"
+      },
+      {
+        "beat": 56,
+        "gain": 0.5194718934269151,
+        "strength": 0.9992241379310318,
+        "active": 6,
+        "played": true,
+        "t": 25.54999999999983,
+        "kind": "ending"
+      },
+      {
+        "beat": 57,
+        "gain": 0.5198752449100349,
+        "strength": 0.9999999999999973,
+        "active": 6,
+        "played": true,
+        "t": 25.599999999999827,
+        "kind": "ending"
+      }
+    ],
+    "method": "Controlled native first-host defeat checkpoint. Actual real-time game rendering, formation clocks and shared-mixer audio run unmodified after native damage starts rebirth; no animation timers are skipped."
+  },
+  "suite": {
+    "complete": true,
+    "sameFiveBaselineFailures": true,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  }
+}

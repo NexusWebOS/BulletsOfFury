@@ -1209,5 +1209,11 @@
   "chronos_storm_1025": {
     "role": "chronos_red_wave_storm_and_elevenlabs_audio",
     "note": "C33 uses existing arch_hammer_lightning_0926 eight-frame reel in red/white, proportional scaling and downward clipping; no atlas edits. Five ElevenLabs cues, shared mixer and owner gates. See docs/CHRONOS_STORM_1025.md."
+  },
+  "ng27_": {
+    "role": "new_game_plus_enemy_elemental_rounds",
+    "owner": "_BUILD_SOURCE/build_ngplus_1027.py",
+    "manifest": "assets/game/shared/combat/ngplus_1027/manifest.json",
+    "note": "Nine existing EA11 elemental source banks; 16 animation frames x32 directions, baked offline on fixed72x72 cells, pivot36,36. Wind retains source alpha, outline, neutral highlights and luminance. Native launch vectors, collision, ordnance interception and sounds remain."
   }
 }

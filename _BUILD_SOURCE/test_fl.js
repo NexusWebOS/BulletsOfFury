@@ -9950,7 +9950,7 @@ console.log("=== 201. rank glyph ===");
   /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
      with the score and rank section." It shares their bar, and it is a SNAPSHOT rather than a
      live read of stageTimer, which beginStage and the flyover both move. */
-  ok(/const cLab='CLEAR TIME '/.test(_g201) && /clearT: \(typeof stageTimer==='number'/.test(_g201),
+  ok(/const cLab='CLEAR TIME '/.test(_g201) && /clearT: \(/.test(_g201) && /fmtTime\(R.clearT\|\|0\)/.test(_g201),
      'clear time sits in the score/rank bar and is snapshotted, not read live');
   /* Mike: "the score and time and Rank values should be using diffferent stage fonts to stand out
      properly" - the value takes the pack's FINAL LEVEL face, the one cut to belong to no stage,

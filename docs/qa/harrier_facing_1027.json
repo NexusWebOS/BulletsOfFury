@@ -1,0 +1,345 @@
+{
+  "checks": [
+    {
+      "name": "closed_south keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "closed_south preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "closed_north keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "closed_north preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "open_south keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "open_south preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "open_north keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "open_north preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "broken_south keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "broken_south preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "broken_north keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "broken_north preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "closed_wells_south keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "closed_wells_south preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "open_wells_south keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "open_wells_south preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "broken_wells_south keeps original hull pixels outside the four gun apertures",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "broken_wells_south preserves complete hull alpha and even dimensions",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "The real pre-modular arrival uses the south-facing whole hull",
+      "pass": true,
+      "data": {
+        "depth": true,
+        "phase": "arrive",
+        "last": {
+          "key": "whv_closed_w",
+          "art": "hf28_closed_wells_south",
+          "screenFacing": "south",
+          "opening": false
+        },
+        "hp": 1442,
+        "max": 1442,
+        "angles": [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      }
+    },
+    {
+      "name": "Pre-modular damage masks use matching full south-facing silhouettes",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "All four modular guns begin at the same south-facing handover",
+      "pass": true,
+      "data": {
+        "handovers": 1,
+        "phase": "fight",
+        "hp": 1442,
+        "max": 1442,
+        "parts": 10,
+        "guns": [
+          {
+            "angle": 1.5707963267948966,
+            "bearing": 1.5707963267948966,
+            "muzzle": 1.5707963267948966,
+            "age": 99
+          },
+          {
+            "angle": 1.5707963267948966,
+            "bearing": 1.5707963267948966,
+            "muzzle": 1.5707963267948966,
+            "age": 99
+          },
+          {
+            "angle": 1.5707963267948966,
+            "bearing": 1.5707963267948966,
+            "muzzle": 1.5707963267948966,
+            "age": 99
+          },
+          {
+            "angle": 1.5707963267948966,
+            "bearing": 1.5707963267948966,
+            "muzzle": 1.5707963267948966,
+            "age": 99
+          }
+        ]
+      }
+    },
+    {
+      "name": "Handover keeps the native ten modules and health budget",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "The handover does not retrigger during ordinary fighting",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Return flyover also selects the south-facing hull",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "A later flyover resets the gun handover south exactly once again",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Independent live gun targets and actual opaque hits remain",
+      "pass": true,
+      "data": {
+        "targets": 4,
+        "hit": true
+      }
+    },
+    {
+      "name": "The northbound opening flight uses compensated hull pixels to keep guns facing screen-south",
+      "pass": true,
+      "data": {
+        "key": "whv_open",
+        "art": "hf28_open_north",
+        "screenFacing": "south",
+        "opening": true
+      }
+    },
+    {
+      "name": "Opening compensation is scoped and restored after draw",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Other stages retain their original carrier images",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No page, draw or HTTP errors",
+      "pass": true,
+      "data": {
+        "page": [],
+        "console": [],
+        "http": []
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "HTTPerrors": [],
+  "video": {
+    "file": "C:\\Users\\Mike\\Documents\\New project\\BOF-Harrier-Facing-1027\\facing-fight\\stage6-furious.mp4",
+    "duration": 171.79,
+    "bytes": 203713074,
+    "completed": true,
+    "defeatSeconds": 164.46,
+    "nativeAverageFps": 54.22250366850964,
+    "audio": {
+      "meanDb": -18.2,
+      "peakDb": -0.9
+    },
+    "depthSamples": 27,
+    "allDepthFacingSouth": true,
+    "handovers": 3,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "botErrors": [],
+    "abortedPreloads": 3,
+    "godBlocks": 525,
+    "sha256": "0fbb9812c80cd19b507e3e6ef8b7d6e66fdef740c4ac0fc4e030faf2841ddbd4"
+  },
+  "rebuild": {
+    "pass": true,
+    "files": {
+      "assets\\harrier_facing_art_1027.js": "82c6a60ff00eca12f25607070c3f899ddf8161389040f477a03aeda704f8bf24",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\broken_north.png": "5f67315021f7cf37d771bfc0dcb8dcb07bb28845022a174c6b39416605019ba0",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\broken_south.png": "5f241906dc912af6f6cb8d0c200c064125e6d4ae6ad714ba2f44fb70316c6b65",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\broken_wells_south.png": "ae6a3856687b54c15198596df281ec34924ff87b99ad2aee7ca7672cf82e6ddb",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\closed_north.png": "ee744f21790f62b4907c58fdec8ce5b483902fe8fa71eb011568b1ddcefce01d",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\closed_south.png": "28dd9b8f7b107c52a9581abfd914584832d5e218a67649b215a31973982548e5",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\closed_wells_south.png": "982aaa96821b9cd0892937b6a8036fe9574615a50abcd81401f5fa3dd9c09165",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\hit_0.png": "32c1c1c74e33b9104406369be580fc82fabc6bb62938cea984de54444515530f",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\hit_1.png": "32c1c1c74e33b9104406369be580fc82fabc6bb62938cea984de54444515530f",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\hit_2.png": "32c1c1c74e33b9104406369be580fc82fabc6bb62938cea984de54444515530f",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\hit_3.png": "32c1c1c74e33b9104406369be580fc82fabc6bb62938cea984de54444515530f",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\open_north.png": "5139eceaa74f1e367e8b5b77aaaa142331845e34e476dba107e8b157cfc57c56",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\open_south.png": "38d47689d156f290485a675d17984717d2a6d00a7881bae270ccc535543532e6",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_facing_1027\\open_wells_south.png": "97ca2694569c0b1ff1b324cd2c73fca1e8c37955f6512c5240d59c642bea81f3"
+    }
+  },
+  "reviewUrl": "http://127.0.0.1:49257/index.html",
+  "fullSuite": {
+    "errors": 5,
+    "baselineUnchanged": true
+  },
+  "playbackChecks": [
+    {
+      "name": "shortfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 12,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "shortfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 35,
+        "audio": 7137
+      }
+    },
+    {
+      "name": "shortfilm seek2.4s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek9s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 171.789,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "fullfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 31,
+        "audio": 7304
+      }
+    },
+    {
+      "name": "fullfilm seek3s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek24s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek164s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No review browser errors",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "Captured affected source files still match current game",
+      "pass": true,
+      "data": []
+    }
+  ]
+}

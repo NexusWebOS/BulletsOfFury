@@ -1,0 +1,232 @@
+[
+  {
+    "pilot": "voss",
+    "view": "south",
+    "key": null,
+    "frame": null,
+    "sha256": "8622f17add6edaf7b95f3fd02731c954dd5e96ece1b4fe8bedaf668b278f8f29"
+  },
+  {
+    "pilot": "voss",
+    "view": "north",
+    "key": null,
+    "frame": null,
+    "sha256": "0bb91fd8e69b3cf4c2e1729ddaf50f40e94251bde9a46364a6f8c1cf7fb561e5"
+  },
+  {
+    "pilot": "voss",
+    "bank": "idle",
+    "frames": 1,
+    "key": "af21_voss_idle",
+    "span": 86,
+    "ratio": 0.8806818181818182
+  },
+  {
+    "pilot": "voss",
+    "bank": "somer",
+    "frames": 16,
+    "key": "af21_voss_somer",
+    "span": 86,
+    "ratio": 0.8806818181818182
+  },
+  {
+    "pilot": "voss",
+    "bank": "roll",
+    "frames": 16,
+    "key": "af21_voss_roll",
+    "span": 86,
+    "ratio": 0.8806818181818182
+  },
+  {
+    "pilot": "voss",
+    "bank": "drift",
+    "frames": 16,
+    "key": "af21_voss_drift",
+    "span": 86,
+    "ratio": 0.8806818181818182
+  },
+  {
+    "pilot": "nyx",
+    "view": "south",
+    "key": "af21_nyx_idle",
+    "frame": 0,
+    "sha256": "6bf16f9183eafa4b51fab6d893f72f661f976d28b794d260f528aeca7b55305e"
+  },
+  {
+    "pilot": "nyx",
+    "view": "north",
+    "key": "air13_s6_nyx_heading",
+    "frame": 4,
+    "sha256": "5b8bab1e3d3c4e50a86ce35a8cc09d1351955428bf51f2f8e1aaeda4a41b55b1"
+  },
+  {
+    "pilot": "nyx",
+    "bank": "idle",
+    "frames": 1,
+    "key": "af21_nyx_idle",
+    "span": 98,
+    "ratio": 1.0170454545454546
+  },
+  {
+    "pilot": "nyx",
+    "bank": "somer",
+    "frames": 16,
+    "key": "af21_nyx_somer",
+    "span": 98,
+    "ratio": 1.0170454545454546
+  },
+  {
+    "pilot": "nyx",
+    "bank": "roll",
+    "frames": 16,
+    "key": "af21_nyx_roll",
+    "span": 98,
+    "ratio": 1.0170454545454546
+  },
+  {
+    "pilot": "nyx",
+    "bank": "drift",
+    "frames": 16,
+    "key": "af21_nyx_drift",
+    "span": 98,
+    "ratio": 1.0170454545454546
+  },
+  {
+    "pilot": "rook",
+    "view": "south",
+    "key": null,
+    "frame": null,
+    "sha256": "514d0f420795d46915a8a9e3840dfed19ebbaf22f8ae1f17107c14b7f89cf389"
+  },
+  {
+    "pilot": "rook",
+    "view": "north",
+    "key": null,
+    "frame": null,
+    "sha256": "82a3b16bc5cf9686f535325a16e9a5b7ce50a300de61cc907f69761ccdfba385"
+  },
+  {
+    "pilot": "rook",
+    "bank": "idle",
+    "frames": 1,
+    "key": "af21_rook_idle",
+    "span": 100,
+    "ratio": 0.7954545454545454
+  },
+  {
+    "pilot": "rook",
+    "bank": "somer",
+    "frames": 16,
+    "key": "af21_rook_somer",
+    "span": 100,
+    "ratio": 0.7954545454545454
+  },
+  {
+    "pilot": "rook",
+    "bank": "roll",
+    "frames": 16,
+    "key": "af21_rook_roll",
+    "span": 100,
+    "ratio": 0.7954545454545454
+  },
+  {
+    "pilot": "rook",
+    "bank": "drift",
+    "frames": 16,
+    "key": "af21_rook_drift",
+    "span": 100,
+    "ratio": 0.7954545454545454
+  },
+  {
+    "pilot": "kaia",
+    "view": "south",
+    "key": null,
+    "frame": null,
+    "sha256": "6193b325034890e269a60b1351ca28dc6c11736d790ed898bc15db34abd41db4"
+  },
+  {
+    "pilot": "kaia",
+    "view": "north",
+    "key": null,
+    "frame": null,
+    "sha256": "7b327c3f15ab0319c40fdc8b46834c0c0db0b099c8aa1939d7c9e7afec0e2723"
+  },
+  {
+    "pilot": "kaia",
+    "bank": "idle",
+    "frames": 1,
+    "key": "af21_kaia_idle",
+    "span": 108,
+    "ratio": 0.9488636363636364
+  },
+  {
+    "pilot": "kaia",
+    "bank": "somer",
+    "frames": 16,
+    "key": "af21_kaia_somer",
+    "span": 108,
+    "ratio": 0.9488636363636364
+  },
+  {
+    "pilot": "kaia",
+    "bank": "roll",
+    "frames": 16,
+    "key": "af21_kaia_roll",
+    "span": 108,
+    "ratio": 0.9488636363636364
+  },
+  {
+    "pilot": "kaia",
+    "bank": "drift",
+    "frames": 16,
+    "key": "af21_kaia_drift",
+    "span": 108,
+    "ratio": 0.9488636363636364
+  },
+  {
+    "pilot": "jace",
+    "view": "south",
+    "key": null,
+    "frame": null,
+    "sha256": "e949577b94436dc6822d8478b31bf59ddc8552afee39b71cc43206a59610f5df"
+  },
+  {
+    "pilot": "jace",
+    "view": "north",
+    "key": null,
+    "frame": null,
+    "sha256": "44e623fba46502ea4f9b4f28c61ba47052e55d2db3537addd15d7cdf771e2f3a"
+  },
+  {
+    "pilot": "jace",
+    "bank": "idle",
+    "frames": 1,
+    "key": "af21_jace_idle",
+    "span": 103,
+    "ratio": 1.0113636363636365
+  },
+  {
+    "pilot": "jace",
+    "bank": "somer",
+    "frames": 16,
+    "key": "af21_jace_somer",
+    "span": 103,
+    "ratio": 1.0113636363636365
+  },
+  {
+    "pilot": "jace",
+    "bank": "roll",
+    "frames": 16,
+    "key": "af21_jace_roll",
+    "span": 103,
+    "ratio": 1.0113636363636365
+  },
+  {
+    "pilot": "jace",
+    "bank": "drift",
+    "frames": 16,
+    "key": "af21_jace_drift",
+    "span": 103,
+    "ratio": 1.0113636363636365
+  }
+]

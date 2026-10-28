@@ -1,0 +1,11 @@
+from pathlib import Path
+import rough_riders_capture_base_1028 as rec
+import json,hashlib,http.server
+http.server.ThreadingHTTPServer.request_queue_size=256
+R=Path(__file__).resolve().parents[1];W=R/'_shots/rough_riders_1028_capture';W.mkdir(parents=True,exist_ok=True);rec.OUT=W
+rec.CONFIG=dict(id='rough-riders-intro',stage=6,role='boss',kind='rebelsquad',name='The Rough Riders / Catch-up + Airshow + Bowling Intro',limit=150,demonstrate=999)
+rec.SNAPSHOT=rec.SNAPSHOT.replace('P=b?._pb28;','P=b?._pb28,RI=b?._rebels?.rough33,RT=b?._rebels?.h3Intro;').replace('mode:P?.mode||','mode:RI?.phase||P?.mode||').replace('pursuitEvents:typeof PB28','rough:{phase:RI?.phase,t:RI?.t,scroll:RI?.scroll,resume:RI?.resume,done:!!b?._rebels?.frIntro?.done,health:b?._rebels?.ships.map(q=>({key:q.key,hp:q.hp,max:q.max})),sky:_stage6SkyScroll,frame:RR33.last,events:RR33.events.slice(-25),line:RT?.rows[RT.i]?.who,text:RT?.rows[RT.i]?.text,allies:s6Wing?.ships.map(q=>({key:q.key,x:q.x,y:q.y}))},pursuitEvents:typeof PB28')
+original=Path(rec.__file__).read_text(encoding='utf-8').replace("if q['bossDefeated'] and completed_at is None:","if q.get('rough',{}).get('done') and completed_at is None:").replace("reason='native defeat'","reason='native Rough Riders introduction and combat handoff'")
+original=original.replace("'method': 'Native encounter spawn, real RAF, Cole with level-5 Laser and40 missiles, native GOD and input-only aiming; no enemy HP/phase/timer writes.'", "'method': 'Native encounter spawn, real RAF, Cole GOD input-only observing bot without player fire, normal allies; no enemy HP/phase/timer writes.'")
+scope={'__name__':'recorder_capture','__file__':rec.__file__};exec(compile(original,rec.__file__,'exec'),scope);scope.update(CONFIG=rec.CONFIG,OUT=W,SNAPSHOT=rec.SNAPSHOT,CAPTURE=rec.CAPTURE)
+files=['index.html','assets/game.js','assets/rough_riders_1028.js','assets/rough_riders_art_1028.js','assets/rebel_revision_1026.js','assets/feedback_1003h.js','assets/encounter_revision_1027.js','assets/rebel_gang_1004.js'];(W/'source-hashes.json').write_text(json.dumps({f:hashlib.sha256((R/f).read_bytes()).hexdigest()for f in files},indent=2));print('FINAL',scope['record'](6,150),flush=True)

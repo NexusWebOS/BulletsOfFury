@@ -67,8 +67,8 @@ Rival24.mapDraw=function(dt){if(!cf4Pending())return CF4_BASE.map(dt);if(sselBoo
   x=lerp(o?.x||h.x,tx,e),y=lerp(o?.y||h.y,ty,e)-Math.sin(u*Math.PI)*65,z=harrier?50:30;
   ctx.save();ctx.translate(x,y);ctx.rotate(u<.98?Math.atan2(ty-(o?.y||h.y),tx-(o?.x||h.x))-Math.PI/2:a);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-z*im.width/im.height/2,-z/2,z*im.width/im.height,z);ctx.restore();});
  if(typeof map4eStageXMarker!=='function'&&XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),w=CF4.focus?115:100;ctx.drawImage(im,h.x-w/2,h.y-w*im.height/im.width/2,w,w*im.height/im.width);}
- if(CF4.focus)mapgBriefingDraw({key:'cf4-x-'+harrier,title:'STAGE X - '+(harrier?'HARRIER PURSUIT':'REBEL FURY'),body:harrier?'THE ESCAPED HARRIER IS HOLDING OVER THE CENTRAL CITY. FINISH THE PURSUIT.':'FIVE REBEL PILOTS. YOUR FULL FIVE-SHIP WING. FINISH THE FIGHT.'});
- if(CF4.flight<3.2)campText((harrier?'HARRIER':'REBEL FURY')+' MOVING TO STAGE X',VW/2,VH-212,10,'#ffb4a3');
+ if(CF4.focus)mapgBriefingDraw({key:'cf4-x-'+harrier,title:'STAGE X - '+(harrier?'HARRIER PURSUIT':'ROUGH RIDERS'),body:harrier?'THE ESCAPED HARRIER IS HOLDING OVER THE CENTRAL CITY. FINISH THE PURSUIT.':'THE ROUGH RIDERS. YOUR FULL FIVE-SHIP WING. FINISH THE FIGHT.'});
+ if(CF4.flight<3.2)campText((harrier?'HARRIER':'ROUGH RIDERS')+' MOVING TO STAGE X',VW/2,VH-212,10,'#ffb4a3');
  else controlHintRow(CF4.focus?[['pad_a','FIGHT'],['pad_b','MAP']]:[['pad_dpad','STAGE X']],VH-212,VW/2,VW-24,20);
 };
 Rival24.mapInput=function(){if(!cf4Pending())return CF4_BASE.input();if(CF4.flight<3.2)return true;

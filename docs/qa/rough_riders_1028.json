@@ -1,0 +1,799 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "All five aircraft use72 complete fixed192px authored cells",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All360 flight cells have clear outer borders and bounded textures",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Complete80-glyph font includes R,5 and common baselines with safety margins",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Crew official name is live on the actual boss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Catch-up aircraft face north in the player flight direction",
+        "passed": true,
+        "data": {
+          "phase": "catch-up",
+          "t": 2.0166666666666644,
+          "scroll": 1,
+          "protected": true,
+          "ships": [
+            {
+              "key": "voss",
+              "x": 341.8720178145817,
+              "y": 91.7310862589081,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "nyx",
+              "x": 257.8720178145817,
+              "y": 67.3041104834789,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "rook",
+              "x": 425.8720178145817,
+              "y": 63.101932836626474,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "kaia",
+              "x": 173.87201781458168,
+              "y": 38.67495706119726,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "jace",
+              "x": 509.8720178145817,
+              "y": 34.47277941434484,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            }
+          ],
+          "allies": 4
+        }
+      },
+      {
+        "name": "All five boost together with animated anchored plume cells",
+        "passed": true,
+        "data": {
+          "phase": "spool",
+          "t": 3.183333333333327,
+          "scroll": 1,
+          "protected": true,
+          "ships": [
+            {
+              "key": "voss",
+              "x": 341.8290513213059,
+              "y": 137,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "nyx",
+              "x": 257.8290513213059,
+              "y": 112,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "rook",
+              "x": 425.8290513213059,
+              "y": 112,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "kaia",
+              "x": 173.82905132130588,
+              "y": 87,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "jace",
+              "x": 509.8290513213059,
+              "y": 87,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            }
+          ],
+          "allies": 4
+        }
+      },
+      {
+        "name": "All five fly completely off the north edge before returning",
+        "passed": true,
+        "data": {
+          "phase": "away",
+          "t": 4.516666666666656,
+          "scroll": 1,
+          "protected": true,
+          "ships": [
+            {
+              "key": "voss",
+              "x": 340.9010640035692,
+              "y": -250,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "nyx",
+              "x": 256.9010640035692,
+              "y": -280,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "rook",
+              "x": 424.9010640035692,
+              "y": -310,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "kaia",
+              "x": 172.90106400356922,
+              "y": -340,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "jace",
+              "x": 508.9010640035692,
+              "y": -370,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            }
+          ],
+          "allies": 4
+        }
+      },
+      {
+        "name": "Every pilot actually traverses at least12 distinct true somersault cells",
+        "passed": true,
+        "data": {
+          "voss": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            25,
+            26,
+            27,
+            28,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "nyx": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            20,
+            21,
+            22,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "rook": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            26,
+            27,
+            28,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "kaia": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            20,
+            21,
+            22,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "jace": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            25,
+            26,
+            27,
+            28,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ]
+        }
+      },
+      {
+        "name": "The intro remains fully protected with unchanged native pilot health",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No timed wave or stage sequence advances through the new entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Allies accompany the player through the entire entrance",
+        "passed": true,
+        "data": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "The five settle in a spread bowling-pin formation",
+        "passed": true,
+        "data": [
+          {
+            "key": "voss",
+            "x": 344.1969737098286,
+            "y": 236.3191529468402,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "nyx",
+            "x": 260.1969737098286,
+            "y": 179.1661636146566,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "rook",
+            "x": 428.1969737098286,
+            "y": 178.97516856024373,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "kaia",
+            "x": 176.19697370982863,
+            "y": 123.81288785107022,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "jace",
+            "x": 512.1969737098286,
+            "y": 125.386682037515,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          }
+        ]
+      },
+      {
+        "name": "Dialogue waits until the airshow and begins with the new crew identity",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Scrolling eases down while preserving nonzero parallax movement",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Direct hostile and stale targeting cannot hurt a protected stunt pilot",
+        "passed": true,
+        "data": {
+          "before": 7740,
+          "after": 7740,
+          "hit": false
+        }
+      },
+      {
+        "name": "Actual sky scroll during dialogue is approximately41px per second",
+        "passed": true,
+        "data": 40.69999999999709
+      },
+      {
+        "name": "The conversation releases back into the original combat controller",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Normal sky speed returns smoothly and the native arsenal initializes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Combat damage and native hit flash remain active after the entrance",
+        "passed": true,
+        "data": {
+          "before": 1421.1999999999998,
+          "hp": 1420.1999999999998,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Native combat flash still expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy retains the complete protected five-pilot entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal retains the complete protected five-pilot entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard retains the complete protected five-pilot entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage X keeps its existing encounter choreography",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages do not change scroll rate",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or HTTP asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": {
+    "meanDb": -16.7,
+    "peakDb": -2.7,
+    "liveSeconds": 59.638,
+    "nativeFrames": {
+      "peak": 1.3415766954421997,
+      "tapped": 40,
+      "playing": {
+        "bossAlarm": 1,
+        "allyArrive": 1,
+        "stagex": 1,
+        "juggernautRamLaunch": 5,
+        "av3_impact_metal": 32,
+        "dialogueLetter": 7118,
+        "teleportOut": 1,
+        "maverickHelixRelease": 1,
+        "enemyMachineGunHeavy": 27,
+        "enemyMachineGunLight": 33,
+        "expSmall": 48,
+        "missile": 1,
+        "hit": 1,
+        "teleportIn": 2,
+        "enemyShoot": 1,
+        "av3_impact_energy": 1,
+        "av3_target_acquire": 3,
+        "bossWeaponCharge": 1,
+        "alertLockon": 2,
+        "powerup": 1,
+        "retinaLockBeep": 6
+      },
+      "tapErrors": [],
+      "frames": 3485,
+      "god": true,
+      "godBlocks": 9,
+      "deaths": 0
+    },
+    "checks": [
+      {
+        "name": "Live native introduction reaches its real combat handoff",
+        "passed": true,
+        "data": "native Rough Riders introduction and combat handoff"
+      },
+      {
+        "name": "No native game, browser, bot or asset errors",
+        "passed": true,
+        "data": {
+          "cancelledMediaRequests": 21,
+          "failed": []
+        }
+      },
+      {
+        "name": "Live film traverses the complete seven-part entrance",
+        "passed": true,
+        "data": [
+          "catch-up",
+          "spool",
+          "boost",
+          "away",
+          "airshow",
+          "settle",
+          "dialogue",
+          "combat"
+        ]
+      },
+      {
+        "name": "Protected film preserves every pilot HP until dialogue releases",
+        "passed": true,
+        "data": 8960
+      },
+      {
+        "name": "Native allies remain with the player throughout the introduction",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Live conversation actually uses the slow scrolling multiplier",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Live combat restores full scenery speed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Captured source matches the installed game",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recorded game audio is audible without clipping",
+        "passed": true,
+        "data": {
+          "meanDb": -16.7,
+          "peakDb": -2.7
+        }
+      }
+    ],
+    "phases": [
+      "catch-up",
+      "spool",
+      "boost",
+      "away",
+      "airshow",
+      "settle",
+      "dialogue",
+      "combat"
+    ],
+    "sourceHashes": {
+      "index.html": "4e3a470b12e3fc81f860dcd8dfa61fe23b95715b8b7308123d915bef31ae0a9b",
+      "assets/game.js": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+      "assets/rough_riders_1028.js": "abda1987f447c13cded82e655bb00743cb60475e428bf191f529ae598b319039",
+      "assets/rough_riders_art_1028.js": "1f2d21045c75e3c576dd47211fb51e5e6bf2ea41f4c6684878b9df0238004c53",
+      "assets/rebel_revision_1026.js": "eed13335829c4d84f48133a0f795cf58e323db79a6431984c230685d42bcc7e1",
+      "assets/feedback_1003h.js": "93dad4331cd8119af03b83a59ae2c313f8e016cafb485174cefe0ddceab1d2cd",
+      "assets/encounter_revision_1027.js": "19eb100a1a4813c92bbeebc0b4c938c8d2ce31b2c46fefcb280e58cb307ff716",
+      "assets/rebel_gang_1004.js": "5eebe0b05982f3c6aa6bb16224455293d219b38ff23d2926769a29cddf5e22ba"
+    }
+  },
+  "playback": {
+    "checks": [
+      {
+        "name": "All generated art and font previews load",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 1 has native HD capture dimensions",
+        "passed": true,
+        "data": {
+          "width": 1280,
+          "height": 800,
+          "duration": 18
+        }
+      },
+      {
+        "name": "Video 1 supports efficient byte-range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 1 seeks to 5 percent",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 1 seeks to 50 percent",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 1 seeks to 90 percent",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 1 decodes moving frames and actual audio",
+        "passed": true,
+        "data": {
+          "t": 2.854177,
+          "a": 249383,
+          "f": 386
+        }
+      },
+      {
+        "name": "Video 2 has native HD capture dimensions",
+        "passed": true,
+        "data": {
+          "width": 1280,
+          "height": 800,
+          "duration": 59.582
+        }
+      },
+      {
+        "name": "Video 2 supports efficient byte-range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 2 seeks to 5 percent",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 2 seeks to 50 percent",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 2 seeks to 90 percent",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Video 2 decodes moving frames and actual audio",
+        "passed": true,
+        "data": {
+          "t": 2.860905,
+          "a": 284021,
+          "f": 437
+        }
+      },
+      {
+        "name": "Review has no browser errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "review": "http://127.0.0.1:58112/index.html",
+  "fullSuite": {
+    "exitCode": 1,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ],
+    "baselineUnchanged": true
+  },
+  "editableSources": "_ART_SOURCES/rough_riders_1028",
+  "noCommitOrPush": true
+}

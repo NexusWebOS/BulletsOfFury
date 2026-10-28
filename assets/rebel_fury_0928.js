@@ -44,7 +44,7 @@ const RF28_K={
 const RF28_CYCLE=[['wall','pincer'],['wall','fivepoint','pincer'],['fivepoint','wall','pincer']];
 const RF28_SIG={voss:'talons',nyx:'knife',rook:'hammer',kaia:'cage',jace:'razor'};
 const RF28_SIG_NAME={talons:'IRON TALONS',knife:'GHOSTKNIFE',hammer:'BREACH HAMMER',cage:'SIGNAL CAGE',razor:'RAZOR RUN'};
-const RF28_FORM_NAME={wall:'WALL OF FURY',pincer:'PINCER',fivepoint:'FIVE-POINT LOCK',spiral:'REBEL FURY'};
+const RF28_FORM_NAME={wall:'WALL OF FURY',pincer:'PINCER',fivepoint:'FIVE-POINT LOCK',spiral:'RIDERS SPIRAL'};
 const RF28_ORB={voss:'antimatter',nyx:'gravity',rook:'kinetic',kaia:'solar',jace:'lightning'};
 if(typeof TB28_ART!=='undefined'&&!TB28_ART.kinetic)TB28_ART.kinetic={still:'xorb_kinetic_rock',spin:1.2};
 /* Radio lines are the squad's voice in this layer. They are one table so Mike can rewrite them. */

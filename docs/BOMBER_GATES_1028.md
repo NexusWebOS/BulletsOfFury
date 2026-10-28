@@ -1,0 +1,13 @@
+# Stage 5 and Stage 6 bomber body gates — October 28
+
+Mike clarified that both bomber minibosses require all four modular pieces destroyed before the body can be damaged. The existing assets/stage5_bomber_gate_1027.js now owns Stage 5 and Stage 6 bomber actors, retaining its compatibility names and native hit/HP/death routes. The HTML version tag is refreshed.
+
+While any of the four module HP pools remain positive, offensive point/solid/beam collision sees only surviving modules. The protected body does not stop a projectile. No body/core Retina target is exposed, and direct, coordinate-free and stale-target damage cannot bypass the gate. Destroying the fourth piece exposes the native core and emits the existing authored SHOOT! callout once. Reserved core HP and the total remaining core-plus-modules budget remain native.
+
+The Stage 6 pursuit bomber's hidden/offscreen phase explicitly returns no collision before the live-module scan, preserving its existing hidden hit/beam/target guards. Its chase/bomb/missile choreography, native module flashes, breakup, exposed-core combat, death cleanup, rewards and progression remain.
+
+Verification: 34 Stage 5 and 37 Stage 6 actual Chromium checks pass (71 total), exercising Easy, Normal, Hard and Furious. Each checks all four ordinary bullet/beam lanes, protected core collision/Retina/space targets, direct and stale-target rejection, actual native space pulses, protection with 3/2/1 pieces left, fourth-piece exposure, full remaining HP accounting, rendered module hit flash and expiry, and native complete defeat. Stage 6 additionally checks real ground MG projectiles through the normal updatePlay collision loop: each damages its intended module while core HP remains untouched; a centerline MG shot passes through the body and exits. All hidden pursuit module/core damage and target paths remain protected. Actual intact/module-hit/core-exposed renderer screenshots inspected.
+
+No new page/draw/asset errors. Stage 5 still encounters the documented unrelated optional Chronos stop_empty.png 404, handled by its existing fallback. The required full suite reaches its summary with the same five recorded failures: single-hit flash duration; dialogue/opening-jump expectation; jump return before Chromium; opposite StageX route persistence; StageX right full encounter. Syntax passes. No game.js/test_fl.js changes, commit or push.
+
+Portable native probes: _BUILD_SOURCE/probe_stage5_bomber_gate_1027.py (scope expectation updated to this user clarification) and _BUILD_SOURCE/probe_stage6_bomber_gate_1028.py --out <evidence-folder>. QA: docs/qa/bomber_gates_1028.json. Local evidence: C:/Users/Mike/Documents/New project/BOF-Bomber-Gates-1028.

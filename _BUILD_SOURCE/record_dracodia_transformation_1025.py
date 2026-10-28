@@ -50,7 +50,7 @@ subprocess.run([FF,'-v','error','-y','-threads','2','-i',str(OUT/'capture.webm')
 dec=subprocess.run([FF,'-hide_banner','-nostats','-threads','2','-i',str(mp4),'-af','volumedetect','-f','null','-'],capture_output=True,text=True);(OUT/'decode.log').write_text(dec.stderr,encoding='utf8')
 peak=re.search(r'max_volume: ([\-\d.inf]+) dB',dec.stderr);db=float(peak[1])if peak else-999
 fall=next(q['seconds']-q['sceneTime']for q in timeline if q['mode']=='dr5er23rebirth')
-chapters={'collapse':fall,'symbiote':fall+10.6,'download':fall+14.5,'lightning':fall+19.2,'storm':fall+24.1,'complete':fall+25.22,'reveal':fall+29.6}
+chapters={'collapse':fall,'symbiote':fall+10.6,'download':fall+14.5,'lightning':fall+14.02,'storm':fall+24.1,'complete':fall+25.22,'reveal':fall+29.6}
 if args.climax:chapters.update({'complete':fall+25.22,'peak-flash':fall+25.75,'clearing-light':fall+27.2})
 if args.polish:
  chapters.update({'left-arm-break':1.45,'right-arm-break':2.65})
@@ -64,7 +64,7 @@ checks={'noPageOrConsoleErrors':not errors,'noAssetErrors':not assets,'fullDecod
  'nativeDamageStartsCheckpoint':fixture,'all24LightningBeats':sum(e['event']=='corrupted-lightning'for e in events['rebirth'])==24,
  'downloadCompletes':any(q.get('download',{}).get('progress',0)>=1 for q in timeline if q.get('download')),
  'finalArenaRevealed':any(q['encounter']==2 and q['mode']=='dr5Monologue'for q in timeline),
- 'nativeLightningAudioPlayed':all(sound['playing'].get(k,0)>0 for k in ['combatBeam0927','bossWeaponCharge','expBig']),
+ 'nativeLightningAudioPlayed':all(sound['playing'].get(k,0)>0 for k in ['rd27Lightning','bossWeaponCharge','expBig']),
  'nativeFinalBodyDownloaded':any(q.get('download',{}).get('source')=='native-colossus'for q in timeline if q.get('download')),
  'downloadEnergyReplacesTeleportCue':sound['playing'].get('combatEnergy0927',0)>0 and not sound['playing'].get('teleportIn',0)}
 if args.depth:
@@ -80,10 +80,10 @@ if args.climax:
 if args.strikes:
  late=[q['effects']['clock']for q in timeline if q['mode']=='dr5er23rebirth'and 23<q['sceneTime']<25.6 and q['effects'].get('clock')]
  checks.update({'strikeCadenceAcceleratesIndependently':len(late)>4 and all(z['rate']>a['rate']for a,z in zip(late,late[1:]))and late[-1]['rate']>19,
-  'spiralOnlyDuringEnding':all(q['effects']['front']==0 and q['effects']['back']==0 for q in timeline if q['mode']=='dr5er23rebirth'and 17<q['sceneTime']<23)})
+  'spiralBuildsFromDownloadStart':any(q['effects']['front']+q['effects']['back']>0 for q in timeline if q['mode']=='dr5er23rebirth'and 14<=q['sceneTime']<15)})
 if args.polish:
- audio=events['polish'];gains=[q['gain']for q in audio];intro=[q['intro']for q in timeline if q.get('intro')and 7<q['sceneTime']<14]
- checks.update({'audibleGainIncreasesEachStrike':len(gains)>50 and all(z>a for a,z in zip(gains,gains[1:])),
+ audio=events['polish'];gains=[q['strength']for q in audio];intro=[q['intro']for q in timeline if q.get('intro')and 7<q['sceneTime']<14]
+ checks.update({'formationThunderStrengthBuilds':len(gains)>50 and all(z>a for a,z in zip(gains,gains[1:])),
   'everyStrikeMixerReleaseAccepted':all(q['played']for q in audio),
   'steppedSkeletonVisibility':min(q['alpha']for q in intro)==.25 and max(q['alpha']for q in intro)==1 and len({q['frame']for q in intro})>=20,
   'singleClosingRoar':len([e for e in events['speech']if e['event']=='dracodiaShriek'])==1 and timeline[-1]['mode']=='fight'})
@@ -94,7 +94,7 @@ if args.dna:
   'doubleHelixAndFluidLobes':bool(forming)and all(q['front']>10 and q['back']>10 and q['rungs']==9 and len(q['blobs'])==14 for q in forming),
   'codeInsideSkeletalSilhouette':any(q['skin']>.08 for q in forming),
   'codeConvergesIntoDownload':bool(handoff)and handoff[-1]['absorb']>.85 and handoff[-1]['alpha']<.15,
-  'formationClearsBeforeLightning':all(q.get('dna')is None for q in timeline if q['mode']=='dr5er23rebirth'and q['sceneTime']>=16)})
+  'codeClearsAfterItsConvergence':all(q.get('dna')is None for q in timeline if q['mode']=='dr5er23rebirth'and q['sceneTime']>=16)})
 report={'video':mp4.relative_to(ROOT).as_posix(),'timeline':timeline,'events':events,'sound':sound,'decodedPeakDb':db,'checks':checks,'errors':errors,'assetErrors':assets,'chapters':chapters,'method':__doc__}
 (OUT/'report.json').write_text(json.dumps(report,indent=2),encoding='utf8');(OUT.parent/'latest.json').write_text(json.dumps({'folder':str(OUT),'report':str(OUT/'report.json')},indent=2),encoding='utf8')
 im=Image.new('RGB',(1280,((len(shots)+2)//3)*285),(5,10,17));g=ImageDraw.Draw(im)

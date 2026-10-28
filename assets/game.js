@@ -6754,6 +6754,7 @@ function encounterClockText(seconds){
   return String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0');
 }
 function drawEncounterClocks(){
+  if(typeof hud28DrawClocks==='function')return hud28DrawClocks();
   if(state!==GS.PLAY)return;
   const rows=[[boss,bossActive,'BOSS'],[subBoss,subBossActive,'MINI']];
   ctx.save();ctx.setTransform(SS,0,0,SS,0,0);ctx.globalAlpha=1;
@@ -75800,7 +75801,7 @@ function computeStageResults(){
     /* ⚠ SNAPSHOT, NOT READ LIVE. The old CLEAR TIME row called fmtTime(stageTimer) every frame,
        which is only correct while nothing else touches the clock - and beginStage, the flyover and
        the co-op seat swap all do. Taken once, here, at the moment the stage was cleared. */
-    clearT: (typeof stageTimer==='number' ? stageTimer : 0),
+    clearT: (typeof hud28StageSeconds==='function' ? hud28StageSeconds() : typeof stageTimer==='number' ? stageTimer : 0),
     seats: coop ? [one, two] : null,
   };
   drawStageClear._seq=0; drawStageClear._segT=0; drawStageClear._row=0;

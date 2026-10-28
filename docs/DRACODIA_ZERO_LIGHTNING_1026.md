@@ -1,0 +1,9 @@
+# Dracodia lightning from download zero — October26
+
+Lightning starts at native rebirth t14, the same instant the download displays00%. Beat1 is immediate; the remaining pre-storm strikes accelerate across14–23s, retaining exactly24 native strike events. The first authored down-stroke and partial front/back wrap are visible at00%; the wrap grows from one eighth to its complete32-segment depth helix by23s. The existing ending storm, whiteout, full-body reveal and monologue remain on their original clocks. Body HP, form pools and phase transitions are unchanged.
+
+Formation thunder now has its own six lazy voices cloned from the existing combatBeam0927 sample. Its native mixer gain is1.35, compared with the general beam's unchanged0.82; strike strength rises from0.82 to1 with overlapping tails power-bounded by1/sqrt(1+0.45*active). Cue tokens prevent duplicates. The shared SFX/master settings remain authoritative; pause and stage changes cancel owned voices. Other beam and Chronos sound mappings retain their source, gain and ownership.
+
+Native checks confirm zero-percent visual/audio alignment, no earlier strikes,24 retained beats, independent pool/gain, growing wrap, mute and pause cleanup. A real-time native first-host defeat checkpoint recording passes30 rendering, timing, audio, reveal and dialogue checks; its decoded peak is−4.4dB. Diagnostic fast-step decoder cancellation notices are retained in the focused report; the real-time recording has no game, console or asset errors. The required full suite retains exactly the same5 pre-existing failures.
+
+Evidence: C:/Users/Mike/Documents/New project/BOF-Dracodia-Zero-Lightning-1026. The native recording is a clearly labeled controlled defeat checkpoint, not another full fight. Source regression owners: _BUILD_SOURCE/probe_dracodia_zero_lightning_1026.py and the updated existing download/formation probes.

@@ -1,0 +1,923 @@
+{
+  "checks": [
+    {
+      "name": "easy native bay launches exactly 0 royal helpers",
+      "pass": true,
+      "data": {
+        "cap": 0,
+        "alive": 0,
+        "slots": [],
+        "bay": "wait",
+        "model": []
+      }
+    },
+    {
+      "name": "easy repeated spawn calls cannot exceed the cap",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "easy bay stays closed without announcing incoming helpers",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal native bay launches exactly 0 royal helpers",
+      "pass": true,
+      "data": {
+        "cap": 0,
+        "alive": 0,
+        "slots": [],
+        "bay": "wait",
+        "model": []
+      }
+    },
+    {
+      "name": "normal repeated spawn calls cannot exceed the cap",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "normal bay stays closed without announcing incoming helpers",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard native bay launches exactly 2 royal helpers",
+      "pass": true,
+      "data": {
+        "cap": 2,
+        "alive": 2,
+        "slots": [
+          0,
+          1
+        ],
+        "bay": "cool",
+        "model": [
+          "royal_harrier_escort",
+          "royal_harrier_escort"
+        ]
+      }
+    },
+    {
+      "name": "hard repeated spawn calls cannot exceed the cap",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "hard replacement fills a vacant slot without exceeding cap",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious native bay launches exactly 5 royal helpers",
+      "pass": true,
+      "data": {
+        "cap": 5,
+        "alive": 5,
+        "slots": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "bay": "cool",
+        "model": [
+          "royal_harrier_escort",
+          "royal_harrier_escort",
+          "royal_harrier_escort",
+          "royal_harrier_escort",
+          "royal_harrier_escort"
+        ]
+      }
+    },
+    {
+      "name": "furious repeated spawn calls cannot exceed the cap",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious replacement fills a vacant slot without exceeding cap",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Shared Stage6 sky enemies keep their original model",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Corner entrance bends laterally and changes authored headings",
+      "pass": true,
+      "data": [
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 240.94967484230594,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 248.86793569480088,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 269.4554139112878,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 302.71210949176657,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 348.6380224362373,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 407.23315274470013,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 478.49750041715504,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 562.4310654536018,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south",
+          "x": 335.5863585366252,
+          "y": 659.0338478540402,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "south_wait",
+          "x": 335.5863585366252,
+          "y": 672,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 205.03867290860984,
+          "y": 661.605423555043,
+          "pose": {
+            "bank": "heading",
+            "frame": 16,
+            "scale": 1,
+            "heading": -1.5633559502264835
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 207.96763688174232,
+          "y": 580.7991695501729,
+          "pose": {
+            "bank": "heading",
+            "frame": 80,
+            "scale": 1,
+            "heading": -1.5060127759814268
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 215.00000000000003,
+          "y": 503.925925925926,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.4537219546879951
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 225.35416242621613,
+          "y": 430.63924131744193,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.4080982489491702
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 238.2485243232241,
+          "y": 360.5926643598616,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.370659336438191
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 252.90148585385714,
+          "y": 293.4397436883247,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.3428130743479223
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 268.5314471809486,
+          "y": 228.83402793797217,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.3258765748201171
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 284.3568084673317,
+          "y": 166.42906574394397,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.3211110727901338
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 299.5959698758397,
+          "y": 105.87840574138104,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.3297479148461853
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 313.467331569306,
+          "y": 46.83559656542331,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.3529730450347384
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 325.1892937105638,
+          "y": -11.045813148788966,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.3918294155442428
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 333.9802564624465,
+          "y": -68.11227476611543,
+          "pose": {
+            "bank": "heading",
+            "frame": 81,
+            "scale": 1,
+            "heading": -1.4469942367243103
+          },
+          "protected": true
+        },
+        {
+          "mode": "north",
+          "x": 339.0586199877875,
+          "y": -124.71023965141578,
+          "pose": {
+            "bank": "heading",
+            "frame": 16,
+            "scale": 1,
+            "heading": -1.5184085303553534
+          },
+          "protected": true
+        },
+        {
+          "mode": "north_wait",
+          "x": 340,
+          "y": -160,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "north_wait",
+          "x": 340,
+          "y": -160,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 324.60408587218524,
+          "y": -146.32766384227034,
+          "pose": {
+            "bank": "heading",
+            "frame": 4,
+            "scale": 1,
+            "heading": 2.348897140415177
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 302.91114159426917,
+          "y": -117.16791139562059,
+          "pose": {
+            "bank": "heading",
+            "frame": 66,
+            "scale": 1,
+            "heading": 2.060913476613214
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 291.688146003037,
+          "y": -86.07457836335549,
+          "pose": {
+            "bank": "heading",
+            "frame": 65,
+            "scale": 1,
+            "heading": 1.776616700885129
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 288.94082315816803,
+          "y": -53.63149625264142,
+          "pose": {
+            "bank": "heading",
+            "frame": 64,
+            "scale": 1,
+            "heading": 1.545720449256182
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 292.6748971193415,
+          "y": -20.422496570644658,
+          "pose": {
+            "bank": "heading",
+            "frame": 95,
+            "scale": 1,
+            "heading": 1.3840599938362088
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 300.89609194623677,
+          "y": 12.968589175468352,
+          "pose": {
+            "bank": "heading",
+            "frame": 95,
+            "scale": 1,
+            "heading": 1.284480851477193
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 311.61013169853294,
+          "y": 45.95792947853126,
+          "pose": {
+            "bank": "heading",
+            "frame": 94,
+            "scale": 1,
+            "heading": 1.237190021193299
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 322.8227404359093,
+          "y": 77.96169283137763,
+          "pose": {
+            "bank": "heading",
+            "frame": 94,
+            "scale": 1,
+            "heading": 1.2387828574120525
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 332.53964221804495,
+          "y": 108.39604772684098,
+          "pose": {
+            "bank": "heading",
+            "frame": 95,
+            "scale": 1,
+            "heading": 1.2959978842753246
+          },
+          "protected": true
+        },
+        {
+          "mode": "return",
+          "x": 338.7665611046193,
+          "y": 136.6771626577551,
+          "pose": {
+            "bank": "heading",
+            "frame": 31,
+            "scale": 1,
+            "heading": 1.4304012067204637
+          },
+          "protected": true
+        },
+        {
+          "mode": "settle",
+          "x": 340,
+          "y": 153,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "settle",
+          "x": 340,
+          "y": 153,
+          "pose": null,
+          "protected": true
+        },
+        {
+          "mode": "settle",
+          "x": 340,
+          "y": 153,
+          "pose": null,
+          "protected": true
+        }
+      ]
+    },
+    {
+      "name": "Intro remains protected until the whole ship settles",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Curved entrance returns to native fight with one HP pool",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Charge actually leaves the screen before its large northbound pass",
+      "pass": true,
+      "data": [
+        "warn",
+        "go",
+        "offscreen",
+        "flyover_warn",
+        "flyover",
+        "drift",
+        "approach"
+      ]
+    },
+    {
+      "name": "Flyover is large, moves north and has a paired authored shadow",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Drift uses many rotated frames while shrinking continuously",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Flight restores original body dimensions and foreground vulnerability",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "idle accepted damage visibly whites the complete current pose and expires",
+      "pass": true,
+      "data": {
+        "name": "idle",
+        "hp": 4648.39962496,
+        "after": 4647.39962496,
+        "flash": 0.16,
+        "opaque": 12343,
+        "white": 12343,
+        "changed": 12300,
+        "key": "nf29_approach"
+      }
+    },
+    {
+      "name": "bank accepted damage visibly whites the complete current pose and expires",
+      "pass": true,
+      "data": {
+        "name": "bank",
+        "hp": 4647.39962496,
+        "after": 4646.39962496,
+        "flash": 0.16,
+        "opaque": 11730,
+        "white": 11730,
+        "changed": 11730,
+        "key": "nf29_heading"
+      }
+    },
+    {
+      "name": "flyover accepted damage visibly whites the complete current pose and expires",
+      "pass": true,
+      "data": {
+        "name": "flyover",
+        "hp": 4646.39962496,
+        "after": 4645.39962496,
+        "flash": 0.16,
+        "opaque": 31877,
+        "white": 31151,
+        "changed": 31755,
+        "key": "nf29_flyover"
+      }
+    },
+    {
+      "name": "drift accepted damage visibly whites the complete current pose and expires",
+      "pass": true,
+      "data": {
+        "name": "drift",
+        "hp": 4645.39962496,
+        "after": 4644.39962496,
+        "flash": 0.16,
+        "opaque": 21006,
+        "white": 20504,
+        "changed": 21006,
+        "key": "nf29_drift_right"
+      }
+    },
+    {
+      "name": "return accepted damage visibly whites the complete current pose and expires",
+      "pass": true,
+      "data": {
+        "name": "return",
+        "hp": 4644.39962496,
+        "after": 4643.39962496,
+        "flash": 0.16,
+        "opaque": 12357,
+        "white": 12189,
+        "changed": 12314,
+        "key": "nf29_approach"
+      }
+    },
+    {
+      "name": "Native hit-flash timer expires during movement",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Large flyover collision uses its actual whole silhouette",
+      "pass": true,
+      "data": {
+        "inside": 71,
+        "outside": false
+      }
+    },
+    {
+      "name": "Background scale rejects bullets and Retina until foreground return",
+      "pass": true,
+      "data": {
+        "same": true,
+        "targets": 0
+      }
+    },
+    {
+      "name": "Furious preserves the second fully warned charge below half HP",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Hard completes one charge without an extra pass",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No page, draw or HTTP errors",
+      "pass": true,
+      "data": {
+        "page": [],
+        "console": [],
+        "http": []
+      }
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "http": [],
+  "art": {
+    "rebuildByteIdentical": true,
+    "assets": 21,
+    "bounds": [
+      {
+        "bank": "heading",
+        "frames": 96,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "heading_hit",
+        "frames": 96,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "flyover",
+        "frames": 8,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "flyover_hit",
+        "frames": 8,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "flyover_shadow",
+        "frames": 8,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "drift_left",
+        "frames": 24,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "drift_left_hit",
+        "frames": 24,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "drift_left_shadow",
+        "frames": 24,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "drift_right",
+        "frames": 24,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "drift_right_hit",
+        "frames": 24,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "drift_right_shadow",
+        "frames": 24,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "approach",
+        "frames": 16,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "approach_hit",
+        "frames": 16,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "approach_shadow",
+        "frames": 16,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      },
+      {
+        "bank": "death_large",
+        "frames": 32,
+        "edgeAlphaPixels": 0,
+        "evenCells": true
+      }
+    ],
+    "palette": {
+      "idle": {
+        "changed": 15798,
+        "max_luminance_error": 108.62859999999999,
+        "alpha_identical": true
+      },
+      "attack": {
+        "changed": 29738,
+        "max_luminance_error": 108.62859999999999,
+        "alpha_identical": true
+      },
+      "drift": {
+        "changed": 15786,
+        "max_luminance_error": 108.62859999999999,
+        "alpha_identical": true
+      },
+      "roll": {
+        "changed": 24923,
+        "max_luminance_error": 108.62859999999999,
+        "alpha_identical": true
+      },
+      "somer": {
+        "changed": 21216,
+        "max_luminance_error": 108.62859999999999,
+        "alpha_identical": true
+      }
+    }
+  },
+  "video": {
+    "file": "C:\\Users\\Mike\\Documents\\New project\\BOF-Nightwing-Flight-1027\\royal-flight-fight\\stage6-furious.mp4",
+    "duration": 181.57,
+    "bytes": 210960274,
+    "completed": true,
+    "defeatSeconds": 174.46,
+    "nativeAverageFps": 54.43613672082828,
+    "audio": {
+      "meanDb": -18.3,
+      "peakDb": -0.5
+    },
+    "focus": {
+      "start": 39.145,
+      "end": 66.509,
+      "duration": 27.363999999999997
+    },
+    "filmPhases": [
+      "approach",
+      "drift",
+      "fight",
+      "flyover",
+      "flyover_warn",
+      "go",
+      "north",
+      "offscreen",
+      "return",
+      "settle",
+      "south",
+      "warn"
+    ],
+    "maxHelpers": 5,
+    "largeFlyoverSamples": 11,
+    "driftFrames": [
+      2,
+      6,
+      8,
+      11,
+      16,
+      18,
+      21,
+      23
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "botErrors": [],
+    "abortedPreloads": 2,
+    "godBlocks": 516,
+    "sha256": "66c4fae80e914cb18ce9051d11231e131fcf36e3318cbdb2c546c1add491dda7"
+  },
+  "fullSuite": {
+    "errors": 5,
+    "baselineUnchanged": true
+  },
+  "review": "http://127.0.0.1:56695/index.html",
+  "playback": [
+    {
+      "name": "shortfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 27.366667,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "shortfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 35,
+        "audio": 26646
+      }
+    },
+    {
+      "name": "shortfilm seek4s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek20s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek24s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 181.569,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "fullfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 32,
+        "audio": 6452
+      }
+    },
+    {
+      "name": "fullfilm seek8s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek44s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek63.5s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek124s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek173s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No review browser errors",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "Captured affected source files still match current game",
+      "pass": true,
+      "data": []
+    }
+  ]
+}

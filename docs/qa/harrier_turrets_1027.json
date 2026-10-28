@@ -1,0 +1,555 @@
+{
+  "checks": [
+    {
+      "name": "Every turret remains solid and targetable at its mounting pivot through five headings",
+      "pass": true,
+      "data": [
+        {
+          "id": "hullGun0",
+          "a": 0,
+          "frame": 48,
+          "centerOpaque": true,
+          "hit": "hullGun0",
+          "muzzle": {
+            "x": 264.84911688047526,
+            "y": 166.28794539464735
+          }
+        },
+        {
+          "id": "hullGun0",
+          "a": 0.7853981633974483,
+          "frame": 56,
+          "centerOpaque": true,
+          "hit": "hullGun0",
+          "muzzle": {
+            "x": 255.96911688047527,
+            "y": 179.83794539464736
+          }
+        },
+        {
+          "id": "hullGun0",
+          "a": 1.5707963267948966,
+          "frame": 0,
+          "centerOpaque": true,
+          "hit": "hullGun0",
+          "muzzle": {
+            "x": 240.10911688047528,
+            "y": 183.14794539464737
+          }
+        },
+        {
+          "id": "hullGun0",
+          "a": 3.141592653589793,
+          "frame": 16,
+          "centerOpaque": true,
+          "hit": "hullGun0",
+          "muzzle": {
+            "x": 223.24911688047527,
+            "y": 158.40794539464736
+          }
+        },
+        {
+          "id": "hullGun0",
+          "a": 4.71238898038469,
+          "frame": 32,
+          "centerOpaque": true,
+          "hit": "hullGun0",
+          "muzzle": {
+            "x": 247.98911688047528,
+            "y": 141.54794539464734
+          }
+        },
+        {
+          "id": "hullGun1",
+          "a": 0,
+          "frame": 48,
+          "centerOpaque": true,
+          "hit": "hullGun1",
+          "muzzle": {
+            "x": 309.21911688047527,
+            "y": 154.54294539464735
+          }
+        },
+        {
+          "id": "hullGun1",
+          "a": 0.7853981633974483,
+          "frame": 56,
+          "centerOpaque": true,
+          "hit": "hullGun1",
+          "muzzle": {
+            "x": 300.3391168804753,
+            "y": 168.09294539464736
+          }
+        },
+        {
+          "id": "hullGun1",
+          "a": 1.5707963267948966,
+          "frame": 0,
+          "centerOpaque": true,
+          "hit": "hullGun1",
+          "muzzle": {
+            "x": 284.47911688047526,
+            "y": 171.40294539464736
+          }
+        },
+        {
+          "id": "hullGun1",
+          "a": 3.141592653589793,
+          "frame": 16,
+          "centerOpaque": true,
+          "hit": "hullGun1",
+          "muzzle": {
+            "x": 267.61911688047525,
+            "y": 146.66294539464735
+          }
+        },
+        {
+          "id": "hullGun1",
+          "a": 4.71238898038469,
+          "frame": 32,
+          "centerOpaque": true,
+          "hit": "hullGun1",
+          "muzzle": {
+            "x": 292.35911688047526,
+            "y": 129.80294539464734
+          }
+        },
+        {
+          "id": "hullGun2",
+          "a": 0,
+          "frame": 48,
+          "centerOpaque": true,
+          "hit": "hullGun2",
+          "muzzle": {
+            "x": 426.6691168804753,
+            "y": 154.54294539464735
+          }
+        },
+        {
+          "id": "hullGun2",
+          "a": 0.7853981633974483,
+          "frame": 56,
+          "centerOpaque": true,
+          "hit": "hullGun2",
+          "muzzle": {
+            "x": 417.7891168804753,
+            "y": 168.09294539464736
+          }
+        },
+        {
+          "id": "hullGun2",
+          "a": 1.5707963267948966,
+          "frame": 0,
+          "centerOpaque": true,
+          "hit": "hullGun2",
+          "muzzle": {
+            "x": 401.9291168804753,
+            "y": 171.40294539464736
+          }
+        },
+        {
+          "id": "hullGun2",
+          "a": 3.141592653589793,
+          "frame": 16,
+          "centerOpaque": true,
+          "hit": "hullGun2",
+          "muzzle": {
+            "x": 385.0691168804753,
+            "y": 146.66294539464735
+          }
+        },
+        {
+          "id": "hullGun2",
+          "a": 4.71238898038469,
+          "frame": 32,
+          "centerOpaque": true,
+          "hit": "hullGun2",
+          "muzzle": {
+            "x": 409.8091168804753,
+            "y": 129.80294539464734
+          }
+        },
+        {
+          "id": "hullGun3",
+          "a": 0,
+          "frame": 48,
+          "centerOpaque": true,
+          "hit": "hullGun3",
+          "muzzle": {
+            "x": 471.0391168804753,
+            "y": 166.28794539464735
+          }
+        },
+        {
+          "id": "hullGun3",
+          "a": 0.7853981633974483,
+          "frame": 56,
+          "centerOpaque": true,
+          "hit": "hullGun3",
+          "muzzle": {
+            "x": 462.1591168804753,
+            "y": 179.83794539464736
+          }
+        },
+        {
+          "id": "hullGun3",
+          "a": 1.5707963267948966,
+          "frame": 0,
+          "centerOpaque": true,
+          "hit": "hullGun3",
+          "muzzle": {
+            "x": 446.2991168804753,
+            "y": 183.14794539464737
+          }
+        },
+        {
+          "id": "hullGun3",
+          "a": 3.141592653589793,
+          "frame": 16,
+          "centerOpaque": true,
+          "hit": "hullGun3",
+          "muzzle": {
+            "x": 429.4391168804753,
+            "y": 158.40794539464736
+          }
+        },
+        {
+          "id": "hullGun3",
+          "a": 4.71238898038469,
+          "frame": 32,
+          "centerOpaque": true,
+          "hit": "hullGun3",
+          "muzzle": {
+            "x": 454.1791168804753,
+            "y": 141.54794539464734
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gun0 uses full opaque coloured metal instead of translucent white highlight masks",
+      "pass": true,
+      "data": {
+        "colours": 66,
+        "opaque": true
+      }
+    },
+    {
+      "name": "Gun0 all256 directional/recoil poses preserve fixed even cells and bore metadata",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Gun1 uses full opaque coloured metal instead of translucent white highlight masks",
+      "pass": true,
+      "data": {
+        "colours": 66,
+        "opaque": true
+      }
+    },
+    {
+      "name": "Gun1 all256 directional/recoil poses preserve fixed even cells and bore metadata",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Gun2 uses full opaque coloured metal instead of translucent white highlight masks",
+      "pass": true,
+      "data": {
+        "colours": 66,
+        "opaque": true
+      }
+    },
+    {
+      "name": "Gun2 all256 directional/recoil poses preserve fixed even cells and bore metadata",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Gun3 uses full opaque coloured metal instead of translucent white highlight masks",
+      "pass": true,
+      "data": {
+        "colours": 66,
+        "opaque": true
+      }
+    },
+    {
+      "name": "Gun3 all256 directional/recoil poses preserve fixed even cells and bore metadata",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Bore sockets follow the moving hull exactly",
+      "pass": true,
+      "data": {
+        "dx": 17,
+        "dy": 9
+      }
+    },
+    {
+      "name": "Native gun fire launches from the actual alternating bore sockets",
+      "pass": true,
+      "data": [
+        {
+          "x": 284.52180412995784,
+          "y": 171.38008194880942,
+          "a": 1.5707963267948966,
+          "id": "hullGun1",
+          "round": 1,
+          "expected": {
+            "x": 284.52180412995784,
+            "y": 171.38008194880942
+          }
+        },
+        {
+          "x": 292.54302077311837,
+          "y": 171.27389039758768,
+          "a": 1.5707963267948966,
+          "id": "hullGun1",
+          "round": 2,
+          "expected": {
+            "x": 292.54302077311837,
+            "y": 171.27389039758768
+          }
+        },
+        {
+          "x": 284.79131268773784,
+          "y": 171.127346537575,
+          "a": 1.5707963267948966,
+          "id": "hullGun1",
+          "round": 3,
+          "expected": {
+            "x": 284.79131268773784,
+            "y": 171.127346537575
+          }
+        },
+        {
+          "x": 292.78645360014394,
+          "y": 170.9410535357644,
+          "a": 1.5707963267948966,
+          "id": "hullGun1",
+          "round": 4,
+          "expected": {
+            "x": 292.78645360014394,
+            "y": 170.9410535357644
+          }
+        },
+        {
+          "x": 285.00824043162237,
+          "y": 169.4157781645727,
+          "a": 1.5707963267948966,
+          "id": "hullGun1",
+          "round": 5,
+          "expected": {
+            "x": 285.00824043162237,
+            "y": 169.4157781645727
+          }
+        },
+        {
+          "x": 292.9764936565951,
+          "y": 169.1524476458448,
+          "a": 1.5707963267948966,
+          "id": "hullGun1",
+          "round": 6,
+          "expected": {
+            "x": 292.9764936565951,
+            "y": 169.1524476458448
+          }
+        }
+      ]
+    },
+    {
+      "name": "Native damage reduces its own gun pool and visibly flashes the complete module",
+      "pass": true,
+      "data": {
+        "before": {
+          "white": 0,
+          "hp": 83,
+          "flash": 0
+        },
+        "hit": {
+          "white": 403,
+          "hp": 76,
+          "flash": 0.14333333333333334
+        }
+      }
+    },
+    {
+      "name": "Native white hit flash expires back to coloured armor",
+      "pass": true,
+      "data": {
+        "white": 0,
+        "hp": 76,
+        "flash": 0
+      }
+    },
+    {
+      "name": "All four modules retain independent live Retina targets",
+      "pass": true,
+      "data": [
+        {
+          "id": "harrier hullGun0",
+          "x": 244.87348156723718,
+          "y": 160.10596292052375,
+          "hp": 76
+        },
+        {
+          "id": "harrier hullGun1",
+          "x": 289.24348156723715,
+          "y": 148.36096292052375,
+          "hp": 82
+        },
+        {
+          "id": "harrier hullGun2",
+          "x": 406.6934815672372,
+          "y": 148.36096292052375,
+          "hp": 77.39999999999998
+        },
+        {
+          "id": "harrier hullGun3",
+          "x": 451.0634815672372,
+          "y": 160.10596292052375,
+          "hp": 82
+        }
+      ]
+    },
+    {
+      "name": "Destroying one turret stops its fire and Retina target without deleting other module HP",
+      "pass": true,
+      "data": {
+        "dead": true,
+        "hp": 0,
+        "other": 1327.9999999999998,
+        "prior": 1327.9999999999998,
+        "unchangedShots": true,
+        "remainingTarget": false
+      }
+    },
+    {
+      "name": "Harrier gun bullets remain unshootable",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No game/page/console/HTTP errors",
+      "pass": true,
+      "data": {
+        "page": [],
+        "http": [],
+        "console": []
+      }
+    }
+  ],
+  "pageErrors": [],
+  "HTTPerrors": [],
+  "consoleErrors": [],
+  "video": {
+    "file": "C:\\Users\\Mike\\Documents\\New project\\BOF-Harrier-Turrets-1027\\harrier-fight\\stage6-furious.mp4",
+    "bytes": 195888681,
+    "duration": 161.82999999999998,
+    "completed": true,
+    "reason": "native defeat",
+    "defeatSeconds": 154.644,
+    "nativeAverageFps": 55.15824592822638,
+    "maxObservationGap": 0.8759999999999977,
+    "audio": {
+      "meanDb": -18.0,
+      "peakDb": -1.5
+    },
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "abortedPreloads": 5,
+    "botErrors": [],
+    "carrierSamples": 98,
+    "moduleBreaks": [
+      "hullGun0",
+      "hullGun1",
+      "hullGun2",
+      "hullGun3"
+    ],
+    "godBlocks": 672,
+    "sha256": "c963657e9656dee46e5bf440bf7b917eac9015ca1aa59fc98290495070a9e126"
+  },
+  "rebuild": {
+    "pass": true,
+    "files": {
+      "assets\\harrier_turrets_art_1027.js": "e0f537fce3c0c33b7196f9186d7eb124c4eefff0fd2478d1677863e622a0bebb",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_0.png": "06f85d1e086c2ba281abd8debbb0b0cf339c2f1abd7a7bb1e3a153c7738aa2c5",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_0_hit.png": "489fe6356139679628a49a66dea1c95d5f618f3aab6418cb093dbcc44861edf1",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_1.png": "06f85d1e086c2ba281abd8debbb0b0cf339c2f1abd7a7bb1e3a153c7738aa2c5",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_1_hit.png": "489fe6356139679628a49a66dea1c95d5f618f3aab6418cb093dbcc44861edf1",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_2.png": "9e6fb4c547ae7b8098125e4ab345830dd31e685d950eb4021152769e6ad880d2",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_2_hit.png": "489fe6356139679628a49a66dea1c95d5f618f3aab6418cb093dbcc44861edf1",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_3.png": "9e6fb4c547ae7b8098125e4ab345830dd31e685d950eb4021152769e6ad880d2",
+      "assets\\game\\levels\\stage_06\\boss\\harrier_turrets_1027\\gun_3_hit.png": "489fe6356139679628a49a66dea1c95d5f618f3aab6418cb093dbcc44861edf1"
+    }
+  },
+  "reviewUrl": "http://127.0.0.1:62986/index.html",
+  "fullSuite": {
+    "errors": 5,
+    "baselineUnchanged": true,
+    "names": [
+      "single-hit flash hold",
+      "opening jump dialogue",
+      "opening jump before chromium",
+      "StageX right route persistence",
+      "StageX full right encounter"
+    ]
+  },
+  "playbackChecks": [
+    {
+      "name": "MP4 has working206 byte-range seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser decodes full H264 dimensions and duration",
+      "pass": true,
+      "data": {
+        "duration": 161.825,
+        "width": 1280,
+        "height": 800
+      }
+    },
+    {
+      "name": "Browser plays moving frames and decodes audible audio",
+      "pass": true,
+      "data": {
+        "frames": 30,
+        "audio": 7615,
+        "time": 1.004098
+      }
+    },
+    {
+      "name": "Browser seeks to12s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser seeks to28s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser seeks to75s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Browser seeks to153s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Review page has no browser errors",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "Film source hashes still match current game",
+      "pass": true,
+      "data": []
+    }
+  ]
+}

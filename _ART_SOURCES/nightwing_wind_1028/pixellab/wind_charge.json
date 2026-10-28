@@ -1,0 +1,651 @@
+{
+ "frames": [
+  {
+   "filename": "bof-nightwing-wind-charge 0.png",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 1.png",
+   "frame": {
+    "x": 172,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 2.png",
+   "frame": {
+    "x": 344,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 3.png",
+   "frame": {
+    "x": 516,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 4.png",
+   "frame": {
+    "x": 688,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 5.png",
+   "frame": {
+    "x": 0,
+    "y": 88,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 6.png",
+   "frame": {
+    "x": 172,
+    "y": 88,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 7.png",
+   "frame": {
+    "x": 344,
+    "y": 88,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 8.png",
+   "frame": {
+    "x": 516,
+    "y": 88,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 9.png",
+   "frame": {
+    "x": 688,
+    "y": 88,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 10.png",
+   "frame": {
+    "x": 0,
+    "y": 176,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 11.png",
+   "frame": {
+    "x": 172,
+    "y": 176,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 12.png",
+   "frame": {
+    "x": 344,
+    "y": 176,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 13.png",
+   "frame": {
+    "x": 516,
+    "y": 176,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 14.png",
+   "frame": {
+    "x": 688,
+    "y": 176,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 15.png",
+   "frame": {
+    "x": 0,
+    "y": 264,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 16.png",
+   "frame": {
+    "x": 172,
+    "y": 264,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 17.png",
+   "frame": {
+    "x": 344,
+    "y": 264,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 18.png",
+   "frame": {
+    "x": 516,
+    "y": 264,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 19.png",
+   "frame": {
+    "x": 688,
+    "y": 264,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 20.png",
+   "frame": {
+    "x": 0,
+    "y": 352,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 21.png",
+   "frame": {
+    "x": 172,
+    "y": 352,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 22.png",
+   "frame": {
+    "x": 344,
+    "y": 352,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  },
+  {
+   "filename": "bof-nightwing-wind-charge 23.png",
+   "frame": {
+    "x": 516,
+    "y": 352,
+    "w": 172,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 172,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 172,
+    "h": 88
+   },
+   "pivot": {
+    "x": 0.5058139534883721,
+    "y": 0.45454545454545453
+   },
+   "duration": 83
+  }
+ ],
+ "meta": {
+  "app": "PixelLab VFX Creator",
+  "image": "bof-nightwing-wind-charge.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 860,
+   "h": 440
+  },
+  "scale": "1",
+  "anchor": {
+   "kind": "origin",
+   "x": 87,
+   "y": 40
+  },
+  "frameTags": [
+   {
+    "name": "bof-nightwing-wind-charge",
+    "from": 0,
+    "to": 23,
+    "direction": "forward"
+   }
+  ]
+ }
+}

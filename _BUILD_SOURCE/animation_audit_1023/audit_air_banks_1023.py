@@ -1,0 +1,11 @@
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+import sys,json
+R=Path(__file__).resolve().parents[2];W=R/'_shots/animation_audit_1023';W.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'));import shoot
+out={};port,stop=shoot.serve(str(R))
+try:
+ with sync_playwright()as pw:
+  br=pw.chromium.launch(channel='msedge');p=br.new_page();p.set_default_timeout(240000);p.goto(f'http://127.0.0.1:{port}');p.wait_for_function('window.__bofFrames>4');p.evaluate(shoot.TRAP_RAF)
+  p.wait_for_function('''()=>{window.AB23models=[...Object.values(AF21_ART.models),...Object.values(BF22_ART.models)].filter((m,i,a)=>a.findIndex(x=>x.id===m.id&&x.stages[0]===m.stages[0])===i);let ready=true;for(const m of AB23models)for(const b of Object.values(m.banks))if(!XART.rdy(b.key))ready=false;return ready;}''')
+  out=p.evaluate('''()=>{const rows=[];for(const m of AB23models)for(const [kind,b]of Object.entries(m.banks)){const im=XART.get(b.key),frames=[];for(const c of b.cells){ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,cv.width,cv.height);ctx.drawImage(im,...c,0,0,128,128);const a=ctx.getImageData(0,0,128,128).data;let n=0,edge=0,hash=2166136261;for(let i=0;i<a.length;i+=4){const v=Math.max(a[i],a[i+1],a[i+2]);if(v>12){n++;const x=i/4%128,y=Math.floor(i/4/128);if(x<2||x>125||y<2||y>125)edge++;}hash=Math.imul(hash^a[i],16777619);hash=Math.imul(hash^a[i+1],16777619);hash=Math.imul(hash^a[i+2],16777619);}frames.push({pixels:n,edge,hash:hash>>>0,valid:c[0]>=0&&c[1]>=0&&c[0]+c[2]<=im.width&&c[1]+c[3]<=im.height});}rows.push({model:m.id,stage:m.stages[0],kind,key:b.key,frames,unique:new Set(frames.map(f=>f.hash)).size,span:m.span});}return{models:AB23models.length,banks:rows.length,frames:rows.reduce((s,r)=>s+r.frames.length,0),blank:rows.filter(r=>r.frames.some(f=>f.pixels<20)),invalid:rows.filter(r=>r.frames.some(f=>!f.valid)),edge:rows.filter(r=>r.frames.some(f=>f.edge>0)),staticMotion:rows.filter(r=>r.kind!=='idle'&&r.unique<2),rows};}''');print(json.dumps({k:v for k,v in out.items()if k not in ['rows','edge']}),flush=True);br.close()
+finally:stop();(W/'air-bank-native.json').write_text(json.dumps(out,indent=2))

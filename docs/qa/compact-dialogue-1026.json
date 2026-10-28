@@ -1,0 +1,369 @@
+{
+  "focused": {
+    "checks": {
+      "explicitFullTextStaysVisible": true,
+      "uniformSizeAcrossSpeakersAndLengths": true,
+      "textFitsEveryPage": true,
+      "longTextPaginates": true,
+      "portraitProportions": true,
+      "onlyActiveConversationOwnsFrame": true,
+      "responsiveFrameKeepsHeight": true,
+      "cinematicSameSize": true,
+      "avatarlessMenusUnchanged": true,
+      "recoveredHQCaptionSameSize": true,
+      "cinematicUsesItsOwnViewport": true,
+      "allNineAvatarsMaximizeTheirBay": true,
+      "noPageErrors": true
+    },
+    "samples": [
+      {
+        "who": "COLE",
+        "shown": 0,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "I SPECIFICALLY TOLD ALL OF YOU TO LEAVE AT THE FIRST SIGN OF TROUBLE."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "I SPECIFICALLY TOLD ALL OF YOU TO",
+            "LEAVE AT THE FIRST SIGN OF TROUBLE."
+          ],
+          "step": 14,
+          "height": 25
+        },
+        "portrait": null
+      },
+      {
+        "who": "COLE",
+        "shown": 20,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "I SPECIFICALLY TOLD ALL OF YOU TO LEAVE AT THE FIRST SIGN OF TROUBLE."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "I SPECIFICALLY TOLD ALL OF YOU TO",
+            "LEAVE AT THE FIRST SIGN OF TROUBLE."
+          ],
+          "step": 14,
+          "height": 25
+        },
+        "portrait": null
+      },
+      {
+        "who": "COLE",
+        "shown": 69,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "I SPECIFICALLY TOLD ALL OF YOU TO LEAVE AT THE FIRST SIGN OF TROUBLE."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "I SPECIFICALLY TOLD ALL OF YOU TO",
+            "LEAVE AT THE FIRST SIGN OF TROUBLE."
+          ],
+          "step": 14,
+          "height": 25
+        },
+        "portrait": null
+      },
+      {
+        "who": "DECKER",
+        "shown": 0,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 3,
+          "text": "DECKER HAS IDENTIFIED THE SATELLITE SIGNAL. TARGET THE OUTER MISSILE TURRETS FIRST, THEN KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE. DECKER HAS IDENTIFIED THE SATELLITE SIGNAL."
+        },
+        "layout": {
+          "H": 8,
+          "lines": [
+            "DECKER HAS IDENTIFIED THE SATELLITE SIGNAL.",
+            "TARGET THE OUTER MISSILE TURRETS FIRST, THEN",
+            "KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE.",
+            "DECKER HAS IDENTIFIED THE SATELLITE SIGNAL."
+          ],
+          "step": 10,
+          "height": 38
+        },
+        "portrait": null
+      },
+      {
+        "who": "DECKER",
+        "shown": 20,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 3,
+          "text": "DECKER HAS IDENTIFIED THE SATELLITE SIGNAL. TARGET THE OUTER MISSILE TURRETS FIRST, THEN KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE. DECKER HAS IDENTIFIED THE SATELLITE SIGNAL."
+        },
+        "layout": {
+          "H": 8,
+          "lines": [
+            "DECKER HAS IDENTIFIED THE SATELLITE SIGNAL.",
+            "TARGET THE OUTER MISSILE TURRETS FIRST, THEN",
+            "KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE.",
+            "DECKER HAS IDENTIFIED THE SATELLITE SIGNAL."
+          ],
+          "step": 10,
+          "height": 38
+        },
+        "portrait": null
+      },
+      {
+        "who": "DECKER",
+        "shown": 532,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 2,
+          "count": 3,
+          "text": "KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE. DECKER HAS IDENTIFIED THE SATELLITE SIGNAL. TARGET THE OUTER MISSILE TURRETS FIRST, THEN KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE."
+        },
+        "layout": {
+          "H": 8,
+          "lines": [
+            "KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE.",
+            "DECKER HAS IDENTIFIED THE SATELLITE SIGNAL.",
+            "TARGET THE OUTER MISSILE TURRETS FIRST, THEN",
+            "KEEP YOUR FIRE ON THE EXPOSED CENTRAL CORE."
+          ],
+          "step": 10,
+          "height": 38
+        },
+        "portrait": null
+      },
+      {
+        "who": "MAVERICK",
+        "shown": 0,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "WE ARE GOING IN. COVER THE CITY AND KEEP THOSE FIGHTERS OFF OUR TAIL."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "WE ARE GOING IN. COVER THE CITY AND",
+            "KEEP THOSE FIGHTERS OFF OUR TAIL."
+          ],
+          "step": 14,
+          "height": 25
+        },
+        "portrait": null
+      },
+      {
+        "who": "MAVERICK",
+        "shown": 20,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "WE ARE GOING IN. COVER THE CITY AND KEEP THOSE FIGHTERS OFF OUR TAIL."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "WE ARE GOING IN. COVER THE CITY AND",
+            "KEEP THOSE FIGHTERS OFF OUR TAIL."
+          ],
+          "step": 14,
+          "height": 25
+        },
+        "portrait": null
+      },
+      {
+        "who": "MAVERICK",
+        "shown": 69,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "WE ARE GOING IN. COVER THE CITY AND KEEP THOSE FIGHTERS OFF OUR TAIL."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "WE ARE GOING IN. COVER THE CITY AND",
+            "KEEP THOSE FIGHTERS OFF OUR TAIL."
+          ],
+          "step": 14,
+          "height": 25
+        },
+        "portrait": null
+      },
+      {
+        "who": "CHRONOS",
+        "shown": 0,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "CHROMIUM ARMOR, ACTIVATED."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "CHROMIUM ARMOR, ACTIVATED."
+          ],
+          "step": 14,
+          "height": 11
+        },
+        "portrait": null
+      },
+      {
+        "who": "CHRONOS",
+        "shown": 20,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "CHROMIUM ARMOR, ACTIVATED."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "CHROMIUM ARMOR, ACTIVATED."
+          ],
+          "step": 14,
+          "height": 11
+        },
+        "portrait": null
+      },
+      {
+        "who": "CHRONOS",
+        "shown": 26,
+        "w": 460,
+        "h": 84,
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "CHROMIUM ARMOR, ACTIVATED."
+        },
+        "layout": {
+          "H": 11,
+          "lines": [
+            "CHROMIUM ARMOR, ACTIVATED."
+          ],
+          "step": 14,
+          "height": 11
+        },
+        "portrait": null
+      }
+    ],
+    "avatars": [
+      {
+        "pilot": "axel",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "decker",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "maverick",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "freezer",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "juggernaut",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "yuri",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "lizzie",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "falva",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      },
+      {
+        "pilot": "cole",
+        "ready": true,
+        "maxFit": true,
+        "proportions": true,
+        "contained": true
+      }
+    ],
+    "errors": []
+  },
+  "suite": {
+    "complete": true,
+    "sameFiveBaselineFailures": true,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "frame": {
+    "regularWidth": 460,
+    "height": 84,
+    "portraitMaxHeight": 68,
+    "responsiveWidths": [
+      460,
+      360,
+      280,
+      220
+    ],
+    "portraitAperture": {
+      "w": 74,
+      "h": 68
+    }
+  },
+  "evidence": "C:\\Users\\Mike\\Documents\\New project\\BOF-Compact-Dialogue-1026"
+}

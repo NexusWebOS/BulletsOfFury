@@ -8,7 +8,7 @@ bossHitTest=function(b){if(c25Own(b)&&b._hammer._hf22Charge)return false;return 
 hammerBossTick=function(b,dt){if(!c25Own(b)||b.dead)return C43.tick.apply(this,arguments);
  const old=b._c43Float||{x:0,y:0};b.x-=old.x;b.y-=old.y;const r=C43.tick.apply(this,arguments),h=b._hammer;
  const t=efxClock,depth=hammerDepthScale(b),u=h._hf22Charge?cgChargeU(b):null;
- const offset={x:Math.sin(t*.9)*2.5*depth,y:Math.sin(t*1.35)*4*depth+(u!=null&&u<.30?Math.sin(Math.PI*u/.30)*46:0)};
+ const offset={x:Math.sin(t*.9)*2.5*depth,y:(b._sg26Tick?0:Math.sin(t*1.35)*4*depth)+(u!=null&&u<.30?Math.sin(Math.PI*u/.30)*46:0)};
  b.x+=offset.x;b.y+=offset.y;b._drawY=b.y;b._c43Float=offset;if(h._hf22Charge)b._noHit=true;return r;};
 hammerBossDraw=function(b){if(!c25Own(b)||!b._hammer._hf22Charge)return C43.draw.apply(this,arguments);
  const C=b._hammer._hf22Charge,u=cgChargeU(b);ctx.save();

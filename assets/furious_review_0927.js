@@ -306,7 +306,7 @@ s6WingChoiceDraw=function(){
  ctx.save();worldXformEscape();ctx.fillStyle='rgba(0,3,12,.72)';ctx.fillRect(0,0,VW,VH);
  dialogueFrameDraw('FURY WING','#8edfff',VW*.06,VH*.30,VW*.88,VH*.35);
  campText('CHOOSE YOUR PURSUIT',VW/2,VH*.355,18,'#fff0b0');
- for(const [i,side,name]of [[0,'left','HARRIER'],[1,'right','REBEL FURY']]){
+ for(const [i,side,name]of [[0,'left','HARRIER'],[1,'right','ROUGH RIDERS']]){
   const x=VW*(i?.72:.28),selected=C.side===side;
   ctx.fillStyle=selected?'rgba(53,113,159,.65)':'rgba(2,12,24,.85)';ctx.fillRect(x-VW*.185,VH*.43,VW*.37,VH*.13);
   ctx.strokeStyle=selected?'#fff0aa':'#426b88';ctx.lineWidth=selected?2:1;ctx.strokeRect(x-VW*.185,VH*.43,VW*.37,VH*.13);

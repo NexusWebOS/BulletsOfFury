@@ -123,7 +123,7 @@ function roster17Weapon(b,p,dt){const C=b._carrier17,rank=target17Rank();
  if(p.phase==='rest'&&p.cool<=0){const m=roster17Mount(b,p),t=targetShip(m.x,m.y);p.aim={x:t.x,y:t.y};p.angle=Math.atan2(t.y-m.y,t.x-m.x);p.phase='tell';p.t=0;p.serial++;p.round=0;p.shot=0;Audio.SFX.bossWeaponCharge?.();}
  if(p.phase==='tell'){combatWarningTick(p,'harrier-'+p.serial,p.t,warm);if(p.t>=warm){p.phase='fire';p.t=0;Audio.SFX.enemyHeavyLaser?.();}}
  else if(p.phase==='fire'){
-  const m=roster17Mount(b,p),k=roster17HullScale(b);m.y+=p.h*k*.35;
+  const m=roster17Muzzle(b,p),k=roster17HullScale(b);
   if(p.kind==='laser'){
    const width=(14+rank*2)*k,open=Math.min(1,p.t/.1,(.62-p.t)/.12);
    if(open>.25)for(const s of seatList())withSeat(s,()=>{const dx=player.x-m.x,dy=player.y-m.y,along=dx*Math.cos(p.angle)+dy*Math.sin(p.angle),cross=Math.abs(-dx*Math.sin(p.angle)+dy*Math.cos(p.angle));

@@ -1,0 +1,493 @@
+{
+  "checks": [
+    {
+      "name": "Wreck stays opaque at 1s",
+      "passed": true,
+      "data": {
+        "t": 1.0000000000000013,
+        "last": {
+          "t": 1.0000000000000013,
+          "hull": true,
+          "alpha": 1
+        },
+        "alpha": [
+          1
+        ],
+        "events": 6,
+        "rings": 0,
+        "mode": "death",
+        "ace": false
+      }
+    },
+    {
+      "name": "Wreck stays opaque at 3.7s",
+      "passed": true,
+      "data": {
+        "t": 3.7166666666666583,
+        "last": {
+          "t": 3.7166666666666583,
+          "hull": true,
+          "alpha": 1
+        },
+        "alpha": [
+          1
+        ],
+        "events": 24,
+        "rings": 1,
+        "mode": "death",
+        "ace": true
+      }
+    },
+    {
+      "name": "Carrier is consumed by detonation instead of fading at 3.95s",
+      "passed": true,
+      "data": {
+        "t": 3.9666666666666575,
+        "last": {
+          "t": 3.9666666666666575,
+          "hull": false,
+          "reason": "hull-sized detonation"
+        },
+        "alpha": [],
+        "events": 25,
+        "rings": 1,
+        "mode": "death",
+        "ace": true
+      }
+    },
+    {
+      "name": "Carrier is consumed by detonation instead of fading at 4.5s",
+      "passed": true,
+      "data": {
+        "t": 4.516666666666656,
+        "last": {
+          "t": 4.516666666666656,
+          "hull": false,
+          "reason": "hull-sized detonation"
+        },
+        "alpha": [],
+        "events": 30,
+        "rings": 3,
+        "mode": "death",
+        "ace": true
+      }
+    },
+    {
+      "name": "Carrier is consumed by detonation instead of fading at 5.3s",
+      "passed": true,
+      "data": {
+        "t": 5.316666666666653,
+        "last": {
+          "t": 5.316666666666653,
+          "hull": false,
+          "reason": "hull-sized detonation"
+        },
+        "alpha": [],
+        "events": 34,
+        "rings": 3,
+        "mode": "death",
+        "ace": true
+      }
+    },
+    {
+      "name": "Exactly one hull-sized covering detonation",
+      "passed": true,
+      "data": [
+        {
+          "event": "hull-detonation",
+          "t": 3.6166666666666587,
+          "x": 347.74972080094614,
+          "y": 372.02624567816036,
+          "width": 668.16,
+          "height": 375.84,
+          "size": 748.3392
+        }
+      ]
+    },
+    {
+      "name": "Explosions spread across both wings and outside the wreck",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Three large smoke rings emit exactly once",
+      "passed": true,
+      "data": [
+        {
+          "event": "smoke-ring",
+          "t": 3.6166666666666587,
+          "size": 501.12
+        },
+        {
+          "event": "smoke-ring",
+          "t": 3.983333333333324,
+          "size": 594.6623999999999
+        },
+        {
+          "event": "smoke-ring",
+          "t": 4.3666666666666565,
+          "size": 688.2048
+        }
+      ]
+    },
+    {
+      "name": "Native Nightwing entrance, life and encounter continue",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Destruction stops emitting after its finite sequence",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game/draw errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "video": {
+    "nativeTransitionComplete": true,
+    "reason": "native carrier destruction and Nightwing entry",
+    "clipSeconds": 10,
+    "clipStart": 30.010333333333335,
+    "audio": {
+      "meanDb": -18.1,
+      "peakDb": -4.2
+    },
+    "nativeDestructionFps": 56.898013375815665,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "godMode": true,
+    "godBlocks": 213,
+    "runtimeSourceMatchesFilm": true,
+    "events": [
+      {
+        "event": "spread-blast",
+        "t": 0.13333333333333333,
+        "x": 519.7346415735519,
+        "y": 212.98786522126295,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 0.3,
+        "x": 20.57327400286212,
+        "y": 325.67966223288533,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 0.4666666666666666,
+        "x": 257.5440217864357,
+        "y": 59.4343567984057,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 0.6333333333333336,
+        "x": 407.23568040914745,
+        "y": 352.9843017051272,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 0.8000000000000008,
+        "x": -50.49100818192437,
+        "y": 201.27144436272587,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 0.9833333333333347,
+        "x": 474.8441630289656,
+        "y": 148.28993408099797,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 1.1500000000000008,
+        "x": 157.83923980574588,
+        "y": 396.60990384758225,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 1.3166666666666669,
+        "x": 100.00319787588353,
+        "y": 103.01514838022723,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 1.483333333333333,
+        "x": 502.30111582093133,
+        "y": 308.1617503327179,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 1.6666666666666656,
+        "x": -33.14677121345011,
+        "y": 321.7505427866607,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 1.8333333333333317,
+        "x": 354.200526501687,
+        "y": 120.81272940495785,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 1.9999999999999978,
+        "x": 318.4127287083143,
+        "y": 428.8848071788683,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 2.166666666666664,
+        "x": -16.15695237811758,
+        "y": 201.52867276277948,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 2.33333333333333,
+        "x": 513.0333863013498,
+        "y": 256.1301345207122,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 2.5166666666666626,
+        "x": 67.18609454985918,
+        "y": 432.5848047798235,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 2.6833333333333287,
+        "x": 195.5035906599412,
+        "y": 149.19172521624697,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 2.8499999999999948,
+        "x": 452.1162260753719,
+        "y": 423.0877159980081,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 3.016666666666661,
+        "x": -54.63761228277514,
+        "y": 335.47917683844247,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 3.183333333333327,
+        "x": 436.07877099162005,
+        "y": 225.05723369750868,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 3.3666666666666596,
+        "x": 219.15463119049554,
+        "y": 512.220451164912,
+        "size": 126.9504
+      },
+      {
+        "event": "spread-blast",
+        "t": 3.5333333333333257,
+        "x": 48.344467182141585,
+        "y": 237.7687548344473,
+        "size": 126.9504
+      },
+      {
+        "event": "hull-detonation",
+        "t": 3.6166666666666587,
+        "x": 232.4258415735519,
+        "y": 367.5317541101517,
+        "width": 668.16,
+        "height": 375.84,
+        "size": 748.3392
+      },
+      {
+        "event": "smoke-ring",
+        "t": 3.6166666666666587,
+        "size": 501.12
+      },
+      {
+        "event": "spread-blast",
+        "t": 3.6999999999999917,
+        "x": 649.6073927051273,
+        "y": 404.88332630941056,
+        "size": 180.4032
+      },
+      {
+        "event": "spread-blast",
+        "t": 3.866666666666658,
+        "x": -113.10692491071302,
+        "y": 520.3888956012397,
+        "size": 180.4032
+      },
+      {
+        "event": "smoke-ring",
+        "t": 3.983333333333324,
+        "size": 594.6623999999999
+      },
+      {
+        "event": "spread-blast",
+        "t": 4.033333333333324,
+        "x": 324.8145072922459,
+        "y": 166.38712584738425,
+        "size": 180.4032
+      },
+      {
+        "event": "spread-blast",
+        "t": 4.216666666666657,
+        "x": 441.7095544476579,
+        "y": 616.7424984472864,
+        "size": 180.4032
+      },
+      {
+        "event": "smoke-ring",
+        "t": 4.3666666666666565,
+        "size": 688.2048
+      },
+      {
+        "event": "spread-blast",
+        "t": 4.383333333333323,
+        "x": -168.601417345951,
+        "y": 352.3890488596014,
+        "size": 180.4032
+      },
+      {
+        "event": "spread-blast",
+        "t": 4.549999999999989,
+        "x": 614.5521688230515,
+        "y": 338.48566920576917,
+        "size": 180.4032
+      },
+      {
+        "event": "spread-blast",
+        "t": 4.716666666666655,
+        "x": 69.91697793666904,
+        "y": 670.0492243895036,
+        "size": 180.4032
+      },
+      {
+        "event": "spread-blast",
+        "t": 4.883333333333321,
+        "x": 89.95747129904689,
+        "y": 243.04086410939158,
+        "size": 180.4032
+      },
+      {
+        "event": "spread-blast",
+        "t": 5.066666666666654,
+        "x": 605.0381899645777,
+        "y": 592.0937228919262,
+        "size": 180.4032
+      }
+    ]
+  },
+  "fullSuite": {
+    "errors": 5,
+    "baselineUnchanged": true
+  },
+  "review": "http://127.0.0.1:56521/index.html",
+  "playback": [
+    {
+      "name": "shortfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 10,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "shortfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 33,
+        "audio": 26381
+      }
+    },
+    {
+      "name": "shortfilm seek2s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek4.5s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek7s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 45.78,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "fullfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 32,
+        "audio": 5968
+      }
+    },
+    {
+      "name": "fullfilm seek10s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek34s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek42s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No review browser errors",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "Captured affected source files still match current game",
+      "pass": true,
+      "data": []
+    }
+  ]
+}

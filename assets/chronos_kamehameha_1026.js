@@ -25,8 +25,8 @@
  * then his normal rage loop (palm volleys, the wave, and the orb, below).
  * Load after chronos_rageform_1026.js. */
 const C46 = { base: { tick: hammerBossTick, draw: hammerBossDraw, blue: ha21Blue }, events: [] };
-const C46_T = { strafe: 2.24, charge: 2.6, lock: 1.75, thrust: .36, fire: 1.6, recover: .55 };
-const C46_W = 2 * Math.PI / 1.12;   /* two full swings in the strafe, ending back on centre */
+const C46_T = { strafe: 2.8 / .85, charge: 2.6, lock: 1.75, thrust: .36, fire: 1.6, recover: .55 };
+const C46_W = 2 * Math.PI / (1.4 / .85); /* another 15% slower; retain two whole sweeps and centre return */
 function c46Log(type, data) { C46.events.push({ type, t: efxClock, ...(data || {}) }); if (C46.events.length > 300) C46.events.shift(); }
 function c46Own(b) { return typeof c30Own === 'function' && c30Own(b) && b._hammer.c30 && /^kame_/.test(b._hammer.c30.phase || ''); }
 function c46Sfx(k) { try { const fn = Audio.SFX && Audio.SFX[k]; if (fn) fn(); else if (typeof Snd !== 'undefined' && Snd.play) Snd.play(k); } catch (e) {} }
@@ -148,6 +148,7 @@ hammerBossDraw = function (b) {
   const R = b._hammer.c30, K = R.k46 || {};
   /* the screen darkens under him (everything already drawn), not over him */
   if (K.dark > 0) { ctx.save(); ctx.fillStyle = 'rgba(2,0,10,' + K.dark + ')'; ctx.fillRect(camLeftX() - 4, viewTopY() - 4, camRightX() - camLeftX() + 8, viewH() + 8); ctx.restore(); }
+  if (typeof chronosKameLightningDraw === 'function') chronosKameLightningDraw(b);
   /* the aura blazes while he charges and fires */
   const blazing = ['kame_charge', 'kame_thrust', 'kame_fire'].includes(R.phase);
   if (blazing && typeof c45Aura === 'function') {

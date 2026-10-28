@@ -50,3 +50,13 @@ archived candidates, not approved aircraft likenesses. Native composites of
 those generated reels are also archived references. Use the original pilot
 sheet images for the current ending, never those generated composites as a
 new identity authority.
+
+## October21 cinematic front-view upgrade
+
+Mike requested dimensional HD16-bit cinematic views. The rejected nine-ship
+GPT batch front sheet is excluded. Exported all nine current native so6 fronts
+from XART, inspected them against their native rear/top views, then supplied
+individual fronts to PixelLab. C22 uses those matching front plates for cinematic
+landing/boarding/return; original rear sprites remain authoritative for takeoff.
+Combat aircraft and flight/weapon properties are unchanged. References and
+completion receipts: _ART_SOURCES/cinema_story_1021/.

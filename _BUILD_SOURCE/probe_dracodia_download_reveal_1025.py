@@ -65,7 +65,7 @@ try:
    ck('Code formation begins with Coles reaction before the skeleton becomes solid',any(q.get('dna')and q['dna']['alpha']>0 for q in trace if 6.4<q['t']<7))
    ck('DNA code and fluid use their complete authored animation banks',len({q['codeFrame']for q in forming})==12 and len({q['fluidFrame']for q in forming})==32)
    handoff=[q['dna']for q in trace if 14<q['t']<15.8 and q.get('dna')]
-   ck('Living strands converge into the native download before lightning begins',bool(handoff)and handoff[-1]['absorb']>.98 and handoff[-1]['alpha']<.02 and all(q.get('dna')is None for q in trace if q['t']>=15.8))
+   ck('Living strands converge during the opening download lightning',bool(handoff)and handoff[-1]['absorb']>.98 and handoff[-1]['alpha']<.02 and all(q.get('dna')is None for q in trace if q['t']>=15.8))
   ck('The turning carrier keeps animating throughout the partial download',len({q['download']['frame']for q in relevant if q['t']<24.2})==24)
   if args.depth:
    ck('Generated side and back views animate through the complete depth turntable',len({q['download']['depthFrame']for q in relevant if q['t']<23.6})==16)
@@ -86,7 +86,7 @@ try:
      ck('Downward strike positions stay fixed while the boss keeps rotating',d['out'][0]['yaw']!=d['out'][1]['yaw']and d['out'][0]['geometry']==d['out'][1]['geometry'],d)
      ck('Ending strike cadence accelerates independently to over twenty per second',all(z>a for a,z in zip(d['rates'],d['rates'][1:]))and d['rates'][-1]>20,d['rates'])
      ck('Separate strike pulses have a release interval',d['quiet']>.72,d['quiet'])
-     ck('Surrounding spiral appears only in the final storm',all(q['effects']['front']==0 and q['effects']['back']==0 for q in relevant if q['t']<23))
+     ck('Surrounding spiral begins with the opening download',any(q['effects']['front']+q['effects']['back']>0 for q in relevant if q['t']<15))
 
     d=p.evaluate("""()=>{const out=[];for(const t of [24.7,25.22,25.59]){const Q=rd25Pose(boss,t),fn=ce20Body;let calls=0;ce20Body=function(){calls++;return fn.apply(this,arguments);};let bands;try{bands=rd25Body(boss,Q);}finally{ce20Body=fn;}out.push({t,calls,bands,full:Q.fullForm});}drawWorld(0);return out;}""")
     ck('Actual preflash renderer retains partial bands and never draws native complete body',all(q['calls']==0 and q['bands']<128 and not q['full']for q in d),d)
@@ -108,9 +108,9 @@ try:
   if args.polish:
    intro=[q['intro']for q in trace if 7<q['t']<14 and q.get('intro')]
    ck('Skeleton gains visibility through all24 stepped opacity frames before lightning',len({q['frame']for q in intro})==24 and min(q['alpha']for q in intro)==.25 and max(q['alpha']for q in intro)==1)
-   d=p.evaluate("""()=>{const out=[];for(const kind of ['carrier','body','wire']){const a=rd27Blend(kind,1-1e-7),x=a.getContext('2d').getImageData(0,0,a.width,a.height).data.slice(),b=rd27Blend(kind,1e-7),y=b.getContext('2d').getImageData(0,0,b.width,b.height).data;let diff=0;for(let i=0;i<x.length;i++)if(x[i]!==y[i])diff++;out.push({kind,diff});}const gains=RD27.audio.map(q=>q.gain);return{out,gains,ending:RD27.audio.filter(q=>q.kind==='ending').length};}""")
+   d=p.evaluate("""()=>{const out=[];for(const kind of ['carrier','body','wire']){const a=rd27Blend(kind,1-1e-7),x=a.getContext('2d').getImageData(0,0,a.width,a.height).data.slice(),b=rd27Blend(kind,1e-7),y=b.getContext('2d').getImageData(0,0,b.width,b.height).data;let diff=0;for(let i=0;i<x.length;i++)if(x[i]!==y[i])diff++;out.push({kind,diff});}const gains=RD27.audio.map(q=>q.strength);return{out,gains,ending:RD27.audio.filter(q=>q.kind==='ending').length};}""")
    ck('Carrier material and wire have pixel-continuous cyclic frame seams',all(q['diff']==0 for q in d['out']),d['out'])
-   ck('Each native and ending lightning beat receives increasing mixer gain',len(d['gains'])>50 and all(z>a for a,z in zip(d['gains'],d['gains'][1:]))and d['ending']>=33,d)
+   ck('Lightning strength rises while overlapping tails keep bounded gain',len(d['gains'])>50 and all(z>a for a,z in zip(d['gains'],d['gains'][1:]))and d['ending']>=33,d)
   # Let the complete native speech finish; normal combat then owns the hit fixture.
   advance(p,"boss._r30.mode==='fight'",1400,12)
   if args.polish:

@@ -1,0 +1,1110 @@
+{
+  "shadowTurn": {
+    "checks": [
+      {
+        "name": "Directional heading has 64 actual frames for each of three bank attitudes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Each drift has 48 distinct pre-rendered banked turning/depth frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All textures use fixed even cells and fit4096px",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every normal, directional, depth and gun pose has a shadow",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All shadow cells exactly match their source pose alpha and stored opacity",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All aircraft and shadow cells retain clear canvas borders",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Canonical hull, weapons, wind gusts, charge, rings and thrusters are byte-identical",
+        "passed": true,
+        "data": [
+          "whole",
+          "whole_hit",
+          "flyover",
+          "flyover_hit",
+          "approach",
+          "approach_hit",
+          "death_large",
+          "clean",
+          "clean_hit",
+          "gun_left",
+          "gun_left_hit",
+          "gun_right",
+          "gun_right_hit",
+          "exhaust_small",
+          "exhaust_cruise",
+          "exhaust_boost",
+          "exhaust_large_a",
+          "exhaust_large_b",
+          "wind_ring",
+          "wind_charge",
+          "wind_bullet",
+          "wind_muzzle"
+        ]
+      },
+      {
+        "name": "drift_left yaw follows the exact half-circle flight tangent and ends south",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "drift_right yaw follows the exact half-circle flight tangent and ends south",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Live stage load resolves the updated frame metadata",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "cruise draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "clean_shadow",
+            "frame": 4,
+            "x": 222,
+            "y": 130,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "gun_left_shadow",
+            "frame": 127,
+            "x": 252,
+            "y": 224,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "gun_right_shadow",
+            "frame": 7,
+            "x": 368,
+            "y": 224,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 280,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 305,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "clean",
+            "frame": 4,
+            "x": 204,
+            "y": 54,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "gun_left",
+            "frame": 127,
+            "x": 234,
+            "y": 148,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "gun_right",
+            "frame": 7,
+            "x": 350,
+            "y": 148,
+            "w": 96,
+            "h": 96
+          }
+        ]
+      },
+      {
+        "name": "bank draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "whole_shadow",
+            "frame": 65,
+            "x": 222,
+            "y": 130,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 283,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 306,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "whole",
+            "frame": 65,
+            "x": 204,
+            "y": 54,
+            "w": 272,
+            "h": 272
+          }
+        ]
+      },
+      {
+        "name": "bank shadow uses the same actual rotation/frame and depth offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "roll draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "whole_shadow",
+            "frame": 19,
+            "x": 222,
+            "y": 130,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 287,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 305,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "whole",
+            "frame": 19,
+            "x": 204,
+            "y": 54,
+            "w": 272,
+            "h": 272
+          }
+        ]
+      },
+      {
+        "name": "roll shadow uses the same actual rotation/frame and depth offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "somer draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "whole_shadow",
+            "frame": 35,
+            "x": 222,
+            "y": 130,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 280,
+            "y": 101,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 305,
+            "y": 101,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "whole",
+            "frame": 35,
+            "x": 204,
+            "y": 54,
+            "w": 272,
+            "h": 272
+          }
+        ]
+      },
+      {
+        "name": "somer shadow uses the same actual rotation/frame and depth offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "inverted draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "clean_shadow",
+            "frame": 16,
+            "x": 222,
+            "y": 130,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "gun_left_shadow",
+            "frame": 127,
+            "x": 252,
+            "y": 224,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "gun_right_shadow",
+            "frame": 7,
+            "x": 368,
+            "y": 224,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 280,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 305,
+            "y": 78,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "clean",
+            "frame": 16,
+            "x": 204,
+            "y": 54,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "gun_left",
+            "frame": 127,
+            "x": 234,
+            "y": 148,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "gun_right",
+            "frame": 7,
+            "x": 350,
+            "y": 148,
+            "w": 96,
+            "h": 96
+          }
+        ]
+      },
+      {
+        "name": "heading draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "heading_shadow",
+            "frame": 116,
+            "x": 222,
+            "y": 130,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 213,
+            "x": 228,
+            "y": 130,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 213,
+            "x": 236,
+            "y": 109,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "heading",
+            "frame": 116,
+            "x": 204,
+            "y": 54,
+            "w": 272,
+            "h": 272
+          }
+        ]
+      },
+      {
+        "name": "heading shadow uses the same actual rotation/frame and depth offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "flyover draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "flyover_shadow",
+            "frame": 3,
+            "x": 153,
+            "y": 96,
+            "w": 432,
+            "h": 432
+          },
+          {
+            "bank": "exhaust_large_b",
+            "frame": 5,
+            "x": 200,
+            "y": 132,
+            "w": 320,
+            "h": 320
+          },
+          {
+            "bank": "exhaust_large_b",
+            "frame": 5,
+            "x": 160,
+            "y": 132,
+            "w": 320,
+            "h": 320
+          },
+          {
+            "bank": "flyover",
+            "frame": 3,
+            "x": 124,
+            "y": -26,
+            "w": 432,
+            "h": 432
+          }
+        ]
+      },
+      {
+        "name": "flyover shadow uses the same actual rotation/frame and depth offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "drift draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "drift_right_shadow",
+            "frame": 19,
+            "x": 147,
+            "y": 70,
+            "w": 432,
+            "h": 432
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 181,
+            "x": 218,
+            "y": 176,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 181,
+            "x": 210,
+            "y": 149,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "drift_right",
+            "frame": 19,
+            "x": 124,
+            "y": -26,
+            "w": 432,
+            "h": 432
+          }
+        ]
+      },
+      {
+        "name": "drift shadow uses the same actual rotation/frame and depth offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "return draws one complete matching shadow behind the aircraft layers",
+        "passed": true,
+        "data": [
+          {
+            "bank": "approach_shadow",
+            "frame": 10,
+            "x": 221,
+            "y": 124,
+            "w": 272,
+            "h": 272
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 281,
+            "y": 83,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "exhaust_cruise",
+            "frame": 5,
+            "x": 303,
+            "y": 83,
+            "w": 96,
+            "h": 96
+          },
+          {
+            "bank": "approach",
+            "frame": 10,
+            "x": 204,
+            "y": 54,
+            "w": 272,
+            "h": 272
+          }
+        ]
+      },
+      {
+        "name": "return shadow uses the same actual rotation/frame and depth offset",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native shadow pixels are actually present beneath the aircraft",
+        "passed": true,
+        "data": {
+          "visible": 245760,
+          "lower": 115680
+        }
+      },
+      {
+        "name": "All64 headings select distinct actual authored native cells",
+        "passed": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ]
+      },
+      {
+        "name": "Natural native charge plays at least45 different drift rotation frames",
+        "passed": true,
+        "data": 48
+      },
+      {
+        "name": "The rendered swerve points along actual native motion",
+        "passed": true,
+        "data": 0.0826734908839395
+      },
+      {
+        "name": "Native charge returns to normal foreground combat",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Hidden offscreen flight draws no lingering shadow or aircraft",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Damage retains matched white-hit art with a dark unchanged shadow",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            {
+              "bank": "drift_right_shadow",
+              "frame": 35,
+              "x": 235,
+              "y": -23,
+              "w": 432,
+              "h": 432
+            },
+            {
+              "bank": "exhaust_small",
+              "frame": 228,
+              "x": 347,
+              "y": 54,
+              "w": 96,
+              "h": 96
+            },
+            {
+              "bank": "exhaust_small",
+              "frame": 228,
+              "x": 360,
+              "y": 41,
+              "w": 96,
+              "h": 96
+            },
+            {
+              "bank": "drift_right_hit",
+              "frame": 35,
+              "x": 221,
+              "y": -84,
+              "w": 432,
+              "h": 432
+            }
+          ]
+        }
+      },
+      {
+        "name": "Native hit flash expires normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages retain their original flight metadata",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No live game, draw or HTTP errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "nightwingRegression": {
+    "checks": [
+      {
+        "name": "All aircraft, weapons and wind banks use even cells and bounded texture dimensions",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Whole-aircraft palette aliases are ready across native and depth poses",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Nightwing still has one native health pool and one Retina target",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Dual machine guns arm a real player Retina warning before release",
+        "passed": true,
+        "data": {
+          "action": {
+            "kind": "gun",
+            "phase": "warn",
+            "t": 0.016666666666666666,
+            "n": 0,
+            "next": 0,
+            "x": 340.16475811997987,
+            "y": 153.55267517479413,
+            "tx": 340,
+            "ty": 399.36,
+            "warn": 0.95,
+            "id": 2
+          },
+          "locks": 1
+        }
+      },
+      {
+        "name": "Both physical turret sockets release paired machine-gun bullets",
+        "passed": true,
+        "data": [
+          {
+            "event": "turret-shot",
+            "time": 5.999999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 0,
+            "x": 288.2428903045161,
+            "y": 190.44511297418333,
+            "angle": 7.6576320931251205,
+            "frame": 124
+          },
+          {
+            "event": "turret-shot",
+            "time": 5.999999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 1,
+            "x": 391.7571096954839,
+            "y": 190.44511297418333,
+            "angle": 1.7671458676442586,
+            "frame": 4
+          },
+          {
+            "event": "turret-shot",
+            "time": 6.099999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 0,
+            "x": 288.2428903045161,
+            "y": 190.79966244574953,
+            "angle": 7.6576320931251205,
+            "frame": 124
+          },
+          {
+            "event": "turret-shot",
+            "time": 6.099999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 1,
+            "x": 391.7571096954839,
+            "y": 190.79966244574953,
+            "angle": 1.7671458676442586,
+            "frame": 4
+          }
+        ]
+      },
+      {
+        "name": "Machine-gun bullets cannot be shot down",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native renderer draws exactly two separate recoil guns and two anchored exhausts",
+        "passed": true,
+        "data": {
+          "calls": 2,
+          "modules": true,
+          "engines": [
+            [
+              327.66475811997987,
+              90.39963888488668
+            ],
+            [
+              352.66475811997987,
+              90.39963888488668
+            ]
+          ]
+        }
+      },
+      {
+        "name": "Gun kickback uses multiple authored recoil frames",
+        "passed": true,
+        "data": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "Wind charge starts as its own exclusive attack",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind charge darkens scenery without protecting the boss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Current complete pose retains accepted damage and hit flash while charging",
+        "passed": true,
+        "data": {
+          "damage": 1,
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "Animated wind rounds leave both guns and carry Wind damage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Live projectile renderer selects the generated animated wind bank",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind volley has finite recovery and clears scenery dimming",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Cruise, boosted dash, large flyover and small approach use distinct exhaust banks",
+        "passed": true,
+        "data": [
+          "small",
+          "large_b",
+          "boost",
+          "cruise",
+          "large_a"
+        ]
+      },
+      {
+        "name": "Dashes leave bounded authored wind rings",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Accepted hits visibly white the whole body and both recoil modules",
+        "passed": true,
+        "data": {
+          "draws": 3,
+          "lit": 12031,
+          "neutral": 12031,
+          "damaged": true
+        }
+      },
+      {
+        "name": "The native white hit flash expires while the wind jet keeps moving",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages keep the original aircraft sources",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or asset HTTP errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "art": {
+    "checks": [
+      {
+        "name": "heading hit image has exactly matching pose alpha and white damaged pixels",
+        "passed": true
+      },
+      {
+        "name": "drift_left hit image has exactly matching pose alpha and white damaged pixels",
+        "passed": true
+      },
+      {
+        "name": "drift_right hit image has exactly matching pose alpha and white damaged pixels",
+        "passed": true
+      },
+      {
+        "name": "All38 banks/4084 cells and their registry rebuild byte-identically",
+        "passed": true
+      }
+    ]
+  },
+  "film": {
+    "checks": [
+      {
+        "name": "Full live fight reaches native Nightwing defeat",
+        "passed": true,
+        "data": "native defeat"
+      },
+      {
+        "name": "Dedicated flight preview ends at its planned time limit",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native entrance, dash, northbound flyover, drift and approach occur",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "fight has no game, console, asset or bot errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "fight has no resource failures beyond normal cancelled preloads",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "fight recording audio taps are healthy",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "focus has no game, console, asset or bot errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "focus has no resource failures beyond normal cancelled preloads",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "focus recording audio taps are healthy",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Dedicated preview runs at more than50 native frames per second",
+        "passed": true,
+        "data": 54.41727252698832
+      },
+      {
+        "name": "Captured runtime and artwork match the installed game",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "focus audio is audible without clipping",
+        "passed": true,
+        "data": {
+          "meanDb": -19.1,
+          "peakDb": -3.7
+        }
+      },
+      {
+        "name": "fight audio is audible without clipping",
+        "passed": true,
+        "data": {
+          "meanDb": -19.0,
+          "peakDb": -2.3
+        }
+      }
+    ],
+    "focusSeconds": 45.39,
+    "nativeFps": 54.41727252698832,
+    "fullSeconds": 179.726,
+    "fullNativeFps": 42.92645471439859,
+    "audio": {
+      "focus": {
+        "meanDb": -19.1,
+        "peakDb": -3.7
+      },
+      "fight": {
+        "meanDb": -19.0,
+        "peakDb": -2.3
+      }
+    },
+    "sourceHashes": {
+      "index.html": "49638dcc1a11c7a419e35329ea32995cdfcd1ef8c38235317c750e991c84e660",
+      "assets/game.js": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+      "assets/nightwing_wind_1028.js": "a0e4b8a2a26b8f47cfe8d5eec82a741d64e659e4d5621ece62e5471fa0730fd9",
+      "assets/nightwing_flight_1027.js": "5557ee9a011efac434be4a667815a19e140b4922b481d8b8121ec4d76285a194",
+      "assets/nightwing_wind_art_1028.js": "79b3b9cf31a1206813b0723b4997795797aa3679ad94fc3f12d1cae92791d0d3",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/wind_bullet_gusts_1028.png": "2aedb99b5ecc6eb35db93d748623ae58934c8f65f2a93a18faca88b4b352c007",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/wind_muzzle_gusts_1028.png": "dc0656de12ea218fa4077c7de560c318c57fb9edee176848c332c5f58c3f617a",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/whole_identity_1028b.png": "762439b40550eb8dde774faa0252eed92dab8576fffa3801298b08a329664bd0",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/heading_flight_1028c.png": "985327383b32518730fc53bb6ce0dde0723859382e67b07a4a5c415fb778f0fe",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/drift_right_flight_1028c.png": "0d45da2780cfd8d0372843e5016a80cbdf9dbc4f03934df59a70577ee840b9a4",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/whole_shadow_flight_1028c.png": "4cff954d7da657b93d1848f4ead07f39aa52285c3e0bbbbedb9188e487f34e93"
+    },
+    "method": "Real native Furious Nightwing flight, GOD/input bot and ordinary allies. Carrier skipped via native ace spawn in setup. Dedicated45s proof with player fire withheld; natural AI attack/movement selection. Full fight uses fire after35s and reaches native defeat. No enemy HP/phase/timer writes.",
+    "limitation": "First full recording overlapped heavy validation and its first drift had capture hitches. A separate unloaded flight-only recording verifies the complete flyover/turn at normal speed; the 11-second showcase uses this later take without speed changes."
+  },
+  "playback": {
+    "checks": [
+      {
+        "name": "Current review images load",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 decodes at1280x800",
+        "passed": true,
+        "data": {
+          "w": 1280,
+          "h": 800,
+          "d": 11
+        }
+      },
+      {
+        "name": "showcase.mp4 supports range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.1",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.5",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.9",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 has moving frames and decoded sound",
+        "passed": true,
+        "data": {
+          "t": 2.855673,
+          "a": 247101,
+          "f": 352
+        }
+      },
+      {
+        "name": "nightwing-flight-proof/stage6-furious.mp4 decodes at1280x800",
+        "passed": true,
+        "data": {
+          "w": 1280,
+          "h": 800,
+          "d": 45.364
+        }
+      },
+      {
+        "name": "nightwing-flight-proof/stage6-furious.mp4 supports range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-flight-proof/stage6-furious.mp4 seeks to 0.1",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-flight-proof/stage6-furious.mp4 seeks to 0.5",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-flight-proof/stage6-furious.mp4 seeks to 0.9",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-flight-proof/stage6-furious.mp4 has moving frames and decoded sound",
+        "passed": true,
+        "data": {
+          "t": 2.844821,
+          "a": 387146,
+          "f": 643
+        }
+      },
+      {
+        "name": "No review browser errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "rebuild": {
+    "banks": 38,
+    "cells": 4084,
+    "byteIdentical": true
+  },
+  "fullSuite": {
+    "exitCode": 1,
+    "unchangedBaselineFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "review": "http://127.0.0.1:51787/"
+}

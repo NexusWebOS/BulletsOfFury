@@ -1,0 +1,47 @@
+{
+  "stages": [
+    {
+      "stage": 1,
+      "specs": [
+        {
+          "type": "s1boatpatrol",
+          "pattern": "naval",
+          "opt": {
+            "pattern": "naval",
+            "_side": null,
+            "phase": null,
+            "_s9Role": null,
+            "_s1Kamikaze": null,
+            "_s1Rush": null,
+            "_modStage": null,
+            "_modWeapon": null
+          },
+          "x": 138.4,
+          "y": -85.2,
+          "spawn": {
+            "x": 138.4,
+            "y": -48
+          },
+          "flight": null,
+          "ai": null,
+          "velocity": {
+            "vx": 0,
+            "vy": 0,
+            "hiAlt": false,
+            "scale": null
+          },
+          "map": 40,
+          "signature": {
+            "type": "s1boatpatrol",
+            "art": "s1boatPatrol",
+            "variant": 3,
+            "pal": null
+          },
+          "flags": [],
+          "shoots": true,
+          "fk": null
+        }
+      ]
+    }
+  ]
+}

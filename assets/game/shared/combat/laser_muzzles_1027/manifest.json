@@ -1,0 +1,59 @@
+{
+  "source": "PixelLab VFX Workbench / ba5669e0-cf0d-4acf-9de2-9a14830f7824",
+  "sourcePivot": [
+    16,
+    32
+  ],
+  "directionCount": 64,
+  "fps": 24,
+  "banks": {
+    "small": {
+      "key": "lm27_small",
+      "path": "assets/game/shared/combat/laser_muzzles_1027/small.png",
+      "cw": 64,
+      "ch": 64,
+      "cols": 64,
+      "frames": 16,
+      "directions": 64,
+      "pivot": [
+        32,
+        32
+      ],
+      "referenceBeamWidth": 12,
+      "sourceScale": 0.65625,
+      "sha256": "5669f1501527cf85be9af22c976a9684617e95a010d702d49a75b55ba1dcd796"
+    },
+    "medium": {
+      "key": "lm27_medium",
+      "path": "assets/game/shared/combat/laser_muzzles_1027/medium.png",
+      "cw": 64,
+      "ch": 64,
+      "cols": 64,
+      "frames": 16,
+      "directions": 64,
+      "pivot": [
+        32,
+        32
+      ],
+      "referenceBeamWidth": 20,
+      "sourceScale": 0.84375,
+      "sha256": "bd8c2e4bebd99a38468cd62cde35744433ee16c8ece045cdc5bb708c1bfc95eb"
+    },
+    "large": {
+      "key": "lm27_large",
+      "path": "assets/game/shared/combat/laser_muzzles_1027/large.png",
+      "cw": 64,
+      "ch": 64,
+      "cols": 64,
+      "frames": 16,
+      "directions": 64,
+      "pivot": [
+        32,
+        32
+      ],
+      "referenceBeamWidth": 29,
+      "sourceScale": 1.0625,
+      "sha256": "1800f47e0da8c1de36640b0a8e8560071c05f06b1bf0fb068835e921b9833ce6"
+    }
+  }
+}

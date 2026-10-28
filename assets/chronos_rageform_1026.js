@@ -276,7 +276,8 @@ hammerBossDraw = function (b) {
     if (!C.c45Final) {
       /* he must stay VISIBLE in this pose: a 3-frame flash and rings, not a white disc */
       C.c45Final = true; b._hammer._c45Burst = true; b._hammer._c45After = null;
-      if (typeof spawnShockRing === 'function') { spawnShockRing(b.x, b.y, 150, 'comet'); spawnShockRing(b.x, b.y, 230, 'comet'); }
+      if (typeof chronosRageRings === 'function') chronosRageRings(b);
+      else if (typeof spawnShockRing === 'function') { spawnShockRing(b.x, b.y, 150, 'comet'); spawnShockRing(b.x, b.y, 230, 'comet'); }
       if (typeof fxBurst === 'function') fxBurst(b.x, b.y, 120, { color: '#ff3a18', rings: 0, chunks: 0, sparks: 48 });
       shake = Math.max(shake, 18); flashScreen = Math.max(flashScreen || 0, .18);
       if (typeof c33Sound === 'function') c33Sound('thunder', b);

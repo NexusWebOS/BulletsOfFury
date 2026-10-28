@@ -1,0 +1,38 @@
+{
+  "generated-group-photo": {
+    "path": "_ART_SOURCES/rough_riders_1028/generated/crew-photo.png",
+    "sha256": "a6d98c92eb94981b6c3fb74a2d5eb310f828bff7ec55391e734184ac98299112"
+  },
+  "generated-brand-sheet": {
+    "path": "_ART_SOURCES/rough_riders_1028/generated/brand-sheet.png",
+    "sha256": "91bcb20c1ec577cb8fbece67d59abdd486f7e933805aa36c17c525d4f6c8a9e6"
+  },
+  "pixellab-font": {
+    "path": "_ART_SOURCES/rough_riders_1028/font/source.png",
+    "sha256": "7117057d19adca4684f00cb7ad69e6c7d0dffa9cfa548a374a521ee3b40ec37e"
+  },
+  "native-generated-boost": {
+    "path": "assets/game/levels/stage_06/boss/nightwing_wind_1028/exhaust_boost.png",
+    "sha256": "4cf7dc82551174898c0dcd646fd1171dc5924d582412c727813ce30b27378c06"
+  },
+  "voss-native-render": {
+    "path": "_ART_SOURCES/rough_riders_1028/references/voss-south.png",
+    "sha256": "8622f17add6edaf7b95f3fd02731c954dd5e96ece1b4fe8bedaf668b278f8f29"
+  },
+  "nyx-native-render": {
+    "path": "_ART_SOURCES/rough_riders_1028/references/nyx-south.png",
+    "sha256": "6bf16f9183eafa4b51fab6d893f72f661f976d28b794d260f528aeca7b55305e"
+  },
+  "rook-native-render": {
+    "path": "_ART_SOURCES/rough_riders_1028/references/rook-south.png",
+    "sha256": "514d0f420795d46915a8a9e3840dfed19ebbaf22f8ae1f17107c14b7f89cf389"
+  },
+  "kaia-native-render": {
+    "path": "_ART_SOURCES/rough_riders_1028/references/kaia-south.png",
+    "sha256": "6193b325034890e269a60b1351ca28dc6c11736d790ed898bc15db34abd41db4"
+  },
+  "jace-native-render": {
+    "path": "_ART_SOURCES/rough_riders_1028/references/jace-south.png",
+    "sha256": "e949577b94436dc6822d8478b31bf59ddc8552afee39b71cc43206a59610f5df"
+  }
+}

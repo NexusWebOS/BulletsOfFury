@@ -107,8 +107,8 @@ function rb23SceneTick(b,dt){const S=b._r30,N=S.v18,D=dr5State(b);dr5Protect(b,d
  if(t>=6.4&&!R.line2){R.line2=true;dr5Say(b,run.pilot.toUpperCase(),"Uhh, what's going on...?");}
  if(t>=10.4&&!R.silence){R.silence=true;dr5Say(b,run.pilot.toUpperCase(),'...');r30Sound('combatAlien0927');rb23Log('symbiote-heart-rise');}
  if(t>=14&&!R.fuse){R.fuse=true;D.radio=null;r30Sound('combatEnergy0927');rb23Log('matter-fusion');}
- if(t>=17&&t<23){const u=(t-17)/6,n=Math.min(24,Math.floor(24*Math.pow(u,1.65)));
-  while(R.bolts<n){R.bolts++;r30Sound('combatBeam0927');rb23Log('corrupted-lightning',{number:R.bolts});}R.boltPhase=(24*Math.pow(u,1.65))%1;}
+ if(t>=14&&t<23){const u=(t-14)/9,n=Math.min(24,1+Math.floor(23*Math.pow(u,1.65)));
+  while(R.bolts<n){R.bolts++;r30Sound('combatBeam0927');rb23Log('corrupted-lightning',{number:R.bolts});}R.boltPhase=(23*Math.pow(u,1.65))%1;}
  if(t>=23&&R.bolts<24){R.bolts=24;rb23Log('corrupted-lightning',{number:24});r30Sound('bossWeaponCharge');}
  if(t>=25.6&&!R.swapped){R.swapped=true;v18Enter(b,2,0);N.rb23Rebirth=R;N.arenaPhase=2;S.mode='dr5er23rebirth';S.t=t;b.x=cx;b.y=cy;D.radio=null;rb23Log('final-arena-whiteout');r30Sound('expBig');}
  if(t>=28.5){N.rb23Rebirth=null;D.radio=null;dr5Ships(b);S.mode='dr5Monologue';S.t=0;b.enter=b._noHit=true;D.line=0;rb23Log('rebirth-complete');bossPhaseMusic(8,3);}

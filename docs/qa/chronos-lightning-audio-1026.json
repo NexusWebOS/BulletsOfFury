@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-26",
+  "candidateCount": 18,
+  "productionScope": "Louder per-strike Dracodia-derived lightning integrated locally for Chronos. Candidate charge and wave sounds are audition-only.",
+  "nativeVideo": {
+    "file": "Chronos-Lightning-Live.mp4",
+    "seconds": 22.689,
+    "decodedPeakDb": -6.0,
+    "events": {
+      "rage": 26,
+      "rage-final": 1,
+      "kame": 12
+    },
+    "allAccepted": true
+  },
+  "focusedNativeChecks": {
+    "checks": {
+      "sameStrikeNotRepeated": true,
+      "nextStrikeAccepted": true,
+      "independentPool": true,
+      "boundedEightVoices": true,
+      "respectsMute": true,
+      "nativeWaveOneCue": true,
+      "nativeWaveNextBolt": true,
+      "openerOneCue": true,
+      "authoredBolt": true,
+      "drawDoesNotAdvanceClock": true,
+      "drawDoesNotSpawnRounds": true,
+      "healthScoreUnchanged": true,
+      "pauseStopsVoices": true,
+      "noPageErrors": true
+    },
+    "errors": [],
+    "fixtureCorrection": "Kame draw test now uses a fresh native phase object, not a beat already consumed during the recorded run."
+  },
+  "reviewPlayerChecks": {
+    "all21MediaPlay": true,
+    "videoSeeks": true,
+    "jumpButtonsWork": true,
+    "byteRangeSupported": true,
+    "noPageErrors": true
+  },
+  "fullSuite": {
+    "status": "failed",
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ],
+    "baselineFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ],
+    "sameFailuresWithoutAudioChanges": true
+  },
+  "knownCaptureLimitation": "The downloaded build is missing optional stop_empty.png. The recording and probe use the existing native C29 recovery fallback only in their browser session. Production artwork was not edited.",
+  "fixtureCorrection": "The original recording report contains a failed deduplication assertion against an already-consumed Kame phase token. A separate fresh-token native probe passes all 14 checks. The original report is retained.",
+  "listening": "Numerical and browser playback checks completed. Final timbre preference requires listening; no headphone or speaker listening claim is made."
+}

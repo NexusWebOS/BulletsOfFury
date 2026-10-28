@@ -1,0 +1,592 @@
+{
+  "gusts": {
+    "checks": [
+      {
+        "name": "Travel gusts have32 directions and16 animated phases",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Barrel gusts have32 directions and8 phases",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All768 gust cells retain clear borders, fixed even canvases and bounded textures",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All sixteen travel animation phases are distinct",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "New source is the selected animated wind design",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Corrected aircraft, guns, exhausts, charge and dash rings remain byte-identical",
+        "passed": true,
+        "data": 28
+      },
+      {
+        "name": "Wind attack releases six real gust rounds in its first dual fan",
+        "passed": true,
+        "data": {
+          "wind": [
+            {
+              "w": 18,
+              "h": 18,
+              "element": "wind",
+              "intercept": false
+            },
+            {
+              "w": 18,
+              "h": 18,
+              "element": "wind",
+              "intercept": false
+            },
+            {
+              "w": 18,
+              "h": 18,
+              "element": "wind",
+              "intercept": false
+            },
+            {
+              "w": 18,
+              "h": 18,
+              "element": "wind",
+              "intercept": false
+            },
+            {
+              "w": 18,
+              "h": 18,
+              "element": "wind",
+              "intercept": false
+            },
+            {
+              "w": 18,
+              "h": 18,
+              "element": "wind",
+              "intercept": false
+            }
+          ],
+          "muzzles": [
+            {
+              "family": "nw30wind",
+              "age": 0.08333333333333333
+            },
+            {
+              "family": "nw30wind",
+              "age": 0.08333333333333333
+            }
+          ],
+          "action": "wind"
+        }
+      },
+      {
+        "name": "Real rounds retain Wind classification and cannot be shot down",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both barrels use the dedicated gust release rather than sonic rings",
+        "passed": true,
+        "data": [
+          {
+            "family": "nw30wind",
+            "age": 0.08333333333333333
+          },
+          {
+            "family": "nw30wind",
+            "age": 0.08333333333333333
+          }
+        ]
+      },
+      {
+        "name": "Gust releases stay anchored to the moving barrel",
+        "passed": true,
+        "data": {
+          "x": 11,
+          "y": 7
+        }
+      },
+      {
+        "name": "Native muzzle renderer blits exactly two fixed authored gust cells",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every travel direction selects its own native wind-gust bank",
+        "passed": true,
+        "data": [
+          4,
+          20,
+          36,
+          52,
+          68,
+          84,
+          100,
+          116,
+          132,
+          148,
+          164,
+          180,
+          196,
+          212,
+          228,
+          244,
+          260,
+          276,
+          292,
+          308,
+          324,
+          340,
+          356,
+          372,
+          388,
+          404,
+          420,
+          436,
+          452,
+          468,
+          484,
+          500
+        ]
+      },
+      {
+        "name": "Native projectile animation traverses the generated motion",
+        "passed": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "name": "The existing five-volley dual-fan firing sequence is preserved",
+        "passed": true,
+        "data": {
+          "shots": 10,
+          "n": 5,
+          "phase": "recover"
+        }
+      },
+      {
+        "name": "Native muzzle lifetime and attack recovery clear their effects",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other projectiles retain their existing renderer",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native scene has no game, draw or HTTP errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "nightwingRegression": {
+    "checks": [
+      {
+        "name": "All aircraft, weapons and wind banks use even cells and bounded texture dimensions",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Whole-aircraft palette aliases are ready across native and depth poses",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Nightwing still has one native health pool and one Retina target",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Dual machine guns arm a real player Retina warning before release",
+        "passed": true,
+        "data": {
+          "action": {
+            "kind": "gun",
+            "phase": "warn",
+            "t": 0.016666666666666666,
+            "n": 0,
+            "next": 0,
+            "x": 340.2613333333333,
+            "y": 153.47077808268432,
+            "tx": 340,
+            "ty": 399.36,
+            "warn": 0.95,
+            "id": 2
+          },
+          "locks": 1
+        }
+      },
+      {
+        "name": "Both physical turret sockets release paired machine-gun bullets",
+        "passed": true,
+        "data": [
+          {
+            "event": "turret-shot",
+            "time": 5.999999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 0,
+            "x": 288.2428903045161,
+            "y": 190.44511297418333,
+            "angle": 7.6576320931251205,
+            "frame": 124
+          },
+          {
+            "event": "turret-shot",
+            "time": 5.999999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 1,
+            "x": 391.7571096954839,
+            "y": 190.44511297418333,
+            "angle": 1.7671458676442586,
+            "frame": 4
+          },
+          {
+            "event": "turret-shot",
+            "time": 6.099999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 0,
+            "x": 288.2428903045161,
+            "y": 190.79966244574953,
+            "angle": 7.6576320931251205,
+            "frame": 124
+          },
+          {
+            "event": "turret-shot",
+            "time": 6.099999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 1,
+            "x": 391.7571096954839,
+            "y": 190.79966244574953,
+            "angle": 1.7671458676442586,
+            "frame": 4
+          }
+        ]
+      },
+      {
+        "name": "Machine-gun bullets cannot be shot down",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native renderer draws exactly two separate recoil guns and two anchored exhausts",
+        "passed": true,
+        "data": {
+          "calls": 2,
+          "modules": true,
+          "engines": [
+            [
+              327.7613333333333,
+              90.31774179277687
+            ],
+            [
+              352.7613333333333,
+              90.31774179277687
+            ]
+          ]
+        }
+      },
+      {
+        "name": "Gun kickback uses multiple authored recoil frames",
+        "passed": true,
+        "data": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "Wind charge starts as its own exclusive attack",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind charge darkens scenery without protecting the boss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Current complete pose retains accepted damage and hit flash while charging",
+        "passed": true,
+        "data": {
+          "damage": 1,
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "Animated wind rounds leave both guns and carry Wind damage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Live projectile renderer selects the generated animated wind bank",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind volley has finite recovery and clears scenery dimming",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Cruise, boosted dash, large flyover and small approach use distinct exhaust banks",
+        "passed": true,
+        "data": [
+          "small",
+          "cruise",
+          "large_a",
+          "boost",
+          "large_b"
+        ]
+      },
+      {
+        "name": "Dashes leave bounded authored wind rings",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Accepted hits visibly white the whole body and both recoil modules",
+        "passed": true,
+        "data": {
+          "draws": 3,
+          "lit": 12030,
+          "neutral": 12030,
+          "damaged": true
+        }
+      },
+      {
+        "name": "The native white hit flash expires while the wind jet keeps moving",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages keep the original aircraft sources",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or asset HTTP errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": {
+    "checks": [
+      {
+        "name": "Fresh live recording reaches native Nightwing defeat",
+        "passed": true,
+        "data": "native defeat"
+      },
+      {
+        "name": "No game, console, HTTP or bot errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No failed resources beyond normal cancelled preloads",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Native protected entrance and complete combat occur",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native dash, close flyover, drift and return occur",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Multiple actual wind charges and animated fan volleys appear",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native damage flashes and clear frames occur",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recording audio taps are healthy",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Captured runtime and art match the installed game",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recorded audio is audible without clipping",
+        "passed": true,
+        "data": {
+          "meanDb": -18.6,
+          "peakDb": -2.2
+        }
+      }
+    ],
+    "seconds": 135.644,
+    "nativeFps": 57.85733242900533,
+    "audio": {
+      "meanDb": -18.6,
+      "peakDb": -2.2
+    },
+    "sourceHashes": {
+      "index.html": "d207b762f3f35cb13861f2a4596113a9a0f8e805594aaef9f08d70784fdf73c8",
+      "assets/game.js": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+      "assets/nightwing_wind_1028.js": "2bca1dca4631a67ccd4e69954d0e83f176606d65ff6aa75752d8ff2673a0104b",
+      "assets/nightwing_wind_art_1028.js": "a6df133d64831efa63769832a66a3b4c737503b60957404ff4ca611220373aca",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/wind_bullet_gusts_1028.png": "2aedb99b5ecc6eb35db93d748623ae58934c8f65f2a93a18faca88b4b352c007",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/wind_muzzle_gusts_1028.png": "dc0656de12ea218fa4077c7de560c318c57fb9edee176848c332c5f58c3f617a",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/whole_identity_1028b.png": "762439b40550eb8dde774faa0252eed92dab8576fffa3801298b08a329664bd0"
+    },
+    "method": "Real live Furious Nightwing life and native defeat; GOD input bot and normal allies. Native ace spawn in setup skips carrier. First35s withhold player fire. No enemy HP/phase/timer edits."
+  },
+  "playback": {
+    "checks": [
+      {
+        "name": "Current review images load",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 decodes at1280x800",
+        "passed": true,
+        "data": {
+          "w": 1280,
+          "h": 800,
+          "d": 11.004
+        }
+      },
+      {
+        "name": "showcase.mp4 supports range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.1",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.5",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.9",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 has moving frames and decoded sound",
+        "passed": true,
+        "data": {
+          "t": 2.854065,
+          "a": 245783,
+          "f": 351
+        }
+      },
+      {
+        "name": "nightwing-gusts/stage6-furious.mp4 decodes at1280x800",
+        "passed": true,
+        "data": {
+          "w": 1280,
+          "h": 800,
+          "d": 135.608
+        }
+      },
+      {
+        "name": "nightwing-gusts/stage6-furious.mp4 supports range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-gusts/stage6-furious.mp4 seeks to 0.1",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-gusts/stage6-furious.mp4 seeks to 0.5",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-gusts/stage6-furious.mp4 seeks to 0.9",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-gusts/stage6-furious.mp4 has moving frames and decoded sound",
+        "passed": true,
+        "data": {
+          "t": 2.841506,
+          "a": 293699,
+          "f": 454
+        }
+      },
+      {
+        "name": "No review browser errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "rebuild": {
+    "banks": 32,
+    "cells": 3144,
+    "byteIdentical": true
+  },
+  "fullSuite": {
+    "exitCode": 1,
+    "unchangedBaselineFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "review": "http://127.0.0.1:64935/"
+}

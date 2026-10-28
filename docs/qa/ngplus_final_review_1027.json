@@ -1,0 +1,1012 @@
+{
+  "native": {
+    "checks": {
+      "razorback-health25": true,
+      "damkeeper-health25": true,
+      "magmaward-health25": true,
+      "infernoreaver-health25": true,
+      "cryospear-health25": true,
+      "rimewall-health25": true,
+      "stormsovereign-health25": true,
+      "chromehammer-health25": true,
+      "siegebomber-health25": true,
+      "warhive-health25": true,
+      "rebelsquad-health25": true,
+      "dualscoopdredger-health25": true,
+      "sludgeemperor-health25": true,
+      "heralddeath-health25": true,
+      "vileexistence-health25": true,
+      "voidhorizon-health25": true,
+      "tidalfusion-health25": true,
+      "ordinary-enemy-health25": true,
+      "enemy-has-element": true,
+      "health-aliases-scale-once": true,
+      "native-shot-element-and-physics": true,
+      "ordinary-bullet-stays-unshootable": true,
+      "missile-retains-native-owner": true,
+      "all-nine-dark-forms-free": true,
+      "dark-is-discovered": true,
+      "all-nine-select-and-infuse": true,
+      "ngplus-weapon-family-unlocks": true,
+      "ngplus-loadout-has-earned-late-weapons": true,
+      "unused-free-arsenal-does-not-offer-paid-respec": true,
+      "free-dark-does-not-spend-upgrade-points": true,
+      "player-damage12": true,
+      "maverick-homing-stats-fixed": true,
+      "attack-countdown15": true,
+      "recovery-clock15": true,
+      "warning-and-scene-clocks-unchanged": true,
+      "warning-countdowns-remain-native": true,
+      "stagex-requires-defeat": true,
+      "stagex-left-reward-once": true,
+      "stagex-right-reward-once": true,
+      "campaign-save-retains-ngplus": true,
+      "save-load-keeps-ngplus-and-dark": true,
+      "stagex-bonus-survives-save": true,
+      "debug-fight-does-not-unlock-ngplus": true,
+      "final-clear-unlocks-ngplus": true,
+      "normal-campaign-disabled": true,
+      "noRuntimeErrors": true
+    },
+    "ratios": [
+      {
+        "stage": 1,
+        "role": "mini",
+        "kind": "razorback",
+        "base": {
+          "hull": 1368,
+          "part": null
+        },
+        "ng": {
+          "hull": 1710,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 1,
+        "role": "boss",
+        "kind": "damkeeper",
+        "base": {
+          "hull": 2368.9641248000003,
+          "part": null
+        },
+        "ng": {
+          "hull": 2961.2051560000004,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 2,
+        "role": "mini",
+        "kind": "magmaward",
+        "base": {
+          "hull": 2966,
+          "part": null
+        },
+        "ng": {
+          "hull": 3707.5,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 2,
+        "role": "boss",
+        "kind": "infernoreaver",
+        "base": {
+          "hull": 2413,
+          "part": null
+        },
+        "ng": {
+          "hull": 3016.25,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 3,
+        "role": "boss",
+        "kind": "cryospear",
+        "base": {
+          "hull": 4680,
+          "part": null
+        },
+        "ng": {
+          "hull": 5850,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 3,
+        "role": "mini",
+        "kind": "rimewall",
+        "base": {
+          "hull": 1840,
+          "part": null
+        },
+        "ng": {
+          "hull": 2300,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 4,
+        "role": "boss",
+        "kind": "stormsovereign",
+        "base": {
+          "hull": 4576,
+          "part": null
+        },
+        "ng": {
+          "hull": 5720,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 5,
+        "role": "boss",
+        "kind": "chromehammer",
+        "base": {
+          "hull": 2200,
+          "hammer": 91,
+          "chain": 690
+        },
+        "ng": {
+          "hull": 2750,
+          "hammer": 113.75,
+          "chain": 862.5
+        },
+        "ratios": {
+          "hull": 1.25,
+          "hammer": 1.25,
+          "chain": 1.25
+        }
+      },
+      {
+        "stage": 6,
+        "role": "mini",
+        "kind": "siegebomber",
+        "base": {
+          "hull": 3048,
+          "part": null
+        },
+        "ng": {
+          "hull": 3810,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 6,
+        "role": "boss",
+        "kind": "warhive",
+        "base": {
+          "hull": 1662,
+          "ace": 5810.4995312,
+          "core": 0
+        },
+        "ng": {
+          "hull": 2077.5,
+          "ace": 7263.124414,
+          "core": 0
+        },
+        "ratios": {
+          "hull": 1.25,
+          "ace": 1.25
+        }
+      },
+      {
+        "stage": 6,
+        "role": "boss",
+        "kind": "rebelsquad",
+        "base": {
+          "hull": 8600,
+          "ship": 1720
+        },
+        "ng": {
+          "hull": 10750,
+          "ship": 2150
+        },
+        "ratios": {
+          "hull": 1.25,
+          "ship": 1.25
+        }
+      },
+      {
+        "stage": 7,
+        "role": "mini",
+        "kind": "dualscoopdredger",
+        "base": {
+          "hull": 2028,
+          "core": 1170,
+          "part": 429
+        },
+        "ng": {
+          "hull": 2535,
+          "core": 1462.5,
+          "part": 536.25
+        },
+        "ratios": {
+          "hull": 1.25,
+          "core": 1.25,
+          "part": 1.25
+        }
+      },
+      {
+        "stage": 7,
+        "role": "boss",
+        "kind": "sludgeemperor",
+        "base": {
+          "hull": 6150,
+          "core": 1748,
+          "part": 787
+        },
+        "ng": {
+          "hull": 7687.5,
+          "core": 2185,
+          "part": 983.75
+        },
+        "ratios": {
+          "hull": 1.25,
+          "core": 1.25,
+          "part": 1.25
+        }
+      },
+      {
+        "stage": 8,
+        "role": "mini",
+        "kind": "heralddeath",
+        "base": {
+          "hull": 3616,
+          "part": null
+        },
+        "ng": {
+          "hull": 4520,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 8,
+        "role": "boss",
+        "kind": "vileexistence",
+        "base": {
+          "hull": 5945,
+          "copy": 4920,
+          "arm": 1979
+        },
+        "ng": {
+          "hull": 7431.25,
+          "copy": 6150,
+          "arm": 2474
+        },
+        "ratios": {
+          "hull": 1.25,
+          "copy": 1.25,
+          "arm": 1.2501263264274887
+        }
+      },
+      {
+        "stage": 9,
+        "role": "mini",
+        "kind": "voidhorizon",
+        "base": {
+          "hull": 9287,
+          "part": null
+        },
+        "ng": {
+          "hull": 11608.75,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      },
+      {
+        "stage": 9,
+        "role": "boss",
+        "kind": "tidalfusion",
+        "base": {
+          "hull": 9932,
+          "part": null
+        },
+        "ng": {
+          "hull": 12415,
+          "part": null
+        },
+        "ratios": {
+          "hull": 1.25
+        }
+      }
+    ],
+    "notes": [
+      {
+        "rewardResults": [
+          {
+            "route": "left",
+            "combos": 13,
+            "lives": 4,
+            "bombs": 14,
+            "tier": "super",
+            "bonus": 1,
+            "mk2": true,
+            "same": true
+          },
+          {
+            "route": "right",
+            "combos": 13,
+            "lives": 4,
+            "bombs": 14,
+            "tier": "super",
+            "bonus": 1,
+            "mk2": true,
+            "same": true
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "requiredSuite": {
+    "exit": 1,
+    "reachedFinalSummary": true,
+    "failureNames": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ],
+    "sameBaseline": true
+  },
+  "note": "Recordings use a native invulnerable input bot. This does not establish human dodgeability or final difficulty balance.",
+  "videoChecks": {
+    "stage6-harrier-native-win": true,
+    "stage6-harrier-decode": true,
+    "stage6-harrier-no-page-errors": true,
+    "stage6-harrier-no-bot-errors": true,
+    "stage6-rebels-native-win": true,
+    "stage6-rebels-decode": true,
+    "stage6-rebels-no-page-errors": true,
+    "stage6-rebels-no-bot-errors": true,
+    "stage7-miniboss-native-win": true,
+    "stage7-miniboss-decode": true,
+    "stage7-miniboss-no-page-errors": true,
+    "stage7-miniboss-no-bot-errors": true,
+    "stage7-boss-native-win": true,
+    "stage7-boss-decode": true,
+    "stage7-boss-no-page-errors": true,
+    "stage7-boss-no-bot-errors": true,
+    "stage8-miniboss-native-win": true,
+    "stage8-miniboss-decode": true,
+    "stage8-miniboss-no-page-errors": true,
+    "stage8-miniboss-no-bot-errors": true,
+    "stage6-miniboss-native-win": true,
+    "stage6-miniboss-decode": true,
+    "stage6-miniboss-no-page-errors": true,
+    "stage6-miniboss-no-bot-errors": true,
+    "dracodia-native-win": true,
+    "dracodia-no-page-errors": true,
+    "dracodia-no-bot-errors": true,
+    "all-five-final-forms": true,
+    "base-protected-until-copies-exhausted": true,
+    "all-final-pools-empty": true,
+    "final-recording-has-no-long-stall": true,
+    "dracodia-present": true,
+    "code-hammer-present": true,
+    "helicopter-present": true,
+    "neural-archon-present": true,
+    "phoenix-volcano-present": true,
+    "phase1-decode": true,
+    "phase2-decode": true,
+    "formation-decode": true,
+    "dracodia-decode": true,
+    "code-hammer-decode": true,
+    "helicopter-decode": true,
+    "neural-archon-decode": true,
+    "phoenix-volcano-decode": true,
+    "ngplus-native-wave-elements": true,
+    "ngplus-native-wave-dark-weapon": true,
+    "ngplus-native-wave-no-runtime-errors": true,
+    "ngplus-razorback-health25": true,
+    "ngplus-damkeeper-health25": true,
+    "ngplus-magmaward-health25": true,
+    "ngplus-infernoreaver-health25": true,
+    "ngplus-cryospear-health25": true,
+    "ngplus-rimewall-health25": true,
+    "ngplus-stormsovereign-health25": true,
+    "ngplus-chromehammer-health25": true,
+    "ngplus-siegebomber-health25": true,
+    "ngplus-warhive-health25": true,
+    "ngplus-rebelsquad-health25": true,
+    "ngplus-dualscoopdredger-health25": true,
+    "ngplus-sludgeemperor-health25": true,
+    "ngplus-heralddeath-health25": true,
+    "ngplus-vileexistence-health25": true,
+    "ngplus-voidhorizon-health25": true,
+    "ngplus-tidalfusion-health25": true,
+    "ngplus-ordinary-enemy-health25": true,
+    "ngplus-enemy-has-element": true,
+    "ngplus-health-aliases-scale-once": true,
+    "ngplus-native-shot-element-and-physics": true,
+    "ngplus-ordinary-bullet-stays-unshootable": true,
+    "ngplus-missile-retains-native-owner": true,
+    "ngplus-all-nine-dark-forms-free": true,
+    "ngplus-dark-is-discovered": true,
+    "ngplus-all-nine-select-and-infuse": true,
+    "ngplus-ngplus-weapon-family-unlocks": true,
+    "ngplus-ngplus-loadout-has-earned-late-weapons": true,
+    "ngplus-unused-free-arsenal-does-not-offer-paid-respec": true,
+    "ngplus-free-dark-does-not-spend-upgrade-points": true,
+    "ngplus-player-damage12": true,
+    "ngplus-maverick-homing-stats-fixed": true,
+    "ngplus-attack-countdown15": true,
+    "ngplus-recovery-clock15": true,
+    "ngplus-warning-and-scene-clocks-unchanged": true,
+    "ngplus-warning-countdowns-remain-native": true,
+    "ngplus-stagex-requires-defeat": true,
+    "ngplus-stagex-left-reward-once": true,
+    "ngplus-stagex-right-reward-once": true,
+    "ngplus-campaign-save-retains-ngplus": true,
+    "ngplus-save-load-keeps-ngplus-and-dark": true,
+    "ngplus-stagex-bonus-survives-save": true,
+    "ngplus-debug-fight-does-not-unlock-ngplus": true,
+    "ngplus-final-clear-unlocks-ngplus": true,
+    "ngplus-normal-campaign-disabled": true,
+    "ngplus-noRuntimeErrors": true
+  },
+  "playback": {
+    "checks": {
+      "all16VideosPresent": true,
+      "allPlayAndSeek": true,
+      "allNative1280x800": true,
+      "allDecodeAudio": true,
+      "noPageErrors": true
+    },
+    "results": [
+      {
+        "title": "Stage 6 \u2014 Harrier / Nightwing",
+        "path": "stage6-harrier/stage6-furious.mp4",
+        "seconds": 121.233333,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 67.095121,
+        "error": null,
+        "decodedAudioBytes": 152614
+      },
+      {
+        "title": "Stage 6 \u2014 Rebel Fighters",
+        "path": "stage6-rebels/stage6-furious.mp4",
+        "seconds": 138.733333,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 76.715405,
+        "error": null,
+        "decodedAudioBytes": 16497
+      },
+      {
+        "title": "Stage 7 \u2014 Dredger miniboss",
+        "path": "stage7-miniboss/stage7-furious.mp4",
+        "seconds": 70.325,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 39.090259,
+        "error": null,
+        "decodedAudioBytes": 110939
+      },
+      {
+        "title": "Stage 7 \u2014 Warden boss",
+        "path": "stage7-boss/stage7-furious.mp4",
+        "seconds": 127.03,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 70.27857,
+        "error": null,
+        "decodedAudioBytes": 69131
+      },
+      {
+        "title": "Stage 8 \u2014 Herald of Death (extra review)",
+        "path": "stage8-miniboss/stage8-furious.mp4",
+        "seconds": 86.701,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 48.106666,
+        "error": null,
+        "decodedAudioBytes": 95297
+      },
+      {
+        "title": "Stage 6 \u2014 Siege Bomber (extra review)",
+        "path": "stage6-miniboss/stage6-furious.mp4",
+        "seconds": 137.891,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 76.253143,
+        "error": null,
+        "decodedAudioBytes": 147391
+      },
+      {
+        "title": "Stage 8 \u2014 Phase 1 / Infused host",
+        "path": "chapters-final/phase1.mp4",
+        "seconds": 105.324667,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 58.339216,
+        "error": null,
+        "decodedAudioBytes": 22672
+      },
+      {
+        "title": "Stage 8 \u2014 Complete Phase 2, formation and ending",
+        "path": "chapters-final/phase2.mp4",
+        "seconds": 907.872,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 499.74027,
+        "error": null,
+        "decodedAudioBytes": 166632
+      },
+      {
+        "title": "Stage 8 \u2014 Destruction, download and final-form formation",
+        "path": "chapters-final/formation.mp4",
+        "seconds": 34.9,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 19.606042,
+        "error": null,
+        "decodedAudioBytes": 28246
+      },
+      {
+        "title": "Stage 8 \u2014 Dracodia / protected base and final life",
+        "path": "chapters-final/dracodia.mp4",
+        "seconds": 545.262,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 300.304478,
+        "error": null,
+        "decodedAudioBytes": 93039
+      },
+      {
+        "title": "Stage 8 \u2014 Code Hammer",
+        "path": "chapters-final/code-hammer.mp4",
+        "seconds": 82.978,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 46.047969,
+        "error": null,
+        "decodedAudioBytes": 95130
+      },
+      {
+        "title": "Stage 8 \u2014 Helicopter",
+        "path": "chapters-final/helicopter.mp4",
+        "seconds": 76.292,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 42.371178,
+        "error": null,
+        "decodedAudioBytes": 21367
+      },
+      {
+        "title": "Stage 8 \u2014 Neural Archon / alien brain",
+        "path": "chapters-final/neural-archon.mp4",
+        "seconds": 92.966,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 51.541641,
+        "error": null,
+        "decodedAudioBytes": 103723
+      },
+      {
+        "title": "Stage 8 \u2014 Phoenix / Volcano",
+        "path": "chapters-final/phoenix-volcano.mp4",
+        "seconds": 92.568,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 51.329291,
+        "error": null,
+        "decodedAudioBytes": 33319
+      },
+      {
+        "title": "Stage 8 \u2014 Complete uninterrupted encounter",
+        "path": "stage8-clean/stage8-furious.mp4",
+        "seconds": 1013.23,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 557.688015,
+        "error": null,
+        "decodedAudioBytes": 51620
+      },
+      {
+        "title": "New Game + \u2014 Native dark weapons / elemental waves",
+        "path": "ngplus-wave/stage1-furious.mp4",
+        "seconds": 65.164,
+        "width": 1280,
+        "height": 800,
+        "currentTime": 36.250451,
+        "error": null,
+        "decodedAudioBytes": 25282
+      }
+    ],
+    "errors": []
+  },
+  "recording": {
+    "source": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage8-clean\\stage8-furious.mp4",
+    "nativeFps": 37.54134743500218,
+    "maxObservationGap": 0.9879999999999995,
+    "consoleErrors": [],
+    "failedRequests": [
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/energy_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_bossCannon.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/module_break.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_timedBombBeep.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/nsp_bof2_boss_warning.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/alien.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/alien.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/alien.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_bossCannon.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_bossCannon.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_bossCannon.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/hammer_slam.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/hammer_slam.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/hammer_slam.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/energy_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/energy_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sfx_0927/energy_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/module_break.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/module_break.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/module_break.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/laser_release.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/expBig.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/expBig.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/expBig.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/expSmall.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/expSmall.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/expSmall.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/levels/stage_08/audio/dracodia_1005/dracodia_shriek.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/levels/stage_08/audio/dracodia_1005/dracodia_shriek.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/teleport_in.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/teleport_in.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/combat/combat_1003i/teleport_in.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/shield_hit_heavy.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/shield_hit_heavy.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/shield_hit_heavy.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_shieldBreak.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_shieldBreak.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/chip_1011/chip_shieldBreak.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/bossPhase.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/bossPhase.mp3",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:49785/assets/game/shared/audio/sounds/bossPhase.mp3",
+        "failure": "net::ERR_ABORTED"
+      }
+    ],
+    "duration": 1013.23,
+    "allVideos": [
+      {
+        "id": "stage6-harrier",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage6-harrier\\stage6-furious.mp4",
+        "seconds": 121.23,
+        "peakDb": -1.6
+      },
+      {
+        "id": "stage6-rebels",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage6-rebels\\stage6-furious.mp4",
+        "seconds": 138.73,
+        "peakDb": -0.9
+      },
+      {
+        "id": "stage7-miniboss",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage7-miniboss\\stage7-furious.mp4",
+        "seconds": 70.33,
+        "peakDb": -3.2
+      },
+      {
+        "id": "stage7-boss",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage7-boss\\stage7-furious.mp4",
+        "seconds": 127.03,
+        "peakDb": -4.7
+      },
+      {
+        "id": "stage8-miniboss",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage8-miniboss\\stage8-furious.mp4",
+        "seconds": 86.7,
+        "peakDb": -3.9
+      },
+      {
+        "id": "stage6-miniboss",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage6-miniboss\\stage6-furious.mp4",
+        "seconds": 137.89,
+        "peakDb": -2.0
+      },
+      {
+        "id": "phase1",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\phase1.mp4",
+        "seconds": 105.32,
+        "peakDb": -3.7
+      },
+      {
+        "id": "phase2",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\phase2.mp4",
+        "seconds": 907.87,
+        "peakDb": -0.6
+      },
+      {
+        "id": "formation",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\formation.mp4",
+        "seconds": 34.9,
+        "peakDb": -5.6
+      },
+      {
+        "id": "dracodia",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\dracodia.mp4",
+        "seconds": 545.26,
+        "peakDb": -0.5
+      },
+      {
+        "id": "code-hammer",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\code-hammer.mp4",
+        "seconds": 82.98,
+        "peakDb": -2.2
+      },
+      {
+        "id": "helicopter",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\helicopter.mp4",
+        "seconds": 76.28999999999999,
+        "peakDb": -0.4
+      },
+      {
+        "id": "neural-archon",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\neural-archon.mp4",
+        "seconds": 92.97,
+        "peakDb": -2.3
+      },
+      {
+        "id": "phoenix-volcano",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\chapters-final\\phoenix-volcano.mp4",
+        "seconds": 92.57,
+        "peakDb": -1.1
+      },
+      {
+        "id": "full",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\stage8-clean\\stage8-furious.mp4",
+        "seconds": 1013.23,
+        "peakDb": -0.5
+      },
+      {
+        "id": "ngplus-preview",
+        "path": "C:\\Users\\Mike\\Documents\\New project\\BOF-Final-Pass-1027\\ngplus-wave\\stage1-furious.mp4",
+        "seconds": 65.16,
+        "peakDb": -4.9
+      }
+    ]
+  },
+  "art": {
+    "chrome": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "dark": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "fire": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "ice": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "kinetic": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "lightning": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "toxic": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "water": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    },
+    "wind": {
+      "even": true,
+      "grid": true,
+      "nonEmpty": true
+    }
+  },
+  "unclippedBanks": true
+}

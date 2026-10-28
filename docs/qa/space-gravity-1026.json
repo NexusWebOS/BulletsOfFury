@@ -1,0 +1,89 @@
+{
+  "nativeMotion": {
+    "nativeFloatVisible": true,
+    "backgroundUntargetable": true,
+    "strafeLonger": true,
+    "fullReturn": true,
+    "nativeRecordingPassed": true
+  },
+  "focused": {
+    "checks": {
+      "extra15Percent": true,
+      "twoWholeSweeps": true,
+      "allBackgroundFormsProtected": true,
+      "foregroundEligible": true,
+      "nativeProtectionRetained": true,
+      "boundedNonAccumulatingFloat": true,
+      "pausedFloatUnchanged": true,
+      "groundStagesExcluded": true,
+      "horizonEyeCoreAndHullTogether": true,
+      "twinsPhysicalPartsFloatTogether": true,
+      "nativeRageDepthProtected": true,
+      "nativeRageForegroundEligible": true,
+      "beamCollisionAndRenderedSocketAligned": true,
+      "muzzleFollowsOnce": true,
+      "noPageErrors": true
+    },
+    "detail": {
+      "depth": [
+        {
+          "mode": "idle",
+          "pass": true
+        },
+        {
+          "mode": "warn",
+          "pass": true
+        },
+        {
+          "mode": "chain_warn",
+          "pass": true
+        },
+        {
+          "mode": "chaingun",
+          "pass": true
+        },
+        {
+          "mode": "ball",
+          "pass": true
+        },
+        {
+          "mode": "giant_warn",
+          "pass": true
+        },
+        {
+          "mode": "kame_strafe",
+          "pass": true
+        },
+        {
+          "mode": "kame_charge",
+          "pass": true
+        },
+        {
+          "mode": "kame_fire",
+          "pass": true
+        },
+        {
+          "mode": "volley_fire",
+          "pass": true
+        }
+      ],
+      "float": {
+        "min": -3.4999393084424,
+        "max": 3.499999682731712,
+        "maxError": 5.684341886080802e-14
+      }
+    },
+    "errors": []
+  },
+  "suite": {
+    "complete": true,
+    "sameFiveBaselineFailures": true,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  }
+}

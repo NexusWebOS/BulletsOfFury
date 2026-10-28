@@ -1,0 +1,1016 @@
+{
+  "date": "2026-10-28",
+  "sourceBranch": "codex/build-2026-10-26",
+  "release": "https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-stage6-9-review-2026-10-28",
+  "watch": "https://NexusWebOS.github.io/BulletsOfFury/",
+  "checks": [
+    {
+      "name": "stage6-miniboss-current reaches native defeat with no game/HTTP/audio/bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-miniboss-current audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "peak": -1.6,
+        "mean": -18.8
+      }
+    },
+    {
+      "name": "stage6-rough-riders-current reaches native defeat with no game/HTTP/audio/bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-rough-riders-current audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "peak": -1.3,
+        "mean": -15.8
+      }
+    },
+    {
+      "name": "All28 selected movies exist and are nonempty",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gallery lists all28 videos and every poster loads",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 12.521333
+      }
+    },
+    {
+      "name": "rough-riders-evasion seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 242,
+        "audio": 174329
+      }
+    },
+    {
+      "name": "rough-riders-formations decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 38.203333
+      }
+    },
+    {
+      "name": "rough-riders-formations seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 204,
+        "audio": 145865
+      }
+    },
+    {
+      "name": "rough-riders-jace decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 29.562333
+      }
+    },
+    {
+      "name": "rough-riders-jace seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 48,
+        "audio": 35449
+      }
+    },
+    {
+      "name": "rough-riders-kaia decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 19.2
+      }
+    },
+    {
+      "name": "rough-riders-kaia seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 112,
+        "audio": 81392
+      }
+    },
+    {
+      "name": "rough-riders-nyx decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 24.583333
+      }
+    },
+    {
+      "name": "rough-riders-nyx seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 209,
+        "audio": 148710
+      }
+    },
+    {
+      "name": "rough-riders-rook decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 23.386333
+      }
+    },
+    {
+      "name": "rough-riders-rook seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 187,
+        "audio": 136251
+      }
+    },
+    {
+      "name": "rough-riders-voss decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 29.564333
+      }
+    },
+    {
+      "name": "rough-riders-voss seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 49,
+        "audio": 39394
+      }
+    },
+    {
+      "name": "stage6-carrier decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 52.682
+      }
+    },
+    {
+      "name": "stage6-carrier seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 215,
+        "audio": 145780
+      }
+    },
+    {
+      "name": "stage6-miniboss decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 67.633008
+      }
+    },
+    {
+      "name": "stage6-miniboss seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-miniboss decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 233,
+        "audio": 157510
+      }
+    },
+    {
+      "name": "stage6-nightwing decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 179.702
+      }
+    },
+    {
+      "name": "stage6-nightwing seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 250,
+        "audio": 169773
+      }
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 11
+      }
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 214,
+        "audio": 147979
+      }
+    },
+    {
+      "name": "stage6-nightwing-wind decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 11.004
+      }
+    },
+    {
+      "name": "stage6-nightwing-wind seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-wind decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 215,
+        "audio": 147145
+      }
+    },
+    {
+      "name": "stage6-rough-riders decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 152.65
+      }
+    },
+    {
+      "name": "stage6-rough-riders seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-rough-riders decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 263,
+        "audio": 178307
+      }
+    },
+    {
+      "name": "stage7-boss decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 128.225
+      }
+    },
+    {
+      "name": "stage7-boss seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-boss decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 66,
+        "audio": 45827
+      }
+    },
+    {
+      "name": "stage7-miniboss decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 68.223
+      }
+    },
+    {
+      "name": "stage7-miniboss seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-miniboss decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 236,
+        "audio": 159952
+      }
+    },
+    {
+      "name": "s8-code-hammer decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 60.466667
+      }
+    },
+    {
+      "name": "s8-code-hammer seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-code-hammer decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 104,
+        "audio": 76206
+      }
+    },
+    {
+      "name": "s8-dracodia decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 359.949
+      }
+    },
+    {
+      "name": "s8-dracodia seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-dracodia decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 30,
+        "audio": 26945
+      }
+    },
+    {
+      "name": "s8-final-life decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 69.112
+      }
+    },
+    {
+      "name": "s8-final-life seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-final-life decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 260,
+        "audio": 181341
+      }
+    },
+    {
+      "name": "s8-formation decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 34.8
+      }
+    },
+    {
+      "name": "s8-formation seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-formation decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 142,
+        "audio": 65591
+      }
+    },
+    {
+      "name": "s8-helicopter decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 47.633008
+      }
+    },
+    {
+      "name": "s8-helicopter seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-helicopter decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 123,
+        "audio": 88643
+      }
+    },
+    {
+      "name": "s8-neural-archon decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 48.587955
+      }
+    },
+    {
+      "name": "s8-neural-archon seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-neural-archon decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 31,
+        "audio": 26727
+      }
+    },
+    {
+      "name": "s8-phase1 decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 106.414667
+      }
+    },
+    {
+      "name": "s8-phase1 seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 205,
+        "audio": 144080
+      }
+    },
+    {
+      "name": "s8-phase2 decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 613.816
+      }
+    },
+    {
+      "name": "s8-phase2 seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase2 decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 261,
+        "audio": 181912
+      }
+    },
+    {
+      "name": "s8-phoenix-volcano decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 76.786979
+      }
+    },
+    {
+      "name": "s8-phoenix-volcano seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phoenix-volcano decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 147,
+        "audio": 105438
+      }
+    },
+    {
+      "name": "stage8-final decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 720.213
+      }
+    },
+    {
+      "name": "stage8-final seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 110,
+        "audio": 82046
+      }
+    },
+    {
+      "name": "stage8-miniboss decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 153.005
+      }
+    },
+    {
+      "name": "stage8-miniboss seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 261,
+        "audio": 177907
+      }
+    },
+    {
+      "name": "stage9-boss decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 131.349
+      }
+    },
+    {
+      "name": "stage9-boss seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-boss decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 129,
+        "audio": 87677
+      }
+    },
+    {
+      "name": "stage9-miniboss decodes native-size video",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 135.127
+      }
+    },
+    {
+      "name": "stage9-miniboss seeks into the fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-miniboss decodes moving frames and game sound",
+      "passed": true,
+      "data": {
+        "frames": 197,
+        "audio": 133143
+      }
+    },
+    {
+      "name": "Gallery has no browser errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Gallery fits phone width",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "videos": [
+    {
+      "id": "rough-riders-evasion",
+      "stage": 6,
+      "asset": "rough-riders-evasion.mp4",
+      "bytes": 15357938,
+      "sha256": "552efa7d3fe0c76c44970ab8c7a76edb753b8fa9a5fcc536e7a67b38534bf2f8",
+      "note": "Focused native behavior demonstration; see the full current encounter above.",
+      "segments": []
+    },
+    {
+      "id": "rough-riders-formations",
+      "stage": 6,
+      "asset": "rough-riders-formations.mp4",
+      "bytes": 46091183,
+      "sha256": "c44f29233637926bd03af413efad5b1efa1d26bbee7c2a93236ac632e8821915",
+      "note": "Focused native behavior demonstration; see the full current encounter above.",
+      "segments": []
+    },
+    {
+      "id": "rough-riders-jace",
+      "stage": 6,
+      "asset": "rough-riders-jace.mp4",
+      "bytes": 35970501,
+      "sha256": "a26b5a0f886f660c414905accba0085a9f141b086557f1f50c9d8139f71ef258",
+      "note": "Focused native behavior demonstration; see the full current encounter above.",
+      "segments": []
+    },
+    {
+      "id": "rough-riders-kaia",
+      "stage": 6,
+      "asset": "rough-riders-kaia.mp4",
+      "bytes": 23907654,
+      "sha256": "ef1f1993b15367e1b1f745f056324e21e354144c5fa044ce0796f44ddf63192f",
+      "note": "Focused native behavior demonstration; see the full current encounter above.",
+      "segments": []
+    },
+    {
+      "id": "rough-riders-nyx",
+      "stage": 6,
+      "asset": "rough-riders-nyx.mp4",
+      "bytes": 27574549,
+      "sha256": "e6bf486778e52db23b97744650f6b742aa72a431debb02f79601c753bcdcbabb",
+      "note": "Focused native behavior demonstration; see the full current encounter above.",
+      "segments": []
+    },
+    {
+      "id": "rough-riders-rook",
+      "stage": 6,
+      "asset": "rough-riders-rook.mp4",
+      "bytes": 26814102,
+      "sha256": "7098851c9a7279086ad9f03cf0b35ef9c4d92a38eae24742c8708e41317f2ace",
+      "note": "Focused native behavior demonstration; see the full current encounter above.",
+      "segments": []
+    },
+    {
+      "id": "rough-riders-voss",
+      "stage": 6,
+      "asset": "rough-riders-voss.mp4",
+      "bytes": 35773709,
+      "sha256": "10abb47ca593988b7cdabebb2f149447f3502a334ce96bd39dac108ac0f3fcda",
+      "note": "Focused native behavior demonstration; see the full current encounter above.",
+      "segments": []
+    },
+    {
+      "id": "stage6-carrier",
+      "stage": 6,
+      "asset": "stage6-carrier.mp4",
+      "bytes": 63773270,
+      "sha256": "1a5560c17aa7e0b7a95ef4a1b6444ce5028ac735b8f11bc881d0e4e340bdce0e",
+      "note": "Carrier life through native destruction and Nightwing handoff.",
+      "segments": []
+    },
+    {
+      "id": "stage6-miniboss",
+      "stage": 6,
+      "asset": "stage6-miniboss.mp4",
+      "bytes": 68129292,
+      "sha256": "a2859bb6c69f2566b127058de3e632897b140e387ffb690c0139f2b79b5c9691",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "stage6-nightwing",
+      "stage": 6,
+      "asset": "stage6-nightwing.mp4",
+      "bytes": 163826760,
+      "sha256": "25ed09fa1e2723c5a2e9d158d6ba470c60c1f5d2a0fae9f219dc1dbb6df497bf",
+      "note": "Full native clear. An early capture hitch occurred during concurrent validation; see the clean flight preview for the turn.",
+      "segments": []
+    },
+    {
+      "id": "stage6-nightwing-shadow-turn",
+      "stage": 6,
+      "asset": "stage6-nightwing-shadow-turn.mp4",
+      "bytes": 13144149,
+      "sha256": "8b6af3e7f1042569312cbbb054850ba31542bb79079df807da3755935741be8d",
+      "note": "Normal-speed excerpt from a separate clean flight-only take.",
+      "segments": []
+    },
+    {
+      "id": "stage6-nightwing-wind",
+      "stage": 6,
+      "asset": "stage6-nightwing-wind.mp4",
+      "bytes": 12773488,
+      "sha256": "d6fd5d7d21909f62bd026e92fdc12b5bb1309f19c169e8dc6e57dbfb1e11f0ea",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "stage6-rough-riders",
+      "stage": 6,
+      "asset": "stage6-rough-riders.mp4",
+      "bytes": 182336535,
+      "sha256": "66ef9444046c80429029947d75200e39afae7f184bac14c755b539192f52728f",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "stage7-boss",
+      "stage": 7,
+      "asset": "stage7-boss.mp4",
+      "bytes": 92149574,
+      "sha256": "f9c7a546a45e26b4a76a5df55664c613f25fa90e876310d5ae839522d58d2119",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "stage7-miniboss",
+      "stage": 7,
+      "asset": "stage7-miniboss.mp4",
+      "bytes": 42412091,
+      "sha256": "75751c010d6e5226aa23d8fea5f4bf0f2745ba307e908160f9688ecf4a0defba",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "s8-code-hammer",
+      "stage": 8,
+      "asset": "s8-code-hammer.mp4",
+      "bytes": 38306421,
+      "sha256": "8621c5a0df8797474965f95d42685ab318adfa51e8f27347d7c9aad067f3717e",
+      "note": "",
+      "segments": [
+        {
+          "start": 253.322,
+          "end": 313.774
+        }
+      ]
+    },
+    {
+      "id": "s8-dracodia",
+      "stage": 8,
+      "asset": "s8-dracodia.mp4",
+      "bytes": 222439174,
+      "sha256": "76814bd4c94d0443e23bd48072606b63ff971c4a71722b1d1719d7681b89327a",
+      "note": "Joined visits to this form; cuts skip other forms.",
+      "segments": [
+        {
+          "start": 131.86599999999999,
+          "end": 253.67200000000003
+        },
+        {
+          "start": 313.424,
+          "end": 338.524
+        },
+        {
+          "start": 385.438,
+          "end": 412.09700000000004
+        },
+        {
+          "start": 431.658,
+          "end": 456.884
+        },
+        {
+          "start": 510.71799999999996,
+          "end": 535.8
+        },
+        {
+          "start": 555.032,
+          "end": 597.0939999999999
+        },
+        {
+          "start": 618.585,
+          "end": 643.641
+        },
+        {
+          "start": 651.298,
+          "end": 720.159
+        }
+      ]
+    },
+    {
+      "id": "s8-final-life",
+      "stage": 8,
+      "asset": "s8-final-life.mp4",
+      "bytes": 38941030,
+      "sha256": "6f792bc7403817c9954b3a8ca07c887a51823f88a3e87cde26a10491705e343b",
+      "note": "",
+      "segments": [
+        {
+          "start": 651.098,
+          "end": 720.21
+        }
+      ]
+    },
+    {
+      "id": "s8-formation",
+      "stage": 8,
+      "asset": "s8-formation.mp4",
+      "bytes": 21564143,
+      "sha256": "5be98df9aedea0ff3da1318278bf886e943724b8999d035663328684d1553a38",
+      "note": "",
+      "segments": [
+        {
+          "start": 102.394,
+          "end": 137.166
+        }
+      ]
+    },
+    {
+      "id": "s8-helicopter",
+      "stage": 8,
+      "asset": "s8-helicopter.mp4",
+      "bytes": 36078011,
+      "sha256": "0e8f79f296a9b15799d708604b0e97e57325a7365683de3b9ad36bcbcadca826",
+      "note": "",
+      "segments": [
+        {
+          "start": 338.174,
+          "end": 385.788
+        }
+      ]
+    },
+    {
+      "id": "s8-neural-archon",
+      "stage": 8,
+      "asset": "s8-neural-archon.mp4",
+      "bytes": 38483114,
+      "sha256": "1d89aa5e5865f9851c893a2026afe971cd0df94bece4f120d38fa922d3242614",
+      "note": "Joined visits to this form; cuts skip other forms.",
+      "segments": [
+        {
+          "start": 411.747,
+          "end": 432.00800000000004
+        },
+        {
+          "start": 535.45,
+          "end": 555.382
+        },
+        {
+          "start": 643.291,
+          "end": 651.6479999999999
+        }
+      ]
+    },
+    {
+      "id": "s8-phase1",
+      "stage": 8,
+      "asset": "s8-phase1.mp4",
+      "bytes": 61410900,
+      "sha256": "4495ac5b1f8e61ed78f921fdb6d2e81737a6be983f3b01dc59ffb6ab0d147c38",
+      "note": "",
+      "segments": [
+        {
+          "start": 0,
+          "end": 106.394
+        }
+      ]
+    },
+    {
+      "id": "s8-phase2",
+      "stage": 8,
+      "asset": "s8-phase2.mp4",
+      "bytes": 423162032,
+      "sha256": "817dd7ea69108eff8309344f153232efd46dfdf95118a92686d8f1bc9e553a03",
+      "note": "",
+      "segments": [
+        {
+          "start": 106.394,
+          "end": 720.21
+        }
+      ]
+    },
+    {
+      "id": "s8-phoenix-volcano",
+      "stage": 8,
+      "asset": "s8-phoenix-volcano.mp4",
+      "bytes": 79590497,
+      "sha256": "d561217a9bfdfa0ec2d0c4b9deaeae7bef7be3b6f8c2fe9ffccd15ccc5e2b071",
+      "note": "Joined visits to this form; cuts skip other forms.",
+      "segments": [
+        {
+          "start": 456.534,
+          "end": 511.068
+        },
+        {
+          "start": 596.744,
+          "end": 618.935
+        }
+      ]
+    },
+    {
+      "id": "stage8-final",
+      "stage": 8,
+      "asset": "stage8-final.mp4",
+      "bytes": 527785137,
+      "sha256": "ee206c75f7bb282df4ffef96b1fa8b4588aeeb9541e4ce2b333a4e1c20d8b970",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "stage8-miniboss",
+      "stage": 8,
+      "asset": "stage8-miniboss.mp4",
+      "bytes": 156292309,
+      "sha256": "c306f67fe1c43e1afa8d72b75dca5a9897cf8224bf8a825aa399ab891ed712d3",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "stage9-boss",
+      "stage": 9,
+      "asset": "stage9-boss.mp4",
+      "bytes": 99706519,
+      "sha256": "6e1c55ee95726399f2a570516b680beb1c93e9f3272f622764873f2ceafc84a7",
+      "note": "",
+      "segments": []
+    },
+    {
+      "id": "stage9-miniboss",
+      "stage": 9,
+      "asset": "stage9-miniboss.mp4",
+      "bytes": 91813005,
+      "sha256": "a1959992c9eb4248f74cd08e766e33ffb155b3e9f0acb0aa985a4b4d2e367e9e",
+      "note": "",
+      "segments": []
+    }
+  ],
+  "gameFiles": 1450,
+  "gameBytes": 136566261,
+  "fullSuite": {
+    "exitCode": 1,
+    "unchangedBaselineFailures": 5
+  },
+  "scope": "Current main BOF runtime/assets, portable source/checks, Nightwing/Rough Riders art sources and review documentation. Existing deletions and expansion/topdown work are preserved locally and omitted."
+}

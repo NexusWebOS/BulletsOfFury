@@ -1,0 +1,916 @@
+{
+  "identity": {
+    "checks": [
+      {
+        "name": "Regular teal aircraft and royal cockpit are pixel-identical to the existing design",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Bank, roll and pitch now use the canonical aircraft rather than Part2 art",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The inverted view retains exactly the canonical wing planform",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All rebuilt textures have even fixed cells and fit4096px",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every rebuilt body, hit and shadow frame has transparent safety borders",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "whole white-hit masks match every actual pose silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "heading white-hit masks match every actual pose silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "flyover white-hit masks match every actual pose silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "drift_left white-hit masks match every actual pose silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "drift_right white-hit masks match every actual pose silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "approach white-hit masks match every actual pose silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "clean white-hit masks match every actual pose silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "flyover shadow uses the same new planform and source alias",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "drift_left shadow uses the same new planform and source alias",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "drift_right shadow uses the same new planform and source alias",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "approach shadow uses the same new planform and source alias",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "cruise native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "clean",
+              "frame": 4
+            },
+            {
+              "bank": "gun_left",
+              "frame": 127
+            },
+            {
+              "bank": "gun_right",
+              "frame": 7
+            }
+          ],
+          "pose": {
+            "bank": "whole",
+            "frame": 4,
+            "meta": {
+              "engines": [
+                [
+                  -12.5,
+                  -64
+                ],
+                [
+                  12.5,
+                  -64
+                ]
+              ],
+              "angle": 0,
+              "scale": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "cruise native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_cruise",
+            "exhaust_cruise",
+            "clean_hit",
+            "gun_left_hit",
+            "gun_right_hit"
+          ]
+        }
+      },
+      {
+        "name": "bank native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "whole",
+              "frame": 65
+            }
+          ],
+          "pose": {
+            "bank": "whole",
+            "frame": 65,
+            "meta": {
+              "engines": [
+                [
+                  -9.252393562200545,
+                  -64
+                ],
+                [
+                  13.844594750581624,
+                  -64
+                ]
+              ],
+              "angle": 0,
+              "scale": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "bank native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_cruise",
+            "exhaust_cruise",
+            "whole_hit"
+          ]
+        }
+      },
+      {
+        "name": "roll native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "whole",
+              "frame": 18
+            }
+          ],
+          "pose": {
+            "bank": "whole",
+            "frame": 18,
+            "meta": {
+              "engines": [
+                [
+                  -9.252393562200545,
+                  -64
+                ],
+                [
+                  13.844594750581624,
+                  -64
+                ]
+              ],
+              "angle": 0,
+              "scale": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "roll native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_cruise",
+            "exhaust_cruise",
+            "whole_hit"
+          ]
+        }
+      },
+      {
+        "name": "somer native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "whole",
+              "frame": 35
+            }
+          ],
+          "pose": {
+            "bank": "whole",
+            "frame": 35,
+            "meta": {
+              "engines": [
+                [
+                  -12.5,
+                  -41.01219330881976
+                ],
+                [
+                  12.5,
+                  -41.01219330881976
+                ]
+              ],
+              "angle": 0,
+              "scale": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "somer native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_cruise",
+            "exhaust_cruise",
+            "whole_hit"
+          ]
+        }
+      },
+      {
+        "name": "inverted native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "clean",
+              "frame": 16
+            },
+            {
+              "bank": "gun_left",
+              "frame": 127
+            },
+            {
+              "bank": "gun_right",
+              "frame": 7
+            }
+          ],
+          "pose": {
+            "bank": "whole",
+            "frame": 16,
+            "meta": {
+              "engines": [
+                [
+                  -12.5,
+                  -64
+                ],
+                [
+                  12.5,
+                  -64
+                ]
+              ],
+              "angle": 0,
+              "scale": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "inverted native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_cruise",
+            "exhaust_cruise",
+            "clean_hit",
+            "gun_left_hit",
+            "gun_right_hit"
+          ]
+        }
+      },
+      {
+        "name": "flyover native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_large_b",
+              "frame": 5
+            },
+            {
+              "bank": "exhaust_large_b",
+              "frame": 5
+            },
+            {
+              "bank": "flyover_shadow",
+              "frame": 3
+            },
+            {
+              "bank": "flyover",
+              "frame": 3
+            }
+          ],
+          "pose": {
+            "bank": "flyover",
+            "frame": 3,
+            "meta": {
+              "engines": [
+                [
+                  20.000000000000014,
+                  102.4
+                ],
+                [
+                  -19.99999999999999,
+                  102.4
+                ]
+              ],
+              "angle": 3.141592653589793,
+              "scale": 1.6
+            }
+          }
+        }
+      },
+      {
+        "name": "flyover native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_large_b",
+            "exhaust_large_b",
+            "flyover_shadow",
+            "flyover_hit"
+          ]
+        }
+      },
+      {
+        "name": "drift native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_cruise",
+              "frame": 181
+            },
+            {
+              "bank": "exhaust_cruise",
+              "frame": 181
+            },
+            {
+              "bank": "drift_right_shadow",
+              "frame": 8
+            },
+            {
+              "bank": "drift_right",
+              "frame": 8
+            }
+          ],
+          "pose": {
+            "bank": "drift_right",
+            "frame": 8,
+            "meta": {
+              "engines": [
+                [
+                  -70.18622942395251,
+                  50.28080815278531
+                ],
+                [
+                  -84.37371542593156,
+                  22.900203076663427
+                ]
+              ],
+              "angle": 4.234320533099286,
+              "scale": 1.3351524615763952
+            }
+          }
+        }
+      },
+      {
+        "name": "drift native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_cruise",
+            "exhaust_cruise",
+            "drift_right_shadow",
+            "drift_right_hit"
+          ]
+        }
+      },
+      {
+        "name": "return native renderer uses exactly one source-locked hull",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "exhaust_cruise",
+              "frame": 5
+            },
+            {
+              "bank": "approach_shadow",
+              "frame": 15
+            },
+            {
+              "bank": "approach",
+              "frame": 15
+            }
+          ],
+          "pose": {
+            "bank": "approach",
+            "frame": 15,
+            "meta": {
+              "engines": [
+                [
+                  -12.5,
+                  -64
+                ],
+                [
+                  12.5,
+                  -64
+                ]
+              ],
+              "angle": 0,
+              "scale": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "return native flash selects matching authored hit art",
+        "passed": true,
+        "data": {
+          "flash": 0.16,
+          "calls": [
+            "exhaust_cruise",
+            "exhaust_cruise",
+            "approach_shadow",
+            "approach_hit"
+          ]
+        }
+      },
+      {
+        "name": "Removed extra-wing pixels no longer create phantom hull hits",
+        "passed": true,
+        "data": 26
+      },
+      {
+        "name": "Nightwing still has one health pool and one live target",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native rendering has no game, draw or HTTP errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "legacy": {
+    "checks": [
+      {
+        "name": "All aircraft, weapons and wind banks use even cells and bounded texture dimensions",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Whole-aircraft palette aliases are ready across native and depth poses",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Nightwing still has one native health pool and one Retina target",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Dual machine guns arm a real player Retina warning before release",
+        "passed": true,
+        "data": {
+          "action": {
+            "kind": "gun",
+            "phase": "warn",
+            "t": 0.016666666666666666,
+            "n": 0,
+            "next": 0,
+            "x": 340.2613333333333,
+            "y": 153.5027577314455,
+            "tx": 340,
+            "ty": 399.36,
+            "warn": 0.95,
+            "id": 2
+          },
+          "locks": 1
+        }
+      },
+      {
+        "name": "Both physical turret sockets release paired machine-gun bullets",
+        "passed": true,
+        "data": [
+          {
+            "event": "turret-shot",
+            "time": 5.999999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 0,
+            "x": 288.2428903045161,
+            "y": 190.44511297418333,
+            "angle": 7.6576320931251205,
+            "frame": 124
+          },
+          {
+            "event": "turret-shot",
+            "time": 5.999999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 1,
+            "x": 391.7571096954839,
+            "y": 190.44511297418333,
+            "angle": 1.7671458676442586,
+            "frame": 4
+          },
+          {
+            "event": "turret-shot",
+            "time": 6.099999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 0,
+            "x": 288.2428903045161,
+            "y": 190.79966244574953,
+            "angle": 7.6576320931251205,
+            "frame": 124
+          },
+          {
+            "event": "turret-shot",
+            "time": 6.099999999999984,
+            "id": 1,
+            "kind": "gun",
+            "side": 1,
+            "x": 391.7571096954839,
+            "y": 190.79966244574953,
+            "angle": 1.7671458676442586,
+            "frame": 4
+          }
+        ]
+      },
+      {
+        "name": "Machine-gun bullets cannot be shot down",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native renderer draws exactly two separate recoil guns and two anchored exhausts",
+        "passed": true,
+        "data": {
+          "calls": 2,
+          "modules": true,
+          "engines": [
+            [
+              327.7613333333333,
+              90.34972144153807
+            ],
+            [
+              352.7613333333333,
+              90.34972144153807
+            ]
+          ]
+        }
+      },
+      {
+        "name": "Gun kickback uses multiple authored recoil frames",
+        "passed": true,
+        "data": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "Wind charge starts as its own exclusive attack",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind charge darkens scenery without protecting the boss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Current complete pose retains accepted damage and hit flash while charging",
+        "passed": true,
+        "data": {
+          "damage": 1,
+          "flash": 0.16
+        }
+      },
+      {
+        "name": "Animated wind rounds leave both guns and carry Wind damage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Live projectile renderer selects the generated animated wind bank",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind volley has finite recovery and clears scenery dimming",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Cruise, boosted dash, large flyover and small approach use distinct exhaust banks",
+        "passed": true,
+        "data": [
+          "large_a",
+          "small",
+          "boost",
+          "cruise",
+          "large_b"
+        ]
+      },
+      {
+        "name": "Dashes leave bounded authored wind rings",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Accepted hits visibly white the whole body and both recoil modules",
+        "passed": true,
+        "data": {
+          "draws": 3,
+          "lit": 12033,
+          "neutral": 12033,
+          "damaged": true
+        }
+      },
+      {
+        "name": "The native white hit flash expires while the wind jet keeps moving",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages keep the original aircraft sources",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or asset HTTP errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": {
+    "checks": [
+      {
+        "name": "Fresh recording reaches native Nightwing defeat",
+        "passed": true,
+        "data": "native defeat"
+      },
+      {
+        "name": "No game, console, HTTP or bot errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No failed network resources beyond normal cancelled preloads",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "The film shows the actual protected entrance and normal combat",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native dash, close flyover, drifting turn and return all occur",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Wind and dual guns are present in real combat",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native footage shows actual damage flash and ordinary clear frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recording audio taps are healthy",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Captured runtime and artwork match the installed game",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recorded audio is audible without clipping",
+        "passed": true,
+        "data": {
+          "meanDb": -17.8,
+          "peakDb": -2.4
+        }
+      }
+    ],
+    "seconds": 102.548,
+    "nativeFps": 56.52962515114873,
+    "audio": {
+      "meanDb": -17.8,
+      "peakDb": -2.4
+    },
+    "sourceHashes": {
+      "index.html": "10b1036a7cf4f39c30ed736356b921b4160bfb9f2699623a68ebb88beee552ec",
+      "assets/game.js": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+      "assets/nightwing_wind_1028.js": "0559a141180d8affc3ee6b7bd32fee72066dae2fe992f28a459ff334630a756f",
+      "assets/nightwing_flight_1027.js": "3b25bfa58ef944944952f113f285c343485141c2a116bb0d1ab9eb2b06fa9688",
+      "assets/nightwing_entrance_1027.js": "7ebbf33e75ffd3ec9d6316c2058995da48ac7ef7a792bcf65ca236fd402d2794",
+      "assets/nightwing_wind_art_1028.js": "3bc2f7acc128d27310298d5c9f318d702cb0d297bea6d911995cebf45628b2e7",
+      "assets/game/levels/stage_06/boss/nightwing_wind_1028/whole_identity_1028b.png": "762439b40550eb8dde774faa0252eed92dab8576fffa3801298b08a329664bd0"
+    },
+    "method": "Real live Furious Nightwing life and native defeat, with GOD input bot and normal allies. Carrier fight skipped in setup via native ace spawn. No enemy health, attack phase or timeline writes. First35s withhold player fire."
+  },
+  "playback": {
+    "checks": [
+      {
+        "name": "Current review images load",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 decodes at1280x800",
+        "passed": true,
+        "data": {
+          "w": 1280,
+          "h": 800,
+          "d": 19.005
+        }
+      },
+      {
+        "name": "showcase.mp4 supports range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.1",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.5",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 seeks to 0.9",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "showcase.mp4 has moving frames and decoded sound",
+        "passed": true,
+        "data": {
+          "t": 2.844182,
+          "a": 156197,
+          "f": 212
+        }
+      },
+      {
+        "name": "nightwing-identity/stage6-furious.mp4 decodes at1280x800",
+        "passed": true,
+        "data": {
+          "w": 1280,
+          "h": 800,
+          "d": 102.486
+        }
+      },
+      {
+        "name": "nightwing-identity/stage6-furious.mp4 supports range seeking",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-identity/stage6-furious.mp4 seeks to 0.1",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-identity/stage6-furious.mp4 seeks to 0.5",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-identity/stage6-furious.mp4 seeks to 0.9",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "nightwing-identity/stage6-furious.mp4 has moving frames and decoded sound",
+        "passed": true,
+        "data": {
+          "t": 2.843991,
+          "a": 131155,
+          "f": 214
+        }
+      },
+      {
+        "name": "No review browser errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "rebuild": {
+    "banks": 31,
+    "frames": 2393,
+    "byteIdentical": true,
+    "source": "source-locked whole aircraft with editable Aseprite sheet"
+  },
+  "fullSuite": {
+    "exitCode": 1,
+    "unchangedBaselineFailures": 5
+  },
+  "review": "http://127.0.0.1:61609/"
+}

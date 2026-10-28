@@ -1,0 +1,17 @@
+# Jumping Hammer windups and double slams — October22
+
+Stage5 now follows the approved Stage8 straight-down end-cap attack. New PixelLab behind-head windups and explicit descent keys form18 blue/Chromium poses and16 corrupted poses. Both jump toward the committed player position. Stage8 shows its windup on screen before lift-off. The original tell and first-impact times remain.
+
+Every other normal Hammer leap can add a Hama-style second swing: a short first-contact hold, re-cock, hopping straight-down blow, and recovery. Both use their own current body artwork throughout. The original Hama exclusive encounter keeps its existing animation/music clock. Follow-up targets commit before the new green/yellow/red tell; native invulnerability, hit sets, damage, audio, wave/explosion owners and defeat cancellation apply. Counter starts cannot interrupt Stage5's follow-up.
+
+Each hammer has its own five-frame PixelLab corona. New leap frames use measured head sockets;707 existing armed cells have offline measured light positions. Released/broken/unarmed bodies do not receive a floating hammer glow. Physical held hammers retain their existing luminous pixels as well. Blue Chromium and white damage-feedback palettes are authored sheets. Native markHit/part flash timers still select and expire the white frames.
+
+Source units: blue512-square fixed cells/pivot256,228; corrupted464-square fixed cells/pivot232,209. Separately generated blue front/impact keys use the measured100px-to64px shoulder unit, converted offline around the chest landmark; the corrupted front key uses its measured .85 source conversion. No silhouette fitting or nonuniform stretch. The finished banks use one fixed canvas, pivot and common proportional unit. All new cells are even, padded and alpha-bounds checked.
+
+The new actor, corona and follow-up warning renderers use fixed stored pixels and integer-position blits. Follow-up cones/reticles are offline conversions of the game's actual warning artwork. No new runtime rotation, scale, alpha animation, tint/compositing or glow synthesis. Existing unrelated giant/ball/spin/morph/side-body rendering and the original encounter's warning/effect helpers still use legacy transforms or opacity; this pass does not claim a complete portability migration.
+
+Seven banks,10 WebP sheets,120 registered cells including52 authored white flash cells. Metadata and SHA256s: assets/game/shared/combat/hammer_jump_1022/manifest.json. Builder: _BUILD_SOURCE/build_hammer_jump_1022.py. Reproducible sources, jobs and rejected candidates: _ART_SOURCES/hammer_jump_1022. Rejected top-clipped windup cells, malformed floating-head/intermediate poses and the double-outfit transfer never ship. Original Hama references remain archived; their lower-detail body is not swapped into the new combo.
+
+Verification: native Chromium 24/24; Normal/Hard/Furious landings, both single/double completions, exactly one follow-up impact, visible windup before Stage8 takeoff, current Chromium palette, actual flash pixels/expiry, constant armed glow, no broken-body halo, evasion invulnerability, counter interlock, defeat cancellation, distinct warning pixels, plain new rendering, decoded impact audio and zero renderer/page errors. Full official core reached final BUILD OK,0 ERRORS with exit0; game.js/new runtime syntax passes. Native captures are isolated encounter review clips, not full campaign playthroughs.
+
+PixelLab credit snapshot6.35->5.36USD; no outstanding jobs. No commit or push.

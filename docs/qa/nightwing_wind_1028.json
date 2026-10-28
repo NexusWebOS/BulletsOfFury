@@ -1,0 +1,753 @@
+{
+  "checks": [
+    {
+      "name": "All aircraft, weapons and wind banks use even cells and bounded texture dimensions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Whole-aircraft palette aliases are ready across native and depth poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Nightwing still has one native health pool and one Retina target",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dual machine guns arm a real player Retina warning before release",
+      "passed": true,
+      "data": {
+        "action": {
+          "kind": "gun",
+          "phase": "warn",
+          "t": 0.016666666666666666,
+          "n": 0,
+          "next": 0,
+          "x": 340.2613333333333,
+          "y": 153.5644725460212,
+          "tx": 340,
+          "ty": 399.36,
+          "warn": 0.95,
+          "id": 2
+        },
+        "locks": 1
+      }
+    },
+    {
+      "name": "Both physical turret sockets release paired machine-gun bullets",
+      "passed": true,
+      "data": [
+        {
+          "event": "turret-shot",
+          "time": 5.999999999999984,
+          "id": 1,
+          "kind": "gun",
+          "side": 0,
+          "x": 288.2428903045161,
+          "y": 190.44511297418333,
+          "angle": 7.6576320931251205,
+          "frame": 124
+        },
+        {
+          "event": "turret-shot",
+          "time": 5.999999999999984,
+          "id": 1,
+          "kind": "gun",
+          "side": 1,
+          "x": 391.7571096954839,
+          "y": 190.44511297418333,
+          "angle": 1.7671458676442586,
+          "frame": 4
+        },
+        {
+          "event": "turret-shot",
+          "time": 6.099999999999984,
+          "id": 1,
+          "kind": "gun",
+          "side": 0,
+          "x": 288.2428903045161,
+          "y": 190.79966244574953,
+          "angle": 7.6576320931251205,
+          "frame": 124
+        },
+        {
+          "event": "turret-shot",
+          "time": 6.099999999999984,
+          "id": 1,
+          "kind": "gun",
+          "side": 1,
+          "x": 391.7571096954839,
+          "y": 190.79966244574953,
+          "angle": 1.7671458676442586,
+          "frame": 4
+        }
+      ]
+    },
+    {
+      "name": "Machine-gun bullets cannot be shot down",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native renderer draws exactly two separate recoil guns and two anchored exhausts",
+      "passed": true,
+      "data": {
+        "calls": 2,
+        "modules": true,
+        "engines": [
+          [
+            327.7613333333333,
+            90.41143625611375
+          ],
+          [
+            352.7613333333333,
+            90.41143625611375
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Gun kickback uses multiple authored recoil frames",
+      "passed": true,
+      "data": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "Wind charge starts as its own exclusive attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Wind charge darkens scenery without protecting the boss",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Current complete pose retains accepted damage and hit flash while charging",
+      "passed": true,
+      "data": {
+        "damage": 1,
+        "flash": 0.16
+      }
+    },
+    {
+      "name": "Animated wind rounds leave both guns and carry Wind damage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Live projectile renderer selects the generated animated wind bank",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Wind volley has finite recovery and clears scenery dimming",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cruise, boosted dash, large flyover and small approach use distinct exhaust banks",
+      "passed": true,
+      "data": [
+        "large_b",
+        "cruise",
+        "large_a",
+        "boost",
+        "small"
+      ]
+    },
+    {
+      "name": "Dashes leave bounded authored wind rings",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Accepted hits visibly white the whole body and both recoil modules",
+      "passed": true,
+      "data": {
+        "draws": 3,
+        "lit": 12030,
+        "neutral": 12030,
+        "damaged": true
+      }
+    },
+    {
+      "name": "The native white hit flash expires while the wind jet keeps moving",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Other stages keep the original aircraft sources",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game, draw or asset HTTP errors",
+      "passed": true,
+      "data": {
+        "errors": [],
+        "http": []
+      }
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "art": {
+    "byteIdenticalRebuild": true,
+    "assets": 28,
+    "banks": [
+      {
+        "bank": "whole",
+        "frames": 107,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          3808
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "whole_hit",
+        "frames": 107,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          3808
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "heading",
+        "frames": 96,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          3264
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "heading_hit",
+        "frames": 96,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          3264
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "flyover",
+        "frames": 8,
+        "cell": [
+          432,
+          432
+        ],
+        "texture": [
+          3456,
+          432
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "flyover_hit",
+        "frames": 8,
+        "cell": [
+          432,
+          432
+        ],
+        "texture": [
+          3456,
+          432
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "drift_left",
+        "frames": 24,
+        "cell": [
+          432,
+          432
+        ],
+        "texture": [
+          3456,
+          1296
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "drift_left_hit",
+        "frames": 24,
+        "cell": [
+          432,
+          432
+        ],
+        "texture": [
+          3456,
+          1296
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "drift_right",
+        "frames": 24,
+        "cell": [
+          432,
+          432
+        ],
+        "texture": [
+          3456,
+          1296
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "drift_right_hit",
+        "frames": 24,
+        "cell": [
+          432,
+          432
+        ],
+        "texture": [
+          3456,
+          1296
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "approach",
+        "frames": 16,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          544
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "approach_hit",
+        "frames": 16,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          544
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "death_large",
+        "frames": 32,
+        "cell": [
+          432,
+          432
+        ],
+        "texture": [
+          3456,
+          1728
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "clean",
+        "frames": 17,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          816
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "clean_hit",
+        "frames": 17,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          816
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "gun_left",
+        "frames": 128,
+        "cell": [
+          96,
+          96
+        ],
+        "texture": [
+          768,
+          1536
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "gun_left_hit",
+        "frames": 128,
+        "cell": [
+          96,
+          96
+        ],
+        "texture": [
+          768,
+          1536
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "gun_right",
+        "frames": 128,
+        "cell": [
+          96,
+          96
+        ],
+        "texture": [
+          768,
+          1536
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "gun_right_hit",
+        "frames": 128,
+        "cell": [
+          96,
+          96
+        ],
+        "texture": [
+          768,
+          1536
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "exhaust_small",
+        "frames": 256,
+        "cell": [
+          96,
+          96
+        ],
+        "texture": [
+          768,
+          3072
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "exhaust_cruise",
+        "frames": 256,
+        "cell": [
+          96,
+          96
+        ],
+        "texture": [
+          768,
+          3072
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "exhaust_boost",
+        "frames": 256,
+        "cell": [
+          192,
+          192
+        ],
+        "texture": [
+          3072,
+          3072
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "exhaust_large_a",
+        "frames": 128,
+        "cell": [
+          320,
+          320
+        ],
+        "texture": [
+          3840,
+          3520
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "exhaust_large_b",
+        "frames": 128,
+        "cell": [
+          320,
+          320
+        ],
+        "texture": [
+          3840,
+          3520
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "wind_ring",
+        "frames": 128,
+        "cell": [
+          192,
+          192
+        ],
+        "texture": [
+          1536,
+          3072
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "wind_charge",
+        "frames": 24,
+        "cell": [
+          272,
+          272
+        ],
+        "texture": [
+          2176,
+          816
+        ],
+        "edgeAlpha": 0
+      },
+      {
+        "bank": "wind_bullet",
+        "frames": 17,
+        "cell": [
+          40,
+          40
+        ],
+        "texture": [
+          320,
+          120
+        ],
+        "edgeAlpha": 0
+      }
+    ],
+    "pixellab": {
+      "ring": "4eba8168-3c04-4858-a4a0-e843f2b5f243",
+      "charge": "b12506e1-7690-400b-92a0-462a2e2f4851",
+      "bullet": "2009ff50-011a-4117-98a8-4d4030ac9fda",
+      "thruster": "9416e797-7447-4e4e-9482-3973b78e6ca7"
+    }
+  },
+  "video": {
+    "completed": true,
+    "duration": 188.23,
+    "bytes": 215882242,
+    "defeatSeconds": 181.092,
+    "nativeAverageFps": 53.92508574365445,
+    "audio": {
+      "meanDb": -18.4,
+      "peakDb": -0.3,
+      "playing": {
+        "boss6": 3,
+        "bossAlarm": 1,
+        "allyArrive": 2,
+        "hit": 1095,
+        "missile": 100,
+        "mechRoar": 5,
+        "av3_impact_metal": 916,
+        "enemyMachineGunLight": 729,
+        "expSmall": 933,
+        "bossWeaponCharge": 18,
+        "av3_target_acquire": 63,
+        "alertLockon": 49,
+        "launch": 15,
+        "arcBarrelRoll": 76,
+        "enemyMachineGunHeavy": 60,
+        "dash": 64,
+        "enemyHeavyLaser": 14,
+        "powerup": 21,
+        "retinaLockBeep": 131,
+        "retinaCharge": 17,
+        "loop": 72,
+        "laserBeamStart": 142,
+        "expBig": 114,
+        "missileHit": 45,
+        "laserBeamEnd": 141,
+        "juggernautRamLaunch": 1,
+        "helixBurst": 1,
+        "jetDash": 9,
+        "combatOrb0927": 25,
+        "cfComboKinetic": 25,
+        "fireOrbImpact": 25,
+        "weapon": 1,
+        "achievement": 1,
+        "bossWhiteout": 1,
+        "expBoss": 1,
+        "life": 1,
+        "death": 1,
+        "stageclear": 1,
+        "statTick": 10,
+        "stageClear": 1
+      }
+    },
+    "showcase": {
+      "start": 47.641999999999996,
+      "end": 72.517,
+      "duration": 24.875
+    },
+    "modes": [
+      "arrive",
+      "fight",
+      "flyover",
+      "gun-fire",
+      "gun-recover",
+      "gun-warn",
+      "leave",
+      "north",
+      "return",
+      "settle",
+      "south",
+      "south_wait",
+      "wind-charge",
+      "wind-fire",
+      "wind-recover"
+    ],
+    "throttles": [
+      "boost",
+      "cruise",
+      "large_a",
+      "large_b",
+      "small"
+    ],
+    "maxWindRounds": 20,
+    "maxWindRings": 5,
+    "maxDim": 12,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "botErrors": [],
+    "abortedPreloads": 23,
+    "godBlocks": 585,
+    "runtimeSourceMatches": true,
+    "sha256": "2c610c2a56b87684d3cdd36b2ae363453a88dd2201777c651264346f3b7908ad"
+  },
+  "playback": [
+    {
+      "name": "shortfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 24.899675,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "shortfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 35,
+        "audio": 25886
+      }
+    },
+    {
+      "name": "shortfilm seek2s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek8s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "shortfilm seek20s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm range206 seeking",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm metadata and complete dimensions",
+      "pass": true,
+      "data": {
+        "duration": 188.226,
+        "w": 1280,
+        "h": 800
+      }
+    },
+    {
+      "name": "fullfilm moving frames and audio decode",
+      "pass": true,
+      "data": {
+        "frames": 32,
+        "audio": 3711
+      }
+    },
+    {
+      "name": "fullfilm seek45s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek51s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek70s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fullfilm seek180s",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No review browser errors",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "Captured affected source files still match current game",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "fullSuite": {
+    "errors": 5,
+    "baselineUnchanged": true
+  },
+  "review": "http://127.0.0.1:55280/index.html"
+}
