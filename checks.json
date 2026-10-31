@@ -1,0 +1,507 @@
+{
+  "checks": [
+    {
+      "name": "All9 full videos and24 chapter paths resolve to local files",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All33 cards and local posters load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-miniboss decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 54.117
+      }
+    },
+    {
+      "name": "stage6-miniboss supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-miniboss seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-miniboss seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-miniboss seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-miniboss has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 357,
+        "a": 237773,
+        "t": 51.373324,
+        "lit": 3712
+      }
+    },
+    {
+      "name": "stage6-carrier-nightwing decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 194.757
+      }
+    },
+    {
+      "name": "stage6-carrier-nightwing supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier-nightwing seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier-nightwing seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier-nightwing seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier-nightwing has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 314,
+        "a": 218546,
+        "t": 183.522783,
+        "lit": 7234
+      }
+    },
+    {
+      "name": "stage6-rough-riders decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 295.799349
+      }
+    },
+    {
+      "name": "stage6-rough-riders supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-rough-riders seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-rough-riders seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-rough-riders seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-rough-riders has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 383,
+        "a": 270038,
+        "t": 278.49872,
+        "lit": 7349
+      }
+    },
+    {
+      "name": "stage7-miniboss decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 86.941
+      }
+    },
+    {
+      "name": "stage7-miniboss supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-miniboss seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-miniboss seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-miniboss seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-miniboss has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 417,
+        "a": 279148,
+        "t": 82.17493,
+        "lit": 7357
+      }
+    },
+    {
+      "name": "stage7-boss decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 130.918
+      }
+    },
+    {
+      "name": "stage7-boss supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-boss seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-boss seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-boss seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage7-boss has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 515,
+        "a": 346789,
+        "t": 123.507105,
+        "lit": 6096
+      }
+    },
+    {
+      "name": "stage8-miniboss decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 75.733008
+      }
+    },
+    {
+      "name": "stage8-miniboss supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 380,
+        "a": 259848,
+        "t": 71.640822,
+        "lit": 4493
+      }
+    },
+    {
+      "name": "stage8-final decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 685.907
+      }
+    },
+    {
+      "name": "stage8-final supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 411,
+        "a": 287842,
+        "t": 645.201756,
+        "lit": 2616
+      }
+    },
+    {
+      "name": "stage9-miniboss decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 91.92
+      }
+    },
+    {
+      "name": "stage9-miniboss supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-miniboss seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-miniboss seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-miniboss seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-miniboss has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 408,
+        "a": 274656,
+        "t": 86.853106,
+        "lit": 2314
+      }
+    },
+    {
+      "name": "stage9-boss decodes at native1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 190.499675
+      }
+    },
+    {
+      "name": "stage9-boss supports byte-range video delivery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-boss seeks to5%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-boss seeks to60%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-boss seeks to94%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-boss has advancing video, decoded pixels and game audio",
+      "passed": true,
+      "data": {
+        "f": 364,
+        "a": 253131,
+        "t": 179.518679,
+        "lit": 2989
+      }
+    },
+    {
+      "name": "stage6-carrier opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-flight opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-wind opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-formation opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase2 opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-dracodia opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-code-hammer opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-helicopter opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-neural-archon opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phoenix-volcano opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-final-life opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-sentinels opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage9-tidal opens the correct local full recording and chapter time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rapid selection keeps the most recent video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview fits phone width",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Playback makes no remote network requests",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "No preview browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "external": []
+}

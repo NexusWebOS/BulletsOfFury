@@ -1,0 +1,4273 @@
+{
+  "maxGrenades": 2,
+  "maxPendingRain": 2,
+  "maxLargeWaves": 1,
+  "fanPhases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "completed": true,
+  "seconds": 147.84,
+  "defeatSeconds": 140.577,
+  "maxHP": 6500,
+  "nativeFPS": 57.66656019138365,
+  "events": [
+    {
+      "event": "immediate-water-entry",
+      "time": 0,
+      "hp": 6500,
+      "maxhp": 6500
+    },
+    {
+      "event": "water-attack-start",
+      "time": 1.6166666666666658,
+      "kind": "bullets",
+      "half": false,
+      "warm": 1.35
+    },
+    {
+      "event": "aim-locked",
+      "time": 2.2333333333333303,
+      "kind": "bullets",
+      "target": {
+        "x": 345.63040463346397,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 2.966666666666661,
+      "kind": "bullets"
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 2.966666666666661,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 258.6122217812064
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.1999999999999935,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 259.29782605826114
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.433333333333326,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 259.2624703179812
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.6666666666666585,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 258.51133075157156
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 3.899999999999991,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 257.1543765461169
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.133333333333324,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 255.39027005087726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.3666666666666565,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 253.47728198661855
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.599999999999989,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 251.69547980250323
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 4.8333333333333215,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 250.30572492361844
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 300,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 300,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 300,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 300,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 300,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 380,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 380,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 380,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 380,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 5.066666666666654,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 380,
+      "y": 249.5114818206331
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 6.466666666666649,
+      "kind": "bullets"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 6.466666666666649,
+      "kind": "mortars",
+      "half": false,
+      "warm": 1.35
+    },
+    {
+      "event": "aim-locked",
+      "time": 7.0833333333333135,
+      "kind": "mortars",
+      "target": {
+        "x": 394.91080463346384,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 7.816666666666644,
+      "kind": "mortars"
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 7.816666666666644,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 331.92877670024353,
+      "y": 113.79428016559939
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 7.816666666666644,
+      "slot": "circleL",
+      "source": "fan-mortar",
+      "x": 331.92877670024353,
+      "y": 113.79428016559939
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 8.11666666666665,
+      "x": 356.91080463346384,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 8.11666666666665,
+      "slot": "circleL",
+      "x": 331.92877670024353,
+      "y": -9.205719834400583,
+      "target": {
+        "x": 356.91080463346384,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 8.633333333333342,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 459.9287767002436,
+      "y": 107.77001538591645
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 8.633333333333342,
+      "slot": "circleR",
+      "source": "fan-mortar",
+      "x": 459.9287767002436,
+      "y": 107.77001538591645
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 8.91666666666669,
+      "x": 450.91080463346384,
+      "y": 356.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 8.91666666666669,
+      "slot": "circleR",
+      "x": 459.9287767002436,
+      "y": -8.396651280750195,
+      "target": {
+        "x": 450.91080463346384,
+        "y": 356.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 9.450000000000049,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 331.92877670024353,
+      "y": 108.01922816779478
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 9.450000000000049,
+      "slot": "circleL",
+      "source": "fan-mortar",
+      "x": 331.92877670024353,
+      "y": 108.01922816779478
+    },
+    {
+      "event": "geyser-impact",
+      "time": 9.716666666666729,
+      "x": 356.91080463346384,
+      "y": 442.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 9.733333333333396,
+      "x": 320.91080463346384,
+      "y": 270.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 9.733333333333396,
+      "slot": "circleL",
+      "x": 331.92877670024353,
+      "y": -8.147438498871868,
+      "target": {
+        "x": 320.91080463346384,
+        "y": 270.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 10.266666666666756,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 459.9287767002436,
+      "y": 114.15386695023363
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 10.266666666666756,
+      "slot": "circleR",
+      "source": "fan-mortar",
+      "x": 459.9287767002436,
+      "y": 114.15386695023363
+    },
+    {
+      "event": "tidal-wave",
+      "time": 10.366666666666761,
+      "x": 356.91080463346384,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 10.516666666666769,
+      "x": 450.91080463346384,
+      "y": 356.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 10.566666666666771,
+      "x": 486.91080463346384,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 10.566666666666771,
+      "slot": "circleR",
+      "x": 459.9287767002436,
+      "y": -8.84613304976634,
+      "target": {
+        "x": 486.91080463346384,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "tidal-wave",
+      "time": 11.166666666666801,
+      "x": 450.91080463346384,
+      "y": 221.89840463346388,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 11.333333333333476,
+      "x": 320.91080463346384,
+      "y": 270.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 11.983333333333508,
+      "x": 320.91080463346384,
+      "y": 135.89840463346388,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 12.16666666666685,
+      "x": 486.91080463346384,
+      "y": 442.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 12.816666666666883,
+      "x": 486.91080463346384,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 15.116666666666998,
+      "kind": "mortars"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 15.116666666666998,
+      "kind": "grenades",
+      "half": false,
+      "warm": 2.1
+    },
+    {
+      "event": "aim-locked",
+      "time": 16.066666666667036,
+      "kind": "grenades",
+      "target": {
+        "x": 417.6556046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 17.233333333333636,
+      "kind": "grenades"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 17.233333333333636,
+      "x": 362.6556046334638,
+      "y": 442.8984046334639,
+      "warm": 1.8,
+      "source": "fan-grenade"
+    },
+    {
+      "event": "fan-grenade-launch",
+      "time": 17.233333333333636,
+      "slot": "circleL",
+      "x": 357.54235252065996,
+      "y": 122.8587272333111,
+      "target": {
+        "x": 362.6556046334638,
+        "y": 442.8984046334639
+      },
+      "fuse": 1.8
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 18.100000000000254,
+      "x": 472.6556046334638,
+      "y": 377.8984046334639,
+      "warm": 1.8,
+      "source": "fan-grenade"
+    },
+    {
+      "event": "fan-grenade-launch",
+      "time": 18.100000000000254,
+      "slot": "circleR",
+      "x": 485.54235252065996,
+      "y": 129.35609594756275,
+      "target": {
+        "x": 472.6556046334638,
+        "y": 377.8984046334639
+      },
+      "fuse": 1.8
+    },
+    {
+      "event": "water-grenade-explode",
+      "time": 19.0500000000002,
+      "x": 362.6556046334638,
+      "y": 442.8984046334639,
+      "radius": 48,
+      "shards": 10
+    },
+    {
+      "event": "water-grenade-explode",
+      "time": 19.916666666666817,
+      "x": 472.6556046334638,
+      "y": 377.8984046334639,
+      "radius": 48,
+      "shards": 10
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 23.383333333333287,
+      "kind": "grenades"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 23.383333333333287,
+      "kind": "tidal",
+      "half": false,
+      "warm": 3.35
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 23.399999999999952,
+      "index": 0,
+      "x": 256.72000513621754
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 24.133333333333244,
+      "index": 1,
+      "x": 391.1200051362175
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 24.899999999999867,
+      "index": 2,
+      "x": 525.5200051362176
+    },
+    {
+      "event": "aim-locked",
+      "time": 24.899999999999867,
+      "kind": "tidal",
+      "target": {
+        "x": 391.12000463346385,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 26.749999999999762,
+      "kind": "tidal"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 26.749999999999762,
+      "x": 256.72000513621754,
+      "y": -140,
+      "small": false
+    },
+    {
+      "event": "tidal-wave",
+      "time": 28.033333333333022,
+      "x": 391.1200051362175,
+      "y": -140,
+      "small": false
+    },
+    {
+      "event": "tidal-wave",
+      "time": 29.316666666666283,
+      "x": 525.5200051362176,
+      "y": -140,
+      "small": false
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 32.083333333332796,
+      "kind": "tidal"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 32.083333333332796,
+      "kind": "rain",
+      "half": false,
+      "warm": 1.8
+    },
+    {
+      "event": "aim-locked",
+      "time": 32.899999999999416,
+      "kind": "rain",
+      "target": {
+        "x": 387.32920463346386,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 33.89999999999936,
+      "kind": "rain"
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 33.89999999999936,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 317.29367402904535,
+      "y": 118.95014769095235
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 33.89999999999936,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 317.29367402904535,
+      "y": 118.95014769095235
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 33.89999999999936,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 445.2936740290454,
+      "y": 118.95014769095235
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 33.89999999999936,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 445.2936740290454,
+      "y": 118.95014769095235
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 34.19999999999934,
+      "x": 342.32920463346386,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 34.19999999999934,
+      "slot": "circleL",
+      "x": 317.29367402904535,
+      "y": -4.049852309047617,
+      "target": {
+        "x": 342.32920463346386,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 34.19999999999934,
+      "x": 432.32920463346386,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 34.19999999999934,
+      "slot": "circleR",
+      "x": 445.2936740290454,
+      "y": -4.049852309047617,
+      "target": {
+        "x": 432.32920463346386,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 34.71666666666598,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 317.29367402904535,
+      "y": 114.10478432514572
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 34.71666666666598,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 317.29367402904535,
+      "y": 114.10478432514572
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 34.71666666666598,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 445.2936740290454,
+      "y": 114.10478432514572
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 34.71666666666598,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 445.2936740290454,
+      "y": 114.10478432514572
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 35.01666666666596,
+      "x": 310.32920463346386,
+      "y": 367.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 35.01666666666596,
+      "slot": "circleL",
+      "x": 317.29367402904535,
+      "y": -8.89521567485426,
+      "target": {
+        "x": 310.32920463346386,
+        "y": 367.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 35.01666666666596,
+      "x": 464.32920463346386,
+      "y": 367.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 35.01666666666596,
+      "slot": "circleR",
+      "x": 445.2936740290454,
+      "y": -8.89521567485426,
+      "target": {
+        "x": 464.32920463346386,
+        "y": 367.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 35.5333333333326,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 317.29367402904535,
+      "y": 109.19871619774514
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 35.5333333333326,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 317.29367402904535,
+      "y": 109.19871619774514
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 35.5333333333326,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 445.2936740290454,
+      "y": 109.19871619774514
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 35.5333333333326,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 445.2936740290454,
+      "y": 109.19871619774514
+    },
+    {
+      "event": "geyser-impact",
+      "time": 35.79999999999925,
+      "x": 342.32920463346386,
+      "y": 442.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 35.79999999999925,
+      "x": 432.32920463346386,
+      "y": 442.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 35.81666666666592,
+      "x": 278.32920463346386,
+      "y": 292.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 35.81666666666592,
+      "slot": "circleL",
+      "x": 317.29367402904535,
+      "y": -6.9679504689215035,
+      "target": {
+        "x": 278.32920463346386,
+        "y": 292.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 35.81666666666592,
+      "x": 496.32920463346386,
+      "y": 292.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 35.81666666666592,
+      "slot": "circleR",
+      "x": 445.2936740290454,
+      "y": -6.9679504689215035,
+      "target": {
+        "x": 496.32920463346386,
+        "y": 292.8984046334639
+      }
+    },
+    {
+      "event": "tidal-wave",
+      "time": 36.449999999999214,
+      "x": 342.32920463346386,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 36.449999999999214,
+      "x": 432.32920463346386,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 36.61666666666587,
+      "x": 310.32920463346386,
+      "y": 367.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 36.61666666666587,
+      "x": 464.32920463346386,
+      "y": 367.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 37.266666666665834,
+      "x": 310.32920463346386,
+      "y": 232.89840463346388,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 37.266666666665834,
+      "x": 464.32920463346386,
+      "y": 232.89840463346388,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 37.416666666665826,
+      "x": 278.32920463346386,
+      "y": 292.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 37.416666666665826,
+      "x": 496.32920463346386,
+      "y": 292.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 38.06666666666579,
+      "x": 278.32920463346386,
+      "y": 157.89840463346388,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 38.06666666666579,
+      "x": 496.32920463346386,
+      "y": 157.89840463346388,
+      "small": true
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 41.04999999999895,
+      "kind": "rain"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 41.04999999999895,
+      "kind": "slide",
+      "half": false,
+      "warm": 1.6
+    },
+    {
+      "event": "aim-locked",
+      "time": 41.783333333332244,
+      "kind": "slide",
+      "target": {
+        "x": 413.8648046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 42.66666666666553,
+      "kind": "slide"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 42.66666666666553,
+      "x": 348.8648046334638,
+      "y": 190.2084716321567,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 42.66666666666553,
+      "x": 478.8648046334638,
+      "y": 190.2084716321567,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 42.89999999999885,
+      "x": 348.8648046334638,
+      "y": 297.80693133540046,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 42.89999999999885,
+      "x": 478.8648046334638,
+      "y": 297.80693133540046,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.13333333333217,
+      "x": 348.8648046334638,
+      "y": 405.4053910386442,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.13333333333217,
+      "x": 478.8648046334638,
+      "y": 405.4053910386442,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.36666666666549,
+      "x": 348.8648046334638,
+      "y": 513.003850741888,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.36666666666549,
+      "x": 478.8648046334638,
+      "y": 513.003850741888,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.59999999999881,
+      "x": 348.8648046334638,
+      "y": 620.6023104451318,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.59999999999881,
+      "x": 478.8648046334638,
+      "y": 620.6023104451318,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.83333333333213,
+      "x": 348.8648046334638,
+      "y": 728.2007701483756,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 43.83333333333213,
+      "x": 478.8648046334638,
+      "y": 728.2007701483756,
+      "small": true
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 49.099999999998495,
+      "kind": "slide"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 49.099999999998495,
+      "kind": "bullets",
+      "half": false,
+      "warm": 1.35
+    },
+    {
+      "event": "aim-locked",
+      "time": 49.71666666666513,
+      "kind": "bullets",
+      "target": {
+        "x": 394.91080463346384,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 50.44999999999842,
+      "kind": "bullets"
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.44999999999842,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 252.36915053892454
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.68333333333174,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 251.35481009315993
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 50.91666666666506,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 251.02391351377494
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.14999999999838,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 251.42490509723768
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.3833333333317,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 252.49907841875952
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.61666666666502,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 254.08917113690833
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 51.84999999999834,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 255.9623886933573
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.08333333333166,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 257.84448616595404
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.31666666666498,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 259.45991858498684
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.3307963267948966,
+      "x": 357.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.4507963267948965,
+      "x": 357.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.5707963267948966,
+      "x": 357.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.6907963267948967,
+      "x": 357.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "L",
+      "a": 1.8107963267948965,
+      "x": 357.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.3307963267948966,
+      "x": 437.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.4507963267948965,
+      "x": 437.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.5707963267948966,
+      "x": 437.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.6907963267948967,
+      "x": 437.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 52.5499999999983,
+      "kind": "slug",
+      "slot": "R",
+      "a": 1.8107963267948965,
+      "x": 437.345928691572,
+      "y": 260.5721815804882
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 53.89999999999822,
+      "kind": "bullets"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 53.89999999999822,
+      "kind": "mortars",
+      "half": false,
+      "warm": 1.35
+    },
+    {
+      "event": "aim-locked",
+      "time": 54.516666666664854,
+      "kind": "mortars",
+      "target": {
+        "x": 421.44640463346377,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 55.249999999998145,
+      "kind": "mortars"
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 55.249999999998145,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 360.0330453092381,
+      "y": 104.34479977285514
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 55.249999999998145,
+      "slot": "circleL",
+      "source": "fan-mortar",
+      "x": 360.0330453092381,
+      "y": 104.34479977285514
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 55.5166666666648,
+      "x": 383.44640463346377,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 55.5166666666648,
+      "slot": "circleL",
+      "x": 360.0330453092381,
+      "y": -4.988533560478176,
+      "target": {
+        "x": 383.44640463346377,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 56.066666666664766,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 488.0330453092381,
+      "y": 110.58359188427755
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 56.066666666664766,
+      "slot": "circleR",
+      "source": "fan-mortar",
+      "x": 488.0330453092381,
+      "y": 110.58359188427755
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 56.34999999999808,
+      "x": 477.44640463346377,
+      "y": 356.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 56.34999999999808,
+      "slot": "circleR",
+      "x": 488.0330453092381,
+      "y": -5.583074782389092,
+      "target": {
+        "x": 477.44640463346377,
+        "y": 356.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 56.883333333331386,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 360.0330453092381,
+      "y": 112.03551495723121
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 56.883333333331386,
+      "slot": "circleL",
+      "source": "fan-mortar",
+      "x": 360.0330453092381,
+      "y": 112.03551495723121
+    },
+    {
+      "event": "geyser-impact",
+      "time": 57.116666666664706,
+      "x": 383.44640463346377,
+      "y": 442.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 57.1666666666647,
+      "x": 347.44640463346377,
+      "y": 270.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 57.1666666666647,
+      "slot": "circleL",
+      "x": 360.0330453092381,
+      "y": -4.131151709435423,
+      "target": {
+        "x": 347.44640463346377,
+        "y": 270.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 57.699999999998006,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 488.0330453092381,
+      "y": 106.43976595157447
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 57.699999999998006,
+      "slot": "circleR",
+      "source": "fan-mortar",
+      "x": 488.0330453092381,
+      "y": 106.43976595157447
+    },
+    {
+      "event": "tidal-wave",
+      "time": 57.76666666666467,
+      "x": 383.44640463346377,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 57.94999999999799,
+      "x": 477.44640463346377,
+      "y": 356.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 57.98333333333132,
+      "x": 513.4464046334638,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 57.98333333333132,
+      "slot": "circleR",
+      "x": 488.0330453092381,
+      "y": -9.726900715092171,
+      "target": {
+        "x": 513.4464046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "tidal-wave",
+      "time": 58.599999999997955,
+      "x": 477.44640463346377,
+      "y": 221.89840463346388,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 58.76666666666461,
+      "x": 347.44640463346377,
+      "y": 270.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 59.416666666664575,
+      "x": 347.44640463346377,
+      "y": 135.89840463346388,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 59.58333333333123,
+      "x": 513.4464046334638,
+      "y": 442.8984046334639,
+      "source": "fan-mortar"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 60.233333333331196,
+      "x": 513.4464046334638,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 62.54999999999773,
+      "kind": "mortars"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 62.54999999999773,
+      "kind": "grenades",
+      "half": false,
+      "warm": 2.1
+    },
+    {
+      "event": "aim-locked",
+      "time": 63.49999999999768,
+      "kind": "grenades",
+      "target": {
+        "x": 413.8648046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 64.66666666666428,
+      "kind": "grenades"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 64.66666666666428,
+      "x": 358.8648046334638,
+      "y": 442.8984046334639,
+      "warm": 1.8,
+      "source": "fan-grenade"
+    },
+    {
+      "event": "fan-grenade-launch",
+      "time": 64.66666666666428,
+      "slot": "circleL",
+      "x": 353.17641982086343,
+      "y": 120.4769611012488,
+      "target": {
+        "x": 358.8648046334638,
+        "y": 442.8984046334639
+      },
+      "fuse": 1.8
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 65.5333333333309,
+      "x": 468.8648046334638,
+      "y": 377.8984046334639,
+      "warm": 1.8,
+      "source": "fan-grenade"
+    },
+    {
+      "event": "fan-grenade-launch",
+      "time": 65.5333333333309,
+      "slot": "circleR",
+      "x": 481.17641982086343,
+      "y": 113.98564781402098,
+      "target": {
+        "x": 468.8648046334638,
+        "y": 377.8984046334639
+      },
+      "fuse": 1.8
+    },
+    {
+      "event": "water-grenade-explode",
+      "time": 66.48333333333085,
+      "x": 358.8648046334638,
+      "y": 442.8984046334639,
+      "radius": 48,
+      "shards": 10
+    },
+    {
+      "event": "water-grenade-explode",
+      "time": 67.34999999999746,
+      "x": 468.8648046334638,
+      "y": 377.8984046334639,
+      "radius": 48,
+      "shards": 10
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 70.7833333333306,
+      "kind": "grenades"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 70.7833333333306,
+      "kind": "tidal",
+      "half": false,
+      "warm": 3.35
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 70.79999999999727,
+      "index": 0,
+      "x": 259.5417422103699
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 71.53333333333056,
+      "index": 1,
+      "x": 393.9417422103699
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 72.29999999999718,
+      "index": 2,
+      "x": 528.34174221037
+    },
+    {
+      "event": "aim-locked",
+      "time": 72.29999999999718,
+      "kind": "tidal",
+      "target": {
+        "x": 391.12000463346385,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 74.14999999999708,
+      "kind": "tidal"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 74.14999999999708,
+      "x": 259.5417422103699,
+      "y": -140,
+      "small": false
+    },
+    {
+      "event": "tidal-wave",
+      "time": 75.43333333333034,
+      "x": 393.9417422103699,
+      "y": -140,
+      "small": false
+    },
+    {
+      "event": "tidal-wave",
+      "time": 76.7166666666636,
+      "x": 528.34174221037,
+      "y": -140,
+      "small": false
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 79.48333333333011,
+      "kind": "tidal"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 79.48333333333011,
+      "kind": "rain",
+      "half": false,
+      "warm": 1.8
+    },
+    {
+      "event": "aim-locked",
+      "time": 80.29999999999673,
+      "kind": "rain",
+      "target": {
+        "x": 417.6556046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 81.29999999999667,
+      "kind": "rain"
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 81.29999999999667,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 356.66485754104997,
+      "y": 118.90485133152094
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 81.29999999999667,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 356.66485754104997,
+      "y": 118.90485133152094
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 81.29999999999667,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 484.66485754104997,
+      "y": 118.90485133152094
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 81.29999999999667,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 484.66485754104997,
+      "y": 118.90485133152094
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 81.59999999999665,
+      "x": 372.6556046334638,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 81.59999999999665,
+      "slot": "circleL",
+      "x": 356.66485754104997,
+      "y": -4.0951486684790215,
+      "target": {
+        "x": 372.6556046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 81.59999999999665,
+      "x": 462.6556046334638,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 81.59999999999665,
+      "slot": "circleR",
+      "x": 484.66485754104997,
+      "y": -4.0951486684790215,
+      "target": {
+        "x": 462.6556046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 82.11666666666329,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 356.66485754104997,
+      "y": 122.21603440342915
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 82.11666666666329,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 356.66485754104997,
+      "y": 122.21603440342915
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 82.11666666666329,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 484.66485754104997,
+      "y": 122.21603440342915
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 82.11666666666329,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 484.66485754104997,
+      "y": 122.21603440342915
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 82.43333333332994,
+      "x": 340.6556046334638,
+      "y": 367.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 82.43333333332994,
+      "slot": "circleL",
+      "x": 356.66485754104997,
+      "y": -7.6172989299041545,
+      "target": {
+        "x": 340.6556046334638,
+        "y": 367.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 82.43333333332994,
+      "x": 494.6556046334638,
+      "y": 367.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 82.43333333332994,
+      "slot": "circleR",
+      "x": 484.66485754104997,
+      "y": -7.6172989299041545,
+      "target": {
+        "x": 494.6556046334638,
+        "y": 367.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 82.93333333332991,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 356.66485754104997,
+      "y": 128.1060731293761
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 82.93333333332991,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 356.66485754104997,
+      "y": 128.1060731293761
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 82.93333333332991,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 484.66485754104997,
+      "y": 128.1060731293761
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 82.93333333332991,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 484.66485754104997,
+      "y": 128.1060731293761
+    },
+    {
+      "event": "geyser-impact",
+      "time": 83.19999999999656,
+      "x": 372.6556046334638,
+      "y": 442.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 83.19999999999656,
+      "x": 462.6556046334638,
+      "y": 442.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 83.26666666666323,
+      "x": 308.6556046334638,
+      "y": 292.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 83.26666666666323,
+      "slot": "circleL",
+      "x": 356.66485754104997,
+      "y": -8.560593537290519,
+      "target": {
+        "x": 308.6556046334638,
+        "y": 292.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 83.26666666666323,
+      "x": 526.6556046334638,
+      "y": 292.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 83.26666666666323,
+      "slot": "circleR",
+      "x": 484.66485754104997,
+      "y": -8.560593537290519,
+      "target": {
+        "x": 526.6556046334638,
+        "y": 292.8984046334639
+      }
+    },
+    {
+      "event": "tidal-wave",
+      "time": 83.84999999999653,
+      "x": 372.6556046334638,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 83.84999999999653,
+      "x": 462.6556046334638,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 84.03333333332985,
+      "x": 340.6556046334638,
+      "y": 367.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 84.03333333332985,
+      "x": 494.6556046334638,
+      "y": 367.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 84.68333333332981,
+      "x": 340.6556046334638,
+      "y": 232.89840463346388,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 84.68333333332981,
+      "x": 494.6556046334638,
+      "y": 232.89840463346388,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 84.86666666666314,
+      "x": 308.6556046334638,
+      "y": 292.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 84.86666666666314,
+      "x": 526.6556046334638,
+      "y": 292.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 85.5166666666631,
+      "x": 308.6556046334638,
+      "y": 157.89840463346388,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 85.5166666666631,
+      "x": 526.6556046334638,
+      "y": 157.89840463346388,
+      "small": true
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 88.49999999999626,
+      "kind": "rain"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 88.49999999999626,
+      "kind": "slide",
+      "half": false,
+      "warm": 1.6
+    },
+    {
+      "event": "half-health-fill",
+      "time": 88.78333333332958,
+      "hp": 3250,
+      "maxhp": 6500
+    },
+    {
+      "event": "water-attack-start",
+      "time": 91.79999999999607,
+      "kind": "lamp",
+      "half": true,
+      "warm": 2.5
+    },
+    {
+      "event": "aim-locked",
+      "time": 92.93333333332934,
+      "kind": "lamp",
+      "target": {
+        "x": 444.1912046334637,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 94.3166666666626,
+      "kind": "lamp"
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 94.3166666666626,
+      "slot": "circleL",
+      "index": 0
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 94.3166666666626,
+      "slot": "circleR",
+      "index": 0
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 95.5333333333292,
+      "slot": "circleL",
+      "index": 1
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 95.5333333333292,
+      "slot": "circleR",
+      "index": 1
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 96.7499999999958,
+      "slot": "circleL",
+      "index": 2
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 96.7499999999958,
+      "slot": "circleR",
+      "index": 2
+    },
+    {
+      "event": "bubble-merge",
+      "time": 96.81666666666246,
+      "mass": 3.2,
+      "x": 482.6958069365583,
+      "y": 448.40046602617264
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 97.96666666666239,
+      "slot": "circleL",
+      "index": 3
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 97.96666666666239,
+      "slot": "circleR",
+      "index": 3
+    },
+    {
+      "event": "bubble-merge",
+      "time": 98.03333333332905,
+      "mass": 3.2,
+      "x": 499.9546136216186,
+      "y": 301.94751900073004
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 99.18333333332899,
+      "slot": "circleL",
+      "index": 4
+    },
+    {
+      "event": "lamp-bubble",
+      "time": 99.18333333332899,
+      "slot": "circleR",
+      "index": 4
+    },
+    {
+      "event": "bubble-merge",
+      "time": 99.19999999999565,
+      "mass": 3.2,
+      "x": 379.36419000404646,
+      "y": 211.02939702034254
+    },
+    {
+      "event": "bubble-merge",
+      "time": 99.28333333332898,
+      "mass": 3.2,
+      "x": 375.33260637728233,
+      "y": 50.43759779477396
+    },
+    {
+      "event": "bubble-merge",
+      "time": 100.2499999999956,
+      "mass": 4.800000000000001,
+      "x": 395.9135642276055,
+      "y": 310.6002143993918
+    },
+    {
+      "event": "bubble-merge",
+      "time": 101.38333333332886,
+      "mass": 4.800000000000001,
+      "x": 520.075904237,
+      "y": 424.0349725337158
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 105.79999999999528,
+      "kind": "lamp"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 105.79999999999528,
+      "kind": "grenades",
+      "half": true,
+      "warm": 2.1
+    },
+    {
+      "event": "aim-locked",
+      "time": 106.74999999999523,
+      "kind": "grenades",
+      "target": {
+        "x": 459.3544046334637,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 107.91666666666183,
+      "kind": "grenades"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 107.91666666666183,
+      "x": 404.3544046334637,
+      "y": 442.8984046334639,
+      "warm": 1.8,
+      "source": "fan-grenade"
+    },
+    {
+      "event": "fan-grenade-launch",
+      "time": 107.91666666666183,
+      "slot": "circleL",
+      "x": 390.5686744425418,
+      "y": 208.15829942046366,
+      "target": {
+        "x": 404.3544046334637,
+        "y": 442.8984046334639
+      },
+      "fuse": 1.8
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 108.78333333332844,
+      "x": 514.3544046334637,
+      "y": 377.8984046334639,
+      "warm": 1.8,
+      "source": "fan-grenade"
+    },
+    {
+      "event": "fan-grenade-launch",
+      "time": 108.78333333332844,
+      "slot": "circleR",
+      "x": 518.5686744425418,
+      "y": 211.50589988015324,
+      "target": {
+        "x": 514.3544046334637,
+        "y": 377.8984046334639
+      },
+      "fuse": 1.8
+    },
+    {
+      "event": "water-grenade-explode",
+      "time": 109.73333333332839,
+      "x": 404.3544046334637,
+      "y": 442.8984046334639,
+      "radius": 48,
+      "shards": 10
+    },
+    {
+      "event": "water-grenade-explode",
+      "time": 110.599999999995,
+      "x": 514.3544046334637,
+      "y": 377.8984046334639,
+      "radius": 48,
+      "shards": 10
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 114.3499999999948,
+      "kind": "grenades"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 114.3499999999948,
+      "kind": "rain",
+      "half": true,
+      "warm": 1.8
+    },
+    {
+      "event": "aim-locked",
+      "time": 115.16666666666141,
+      "kind": "rain",
+      "target": {
+        "x": 451.7728046334637,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 116.16666666666136,
+      "kind": "rain"
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 116.16666666666136,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 393.58531441453783,
+      "y": 208.60900212970776
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 116.16666666666136,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 393.58531441453783,
+      "y": 208.60900212970776
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 116.16666666666136,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 521.5853144145378,
+      "y": 208.60900212970776
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 116.16666666666136,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 521.5853144145378,
+      "y": 208.60900212970776
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 116.69999999999466,
+      "x": 406.7728046334637,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 116.69999999999466,
+      "slot": "circleL",
+      "x": 393.58531441453783,
+      "y": -10.057664536958967,
+      "target": {
+        "x": 406.7728046334637,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 116.69999999999466,
+      "x": 496.7728046334637,
+      "y": 442.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 116.69999999999466,
+      "slot": "circleR",
+      "x": 521.5853144145378,
+      "y": -10.057664536958967,
+      "target": {
+        "x": 496.7728046334637,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 116.98333333332798,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 393.58531441453783,
+      "y": 214.84539828748726
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 116.98333333332798,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 393.58531441453783,
+      "y": 214.84539828748726
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 116.98333333332798,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 521.5853144145378,
+      "y": 214.84539828748726
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 116.98333333332798,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 521.5853144145378,
+      "y": 214.84539828748726
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 117.53333333332795,
+      "x": 374.7728046334637,
+      "y": 367.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 117.53333333332795,
+      "slot": "circleL",
+      "x": 393.58531441453783,
+      "y": -10.654601712512815,
+      "target": {
+        "x": 374.7728046334637,
+        "y": 367.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 117.53333333332795,
+      "x": 528.7728046334637,
+      "y": 367.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 117.53333333332795,
+      "slot": "circleR",
+      "x": 521.5853144145378,
+      "y": -10.654601712512815,
+      "target": {
+        "x": 528.7728046334637,
+        "y": 367.8984046334639
+      }
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 117.7999999999946,
+      "kind": "jet",
+      "slot": "circleL",
+      "a": -1.5707963267948966,
+      "x": 393.58531441453783,
+      "y": 216.4091111093881
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 117.7999999999946,
+      "slot": "circleL",
+      "source": "fan-rain",
+      "x": 393.58531441453783,
+      "y": 216.4091111093881
+    },
+    {
+      "event": "water-muzzle-release",
+      "time": 117.7999999999946,
+      "kind": "jet",
+      "slot": "circleR",
+      "a": -1.5707963267948966,
+      "x": 521.5853144145378,
+      "y": 216.4091111093881
+    },
+    {
+      "event": "fan-geyser-launch",
+      "time": 117.7999999999946,
+      "slot": "circleR",
+      "source": "fan-rain",
+      "x": 521.5853144145378,
+      "y": 216.4091111093881
+    },
+    {
+      "event": "geyser-impact",
+      "time": 118.29999999999457,
+      "x": 406.7728046334637,
+      "y": 442.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 118.29999999999457,
+      "x": 496.7728046334637,
+      "y": 442.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 118.34999999999457,
+      "x": 342.7728046334637,
+      "y": 292.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 118.34999999999457,
+      "slot": "circleL",
+      "x": 393.58531441453783,
+      "y": -9.090888890611964,
+      "target": {
+        "x": 342.7728046334637,
+        "y": 292.8984046334639
+      }
+    },
+    {
+      "event": "ground-water-mark",
+      "time": 118.34999999999457,
+      "x": 560.7728046334637,
+      "y": 292.8984046334639,
+      "warm": 1.6,
+      "source": "fan-rain"
+    },
+    {
+      "event": "fan-jet-offscreen",
+      "time": 118.34999999999457,
+      "slot": "circleR",
+      "x": 521.5853144145378,
+      "y": -9.090888890611964,
+      "target": {
+        "x": 560.7728046334637,
+        "y": 292.8984046334639
+      }
+    },
+    {
+      "event": "tidal-wave",
+      "time": 118.94999999999453,
+      "x": 406.7728046334637,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 118.94999999999453,
+      "x": 496.7728046334637,
+      "y": 307.8984046334639,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 119.13333333332785,
+      "x": 374.7728046334637,
+      "y": 367.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 119.13333333332785,
+      "x": 528.7728046334637,
+      "y": 367.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 119.78333333332782,
+      "x": 374.7728046334637,
+      "y": 232.89840463346388,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 119.78333333332782,
+      "x": 528.7728046334637,
+      "y": 232.89840463346388,
+      "small": true
+    },
+    {
+      "event": "geyser-impact",
+      "time": 119.94999999999447,
+      "x": 342.7728046334637,
+      "y": 292.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "geyser-impact",
+      "time": 119.94999999999447,
+      "x": 560.7728046334637,
+      "y": 292.8984046334639,
+      "source": "fan-rain"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 120.59999999999444,
+      "x": 342.7728046334637,
+      "y": 157.89840463346388,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 120.59999999999444,
+      "x": 560.7728046334637,
+      "y": 157.89840463346388,
+      "small": true
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 123.5833333333276,
+      "kind": "rain"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 123.5833333333276,
+      "kind": "slide",
+      "half": true,
+      "warm": 1.6
+    },
+    {
+      "event": "aim-locked",
+      "time": 124.3166666666609,
+      "kind": "slide",
+      "target": {
+        "x": 413.8648046334638,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 125.19999999999418,
+      "kind": "slide"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.19999999999418,
+      "x": 348.8648046334638,
+      "y": 274.7091489332641,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.19999999999418,
+      "x": 478.8648046334638,
+      "y": 274.7091489332641,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.4333333333275,
+      "x": 348.8648046334638,
+      "y": 366.9438491272157,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.4333333333275,
+      "x": 478.8648046334638,
+      "y": 366.9438491272157,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.66666666666082,
+      "x": 348.8648046334638,
+      "y": 459.1785493211673,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.66666666666082,
+      "x": 478.8648046334638,
+      "y": 459.1785493211673,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.89999999999414,
+      "x": 348.8648046334638,
+      "y": 551.4132495151189,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 125.89999999999414,
+      "x": 478.8648046334638,
+      "y": 551.4132495151189,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 126.13333333332746,
+      "x": 348.8648046334638,
+      "y": 643.6479497090704,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 126.13333333332746,
+      "x": 478.8648046334638,
+      "y": 643.6479497090704,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 126.36666666666078,
+      "x": 348.8648046334638,
+      "y": 735.8826499030221,
+      "small": true
+    },
+    {
+      "event": "tidal-wave",
+      "time": 126.36666666666078,
+      "x": 478.8648046334638,
+      "y": 735.8826499030221,
+      "small": true
+    },
+    {
+      "event": "water-recover-complete",
+      "time": 131.63333333333023,
+      "kind": "slide"
+    },
+    {
+      "event": "water-attack-start",
+      "time": 131.63333333333023,
+      "kind": "tidal",
+      "half": true,
+      "warm": 3.35
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 131.6499999999969,
+      "index": 0,
+      "x": 290.8276633891829
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 132.38333333333082,
+      "index": 1,
+      "x": 425.2276633891829
+    },
+    {
+      "event": "water-wall-warning",
+      "time": 133.1499999999981,
+      "index": 2,
+      "x": 559.6276633891829
+    },
+    {
+      "event": "aim-locked",
+      "time": 133.1499999999981,
+      "kind": "tidal",
+      "target": {
+        "x": 421.44640463346377,
+        "y": 442.8984046334639
+      }
+    },
+    {
+      "event": "water-release",
+      "time": 134.99999999999957,
+      "kind": "tidal"
+    },
+    {
+      "event": "tidal-wave",
+      "time": 134.99999999999957,
+      "x": 290.8276633891829,
+      "y": -140,
+      "small": false
+    },
+    {
+      "event": "tidal-wave",
+      "time": 136.28333333333393,
+      "x": 425.2276633891829,
+      "y": -140,
+      "small": false
+    }
+  ],
+  "chapters": [
+    {
+      "id": "stage9-tidal-mortars",
+      "stage": 9,
+      "title": "Tidal \u00b7 fan jets fly north, return and erupt at ground Retinas",
+      "seconds": 11.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 7.5089999999999995,
+      "end": 18.509
+    },
+    {
+      "id": "stage9-tidal-grenades",
+      "stage": 9,
+      "title": "Tidal \u00b7 fan water-ball grenades explode into splash",
+      "seconds": 11.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 16.386,
+      "end": 27.386
+    },
+    {
+      "id": "stage9-tidal-walls",
+      "stage": 9,
+      "title": "Tidal \u00b7 visible asterisk countdown and rushing aqua wave triplet",
+      "seconds": 10.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 24.679000000000002,
+      "end": 34.679
+    },
+    {
+      "id": "stage9-tidal-rain",
+      "stage": 9,
+      "title": "Tidal \u00b7 fan geyser launches and warned falling rain",
+      "seconds": 11.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 33.375,
+      "end": 44.375
+    },
+    {
+      "id": "stage9-tidal-slide",
+      "stage": 9,
+      "title": "Tidal \u00b7 Slip N Slide water trail and wave rush",
+      "seconds": 9.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 42.269,
+      "end": 51.269
+    },
+    {
+      "id": "stage9-tidal-bubbles",
+      "stage": 9,
+      "title": "Tidal \u00b7 half-health fill and merging lava-lamp bubbles",
+      "seconds": 19.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 91.463,
+      "end": 110.463
+    },
+    {
+      "id": "stage9-tidal-spread",
+      "stage": 9,
+      "title": "Tidal \u00b7 forward-facing water spread with matching barrel FOV",
+      "seconds": 6.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 2.711,
+      "end": 8.711
+    },
+    {
+      "id": "stage9-tidal-fans",
+      "stage": 9,
+      "title": "Tidal \u00b7 counter-rotating spiral fans in fixed metal rims",
+      "seconds": 8.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "poster": "posters/stage9-tidal-three-beeps-water-waves-1029.jpg",
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "bytes": 126529997,
+      "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, fan-launched timed water grenades, fan rain, merging buoyant bubbles and Slip N Slide. Water walls now use front-layer lane asterisks with reveal beeps and dedicated ElevenLabs aqua wave crash audio. Older films retained.",
+      "parent": "stage9-boss",
+      "start": 2.0,
+      "end": 10.0
+    }
+  ],
+  "audioMeanDB": -20.5,
+  "audioPeakDB": -1.9,
+  "decodedCueCounts": {
+    "boss9": 2,
+    "bossAlarm": 1,
+    "bossWeaponCharge": 17,
+    "av3_target_acquire": 40,
+    "alertLockon": 31,
+    "bossfireTidalfusion": 8,
+    "cfComboWater": 57,
+    "combatOrb0927": 11,
+    "tidalWallAlert": 9,
+    "tidalWaterWave": 8,
+    "jetDash": 6,
+    "missile": 49,
+    "spaceLaserCannon": 226,
+    "spaceVolleyLaunch": 60,
+    "hit": 236,
+    "av3_impact_metal": 206,
+    "spaceLaserHit": 200,
+    "spaceVolleyHit": 62,
+    "missileHit": 48,
+    "expSmall": 55,
+    "expBig": 59,
+    "powerup": 3,
+    "achievement": 1,
+    "laserMistUnlock": 1,
+    "expBoss": 1,
+    "bossWhiteout": 1,
+    "life": 1,
+    "stageclear": 1,
+    "statTick": 10,
+    "stageClear": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "audioErrors": [],
+  "botErrors": [],
+  "maxProjectiles": 55,
+  "maxMarkers": 4,
+  "inputOnly": true,
+  "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c"
+}

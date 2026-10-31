@@ -1,0 +1,5232 @@
+{
+  "id": "kaia",
+  "setup": {
+    "health": [
+      {
+        "key": "voss",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "nyx",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "rook",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "kaia",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "jace",
+        "hp": 1424,
+        "max": 1424
+      }
+    ],
+    "view": {
+      "width": 480,
+      "height": 512
+    },
+    "key": "kaia"
+  },
+  "timeline": [
+    {
+      "t": 0.4333333333333333,
+      "wall": 0.41710000002384184,
+      "label": "Kaia / teal roller gunship",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 182.79529331783664,
+          "y": 136.98184971509093,
+          "heading": 1.6881428602811526,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.4997583241588,
+          "y": 188.99099419671774,
+          "heading": 1.7257213889978344,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.4333333333333333,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 354.2762354549923,
+          "y": 136.13688313665776,
+          "heading": 1.6208625299986652,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 417.9272075467388,
+          "y": 168.72115463417754,
+          "heading": 1.4699730346660769,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 485.322686237369,
+          "y": 115.07816760465552,
+          "heading": 1.411780009146291,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        }
+      ],
+      "frames": 26
+    },
+    {
+      "t": 0.8666666666666677,
+      "wall": 0.8412000000476837,
+      "label": "Kaia / teal roller gunship",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 188.78208922393557,
+          "y": 142.11502545989708,
+          "heading": 1.730336042975316,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.8500346094185,
+          "y": 186.20809325252486,
+          "heading": 1.6467909701193997,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.8666666666666677,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 348.6679497181268,
+          "y": 127.99649179755156,
+          "heading": 1.493376772658189,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 411.5165918302875,
+          "y": 162.70751115599418,
+          "heading": 1.4111417562317006,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.00363106696807,
+          "y": 116.72018806789899,
+          "heading": 1.4756924156962392,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        }
+      ],
+      "frames": 52
+    },
+    {
+      "t": 1.2833333333333337,
+      "wall": 1.2585,
+      "label": "Kaia / teal roller gunship",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.11156333564355,
+          "y": 142.64439383344452,
+          "heading": 1.6742694670580187,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 275.9575641288096,
+          "y": 179.7337783420442,
+          "heading": 1.5240115436069794,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 342.2934632774981,
+          "y": 120.47094887390575,
+          "heading": 1.4167673340598292,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 406.52076286570264,
+          "y": 161.04968967736386,
+          "heading": 1.4511366700922061,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.9796016890207,
+          "y": 122.45428145630142,
+          "heading": 1.5955205426582566,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        }
+      ],
+      "frames": 77
+    },
+    {
+      "t": 1.6999999999999988,
+      "wall": 1.6784000000357628,
+      "label": "Kaia / teal roller gunship",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.55729204870633,
+          "y": 138.66104976979713,
+          "heading": 1.5566695702856796,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 272.08821531540354,
+          "y": 171.69382551024347,
+          "heading": 1.4290540529874403,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 335.66649839225244,
+          "y": 115.76628282936713,
+          "heading": 1.4317557285497897,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 403.22898286229787,
+          "y": 164.00575868475707,
+          "heading": 1.5622906889201191,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 488.0494539217659,
+          "y": 130.3532893028398,
+          "heading": 1.7006456935267602,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        }
+      ],
+      "frames": 102
+    },
+    {
+      "t": 2.0999999999999974,
+      "wall": 2.082,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.88086404396154,
+          "y": 131.80321978610485,
+          "heading": 1.45075979427811,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 266.9074928908375,
+          "y": 164.97256203226445,
+          "heading": 1.4169222622466093,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.74461385288555,
+          "y": 115.36108450206066,
+          "heading": 1.524555835534198,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "charge",
+            "t": 0.09999999999999999,
+            "shot": 0
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 492.6546289614206,
+          "y": 137.54836329069767,
+          "heading": 1.7293185276287342,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 126
+    },
+    {
+      "t": 2.533333333333329,
+      "wall": 2.5071000000238417,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.95756412880965,
+          "y": 123.48278501156962,
+          "heading": 1.4116108158129619,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 260.2934632774982,
+          "y": 161.19180761153046,
+          "heading": 1.4983556379959704,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 324.5207628657027,
+          "y": 119.5960186137084,
+          "heading": 1.6517020953833588,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "charge",
+            "t": 0.5333333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 498.92570700239213,
+          "y": 142.3440891981373,
+          "heading": 1.6626444784638237,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 152
+    },
+    {
+      "t": 2.9499999999999944,
+      "wall": 2.923600000023842,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 190.0882153154036,
+          "y": 117.30788535900875,
+          "heading": 1.470415377383561,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 253.6664983922525,
+          "y": 162.20315348288926,
+          "heading": 1.6214025047817353,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 321.22898286229787,
+          "y": 126.86378327892004,
+          "heading": 1.725862545521157,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "charge",
+            "t": 0.9500000000000013,
+            "shot": 0
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 505.5347834858503,
+          "y": 142.4700743023043,
+          "heading": 1.5421166434497109,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 177
+    },
+    {
+      "t": 3.3666666666666596,
+      "wall": 3.357300000011921,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 184.66794971812692,
+          "y": 115.00000624261698,
+          "heading": 1.5889143983293612,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 247.5165918302876,
+          "y": 167.44689612757253,
+          "heading": 1.7143549317989482,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.00363106696807,
+          "y": 134.83807487991476,
+          "heading": 1.7078083458822368,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 0.016666666666666666,
+            "shot": 1
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 511.97490162969467,
+          "y": 138.14100097177928,
+          "heading": 1.438644018636165,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 202
+    },
+    {
+      "t": 3.7999999999999914,
+      "wall": 3.775,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 178.02835972633218,
+          "y": 117.50580054604244,
+          "heading": 1.699704382913169,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 242.35328185546703,
+          "y": 175.5152892839614,
+          "heading": 1.7201978902857218,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 321.0637244881478,
+          "y": 141.05102343058454,
+          "heading": 1.6033322891854203,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 0.44999999999999996,
+            "shot": 4
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 517.7321825741527,
+          "y": 130.46420889837106,
+          "heading": 1.4148087950309576,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 228
+    },
+    {
+      "t": 4.19999999999999,
+      "wall": 4.1795,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 171.66649839225255,
+          "y": 123.50709686411948,
+          "heading": 1.7295275569148485,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.2289828622979,
+          "y": 182.86814932261024,
+          "heading": 1.6396375195491022,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 324.0494539217658,
+          "y": 142.99526157972284,
+          "heading": 1.4864552070425652,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 0.850000000000001,
+            "shot": 7
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 521.6090401910606,
+          "y": 122.84473546977767,
+          "heading": 1.4822616770264974,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 252
+    },
+    {
+      "t": 4.616666666666656,
+      "wall": 4.589800000011921,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 165.51659183028767,
+          "y": 131.50845288486218,
+          "heading": 1.668021978542444,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.00363106696807,
+          "y": 187.94527344760388,
+          "heading": 1.516400568756646,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 328.87523968269795,
+          "y": 140.48026930280577,
+          "heading": 1.4147903680523248,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 1.266666666666667,
+            "shot": 10
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.7424757964932,
+          "y": 116.93659160899405,
+          "heading": 1.6034134474737998,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 277
+    },
+    {
+      "t": 5.033333333333321,
+      "wall": 5.006700000047684,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 160.52076286570278,
+          "y": 138.68016951892227,
+          "heading": 1.54869833058107,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.97960168902063,
+          "y": 188.74091045026762,
+          "heading": 1.4255116420408669,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 334.92570700239196,
+          "y": 134.16832168309213,
+          "heading": 1.435899022648867,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 1.6833333333333322,
+            "shot": 13
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.7025390916331,
+          "y": 115.01826904372413,
+          "heading": 1.7051684957669389,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 302
+    },
+    {
+      "t": 5.449999999999986,
+      "wall": 5.427,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 157.22898286229793,
+          "y": 142.65029127706205,
+          "heading": 1.442515900599755,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 242.04945392176577,
+          "y": 184.99191335307785,
+          "heading": 1.4210204906275488,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 341.53478348585014,
+          "y": 126.14701637234319,
+          "heading": 1.5372282937009447,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 0.09999999999999999,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 521.4936265528594,
+          "y": 117.7242289456783,
+          "heading": 1.7270152145523539,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 327
+    },
+    {
+      "t": 5.866666666666651,
+      "wall": 5.8465,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.00363106696807,
+          "y": 142.1057500923645,
+          "heading": 1.412619167606225,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 246.8752396826979,
+          "y": 177.93821600974863,
+          "heading": 1.5055979086978828,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 347.9749016296945,
+          "y": 119.06929967804723,
+          "heading": 1.6585197747100249,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 0.5166666666666666,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 517.3589087630878,
+          "y": 124.15950895499216,
+          "heading": 1.6559618153017908,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 352
+    },
+    {
+      "t": 6.283333333333316,
+      "wall": 6.258700000047684,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.9796016890206,
+          "y": 137.22664614419608,
+          "heading": 1.476787095872081,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 252.9257070023919,
+          "y": 169.91274050667027,
+          "heading": 1.6289474677296574,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 353.537093896463,
+          "y": 115.27603778621264,
+          "heading": 1.727643948789541,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 0.9333333333333346,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 511.75356070887,
+          "y": 132.19572077612418,
+          "heading": 1.5342622742916856,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 377
+    },
+    {
+      "t": 6.6999999999999815,
+      "wall": 6.6805,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 160.04945392176575,
+          "y": 129.62668197867472,
+          "heading": 1.5968603552702423,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 259.5347834858501,
+          "y": 163.56981239023463,
+          "heading": 1.717715754712219,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 357.60904019106056,
+          "y": 116.02180457720195,
+          "heading": 1.7034941096806655,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1261799273307,
+          "y": 168.49556948820737,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 1.35,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 505.2946533379516,
+          "y": 139.1749879599013,
+          "heading": 1.4342887731900862,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 402
+    },
+    {
+      "t": 7.116666666666647,
+      "wall": 7.0895,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 164.87523968269784,
+          "y": 121.81945059455411,
+          "heading": 1.7014338799269038,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 265.97490162969444,
+          "y": 161.0072757236284,
+          "heading": 1.7191141186897694,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.7424757964931,
+          "y": 121.05994702164453,
+          "heading": 1.6004316635870306,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 435.3589087630879,
+          "y": 180.4126664105303,
+          "heading": 1.454502616507962,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 498.69322262066385,
+          "y": 142.78900526336457,
+          "heading": 1.415493470350778,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 427
+    },
+    {
+      "t": 7.533333333333312,
+      "wall": 7.507400000035763,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 170.92570700239185,
+          "y": 116.38709602822372,
+          "heading": 1.7283199733125316,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 271.5370938964629,
+          "y": 163.07265742723524,
+          "heading": 1.6323109817370227,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.70253909163307,
+          "y": 128.72416258188824,
+          "heading": 1.4797457000970893,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 429.75356070887005,
+          "y": 186.62927138666373,
+          "heading": 1.410891944741641,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 492.6759943677492,
+          "y": 141.84248170967336,
+          "heading": 1.4890535408091161,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 452
+    },
+    {
+      "t": 7.949999999999977,
+      "wall": 7.927800000011921,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 177.53478348585,
+          "y": 115.12630154124717,
+          "heading": 1.6615300358095872,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 275.6090401910605,
+          "y": 169.08285836047077,
+          "heading": 1.5089263610270849,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 357.4936265528595,
+          "y": 136.47960791478076,
+          "heading": 1.4132056474435424,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 423.2946533379517,
+          "y": 188.9996404462205,
+          "heading": 1.4623730776889818,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 487.90538181473084,
+          "y": 136.64846811405488,
+          "heading": 1.6112243431429678,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 477
+    },
+    {
+      "t": 8.366666666666662,
+      "wall": 8.349,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 183.97490162969467,
+          "y": 118.45405912546971,
+          "heading": 1.540782651814035,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.7424757964932,
+          "y": 177.05007981035982,
+          "heading": 1.422334520020169,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 353.35890876308775,
+          "y": 141.76126657203255,
+          "heading": 1.4403814887082866,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 416.6932226206636,
+          "y": 186.73980369897455,
+          "heading": 1.5783312580943933,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.9065631273436,
+          "y": 128.924819445958,
+          "heading": 1.7093534463928588,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 502
+    },
+    {
+      "t": 8.800000000000017,
+      "wall": 8.773900000035763,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 189.73218257415297,
+          "y": 125.58559907035315,
+          "heading": 1.435130191562755,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.6549683215172,
+          "y": 184.58005784189396,
+          "heading": 1.4261207060306642,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 347.507066837609,
+          "y": 142.76665561429775,
+          "heading": 1.5501253190233995,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 410.45720272381556,
+          "y": 180.29625370310134,
+          "heading": 1.6931347612320127,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.01973319340914,
+          "y": 120.95650056219893,
+          "heading": 1.723666811011738,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 528
+    },
+    {
+      "t": 9.216666666666704,
+      "wall": 9.201600000023841,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.73390729331007,
+          "y": 133.62871006451076,
+          "heading": 1.4151164012550577,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 275.36282249995077,
+          "y": 188.6189937235773,
+          "heading": 1.517756897047986,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 341.0284387728952,
+          "y": 139.0880373603943,
+          "heading": 1.6691615999463614,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 405.74851318092817,
+          "y": 172.28218597143268,
+          "heading": 1.7301297243439788,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 485.4101296228444,
+          "y": 115.9750802664943,
+          "heading": 1.64460745783858,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 553
+    },
+    {
+      "t": 9.650000000000059,
+      "wall": 9.630400000035763,
+      "label": "Kaia / sixteen-round roller burst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.82075759128594,
+          "y": 140.3357068320356,
+          "heading": 1.4920525952380272,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 270.9572941183896,
+          "y": 188.03818778706187,
+          "heading": 1.6454525153639348,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 334.18095418866926,
+          "y": 131.7534190193471,
+          "heading": 1.730213880014122,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.7546181419817,
+          "y": 164.93716950328695,
+          "heading": 1.668407481426267,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 489.0223974209304,
+          "y": 115.37263993878435,
+          "heading": 1.5168578374272332,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 579
+    },
+    {
+      "t": 10.066666666666746,
+      "wall": 10.040700000047684,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.6039033865766,
+          "y": 142.98655245714397,
+          "heading": 1.6145687691694348,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 265.2592383964591,
+          "y": 183.07318712488214,
+          "heading": 1.723945681909916,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 328.2404631023302,
+          "y": 123.73737078141362,
+          "heading": 1.6925177838420855,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "charge",
+            "t": 0.08333333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 494.18348477187277,
+          "y": 119.39350054532657,
+          "heading": 1.4257158858401653,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 604
+    },
+    {
+      "t": 10.483333333333434,
+      "wall": 10.455800000011921,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.22893176877102,
+          "y": 141.01152096397922,
+          "heading": 1.7110543835334768,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 258.76204137698767,
+          "y": 175.43808089473205,
+          "heading": 1.71136411753469,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 323.5945336575357,
+          "y": 117.46187127118182,
+          "heading": 1.5824364729913174,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "charge",
+            "t": 0.49999999999999994,
+            "shot": 0
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 500.42523407222325,
+          "y": 126.59159057636354,
+          "heading": 1.4208502500231426,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 629
+    },
+    {
+      "t": 10.883333333333454,
+      "wall": 10.862700000047683,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 189.1592711363985,
+          "y": 135.3565867813038,
+          "heading": 1.7255014519234841,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 252.43659388700345,
+          "y": 167.9382012025266,
+          "heading": 1.6200344825208473,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.82888656093564,
+          "y": 115.01240087099278,
+          "heading": 1.4692981798171605,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "charge",
+            "t": 0.9000000000000011,
+            "shot": 0
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 506.7967252851076,
+          "y": 134.28520347554806,
+          "heading": 1.5005674672266724,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 653
+    },
+    {
+      "t": 11.300000000000141,
+      "wall": 11.282800000011921,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 149.5089020290921,
+          "y": 127.43476508421828,
+          "heading": 1.6504565772592066,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 212.3511028674975,
+          "y": 162.44756522939974,
+          "heading": 1.4970747122568135,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 283.42385312895567,
+          "y": 117.00101601415224,
+          "heading": 1.4114721596760897,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "charge",
+            "t": 1.3166666666666669,
+            "shot": 0
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 474.060251916025,
+          "y": 140.55191337076243,
+          "heading": 1.623740572594586,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 678
+    },
+    {
+      "t": 11.716666666666828,
+      "wall": 11.69,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 89.09223536242543,
+          "y": 120.03062523931345,
+          "heading": 1.5280394112084958,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 151.93443620083107,
+          "y": 161.10848990439217,
+          "heading": 1.417955650313688,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 224.62397438883394,
+          "y": 122.95814488739164,
+          "heading": 1.4483929025148106,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 0.3833333333333333,
+            "shot": 3
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 421.6576374916445,
+          "y": 142.99797254466284,
+          "heading": 1.715428837974688,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 703
+    },
+    {
+      "t": 12.116666666666848,
+      "wall": 12.098,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 70.84271154861399,
+          "y": 115.69070078374044,
+          "heading": 1.4335858312098582,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 139.05605205529596,
+          "y": 164.15435874854234,
+          "heading": 1.4274081692180276,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 224.82381036880352,
+          "y": 130.5894492626972,
+          "heading": 1.553060918034002,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 0.7833333333333341,
+            "shot": 6
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 422.21173160794956,
+          "y": 140.9864106512123,
+          "heading": 1.7227678908813684,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 727
+    },
+    {
+      "t": 12.550000000000203,
+      "wall": 12.523200000047684,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 64.46258738650573,
+          "y": 115.58956181506407,
+          "heading": 1.4171632610425782,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.02511785610187,
+          "y": 171.13699627768514,
+          "heading": 1.5253903997984928,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 229.95741348395623,
+          "y": 138.23605854744807,
+          "heading": 1.67536353843474,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 1.2166666666666672,
+            "shot": 10
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.9110447783754,
+          "y": 134.7233250915665,
+          "heading": 1.637398763886262,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 753
+    },
+    {
+      "t": 12.96666666666689,
+      "wall": 12.941200000047683,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 59.7487335878877,
+          "y": 120.02146436267128,
+          "heading": 1.4946400135444555,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 139.4103500298068,
+          "y": 179.18777504654201,
+          "heading": 1.648055003899579,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 236.1634075649021,
+          "y": 142.50386466553613,
+          "heading": 1.7304387228213014,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "fire",
+            "t": 1.6333333333333324,
+            "shot": 13
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.4450622793276,
+          "y": 126.73935451388152,
+          "heading": 1.5140832838749487,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 778
+    },
+    {
+      "t": 13.383333333333578,
+      "wall": 13.3615,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.82889558271255,
+          "y": 127.42290516408205,
+          "heading": 1.6174053389693204,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 142.847021540403,
+          "y": 185.85349964828865,
+          "heading": 1.7247754822591441,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 242.79673430688706,
+          "y": 142.30543660933674,
+          "heading": 1.690577900126396,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 0.05,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 420.8434257006629,
+          "y": 119.50306412820991,
+          "heading": 1.4244938689833864,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 803
+    },
+    {
+      "t": 13.800000000000265,
+      "wall": 13.7825,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.019733562691975,
+          "y": 135.34595033777634,
+          "heading": 1.7124532558611827,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 147.95202919054714,
+          "y": 188.9295651235248,
+          "heading": 1.7099277647170752,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 249.1223831815385,
+          "y": 137.70640197418538,
+          "heading": 1.5794854711848165,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 0.4666666666666666,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 416.3877656776887,
+          "y": 115.40776638369357,
+          "heading": 1.4219074778282774,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 828
+    },
+    {
+      "t": 14.23333333333362,
+      "wall": 14.2075,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 57.510136048963986,
+          "y": 141.32829275732442,
+          "heading": 1.721647967007541,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 154.42523408552796,
+          "y": 187.24352910511496,
+          "heading": 1.6074285844223364,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 254.62695543020942,
+          "y": 129.90212125759015,
+          "heading": 1.4595296731127751,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 0.9000000000000011,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 410.315941527515,
+          "y": 115.92087742761942,
+          "heading": 1.5125512184682546,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 854
+    },
+    {
+      "t": 14.650000000000308,
+      "wall": 14.623,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 61.02239742147755,
+          "y": 142.94378063108988,
+          "heading": 1.638850198718583,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 161.06051543887094,
+          "y": 181.47916711441044,
+          "heading": 1.485716254530647,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 258.2848096765571,
+          "y": 122.05763723295209,
+          "heading": 1.4108045364156063,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.0007934518541,
+          "y": 161.63397747438293,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26roller",
+            "phase": "recover",
+            "t": 1.3166666666666669,
+            "shot": 16
+          }
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 403.7592711725329,
+          "y": 120.83430397624943,
+          "heading": 1.6359026097509204,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        },
+        {
+          "kind": "roller",
+          "hp": 3,
+          "dead": null,
+          "owner": "kaia"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 879
+    },
+    {
+      "t": 15.066666666666995,
+      "wall": 15.043600000023842,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 66.18348477189856,
+          "y": 139.94753763256074,
+          "heading": 1.5155822105652241,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 167.35887657329621,
+          "y": 173.57190171760527,
+          "heading": 1.4145992711384838,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.9297604138964,
+          "y": 116.50925277747086,
+          "heading": 1.4572231843426209,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 356.0841267851871,
+          "y": 162.93053922969762,
+          "heading": 1.604265720947999,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 397.2291017293936,
+          "y": 128.4484322529703,
+          "heading": 1.7205366509210338,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 904
+    },
+    {
+      "t": 15.466666666667015,
+      "wall": 15.450400000035764,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 72.16318715794378,
+          "y": 133.6399724965101,
+          "heading": 1.427318959270406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 172.44379272565874,
+          "y": 166.39222138901818,
+          "heading": 1.4336894914118334,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.4448418723669,
+          "y": 115.05842223965803,
+          "heading": 1.5661154157038821,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 328.5683930761046,
+          "y": 168.54244538827635,
+          "heading": 1.7028449480658816,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 391.6529939773693,
+          "y": 135.9635144663745,
+          "heading": 1.7181695870047555,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 928
+    },
+    {
+      "t": 15.883333333333702,
+      "wall": 15.8605,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 78.79672528511156,
+          "y": 125.5971752298703,
+          "heading": 1.4195964000698114,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 176.1751417222242,
+          "y": 161.7341341451783,
+          "heading": 1.5331380665596748,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 256.8434166788844,
+          "y": 118.06766894873454,
+          "heading": 1.6813025638398365,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 322.025932018374,
+          "y": 176.4523385037965,
+          "heading": 1.7278681364065023,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 387.18460557976226,
+          "y": 141.50173473627012,
+          "heading": 1.6300226115900207,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 953
+    },
+    {
+      "t": 16.300000000000356,
+      "wall": 16.28030000001192,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 85.12238281225716,
+          "y": 118.67981965373104,
+          "heading": 1.5017892873394276,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.9056601156831,
+          "y": 161.46356594864693,
+          "heading": 1.6549812245335842,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 252.38776530840494,
+          "y": 124.6926472839128,
+          "heading": 1.7307739549853383,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 315.480616205686,
+          "y": 183.88188884197447,
+          "heading": 1.659483991853432,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 384.56735849778056,
+          "y": 142.90516275965382,
+          "heading": 1.5066549984708308,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 978
+    },
+    {
+      "t": 16.716666666667,
+      "wall": 16.68960000002384,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 90.44379272565754,
+          "y": 115.17573452193679,
+          "heading": 1.625019223347215,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.44484187236594,
+          "y": 165.67000384300334,
+          "heading": 1.7267613776491255,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 246.5683930761038,
+          "y": 132.74222860333086,
+          "heading": 1.6851099834653411,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 309.6529939773685,
+          "y": 188.3738656439274,
+          "heading": 1.5383591405231878,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 384.08937527470493,
+          "y": 139.70963228823848,
+          "heading": 1.4214308970474947,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 1003
+    },
+    {
+      "t": 17.133333333333642,
+      "wall": 17.1075,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 94.17514172222377,
+          "y": 116.24385212186209,
+          "heading": 1.716003932402783,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 174.8434166788849,
+          "y": 172.96222115787546,
+          "heading": 1.7057923642468553,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 240.025932018375,
+          "y": 139.55411466363952,
+          "heading": 1.5714660618237202,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 305.1846055797628,
+          "y": 188.4426038204469,
+          "heading": 1.436524008103726,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 385.80327522295215,
+          "y": 132.97202501847914,
+          "heading": 1.4250313049598706,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 1028
+    },
+    {
+      "t": 17.550000000000285,
+      "wall": 17.529,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 95.90566011568299,
+          "y": 121.53090592980442,
+          "heading": 1.7206367035183174,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 170.38776530840582,
+          "y": 180.92840831247517,
+          "heading": 1.6045440197489358,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 233.48061620568706,
+          "y": 142.87535943291195,
+          "heading": 1.4574238627130705,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 302.56735849778084,
+          "y": 184.06536908022798,
+          "heading": 1.4145378263101303,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 389.52038176879705,
+          "y": 124.92072020227386,
+          "heading": 1.5153151346298885,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 1053
+    },
+    {
+      "t": 17.966666666666928,
+      "wall": 17.948900000035763,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 95.44484187236621,
+          "y": 129.28826909092064,
+          "heading": 1.636162524226088,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 164.56839307610488,
+          "y": 186.93384863940003,
+          "heading": 1.4832266253180821,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 227.6529939773694,
+          "y": 141.60750278457775,
+          "heading": 1.4108019060994903,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 302.0893752747048,
+          "y": 176.68987701209267,
+          "heading": 1.4854753194161805,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 394.83149312192626,
+          "y": 118.21858610795672,
+          "heading": 1.6385924734388773,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 1078
+    },
+    {
+      "t": 18.38333333333357,
+      "wall": 18.35730000001192,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 92.84341667888549,
+          "y": 136.95029085924685,
+          "heading": 1.5128164290977388,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 158.02593201837612,
+          "y": 188.99231793661073,
+          "heading": 1.4139851080129267,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 223.1846055797634,
+          "y": 136.16987243193498,
+          "heading": 1.4593252983042708,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 303.80327522295164,
+          "y": 168.75547927889903,
+          "heading": 1.6071514381149101,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 401.15192970766236,
+          "y": 115.08226967876054,
+          "heading": 1.7215528562381148,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 1103
+    },
+    {
+      "t": 18.800000000000214,
+      "wall": 18.776700000047683,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 88.38776530840671,
+          "y": 141.98285346084225,
+          "heading": 1.4239497712327127,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 151.48061620568814,
+          "y": 186.42300325539753,
+          "heading": 1.437995955663965,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.5673584977811,
+          "y": 128.36089653681884,
+          "heading": 1.5741381888727062,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 307.5203817687963,
+          "y": 162.88637859491232,
+          "heading": 1.707207929498896,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 407.78589926539945,
+          "y": 116.54906830801607,
+          "heading": 1.7148614716933657,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 1128
+    },
+    {
+      "t": 19.20000000000019,
+      "wall": 19.183300000011922,
+      "label": "Kaia / repeat burst and recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 82.81967694097182,
+          "y": 142.7825920745938,
+          "heading": 1.4205893228558295,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 145.86386882474315,
+          "y": 180.37870590796373,
+          "heading": 1.53601828086738,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.06596374240922,
+          "y": 121.02966233472497,
+          "heading": 1.683422013917513,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 312.5953196647861,
+          "y": 161.0085104538447,
+          "heading": 1.7272782096270798,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 413.7712953154531,
+          "y": 121.85106953663967,
+          "heading": 1.6272656839139135,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Kaia / teal roller gunship",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Kaia / sixteen-round roller burst",
+          "request": "rockets"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Kaia / repeat burst and recovery",
+          "request": "rockets"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26roller",
+          "warm": 1.35
+        }
+      ],
+      "frames": 1152
+    }
+  ],
+  "stats": {
+    "peak": 1.1641428470611572,
+    "tapped": 8,
+    "playing": {
+      "stagex": 1,
+      "av3_target_acquire": 2,
+      "bossWeaponCharge": 2,
+      "falvaBurst": 31,
+      "alertLockon": 1
+    },
+    "tapErrors": [],
+    "frames": 1155,
+    "events": [
+      {
+        "t": 0.016666666666666666,
+        "label": "Kaia / teal roller gunship",
+        "request": "drift"
+      },
+      {
+        "t": 2.0166666666666644,
+        "label": "Kaia / sixteen-round roller burst",
+        "request": "rockets"
+      },
+      {
+        "t": 2.0166666666666644,
+        "resolved": "rr26roller",
+        "warm": 1.35
+      },
+      {
+        "t": 10.000000000000076,
+        "label": "Kaia / repeat burst and recovery",
+        "request": "rockets"
+      },
+      {
+        "t": 10.000000000000076,
+        "resolved": "rr26roller",
+        "warm": 1.35
+      }
+    ],
+    "rr26": [
+      {
+        "kind": "kaia-roller",
+        "t": 3.349999999999993,
+        "shot": 0
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 3.483333333333326,
+        "shot": 1
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 3.6166666666666587,
+        "shot": 2
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 3.7499999999999916,
+        "shot": 3
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 3.8833333333333244,
+        "shot": 4
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.016666666666658,
+        "shot": 5
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.149999999999991,
+        "shot": 6
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.2833333333333234,
+        "shot": 7
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.416666666666656,
+        "shot": 8
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.549999999999989,
+        "shot": 9
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.683333333333322,
+        "shot": 10
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.816666666666655,
+        "shot": 11
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 4.949999999999988,
+        "shot": 12
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 5.083333333333321,
+        "shot": 13
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 5.2166666666666535,
+        "shot": 14
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 5.349999999999986,
+        "shot": 15
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 11.333333333333476,
+        "shot": 0
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 11.466666666666816,
+        "shot": 1
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 11.600000000000156,
+        "shot": 2
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 11.733333333333496,
+        "shot": 3
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 11.866666666666836,
+        "shot": 4
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.000000000000176,
+        "shot": 5
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.133333333333516,
+        "shot": 6
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.266666666666856,
+        "shot": 7
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.400000000000196,
+        "shot": 8
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.533333333333536,
+        "shot": 9
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.666666666666876,
+        "shot": 10
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.800000000000216,
+        "shot": 11
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 12.933333333333556,
+        "shot": 12
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 13.066666666666896,
+        "shot": 13
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 13.200000000000236,
+        "shot": 14
+      },
+      {
+        "kind": "kaia-roller",
+        "t": 13.333333333333576,
+        "shot": 15
+      }
+    ],
+    "rd21": [
+      {
+        "event": "personal-charge",
+        "time": 1.9999999999999978,
+        "pilot": "kaia",
+        "kind": "windspread",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-recovery",
+        "time": 6.766666666666648,
+        "pilot": "kaia"
+      },
+      {
+        "event": "personal-charge",
+        "time": 9.983333333333409,
+        "pilot": "kaia",
+        "kind": "windspread",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-recovery",
+        "time": 14.750000000000313,
+        "pilot": "kaia"
+      }
+    ],
+    "ra4": [],
+    "god": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+}

@@ -1,0 +1,324 @@
+[
+  {
+    "name": "Current game and late owners load without errors",
+    "passed": true,
+    "data": []
+  },
+  {
+    "name": "hard health is one consistent pool with no adaptive double ramp",
+    "passed": true,
+    "data": {
+      "max": 3520,
+      "core": 3520,
+      "on": 0.2,
+      "gap": 0.6799999999999999,
+      "pulses": 3,
+      "warm": 1.5,
+      "rest": 1.65
+    }
+  },
+  {
+    "name": "hard has a readable tell and at least half a second between laser bursts",
+    "passed": true,
+    "data": {
+      "max": 3520,
+      "core": 3520,
+      "on": 0.2,
+      "gap": 0.6799999999999999,
+      "pulses": 3,
+      "warm": 1.5,
+      "rest": 1.65
+    }
+  },
+  {
+    "name": "hard rotation never pauses and active lasers leave actual off gaps",
+    "passed": true,
+    "data": {
+      "frames": 140,
+      "on": 48,
+      "off": 92,
+      "continuous": true,
+      "omega": 3.7699111843077517
+    }
+  },
+  {
+    "name": "furious health is one consistent pool with no adaptive double ramp",
+    "passed": true,
+    "data": {
+      "max": 4160,
+      "core": 4160,
+      "on": 0.22,
+      "gap": 0.52,
+      "pulses": 4,
+      "warm": 1.35,
+      "rest": 1.35
+    }
+  },
+  {
+    "name": "furious has a readable tell and at least half a second between laser bursts",
+    "passed": true,
+    "data": {
+      "max": 4160,
+      "core": 4160,
+      "on": 0.22,
+      "gap": 0.52,
+      "pulses": 4,
+      "warm": 1.35,
+      "rest": 1.35
+    }
+  },
+  {
+    "name": "furious rotation never pauses and active lasers leave actual off gaps",
+    "passed": true,
+    "data": {
+      "frames": 178,
+      "on": 68,
+      "off": 110,
+      "continuous": true,
+      "omega": 3.7699111843077517
+    }
+  },
+  {
+    "name": "NG+ adds exactly 25% once",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Co-op retains the native 1.5 health multiplier",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "A large hit stops exactly at the half-health transition",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Dash corridor is committed from charge start",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Offscreen return cannot take hits or Retina locks",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Dash has an actual foreground recovery window",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Horizon ordinary projectiles remain unshootable",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Actual Normal Chronos defeat autosaves before results/flight",
+    "passed": true,
+    "data": {
+      "v": 1,
+      "t": 1793456962545,
+      "pilot": "cole",
+      "pilotIndex": 8,
+      "diff": "normal",
+      "stage": 5,
+      "score": 75000,
+      "lives": 5,
+      "ngplus": false,
+      "bombs": 1,
+      "missileTier": "standard",
+      "missileUpgrade": null,
+      "missileWaveSerial": 0,
+      "retinaScan": false,
+      "shield": 0,
+      "megaShield": false,
+      "contUsed": 0,
+      "contBonus": 0,
+      "weapon": 0,
+      "wlevel": 1,
+      "wlevels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wvars": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "mavBeamUnlocked": false,
+      "thunderStormUnlocked": false,
+      "thunderCeremonyShown": false,
+      "earnedUnlocks": {
+        "chaingun": true
+      },
+      "forge": {},
+      "forgeForms": {},
+      "forgeElems": {},
+      "loadout": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "unlockedMax": 5,
+      "rank": {
+        "1": "A",
+        "2": "A",
+        "3": "B",
+        "4": "A"
+      },
+      "bonusUnlocked": false,
+      "mapStageX": false,
+      "rival24": {
+        "scattered": false,
+        "defeated": [],
+        "stageX1004": null
+      },
+      "unlocks": {
+        "bomber": false,
+        "cole": false,
+        "legacySpaceShip": false
+      },
+      "freezerL2Cleared": false,
+      "primary1003b": "chain",
+      "coleLaserTier": null,
+      "coleLaserUnlocked": 1,
+      "forgeCombos": 10,
+      "forgeRespecs": 0,
+      "rs22Serial": 0,
+      "forgeBudget23": {
+        "v": 1,
+        "cleared": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "spent": 0,
+        "reset": 0
+      },
+      "respecBase23": false,
+      "forgeBonus27": 0,
+      "normalComplete100": {
+        "version": 1,
+        "phase": "defeated",
+        "mode": "campaign",
+        "completedAt": 1793456962543,
+        "pilot": "cole",
+        "coop": false,
+        "p2": null
+      },
+      "mode": "campaign",
+      "completed": true
+    }
+  },
+  {
+    "name": "Defeat save retains earned chaingun and completed difficulty",
+    "passed": true,
+    "data": {
+      "chaingun": true
+    }
+  },
+  {
+    "name": "Normal results settle once and launch the return flight",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Flight reaches Hard/Furious choice instead of Stage 6",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Message and description fit their bitmap text bounds",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Failed autosave is honest and blocks abandoning completion",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Furious choice fades into pilot select, resets route, preserves mode",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "New run cannot erase archived Normal completion",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Loading completed Normal save reopens the choice, not a locked stage",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Hard choice also routes to pilot select correctly",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Arcade mode is retained across the new difficulty choice",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Debug demonstrations never write completion saves",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Normal NG+ also ends at Stage 5",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Existing Stage 5 bonus detour saves are not misclassified as completed Normal",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Co-op return flight includes the actual second pilot",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Co-op restart opens player-one selection before player two",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Completed co-op autosave restores both pilot identity and second score",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "No browser/render errors throughout actual state transitions",
+    "passed": true,
+    "data": []
+  },
+  {
+    "name": "Core remains byte-for-byte unchanged",
+    "passed": true,
+    "data": null
+  }
+]

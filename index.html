@@ -1,97 +1,93 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="data:,">
-<title>Bullets of Fury — updated Stage 6–9 fights</title>
-<style>
-:root{color-scheme:dark;font:16px/1.6 system-ui;background:#07111a;color:#e6f1f7}
-*{box-sizing:border-box}body{margin:0}main{max-width:1260px;margin:auto;padding:28px}
-h1,h2{line-height:1.2;color:#89e7da}h1{font-size:clamp(26px,4vw,40px)}h2{font-size:24px}
-p{color:#b8ccd8}a{color:#8bdfff}.tag{font-size:13px;letter-spacing:2px;color:#facb79}
-video{display:block;width:100%;aspect-ratio:1.6;background:#02060a;border:1px solid #385468}
-.links{display:flex;flex-wrap:wrap;gap:12px 24px;margin:16px 0}.notes{font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-.card{padding:0;text-align:left;border:1px solid #304b60;background:#12212f;color:inherit;cursor:pointer;font:inherit}
-.card:hover,.card[aria-pressed="true"]{border-color:#78dfcf}.card img{width:100%;aspect-ratio:1.6;object-fit:contain;background:#02060a;display:block}
-.card span{display:block;padding:10px 14px}.card small{display:block;color:#a5bccb}
-button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #f3cc75;outline-offset:3px}
-section{margin-top:36px}details{margin-top:18px}summary{cursor:pointer;color:#b7dce3;padding:8px 0}
-#status{color:#f1ce87;min-height:1.6em}footer{padding:28px 0;font-size:14px;color:#a8bfcd}
-[hidden]{display:none!important}@media(max-width:600px){main{padding:16px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card span{padding:8px;font-size:14px}.card small{font-size:12px}}
-</style>
-</head>
-<body><main>
-<div class="tag">BULLETS OF FURY · OCTOBER 28, 2026</div>
-<h1>Updated Stage 6–9 fights</h1>
-<p>Nine new complete recordings, including both Stage 6 routes, Carrier into Nightwing, and Dracodia’s first host, transformation, copied forms and final life.</p>
-<video id="player" controls playsinline preload="metadata"></video>
-<h2 id="title"></h2><p id="note" class="notes"></p>
-<div class="links">
-<a id="download">Open / download full recording</a>
-<a id="whole" hidden>Watch this full fight</a>
-<a id="release" href="https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-stage6-9-updated-2026-10-28">All videos on GitHub</a>
-<a href="https://github.com/NexusWebOS/BulletsOfFury/tree/codex/build-2026-10-26">Updated game source</a>
-</div>
-<p id="status" role="status" aria-live="polite"></p>
-<p class="notes">Recorded in the live game with audio. Furious · Cole · level 5 Laser · invulnerable input bot. Enemy health, transformations, attack sequences and defeats run normally. Chapter previews seek within these same uncut recordings.</p>
-<nav class="links" aria-label="Stages"><a href="#stage6">Stage 6</a><a href="#stage7">Stage 7</a><a href="#stage8">Stage 8</a><a href="#stage9">Stage 9</a></nav>
-<div id="library"></div>
-<footer>Previous recordings remain available in the <a href="https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-stage6-9-review-2026-10-28">earlier review release</a>.</footer>
-</main>
-<script>
-'use strict';
-const $=s=>document.querySelector(s),player=$('#player'),params=new URLSearchParams(location.search);
-let clips=[],current=null,revision=0,pending=null,objectURL=null;
-const isLocal=location.hostname==='127.0.0.1'||location.hostname==='localhost';
-const fmt=t=>Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');
-function ready(){return new Promise((resolve,reject)=>{if(player.readyState>=1)return resolve();const ok=()=>{clean();resolve()},bad=()=>{clean();reject(Error('Video metadata unavailable'))},clean=()=>{player.removeEventListener('loadedmetadata',ok);player.removeEventListener('error',bad)};player.addEventListener('loadedmetadata',ok);player.addEventListener('error',bad)})}
-async function show(c,play=false){
- const version=++revision,source=isLocal&&c.localSrc?c.localSrc:c.src;
- const reuse=player.dataset.source===source&&player.readyState>=1&&!player.error;
- current=c;player.pause();
- if(!reuse){pending?.abort();pending=new AbortController();player.removeAttribute('src');player.load();if(objectURL){URL.revokeObjectURL(objectURL);objectURL=null}}
- player.poster=c.poster;player.dataset.clip=c.id;player.dataset.source=source;
- $('#title').textContent='Stage '+c.stage+' — '+c.title;$('#note').textContent=c.note||'';
- $('#download').href=c.src;$('#status').textContent='Loading video…';
- const parent=clips.find(x=>x.id===c.parent);$('#whole').hidden=!parent;$('#whole').href=parent?'#clip='+parent.id:'#';
- $('#whole').onclick=e=>{e.preventDefault();if(parent)show(parent,true)};
- document.querySelectorAll('.card').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===c.id)));
- history.replaceState(null,'','#clip='+c.id);
- try{
-  if(!reuse&&isLocal&&c.localSrc){
-   const response=await fetch(c.localSrc,{signal:pending.signal});if(!response.ok)throw Error('Video HTTP '+response.status);
-   const blob=await response.blob();if(version!==revision)return;
-   objectURL=URL.createObjectURL(blob);player.src=objectURL;
-  }else if(!reuse)player.src=c.src;
-  await ready();if(version!==revision)return;
-  player.currentTime=c.start||0;
-  $('#status').textContent=c.parent?'Chapter '+fmt(c.start)+'–'+fmt(c.end)+' in the complete recording.':'';
-  if(play)await player.play().catch(()=>{});
- }catch(error){if(error.name!=='AbortError'&&version===revision)$('#status').textContent='Streaming is unavailable. Use “Open / download full recording” above.'}
-}
-player.addEventListener('timeupdate',()=>{if(current?.end&&player.currentTime>=current.end&&!player.seeking&&!player.paused){player.pause();$('#status').textContent='Chapter complete. Choose “Watch this full fight” to continue.'}});
-player.addEventListener('error',()=>{if(player.getAttribute('src'))$('#status').textContent='Streaming is unavailable. Use “Open / download full recording” above.'});
-function card(c){
- const b=document.createElement('button');b.className='card';b.dataset.id=c.id;b.setAttribute('aria-pressed','false');
- const im=document.createElement('img');im.src=c.poster;im.alt='';im.loading='lazy';b.append(im);
- const span=document.createElement('span');span.textContent=c.title;const small=document.createElement('small');
- small.textContent=fmt(c.seconds)+(c.parent?' · chapter':' · full fight');span.append(small);b.append(span);
- b.onclick=()=>{show(c,true);player.scrollIntoView({behavior:'instant',block:'center'})};return b;
-}
-fetch('manifest.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Manifest HTTP '+r.status);return r.json()}).then(rows=>{
- clips=rows;
- for(const stage of[6,7,8,9]){
-  const section=document.createElement('section');section.id='stage'+stage;const h=document.createElement('h2');h.textContent='Stage '+stage;section.append(h);
-  const grid=document.createElement('div');grid.className='grid';rows.filter(c=>c.stage===stage&&!c.parent).forEach(c=>grid.append(card(c)));section.append(grid);
-  const chapters=rows.filter(c=>c.stage===stage&&c.parent);
-  if(chapters.length){const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Attack and transformation chapters ('+chapters.length+')';details.append(summary);const chapterGrid=document.createElement('div');chapterGrid.className='grid';chapters.forEach(c=>chapterGrid.append(card(c)));details.append(chapterGrid);section.append(details)}
-  $('#library').append(section);
- }
- const selected=rows.find(c=>c.id===location.hash.replace('#clip=',''))||rows.find(c=>c.id==='stage6-carrier-nightwing')||rows[0];
- if(selected?.parent)document.querySelector('.card[data-id="'+selected.id+'"]').closest('details').open=true;
- if(selected)show(selected);
-}).catch(()=>$('#status').textContent='Could not load the video list. Use “All videos on GitHub” above.');
-</script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>BOF — Current game & review library</title>
+<style>
+:root{color-scheme:dark;font:16px/1.6 system-ui;background:#07111a;color:#e6f1f7}
+*{box-sizing:border-box}body{margin:0}main{max-width:1260px;margin:auto;padding:28px}
+h1,h2{line-height:1.2;color:#89e7da}h1{font-size:clamp(26px,4vw,40px)}h2{font-size:24px}
+p{color:#b8ccd8}a{color:#8bdfff}.tag{font-size:13px;letter-spacing:2px;color:#facb79}
+video{display:block;width:100%;aspect-ratio:1.6;background:#02060a;border:1px solid #385468}
+.links{display:flex;flex-wrap:wrap;gap:12px 24px;margin:16px 0}.notes{font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{padding:0;text-align:left;border:1px solid #304b60;background:#12212f;color:inherit;cursor:pointer;font:inherit}
+.card:hover,.card[aria-pressed="true"]{border-color:#78dfcf}.card img{width:100%;aspect-ratio:1.6;object-fit:contain;background:#02060a;display:block}
+.card span{display:block;padding:10px 14px}.card small{display:block;color:#a5bccb}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #f3cc75;outline-offset:3px}
+section{margin-top:36px}details{margin-top:18px}summary{cursor:pointer;color:#b7dce3;padding:8px 0}
+#status{color:#f1ce87;min-height:1.6em}footer{padding:28px 0;font-size:14px;color:#a8bfcd}
+[hidden]{display:none!important}@media(max-width:600px){main{padding:16px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card span{padding:8px;font-size:14px}.card small{font-size:12px}}
+</style>
+</head>
+<body><nav aria-label="BOF review library" style="display:flex;gap:10px;flex-wrap:wrap;padding:14px 18px;background:#0a1822;border-bottom:1px solid #3c5968;font:14px/1.5 system-ui"><a style="color:#8fe7e4" href="index.html">Boss fights</a><a style="color:#8fe7e4" href="boss-balance-normal-finale-1031.html">Boss analysis / Normal ending</a><a style="color:#8fe7e4" href="enemy-showcase-1031.html">Enemy field guide</a><a style="color:#8fe7e4" href="furious-next-wave-1031.html">New concepts</a><a style="color:#8fe7e4" href="furious-alternatives-1031.html">Earlier concepts</a><a style="color:#8fe7e4" href="field-manual/guide.html">Full field manual</a><a style="color:#8fe7e4" href="rough-riders-guide/index.html">Rough Riders guide</a><a style="color:#8fe7e4" href="audio-speed-1031.html">Audio / speed audit</a></nav><main>
+<div class="tag">BULLETS OF FURY · GITHUB REVIEW LIBRARY · OCTOBER 31, 2026</div>
+<h1>Bullets of Fury / Review library</h1>
+<p>October 31: current boss fixes, Normal’s Stage 5 ending and difficulty restart, the Sumpjaw pair, concepts and the complete enemy field guide. Use the links above to switch pages. Current main encounter cards point to the newest recordings; earlier revisions remain labelled as archives.</p>
+<video id="player" controls playsinline preload="metadata"></video>
+<h2 id="title"></h2><p id="note" class="notes"></p>
+<div class="links">
+<a id="download">Open / download full recording</a>
+<a id="whole" hidden>Watch this full fight</a>
+<a id="release" href="https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-complete-review-2026-10-31">All videos on GitHub</a>
+<a href="https://github.com/NexusWebOS/BulletsOfFury/tree/main">Updated game source</a>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<p class="notes">Recorded in the live game with audio. Furious · Cole · level 5 Laser · invulnerable input bot. Enemy health, transformations, attack sequences and defeats run normally. Chapter previews seek within these same uncut recordings.</p>
+<nav class="links" aria-label="Stages"><a href="#stage6">Stage 6</a><a href="#stage7">Stage 7</a><a href="#stage8">Stage 8</a><a href="#stage9">Stage 9</a></nav>
+<div id="library"></div>
+<footer>All nine full recordings are stored locally in this preview’s videos folder. Previous recordings remain available in the <a href="https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-stage6-9-review-2026-10-28">earlier review release</a>.</footer>
+</main>
+<script>
+'use strict';
+const $=s=>document.querySelector(s),player=$('#player'),params=new URLSearchParams(location.search);
+let clips=[],current=null,revision=0,pending=null,objectURL=null;
+const isLocal=location.hostname==='127.0.0.1'||location.hostname==='localhost';
+const fmt=t=>Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');
+function ready(){return new Promise((resolve,reject)=>{if(player.readyState>=1)return resolve();const ok=()=>{clean();resolve()},bad=()=>{clean();reject(Error('Video metadata unavailable'))},clean=()=>{player.removeEventListener('loadedmetadata',ok);player.removeEventListener('error',bad)};player.addEventListener('loadedmetadata',ok);player.addEventListener('error',bad)})}
+async function show(c,play=false){
+ const version=++revision,source=isLocal&&c.localSrc?c.localSrc:c.src;
+ const reuse=player.dataset.source===source&&player.readyState>=1&&!player.error;
+ current=c;player.pause();
+ if(!reuse){pending?.abort();pending=new AbortController();player.removeAttribute('src');player.load();if(objectURL){URL.revokeObjectURL(objectURL);objectURL=null}}
+ player.poster=c.poster;player.dataset.clip=c.id;player.dataset.source=source;
+ $('#title').textContent='Stage '+c.stage+' — '+c.title;$('#note').textContent=c.note||'';
+ $('#download').href=c.src;$('#status').textContent='Loading video…';
+ const parent=clips.find(x=>x.id===c.parent);$('#whole').hidden=!parent;$('#whole').href=parent?'#clip='+parent.id:'#';
+ $('#whole').onclick=e=>{e.preventDefault();if(parent)show(parent,true)};
+ document.querySelectorAll('.card').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===c.id)));
+ history.replaceState(null,'','#clip='+c.id);
+ try{
+  if(!reuse)player.src=source;
+  await ready();if(version!==revision)return;
+  player.currentTime=c.start||0;
+  $('#status').textContent=c.parent?'Chapter '+fmt(c.start)+'–'+fmt(c.end)+' in the complete recording.':'';
+  if(play)await player.play().catch(()=>{});
+ }catch(error){if(error.name!=='AbortError'&&version===revision)$('#status').textContent='Streaming is unavailable. Use “Open / download full recording” above.'}
+}
+player.addEventListener('timeupdate',()=>{if(current?.end&&player.currentTime>=current.end&&!player.seeking&&!player.paused){player.pause();$('#status').textContent='Chapter complete. Choose “Watch this full fight” to continue.'}});
+player.addEventListener('error',()=>{if(player.getAttribute('src'))$('#status').textContent='Streaming is unavailable. Use “Open / download full recording” above.'});
+function card(c){
+ const b=document.createElement('button');b.className='card';b.dataset.id=c.id;b.setAttribute('aria-pressed','false');
+ const im=document.createElement('img');im.src=c.poster;im.alt='';im.loading='lazy';b.append(im);
+ const span=document.createElement('span');span.textContent=c.title;const small=document.createElement('small');
+ small.textContent=fmt(c.seconds)+(c.kind?' · '+c.kind:c.parent?' · chapter':' · full fight');span.append(small);b.append(span);
+ b.onclick=()=>{show(c,true);player.scrollIntoView({behavior:'instant',block:'center'})};return b;
+}
+fetch('manifest.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Manifest HTTP '+r.status);return r.json()}).then(rows=>{
+ clips=rows;
+ for(const stage of[6,7,8,9]){
+  const section=document.createElement('section');section.id='stage'+stage;const h=document.createElement('h2');h.textContent='Stage '+stage;section.append(h);
+  const grid=document.createElement('div');grid.className='grid';rows.filter(c=>c.stage===stage&&!c.parent).forEach(c=>grid.append(card(c)));section.append(grid);
+  const chapters=rows.filter(c=>c.stage===stage&&c.parent);
+  if(chapters.length){const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Attack and transformation chapters ('+chapters.length+')';details.append(summary);const chapterGrid=document.createElement('div');chapterGrid.className='grid';chapters.forEach(c=>chapterGrid.append(card(c)));details.append(chapterGrid);section.append(details)}
+  $('#library').append(section);
+ }
+ const selected=rows.find(c=>c.id===location.hash.replace('#clip=',''))||rows.find(c=>c.id==='stage6-carrier-nightwing')||rows[0];
+ if(selected?.parent)document.querySelector('.card[data-id="'+selected.id+'"]').closest('details').open=true;
+ if(selected)show(selected);
+}).catch(()=>$('#status').textContent='Could not load the video list. Use “All videos on GitHub” above.');
+</script>
+</body></html>

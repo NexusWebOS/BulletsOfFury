@@ -1,0 +1,1389 @@
+{
+  "completed": true,
+  "seconds": 164.77,
+  "defeatSeconds": 158.641,
+  "maxHP": 10965,
+  "nativeFPS": 58.89014722536806,
+  "events": [
+    {
+      "event": "attack-start",
+      "time": 1.816666666666665,
+      "mode": "spiral",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 340,
+        "y": 205
+      },
+      "target": {
+        "x": 405.3634023167318,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 2.416666666666663,
+      "mode": "spiral",
+      "a": 1.5856211452403286,
+      "eye": {
+        "x": 351.91428991953376,
+        "y": 211.78100570082785
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 3.1166666666666605,
+      "mode": "spiral",
+      "eye": {
+        "x": 351.91428991953376,
+        "y": 211.78100570082785
+      },
+      "a": 1.5856211452403286
+    },
+    {
+      "event": "attack-start",
+      "time": 8.883333333333354,
+      "mode": "beam",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 300.18013899349086,
+        "y": 198.20053024521783
+      },
+      "target": {
+        "x": 303.0118023167321,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 9.483333333333384,
+      "mode": "beam",
+      "a": 1.593121275763291,
+      "eye": {
+        "x": 312.0944289130246,
+        "y": 204.98153594604568
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 10.183333333333419,
+      "mode": "beam",
+      "eye": {
+        "x": 312.0944289130246,
+        "y": 204.98153594604568
+      },
+      "a": 1.593121275763291
+    },
+    {
+      "event": "attack-start",
+      "time": 12.90000000000022,
+      "mode": "sweep",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 381.42776224635674,
+        "y": 224.97209317127124
+      },
+      "target": {
+        "x": 375.0370023167319,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 13.50000000000025,
+      "mode": "sweep",
+      "a": 1.603761586943793,
+      "eye": {
+        "x": 393.3420521658905,
+        "y": 231.7530988720991
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 14.200000000000285,
+      "mode": "sweep",
+      "eye": {
+        "x": 393.3420521658905,
+        "y": 231.7530988720991
+      },
+      "a": 1.603761586943793
+    },
+    {
+      "event": "attack-start",
+      "time": 20.866666666666763,
+      "mode": "orb",
+      "half": false,
+      "warm": 1.65,
+      "eye": {
+        "x": 462.6753854992226,
+        "y": 189.08643220543303
+      },
+      "target": {
+        "x": 454.6438023167317,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 21.61666666666672,
+      "mode": "orb",
+      "a": 1.5982264826151462,
+      "eye": {
+        "x": 476.5541571087269,
+        "y": 196.06448740461045
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 22.533333333333335,
+      "mode": "orb",
+      "eye": {
+        "x": 476.5541571087269,
+        "y": 196.06448740461042
+      },
+      "a": 1.5982264826151462
+    },
+    {
+      "event": "orb-release",
+      "time": 22.533333333333335,
+      "index": 1,
+      "eye": {
+        "x": 476.5541571087269,
+        "y": 196.06448740461042
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 22.999999999999975,
+      "index": 2,
+      "eye": {
+        "x": 476.5541571087269,
+        "y": 196.06448740461042
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 23.466666666666615,
+      "index": 3,
+      "eye": {
+        "x": 476.5541571087269,
+        "y": 196.06448740461042
+      }
+    },
+    {
+      "event": "attack-start",
+      "time": 25.08333333333319,
+      "mode": "spin",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 407.22082377539476,
+        "y": 217.61729478099164
+      },
+      "target": {
+        "x": 412.9450023167318,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 25.683333333333156,
+      "mode": "spin",
+      "a": 1.599238433297129,
+      "eye": {
+        "x": 419.1351136949285,
+        "y": 224.3983004818195
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 26.383333333333116,
+      "mode": "spin",
+      "eye": {
+        "x": 419.1351136949285,
+        "y": 224.3983004818195
+      },
+      "a": 1.599238433297129
+    },
+    {
+      "event": "spin-volley",
+      "time": 26.383333333333116,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 26.849999999999756,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 27.316666666666396,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 27.783333333333037,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 28.249999999999677,
+      "count": 18
+    },
+    {
+      "event": "attack-start",
+      "time": 29.549999999999603,
+      "mode": "spiral",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 488.46844702826064,
+        "y": 222.72396049290376
+      },
+      "target": {
+        "x": 481.1794023167316,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 30.14999999999957,
+      "mode": "spiral",
+      "a": 1.5898087929625093,
+      "eye": {
+        "x": 500.3827369477944,
+        "y": 229.5049661937316
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 30.84999999999953,
+      "mode": "spiral",
+      "eye": {
+        "x": 500.3827369477944,
+        "y": 229.5049661937316
+      },
+      "a": 1.5898087929625093
+    },
+    {
+      "event": "attack-start",
+      "time": 36.61666666666587,
+      "mode": "beam",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 473.49375715522154,
+        "y": 215.66387366037515
+      },
+      "target": {
+        "x": 473.59780231673165,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 37.21666666666584,
+      "mode": "beam",
+      "a": 1.5900558822006434,
+      "eye": {
+        "x": 485.4080470747553,
+        "y": 222.444879361203
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 37.9166666666658,
+      "mode": "beam",
+      "eye": {
+        "x": 485.4080470747553,
+        "y": 222.444879361203
+      },
+      "a": 1.5900558822006434
+    },
+    {
+      "event": "attack-start",
+      "time": 40.63333333333231,
+      "mode": "sweep",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 426.9167972100265,
+        "y": 218.10282425045813
+      },
+      "target": {
+        "x": 431.89900231673175,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 41.233333333332276,
+      "mode": "sweep",
+      "a": 1.6027166268439161,
+      "eye": {
+        "x": 438.8310871295603,
+        "y": 224.88382995128597
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 41.933333333332236,
+      "mode": "sweep",
+      "eye": {
+        "x": 438.8310871295603,
+        "y": 224.88382995128597
+      },
+      "a": 1.6027166268439161
+    },
+    {
+      "event": "attack-start",
+      "time": 48.59999999999852,
+      "mode": "orb",
+      "half": false,
+      "warm": 1.65,
+      "eye": {
+        "x": 475.8355044114039,
+        "y": 203.9419963011465
+      },
+      "target": {
+        "x": 481.1794023167316,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 49.34999999999848,
+      "mode": "orb",
+      "a": 1.5913253538303096,
+      "eye": {
+        "x": 489.7142760209082,
+        "y": 210.92005150032392
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 50.266666666665095,
+      "mode": "orb",
+      "eye": {
+        "x": 489.7142760209082,
+        "y": 210.92005150032395
+      },
+      "a": 1.5913253538303096
+    },
+    {
+      "event": "orb-release",
+      "time": 50.266666666665095,
+      "index": 1,
+      "eye": {
+        "x": 489.7142760209082,
+        "y": 210.92005150032395
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 50.733333333331736,
+      "index": 2,
+      "eye": {
+        "x": 489.7142760209082,
+        "y": 210.92005150032395
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 51.199999999998376,
+      "index": 3,
+      "eye": {
+        "x": 489.7142760209082,
+        "y": 210.92005150032395
+      }
+    },
+    {
+      "event": "attack-start",
+      "time": 52.81666666666495,
+      "mode": "spin",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 420.38094268757607,
+        "y": 224.99553507676916
+      },
+      "target": {
+        "x": 428.10820231673176,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 53.416666666664916,
+      "mode": "spin",
+      "a": 1.590712766384337,
+      "eye": {
+        "x": 432.2952326071098,
+        "y": 231.776540777597
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 54.11666666666488,
+      "mode": "spin",
+      "eye": {
+        "x": 432.2952326071098,
+        "y": 231.776540777597
+      },
+      "a": 1.590712766384337
+    },
+    {
+      "event": "spin-volley",
+      "time": 54.11666666666488,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 54.58333333333152,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 55.04999999999816,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 55.5166666666648,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 55.98333333333144,
+      "count": 18
+    },
+    {
+      "event": "attack-start",
+      "time": 57.28333333333136,
+      "mode": "spiral",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 487.3125574983222,
+        "y": 208.57692353607467
+      },
+      "target": {
+        "x": 484.9702023167316,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 57.88333333333133,
+      "mode": "spiral",
+      "a": 1.6002425182517193,
+      "eye": {
+        "x": 499.22684741785594,
+        "y": 215.35792923690252
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 58.58333333333129,
+      "mode": "spiral",
+      "eye": {
+        "x": 499.22684741785594,
+        "y": 215.35792923690252
+      },
+      "a": 1.6002425182517193
+    },
+    {
+      "event": "attack-start",
+      "time": 64.34999999999764,
+      "mode": "beam",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 501.1571549446626,
+        "y": 224.90174300342193
+      },
+      "target": {
+        "x": 496.3426023167316,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 64.9499999999976,
+      "mode": "beam",
+      "a": 1.5962618057277065,
+      "eye": {
+        "x": 513.0714448641963,
+        "y": 231.68274870424978
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 65.64999999999756,
+      "mode": "beam",
+      "eye": {
+        "x": 513.0714448641963,
+        "y": 231.68274870424978
+      },
+      "a": 1.5962618057277065
+    },
+    {
+      "event": "attack-start",
+      "time": 68.36666666666407,
+      "mode": "sweep",
+      "half": false,
+      "warm": 1.3,
+      "eye": {
+        "x": 443.7381115308642,
+        "y": 201.12682070616185
+      },
+      "target": {
+        "x": 450.8530023167317,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 68.96666666666404,
+      "mode": "sweep",
+      "a": 1.5912975051374467,
+      "eye": {
+        "x": 455.652401450398,
+        "y": 207.9078264069897
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 69.666666666664,
+      "mode": "sweep",
+      "eye": {
+        "x": 455.652401450398,
+        "y": 207.9078264069897
+      },
+      "a": 1.5912975051374467
+    },
+    {
+      "event": "attack-start",
+      "time": 76.33333333333029,
+      "mode": "orb",
+      "half": false,
+      "warm": 1.65,
+      "eye": {
+        "x": 438.1621356551398,
+        "y": 220.10892564488495
+      },
+      "target": {
+        "x": 443.2714023167317,
+        "y": 441.9786023167319
+      },
+      "start": null,
+      "end": null
+    },
+    {
+      "event": "aim-locked",
+      "time": 77.08333333333024,
+      "mode": "orb",
+      "a": 1.5939606287935726,
+      "eye": {
+        "x": 452.0409072646441,
+        "y": 227.08698084406237
+      }
+    },
+    {
+      "event": "half-health",
+      "time": 77.71666666666354,
+      "hp": 5482.5,
+      "maxhp": 10965,
+      "eye": {
+        "x": 452.0409072646441,
+        "y": 222.2503943850174
+      }
+    },
+    {
+      "event": "water-phase-ready",
+      "time": 80.13333333333007
+    },
+    {
+      "event": "attack-start",
+      "time": 80.13333333333007,
+      "mode": "dash",
+      "half": true,
+      "warm": 1.25,
+      "eye": {
+        "x": 444.09934612384285,
+        "y": 226.3657987800749
+      },
+      "target": {
+        "x": 484.9702023167316,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": -40.00007440757284,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": 919.9999255924272,
+        "y": 441.9786023167319
+      }
+    },
+    {
+      "event": "dash-release",
+      "time": 83.19999999999656,
+      "start": {
+        "x": -40.00007440757284,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": 919.9999255924272,
+        "y": 441.9786023167319
+      },
+      "duration": 1.05
+    },
+    {
+      "event": "dash-complete",
+      "time": 86.24999999999639
+    },
+    {
+      "event": "attack-start",
+      "time": 86.24999999999639,
+      "mode": "spiral",
+      "half": true,
+      "warm": 1.3,
+      "eye": {
+        "x": 314.39081988362165,
+        "y": 205
+      },
+      "target": {
+        "x": 314.38420231673206,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": -40.00007440757284,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": 919.9999255924272,
+        "y": 441.9786023167319
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 86.84999999999636,
+      "mode": "spiral",
+      "a": 1.5896444541817678,
+      "eye": {
+        "x": 326.3051098031554,
+        "y": 211.78100570082785
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 87.54999999999632,
+      "mode": "spiral",
+      "eye": {
+        "x": 326.3051098031554,
+        "y": 211.78100570082785
+      },
+      "a": 1.5896444541817678
+    },
+    {
+      "event": "attack-start",
+      "time": 93.31666666666266,
+      "mode": "sweep",
+      "half": true,
+      "warm": 1.3,
+      "eye": {
+        "x": 395.6384431364875,
+        "y": 222.08622467295967
+      },
+      "target": {
+        "x": 390.20020231673186,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": -40.00007440757284,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": 919.9999255924272,
+        "y": 441.9786023167319
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 93.91666666666262,
+      "mode": "sweep",
+      "a": 1.5988500237659824,
+      "eye": {
+        "x": 407.5527330560213,
+        "y": 228.86723037378752
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 94.61666666666258,
+      "mode": "sweep",
+      "eye": {
+        "x": 407.5527330560213,
+        "y": 228.86723037378755
+      },
+      "a": 1.5988500237659824
+    },
+    {
+      "event": "attack-start",
+      "time": 101.28333333332887,
+      "mode": "dash",
+      "half": true,
+      "warm": 1.25,
+      "eye": {
+        "x": 476.8860663893534,
+        "y": 186.2005637071215
+      },
+      "target": {
+        "x": 469.80700231673165,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 469.80700231673165,
+        "y": -240
+      },
+      "end": {
+        "x": 469.80700231673165,
+        "y": 752
+      }
+    },
+    {
+      "event": "dash-release",
+      "time": 104.34999999999536,
+      "start": {
+        "x": 469.80700231673165,
+        "y": -240
+      },
+      "end": {
+        "x": 469.80700231673165,
+        "y": 752
+      },
+      "duration": 1.05
+    },
+    {
+      "event": "dash-complete",
+      "time": 107.39999999999519
+    },
+    {
+      "event": "attack-start",
+      "time": 107.39999999999519,
+      "mode": "orb",
+      "half": true,
+      "warm": 1.65,
+      "eye": {
+        "x": 439.99999998846783,
+        "y": 205
+      },
+      "target": {
+        "x": 443.2714023167317,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 469.80700231673165,
+        "y": -240
+      },
+      "end": {
+        "x": 469.80700231673165,
+        "y": 752
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 108.14999999999515,
+      "mode": "orb",
+      "a": 1.5839510552676426,
+      "eye": {
+        "x": 453.8787715979721,
+        "y": 211.97805519917742
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 109.06666666666176,
+      "mode": "orb",
+      "eye": {
+        "x": 453.8787715979721,
+        "y": 211.97805519917742
+      },
+      "a": 1.5839510552676426
+    },
+    {
+      "event": "orb-release",
+      "time": 109.06666666666176,
+      "index": 1,
+      "eye": {
+        "x": 453.8787715979721,
+        "y": 211.97805519917742
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 109.5333333333284,
+      "index": 2,
+      "eye": {
+        "x": 453.8787715979721,
+        "y": 211.97805519917742
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 109.99999999999504,
+      "index": 3,
+      "eye": {
+        "x": 453.8787715979721,
+        "y": 211.97805519917745
+      }
+    },
+    {
+      "event": "attack-start",
+      "time": 111.61666666666162,
+      "mode": "beam",
+      "half": true,
+      "warm": 1.3,
+      "eye": {
+        "x": 467.78381712720915,
+        "y": 199.93148763436506
+      },
+      "target": {
+        "x": 473.59780231673165,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 469.80700231673165,
+        "y": -240
+      },
+      "end": {
+        "x": 469.80700231673165,
+        "y": 752
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 112.21666666666158,
+      "mode": "beam",
+      "a": 1.5967198997336465,
+      "eye": {
+        "x": 479.6981070467429,
+        "y": 206.7124933351929
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 112.91666666666154,
+      "mode": "beam",
+      "eye": {
+        "x": 479.6981070467429,
+        "y": 206.7124933351929
+      },
+      "a": 1.5967198997336465
+    },
+    {
+      "event": "attack-start",
+      "time": 115.63333333332805,
+      "mode": "spin",
+      "half": true,
+      "warm": 1.3,
+      "eye": {
+        "x": 410.3647737134108,
+        "y": 224.98568622725762
+      },
+      "target": {
+        "x": 416.7358023167318,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 469.80700231673165,
+        "y": -240
+      },
+      "end": {
+        "x": 469.80700231673165,
+        "y": 752
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 116.23333333332802,
+      "mode": "spin",
+      "a": 1.5971600897657654,
+      "eye": {
+        "x": 422.27906363294454,
+        "y": 231.76669192808546
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 116.93333333332798,
+      "mode": "spin",
+      "eye": {
+        "x": 422.27906363294454,
+        "y": 231.76669192808546
+      },
+      "a": 1.5971600897657654
+    },
+    {
+      "event": "spin-volley",
+      "time": 116.93333333332798,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 117.39999999999462,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 117.86666666666126,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 118.3333333333279,
+      "count": 18
+    },
+    {
+      "event": "spin-volley",
+      "time": 118.79999999999454,
+      "count": 18
+    },
+    {
+      "event": "attack-start",
+      "time": 120.09999999999447,
+      "mode": "dash",
+      "half": true,
+      "warm": 1.25,
+      "eye": {
+        "x": 487.8288772636007,
+        "y": 208.24772553049172
+      },
+      "target": {
+        "x": 484.9702023167316,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 919.9606402294895,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": -40.03935977051046,
+        "y": 441.9786023167319
+      }
+    },
+    {
+      "event": "dash-release",
+      "time": 123.16666666666096,
+      "start": {
+        "x": 919.9606402294895,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": -40.03935977051046,
+        "y": 441.9786023167319
+      },
+      "duration": 1.05
+    },
+    {
+      "event": "dash-complete",
+      "time": 126.21666666666079
+    },
+    {
+      "event": "attack-start",
+      "time": 126.21666666666079,
+      "mode": "spiral",
+      "half": true,
+      "warm": 1.3,
+      "eye": {
+        "x": 424.31260045123355,
+        "y": 205
+      },
+      "target": {
+        "x": 424.3174023167318,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 919.9606402294895,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": -40.03935977051046,
+        "y": 441.9786023167319
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 126.81666666666075,
+      "mode": "spiral",
+      "a": 1.589594864668574,
+      "eye": {
+        "x": 436.2268903707673,
+        "y": 211.78100570082785
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 127.51666666666071,
+      "mode": "spiral",
+      "eye": {
+        "x": 436.2268903707673,
+        "y": 211.78100570082785
+      },
+      "a": 1.589594864668574
+    },
+    {
+      "event": "attack-start",
+      "time": 133.28333333333154,
+      "mode": "sweep",
+      "half": true,
+      "warm": 1.3,
+      "eye": {
+        "x": 366.8935570374352,
+        "y": 222.28027396892742
+      },
+      "target": {
+        "x": 371.2462023167319,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 919.9606402294895,
+        "y": 441.9786023167319
+      },
+      "end": {
+        "x": -40.03935977051046,
+        "y": 441.9786023167319
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 133.88333333333202,
+      "mode": "sweep",
+      "a": 1.588504845841924,
+      "eye": {
+        "x": 378.80784695696894,
+        "y": 229.06127966975527
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 134.58333333333258,
+      "mode": "sweep",
+      "eye": {
+        "x": 378.80784695696894,
+        "y": 229.06127966975527
+      },
+      "a": 1.588504845841924
+    },
+    {
+      "event": "attack-start",
+      "time": 141.25000000000455,
+      "mode": "dash",
+      "half": true,
+      "warm": 1.25,
+      "eye": {
+        "x": 309.4745136236368,
+        "y": 186.39461300308923
+      },
+      "target": {
+        "x": 314.38420231673206,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 314.38420231673206,
+        "y": 752
+      },
+      "end": {
+        "x": 314.38420231673206,
+        "y": -240
+      }
+    },
+    {
+      "event": "dash-release",
+      "time": 144.31666666667365,
+      "start": {
+        "x": 314.38420231673206,
+        "y": 752
+      },
+      "end": {
+        "x": 314.38420231673206,
+        "y": -240
+      },
+      "duration": 1.05
+    },
+    {
+      "event": "dash-complete",
+      "time": 147.36666666667608
+    },
+    {
+      "event": "attack-start",
+      "time": 147.36666666667608,
+      "mode": "orb",
+      "half": true,
+      "warm": 1.65,
+      "eye": {
+        "x": 337.13110040405513,
+        "y": 205
+      },
+      "target": {
+        "x": 337.129002316732,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 314.38420231673206,
+        "y": 752
+      },
+      "end": {
+        "x": 314.38420231673206,
+        "y": -240
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 148.11666666667668,
+      "mode": "orb",
+      "a": 1.5981775458578167,
+      "eye": {
+        "x": 351.0098720135594,
+        "y": 211.97805519917742
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 149.03333333334407,
+      "mode": "orb",
+      "eye": {
+        "x": 351.0098720135594,
+        "y": 211.97805519917742
+      },
+      "a": 1.5981775458578167
+    },
+    {
+      "event": "orb-release",
+      "time": 149.03333333334407,
+      "index": 1,
+      "eye": {
+        "x": 351.0098720135594,
+        "y": 211.97805519917742
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 149.5000000000111,
+      "index": 2,
+      "eye": {
+        "x": 351.0098720135594,
+        "y": 211.97805519917742
+      }
+    },
+    {
+      "event": "orb-release",
+      "time": 149.96666666667815,
+      "index": 3,
+      "eye": {
+        "x": 351.0098720135594,
+        "y": 211.97805519917742
+      }
+    },
+    {
+      "event": "attack-start",
+      "time": 151.5833333333461,
+      "mode": "beam",
+      "half": true,
+      "warm": 1.3,
+      "eye": {
+        "x": 281.6765386802273,
+        "y": 200.29927181688439
+      },
+      "target": {
+        "x": 287.8486023167321,
+        "y": 441.9786023167319
+      },
+      "start": {
+        "x": 314.38420231673206,
+        "y": 752
+      },
+      "end": {
+        "x": 314.38420231673206,
+        "y": -240
+      }
+    },
+    {
+      "event": "aim-locked",
+      "time": 152.18333333334658,
+      "mode": "beam",
+      "a": 1.5952370411860355,
+      "eye": {
+        "x": 293.59082859976104,
+        "y": 207.08027751771223
+      }
+    },
+    {
+      "event": "laser-release",
+      "time": 152.88333333334714,
+      "mode": "beam",
+      "eye": {
+        "x": 293.59082859976104,
+        "y": 207.08027751771223
+      },
+      "a": 1.5952370411860355
+    }
+  ],
+  "chapters": [
+    {
+      "id": "stage9-horizon-spiral",
+      "stage": 9,
+      "title": "Horizon \u00b7 eye glow, 360 warning and spiral beams",
+      "seconds": 7.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "poster": "posters/stage9-horizon-symbiote-1029.jpg",
+      "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2",
+      "bytes": 137508885,
+      "note": "Actual native Furious encounter. Input-only invulnerable Cole bot; native HP, attack timers and defeat. PixelLab rotation/beam/orb masters, fixed-pivot authored frames, 360 warnings and a 50% aqua/white-eye dash phase. Stage9 arena retained; older films preserved.",
+      "parent": "stage9-miniboss",
+      "start": 2.2729999999999997,
+      "end": 9.273
+    },
+    {
+      "id": "stage9-horizon-eye-sweep",
+      "stage": 9,
+      "title": "Horizon \u00b7 full 360-degree eye laser sweep",
+      "seconds": 8.000000000000002,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "poster": "posters/stage9-horizon-symbiote-1029.jpg",
+      "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2",
+      "bytes": 137508885,
+      "note": "Actual native Furious encounter. Input-only invulnerable Cole bot; native HP, attack timers and defeat. PixelLab rotation/beam/orb masters, fixed-pivot authored frames, 360 warnings and a 50% aqua/white-eye dash phase. Stage9 arena retained; older films preserved.",
+      "parent": "stage9-miniboss",
+      "start": 13.566,
+      "end": 21.566000000000003
+    },
+    {
+      "id": "stage9-horizon-orb",
+      "stage": 9,
+      "title": "Horizon \u00b7 charged alien plasma orbs",
+      "seconds": 5.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "poster": "posters/stage9-horizon-symbiote-1029.jpg",
+      "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2",
+      "bytes": 137508885,
+      "note": "Actual native Furious encounter. Input-only invulnerable Cole bot; native HP, attack timers and defeat. PixelLab rotation/beam/orb masters, fixed-pivot authored frames, 360 warnings and a 50% aqua/white-eye dash phase. Stage9 arena retained; older films preserved.",
+      "parent": "stage9-miniboss",
+      "start": 21.501,
+      "end": 26.501
+    },
+    {
+      "id": "stage9-horizon-radial",
+      "stage": 9,
+      "title": "Horizon \u00b7 spinning radial laser volley",
+      "seconds": 5.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "poster": "posters/stage9-horizon-symbiote-1029.jpg",
+      "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2",
+      "bytes": 137508885,
+      "note": "Actual native Furious encounter. Input-only invulnerable Cole bot; native HP, attack timers and defeat. PixelLab rotation/beam/orb masters, fixed-pivot authored frames, 360 warnings and a 50% aqua/white-eye dash phase. Stage9 arena retained; older films preserved.",
+      "parent": "stage9-miniboss",
+      "start": 25.702,
+      "end": 30.702
+    },
+    {
+      "id": "stage9-horizon-water",
+      "stage": 9,
+      "title": "Horizon \u00b7 half-health aqua/white-eye transformation",
+      "seconds": 10.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "poster": "posters/stage9-horizon-symbiote-1029.jpg",
+      "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2",
+      "bytes": 137508885,
+      "note": "Actual native Furious encounter. Input-only invulnerable Cole bot; native HP, attack timers and defeat. PixelLab rotation/beam/orb masters, fixed-pivot authored frames, 360 warnings and a 50% aqua/white-eye dash phase. Stage9 arena retained; older films preserved.",
+      "parent": "stage9-miniboss",
+      "start": 79.582,
+      "end": 89.582
+    },
+    {
+      "id": "stage9-horizon-dash",
+      "stage": 9,
+      "title": "Horizon \u00b7 edge warning and spinning laser dash",
+      "seconds": 6.0,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "poster": "posters/stage9-horizon-symbiote-1029.jpg",
+      "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2",
+      "bytes": 137508885,
+      "note": "Actual native Furious encounter. Input-only invulnerable Cole bot; native HP, attack timers and defeat. PixelLab rotation/beam/orb masters, fixed-pivot authored frames, 360 warnings and a 50% aqua/white-eye dash phase. Stage9 arena retained; older films preserved.",
+      "parent": "stage9-miniboss",
+      "start": 83.333,
+      "end": 89.333
+    }
+  ],
+  "audioMeanDB": -19.4,
+  "audioPeakDB": -3.5,
+  "decodedCueCounts": {
+    "mini9": 2,
+    "bossAlarm": 1,
+    "enemyunit": 1,
+    "bossWeaponCharge": 28,
+    "av3_target_acquire": 23,
+    "alertLockon": 23,
+    "lockon": 125,
+    "combatBeam0927": 30,
+    "enemyHeavyLaser": 98,
+    "combatOrb0927": 12,
+    "hit": 18,
+    "missile": 50,
+    "spaceLaserHit": 365,
+    "spaceVolleyLaunch": 100,
+    "spaceLaserCannon": 395,
+    "expBig": 36,
+    "expSmall": 58,
+    "missileHit": 50,
+    "spaceVolleyHit": 102,
+    "powerup": 5,
+    "jetDash": 4,
+    "stageclear": 1,
+    "statTick": 10,
+    "stageClear": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "audioErrors": [],
+  "botErrors": [],
+  "maxProjectiles": 60,
+  "inputOnly": true,
+  "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2"
+}

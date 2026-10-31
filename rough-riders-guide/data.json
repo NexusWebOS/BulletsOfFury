@@ -1,0 +1,315 @@
+[
+  {
+    "id": "voss",
+    "name": "Voss",
+    "ship": "Iron Vulture",
+    "role": "Pursuit leader",
+    "accent": "#f28376",
+    "quote": "The Division betrayed every one of us.",
+    "identity": "The veteran at the front of the crew. Black aviators, red scarf, shearling collar; a charcoal-and-red fighter with four engine plumes.",
+    "purpose": "Break comfortable firing positions. Voss turns the whole screen into a flight lane and makes the player move before committing to damage.",
+    "flight": "Cruises with a banking sway, locks a rush direction, makes fast lateral turbo passes, then returns. His separate charged rush exits the playfield and re-enters from the north.",
+    "chapters": [
+      {
+        "t": 0.4400999999642372,
+        "label": "Cruise"
+      },
+      {
+        "t": 2.101699999988079,
+        "label": "Energy shot"
+      },
+      {
+        "t": 5.017,
+        "label": "Turbo passes"
+      },
+      {
+        "t": 17.06019999998808,
+        "label": "Charged rush"
+      },
+      {
+        "t": 24.152,
+        "label": "Recovery"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Turbo pursuit",
+        "tell": "A committed flight lane and charge cue precede the rush. Each lateral row gets another warning.",
+        "action": "The initial rush leads into repeated side-to-side passes. The native turbo return brings him back to his lane.",
+        "response": "Leave the warned row before he commits. Use roll or somersault if his body closes the gap.",
+        "facts": [
+          "Multiple screen passes",
+          "Body collision threat",
+          "Visible return"
+        ]
+      },
+      {
+        "name": "Charged fly-through",
+        "tell": "1.65 seconds of charge. His nose turns toward the aim point before he launches.",
+        "action": "He accelerates into a straight rush, exits, waits briefly, then flies back in from the top and recovers.",
+        "response": "Make a late lateral move after his aim settles. Keep his return lane clear.",
+        "facts": [
+          "1.65 s charge",
+          "Northbound reset",
+          "6 s recovery cooldown"
+        ]
+      },
+      {
+        "name": "Aimed energy shot",
+        "tell": "A short committed gun tell points at the target\u2019s earlier position.",
+        "action": "The shared gun owner releases a slower, destructible energy charge rather than an ordinary tracer.",
+        "response": "Move out of the aim line or destroy the energy object.",
+        "facts": [
+          "2 HP energy object",
+          "155 px/s",
+          "Shared firing turn"
+        ]
+      }
+    ],
+    "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-voss.mp4",
+    "poster": "videos/voss/poster.jpg",
+    "hp": 1424
+  },
+  {
+    "id": "nyx",
+    "name": "Nyx",
+    "ship": "Ghostknife",
+    "role": "Cloaked ambusher",
+    "accent": "#c49aff",
+    "quote": "Your cloak belongs to us now.",
+    "identity": "Black-and-violet swept hair, shaved side and a high collar. Her silver/violet craft has two prominent cylindrical engines.",
+    "purpose": "Make target acquisition matter. Find her with Retina or a missile, then use the visible retaliation window to attack.",
+    "flight": "Begins in a spectre cloak with a slow banking drift. Regular Retina, Multi-Retina or a missile reveals her; after retaliation and recovery she cloaks again.",
+    "chapters": [
+      {
+        "t": 0.44289999997615814,
+        "label": "Cloaked drift"
+      },
+      {
+        "t": 3.3425,
+        "label": "Retina reveal"
+      },
+      {
+        "t": 4.175799999952316,
+        "label": "Shadow pulses"
+      },
+      {
+        "t": 11.225099999964238,
+        "label": "Reveal again"
+      },
+      {
+        "t": 19.1525,
+        "label": "Recloak"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Spectre cloak & reveal",
+        "tell": "The hull fades into its spectre treatment, but remains available to the dedicated Retina target path.",
+        "action": "A successful lock or missile hit calls her reveal handler. She becomes visible and prepares shadow retaliation.",
+        "response": "Use Retina/Multi-Retina to expose her. A missile works with or without a prior lock.",
+        "facts": [
+          "Lock reveals",
+          "Missile reveals",
+          "Recloaks after recovery"
+        ]
+      },
+      {
+        "name": "Shadow-charge retaliation",
+        "tell": "Aimed warning lanes and an energy charge precede each pulse. Initial Furious windup is 1.15 seconds.",
+        "action": "On Furious she makes three charged pulses. The current shared round gate emits one destructible energy charge per pulse.",
+        "response": "Keep moving between pulses or destroy the energy charges. Attack while the revealed hull is readable.",
+        "facts": [
+          "3 pulses on Furious",
+          "0.78 s repeat charge",
+          "2 HP energy charges"
+        ]
+      }
+    ],
+    "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-nyx.mp4",
+    "poster": "videos/nyx/poster.jpg",
+    "hp": 1424
+  },
+  {
+    "id": "rook",
+    "name": "Rook",
+    "ship": "Breachhammer",
+    "role": "Heavy gunner",
+    "accent": "#ffbe68",
+    "quote": "Big guns scare ya when you are not the only one who has them?",
+    "identity": "Bald, scarred, heavily built, full dark beard and orange armor. His broad gunmetal/orange ship carries paired long guns.",
+    "purpose": "Punish hovering in a lock. Rook plants the heavy ship, commits to a firing direction and forces the player to break that line.",
+    "flight": "Heavy cruising sway with evasive rolls. During his current special, he holds position, rotates toward the aim point, fires from alternating gun sockets, then recovers.",
+    "chapters": [
+      {
+        "t": 0.4745,
+        "label": "Heavy cruise"
+      },
+      {
+        "t": 2.137699999988079,
+        "label": "Dual chaingun"
+      },
+      {
+        "t": 10.054099999964237,
+        "label": "Late sidestep test"
+      },
+      {
+        "t": 18.373,
+        "label": "Recovery"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Locked dual chaingun",
+        "tell": "1.65-second charge with accelerating lock beeps and a lane warning. Aim follows for the first 72% of the tell.",
+        "action": "He alternates the two gun sockets every 0.09 seconds. Furious releases 30 slugs. If the target is still inside the lock when it completes, early rounds gain limited tracking.",
+        "response": "Break the lock with a late sidestep. Keep moving across the firing line instead of trying to destroy the slugs.",
+        "facts": [
+          "30 slugs on Furious",
+          "0.09 s shot interval",
+          "Ordinary bullets cannot be shot down"
+        ]
+      },
+      {
+        "name": "Hook / ram selections \u2014 current result",
+        "tell": "These names still occur in his selection book.",
+        "action": "The latest role override converts both selections into the same chaingun special. They do not currently execute as separate hook or ram attacks.",
+        "response": "Treat the live result as the chaingun pattern above. Restoring distinct attacks is an open design decision.",
+        "facts": [
+          "Verified live mapping",
+          "No separate hook preview",
+          "No separate Rook ram"
+        ]
+      }
+    ],
+    "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-rook.mp4",
+    "poster": "videos/rook/poster.jpg",
+    "hp": 1424
+  },
+  {
+    "id": "kaia",
+    "name": "Kaia",
+    "ship": "Signal Wraith",
+    "role": "Teal barrage controller",
+    "accent": "#69e4d0",
+    "quote": "I will not miss a second time.",
+    "identity": "Short blond hair and teal flight gear. Her slender teal-and-ivory craft uses a crescent-like wing silhouette.",
+    "purpose": "Fill a committed corridor with slower, readable pressure. She controls space through a sequence of energy rollers rather than a single instantaneous fan.",
+    "flight": "A light banking drift between bursts, with evasive rolls under nearby fire. She holds the attack lane through her charge and rapid release.",
+    "chapters": [
+      {
+        "t": 0.41710000002384184,
+        "label": "Cruise"
+      },
+      {
+        "t": 2.082,
+        "label": "Roller burst"
+      },
+      {
+        "t": 10.040700000047684,
+        "label": "Repeat burst"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Teal roller gatling",
+        "tell": "1.35-second charge with a broad lane warning and growing muzzle energy.",
+        "action": "Furious releases 16 rollers at 0.12-second intervals, alternating small aim offsets. Rollers travel at 225 px/s, have 3 HP each and can ricochet from side boundaries.",
+        "response": "Move out of the corridor before the stream arrives, or open a path by destroying rollers. Watch for side-wall rebounds.",
+        "facts": [
+          "16 rollers on Furious",
+          "3 HP each",
+          "1.4 s recovery"
+        ]
+      },
+      {
+        "name": "Difficulty steps",
+        "tell": "The warning still precedes each burst.",
+        "action": "Easy / Normal / Hard / Furious use 8 / 12 / 14 / 16 rollers, travelling at 175 / 195 / 210 / 225 px/s.",
+        "response": "Use lower difficulties to learn the burst lane; higher difficulty adds density and travel speed.",
+        "facts": [
+          "8 \u2192 16 rounds",
+          "175 \u2192 225 px/s",
+          "Current pattern is a burst, not a five-way fan"
+        ]
+      }
+    ],
+    "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-kaia.mp4",
+    "poster": "videos/kaia/poster.jpg",
+    "hp": 1424
+  },
+  {
+    "id": "jace",
+    "name": "Jace",
+    "ship": "Razorjack",
+    "role": "Helix skirmisher",
+    "accent": "#ff8f7d",
+    "quote": "We are not going home empty-handed.",
+    "identity": "Messy brown hair, stubble and a red high collar. His red/ivory fighter has sharp reverse-swept wings and paired engines.",
+    "purpose": "Mix an agile release with a second threat: destroy his stolen Helix charge for a counterburst, or give it room while avoiding his follow-up dash.",
+    "flight": "Sways while charging, advances through a short swerve, releases the Helix ball, then recovers. His secondary selection is a straight charge dash.",
+    "chapters": [
+      {
+        "t": 0.45430000001192095,
+        "label": "Cruise"
+      },
+      {
+        "t": 1.2845,
+        "label": "Energy shot"
+      },
+      {
+        "t": 4.193,
+        "label": "Swerve + Helix"
+      },
+      {
+        "t": 12.143300000011921,
+        "label": "Second Helix"
+      },
+      {
+        "t": 13.799699999988079,
+        "label": "Counterburst"
+      },
+      {
+        "t": 20.451599999964237,
+        "label": "Charge dash"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Swerve Helix",
+        "tell": "The ball grows at his nose while a wide warning marks the aim. Furious initial charge is 1.15 seconds.",
+        "action": "He swerves forward and releases roughly 0.62 seconds into that movement. The Helix travels at 155 px/s and carries 6 HP.",
+        "response": "Destroy it early: the native counterburst deals 22 damage to Rough Riders within 210 pixels. Otherwise move away from its path and close burst.",
+        "facts": [
+          "6 HP Helix",
+          "3.2 s maximum lifetime",
+          "Shoot it near enemy ships"
+        ]
+      },
+      {
+        "name": "Charge dash",
+        "tell": "A dedicated lane warning precedes the committed line.",
+        "action": "His secondary attack uses the native ram controller, rushing through the target lane before returning to cruising position.",
+        "response": "Step out of the line after commitment, or evade through the dangerous pass.",
+        "facts": [
+          "Body collision threat",
+          "Straight committed rush",
+          "5.2 s base cooldown"
+        ]
+      },
+      {
+        "name": "Aimed energy shot",
+        "tell": "A short gun tell precedes the shot.",
+        "action": "Between specials he can release the shared destructible energy charge.",
+        "response": "Strafe or shoot the energy object.",
+        "facts": [
+          "2 HP energy object",
+          "Shared firing turn"
+        ]
+      }
+    ],
+    "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-jace.mp4",
+    "poster": "videos/jace/poster.jpg",
+    "hp": 1424
+  }
+]

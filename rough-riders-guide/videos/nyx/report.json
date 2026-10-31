@@ -1,0 +1,5866 @@
+{
+  "id": "nyx",
+  "setup": {
+    "health": [
+      {
+        "key": "voss",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "nyx",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "rook",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "kaia",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "jace",
+        "hp": 1424,
+        "max": 1424
+      }
+    ],
+    "view": {
+      "width": 480,
+      "height": 512
+    },
+    "key": "nyx"
+  },
+  "timeline": [
+    {
+      "t": 0.21666666666666665,
+      "wall": 0.44289999997615814,
+      "label": "Nyx / spectre cloak",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 179.44933371276878,
+          "y": 133.1818421953077,
+          "heading": 1.6348182961321003,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.44091971331585,
+          "y": 188.50222290804766,
+          "heading": 1.7287748180649007,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.21666666666666665,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.47800917409876,
+          "y": 139.40872214781982,
+          "heading": 1.6774866436791989,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 421.365292992448,
+          "y": 172.745490247168,
+          "heading": 1.5281078839776745,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.8361235064392,
+          "y": 120.41666666666661,
+          "heading": 1.4179766817344637,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        }
+      ],
+      "frames": 10
+    },
+    {
+      "t": 0.6333333333333336,
+      "wall": 0.8535999999642372,
+      "label": "Nyx / spectre cloak",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 185.70530783636184,
+          "y": 139.8495715196713,
+          "heading": 1.7201150091824027,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.95888795964316,
+          "y": 188.3073692249427,
+          "heading": 1.6998411660619255,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.6333333333333336,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.86235853795625,
+          "y": 132.53043303487922,
+          "heading": 1.560924092840109,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 414.8596313825416,
+          "y": 165.50763299397389,
+          "heading": 1.4310835059881846,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.4217262045212,
+          "y": 115.21207140211565,
+          "heading": 1.429694242267267,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        }
+      ],
+      "frames": 34
+    },
+    {
+      "t": 1.0500000000000012,
+      "wall": 1.263,
+      "label": "Nyx / spectre cloak",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 190.8928623994172,
+          "y": 142.92894089688613,
+          "heading": 1.716615012578024,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.27965992304894,
+          "y": 183.71126977447025,
+          "heading": 1.5941672365423565,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.9408270261366,
+          "y": 124.48449739548528,
+          "heading": 1.4502323538653465,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 409.1400251589218,
+          "y": 161.40925728678397,
+          "heading": 1.4171434318905172,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.1626248537817,
+          "y": 118.82928335169223,
+          "heading": 1.5253222728841442,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        }
+      ],
+      "frames": 59
+    },
+    {
+      "t": 1.4666666666666663,
+      "wall": 1.6765999999642371,
+      "label": "Nyx / spectre cloak",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.44091971331585,
+          "y": 141.40148745810623,
+          "heading": 1.626399681384041,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.4780091740988,
+          "y": 176.2340269082564,
+          "heading": 1.474595113882928,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 339.365292992448,
+          "y": 117.93200770996229,
+          "heading": 1.4112374978784552,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.8361235064392,
+          "y": 161.80584958046728,
+          "heading": 1.4945775333365185,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.08734291333826,
+          "y": 125.81033249874847,
+          "heading": 1.6479927759992397,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        }
+      ],
+      "frames": 84
+    },
+    {
+      "t": 1.8833333333333315,
+      "wall": 2.097299999952316,
+      "label": "Nyx / spectre cloak",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.95888795964316,
+          "y": 135.77239730500528,
+          "heading": 1.503118193602464,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.8623585379563,
+          "y": 168.34864509173815,
+          "heading": 1.412231848379119,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.85963138254164,
+          "y": 115.04011790683222,
+          "heading": 1.4671289533536822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.4217262045212,
+          "y": 166.56624193909005,
+          "heading": 1.6173373633835106,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 489.9839956642284,
+          "y": 133.84632423828046,
+          "heading": 1.7247561590087543,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        }
+      ],
+      "frames": 109
+    },
+    {
+      "t": 2.2999999999999967,
+      "wall": 2.5087999999523163,
+      "label": "Nyx / spectre cloak",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.27965992304897,
+          "y": 127.90342153140796,
+          "heading": 1.4200834816895846,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.9408270261367,
+          "y": 162.66311563840347,
+          "heading": 1.4441635748100214,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 327.14002515892184,
+          "y": 116.76528433299366,
+          "heading": 1.5846692361084957,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1626248537817,
+          "y": 174.11599418854735,
+          "heading": 1.7124202085622462,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.423615773332,
+          "y": 140.27945491034896,
+          "heading": 1.7099628372510889,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        }
+      ],
+      "frames": 134
+    },
+    {
+      "t": 2.716666666666662,
+      "wall": 2.9255999999642373,
+      "label": "Nyx / spectre cloak",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 192.47800917409882,
+          "y": 120.39712535750421,
+          "heading": 1.4266745589550256,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 257.3652929924481,
+          "y": 161.05785623402826,
+          "heading": 1.551401160701916,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.83612350643926,
+          "y": 122.53692979149652,
+          "heading": 1.6939595887093017,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.08734291333826,
+          "y": 181.9581202926875,
+          "heading": 1.7232822817090665,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 501.80737663726353,
+          "y": 142.9820470857974,
+          "heading": 1.6124100909857537,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        }
+      ],
+      "frames": 159
+    },
+    {
+      "t": 3.133333333333327,
+      "wall": 3.3425,
+      "label": "Nyx / native Retina reveal",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.86235853795634,
+          "y": 115.73612226651187,
+          "heading": 1.5189718490611648,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.8596313825417,
+          "y": 164.06378632930233,
+          "heading": 1.6701726478091539,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0.8666666666666663,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.4217262045212,
+          "y": 130.4461548059989,
+          "heading": 1.7300073153140196,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 407.98399566422836,
+          "y": 187.49893522334466,
+          "heading": 1.6434641342134952,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.4325148721283,
+          "y": 141.06025223814035,
+          "heading": 1.4901105060970752,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        }
+      ],
+      "frames": 184
+    },
+    {
+      "t": 3.5333333333333257,
+      "wall": 3.752599999964237,
+      "label": "Nyx / native Retina reveal",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 182.19492198027223,
+          "y": 115.38244817376915,
+          "heading": 1.6375171825653503,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 245.34539346160153,
+          "y": 170.3771578604948,
+          "heading": 1.7292163783528973,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0.4666666666666652,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.1304518346263,
+          "y": 137.62208729095272,
+          "heading": 1.6752649093295175,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.1834811577795,
+          "y": 188.93990942890147,
+          "heading": 1.5252655073053596,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 514.3423772450104,
+          "y": 135.44144312510429,
+          "heading": 1.4171269307437497,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        }
+      ],
+      "frames": 208
+    },
+    {
+      "t": 3.9666666666666575,
+      "wall": 4.175799999952316,
+      "label": "Nyx / native Retina reveal",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 175.36529299244816,
+          "y": 119.66536948643748,
+          "heading": 1.7228085854924273,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.8361235064393,
+          "y": 178.73623735890865,
+          "heading": 1.6949373808810664,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0.03333333333333194,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.0873429133382,
+          "y": 142.3720258341406,
+          "heading": 1.5529314636486837,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 419.8073766372634,
+          "y": 185.71363542572033,
+          "heading": 1.4273504192048918,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.543298169088,
+          "y": 127.20517801535398,
+          "heading": 1.433652880664654,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        }
+      ],
+      "frames": 234
+    },
+    {
+      "t": 4.383333333333323,
+      "wall": 4.592799999952316,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.85963138254175,
+          "y": 126.95607047221732,
+          "heading": 1.7131305711995157,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.3833333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 325.9839956642283,
+          "y": 142.44433931311207,
+          "heading": 1.445111205336787,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.43251487212825,
+          "y": 178.97798625415072,
+          "heading": 1.4195731757031278,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.8058003481831,
+          "y": 119.85429097854674,
+          "heading": 1.5330690137819487,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 259
+    },
+    {
+      "t": 4.799999999999988,
+      "wall": 5.0095,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 163.14002515892196,
+          "y": 134.92277556000175,
+          "heading": 1.6188093470133134,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.8000000000000008,
+            "shot": 0
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.4236157733319,
+          "y": 138.07010588287343,
+          "heading": 1.4120332703536342,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 432.56969479885845,
+          "y": 170.92666793206936,
+          "heading": 1.5017251897186084,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.9980451709595,
+          "y": 115.52823269938744,
+          "heading": 1.654920793973653,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 284
+    },
+    {
+      "t": 5.199999999999987,
+      "wall": 5.417799999952316,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.97453198128864,
+          "y": 140.75643966068557,
+          "heading": 1.5004504464495003,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.05,
+            "shot": 1
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 337.54252009786876,
+          "y": 131.01981803828667,
+          "heading": 1.4693989113092134,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.374109003835,
+          "y": 164.43396754700035,
+          "heading": 1.620158407668171,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.0708129930116,
+          "y": 115.56247856524672,
+          "heading": 1.7255346345171392,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 308
+    },
+    {
+      "t": 5.616666666666652,
+      "wall": 5.8265,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.47793800131694,
+          "y": 142.9993878244952,
+          "heading": 1.4191164920463675,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.4666666666666666,
+            "shot": 1
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.17209343432506,
+          "y": 123.05515211216338,
+          "heading": 1.5876125805628205,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.71336494813727,
+          "y": 161.12223539960488,
+          "heading": 1.713771865879462,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 520.0496550297362,
+          "y": 119.94847146005915,
+          "heading": 1.7084800999272347,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 333
+    },
+    {
+      "t": 6.033333333333317,
+      "wall": 6.242,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.13045183462629,
+          "y": 140.6122137329752,
+          "heading": 1.427983375417048,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.09999999999999999,
+            "shot": 2
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.3423772450103,
+          "y": 117.05667019744804,
+          "heading": 1.6958259740342279,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.9925393894951,
+          "y": 162.4004001488497,
+          "heading": 1.7223607496114122,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515.2616530195974,
+          "y": 127.32814409736721,
+          "heading": 1.6095478938262393,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 358
+    },
+    {
+      "t": 6.449999999999982,
+      "wall": 6.658899999976158,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 157.9703268806728,
+          "y": 134.38444533028,
+          "heading": 1.5217781457450799,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.5166666666666666,
+            "shot": 2
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.3741090038349,
+          "y": 115.00829508845877,
+          "heading": 1.7296868410392823,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.0708129930116,
+          "y": 167.84572480611442,
+          "heading": 1.6408174286411368,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 509.23389946597354,
+          "y": 135.260762143398,
+          "heading": 1.4875709381244135,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 383
+    },
+    {
+      "t": 6.866666666666648,
+      "wall": 7.075099999964237,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 161.79501845758898,
+          "y": 126.37583904603731,
+          "heading": 1.644723007146011,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "recover",
+            "t": 0.15,
+            "shot": 3
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.71336494813727,
+          "y": 117.58750120752704,
+          "heading": 1.6690588293946675,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 438.0496550297362,
+          "y": 175.65723641464012,
+          "heading": 1.5176340171548892,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 502.62996629377204,
+          "y": 141.1227114931341,
+          "heading": 1.4150863872275818,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 408
+    },
+    {
+      "t": 7.283333333333313,
+      "wall": 7.4925,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 167.18348115777934,
+          "y": 119.23514114370619,
+          "heading": 1.7237052118591711,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "recover",
+            "t": 0.5666666666666668,
+            "shot": 3
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.9925393894951,
+          "y": 123.94124842156326,
+          "heading": 1.5499961545600152,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 433.26165301959736,
+          "y": 183.2513753074022,
+          "heading": 1.4260651236793565,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 496.17685479925564,
+          "y": 142.97522578878244,
+          "heading": 1.4351992934809852,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 433
+    },
+    {
+      "t": 7.699999999999978,
+      "wall": 7.909299999952316,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 173.54252009786865,
+          "y": 115.32404805534902,
+          "heading": 1.7117556881805909,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "recover",
+            "t": 0.9833333333333347,
+            "shot": 3
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.0708129930116,
+          "y": 131.96811438630087,
+          "heading": 1.4433029088227536,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 427.2338994659736,
+          "y": 188.1164751216818,
+          "heading": 1.4205648615065767,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.5849629072835,
+          "y": 140.20560911991262,
+          "heading": 1.5359489305485823,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 458
+    },
+    {
+      "t": 8.099999999999982,
+      "wall": 8.316599999964238,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 179.9109303020106,
+          "y": 115.82222672622144,
+          "heading": 1.6208175382026369,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 252.6518178850616,
+          "y": 171.85780893467367,
+          "heading": 1.469936258635172,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.09999999999999999,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.20733711822726,
+          "y": 138.78230711763038,
+          "heading": 1.4117852605937222,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.8961204569788,
+          "y": 188.71299725005835,
+          "heading": 1.4998283035005295,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.5998055567827,
+          "y": 134.0360209515096,
+          "heading": 1.65311901973837,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 482
+    },
+    {
+      "t": 8.51666666666667,
+      "wall": 8.72669999998808,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.11322107355798,
+          "y": 120.60519577438116,
+          "heading": 1.4978067259971455,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.98347943146086,
+          "y": 179.89202043545393,
+          "heading": 1.4115498974555074,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.5166666666666666,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.4810189586157,
+          "y": 142.68114406887847,
+          "heading": 1.471703501645968,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 414.42296260265095,
+          "y": 184.8918869392046,
+          "heading": 1.6229625922883768,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.3311994865106,
+          "y": 126.00807457639989,
+          "heading": 1.7262602590131388,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 507
+    },
+    {
+      "t": 8.933333333333357,
+      "wall": 9.144199999988079,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.20218670413968,
+          "y": 128.16464122004206,
+          "heading": 1.4182013087912546,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.14945262365086,
+          "y": 186.3082574236564,
+          "heading": 1.4478640702177288,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.9333333333333346,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.49080011320285,
+          "y": 142.05511390266207,
+          "heading": 1.5905501814101033,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.7839313007982,
+          "y": 177.79915886630263,
+          "heading": 1.7150746897688247,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.2278551014162,
+          "y": 118.96967007724707,
+          "heading": 1.7069503365830776,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 532
+    },
+    {
+      "t": 9.350000000000044,
+      "wall": 9.5585,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.61760277694253,
+          "y": 136.00037112376341,
+          "heading": 1.429340969774958,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.2073371182267,
+          "y": 188.9844298445598,
+          "heading": 1.5572834949145324,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.8961204569778,
+          "y": 137.11126825877037,
+          "heading": 1.6976496553672966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.5998055567822,
+          "y": 169.78064404289753,
+          "heading": 1.7213874505446938,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.30114918257306,
+          "y": 115.24867162369151,
+          "heading": 1.606672461033076,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 557
+    },
+    {
+      "t": 9.766666666666731,
+      "wall": 9.975899999976159,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.98347943146092,
+          "y": 141.52081592058934,
+          "heading": 1.5246011846341816,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.4810189586149,
+          "y": 187.0354271747279,
+          "heading": 1.674738719217305,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.42296260265005,
+          "y": 129.48472218863773,
+          "heading": 1.7293120975621685,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.33119948651046,
+          "y": 163.48836585772494,
+          "heading": 1.6381468072965328,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.32284085515226,
+          "y": 116.07575286859907,
+          "heading": 1.4850597958603473,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 582
+    },
+    {
+      "t": 10.183333333333419,
+      "wall": 10.391699999988079,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.1494526236506,
+          "y": 142.9001576080797,
+          "heading": 1.6473326881514232,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.4908001132019,
+          "y": 181.1058576463504,
+          "heading": 1.7303815681818484,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.78393130079746,
+          "y": 121.69786032317177,
+          "heading": 1.6667085132461574,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.22785510141637,
+          "y": 161.00341654332655,
+          "heading": 1.514854236408887,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.8501977378751,
+          "y": 121.1773670449952,
+          "heading": 1.414432859482346,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 607
+    },
+    {
+      "t": 10.600000000000106,
+      "wall": 10.809299999952316,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 192.2073371182261,
+          "y": 139.6821961919905,
+          "heading": 1.7245496120545432,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.8961204569768,
+          "y": 173.1568521447243,
+          "heading": 1.6911223987383033,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.5998055567817,
+          "y": 116.32608973548676,
+          "heading": 1.5470679497894064,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.3011491825735,
+          "y": 163.1476619747109,
+          "heading": 1.4248292612303404,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 502.2747346274748,
+          "y": 128.86621913452856,
+          "heading": 1.4367920195897153,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 632
+    },
+    {
+      "t": 11.016666666666794,
+      "wall": 11.225099999964238,
+      "label": "Nyx / reveal and retaliate",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.4810189586141,
+          "y": 132.93123212289987,
+          "heading": 1.710332660361144,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.4229626026491,
+          "y": 165.8174447206401,
+          "heading": 1.5803078210671406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0.9666666666666666,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.3311994865103,
+          "y": 115.14605629470051,
+          "heading": 1.4415381578037394,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.322840855153,
+          "y": 169.21191982067847,
+          "heading": 1.4216078590062207,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.88919926611703,
+          "y": 136.59931757042528,
+          "heading": 1.5388407494757412,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        }
+      ],
+      "frames": 657
+    },
+    {
+      "t": 11.433333333333481,
+      "wall": 11.64469999998808,
+      "label": "Nyx / reveal and retaliate",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 181.49080011320095,
+          "y": 124.88006224686256,
+          "heading": 1.613136358061054,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.78393130079672,
+          "y": 161.51505249270403,
+          "heading": 1.4638369559055564,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0.5499999999999986,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.2278551014165,
+          "y": 118.54804128773178,
+          "heading": 1.4128755060773068,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.850197737876,
+          "y": 177.19051272114174,
+          "heading": 1.5071057305276312,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 514.9654309893936,
+          "y": 141.81903686080096,
+          "heading": 1.6598927954618456,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        }
+      ],
+      "frames": 682
+    },
+    {
+      "t": 11.833333333333501,
+      "wall": 12.049599999964236,
+      "label": "Nyx / reveal and retaliate",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 175.16247086252736,
+          "y": 118.40205635221525,
+          "heading": 1.495187935210538,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.73282420655775,
+          "y": 161.57623644685123,
+          "heading": 1.4112904545468614,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0.14999999999999858,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.17853934341787,
+          "y": 125.0921628453948,
+          "heading": 1.4740419372290106,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.00922322006295,
+          "y": 184.200936701968,
+          "heading": 1.625748959472307,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.6702180872446,
+          "y": 142.85041178704543,
+          "heading": 1.7269327846590419,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Nyx / spectre cloak",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Nyx / native Retina reveal",
+          "request": "reveal"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        }
+      ],
+      "frames": 706
+    },
+    {
+      "t": 12.250000000000188,
+      "wall": 12.46919999998808,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.67041741495862,
+          "y": 115.11589298371808,
+          "heading": 1.4173382445059293,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.26666666666666666,
+            "shot": 0
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.12949830445973,
+          "y": 133.143221906132,
+          "heading": 1.5934810353100763,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.6301965020337,
+          "y": 188.4914763322078,
+          "heading": 1.7163282352496374,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.8739133888831,
+          "y": 139.4357296375826,
+          "heading": 1.7053740697106916,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 731
+    },
+    {
+      "t": 12.683333333333543,
+      "wall": 12.891799999952315,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.78393130079598,
+          "y": 116.56856769995737,
+          "heading": 1.43326673943473,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.7000000000000005,
+            "shot": 0
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.8501977378769,
+          "y": 140.02818050537633,
+          "heading": 1.7023780750589648,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 432.96543098939435,
+          "y": 188.21568295188598,
+          "heading": 1.7184883478320188,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.9990975589386,
+          "y": 132.25274743967617,
+          "heading": 1.598811257580194,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 757
+    },
+    {
+      "t": 13.10000000000023,
+      "wall": 13.31619999998808,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.59980555678072,
+          "y": 122.17094515589633,
+          "heading": 1.5323380244659526,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 1.1166666666666676,
+            "shot": 0
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.2747346274768,
+          "y": 142.95482892502187,
+          "heading": 1.7280229168761716,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.8345210994081,
+          "y": 183.48540515756608,
+          "heading": 1.6307869982572591,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.8361218971789,
+          "y": 124.21453902069484,
+          "heading": 1.4783959329570067,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 782
+    },
+    {
+      "t": 13.516666666666918,
+      "wall": 13.725099999964238,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.3311994865099,
+          "y": 130.03194700405538,
+          "heading": 1.654279660689085,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.3833333333333333,
+            "shot": 1
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.88919926611896,
+          "y": 141.2660923874757,
+          "heading": 1.6601683810789132,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.96045041951135,
+          "y": 175.94868584179662,
+          "heading": 1.5074104461515203,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.599550897802,
+          "y": 117.75906190825863,
+          "heading": 1.4129291975686822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 807
+    },
+    {
+      "t": 13.933333333333605,
+      "wall": 14.142099999964238,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.2278551014168,
+          "y": 137.55164530025215,
+          "heading": 1.726575497456462,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.016666666666666666,
+            "shot": 2
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.9654309893952,
+          "y": 135.52049936011844,
+          "heading": 1.5391661464899802,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.99909755893856,
+          "y": 168.09820056108018,
+          "heading": 1.421728156744202,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 514.6456860633575,
+          "y": 115.02138433690595,
+          "heading": 1.4413427550799445,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 832
+    },
+    {
+      "t": 14.350000000000293,
+      "wall": 14.558799999952317,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.3011491825749,
+          "y": 142.24299397711016,
+          "heading": 1.7062327067841379,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "charge",
+            "t": 0.4333333333333333,
+            "shot": 2
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.8345210994087,
+          "y": 127.61833280385842,
+          "heading": 1.4369737211757645,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.83612189717866,
+          "y": 162.5303990365815,
+          "heading": 1.4246936025238028,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.5198790899093,
+          "y": 116.9069588885604,
+          "heading": 1.5467396547794505,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 857
+    },
+    {
+      "t": 14.76666666666698,
+      "wall": 14.975299999952316,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.32284085515516,
+          "y": 142.55438819386444,
+          "heading": 1.605348722482897,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "recover",
+            "t": 0.06666666666666667,
+            "shot": 3
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.96045041951163,
+          "y": 120.17313537471415,
+          "heading": 1.4143628114923774,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.59955089780146,
+          "y": 161.08676191552814,
+          "heading": 1.5145432946644266,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 501.8964962216674,
+          "y": 122.79215538702073,
+          "heading": 1.6664425561530807,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 882
+    },
+    {
+      "t": 15.183333333333668,
+      "wall": 15.392299999952316,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 167.85019773787872,
+          "y": 138.38283821187426,
+          "heading": 1.4839171482972304,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "recover",
+            "t": 0.4833333333333333,
+            "shot": 3
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.99909755893856,
+          "y": 115.64731291101025,
+          "heading": 1.4847796543746834,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 432.6456860633567,
+          "y": 164.24475410185786,
+          "heading": 1.63784549309172,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.5046798962214,
+          "y": 130.73051877109967,
+          "heading": 1.72926663752853,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 907
+    },
+    {
+      "t": 15.583333333333687,
+      "wall": 15.799899999976159,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.00922322006593,
+          "y": 131.43037110066547,
+          "heading": 1.4152612257339967,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "recover",
+            "t": 0.8833333333333344,
+            "shot": 3
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.9240867119259,
+          "y": 115.45173181483037,
+          "heading": 1.601391819750296,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.7792372865579,
+          "y": 170.6482682538454,
+          "heading": 1.7194780528021236,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.24037914051047,
+          "y": 137.8457667912358,
+          "heading": 1.7008669926438171,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 931
+    },
+    {
+      "t": 15.933333333333705,
+      "wall": 16.2475,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 179.58641669543252,
+          "y": 124.6556735914218,
+          "heading": 1.4252421912911206,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.6488858393299,
+          "y": 162.69982340821156,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "shadowcast",
+            "phase": "recover",
+            "t": 1.2333333333333338,
+            "shot": 3
+          }
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.3986901247957,
+          "y": 118.70612886579649,
+          "heading": 1.6917800250582518,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 421.22612526408307,
+          "y": 177.42269842511007,
+          "heading": 1.7242695448006204,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.7650572666663,
+          "y": 141.91185022522367,
+          "heading": 1.615656495686534,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 952
+    },
+    {
+      "t": 16.383333333333685,
+      "wall": 16.658899999976157,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.2877979150538,
+          "y": 117.64879589201739,
+          "heading": 1.5254131107604747,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.9906980537032,
+          "y": 161.97146705845776,
+          "heading": 1.675381463554705,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.39999999999999997,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.3142425936054,
+          "y": 126.27251132719404,
+          "heading": 1.7291947239310368,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 414.23552467124983,
+          "y": 185.08119610324965,
+          "heading": 1.6373772284720358,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.29542955843453,
+          "y": 142.62127567379534,
+          "heading": 1.4843455590646328,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 978
+    },
+    {
+      "t": 16.800000000000328,
+      "wall": 17.0755,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.3332844413207,
+          "y": 115.01231381803738,
+          "heading": 1.6480757431478947,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.08990860481686,
+          "y": 166.94842993340376,
+          "heading": 1.7304403036746452,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.8166666666666675,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.2953588346685,
+          "y": 134.28712243628092,
+          "heading": 1.6660289280940748,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.63228057272437,
+          "y": 188.76485895405577,
+          "heading": 1.5140611380666824,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.2594219038208,
+          "y": 138.58724762937115,
+          "heading": 1.4142554189082819,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        },
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 1003
+    },
+    {
+      "t": 17.21666666666697,
+      "wall": 17.493299999952317,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.69078937023778,
+          "y": 117.00208382761946,
+          "heading": 1.7247819165948906,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.0875854275673,
+          "y": 174.58834880492978,
+          "heading": 1.6905621966125879,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.69352963449285,
+          "y": 140.55308399256091,
+          "heading": 1.5462302882485068,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.50063667036886,
+          "y": 187.89596703720812,
+          "heading": 1.424484282431885,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.396577649059,
+          "y": 131.38235746064524,
+          "heading": 1.437256895450053,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "nyx"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 1028
+    },
+    {
+      "t": 17.633333333333614,
+      "wall": 17.909099999964237,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.99069805370323,
+          "y": 122.96001440134502,
+          "heading": 1.7099160677748493,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.31424259360637,
+          "y": 182.3644161554909,
+          "heading": 1.579461821856381,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.23552467125086,
+          "y": 142.9980076590236,
+          "heading": 1.441040559741362,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.29542955843476,
+          "y": 182.76189547596977,
+          "heading": 1.4219161514559842,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.4716256373114,
+          "y": 123.3895323881243,
+          "heading": 1.5396714897810966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 1053
+    },
+    {
+      "t": 18.050000000000257,
+      "wall": 18.324899999976157,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.0899086048172,
+          "y": 130.91559459323938,
+          "heading": 1.6123186072803162,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.29535883466957,
+          "y": 187.70479506263445,
+          "heading": 1.463208257715662,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.6322805727252,
+          "y": 140.81326554260772,
+          "heading": 1.4130138826946548,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.2594219038206,
+          "y": 175.06067416237275,
+          "heading": 1.507883959128388,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 496.03595969820316,
+          "y": 117.25229923706551,
+          "heading": 1.660595376259461,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 1078
+    },
+    {
+      "t": 18.4666666666669,
+      "wall": 18.742199999988078,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 192.087585427568,
+          "y": 138.23761585601923,
+          "heading": 1.4900287116161828,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.693529634494,
+          "y": 188.84322206256877,
+          "heading": 1.4109350768704687,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.50063667036943,
+          "y": 134.72143374608197,
+          "heading": 1.4788171380673476,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.39657764905843,
+          "y": 167.339385629191,
+          "heading": 1.6312644411965733,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 502.47702395486164,
+          "y": 115.00047103608861,
+          "heading": 1.7281176388078945,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 1103
+    },
+    {
+      "t": 18.866666666666877,
+      "wall": 19.1525,
+      "label": "Nyx / shadow charge volleys",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.53312446411638,
+          "y": 142.41459640841364,
+          "heading": 1.4171005726829755,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.4819582591612,
+          "y": 185.6189297072413,
+          "heading": 1.45033361754012,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.3428449595074,
+          "y": 127.06026800493468,
+          "heading": 1.5943195217438595,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.2764293504674,
+          "y": 162.2849869533587,
+          "heading": 1.716678308994294,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.8274013071191,
+          "y": 117.19983025857778,
+          "heading": 1.7049138745798325,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        }
+      ],
+      "frames": 1127
+    },
+    {
+      "t": 19.300000000000185,
+      "wall": 19.57569999998808,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 181.29535883467068,
+          "y": 142.30479182102616,
+          "heading": 1.4337017010030382,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.63228057272607,
+          "y": 178.52241085109927,
+          "heading": 1.566139089801864,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.25942190382045,
+          "y": 119.5015415891016,
+          "heading": 1.702858320814135,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 414.0359596982021,
+          "y": 161.21351118569868,
+          "heading": 1.7181603635602074,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515.1345994180032,
+          "y": 123.60071501851375,
+          "heading": 1.5979765905083274,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1153
+    },
+    {
+      "t": 19.71666666666683,
+      "wall": 19.994399999976157,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.69352963449512,
+          "y": 137.70477899250108,
+          "heading": 1.53316108580314,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.50063667036997,
+          "y": 170.47665173480712,
+          "heading": 1.6813196904586214,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.3965776490579,
+          "y": 115.4072700116422,
+          "heading": 1.7278636242662802,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.4770239548605,
+          "y": 164.8349815536874,
+          "heading": 1.630000609131703,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.9576874130005,
+          "y": 131.60836417688807,
+          "heading": 1.4777054498512028,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1178
+    },
+    {
+      "t": 20.116666666666806,
+      "wall": 20.40039999997616,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.48195825916233,
+          "y": 130.5508184646701,
+          "heading": 1.6506516289941384,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.3428449595076,
+          "y": 164.12981758443829,
+          "heading": 1.7306101834886287,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.2764293504665,
+          "y": 115.70281228665931,
+          "heading": 1.6636366151582624,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.8274013071179,
+          "y": 171.50118004940276,
+          "heading": 1.5113061138615436,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.9400827647069,
+          "y": 138.5163467390904,
+          "heading": 1.4136706399825762,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1202
+    },
+    {
+      "t": 20.550000000000114,
+      "wall": 20.825599999964236,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.63228057272687,
+          "y": 122.34135208009216,
+          "heading": 1.7267666613300252,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.25942190382025,
+          "y": 161.03949325619544,
+          "heading": 1.6850934109592364,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.0359596982011,
+          "y": 120.5728599503772,
+          "heading": 1.5383359485157633,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 433.13459941800227,
+          "y": 179.85410034243466,
+          "heading": 1.4214224081634212,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.9961397827283,
+          "y": 142.67250326548836,
+          "heading": 1.4418425597277378,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1228
+    },
+    {
+      "t": 20.966666666666757,
+      "wall": 21.24269999998808,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.5006366703705,
+          "y": 116.65919910255472,
+          "heading": 1.7057796496824968,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.3965776490574,
+          "y": 162.76931591062956,
+          "heading": 1.5714423778394255,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.4770239548594,
+          "y": 128.12426726578204,
+          "heading": 1.4365111296454316,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.9576874129998,
+          "y": 186.2843632581261,
+          "heading": 1.42504107242274,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.7669266562741,
+          "y": 142.06966771145645,
+          "heading": 1.5475777238850148,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1253
+    },
+    {
+      "t": 21.3833333333334,
+      "wall": 21.66009999996424,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.29542955843533,
+          "y": 115.0586115191746,
+          "heading": 1.60452086802586,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.4716256373089,
+          "y": 168.54428420357564,
+          "heading": 1.4574071516226368,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.0857467159458,
+          "y": 135.96531221915046,
+          "heading": 1.414542919951816,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.0240557180648,
+          "y": 188.98246430262142,
+          "heading": 1.5153373499330187,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.471735626923,
+          "y": 137.14420318970014,
+          "heading": 1.667120507478856,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1278
+    },
+    {
+      "t": 21.800000000000043,
+      "wall": 22.07869999998808,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.25942190382008,
+          "y": 118.06896363433707,
+          "heading": 1.4832068042836817,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.0359596982001,
+          "y": 176.4543996728006,
+          "heading": 1.4108021056402555,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.13459941800136,
+          "y": 141.502667359399,
+          "heading": 1.485495356075252,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.9961397827283,
+          "y": 187.0560403347706,
+          "heading": 1.6386139256043084,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 514.4733214481381,
+          "y": 129.52514542563273,
+          "heading": 1.7293813075448723,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1303
+    },
+    {
+      "t": 22.216666666666686,
+      "wall": 22.494099999964238,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.39657764905687,
+          "y": 124.69461917454717,
+          "heading": 1.413980404823427,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.4770239548583,
+          "y": 183.88349065884105,
+          "heading": 1.4593422898134991,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.9576874129991,
+          "y": 142.9049217997126,
+          "heading": 1.607174502407642,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.76692665627456,
+          "y": 181.14223196376074,
+          "heading": 1.721560788109979,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.32194007988767,
+          "y": 121.73240238668122,
+          "heading": 1.6973349233651651,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1328
+    },
+    {
+      "t": 22.63333333333333,
+      "wall": 22.911799999952315,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.47162563730805,
+          "y": 132.74422552085727,
+          "heading": 1.43800916720818,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.0857467159447,
+          "y": 188.37447832778224,
+          "heading": 1.5741618678538443,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.02405571806446,
+          "y": 139.70829743971115,
+          "heading": 1.7072203055708997,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.47173562692365,
+          "y": 173.19695726941342,
+          "heading": 1.7148511663527102,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 501.69477315195377,
+          "y": 116.34332627045941,
+          "heading": 1.5900386719879966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1353
+    },
+    {
+      "t": 23.033333333333307,
+      "wall": 23.319599999964236,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 167.79206211780595,
+          "y": 139.33802931367387,
+          "heading": 1.5360413991649975,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 268.91209797947783,
+          "y": 188.52966192919612,
+          "heading": 1.6834388352906473,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.999601282536,
+          "y": 133.28218576224825,
+          "heading": 1.727273268582847,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 432.6995633993173,
+          "y": 166.09768775380076,
+          "heading": 1.6272435232255944,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.562396270331,
+          "y": 115.09793456939249,
+          "heading": 1.4753164857895418,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1377
+    },
+    {
+      "t": 23.466666666666615,
+      "wall": 23.743099999964237,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.47702395485717,
+          "y": 142.87563519785627,
+          "heading": 1.6617152690626307,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.95768741299844,
+          "y": 184.06378974869713,
+          "heading": 1.7307061625396236,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.76692665627496,
+          "y": 124.91873780439386,
+          "heading": 1.6526766904949055,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.32194007988875,
+          "y": 161.52597950102594,
+          "heading": 1.4993667896750429,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 489.90338172570074,
+          "y": 118.52117350578561,
+          "heading": 1.411728875868986,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1403
+    },
+    {
+      "t": 23.88333333333326,
+      "wall": 24.15919999998808,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 181.0857467159436,
+          "y": 141.60660161971617,
+          "heading": 1.7283592502363,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.02405571806406,
+          "y": 176.68781977983338,
+          "heading": 1.67933724842803,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.4717356269244,
+          "y": 118.21726421815148,
+          "heading": 1.5305232238323632,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 419.6947731519549,
+          "y": 161.6603062071673,
+          "heading": 1.4187361043715194,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.03722560997977,
+          "y": 125.36780115016369,
+          "heading": 1.4467524521450843,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1428
+    },
+    {
+      "t": 24.283333333333236,
+      "wall": 24.568299999952316,
+      "label": "Nyx / recloak and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.91209797947695,
+          "y": 136.44671632766793,
+          "heading": 1.7041690649414332,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.999601282536,
+          "y": 169.0476481549288,
+          "heading": 1.5684854424267862,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.6995633993182,
+          "y": 115.12114481787117,
+          "heading": 1.4349264363429908,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.562396270332,
+          "y": 165.95479692964284,
+          "heading": 1.4262855809445742,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.1827230983993,
+          "y": 133.10456703020972,
+          "heading": 1.5505072388354948,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 11.000000000000126,
+          "label": "Nyx / reveal and retaliate",
+          "request": "reveal"
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Nyx / shadow charge volleys",
+          "request": "cloak"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "shadowcast",
+          "warm": 1.15
+        },
+        {
+          "t": 19.000000000000203,
+          "label": "Nyx / recloak and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 1452
+    }
+  ],
+  "stats": {
+    "peak": 1.0685514211654663,
+    "tapped": 14,
+    "playing": {
+      "stagex": 1,
+      "teleportIn": 2,
+      "av3_target_acquire": 6,
+      "bossWeaponCharge": 2,
+      "alertLockon": 3,
+      "shadowRelease": 5
+    },
+    "tapErrors": [],
+    "frames": 1453,
+    "events": [
+      {
+        "t": 0.016666666666666666,
+        "label": "Nyx / spectre cloak",
+        "request": "drift"
+      },
+      {
+        "t": 3.016666666666661,
+        "label": "Nyx / native Retina reveal",
+        "request": "reveal"
+      },
+      {
+        "t": 4.016666666666658,
+        "label": "Nyx / shadow charge volleys",
+        "request": "cloak"
+      },
+      {
+        "t": 4.016666666666658,
+        "resolved": "shadowcast",
+        "warm": 1.15
+      },
+      {
+        "t": 11.000000000000126,
+        "label": "Nyx / reveal and retaliate",
+        "request": "reveal"
+      },
+      {
+        "t": 12.000000000000176,
+        "label": "Nyx / shadow charge volleys",
+        "request": "cloak"
+      },
+      {
+        "t": 12.000000000000176,
+        "resolved": "shadowcast",
+        "warm": 1.15
+      },
+      {
+        "t": 19.000000000000203,
+        "label": "Nyx / recloak and drift",
+        "request": "drift"
+      }
+    ],
+    "rr26": [
+      {
+        "kind": "energy-launch",
+        "t": 5.149999999999987,
+        "pilot": "nyx",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 5.933333333333318,
+        "pilot": "nyx",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 6.716666666666648,
+        "pilot": "nyx",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 13.133333333333566,
+        "pilot": "nyx",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 13.916666666666938,
+        "pilot": "nyx",
+        "large": false
+      },
+      {
+        "kind": "energy-launch",
+        "t": 14.70000000000031,
+        "pilot": "nyx",
+        "large": false
+      }
+    ],
+    "rd21": [
+      {
+        "event": "nyx-revealed",
+        "time": 2.9999999999999942,
+        "reason": "retina"
+      },
+      {
+        "event": "personal-charge",
+        "time": 3.9999999999999907,
+        "pilot": "nyx",
+        "kind": "shadowcast",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-release",
+        "time": 5.149999999999987,
+        "pilot": "nyx",
+        "kind": "shadowcast"
+      },
+      {
+        "event": "personal-release",
+        "time": 5.933333333333318,
+        "pilot": "nyx",
+        "kind": "shadowcast"
+      },
+      {
+        "event": "personal-release",
+        "time": 6.716666666666648,
+        "pilot": "nyx",
+        "kind": "shadowcast"
+      },
+      {
+        "event": "personal-recovery",
+        "time": 8.016666666666644,
+        "pilot": "nyx"
+      },
+      {
+        "event": "nyx-revealed",
+        "time": 10.983333333333459,
+        "reason": "retina"
+      },
+      {
+        "event": "personal-charge",
+        "time": 11.983333333333508,
+        "pilot": "nyx",
+        "kind": "shadowcast",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-release",
+        "time": 13.133333333333566,
+        "pilot": "nyx",
+        "kind": "shadowcast"
+      },
+      {
+        "event": "personal-release",
+        "time": 13.916666666666938,
+        "pilot": "nyx",
+        "kind": "shadowcast"
+      },
+      {
+        "event": "personal-release",
+        "time": 14.70000000000031,
+        "pilot": "nyx",
+        "kind": "shadowcast"
+      },
+      {
+        "event": "personal-recovery",
+        "time": 16.000000000000373,
+        "pilot": "nyx"
+      }
+    ],
+    "ra4": [],
+    "god": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+}

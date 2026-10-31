@@ -1,0 +1,501 @@
+{
+  "checks": [
+    {
+      "name": "All five pilot dossiers and custom font load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss selection updates identity, portrait and aircraft",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 29.564333,
+        "src": "http://127.0.0.1:63068/videos/voss/preview.mp4"
+      }
+    },
+    {
+      "name": "voss supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.701252,
+        "a": 335122,
+        "f": 462
+      }
+    },
+    {
+      "name": "voss chapter Cruise jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss chapter Energy shot jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss chapter Turbo passes jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss chapter Charged rush jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss chapter Recovery jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx selection updates identity, portrait and aircraft",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 24.583333,
+        "src": "http://127.0.0.1:63068/videos/nyx/preview.mp4"
+      }
+    },
+    {
+      "name": "nyx supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.69522,
+        "a": 349822,
+        "f": 489
+      }
+    },
+    {
+      "name": "nyx chapter Cloaked drift jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx chapter Retina reveal jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx chapter Shadow pulses jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx chapter Reveal again jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx chapter Recloak jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook selection updates identity, portrait and aircraft",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 23.386333,
+        "src": "http://127.0.0.1:63068/videos/rook/preview.mp4"
+      }
+    },
+    {
+      "name": "rook supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.699375,
+        "a": 312715,
+        "f": 434
+      }
+    },
+    {
+      "name": "rook chapter Heavy cruise jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook chapter Dual chaingun jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook chapter Late sidestep test jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook chapter Recovery jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia selection updates identity, portrait and aircraft",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 19.2,
+        "src": "http://127.0.0.1:63068/videos/kaia/preview.mp4"
+      }
+    },
+    {
+      "name": "kaia supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.680298,
+        "a": 173396,
+        "f": 239
+      }
+    },
+    {
+      "name": "kaia chapter Cruise jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia chapter Roller burst jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia chapter Repeat burst jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace selection updates identity, portrait and aircraft",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 29.562333,
+        "src": "http://127.0.0.1:63068/videos/jace/preview.mp4"
+      }
+    },
+    {
+      "name": "jace supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.688937,
+        "a": 330102,
+        "f": 471
+      }
+    },
+    {
+      "name": "jace chapter Cruise jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace chapter Energy shot jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace chapter Swerve + Helix jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace chapter Second Helix jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace chapter Counterburst jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace chapter Charge dash jumps correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pilot controls work with the keyboard",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "entrance metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 18,
+        "src": "http://127.0.0.1:63068/entrance.mp4"
+      }
+    },
+    {
+      "name": "entrance supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "entrance seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "entrance seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "entrance seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "entrance decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.682707,
+        "a": 281768,
+        "f": 433
+      }
+    },
+    {
+      "name": "evasion metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 12.521333,
+        "src": "http://127.0.0.1:63068/videos/evasion/preview.mp4"
+      }
+    },
+    {
+      "name": "evasion supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "evasion seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "evasion seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "evasion seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "evasion decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.688355,
+        "a": 306994,
+        "f": 427
+      }
+    },
+    {
+      "name": "formations metadata is playable HD footage",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 38.203333,
+        "src": "http://127.0.0.1:63068/videos/formations/preview.mp4"
+      }
+    },
+    {
+      "name": "formations supports seekable byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "formations seeks to 10%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "formations seeks to 55%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "formations seeks to 90%",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "formations decodes moving video and audio",
+      "passed": true,
+      "data": {
+        "t": 2.694229,
+        "a": 268228,
+        "f": 364
+      }
+    },
+    {
+      "name": "Formation chapter selector seeks the X call",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Deep-linked pilot opens on a narrow screen",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Narrow layout does not overflow the page",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mobile chapter control can start its video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Portraits, ships, branding and poster images resolve",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or HTTP errors",
+      "passed": true,
+      "data": {
+        "errors": [],
+        "http": []
+      }
+    }
+  ],
+  "errors": [],
+  "http": []
+}

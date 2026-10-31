@@ -1,0 +1,883 @@
+{
+  "seconds": 139.93,
+  "completed": true,
+  "nativeFPS": 58.950648306362446,
+  "events": [
+    {
+      "event": "flight-opposite-entry",
+      "time": 6.26666666666665,
+      "exit": {
+        "x": 49.60929296203972,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.6092929620397,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 10.950000000000124,
+      "exit": {
+        "x": 47.31243402491032,
+        "y": 138
+      },
+      "entry": {
+        "x": 827.3124340249103,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 14.550000000000303
+    },
+    {
+      "event": "chaos-start",
+      "time": 15.400000000000345,
+      "kind": "storm",
+      "warm": 2.05
+    },
+    {
+      "event": "chaos-release",
+      "time": 17.466666666666956,
+      "kind": "storm"
+    },
+    {
+      "event": "tornado-volley",
+      "time": 17.466666666666956,
+      "count": 12,
+      "x": 388.786774476831,
+      "y": 277.7770282354032
+    },
+    {
+      "event": "tornado-volley",
+      "time": 17.900000000000265,
+      "count": 12,
+      "x": 100.73855267085426,
+      "y": 242.21076258699958
+    },
+    {
+      "event": "tornado-volley",
+      "time": 18.333333333333574,
+      "count": 12,
+      "x": 353.1669291884194,
+      "y": 339.6441259430976
+    },
+    {
+      "event": "tornado-volley",
+      "time": 18.766666666666882,
+      "count": 12,
+      "x": 166.39208052192404,
+      "y": 191.93619200150204
+    },
+    {
+      "event": "tornado-volley",
+      "time": 19.20000000000019,
+      "count": 12,
+      "x": 265.29111086355846,
+      "y": 372.3445497332773
+    },
+    {
+      "event": "tornado-volley",
+      "time": 19.6333333333335,
+      "count": 12,
+      "x": 266.03480960486644,
+      "y": 180.70057973007295
+    },
+    {
+      "event": "tornado-volley",
+      "time": 20.06666666666681,
+      "count": 12,
+      "x": 230.44968062833962,
+      "y": 360.778548229474
+    },
+    {
+      "event": "tornado-volley",
+      "time": 20.500000000000117,
+      "count": 12,
+      "x": 454.8341249391437,
+      "y": 213.69208336203172
+    },
+    {
+      "event": "tornado-volley",
+      "time": 20.933333333333426,
+      "count": 12,
+      "x": 203.0247053060294,
+      "y": 310.28683959020077
+    },
+    {
+      "event": "tornado-volley",
+      "time": 21.366666666666735,
+      "count": 12,
+      "x": 491.3946720243573,
+      "y": 275.6765424603493
+    },
+    {
+      "event": "tornado-volley",
+      "time": 21.800000000000043,
+      "count": 12,
+      "x": 202.2407789707931,
+      "y": 244.18448088988828
+    },
+    {
+      "event": "tornado-volley",
+      "time": 22.233333333333352,
+      "count": 12,
+      "x": 457.82817759774684,
+      "y": 338.0320062027695
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 27.449999999999722,
+      "exit": {
+        "x": 49.51039450392261,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.5103945039226,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 32.13333333333279,
+      "exit": {
+        "x": 49.28425432871802,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.284254328718,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 35.73333333333259
+    },
+    {
+      "event": "chaos-start",
+      "time": 36.58333333333254,
+      "kind": "nuke",
+      "warm": 2.4
+    },
+    {
+      "event": "chaos-release",
+      "time": 38.99999999999907,
+      "kind": "nuke"
+    },
+    {
+      "event": "skull-release",
+      "time": 38.99999999999907,
+      "index": 1,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 40.066666666665675,
+      "index": 2,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 40.93333333333229,
+      "index": 3,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 41.63333333333225,
+      "index": 4,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 42.19999999999889,
+      "index": 5,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-burst",
+      "time": 42.34999999999888,
+      "level": 1,
+      "radius": 27,
+      "chunks": 7,
+      "x": 269.17829650653533,
+      "y": 123.34753939827038
+    },
+    {
+      "event": "skull-burst",
+      "time": 42.38333333333221,
+      "level": 5,
+      "radius": 47,
+      "chunks": 11,
+      "x": 244.414236229926,
+      "y": 384.1544363008366
+    },
+    {
+      "event": "skull-release",
+      "time": 42.66666666666553,
+      "index": 6,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 43.03333333333217,
+      "index": 7,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.24999999999883,
+      "level": 4,
+      "radius": 42,
+      "chunks": 10,
+      "x": 256.2370496431845,
+      "y": 309.7939453795427
+    },
+    {
+      "event": "skull-release",
+      "time": 43.333333333332156,
+      "index": 8,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.54999999999881,
+      "level": 3,
+      "radius": 37,
+      "chunks": 9,
+      "x": 272.09996462140805,
+      "y": 283.4559273043224
+    },
+    {
+      "event": "skull-release",
+      "time": 43.58333333333214,
+      "index": 9,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 43.78333333333213,
+      "index": 10,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 43.94999999999879,
+      "index": 11,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.94999999999879,
+      "level": 4,
+      "radius": 42,
+      "chunks": 10,
+      "x": 245.7225648216528,
+      "y": 325.64807370787105
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.94999999999879,
+      "level": 2,
+      "radius": 32,
+      "chunks": 8,
+      "x": 278.6459135804059,
+      "y": 217.48946968636014
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.94999999999879,
+      "level": 0,
+      "radius": 22,
+      "chunks": 6,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.083333333332114,
+      "index": 12,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 44.199999999998774,
+      "index": 13,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.316666666665434,
+      "index": 14,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 44.433333333332094,
+      "index": 15,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.549999999998754,
+      "index": 16,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 44.666666666665414,
+      "index": 17,
+      "x": 264.8638827921647,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.783333333332074,
+      "index": 18,
+      "x": 221.22708402334223,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 51.549999999998356,
+      "exit": {
+        "x": -11.189206177952542,
+        "y": 622
+      },
+      "entry": {
+        "x": 688.8107938220475,
+        "y": -100
+      },
+      "kind": "swoop",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 56.66666666666473,
+      "exit": {
+        "x": -73.32619082914925,
+        "y": 622
+      },
+      "entry": {
+        "x": 626.6738091708507,
+        "y": -100
+      },
+      "kind": "swoop",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 60.41666666666452
+    },
+    {
+      "event": "chaos-start",
+      "time": 61.26666666666447,
+      "kind": "rage",
+      "warm": 2.5
+    },
+    {
+      "event": "chaos-release",
+      "time": 63.783333333330994,
+      "kind": "rage"
+    },
+    {
+      "event": "lightning-tell",
+      "time": 66.13333333333087,
+      "id": 0,
+      "x": 274.3671938220482,
+      "y": 442.2480061779519,
+      "at": 68.13333333333087,
+      "born": 66.13333333333087,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 67.19999999999747,
+      "id": 1,
+      "x": 313.3671938220482,
+      "y": 442.2480061779519,
+      "at": 69.19999999999747,
+      "born": 67.19999999999747,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 68.08333333333076,
+      "id": 2,
+      "x": 357.3671938220482,
+      "y": 442.2480061779519,
+      "at": 70.08333333333076,
+      "born": 68.08333333333076,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 68.14999999999742,
+      "id": 0,
+      "x": 274.3671938220482,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 68.81666666666405,
+      "id": 3,
+      "x": 308.3671938220482,
+      "y": 442.2480061779519,
+      "at": 70.81666666666405,
+      "born": 68.81666666666405,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 69.21666666666403,
+      "id": 1,
+      "x": 313.3671938220482,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 69.43333333333068,
+      "id": 4,
+      "x": 254.3671938220482,
+      "y": 442.2480061779519,
+      "at": 71.43333333333068,
+      "born": 69.43333333333068,
+      "dir": -1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 69.93333333333065,
+      "id": 5,
+      "x": 198.76760335239308,
+      "y": 442.2480061779519,
+      "at": 71.93333333333065,
+      "born": 69.93333333333065,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 70.09999999999731,
+      "id": 2,
+      "x": 357.3671938220482,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 70.3499999999973,
+      "id": 6,
+      "x": 134.76760335239308,
+      "y": 442.2480061779519,
+      "at": 72.3499999999973,
+      "born": 70.3499999999973,
+      "dir": -1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 70.69999999999727,
+      "id": 7,
+      "x": 65.76760335239308,
+      "y": 442.2480061779519,
+      "at": 72.69999999999727,
+      "born": 70.69999999999727,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 70.8333333333306,
+      "id": 3,
+      "x": 308.3671938220482,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 70.99999999999726,
+      "id": 8,
+      "x": 48.532526075269026,
+      "y": 442.2480061779519,
+      "at": 72.99999999999726,
+      "born": 70.99999999999726,
+      "dir": -1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.24999999999724,
+      "id": 9,
+      "x": 48.07826740958459,
+      "y": 442.2480061779519,
+      "at": 73.24999999999724,
+      "born": 71.24999999999724,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 71.44999999999723,
+      "id": 4,
+      "x": 254.3671938220482,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.48333333333056,
+      "id": 10,
+      "x": 132.07826740958458,
+      "y": 442.2480061779519,
+      "at": 73.48333333333056,
+      "born": 71.48333333333056,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.71666666666388,
+      "id": 11,
+      "x": 216.07826740958458,
+      "y": 442.2480061779519,
+      "at": 73.71666666666388,
+      "born": 71.71666666666388,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.9499999999972,
+      "id": 12,
+      "x": 300.07826740958456,
+      "y": 442.2480061779519,
+      "at": 73.9499999999972,
+      "born": 71.9499999999972,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 71.9499999999972,
+      "id": 5,
+      "x": 198.76760335239308,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 72.18333333333052,
+      "id": 13,
+      "x": 384.07826740958456,
+      "y": 442.2480061779519,
+      "at": 74.18333333333052,
+      "born": 72.18333333333052,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 72.36666666666385,
+      "id": 6,
+      "x": 134.76760335239308,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 72.41666666666384,
+      "id": 14,
+      "x": 435.0286128016319,
+      "y": 442.2480061779519,
+      "at": 74.41666666666384,
+      "born": 72.41666666666384,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 72.71666666666383,
+      "id": 7,
+      "x": 65.76760335239308,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.01666666666381,
+      "id": 8,
+      "x": 48.532526075269026,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.2666666666638,
+      "id": 9,
+      "x": 48.07826740958459,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.49999999999712,
+      "id": 10,
+      "x": 132.07826740958458,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.73333333333044,
+      "id": 11,
+      "x": 216.07826740958458,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.96666666666376,
+      "id": 12,
+      "x": 300.07826740958456,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 74.19999999999708,
+      "id": 13,
+      "x": 384.07826740958456,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 74.4333333333304,
+      "id": 14,
+      "x": 435.0286128016319,
+      "y": 442.2480061779519,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 83.19999999999656,
+      "exit": {
+        "x": -16.52229617884086,
+        "y": 138
+      },
+      "entry": {
+        "x": 763.4777038211591,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 87.88333333332963,
+      "exit": {
+        "x": 45.93963379262891,
+        "y": 138
+      },
+      "entry": {
+        "x": 825.9396337926289,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 91.48333333332943
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 108.21666666666181,
+      "exit": {
+        "x": 10.682477346471842,
+        "y": 138
+      },
+      "entry": {
+        "x": 790.6824773464718,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 111.8166666666616
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 115.96666666666137,
+      "exit": {
+        "x": 789.9999999992615,
+        "y": 622
+      },
+      "entry": {
+        "x": 89.99999999926143,
+        "y": -100
+      },
+      "kind": "swoop",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 119.73333333332782
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 123.61666666666093,
+      "exit": {
+        "x": 49.99966358074971,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.9996635807497,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 127.21666666666073
+    },
+    {
+      "event": "chaos-start",
+      "time": 128.06666666666072,
+      "kind": "storm",
+      "warm": 2.05
+    },
+    {
+      "event": "chaos-release",
+      "time": 130.13333333332903,
+      "kind": "storm"
+    },
+    {
+      "event": "tornado-volley",
+      "time": 130.13333333332903,
+      "count": 12,
+      "x": 584.6274680526353,
+      "y": 277.7770282354032
+    }
+  ],
+  "chapters": [
+    {
+      "id": "stage8-herald-tornado",
+      "stage": 8,
+      "title": "Herald \u00b7 GPT chaos tornadoes",
+      "seconds": 7.993000000000002,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "poster": "posters/stage8-herald-chaos-verified-1029.jpg",
+      "note": "Fresh native Furious defeat with GPT red tornadoes, asterisk-only tornado warning, accelerating shootable/growing skull bombs and larger ricochet bursts, committed two-second red-lightning impacts, charge/throw/depth flight and opposite-edge returns. Invulnerable input bot; native health and attack clocks. Earlier films retained.",
+      "sha256": "f3addb0c47e4520b19f5d7eb3b3ff94b088d08e08066356fba593e83c2762f8b",
+      "bytes": 146283624,
+      "parent": "stage8-miniboss",
+      "start": 16.599,
+      "end": 24.592000000000002
+    },
+    {
+      "id": "stage8-herald-skulls",
+      "stage": 8,
+      "title": "Herald \u00b7 accelerating skull bombs",
+      "seconds": 10.817999999999998,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "poster": "posters/stage8-herald-chaos-verified-1029.jpg",
+      "note": "Fresh native Furious defeat with GPT red tornadoes, asterisk-only tornado warning, accelerating shootable/growing skull bombs and larger ricochet bursts, committed two-second red-lightning impacts, charge/throw/depth flight and opposite-edge returns. Invulnerable input bot; native health and attack clocks. Earlier films retained.",
+      "sha256": "f3addb0c47e4520b19f5d7eb3b3ff94b088d08e08066356fba593e83c2762f8b",
+      "bytes": 146283624,
+      "parent": "stage8-miniboss",
+      "start": 37.682,
+      "end": 48.5
+    },
+    {
+      "id": "stage8-herald-lightning",
+      "stage": 8,
+      "title": "Herald \u00b7 anchored lightning storm",
+      "seconds": 18.332,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "poster": "posters/stage8-herald-chaos-verified-1029.jpg",
+      "note": "Fresh native Furious defeat with GPT red tornadoes, asterisk-only tornado warning, accelerating shootable/growing skull bombs and larger ricochet bursts, committed two-second red-lightning impacts, charge/throw/depth flight and opposite-edge returns. Invulnerable input bot; native health and attack clocks. Earlier films retained.",
+      "sha256": "f3addb0c47e4520b19f5d7eb3b3ff94b088d08e08066356fba593e83c2762f8b",
+      "bytes": 146283624,
+      "parent": "stage8-miniboss",
+      "start": 62.192,
+      "end": 80.524
+    },
+    {
+      "id": "stage8-herald-bomb-landings",
+      "stage": 8,
+      "title": "Herald \u00b7 actual bomb landing retinas + opposite-edge return",
+      "seconds": 11.984,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "poster": "posters/stage8-herald-chaos-verified-1029.jpg",
+      "note": "Fresh native Furious defeat with GPT red tornadoes, asterisk-only tornado warning, accelerating shootable/growing skull bombs and larger ricochet bursts, committed two-second red-lightning impacts, charge/throw/depth flight and opposite-edge returns. Invulnerable input bot; native health and attack clocks. Earlier films retained.",
+      "sha256": "f3addb0c47e4520b19f5d7eb3b3ff94b088d08e08066356fba593e83c2762f8b",
+      "bytes": 146283624,
+      "parent": "stage8-miniboss",
+      "start": 3.814,
+      "end": 15.798
+    }
+  ],
+  "audioMeanDB": -21.0,
+  "audioPeakDB": -4.1,
+  "decodedCueCounts": {
+    "bossAlarm": 1,
+    "enemyunit": 1,
+    "boss8": 1,
+    "lockon": 31,
+    "enemyHeavyLaser": 1,
+    "bossWeaponCharge": 26,
+    "alertLockon": 16,
+    "av3_target_acquire": 16,
+    "jetDash": 11,
+    "bossfireVileexistence": 16,
+    "expSmall": 67,
+    "combatOrb0927": 26,
+    "wardenScream": 5,
+    "loop": 29,
+    "hit": 271,
+    "laserBeamStart": 55,
+    "expBig": 29,
+    "timedBombBlast": 3,
+    "laserBeamEnd": 55,
+    "geyserLightning": 10,
+    "missile": 41,
+    "av3_impact_energy": 8,
+    "missileHit": 41,
+    "combatModule0927": 5,
+    "powerup": 2,
+    "stageclear": 1,
+    "statTick": 10,
+    "stageClear": 1
+  },
+  "maxOwnerProjectiles": 60,
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "audioErrors": [],
+  "abortedRequests": 39
+}

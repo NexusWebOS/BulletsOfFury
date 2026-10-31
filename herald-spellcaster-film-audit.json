@@ -1,0 +1,1543 @@
+{
+  "seconds": 180.0,
+  "completed": true,
+  "nativeFPS": 58.96594814120587,
+  "events": [
+    {
+      "event": "cast-start",
+      "time": 92.33333333332938,
+      "casterPhase": false
+    },
+    {
+      "event": "seal-line",
+      "time": 92.93333333332934,
+      "line": 0
+    },
+    {
+      "event": "seal-line",
+      "time": 93.23333333332933,
+      "line": 1
+    },
+    {
+      "event": "seal-line",
+      "time": 93.53333333332931,
+      "line": 2
+    },
+    {
+      "event": "seal-line",
+      "time": 93.83333333332929,
+      "line": 3
+    },
+    {
+      "event": "seal-line",
+      "time": 94.11666666666261,
+      "line": 4
+    },
+    {
+      "event": "seal-circle",
+      "time": 94.41666666666259,
+      "line": 5
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 97.74999999999574,
+      "index": 0,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558,
+      "vx": -1.081886202477239,
+      "vy": 1.1472377517946228,
+      "at": 99.09999999999573,
+      "target": {
+        "x": 252.30637013559772,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 97.74999999999574,
+      "index": 1,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558,
+      "vx": -0.27211021656747736,
+      "vy": 1.5843551793563104,
+      "at": 99.31999999999573,
+      "target": {
+        "x": 314.3063701355977,
+        "y": 404.48
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 97.74999999999574,
+      "index": 2,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558,
+      "vx": 0.33861468900692393,
+      "vy": 0.865235175934492,
+      "at": 99.53999999999574,
+      "target": {
+        "x": 376.3063701355977,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 97.74999999999574,
+      "index": 3,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558,
+      "vx": 1.2144100938190572,
+      "vy": 1.8425463937699313,
+      "at": 99.09999999999573,
+      "target": {
+        "x": 438.3063701355977,
+        "y": 404.48
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 97.74999999999574,
+      "index": 4,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558,
+      "vx": 1.7024120764261532,
+      "vy": 0.9864783216068412,
+      "at": 99.31999999999573,
+      "target": {
+        "x": 500.3063701355977,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 97.74999999999574,
+      "index": 5,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558,
+      "vx": 2.0704582644259184,
+      "vy": 1.3896299617817918,
+      "at": 99.53999999999574,
+      "target": {
+        "x": 562.3063701355977,
+        "y": 404.48
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 97.74999999999574,
+      "index": 6,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558,
+      "vx": 3.5107063901153537,
+      "vy": 1.1472377517946228,
+      "at": 99.09999999999573,
+      "target": {
+        "x": 624.3063701355977,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "seal-release",
+      "time": 97.74999999999574,
+      "count": 7,
+      "x": 339.9391525362541,
+      "y": 255.23374210463558
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 99.11666666666233,
+      "index": 0,
+      "count": 13,
+      "x": 252.30637013559772,
+      "y": 348.16,
+      "gap": 0.630338981323753,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 99.11666666666233,
+      "index": 3,
+      "count": 13,
+      "x": 438.3063701355977,
+      "y": 404.48,
+      "gap": 1.568589045415711,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 99.11666666666233,
+      "index": 6,
+      "count": 13,
+      "x": 624.3063701355977,
+      "y": 348.16,
+      "gap": 2.510354755613371,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 99.33333333332898,
+      "index": 1,
+      "count": 13,
+      "x": 314.3063701355977,
+      "y": 404.48,
+      "gap": 0.5695854567265253,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 99.33333333332898,
+      "index": 4,
+      "count": 13,
+      "x": 500.3063701355977,
+      "y": 348.16,
+      "gap": 1.9979058326536707,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 99.54999999999563,
+      "index": 2,
+      "count": 13,
+      "x": 376.3063701355977,
+      "y": 348.16,
+      "gap": 1.1415480928200923,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 99.54999999999563,
+      "index": 5,
+      "count": 13,
+      "x": 562.3063701355977,
+      "y": 404.48,
+      "gap": 2.5707207460484933,
+      "source": "fuse"
+    },
+    {
+      "event": "cast-complete",
+      "time": 103.63333333332874
+    },
+    {
+      "event": "caster-phase-enter",
+      "time": 151.51666666667938,
+      "hp": 833.1999999999916,
+      "maxhp": 4264
+    },
+    {
+      "event": "cast-start",
+      "time": 151.51666666667938,
+      "casterPhase": true
+    },
+    {
+      "event": "seal-line",
+      "time": 152.11666666667986,
+      "line": 0
+    },
+    {
+      "event": "seal-line",
+      "time": 152.4166666666801,
+      "line": 1
+    },
+    {
+      "event": "seal-line",
+      "time": 152.71666666668034,
+      "line": 2
+    },
+    {
+      "event": "seal-line",
+      "time": 153.01666666668058,
+      "line": 3
+    },
+    {
+      "event": "seal-line",
+      "time": 153.30000000001414,
+      "line": 4
+    },
+    {
+      "event": "seal-circle",
+      "time": 153.60000000001438,
+      "line": 5
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 156.93333333335036,
+      "index": 0,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235,
+      "vx": -2.331363055208777,
+      "vy": 1.1115451807703416,
+      "at": 158.28333333335036,
+      "target": {
+        "x": 54,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 156.93333333335036,
+      "index": 1,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235,
+      "vx": -1.3465011408907746,
+      "vy": 1.5536641150997628,
+      "at": 158.50333333335035,
+      "target": {
+        "x": 116,
+        "y": 404.48
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 156.93333333335036,
+      "index": 2,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235,
+      "vx": -0.6037281887514987,
+      "vy": 0.8383161977876877,
+      "at": 158.72333333335035,
+      "target": {
+        "x": 178,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 156.93333333335036,
+      "index": 3,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235,
+      "vx": -0.035066758912481046,
+      "vy": 1.80685382274565,
+      "at": 158.28333333335036,
+      "target": {
+        "x": 240,
+        "y": 404.48
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 156.93333333335036,
+      "index": 4,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235,
+      "vx": 0.628021152102856,
+      "vy": 0.9557872573502938,
+      "at": 158.50333333335035,
+      "target": {
+        "x": 302,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 156.93333333335036,
+      "index": 5,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235,
+      "vx": 1.1281153866674956,
+      "vy": 1.3627109836349875,
+      "at": 158.72333333335035,
+      "target": {
+        "x": 364,
+        "y": 404.48
+      }
+    },
+    {
+      "event": "penta-ball-release",
+      "time": 156.93333333335036,
+      "index": 6,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235,
+      "vx": 2.2612295373838154,
+      "vy": 1.1115451807703416,
+      "at": 158.28333333335036,
+      "target": {
+        "x": 426,
+        "y": 348.16
+      }
+    },
+    {
+      "event": "seal-release",
+      "time": 156.93333333335036,
+      "count": 7,
+      "x": 242.84040747191096,
+      "y": 258.12484035760235
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 158.28333333335144,
+      "index": 0,
+      "count": 13,
+      "x": 54,
+      "y": 348.16,
+      "gap": 0.6370653127770377,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 158.28333333335144,
+      "index": 3,
+      "count": 13,
+      "x": 240,
+      "y": 404.48,
+      "gap": 1.6013515346238303,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 158.28333333335144,
+      "index": 6,
+      "count": 13,
+      "x": 426,
+      "y": 348.16,
+      "gap": 2.516975560500001,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 158.51666666668496,
+      "index": 1,
+      "count": 13,
+      "x": 116,
+      "y": 404.48,
+      "gap": 0.5792601052222335,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 158.51666666668496,
+      "index": 4,
+      "count": 13,
+      "x": 302,
+      "y": 348.16,
+      "gap": 2.013682953867895,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 158.7333333333518,
+      "index": 2,
+      "count": 13,
+      "x": 178,
+      "y": 348.16,
+      "gap": 1.1575242917640984,
+      "source": "fuse"
+    },
+    {
+      "event": "penta-ball-shatter",
+      "time": 158.7333333333518,
+      "index": 5,
+      "count": 13,
+      "x": 364,
+      "y": 404.48,
+      "gap": 2.5801492423734502,
+      "source": "fuse"
+    },
+    {
+      "event": "cast-complete",
+      "time": 162.81666666668838
+    }
+  ],
+  "legacyEvents": [
+    {
+      "event": "flight-opposite-entry",
+      "time": 6.26666666666665,
+      "exit": {
+        "x": 49.61166693135874,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.6116669313587,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 10.950000000000124,
+      "exit": {
+        "x": 47.07424190354345,
+        "y": 138
+      },
+      "entry": {
+        "x": 827.0742419035435,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 14.550000000000303
+    },
+    {
+      "event": "chaos-start",
+      "time": 15.400000000000345,
+      "kind": "storm",
+      "warm": 2.05
+    },
+    {
+      "event": "chaos-release",
+      "time": 17.466666666666956,
+      "kind": "storm"
+    },
+    {
+      "event": "tornado-volley",
+      "time": 17.466666666666956,
+      "count": 12,
+      "x": 388.7867745436604,
+      "y": 277.7770282354032
+    },
+    {
+      "event": "tornado-volley",
+      "time": 17.900000000000265,
+      "count": 12,
+      "x": 100.73855267326147,
+      "y": 242.21076258699958
+    },
+    {
+      "event": "tornado-volley",
+      "time": 18.333333333333574,
+      "count": 12,
+      "x": 353.16692918850606,
+      "y": 339.6441259430976
+    },
+    {
+      "event": "tornado-volley",
+      "time": 18.766666666666882,
+      "count": 12,
+      "x": 166.39208052192717,
+      "y": 191.93619200150204
+    },
+    {
+      "event": "tornado-volley",
+      "time": 19.20000000000019,
+      "count": 12,
+      "x": 265.2911108635586,
+      "y": 372.3445497332773
+    },
+    {
+      "event": "tornado-volley",
+      "time": 19.6333333333335,
+      "count": 12,
+      "x": 266.03480960486644,
+      "y": 180.70057973007295
+    },
+    {
+      "event": "tornado-volley",
+      "time": 20.06666666666681,
+      "count": 12,
+      "x": 231.5145330567615,
+      "y": 360.778548229474
+    },
+    {
+      "event": "tornado-volley",
+      "time": 20.500000000000117,
+      "count": 12,
+      "x": 455.94278752366205,
+      "y": 213.69208336203172
+    },
+    {
+      "event": "tornado-volley",
+      "time": 20.933333333333426,
+      "count": 12,
+      "x": 204.13494595332688,
+      "y": 310.28683959020077
+    },
+    {
+      "event": "tornado-volley",
+      "time": 21.366666666666735,
+      "count": 12,
+      "x": 492.5049695142309,
+      "y": 275.6765424603493
+    },
+    {
+      "event": "tornado-volley",
+      "time": 21.800000000000043,
+      "count": 12,
+      "x": 203.35107850816354,
+      "y": 244.18448088988828
+    },
+    {
+      "event": "tornado-volley",
+      "time": 22.233333333333352,
+      "count": 12,
+      "x": 458.938477208869,
+      "y": 338.0320062027695
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 27.449999999999722,
+      "exit": {
+        "x": 49.499053887409104,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.4990538874091,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 32.13333333333279,
+      "exit": {
+        "x": 49.21760917905749,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.2176091790575,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 35.73333333333259
+    },
+    {
+      "event": "chaos-start",
+      "time": 36.58333333333254,
+      "kind": "nuke",
+      "warm": 2.4
+    },
+    {
+      "event": "chaos-release",
+      "time": 38.99999999999907,
+      "kind": "nuke"
+    },
+    {
+      "event": "skull-release",
+      "time": 38.99999999999907,
+      "index": 1,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 40.066666666665675,
+      "index": 2,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 40.93333333333229,
+      "index": 3,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 41.63333333333225,
+      "index": 4,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 42.19999999999889,
+      "index": 5,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-burst",
+      "time": 42.366666666665544,
+      "level": 1,
+      "radius": 27,
+      "chunks": 7,
+      "x": 269.9630366891156,
+      "y": 130.6045072180808
+    },
+    {
+      "event": "skull-burst",
+      "time": 42.38333333333221,
+      "level": 5,
+      "radius": 47,
+      "chunks": 11,
+      "x": 244.9134875806444,
+      "y": 384.1366334195998
+    },
+    {
+      "event": "skull-release",
+      "time": 42.66666666666553,
+      "index": 6,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 43.03333333333217,
+      "index": 7,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.24999999999883,
+      "level": 4,
+      "radius": 42,
+      "chunks": 10,
+      "x": 256.67681243411954,
+      "y": 309.7675117261946
+    },
+    {
+      "event": "skull-release",
+      "time": 43.333333333332156,
+      "index": 8,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 43.58333333333214,
+      "index": 9,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.766666666665465,
+      "level": 5,
+      "radius": 47,
+      "chunks": 11,
+      "x": 275.6298636660465,
+      "y": 377.9932984408723
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.766666666665465,
+      "level": 3,
+      "radius": 37,
+      "chunks": 9,
+      "x": 238.83335075124842,
+      "y": 245.92579348376898
+    },
+    {
+      "event": "skull-burst",
+      "time": 43.766666666665465,
+      "level": 1,
+      "radius": 27,
+      "chunks": 7,
+      "x": 270.7235123336635,
+      "y": 137.8459125293434
+    },
+    {
+      "event": "skull-release",
+      "time": 43.78333333333213,
+      "index": 10,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 43.94999999999879,
+      "index": 11,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.083333333332114,
+      "index": 12,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 44.199999999998774,
+      "index": 13,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.316666666665434,
+      "index": 14,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 44.433333333332094,
+      "index": 15,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.549999999998754,
+      "index": 16,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "skull-release",
+      "time": 44.666666666665414,
+      "index": 17,
+      "x": 265.11370758052203,
+      "y": 58.001636465429826
+    },
+    {
+      "event": "skull-release",
+      "time": 44.783333333332074,
+      "index": 18,
+      "x": 221.47690881169956,
+      "y": 57.535566870849536
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 51.549999999998356,
+      "exit": {
+        "x": -10.07890656407426,
+        "y": 622
+      },
+      "entry": {
+        "x": 689.9210934359257,
+        "y": -100
+      },
+      "kind": "swoop",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 56.66666666666473,
+      "exit": {
+        "x": -55.00822047120505,
+        "y": 622
+      },
+      "entry": {
+        "x": 644.991779528795,
+        "y": -100
+      },
+      "kind": "swoop",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 60.41666666666452
+    },
+    {
+      "event": "chaos-start",
+      "time": 61.26666666666447,
+      "kind": "rage",
+      "warm": 2.5
+    },
+    {
+      "event": "chaos-release",
+      "time": 63.783333333330994,
+      "kind": "rage"
+    },
+    {
+      "event": "lightning-tell",
+      "time": 66.13333333333087,
+      "id": 0,
+      "x": 267.89589343592627,
+      "y": 444.92850656407387,
+      "at": 68.13333333333087,
+      "born": 66.13333333333087,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 67.19999999999747,
+      "id": 1,
+      "x": 306.89589343592627,
+      "y": 444.92850656407387,
+      "at": 69.19999999999747,
+      "born": 67.19999999999747,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 68.08333333333076,
+      "id": 2,
+      "x": 350.89589343592627,
+      "y": 444.92850656407387,
+      "at": 70.08333333333076,
+      "born": 68.08333333333076,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 68.14999999999742,
+      "id": 0,
+      "x": 267.89589343592627,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 68.81666666666405,
+      "id": 3,
+      "x": 301.89589343592627,
+      "y": 444.92850656407387,
+      "at": 70.81666666666405,
+      "born": 68.81666666666405,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 69.21666666666403,
+      "id": 1,
+      "x": 306.89589343592627,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 69.43333333333068,
+      "id": 4,
+      "x": 247.99999989354114,
+      "y": 444.92850656407387,
+      "at": 71.43333333333068,
+      "born": 69.43333333333068,
+      "dir": -1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 69.93333333333065,
+      "id": 5,
+      "x": 199.6653206541385,
+      "y": 444.92850656407387,
+      "at": 71.93333333333065,
+      "born": 69.93333333333065,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 70.09999999999731,
+      "id": 2,
+      "x": 350.89589343592627,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 70.3499999999973,
+      "id": 6,
+      "x": 135.6653206541385,
+      "y": 444.92850656407387,
+      "at": 72.3499999999973,
+      "born": 70.3499999999973,
+      "dir": -1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 70.69999999999727,
+      "id": 7,
+      "x": 66.6653206541385,
+      "y": 444.92850656407387,
+      "at": 72.69999999999727,
+      "born": 70.69999999999727,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 70.8333333333306,
+      "id": 3,
+      "x": 301.89589343592627,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 70.99999999999726,
+      "id": 8,
+      "x": 48.55357244746513,
+      "y": 444.92850656407387,
+      "at": 72.99999999999726,
+      "born": 70.99999999999726,
+      "dir": -1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.24999999999724,
+      "id": 9,
+      "x": 48.08136067601687,
+      "y": 444.92850656407387,
+      "at": 73.24999999999724,
+      "born": 71.24999999999724,
+      "dir": -1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 71.44999999999723,
+      "id": 4,
+      "x": 247.99999989354114,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.48333333333056,
+      "id": 10,
+      "x": 132.08136067601686,
+      "y": 444.92850656407387,
+      "at": 73.48333333333056,
+      "born": 71.48333333333056,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.71666666666388,
+      "id": 11,
+      "x": 216.08136067601686,
+      "y": 444.92850656407387,
+      "at": 73.71666666666388,
+      "born": 71.71666666666388,
+      "dir": 1
+    },
+    {
+      "event": "lightning-tell",
+      "time": 71.9499999999972,
+      "id": 12,
+      "x": 300.08136067601686,
+      "y": 444.92850656407387,
+      "at": 73.9499999999972,
+      "born": 71.9499999999972,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 71.9499999999972,
+      "id": 5,
+      "x": 199.6653206541385,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 72.18333333333052,
+      "id": 13,
+      "x": 384.08136067601686,
+      "y": 444.92850656407387,
+      "at": 74.18333333333052,
+      "born": 72.18333333333052,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 72.36666666666385,
+      "id": 6,
+      "x": 135.6653206541385,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-tell",
+      "time": 72.41666666666384,
+      "id": 14,
+      "x": 434.6997006715165,
+      "y": 444.92850656407387,
+      "at": 74.41666666666384,
+      "born": 72.41666666666384,
+      "dir": 1
+    },
+    {
+      "event": "lightning-strike",
+      "time": 72.71666666666383,
+      "id": 7,
+      "x": 66.6653206541385,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.01666666666381,
+      "id": 8,
+      "x": 48.55357244746513,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.2666666666638,
+      "id": 9,
+      "x": 48.08136067601687,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.49999999999712,
+      "id": 10,
+      "x": 132.08136067601686,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.73333333333044,
+      "id": 11,
+      "x": 216.08136067601686,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 73.96666666666376,
+      "id": 12,
+      "x": 300.08136067601686,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 74.19999999999708,
+      "id": 13,
+      "x": 384.08136067601686,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "lightning-strike",
+      "time": 74.4333333333304,
+      "id": 14,
+      "x": 434.6997006715165,
+      "y": 444.92850656407387,
+      "delay": 2.016666666666552
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 83.19999999999656,
+      "exit": {
+        "x": -149.99999998792862,
+        "y": 138
+      },
+      "entry": {
+        "x": 630.0000000120714,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 87.88333333332963,
+      "exit": {
+        "x": -17.081430484259158,
+        "y": 138
+      },
+      "entry": {
+        "x": 762.9185695157408,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 91.48333333332943
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 107.71666666666184,
+      "exit": {
+        "x": -123.35717665143795,
+        "y": 138
+      },
+      "entry": {
+        "x": 656.642823348562,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 112.3999999999949,
+      "exit": {
+        "x": 20.73987103021534,
+        "y": 138
+      },
+      "entry": {
+        "x": 800.7398710302153,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 115.9999999999947
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 120.14999999999446,
+      "exit": {
+        "x": 592.712595003277,
+        "y": 622
+      },
+      "entry": {
+        "x": -107.28740499672304,
+        "y": -100
+      },
+      "kind": "swoop",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 125.24999999999417,
+      "exit": {
+        "x": 656.9010322504187,
+        "y": 622
+      },
+      "entry": {
+        "x": -43.09896774958136,
+        "y": -100
+      },
+      "kind": "swoop",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 129.01666666666148
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 132.8999999999979,
+      "exit": {
+        "x": 48.64409874495175,
+        "y": 138
+      },
+      "entry": {
+        "x": 828.6440987449517,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": true
+    },
+    {
+      "event": "flight-opposite-entry",
+      "time": 137.58333333333496,
+      "exit": {
+        "x": 49.11345450110821,
+        "y": 138
+      },
+      "entry": {
+        "x": 829.1134545011082,
+        "y": 138
+      },
+      "kind": "bomber",
+      "nextPass": false
+    },
+    {
+      "event": "flight-return-complete",
+      "time": 141.18333333333783
+    },
+    {
+      "event": "chaos-start",
+      "time": 142.0333333333385,
+      "kind": "storm",
+      "warm": 2.05
+    },
+    {
+      "event": "chaos-release",
+      "time": 144.10000000000682,
+      "kind": "storm"
+    },
+    {
+      "event": "tornado-volley",
+      "time": 144.10000000000682,
+      "count": 12,
+      "x": 388.78677440189244,
+      "y": 277.7770282354032
+    },
+    {
+      "event": "tornado-volley",
+      "time": 144.5333333333405,
+      "count": 12,
+      "x": 108.47818304238447,
+      "y": 242.21076258699958
+    },
+    {
+      "event": "tornado-volley",
+      "time": 144.96666666667417,
+      "count": 12,
+      "x": 362.04527475988755,
+      "y": 339.6441259430976
+    },
+    {
+      "event": "tornado-volley",
+      "time": 145.40000000000785,
+      "count": 12,
+      "x": 175.3316849333746,
+      "y": 191.93619200150204
+    },
+    {
+      "event": "tornado-volley",
+      "time": 145.83333333334153,
+      "count": 12,
+      "x": 274.2329218477282,
+      "y": 372.3445497332773
+    },
+    {
+      "event": "tornado-volley",
+      "time": 146.2666666666752,
+      "count": 12,
+      "x": 274.97670007084105,
+      "y": 180.70057973007295
+    },
+    {
+      "event": "tornado-volley",
+      "time": 146.70000000000888,
+      "count": 12,
+      "x": 174.67875966483214,
+      "y": 360.778548229474
+    },
+    {
+      "event": "tornado-volley",
+      "time": 147.13333333334256,
+      "count": 12,
+      "x": 362.59759550124477,
+      "y": 213.69208336203172
+    },
+    {
+      "event": "tornado-volley",
+      "time": 147.56666666667624,
+      "count": 12,
+      "x": 109.41626821823363,
+      "y": 310.28683959020077
+    },
+    {
+      "event": "tornado-volley",
+      "time": 148.00000000000992,
+      "count": 12,
+      "x": 397.736818166763,
+      "y": 275.6765424603493
+    },
+    {
+      "event": "tornado-volley",
+      "time": 148.4333333333436,
+      "count": 12,
+      "x": 108.58114509751226,
+      "y": 244.18448088988828
+    },
+    {
+      "event": "tornado-volley",
+      "time": 148.86666666667728,
+      "count": 12,
+      "x": 364.1684796074495,
+      "y": 338.0320062027695
+    },
+    {
+      "event": "chaos-start",
+      "time": 164.33333333335625,
+      "kind": "nuke",
+      "warm": 2.4
+    },
+    {
+      "event": "chaos-release",
+      "time": 166.75000000002484,
+      "kind": "nuke"
+    },
+    {
+      "event": "skull-release",
+      "time": 166.75000000002484,
+      "index": 1,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-burst",
+      "time": 166.75000000002484,
+      "level": 0,
+      "radius": 22,
+      "chunks": 6,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-release",
+      "time": 167.81666666669236,
+      "index": 2,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-burst",
+      "time": 167.81666666669236,
+      "level": 0,
+      "radius": 22,
+      "chunks": 6,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-release",
+      "time": 168.6833333333597,
+      "index": 3,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-burst",
+      "time": 168.6833333333597,
+      "level": 0,
+      "radius": 22,
+      "chunks": 6,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-release",
+      "time": 169.38333333336027,
+      "index": 4,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-burst",
+      "time": 169.38333333336027,
+      "level": 0,
+      "radius": 22,
+      "chunks": 6,
+      "x": 240,
+      "y": 101.93329795636066
+    },
+    {
+      "event": "skull-release",
+      "time": 169.9500000000274,
+      "index": 5,
+      "x": 240,
+      "y": 101.93329795636066
+    }
+  ],
+  "chapters": [
+    {
+      "id": "stage8-herald-spellcaster",
+      "stage": 8,
+      "title": "Herald \u00b7 inscribed seal and ruby-glass spell",
+      "seconds": 11.773999999999987,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "poster": "posters/stage8-herald-spellcaster-1029.jpg",
+      "note": "Native Furious defeat: an ornate seal inscribes five lines then its circle, spins, glows, expands/contracts and bursts into ruby penta balls with red-glass bullet hell. Animated skull/eyes, overhead asterisk and real skull/core casting phase after four limb breaks. Invulnerable input-only bot; native HP/clocks. Earlier films preserved.",
+      "sha256": "5914951eb670fea7ba8f6843925c4e56a0d52748ade00f88c5ebd4a8c53c5499",
+      "bytes": 191193446,
+      "parent": "stage8-miniboss",
+      "start": 93.453,
+      "end": 105.22699999999999
+    },
+    {
+      "id": "stage8-herald-skull-caster",
+      "stage": 8,
+      "title": "Herald \u00b7 stripped skull/core caster phase",
+      "seconds": 11.650000000000006,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "poster": "posters/stage8-herald-spellcaster-1029.jpg",
+      "note": "Native Furious defeat: an ornate seal inscribes five lines then its circle, spins, glows, expands/contracts and bursts into ruby penta balls with red-glass bullet hell. Animated skull/eyes, overhead asterisk and real skull/core casting phase after four limb breaks. Invulnerable input-only bot; native HP/clocks. Earlier films preserved.",
+      "sha256": "5914951eb670fea7ba8f6843925c4e56a0d52748ade00f88c5ebd4a8c53c5499",
+      "bytes": 191193446,
+      "parent": "stage8-miniboss",
+      "start": 153.184,
+      "end": 164.834
+    },
+    {
+      "id": "stage8-herald-tornado",
+      "stage": 8,
+      "title": "Herald \u00b7 GPT chaos tornadoes",
+      "seconds": 8.429000000000002,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "poster": "posters/stage8-herald-spellcaster-1029.jpg",
+      "note": "Native Furious defeat: an ornate seal inscribes five lines then its circle, spins, glows, expands/contracts and bursts into ruby penta balls with red-glass bullet hell. Animated skull/eyes, overhead asterisk and real skull/core casting phase after four limb breaks. Invulnerable input-only bot; native HP/clocks. Earlier films preserved.",
+      "sha256": "5914951eb670fea7ba8f6843925c4e56a0d52748ade00f88c5ebd4a8c53c5499",
+      "bytes": 191193446,
+      "parent": "stage8-miniboss",
+      "start": 16.729,
+      "end": 25.158
+    },
+    {
+      "id": "stage8-herald-skulls",
+      "stage": 8,
+      "title": "Herald \u00b7 accelerating skull bombs",
+      "seconds": 11.249000000000002,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "poster": "posters/stage8-herald-spellcaster-1029.jpg",
+      "note": "Native Furious defeat: an ornate seal inscribes five lines then its circle, spins, glows, expands/contracts and bursts into ruby penta balls with red-glass bullet hell. Animated skull/eyes, overhead asterisk and real skull/core casting phase after four limb breaks. Invulnerable input-only bot; native HP/clocks. Earlier films preserved.",
+      "sha256": "5914951eb670fea7ba8f6843925c4e56a0d52748ade00f88c5ebd4a8c53c5499",
+      "bytes": 191193446,
+      "parent": "stage8-miniboss",
+      "start": 37.754,
+      "end": 49.003
+    },
+    {
+      "id": "stage8-herald-lightning",
+      "stage": 8,
+      "title": "Herald \u00b7 anchored lightning storm",
+      "seconds": 17.895000000000003,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "poster": "posters/stage8-herald-spellcaster-1029.jpg",
+      "note": "Native Furious defeat: an ornate seal inscribes five lines then its circle, spins, glows, expands/contracts and bursts into ruby penta balls with red-glass bullet hell. Animated skull/eyes, overhead asterisk and real skull/core casting phase after four limb breaks. Invulnerable input-only bot; native HP/clocks. Earlier films preserved.",
+      "sha256": "5914951eb670fea7ba8f6843925c4e56a0d52748ade00f88c5ebd4a8c53c5499",
+      "bytes": 191193446,
+      "parent": "stage8-miniboss",
+      "start": 62.745,
+      "end": 80.64
+    },
+    {
+      "id": "stage8-herald-bomb-landings",
+      "stage": 8,
+      "title": "Herald \u00b7 bomb landing retinas + opposite-edge return",
+      "seconds": 12.116999999999999,
+      "src": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "localSrc": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "poster": "posters/stage8-herald-spellcaster-1029.jpg",
+      "note": "Native Furious defeat: an ornate seal inscribes five lines then its circle, spins, glows, expands/contracts and bursts into ruby penta balls with red-glass bullet hell. Animated skull/eyes, overhead asterisk and real skull/core casting phase after four limb breaks. Invulnerable input-only bot; native HP/clocks. Earlier films preserved.",
+      "sha256": "5914951eb670fea7ba8f6843925c4e56a0d52748ade00f88c5ebd4a8c53c5499",
+      "bytes": 191193446,
+      "parent": "stage8-miniboss",
+      "start": 3.846,
+      "end": 15.963
+    }
+  ],
+  "audioMeanDB": -21.3,
+  "audioPeakDB": -3.8,
+  "decodedCueCounts": {
+    "bossAlarm": 1,
+    "enemyunit": 1,
+    "boss8": 2,
+    "lockon": 31,
+    "enemyHeavyLaser": 1,
+    "bossWeaponCharge": 31,
+    "av3_target_acquire": 21,
+    "alertLockon": 21,
+    "jetDash": 14,
+    "bossfireVileexistence": 22,
+    "expSmall": 79,
+    "combatOrb0927": 34,
+    "wardenScream": 5,
+    "loop": 32,
+    "hit": 278,
+    "laserBeamStart": 61,
+    "expBig": 37,
+    "timedBombBlast": 9,
+    "laserBeamEnd": 60,
+    "geyserLightning": 10,
+    "combatAlien0927": 8,
+    "iceOrbImpact": 6,
+    "missile": 46,
+    "missileHit": 46,
+    "av3_impact_energy": 14,
+    "combatModule0927": 5,
+    "powerup": 1,
+    "stageclear": 1,
+    "statTick": 10,
+    "stageClear": 1
+  },
+  "maxOwnerProjectiles": 61,
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "audioErrors": [],
+  "abortedRequests": 49
+}

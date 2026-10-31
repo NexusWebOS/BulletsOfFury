@@ -1,0 +1,3165 @@
+{
+  "tag": "bof-complete-review-2026-10-31",
+  "assets": [
+    {
+      "asset": "preview--enemy-showcase-1031--BOF-Every-Regular-Enemy-1031.mp4",
+      "bytes": 776714341,
+      "sha256": "7418447686dc129cac266444d22346a8da0cd411dc5f3e1295af8d5d81f27d98",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--BOF-Every-Regular-Enemy-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/BOF-Every-Regular-Enemy-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-modturret-2.mp4",
+      "bytes": 4334482,
+      "sha256": "e38634d81a08c791b15b3fd81182c38996e2445735fa1a0d028f464b74792f92",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-modturret-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-modturret-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-modturret.mp4",
+      "bytes": 4009939,
+      "sha256": "cc2617555473352064967b08070ccaa8a68033e118b0715c3c68fdef8afc2b2b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-modturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-modturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1boatgun.mp4",
+      "bytes": 9072111,
+      "sha256": "c2ac44e375815808a3529eed343e31d45e868d0c884e02025955c61553980859",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1boatgun.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1boatgun.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1boatpatrol.mp4",
+      "bytes": 9391127,
+      "sha256": "046b9fd9cd163814e927ce9625340a3029a35127a02abdda645ed75e6de6bd06",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1boatpatrol.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1boatpatrol.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1corvette.mp4",
+      "bytes": 8278062,
+      "sha256": "a3827bb4b0f41ea79f06f3f7cbb6987b00b3338e934fe763ce3a7a92404ac69f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1corvette.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1corvette.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1jetbomber.mp4",
+      "bytes": 2847921,
+      "sha256": "087fa36028fad7047444a2678176d25d7fa2625b2d5c836e889e7010cd5e66ad",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1jetbomber.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1jetbomber.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1jetdelta-2.mp4",
+      "bytes": 2368205,
+      "sha256": "21b4b35781c81d34eed6dbd59b8758c8de9b4fa40d70c9e4cdfba3f770cf7e17",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1jetdelta-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1jetdelta-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1jetdelta-b-2.mp4",
+      "bytes": 1654529,
+      "sha256": "7a401eacaca02c67cf40874a9a0062bb6cffc8393f85a86cef7339a583d04953",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1jetdelta-b-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1jetdelta-b-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1jetdelta-b.mp4",
+      "bytes": 1878896,
+      "sha256": "13676c0dcedf9543009131fdba7293f4b05e017e9ce99f99f8f5f656d78c4046",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1jetdelta-b.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1jetdelta-b.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1jetdelta.mp4",
+      "bytes": 3357927,
+      "sha256": "f41292c6ef4da4dc72e4230914bed8a1a2545fb89861dfd6dc07a930a0adde46",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1jetdelta.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1jetdelta.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1tankapc.mp4",
+      "bytes": 4277033,
+      "sha256": "1fbb577e942b80eeee71ef5fbb78eb7b49dea4d7aa807fb7b3f1d407571f01be",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1tankapc.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1tankapc.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1tankheavy.mp4",
+      "bytes": 4432416,
+      "sha256": "e69490e38609c5a1390de9013d718c8acdb21dee03e78b3bba0faf3340b78f8d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1tankheavy.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1tankheavy.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1tanklight.mp4",
+      "bytes": 4098763,
+      "sha256": "6c437d79555ff85caf71403faabae074c84c9f7114678baffd699d2dea00fd8a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1tanklight.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1tanklight.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage1-s1truckmissile.mp4",
+      "bytes": 4231947,
+      "sha256": "af3d32a80d85581d57b13c224d52339379be73c124d80e154dd82b0a57089cfe",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage1-s1truckmissile.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage1-s1truckmissile.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-ac10firejet.mp4",
+      "bytes": 5599535,
+      "sha256": "14c46f5755fc890fa50e0d2d2d7c15e3cebe262ef593578ea29f4f9d61599eb7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-ac10firejet.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-ac10firejet.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-ash.mp4",
+      "bytes": 1777758,
+      "sha256": "85afd5994bd6172f58c01ea2818d7aed8c4ec0049903eed992e75eb6ffd4ffb5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-ash.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-ash.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-basaltbomber-2.mp4",
+      "bytes": 1843386,
+      "sha256": "e4ca6c0fb8f94d8b22891acea4e6e24ff034b6a7e7c6957313237a78b3af9b42",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-basaltbomber-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-basaltbomber-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-basaltbomber.mp4",
+      "bytes": 1725497,
+      "sha256": "8a9825c7e0904a309af2234441bd99409976732a6f87dfe5435ec9bf1e375613",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-basaltbomber.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-basaltbomber.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-carrier.mp4",
+      "bytes": 3664940,
+      "sha256": "3b3aade4dfb280a93475a499933fda80fb330fab0702d5a8c2de5c75d18a18be",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-carrier.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-carrier.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-cinderwasp-2.mp4",
+      "bytes": 2249207,
+      "sha256": "457131aa60e833878eaab95d500545e0a32d558ffd24ac7a0339e839bee11ece",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-cinderwasp-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-cinderwasp-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-cinderwasp-3.mp4",
+      "bytes": 1876070,
+      "sha256": "21cea7760bd580232706066e577da9eef9da7224085880bfbe556111dc1aa760",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-cinderwasp-3.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-cinderwasp-3.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-cinderwasp.mp4",
+      "bytes": 1819151,
+      "sha256": "28a4a07419493693d9fb4b4f599bb7d573748c81600bbd6c158281240555bef0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-cinderwasp.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-cinderwasp.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-crawl.mp4",
+      "bytes": 4231437,
+      "sha256": "f73c08ca61f483920f8190702a13afd65cf6cfcdf8f8f9b90f307bf06958aa6b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-crawl.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-crawl.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-cruc.mp4",
+      "bytes": 5903208,
+      "sha256": "70072f357288ecb1b34ff17607746d4d11f3033ecbef06032e93f6e35f7419e6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-cruc.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-cruc.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-disc.mp4",
+      "bytes": 2854578,
+      "sha256": "4dae80030aeae566d1752488352770f08a85344950d81cf376be95b15f39872c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-disc.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-disc.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-eye.mp4",
+      "bytes": 2047306,
+      "sha256": "9d2c3e1a133a3b6e9737327f708682b4c129913700bb11f0e3c238f40c69896f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-eye.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-eye.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-firejet1002.mp4",
+      "bytes": 6260939,
+      "sha256": "0ba3ad93acb5c3fb3141039c16bd7b49850dcd2a0b4d94a8c45beee8e50859f3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-firejet1002.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-firejet1002.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-lance.mp4",
+      "bytes": 5730812,
+      "sha256": "aa7688ef2c6a4e32e849ffebbc63daed29ed7b5314d4bcc7f84f7f7d55bc5062",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-lance.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-lance.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-lavamaw.mp4",
+      "bytes": 5104232,
+      "sha256": "d24277abcd891a4915621d2abd3e9f51ecb5bf9aa8b8ef0c658f50b4b465e4f5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-lavamaw.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-lavamaw.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-magmaorb-2.mp4",
+      "bytes": 3369258,
+      "sha256": "158a13d6b2cc28718f9653aa6fb800dfc4f382f6738742d0f0c3c6bf9bfe90e7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-magmaorb-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-magmaorb-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-magmaorb.mp4",
+      "bytes": 2540450,
+      "sha256": "b2467aa1a56eff120b05d4a1caacd41897d32e004c00f0a146b9ab112e8f9767",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-magmaorb.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-magmaorb.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-miner.mp4",
+      "bytes": 5323559,
+      "sha256": "c28f94656417a37c74ab4a424d04262511bf96a2fbb37f29ec4246275f4e93e5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-miner.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-miner.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-modturret-2.mp4",
+      "bytes": 4284252,
+      "sha256": "86dd68ee0c50d2882d15f090129d1a8b19bd7d8c7de5eea0a4f123a2f136cfb6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-modturret-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-modturret-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-modturret.mp4",
+      "bytes": 4507912,
+      "sha256": "391616da958d314de57dcd60894cc7e6e8d9a8d706146d862760e329d6910fa1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-modturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-modturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-pod.mp4",
+      "bytes": 5817906,
+      "sha256": "2e7b8f5e4063cc8a3cf97f7d306a8d21d24d74f638cd4e1ab730cd63e297ab69",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-pod.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-pod.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage2-skim.mp4",
+      "bytes": 1987484,
+      "sha256": "c472b9e150be13bb9caf61f8641a8a7e9d9d99dcca12d0358fd36ca51ed0e01e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage2-skim.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage2-skim.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-ac10icejet.mp4",
+      "bytes": 11758432,
+      "sha256": "2ae947f2feb19663fed8cc770095684169d1c65112c8c861b36f38b336e7f041",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-ac10icejet.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-ac10icejet.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-cryoeye-2.mp4",
+      "bytes": 4177405,
+      "sha256": "8a43a28dfc32cc6886bd83d09fccc323295c54ecc76f2b02fef49e14c89436cf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-cryoeye-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-cryoeye-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-cryoeye.mp4",
+      "bytes": 6507272,
+      "sha256": "a83dd4500cd1e91e9a140b6bd41c5801ce14d0004a42439a84bcab4de5b836a3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-cryoeye.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-cryoeye.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-glaciercarrier-2.mp4",
+      "bytes": 3041163,
+      "sha256": "2fa8e7104f4f1a50cd66f7cda5def8c7c043c19d25378692114e8d509107ca97",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-glaciercarrier-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-glaciercarrier-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-glaciercarrier.mp4",
+      "bytes": 8535473,
+      "sha256": "0fd8e42fdb86c54ccf73f2cca939039a03531472bb12b0b1946ac75a95e0ec2f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-glaciercarrier.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-glaciercarrier.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-modturret-2.mp4",
+      "bytes": 10716654,
+      "sha256": "4fd4fa62b83b302a7c31f700191f4fa13c85ad29e869c2c95f3f085a42811cad",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-modturret-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-modturret-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-modturret.mp4",
+      "bytes": 9806068,
+      "sha256": "6f6028d8f0b5628e645138dccf1d09a3441bc1c2728ca2782f8b83220bd3c285",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-modturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-modturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-s3interceptor.mp4",
+      "bytes": 12316944,
+      "sha256": "62d74aa63454c1cc90f366866b956002f6b20a34c7732fb5d360290076596e76",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-s3interceptor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-s3interceptor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-s3mine.mp4",
+      "bytes": 3690261,
+      "sha256": "347201b273ec3ca0d2b7cfb5ebe4db8003474f19d07114262e3886539ca8b2fe",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-s3mine.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-s3mine.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-sharddart-2.mp4",
+      "bytes": 4778629,
+      "sha256": "6e19f919a88b409a7853141180b6d8533a334c5b586788c9ea2ba0becadf0bf2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-sharddart-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-sharddart-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-sharddart-3.mp4",
+      "bytes": 2747827,
+      "sha256": "f607828279bfee28880bf9065f761632c2c856b0d1c9096a79fdd3997e7da230",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-sharddart-3.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-sharddart-3.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-sharddart-4.mp4",
+      "bytes": 3038821,
+      "sha256": "831249471617d612c79aad1f23d70569541be78683a340dd503387d329250581",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-sharddart-4.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-sharddart-4.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage3-sharddart.mp4",
+      "bytes": 2719345,
+      "sha256": "21b82e658cd99d07416a4c2fddd71db5f1cd4ec9e6fbcc4ee389de544deeb147",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage3-sharddart.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage3-sharddart.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-modturret-2.mp4",
+      "bytes": 6378159,
+      "sha256": "a27f969a11d8667b82db6446eb4abdb473d4665befce6485e686c0665142f911",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-modturret-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-modturret-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-modturret-3.mp4",
+      "bytes": 7197229,
+      "sha256": "5bc54f6787e137c8b38d9e3d3e193aba762cb8cab23edb594865261ae2850957",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-modturret-3.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-modturret-3.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-modturret.mp4",
+      "bytes": 6743801,
+      "sha256": "6dd82a5673286aa54623e78cc327ac1c73b177f7bb7acecf416b358bc42c0448",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-modturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-modturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4bomber.mp4",
+      "bytes": 3801867,
+      "sha256": "e54273d64ec5e8636cd4a7f5151ac124b804b1c7d793829a695a503ef0cda748",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4bomber.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4bomber.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4command.mp4",
+      "bytes": 8403705,
+      "sha256": "c2f8e8742a2b357dd3f312c2c476c9bb6d01ec7f7e47b4043140325f1166de5d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4command.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4command.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4heavyjet.mp4",
+      "bytes": 3737946,
+      "sha256": "5941694d7cb995cb3a82d9170846e1bb859aaa2079fe0fed28ef50636e7bc7b9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4heavyjet.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4heavyjet.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4interceptor.mp4",
+      "bytes": 3246101,
+      "sha256": "4031a3fd2ab24542038aa4f14e3538de697743750ec6ee9bbb47d41ac72bacc9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4interceptor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4interceptor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4missile.mp4",
+      "bytes": 7893157,
+      "sha256": "3abea062b34d23b086743215c500605158276469a7cde782c8aeaa396fe108ff",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4missile.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4missile.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4rocket.mp4",
+      "bytes": 3686754,
+      "sha256": "4d44d50bca417276ca618bf7f14811251a4e0b62aaf69f93287040149781aedf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4rocket.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4rocket.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4sam.mp4",
+      "bytes": 7650399,
+      "sha256": "4a409a87559dad615e5e10207fe9d9dece27ac81a71643371907a3ffbab2dcb3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4sam.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4sam.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4tanker.mp4",
+      "bytes": 6871205,
+      "sha256": "ebdb1119fa09231ec598348bb10d29aa16f226d03932fc01a43196c2ba42c1e1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4tanker.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4tanker.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-s4tractor.mp4",
+      "bytes": 7308180,
+      "sha256": "0d7f018263336fb393f2849ea3256e6f6645ffa0b4eda8ed64359199f15b9a63",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-s4tractor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-s4tractor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage4-sandtank.mp4",
+      "bytes": 7969858,
+      "sha256": "473b018e6b71f62b2a4778f132f2b668580dffd78fdbe90496b779cedf4ef024",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage4-sandtank.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage4-sandtank.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5frigate.mp4",
+      "bytes": 4693291,
+      "sha256": "132901034b1c0ef80972d8e9d8cc182bff8dfbdabcbf999c02eed137ee8a4689",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5frigate.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5frigate.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5gravity.mp4",
+      "bytes": 5212480,
+      "sha256": "3ebcee8a9cfaf338e085fb28702324d890d746682e6791a36094fa0a7a979e79",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5gravity.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5gravity.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5interceptor.mp4",
+      "bytes": 2750799,
+      "sha256": "529a061ee84c5f2bbab82d35e46c4c0339fc5130b6e0b165b1547598000b3f7d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5interceptor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5interceptor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5leech.mp4",
+      "bytes": 4805765,
+      "sha256": "02b310c1e31480041a5c3a0af52056850f92727499f67f5c4ab2c40af0ad6cca",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5leech.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5leech.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5minelayer.mp4",
+      "bytes": 5038606,
+      "sha256": "d81d93b01c73cbe967324222332f431daf479d5b5eeb8146577ff1d34f98976d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5minelayer.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5minelayer.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5portalmine.mp4",
+      "bytes": 4875408,
+      "sha256": "a8e6af544f7ed6c834e167aee6b38b3488dcaff394fe4b951fa363f6395789c7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5portalmine.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5portalmine.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5rammer.mp4",
+      "bytes": 2140764,
+      "sha256": "f94e88369b276b3e15e0a6be1b60702cdc96e9ba6ad966eb439c2ce8cb216b72",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5rammer.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5rammer.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5repair.mp4",
+      "bytes": 5545911,
+      "sha256": "ce64d3f1ef35d003490897403b5757c0de1d12d0f9c24a7708f75c30cc4a7a0b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5repair.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5repair.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5satellite.mp4",
+      "bytes": 5287052,
+      "sha256": "76e45535e35a5ccc2d2b19a0a27022fcd8abbc99472c4f3d2b4bfa6a2bc5a54d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5satellite.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5satellite.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5skimmer.mp4",
+      "bytes": 2055140,
+      "sha256": "ee50f094215f240f47a32f015c968a105315b2ed01ce1313f0de8b2496de9458",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5skimmer.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5skimmer.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-s5station.mp4",
+      "bytes": 5732617,
+      "sha256": "99d2314bc993065b6ed6be293e515a5f487888b9f4a40faa44f5a7a67b412310",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-s5station.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-s5station.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage5-xelite-voidreaver.mp4",
+      "bytes": 6084044,
+      "sha256": "74bc1f08ea54a5fc2c8427bca786b2cb0dfeddcda1919f0c500951e7f712dab8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage5-xelite-voidreaver.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage5-xelite-voidreaver.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-flyby-bomb.mp4",
+      "bytes": 1929725,
+      "sha256": "f963a98ac192bd32e7b441d56ee283cbec2a58ad31ae6202b615b1b21128900e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-flyby-bomb.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-flyby-bomb.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-flyby-charge.mp4",
+      "bytes": 1330450,
+      "sha256": "0a1ab4bf536b7dacf36ad79f6d92d9dadd42452edfd1483faf572690fe00ae75",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-flyby-charge.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-flyby-charge.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-flyby-rain.mp4",
+      "bytes": 1833299,
+      "sha256": "635b1243764260a1aaa2fbcff4398f712931ff9a5671bac7db00eb0d607968f3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-flyby-rain.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-flyby-rain.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-b0.mp4",
+      "bytes": 1787747,
+      "sha256": "7d8d272de29d18c45e1cbcc6afd307f3a0b93a5e95be76b19a78deea49857b64",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-b0.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-b0.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-b1.mp4",
+      "bytes": 2210592,
+      "sha256": "19e43bb7bfcb7c1af23aa90bd0633695c746c2f6f9b83f5293a5e8444e2e58e6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-b1.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-b1.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-b2.mp4",
+      "bytes": 2013582,
+      "sha256": "bbe0a3a07cebcab1f181853c1bded6d1ff70f501e9b4212eb42308bb72360608",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-b2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-b2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-r0.mp4",
+      "bytes": 1854093,
+      "sha256": "ddc7f477cd235a16d5f710e1d428357208b5d5361e67015a049eb69e3f58b03b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-r0.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-r0.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-r1.mp4",
+      "bytes": 2183920,
+      "sha256": "7d74805cbb5686cb8f72d2afced653a3cf4f1b5202f19942e5884e34a674c2db",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-r1.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-r1.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-r2.mp4",
+      "bytes": 2021335,
+      "sha256": "61af548e25553b9b07b75e6f37271cd8399f995275d46b8b0ed02f67ddb643ec",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-r2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-r2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-s0.mp4",
+      "bytes": 1997667,
+      "sha256": "abc3f5a1df265f3bcc6b076fe1ca5d716409b189b365a6309482eccb0ad37a00",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-s0.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-s0.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-s1.mp4",
+      "bytes": 2320709,
+      "sha256": "fba9ba392d38131d0385f71670c7ea3d95c165239a8c71ca18c31e1972d11a23",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-s1.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-s1.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-l6v-s2.mp4",
+      "bytes": 2098842,
+      "sha256": "f545c2b8a4a27348fad7f2576774a9ad74d5e8192b9eecd8903ff4a8e20aa455",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-l6v-s2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-l6v-s2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-modturret-2.mp4",
+      "bytes": 4343799,
+      "sha256": "90c0a1a818a6e7d9cd06da60a52d936886dea2ae416d9287197f1051a3c67474",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-modturret-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-modturret-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-modturret-3.mp4",
+      "bytes": 4671913,
+      "sha256": "42494997b5a0826199b6043466b5c0a499122f59a712acf38dbab840cc708a76",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-modturret-3.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-modturret-3.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-modturret.mp4",
+      "bytes": 4340782,
+      "sha256": "5ef30a6d6bc889268837d3a0e622c12d6701bb6d3dcdff737556b6678c035040",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-modturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-modturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s1jetbomber-b-2.mp4",
+      "bytes": 1438229,
+      "sha256": "c3b68ea9133354578452aee30e0b80c38b85cc08fef3e371737b80eb9a49ecc8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s1jetbomber-b-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s1jetbomber-b-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s1jetbomber-b-3.mp4",
+      "bytes": 1417647,
+      "sha256": "f1520e4046cb1763bf0b5e3c1b43b74be677090655eb1b34cf0da9fb118b202e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s1jetbomber-b-3.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s1jetbomber-b-3.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s1jetbomber-b.mp4",
+      "bytes": 1360798,
+      "sha256": "84443c266273108a14374c6e312da123b9cee30fdd1626f652f380b0b8fdcd8e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s1jetbomber-b.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s1jetbomber-b.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6cyclone.mp4",
+      "bytes": 2300079,
+      "sha256": "d16563f5e8837f44a634f1771185b7eafb6833272dbd3cda5c982704ba7512b6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6cyclone.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6cyclone.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6dart.mp4",
+      "bytes": 1627010,
+      "sha256": "025ba0b8fedecc8edcc1438bb74dd4f41365c1b76d797d1628d7adeb5a88cd7d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6dart.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6dart.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6lancer.mp4",
+      "bytes": 4798693,
+      "sha256": "a7fceaddd87bd55ae1c6a77eed73d0e80cf90141245b7c6add942aeb5ec59459",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6lancer.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6lancer.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6mine.mp4",
+      "bytes": 4205009,
+      "sha256": "e57bfb115782906e617581576c576ebbabec6d332c3625b657fb19600a7637e4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6mine.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6mine.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6probe.mp4",
+      "bytes": 5357997,
+      "sha256": "a6ca0aedbe55e1b78e17735cd48d24d0ee5fcec8493ca8aa87fd78ff2a358691",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6probe.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6probe.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6skimmer.mp4",
+      "bytes": 1375679,
+      "sha256": "9e96e1d4a6f963f85d3da4bd933217a95a8d9ebb4e565bc2fd23383f901d6bb7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6skimmer.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6skimmer.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6thunder.mp4",
+      "bytes": 4597306,
+      "sha256": "edc804aa68970116c9844a9ac154db3b448389eb16a21ebe03350990a9bfe118",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6thunder.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6thunder.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-s6turbine.mp4",
+      "bytes": 5612712,
+      "sha256": "2105329950e6561104ae0819c14f20f305ba389d7f6931ff61c62be5ad00e186",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-s6turbine.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-s6turbine.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-tempest-dasher.mp4",
+      "bytes": 1241879,
+      "sha256": "1cd2ec6290c990b6226b93a2e4cdfa8227f103209e019b01b99bcb460fbbfdfb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-tempest-dasher.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-tempest-dasher.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-xelite-glacierlance.mp4",
+      "bytes": 6424037,
+      "sha256": "01852ffef9d234736d8a7f76ec60f5c7da5b3077016bdc8bb35b1379aab1b4ef",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-xelite-glacierlance.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-xelite-glacierlance.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-xelite-solarwarden.mp4",
+      "bytes": 6647634,
+      "sha256": "fb5bea3adc2d8f3474f556fe2811af94dbf88577005dd78638b48620fbf36338",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-xelite-solarwarden.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-xelite-solarwarden.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage6-xelite-tempest.mp4",
+      "bytes": 6669703,
+      "sha256": "2078f5198f3f4dd4d66a35539ec3fa9a0f75ee672d68f628a46be801b1b75dab",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage6-xelite-tempest.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage6-xelite-tempest.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-brood-escort.mp4",
+      "bytes": 4342507,
+      "sha256": "09c8ec75b7c0f2733e3f0c35e13fee2f1945e79911b669886732e05355a35bd2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-brood-escort.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-brood-escort.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-cp22drone.mp4",
+      "bytes": 4773607,
+      "sha256": "659ffeb01726647bf4e1f21d0506932fa8f092ae836e56604bc2ea2020df0e7a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-cp22drone.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-cp22drone.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-cp22relay.mp4",
+      "bytes": 4367704,
+      "sha256": "99db90acdc2428416426f10676a3e831db5b45060de7626cce70f157bcdda9f8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-cp22relay.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-cp22relay.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-cp22slime.mp4",
+      "bytes": 3538060,
+      "sha256": "26d6e09abe387bc6337e67be4bc9efe3d8be909067c1504e39b410f2bc95450a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-cp22slime.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-cp22slime.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-ll18brood.mp4",
+      "bytes": 6350002,
+      "sha256": "53647881edd8808fdbc81f9ed7f537fe7d1a9462b5c9a79f578d5d97243f49c9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-ll18brood.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-ll18brood.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-ll18raptor.mp4",
+      "bytes": 5233270,
+      "sha256": "dc8976670de116aa8b0de617d6bedd350e043d804a8cdf4d1602636154cb628e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-ll18raptor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-ll18raptor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-modturret-2.mp4",
+      "bytes": 3311223,
+      "sha256": "7e6878f91917780bda49f7b599cdd181afc585f0ac12536ef4a609a9e9564683",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-modturret-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-modturret-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-modturret-3.mp4",
+      "bytes": 3627076,
+      "sha256": "cba219581294a476afd41dc6ba3fdb8ff99d167b9ae768ce1023ee1b52f304f1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-modturret-3.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-modturret-3.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-modturret.mp4",
+      "bytes": 3627582,
+      "sha256": "b6fb016733c125a9d83858df5addf0f81f2d710a57ff72798861df7208e3c1da",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-modturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-modturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-s7barge.mp4",
+      "bytes": 5548991,
+      "sha256": "963d1fe39b9a19306d5e991b0177f3b76aa8fcaa93f36686cf6732ad0fd1a649",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-s7barge.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-s7barge.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-s7pipe.mp4",
+      "bytes": 4240703,
+      "sha256": "c9508fbff5925801db5b0030d9f58152bffd733ab32c91714224acbad2fe052b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-s7pipe.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-s7pipe.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage7-s7tank.mp4",
+      "bytes": 5669280,
+      "sha256": "cb6f2bee16322a443f5d94015a5e31526fd1f215f6060350e75a08b6218d88b7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage7-s7tank.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage7-s7tank.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-brood-escort.mp4",
+      "bytes": 6327788,
+      "sha256": "74f1ba510542b34f6e9f0749493eaba6113f32c27c5e08797ea04f2dbd400da0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-brood-escort.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-brood-escort.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-ll18brood.mp4",
+      "bytes": 8176912,
+      "sha256": "a6b37c9ac3db91e24cf77b4ebdd583baa4078c29d13441615411a3892a02e6fd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-ll18brood.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-ll18brood.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-ll18herald.mp4",
+      "bytes": 7899621,
+      "sha256": "446ae1e3fc5c1a74dcfe81d7d1b4c3863e201399347ce04cf8f435543fafc789",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-ll18herald.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-ll18herald.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-ll18raptor.mp4",
+      "bytes": 7190674,
+      "sha256": "8bd2af6588ba2167c5155ddad68e011be994dc5e1846b951ca565257b4d084f5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-ll18raptor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-ll18raptor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-ll18spear.mp4",
+      "bytes": 8574776,
+      "sha256": "16d6a26f8b403a0fa042809b1ef51dc9dd7589d86345c46cc015cc5fbeb77fdb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-ll18spear.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-ll18spear.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-mm1003-bluehybrid.mp4",
+      "bytes": 6530601,
+      "sha256": "1acdc7f324c0f65bebf51c212a4ba11c5ab30b2cf9189697fae92512c342af6c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-mm1003-bluehybrid.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-mm1003-bluehybrid.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-mm1003-furnacemaw.mp4",
+      "bytes": 6512991,
+      "sha256": "09f1510ffb4a00f3cfe432448282870a9be4f21909eb453ddd012fe3c8c4070b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-mm1003-furnacemaw.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-mm1003-furnacemaw.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-mm1003-hexpyre.mp4",
+      "bytes": 6754554,
+      "sha256": "8e02d01be31fb020275a9285e5265f3611838803f73bd42278f692954e290cc1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-mm1003-hexpyre.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-mm1003-hexpyre.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-mm1003-impharrow.mp4",
+      "bytes": 6739403,
+      "sha256": "2663ec832073814723b0f0869b6ba064219cde6ab043073c0400d98a88b26ff9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-mm1003-impharrow.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-mm1003-impharrow.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-modturret-2.mp4",
+      "bytes": 5103716,
+      "sha256": "a0d46f6de575dccf29e5fa0afaa8cb6d24276af143d24cb7c7f378bb0003e998",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-modturret-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-modturret-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-modturret-3.mp4",
+      "bytes": 6278086,
+      "sha256": "ef367a499c635827d94030b2b528aec4593baeb49af2da8b8262d8167e3542a6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-modturret-3.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-modturret-3.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-modturret.mp4",
+      "bytes": 5632309,
+      "sha256": "0d5c833836734d601040c7a90b8d1545dd381fab2f240ee6de75e004c7712820",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-modturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-modturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8bomber.mp4",
+      "bytes": 7590882,
+      "sha256": "cc7809de2d269f055c02a180212863d4f45fafd2aaf7ea0a5ec9d367e5828d33",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8bomber.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8bomber.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8carrier.mp4",
+      "bytes": 8685032,
+      "sha256": "3cbc570c2c0cd42b9a433d019953fffca4d4f18d65b6a263541312f3bf03a9f5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8carrier.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8carrier.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8crescent.mp4",
+      "bytes": 6259386,
+      "sha256": "97e2a20abc121b88a7d572309149e46a6c88e5aabc1e9bb7bfbcced31d7dfd24",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8crescent.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8crescent.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8deathorb.mp4",
+      "bytes": 8275618,
+      "sha256": "3e4f50ac86f28602e08dc41966661d584ec209cd3d748b541f86470535dd4893",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8deathorb.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8deathorb.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8gunship-2.mp4",
+      "bytes": 8347432,
+      "sha256": "9007dc8ee517c3bea5bc051435bb401ff43279a97d0ef4f4bc59abe3febc5e0d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8gunship-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8gunship-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8gunship.mp4",
+      "bytes": 8421909,
+      "sha256": "578018f9a87496dce3325178a7b563f4d011e864000151ee7ef18736521586dc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8gunship.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8gunship.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8hunter.mp4",
+      "bytes": 6976611,
+      "sha256": "eee6cb941b9c0a335a0273bf05f5ea6536e80c05df22017368c8ba2b94d11f20",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8hunter.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8hunter.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8interceptor.mp4",
+      "bytes": 6237887,
+      "sha256": "7db9eaf93d4e42903648e5486153a7cd920f662999bba40d743ab2747631870f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8interceptor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8interceptor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8leech.mp4",
+      "bytes": 7887590,
+      "sha256": "87a7a5466a599efaca9444c5d77c9e7ee4429cbc21a87e839a01bd1c3f13494c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8leech.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8leech.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8parasite.mp4",
+      "bytes": 7337777,
+      "sha256": "e8f83d22a64757c42c8f3b67c42ec1940855ae3957d0d19d382ceae64cf37457",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8parasite.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8parasite.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8razor.mp4",
+      "bytes": 6639498,
+      "sha256": "44f86e69d822641fdc4e1c495c07cada21053c0d851bb7529257693a18858970",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8razor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8razor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8skull.mp4",
+      "bytes": 6655385,
+      "sha256": "2c29f33759ddffd2a920f0fbf2fd5bd186544b0d084b95a8728f9d46924dec24",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8skull.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8skull.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8solar.mp4",
+      "bytes": 6872292,
+      "sha256": "b30b55b5832ad87cf4928c091cd9a210c23abeb4b6fcec5a99cc767472e0ec65",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8solar.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8solar.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8spread.mp4",
+      "bytes": 6573530,
+      "sha256": "1c03cc04edf8899ff472c73b6234325872141710010aa4706eb20ab0c889a4f3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8spread.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8spread.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8symbiote.mp4",
+      "bytes": 5092175,
+      "sha256": "08cbc5f4066b1cf766e32c7cbdd54dc0aec0f566432e4084b6608047245223d8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8symbiote.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8symbiote.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage8-s8tentacle.mp4",
+      "bytes": 9048716,
+      "sha256": "f49e49d7ff3d24182982dbb6760249a36d0387186ce6ddfa45f3eea0682ee3bf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage8-s8tentacle.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage8-s8tentacle.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-cbreak.mp4",
+      "bytes": 2580296,
+      "sha256": "92cc75a9681ac07502017e63804f75e3e580cbcb4788005b3866acf7b55c45dd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-cbreak.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-cbreak.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-echof.mp4",
+      "bytes": 2249595,
+      "sha256": "7272732d0c5179a4bd286e2fd8569f97b69fbef9dfbeb13dd26aa5aaf0355e99",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-echof.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-echof.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-gleech.mp4",
+      "bytes": 3627442,
+      "sha256": "50e0706bf97a99904e5e9015fb36861fd7911b3e9e95c76074444be6cf4920e0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-gleech.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-gleech.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-pmine.mp4",
+      "bytes": 4368806,
+      "sha256": "097406e07c9ad199e0380f3e04dbe2692bf54c9f7d8aac39fb871fcacdd261fd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-pmine.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-pmine.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9beacon.mp4",
+      "bytes": 4578309,
+      "sha256": "5838e533137c806285907a0393d145b0b66685dbed999f1b1aba3d9da0685603",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9beacon.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9beacon.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9comet.mp4",
+      "bytes": 1710055,
+      "sha256": "91d98ec3b6bec030337965f75af9c830e41e698b004d10f48128d2d2e5e3c55d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9comet.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9comet.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9gateturret.mp4",
+      "bytes": 4398114,
+      "sha256": "9ded25884d6574688dc138e9b69eeaacb09580c2c7e2f4f9d571700eb9ba29b4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9gateturret.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9gateturret.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9gunship-2.mp4",
+      "bytes": 4832412,
+      "sha256": "e0b161c3f34662f76b1ac5568872ff80f711e904b739fd792c2bc86790e3187d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9gunship-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9gunship-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9gunship.mp4",
+      "bytes": 4898788,
+      "sha256": "aefdfab4916c1b0491c380cbae89745b079cbc7d97922a3513a2acadb3599dd3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9gunship.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9gunship.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9interceptor-2.mp4",
+      "bytes": 2196157,
+      "sha256": "da5fa0278dbff683c70b0ca40c5db8ae2cba9b1004fb8ceddba172ad7c549a8b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9interceptor-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9interceptor-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9interceptor.mp4",
+      "bytes": 1441496,
+      "sha256": "54c8efdffb6033dbdebd6886a9d31c7fcafad4e75a5d79a3e9680f91cd250ddf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9interceptor.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9interceptor.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9prism-2.mp4",
+      "bytes": 4823776,
+      "sha256": "e5d3f287e761b678ddccba2b6ce5e340ef0b2dc1278ee23d956e31fb25e7a2f6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9prism-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9prism-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9prism.mp4",
+      "bytes": 5046882,
+      "sha256": "8f9d19cfe190e45b52e8136b995dd23ae9c012d72e1f0a70303b5f73811d87b7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9prism.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9prism.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9ring-2.mp4",
+      "bytes": 4544671,
+      "sha256": "578e8d4935fba4cdea94af4ad223d839a54d8cffcba08ea4f884d797be404dad",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9ring-2.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9ring-2.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9ring.mp4",
+      "bytes": 4626435,
+      "sha256": "e6b812a08777a1a9816d41c2392d275488891c76b20b646bbd6f4f75e1a6547f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9ring.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9ring.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-s9singularity.mp4",
+      "bytes": 4779426,
+      "sha256": "c6d31aebba46e4ad8163ec43fd2c1874a89be34a2053a595282c3b8617da0cfb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-s9singularity.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-s9singularity.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-tsplit.mp4",
+      "bytes": 2320025,
+      "sha256": "6712ad115a26a148676d899aed492a86d0e0aafc7087a0649b09c20b65342679",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-tsplit.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-tsplit.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-vmanta.mp4",
+      "bytes": 2423861,
+      "sha256": "91fd687abdbef18a55a5951f843780f3a3c4f84c1e3dacd7ef09241d44aeb14d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-vmanta.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-vmanta.mp4"
+      ]
+    },
+    {
+      "asset": "preview--enemy-showcase-1031--stage9-wskim.mp4",
+      "bytes": 2509106,
+      "sha256": "c71181ff1e7ead0cc4385f06a4a0705d401190da3b27f11fc6ef38f73e4f77e6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--enemy-showcase-1031--stage9-wskim.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/enemy-showcase-1031/stage9-wskim.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage5-normal-ending-1031.mp4",
+      "bytes": 2977619,
+      "sha256": "340066c8839c85bb7ca1b939c16cb77ca5d90818c1bfd7377d45f00a9ae7d35f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage5-normal-ending-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage5-normal-ending-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-carrier-nightwing-side-facing-1030.mp4",
+      "bytes": 249608087,
+      "sha256": "5b52c6437679d5547efd1a71169398a894406eba269053dd4216b165941eddbe",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-carrier-nightwing-side-facing-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-carrier-nightwing-side-facing-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-carrier-nightwing-stable-wind-packed.mp4",
+      "bytes": 230956537,
+      "sha256": "2d2296cfe794448a739db6c1f71f48331bbf839d81382f46a9a6f235ef464438",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-carrier-nightwing-stable-wind-packed.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-carrier-nightwing-stable-wind-packed.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-carrier-nightwing-stable-wind.mp4",
+      "bytes": 257690348,
+      "sha256": "430e454de19ba25639372a954b579449abd7ab287e6e346e417b4ef6dc05c739",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-carrier-nightwing-stable-wind.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-carrier-nightwing-stable-wind.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-carrier-nightwing-teal-charge-1030.mp4",
+      "bytes": 229906554,
+      "sha256": "5fe7f4e4fdd631c8acecea5030f51d9d3530f5dcfd0de62dc26126236667a654",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-carrier-nightwing-teal-charge-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-carrier-nightwing-teal-charge-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-carrier-nightwing.mp4",
+      "bytes": 241001559,
+      "sha256": "6eb05b2af4a6c2848d3ef7aae3e0db046b63403555379899b414ba44e03615b1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-carrier-nightwing.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage6-carrier-nightwing.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-miniboss-red-core.mp4",
+      "bytes": 80940080,
+      "sha256": "a9b8fa13087c6e2372df357ec005e01aa35afb7fa49173c7a7cffee4954d8d94",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-miniboss-red-core.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-miniboss-red-core.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-miniboss-solo.mp4",
+      "bytes": 59103080,
+      "sha256": "f6a1be1440ab097fd933bc8f1d356c7ba510efbec01363c8de8ee11b3b151bad",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-miniboss-solo.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-miniboss-solo.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-miniboss.mp4",
+      "bytes": 54949394,
+      "sha256": "78a25502781e3da8dff06bb2a12306ceafe2ef708e168d850dbc8ea83a33079b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-miniboss.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage6-miniboss.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-nightwing-balanced-1031.mp4",
+      "bytes": 119700284,
+      "sha256": "da02caccf0ab0da04dfcad959b9edf6976071a71eb701f208320b0af113a56d7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-nightwing-balanced-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-nightwing-balanced-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-allied-overflight-1030.mp4",
+      "bytes": 185732430,
+      "sha256": "0663f5c01d583e3f30ad3e02992e01253a8905363f714d5a906c278f531a86b3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-allied-overflight-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-allied-overflight-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-boss6-steady.mp4",
+      "bytes": 167008395,
+      "sha256": "1c47c8cd3a2bd777a588182d65e5f457623eb60eefb4abc79dfb6f9e31d0edb2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-boss6-steady.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-boss6-steady.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-gold-defense.mp4",
+      "bytes": 208517666,
+      "sha256": "c4465e82922a2eda6bc0d29072400a504ea4e073181ec20c1a9fa3d0a7cc688c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-gold-defense.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-gold-defense.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-kaia-ricochet.mp4",
+      "bytes": 387393201,
+      "sha256": "b6d4a9d137870b6701e07e71049fade2d20ed714e78f30930aa215f9bf2c2fff",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-kaia-ricochet.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-kaia-ricochet.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-missile-warning.mp4",
+      "bytes": 288047596,
+      "sha256": "598efdc500c717f0b577ae38b15074a8a03ad4216cd11a1122877026e2b44991",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-missile-warning.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-missile-warning.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-nyx-retina.mp4",
+      "bytes": 160457218,
+      "sha256": "ca37ae0732930209c4eb4b05ec067ba2d7d4c67e44b03413e0708d92c2964452",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-nyx-retina.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-nyx-retina.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-nyx-turret-fire.mp4",
+      "bytes": 248015152,
+      "sha256": "a06d3f04d988299d71b61ea92dba7ffb28f55cd39a1d6f6a932c5bfbd4e5fc6f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-nyx-turret-fire.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-nyx-turret-fire.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-orb-rows.mp4",
+      "bytes": 196649385,
+      "sha256": "66c9c21e3219f9d383b1b4762bdb5ff13caa3c8ed0696e93c812cf3be3df48e1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-orb-rows.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-orb-rows.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-roll-gasline-final-1030.mp4",
+      "bytes": 198387742,
+      "sha256": "aa4b89d1a8bd0e2faa588ac47dbef53ce960a82d24fb886a284a78110d53c288",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-roll-gasline-final-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-roll-gasline-final-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-rook-circle.mp4",
+      "bytes": 373588713,
+      "sha256": "4084f2b96ca27de34045443060b2db61220305bdc30604378aa4b9fd63413614",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-rook-circle.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-rook-circle.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders-stable-grid-1030.mp4",
+      "bytes": 195879250,
+      "sha256": "71623f1bf7b2ccc98d0abd4d99c599b6dec5c4344e8334ea4264dfbb43196c51",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-rough-riders-stable-grid-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-rough-riders-stable-grid-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-rough-riders.mp4",
+      "bytes": 369722289,
+      "sha256": "603ef056c22afb3f2fd06bd57815f7c961208a58fda9b251200759e46b6fd83a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage6-rough-riders.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage6-rough-riders.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage6-teal-return-overflight-1030.mp4",
+      "bytes": 8630824,
+      "sha256": "a49272ff728f7c1bf32c46084cd1fa1f7f837ef958213a096faa693f13fc419d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage6-teal-return-overflight-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage6-teal-return-overflight-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-boss.mp4",
+      "bytes": 116115662,
+      "sha256": "75a7f5a84eab7baa26636f914306d516ad492ac6f3ea6bdcf6aedddb9be5c582",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage7-boss.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage7-boss.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-dredger-clear-sewer-1029.mp4",
+      "bytes": 55582785,
+      "sha256": "d5a125437d20dbbdd0e65a8cd5867ab4c3fcf27f81f57d1c54ab1955f5cf272a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage7-dredger-clear-sewer-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage7-dredger-clear-sewer-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-dredger-protected-hull-retinas-1029.mp4",
+      "bytes": 56555445,
+      "sha256": "d5c5bb90565beec8b9bc58f24b4bff8930d48d60b1380206fe25901832eef95f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage7-dredger-protected-hull-retinas-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage7-dredger-protected-hull-retinas-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-miniboss.mp4",
+      "bytes": 50468730,
+      "sha256": "050d02c96220264faa96cda9bcd13355b4d517cdaed9c4d928107d73ef3122d9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage7-miniboss.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage7-miniboss.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-sewer-nick-of-time-1031.mp4",
+      "bytes": 7553224,
+      "sha256": "80fec5dc3ecf039242202f00a0de7e9da4c80400619471a8174c7d2f92cf1d83",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage7-sewer-nick-of-time-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage7-sewer-nick-of-time-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-stone-chamber-green-gate-1031.mp4",
+      "bytes": 15219020,
+      "sha256": "9da6b2f8be27af6e965f06c197ae54a6600baebd4069e5c916ba9f3272ee114c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage7-stone-chamber-green-gate-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage7-stone-chamber-green-gate-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-sumpjaw-duo-1031.mp4",
+      "bytes": 53043344,
+      "sha256": "fb4cc3d954cb5bdae99874ac99bfff8413038cd22139abd28bea046b81654531",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage7-sumpjaw-duo-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage7-sumpjaw-duo-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-warden-spin-hops-1029.mp4",
+      "bytes": 105431603,
+      "sha256": "174e797231376c3f8741d2c123b1a019bbe1124a63a88f0a5ece59a925636d3f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage7-warden-spin-hops-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage7-warden-spin-hops-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage7-warden-spin-hops-smooth-1029.mp4",
+      "bytes": 106422286,
+      "sha256": "1198e2da7b4a7f6556177bcfe1f5a4c6b5ab32b10dbfb826b739d883f3365e12",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage7-warden-spin-hops-smooth-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage7-warden-spin-hops-smooth-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-blue-metal-gated-return-1031.mp4",
+      "bytes": 24817533,
+      "sha256": "1643c91718313349ed87b5e25af8f2ead3dc5dde4938236ab63aaf2e7f17f625",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-blue-metal-gated-return-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-blue-metal-gated-return-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-copy-arena-return-1030.mp4",
+      "bytes": 12689828,
+      "sha256": "2cb46170714f6fdd6a85adb90cf84da872ed5a26a90cc915d497275276901b0a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-copy-arena-return-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-copy-arena-return-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-claws-optic-1030.mp4",
+      "bytes": 98553854,
+      "sha256": "a44e2335732f2ee4142a2c8f21d4c3553019c61adc8860d97cc18375a75f05d2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-claws-optic-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-claws-optic-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-claws-optic-polished-1030.mp4",
+      "bytes": 111794627,
+      "sha256": "c8d4f5bdb97bd3bb1c2cbf226361dc24e526bd5563f4282522e81ac2112ade5a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-claws-optic-polished-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-claws-optic-polished-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-corrupted-chronos-1030.mp4",
+      "bytes": 77493298,
+      "sha256": "541c00b180d11ec35eba6a97e714883b3e0f41c1f7a3a52335933acc7ec36106",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-corrupted-chronos-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-corrupted-chronos-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-extended-claws-1031.mp4",
+      "bytes": 70480068,
+      "sha256": "d4841df969a9eeae1d7ac5c4d9342a1c9dff5997cd91dab55e599bd2f7723274",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-extended-claws-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-extended-claws-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-grab-throw-1030.mp4",
+      "bytes": 29696216,
+      "sha256": "71dd9a909f27bc5b4dc76b71a528e36df9944455e8416cb7623c1ac5171f248e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-grab-throw-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-grab-throw-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-grab-throw-polished-1030.mp4",
+      "bytes": 29592470,
+      "sha256": "c7cfd9354cb4b452f9049a188ee55d33d6a0ed79fcdc406c03ee85ef1cb075f4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-grab-throw-polished-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-grab-throw-polished-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-luminaire-1030.mp4",
+      "bytes": 74562914,
+      "sha256": "eec7828d0db01509c85c400b08b997cef4d9ae98996fea04c5bf44cf7f58f947",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-luminaire-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-luminaire-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-ninja-claws-1030.mp4",
+      "bytes": 56597335,
+      "sha256": "1135f68628dfa2bc9435122a6ea9ca459031d1711aa52da6094ccce8ae67541f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-ninja-claws-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-ninja-claws-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-plasma-mine-1031.mp4",
+      "bytes": 101142238,
+      "sha256": "d546a9c73d1c7b067ad1719cefe90cc3713d3d5b5f37134c4e5dc82d835c7c08",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-plasma-mine-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-plasma-mine-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-possession-shoulders-1030.mp4",
+      "bytes": 80912201,
+      "sha256": "f6a6c7ef3f9e133007b95a3bfa45e9e0a57225dc6c95cc1fccdc4c1a92aac16c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-possession-shoulders-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-possession-shoulders-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-ricochet-1030.mp4",
+      "bytes": 102808152,
+      "sha256": "60fff2c9447deabb1bb27ad5d19f6d6d5778f7a1d6e545372068e6254c2d5afc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-ricochet-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-ricochet-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-dracodia-terminal-1030.mp4",
+      "bytes": 24955153,
+      "sha256": "074aecff6c61799609ee54990e8dd12d3a27bd0a04d473ab6a1ecbc2014e95ca",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-dracodia-terminal-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-dracodia-terminal-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-final.mp4",
+      "bytes": 651428898,
+      "sha256": "26a75b9cd4a13f6ad184ab7912d828eec1d7ccbfde22c74d4fc13182a762c991",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-final.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage8-final.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-firsthost-whole-arms-ball-1031.mp4",
+      "bytes": 116102001,
+      "sha256": "a7ab4cde5e61a6948a7c375177bbb985760f6049fcbcb802abee3b0aaea7cfb2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-firsthost-whole-arms-ball-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-firsthost-whole-arms-ball-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-gated-possession-1031.mp4",
+      "bytes": 23442303,
+      "sha256": "dd6c8bff30c78f495ad8a4e1908f15dac6a3506dd411c17b37320aeba1f8c41b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-gated-possession-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-gated-possession-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-helicopter-digital-jungle-1030.mp4",
+      "bytes": 137523236,
+      "sha256": "79af1a9d486aaad84e4b853a5fff03a1b96b932ffb81eefaade2b93a42b940e8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-helicopter-digital-jungle-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-helicopter-digital-jungle-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-chaos-final-1029.mp4",
+      "bytes": 181886872,
+      "sha256": "c173946a362520e3243f153552f932b8325b30a7da62725ebb46cee78cf9a0e6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-final-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-chaos-final-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "bytes": 146283624,
+      "sha256": "f3addb0c47e4520b19f5d7eb3b3ff94b088d08e08066356fba593e83c2762f8b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-chaos-verified-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-chaos-verified-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-complete-1031.mp4",
+      "bytes": 91346540,
+      "sha256": "bb4be66cd0fb85acdbe5177c554850d1e4f4b7218eb67d4e6d92fef5beaf8400",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-complete-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-complete-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-dual-red-lasers-1030.mp4",
+      "bytes": 95513184,
+      "sha256": "9a15fc3ef6553a2de680494a1f6fb777dc87c1d4c86dba33e9aaf6f50dad1abd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-dual-red-lasers-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-dual-red-lasers-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-final-desperation-1029.mp4",
+      "bytes": 114403103,
+      "sha256": "46b20ac666ed86eb570ff4105ffae187fbb25f9e8f2fce092adbf1f3f16e2eee",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-final-desperation-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-final-desperation-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-full-ritual-1031.mp4",
+      "bytes": 154663171,
+      "sha256": "a6a1a72b2ed7d33772beab419de6e610b0e5e98910d1bce7b0e06c82bc45702f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-full-ritual-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-full-ritual-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-gothic-counters-1030.mp4",
+      "bytes": 122519435,
+      "sha256": "bb0d1436a83a9c98972405ab44399678575414cd20bced2d59b56ec57b8a98fc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-gothic-counters-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-gothic-counters-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-ground-retina-arrivals-1030.mp4",
+      "bytes": 114993607,
+      "sha256": "b8b71edee61c122a6405d76f494844f74a269a715ecf20614be8c816a4b23815",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-ground-retina-arrivals-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-ground-retina-arrivals-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-inscribed-storm-1031.mp4",
+      "bytes": 23380538,
+      "sha256": "90214a543b86bb7212868e62572c5b9e40af3d907717fcde7b145703e92fa447",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-inscribed-storm-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-inscribed-storm-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-six-slice-ritual-1031.mp4",
+      "bytes": 20862503,
+      "sha256": "ae93ad51138ed150e979ddcea219833995ab2eee01a58a9d20008b0f8760f3a8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-six-slice-ritual-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-six-slice-ritual-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "bytes": 191193446,
+      "sha256": "5914951eb670fea7ba8f6843925c4e56a0d52748ade00f88c5ebd4a8c53c5499",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-spellcaster-committed-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-spellcaster-committed-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-storm-lightning-1030.mp4",
+      "bytes": 116929874,
+      "sha256": "361145ad3ca3a2d9ad4d42b89e730445597b563d956f41757e85628202acf5de",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-storm-lightning-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-storm-lightning-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-herald-straight-shards-1031.mp4",
+      "bytes": 24860454,
+      "sha256": "4e6176e3ecfeec613c6a2ff264b19cde1b60b523c77d19bdd7aa3392e6d3e43e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-herald-straight-shards-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-herald-straight-shards-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-miniboss-bomb-landings.mp4",
+      "bytes": 81839575,
+      "sha256": "05973653af6e01b12cf437c4e75004a3685eec14c0ddc9c059efb86d796a47d5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-miniboss-bomb-landings.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-miniboss-bomb-landings.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-miniboss.mp4",
+      "bytes": 84974050,
+      "sha256": "57a99f1fa269f05e9130b278c66d5ea1d2ecad3bd0284fc183a6d38fa06e01bd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage8-miniboss.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage8-miniboss.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-neural-eye-beams-1030.mp4",
+      "bytes": 119598722,
+      "sha256": "7ed64ae75f004579e58cda4c7b7d576bdbbb1959f8aacf138df2448147e7fd96",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-neural-eye-beams-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-neural-eye-beams-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-neural-night-storm-1030.mp4",
+      "bytes": 89915255,
+      "sha256": "3f160712b938271639c2bb1da4c57d9e27c4dc0e4f75cc6c71cae7a8a678c026",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-neural-night-storm-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-neural-night-storm-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-order-phoenix-1030.mp4",
+      "bytes": 203337418,
+      "sha256": "a57781c65ccebc6b71201146e2b4cb08b43b81b334ecc81fb491948ade8a805e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-order-phoenix-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-order-phoenix-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-phoenix-turbo-core-1030.mp4",
+      "bytes": 105770094,
+      "sha256": "3b64df42e777406c835bbc9eacd6105206bfec02f33f35e58320670a88647fc9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-phoenix-turbo-core-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-phoenix-turbo-core-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage8-possession-bomb-palette-1031.mp4",
+      "bytes": 23645502,
+      "sha256": "b81b4d32aa236aa801a887900adea6e91c963ade6cc686ea1cd19f2a7986e413",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage8-possession-bomb-palette-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage8-possession-bomb-palette-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-boss.mp4",
+      "bytes": 159565564,
+      "sha256": "f838c24fd0e6b45030e2a5c2ebf183bb3b085f669350de7e2abe35ee288ec589",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage9-boss.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage9-boss.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-horizon-balanced-1031.mp4",
+      "bytes": 54390663,
+      "sha256": "979ac51996341de937fecdf12f192d4f9b42a196a6b8fa51984a426928c166c6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-balanced-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-horizon-balanced-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-horizon-cyan-1031.mp4",
+      "bytes": 103298051,
+      "sha256": "14037a3752235ea9444189ef77aee2d283a457c2003ee6e26554d44c1cf4f8c5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-cyan-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-horizon-cyan-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "bytes": 137508885,
+      "sha256": "2502764b558cf097800d1fe43ec69de6fae3e09503fc04baa24e6108789073a2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-horizon-symbiote-lasers-aqua-dash-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-horizon-white-core-1031.mp4",
+      "bytes": 125084915,
+      "sha256": "e595acb59c4035ffe07ee796a41afd19e52392afc8da808f9838c5d88e8523c1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-horizon-white-core-1031.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-horizon-white-core-1031.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-miniboss.mp4",
+      "bytes": 66626535,
+      "sha256": "bdc4fc1019f8b605e7fd957e700cc4b9a3cf7f1331d6718ae3a3ccd99a0b7000",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-updated-2026-10-28/stage9-miniboss.mp4",
+      "reused": true,
+      "aliases": [
+        "preview/videos/stage9-miniboss.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-tidal-forward-fan-grenades-1029.mp4",
+      "bytes": 118696438,
+      "sha256": "a76f3c04e6b43d0474cda166b2b12fb9386d5b7f6c89cc1537cb4df65c07f67f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-forward-fan-grenades-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-tidal-forward-fan-grenades-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-tidal-metal-warning-signs-1030.mp4",
+      "bytes": 37755911,
+      "sha256": "c13383bc85b1379fc0eb223f4c1c64b1d8fae3ea1da6d1993f9766e1544e2538",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-metal-warning-signs-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-tidal-metal-warning-signs-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-tidal-mortar-sway-1030.mp4",
+      "bytes": 30167259,
+      "sha256": "f1bf700c03ab4b7e84e0655b6abd98de54bd7725527a3255abf4d054f5329cb7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-mortar-sway-1030.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-tidal-mortar-sway-1030.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-tidal-sovereign-water-arsenal-1029.mp4",
+      "bytes": 129843058,
+      "sha256": "0ebeef030c990ea610e9d4b8e73925d24663cfdf394a92b8f2da81110c2c50ca",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-sovereign-water-arsenal-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-tidal-sovereign-water-arsenal-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+      "bytes": 127810057,
+      "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "bytes": 126529997,
+      "sha256": "c627d39bb1837f84d01baaa49c904aab667ff288e3babdbd9fffb69856da2c2c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-three-beeps-water-waves-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-tidal-three-beeps-water-waves-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--stage9-tidal-visible-stars-water-audio-1029.mp4",
+      "bytes": 121419822,
+      "sha256": "db2e02fea8e7a62d685419eb1935f39dc43f989c931d64e4c66c4a4bcafe8a56",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--stage9-tidal-visible-stars-water-audio-1029.mp4",
+      "reused": false,
+      "aliases": [
+        "preview/videos/stage9-tidal-visible-stars-water-audio-1029.mp4"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s2-enemy-roster.webm",
+      "bytes": 6107941,
+      "sha256": "baf6c2d6c0b4e74d0e802c4d4d30dc5c9bb812bf30b124bfc1eeeb14469f8466",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s2-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s2-enemy-roster.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s5-bomber.webm",
+      "bytes": 5531300,
+      "sha256": "73980540a6d28d2b1c607d07294df26483ae6034efc8ae692cfc61688b3b107a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s5-bomber.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s5-bomber.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s5-chronos.webm",
+      "bytes": 6946039,
+      "sha256": "00625f7bedd349462c8427ee362e371eb5ce512f0c9462a1604cb764e19b7a62",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s5-chronos.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s5-chronos.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s6-carrier.webm",
+      "bytes": 8901644,
+      "sha256": "767ab46ef26606346c97e1129ea56afae2134ef2aa913594eb94f96dca910675",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s6-carrier.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s6-carrier.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s6-enemy-roster.webm",
+      "bytes": 6463926,
+      "sha256": "f1f2e640ce546c5e58c2f312dd9d9b8328aa7f360b78fae8bce0bcbd88829f35",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s6-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s6-enemy-roster.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s6-fortress.webm",
+      "bytes": 6288610,
+      "sha256": "edbab1c33a9b8aa0b4a1d08a0cd04f1540a14b13f89821154fd147da0ab9448f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s6-fortress.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s6-fortress.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s6-nightwing.webm",
+      "bytes": 7224156,
+      "sha256": "4c98bef8b9e5f83da7f78da9b1457672f5adcd80868c83f4fa9ccc956c85613e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s6-nightwing.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s6-nightwing.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s6-red-core.webm",
+      "bytes": 5385425,
+      "sha256": "563328e7d68d984f6681793590fa85ecc2602d721fc9db3d1709f5e91f31fd06",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s6-red-core.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s6-red-core.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s6-rough-riders.webm",
+      "bytes": 8842261,
+      "sha256": "1dfa58ee0617fd198150724961ed4f9cfd60072f455633040103ab433c023e75",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s6-rough-riders.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s6-rough-riders.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s7-dredger.webm",
+      "bytes": 8695004,
+      "sha256": "ed8035e2f636866ffb89cf1ce50233d5f0d425638eac499337e772499a7bffed",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s7-dredger.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s7-dredger.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s7-enemy-roster.webm",
+      "bytes": 5889956,
+      "sha256": "7ff1602bfa88aff90500d9f745cc70978325232173546b6a3f1f97529caba800",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s7-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s7-enemy-roster.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s7-warden.webm",
+      "bytes": 8641918,
+      "sha256": "915ef3d34a33a5c55ec7fe4da2a3e7f58025ec2dea4f792778f3bdae76c7d65a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s7-warden.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s7-warden.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-brain.webm",
+      "bytes": 9487184,
+      "sha256": "fbbb2cc9035ac80d952819760d317f6130d4274c7f6f95d981062d5edbb8a38b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-brain.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-brain.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-chronos-copy.webm",
+      "bytes": 7344827,
+      "sha256": "30023dac29a55d16e38a5779af83c6a907e4d0aba896f31a2049f9f0823b4365",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-chronos-copy.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-chronos-copy.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-final-life.webm",
+      "bytes": 8358614,
+      "sha256": "962ddc3ee618784e22989b72eee4541928800974d900c89bd82d5ddd56b9b767",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-final-life.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-final-life.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-helicopter.webm",
+      "bytes": 7864998,
+      "sha256": "328cb2e2319505628155f792d90da3129a6279ef03b800f964ad5b5e89329a7e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-helicopter.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-helicopter.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-herald-cast.webm",
+      "bytes": 5030596,
+      "sha256": "4714286db1352b9ccca0b4300fab184a5cfb5279197e8b4c860aad18a40a46ee",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-herald-cast.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-herald-cast.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-herald-skulls.webm",
+      "bytes": 4932120,
+      "sha256": "e77559dfc252bb1b3c32cd216a6c43854374d1dea66b2c2a10e408cf8ac9aa97",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-herald-skulls.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-herald-skulls.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-herald-storm.webm",
+      "bytes": 5515615,
+      "sha256": "c6c5f86c1198f69d84f4ffccda34d11a9ad4c251a2bffbc4eaa1d67ecb1c797d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-herald-storm.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-herald-storm.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-host.webm",
+      "bytes": 6952243,
+      "sha256": "752e02e3e97d2cfb37468d5db7610beb3121a23f99dae0359e98a4059c72a859",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-host.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-host.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s8-phoenix.webm",
+      "bytes": 8620193,
+      "sha256": "ea48e6951c9563f58f12ceaa396666dcf3b55de7d84959076c25fb4889b1920e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s8-phoenix.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s8-phoenix.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s9-enemy-roster.webm",
+      "bytes": 6128624,
+      "sha256": "20f6208c87fef4cae957d70f3d8fe1bda7044624a96a988c2736238ed94a93b8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s9-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s9-enemy-roster.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s9-horizon-water.webm",
+      "bytes": 8977560,
+      "sha256": "f358db4f28a08f35bbd4496b502250de9104d5410707f93d47fbfdc94c2d0cb6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s9-horizon-water.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s9-horizon-water.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s9-horizon.webm",
+      "bytes": 8076604,
+      "sha256": "7feb4e512f769f83b362d4b8a7ed494f8f2644924ba7340615adf9812aad6f32",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s9-horizon.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s9-horizon.webm"
+      ]
+    },
+    {
+      "asset": "preview--videos--audio-speed-1031--s9-water.webm",
+      "bytes": 9338521,
+      "sha256": "49ae7eba3dba23ce4fa23b7704c70809b34f3c0e5c999c969c2f639f5fbb6bfe",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/preview--videos--audio-speed-1031--s9-water.webm",
+      "reused": false,
+      "aliases": [
+        "preview/videos/audio-speed-1031/s9-water.webm"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--entrance.mp4",
+      "bytes": 18151625,
+      "sha256": "ccdf6e60aea9b06589c30c4c22ab06969404c019dc120e1fcd58fd8ae3d1730e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/source--docs--previews--rough_riders_guide_1028--entrance.mp4",
+      "reused": false,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/entrance.mp4"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--videos--evasion--preview.mp4",
+      "bytes": 15357938,
+      "sha256": "552efa7d3fe0c76c44970ab8c7a76edb753b8fa9a5fcc536e7a67b38534bf2f8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-evasion.mp4",
+      "reused": true,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/videos/evasion/preview.mp4"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--videos--formations--preview.mp4",
+      "bytes": 46091183,
+      "sha256": "c44f29233637926bd03af413efad5b1efa1d26bbee7c2a93236ac632e8821915",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-formations.mp4",
+      "reused": true,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/videos/formations/preview.mp4"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--videos--jace--preview.mp4",
+      "bytes": 35970501,
+      "sha256": "a26b5a0f886f660c414905accba0085a9f141b086557f1f50c9d8139f71ef258",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-jace.mp4",
+      "reused": true,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/videos/jace/preview.mp4"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--videos--kaia--preview.mp4",
+      "bytes": 23907654,
+      "sha256": "ef1f1993b15367e1b1f745f056324e21e354144c5fa044ce0796f44ddf63192f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-kaia.mp4",
+      "reused": true,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/videos/kaia/preview.mp4"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--videos--nyx--preview.mp4",
+      "bytes": 27574549,
+      "sha256": "e6bf486778e52db23b97744650f6b742aa72a431debb02f79601c753bcdcbabb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-nyx.mp4",
+      "reused": true,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/videos/nyx/preview.mp4"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--videos--rook--preview.mp4",
+      "bytes": 26814102,
+      "sha256": "7098851c9a7279086ad9f03cf0b35ef9c4d92a38eae24742c8708e41317f2ace",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-rook.mp4",
+      "reused": true,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/videos/rook/preview.mp4"
+      ]
+    },
+    {
+      "asset": "source--docs--previews--rough_riders_guide_1028--videos--voss--preview.mp4",
+      "bytes": 35773709,
+      "sha256": "10abb47ca593988b7cdabebb2f149447f3502a334ce96bd39dac108ac0f3fcda",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-stage6-9-review-2026-10-28/rough-riders-voss.mp4",
+      "reused": true,
+      "aliases": [
+        "source/docs/previews/rough_riders_guide_1028/videos/voss/preview.mp4"
+      ]
+    },
+    {
+      "asset": "downloads--BOF-Field-Manual-1.3-1031.zip",
+      "bytes": 18946241,
+      "sha256": "c043f470515d5978f0240fd898c068019535b6154bc910720d204fd3c160cfdd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/downloads--BOF-Field-Manual-1.3-1031.zip",
+      "reused": false,
+      "aliases": [
+        "downloads/BOF-Field-Manual-1.3-1031.zip"
+      ]
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s2-enemy-roster.webm",
+      "bytes": 6107647,
+      "sha256": "c8cf1f5ee4a0d11a9463ad8f571d36dd7360cf2250cb482094c047463cc5f1b8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s2-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s2-enemy-roster.webm"
+      ],
+      "sourceSha256": "baf6c2d6c0b4e74d0e802c4d4d30dc5c9bb812bf30b124bfc1eeeb14469f8466",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.394
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s5-bomber.webm",
+      "bytes": 5530998,
+      "sha256": "fa098e4ab69c59accabad68af93ce5208cc6a8374af15d6cf9931f9fab6bc3a0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s5-bomber.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s5-bomber.webm"
+      ],
+      "sourceSha256": "73980540a6d28d2b1c607d07294df26483ae6034efc8ae692cfc61688b3b107a",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.28
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s5-chronos.webm",
+      "bytes": 6945584,
+      "sha256": "84e3dfd317165e6bebaeaaf39494080549d41aabb0aad0d14cbb527ef5d4562a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s5-chronos.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s5-chronos.webm"
+      ],
+      "sourceSha256": "00625f7bedd349462c8427ee362e371eb5ce512f0c9462a1604cb764e19b7a62",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.506
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-carrier.webm",
+      "bytes": 8901265,
+      "sha256": "c3d54e846a61ed44791c7d5749604e436f7e0d35df92d0be06599d621979bec8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-carrier.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-carrier.webm"
+      ],
+      "sourceSha256": "767ab46ef26606346c97e1129ea56afae2134ef2aa913594eb94f96dca910675",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 28.835
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-enemy-roster.webm",
+      "bytes": 6463651,
+      "sha256": "1ec7cac4572436739185b4a80c001be74a876f80dc440a592227f1ea7a19dae2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-enemy-roster.webm"
+      ],
+      "sourceSha256": "f1f2e640ce546c5e58c2f312dd9d9b8328aa7f360b78fae8bce0bcbd88829f35",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.519
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-fortress.webm",
+      "bytes": 6288179,
+      "sha256": "b891d6b03e826546379e62b118951735cb00052b89de3e0b760638b518aeac67",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-fortress.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-fortress.webm"
+      ],
+      "sourceSha256": "edbab1c33a9b8aa0b4a1d08a0cd04f1540a14b13f89821154fd147da0ab9448f",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 28.305
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-nightwing.webm",
+      "bytes": 7223640,
+      "sha256": "bc9eb9056318400c97384bcb530517bcdf38b777fee87e05ad8ce96d98f7d048",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-nightwing.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-nightwing.webm"
+      ],
+      "sourceSha256": "4c98bef8b9e5f83da7f78da9b1457672f5adcd80868c83f4fa9ccc956c85613e",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.381
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-red-core.webm",
+      "bytes": 5385123,
+      "sha256": "8c78547134f60e74f8f760cc0be38dc02e7211a72af056e992f718fe9d8b4e14",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-red-core.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-red-core.webm"
+      ],
+      "sourceSha256": "563328e7d68d984f6681793590fa85ecc2602d721fc9db3d1709f5e91f31fd06",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.458
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-rough-riders.webm",
+      "bytes": 8841385,
+      "sha256": "758c0b8d633a2feaf2c1901dfecafac6db2d5e6a778d99b6f9e0e30436a6f8c1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-rough-riders.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-rough-riders.webm"
+      ],
+      "sourceSha256": "1dfa58ee0617fd198150724961ed4f9cfd60072f455633040103ab433c023e75",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 42.338
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s7-dredger.webm",
+      "bytes": 8694348,
+      "sha256": "a82cbc00638c2e2c529541b362c29a07bc309ccc6592faf6301fc6d8bf4467da",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s7-dredger.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s7-dredger.webm"
+      ],
+      "sourceSha256": "ed8035e2f636866ffb89cf1ce50233d5f0d425638eac499337e772499a7bffed",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.346
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s7-enemy-roster.webm",
+      "bytes": 5889671,
+      "sha256": "556e64a63410486e3a195c99d97e88d52e3d47218ce489f26fbf6dc16cac219c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s7-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s7-enemy-roster.webm"
+      ],
+      "sourceSha256": "7ff1602bfa88aff90500d9f745cc70978325232173546b6a3f1f97529caba800",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.341
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s7-warden.webm",
+      "bytes": 8641236,
+      "sha256": "15af827b1f61103df3abfa8a3375e0b68596469be36937e688c53eec27b85eef",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s7-warden.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s7-warden.webm"
+      ],
+      "sourceSha256": "915ef3d34a33a5c55ec7fe4da2a3e7f58025ec2dea4f792778f3bdae76c7d65a",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.339
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-brain.webm",
+      "bytes": 9486515,
+      "sha256": "15463433203c142b70b15cb5ac036ce21825cbd7086ef6cbb50ae5f70f3cda56",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-brain.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-brain.webm"
+      ],
+      "sourceSha256": "fbbb2cc9035ac80d952819760d317f6130d4274c7f6f95d981062d5edbb8a38b",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.219
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-chronos-copy.webm",
+      "bytes": 7344274,
+      "sha256": "39610b9e7bd1962a1951f8720a8a5f9416e11aa7f520eb0601c4c431194f35cc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-chronos-copy.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-chronos-copy.webm"
+      ],
+      "sourceSha256": "30023dac29a55d16e38a5779af83c6a907e4d0aba896f31a2049f9f0823b4365",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.259
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-final-life.webm",
+      "bytes": 8358083,
+      "sha256": "55bcb952c78c135cf42bb51ad6813de5c8edca7451e281c9ecc39ca054c8e0cf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-final-life.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-final-life.webm"
+      ],
+      "sourceSha256": "962ddc3ee618784e22989b72eee4541928800974d900c89bd82d5ddd56b9b767",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.442
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-helicopter.webm",
+      "bytes": 7864451,
+      "sha256": "7242240c8672bf4bb714211316f2d0b78b46a26a2137c5fef6269b8b23feb7af",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-helicopter.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-helicopter.webm"
+      ],
+      "sourceSha256": "328cb2e2319505628155f792d90da3129a6279ef03b800f964ad5b5e89329a7e",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.325
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-herald-cast.webm",
+      "bytes": 5030408,
+      "sha256": "fa42a5f7eebed0a71f047d42b33041344916654079ab2c40cd8df2bed414229e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-herald-cast.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-herald-cast.webm"
+      ],
+      "sourceSha256": "4714286db1352b9ccca0b4300fab184a5cfb5279197e8b4c860aad18a40a46ee",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 20.379
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-herald-skulls.webm",
+      "bytes": 4931940,
+      "sha256": "e9ccc41a197bf4af10b041d8a5c68c5e41cd4dea6edc47c17fbf780f7c1273f5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-herald-skulls.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-herald-skulls.webm"
+      ],
+      "sourceSha256": "e77559dfc252bb1b3c32cd216a6c43854374d1dea66b2c2a10e408cf8ac9aa97",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 20.436
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-herald-storm.webm",
+      "bytes": 5515384,
+      "sha256": "d9fc82d069cf828263d261985e6c82df472983605768d400b9dbf4823a9da28d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-herald-storm.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-herald-storm.webm"
+      ],
+      "sourceSha256": "c6c5f86c1198f69d84f4ffccda34d11a9ad4c251a2bffbc4eaa1d67ecb1c797d",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 22.362
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-host.webm",
+      "bytes": 6951797,
+      "sha256": "6bb4af49590e1878c57378745a083f1a145ebd1603875eb18571763306aebf9f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-host.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-host.webm"
+      ],
+      "sourceSha256": "752e02e3e97d2cfb37468d5db7610beb3121a23f99dae0359e98a4059c72a859",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 28.539
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-phoenix.webm",
+      "bytes": 8619522,
+      "sha256": "6fc1704ea997aa4b7326ea064b2508b6f3cc2349a91495e46ca0fbbea928c301",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-phoenix.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-phoenix.webm"
+      ],
+      "sourceSha256": "ea48e6951c9563f58f12ceaa396666dcf3b55de7d84959076c25fb4889b1920e",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.342
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-enemy-roster.webm",
+      "bytes": 6128347,
+      "sha256": "44b4be09fcdb6b988ba998fa6bb165885af0750038fb964c3b4c8398802a9ac3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-enemy-roster.webm"
+      ],
+      "sourceSha256": "20f6208c87fef4cae957d70f3d8fe1bda7044624a96a988c2736238ed94a93b8",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.395
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-horizon-water.webm",
+      "bytes": 8976841,
+      "sha256": "172adef82cd60cd811510a696d0c2788f4f2221657b17119c816a147be20395e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-horizon-water.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-horizon-water.webm"
+      ],
+      "sourceSha256": "f358db4f28a08f35bbd4496b502250de9104d5410707f93d47fbfdc94c2d0cb6",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 38.377
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-horizon.webm",
+      "bytes": 8076076,
+      "sha256": "969c19b8bc77c2c26046068c8af7dd87e455a81acc50d0f327153f324a1b0343",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-horizon.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-horizon.webm"
+      ],
+      "sourceSha256": "7feb4e512f769f83b362d4b8a7ed494f8f2644924ba7340615adf9812aad6f32",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.381
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-water.webm",
+      "bytes": 9337730,
+      "sha256": "a8d88d41ba35f069a3691aea8e933d47f89352b2793a4d5eca614d5d18acb858",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-water.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-water.webm"
+      ],
+      "sourceSha256": "49ae7eba3dba23ce4fa23b7704c70809b34f3c0e5c999c969c2f639f5fbb6bfe",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 40.355
+    }
+  ]
+}

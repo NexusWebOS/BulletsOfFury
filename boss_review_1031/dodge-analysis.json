@@ -1,0 +1,51 @@
+{
+  "method": "Conservative reachable-cell test against three native beam samples per50ms;3px grid,10px clearance,143.52px/s, start south-centre, no dodge abilities. Diagnostic only; excludes regular bullets, input latency and future adaptive re-aim.",
+  "results": [
+    {
+      "version": "old",
+      "rank": "furious",
+      "mode": "spiral",
+      "survives": true,
+      "minimumAfterWarmup": 306,
+      "endReachable": 1221,
+      "speed": 143.52
+    },
+    {
+      "version": "old",
+      "rank": "furious",
+      "mode": "sweep",
+      "survives": true,
+      "minimumAfterWarmup": 6251,
+      "endReachable": 19723,
+      "speed": 143.52
+    },
+    {
+      "version": "new",
+      "rank": "hard",
+      "mode": "spiral",
+      "survives": true,
+      "minimumAfterWarmup": 8232,
+      "endReachable": 19839,
+      "speed": 143.52
+    },
+    {
+      "version": "new",
+      "rank": "furious",
+      "mode": "spiral",
+      "survives": true,
+      "minimumAfterWarmup": 8540,
+      "endReachable": 18701,
+      "speed": 143.52
+    },
+    {
+      "version": "new",
+      "rank": "furious",
+      "mode": "sweep",
+      "survives": true,
+      "minimumAfterWarmup": 5655,
+      "endReachable": 18147,
+      "speed": 143.52
+    }
+  ],
+  "errors": []
+}

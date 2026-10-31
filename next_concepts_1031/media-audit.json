@@ -1,0 +1,68 @@
+{
+  "completed": true,
+  "seconds": 74.035,
+  "fps": 57.88870078095134,
+  "audio": [
+    "mean_volume: -20.5 dB",
+    "max_volume: -2.3 dB"
+  ],
+  "bytes": 53043344,
+  "sha256": "fb4cc3d954cb5bdae99874ac99bfff8413038cd22139abd28bea046b81654531",
+  "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Sumpjaw-Duo-1031\\video\\stage7-085107\\report.json",
+  "errors": {
+    "page": [],
+    "console": [],
+    "assets": [],
+    "taps": []
+  },
+  "cues": {
+    "mini7": 1,
+    "bossAlarm": 1,
+    "enemyunit": 1,
+    "bossWeaponCharge": 19,
+    "av3_target_acquire": 19,
+    "alertLockon": 19,
+    "jetDash": 13,
+    "hammerImpact": 7,
+    "enemyToxicSpit": 36,
+    "loop": 23,
+    "hit": 274,
+    "laserBeamStart": 45,
+    "missile": 36,
+    "laserBeamEnd": 45,
+    "expSmall": 51,
+    "expBig": 36,
+    "missileHit": 36,
+    "combatModule0927": 6,
+    "powerup": 1,
+    "stageclear": 1,
+    "statTick": 10,
+    "stageClear": 1,
+    "crackle": 1,
+    "warpGate": 1,
+    "mapDeploy": 1,
+    "bossPhase": 1
+  },
+  "checkpoint": {
+    "entry": {
+      "stage": 7,
+      "role": "mini",
+      "kind": "dualscoopdredger",
+      "name": "Sumpjaw pair / Two independent gill-heart budgets and local health bars"
+    },
+    "difficulty": "furious",
+    "weapon": 3,
+    "wlevel": 5,
+    "missiles": 40,
+    "screen": {
+      "width": 480,
+      "height": 512
+    },
+    "nativeGod": true,
+    "currentFont": "assets/game/shared/ui/pixelmap_ui_1027/fury_strike_28.png?v=solid-r-square-hud-1027d",
+    "focusedLaser": true,
+    "newEncounterBanks": true
+  },
+  "method": "Native encounter spawn, real RAF, Cole with level-5 Laser and40 missiles, native GOD and input-only aiming; no enemy HP/phase/timer writes.",
+  "defeatSeconds": 67.749
+}

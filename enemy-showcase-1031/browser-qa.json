@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "name": "All 163 clip cards rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-s1corvette / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage2-miner / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage3-s3interceptor / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage4-sandtank / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage5-s5repair / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage6-tempest-dasher / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage7-ll18brood / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage8-s8gunship / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "stage9-vmanta / moving decoded playback",
+      "passed": true
+    },
+    {
+      "name": "Complete reel duration exceeds 23 minutes",
+      "passed": true
+    },
+    {
+      "name": "Complete reel seeks near its end",
+      "passed": true
+    },
+    {
+      "name": "Byte-range video serving",
+      "passed": true
+    },
+    {
+      "name": "Phone layout fits",
+      "passed": true
+    },
+    {
+      "name": "No browser/media errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "rangeResponses": 13
+}

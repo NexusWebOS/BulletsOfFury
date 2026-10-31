@@ -1,0 +1,1143 @@
+[
+  {
+    "start": 0,
+    "end": 9.641,
+    "name": "Patrol Boat",
+    "stage": 1,
+    "id": "stage1-s1boatpatrol"
+  },
+  {
+    "start": 9.641,
+    "end": 18.507,
+    "name": "Gunboat",
+    "stage": 1,
+    "id": "stage1-s1boatgun"
+  },
+  {
+    "start": 18.507,
+    "end": 27.64,
+    "name": "River Corvette",
+    "stage": 1,
+    "id": "stage1-s1corvette"
+  },
+  {
+    "start": 27.64,
+    "end": 31.643,
+    "name": "Delta Fighter / Flyby",
+    "stage": 1,
+    "id": "stage1-s1jetdelta"
+  },
+  {
+    "start": 31.643,
+    "end": 35.809,
+    "name": "Delta Fighter / Gun Run",
+    "stage": 1,
+    "id": "stage1-s1jetdelta-2"
+  },
+  {
+    "start": 35.809,
+    "end": 41.009,
+    "name": "Strike Bomber",
+    "stage": 1,
+    "id": "stage1-s1jetbomber"
+  },
+  {
+    "start": 41.009,
+    "end": 50.411,
+    "name": "Heavy Jungle Tank",
+    "stage": 1,
+    "id": "stage1-s1tankheavy"
+  },
+  {
+    "start": 50.411,
+    "end": 59.777,
+    "name": "Jungle APC",
+    "stage": 1,
+    "id": "stage1-s1tankapc"
+  },
+  {
+    "start": 59.777,
+    "end": 68.944,
+    "name": "Light Jungle Tank",
+    "stage": 1,
+    "id": "stage1-s1tanklight"
+  },
+  {
+    "start": 68.944,
+    "end": 73.077,
+    "name": "Delta Strike Fighter",
+    "stage": 1,
+    "id": "stage1-s1jetdelta-b"
+  },
+  {
+    "start": 73.077,
+    "end": 82.447,
+    "name": "Rocket Buggy",
+    "stage": 1,
+    "id": "stage1-s1truckmissile"
+  },
+  {
+    "start": 82.447,
+    "end": 91.98,
+    "name": "Missile Ground Turret",
+    "stage": 1,
+    "id": "stage1-modturret"
+  },
+  {
+    "start": 91.98,
+    "end": 101.446,
+    "name": "Mg Ground Turret",
+    "stage": 1,
+    "id": "stage1-modturret-2"
+  },
+  {
+    "start": 101.446,
+    "end": 105.465,
+    "name": "Delta Strike Fighter / Kamikaze",
+    "stage": 1,
+    "id": "stage1-s1jetdelta-b-2"
+  },
+  {
+    "start": 105.465,
+    "end": 110.132,
+    "name": "Ash Fighter",
+    "stage": 2,
+    "id": "stage2-ash"
+  },
+  {
+    "start": 110.132,
+    "end": 114.532,
+    "name": "Lava Skimmer",
+    "stage": 2,
+    "id": "stage2-skim"
+  },
+  {
+    "start": 114.532,
+    "end": 118.532,
+    "name": "Cinderwasp / Curve",
+    "stage": 2,
+    "id": "stage2-cinderwasp"
+  },
+  {
+    "start": 118.532,
+    "end": 123.732,
+    "name": "Cinderwasp / Rush",
+    "stage": 2,
+    "id": "stage2-cinderwasp-2"
+  },
+  {
+    "start": 123.732,
+    "end": 133.499,
+    "name": "Missile Ground Turret",
+    "stage": 2,
+    "id": "stage2-modturret"
+  },
+  {
+    "start": 133.499,
+    "end": 144.699,
+    "name": "THUNDER LANCE",
+    "stage": 2,
+    "id": "stage2-lance"
+  },
+  {
+    "start": 144.699,
+    "end": 149.365,
+    "name": "Magma Eye",
+    "stage": 2,
+    "id": "stage2-eye"
+  },
+  {
+    "start": 149.365,
+    "end": 155.331,
+    "name": "Magmaorb / Rush",
+    "stage": 2,
+    "id": "stage2-magmaorb"
+  },
+  {
+    "start": 155.331,
+    "end": 165.997,
+    "name": "Fire Interceptor",
+    "stage": 2,
+    "id": "stage2-ac10firejet"
+  },
+  {
+    "start": 165.997,
+    "end": 175.672,
+    "name": "Laser Ground Turret",
+    "stage": 2,
+    "id": "stage2-modturret-2"
+  },
+  {
+    "start": 175.672,
+    "end": 179.672,
+    "name": "Basaltbomber / Curve",
+    "stage": 2,
+    "id": "stage2-basaltbomber"
+  },
+  {
+    "start": 179.672,
+    "end": 184.072,
+    "name": "Basaltbomber / Charge",
+    "stage": 2,
+    "id": "stage2-basaltbomber-2"
+  },
+  {
+    "start": 184.072,
+    "end": 195.072,
+    "name": "Crucible Gunship",
+    "stage": 2,
+    "id": "stage2-cruc"
+  },
+  {
+    "start": 195.072,
+    "end": 205.219,
+    "name": "Lava Crawler",
+    "stage": 2,
+    "id": "stage2-crawl"
+  },
+  {
+    "start": 205.219,
+    "end": 215.585,
+    "name": "Magma Minelayer",
+    "stage": 2,
+    "id": "stage2-miner"
+  },
+  {
+    "start": 215.585,
+    "end": 226.318,
+    "name": "Lavamaw",
+    "stage": 2,
+    "id": "stage2-lavamaw"
+  },
+  {
+    "start": 226.318,
+    "end": 230.338,
+    "name": "Cinderwasp / Diag",
+    "stage": 2,
+    "id": "stage2-cinderwasp-3"
+  },
+  {
+    "start": 230.338,
+    "end": 237.938,
+    "name": "Magmaorb / Loop",
+    "stage": 2,
+    "id": "stage2-magmaorb-2"
+  },
+  {
+    "start": 237.938,
+    "end": 248.405,
+    "name": "Magma Pod",
+    "stage": 2,
+    "id": "stage2-pod"
+  },
+  {
+    "start": 248.405,
+    "end": 256.171,
+    "name": "Magma Carrier",
+    "stage": 2,
+    "id": "stage2-carrier"
+  },
+  {
+    "start": 256.171,
+    "end": 267.871,
+    "name": "THUNDER LANCE",
+    "stage": 2,
+    "id": "stage2-firejet1002"
+  },
+  {
+    "start": 267.871,
+    "end": 273.037,
+    "name": "Magma Disc",
+    "stage": 2,
+    "id": "stage2-disc"
+  },
+  {
+    "start": 273.037,
+    "end": 277.171,
+    "name": "Sharddart / Curve",
+    "stage": 3,
+    "id": "stage3-sharddart"
+  },
+  {
+    "start": 277.171,
+    "end": 283.138,
+    "name": "Sharddart / Rush",
+    "stage": 3,
+    "id": "stage3-sharddart-2"
+  },
+  {
+    "start": 283.138,
+    "end": 287.157,
+    "name": "Sharddart / Diag",
+    "stage": 3,
+    "id": "stage3-sharddart-3"
+  },
+  {
+    "start": 287.157,
+    "end": 291.591,
+    "name": "Sharddart / Charge",
+    "stage": 3,
+    "id": "stage3-sharddart-4"
+  },
+  {
+    "start": 291.591,
+    "end": 303.157,
+    "name": "Interceptor",
+    "stage": 3,
+    "id": "stage3-s3interceptor"
+  },
+  {
+    "start": 303.157,
+    "end": 312.757,
+    "name": "Laser Ground Turret",
+    "stage": 3,
+    "id": "stage3-modturret"
+  },
+  {
+    "start": 312.757,
+    "end": 321.457,
+    "name": "Glaciercarrier / Rush",
+    "stage": 3,
+    "id": "stage3-glaciercarrier"
+  },
+  {
+    "start": 321.457,
+    "end": 328.79,
+    "name": "Cryoeye / Loop",
+    "stage": 3,
+    "id": "stage3-cryoeye"
+  },
+  {
+    "start": 328.79,
+    "end": 339.595,
+    "name": "Ice Interceptor",
+    "stage": 3,
+    "id": "stage3-ac10icejet"
+  },
+  {
+    "start": 339.595,
+    "end": 349.361,
+    "name": "Sonic Ground Turret",
+    "stage": 3,
+    "id": "stage3-modturret-2"
+  },
+  {
+    "start": 349.361,
+    "end": 353.761,
+    "name": "Glaciercarrier / Curve",
+    "stage": 3,
+    "id": "stage3-glaciercarrier-2"
+  },
+  {
+    "start": 353.761,
+    "end": 359.028,
+    "name": "Mine",
+    "stage": 3,
+    "id": "stage3-s3mine"
+  },
+  {
+    "start": 359.028,
+    "end": 364.761,
+    "name": "Cryoeye / Rush",
+    "stage": 3,
+    "id": "stage3-cryoeye-2"
+  },
+  {
+    "start": 364.761,
+    "end": 377.243,
+    "name": "Highway Tank",
+    "stage": 4,
+    "id": "stage4-sandtank"
+  },
+  {
+    "start": 377.243,
+    "end": 382.143,
+    "name": "Interceptor",
+    "stage": 4,
+    "id": "stage4-s4interceptor"
+  },
+  {
+    "start": 382.143,
+    "end": 391.843,
+    "name": "Mg Ground Turret",
+    "stage": 4,
+    "id": "stage4-modturret"
+  },
+  {
+    "start": 391.843,
+    "end": 397.32,
+    "name": "Rocket",
+    "stage": 4,
+    "id": "stage4-s4rocket"
+  },
+  {
+    "start": 397.32,
+    "end": 406.92,
+    "name": "Missile Ground Turret",
+    "stage": 4,
+    "id": "stage4-modturret-2"
+  },
+  {
+    "start": 406.92,
+    "end": 416.553,
+    "name": "Laser Ground Turret",
+    "stage": 4,
+    "id": "stage4-modturret-3"
+  },
+  {
+    "start": 416.553,
+    "end": 422.257,
+    "name": "Bomber",
+    "stage": 4,
+    "id": "stage4-s4bomber"
+  },
+  {
+    "start": 422.257,
+    "end": 432.49,
+    "name": "Missile",
+    "stage": 4,
+    "id": "stage4-s4missile"
+  },
+  {
+    "start": 432.49,
+    "end": 442.724,
+    "name": "Command",
+    "stage": 4,
+    "id": "stage4-s4command"
+  },
+  {
+    "start": 442.724,
+    "end": 451.639,
+    "name": "Tanker",
+    "stage": 4,
+    "id": "stage4-s4tanker"
+  },
+  {
+    "start": 451.639,
+    "end": 461.039,
+    "name": "Tractor",
+    "stage": 4,
+    "id": "stage4-s4tractor"
+  },
+  {
+    "start": 461.039,
+    "end": 466.239,
+    "name": "Heavyjet",
+    "stage": 4,
+    "id": "stage4-s4heavyjet"
+  },
+  {
+    "start": 466.239,
+    "end": 476.472,
+    "name": "Sam",
+    "stage": 4,
+    "id": "stage4-s4sam"
+  },
+  {
+    "start": 476.472,
+    "end": 486.772,
+    "name": "Frigate",
+    "stage": 5,
+    "id": "stage5-s5frigate"
+  },
+  {
+    "start": 486.772,
+    "end": 493.305,
+    "name": "Interceptor",
+    "stage": 5,
+    "id": "stage5-s5interceptor"
+  },
+  {
+    "start": 493.305,
+    "end": 498.707,
+    "name": "Rammer",
+    "stage": 5,
+    "id": "stage5-s5rammer"
+  },
+  {
+    "start": 498.707,
+    "end": 503.374,
+    "name": "Skimmer",
+    "stage": 5,
+    "id": "stage5-s5skimmer"
+  },
+  {
+    "start": 503.374,
+    "end": 513.016,
+    "name": "Gravity",
+    "stage": 5,
+    "id": "stage5-s5gravity"
+  },
+  {
+    "start": 513.016,
+    "end": 522.682,
+    "name": "Minelayer",
+    "stage": 5,
+    "id": "stage5-s5minelayer"
+  },
+  {
+    "start": 522.682,
+    "end": 532.248,
+    "name": "Satellite",
+    "stage": 5,
+    "id": "stage5-s5satellite"
+  },
+  {
+    "start": 532.248,
+    "end": 541.581,
+    "name": "Portalmine",
+    "stage": 5,
+    "id": "stage5-s5portalmine"
+  },
+  {
+    "start": 541.581,
+    "end": 551.215,
+    "name": "Repair",
+    "stage": 5,
+    "id": "stage5-s5repair"
+  },
+  {
+    "start": 551.215,
+    "end": 564.219,
+    "name": "Voidreaver",
+    "stage": 5,
+    "id": "stage5-xelite-voidreaver"
+  },
+  {
+    "start": 564.219,
+    "end": 574.885,
+    "name": "Station",
+    "stage": 5,
+    "id": "stage5-s5station"
+  },
+  {
+    "start": 574.885,
+    "end": 584.79,
+    "name": "Leech",
+    "stage": 5,
+    "id": "stage5-s5leech"
+  },
+  {
+    "start": 584.79,
+    "end": 589.959,
+    "name": "Dart",
+    "stage": 6,
+    "id": "stage6-s6dart"
+  },
+  {
+    "start": 589.959,
+    "end": 600.593,
+    "name": "Mine",
+    "stage": 6,
+    "id": "stage6-s6mine"
+  },
+  {
+    "start": 600.593,
+    "end": 606.605,
+    "name": "Silver Sky Wing 1",
+    "stage": 6,
+    "id": "stage6-l6v-s0"
+  },
+  {
+    "start": 606.605,
+    "end": 610.607,
+    "name": "Jetbomber B / Red",
+    "stage": 6,
+    "id": "stage6-s1jetbomber-b"
+  },
+  {
+    "start": 610.607,
+    "end": 621.04,
+    "name": "Lancer",
+    "stage": 6,
+    "id": "stage6-s6lancer"
+  },
+  {
+    "start": 621.04,
+    "end": 627.306,
+    "name": "Silver Sky Wing 3",
+    "stage": 6,
+    "id": "stage6-l6v-s2"
+  },
+  {
+    "start": 627.306,
+    "end": 631.327,
+    "name": "Skimmer",
+    "stage": 6,
+    "id": "stage6-s6skimmer"
+  },
+  {
+    "start": 631.327,
+    "end": 638.062,
+    "name": "Silver Sky Wing 2",
+    "stage": 6,
+    "id": "stage6-l6v-s1"
+  },
+  {
+    "start": 638.062,
+    "end": 648.234,
+    "name": "Thunder",
+    "stage": 6,
+    "id": "stage6-s6thunder"
+  },
+  {
+    "start": 648.234,
+    "end": 652.254,
+    "name": "Jetbomber B / Green",
+    "stage": 6,
+    "id": "stage6-s1jetbomber-b-2"
+  },
+  {
+    "start": 652.254,
+    "end": 657.932,
+    "name": "Red Sky Wing 1",
+    "stage": 6,
+    "id": "stage6-l6v-r0"
+  },
+  {
+    "start": 657.932,
+    "end": 661.94,
+    "name": "Jetbomber B / Orange",
+    "stage": 6,
+    "id": "stage6-s1jetbomber-b-3"
+  },
+  {
+    "start": 661.94,
+    "end": 672.673,
+    "name": "Probe",
+    "stage": 6,
+    "id": "stage6-s6probe"
+  },
+  {
+    "start": 672.673,
+    "end": 685.682,
+    "name": "Glacierlance",
+    "stage": 6,
+    "id": "stage6-xelite-glacierlance"
+  },
+  {
+    "start": 685.682,
+    "end": 692.228,
+    "name": "Cyclone",
+    "stage": 6,
+    "id": "stage6-s6cyclone"
+  },
+  {
+    "start": 692.228,
+    "end": 702.18,
+    "name": "Mg Ground Turret",
+    "stage": 6,
+    "id": "stage6-modturret"
+  },
+  {
+    "start": 702.18,
+    "end": 708.151,
+    "name": "Red Sky Wing 3",
+    "stage": 6,
+    "id": "stage6-l6v-r2"
+  },
+  {
+    "start": 708.151,
+    "end": 718.117,
+    "name": "Laser Ground Turret",
+    "stage": 6,
+    "id": "stage6-modturret-2"
+  },
+  {
+    "start": 718.117,
+    "end": 724.617,
+    "name": "Red Sky Wing 2",
+    "stage": 6,
+    "id": "stage6-l6v-r1"
+  },
+  {
+    "start": 724.617,
+    "end": 734.526,
+    "name": "Sonic Ground Turret",
+    "stage": 6,
+    "id": "stage6-modturret-3"
+  },
+  {
+    "start": 734.526,
+    "end": 740.026,
+    "name": "Blue Sky Wing 1",
+    "stage": 6,
+    "id": "stage6-l6v-b0"
+  },
+  {
+    "start": 740.026,
+    "end": 750.597,
+    "name": "Turbine",
+    "stage": 6,
+    "id": "stage6-s6turbine"
+  },
+  {
+    "start": 750.597,
+    "end": 763.609,
+    "name": "Tempest",
+    "stage": 6,
+    "id": "stage6-xelite-tempest"
+  },
+  {
+    "start": 763.609,
+    "end": 776.616,
+    "name": "Solarwarden",
+    "stage": 6,
+    "id": "stage6-xelite-solarwarden"
+  },
+  {
+    "start": 776.616,
+    "end": 782.626,
+    "name": "Blue Sky Wing 3",
+    "stage": 6,
+    "id": "stage6-l6v-b2"
+  },
+  {
+    "start": 782.626,
+    "end": 788.859,
+    "name": "Blue Sky Wing 2",
+    "stage": 6,
+    "id": "stage6-l6v-b1"
+  },
+  {
+    "start": 788.859,
+    "end": 792.863,
+    "name": "Tempest Dasher",
+    "stage": 6,
+    "id": "stage6-tempest-dasher"
+  },
+  {
+    "start": 792.863,
+    "end": 797.796,
+    "name": "Bombing Flyby",
+    "stage": 6,
+    "id": "stage6-flyby-bomb"
+  },
+  {
+    "start": 797.796,
+    "end": 802.97,
+    "name": "Machine Gun Rain Flyby",
+    "stage": 6,
+    "id": "stage6-flyby-rain"
+  },
+  {
+    "start": 802.97,
+    "end": 806.977,
+    "name": "Turbo Charge Flyby",
+    "stage": 6,
+    "id": "stage6-flyby-charge"
+  },
+  {
+    "start": 806.977,
+    "end": 819.377,
+    "name": "Alien Sewer Drone",
+    "stage": 7,
+    "id": "stage7-cp22drone"
+  },
+  {
+    "start": 819.377,
+    "end": 830.547,
+    "name": "Pipe",
+    "stage": 7,
+    "id": "stage7-s7pipe"
+  },
+  {
+    "start": 830.547,
+    "end": 843.562,
+    "name": "Tank",
+    "stage": 7,
+    "id": "stage7-s7tank"
+  },
+  {
+    "start": 843.562,
+    "end": 853.128,
+    "name": "Mg Ground Turret",
+    "stage": 7,
+    "id": "stage7-modturret"
+  },
+  {
+    "start": 853.128,
+    "end": 866.139,
+    "name": "BROOD SENTINEL",
+    "stage": 7,
+    "id": "stage7-ll18brood"
+  },
+  {
+    "start": 866.139,
+    "end": 876.239,
+    "name": "Laser Ground Turret",
+    "stage": 7,
+    "id": "stage7-modturret-2"
+  },
+  {
+    "start": 876.239,
+    "end": 886.905,
+    "name": "Heavy Sewer Relay",
+    "stage": 7,
+    "id": "stage7-cp22relay"
+  },
+  {
+    "start": 886.905,
+    "end": 896.776,
+    "name": "Sonic Ground Turret",
+    "stage": 7,
+    "id": "stage7-modturret-3"
+  },
+  {
+    "start": 896.776,
+    "end": 906.611,
+    "name": "Toxic Slime Jet",
+    "stage": 7,
+    "id": "stage7-cp22slime"
+  },
+  {
+    "start": 906.611,
+    "end": 919.627,
+    "name": "BLACKSTEEL HUNTER",
+    "stage": 7,
+    "id": "stage7-ll18raptor"
+  },
+  {
+    "start": 919.627,
+    "end": 932.633,
+    "name": "Barge",
+    "stage": 7,
+    "id": "stage7-s7barge"
+  },
+  {
+    "start": 932.633,
+    "end": 944.105,
+    "name": "Brood Sentinel / Crescent Escort",
+    "stage": 7,
+    "id": "stage7-brood-escort"
+  },
+  {
+    "start": 944.105,
+    "end": 955.438,
+    "name": "Interceptor",
+    "stage": 8,
+    "id": "stage8-s8interceptor"
+  },
+  {
+    "start": 955.438,
+    "end": 966.238,
+    "name": "Impharrow",
+    "stage": 8,
+    "id": "stage8-mm1003-impharrow"
+  },
+  {
+    "start": 966.238,
+    "end": 978.538,
+    "name": "Leech",
+    "stage": 8,
+    "id": "stage8-s8leech"
+  },
+  {
+    "start": 978.538,
+    "end": 988.971,
+    "name": "Hexpyre",
+    "stage": 8,
+    "id": "stage8-mm1003-hexpyre"
+  },
+  {
+    "start": 988.971,
+    "end": 999.637,
+    "name": "Razor",
+    "stage": 8,
+    "id": "stage8-s8razor"
+  },
+  {
+    "start": 999.637,
+    "end": 1012.641,
+    "name": "BLACKSTEEL HUNTER",
+    "stage": 8,
+    "id": "stage8-ll18raptor"
+  },
+  {
+    "start": 1012.641,
+    "end": 1022.448,
+    "name": "Missile Ground Turret",
+    "stage": 8,
+    "id": "stage8-modturret"
+  },
+  {
+    "start": 1022.448,
+    "end": 1032.981,
+    "name": "Spread",
+    "stage": 8,
+    "id": "stage8-s8spread"
+  },
+  {
+    "start": 1032.981,
+    "end": 1045.988,
+    "name": "HELLWING EXECUTIONER",
+    "stage": 8,
+    "id": "stage8-ll18herald"
+  },
+  {
+    "start": 1045.988,
+    "end": 1056.021,
+    "name": "Laser Ground Turret",
+    "stage": 8,
+    "id": "stage8-modturret-2"
+  },
+  {
+    "start": 1056.021,
+    "end": 1067.187,
+    "name": "Parasite",
+    "stage": 8,
+    "id": "stage8-s8parasite"
+  },
+  {
+    "start": 1067.187,
+    "end": 1077.587,
+    "name": "Crescent",
+    "stage": 8,
+    "id": "stage8-s8crescent"
+  },
+  {
+    "start": 1077.587,
+    "end": 1087.953,
+    "name": "Sonic Ground Turret",
+    "stage": 8,
+    "id": "stage8-modturret-3"
+  },
+  {
+    "start": 1087.953,
+    "end": 1098.638,
+    "name": "Hunter",
+    "stage": 8,
+    "id": "stage8-s8hunter"
+  },
+  {
+    "start": 1098.638,
+    "end": 1109.322,
+    "name": "Skull",
+    "stage": 8,
+    "id": "stage8-s8skull"
+  },
+  {
+    "start": 1109.322,
+    "end": 1120.522,
+    "name": "Solar",
+    "stage": 8,
+    "id": "stage8-s8solar"
+  },
+  {
+    "start": 1120.522,
+    "end": 1133.532,
+    "name": "CRYO SPEAR VETERAN",
+    "stage": 8,
+    "id": "stage8-ll18spear"
+  },
+  {
+    "start": 1133.532,
+    "end": 1144.065,
+    "name": "Symbiote",
+    "stage": 8,
+    "id": "stage8-s8symbiote"
+  },
+  {
+    "start": 1144.065,
+    "end": 1157.077,
+    "name": "Warp Sentinel Alpha",
+    "stage": 8,
+    "id": "stage8-s8gunship"
+  },
+  {
+    "start": 1157.077,
+    "end": 1170.088,
+    "name": "Warp Sentinel Beta",
+    "stage": 8,
+    "id": "stage8-s8gunship-2"
+  },
+  {
+    "start": 1170.088,
+    "end": 1184.688,
+    "name": "Carrier",
+    "stage": 8,
+    "id": "stage8-s8carrier"
+  },
+  {
+    "start": 1184.688,
+    "end": 1197.695,
+    "name": "BROOD SENTINEL",
+    "stage": 8,
+    "id": "stage8-ll18brood"
+  },
+  {
+    "start": 1197.695,
+    "end": 1210.702,
+    "name": "Deathorb",
+    "stage": 8,
+    "id": "stage8-s8deathorb"
+  },
+  {
+    "start": 1210.702,
+    "end": 1221.102,
+    "name": "Bluehybrid",
+    "stage": 8,
+    "id": "stage8-mm1003-bluehybrid"
+  },
+  {
+    "start": 1221.102,
+    "end": 1231.526,
+    "name": "Furnacemaw",
+    "stage": 8,
+    "id": "stage8-mm1003-furnacemaw"
+  },
+  {
+    "start": 1231.526,
+    "end": 1244.532,
+    "name": "Bomber",
+    "stage": 8,
+    "id": "stage8-s8bomber"
+  },
+  {
+    "start": 1244.532,
+    "end": 1258.904,
+    "name": "Tentacle",
+    "stage": 8,
+    "id": "stage8-s8tentacle"
+  },
+  {
+    "start": 1258.904,
+    "end": 1269.77,
+    "name": "Brood Sentinel / Crescent Escort",
+    "stage": 8,
+    "id": "stage8-brood-escort"
+  },
+  {
+    "start": 1269.77,
+    "end": 1273.777,
+    "name": "Interceptor / Kamikaze",
+    "stage": 9,
+    "id": "stage9-s9interceptor"
+  },
+  {
+    "start": 1273.777,
+    "end": 1278.712,
+    "name": "Comet / Slider",
+    "stage": 9,
+    "id": "stage9-s9comet"
+  },
+  {
+    "start": 1278.712,
+    "end": 1288.512,
+    "name": "Beacon / Orb",
+    "stage": 9,
+    "id": "stage9-s9beacon"
+  },
+  {
+    "start": 1288.512,
+    "end": 1298.445,
+    "name": "Ring / Spinner",
+    "stage": 9,
+    "id": "stage9-s9ring"
+  },
+  {
+    "start": 1298.445,
+    "end": 1304.422,
+    "name": "Interceptor / Jumper",
+    "stage": 9,
+    "id": "stage9-s9interceptor-2"
+  },
+  {
+    "start": 1304.422,
+    "end": 1314.722,
+    "name": "Gunship / Beam",
+    "stage": 9,
+    "id": "stage9-s9gunship"
+  },
+  {
+    "start": 1314.722,
+    "end": 1321.422,
+    "name": "Water Skimmer",
+    "stage": 9,
+    "id": "stage9-wskim"
+  },
+  {
+    "start": 1321.422,
+    "end": 1331.03,
+    "name": "Ring / Laser",
+    "stage": 9,
+    "id": "stage9-s9ring-2"
+  },
+  {
+    "start": 1331.03,
+    "end": 1340.603,
+    "name": "Gateturret / Spinner",
+    "stage": 9,
+    "id": "stage9-s9gateturret"
+  },
+  {
+    "start": 1340.603,
+    "end": 1350.236,
+    "name": "Gravity Leech",
+    "stage": 9,
+    "id": "stage9-gleech"
+  },
+  {
+    "start": 1350.236,
+    "end": 1360.302,
+    "name": "Prism / Beam",
+    "stage": 9,
+    "id": "stage9-s9prism"
+  },
+  {
+    "start": 1360.302,
+    "end": 1366.802,
+    "name": "Echo Fighter",
+    "stage": 9,
+    "id": "stage9-echof"
+  },
+  {
+    "start": 1366.802,
+    "end": 1376.688,
+    "name": "Singularity / Orb",
+    "stage": 9,
+    "id": "stage9-s9singularity"
+  },
+  {
+    "start": 1376.688,
+    "end": 1386.788,
+    "name": "Prism / Orb",
+    "stage": 9,
+    "id": "stage9-s9prism-2"
+  },
+  {
+    "start": 1386.788,
+    "end": 1397.388,
+    "name": "Prism Mine",
+    "stage": 9,
+    "id": "stage9-pmine"
+  },
+  {
+    "start": 1397.388,
+    "end": 1407.288,
+    "name": "Gunship / Laser",
+    "stage": 9,
+    "id": "stage9-s9gunship-2"
+  },
+  {
+    "start": 1407.288,
+    "end": 1413.788,
+    "name": "Void Manta",
+    "stage": 9,
+    "id": "stage9-vmanta"
+  },
+  {
+    "start": 1413.788,
+    "end": 1420.288,
+    "name": "Tidal Splitter",
+    "stage": 9,
+    "id": "stage9-tsplit"
+  },
+  {
+    "start": 1420.288,
+    "end": 1426.794,
+    "name": "Current Breaker",
+    "stage": 9,
+    "id": "stage9-cbreak"
+  }
+]
