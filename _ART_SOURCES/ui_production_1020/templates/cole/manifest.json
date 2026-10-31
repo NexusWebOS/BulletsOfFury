@@ -1,0 +1,54 @@
+{
+  "resolution": [
+    512,
+    1024
+  ],
+  "pivot": [
+    256,
+    990
+  ],
+  "commonScale": 0.5765765765765766,
+  "sourceCanvas": [
+    888,
+    1776
+  ],
+  "poses": [
+    {
+      "pose": "neutral",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-8022fb05-3aa5-4b5c-97d6-81f2214f6923.png",
+      "sourceSize": [
+        887,
+        1774
+      ],
+      "runtime": "cole-neutral.webp"
+    },
+    {
+      "pose": "report",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-7e512359-d8bd-4855-9ecd-f8d29fca20d0.png",
+      "sourceSize": [
+        887,
+        1774
+      ],
+      "runtime": "cole-report.webp"
+    },
+    {
+      "pose": "horror",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-c171f6fd-28dc-4eab-95fd-8d3ec187b45a.png",
+      "sourceSize": [
+        887,
+        1774
+      ],
+      "runtime": "cole-horror.webp"
+    },
+    {
+      "pose": "talk",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-72f91db3-8b29-4b26-b9d8-025b327c72c0.png",
+      "sourceSize": [
+        887,
+        1774
+      ],
+      "runtime": "cole-talk.webp"
+    }
+  ],
+  "likeness": "User-approved portrait sheet, top row second column; full-body outfit coleyoung.png; NOT the rejected cropped actors."
+}
