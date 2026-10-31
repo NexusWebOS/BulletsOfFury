@@ -62,7 +62,7 @@
   function resolve(key) {
     const X = root.BOFX; if (!X) return null;
     const ui=(root.TD_UI_ART||{}).assets?.[key];if(ui)return{path:ui.file,sx:0,sy:0,sw:ui.size[0],sh:ui.size[1]};
-    const assault=root.TD_ASSAULT_ART?.assets[key];if(assault)return{path:assault.file,sx:0,sy:0,sw:assault.size[0],sh:assault.size[1]};
+    const assault=root.TD_ASSAULT_ART?.assets[key];if(assault)return{path:assault.file,sx:assault.rect?.[0]||0,sy:assault.rect?.[1]||0,sw:assault.size[0],sh:assault.size[1]};
     if(key.startsWith('od_font_')){const f=root.BOF?.stageFontV4?.final,r=f?.frames[key.slice(8)];if(r)return{path:f.atlas,sx:r[0],sy:r[1],sw:r[2],sh:r[3]};}
     const ship=X.ships?.[key];if(ship){const pk=/^ship_([a-z]+)/.exec(key)?.[1];return{path:X.img['nsa_ship_'+pk],sx:ship[0],sy:ship[1],sw:ship[2],sh:ship[3]};}
     const c = X.cells[key];

@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_machine_gunner_pseudo3d_ready_south_0"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    140,
+    148
+  ],
+  "size": [
+    280,
+    222
+  ],
+  "duration": 0.08333333333333333,
+  "provider": "PixelLab",
+  "source_review": "facing reviewed; playback pending",
+  "export_scale": 2.25,
+  "source_master": "machine_gunner_pseudo3d",
+  "source_action": "fire",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

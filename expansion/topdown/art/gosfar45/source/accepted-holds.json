@@ -1,0 +1,157 @@
+{
+  "hotwire/rifle/crouch_walk/north": [
+    6
+  ],
+  "hotwire/rifle/crouch_walk/south": [
+    2,
+    3,
+    7,
+    8
+  ],
+  "hotwire/rifle/crouch_walk/west": [
+    4
+  ],
+  "hotwire/eagle/run_fire/north-east": [
+    8
+  ],
+  "hotwire/eagle/run_fire/north-west": [
+    7
+  ],
+  "hotwire/rifle/death/north": [
+    1
+  ],
+  "hotwire/rifle/death/south": [
+    1
+  ],
+  "hotwire/rifle/fire/south": [
+    5,
+    6,
+    10,
+    11,
+    14,
+    15
+  ],
+  "hotwire/rifle/fire/south-east": [
+    4,
+    7
+  ],
+  "hotwire/eagle/fire/north-west": [
+    4,
+    7
+  ],
+  "hotwire/rifle/crouch_fire/north": [
+    4
+  ],
+  "hotwire/rifle/crouch_fire/south": [
+    2,
+    7
+  ],
+  "hotwire/eagle/crouch_fire/south": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7
+  ],
+  "hotwire/eagle/crouch_fire/east": [
+    1,
+    4,
+    7
+  ],
+  "hotwire/eagle/prone_fire/north": [
+    1,
+    6
+  ],
+  "hotwire/eagle/fire/south-west": [
+    3,
+    5,
+    7
+  ],
+  "hotwire/rifle/run_fire/south": [
+    2,
+    5,
+    8
+  ],
+  "hotwire/rifle/run_fire/east": [
+    6,
+    8
+  ],
+  "hotwire/rifle/run_fire/west": [
+    1,
+    4,
+    7
+  ],
+  "hotwire/eagle/run_fire/south": [
+    2,
+    7
+  ],
+  "hotwire/eagle/run_fire/east": [
+    1,
+    4,
+    7
+  ],
+  "hotwire/rifle/run_fire/north-east": [
+    1,
+    6
+  ],
+  "hotwire/rifle/run_fire/north-west": [
+    3,
+    4
+  ],
+  "hotwire/rifle/run_fire/south-east": [
+    6,
+    8
+  ],
+  "hotwire/rifle/run_fire/south-west": [
+    2,
+    4,
+    6
+  ],
+  "hotwire/eagle/run_fire/south-east": [
+    3,
+    7
+  ],
+  "hotwire/eagle/run_fire/south-west": [
+    5
+  ],
+  "hotwire/rifle/run/east": [
+    3,
+    6
+  ],
+  "hotwire/eagle/run/east": [
+    6,
+    7
+  ],
+  "gosfar/walk/south": [
+    13,
+    14,
+    15
+  ],
+  "hotwire/eagle/fire/west": [
+    13
+  ],
+  "gosfar/fire/south": [
+    2,
+    3,
+    6,
+    7,
+    8
+  ],
+  "gosfar/fire/west": [
+    3
+  ],
+  "hotwire/rifle/prone_fire/south": [
+    1,
+    2,
+    3,
+    5,
+    6
+  ],
+  "hotwire/eagle/prone_fire/south": [
+    2,
+    3,
+    5,
+    7
+  ]
+}

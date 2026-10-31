@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_flying_alien_pseudo3d_ready_south_0"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    162,
+    158
+  ],
+  "size": [
+    324,
+    258
+  ],
+  "duration": 0.08333333333333333,
+  "provider": "PixelLab",
+  "source_review": "facing reviewed; playback pending",
+  "export_scale": 2.25,
+  "source_master": "flying_alien_pseudo3d",
+  "source_action": "fire",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

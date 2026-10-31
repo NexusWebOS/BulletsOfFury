@@ -1,0 +1,1154 @@
+[
+  {
+    "bank": "gosfar/ready/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/walk/south",
+    "frames": 17,
+    "unique_pixels": 14,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/throw/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/south-east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/north-east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/north-west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/ready/south-west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/south-east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/north-east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/north-west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/ready/south-west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/ready/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/ready/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/ready/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/north",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/north",
+    "frames": 12,
+    "unique_pixels": 12,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/south",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/south",
+    "frames": 12,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/east",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/east",
+    "frames": 12,
+    "unique_pixels": 12,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/west",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/west",
+    "frames": 12,
+    "unique_pixels": 12,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/north",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/north",
+    "frames": 12,
+    "unique_pixels": 12,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/south",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/south",
+    "frames": 12,
+    "unique_pixels": 12,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/east",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/east",
+    "frames": 12,
+    "unique_pixels": 12,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/west",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/west",
+    "frames": 12,
+    "unique_pixels": 11,
+    "held_pose": false
+  },
+  {
+    "bank": "lift/open",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/north",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/south",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/east",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/west",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/north-east",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/north-west",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/south-east",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/walk/south-west",
+    "frames": 17,
+    "unique_pixels": 17,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/north-east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/north-west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "lift/depart",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "lift/shaft",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/fire/south",
+    "frames": 9,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/fire/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/walk/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/fire/west",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/walk/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/fire/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/walk/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/overheat/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/death/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/south-east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/walk/south-west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/north-east",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/north-east",
+    "frames": 4,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/north-west",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/north-west",
+    "frames": 4,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/south-east",
+    "frames": 5,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/south-east",
+    "frames": 4,
+    "unique_pixels": 3,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/south-west",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/fire/south-west",
+    "frames": 4,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/north-east",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/north-east",
+    "frames": 4,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/north-west",
+    "frames": 5,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/north-west",
+    "frames": 4,
+    "unique_pixels": 3,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/south-east",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/south-east",
+    "frames": 4,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/north",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/south",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crawl/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crawl/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crawl/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/south",
+    "frames": 9,
+    "unique_pixels": 3,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/east",
+    "frames": 9,
+    "unique_pixels": 6,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/north",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crawl/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crawl/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crawl/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/south-west",
+    "frames": 5,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/fire/south-west",
+    "frames": 4,
+    "unique_pixels": 3,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/reload/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/south",
+    "frames": 9,
+    "unique_pixels": 4,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crawl/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/south",
+    "frames": 9,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/crawl/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/reload/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/reload/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/reload/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/reload/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/reload/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/reload/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/reload/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run/east",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run/east",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/roll/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/roll/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/roll/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/roll/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/grenade/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/grenade/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/grenade/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/grenade/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/jump/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/jump/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/north",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "yuri/cover/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": false
+  },
+  {
+    "bank": "yuri/drop/north",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/west",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/south",
+    "frames": 9,
+    "unique_pixels": 6,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/east",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/west",
+    "frames": 9,
+    "unique_pixels": 6,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/south",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/east",
+    "frames": 9,
+    "unique_pixels": 6,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/north-east",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/north-west",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/south-east",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/south-west",
+    "frames": 9,
+    "unique_pixels": 6,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north-east",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north-west",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/south-east",
+    "frames": 9,
+    "unique_pixels": 7,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/south-west",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/death/north",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/death/south",
+    "frames": 9,
+    "unique_pixels": 8,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/death/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/death/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/north",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/south",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/jump/east",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/jump/west",
+    "frames": 9,
+    "unique_pixels": 9,
+    "held_pose": false
+  },
+  {
+    "bank": "env/cover",
+    "frames": 3,
+    "unique_pixels": 3,
+    "held_pose": false
+  },
+  {
+    "bank": "env/side",
+    "frames": 3,
+    "unique_pixels": 3,
+    "held_pose": false
+  },
+  {
+    "bank": "env/return",
+    "frames": 3,
+    "unique_pixels": 3,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/hack",
+    "frames": 5,
+    "unique_pixels": 5,
+    "held_pose": false
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": true
+  },
+  {
+    "bank": "hotwire/eagle/crouch_walk/north",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": true
+  },
+  {
+    "bank": "hotwire/eagle/crouch_walk/south",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": true
+  },
+  {
+    "bank": "hotwire/eagle/crouch_walk/east",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": true
+  },
+  {
+    "bank": "hotwire/eagle/crouch_walk/west",
+    "frames": 1,
+    "unique_pixels": 1,
+    "held_pose": true
+  },
+  {
+    "bank": "gosfar/rev/south",
+    "frames": 2,
+    "unique_pixels": 2,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/rev/east",
+    "frames": 2,
+    "unique_pixels": 2,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/rev/west",
+    "frames": 2,
+    "unique_pixels": 2,
+    "held_pose": false
+  },
+  {
+    "bank": "gosfar/rev/north",
+    "frames": 3,
+    "unique_pixels": 3,
+    "held_pose": false
+  }
+]

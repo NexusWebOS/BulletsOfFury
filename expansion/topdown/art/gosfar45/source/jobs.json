@@ -1,0 +1,2134 @@
+{
+  "gosfar/ready/south": {
+    "job": "7320cf6b-270d-4e63-9ad2-e1b2bd19f266",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      132,
+      116
+    ]
+  },
+  "gosfar/walk/south": {
+    "job": "aae711cd-3e81-4ad0-bc05-789037f520b3",
+    "n": 17,
+    "fps": 16,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      132,
+      116
+    ],
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "13": 12,
+      "14": 16,
+      "15": 16
+    }
+  },
+  "gosfar/rev/south": {
+    "job": "bd153442-9c8b-4932-8b86-8118611c11af",
+    "n": 9,
+    "fps": 24,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      132,
+      116
+    ]
+  },
+  "gosfar/throw/south": {
+    "job": "19184420-502e-40cb-bd9c-9e4eaa6ecbc6",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      132,
+      116
+    ]
+  },
+  "hotwire/rifle/ready/south": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:south",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/rifle/ready/south-east": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:south-east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/rifle/ready/east": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/rifle/ready/north-east": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:north-east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/rifle/ready/north": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:north",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/rifle/ready/north-west": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:north-west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/rifle/ready/west": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/rifle/ready/south-west": {
+    "job": "character:3d5729c8-9f0b-4052-9ab1-7494ab53df28:south-west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/south": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:south",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/south-east": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:south-east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/east": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/north-east": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:north-east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/north": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:north",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/north-west": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:north-west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/west": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "hotwire/eagle/ready/south-west": {
+    "job": "character:87579bbd-6f7b-48a1-8d75-be7ae41e081b:south-west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "local": true
+  },
+  "gosfar/ready/west": {
+    "job": "character:9552274e-4c24-46d1-a9ad-9a85d2770ae4:west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      80,
+      152
+    ],
+    "local": true
+  },
+  "gosfar/ready/east": {
+    "job": "character:9552274e-4c24-46d1-a9ad-9a85d2770ae4:east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      80,
+      152
+    ],
+    "local": true
+  },
+  "gosfar/ready/north": {
+    "job": "character:9552274e-4c24-46d1-a9ad-9a85d2770ae4:north",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      80,
+      152
+    ],
+    "local": true
+  },
+  "hotwire/rifle/fire/north": {
+    "job": "89115122-5e9c-4c3b-8ea8-8ef825413ae9",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/fire/south": {
+    "job": "24407eb7-a6af-4eee-bde6-02c159ea3f20",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "5": 4,
+      "6": 7,
+      "10": 9,
+      "11": 12,
+      "14": 13,
+      "15": 16
+    }
+  },
+  "hotwire/rifle/fire/east": {
+    "job": "4718fbea-cc43-4135-91bf-3b707d586cbe",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/fire/west": {
+    "job": "ea207c8b-31ba-41a6-bd85-7dc814f8720b",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/eagle/fire/north": {
+    "job": "ba7fc0bd-4a79-4eca-adb8-6c94265ae798",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/fire/south": {
+    "job": "7e0f6b1a-84aa-42ba-95ce-ad8972be06a9",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/fire/east": {
+    "job": "b5978350-cd22-45ad-b189-df2486113ac0",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/fire/west": {
+    "job": "28c07c7f-65e2-4e5b-b37f-9cd1c27c01a4",
+    "n": 17,
+    "fps": 20,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "13": 14
+    }
+  },
+  "lift/open": {
+    "job": "a327d3eb-34c8-4d2a-b919-235249e9bbe0",
+    "n": 9,
+    "fps": 8,
+    "root": [
+      96,
+      184
+    ],
+    "loop": false
+  },
+  "hotwire/rifle/walk/north": {
+    "job": "b155f47d-1f0b-482f-b24c-0abb78a97a9b",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/walk/south": {
+    "job": "c4c8d31a-cb3f-420c-b2a6-d36d06d21869",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/walk/east": {
+    "job": "7f6d2626-d53b-4906-ba0d-809df6dc5c87",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/walk/west": {
+    "job": "4a81dbdc-2b82-41ba-99af-1516d2652d7c",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/walk/north-east": {
+    "job": "26b549bf-77e2-4fdd-8d71-e87630f99ae8",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/walk/north-west": {
+    "job": "ced6951e-fbc7-4f98-9a5e-83fcb5afdc2e",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation."
+  },
+  "hotwire/rifle/walk/south-east": {
+    "job": "9448f766-3f35-434e-80de-e16fc429966a",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/walk/south-west": {
+    "job": "73616919-a6f6-4255-bf4c-ee36510bd279",
+    "n": 17,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/eagle/walk/north": {
+    "job": "a42edaf0-65b5-4e74-9856-07efcab84fa4",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/walk/south": {
+    "job": "c76d0c7f-4951-4fbe-b86c-a108baafb978",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/walk/east": {
+    "job": "ef24a8b4-a770-44d5-b45d-3c277e53f6ea",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/walk/west": {
+    "job": "fb0129aa-96d0-4fa4-9473-ae255f7a01c9",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/walk/north-east": {
+    "job": "b401c247-c5ca-454b-b0d5-b8ab34b042f1",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/walk/north-west": {
+    "job": "56327f9f-ed22-4767-8d75-6905de0a2b1c",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "lift/depart": {
+    "job": "9f0c94b0-6847-4724-801b-f73588bcbb20",
+    "n": 9,
+    "fps": 8,
+    "loop": false,
+    "root": [
+      96,
+      184
+    ],
+    "source_only": false
+  },
+  "env/cover-master": {
+    "job": "7ae7f395-debb-4375-8129-6546ded5f830",
+    "n": 1,
+    "fps": 1,
+    "source_only": true,
+    "root": [
+      48,
+      76
+    ]
+  },
+  "env/cover-cracked": {
+    "job": "f43174d5-1982-45fe-b409-ddeb920793d6",
+    "n": 1,
+    "fps": 1,
+    "source_only": true,
+    "root": [
+      48,
+      76
+    ]
+  },
+  "env/cover-rubble": {
+    "job": "c9cb89ed-fb5e-4a6b-ba87-b0e2725b9ce5",
+    "n": 1,
+    "fps": 1,
+    "source_only": true,
+    "root": [
+      48,
+      76
+    ]
+  },
+  "env/side-master": {
+    "job": "50aab107-3067-492d-85d7-68ee4911df88",
+    "n": 1,
+    "fps": 1,
+    "source_only": true,
+    "root": [
+      48,
+      76
+    ]
+  },
+  "env/side-cracked": {
+    "job": "33dd4644-22a9-48c6-be2e-d57162800433",
+    "n": 1,
+    "fps": 1,
+    "source_only": true,
+    "root": [
+      48,
+      76
+    ]
+  },
+  "lift/shaft": {
+    "job": "c27b2a88-8125-4421-a550-8cdfd5bdbc04",
+    "n": 1,
+    "fps": 1,
+    "source_only": false,
+    "root": [
+      96,
+      184
+    ]
+  },
+  "gosfar/north-raised": {
+    "job": "e627d822-16c1-4c19-ba50-e0e89e6f8a54",
+    "n": 1,
+    "fps": 1,
+    "source_only": true,
+    "root": [
+      48,
+      76
+    ]
+  },
+  "env/side-open": {
+    "job": "23c55ac4-c86d-42ba-8e46-5911a8180d5c",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      48,
+      136
+    ],
+    "source_only": true
+  },
+  "env/return-master": {
+    "job": "f79abc8b-19fa-44ad-b794-2e86aec4d0dd",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      48,
+      136
+    ],
+    "source_only": true
+  },
+  "gosfar/fire/south": {
+    "job": "8999713f-c622-4e09-94b1-e0887ccdc980",
+    "n": 9,
+    "fps": 24,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "fire",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "2": 4,
+      "3": 5,
+      "6": 5,
+      "7": 4,
+      "8": 5
+    }
+  },
+  "gosfar/fire/east": {
+    "job": "0bfa044c-49e0-45bf-913e-176f9cdd78aa",
+    "n": 9,
+    "fps": 24,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "fire"
+  },
+  "gosfar/walk/east": {
+    "job": "8895dbcb-06aa-4fa4-ae55-b66155ed6938",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "walk"
+  },
+  "gosfar/fire/west": {
+    "job": "5e235c37-ded1-4a05-bdab-64af45037852",
+    "n": 9,
+    "fps": 24,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "fire",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "3": 2
+    }
+  },
+  "gosfar/walk/west": {
+    "job": "a59c36a2-f6da-4f46-81ac-4e59f28d411b",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "walk"
+  },
+  "gosfar/fire/north": {
+    "job": "941b1a2b-2529-4c4a-b9cd-19354ac8c604",
+    "n": 9,
+    "fps": 24,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "fire"
+  },
+  "gosfar/walk/north": {
+    "job": "eb58e7a8-2b41-4b00-8567-ba91b3f00a95",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "walk"
+  },
+  "gosfar/overheat/south": {
+    "job": "9c7ad25b-9acb-41b8-8945-cccbe647c1f7",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "overheat"
+  },
+  "gosfar/death/south": {
+    "job": "dcf25b02-e86f-41ce-8364-0c4b4837e8c5",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      112,
+      216
+    ],
+    "weapon": "death"
+  },
+  "hotwire/rifle/crouch/north": {
+    "job": "db69a6bb-46b9-4c56-a066-73c8aacd0875",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/crouch/south": {
+    "job": "cebc2f78-9bbf-4305-85ca-f9946e67c383",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/crouch/east": {
+    "job": "47eab1a7-d8c3-4ae4-94a8-8f727298f788",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/crouch/west": {
+    "job": "1c8f1722-16cc-4c0f-a03c-6fecf0078a9b",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/eagle/crouch/north": {
+    "job": "557c2b9e-db4c-482f-992f-d48e907d244a",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/crouch/south": {
+    "job": "2dc2dd88-6452-421e-b214-b7cbb673f4cb",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/crouch/east": {
+    "job": "ba3648ca-24a7-4d1a-bda7-2e1bcdecbab2",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/crouch/west": {
+    "job": "dd519f5b-c5e6-4d50-8a7f-70e292fb9a5b",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/rifle/prone/north": {
+    "job": "9b6f4d33-e04f-48d5-b0eb-ab8eeb9c88b0",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/prone/south": {
+    "job": "f444d6ae-e25b-4109-aa3d-9a2a75b74d77",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "rejected_job": "44d25e8f-a495-4c9e-8189-2d13a2f914d5",
+    "replace": true
+  },
+  "env/return-cracked": {
+    "job": "640e9f76-9b7d-41f0-b390-ae2a6681fb74",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      48,
+      136
+    ],
+    "source_only": true
+  },
+  "env/return-rubble": {
+    "job": "fa848412-312d-42c2-a470-ad8b26925672",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      48,
+      136
+    ],
+    "source_only": true
+  },
+  "hotwire/rifle/prone/east": {
+    "job": "e1489727-1d0f-450a-abc3-ac2b34d18cfa",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/prone/west": {
+    "job": "06ac67bd-3a46-42bb-8795-6eedeabe78f6",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/eagle/prone/north": {
+    "job": "ec04f4a3-0094-4d28-b7ea-a998cbbdfb96",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/prone/south": {
+    "job": "0c91b65f-15de-4131-946a-a96752bb429c",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle",
+    "rejected_job": "68d11a0c-d239-4fc7-9c65-fa22fc85430d",
+    "replace": true
+  },
+  "hotwire/eagle/prone/east": {
+    "job": "108c8dc8-a09c-444b-b1ab-bf45e31efce4",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/prone/west": {
+    "job": "926d365c-21ae-4e38-a91c-708adfbb5bfa",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/walk/south-east": {
+    "job": "f9bde337-35e6-4555-845b-a8c42e805b47",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/walk/south-west": {
+    "job": "45fdab23-6ec8-48b9-9dcc-91d982671620",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/rifle/fire/north-east": {
+    "job": "b9e5c05b-e2ee-456a-a36e-5c6439a3588d",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/fire/north-west": {
+    "job": "1bd62abb-cecc-4664-b811-788f0b08b321",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/fire/south-east": {
+    "job": "60f84526-33ef-44b8-84b3-468f1bea7ddb",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "4": 3,
+      "7": 6
+    }
+  },
+  "hotwire/rifle/fire/south-west": {
+    "job": "51632793-788f-44b0-a153-33aac2eff7dc",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/eagle/fire/north-east": {
+    "job": "0b2810b7-383a-448c-ab21-27a57d14be7f",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/fire/north-west": {
+    "job": "27c5bdc2-941e-46dd-816a-8a263c72badd",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "4": 3,
+      "7": 6
+    }
+  },
+  "hotwire/eagle/fire/south-east": {
+    "job": "d954edda-17d0-466a-90ef-7b59d8bc0353",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/rifle/crouch_fire/north": {
+    "job": "74a6498b-780f-42c1-8c31-8c05eb7e3c34",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "4": 3
+    }
+  },
+  "hotwire/rifle/crouch_fire/south": {
+    "job": "04b38a57-1a2b-4ba6-8b3a-2fc032194351",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "2": 1,
+      "7": 5
+    }
+  },
+  "hotwire/rifle/crouch_fire/east": {
+    "job": "02ac8745-1757-4903-82ca-b8dc3ece2f79",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/crouch_fire/west": {
+    "job": "8a4e96dc-10d8-44e9-a560-9327ec385f8b",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation."
+  },
+  "hotwire/rifle/prone_fire/north": {
+    "job": "750c18d8-282c-4302-9c5f-4ab3b357e1ba",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/prone_fire/east": {
+    "job": "d1db4d30-9373-4844-bb81-39172bbcd71d",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/prone_fire/west": {
+    "job": "771b0f39-a439-4a7e-872f-2566be296692",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/crawl/north": {
+    "job": "cc863310-2146-4b5d-b323-a3c76bb7edaf",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/crawl/east": {
+    "job": "b57fb94c-b74e-46c8-a9b6-5bd40c4d87bd",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/crawl/west": {
+    "job": "cf40c64f-7410-49ad-8c81-e883abc661a0",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation."
+  },
+  "hotwire/eagle/crouch_fire/north": {
+    "job": "f431c988-dd1f-4c86-8e93-a8757036e1f6",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/crouch_fire/south": {
+    "job": "bbeace08-333f-4e52-892c-0c61787e78e2",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 0,
+      "2": 3,
+      "4": 3,
+      "5": 8,
+      "6": 3,
+      "7": 8
+    }
+  },
+  "hotwire/eagle/crouch_fire/east": {
+    "job": "0a02c37f-4196-4184-90af-b5c31e9b111f",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 0,
+      "4": 3,
+      "7": 6
+    }
+  },
+  "hotwire/eagle/crouch_fire/west": {
+    "job": "f5e10ab0-1f52-4c1b-9fab-be6d614fc148",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/prone_fire/north": {
+    "job": "1ef9de5c-8e31-4021-940b-09b348fb9697",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 3,
+      "6": 5
+    }
+  },
+  "hotwire/eagle/prone_fire/east": {
+    "job": "475728e5-683d-45ca-ad4e-519b646b0099",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/prone_fire/west": {
+    "job": "abc8e4d3-7b83-45d5-99f3-73173023f02c",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/crawl/north": {
+    "job": "7b76a7ab-32b3-42eb-a0bc-7ff81b6b45a7",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/crawl/east": {
+    "job": "5a03b142-a489-4f29-a803-c0da078d97ee",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/crawl/west": {
+    "job": "c8fff504-0c55-408e-b465-b8159d3edfd3",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle"
+  },
+  "hotwire/eagle/fire/south-west": {
+    "job": "c931f749-d842-49ee-9381-d9ea7f444874",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "3": 4,
+      "5": 4,
+      "7": 6
+    }
+  },
+  "hotwire/rifle/reload/north": {
+    "job": "d9c510e9-9aea-4613-9168-1e40552d4a8d",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle"
+  },
+  "hotwire/rifle/prone_fire/south": {
+    "job": "a399be06-327b-4b4b-ac03-ba71e2ab4bf1",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 0,
+      "2": 4,
+      "3": 4,
+      "5": 7,
+      "6": 4
+    }
+  },
+  "hotwire/rifle/crawl/south": {
+    "job": "2cb3e392-4d46-4b83-af56-c4e1b6b0f759",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "replace": true
+  },
+  "hotwire/eagle/prone_fire/south": {
+    "job": "d9d8dbb4-49f6-4792-9630-3c02e20f6131",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "2": 4,
+      "3": 1,
+      "5": 4,
+      "7": 8
+    }
+  },
+  "hotwire/eagle/crawl/south": {
+    "job": "b773ec12-d965-42f3-ab12-7283fb1d1f70",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "eagle",
+    "replace": true
+  },
+  "hotwire/rifle/reload/south": {
+    "job": "1ad41a15-0dbf-4ec8-be78-89e7b58e6d6e",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/reload/east": {
+    "job": "928fb560-9f19-44b8-806f-9fa904d33679",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/reload/west": {
+    "job": "0f4951a4-7d07-4439-b904-563a20da4da6",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/eagle/reload/north": {
+    "job": "2693b3dc-4e06-40d2-bc53-c590aebb917f",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false
+  },
+  "hotwire/eagle/reload/south": {
+    "job": "f92e9bc0-8f05-4675-af87-9ba825d2b400",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false
+  },
+  "hotwire/eagle/reload/east": {
+    "job": "458a690d-abbc-49d7-9a28-56002ec01d55",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false
+  },
+  "hotwire/eagle/reload/west": {
+    "job": "1e888d1d-f3a9-4d18-9cdf-3cecfa69dea6",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false
+  },
+  "hotwire/rifle/run/north": {
+    "job": "644b7f4d-fa5f-4721-9977-dcce93f17ffe",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/run/south": {
+    "job": "47094397-dab8-4219-b369-e1c50d9c5e86",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/run/east": {
+    "job": "8a8860d6-2921-4fa1-ba83-852c02910eb9",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "3": 2,
+      "6": 5
+    }
+  },
+  "hotwire/rifle/run/west": {
+    "job": "91049a21-ade6-4750-b86e-cd0aea8eaaa6",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/eagle/run/north": {
+    "job": "06ca7d5f-8f31-4f2b-afb3-68516fa090cb",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false
+  },
+  "hotwire/eagle/run/south": {
+    "job": "5cab1f07-6596-4492-b39b-0b806689df1c",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false
+  },
+  "hotwire/eagle/run/east": {
+    "job": "feab178d-a2ee-427e-877b-4b4cba1f00ee",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "6": 5,
+      "7": 8
+    }
+  },
+  "hotwire/eagle/run/west": {
+    "job": "4ae0603c-b0de-4671-9291-d53079455b1a",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": false
+  },
+  "hotwire/rifle/roll/north": {
+    "job": "126d6df4-4ecc-43dd-a923-b5e14a289df2",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/roll/south": {
+    "job": "420d3843-228e-4fc0-a1aa-0bd3ac327c40",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/roll/east": {
+    "job": "ab470213-3a03-48e4-b9f0-6fabe0a27777",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/roll/west": {
+    "job": "6b954656-952a-4dd5-bb49-e2bdc01365bf",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/grenade/north": {
+    "job": "046cea14-2154-415e-aa91-dd93923ac402",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/grenade/south": {
+    "job": "63478769-5605-4f5b-9733-4fa367776b66",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/grenade/east": {
+    "job": "be1bf114-1fd9-4460-a01a-696fd0c67210",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/grenade/west": {
+    "job": "ac9a1302-6050-4753-a9f2-d0588c4da8a6",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/jump/north": {
+    "job": "af918e21-6912-4f8e-82a0-2b5e9865fe4f",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/jump/south": {
+    "job": "3fdb2f63-60d2-4671-a85b-7a1b4102c284",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/crouch_walk/north": {
+    "job": "dba4dd37-7378-4f94-9275-77192154848a",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "6": 5
+    }
+  },
+  "yuri/cover/east": {
+    "job": "9ff73a56-28a7-4f62-b3f7-8e90aca992b4",
+    "n": 5,
+    "fps": 6,
+    "root": [
+      64,
+      120
+    ],
+    "loop": true,
+    "take": [
+      0
+    ],
+    "review": "Hold approved same-unit crouch; generated breathing grew body and was rejected."
+  },
+  "yuri/drop/north": {
+    "job": "cdf800fc-2169-409d-b6a6-1bc77de2fb3f",
+    "rejected_job": "d8df29ce-fe03-48a9-b6e9-dd62418f271b",
+    "n": 5,
+    "fps": 16,
+    "root": [
+      64,
+      120
+    ],
+    "loop": false,
+    "replace": true
+  },
+  "hotwire/rifle/crouch_walk/south": {
+    "job": "ecf068fb-3af1-487c-b18b-2f387f69c294",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false,
+    "source_only": true
+  },
+  "hotwire/rifle/crouch_walk/east": {
+    "job": "627d4d44-b3a3-4dd1-b63a-9bc70861f048",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/crouch_walk/west": {
+    "job": "8cc361e9-2c53-4c7e-8ee1-e0389026195b",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "4": 3
+    }
+  },
+  "hotwire/rifle/run_fire/north": {
+    "job": "90e85fa6-502d-4339-8a83-482c2132f148",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true
+  },
+  "hotwire/rifle/run_fire/south": {
+    "job": "dade3033-0a3e-4571-af56-37cfb988f046",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "2": 1,
+      "5": 4,
+      "8": 7
+    }
+  },
+  "hotwire/rifle/run_fire/east": {
+    "job": "f7873e10-5ef0-4126-9d3e-0ed12f6818d8",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "6": 5,
+      "8": 7
+    }
+  },
+  "hotwire/rifle/run_fire/west": {
+    "job": "7e0d1421-4191-44bb-8339-5a63b3821a45",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 3,
+      "4": 3,
+      "7": 6
+    }
+  },
+  "hotwire/eagle/run_fire/north": {
+    "job": "6b3c68f7-215a-4c8b-99dc-4811403220eb",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true
+  },
+  "hotwire/eagle/run_fire/south": {
+    "job": "437fb536-d98d-476b-a047-c61055e11085",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "2": 3,
+      "7": 5
+    }
+  },
+  "hotwire/eagle/run_fire/east": {
+    "job": "c752fa6b-1a4f-4592-8176-be9d10d42197",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 0,
+      "4": 5,
+      "7": 8
+    }
+  },
+  "hotwire/eagle/run_fire/west": {
+    "job": "b0cbe4ce-78e2-4d3b-9718-2e04eb955c52",
+    "n": 9,
+    "fps": 16,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true
+  },
+  "hotwire/rifle/run_fire/north-east": {
+    "job": "8fa044ad-c4ac-4961-89fd-fc0e106a210f",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 0,
+      "6": 5
+    }
+  },
+  "hotwire/rifle/run_fire/north-west": {
+    "job": "62f61827-9480-434d-89e7-c9f31c5f23a9",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "3": 2,
+      "4": 5
+    }
+  },
+  "hotwire/rifle/run_fire/south-east": {
+    "job": "b8d724c2-90cb-48c4-90ce-d77435baf7cb",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "6": 5,
+      "8": 7
+    }
+  },
+  "hotwire/rifle/run_fire/south-west": {
+    "job": "d37dcb19-0f14-4233-9d0d-1f253fb61f1c",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "2": 1,
+      "4": 3,
+      "6": 7
+    }
+  },
+  "hotwire/eagle/run_fire/north-east": {
+    "job": "73014c5a-33a2-426d-ab2d-8a874c1d1811",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "8": 7
+    }
+  },
+  "hotwire/eagle/run_fire/north-west": {
+    "job": "89763472-a390-4e1d-8fd7-46652bc338bb",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "7": 8
+    }
+  },
+  "hotwire/eagle/run_fire/south-east": {
+    "job": "328c0fe3-b037-4c97-8be5-37e139ab0475",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "3": 4,
+      "7": 6
+    }
+  },
+  "hotwire/eagle/run_fire/south-west": {
+    "job": "eff679c4-da64-4de3-becd-f465869fd601",
+    "n": 9,
+    "fps": 12,
+    "loop": true,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "eagle",
+    "replace": true,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "5": 6
+    }
+  },
+  "hotwire/rifle/death/north": {
+    "job": "3a11f58c-7ad9-4428-8671-a85940d182c7",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 0
+    }
+  },
+  "hotwire/rifle/death/south": {
+    "job": "9570545c-58d6-4ca6-92fb-67b925e1a045",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false,
+    "review": "Whole-body lighting rejects replaced by clean authored pose holds; no deformation.",
+    "replace_frames": {
+      "1": 0
+    }
+  },
+  "hotwire/rifle/death/east": {
+    "job": "189f91b0-c111-4c3c-995f-f19c189ca620",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/death/west": {
+    "job": "ea7197d8-10c1-47f1-a870-5b91648ef090",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/prone_roll/north": {
+    "job": "534f7f9d-3ea6-4794-bc5a-5f8269b8bd71",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/prone_roll/south": {
+    "job": "c0648a9e-75dc-4e38-a711-f6e6aab838dc",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/prone_roll/east": {
+    "job": "0bce5665-328a-42ee-a007-3decde2de258",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/prone_roll/west": {
+    "job": "54ba3023-7faa-4a41-98a4-fbe73926883f",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      96,
+      152
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/jump/east": {
+    "job": "bfbc6798-8f35-4e95-a8c2-bba29cf42fb9",
+    "n": 9,
+    "fps": 12,
+    "loop": false,
+    "root": [
+      64,
+      120
+    ],
+    "weapon": "rifle",
+    "replace": false
+  },
+  "hotwire/rifle/jump/west": {
+    "job": "pixel-tools:4f6072ab-c3f0-4385-8ab9-cf0d07e21fa9",
+    "n": 9,
+    "fps": 14,
+    "root": [
+      63,
+      120
+    ],
+    "local": true,
+    "review": "PixelLab exact whole-plate mirror of available east jump, no limb edits or body resizing."
+  }
+}

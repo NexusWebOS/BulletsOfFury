@@ -1,0 +1,18 @@
+{
+  "build": "overdrive1015-yuri32-r1",
+  "service": "PixelLab Pro Flash / PixMiniMax / exact pixel workbench",
+  "exports": 215,
+  "sourceDrawings": 112,
+  "banks": 21,
+  "originalReferences": [
+    "art/yuri31/source/down_setup/00.png",
+    "art/yuri30/source/side_setup/00.png",
+    "art/yuri30/source/run_clean/03.png"
+  ],
+  "requests": "source/generation_requests.json",
+  "exactCleanup": "source/pixel_cleanup.json",
+  "polishedWalk": "449977d2-ce8f-432c-b632-dbae6e1346b1",
+  "selection": "All selected indices are declared in manifest sequences and sourceFrame metadata. Walk excludes11/14 after exact external-effect cleanup; run excludes15/17; recovery selects0,3..9,14..16 from initial take. Flashed/illuminated alternative recovery and effect-bearing cover entries rejected. Cover entry/returns reuse reversed clean controlled lean frames.",
+  "exportOwner": "_research/build_yuri32.py",
+  "unit": "256x256 padded source at original body size; fixed proportional0.5 into192x224 cells; anchor96,160; binary alpha; measured contact roots and barrel sockets. No per-frame fit or body puppetry."
+}

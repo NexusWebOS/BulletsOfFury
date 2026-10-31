@@ -1,0 +1,42 @@
+{
+  "frames": [
+    "pl38_yuri_side_crouch_enter_east_0",
+    "pl38_yuri_side_crouch_enter_east_1",
+    "pl38_yuri_side_crouch_enter_east_2",
+    "pl38_yuri_side_crouch_enter_east_3",
+    "pl38_yuri_side_crouch_enter_east_4",
+    "pl38_yuri_side_crouch_enter_east_5",
+    "pl38_yuri_side_crouch_enter_east_6",
+    "pl38_yuri_side_crouch_enter_east_7",
+    "pl38_yuri_side_crouch_enter_east_8"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    90,
+    144
+  ],
+  "size": [
+    180,
+    176
+  ],
+  "duration": 0.75,
+  "provider": "PixelLab",
+  "source_review": "pending",
+  "export_scale": 1,
+  "source_master": "yuri_side",
+  "source_action": "crouch_enter",
+  "source_direction": "east",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ]
+}

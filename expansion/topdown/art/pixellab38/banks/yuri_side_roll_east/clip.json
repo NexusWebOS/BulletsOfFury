@@ -1,0 +1,58 @@
+{
+  "frames": [
+    "pl38_yuri_side_roll_east_0",
+    "pl38_yuri_side_roll_east_1",
+    "pl38_yuri_side_roll_east_2",
+    "pl38_yuri_side_roll_east_3",
+    "pl38_yuri_side_roll_east_4",
+    "pl38_yuri_side_roll_east_5",
+    "pl38_yuri_side_roll_east_6",
+    "pl38_yuri_side_roll_east_7",
+    "pl38_yuri_side_roll_east_8",
+    "pl38_yuri_side_roll_east_9",
+    "pl38_yuri_side_roll_east_10",
+    "pl38_yuri_side_roll_east_11",
+    "pl38_yuri_side_roll_east_12",
+    "pl38_yuri_side_roll_east_13",
+    "pl38_yuri_side_roll_east_14",
+    "pl38_yuri_side_roll_east_15",
+    "pl38_yuri_side_roll_east_16"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    90,
+    144
+  ],
+  "size": [
+    180,
+    176
+  ],
+  "duration": 1.4166666666666667,
+  "provider": "PixelLab",
+  "source_review": "pending",
+  "export_scale": 1,
+  "source_master": "yuri_side",
+  "source_action": "roll",
+  "source_direction": "east",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ]
+}

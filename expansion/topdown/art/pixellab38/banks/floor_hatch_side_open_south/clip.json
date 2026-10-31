@@ -1,0 +1,59 @@
+{
+  "frames": [
+    "pl38_floor_hatch_side_open_south_0",
+    "pl38_floor_hatch_side_open_south_1",
+    "pl38_floor_hatch_side_open_south_2",
+    "pl38_floor_hatch_side_open_south_3",
+    "pl38_floor_hatch_side_open_south_4",
+    "pl38_floor_hatch_side_open_south_5",
+    "pl38_floor_hatch_side_open_south_6",
+    "pl38_floor_hatch_side_open_south_7",
+    "pl38_floor_hatch_side_open_south_8",
+    "pl38_floor_hatch_side_open_south_9",
+    "pl38_floor_hatch_side_open_south_10",
+    "pl38_floor_hatch_side_open_south_11",
+    "pl38_floor_hatch_side_open_south_12",
+    "pl38_floor_hatch_side_open_south_13",
+    "pl38_floor_hatch_side_open_south_14",
+    "pl38_floor_hatch_side_open_south_15"
+  ],
+  "fps": 12.5,
+  "loop": false,
+  "events": {
+    "passable": 10,
+    "fully_open": 15
+  },
+  "origin": [
+    56,
+    40
+  ],
+  "size": [
+    112,
+    68
+  ],
+  "duration": 1.28,
+  "provider": "PixelLab",
+  "source_review": "mechanics reviewed",
+  "export_scale": 1,
+  "source_master": "floor_hatch_side",
+  "source_action": "open",
+  "source_direction": "south",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

@@ -376,16 +376,16 @@
   // ------------------------------------------------------------------ outside the mission: wrappers gated on it
   const baseDrop = TD.dropPickup, basePickups = TD.pickupTick, baseBlast = TD.blast;
   TD.dropPickup = function (G, x, y, kind) {
-    if (G.mission === MID) return TD.footDrop(G, x, y, kind || (Math.random() < 0.1 ? 'pow' : 'ammo'));
+    if (G.mission === MID && !G.desert) return TD.footDrop(G, x, y, kind || (Math.random() < 0.1 ? 'pow' : 'ammo'));
     return baseDrop.apply(this, arguments);
   };
   TD.pickupTick = function (G, dt) {
-    if (G.mission === MID && !G.player.onfoot) return;    // the pickups wait for you to climb out
+    if (G.mission === MID && !G.desert && !G.player.onfoot) return;    // the pickups wait for you to climb out
     return basePickups.apply(this, arguments);
   };
   TD.blast = function (G, x, y, r) {
     baseBlast.apply(this, arguments);
-    if (G.mission === MID) for (const h of G.hostages) if (h.state === 'bound' && M.dist(x, y, h.x, h.y) < r + 6) killHostage(G, h);
+    if (G.mission === MID && !G.desert) for (const h of G.hostages) if (h.state === 'bound' && M.dist(x, y, h.x, h.y) < r + 6) killHostage(G, h);
   };
 
   // ------------------------------------------------------------------ the mission

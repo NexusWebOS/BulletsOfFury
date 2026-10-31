@@ -1,0 +1,439 @@
+[
+  {
+    "bank": "hotwire/rifle/crouch_walk/north",
+    "bad": [
+      6
+    ],
+    "metrics": [
+      {
+        "i": 0,
+        "dark": 0.745,
+        "warm": 0.102,
+        "bright": 0.049
+      },
+      {
+        "i": 1,
+        "dark": 0.751,
+        "warm": 0.102,
+        "bright": 0.05
+      },
+      {
+        "i": 2,
+        "dark": 0.745,
+        "warm": 0.103,
+        "bright": 0.051
+      },
+      {
+        "i": 3,
+        "dark": 0.749,
+        "warm": 0.107,
+        "bright": 0.047
+      },
+      {
+        "i": 4,
+        "dark": 0.748,
+        "warm": 0.107,
+        "bright": 0.051
+      },
+      {
+        "i": 5,
+        "dark": 0.702,
+        "warm": 0.127,
+        "bright": 0.081
+      },
+      {
+        "i": 6,
+        "dark": 0.0,
+        "warm": 0.91,
+        "bright": 0.089
+      },
+      {
+        "i": 7,
+        "dark": 0.744,
+        "warm": 0.108,
+        "bright": 0.051
+      },
+      {
+        "i": 8,
+        "dark": 0.75,
+        "warm": 0.102,
+        "bright": 0.049
+      }
+    ]
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/south",
+    "bad": [
+      2,
+      3,
+      7,
+      8
+    ],
+    "metrics": [
+      {
+        "i": 0,
+        "dark": 0.699,
+        "warm": 0.158,
+        "bright": 0.064
+      },
+      {
+        "i": 1,
+        "dark": 0.698,
+        "warm": 0.158,
+        "bright": 0.063
+      },
+      {
+        "i": 2,
+        "dark": 0.002,
+        "warm": 0.967,
+        "bright": 0.114
+      },
+      {
+        "i": 3,
+        "dark": 0.001,
+        "warm": 0.894,
+        "bright": 0.182
+      },
+      {
+        "i": 4,
+        "dark": 0.711,
+        "warm": 0.158,
+        "bright": 0.065
+      },
+      {
+        "i": 5,
+        "dark": 0.7,
+        "warm": 0.158,
+        "bright": 0.065
+      },
+      {
+        "i": 6,
+        "dark": 0.707,
+        "warm": 0.154,
+        "bright": 0.064
+      },
+      {
+        "i": 7,
+        "dark": 0.0,
+        "warm": 0.956,
+        "bright": 0.134
+      },
+      {
+        "i": 8,
+        "dark": 0.0,
+        "warm": 0.96,
+        "bright": 0.117
+      }
+    ]
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/west",
+    "bad": [
+      4
+    ],
+    "metrics": [
+      {
+        "i": 0,
+        "dark": 0.737,
+        "warm": 0.104,
+        "bright": 0.075
+      },
+      {
+        "i": 1,
+        "dark": 0.734,
+        "warm": 0.105,
+        "bright": 0.082
+      },
+      {
+        "i": 2,
+        "dark": 0.733,
+        "warm": 0.114,
+        "bright": 0.079
+      },
+      {
+        "i": 3,
+        "dark": 0.73,
+        "warm": 0.113,
+        "bright": 0.073
+      },
+      {
+        "i": 4,
+        "dark": 0.0,
+        "warm": 0.937,
+        "bright": 0.081
+      },
+      {
+        "i": 5,
+        "dark": 0.701,
+        "warm": 0.133,
+        "bright": 0.075
+      },
+      {
+        "i": 6,
+        "dark": 0.724,
+        "warm": 0.116,
+        "bright": 0.075
+      },
+      {
+        "i": 7,
+        "dark": 0.728,
+        "warm": 0.109,
+        "bright": 0.083
+      },
+      {
+        "i": 8,
+        "dark": 0.717,
+        "warm": 0.11,
+        "bright": 0.086
+      }
+    ]
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north-east",
+    "bad": [
+      8
+    ],
+    "metrics": [
+      {
+        "i": 0,
+        "dark": 0.682,
+        "warm": 0.198,
+        "bright": 0.086
+      },
+      {
+        "i": 1,
+        "dark": 0.673,
+        "warm": 0.2,
+        "bright": 0.087
+      },
+      {
+        "i": 2,
+        "dark": 0.661,
+        "warm": 0.202,
+        "bright": 0.1
+      },
+      {
+        "i": 3,
+        "dark": 0.678,
+        "warm": 0.196,
+        "bright": 0.088
+      },
+      {
+        "i": 4,
+        "dark": 0.656,
+        "warm": 0.225,
+        "bright": 0.098
+      },
+      {
+        "i": 5,
+        "dark": 0.662,
+        "warm": 0.207,
+        "bright": 0.093
+      },
+      {
+        "i": 6,
+        "dark": 0.659,
+        "warm": 0.21,
+        "bright": 0.097
+      },
+      {
+        "i": 7,
+        "dark": 0.702,
+        "warm": 0.185,
+        "bright": 0.093
+      },
+      {
+        "i": 8,
+        "dark": 0.171,
+        "warm": 0.844,
+        "bright": 0.188
+      }
+    ]
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north-west",
+    "bad": [
+      7
+    ],
+    "metrics": [
+      {
+        "i": 0,
+        "dark": 0.707,
+        "warm": 0.183,
+        "bright": 0.052
+      },
+      {
+        "i": 1,
+        "dark": 0.697,
+        "warm": 0.184,
+        "bright": 0.052
+      },
+      {
+        "i": 2,
+        "dark": 0.699,
+        "warm": 0.184,
+        "bright": 0.054
+      },
+      {
+        "i": 3,
+        "dark": 0.689,
+        "warm": 0.194,
+        "bright": 0.054
+      },
+      {
+        "i": 4,
+        "dark": 0.699,
+        "warm": 0.193,
+        "bright": 0.054
+      },
+      {
+        "i": 5,
+        "dark": 0.688,
+        "warm": 0.193,
+        "bright": 0.055
+      },
+      {
+        "i": 6,
+        "dark": 0.678,
+        "warm": 0.199,
+        "bright": 0.059
+      },
+      {
+        "i": 7,
+        "dark": 0.0,
+        "warm": 0.837,
+        "bright": 0.113
+      },
+      {
+        "i": 8,
+        "dark": 0.705,
+        "warm": 0.186,
+        "bright": 0.051
+      }
+    ]
+  },
+  {
+    "bank": "hotwire/rifle/death/north",
+    "bad": [
+      1
+    ],
+    "metrics": [
+      {
+        "i": 0,
+        "dark": 0.711,
+        "warm": 0.115,
+        "bright": 0.04
+      },
+      {
+        "i": 1,
+        "dark": 0.0,
+        "warm": 0.942,
+        "bright": 0.056
+      },
+      {
+        "i": 2,
+        "dark": 0.713,
+        "warm": 0.114,
+        "bright": 0.03
+      },
+      {
+        "i": 3,
+        "dark": 0.715,
+        "warm": 0.192,
+        "bright": 0.033
+      },
+      {
+        "i": 4,
+        "dark": 0.778,
+        "warm": 0.101,
+        "bright": 0.029
+      },
+      {
+        "i": 5,
+        "dark": 0.761,
+        "warm": 0.098,
+        "bright": 0.028
+      },
+      {
+        "i": 6,
+        "dark": 0.764,
+        "warm": 0.089,
+        "bright": 0.03
+      },
+      {
+        "i": 7,
+        "dark": 0.745,
+        "warm": 0.095,
+        "bright": 0.033
+      },
+      {
+        "i": 8,
+        "dark": 0.747,
+        "warm": 0.096,
+        "bright": 0.034
+      }
+    ]
+  },
+  {
+    "bank": "hotwire/rifle/death/south",
+    "bad": [
+      1
+    ],
+    "metrics": [
+      {
+        "i": 0,
+        "dark": 0.726,
+        "warm": 0.161,
+        "bright": 0.071
+      },
+      {
+        "i": 1,
+        "dark": 0.007,
+        "warm": 0.954,
+        "bright": 0.063
+      },
+      {
+        "i": 2,
+        "dark": 0.7,
+        "warm": 0.18,
+        "bright": 0.069
+      },
+      {
+        "i": 3,
+        "dark": 0.732,
+        "warm": 0.163,
+        "bright": 0.07
+      },
+      {
+        "i": 4,
+        "dark": 0.734,
+        "warm": 0.169,
+        "bright": 0.056
+      },
+      {
+        "i": 5,
+        "dark": 0.749,
+        "warm": 0.142,
+        "bright": 0.07
+      },
+      {
+        "i": 6,
+        "dark": 0.736,
+        "warm": 0.153,
+        "bright": 0.059
+      },
+      {
+        "i": 7,
+        "dark": 0.737,
+        "warm": 0.146,
+        "bright": 0.056
+      },
+      {
+        "i": 8,
+        "dark": 0.749,
+        "warm": 0.148,
+        "bright": 0.06
+      }
+    ]
+  }
+]

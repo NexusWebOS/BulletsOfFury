@@ -1,0 +1,99 @@
+[
+  {
+    "name": "slide_twist",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Yuri, the SAME lean brown-mohawk bearded man in RED SLEEVED jacket with circular shoulder insignia, black tactical armor and red-black boots, holding his black rifle",
+      "first_frame_url": "upload:c2335355-e99e-4875-a981-14e5c633ba37",
+      "last_frame_url": "upload:c750c2b8-9caf-4fb0-8ad9-8f87889e42fb",
+      "frame_count": 20,
+      "initial_pose": "Seated low in a slide, feet extended diagonally down-left, rifle aimed up-left, torso front-side visible",
+      "description": "FRAME FORMAT:192x224 transparent, fixed body scale and camera. Animate a continuous upper-body twist from the first pose to the supplied final backward-aim pose while sliding. Keep pelvis seated in the same location and legs extended in the same travel direction. Move head first to look over the right shoulder, smoothly rotate shoulders/spine, draw the rifle across chest through visible intermediate angles, finish rifle aiming right behind him with back visible, exactly final pose. One smooth 180-degree torso aiming turn; no flip or instant swap. Feet stay down-left, do not swivel them to follow the gun. Keep full body and gun in frame. No muzzle flash, blur, glow, dust or background. Preserve short brown mohawk, close beard, jacket sleeves and shoulder insignia in every frame."
+    },
+    "receipt": "id: 4a16d55e-61c4-448f-8dc7-6f1b23da1be9\njob_id: 4a16d55e-61c4-448f-8dc7-6f1b23da1be9\ndescription: FRAME FORMAT:192x224 transparent, fixed body scale and camera. Animate a continuous upper-body twist from the first pose to the supplied final backward-aim pose while sliding. Keep pelvis seated in the same location and legs extended in the same travel direction. Move head first to look over the right shoulder, smoothly rotate shoulders/spine, draw the rifle across chest through visible intermediate angles, finish rifle aiming right behind him with back visible, exactly final pose. One smooth 180-degree torso aiming turn; no flip or instant swap. Feet stay down-left, do not swivel them to follow the gun. Keep full body and gun in frame. No muzzle flash, blur, glow, dust or background. Preserve short brown mohawk, close beard, jacket sleeves and shoulder insignia in every frame.\nframes: 20\nsize: 192x224px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"4a16d55e-61c4-448f-8dc7-6f1b23da1be9\")\nasset_id: e94b2cb6-501b-5127-b722-f321f3f6fcea\nasset_status: pending (saved to your gallery when generation completes)",
+    "id": "4a16d55e-61c4-448f-8dc7-6f1b23da1be9"
+  },
+  {
+    "name": "roll_complete",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Yuri, the SAME lean brown-mohawk bearded man in RED SLEEVED jacket with circular shoulder insignia, black tactical armor and red-black boots, holding his black rifle",
+      "first_frame_url": "upload:1c3bb507-be95-46ce-8b35-0ce6afa59b02",
+      "last_frame_url": "upload:1c3bb507-be95-46ce-8b35-0ce6afa59b02",
+      "frame_count": 24,
+      "initial_pose": "Standing rifle-ready facing left, both boots grounded",
+      "description": "FRAME FORMAT:192x224 transparent, one fixed body scale. Complete ONE forward combat SHOULDER ROLL toward LEFT with an unmistakable full somersault and recovery, from the exact supplied standing pose back to that pose. Phases: bend knees, reach left shoulder toward floor, tuck chin and rifle, push feet off, hips and BOTH BOOTS pass directly ABOVE his head, roll fully over the rounded upper back, hips continue over, plant boots UNDER his hips on the opposite side, rise through a low crouch, settle into original rifle-ready stance. Show the inverted feet-over-head pose then the landing; do NOT stop lying on his back and do not reverse the rotation. Smooth consecutive drawings, continuous forward angular motion. Center action in same canvas. No duplicates, afterimages, effects, dust, stretch, body redesign or weapon discharge. Exact same Yuri mohawk/red sleeved jacket and armor throughout."
+    },
+    "receipt": "id: ab59ac9a-a877-4dd9-862b-014feeebfa35\njob_id: ab59ac9a-a877-4dd9-862b-014feeebfa35\ndescription: FRAME FORMAT:192x224 transparent, one fixed body scale. Complete ONE forward combat SHOULDER ROLL toward LEFT with an unmistakable full somersault and recovery, from the exact supplied standing pose back to that pose. Phases: bend knees, reach left shoulder toward floor, tuck chin and rifle, push feet off, hips and BOTH BOOTS pass directly ABOVE his head, roll fully over the rounded upper back, hips continue over, plant boots UNDER his hips on the opposite side, rise through a low crouch, settle into original rifle-ready stance. Show the inverted feet-over-head pose then the landing; do NOT stop lying on his back and do not reverse the rotation. Smooth consecutive drawings, continuous forward angular motion. Center action in same canvas. No duplicates, afterimages, effects, dust, stretch, body redesign or weapon discharge. Exact same Yuri mohawk/red sleeved jacket and armor throughout.\nframes: 24\nsize: 192x224px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ab59ac9a-a877-4dd9-862b-014feeebfa35\")\nasset_id: 75514957-b9bd-5ea5-ad45-bf15c49f81b1\nasset_status: pending (saved to your gallery when generation completes)",
+    "id": "ab59ac9a-a877-4dd9-862b-014feeebfa35"
+  },
+  {
+    "name": "down_setup",
+    "id": "6346bb07-633d-4b65-8013-94cad4b6a85f",
+    "args": {
+      "image_urls": [
+        "upload:87f767c9-529f-4169-8b5c-09658a4254e0"
+      ],
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "description": "FRAME FORMAT:192x224 transparent, same body height176px, foot pivot(96,208), stable scale and full body margins. Preserve this EXACT Yuri identity and crisp pixels: brown short mohawk and beard, red sleeved jacket with shoulder badges, fitted black-red armor and boots. Change ONLY the pose: stand tall with chest, shoulders, hips and BOTH knees FACING THE CAMERA symmetrically. We see his face. Both feet planted shoulder-width apart. Head tilts down to look at floor directly BETWEEN his boots. Hold his rifle with BOTH hands on its normal grips, stock high near chest, barrel points VERTICALLY STRAIGHT DOWN to the floor between his boots, perpendicular to ground, muzzle at shin height. NOT sideways, NOT diagonally left or right, NOT pointing toward viewer. A front-facing man shooting a hatch under his feet. No blast, no flash, no extra objects, no text, no shadow."
+    },
+    "receipt": "id: 6346bb07-633d-4b65-8013-94cad4b6a85f\njob_id: 6346bb07-633d-4b65-8013-94cad4b6a85f\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT:192x224 transparent, same body height176px, foot pivot(96,208), stable scale and full body margins. Preserve this EXACT Yuri identity and crisp pixels: brown short mohawk and beard, red sleeved jacket with shoulder badges, fitted black-red armor and boots. Change ONLY the pose: stand tall with chest, shoulders, hips and BOTH knees FACING THE CAMERA symmetrically. We see his face. Both feet planted shoulder-width apart. Head tilts down to look at floor directly BETWEEN his boots. Hold his rifle with BOTH hands on its normal grips, stock high near chest, barrel points VERTICALLY STRAIGHT DOWN to the floor between his boots, perpendicular to ground, muzzle at shin height. NOT sideways, NOT diagonally left or right, NOT pointing toward viewer. A front-facing man shooting a hatch under his feet. No blast, no flash, no extra objects, no text, no shadow.\nasset_id: 0a839ff1-3ed7-5954-865e-13b83b599c1b\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"6346bb07-633d-4b65-8013-94cad4b6a85f\")"
+  },
+  {
+    "name": "down_fire",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/6346bb07-633d-4b65-8013-94cad4b6a85f/download?index=0",
+      "frame_count": 8,
+      "no_background": true,
+      "view": "low top-down",
+      "direction": "south",
+      "enhance_prompt": false,
+      "initial_pose": "Front-facing upright Yuri, both hands holding rifle vertically down between his boots, aiming at floor",
+      "subject_description": "Exact supplied Yuri, brown mohawk and close beard, sleeved red jacket with shoulder patches and black-red tactical armor",
+      "description": "FRAME FORMAT:192x224 transparent, exact same unit, feet and pivot. Eight-frame restrained firing recoil LOOP while Yuri STANDS FRONT-FACING and shoots DIRECTLY DOWN at the floor under his feet. Rifle barrel stays VERTICAL downward, muzzle between shins; shoulders square to camera. Small one-to-three pixel recoil of arms and shoulders upward then settle, both boots fixed, no stepping, turning, bending over or aiming toward camera. Start and finish matching supplied pose. Preserve identity, jacket sleeves, armor and rifle exactly. No muzzle flash, smoke, bullets, glow, dust, added graphics or shadows; game draws flashes separately."
+    },
+    "receipt": "id: 81b36493-8235-47e6-90f3-86369a82b50f\njob_id: 81b36493-8235-47e6-90f3-86369a82b50f\ndescription: FRAME FORMAT:192x224 transparent, exact same unit, feet and pivot. Eight-frame restrained firing recoil LOOP while Yuri STANDS FRONT-FACING and shoots DIRECTLY DOWN at the floor under his feet. Rifle barrel stays VERTICAL downward, muzzle between shins; shoulders square to camera. Small one-to-three pixel recoil of arms and shoulders upward then settle, both boots fixed, no stepping, turning, bending over or aiming toward camera. Start and finish matching supplied pose. Preserve identity, jacket sleeves, armor and rifle exactly. No muzzle flash, smoke, bullets, glow, dust, added graphics or shadows; game draws flashes separately.\nframes: 8\nsize: 192x224px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"81b36493-8235-47e6-90f3-86369a82b50f\")\nasset_id: 974fdbf1-9a29-5d59-8ebf-5af601c4d810\nasset_status: pending (saved to your gallery when generation completes)",
+    "id": "81b36493-8235-47e6-90f3-86369a82b50f"
+  },
+  {
+    "name": "roll_prone_finish",
+    "id": "7082d6da-ff44-492f-b5e3-5d45d4907e3b",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/ab59ac9a-a877-4dd9-862b-014feeebfa35/download?index=16",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/2c0a8558-11d6-4e70-9406-aa60abda1d05/download?index=1",
+      "frame_count": 8,
+      "no_background": true,
+      "view": "side",
+      "direction": "west",
+      "enhance_prompt": false,
+      "initial_pose": "Low crouch after completing a forward roll, gun raised left",
+      "subject_description": "Exact Yuri, brown mohawk beard, red sleeved tactical jacket with shoulder badge and black-red armor",
+      "description": "FRAME FORMAT:192x224 transparent fixed unit. Finish a completed shoulder roll by settling from this low crouched landing into the supplied final FLAT PRONE shooting pose. One continuous follow-through: brace elbows, slide legs straight back to the right, lower chest gently to ground, rifle stays aimed left, finish exactly the flat prone frame. NO standing up, NO new somersault. Keep same brown mohawk, beard, red sleeves and armor. No muzzle flash, gunfire, smoke, blur, dust or background. Complete limbs within frame."
+    },
+    "receipt": "id: 7082d6da-ff44-492f-b5e3-5d45d4907e3b\njob_id: 7082d6da-ff44-492f-b5e3-5d45d4907e3b\ndescription: FRAME FORMAT:192x224 transparent fixed unit. Finish a completed shoulder roll by settling from this low crouched landing into the supplied final FLAT PRONE shooting pose. One continuous follow-through: brace elbows, slide legs straight back to the right, lower chest gently to ground, rifle stays aimed left, finish exactly the flat prone frame. NO standing up, NO new somersault. Keep same brown mohawk, beard, red sleeves and armor. No muzzle flash, gunfire, smoke, blur, dust or background. Complete limbs within frame.\nframes: 8\nsize: 192x224px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7082d6da-ff44-492f-b5e3-5d45d4907e3b\")\nasset_id: 384ced6d-032c-509b-ab3a-e4db9a9bc263\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "down_brace",
+    "id": "7ee19fce-6c52-4b62-8b0e-f04bea018396",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/6346bb07-633d-4b65-8013-94cad4b6a85f/download?index=0",
+      "frame_count": 8,
+      "no_background": true,
+      "view": "low top-down",
+      "direction": "south",
+      "enhance_prompt": false,
+      "initial_pose": "Front-facing Yuri with a vertical rifle held motionless toward floor, both feet planted",
+      "subject_description": "Exact supplied Yuri, brown mohawk and close beard, sleeved red jacket with shoulder patches and black-red tactical armor",
+      "description": "FRAME FORMAT:192x224 transparent same character unit and pivot. Subtle braced-hold animation LOOP. The man flexes his forearms and draws his elbows upward by two pixels, his shoulders compress slightly, then relaxes back to the exact starting pose. Keep the long held object absolutely VERTICAL DOWN between his knees. Both boots stay planted. Only this gentle arm-and-shoulder tension rhythm; no action from the object, no movement away, no stepping, no turning. Every part stays its normal color. Empty transparent background. All equipment stays completely dark and inactive; NO light, glow, sparks, smoke, flare, trail or added marks anywhere. Preserve exact face, brown mohawk, beard, red sleeves, black armor and size."
+    },
+    "receipt": "id: 7ee19fce-6c52-4b62-8b0e-f04bea018396\njob_id: 7ee19fce-6c52-4b62-8b0e-f04bea018396\ndescription: FRAME FORMAT:192x224 transparent same character unit and pivot. Subtle braced-hold animation LOOP. The man flexes his forearms and draws his elbows upward by two pixels, his shoulders compress slightly, then relaxes back to the exact starting pose. Keep the long held object absolutely VERTICAL DOWN between his knees. Both boots stay planted. Only this gentle arm-and-shoulder tension rhythm; no action from the object, no movement away, no stepping, no turning. Every part stays its normal color. Empty transparent background. All equipment stays completely dark and inactive; NO light, glow, sparks, smoke, flare, trail or added marks anywhere. Preserve exact face, brown mohawk, beard, red sleeves, black armor and size.\nframes: 8\nsize: 192x224px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7ee19fce-6c52-4b62-8b0e-f04bea018396\")\nasset_id: c4d9ec4d-44a9-5108-ae19-096e78a6e292\nasset_status: pending (saved to your gallery when generation completes)"
+  }
+]

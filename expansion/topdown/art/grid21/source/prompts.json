@@ -1,0 +1,748 @@
+{
+  "wall": {
+    "file": "source/wall.png",
+    "prompt": "Generate ONE independent square seamless WALL TEXTURE for Bullets of Fury Overdrive's dark gritty 16-bit military sci-fi base. Native game export 128x128, source square. Orthographic flat face, fills entire image edge to edge, no border, no room, no perspective, no floor, no ceiling, no sprites. Original industrial gunmetal paneling inspired by the supplied weathered-metal material reference, translated into very crisp Neo Geo pixel art. Restrained 24 color palette charcoal blue-black, graphite, slate, muted rust. Broad readable steel plates, worn seams, bolts, inset ventilation grating, one understated dim cyan conduit. Even illumination for seamless repetition; no soft shadows, no bloom, no depth of field, no photographic texturing, NO BLUR or antialiasing. Deliberate hard-edged square pixel clusters that remain legible at 128 pixels. No lettering. Texture suitable for tiled actual Three.js corridor wall geometry. No characters.",
+    "sha256": "9fca19c2c281f631e5b8ab4e0ef7020040a52413cd4e7ea3a9679887a0e84d1e"
+  },
+  "floor": {
+    "file": "source/floor.png",
+    "prompt": "Bullets of Fury Overdrive original asset. Dark gritty Neo Geo 16-bit arcade pixel art matching the attached wall texture palette: charcoal, dark slate, rusty bronze, tiny cyan/amber accents. ONE seamless square FLOOR TEXTURE ONLY, top-down orthographic, edge-to-edge. Native 128x128 export. Dark charcoal steel decking, large alternating ribbed non-slip plates, recessed square drainage grilles, worn bolt heads, restrained rusty bronze edges and scratches. No perspective, no walls, no objects, no text, no puddle reflections. A hard defined 16-bit pixel grid with clear broad forms. Generate this SINGLE independent modular material; not a scene, not a sheet. Crisp opaque square pixels, limited 24-color palette, no photographic textures, no smooth shading, no antialiasing, no blur, no bloom. Strong chunky pixel clusters remain legible at native export size. Never include any character or enemy.",
+    "sha256": "d4cc0c74e23b6518df630c736846db5eb8a781a0bc1cad8ac11a266a41b9ceca"
+  },
+  "ceiling": {
+    "file": "source/ceiling.png",
+    "prompt": "Bullets of Fury Overdrive original asset. Dark gritty Neo Geo 16-bit arcade pixel art matching the attached wall texture palette: charcoal, dark slate, rusty bronze, tiny cyan/amber accents. ONE seamless square CEILING TEXTURE ONLY viewed straight on flat. Native 128x128 export. Dark industrial military ceiling, parallel gunmetal support ribs, broad steel hatches, ventilation slats, small amber recessed lamp strip at center, exposed conduit. Edge-to-edge tile, no perspective, no walls or floor, no objects, no text. Restrained readable shapes. Generate this SINGLE independent modular material; not a scene, not a sheet. Crisp opaque square pixels, limited 24-color palette, no photographic textures, no smooth shading, no antialiasing, no blur, no bloom. Strong chunky pixel clusters remain legible at native export size. Never include any character or enemy.",
+    "sha256": "fc331034253e63e6512d3d269e3b4bcff000bec6675395bdf328e7486c7c026a"
+  },
+  "rearwall": {
+    "file": "source/rearwall.png",
+    "prompt": "Bullets of Fury Overdrive original asset. Dark gritty Neo Geo 16-bit arcade pixel art matching the attached wall texture palette: charcoal, dark slate, rusty bronze, tiny cyan/amber accents. ONE square REAR WALL panel texture ONLY straight-on orthographic flat face filling the image. Native256x256 export. Weathered charcoal steel bulkhead with graphite ribbing, large rectangular framed panel in middle, big crossed reinforced side panels, pipes at the sides, little copper warning stripes, subdued teal indicator windows. No door, no core, no turrets; these will be separate assets. No perspective, no room, no objects, no text. Generate this SINGLE independent modular material; not a scene, not a sheet. Crisp opaque square pixels, limited 24-color palette, no photographic textures, no smooth shading, no antialiasing, no blur, no bloom. Strong chunky pixel clusters remain legible at native export size. Never include any character or enemy.",
+    "sha256": "5563cc56df242ecf8d42a39900c59a0b78b4710bda405691085cd079e1173d06"
+  },
+  "door": {
+    "file": "source/door.png",
+    "prompt": "Generate Bullets of Fury Overdrive game art: ONE independent armored double DOOR sprite with its own frame. Closed vertically split steel doors, hefty dark side jambs, muted amber hazard diagonal bands near base, deep seams, rivets and recessed hydraulic tracks. Straight-on orthographic frontal, no perspective. No core, no turrets. Door native96x144. Transparent background around the complete door, 12% empty margins. ONLY ONE door. Match reference palette and gritty Neo Geo 16-bit arcade aesthetic. This is an individual component asset, NEVER a room scene. Restrained dark graphite/slate/copper palette, small sharp highlights. Hard solid pixel edges, limited colors, no blurry textures, no bloom, no antialiasing, no smooth gradients, no painted shading. High legibility at native game resolution. No lettering or watermark. Never generate any character/enemy.",
+    "sha256": "d5569e04967c390295fcd037bd8c22037ad2080e85e1832b13df34d743f47afd",
+    "export": {
+      "canvas": [
+        112,
+        160
+      ],
+      "anchor": [
+        56,
+        152
+      ],
+      "uniformScale": 0.1,
+      "nativeTarget": [
+        96,
+        144
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            1024,
+            1536
+          ],
+          "alphaBounds": [
+            32,
+            153,
+            992,
+            1387
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  },
+  "cover": {
+    "file": "source/cover.png",
+    "prompt": "Generate Bullets of Fury Overdrive game art: ONE independent low protective COVER WALL asset shown in FOUR damage states in one 2x2 sprite sheet. Exact same wall silhouette and scale in every cell. State1 intact, state2 bullet gouges, state3 shattered upper edge and damaged plates, state4 low broken rubble. Front-facing orthographic, wide squat steel barricade, worn concrete base, chunky dark graphite reinforcement, rusty hazard stripes, bolts, slanted metal crown slightly visible. Native each160x80; sheet fixed cells192x112. No floor background. Transparent background. No characters or attached guns. Crisp deliberate pixel clusters. Match reference palette and gritty Neo Geo 16-bit arcade aesthetic. This is an individual component asset, NEVER a room scene. Restrained dark graphite/slate/copper palette, small sharp highlights. Hard solid pixel edges, limited colors, no blurry textures, no bloom, no antialiasing, no smooth gradients, no painted shading. High legibility at native game resolution. No lettering or watermark. Never generate any character/enemy.",
+    "sha256": "7efdb133304730476f7b3c00479e42bb466442f7c1ab53279613eed7abeff012",
+    "export": {
+      "canvas": [
+        192,
+        112
+      ],
+      "anchor": [
+        96,
+        104
+      ],
+      "uniformScale": 0.19746835443037974,
+      "nativeTarget": [
+        156,
+        78
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            821,
+            479
+          ],
+          "alphaBounds": [
+            16,
+            135,
+            806,
+            448
+          ]
+        },
+        {
+          "cell": [
+            821,
+            0,
+            1642,
+            479
+          ],
+          "alphaBounds": [
+            16,
+            135,
+            806,
+            448
+          ]
+        },
+        {
+          "cell": [
+            0,
+            479,
+            821,
+            958
+          ],
+          "alphaBounds": [
+            16,
+            100,
+            806,
+            440
+          ]
+        },
+        {
+          "cell": [
+            821,
+            479,
+            1642,
+            958
+          ],
+          "alphaBounds": [
+            16,
+            207,
+            806,
+            440
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  },
+  "crate": {
+    "file": "source/crate.png",
+    "prompt": "Generate Bullets of Fury Overdrive game art: ONE heavy reinforced ammunition CRATE asset shown in FOUR damage states in 2x2 sheet: intact, dented, ripped open corner, shattered low wreck. Front-facing straight orthographic with just a narrow top lip. Wide rectangular squat military storage crate, graphite-black steel, chunky X bracing, rusty orange warning bands, thick latch bolts. Same identity, same native72x52 scale in every cell. Transparent background, generous blank margins, no floor, no shadow. Match the reference material's restrained charcoal slate rusty bronze palette and dark gritty Neo Geo 16-bit arcade aesthetic. This is ONE independent component with its states, NEVER a room scene. Hard solid square pixel edges, 24 colors, no blurry textures, no bloom, no antialiasing, no smooth gradients, no painted shading. Strong chunky pixel clusters readable at native game resolution. No lettering or watermark. Never generate any character/enemy.",
+    "sha256": "500de4c15f820ddd72513c655c61fc4bd5d4fe341b0970474059b25dfc64f72a",
+    "export": {
+      "canvas": [
+        96,
+        80
+      ],
+      "anchor": [
+        48,
+        72
+      ],
+      "uniformScale": 0.10526315789473684,
+      "nativeTarget": [
+        72,
+        52
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            740,
+            532
+          ],
+          "alphaBounds": [
+            30,
+            85,
+            714,
+            488
+          ]
+        },
+        {
+          "cell": [
+            740,
+            0,
+            1479,
+            532
+          ],
+          "alphaBounds": [
+            29,
+            85,
+            713,
+            488
+          ]
+        },
+        {
+          "cell": [
+            0,
+            532,
+            740,
+            1064
+          ],
+          "alphaBounds": [
+            30,
+            39,
+            718,
+            451
+          ]
+        },
+        {
+          "cell": [
+            740,
+            532,
+            1479,
+            1064
+          ],
+          "alphaBounds": [
+            22,
+            166,
+            713,
+            475
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  },
+  "barrel": {
+    "file": "source/barrel.png",
+    "prompt": "Generate Bullets of Fury Overdrive game art: ONE independent industrial explosive BARREL shown in FOUR damage states in one 2x2 sprite sheet. State1 intact, state2 dents, state3 cracked leaking ember, state4 burnt flattened wreck. Same barrel identity and native scale in all cells. Front-facing orthographic upright steel drum, charcoal slate sides, two bulky metal hoops, oxidized red stripe, yellow small danger diamond, inset valve, dirty worn scraped metal. Slightly visible top ellipse, no isometric projection. Native barrel32x48. Transparent background with separated cells and generous margins. Big clear readable metal details, no floor shadow. Match reference palette and gritty Neo Geo 16-bit arcade aesthetic. This is an individual component asset, NEVER a room scene. Restrained dark graphite/slate/copper palette, small sharp highlights. Hard solid pixel edges, limited colors, no blurry textures, no bloom, no antialiasing, no smooth gradients, no painted shading. High legibility at native game resolution. No lettering or watermark. Never generate any character/enemy.",
+    "sha256": "57602e822974df057aca18071d62f70dc6fde53bf159a21636550e5f76dc9b8b",
+    "export": {
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        58
+      ],
+      "uniformScale": 0.09393346379647749,
+      "nativeTarget": [
+        36,
+        48
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            620,
+            634
+          ],
+          "alphaBounds": [
+            162,
+            83,
+            525,
+            594
+          ]
+        },
+        {
+          "cell": [
+            620,
+            0,
+            1239,
+            634
+          ],
+          "alphaBounds": [
+            95,
+            83,
+            457,
+            594
+          ]
+        },
+        {
+          "cell": [
+            0,
+            634,
+            620,
+            1269
+          ],
+          "alphaBounds": [
+            163,
+            38,
+            525,
+            549
+          ]
+        },
+        {
+          "cell": [
+            620,
+            634,
+            1239,
+            1269
+          ],
+          "alphaBounds": [
+            70,
+            225,
+            502,
+            537
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  },
+  "turret_gun": {
+    "file": "source/turret_gun.png",
+    "prompt": "Generate Bullets of Fury Overdrive game art: ONE wall-mounted forward-facing BULLET TURRET in FOUR frames on a 2x2 sheet: idle, windup, fire with compact amber muzzle flash, recoil. One identical turret size and stationary root in every cell, gun pointing forward AT CAMERA with central circular barrel aperture. Bolted square charcoal-steel mounting surround, bulky mechanical housing, battered armor, red-orange tiny indicator. Native40x40. Transparent background, generous blank margins. No wall backdrop, no extra pieces, no characters. Match the reference material's restrained charcoal slate rusty bronze palette and dark gritty Neo Geo 16-bit arcade aesthetic. This is ONE independent component with its states, NEVER a room scene. Hard solid square pixel edges, 24 colors, no blurry textures, no bloom, no antialiasing, no smooth gradients, no painted shading. Strong chunky pixel clusters readable at native game resolution. No lettering or watermark. Never generate any character/enemy.",
+    "sha256": "4f99bdb1c6ec4a0a2dc8de6a1f3bccf1e35d6dad683a405b6455181d30a12966",
+    "export": {
+      "canvas": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "uniformScale": 0.09090909090909091,
+      "nativeTarget": [
+        40,
+        40
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "alphaBounds": [
+            108,
+            154,
+            548,
+            559
+          ]
+        },
+        {
+          "cell": [
+            627,
+            0,
+            1254,
+            627
+          ],
+          "alphaBounds": [
+            79,
+            154,
+            519,
+            559
+          ]
+        },
+        {
+          "cell": [
+            0,
+            627,
+            627,
+            1254
+          ],
+          "alphaBounds": [
+            108,
+            70,
+            548,
+            475
+          ]
+        },
+        {
+          "cell": [
+            627,
+            627,
+            1254,
+            1254
+          ],
+          "alphaBounds": [
+            79,
+            70,
+            519,
+            475
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  },
+  "turret_laser": {
+    "file": "source/turret_laser.png",
+    "prompt": "Generate Bullets of Fury Overdrive game art: ONE wall-mounted forward-facing LASER TURRET in FOUR frames on a 2x2 sheet: idle, cyan charge, short intense cyan firing flash, recoil. Identical turret size and stationary root in every cell, laser aperture facing AT CAMERA in center. Square dark steel armored mounting, chunky twin cooling coils, brass bolts, readable cyan aperture. Native40x40. Transparent background, generous blank margins. No wall backdrop, no extra pieces, no characters. Match the reference material's restrained charcoal slate rusty bronze palette and dark gritty Neo Geo 16-bit arcade aesthetic. This is ONE independent component with its states, NEVER a room scene. Hard solid square pixel edges, 24 colors, no blurry textures, no bloom, no antialiasing, no smooth gradients, no painted shading. Strong chunky pixel clusters readable at native game resolution. No lettering or watermark. Never generate any character/enemy.",
+    "sha256": "7498d808cdc803f46cb7966a4a87de83b6beb27eab36c3c87d26f5729f07a821",
+    "export": {
+      "canvas": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "uniformScale": 0.09259259259259259,
+      "nativeTarget": [
+        40,
+        40
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "alphaBounds": [
+            98,
+            126,
+            530,
+            546
+          ]
+        },
+        {
+          "cell": [
+            627,
+            0,
+            1254,
+            627
+          ],
+          "alphaBounds": [
+            98,
+            126,
+            530,
+            546
+          ]
+        },
+        {
+          "cell": [
+            0,
+            627,
+            627,
+            1254
+          ],
+          "alphaBounds": [
+            98,
+            99,
+            530,
+            520
+          ]
+        },
+        {
+          "cell": [
+            627,
+            627,
+            1254,
+            1254
+          ],
+          "alphaBounds": [
+            98,
+            99,
+            529,
+            520
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  },
+  "core": {
+    "file": "source/core.png",
+    "prompt": "Bullets of Fury Overdrive individual game art component. ONE circular DOOR ENERGY CORE component in EIGHT animation frames in a 4x2 sheet. Identical dark armored octagonal mount fixed size and position, a bright electric cyan orb with white center and rotating cyan segmented power ring, eight distinct clockwise charge phases. Native40x40 per frame. Frame8 is shot-damaged with dark cracked glass. No door, no room, no turrets. Transparent background. Consistent chunky black outline; glow depicted with crisp stepped cyan pixel rings, NO soft bloom. Style: very crisp dark gritty Neo Geo 16-bit pixel art, limited 24-color palette, big legible hard square pixel clusters. Charcoal/slate/rusty bronze machinery, cyan/white energy. No antialiasing, no blurry edges, no photorealism, no soft shading. Exactly this one separate component with its own states, no characters. Match provided material/core references but original design.",
+    "sha256": "42af120a9a9dae4d07bd15db2e5840c228638e4e4697962bfddc35bc8beba1df",
+    "export": {
+      "canvas": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "uniformScale": 0.09523809523809523,
+      "nativeTarget": [
+        40,
+        40
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "alphaBounds": [
+            12,
+            5,
+            432,
+            398
+          ]
+        },
+        {
+          "cell": [
+            444,
+            0,
+            887,
+            444
+          ],
+          "alphaBounds": [
+            11,
+            4,
+            431,
+            398
+          ]
+        },
+        {
+          "cell": [
+            887,
+            0,
+            1330,
+            444
+          ],
+          "alphaBounds": [
+            12,
+            4,
+            432,
+            399
+          ]
+        },
+        {
+          "cell": [
+            1330,
+            0,
+            1774,
+            444
+          ],
+          "alphaBounds": [
+            12,
+            4,
+            432,
+            399
+          ]
+        },
+        {
+          "cell": [
+            0,
+            444,
+            444,
+            887
+          ],
+          "alphaBounds": [
+            12,
+            4,
+            432,
+            398
+          ]
+        },
+        {
+          "cell": [
+            444,
+            444,
+            887,
+            887
+          ],
+          "alphaBounds": [
+            11,
+            4,
+            431,
+            398
+          ]
+        },
+        {
+          "cell": [
+            887,
+            444,
+            1330,
+            887
+          ],
+          "alphaBounds": [
+            12,
+            4,
+            432,
+            398
+          ]
+        },
+        {
+          "cell": [
+            1330,
+            444,
+            1774,
+            887
+          ],
+          "alphaBounds": [
+            12,
+            4,
+            432,
+            398
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  },
+  "reactor": {
+    "file": "source/reactor.png",
+    "prompt": "Bullets of Fury Overdrive individual game art component. ONE large CONTAINMENT REACTOR sprite in EIGHT states on a 4x2 sheet. The same upright transparent blue glass cylinder, massive gunmetal rusty brass armored top and bottom bands, red hazard markings, central white-blue energy orb branching crisp cyan lightning filaments. Native96x144 each frame. States1-4 healthy animated electric energy pulse with fixed cylinder silhouette. State5 hairline cracks; State6 heavy fractured glass; State7 glass shatters into big sharp shards; State8 open damaged shell with explosive white/cyan energy escaping. Transparent background with equal fixed cells and stationary root. Straight-on orthographic front view, no perspective, no surrounding room, no cables outside sprite. Do NOT make a computer screen or creature. Style: very crisp dark gritty Neo Geo 16-bit pixel art, limited 24-color palette, big legible hard square pixel clusters. Charcoal/slate/rusty bronze machinery, cyan/white energy. No antialiasing, no blurry edges, no photorealism, no soft shading. Exactly this one separate component with its own states, no characters. Match provided material/core references but original design.",
+    "sha256": "48aa3088b02524db017a01e0fec5436fb898ad78df289470d22a5fba51127a82",
+    "export": {
+      "canvas": [
+        128,
+        176
+      ],
+      "anchor": [
+        64,
+        88
+      ],
+      "uniformScale": 0.2962962962962963,
+      "nativeTarget": [
+        96,
+        144
+      ],
+      "sourceCells": [
+        {
+          "cell": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "alphaBounds": [
+            115,
+            5,
+            439,
+            439
+          ]
+        },
+        {
+          "cell": [
+            444,
+            0,
+            887,
+            444
+          ],
+          "alphaBounds": [
+            88,
+            5,
+            415,
+            439
+          ]
+        },
+        {
+          "cell": [
+            887,
+            0,
+            1330,
+            444
+          ],
+          "alphaBounds": [
+            46,
+            5,
+            374,
+            439
+          ]
+        },
+        {
+          "cell": [
+            1330,
+            0,
+            1774,
+            444
+          ],
+          "alphaBounds": [
+            3,
+            5,
+            328,
+            439
+          ]
+        },
+        {
+          "cell": [
+            0,
+            444,
+            444,
+            887
+          ],
+          "alphaBounds": [
+            115,
+            3,
+            440,
+            439
+          ]
+        },
+        {
+          "cell": [
+            444,
+            444,
+            887,
+            887
+          ],
+          "alphaBounds": [
+            88,
+            3,
+            415,
+            439
+          ]
+        },
+        {
+          "cell": [
+            887,
+            444,
+            1330,
+            887
+          ],
+          "alphaBounds": [
+            36,
+            3,
+            384,
+            439
+          ]
+        },
+        {
+          "cell": [
+            1330,
+            444,
+            1774,
+            887
+          ],
+          "alphaBounds": [
+            3,
+            3,
+            344,
+            439
+          ]
+        }
+      ],
+      "alphaThreshold": 128,
+      "resample": "nearest",
+      "paletteColors": 48,
+      "dither": false
+    }
+  }
+}

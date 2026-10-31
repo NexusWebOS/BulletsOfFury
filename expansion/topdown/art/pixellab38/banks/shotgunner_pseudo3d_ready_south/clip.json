@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_shotgunner_pseudo3d_ready_south_0"
+  ],
+  "fps": 12.5,
+  "loop": false,
+  "events": {},
+  "origin": [
+    162,
+    248
+  ],
+  "size": [
+    324,
+    360
+  ],
+  "duration": 0.08,
+  "provider": "PixelLab",
+  "source_review": "mechanics reviewed",
+  "export_scale": 2.25,
+  "source_master": "shotgunner_pseudo3d",
+  "source_action": "fire",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

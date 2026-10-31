@@ -1,0 +1,570 @@
+[
+  {
+    "bank": "machine_gunner_pseudo3d/fire/south",
+    "source": "../selected/machine_gunner_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "783967d16bda4065738150935cbd3145d5041fabcfe9ec44392878603fe2c768",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "machine_gunner_pseudo3d/ready/south",
+    "source": "../selected/machine_gunner_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "362e04accf33f9b7f36452175947897f8211752ed32578eb19d31a2cb88b3a91",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "machine_gunner_pseudo3d/draw_forward/south",
+    "source": "../selected/machine_gunner_pseudo3d/draw_forward/south/000.png",
+    "source_review": "pending",
+    "sha256": "f0d887c347dbbd501dad7a185d9e0384898e290a657ff3d91861fc078b6123bc",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "sniper_pseudo3d/fire/south",
+    "source": "../selected/sniper_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "e557dd8348ede131698ae55ecf6bb1168890cac763c4d43fa67b5f21179ef997",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "sniper_pseudo3d/ready/south",
+    "source": "../selected/sniper_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "8499273028e6c5fbe957610799236c42bb11b79065dc96711cf195c1ec63ad04",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "rocket_launcher_pseudo3d/fire/south",
+    "source": "../selected/rocket_launcher_pseudo3d/fire/south/000.png",
+    "source_review": "hardware repair reviewed; playback pending",
+    "sha256": "26904dc2fd31e4b28ac44686ef66b28bb32a2ff8657ea3dd9645cb79b3b3596d",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "rocket_launcher_pseudo3d/ready/south",
+    "source": "../selected/rocket_launcher_pseudo3d/fire/south/000.png",
+    "source_review": "hardware repair reviewed; playback pending",
+    "sha256": "b85102f2e8864a8c3597c66e8d0c4acf89d6d8366ebf9bc3b4223ccfc81b7cb1",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "rocket_launcher_pseudo3d/draw_forward/south",
+    "source": "../selected/rocket_launcher_pseudo3d/draw_forward/south/000.png",
+    "source_review": "pending",
+    "sha256": "4da86ec3ad3c1c0d8c04e5a804bcff49ecd7e3a78fb927d4a6e64a7ae1938128",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "shotgunner_pseudo3d/fire/south",
+    "source": "../selected/shotgunner_pseudo3d/fire/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "71923623b6ff7c6e5bbeed4edcfc87121dbaacd275a66ffcf4f179f0d5d8c9db",
+    "source_count": 8,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "shotgunner_pseudo3d/ready/south",
+    "source": "../selected/shotgunner_pseudo3d/fire/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "5dda3f9ae89969d37c69833c7d96ca9e8f3eee71c472aabbfdc5e4dc67030983",
+    "source_count": 8,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "shotgunner_pseudo3d/draw_forward/south",
+    "source": "../selected/shotgunner_pseudo3d/draw_forward/south/000.png",
+    "source_review": "pending",
+    "sha256": "c4b12e53694144fb8a14a6fe696693dfcd2ac3d17631c2cf5bdbda28650df7a9",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "double_barrel_pseudo3d/fire/south",
+    "source": "../selected/double_barrel_pseudo3d/fire/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "c301ed68d605f7a321cfc4ec108db4c89e1f8973d92b441eefddfdb5a17a12e1",
+    "source_count": 16,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "double_barrel_pseudo3d/ready/south",
+    "source": "../selected/double_barrel_pseudo3d/fire/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "afe9ec3291f3297d59213fd403d1bfcabfa0b75988329d33d8680a0092b46b23",
+    "source_count": 16,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "flamethrower_pseudo3d/fire/south",
+    "source": "../selected/flamethrower_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "1a28999898ba5cbe99c703e0ec51916fcf9ce2cb7a04fb42fa21edb80d18329a",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "flamethrower_pseudo3d/ready/south",
+    "source": "../selected/flamethrower_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "b4be826a651719d44953ec33bef2e6a05e73cdf9d7d67745baf0ad51a43c3672",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "flamethrower_pseudo3d/draw_forward/south",
+    "source": "../selected/flamethrower_pseudo3d/draw_forward/south/000.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "86b2473049f628d1b092dd1035c3e207b3cea547e32612a0029fd8668a66695f",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "flying_alien_pseudo3d/fire/south",
+    "source": "../selected/flying_alien_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "1ee00523af1095da5dee850f5161087cc6cc4e5a46c8ac179e1e94c821db3652",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "flying_alien_pseudo3d/ready/south",
+    "source": "../selected/flying_alien_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "131bbf22bfc84eb6541602a2fa16683f2a58297b8f041371b9d95e807c0257b2",
+    "source_count": 12,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "flying_alien_pseudo3d/draw_forward/south",
+    "source": "../selected/flying_alien_pseudo3d/draw_forward/south/000.png",
+    "source_review": "pending",
+    "sha256": "b831b0809afd626ac30ddd11384893b81e03c260350f100057344b42238e7d41",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "roller_alien_pseudo3d/fire/south",
+    "source": "../selected/roller_alien_pseudo3d/fire/south/000.png",
+    "source_review": "facing and cleanup reviewed; playback pending",
+    "sha256": "251e11822f94f1f006cb2c3260488d9c5a97611f941bf20ad34cd5191a2b8aab",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "roller_alien_pseudo3d/ready/south",
+    "source": "../selected/roller_alien_pseudo3d/fire/south/000.png",
+    "source_review": "facing and cleanup reviewed; playback pending",
+    "sha256": "75298c2d49937be2df90fcd2ba19efa6c4ff43883d9ee398e7578c1ed925a80b",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "roller_alien_pseudo3d/draw_forward/south",
+    "source": "../selected/roller_alien_pseudo3d/draw_forward/south/000.png",
+    "source_review": "pending",
+    "sha256": "a2606699617b21659f19fffbb68baaf58ce032431d29fb5bc5c3cfcda2effa3e",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "minigunner_pseudo3d/fire/south",
+    "source": "../selected/minigunner_pseudo3d/fire/south/001.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "9bb644b41c8ea04b4f03fe29f1094788d9f536d516ead9e4fb4bfdda876362e7",
+    "source_count": 12,
+    "export_scale": 1.25
+  },
+  {
+    "bank": "minigunner_pseudo3d/ready/south",
+    "source": "../selected/minigunner_pseudo3d/fire/south/001.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "42367d4134d1ea8e0b54d4507977995891b10b4b5e6c8010a46bb2931cd380aa",
+    "source_count": 12,
+    "export_scale": 1.25
+  },
+  {
+    "bank": "minigunner_pseudo3d/spin_up/south",
+    "source": "../selected/minigunner_pseudo3d/spin_up/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "0f2ac98a470e1b99c6c89848e0302a0d24e1daf54660ae8a82ac7cf770387cb0",
+    "source_count": 13,
+    "export_scale": 1.25
+  },
+  {
+    "bank": "minigunner_pseudo3d/spin_down/south",
+    "source": "../selected/minigunner_pseudo3d/spin_down/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "b96cc757884350b5902ebcfbd5dd831490238fcf97f04d6f9b3185453a689031",
+    "source_count": 13,
+    "export_scale": 1.25
+  },
+  {
+    "bank": "double_barrel_pseudo3d/reload/south",
+    "source": "../selected/double_barrel_pseudo3d/reload/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "cee2632911f6e475b5cdf405814242b7b3ce3228dd8ed18106d103399cb15a94",
+    "source_count": 37,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "yuri_side/idle/east",
+    "source": "../selected/yuri_side/idle/east/001.png",
+    "source_review": "pending",
+    "sha256": "77ace7a065d105dda019453e2c31df908203b3150d6f6d89bed1d847218e92d9",
+    "source_count": 4,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/walk/east",
+    "source": "../selected/yuri_side/walk/east/001.png",
+    "source_review": "gait reviewed",
+    "sha256": "49ddb3b71b2ce0b7dbbb524b5698422d6efebc36ae7f36a38baac43d7864f785",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/run/east",
+    "source": "../selected/yuri_side/run/east/001.png",
+    "source_review": "gait reviewed",
+    "sha256": "b70064ecf6cc419abf8bded594dcf54b2439637feed8e26f17a323be56ba3832",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/fire/east",
+    "source": "../selected/yuri_side/fire/east/001.png",
+    "source_review": "pending",
+    "sha256": "9de72531770306a704781d128aff976e948338595c60b1a5d1fe1ce78c17934d",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/run_fire/east",
+    "source": "../selected/yuri_side/run_fire/east/001.png",
+    "source_review": "pending",
+    "sha256": "4b249b563bc5527c3b58fbe2918ee9aa3e1bfb06be31e0240b5f683709b84dba",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/crouch_enter/east",
+    "source": "../selected/yuri_side/crouch_enter/east/000.png",
+    "source_review": "pending",
+    "sha256": "d05d6dd80b4464f702ee81303aaabd28d3c5702c9bfd85e0753cd70cf94ed3dd",
+    "source_count": 9,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/prone_enter/east",
+    "source": "../selected/yuri_side/prone_enter/east/000.png",
+    "source_review": "pending",
+    "sha256": "2ecd0f512f312b49342987177b6a61c484ed0f1d98dfd5ff05c88167d59a5413",
+    "source_count": 9,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/prone_idle/east",
+    "source": "../selected/yuri_side/prone_idle/east/001.png",
+    "source_review": "pending",
+    "sha256": "248afbd10b09bfa8e12771108a8e3cbcb9efb34de72a472c0c227a060a2185c7",
+    "source_count": 4,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/prone_fire/east",
+    "source": "../selected/yuri_side/prone_fire/east/001.png",
+    "source_review": "pending",
+    "sha256": "146ff041c45ca37ac7cab78db0e07d05911714eb43141c4fb4741122c77f312e",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/crawl/east",
+    "source": "../selected/yuri_side/crawl/east/001.png",
+    "source_review": "pending",
+    "sha256": "84480cae4f53faab46442c725ca8f4d8f72cd8cfda3b0aa6fb655a072e4e62ff",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_side/roll/east",
+    "source": "../selected/yuri_side/roll/east/000.png",
+    "source_review": "pending",
+    "sha256": "2926db4e64f8d9afc2ce31c0209365efcd4b5202538aa410a538e80d8e1c3658",
+    "source_count": 17,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/idle/north",
+    "source": "../selected/yuri_topdown/idle/north/001.png",
+    "source_review": "pending",
+    "sha256": "2b842e364efe44e52f431e79049538f271a170b3126a0635f350b86a9ed40217",
+    "source_count": 4,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/walk/north",
+    "source": "../selected/yuri_topdown/walk/north/001.png",
+    "source_review": "pending",
+    "sha256": "b02dcb8ca11adc78f06b12afd2843d6df5e59436b48420ac70178c1fd15ff55d",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/run/north",
+    "source": "../selected/yuri_topdown/run/north/001.png",
+    "source_review": "pending",
+    "sha256": "146c56353735f624de3d8ce70669520d182f4f6ad71b5b2f1b7460f8dc7c8c43",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/fire/north",
+    "source": "../selected/yuri_topdown/fire/north/001.png",
+    "source_review": "pending",
+    "sha256": "f6db33e5df805b5732d8edfacad54886d98c4a58aa3f2a9a4fe79a594a8eb9d6",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/crouch_enter/north",
+    "source": "../selected/yuri_topdown/crouch_enter/north/000.png",
+    "source_review": "pending",
+    "sha256": "0a9f14be5332c9e4a29e2668dd88a72d6b16f0bff546c2f04987815741ea1417",
+    "source_count": 9,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/prone_enter/north",
+    "source": "../selected/yuri_topdown/prone_enter/north/000.png",
+    "source_review": "pending",
+    "sha256": "cf02bafba30918ec45797df5c5a8bfb11ac436527cf63db1d2efe80c4f9e35ad",
+    "source_count": 9,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/prone_idle/north",
+    "source": "../selected/yuri_topdown/prone_idle/north/001.png",
+    "source_review": "cleanup reviewed",
+    "sha256": "cafa2911fea269fadb57127a1a2d49c4b713764eb4e89ff9b748e54fb6ca733b",
+    "source_count": 4,
+    "export_scale": 1
+  },
+  {
+    "bank": "yuri_topdown/prone_fire/north",
+    "source": "../selected/yuri_topdown/prone_fire/north/001.png",
+    "source_review": "pending",
+    "sha256": "b7e9c92bfdbf3b7725d2dfa7e9d15b93e2cc0fd4d7e28cbcac7fd4e9ccfad32f",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "gosfer_pseudo3d/fire/south",
+    "source": "../selected/gosfer_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "bc4a0ef7bdf6fd7e9d5e33d1527ff2026053912b756bad6b507cbeb591ec7994",
+    "source_count": 12,
+    "export_scale": 1
+  },
+  {
+    "bank": "gosfer_topdown/ready/south",
+    "source": "../selected/gosfer_pseudo3d/fire/south/001.png",
+    "source_review": "facing reviewed; playback pending",
+    "sha256": "7db3282f156b8f3dfe38fb6a152c3d8208968e1df9cfee6cc21f297686976ef6",
+    "source_count": 12,
+    "export_scale": 1
+  },
+  {
+    "bank": "gosfer_topdown/walk/east",
+    "source": "../selected/gosfer_topdown/walk/east/001.png",
+    "source_review": "pending",
+    "sha256": "b6564df76ab48b81b53daecb3a14c33f05811a06452ca6e58c814c9a41dc09b6",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "gosfer_topdown/walk/west",
+    "source": "../selected/gosfer_topdown/walk/west/001.png",
+    "source_review": "pending",
+    "sha256": "ad250cc7be0ca402d7ccd5d01e0d08a00a5e3c52b563e3b2c8cd8891f64f008c",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "gosfer_topdown/walk/south",
+    "source": "../selected/gosfer_topdown/walk/south/001.png",
+    "source_review": "pending",
+    "sha256": "21c78e1d76fa9db306bdca8c3ede7dfa92dd6de69b802bf29375620d6a6dc73b",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "gosfer_topdown/walk/north",
+    "source": "../selected/gosfer_topdown/walk/north/001.png",
+    "source_review": "pending",
+    "sha256": "1974cd8ffb602ca4f67869b74a6d134a75be0062a23f0d23469848271d9aa903",
+    "source_count": 8,
+    "export_scale": 1
+  },
+  {
+    "bank": "fire_prism_topdown/prism_lightning/south",
+    "source": "../selected/fire_prism_topdown/prism_lightning/south/000.png",
+    "source_review": "cast reviewed",
+    "sha256": "bb8aa17c3f8d25e4dd8b5afd9ea3eafc88bfa28e073bbb10fd8428668dc7b10b",
+    "source_count": 13,
+    "export_scale": 2
+  },
+  {
+    "bank": "fire_prism_topdown/prism_lightning/north",
+    "source": "../selected/fire_prism_topdown/prism_lightning/north/000.png",
+    "source_review": "identity repair reviewed",
+    "sha256": "a70e5456065260b95d983600d51426dc93dba14b8b47b594fbf6d9a9a6b964e4",
+    "source_count": 13,
+    "export_scale": 2
+  },
+  {
+    "bank": "wall_turret_gun_pseudo3d/fire/south",
+    "source": "../selected/wall_turret_gun_pseudo3d/fire/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "3cb4bbe6c37263199380e736fdf2c0731a0d52e42c682c6ebf43095359bda295",
+    "source_count": 16,
+    "export_scale": 0.75
+  },
+  {
+    "bank": "door_core_topdown/active/south",
+    "source": "../selected/door_core_topdown/active/south/000.png",
+    "source_review": "material animation reviewed",
+    "sha256": "b6aefe94e93e6df86447753de30a65617219408a7e66054d7c694b247145b24f",
+    "source_count": 16,
+    "export_scale": 0.5
+  },
+  {
+    "bank": "door_core_topdown/inactive/south",
+    "source": "../selected/door_core_topdown/inactive/south/000.png",
+    "source_review": "material animation reviewed",
+    "sha256": "494052a4c30a96e3a0de44a8b5db1f4c705be1f0fc0f36dc6e43b3fca5cc6478",
+    "source_count": 1,
+    "export_scale": 0.5
+  },
+  {
+    "bank": "door_core_pseudo3d/active/south",
+    "source": "../selected/door_core_pseudo3d/active/south/000.png",
+    "source_review": "material animation reviewed",
+    "sha256": "2708acffee6f9a67878708b35d6ca6816ed786ff3192727084d4961b6c41625a",
+    "source_count": 16,
+    "export_scale": 0.5
+  },
+  {
+    "bank": "door_core_pseudo3d/inactive/south",
+    "source": "../selected/door_core_pseudo3d/inactive/south/000.png",
+    "source_review": "material animation reviewed",
+    "sha256": "89a7100d117df0b6e049b152284f0e1388ba7e95948bfc5a998bbbf0787898ba",
+    "source_count": 1,
+    "export_scale": 0.5
+  },
+  {
+    "bank": "door_core_side/active/south",
+    "source": "../selected/door_core_side/active/south/000.png",
+    "source_review": "material animation reviewed",
+    "sha256": "5bd7233d3c7403e4c40d8a380a3c722e28b9346dfb5c7401bd7868144909d37b",
+    "source_count": 16,
+    "export_scale": 0.5
+  },
+  {
+    "bank": "door_core_side/inactive/south",
+    "source": "../selected/door_core_side/inactive/south/000.png",
+    "source_review": "material animation reviewed",
+    "sha256": "3552f4aa591eb874bff16f64acd83509c71eb612e2bb5706de96ec3f26c955be",
+    "source_count": 1,
+    "export_scale": 0.5
+  },
+  {
+    "bank": "elevator_door_pseudo3d/close/south",
+    "source": "../selected/elevator_door_pseudo3d/close/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "8f30046058910c371521b47b47af5d7aeb05b786788568ae4c990e7451010a44",
+    "source_count": 16,
+    "export_scale": 1
+  },
+  {
+    "bank": "elevator_door_pseudo3d/open/south",
+    "source": "../selected/elevator_door_pseudo3d/open/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "9e1001e2ef9f103cca65a26014f58396128894a50aba1c6a83c432fed8f00097",
+    "source_count": 16,
+    "export_scale": 1
+  },
+  {
+    "bank": "floor_hatch_topdown/close/south",
+    "source": "../selected/floor_hatch_topdown/close/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "cc1dfde0e6e0865bef1aa435847297aa3f3a7048832837ca7a071c67f81fad43",
+    "source_count": 16,
+    "export_scale": 1
+  },
+  {
+    "bank": "floor_hatch_topdown/open/south",
+    "source": "../selected/floor_hatch_topdown/open/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "e09efd9a89d1a5836c7a40f322727e238f838b7fa11d5e8093c422d7d4b38616",
+    "source_count": 16,
+    "export_scale": 1
+  },
+  {
+    "bank": "floor_hatch_side/close/south",
+    "source": "../selected/floor_hatch_side/close/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "5523695dd0200f06c050f4fb71e9f1ce762407db4abb443e15c075df0baf308e",
+    "source_count": 16,
+    "export_scale": 1
+  },
+  {
+    "bank": "floor_hatch_side/open/south",
+    "source": "../selected/floor_hatch_side/open/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "0053d5c602f135e9a6e332457a1e1c06438623f63f54313e8ac981e97860cd64",
+    "source_count": 16,
+    "export_scale": 1
+  },
+  {
+    "bank": "electrical_gate_topdown/active/south",
+    "source": "../selected/electrical_gate_topdown/active/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "518e36ee7a2a705df73f28aabf69f2fa737f6e7956b8d53b16ae634b82502424",
+    "source_count": 12,
+    "export_scale": 1.296875
+  },
+  {
+    "bank": "electrical_gate_topdown/inactive/south",
+    "source": "../selected/electrical_gate_topdown/inactive/south/000.png",
+    "source_review": "mechanics reviewed",
+    "sha256": "6b00214ac551ed91598eb5f638e9af12cb3d3de3f2daaffd61d5cfbcd95fcd65",
+    "source_count": 1,
+    "export_scale": 1.296875
+  },
+  {
+    "bank": "sniper_pseudo3d/draw_forward/south",
+    "source": "../selected/sniper_pseudo3d/draw_forward/south/000.png",
+    "source_review": "playtest41: weapon raise, palette and fixed root reviewed; body height within 1.1% of firing bank",
+    "sha256": "6f05bf1c778808c4d36592306658867b47512e7f09ec84c4757283cfe16ba9a5",
+    "source_count": 13,
+    "export_scale": 2.25
+  },
+  {
+    "bank": "double_barrel_pseudo3d/draw_forward/south",
+    "source": "../selected/double_barrel_pseudo3d/draw_forward/south/000.png",
+    "source_review": "playtest41: weapon raise, palette and fixed root reviewed; body height within 1.1% of firing bank",
+    "sha256": "4171b1bface0c67968efdf3c2acd31232c2267b43e5469c2ccc28bbad264ca16",
+    "source_count": 13,
+    "export_scale": 2.25
+  }
+]

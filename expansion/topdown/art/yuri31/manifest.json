@@ -1,0 +1,4051 @@
+{
+  "build": "overdrive1015-yuri31-r1",
+  "assets": {
+    "y31_roll_west_0": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        57,
+        67,
+        128,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 0,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "813c703262c25aac033c8f623a7b3e1666cefdb50ec1c05458658d334206b8ca"
+    },
+    "y31_roll_west_1": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        72,
+        128,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 1,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "470cd31ebb601425404b5f052cb6504b864b96ee7c9bc4654d2836730f212be6"
+    },
+    "y31_roll_west_2": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        39,
+        71,
+        124,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 2,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "9fb5cbdcdd98a2379725969efdc93300c0f59eec8259ae55e3775c1bba4bf078"
+    },
+    "y31_roll_west_3": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        46,
+        88,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 3,
+      "sourceRoot": [
+        124,
+        186
+      ],
+      "sha256": "35a0bae6f8267c8844675db173ce1a8258b999de28dd85d230d7c408300290f1"
+    },
+    "y31_roll_west_4": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        41,
+        95,
+        126,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 4,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "c56dc319ab7eb6d5e817b752e7b12564d9a84a4a05956516b8b93f0e7a105831"
+    },
+    "y31_roll_west_5": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        43,
+        93,
+        125,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "78be458438896489141d862d3febbf1d8c89921d86267d67e5c02baef8d5e54a"
+    },
+    "y31_roll_west_6": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        90,
+        117,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        124,
+        160
+      ],
+      "sha256": "b2fd56ff472b325cf22b8de595e6b93879433a9dbf483bf7ddfc453bb944c281"
+    },
+    "y31_roll_west_7": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        55,
+        81,
+        116,
+        159
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "7fbb6e866d4fa37195f6222d721a1b94f6804d941179e41de0f58fd925caaffb"
+    },
+    "y31_roll_west_8": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_8.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        53,
+        79,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        124,
+        169
+      ],
+      "sha256": "92298ca1f328b923b4ea482cbca0754d7009604102bf5668d5446f42e92b4499"
+    },
+    "y31_roll_west_9": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_9.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        43,
+        86,
+        119,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        124,
+        165
+      ],
+      "sha256": "1d51d87510a41995585c0fe2e5db56c33affa4c3dc6a37917f212435d6eda7c1"
+    },
+    "y31_roll_west_10": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_10.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        38,
+        102,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        124,
+        156
+      ],
+      "sha256": "6df68072eb28020933629f8ac06a63c42c1a6274f2c9b3b928ae8fdcaf865b61"
+    },
+    "y31_roll_west_11": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_11.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        112,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        124,
+        146
+      ],
+      "sha256": "8da32b81c01d3712ae34c12aac780cc09e70bf098e06d6220a896d3b91c32449"
+    },
+    "y31_roll_west_12": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_12.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        108,
+        124,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "75eed5070efda5180b8dd899cafe540a3ccd7df92073923cfb29ac73c852be3f"
+    },
+    "y31_roll_west_13": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_13.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        45,
+        100,
+        124,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        124,
+        192
+      ],
+      "sha256": "f4a6b2820833cf891c4a8d8751c06039742d363f2baf46ef8326f1608db4d587"
+    },
+    "y31_roll_west_14": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_14.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        58,
+        85,
+        118,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        124,
+        208
+      ],
+      "sha256": "da70e7d4e0587f37ac3f12e04acdeefdbbac3ad4494e33402947b8b87090137a"
+    },
+    "y31_roll_west_15": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_15.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        81,
+        110,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "ad633cce584a01fda6929fba3f8254c3ac86c59b10ef5432fd8b71643e859768"
+    },
+    "y31_roll_west_16": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_16.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        42,
+        86,
+        117,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "3be33583bdde5396b1b18c8b4e3cc89d674c09f41eb9884011309aa68f236ba9"
+    },
+    "y31_roll_west_17": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_17.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        41,
+        89,
+        117,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 17,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "a72f306e5b5a4bf08039bd8de6332ce5b2de4512557522a0039c95f934742cc6"
+    },
+    "y31_roll_west_18": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_18.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        43,
+        86,
+        119,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 18,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "af32593483244c35945c8a01a0b02734acfc5f3fafd2ebc5f318e66c55d057e2"
+    },
+    "y31_roll_west_19": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_19.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        45,
+        82,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 19,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "28ed7cbe559a16107d810fdfab98dd65e7bf9e9dab8f594f5726bcdc5403ed0c"
+    },
+    "y31_roll_west_20": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_20.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        49,
+        77,
+        125,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 20,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "d7318e0cbe88c895145f608aa8ca54717f83968bb442ca40c3eb747b9ccbaaa8"
+    },
+    "y31_roll_west_21": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_21.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        73,
+        126,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 21,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "8bdee9c91bbfeadd144e64b780c5240461a6e573fe80dececf8c79be127d0f40"
+    },
+    "y31_roll_west_22": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_22.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        55,
+        70,
+        128,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 22,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "a367edb29524ec2f1b16b9cd2c4bb11290e40b840feb7373a12a81433a8e41fd"
+    },
+    "y31_roll_west_23": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_west_23.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        57,
+        67,
+        128,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 24,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "bb494d92148970698ce57810a7b45d66665cb03a706e1c968976f9e4525dd352"
+    },
+    "y31_roll_prone_west_0": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        57,
+        67,
+        128,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 0,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "813c703262c25aac033c8f623a7b3e1666cefdb50ec1c05458658d334206b8ca"
+    },
+    "y31_roll_prone_west_1": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        72,
+        128,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 1,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "470cd31ebb601425404b5f052cb6504b864b96ee7c9bc4654d2836730f212be6"
+    },
+    "y31_roll_prone_west_2": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        39,
+        71,
+        124,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 2,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "9fb5cbdcdd98a2379725969efdc93300c0f59eec8259ae55e3775c1bba4bf078"
+    },
+    "y31_roll_prone_west_3": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        46,
+        88,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 3,
+      "sourceRoot": [
+        124,
+        186
+      ],
+      "sha256": "35a0bae6f8267c8844675db173ce1a8258b999de28dd85d230d7c408300290f1"
+    },
+    "y31_roll_prone_west_4": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        41,
+        95,
+        126,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 4,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "c56dc319ab7eb6d5e817b752e7b12564d9a84a4a05956516b8b93f0e7a105831"
+    },
+    "y31_roll_prone_west_5": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        43,
+        93,
+        125,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "78be458438896489141d862d3febbf1d8c89921d86267d67e5c02baef8d5e54a"
+    },
+    "y31_roll_prone_west_6": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        90,
+        117,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        124,
+        160
+      ],
+      "sha256": "b2fd56ff472b325cf22b8de595e6b93879433a9dbf483bf7ddfc453bb944c281"
+    },
+    "y31_roll_prone_west_7": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        55,
+        81,
+        116,
+        159
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "7fbb6e866d4fa37195f6222d721a1b94f6804d941179e41de0f58fd925caaffb"
+    },
+    "y31_roll_prone_west_8": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_8.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        53,
+        79,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        124,
+        169
+      ],
+      "sha256": "92298ca1f328b923b4ea482cbca0754d7009604102bf5668d5446f42e92b4499"
+    },
+    "y31_roll_prone_west_9": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_9.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        43,
+        86,
+        119,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        124,
+        165
+      ],
+      "sha256": "1d51d87510a41995585c0fe2e5db56c33affa4c3dc6a37917f212435d6eda7c1"
+    },
+    "y31_roll_prone_west_10": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_10.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        38,
+        102,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        124,
+        156
+      ],
+      "sha256": "6df68072eb28020933629f8ac06a63c42c1a6274f2c9b3b928ae8fdcaf865b61"
+    },
+    "y31_roll_prone_west_11": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_11.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        112,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        124,
+        146
+      ],
+      "sha256": "8da32b81c01d3712ae34c12aac780cc09e70bf098e06d6220a896d3b91c32449"
+    },
+    "y31_roll_prone_west_12": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_12.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        108,
+        124,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "75eed5070efda5180b8dd899cafe540a3ccd7df92073923cfb29ac73c852be3f"
+    },
+    "y31_roll_prone_west_13": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_13.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        45,
+        100,
+        124,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        124,
+        192
+      ],
+      "sha256": "f4a6b2820833cf891c4a8d8751c06039742d363f2baf46ef8326f1608db4d587"
+    },
+    "y31_roll_prone_west_14": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_14.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        58,
+        85,
+        118,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        124,
+        208
+      ],
+      "sha256": "da70e7d4e0587f37ac3f12e04acdeefdbbac3ad4494e33402947b8b87090137a"
+    },
+    "y31_roll_prone_west_15": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_15.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        81,
+        110,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "ad633cce584a01fda6929fba3f8254c3ac86c59b10ef5432fd8b71643e859768"
+    },
+    "y31_roll_prone_west_16": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_16.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        42,
+        86,
+        117,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "3be33583bdde5396b1b18c8b4e3cc89d674c09f41eb9884011309aa68f236ba9"
+    },
+    "y31_roll_prone_west_17": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_17.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        59,
+        86,
+        125,
+        159
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        124,
+        207
+      ],
+      "sha256": "428297bdce693f8c3ac44dc0fec3ddf1ec76e3bb8930721615735466f43bf3c5"
+    },
+    "y31_roll_prone_west_18": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_18.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        61,
+        88,
+        126,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        124,
+        208
+      ],
+      "sha256": "d5172f48ea5fbfb075c2f89081dcc6bbeed3f2a857a806934f45648c7d3585f1"
+    },
+    "y31_roll_prone_west_19": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_19.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        50,
+        90,
+        125,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        124,
+        206
+      ],
+      "sha256": "e464a72216097dd084285b259e60d1e95c3634d7b45ddc170ff68e39baa20283"
+    },
+    "y31_roll_prone_west_20": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_20.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        36,
+        103,
+        123,
+        159
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        124,
+        207
+      ],
+      "sha256": "153df5f731fb40ed12f271f2ee1047d7a90a814a92c0e86b3df8549f830506cf"
+    },
+    "y31_roll_prone_west_21": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_21.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        35,
+        110,
+        129,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        124,
+        206
+      ],
+      "sha256": "4250004b2e96771ff98a06bf13f54f69e18c41ecffe4a6cba2f314fed66fff64"
+    },
+    "y31_roll_prone_west_22": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_22.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        120,
+        130,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        124,
+        202
+      ],
+      "sha256": "f9b77e896b888bb9cb70a5a6aa4f85a223b080667e859a49fdafe85e9977c77a"
+    },
+    "y31_roll_prone_west_23": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_23.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        36,
+        123,
+        130,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        124,
+        202
+      ],
+      "sha256": "4b7251c70c20023957cc8694671d1e14e8691b5b8031d29925d87ec8c7edd2ac"
+    },
+    "y31_roll_prone_west_24": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_24.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        123,
+        130,
+        159
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        124,
+        203
+      ],
+      "sha256": "3cc0e5f03f23288d3947bb1d5c805aac2e3b2f15d1706d91b4ee946db21e2771"
+    },
+    "y31_roll_prone_west_25": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_25.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        36,
+        123,
+        130,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        124,
+        200
+      ],
+      "sha256": "b92a206f58043b229cae39c5c72e3fac19c49e8c73cd3afd4f5c32ace99869b9"
+    },
+    "y31_roll_prone_west_26": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_26.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        123,
+        130,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        124,
+        204
+      ],
+      "sha256": "6f094486a21feffc2ecb19e37c2ff5599faed0dc547eb9b2a8880ad524687252"
+    },
+    "y31_roll_prone_west_27": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_27.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        123,
+        130,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        124,
+        204
+      ],
+      "sha256": "1c3ad6311c2fffb06d6139223fffb9905f99c237c6d0bd1c3ff5eead4adbfa08"
+    },
+    "y31_roll_prone_west_28": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_west_28.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        34,
+        120,
+        130,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        124,
+        202
+      ],
+      "sha256": "c66f500181c0ae23d66cd17290cb690b6d8ccb7104a52ef93796caf80f4598dc"
+    },
+    "y31_slide_turn_west_0": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        56,
+        92,
+        132,
+        177
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 0,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "f523b30b2914e2c87e856536daa279bc02dd3374cca14aad504a77ae1c10cacf",
+      "muzzle": [
+        66,
+        100
+      ]
+    },
+    "y31_slide_turn_west_1": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        52,
+        93,
+        127,
+        177
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 4,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "be95bb047d3b87a3fce11ee01f33a08dfb4649df8284f8ccc54844855c7d5053",
+      "muzzle": [
+        68,
+        100
+      ]
+    },
+    "y31_slide_turn_west_2": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        51,
+        92,
+        124,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "67825ed5a42418fe45d9200bf303dcf503dab69bdb02b720d52b711a10ad1de5",
+      "muzzle": [
+        77,
+        102
+      ]
+    },
+    "y31_slide_turn_west_3": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        50,
+        91,
+        123,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "21d1b2b123e458c60691b10f006079ff7eae98fcfb762ab298ce6881d60721ae",
+      "muzzle": [
+        97,
+        109
+      ]
+    },
+    "y31_slide_turn_west_4": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        50,
+        91,
+        123,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "4dac97bcb0a775379977d9b885816bbcaf63d4f5ea4c2a30b6aefff4400563d9",
+      "muzzle": [
+        113,
+        141
+      ]
+    },
+    "y31_slide_turn_west_5": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        50,
+        91,
+        132,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "00a2c6a4d54e812d72a6133690242085b9350e847612b90772de69eef9bba0e0",
+      "muzzle": [
+        129,
+        143
+      ]
+    },
+    "y31_slide_turn_west_6": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        49,
+        91,
+        136,
+        179
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "5738fc6dc13efdbdd0a07e79124a204d85446cd21d6bcd149becb815122ac956",
+      "muzzle": [
+        133,
+        130
+      ]
+    },
+    "y31_slide_turn_west_7": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        48,
+        92,
+        131,
+        179
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "3b22562ef365f4dca6c4cd56cc7eae98a28d0f2ad2b7f7e10f3d82e29fd69fd7",
+      "muzzle": [
+        134,
+        121
+      ]
+    },
+    "y31_slide_turn_west_8": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_8.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        47,
+        92,
+        122,
+        180
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "d8df5046b58a1aa4b4b43ee8d7c5497e631522d05a421db74d593d9312f750ed",
+      "muzzle": [
+        121,
+        112
+      ]
+    },
+    "y31_slide_turn_west_9": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_9.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        46,
+        93,
+        130,
+        180
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "8ab7e9250419cef43e90f6c76b0a20cc1a4943b9c8c6a42285628405ff8f6b30",
+      "muzzle": [
+        129,
+        104
+      ]
+    },
+    "y31_slide_turn_west_10": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_10.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        44,
+        93,
+        136,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "d0a3a1af17b19f3dde0358a847700e41fca640a7e7a3211dec2489f181a07c56",
+      "muzzle": [
+        134,
+        103
+      ]
+    },
+    "y31_slide_turn_west_11": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_11.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        44,
+        93,
+        136,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "34fbdf81a6525a31a70b99a27b8e9d6182834291a7bee12dd237eb668edc74dc",
+      "muzzle": [
+        134,
+        103
+      ]
+    },
+    "y31_slide_turn_west_12": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_12.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        44,
+        93,
+        136,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "1ce7255157bbe9a07da57d93d7a13f704f3d4b72f6c76f519fa2eb09d3e43714",
+      "muzzle": [
+        134,
+        103
+      ]
+    },
+    "y31_slide_turn_west_13": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_13.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        44,
+        93,
+        136,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "1ce7255157bbe9a07da57d93d7a13f704f3d4b72f6c76f519fa2eb09d3e43714",
+      "muzzle": [
+        134,
+        103
+      ]
+    },
+    "y31_slide_turn_west_14": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_west_14.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        44,
+        93,
+        136,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 20,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "1ce7255157bbe9a07da57d93d7a13f704f3d4b72f6c76f519fa2eb09d3e43714",
+      "muzzle": [
+        134,
+        103
+      ]
+    },
+    "y31_roll_east_0": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        64,
+        67,
+        135,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 0,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "1a27d7ddd9613fa1e2addf9d6db39692ccb864ba6a3bab608b923690793879e0"
+    },
+    "y31_roll_east_1": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        64,
+        72,
+        140,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 1,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "1957a2800dd1c2353d20438ccfc22623aa6969feea0a48f12a8480033cd6e4bb"
+    },
+    "y31_roll_east_2": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        71,
+        153,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 2,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "aff6cb039b60dded16fc6a5563ee1f6f97cd1adb771540ad90489d9f18bc67f5"
+    },
+    "y31_roll_east_3": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        88,
+        146,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 3,
+      "sourceRoot": [
+        124,
+        186
+      ],
+      "sha256": "4803ab16872a76d62fd0d755411366dcfdd063c812f694e798dd08c11cbc28ec"
+    },
+    "y31_roll_east_4": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        66,
+        95,
+        151,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 4,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "61742965510677ad96ed0a4f72d35f84b6538b592585701201a9f4613727625b"
+    },
+    "y31_roll_east_5": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        67,
+        93,
+        149,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "115543d5dd3d31cdd83321525938f167ed4f9a2fbfe4d83d2aa90822ef2704f4"
+    },
+    "y31_roll_east_6": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        75,
+        90,
+        140,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        124,
+        160
+      ],
+      "sha256": "badecfff949b557dc9b37062b308f849a3d744d0c25f7cb2a6a7c692ba169c4f"
+    },
+    "y31_roll_east_7": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        76,
+        81,
+        137,
+        159
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "dc22d9010dc2dedf0ff0298a642753f8601344c7dcb71d0aad8a2f380be3a97d"
+    },
+    "y31_roll_east_8": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_8.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        79,
+        139,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        124,
+        169
+      ],
+      "sha256": "6b8bfb5adc33c7290800ca54c8f5db1b7e8f9d96a55ea55a4ad4dc78eb157830"
+    },
+    "y31_roll_east_9": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_9.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        73,
+        86,
+        149,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        124,
+        165
+      ],
+      "sha256": "52817e8963849b9079806c99e9552b8971d1ed1cba4e30bd166c8cd80963f8ca"
+    },
+    "y31_roll_east_10": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_10.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        76,
+        102,
+        154,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        124,
+        156
+      ],
+      "sha256": "c362f3a0abaababa1d65bdb0fa6a2b21c776d94dc3ec9b15702d3f8f0673c769"
+    },
+    "y31_roll_east_11": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_11.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        112,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        124,
+        146
+      ],
+      "sha256": "3ee7f24fb27e2d33d9a8ee7592ce9e8bb0e6bd2ea9908cbf8199adb2c9045f9a"
+    },
+    "y31_roll_east_12": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_12.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        108,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "5dd33a3a94d7f5e4e1a1b03b6837ba75545775c0caf97c8be35051b934872727"
+    },
+    "y31_roll_east_13": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_13.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        100,
+        147,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        124,
+        192
+      ],
+      "sha256": "6d35d9cbfb27deb08d1edccf4f603a06df4c4a94c6afb7483dcf7c3cc2629ae4"
+    },
+    "y31_roll_east_14": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_14.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        74,
+        85,
+        134,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        124,
+        208
+      ],
+      "sha256": "884af3ee143b4988e8d0787b067bd106831775d0b4e162ccfae96d16d9d361ec"
+    },
+    "y31_roll_east_15": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_15.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        82,
+        81,
+        140,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "19906626a6f68bfa1f6f7801537cedaef2383fcd9e2a0055ea63ac95534c6f52"
+    },
+    "y31_roll_east_16": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_16.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        75,
+        86,
+        150,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "ec8f57a0a75b778ab0367a1a8cdf51d9117c22c85c700969cda8596c4866d782"
+    },
+    "y31_roll_east_17": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_17.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        75,
+        89,
+        151,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 17,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "bd44777f2277e7d2ac0e4262d28635f85050da5c97cc7810969b2bfba6027362"
+    },
+    "y31_roll_east_18": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_18.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        73,
+        86,
+        149,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 18,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "021aa4f25d3bcf634d3b8b35897409cd57dabcd1a17a353d5e8a26fa277dbed2"
+    },
+    "y31_roll_east_19": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_19.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        82,
+        147,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 19,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "94d1b1fd34c29be83328ce42f67153e550a7709f0010659b3b05cc3f7e4b3a3e"
+    },
+    "y31_roll_east_20": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_20.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        67,
+        77,
+        143,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 20,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "efca8d27fc4bdc0a3194dea54919b86b1049de7e351bacf8dfbb74496fc50f4c"
+    },
+    "y31_roll_east_21": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_21.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        66,
+        73,
+        140,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 21,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "ec37845e4bf4279fbdcf8286c764a9753852a913b68f6918733bce86b7cc702c"
+    },
+    "y31_roll_east_22": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_22.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        64,
+        70,
+        137,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 22,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "34c1716467a03040974335a26cfff15f81ab2b5bc74ba57eaa304728d21dacac"
+    },
+    "y31_roll_east_23": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_east_23.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        64,
+        67,
+        135,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 24,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "8eef6c474b53c225c59abc9e542b680fee4460b502f95ec0ea3f32a4a6a05500"
+    },
+    "y31_roll_prone_east_0": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        64,
+        67,
+        135,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 0,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "1a27d7ddd9613fa1e2addf9d6db39692ccb864ba6a3bab608b923690793879e0"
+    },
+    "y31_roll_prone_east_1": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        64,
+        72,
+        140,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 1,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "1957a2800dd1c2353d20438ccfc22623aa6969feea0a48f12a8480033cd6e4bb"
+    },
+    "y31_roll_prone_east_2": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        71,
+        153,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 2,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "aff6cb039b60dded16fc6a5563ee1f6f97cd1adb771540ad90489d9f18bc67f5"
+    },
+    "y31_roll_prone_east_3": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        88,
+        146,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 3,
+      "sourceRoot": [
+        124,
+        186
+      ],
+      "sha256": "4803ab16872a76d62fd0d755411366dcfdd063c812f694e798dd08c11cbc28ec"
+    },
+    "y31_roll_prone_east_4": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        66,
+        95,
+        151,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 4,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "61742965510677ad96ed0a4f72d35f84b6538b592585701201a9f4613727625b"
+    },
+    "y31_roll_prone_east_5": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        67,
+        93,
+        149,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        124,
+        174
+      ],
+      "sha256": "115543d5dd3d31cdd83321525938f167ed4f9a2fbfe4d83d2aa90822ef2704f4"
+    },
+    "y31_roll_prone_east_6": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        75,
+        90,
+        140,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        124,
+        160
+      ],
+      "sha256": "badecfff949b557dc9b37062b308f849a3d744d0c25f7cb2a6a7c692ba169c4f"
+    },
+    "y31_roll_prone_east_7": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        76,
+        81,
+        137,
+        159
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "dc22d9010dc2dedf0ff0298a642753f8601344c7dcb71d0aad8a2f380be3a97d"
+    },
+    "y31_roll_prone_east_8": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_8.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        79,
+        139,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        124,
+        169
+      ],
+      "sha256": "6b8bfb5adc33c7290800ca54c8f5db1b7e8f9d96a55ea55a4ad4dc78eb157830"
+    },
+    "y31_roll_prone_east_9": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_9.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        73,
+        86,
+        149,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        124,
+        165
+      ],
+      "sha256": "52817e8963849b9079806c99e9552b8971d1ed1cba4e30bd166c8cd80963f8ca"
+    },
+    "y31_roll_prone_east_10": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_10.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        76,
+        102,
+        154,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        124,
+        156
+      ],
+      "sha256": "c362f3a0abaababa1d65bdb0fa6a2b21c776d94dc3ec9b15702d3f8f0673c769"
+    },
+    "y31_roll_prone_east_11": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_11.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        112,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        124,
+        146
+      ],
+      "sha256": "3ee7f24fb27e2d33d9a8ee7592ce9e8bb0e6bd2ea9908cbf8199adb2c9045f9a"
+    },
+    "y31_roll_prone_east_12": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_12.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        108,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        124,
+        168
+      ],
+      "sha256": "5dd33a3a94d7f5e4e1a1b03b6837ba75545775c0caf97c8be35051b934872727"
+    },
+    "y31_roll_prone_east_13": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_13.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        100,
+        147,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        124,
+        192
+      ],
+      "sha256": "6d35d9cbfb27deb08d1edccf4f603a06df4c4a94c6afb7483dcf7c3cc2629ae4"
+    },
+    "y31_roll_prone_east_14": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_14.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        74,
+        85,
+        134,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        124,
+        208
+      ],
+      "sha256": "884af3ee143b4988e8d0787b067bd106831775d0b4e162ccfae96d16d9d361ec"
+    },
+    "y31_roll_prone_east_15": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_15.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        82,
+        81,
+        140,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "19906626a6f68bfa1f6f7801537cedaef2383fcd9e2a0055ea63ac95534c6f52"
+    },
+    "y31_roll_prone_east_16": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_16.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        75,
+        86,
+        150,
+        160
+      ],
+      "drawScale": 1,
+      "source": "roll_complete",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        124,
+        210
+      ],
+      "sha256": "ec8f57a0a75b778ab0367a1a8cdf51d9117c22c85c700969cda8596c4866d782"
+    },
+    "y31_roll_prone_east_17": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_17.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        67,
+        86,
+        133,
+        159
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        124,
+        207
+      ],
+      "sha256": "a0071e7a2bbe75f9b05ef7be6b2bd8e1cc5baf2365f299fbb02da08679dc97c7"
+    },
+    "y31_roll_prone_east_18": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_18.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        66,
+        88,
+        131,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        124,
+        208
+      ],
+      "sha256": "db43af0b05d3047980bb25d8024923ba2efa5d927b7cbbde14b9d185b3038997"
+    },
+    "y31_roll_prone_east_19": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_19.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        67,
+        90,
+        142,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        124,
+        206
+      ],
+      "sha256": "489eaab6740561013bdbec0345a7c5596035eaaa86dee9b64743ea2a62a80213"
+    },
+    "y31_roll_prone_east_20": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_20.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        69,
+        103,
+        156,
+        159
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        124,
+        207
+      ],
+      "sha256": "429863c80883f647c5a96f204a25bb51cac140b99d1b55977fd9be3369811a4a"
+    },
+    "y31_roll_prone_east_21": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_21.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        63,
+        110,
+        157,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        124,
+        206
+      ],
+      "sha256": "f03cbd8fb575a5908ce9f7c50a46d7554a53c441af64da3424de1a24e6e42ee8"
+    },
+    "y31_roll_prone_east_22": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_22.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        120,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        124,
+        202
+      ],
+      "sha256": "df00112006e1308f84d1fbd4d8c3a4a85da1eec666c6d98da61f54528b2db384"
+    },
+    "y31_roll_prone_east_23": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_23.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        123,
+        156,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        124,
+        202
+      ],
+      "sha256": "e7a63851c290ea22f1861db3018a7046baece1a99e6bdbc7548915cbde07b79a"
+    },
+    "y31_roll_prone_east_24": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_24.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        123,
+        158,
+        159
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        124,
+        203
+      ],
+      "sha256": "4b760777d87f76dfd5dd10206d26d5b913a23268084edfb7de7e84ac3f2b6f13"
+    },
+    "y31_roll_prone_east_25": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_25.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        123,
+        156,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        124,
+        200
+      ],
+      "sha256": "13bd60eb890f4f68ad3a600070723ab2f37383ff19b17938913aa32b5d208c54"
+    },
+    "y31_roll_prone_east_26": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_26.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        123,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        124,
+        204
+      ],
+      "sha256": "afb04ca65c07ab14d0ee2c8a83d1388a45ad8e9be75d1c0829a87832c5f3b5e3"
+    },
+    "y31_roll_prone_east_27": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_27.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        123,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        124,
+        204
+      ],
+      "sha256": "3e289c429f63e8de8bd89e5ddc6cb66a1104f44629f4cbb68b5e3cc8db893335"
+    },
+    "y31_roll_prone_east_28": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_roll_prone_east_28.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        120,
+        158,
+        160
+      ],
+      "drawScale": 1,
+      "source": "prone_settle",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        124,
+        202
+      ],
+      "sha256": "d511bbdcc095777e99a3426d1c6a066dc26a45c007dc8372e2ff28d8ce90f3bc"
+    },
+    "y31_slide_turn_east_0": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        60,
+        92,
+        136,
+        177
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 0,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "8f75977fddbd10e4756e3d2050777d01f7135b9711e174c77e112bdb9f51c914",
+      "muzzle": [
+        125,
+        100
+      ]
+    },
+    "y31_slide_turn_east_1": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        65,
+        93,
+        140,
+        177
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 4,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "563f5d42293a8b73f6717c3e1b4f4feecf3b2340fe07ceaa8518195d550b9542",
+      "muzzle": [
+        123,
+        100
+      ]
+    },
+    "y31_slide_turn_east_2": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        92,
+        141,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "8106a2058b2981b656fa6ec46a95e3d93b36f4edc7f6aaf68c5b07380c7529d4",
+      "muzzle": [
+        114,
+        102
+      ]
+    },
+    "y31_slide_turn_east_3": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        69,
+        91,
+        142,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "94d366c2b7bfb6457602e7ce80f60f02c7dde1f38de66b144ed7a2d105eb4e80",
+      "muzzle": [
+        94,
+        109
+      ]
+    },
+    "y31_slide_turn_east_4": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        69,
+        91,
+        142,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "c5b41c585a4c04d8173e1c8d3b1d0e7802eba42f46884c5d3ae800d45a87819d",
+      "muzzle": [
+        78,
+        141
+      ]
+    },
+    "y31_slide_turn_east_5": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        60,
+        91,
+        142,
+        178
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "3b33c2a8509cb0e36275c874ad954e2b7ad78aae9310eefa85e1a36f7f0c95a3",
+      "muzzle": [
+        62,
+        143
+      ]
+    },
+    "y31_slide_turn_east_6": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        56,
+        91,
+        143,
+        179
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 9,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "2d1e99fbb00234da45454abaefa6e007abb70e46fa2f64034cb6c436c9ab3f65",
+      "muzzle": [
+        58,
+        130
+      ]
+    },
+    "y31_slide_turn_east_7": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        61,
+        92,
+        144,
+        179
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 10,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "d7ea3d674a16c408b44b6f66c64ef4f05635f1836e7813617443aff524bac57e",
+      "muzzle": [
+        57,
+        121
+      ]
+    },
+    "y31_slide_turn_east_8": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_8.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        70,
+        92,
+        145,
+        180
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 11,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "546bbea6a0d98cd5a9e36756a4db254f2a3663288d942fa83447610cc88d340e",
+      "muzzle": [
+        70,
+        112
+      ]
+    },
+    "y31_slide_turn_east_9": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_9.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        93,
+        146,
+        180
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 12,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "b0b8f61c1c9ddcf4ec854b980ef3ee3c03679a947f5d84e89314334f065bc372",
+      "muzzle": [
+        62,
+        104
+      ]
+    },
+    "y31_slide_turn_east_10": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_10.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        56,
+        93,
+        148,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 13,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "8d69cda5ee175658a46c36740d6ab964a15c9b4509b2f1dab99d79800162053a",
+      "muzzle": [
+        57,
+        103
+      ]
+    },
+    "y31_slide_turn_east_11": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_11.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        56,
+        93,
+        148,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 14,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "edf2b4c10c9063cf0fa149c3d1c09a7c74d4bd8efbf8c1db42eddc33a3f44c20",
+      "muzzle": [
+        57,
+        103
+      ]
+    },
+    "y31_slide_turn_east_12": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_12.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        56,
+        93,
+        148,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 15,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "b93220811c6f6aee3732b885e44961c192e3508232e914ca613f3a06e506d7a9",
+      "muzzle": [
+        57,
+        103
+      ]
+    },
+    "y31_slide_turn_east_13": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_13.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        56,
+        93,
+        148,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 16,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "b93220811c6f6aee3732b885e44961c192e3508232e914ca613f3a06e506d7a9",
+      "muzzle": [
+        57,
+        103
+      ]
+    },
+    "y31_slide_turn_east_14": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_slide_turn_east_14.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        56,
+        93,
+        148,
+        181
+      ],
+      "drawScale": 1,
+      "source": "slide_twist",
+      "sourceFrame": 20,
+      "sourceRoot": [
+        110,
+        160
+      ],
+      "sha256": "b93220811c6f6aee3732b885e44961c192e3508232e914ca613f3a06e506d7a9",
+      "muzzle": [
+        57,
+        103
+      ]
+    },
+    "y31_down_idle": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_idle.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        69,
+        73,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_setup",
+      "sourceFrame": 0,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "45ba52c5521cd837407bdbd763573cdd3c5845d7d759894c3652f743032ce238",
+      "muzzle": [
+        95,
+        149
+      ]
+    },
+    "y31_down_fire_0": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        69,
+        73,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 1,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "bf2e4f5522dfc40924c53fbae429c425b0e201a0ba06303730facd2748e6bc3e",
+      "muzzle": [
+        95,
+        149
+      ]
+    },
+    "y31_down_fire_1": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        70,
+        72,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 2,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "f736ef2313078d08c32baf54ef33c44e35cc5fe9f24996d415be50a216a77b05",
+      "muzzle": [
+        95,
+        148
+      ]
+    },
+    "y31_down_fire_2": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        70,
+        71,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 3,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "85e89464eff4f1656bbe501e7ee86b59cb1d85ae814f79623d0e950acfe0d10c",
+      "muzzle": [
+        96,
+        147
+      ]
+    },
+    "y31_down_fire_3": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        71,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 4,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "3dae9918dfa0e07338774d3e94a0cdf44006d109b17e45b1b26e8116c8189cb8",
+      "muzzle": [
+        96,
+        145
+      ]
+    },
+    "y31_down_fire_4": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        71,
+        71,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 5,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "329a583ba53f1251ebb9ab261785d879338e778965338f175d9a1ddd402e9038",
+      "muzzle": [
+        96,
+        145
+      ]
+    },
+    "y31_down_fire_5": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        70,
+        71,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 6,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "5d4f046c3637271e4a8a792da1ec9ca01e4a2941b472d9805b1c42fbc8c2b81a",
+      "muzzle": [
+        96,
+        147
+      ]
+    },
+    "y31_down_fire_6": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        70,
+        72,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 7,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "6f84edde4e72f667f0969e15035a9b227d0f27cb33119cedf19314fb17b41583",
+      "muzzle": [
+        96,
+        148
+      ]
+    },
+    "y31_down_fire_7": {
+      "file": "expansion/topdown/art/yuri31/frames/y31_down_fire_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        69,
+        73,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "source": "down_brace",
+      "sourceFrame": 8,
+      "sourceRoot": [
+        96,
+        210
+      ],
+      "sha256": "f15a41a10369ad3e7186e492863e7e85a2bc8c0795c9b4b05ac418cfabadeeb5",
+      "muzzle": [
+        95,
+        149
+      ]
+    }
+  },
+  "sequences": {
+    "y31_roll_west": {
+      "frames": [
+        "y31_roll_west_0",
+        "y31_roll_west_1",
+        "y31_roll_west_2",
+        "y31_roll_west_3",
+        "y31_roll_west_4",
+        "y31_roll_west_5",
+        "y31_roll_west_6",
+        "y31_roll_west_7",
+        "y31_roll_west_8",
+        "y31_roll_west_9",
+        "y31_roll_west_10",
+        "y31_roll_west_11",
+        "y31_roll_west_12",
+        "y31_roll_west_13",
+        "y31_roll_west_14",
+        "y31_roll_west_15",
+        "y31_roll_west_16",
+        "y31_roll_west_17",
+        "y31_roll_west_18",
+        "y31_roll_west_19",
+        "y31_roll_west_20",
+        "y31_roll_west_21",
+        "y31_roll_west_22",
+        "y31_roll_west_23"
+      ],
+      "fps": 48,
+      "duration": 0.5,
+      "loop": false,
+      "phases": {
+        "push": 0,
+        "inverted": 7,
+        "rotation_through": 11,
+        "boots_plant": 16,
+        "recover": 23
+      }
+    },
+    "y31_roll_prone_west": {
+      "frames": [
+        "y31_roll_prone_west_0",
+        "y31_roll_prone_west_1",
+        "y31_roll_prone_west_2",
+        "y31_roll_prone_west_3",
+        "y31_roll_prone_west_4",
+        "y31_roll_prone_west_5",
+        "y31_roll_prone_west_6",
+        "y31_roll_prone_west_7",
+        "y31_roll_prone_west_8",
+        "y31_roll_prone_west_9",
+        "y31_roll_prone_west_10",
+        "y31_roll_prone_west_11",
+        "y31_roll_prone_west_12",
+        "y31_roll_prone_west_13",
+        "y31_roll_prone_west_14",
+        "y31_roll_prone_west_15",
+        "y31_roll_prone_west_16",
+        "y31_roll_prone_west_17",
+        "y31_roll_prone_west_18",
+        "y31_roll_prone_west_19",
+        "y31_roll_prone_west_20",
+        "y31_roll_prone_west_21",
+        "y31_roll_prone_west_22",
+        "y31_roll_prone_west_23",
+        "y31_roll_prone_west_24",
+        "y31_roll_prone_west_25",
+        "y31_roll_prone_west_26",
+        "y31_roll_prone_west_27",
+        "y31_roll_prone_west_28"
+      ],
+      "fps": 58,
+      "duration": 0.5,
+      "loop": false,
+      "landingSource": "approved Yuri30 kneel-to-prone drawings; generated airborne finish rejected"
+    },
+    "y31_slide_turn_west": {
+      "frames": [
+        "y31_slide_turn_west_0",
+        "y31_slide_turn_west_1",
+        "y31_slide_turn_west_2",
+        "y31_slide_turn_west_3",
+        "y31_slide_turn_west_4",
+        "y31_slide_turn_west_5",
+        "y31_slide_turn_west_6",
+        "y31_slide_turn_west_7",
+        "y31_slide_turn_west_8",
+        "y31_slide_turn_west_9",
+        "y31_slide_turn_west_10",
+        "y31_slide_turn_west_11",
+        "y31_slide_turn_west_12",
+        "y31_slide_turn_west_13",
+        "y31_slide_turn_west_14"
+      ],
+      "fps": 44,
+      "duration": 0.34,
+      "loop": false,
+      "reversible": true,
+      "selection": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        20
+      ],
+      "rejectedFrames": {
+        "1,2,3": "unwanted baked flash/sparks"
+      }
+    },
+    "y31_roll_east": {
+      "frames": [
+        "y31_roll_east_0",
+        "y31_roll_east_1",
+        "y31_roll_east_2",
+        "y31_roll_east_3",
+        "y31_roll_east_4",
+        "y31_roll_east_5",
+        "y31_roll_east_6",
+        "y31_roll_east_7",
+        "y31_roll_east_8",
+        "y31_roll_east_9",
+        "y31_roll_east_10",
+        "y31_roll_east_11",
+        "y31_roll_east_12",
+        "y31_roll_east_13",
+        "y31_roll_east_14",
+        "y31_roll_east_15",
+        "y31_roll_east_16",
+        "y31_roll_east_17",
+        "y31_roll_east_18",
+        "y31_roll_east_19",
+        "y31_roll_east_20",
+        "y31_roll_east_21",
+        "y31_roll_east_22",
+        "y31_roll_east_23"
+      ],
+      "fps": 48,
+      "duration": 0.5,
+      "loop": false,
+      "phases": {
+        "push": 0,
+        "inverted": 7,
+        "rotation_through": 11,
+        "boots_plant": 16,
+        "recover": 23
+      }
+    },
+    "y31_roll_prone_east": {
+      "frames": [
+        "y31_roll_prone_east_0",
+        "y31_roll_prone_east_1",
+        "y31_roll_prone_east_2",
+        "y31_roll_prone_east_3",
+        "y31_roll_prone_east_4",
+        "y31_roll_prone_east_5",
+        "y31_roll_prone_east_6",
+        "y31_roll_prone_east_7",
+        "y31_roll_prone_east_8",
+        "y31_roll_prone_east_9",
+        "y31_roll_prone_east_10",
+        "y31_roll_prone_east_11",
+        "y31_roll_prone_east_12",
+        "y31_roll_prone_east_13",
+        "y31_roll_prone_east_14",
+        "y31_roll_prone_east_15",
+        "y31_roll_prone_east_16",
+        "y31_roll_prone_east_17",
+        "y31_roll_prone_east_18",
+        "y31_roll_prone_east_19",
+        "y31_roll_prone_east_20",
+        "y31_roll_prone_east_21",
+        "y31_roll_prone_east_22",
+        "y31_roll_prone_east_23",
+        "y31_roll_prone_east_24",
+        "y31_roll_prone_east_25",
+        "y31_roll_prone_east_26",
+        "y31_roll_prone_east_27",
+        "y31_roll_prone_east_28"
+      ],
+      "fps": 58,
+      "duration": 0.5,
+      "loop": false,
+      "landingSource": "approved Yuri30 kneel-to-prone drawings; generated airborne finish rejected"
+    },
+    "y31_slide_turn_east": {
+      "frames": [
+        "y31_slide_turn_east_0",
+        "y31_slide_turn_east_1",
+        "y31_slide_turn_east_2",
+        "y31_slide_turn_east_3",
+        "y31_slide_turn_east_4",
+        "y31_slide_turn_east_5",
+        "y31_slide_turn_east_6",
+        "y31_slide_turn_east_7",
+        "y31_slide_turn_east_8",
+        "y31_slide_turn_east_9",
+        "y31_slide_turn_east_10",
+        "y31_slide_turn_east_11",
+        "y31_slide_turn_east_12",
+        "y31_slide_turn_east_13",
+        "y31_slide_turn_east_14"
+      ],
+      "fps": 44,
+      "duration": 0.34,
+      "loop": false,
+      "reversible": true,
+      "selection": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        20
+      ],
+      "rejectedFrames": {
+        "1,2,3": "unwanted baked flash/sparks"
+      }
+    },
+    "y31_down_fire": {
+      "frames": [
+        "y31_down_fire_0",
+        "y31_down_fire_1",
+        "y31_down_fire_2",
+        "y31_down_fire_3",
+        "y31_down_fire_4",
+        "y31_down_fire_5",
+        "y31_down_fire_6",
+        "y31_down_fire_7"
+      ],
+      "fps": 64,
+      "duration": 0.12,
+      "loop": true
+    }
+  },
+  "unit": {
+    "cell": [
+      192,
+      224
+    ],
+    "anchor": [
+      96,
+      160
+    ],
+    "bodyScale": 0.5
+  },
+  "notes": "Whole authored plates; same scale throughout. Roots, pose selection, and native barrel sockets are explicit. No skeletal puppetry."
+}

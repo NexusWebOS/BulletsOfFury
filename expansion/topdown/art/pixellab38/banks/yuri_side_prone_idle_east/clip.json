@@ -1,0 +1,32 @@
+{
+  "frames": [
+    "pl38_yuri_side_prone_idle_east_0",
+    "pl38_yuri_side_prone_idle_east_1",
+    "pl38_yuri_side_prone_idle_east_2",
+    "pl38_yuri_side_prone_idle_east_3"
+  ],
+  "fps": 12,
+  "loop": true,
+  "events": {},
+  "origin": [
+    90,
+    144
+  ],
+  "size": [
+    180,
+    176
+  ],
+  "duration": 0.3333333333333333,
+  "provider": "PixelLab",
+  "source_review": "pending",
+  "export_scale": 1,
+  "source_master": "yuri_side",
+  "source_action": "prone_idle",
+  "source_direction": "east",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

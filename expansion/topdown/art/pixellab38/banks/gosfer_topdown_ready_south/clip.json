@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_gosfer_topdown_ready_south_0"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    112,
+    140
+  ],
+  "size": [
+    224,
+    148
+  ],
+  "duration": 0.08333333333333333,
+  "provider": "PixelLab",
+  "source_review": "facing reviewed; playback pending",
+  "export_scale": 1,
+  "source_master": "gosfer_pseudo3d",
+  "source_action": "fire",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

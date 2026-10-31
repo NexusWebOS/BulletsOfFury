@@ -1,0 +1,63 @@
+{
+  "setups": [
+    {
+      "direction": "east",
+      "args": {
+        "image_urls": [
+          "upload:ee7fee77-0c2f-4729-8a5c-47d64993c9c4"
+        ],
+        "width": 192,
+        "height": 224,
+        "no_background": true,
+        "description": "FRAME FORMAT:192x224 transparent canvas, body about176px tall, foot pivot(96,208). Preserve EXACT Yuri identity, red tactical jacket, black leg armor, hair, beard, weapon, palette and pixel density. Change only the stance for UPWARD travel while aiming RIGHT: pelvis, hips, knees and both boot toes face NORTH, away from the viewer toward TOP of the screen. We see the back of the hips and legs. Upper torso twists toward screen RIGHT, with the side of his face visible and both hands holding the rifle LEVEL at the shoulder, barrel pointing perfectly HORIZONTALLY RIGHT. This is a tactical cross-step setup, not a running stride toward the gun. Slight bend in knees, one foot half a step upward behind the other. Maintain full original body size; whole rifle and both boots inside margins. No effects, no ground shadow, no flash, no projectiles, no background, no text. The clear visual is legs walking away while torso aims sideways."
+      },
+      "receipt": "id: b33e2756-6221-45fa-88c6-dfd5622d6f9c\njob_id: b33e2756-6221-45fa-88c6-dfd5622d6f9c\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT:192x224 transparent canvas, body about176px tall, foot pivot(96,208). Preserve EXACT Yuri identity, red tactical jacket, black leg armor, hair, beard, weapon, palette and pixel density. Change only the stance for UPWARD travel while aiming RIGHT: pelvis, hips, knees and both boot toes face NORTH, away from the viewer toward TOP of the screen. We see the back of the hips and legs. Upper torso twists toward screen RIGHT, with the side of his face visible and both hands holding the rifle LEVEL at the shoulder, barrel pointing perfectly HORIZONTALLY RIGHT. This is a tactical cross-step setup, not a running stride toward the gun. Slight bend in knees, one foot half a step upward behind the other. Maintain full original body size; whole rifle and both boots inside margins. No effects, no ground shadow, no flash, no projectiles, no background, no text. The clear visual is legs walking away while torso aims sideways.\nasset_id: bac3daff-dc4d-54ee-b9f7-1cb1e0f17806\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"b33e2756-6221-45fa-88c6-dfd5622d6f9c\")"
+    },
+    {
+      "direction": "west",
+      "args": {
+        "image_urls": [
+          "upload:de87ce38-f8fd-485c-9730-d7c0bde366d5"
+        ],
+        "width": 192,
+        "height": 224,
+        "no_background": true,
+        "description": "FRAME FORMAT:192x224 transparent canvas, body about176px tall, foot pivot(96,208). Preserve EXACT Yuri identity, red tactical jacket, black leg armor, hair, beard, weapon, palette and pixel density. Change only the stance for UPWARD travel while aiming LEFT: pelvis, hips, knees and both boot toes face NORTH, away from the viewer toward TOP of the screen. We see the back of the hips and legs. Upper torso twists toward screen LEFT, with the side of his face visible and both hands holding the rifle LEVEL at the shoulder, barrel pointing perfectly HORIZONTALLY LEFT. This is a tactical cross-step setup, not a running stride toward the gun. Slight bend in knees, one foot half a step upward behind the other. Maintain full original body size; whole rifle and both boots inside margins. No effects, no ground shadow, no flash, no projectiles, no background, no text. The clear visual is legs walking away while torso aims sideways."
+      },
+      "receipt": "id: 7a891684-bb45-4fb1-8774-4d4020fefd31\njob_id: 7a891684-bb45-4fb1-8774-4d4020fefd31\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT:192x224 transparent canvas, body about176px tall, foot pivot(96,208). Preserve EXACT Yuri identity, red tactical jacket, black leg armor, hair, beard, weapon, palette and pixel density. Change only the stance for UPWARD travel while aiming LEFT: pelvis, hips, knees and both boot toes face NORTH, away from the viewer toward TOP of the screen. We see the back of the hips and legs. Upper torso twists toward screen LEFT, with the side of his face visible and both hands holding the rifle LEVEL at the shoulder, barrel pointing perfectly HORIZONTALLY LEFT. This is a tactical cross-step setup, not a running stride toward the gun. Slight bend in knees, one foot half a step upward behind the other. Maintain full original body size; whole rifle and both boots inside margins. No effects, no ground shadow, no flash, no projectiles, no background, no text. The clear visual is legs walking away while torso aims sideways.\nasset_id: e2a209a0-e390-596c-b14e-02fa6f77f774\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"7a891684-bb45-4fb1-8774-4d4020fefd31\")"
+    }
+  ],
+  "selectedRequests": [
+    {
+      "action": "up_step",
+      "description": "FRAME FORMAT:192x224, exact same Yuri and body size. Smooth sixteen-frame stationary upward cross-step LOOP. Keep the supplied back-facing hips and legs aimed NORTH, away from camera. Head, shoulders, both hands and rifle stay twisted to screen LEFT with barrel level and horizontal. Alternate feet toward the TOP of screen: plant, knee load, passing/crossover, heel lift and opposite plant. Do NOT stride to the left. Small pelvis bob, stable shoulder position. Finish at first stride phase. Maintain red jacket, black armor, beard, hair and complete rifle/feet inside margins. EMPTY transparent background at all times: no dust, smoke, particles, flashes, shadows, trails, glow or lighting change. No turning toward camera, resizing or costume changes.",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/7a891684-bb45-4fb1-8774-4d4020fefd31/download",
+        "description": "FRAME FORMAT:192x224, exact same Yuri and body size. Smooth sixteen-frame stationary upward cross-step LOOP. Keep the supplied back-facing hips and legs aimed NORTH, away from camera. Head, shoulders, both hands and rifle stay twisted to screen LEFT with barrel level and horizontal. Alternate feet toward the TOP of screen: plant, knee load, passing/crossover, heel lift and opposite plant. Do NOT stride to the left. Small pelvis bob, stable shoulder position. Finish at first stride phase. Maintain red jacket, black armor, beard, hair and complete rifle/feet inside margins. EMPTY transparent background at all times: no dust, smoke, particles, flashes, shadows, trails, glow or lighting change. No turning toward camera, resizing or costume changes.",
+        "direction": "west",
+        "view": "low top-down",
+        "initial_pose": "Rear-facing hips and legs, upper body and level rifle twisted to left, preparing to step toward top of screen",
+        "subject_description": "Yuri in red tactical jacket and black armor, brown undercut hair and beard, rifle held sideways",
+        "frame_count": 16,
+        "no_background": true
+      },
+      "receipt": "id: 5bb146c7-1122-43b6-a39e-1a210de220bd\njob_id: 5bb146c7-1122-43b6-a39e-1a210de220bd\ndescription: FRAME FORMAT:192x224, exact same Yuri and body size. Smooth sixteen-frame stationary upward cross-step LOOP. Keep the supplied back-facing hips and legs aimed NORTH, away from camera. Head, shoulders, both hands and rifle stay twisted to screen LEFT with barrel level and horizontal. Alternate feet toward the TOP of screen: plant, knee load, passing/crossover, heel lift and opposite plant. Do NOT stride to the left. Small pelvis bob, stable shoulder position. Finish at first stride phase. Maintain red jacket, black armor, beard, hair and complete rifle/feet inside margins. EMPTY transparent background at all times: no dust, smoke, particles, flashes, shadows, trails, glow or lighting change. No turning toward camera, resizing or costume changes.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5bb146c7-1122-43b6-a39e-1a210de220bd\")\nasset_id: 39d3a031-5b8f-5781-a28a-6fc4a4be1e16\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "action": "up_fire",
+      "description": "FRAME FORMAT:192x224, same Yuri and scale. Stationary upward cross-step LOOP. Hips and legs stay NORTH as supplied, moving away from camera; torso, face, hands and level rifle remain turned LEFT. Alternate vertical foot plants, knee loading, crossover and toe-off, smooth sixteen-frame cycle. Upper arms maintain a tight braced stance with tiny controlled elbow and shoulder pulses while the legs keep stepping. Weapon does NOT discharge. The rifle barrel stays level at the same side-facing angle. Keep jacket, armor, beard, hair and body proportions exact. All feet/hands/weapon inside margins. Transparent background must remain completely EMPTY: no dust, flash, sparks, smoke, trails, glow, projectiles or shadows. Return to starting stride.",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/7a891684-bb45-4fb1-8774-4d4020fefd31/download",
+        "description": "FRAME FORMAT:192x224, same Yuri and scale. Stationary upward cross-step LOOP. Hips and legs stay NORTH as supplied, moving away from camera; torso, face, hands and level rifle remain turned LEFT. Alternate vertical foot plants, knee loading, crossover and toe-off, smooth sixteen-frame cycle. Upper arms maintain a tight braced stance with tiny controlled elbow and shoulder pulses while the legs keep stepping. Weapon does NOT discharge. The rifle barrel stays level at the same side-facing angle. Keep jacket, armor, beard, hair and body proportions exact. All feet/hands/weapon inside margins. Transparent background must remain completely EMPTY: no dust, flash, sparks, smoke, trails, glow, projectiles or shadows. Return to starting stride.",
+        "direction": "west",
+        "view": "low top-down",
+        "initial_pose": "Rear-facing hips and legs, upper body and level rifle twisted to left, preparing to step toward top of screen",
+        "subject_description": "Yuri in red tactical jacket and black armor, brown undercut hair and beard, rifle held sideways",
+        "frame_count": 16,
+        "no_background": true
+      },
+      "receipt": "id: 4824390c-aacd-4d1c-b5ff-fcf9ccd71b81\njob_id: 4824390c-aacd-4d1c-b5ff-fcf9ccd71b81\ndescription: FRAME FORMAT:192x224, same Yuri and scale. Stationary upward cross-step LOOP. Hips and legs stay NORTH as supplied, moving away from camera; torso, face, hands and level rifle remain turned LEFT. Alternate vertical foot plants, knee loading, crossover and toe-off, smooth sixteen-frame cycle. Upper arms maintain a tight braced stance with tiny controlled elbow and shoulder pulses while the legs keep stepping. Weapon does NOT discharge. The rifle barrel stays level at the same side-facing angle. Keep jacket, armor, beard, hair and body proportions exact. All feet/hands/weapon inside margins. Transparent background must remain completely EMPTY: no dust, flash, sparks, smoke, trails, glow, projectiles or shadows. Return to starting stride.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"4824390c-aacd-4d1c-b5ff-fcf9ccd71b81\")\nasset_id: ee8f7bf4-721e-5f79-85b9-5d5fe72ee898\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "selection": "West rear-hip setup selected. Right facing is a mirror of selected generated art; initial clips/east setup are rejected."
+}

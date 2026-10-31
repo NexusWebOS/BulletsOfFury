@@ -3,6 +3,7 @@
  'use strict';
  const TD=root.TD,I=TD.Input,F=TD.Frontend,A=TD.Audio,VW=480,VH=512,clamp=TD.M.clamp;
  let ctx,processing=false,consumed=new Set(),followSelection=true,deferredSetup=false;
+ let captureNeutral=false;
  let voiceVol=F.settings.voice,optScroll=0,optSnap=null,optDrag=-1,optSbDrag=false,optSelIdx=0,rebindAction=null,rebindWho=1;
  const SEL_RISE=.20,SEL_FLASH=.10,SEL_REST=.62,SEL_CYCLE=SEL_RISE+SEL_FLASH+SEL_REST;
  const KEY_UNBINDABLE=['alt','control','meta','shift','backspace'];
@@ -12,17 +13,17 @@
  const XART={rdy(key){if(promptFiles[key]){let im=promptImages[key];if(!im){im=promptImages[key]=new Image();im.src=ART.BASE+'assets/game/shared/ui/ui/input_prompts_0915/'+promptFiles[key];}return im.complete&&im.naturalWidth>0;}return!!ART.get(key);},
   get(key){if(promptFiles[key])return promptImages[key];if(cachedArt[key])return cachedArt[key];const a=ART.get(key);if(!a)return null;const c=document.createElement('canvas');c.width=a.sw;c.height=a.sh;c.getContext('2d').drawImage(a.im,a.sx,a.sy,a.sw,a.sh,0,0,a.sw,a.sh);Object.defineProperties(c,{naturalWidth:{value:a.sw},naturalHeight:{value:a.sh}});return cachedArt[key]=c;}};
  const Audio={getVol(k){return F.settings[k];},setVol(k,v){F.settings[k]=clamp(v,0,1);F.applyAudio();},SFX:{blip(){if(processing)A.play('loadoutSelect',.5);},select(){if(processing)A.play('loadoutEquip',.6);},hit(){if(processing)A.play('error');}}};
- const labels={left:'MOVE LEFT',right:'MOVE RIGHT',up:'MOVE UP',down:'MOVE DOWN',A:'FIRE',B:'CANNON / JUMP',C:'STRAFE / COVER',X:'CHARGE / ROLL',Y:'SMOKE / GRENADE',retina:'RETINA LOCK',boost:'SPEED BOOST',cruise:'CRUISE / FREE AIM',aimLeft:'TURRET LEFT',aimRight:'TURRET RIGHT',start:'PAUSE (START)',back:'BACK',help:'HELP',setup:'CONTROLLER SETUP',reload:'JUMP (ON FOOT)',prone:'PRONE (ON FOOT)',tapWall:'TAP WALL',crash:'MEGA CRASH',exitVehicle:'EXIT VEHICLE',swap:'ON FOOT SLOT'};
- const keyboardOrder=['left','right','up','down','A','B','retina','X','C','Y','boost','cruise','aimLeft','aimRight','start','back','help','setup','reload','prone','tapWall','crash','exitVehicle','swap'];
+ const labels={left:'MOVE LEFT',right:'MOVE RIGHT',up:'MOVE UP',down:'MOVE DOWN',A:'FIRE',B:'CANNON / JUMP',C:'STRAFE / COVER',X:'CHARGE / ROLL',Y:'SMOKE / GRENADE',retina:'RETINA LOCK',boost:'SPEED BOOST',cruise:'CRUISE / FREE AIM',aimLeft:'TURRET LEFT',aimRight:'TURRET RIGHT',start:'PAUSE (START)',back:'BACK',help:'HELP',setup:'CONTROLLER SETUP',reload:'HOTWIRE RELOAD / OTHER PILOTS JUMP',prone:'PRONE / STAND TOGGLE',tapWall:'TAP WALL',crash:'MEGA CRASH',exitVehicle:'EXIT VEHICLE',swap:'ON FOOT SLOT'};
+ const keyboardOrder=['left','right','up','down','A','B','retina','X','C','prone','Y','boost','cruise','aimLeft','aimRight','start','back','help','setup','reload','tapWall','crash','exitVehicle','swap'];
  const padLabels={up:'D-PAD UP',down:'D-PAD DOWN',left:'D-PAD LEFT',right:'D-PAD RIGHT',A:'A / FIRE / SELECT',B:'B / BACK',C:'C / CHARGE',X:'X',Y:'Y',Z:'Z / RETINA',mode:'MODE',start:'START',L:'L / CRUISE / COVER',R:'R / RETINA',boost:'SPEED BOOST'};
  const token=b=>typeof b==='number'?'pad_'+b:b&&b.axis!=null?'pad_axis'+b.axis+'_'+(b.sign<0?'neg':'pos'):null;
  const binding=k=>{const n=/^pad_(\d+)$/.exec(k);if(n)return+n[1];const a=/^pad_axis(\d+)_(neg|pos)$/.exec(k);return a?{axis:+a[1],sign:a[2]==='neg'?-1:1}:null;};
  const same=(a,b)=>a!=null&&b!=null&&JSON.stringify(a)===JSON.stringify(b);
- function physicalProfile(){return Object.assign({up:12,down:13,left:14,right:15},I.padProfile());}
- const padTable=new Proxy({}, {ownKeys(){return Object.keys(physicalProfile());},getOwnPropertyDescriptor(){return{enumerable:true,configurable:true};},get(_,k){if(k==='preset')return[I.padStyle()==='six'?'6 BUTTON':'STANDARD'];if(k==='learn')return['SELECT TO LEARN'];const b=token(physicalProfile()[k]);return b?[b]:[];},set(_,k,v){const b=v.map(binding).filter(x=>x!=null).at(-1);if(b==null)return true;for(const [other,assigned]of Object.entries(physicalProfile()))if(other!==k&&same(assigned,b))I.setPadBinding(other,null);I.setPadBinding(k,b);return true;}});
+ function physicalProfile(){return Object.assign(I.directionDefaults(),I.padProfile());}
+ const padTable=new Proxy({}, {ownKeys(){return Object.keys(physicalProfile());},getOwnPropertyDescriptor(){return{enumerable:true,configurable:true};},get(_,k){if(k==='preset')return[I.padPreset()==='standard'?'STANDARD':I.padPreset()==='m30'?'M30 2.4G':'GENESIS 6'];if(k==='learn')return['SELECT TO LEARN'];const b=token(physicalProfile()[k]);return b?[b]:[];},set(_,k,v){const b=v.map(binding).filter(x=>x!=null).at(-1);if(b==null)return true;for(const [other,assigned]of Object.entries(physicalProfile()))if(other!==k&&same(assigned,b))I.setPadBinding(other,null);I.setPadBinding(k,b);return true;}});
  const keybind={get fire(){return TD.BIND.A;}};
  function keybindFor(who){return who===2?padTable:TD.BIND;}
- function makeRows(){const rows=[{t:'head',label:'VOLUME'},...['master','music','sfx','voice'].map(k=>({t:'vol',k,label:k.toUpperCase()})),{t:'head',label:'CONTROLS'},...keyboardOrder.map(act=>({t:'ctrl',act,label:labels[act],who:1})),{t:'head',label:'CONTROLLER BINDINGS'},{t:'ctrl',act:'preset',label:'CONTROLLER PRESET',who:2}];const keys=I.padStyle()==='six'?['up','down','left','right','A','B','C','X','Y','Z','mode','start','L','R']:['up','down','left','right','A','B','X','Y','mode','start','L','R','boost'];for(const act of keys)rows.push({t:'ctrl',act,label:padLabels[act],who:2});rows.push({t:'ctrl',act:'learn',label:'LEARN ALL BUTTONS',who:2},{t:'reset',label:'RESET CONTROLS'});return rows;}
+ function makeRows(){const rows=[{t:'head',label:'VOLUME'},...['master','music','sfx','voice'].map(k=>({t:'vol',k,label:k.toUpperCase()})),{t:'head',label:'CONTROLS'},...keyboardOrder.map(act=>({t:'ctrl',act,label:labels[act],who:1})),{t:'head',label:I.padName()},{t:'ctrl',act:'preset',label:'CONTROLLER PRESET',who:2}];const keys=I.padStyle()==='six'?['up','down','left','right','A','B','C','X','Y','Z','mode','start','L','R']:['up','down','left','right','A','B','X','Y','mode','start','L','R','boost'];for(const act of keys.filter(k=>I.padPreset()!=='genesis'||!['L','R'].includes(k)))rows.push({t:'ctrl',act,label:padLabels[act],who:2});rows.push({t:'ctrl',act:'learn',label:'LEARN ALL BUTTONS',who:2},{t:'reset',label:'RESET CONTROLS'});return rows;}
  const raw=()=>I.raw||{};
  function tap(k){if(!processing||consumed.has(k)||!raw()[k]||I.lastRaw?.[k])return false;consumed.add(k);return true;}
  function action(a){const map=physicalProfile(),keys=[...(TD.BIND[a]||[])];if(a==='back')keys.push(token(map.B),token(map.mode));else if(a==='A')keys.push(...I.menuFaceTokens());else if(a==='start')keys.push(token(map[a]));else if(['up','down','left','right'].includes(a)){keys.push(token(map[a]));if(!(a in I.padProfile())){const axis=a==='left'||a==='right'?0:1,sign=a==='up'||a==='left'?-1:1;keys.push(token({axis,sign}));}}return keys.filter(Boolean).some(tap);}
@@ -34,8 +35,16 @@
  function optApply(){I.saveKeys();try{localStorage.setItem('bof_od_options',JSON.stringify(F.settings));}catch(e){}rebindAction=null;optSnap=null;F.back();}
  function optResetControls(){I.resetKeys();I.resetPad();optResetControls._t=1.8;Audio.SFX.select();}
  optResetControls._t=0;
- function armControl(r){if(r.act==='preset'){I.setPadStyle(I.padStyle()==='six'?'standard':'six');Audio.SFX.select();}else if(r.act==='learn'){deferredSetup=true;}else if(r.who===2&&!I.padId){F.message='CONNECT YOUR CONTROLLER FIRST';Audio.SFX.hit();}else{rebindAction=r.act;rebindWho=r.who||1;Audio.SFX.blip();}}
+ function armControl(r){if(r.act==='preset'){I.setPadPreset(['m30','genesis','standard'][(['m30','genesis','standard'].indexOf(I.padPreset())+1)%3]);Audio.SFX.select();}else if(r.act==='learn'){deferredSetup=true;}else if(r.who===2&&!I.padId){F.message='CONNECT YOUR CONTROLLER FIRST';Audio.SFX.hit();}else{rebindAction=r.act;rebindWho=r.who||1;captureNeutral=false;F.message='RELEASE INPUT, THEN PRESS YOUR NEW '+(rebindWho===2?'BUTTON':'KEY');Audio.SFX.blip();}}
 
+ function finishCapture(k){
+  if(k==='escape'){rebindAction=null;F.message='BINDING CANCELLED';return;}
+  if(rebindWho===2){const b=binding(k);if(b==null)return;padTable[rebindAction]=[k];}
+  else {for(const a in TD.BIND)if(a!==rebindAction&&TD.BIND[a].length>1)TD.BIND[a]=TD.BIND[a].filter(v=>v!==k);TD.BIND[rebindAction]=[k];}
+  F.message='BOUND '+(rebindWho===2?I.physicalLabel(binding(k)):I.keyLabel(rebindAction))+' / APPLY TO KEEP';rebindAction=null;rebindWho=1;captureNeutral=false;Audio.SFX.select();
+ }
+ function pollCapture(){if(!rebindAction||rebindWho!==2)return;const pressed=Object.keys(raw()).filter(k=>k.startsWith('pad_')&&raw()[k]);if(!pressed.length){captureNeutral=true;return;}if(!captureNeutral)return;const expected=token(physicalProfile()[rebindAction]);const k=pressed.includes(expected)?expected:pressed.find(k=>/^pad_\d+$/.test(k))||pressed[0];finishCapture(k);}
+ function onKey(e){if(!rebindAction)return false;const k=e.key.toLowerCase();if(k==='escape'){finishCapture(k);return true;}if(rebindWho!==1)return true;if(e.repeat||['alt','control','meta','backspace'].includes(k))return true;finishCapture(k);return true;}
  function roundRectFill(x,y,w,h,r){
   ctx.beginPath();
   ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
@@ -403,31 +412,6 @@ function drawOptions(dt){
     ctx.fillStyle='rgba(255,180,80,0.7)'; roundRectFill(sbx,sby,4,sbh,2);
     if(m.down && !drawOptions._md && m.x>sbx-8 && m.x<sbx+10 && m.y>wy && m.y<wy+wh) optSbDrag=true;
     if(optSbDrag && m.down){ optScroll=clamp((m.y-wy-sbh/2)/(wh-sbh)*maxScroll,0,maxScroll); } }
-  if(rebindAction){ for(const k in Input.keys){ if(Input.tap(k)){
-      /* REFUSE UNBINDABLE KEYS (drop 0724dl). This is the LIVE rebind handler — the gamecode copy
-         is inside a replaced span and never reaches the build, which is why guarding that one did
-         nothing. Binding an action to a bare modifier kills it permanently and SAVES that, which is
-         how Mike ended up with a menu key on shift and no way to see it. */
-      if(k!=='escape' && typeof KEY_UNBINDABLE!=='undefined' && KEY_UNBINDABLE.indexOf(String(k).toLowerCase())>=0){
-        if(Audio.SFX.hit) Audio.SFX.hit();
-        rebindAction=null; break;
-      }
-      if(k!=='escape'){
-        /* Writes into whichever seat's table armed the rebind. A seat may be bound to either
-           pad, which is deliberate: nothing stops a player giving seat 2 the first controller. */
-        const _kb=keybindFor(rebindWho||1);
-        const isPad=(x)=>x.startsWith('pad_')||x.startsWith('pad2_');
-        const cur=_kb[rebindAction]||[];
-        // pad buttons get APPENDED (keep kb defaults); a normal key REPLACES the primary kb key but keeps pad binds
-        if(isPad(k)){ if(cur.indexOf(k)<0) _kb[rebindAction]=cur.concat([k]); }
-        else { const pads=cur.filter(isPad); _kb[rebindAction]=[k].concat(pads); }
-        /* ⚠ A KEY LIVES ON ONE ACTION (0918). A pad button used to be APPENDED here and left on the action it
-           came from, so mapping the pad's A onto FIRE while it was still BOMB/BACK kept it on both - and menuBack
-           runs first, so A still went BACK. It is taken off every other action that has something else left. */
-        for(const _a in _kb){ if(_a===rebindAction || _a==='__fixed' || !Array.isArray(_kb[_a])) continue;
-          const _i=_kb[_a].indexOf(k); if(_i>=0 && _kb[_a].length>1) _kb[_a].splice(_i,1); }
-      }
-      rebindAction=null; rebindWho=1; Audio.SFX.select(); break; } } }
   const _cDef={x:wx,y:VH-72,w:(ww-16)/2,h:30}, _aDef={x:wx+(ww-16)/2+16,y:VH-72,w:(ww-16)/2,h:30};
   const _cBtn=uiRect('options','btnCancel',_cDef), _aBtn=uiRect('options','btnApply',_aDef);
   const by=_cBtn.y, bh2=_cBtn.h, bw2=_cBtn.w, cbx=_cBtn.x, abx=_aBtn.x;
@@ -471,14 +455,14 @@ function drawOptions(dt){
 }
 
  const originalKeyName=keyName;
- keyName=function(k){const button=/^pad_(\d+)$/.exec(k||'');if(button)return'BUTTON '+button[1];const axis=/^pad_axis(\d+)_(neg|pos)$/.exec(k||'');return axis?'AXIS '+axis[1]+(axis[2]==='neg'?'-':'+'):originalKeyName(k);};
+ keyName=function(k){const button=/^pad_(\d+)$/.exec(k||'');if(button)return I.physicalLabel(+button[1]);const axis=/^pad_axis(\d+)_(neg|pos)$/.exec(k||'');return axis&&+axis[1]<2?'D-PAD '+(+axis[1]===0?(axis[2]==='neg'?'LEFT':'RIGHT'):(axis[2]==='neg'?'UP':'DOWN')):axis?'AXIS '+axis[1]+(axis[2]==='neg'?'-':'+'):originalKeyName(k);};
 
  const O=TD.OriginalOptions={
   enter(preserve){if(!preserve){optScroll=0;optSelIdx=0;rebindAction=null;rebindWho=1;optSnap=null;followSelection=true;}voiceVol=F.settings.voice;drawOptions._md=false;},
-  rows:makeRows,
+  rows:makeRows,onKey,
   snapshot(){return{sel:optSelIdx,scroll:optScroll,capture:rebindAction,who:rebindWho,rows:makeRows()};},
   select(index){optSelIdx=index;followSelection=true;},
-  update(dt){ctx=document.getElementById('screen').getContext('2d');processing=true;consumed.clear();if(I.state.wheel)followSelection=false;ctx.save();const s=document.getElementById('screen').width/VW;ctx.setTransform(s,0,0,s,0,0);ctx.imageSmoothingEnabled=false;drawOptions(dt);ctx.restore();processing=false;if(deferredSetup){deferredSetup=false;F.setupReturn='options';I.beginSetup();F.go('padsetup');}},
+  update(dt){ctx=document.getElementById('screen').getContext('2d');processing=true;consumed.clear();const capturing=!!rebindAction;pollCapture();if(capturing&&!rebindAction)for(const k in raw())if(raw()[k])consumed.add(k);if(I.state.wheel)followSelection=false;ctx.save();const s=document.getElementById('screen').width/VW;ctx.setTransform(s,0,0,s,0,0);ctx.imageSmoothingEnabled=false;drawOptions(dt);ctx.restore();processing=false;if(deferredSetup){deferredSetup=false;F.setupReturn='options';I.beginSetup();F.go('padsetup');}},
   draw(context){ctx=context;processing=false;voiceVol=F.settings.voice;const before={md:drawOptions._md,drag:optDrag,sb:optSbDrag,scroll:optScroll,sel:optSelIdx};drawOptions(0);drawOptions._md=before.md;optDrag=before.drag;optSbDrag=before.sb;optScroll=before.scroll;optSelIdx=before.sel;F.hints([['pad_dpad','ADJUST'],['pad_a','SELECT'],['pad_b','CANCEL']],491);if(F.message){ctx.save();ctx.font='bold 9px "BOFmil",monospace';ctx.textAlign='center';ctx.fillStyle='#ffb347';ctx.fillText(F.message,VW/2,465);ctx.restore();}},
  };
  // The original hint layout is centered in the original 480-pixel menu.

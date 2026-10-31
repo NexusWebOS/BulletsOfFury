@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_rocket_launcher_pseudo3d_ready_south_0"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    153,
+    198
+  ],
+  "size": [
+    306,
+    312
+  ],
+  "duration": 0.08333333333333333,
+  "provider": "PixelLab",
+  "source_review": "hardware repair reviewed; playback pending",
+  "export_scale": 2.25,
+  "source_master": "rocket_launcher_pseudo3d",
+  "source_action": "fire",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "frames": [
+    "pl38_flying_alien_pseudo3d_draw_forward_south_0",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_1",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_2",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_3",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_4",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_5",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_6",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_7",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_8",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_9",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_10",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_11",
+    "pl38_flying_alien_pseudo3d_draw_forward_south_12"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    162,
+    158
+  ],
+  "size": [
+    324,
+    258
+  ],
+  "duration": 1.0833333333333333,
+  "provider": "PixelLab",
+  "source_review": "pending",
+  "export_scale": 2.25,
+  "source_master": "flying_alien_pseudo3d",
+  "source_action": "draw_forward",
+  "source_direction": "south",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ]
+}

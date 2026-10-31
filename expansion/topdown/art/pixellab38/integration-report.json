@@ -1,0 +1,59 @@
+{
+  "build": "overdrive1017-pixellab38-r1",
+  "counts": {
+    "banks": 149,
+    "frames": 1352,
+    "atlases": 154
+  },
+  "verification": {
+    "drawing_path_checks": "39/39",
+    "required_suite": "exit 0; BUILD OK, 0 ERRORS",
+    "chromium": "blocked: Local browser use is disabled in Work settings",
+    "full_gameplay_clear": false
+  },
+  "source_archive": {
+    "files": 756,
+    "bytes": 3628226,
+    "sha256": "5c648285329084eb3c0add0eb9041cb0d51c64e053165460e3ad30dd9c069477"
+  },
+  "edited_files": [
+    {
+      "file": "expansion/topdown/index.html",
+      "before": "c4e18510f3201004cabc7ea18672f6ea165689582a5ffa7bdd37e75d1f429314",
+      "after": "811af5f1f1fe4e86b7ab300d8b248b5011e9668e92ef06bf1c824f8d1e27bc25",
+      "changed_lines": 3
+    },
+    {
+      "file": "expansion/topdown/js/base33.js",
+      "before": "9cca2bb3b32d74f6d533ebeac0e5cf7bc8664a8eb15f17f6d1f45d61d24ad8ae",
+      "after": "77b769d3f79bad24f9acb19220646a0d352b90d7e17aecffab2ac686e87bca0d",
+      "changed_lines": 2
+    },
+    {
+      "file": "expansion/topdown/js/escape29.js",
+      "before": "30938673403d8f2e639a302ac36a68a1a324aa746b9ce8465203d5bdfcc7e73a",
+      "after": "488248fb7e242cb6fcd61465d2fbb411f30c4f8b5978598bfd0656234728702b",
+      "changed_lines": 4
+    },
+    {
+      "file": "expansion/topdown/js/fortress_1013.js",
+      "before": "a21ea60719fe6627b6353be0cdca0fe06682563c1b6c40b7a0f105f366e47ffd",
+      "after": "40ee43b53d29e753bd194ca656b05f42443002d4e2af14cec18348c2d55c067f",
+      "changed_lines": 4
+    },
+    {
+      "file": "expansion/topdown/js/prism_bastion_1013.js",
+      "before": "e607d3de29841dad95ebca6f6757d83a779692d715a7fc486592a2d85f352bd5",
+      "after": "9a3fede40114121128fd34a377edf77cb720dd07b28a4199c548e800f18905e3",
+      "changed_lines": 10
+    }
+  ],
+  "held_back": [
+    "Pump reload weapon continuity",
+    "Prism volleys whose effects leave the source canvas",
+    "Yuri vault with baked wall",
+    "Rear-view prone/crawl turning sideways",
+    "Idle and reload banks containing accidental gunfire",
+    "Other unreviewed directional enemy locomotion and attacks"
+  ]
+}

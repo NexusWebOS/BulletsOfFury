@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_door_core_pseudo3d_inactive_south_0"
+  ],
+  "fps": 12.5,
+  "loop": false,
+  "events": {},
+  "origin": [
+    23,
+    24
+  ],
+  "size": [
+    46,
+    46
+  ],
+  "duration": 0.08,
+  "provider": "PixelLab",
+  "source_review": "material animation reviewed",
+  "export_scale": 0.5,
+  "source_master": "door_core_pseudo3d",
+  "source_action": "inactive",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

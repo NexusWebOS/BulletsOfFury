@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_roller_alien_pseudo3d_ready_south_0"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    166,
+    216
+  ],
+  "size": [
+    334,
+    324
+  ],
+  "duration": 0.08333333333333333,
+  "provider": "PixelLab",
+  "source_review": "facing and cleanup reviewed; playback pending",
+  "export_scale": 2.25,
+  "source_master": "roller_alien_pseudo3d",
+  "source_action": "fire",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

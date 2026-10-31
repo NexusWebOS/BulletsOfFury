@@ -1,0 +1,65 @@
+{
+  "service": "PixelLab",
+  "font": {
+    "request": {
+      "font_name": "Overdrive Arcade HUD",
+      "glyph_px": 16,
+      "weight": "Bold",
+      "description": "Original OVERDRIVE arcade combat HUD font, crisp Sega Genesis / Mega Drive 16-bit military action lettering. Highly legible compact squared condensed capital letters and numerals, strong 2-pixel vertical stems, flat tops, small chamfered corners and restrained racing-cut terminals. Numerals 0 and 8 must clearly differ. White solid glyph faces with a subtle light silver top edge and dark navy one-pixel outline. No glow, no blur, no texture noise, no large serifs, no decorative marks detached from letters. Consistent baseline, cap height and stroke thickness. Designed for small ammo, action status, SCORE and HIGH SCORE text. Include clear equals, hyphen, slash and X characters."
+    },
+    "receipt": "id: 1014c764-1a63-4474-ad31-bde90bf8b0b1\ndescription: Original OVERDRIVE arcade combat HUD font, crisp Sega Genesis / Mega Drive 16-bit military action lettering. Highly legible compact squared condensed capital letters and numerals, strong 2-pixel vertical stems, flat tops, small chamfered corners and restrained racing-cut terminals. Numerals 0 and 8 must clearly differ. White solid glyph faces with a subtle light silver top edge and dark navy one-pixel outline. No glow, no blur, no texture noise, no large serifs, no decorative marks detached from letters. Consistent baseline, cap height and stroke thickness. Designed for small ammo, action status, SCORE and HIGH SCORE text. Include clear equals, hyphen, slash and X characters.\nweight: Bold\nglyph_px: 16\nfont_name: Overdrive Arcade HUD\ncost: 15 generations or $0.115 credits\nstatus: processing (~30-80s)\n\nhint: get_font(job_id=\"1014c764-1a63-4474-ad31-bde90bf8b0b1\")\nasset_id: 2c6f3b0d-8ea4-54e7-958a-817526ba0e6f\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  "ui": {
+    "request": {
+      "name": "Overdrive compact weapon HUD and solid health fills 27",
+      "width": 512,
+      "height": 288,
+      "no_background": true,
+      "color_palette": "Genesis 16-bit steel blue bevels, black navy inset, white edge highlights; uninterrupted lime green and red health fills",
+      "description": "FRAME FORMAT: 512 x 288 transparent atlas, crisp 16-bit Sega Genesis game HUD components. Preserve separate requested silhouettes. Upper left: a 184 x 60 rectangular compact equipment panel. It has a sensible functional layout: ONE bordered 52 x 44 empty weapon display inset on the LEFT, and TWO blank centered text rows on the RIGHT for ammo and action status, separated by a fine steel line. All three regions inside the main compact blue-gray metallic frame. No labels, no letters, no numbers, no guns, no portraits. Upper middle: a solid uninterrupted lime-green health FILL strip, broad rectangle, absolutely NO segments, gaps, divisions or black lines. Below it: same solid uninterrupted red fill strip. Keep health bars filled completely edge-to-edge with a narrow brighter top highlight. Crisp limited-palette pixel art, no gradients, no blur, no rounded modern UI. Rest transparent. Only these THREE components.",
+      "pieces": [
+        {
+          "id": "equipment_panel",
+          "kind": "rounded_rect",
+          "x": 8,
+          "y": 8,
+          "w": 184,
+          "h": 60,
+          "radius": 0
+        },
+        {
+          "id": "solid_green",
+          "kind": "rounded_rect",
+          "x": 248,
+          "y": 8,
+          "w": 128,
+          "h": 14,
+          "radius": 0
+        },
+        {
+          "id": "solid_red",
+          "kind": "rounded_rect",
+          "x": 248,
+          "y": 48,
+          "w": 128,
+          "h": 14,
+          "radius": 0
+        }
+      ]
+    },
+    "receipt": "id: c2792116-6b7a-4365-8343-ea56cdb558c1\ndescription: FRAME FORMAT: 512 x 288 transparent atlas, crisp 16-bit Sega Genesis game HUD components. Preserve separate requested silhouettes. Upper left: a 184 x 60 rectangular compact equipment panel. It has a sensible functional layout: ONE bordered 52 x 44 empty weapon display inset on the LEFT, and TWO blank centered text rows on the RIGHT for ammo and action status, separated by a fine steel line. All three regions inside the main compact blue-gray metallic frame. No labels, no letters, no numbers, no guns, no portraits. Upper middle: a solid uninterrupted lime-green health FILL strip, broad rectangle, absolutely NO segments, gaps, divisions or black lines. Below it: same solid uninterrupted red fill strip. Keep health bars filled completely edge-to-edge with a narrow brighter top highlight. Crisp limited-palette pixel art, no gradients, no blur, no rounded modern UI. Rest transparent. Only these THREE components.\nmode: ui-panel (512x288px)\ncost: 25 generations\nstatus: processing (~30-90s)\n\nhint: get_ui_asset(ui_asset_id=\"c2792116-6b7a-4365-8343-ea56cdb558c1\")"
+  },
+  "rifle": {
+    "request": {
+      "description": "FRAME FORMAT: 96 x 48 pixels, transparent background, crisp 16-bit Genesis arcade inventory weapon icon, exact side view facing right. One compact futuristic assault rifle with a charcoal steel receiver, dark stock, short rectangular barrel, straight magazine, pistol grip and two small red cooling slits, silver edge highlights. Whole weapon centered with generous margins. Original Bullets of Fury Overdrive gritty military style. No hands, no person, no text, no frame, no effects, no glow, no blur.",
+      "width": 96,
+      "height": 48,
+      "no_background": true,
+      "outline": "selective outline",
+      "detail": "medium detail",
+      "direction": "east",
+      "view": "side"
+    },
+    "receipt": "id: 44be975a-e847-45df-9bdf-75279735fc19\njob_id: 44be975a-e847-45df-9bdf-75279735fc19\nmodel: pixen\ndescription: FRAME FORMAT: 96 x 48 pixels, transparent background, crisp 16-bit Genesis arcade inventory weapon icon, exact side view facing right. One compact futuristic assault rifle with a charcoal steel receiver, dark stock, short rectangular barrel, straight magazine, pistol grip and two small red cooling slits, silver edge highlights. Whole weapon centered with generous margins. Original Bullets of Fury Overdrive gritty military style. No hands, no person, no text, no frame, no effects, no glow, no blur.\nsize: 96x48px\ntransparent: True\nasset_id: c2a61050-6127-50b5-9795-6329222f22bc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"44be975a-e847-45df-9bdf-75279735fc19\")"
+  }
+}

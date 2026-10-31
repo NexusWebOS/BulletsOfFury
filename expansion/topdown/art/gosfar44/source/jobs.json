@@ -1,0 +1,234 @@
+{
+  "gosfar/ready": {
+    "job": "317dab9f-e952-45e0-b9f8-750283067f5b",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      80,
+      81
+    ]
+  },
+  "gosfar/walk": {
+    "job": "9e7b1e2c-aafe-49a8-a6c9-ce6516d93573",
+    "n": 17,
+    "fps": 16,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      80,
+      81
+    ]
+  },
+  "gosfar/rev": {
+    "job": "95808d02-8f95-4a26-936f-78dd555b1d2b",
+    "n": 9,
+    "take": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "fps": 24,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      80,
+      81
+    ]
+  },
+  "gosfar/fire": {
+    "job": "fcaf338c-fead-4201-9faf-482cbd7f2b55",
+    "n": 9,
+    "take": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "fps": 64,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      80,
+      81
+    ]
+  },
+  "gosfar/death": {
+    "job": "9ed3bcd2-784d-4c45-854a-3c74e06f8dff",
+    "n": 9,
+    "fps": 5,
+    "loop": false,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      80,
+      81
+    ]
+  },
+  "wall": {
+    "job": "PixelLab exact intact + Pro damage edits",
+    "n": 4,
+    "fps": 5,
+    "loop": false,
+    "root": [
+      44,
+      112
+    ],
+    "states": [
+      "https://api.pixellab.ai/mcp/pixel-tools/fc135915-adf3-458d-86b9-91b052f49281/image.png",
+      "https://api.pixellab.ai/mcp/pixel-tools/21a21611-e2d6-4da4-b134-99d05661476a/image.png",
+      "https://api.pixellab.ai/mcp/pixel-tools/8e9bac01-a425-41a0-987a-71144855172e/image.png",
+      "https://api.pixellab.ai/mcp/pixel-tools/1a267ced-1688-4adc-94e1-adb58b803891/image.png"
+    ]
+  },
+  "gosfar/overheat": {
+    "job": "84ad7db9-4ad3-4c5c-85ee-0e3e8ab138a5",
+    "n": 5,
+    "fps": 8,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      80,
+      81
+    ]
+  },
+  "gosfar/fire/east": {
+    "job": "f120e87f-8402-4522-aa2a-8a8a494095b6",
+    "n": 9,
+    "fps": 22,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      138,
+      73
+    ]
+  },
+  "gosfar/walk/east": {
+    "job": "18d23466-3482-4672-bef1-2e4401c3a9ae",
+    "n": 9,
+    "fps": 12,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      138,
+      73
+    ]
+  },
+  "gosfar/ready/east": {
+    "job": "character:2c67c97e-1473-476a-8f96-3c04ce4050c8:east",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      138,
+      73
+    ]
+  },
+  "gosfar/fire/west": {
+    "job": "051cd7cc-5645-4c1f-a282-6d7ff767f6e3",
+    "n": 9,
+    "fps": 22,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      15,
+      73
+    ]
+  },
+  "gosfar/walk/west": {
+    "job": "ee5a9c67-e0ce-442e-9f49-654e66dd70da",
+    "n": 9,
+    "fps": 12,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      15,
+      73
+    ]
+  },
+  "gosfar/ready/west": {
+    "job": "character:2c67c97e-1473-476a-8f96-3c04ce4050c8:west",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      80,
+      152
+    ],
+    "muzzle": [
+      15,
+      73
+    ]
+  },
+  "gosfar/fire/north": {
+    "job": "f7a3f9fb-cb0d-4854-9db5-9c304b53b43e",
+    "n": 9,
+    "fps": 22,
+    "root": [
+      128,
+      248
+    ],
+    "muzzle": [
+      171,
+      42
+    ]
+  },
+  "gosfar/walk/north": {
+    "job": "80fdf0cb-7cae-463f-8222-c324816d581e",
+    "n": 9,
+    "fps": 12,
+    "root": [
+      128,
+      248
+    ],
+    "muzzle": [
+      171,
+      42
+    ]
+  },
+  "gosfar/ready/north": {
+    "job": "d5ce4e20-19be-475c-a32a-cc3eabc1a839",
+    "n": 1,
+    "fps": 1,
+    "root": [
+      128,
+      248
+    ],
+    "muzzle": [
+      171,
+      42
+    ]
+  }
+}

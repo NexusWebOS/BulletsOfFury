@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <link rel="icon" type="image/png" href="../../extensions/bof-field-manual/art/icon512.png">
-<script>if(new URLSearchParams(location.search).get('enemyAtlas')==='1')document.write('<script src="../../assets/enemy_atlas_boot_1013.js?v=1"><\/script>');</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bullets of Fury: Overdrive - Ground Operations</title>
+<script>if(new URLSearchParams(location.search).get('enemyAtlas')==='1')document.write('<script src="../../assets/enemy_atlas_boot_1013.js?v=1"><\/script>');</script>
 <style>
   @font-face { font-family: BOFCommand; src: url('../../assets/game/shared/fonts/fonts/command_0914/BOFCommandSignal.ttf'); }
   @font-face { font-family: BOFmil; src: url('../../assets/game/shared/fonts/fonts/command_0914/BOFCommandSignal.ttf'); }
@@ -37,12 +37,50 @@
 <script src="art/boss_intro_1011/manifest.js?v=overdrive1011-boss-intro"></script>
 <script src="art/assault_1013/manifest.js?v=overdrive1013-assault-r1"></script>
 <script src="art/yuri_motion_1013/manifest.js?v=overdrive1013-yuri-motion-r1"></script>
+<script src="art/cover_motion_1013/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion_1013/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion16_yuri/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion16_enemies/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion16_environment/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion17_yuri/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion17_enemies/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion17_environment/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion18/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion19/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/bastion20/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/grid21/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/pixel25/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/corner26/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/hud27/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/yuri28/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/escape29/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/yuri30/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/yuri31/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/yuri32/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/contra34/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/depth35/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/level36/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script src="art/pixellab38/manifest.js?v=overdrive1018-gosfar45-r2"></script>
+<script src="art/combat39/manifest.js?v=overdrive1018-gosfar45-r2"></script>
+<script src="art/night_run39/manifest.js?v=overdrive1018-gosfar45-r2"></script>
+<script src="art/base33/manifest.js?v=overdrive1016-slide37-r1"></script>
+<script>
+  [window.TD_BASTION16_YURI_ART, window.TD_BASTION16_ENEMY_ART, window.TD_BASTION16_ENV_ART, window.TD_BASTION17_YURI_ART, window.TD_BASTION17_ENEMY_ART, window.TD_BASTION17_ENV_ART, window.TD_BASTION18_ART, window.TD_BASTION19_ART, window.TD_BASTION20_ART, window.TD_GRID21_ART, window.TD_PIXEL25_ART, window.TD_CORNER26_ART, window.TD_HUD27_ART, window.TD_YURI28_ART, window.TD_ESCAPE29_ART].forEach(function(pack) {
+    if (!pack) return;
+    Object.assign(window.TD_ASSAULT_ART.assets, pack.assets);
+    Object.assign(window.TD_ASSAULT_ART.sequences, pack.sequences);
+  });
+</script>
+<script src="art/combat42/manifest.js?v=overdrive1018-gosfar45-r2"></script>
+<script src="art/gosfar45/manifest.js?v=overdrive1018-gosfar45-r2"></script>
+<script src="audio/colesfx75/manifest.js?v=overdrive1018-gosfar45-r2"></script>
 <script src="audio/chip_1011/manifest.js?v=overdrive1011-menu-r1"></script>
 <script>
   // every module is loaded with the build stamp, so a browser never runs a stale copy after an edit
-  (function () {
-    var V = 'overdrive1013-yuri-motion-r1', files = ['art', 'core', 'audio_1011', 'stealth', 'tank', 'structures', 'boss_warrior', 'level2_map', 'level2_data', 'campaign', 'boss_machinists', 'retina', 'pilot', 'level5_data', 'museum_place', 'museum', 'boss_exhibit', 'infantry_1013', 'armor_1013', 'fortress_1013', 'convoy_1013', 'frontend_1011', 'original_options_1011', 'fullscreen_1011', 'boss_intro_1011', 'main'];
-    files.forEach(function (f) { document.write('<script src="js/' + f + '.js?v=' + V + '"><\/script>'); });
+  (async function () {
+    window.THREE = await import('./vendor/three/three.module.js');
+    var V = 'overdrive1018-gosfar45-r2', files = ['art', 'core', 'audio_1011', 'stealth', 'tank', 'structures', 'boss_warrior', 'level2_map', 'level2_data', 'campaign', 'boss_machinists', 'retina', 'pilot', 'level5_data', 'museum_place', 'museum', 'boss_exhibit', 'infantry_1013', 'armor_1013', 'desert_1013', 'fortress_1013', 'convoy_1013', 'prism_bastion_1013', 'ground20_encounter', 'grid21_renderer', 'lighting22', 'pixel25', 'corner_hud26', 'hud27', 'yuri28', 'combat29', 'escape29', 'yuri31', 'yuri32', 'base33', 'contra34', 'depth35', 'level36', 'tactics36', 'yuri36', 'pixellab38', 'combat39', 'night_run39', 'results39', 'audio42', 'gosfar45', 'hotwire45', 'frontend_1011', 'original_options_1011', 'fullscreen_1011', 'boss_intro_1011', 'main'];
+    for (const f of files) await new Promise(function(resolve, reject) { var script=document.createElement('script');script.src='js/'+f+'.js?v='+V;script.onload=resolve;script.onerror=function(){reject(new Error('Could not load '+f));};document.body.appendChild(script); });
   }());
 </script>
 <script src="../../assets/general_achievements_1011.js"></script>

@@ -16,6 +16,9 @@
   const MUSIC = {
     level2: 'assets/game/shared/audio/music/Unused1.mp3', boss2: 'assets/game/shared/audio/music/Unused11.mp3',
     warrior: 'expansion/topdown/audio/BOF-O-BOSS1.mp3',
+    base: 'expansion/topdown/audio/music23/BOF-BASE.wav',
+    gosfar43: 'expansion/topdown/audio/music43/gosfar-last-hope.wav',
+    lastHope: 'expansion/topdown/audio/music23/rise_of_the_last_hope_fast_riff_genesis.wav',
     clear: 'assets/game/shared/audio/music/Password_StageClear.mp3', title: 'assets/game/shared/audio/music/Title.mp3',select:'assets/game/shared/audio/music/PilotSelect.mp3',
   };
   const sounds = {}, aliases = { cannon: 'gd_tankCannon', missile: 'missileLaunch', lock: 'lockon', engine: 'gd_tankEngineLoop' };
@@ -35,8 +38,9 @@
   const A = TD.Audio = {
     on: false, vol: .8, mvol: .55, master:1,voiceVol:.8,engineVol:1, pools: {}, lastT: {}, music: null, musicKey: null,
     sounds, aliases, loops: new Map(), waves: new Map(), failures: [], stats: {}, suspended: false,
+    musicVoices: new Set(), musicGain: 1, _musicFrame: null,
     resolve(key) { return aliases[key] || key; },
-    unlock() { if (this.on) return; this.on = true; if (this._pending) { const k = this._pending; this._pending = null; this.playMusic(k); } },
+    unlock() { if (this.on) return; this.on = true; if (this._pending) { const p = this._pending; this._pending = null; this.playMusic(p.key, p.seconds, p.gain); } },
     media(file) {
       const audio = new root.Audio(ART.BASE + file); audio.preload = 'auto';
       audio.addEventListener('error', () => { if (this.failures.length < 24) this.failures.push({ file, code: audio.error && audio.error.code }); });
@@ -113,7 +117,7 @@
       // Nearby companion/boss vehicles are quiet layers, capped to three actors.
       const others = [G.ally, ...(G.boss?.tanks || (G.boss?.parts ? [G.boss] : [])), ...G.units.filter(u => !TD.ET[u.type].foot && !TD.ET[u.type].still)];
       for (const u of others.filter(u => u && !u.dead && inView(u, 80)).sort((a, b) => M.dist(p.x, p.y, a.x, a.y) - M.dist(p.x, p.y, b.x, b.y)).slice(0, 3)) this.actor(u, .3, false);
-      if (TD.Stealth.phase === 'ALERT') this.loop('gd_alarmLoop', 'alarm', .65);
+      if (TD.Stealth.phase === 'ALERT' && !G.gosfar43?.power) this.loop('gd_alarmLoop', 'alarm', .65);
       const wren = G.boss?.tanks?.find(u => u.crew === 'wren');
       if (wren && !wren.dead && wren.parts.special_module > 0 && wren.recover <= 0 && wren.t % 9 < 3 && inView(wren, 90)) this.loop('bossShieldStatic', 'wren-shield', .75);
       for (const [token, voice] of this.loops) if (!voice.wanted) { voice.audio.pause(); this.loops.delete(token); }
@@ -141,14 +145,60 @@
       }
       previous.set(p, { x: p.x, y: p.y, aim, boosting: p.boosting, distance: before.distance, side: before.side });
     },
-    playMusic(key) {
-      if (this.musicKey === key && this.music) return;
-      if (!this.on) { this._pending = key; return; }
-      this.stopMusic(); const file = MUSIC[key]; if (!file) return;
-      const audio = this.media(file); audio.loop = key !== 'clear'; audio.volume = this.mvol*this.master;
-      this.start(audio, 'music:' + key); this.music = audio; this.musicKey = key;
+    // Wall-clock fades also run through protected dialogue and paused gameplay.
+    // Wait for actual playback before fading away the outgoing stage track.
+    syncMusicVolumes() {
+      for (const v of this.musicVoices) v.audio.volume = M.clamp(this.mvol * this.master * v.gain, 0, 1);
     },
-    stopMusic() { if (this.music) this.music.pause(); this.music = null; this.musicKey = null; },
+    _updateMusic() {
+      this._musicFrame = null;
+      const now = performance.now(); let fading = false;
+      for (const v of this.musicVoices) {
+        if (v.fade) {
+          const t = M.clamp((now - v.fade.at) / v.fade.ms, 0, 1);
+          v.gain = M.lerp(v.fade.from, v.fade.to, t * t * (3 - 2 * t));
+          if (t === 1) v.fade = null; else fading = true;
+        }
+        if (v.retiring && !v.fade && v.gain === 0) { v.audio.pause(); this.musicVoices.delete(v); }
+      }
+      this.syncMusicVolumes();
+      if (fading) this._musicFrame = root.requestAnimationFrame(() => this._updateMusic());
+    },
+    _rampMusic(v, gain, seconds, retiring = false) {
+      v.retiring = retiring;
+      if (seconds > 0) v.fade = { from: v.gain, to: gain, at: performance.now(), ms: seconds * 1000 };
+      else { v.gain = gain; v.fade = null; }
+      if (this._musicFrame != null) root.cancelAnimationFrame(this._musicFrame);
+      this._updateMusic();
+    },
+    fadeMusic(gain, seconds = 1.8) {
+      gain = M.clamp(gain, 0, 1); this.musicGain = gain;
+      if (this._pending) this._pending.gain = gain;
+      const v = [...this.musicVoices].find(v => v.audio === this.music);
+      if (v && v.playing) this._rampMusic(v, gain, seconds);
+    },
+    playMusic(key, seconds = 0, gain = 1) {
+      if (this.musicKey === key && this.music || this._pending?.key === key) return;
+      const file = MUSIC[key]; if (!file) return;
+      if (!this.on) { this._pending = { key, seconds, gain }; return; }
+      if (!(seconds > 0)) this.stopMusic();
+      const audio = this.media(file), v = { audio, key, gain: seconds > 0 ? 0 : gain, playing: false };
+      audio.loop = key !== 'clear'; this.music = audio; this.musicKey = key; this.musicGain = gain;
+      this.musicVoices.add(v); this.syncMusicVolumes();
+      audio.addEventListener('playing', () => {
+        if (this.music !== audio || !this.musicVoices.has(v)) return;
+        v.playing = true;
+        for (const old of this.musicVoices) if (old !== v) this._rampMusic(old, 0, seconds, true);
+        this._rampMusic(v, this.musicGain, seconds);
+      }, { once: true });
+      this.start(audio, 'music:' + key);
+    },
+    stopMusic() {
+      if (this._musicFrame != null) root.cancelAnimationFrame(this._musicFrame);
+      this._musicFrame = null; this._pending = null;
+      for (const v of this.musicVoices) v.audio.pause(); this.musicVoices.clear();
+      this.music = null; this.musicKey = null; this.musicGain = 1;
+    },
   };
   root.addEventListener('blur', () => { A.suspended = true; A.stopEffects(); });
   root.addEventListener('focus', () => { A.suspended = false; });

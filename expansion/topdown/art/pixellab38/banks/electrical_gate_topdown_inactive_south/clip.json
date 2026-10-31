@@ -1,0 +1,26 @@
+{
+  "frames": [
+    "pl38_electrical_gate_topdown_inactive_south_0"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    314,
+    163
+  ],
+  "size": [
+    628,
+    174
+  ],
+  "duration": 0.08333333333333333,
+  "provider": "PixelLab",
+  "source_review": "mechanics reviewed",
+  "export_scale": 1.296875,
+  "source_master": "electrical_gate_topdown",
+  "source_action": "inactive",
+  "source_direction": "south",
+  "source_indices": [
+    0
+  ]
+}

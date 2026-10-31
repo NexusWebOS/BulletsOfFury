@@ -1,0 +1,1362 @@
+[
+  {
+    "items": [
+      {
+        "name": "side_setup",
+        "index": 0
+      },
+      {
+        "name": "side_up",
+        "index": 0
+      },
+      {
+        "name": "side_down",
+        "index": 0
+      }
+    ],
+    "id": "c211c2bc-e39f-4b90-b3aa-63cb0b135728",
+    "args": {
+      "frame_urls": [
+        "upload:6cc76e96-e4d9-4dae-8fa6-e7c9ab01a25a",
+        "upload:6ed3ce44-ab74-4a65-8335-fae70f47ec19",
+        "upload:804c1c1d-75ae-446d-9647-47d7f21f0887"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "Correct Yuri to match the reference EXACTLY. Short spiky brown mohawk with shaved sides, close brown beard, lean athletic silhouette, RED SLEEVED tactical jacket with circular gray shoulder insignia and high collar, black fitted armor, black-red boots and gloves. These frames have incorrect slick black hair and sleeveless vest: replace those with the reference identity and RED SLEEVES, keep same faces as reference. Preserve every input pose, rifle angle and limbs, placement, overall scale, crisp pixel grid and transparency. Do not add effects or redesign the character. Three distinct aiming poses must remain distinct."
+    }
+  },
+  {
+    "batch": 0,
+    "items": [
+      {
+        "name": "aim_-75_v2",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_-75_v2\\00.png",
+        "ref": "upload:ee13313b-f204-4f46-aef8-382dd6e90dff"
+      },
+      {
+        "name": "aim_-60_v2",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_-60_v2\\00.png",
+        "ref": "upload:07505901-3803-427e-b67c-1e143fdc70b6"
+      },
+      {
+        "name": "aim_-45_v2",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_-45_v2\\00.png",
+        "ref": "upload:308fa1d6-f58f-4f77-bdec-5492897f1b03"
+      }
+    ],
+    "id": "407207e4-41f7-43a1-b5cb-298499fe2c6a",
+    "args": {
+      "frame_urls": [
+        "upload:ee13313b-f204-4f46-aef8-382dd6e90dff",
+        "upload:07505901-3803-427e-b67c-1e143fdc70b6",
+        "upload:308fa1d6-f58f-4f77-bdec-5492897f1b03"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 407207e4-41f7-43a1-b5cb-298499fe2c6a\njob_id: 407207e4-41f7-43a1-b5cb-298499fe2c6a\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 1985752b-e6fd-5bbd-be97-1f4559053e06\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"407207e4-41f7-43a1-b5cb-298499fe2c6a\")"
+  },
+  {
+    "batch": 1,
+    "items": [
+      {
+        "name": "aim_-30",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_-30\\00.png",
+        "ref": "upload:47a982d3-fb38-44d7-a2ea-51208933bfa8"
+      },
+      {
+        "name": "aim_-15",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_-15\\00.png",
+        "ref": "upload:8abbca7d-191b-4e1f-ba77-4e20e82176e8"
+      },
+      {
+        "name": "aim_15",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_15\\00.png",
+        "ref": "upload:bc8b6944-dd77-489b-87a2-962959251e21"
+      }
+    ],
+    "id": "93046c42-b050-4402-85c8-f34f40ec5088",
+    "args": {
+      "frame_urls": [
+        "upload:47a982d3-fb38-44d7-a2ea-51208933bfa8",
+        "upload:8abbca7d-191b-4e1f-ba77-4e20e82176e8",
+        "upload:bc8b6944-dd77-489b-87a2-962959251e21"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 93046c42-b050-4402-85c8-f34f40ec5088\njob_id: 93046c42-b050-4402-85c8-f34f40ec5088\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: d8f28e70-282f-5b10-86c1-0e75e89eeb31\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"93046c42-b050-4402-85c8-f34f40ec5088\")"
+  },
+  {
+    "batch": 2,
+    "items": [
+      {
+        "name": "aim_30",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_30\\00.png",
+        "ref": "upload:fadc7ea6-49f4-46a4-aa2b-05f3f02df54c"
+      },
+      {
+        "name": "aim_45",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_45\\00.png",
+        "ref": "upload:20d3f0b5-6f13-45b5-be19-6ce78164aa44"
+      },
+      {
+        "name": "aim_60_v2",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_60_v2\\00.png",
+        "ref": "upload:af68af69-a303-418f-8200-fcfaf2119b3a"
+      }
+    ],
+    "id": "50e25e9a-2fb1-4aa9-a99e-f82ac294f36b",
+    "args": {
+      "frame_urls": [
+        "upload:fadc7ea6-49f4-46a4-aa2b-05f3f02df54c",
+        "upload:20d3f0b5-6f13-45b5-be19-6ce78164aa44",
+        "upload:af68af69-a303-418f-8200-fcfaf2119b3a"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 50e25e9a-2fb1-4aa9-a99e-f82ac294f36b\njob_id: 50e25e9a-2fb1-4aa9-a99e-f82ac294f36b\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 27d0d0b2-3fef-59de-9040-459d9ce7dc04\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"50e25e9a-2fb1-4aa9-a99e-f82ac294f36b\")"
+  },
+  {
+    "batch": 3,
+    "items": [
+      {
+        "name": "aim_75_v2",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\aim_75_v2\\00.png",
+        "ref": "upload:17955897-dc12-487d-bbe6-f88ba9b88003"
+      },
+      {
+        "name": "run_clean",
+        "index": 1,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\01.png",
+        "ref": "upload:00fd3c5d-539c-493a-aaf6-00850ac29848"
+      },
+      {
+        "name": "run_clean",
+        "index": 2,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\02.png",
+        "ref": "upload:b17d757e-407b-440e-9930-77661f1789b7"
+      }
+    ],
+    "id": "c39398d0-09d2-42ff-bbe7-d8dba3c165a4",
+    "args": {
+      "frame_urls": [
+        "upload:17955897-dc12-487d-bbe6-f88ba9b88003",
+        "upload:00fd3c5d-539c-493a-aaf6-00850ac29848",
+        "upload:b17d757e-407b-440e-9930-77661f1789b7"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: c39398d0-09d2-42ff-bbe7-d8dba3c165a4\njob_id: c39398d0-09d2-42ff-bbe7-d8dba3c165a4\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 9a86d543-5880-594a-a72c-c5a4e526e76a\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"c39398d0-09d2-42ff-bbe7-d8dba3c165a4\")"
+  },
+  {
+    "batch": 4,
+    "items": [
+      {
+        "name": "run_clean",
+        "index": 3,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\03.png",
+        "ref": "upload:2a4eca9b-c605-4bbf-a8ee-e343b22987ca"
+      },
+      {
+        "name": "run_clean",
+        "index": 4,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\04.png",
+        "ref": "upload:47977355-1ff1-480d-b413-cbc76e5e6957"
+      },
+      {
+        "name": "run_clean",
+        "index": 5,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\05.png",
+        "ref": "upload:8bb58584-5b3f-4053-8b2a-8b37d8e66a4c"
+      }
+    ],
+    "id": "b20c63a8-2da0-49de-b667-d6a8d504c63e",
+    "args": {
+      "frame_urls": [
+        "upload:2a4eca9b-c605-4bbf-a8ee-e343b22987ca",
+        "upload:47977355-1ff1-480d-b413-cbc76e5e6957",
+        "upload:8bb58584-5b3f-4053-8b2a-8b37d8e66a4c"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: b20c63a8-2da0-49de-b667-d6a8d504c63e\njob_id: b20c63a8-2da0-49de-b667-d6a8d504c63e\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: c9c229f2-f391-5dca-8585-e476e7ccfe7b\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"b20c63a8-2da0-49de-b667-d6a8d504c63e\")"
+  },
+  {
+    "batch": 5,
+    "items": [
+      {
+        "name": "run_clean",
+        "index": 6,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\06.png",
+        "ref": "upload:a686fa28-2c8b-4478-99a5-66401584d030"
+      },
+      {
+        "name": "run_clean",
+        "index": 7,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\07.png",
+        "ref": "upload:2b545119-1e16-4cae-95df-659f91c6b1ea"
+      },
+      {
+        "name": "run_clean",
+        "index": 8,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\08.png",
+        "ref": "upload:0980d450-1167-4255-b005-52231ed789aa"
+      }
+    ],
+    "id": "18dccea6-729c-4993-ba6b-27c909e3236d",
+    "args": {
+      "frame_urls": [
+        "upload:a686fa28-2c8b-4478-99a5-66401584d030",
+        "upload:2b545119-1e16-4cae-95df-659f91c6b1ea",
+        "upload:0980d450-1167-4255-b005-52231ed789aa"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 18dccea6-729c-4993-ba6b-27c909e3236d\njob_id: 18dccea6-729c-4993-ba6b-27c909e3236d\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: e6710f01-6dfc-533e-a4eb-0690bbd80a0d\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"18dccea6-729c-4993-ba6b-27c909e3236d\")"
+  },
+  {
+    "batch": 6,
+    "items": [
+      {
+        "name": "run_clean",
+        "index": 9,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\09.png",
+        "ref": "upload:63be17f8-86cb-4f1f-ab90-8493ab123e89"
+      },
+      {
+        "name": "run_clean",
+        "index": 10,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\10.png",
+        "ref": "upload:76e2540d-b657-42c2-9999-5e8314219fa2"
+      },
+      {
+        "name": "run_clean",
+        "index": 11,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\11.png",
+        "ref": "upload:1f0c357d-51ad-41bc-9a7e-e10bbad9bc9c"
+      }
+    ],
+    "id": "20d378ef-95cb-4167-878a-132271413b74",
+    "args": {
+      "frame_urls": [
+        "upload:63be17f8-86cb-4f1f-ab90-8493ab123e89",
+        "upload:76e2540d-b657-42c2-9999-5e8314219fa2",
+        "upload:1f0c357d-51ad-41bc-9a7e-e10bbad9bc9c"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 20d378ef-95cb-4167-878a-132271413b74\njob_id: 20d378ef-95cb-4167-878a-132271413b74\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: cdc05265-8ed3-51ca-b304-2069ed43390b\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"20d378ef-95cb-4167-878a-132271413b74\")"
+  },
+  {
+    "batch": 7,
+    "items": [
+      {
+        "name": "run_clean",
+        "index": 12,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\12.png",
+        "ref": "upload:d6628e5d-5a5e-468f-8ce0-9eb1f1531c93"
+      },
+      {
+        "name": "run_clean",
+        "index": 13,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\13.png",
+        "ref": "upload:5ce8f566-b743-419e-9edd-2749a986a0af"
+      },
+      {
+        "name": "run_clean",
+        "index": 14,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\14.png",
+        "ref": "upload:917bc7d1-09e7-4737-8d4c-f334dc42a05f"
+      }
+    ],
+    "id": "15935ef7-7805-4a7f-b78e-9c63a706e600",
+    "args": {
+      "frame_urls": [
+        "upload:d6628e5d-5a5e-468f-8ce0-9eb1f1531c93",
+        "upload:5ce8f566-b743-419e-9edd-2749a986a0af",
+        "upload:917bc7d1-09e7-4737-8d4c-f334dc42a05f"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 15935ef7-7805-4a7f-b78e-9c63a706e600\njob_id: 15935ef7-7805-4a7f-b78e-9c63a706e600\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: d108f3bf-b191-58b1-b35e-ce6906fa6b03\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"15935ef7-7805-4a7f-b78e-9c63a706e600\")"
+  },
+  {
+    "batch": 8,
+    "items": [
+      {
+        "name": "run_clean",
+        "index": 15,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\15.png",
+        "ref": "upload:cd42be0a-4268-4760-a997-8fa90490bee7"
+      },
+      {
+        "name": "run_clean",
+        "index": 16,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\run_clean\\16.png",
+        "ref": "upload:4e1e611f-25f5-474f-a5ea-62887f076ecb"
+      },
+      {
+        "name": "vault",
+        "index": 1,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\01.png",
+        "ref": "upload:4c07f438-bee1-4520-832c-663d40a4c560"
+      }
+    ],
+    "id": "9ea4340a-be29-4e15-bc2b-3e1daafe34f9",
+    "args": {
+      "frame_urls": [
+        "upload:cd42be0a-4268-4760-a997-8fa90490bee7",
+        "upload:4e1e611f-25f5-474f-a5ea-62887f076ecb",
+        "upload:4c07f438-bee1-4520-832c-663d40a4c560"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 9ea4340a-be29-4e15-bc2b-3e1daafe34f9\njob_id: 9ea4340a-be29-4e15-bc2b-3e1daafe34f9\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 5b7d5237-ef91-5b61-b9af-81c3bb2fb48f\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"9ea4340a-be29-4e15-bc2b-3e1daafe34f9\")"
+  },
+  {
+    "batch": 9,
+    "items": [
+      {
+        "name": "vault",
+        "index": 2,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\02.png",
+        "ref": "upload:835909b6-600d-43e5-8cb8-b4f9bb364328"
+      },
+      {
+        "name": "vault",
+        "index": 3,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\03.png",
+        "ref": "upload:bf0fb86e-ffe8-4328-a562-1e3e9d0b780d"
+      },
+      {
+        "name": "vault",
+        "index": 4,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\04.png",
+        "ref": "upload:22008320-bbe7-468b-82c0-08f48678eb55"
+      }
+    ],
+    "id": "709392b0-2498-431c-85d0-5d4603479ad2",
+    "args": {
+      "frame_urls": [
+        "upload:835909b6-600d-43e5-8cb8-b4f9bb364328",
+        "upload:bf0fb86e-ffe8-4328-a562-1e3e9d0b780d",
+        "upload:22008320-bbe7-468b-82c0-08f48678eb55"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 709392b0-2498-431c-85d0-5d4603479ad2\njob_id: 709392b0-2498-431c-85d0-5d4603479ad2\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: f4000442-4ec8-590f-b7d7-fa77849aa607\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"709392b0-2498-431c-85d0-5d4603479ad2\")"
+  },
+  {
+    "batch": 10,
+    "items": [
+      {
+        "name": "vault",
+        "index": 5,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\05.png",
+        "ref": "upload:f3369900-9691-4848-82ac-7177f9573d30"
+      },
+      {
+        "name": "vault",
+        "index": 6,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\06.png",
+        "ref": "upload:eab071e9-a05a-41c9-9d00-f5d33340e6ce"
+      },
+      {
+        "name": "vault",
+        "index": 7,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\07.png",
+        "ref": "upload:72880246-4c5f-4bac-8c32-fa767d2806e0"
+      }
+    ],
+    "id": "012291bc-270e-4e35-bd6f-8d71f3fefff0",
+    "args": {
+      "frame_urls": [
+        "upload:f3369900-9691-4848-82ac-7177f9573d30",
+        "upload:eab071e9-a05a-41c9-9d00-f5d33340e6ce",
+        "upload:72880246-4c5f-4bac-8c32-fa767d2806e0"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 012291bc-270e-4e35-bd6f-8d71f3fefff0\njob_id: 012291bc-270e-4e35-bd6f-8d71f3fefff0\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 42be7954-2d44-55f4-b567-46bcbb9fd6e7\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"012291bc-270e-4e35-bd6f-8d71f3fefff0\")"
+  },
+  {
+    "batch": 11,
+    "items": [
+      {
+        "name": "vault",
+        "index": 8,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\08.png",
+        "ref": "upload:470dbaac-1998-4af0-9eae-fc61797a9237"
+      },
+      {
+        "name": "vault",
+        "index": 9,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\09.png",
+        "ref": "upload:9e21970f-3b10-465c-97ca-919ef20edc3e"
+      },
+      {
+        "name": "vault",
+        "index": 10,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\10.png",
+        "ref": "upload:23983144-0562-41c9-9bf4-ef823063435b"
+      }
+    ],
+    "id": "1821b087-f6b1-43a0-a774-5d69ea86db5f",
+    "args": {
+      "frame_urls": [
+        "upload:470dbaac-1998-4af0-9eae-fc61797a9237",
+        "upload:9e21970f-3b10-465c-97ca-919ef20edc3e",
+        "upload:23983144-0562-41c9-9bf4-ef823063435b"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 1821b087-f6b1-43a0-a774-5d69ea86db5f\njob_id: 1821b087-f6b1-43a0-a774-5d69ea86db5f\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 429a221d-6bd1-521f-9c75-1cea7c9ee92b\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"1821b087-f6b1-43a0-a774-5d69ea86db5f\")"
+  },
+  {
+    "batch": 12,
+    "items": [
+      {
+        "name": "vault",
+        "index": 11,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\11.png",
+        "ref": "upload:90ec369c-04ad-44cb-85ff-b9ce19ea6697"
+      },
+      {
+        "name": "vault",
+        "index": 12,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\12.png",
+        "ref": "upload:dcf8b806-642e-40dc-88b2-1831664676a1"
+      },
+      {
+        "name": "vault",
+        "index": 13,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\13.png",
+        "ref": "upload:0bf37a33-20b7-4e39-adc6-152a165873bc"
+      }
+    ],
+    "id": "a2c0fe0a-35af-4c34-8d6e-65f2e2fa5ca2",
+    "args": {
+      "frame_urls": [
+        "upload:90ec369c-04ad-44cb-85ff-b9ce19ea6697",
+        "upload:dcf8b806-642e-40dc-88b2-1831664676a1",
+        "upload:0bf37a33-20b7-4e39-adc6-152a165873bc"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: a2c0fe0a-35af-4c34-8d6e-65f2e2fa5ca2\njob_id: a2c0fe0a-35af-4c34-8d6e-65f2e2fa5ca2\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 762ad7ec-3d2f-55ff-a8d9-04279dee5447\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"a2c0fe0a-35af-4c34-8d6e-65f2e2fa5ca2\")"
+  },
+  {
+    "batch": 13,
+    "items": [
+      {
+        "name": "vault",
+        "index": 14,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\14.png",
+        "ref": "upload:2f7f05a2-cddd-4e57-8a08-3be1f4d3579c"
+      },
+      {
+        "name": "vault",
+        "index": 15,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\15.png",
+        "ref": "upload:4900f815-ccd4-4ca8-81a9-3bf8d6ce995b"
+      },
+      {
+        "name": "vault",
+        "index": 16,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\vault\\16.png",
+        "ref": "upload:28a28c6a-d898-438b-a5e5-8a7c5ee2c4d1"
+      }
+    ],
+    "id": "1dc2bdca-a588-46b1-84dd-4e3d9aa1c6bb",
+    "args": {
+      "frame_urls": [
+        "upload:2f7f05a2-cddd-4e57-8a08-3be1f4d3579c",
+        "upload:4900f815-ccd4-4ca8-81a9-3bf8d6ce995b",
+        "upload:28a28c6a-d898-438b-a5e5-8a7c5ee2c4d1"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 1dc2bdca-a588-46b1-84dd-4e3d9aa1c6bb\njob_id: 1dc2bdca-a588-46b1-84dd-4e3d9aa1c6bb\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: cc46c581-3a4e-58b4-a497-4f21646ec40b\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"1dc2bdca-a588-46b1-84dd-4e3d9aa1c6bb\")"
+  },
+  {
+    "batch": 14,
+    "items": [
+      {
+        "name": "roll",
+        "index": 1,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\01.png",
+        "ref": "upload:ebd4ba30-073a-4a65-ace5-3a2c13a4fa20"
+      },
+      {
+        "name": "roll",
+        "index": 2,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\02.png",
+        "ref": "upload:9371fecf-74c8-4ea5-af9a-a2a360d39173"
+      },
+      {
+        "name": "roll",
+        "index": 3,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\03.png",
+        "ref": "upload:ad1c2c6a-4a61-427f-8f7d-b4330690210c"
+      }
+    ],
+    "id": "658bd9eb-0aa6-43fd-af31-7bf4d69acbf3",
+    "args": {
+      "frame_urls": [
+        "upload:ebd4ba30-073a-4a65-ace5-3a2c13a4fa20",
+        "upload:9371fecf-74c8-4ea5-af9a-a2a360d39173",
+        "upload:ad1c2c6a-4a61-427f-8f7d-b4330690210c"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 658bd9eb-0aa6-43fd-af31-7bf4d69acbf3\njob_id: 658bd9eb-0aa6-43fd-af31-7bf4d69acbf3\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 0867d1e2-29bd-54e9-9c2e-d7583a34cf67\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"658bd9eb-0aa6-43fd-af31-7bf4d69acbf3\")"
+  },
+  {
+    "batch": 15,
+    "items": [
+      {
+        "name": "roll",
+        "index": 4,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\04.png",
+        "ref": "upload:244b5795-421c-45f5-bdce-45e165e1ad31"
+      },
+      {
+        "name": "roll",
+        "index": 5,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\05.png",
+        "ref": "upload:b540ca89-3125-4652-b076-aa73e2dc7913"
+      },
+      {
+        "name": "roll",
+        "index": 6,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\06.png",
+        "ref": "upload:7e1cc05b-f373-4375-bfa9-95bfe2f1304f"
+      }
+    ],
+    "id": "a49ecb55-3db8-4194-9a6f-d12af871a509",
+    "args": {
+      "frame_urls": [
+        "upload:244b5795-421c-45f5-bdce-45e165e1ad31",
+        "upload:b540ca89-3125-4652-b076-aa73e2dc7913",
+        "upload:7e1cc05b-f373-4375-bfa9-95bfe2f1304f"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: a49ecb55-3db8-4194-9a6f-d12af871a509\njob_id: a49ecb55-3db8-4194-9a6f-d12af871a509\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 82b476df-b6a4-516c-8d51-1a12ff129212\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"a49ecb55-3db8-4194-9a6f-d12af871a509\")"
+  },
+  {
+    "batch": 16,
+    "items": [
+      {
+        "name": "roll",
+        "index": 7,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\07.png",
+        "ref": "upload:fbcbea60-cafc-4f8d-9489-53542cab6f0e"
+      },
+      {
+        "name": "roll",
+        "index": 8,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\08.png",
+        "ref": "upload:065cce1f-cf55-4ec7-9f5d-48d067ba965c"
+      },
+      {
+        "name": "roll",
+        "index": 9,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\09.png",
+        "ref": "upload:dbd4ceba-02a5-4285-a576-5e1655e6df47"
+      }
+    ],
+    "id": "41c16550-8253-4ace-8675-3898ffd9e3bd",
+    "args": {
+      "frame_urls": [
+        "upload:fbcbea60-cafc-4f8d-9489-53542cab6f0e",
+        "upload:065cce1f-cf55-4ec7-9f5d-48d067ba965c",
+        "upload:dbd4ceba-02a5-4285-a576-5e1655e6df47"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 41c16550-8253-4ace-8675-3898ffd9e3bd\njob_id: 41c16550-8253-4ace-8675-3898ffd9e3bd\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: f50a96e9-0aba-5ee4-9b6d-2c3a462ceb7a\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"41c16550-8253-4ace-8675-3898ffd9e3bd\")"
+  },
+  {
+    "batch": 17,
+    "items": [
+      {
+        "name": "roll",
+        "index": 10,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\10.png",
+        "ref": "upload:df07bc53-a00a-438f-9d58-9235f7887c53"
+      },
+      {
+        "name": "roll",
+        "index": 11,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\11.png",
+        "ref": "upload:b3b5a856-06a2-4649-a7ad-cb6c0b55b167"
+      },
+      {
+        "name": "roll",
+        "index": 12,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\12.png",
+        "ref": "upload:0caede39-ffd5-46a4-8ba3-891d86475a60"
+      }
+    ],
+    "id": "5dc119d7-4c46-4802-90f2-2c4edfc55757",
+    "args": {
+      "frame_urls": [
+        "upload:df07bc53-a00a-438f-9d58-9235f7887c53",
+        "upload:b3b5a856-06a2-4649-a7ad-cb6c0b55b167",
+        "upload:0caede39-ffd5-46a4-8ba3-891d86475a60"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 5dc119d7-4c46-4802-90f2-2c4edfc55757\njob_id: 5dc119d7-4c46-4802-90f2-2c4edfc55757\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 7d4c3410-d457-503c-b9ee-1f02c3db22a5\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"5dc119d7-4c46-4802-90f2-2c4edfc55757\")"
+  },
+  {
+    "batch": 18,
+    "items": [
+      {
+        "name": "roll",
+        "index": 13,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\13.png",
+        "ref": "upload:25475069-4d26-44d1-83ea-11f73aba9ef8"
+      },
+      {
+        "name": "roll",
+        "index": 14,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\14.png",
+        "ref": "upload:5e825249-7652-438d-8732-4679043b73cd"
+      },
+      {
+        "name": "roll",
+        "index": 15,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\15.png",
+        "ref": "upload:88fbb48f-9c80-42a4-a9b1-67b4fd9e0f3a"
+      }
+    ],
+    "id": "5162e35f-6ce4-4889-bc68-4de9df8c778c",
+    "args": {
+      "frame_urls": [
+        "upload:25475069-4d26-44d1-83ea-11f73aba9ef8",
+        "upload:5e825249-7652-438d-8732-4679043b73cd",
+        "upload:88fbb48f-9c80-42a4-a9b1-67b4fd9e0f3a"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 5162e35f-6ce4-4889-bc68-4de9df8c778c\njob_id: 5162e35f-6ce4-4889-bc68-4de9df8c778c\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 607c1b21-fdb7-5928-8868-a5a5e572953c\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"5162e35f-6ce4-4889-bc68-4de9df8c778c\")"
+  },
+  {
+    "batch": 19,
+    "items": [
+      {
+        "name": "roll",
+        "index": 16,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\roll\\16.png",
+        "ref": "upload:080a5231-a1a0-4044-8423-0ca1faf06679"
+      },
+      {
+        "name": "crouch",
+        "index": 5,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\05.png",
+        "ref": "upload:2857882b-6719-4785-a985-bdd15a7deabc"
+      },
+      {
+        "name": "crouch",
+        "index": 6,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\06.png",
+        "ref": "upload:1d74cccb-00c8-4144-908f-bad8f9be43a0"
+      }
+    ],
+    "id": "b81d4eec-a3ef-432d-ace3-3e7e4c920746",
+    "args": {
+      "frame_urls": [
+        "upload:080a5231-a1a0-4044-8423-0ca1faf06679",
+        "upload:2857882b-6719-4785-a985-bdd15a7deabc",
+        "upload:1d74cccb-00c8-4144-908f-bad8f9be43a0"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: b81d4eec-a3ef-432d-ace3-3e7e4c920746\njob_id: b81d4eec-a3ef-432d-ace3-3e7e4c920746\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 2fcc728b-b0b4-5baf-90f8-5d92d1f9b27b\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"b81d4eec-a3ef-432d-ace3-3e7e4c920746\")"
+  },
+  {
+    "batch": 20,
+    "items": [
+      {
+        "name": "crouch",
+        "index": 7,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\07.png",
+        "ref": "upload:80f3a722-8fa4-4791-b2dd-ae190b2f6a28"
+      },
+      {
+        "name": "crouch",
+        "index": 8,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\08.png",
+        "ref": "upload:3fe83213-4e84-4cdf-be3a-68750cb17302"
+      },
+      {
+        "name": "crouch",
+        "index": 9,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\09.png",
+        "ref": "upload:44860b85-5d0d-472c-b12f-b0306e15b426"
+      }
+    ],
+    "id": "3feb84d8-8f3b-43c3-8647-d56eeb73d6cd",
+    "args": {
+      "frame_urls": [
+        "upload:80f3a722-8fa4-4791-b2dd-ae190b2f6a28",
+        "upload:3fe83213-4e84-4cdf-be3a-68750cb17302",
+        "upload:44860b85-5d0d-472c-b12f-b0306e15b426"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 3feb84d8-8f3b-43c3-8647-d56eeb73d6cd\njob_id: 3feb84d8-8f3b-43c3-8647-d56eeb73d6cd\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 44b5b720-4e8a-5d46-88e2-8667f23825bb\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"3feb84d8-8f3b-43c3-8647-d56eeb73d6cd\")"
+  },
+  {
+    "batch": 21,
+    "items": [
+      {
+        "name": "crouch",
+        "index": 10,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\10.png",
+        "ref": "upload:56bca908-33a7-45f4-94c5-0baeb2e50831"
+      },
+      {
+        "name": "crouch",
+        "index": 11,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\11.png",
+        "ref": "upload:483cdd62-cfb4-4878-a843-992764a0dc17"
+      },
+      {
+        "name": "crouch",
+        "index": 12,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\crouch\\12.png",
+        "ref": "upload:ca15f199-2553-45ef-954a-11cf51054d53"
+      }
+    ],
+    "id": "3a606f42-99c5-4fa5-ad3c-7c14590739bc",
+    "args": {
+      "frame_urls": [
+        "upload:56bca908-33a7-45f4-94c5-0baeb2e50831",
+        "upload:483cdd62-cfb4-4878-a843-992764a0dc17",
+        "upload:ca15f199-2553-45ef-954a-11cf51054d53"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 3a606f42-99c5-4fa5-ad3c-7c14590739bc\njob_id: 3a606f42-99c5-4fa5-ad3c-7c14590739bc\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 51be2425-c8fb-5561-ad5d-a6f8ee80d3be\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"3a606f42-99c5-4fa5-ad3c-7c14590739bc\")"
+  },
+  {
+    "batch": 22,
+    "items": [
+      {
+        "name": "prone",
+        "index": 1,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\01.png",
+        "ref": "upload:e0eb1984-559c-4e4a-a1c8-2a951accbd17"
+      },
+      {
+        "name": "prone",
+        "index": 2,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\02.png",
+        "ref": "upload:f88a5ecf-964c-4286-bbee-a2284d24b18c"
+      },
+      {
+        "name": "prone",
+        "index": 3,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\03.png",
+        "ref": "upload:526b2a0f-50d7-45e8-b39a-c8e2e011d054"
+      }
+    ],
+    "id": "19912d0f-3076-4ec3-a350-f9a847478324",
+    "args": {
+      "frame_urls": [
+        "upload:e0eb1984-559c-4e4a-a1c8-2a951accbd17",
+        "upload:f88a5ecf-964c-4286-bbee-a2284d24b18c",
+        "upload:526b2a0f-50d7-45e8-b39a-c8e2e011d054"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 19912d0f-3076-4ec3-a350-f9a847478324\njob_id: 19912d0f-3076-4ec3-a350-f9a847478324\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 836781e9-eaa3-5ab3-bcae-5555d1fde5c7\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"19912d0f-3076-4ec3-a350-f9a847478324\")"
+  },
+  {
+    "batch": 23,
+    "items": [
+      {
+        "name": "prone",
+        "index": 4,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\04.png",
+        "ref": "upload:0c9791e0-9ae5-40d7-b545-56898aa54d47"
+      },
+      {
+        "name": "prone",
+        "index": 5,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\05.png",
+        "ref": "upload:fd96a5cf-7513-4ee1-99a6-a18831fbb933"
+      },
+      {
+        "name": "prone",
+        "index": 6,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\06.png",
+        "ref": "upload:1a4c2a5c-492f-45da-a076-e6b28024cfc8"
+      }
+    ],
+    "id": "a79f10d4-1cf0-4fff-b75d-bb5e7f0d58f2",
+    "args": {
+      "frame_urls": [
+        "upload:0c9791e0-9ae5-40d7-b545-56898aa54d47",
+        "upload:fd96a5cf-7513-4ee1-99a6-a18831fbb933",
+        "upload:1a4c2a5c-492f-45da-a076-e6b28024cfc8"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: a79f10d4-1cf0-4fff-b75d-bb5e7f0d58f2\njob_id: a79f10d4-1cf0-4fff-b75d-bb5e7f0d58f2\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: c32f95ac-3010-5fc6-9c6b-cd9b782293c5\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"a79f10d4-1cf0-4fff-b75d-bb5e7f0d58f2\")"
+  },
+  {
+    "batch": 24,
+    "items": [
+      {
+        "name": "prone",
+        "index": 7,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\07.png",
+        "ref": "upload:70bfb882-0f37-4769-9885-e7ad1eb7b62a"
+      },
+      {
+        "name": "prone",
+        "index": 8,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\08.png",
+        "ref": "upload:52a64b82-8c08-4845-8f22-9304b2bad048"
+      },
+      {
+        "name": "prone",
+        "index": 9,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\09.png",
+        "ref": "upload:d4bdcb1f-0d16-4642-b594-9fb0ddc9d08b"
+      }
+    ],
+    "id": "7b853c92-ba1f-4fdc-a969-b7c78ebdbe4b",
+    "args": {
+      "frame_urls": [
+        "upload:70bfb882-0f37-4769-9885-e7ad1eb7b62a",
+        "upload:52a64b82-8c08-4845-8f22-9304b2bad048",
+        "upload:d4bdcb1f-0d16-4642-b594-9fb0ddc9d08b"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 7b853c92-ba1f-4fdc-a969-b7c78ebdbe4b\njob_id: 7b853c92-ba1f-4fdc-a969-b7c78ebdbe4b\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: fe4083bc-fa3a-5724-907b-c53c5b1629d8\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"7b853c92-ba1f-4fdc-a969-b7c78ebdbe4b\")"
+  },
+  {
+    "batch": 25,
+    "items": [
+      {
+        "name": "prone",
+        "index": 10,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\10.png",
+        "ref": "upload:c6b754ea-9451-48a3-89d3-c803e25a5e4f"
+      },
+      {
+        "name": "prone",
+        "index": 11,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\11.png",
+        "ref": "upload:5c18fa0a-9763-46f3-9756-228fca147105"
+      },
+      {
+        "name": "prone",
+        "index": 12,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\12.png",
+        "ref": "upload:54d3b860-a08d-4359-b63f-67fa99cec79d"
+      }
+    ],
+    "id": "a4ac58b4-d01c-4933-b14b-01c57246cd20",
+    "args": {
+      "frame_urls": [
+        "upload:c6b754ea-9451-48a3-89d3-c803e25a5e4f",
+        "upload:5c18fa0a-9763-46f3-9756-228fca147105",
+        "upload:54d3b860-a08d-4359-b63f-67fa99cec79d"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: a4ac58b4-d01c-4933-b14b-01c57246cd20\njob_id: a4ac58b4-d01c-4933-b14b-01c57246cd20\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 6cc9bb49-930b-571a-bb3b-28f8835d98e5\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"a4ac58b4-d01c-4933-b14b-01c57246cd20\")"
+  },
+  {
+    "batch": 26,
+    "items": [
+      {
+        "name": "prone",
+        "index": 13,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\13.png",
+        "ref": "upload:2cf43f29-41b9-49a9-b9ca-14a37ade2b0f"
+      },
+      {
+        "name": "prone",
+        "index": 14,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\14.png",
+        "ref": "upload:732ccbfc-8021-4d12-84b8-c51c1af3d257"
+      },
+      {
+        "name": "prone",
+        "index": 15,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\15.png",
+        "ref": "upload:735cde25-8771-458a-ae29-6832ed9af607"
+      }
+    ],
+    "id": "4789761f-3a6c-4c00-af3c-69fb48a2efee",
+    "args": {
+      "frame_urls": [
+        "upload:2cf43f29-41b9-49a9-b9ca-14a37ade2b0f",
+        "upload:732ccbfc-8021-4d12-84b8-c51c1af3d257",
+        "upload:735cde25-8771-458a-ae29-6832ed9af607"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 4789761f-3a6c-4c00-af3c-69fb48a2efee\njob_id: 4789761f-3a6c-4c00-af3c-69fb48a2efee\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 58f2ea53-63ce-553b-8e67-53c1dc0df311\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"4789761f-3a6c-4c00-af3c-69fb48a2efee\")"
+  },
+  {
+    "batch": 27,
+    "items": [
+      {
+        "name": "prone",
+        "index": 16,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\16.png",
+        "ref": "upload:ddf03372-adf4-4d88-8c53-242fa349012a"
+      },
+      {
+        "name": "cover_clean",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\cover_clean\\00.png",
+        "ref": "upload:56379d62-0b25-463b-bbbe-2a5f320956d7"
+      },
+      {
+        "name": "cover_clean",
+        "index": 1,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\cover_clean\\01.png",
+        "ref": "upload:ed5e1821-980c-479d-a010-b285673e63b5"
+      }
+    ],
+    "id": "b127eac4-464c-4b0e-811f-6994d0eefccc",
+    "args": {
+      "frame_urls": [
+        "upload:ddf03372-adf4-4d88-8c53-242fa349012a",
+        "upload:56379d62-0b25-463b-bbbe-2a5f320956d7",
+        "upload:ed5e1821-980c-479d-a010-b285673e63b5"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: b127eac4-464c-4b0e-811f-6994d0eefccc\njob_id: b127eac4-464c-4b0e-811f-6994d0eefccc\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: f67eba9b-1b41-50b6-83ca-73f353bcb9d6\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"b127eac4-464c-4b0e-811f-6994d0eefccc\")"
+  },
+  {
+    "batch": 28,
+    "items": [
+      {
+        "name": "cover_clean",
+        "index": 2,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\cover_clean\\02.png",
+        "ref": "upload:b750a63c-4c9b-4762-8b04-671ae72f9ea8"
+      },
+      {
+        "name": "cover_clean",
+        "index": 3,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\cover_clean\\03.png",
+        "ref": "upload:f42d7976-76ea-4fd3-84af-8515dcabf956"
+      },
+      {
+        "name": "cover_clean",
+        "index": 4,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\cover_clean\\04.png",
+        "ref": "upload:234f0afa-d3bc-4848-b7f3-61593644a5e1"
+      }
+    ],
+    "id": "34099733-e84c-40bd-b8bc-f584075041ad",
+    "args": {
+      "frame_urls": [
+        "upload:b750a63c-4c9b-4762-8b04-671ae72f9ea8",
+        "upload:f42d7976-76ea-4fd3-84af-8515dcabf956",
+        "upload:234f0afa-d3bc-4848-b7f3-61593644a5e1"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 34099733-e84c-40bd-b8bc-f584075041ad\njob_id: 34099733-e84c-40bd-b8bc-f584075041ad\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: f94efaa0-5ef7-5b13-bf66-c4c48017d3bc\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"34099733-e84c-40bd-b8bc-f584075041ad\")"
+  },
+  {
+    "batch": 29,
+    "items": [
+      {
+        "name": "cover_clean",
+        "index": 5,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\cover_clean\\05.png",
+        "ref": "upload:2cb71131-47f8-4dc3-ac53-45bf7f2afa14"
+      },
+      {
+        "name": "cover_clean",
+        "index": 6,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\cover_clean\\06.png",
+        "ref": "upload:d99ae70a-3739-4130-95a0-22cff3b41b0f"
+      },
+      {
+        "name": "slide_motion",
+        "index": 1,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\01.png",
+        "ref": "upload:8cd57f49-6f1a-498e-84e2-fbf47b2b4d0b"
+      }
+    ],
+    "id": "d98f1f4b-3c45-46d1-a8a7-04f18ccb426f",
+    "args": {
+      "frame_urls": [
+        "upload:2cb71131-47f8-4dc3-ac53-45bf7f2afa14",
+        "upload:d99ae70a-3739-4130-95a0-22cff3b41b0f",
+        "upload:8cd57f49-6f1a-498e-84e2-fbf47b2b4d0b"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: d98f1f4b-3c45-46d1-a8a7-04f18ccb426f\njob_id: d98f1f4b-3c45-46d1-a8a7-04f18ccb426f\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: 8ccc73d6-de11-5b47-84bd-dcc10c818696\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"d98f1f4b-3c45-46d1-a8a7-04f18ccb426f\")"
+  },
+  {
+    "batch": 30,
+    "items": [
+      {
+        "name": "slide_motion",
+        "index": 2,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\02.png",
+        "ref": "upload:8dee16ce-6533-4690-812a-17e3b7783959"
+      },
+      {
+        "name": "slide_motion",
+        "index": 3,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\03.png",
+        "ref": "upload:d56b51ec-8765-4ee8-8a78-94b6f11cc696"
+      },
+      {
+        "name": "slide_motion",
+        "index": 4,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\04.png",
+        "ref": "upload:9dc97cee-e121-42df-945c-aca169eeb126"
+      }
+    ],
+    "id": "205c3c17-ced3-4b85-b0b4-ac26579dcb88",
+    "args": {
+      "frame_urls": [
+        "upload:8dee16ce-6533-4690-812a-17e3b7783959",
+        "upload:d56b51ec-8765-4ee8-8a78-94b6f11cc696",
+        "upload:9dc97cee-e121-42df-945c-aca169eeb126"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 205c3c17-ced3-4b85-b0b4-ac26579dcb88\njob_id: 205c3c17-ced3-4b85-b0b4-ac26579dcb88\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: e8d6aef4-7385-5345-b3c5-da48a4e610ec\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"205c3c17-ced3-4b85-b0b4-ac26579dcb88\")"
+  },
+  {
+    "batch": 31,
+    "items": [
+      {
+        "name": "slide_motion",
+        "index": 5,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\05.png",
+        "ref": "upload:fb9989d7-aad5-4cbc-8b26-5b33f77bfffd"
+      },
+      {
+        "name": "slide_motion",
+        "index": 6,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\06.png",
+        "ref": "upload:782ae9c0-1e9c-435b-9f28-fcc654fa22fe"
+      },
+      {
+        "name": "slide_motion",
+        "index": 7,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\07.png",
+        "ref": "upload:c9ad4e13-147a-40af-889c-9cfd96400e1c"
+      }
+    ],
+    "id": "14024640-de78-447f-9f01-b42b27f0eb00",
+    "args": {
+      "frame_urls": [
+        "upload:fb9989d7-aad5-4cbc-8b26-5b33f77bfffd",
+        "upload:782ae9c0-1e9c-435b-9f28-fcc654fa22fe",
+        "upload:c9ad4e13-147a-40af-889c-9cfd96400e1c"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 14024640-de78-447f-9f01-b42b27f0eb00\njob_id: 14024640-de78-447f-9f01-b42b27f0eb00\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: fe7e8d9c-0a6e-5852-bfd2-711df86a6220\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"14024640-de78-447f-9f01-b42b27f0eb00\")"
+  },
+  {
+    "batch": 32,
+    "items": [
+      {
+        "name": "slide_motion",
+        "index": 8,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\08.png",
+        "ref": "upload:cc2cc4d7-86f8-429a-89a5-c6520d252ad1"
+      },
+      {
+        "name": "slide_motion",
+        "index": 9,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\09.png",
+        "ref": "upload:29e06405-2b04-47ba-8da1-89efdbd992b8"
+      },
+      {
+        "name": "slide_motion",
+        "index": 10,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\10.png",
+        "ref": "upload:2cb66c55-8967-4868-88b8-556d7ff95453"
+      }
+    ],
+    "id": "c7b65662-0107-4c41-8ddb-9a7a95ace71a",
+    "args": {
+      "frame_urls": [
+        "upload:cc2cc4d7-86f8-429a-89a5-c6520d252ad1",
+        "upload:29e06405-2b04-47ba-8da1-89efdbd992b8",
+        "upload:2cb66c55-8967-4868-88b8-556d7ff95453"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: c7b65662-0107-4c41-8ddb-9a7a95ace71a\njob_id: c7b65662-0107-4c41-8ddb-9a7a95ace71a\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: ca320bc2-7d3d-5f62-b5f9-e8ae93280e64\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"c7b65662-0107-4c41-8ddb-9a7a95ace71a\")"
+  },
+  {
+    "batch": 33,
+    "items": [
+      {
+        "name": "slide_motion",
+        "index": 11,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\11.png",
+        "ref": "upload:8025961b-7d84-4a95-86ad-49c8ba62187e"
+      },
+      {
+        "name": "slide_motion",
+        "index": 12,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_motion\\12.png",
+        "ref": "upload:d08e0b82-fd6e-49ff-a9a1-bc820782335b"
+      },
+      {
+        "name": "slide_flat",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_flat\\00.png",
+        "ref": "upload:3c5ffbaf-9826-4278-b989-3a9f70bd6e57"
+      }
+    ],
+    "id": "3d5c318a-491a-4788-a060-6c8cdbbc96a1",
+    "args": {
+      "frame_urls": [
+        "upload:8025961b-7d84-4a95-86ad-49c8ba62187e",
+        "upload:d08e0b82-fd6e-49ff-a9a1-bc820782335b",
+        "upload:3c5ffbaf-9826-4278-b989-3a9f70bd6e57"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 3d5c318a-491a-4788-a060-6c8cdbbc96a1\njob_id: 3d5c318a-491a-4788-a060-6c8cdbbc96a1\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: ce6c2da1-3d5c-532d-b5ec-52c4514dc8a5\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"3d5c318a-491a-4788-a060-6c8cdbbc96a1\")"
+  },
+  {
+    "batch": 34,
+    "items": [
+      {
+        "name": "slide_up",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_up\\00.png",
+        "ref": "upload:0be418a5-c97a-47a9-998d-e6a32088b2f0"
+      },
+      {
+        "name": "slide_back_imagegen",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Documents\\New project\\.tooling\\yuri30\\back_input.png",
+        "ref": "upload:a8d76f82-fa0a-400c-b56f-b7e3dbb3e035"
+      },
+      {
+        "name": "slide_down",
+        "index": 0,
+        "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\slide_down\\00.png",
+        "ref": "upload:df6da4b1-8b8a-48e9-a986-d40cdca431c5"
+      }
+    ],
+    "id": "3dfde3b7-0371-43b0-ac14-1bfd23efbc7b",
+    "args": {
+      "frame_urls": [
+        "upload:0be418a5-c97a-47a9-998d-e6a32088b2f0",
+        "upload:a8d76f82-fa0a-400c-b56f-b7e3dbb3e035",
+        "upload:df6da4b1-8b8a-48e9-a986-d40cdca431c5"
+      ],
+      "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+      "width": 192,
+      "height": 224,
+      "no_background": true,
+      "seed": 301015,
+      "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art."
+    },
+    "receipt": "id: 3dfde3b7-0371-43b0-ac14-1bfd23efbc7b\njob_id: 3dfde3b7-0371-43b0-ac14-1bfd23efbc7b\nframes: 3\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art.\nseed: 301015\nasset_id: d6620452-896d-5e81-bc88-a86303c0bd24\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"3dfde3b7-0371-43b0-ac14-1bfd23efbc7b\")"
+  }
+]

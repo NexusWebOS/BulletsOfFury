@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "name": "prone",
+      "index": 11,
+      "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\11.png",
+      "ref": "upload:5c18fa0a-9763-46f3-9756-228fca147105"
+    },
+    {
+      "name": "prone",
+      "index": 12,
+      "input": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\expansion\\topdown\\art\\escape29\\source\\escape29\\prone\\12.png",
+      "ref": "upload:54d3b860-a08d-4359-b63f-67fa99cec79d"
+    }
+  ],
+  "id": "2c0a8558-11d6-4e70-9406-aa60abda1d05",
+  "args": {
+    "frame_urls": [
+      "upload:5c18fa0a-9763-46f3-9756-228fca147105",
+      "upload:54d3b860-a08d-4359-b63f-67fa99cec79d"
+    ],
+    "reference_image_url": "upload:81e22db1-9e07-4fbb-afbb-14375e29eb40",
+    "width": 192,
+    "height": 224,
+    "no_background": true,
+    "seed": 301016,
+    "additional_instructions": "FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art. EXACTLY ONE character in each frame, lying FLAT along the BOTTOM of the input canvas. Upper half must remain totally empty transparent. No second figure, no floating duplicate, no pose sheet. Preserve the input prone silhouette and ground contact."
+  },
+  "receipt": "id: 2c0a8558-11d6-4e70-9406-aa60abda1d05\njob_id: 2c0a8558-11d6-4e70-9406-aa60abda1d05\nframes: 2\nsize: 192x224px\ntransparent: True\ninstructions: FRAME FORMAT:192x224 per frame. Keep original scale, body root, every limb and exact input motion/aim. Correct Yuri to the reference: short spiky BROWN MOHAWK with shaved sides, close brown beard, lean athletic proportions, RED SLEEVED jacket with circular gray shoulder patch and raised red collar. Black fitted leg armor, black-red boots, gloves and original rifle. Remove incorrect slick black hair and sleeveless vest. Reference determines exact face, hair, jacket, palette. Input determines each distinct body pose and barrel direction. No pose homogenization, no effects, no shadow, no outlines thicker than reference. Transparent crisp pixel art. EXACTLY ONE character in each frame, lying FLAT along the BOTTOM of the input canvas. Upper half must remain totally empty transparent. No second figure, no floating duplicate, no pose sheet. Preserve the input prone silhouette and ground contact.\nseed: 301016\nasset_id: e6dd8c84-2f4d-5dd1-844d-91f38b15c907\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"2c0a8558-11d6-4e70-9406-aa60abda1d05\")"
+}

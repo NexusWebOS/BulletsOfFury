@@ -140,7 +140,7 @@
     p.vx = M.lerp(p.vx, tx, accel); p.vy = M.lerp(p.vy, ty, accel);
     if ((dx || dy) && !lock) {
       const want = M.angTo(0, 0, dx, dy), diff = Math.abs(M.wrap(want - p.a));
-      if (diff < 2.65) p.a = M.turnTo(p.a, want, 0.12);
+      p.a = M.turnTo(p.a, want, 0.10);
     }
     const aim = I.down('aimLeft') || I.down('aimRight') ? null : I.aim(p) ?? freeAim;
     if (aim != null) { p.aim = I.state.directionalFire ? aim : M.turnTo(p.aim, aim, 0.18); p.manualAim = 30; }
@@ -409,6 +409,13 @@
     else ART.draw(ctx, 'score_1000', k.x, k.y + bob, { s: 0.3 });
   };
 
+  // Continuous segment/circle collision catches fast cannon shells crossing a hull.
+  TD.vehicleShotHit = function (u, s) {
+    const ax = s.x - s.vx, ay = s.y - s.vy, dx = s.vx, dy = s.vy;
+    const t = M.clamp(((u.x - ax) * dx + (u.y - ay) * dy) / (dx * dx + dy * dy || 1), 0, 1);
+    return Math.hypot(ax + dx * t - u.x, ay + dy * t - u.y) < (u.hitR || u.r) + s.r;
+  };
+
   // ------------------------------------------------------------------ projectiles
   const PELLET = (fam, age) => 'mfx_mg_' + fam + '_' + Math.min(4, (age / 3) | 0);
   TD.shotTick = function (G) {
@@ -434,8 +441,8 @@
       if (--s.life <= 0 || W.solidAt(s.x, s.y)) { endShot(G, s); continue; }
       for (const u of G.units) {
         if (u.dead || (s.hit && s.hit.has(u))) continue;
-        if (M.dist(s.x, s.y, u.x, u.y) < u.r + s.r) {
-          TD.hitUnit(G, u, s.dmg, s.x, s.y); A.impact(s, 0.6); FX.boom(s.x, s.y, 26, 'nxp_clus_');
+        if (TD.infantryShotHit?.(u, s) ?? TD.vehicleShotHit(u, s)) {
+          TD.hitUnit(G, u, s.dmg, s.x, s.y);if(s.weapon39==='cryo_lance'&&!u.dead)u.freeze39=2.5; A.impact(s, 0.6); FX.boom(s.x, s.y, 26, 'nxp_clus_');
           if (s.pierce > 0) { s.pierce--; (s.hit = s.hit || new Set()).add(u); } else { endShot(G, s); break; }
         }
       }
@@ -454,7 +461,7 @@
       const ex = e.x, ey = e.y; e.x += e.vx; e.y += e.vy;
       if (TD.structureImpact(G, e, ex, ey, e.x, e.y)) { e.dead = true; continue; }
       if (--e.life <= 0 || (!e.over && W.solidAt(e.x, e.y))) { if (e.life > 0) A.impact(e, .55); e.dead = true; if (e.r > 5) FX.boom(e.x, e.y, 40, 'nxp_clus_'); continue; }
-      if (!p.dead && M.dist(e.x, e.y, p.x, p.y) < p.r * 0.75 + e.r) { e.dead = true; if (e.k !== 'mg') A.impact(e, .6); TD.hurtPlayer(G, e.dmg, e.x, e.y); continue; }
+      if (!p.dead && (!p.prone || p.peekExposed || e.hitsProne) && M.dist(e.x, e.y, p.x, p.y) < p.r * 0.75 + e.r) { e.dead = true; if (e.k !== 'mg') A.impact(e, .6); TD.hurtPlayer(G, e.dmg, e.x, e.y, e); continue; }
       if (G.ally && !G.ally.dead && M.dist(e.x, e.y, G.ally.x, G.ally.y) < G.ally.r + e.r) { e.dead = true; if (e.k !== 'mg') A.impact(e, .6); TD.hurtAlly(G, e.dmg); continue; }
       for (const q of G.props) if (!q.dead && M.dist(e.x, e.y, q.x, q.y) < q.r + e.r) { e.dead = true; A.impact(e, .5); TD.hitProp(G, q, e.dmg); break; }
     }

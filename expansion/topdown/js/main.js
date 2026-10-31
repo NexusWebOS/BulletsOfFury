@@ -12,7 +12,7 @@
   function fit() {
     // A close 640x480 field fills the window proportionally. The cinematic
     // zoom changes the camera only; boss entry never resizes the canvas.
-    const wide = [2,3,6].includes(TD.game?.mission);
+    const wide = [2,3,5,6,7].includes(TD.game?.mission);
     TD.VW = VW = wide ? 640 : 480; TD.VH = VH = wide ? 480 : 360;
     const menu=TD.Frontend?.isMenu(TD.game?.state),view=TD.Frontend?.viewport(TD.game?.state),w=menu?view.w:VW,h=menu?view.h:VH;
     document.body.classList.toggle('playing',TD.game?.state==='play');
@@ -57,7 +57,7 @@
   };
 
   // G.sel remains an index into TD.MISSIONS; campaign progression skips hidden entries.
-  function stepMission(from, d) { const n = TD.MISSIONS.length; let i = from; for (let k = 0; k < n; k++) { i = (i + d + n) % n; if (!TD.MISSIONS[i].hidden) return i; } return from; }
+  function stepMission(from, d) { if(TD.campaignStep29)return TD.campaignStep29(from,d); const n = TD.MISSIONS.length; let i = from; for (let k = 0; k < n; k++) { i = (i + d + n) % n; if (!TD.MISSIONS[i].hidden) return i; } return from; }
   TD.stepMission = stepMission;
   function start() {
     TD.Frontend.ensureDifficulty();
@@ -67,7 +67,7 @@
     S.reset(); S.alerts = 0;
     Object.assign(G, { units: [], shots: [], eshots: [], props: [], structures: [], pickups: [], wrecks: [], grenades: [], msgs: [], boss: null, bossDeadT: null,
       score: 0, kills: 0, deaths: 0, lives: TD.DIFFICULTIES[TD.difficulty||'normal'].lives, time: 0, extra: 0, reinfT: 0, structuresBroken: 0, ally: null, footGrenades: [], burns: [], mission: MISSION.id,boostTime:0,cruiseTime:0,cruiseAim:null,cqcKills:0 });
-    G.bossIntro = null; G.fortress = null; G.convoy = null; G.introFireLatch = false; I.combatLatch.clear();
+    G.gosfar43=null; G.escape29=null; G.night39=null; G.bossIntro = null; G.fortress = null; G.convoy = null; G.desert = null; G.bastion = null; G.introFireLatch = false; I.combatLatch.clear();
     fit();
     FX.list = []; Cam.zoom = 1;
     G.player = (MISSION.mode === 'foot' ? TD.makeFootPlayer : TD.makePlayer)(DATA.start.x, DATA.start.y); G.player.a = DATA.start.a;
@@ -83,6 +83,7 @@
     TD.Nav.build(); W.navDirty = false;
     Cam.minY = 0; Cam.maxY = 1e9; Cam.x = G.player.x - VW / 2; Cam.y = G.player.y - VH / 2; Cam.follow(G.player.x, G.player.y, 1);
     TD.Achievements.unlock('deploy');
+    A.playMusic([3,7].includes(MISSION.id) ? 'base' : 'level2');
   }
   function setState(s) { if (s !== 'play') A.stopEffects(); G.state = s; G.stateT = 0; fit(); }
 
@@ -123,7 +124,7 @@
       return;
     }
     if (G.state === 'gameover') { if (G.stateT > 1.5 && I.confirm()){TD.Frontend.returnTo='title';TD.Frontend.go('title');} return; }
-    if (G.state === 'clear') { if (G.stateT > 2.5 && I.confirm()) {const nx=stepMission(G.sel,1);if(nx>G.sel){G.sel=nx;TD.Frontend.launch();}else{TD.Frontend.returnTo='title';TD.Frontend.go('title');}} return; }
+    if (G.state === 'clear') { if (G.stateT > 2.5 && I.confirm()) {const nx=stepMission(G.sel,1);if(!TD.campaignEnd29?.(G.sel)&&nx!==G.sel){G.sel=nx;TD.Frontend.launch();}else{TD.Frontend.returnTo='title';TD.Frontend.go('title');}} return; }
     if (G.state === 'pause') { if (I.tap('start')) setState('play'); return; }
     if (TD.BossIntro.active(G) && G.bossIntro.phase === 'card' && !I.down('click') && I.confirm()) {
       TD.BossIntro.continue(G); TD.BossIntro.update(G, dt); return;
@@ -136,7 +137,8 @@
     if (TD.BossIntro.active(G)) { TD.BossIntro.update(G, dt); return; }
 
     // ---- play
-    if(MISSION.exclusiveStep){if(MISSION.exclusiveStep(G,dt)==='clear'){setState('clear');A.playMusic('clear');finishScore();}return;}
+    if(TD.Escape29?.active(G)){TD.Escape29.step(G,dt);return;}
+    if(MISSION.exclusiveStep&&(!MISSION.exclusiveWhen||MISSION.exclusiveWhen(G))){if(MISSION.exclusiveStep(G,dt)==='clear'){setState('clear');A.playMusic('clear');finishScore();}A.scene(G,dt);return;}
     G.time += dt;
     if (MISSION.pre) MISSION.pre(G, dt);
     const p = G.player;
@@ -183,13 +185,13 @@
       G.reinfT = 9;
       const live = G.units.filter(u => u.reinf && !u.dead).length;
       if (live < 3) {
-        const gate = DATA.gates.map(g => ({ g, d: Math.abs(g[1] - p.y) })).filter(o => o.g[1] < Cam.y - 40 || o.g[1] > Cam.y + VH + 40).sort((a, b) => a.d - b.d)[0];
+        const gate = DATA.gates.map(g => ({ g, d: Math.abs(g[1] - p.y) })).filter(o => o.g[1] < Cam.y - 120).sort((a, b) => a.d - b.d)[0];
         if (gate) { const u = TD.makeUnit(p.onfoot?'robotScout':'scout', gate.g[0], gate.g[1], { a: 0, reinf: true }); u.mode = 'alert'; u.aware = 1; u.goal = { x: p.x, y: p.y }; G.units.push(u); G.say('REINFORCEMENTS', p); }
       }
     }
     // the boss
     if (MISSION.boss && !G.boss && p.y < DATA.bossLine && !p.dead && (!MISSION.canSpawnBoss||MISSION.canSpawnBoss(G))) {
-      G.boss = MISSION.boss(G, DATA.boss.x, DATA.boss.y); Cam.maxY = MISSION.id===3||MISSION.pushScroll?MAP.h:795; A.stopMusic(); A.play('warn');
+      G.boss = MISSION.boss(G, DATA.boss.x, DATA.boss.y); Cam.maxY = MISSION.id===3||MISSION.pushScroll?MAP.h:795; if (MISSION.id !== 3) A.stopMusic(); A.play('warn');
       fit();
       if (MISSION.id === 2) TD.BossIntro.start(G, G.boss.introProfile());
       if (MISSION.id !== 2) G.say('WARNING - '+G.boss.name, { x: 400, y: DATA.bossLine-70 });
@@ -200,7 +202,7 @@
     FX.update(dt);
     for (const m of G.msgs) m.t += dt; G.msgs = G.msgs.filter(m => m.t < 1.6);
     const [fx, fy] = M.fwd(p.aim);
-    Cam.zoom = 1;
+    Cam.zoom = MISSION.mode==='foot'?1.25:1;
     if (MISSION.cameraOwns) MISSION.cam(G);
     else if (MISSION.id === 2 && G.boss && !G.boss.wrecked) G.boss.followCamera(p);
     else Cam.follow(p.x + fx * 24 + p.vx * 12, p.y + fy * 24 + p.vy * 12, 0.12);
@@ -225,9 +227,10 @@
     ctx.fillStyle = col || '#fff'; ctx.fillText(s, x, y);
   }
   function drawWorld() {
+    if(TD.Escape29?.active(G)){TD.Escape29.draw(ctx,G);return;}
     if(MISSION.drawWorld){MISSION.drawWorld(ctx,G);return;}
     const shx = Cam.shake > 0.3 ? M.rnd(-Cam.shake, Cam.shake) : 0, shy = Cam.shake > 0.3 ? M.rnd(-Cam.shake, Cam.shake) : 0;
-    ctx.save(); ctx.scale(Cam.zoom, Cam.zoom); ctx.translate(-Math.round(Cam.x + shx), -Math.round(Cam.y + shy));
+    ctx.save(); ctx.scale(Cam.zoom, Cam.zoom); ctx.translate(-(Cam.x + shx), -(Cam.y + shy));
     ctx.fillStyle = '#0b100c'; ctx.fillRect(Cam.x - 20, Cam.y - 20, VW / Cam.zoom + 40, VH / Cam.zoom + 40);
     const pl = ART.get(MAP.key);
     if (pl) { const sy = M.clamp(Math.floor(Cam.y) - 20, 0, MAP.h), sh = Math.min(VH / Cam.zoom + 40, MAP.h - sy); ctx.drawImage(pl.im, pl.sx, pl.sy + sy, pl.sw, sh, 0, sy, pl.sw, sh); }
@@ -237,18 +240,19 @@
       else ART.draw(ctx, w.art + '_crit_' + ['s', 'w', 'n', 'e'][((Math.round(w.a / (Math.PI / 2)) % 4) + 4) % 4], w.x, w.y, { a: 0, s: 0.5, tint: '#1b1714', alpha: 0.75 });
     }
     // the cones lie on the ground, under everything that stands on it
-    if(!MISSION.arcadeAssault){if(G.player?.onfoot)S.drawGroundCones(ctx,G.units.filter(u=>onScreen(u,240)),G.t/60);
+    if(!MISSION.arcadeAssault){if(G.player?.onfoot)S.drawGroundCones(ctx,G.units.filter(u=>onScreen(u,240)&&!u.kind35),G.t/60);
     else for (const u of G.units) if (onScreen(u, 240)) S.drawCone(ctx, u, G.t / 60);}
     if (G.boss) G.boss.drawUnder(ctx);
     FX.draw(ctx, 0);
-    TD.drawStructures(ctx, G);
+    if(!(G.mission===3&&TD.Depth35))TD.drawStructures(ctx, G);
     for (const q of G.props) if (onScreen(q, 40)) TD.drawProp(ctx, q);
     if (MISSION.drawFloor) MISSION.drawFloor(ctx, G);
     for (const k of G.pickups) {if(G.player.onfoot)TD.drawFootPickup(ctx,k);else TD.drawPickup(ctx, k, G.t / 60);}
-    for (const u of G.units) if (onScreen(u, 60)) TD.drawUnit(ctx, u);
-    if (G.boss) G.boss.draw(ctx, G.t / 60);
+    if(G.mission===3&&TD.Depth35)TD.Depth35.drawActors(ctx,G);
+    else for (const u of G.units) if (onScreen(u, 60)) TD.drawUnit(ctx, u);
+    if (G.boss&&!(G.mission===3&&TD.Depth35)) G.boss.draw(ctx, G.t / 60);
     const p = G.player;
-    if(p&&p.onfoot)TD.drawFoot(ctx,p,{flash:p.inv>0&&Math.floor(p.inv/4)%2?1:0});
+    if(p&&p.onfoot&&!(G.mission===3&&TD.Depth35))TD.drawFoot(ctx,p,{flash:p.inv>0&&Math.floor(p.inv/4)%2?1:0});
     if(p&&p.dead&&!p.onfoot&&!p.crashed)TD.drawPlayerTank(ctx,p,{flash:p.deadT<.15?1:0});
     if (p && !p.dead && !p.onfoot) {
       const blink = p.inv > 0 && Math.floor(p.inv / 4) % 2;
@@ -276,6 +280,7 @@
   function onScreen(o, m) { return o.x > Cam.x - m && o.x < Cam.x + VW / Cam.zoom + m && o.y > Cam.y - m && o.y < Cam.y + VH / Cam.zoom + m; }
 
   function drawHUD() {
+    if(TD.Escape29?.active(G)){TD.Escape29.hud(ctx,text,G);return;}
     const p = G.player, t = G.t / 60;
     if (MISSION.hud && MISSION.hud(ctx, text, G)) return;
     if(p.onfoot){
@@ -340,11 +345,12 @@
     DATA.brief.forEach((line,i)=>{const s=line.slice(0,Math.max(0,typed-n));n+=line.length;TD.Text.fit(ctx,text,s,[20,190+i*15,440,16],10,'#e8efe8');});
     const keys=typeof MISSION.keys==='function'?MISSION.keys():MISSION.keys|| (G.player.onfoot?TD.footBriefKeys():[['x','FIRE NORTH'],['y','FIRE WEST'],['z','RETINA'],['a','FIRE SOUTH'],['b','FIRE EAST'],['c','CHARGE']]);
     keys.forEach((k,i)=>{const x=44+(i%3)*148,y=273+Math.floor(i/3)*24;ART.draw(ctx,'pad_'+k[0],x,y,{s:.1});text(k[1],x+13,y,9,'#c8d2c8');});
-    text(G.player.onfoot?'L: COVER  R: RETINA  MODE+A: JUMP  MODE+X: PRONE':G.player.convoy?'D-PAD / RIGHT STICK: AIM   R: RETINA':'D-PAD: MOVE   MODE + START: CONTROLLER SETUP',VW/2,318,8,'#9fe0ff','center');
+    text(G.player.pseudo3D?'F / X: DUCK  L: COVER  R / Z: FREE AIM  A: FIRE':G.player.onfoot?'F / MODE+X: PRONE / STAND   MOVE PRONE: CRAWL   L: COVER':G.player.convoy?'D-PAD: STEER   L + D-PAD: AIM   R / Z: RETINA':'D-PAD: MOVE   MODE + START: CONTROLLER SETUP',VW/2,318,8,'#9fe0ff','center');
     if (G.stateT > 0.6 && Math.floor(G.t / 30) % 2) ART.draw(ctx, 'pad_start', VW / 2, 338, { s: 0.16 });
     ctx.restore();
   }
   function drawResults() {
+    if(TD.Results39?.draw(ctx,text,G))return;
     drawWorld();
     ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, TD.VW, TD.VH);
     const R = G.results; if (!R) return;
@@ -360,7 +366,7 @@
     if (G.stateT > 2.5 && Math.floor(G.t / 30) % 2) ART.draw(ctx,'pad_start',VW/2,343,{s:.13});
     ctx.restore();
   }
-  function render() {
+  function render(elapsed = 0) {
     ctx.setTransform(SC, 0, 0, SC, 0, 0); ctx.imageSmoothingEnabled = false;
     if (G.state === 'load') {
       ctx.fillStyle = '#000'; ctx.fillRect(0, 0, VW, VH);
@@ -384,30 +390,86 @@
     drawHUD();
     if (G.state === 'pause') { ctx.fillStyle = 'rgba(0,0,0,0.5)'; ctx.fillRect(0, 0, VW, VH); text('PAUSED', VW / 2, VH / 2, 22, '#fff', 'center'); }
     if (G.state === 'gameover') { ctx.fillStyle = 'rgba(40,0,0,0.6)'; ctx.fillRect(0, 0, VW, VH); text('GAME OVER', VW / 2, VH / 2, 26, '#ff4030', 'center'); }
-    TD.Frontend.toast(ctx,text,G,1/60);
+    TD.Frontend.toast(ctx,text,G,elapsed);
   }
 
   // ------------------------------------------------------------------ loop
-  let last = performance.now(), acc = 0, frozen = false;
-  const pace = { avg: 1 / 60, phase: 0 };
-  function frame(now) {
-    if (!frozen) {
-      // 1009 cadence lock (see assets/frame_pacing_1009.js): one tick per frame at 60 Hz, one per k frames at 120/240 Hz;
-      // the accumulator only for rates with no clean ratio. A 60 Hz display no longer flips between 0- and 2-tick frames.
-      const dt = Math.min(0.1, Math.max(0, (now - last) / 1000)), T = 1 / TD.HZ; last = now; pace.avg += (dt - pace.avg) * 0.06;
-      const r = pace.avg / T, n = Math.round(r), k = Math.round(1 / r); let ticks;
-      if (n >= 1 && n <= 3 && Math.abs(r - n) < 0.07 * n) { acc = 0; ticks = Math.max(1, Math.min(3, Math.round(dt / T))); }
-      else if (k >= 2 && k <= 4 && Math.abs(1 / r - k) < 0.07 * k) { acc = 0; if (dt > pace.avg * 1.6) { pace.phase = 0; ticks = Math.min(3, Math.round(dt / T)); } else { pace.phase = (pace.phase + 1) % k; ticks = pace.phase ? 0 : 1; } }
-      else { acc += dt; ticks = 0; while (acc >= T && ticks < 6) { ticks++; acc -= T; } }
-      for (let i = 0; i < ticks; i++) step();
-      render();
+  // Simulation always advances in 1/60-second steps. Display refresh and a
+  // temporarily uneven RAF cadence must never change movement or combat speed.
+  let last = performance.now(), acc = 0, frozen = false, previous = null;
+  const ANGLES = new Set(['a','aim','look','upper','angle','heading','turretAngle','hullAngle']);
+  const POSE_FIELDS = ['x','y','z','jumpZ','rise','scale',...ANGLES];
+  function renderObjects() {
+    const objects = new Set([Cam,G.player,G.ally,G.boss]);
+    for (const bank of [G.units,G.shots,G.eshots,G.grenades,G.footGrenades,G.wrecks,FX.list,G.boss?.tanks])
+      if (bank) for (const o of bank) objects.add(o);
+    const b = G.bastion;
+    if (b) {
+      for (const o of [b,b.cursor,b.aim,b.boss,b.wallCore]) if (o && typeof o === 'object') objects.add(o);
+      for (const key of ['enemies','units','bullets','enemyShots','hazards','particles','sparks','cores','turrets'])
+        if (Array.isArray(b[key])) for (const o of b[key]) objects.add(o);
     }
+    objects.delete(null); objects.delete(undefined);
+    return objects;
+  }
+  function captureMotion() {
+    const poses = new Map();
+    for (const o of renderObjects()) {
+      const pose = {};
+      for (const key of POSE_FIELDS) if (Number.isFinite(o[key])) pose[key] = o[key];
+      poses.set(o,pose);
+    }
+    return {poses,state:G.state,mission:G.mission};
+  }
+  function resetMotion() { acc = 0; previous = null; last = performance.now(); }
+  function drawInterpolated(alpha,elapsed) {
+    if (!previous || G.state !== 'play' || previous.state !== G.state || previous.mission !== G.mission) {
+      render(elapsed); return;
+    }
+    const restore = [];
+    try {
+      for (const [o,pose] of previous.poses) {
+        // Respawns, teleports and new stage placements snap immediately.
+        if (Number.isFinite(pose.x) && Number.isFinite(pose.y) && Math.hypot(o.x-pose.x,o.y-pose.y)>160) continue;
+        for (const [key,from] of Object.entries(pose)) {
+          const to=o[key]; if (!Number.isFinite(to) || from===to) continue;
+          restore.push([o,key,to]);
+          o[key]=from+(ANGLES.has(key)?M.wrap(to-from):to-from)*alpha;
+        }
+      }
+      render(elapsed);
+    } finally {
+      // Collision, damage, aiming and later ticks always see the exact state.
+      for (let i=restore.length-1;i>=0;i--) { const [o,key,value]=restore[i]; o[key]=value; }
+    }
+  }
+  function advanceFrame(seconds) {
+    const elapsed=Number.isFinite(seconds)?M.clamp(seconds,0,.1):0,T=1/TD.HZ;
+    acc+=elapsed; let ticks=0;
+    while (acc+1e-9>=T && ticks<6) {
+      previous=captureMotion(); step(); acc=Math.max(0,acc-T); ticks++;
+    }
+    if (acc>=T) acc%=T;
+    const alpha=M.clamp(acc/T,0,1);
+    drawInterpolated(alpha,elapsed);
+    return {ticks,alpha};
+  }
+  function frame(now) {
+    const seconds=Math.max(0,(now-last)/1000); last=now;
+    if (!frozen && !document.hidden) advanceFrame(seconds);
     root.requestAnimationFrame(frame);
   }
+  root.addEventListener('visibilitychange',resetMotion);
   root.requestAnimationFrame(frame);
   root.TDGAME = {
-    G, step(n) { for (let i = 0; i < (n || 1); i++) step(); render(); }, freeze(b) { frozen = b !== false; last = performance.now(); },
-    start() { start(); setState('play'); },render,resize:fit,
-    launchBrief(){start();setState('brief');A.playMusic('level2');},resume(){setState('play');},
+    G,
+    step(n) { const count=n||1; for(let i=0;i<count;i++)step(); resetMotion(); render(count/TD.HZ); },
+    freeze(b) { frozen=b!==false; resetMotion(); },
+    // A deterministic probe hook exercises the same clock/render path as RAF.
+    // Explicit advances work while RAF is frozen; step/render stay exact-state.
+    advanceFrame,
+    start() { start(); setState('play'); resetMotion(); },render,resize:fit,
+    launchBrief(){start();setState('brief');resetMotion();},
+    resume(){setState('play');resetMotion();},
   };
 }(window));

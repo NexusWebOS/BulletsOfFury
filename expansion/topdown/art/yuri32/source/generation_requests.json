@@ -1,0 +1,238 @@
+[
+  {
+    "name": "up_setup",
+    "args": {
+      "image_url": "upload:6cb1eef9-c82b-4d9c-8b67-2167208c547e",
+      "description": "Change ONLY his pose: Yuri stands facing the viewer, chin lifted and eyes looking straight UP. Raise his SAME black rifle perfectly VERTICAL UP toward the top of the image, both hands holding it near the right side of his chest, muzzle above his head. Straight upright full body, feet still planted at the same baseline. Do NOT turn his back to camera. Preserve EXACT face, brown mohawk, beard, red jacket sleeves and shoulder badge, black tactical armor, boots, body size and crisp gritty 16-bit pixel clusters. FRAME FORMAT:256x256 transparent, fixed source unit, feet at y234 and body center x128. Keep entire rifle inside image with margin. No flash, no light, no effect, no ground or background.",
+      "no_background": true,
+      "method": "text",
+      "use_color_palette_correction": true
+    },
+    "receipt": "{\n  \"background_job_id\": \"07bc87b8-39b1-4ce9-8c2e-e88e2c2a16e2\",\n  \"image_id\": \"58c75cfd-d269-5faf-b3f8-8751958e46e7\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"58c75cfd-d269-5faf-b3f8-8751958e46e7\",\n  \"job_id\": \"07bc87b8-39b1-4ce9-8c2e-e88e2c2a16e2\",\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 256\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/07bc87b8-39b1-4ce9-8c2e-e88e2c2a16e2/download\"\n}\nPoll get_image(job_id=\"07bc87b8-39b1-4ce9-8c2e-e88e2c2a16e2\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work.",
+    "id": "07bc87b8-39b1-4ce9-8c2e-e88e2c2a16e2"
+  },
+  {
+    "name": "slide_hold",
+    "args": {
+      "image_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "description": "Change ONLY the pose to a LOW FEET-FIRST GROUND SLIDE facing LEFT across a FLAT HORIZONTAL floor. Yuri's hips almost touch the flat floor, left leg extended straight LEFT, right knee tucked; torso leaned back slightly, holding his rifle aimed left. Heel and bottom touch the SAME horizontal baseline y234. This is a running power slide, NO slope or descending diagonal posture. Preserve exact Yuri brown mohawk, close beard, red SLEEVED jacket, shoulder patch, black armor, red boots and pixel scale. FRAME FORMAT:256x256 transparent. Whole body rifle and boots visible with margins, root near x128. Draw ONLY Yuri. No dirt trail, flash, floor, wall, object or background.",
+      "no_background": true,
+      "method": "text",
+      "use_color_palette_correction": true
+    },
+    "receipt": "{\n  \"background_job_id\": \"ed161843-bd3f-4a36-ba4c-7cc48d9e210d\",\n  \"image_id\": \"c470ccdf-450f-5105-b263-6eb3c26af098\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"c470ccdf-450f-5105-b263-6eb3c26af098\",\n  \"job_id\": \"ed161843-bd3f-4a36-ba4c-7cc48d9e210d\",\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 256\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/ed161843-bd3f-4a36-ba4c-7cc48d9e210d/download\"\n}\nPoll get_image(job_id=\"ed161843-bd3f-4a36-ba4c-7cc48d9e210d\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work.",
+    "id": "ed161843-bd3f-4a36-ba4c-7cc48d9e210d"
+  },
+  {
+    "name": "back_cover",
+    "args": {
+      "image_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "description": "Change ONLY his pose to standing with his BACK pressed against an INVISIBLE vertical cover surface to his RIGHT. Torso upright, shoulder blades held back, knees slightly bent, rifle tucked vertically close against his chest with barrel UP, face looking cautiously LEFT. His rear shoulder and heel align near x162, feet y234. Preserve the exact brown-mohawk bearded Yuri with red SLEEVED jacket, round shoulder patch, black armor, red-black boots and crisp dark-gritty 16-bit style. FRAME FORMAT:256x256 transparent with original character size. ONLY the complete person and weapon. Absolutely NO cover object, no wall, no box, no shadow plane, no background, no muzzle flash.",
+      "no_background": true,
+      "method": "text",
+      "use_color_palette_correction": true
+    },
+    "receipt": "{\n  \"background_job_id\": \"fb80179c-501f-4ca9-a50a-4f8f57790e78\",\n  \"image_id\": \"21273557-2f23-5ca2-b673-b8fcd3fb2cb2\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"21273557-2f23-5ca2-b673-b8fcd3fb2cb2\",\n  \"job_id\": \"fb80179c-501f-4ca9-a50a-4f8f57790e78\",\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 256\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/fb80179c-501f-4ca9-a50a-4f8f57790e78/download\"\n}\nPoll get_image(job_id=\"fb80179c-501f-4ca9-a50a-4f8f57790e78\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work.",
+    "id": "fb80179c-501f-4ca9-a50a-4f8f57790e78"
+  },
+  {
+    "name": "up_fire",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "low top-down",
+      "direction": "south",
+      "subject_description": "Exact approved Yuri, lean brown mohawk and close beard, red SLEEVED jacket with round shoulder badge, fitted black tactical armor, red-black boots and black rifle",
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/07bc87b8-39b1-4ce9-8c2e-e88e2c2a16e2/download?index=0",
+      "frame_count": 8,
+      "initial_pose": "Standing facing viewer, rifle held perfectly vertical UP, looking upward",
+      "description": "FRAME FORMAT:256x256 transparent, fixed unit and pivot. Subtle braced-hold loop with his held object kept exactly VERTICAL UP. He flexes elbows/shoulders a couple pixels, then relaxes. Both feet stay planted, torso facing viewer. Look up. All equipment remains dark and inactive. No flash, sparks, smoke, glow, streak or additional object. Preserve the same face, haircut, red sleeves, dark armor, rifle shape and pixel clusters. No camera change or scaling."
+    },
+    "id": "d335d8ad-9322-4ac7-8ac4-67b41722fb48",
+    "receipt": "id: d335d8ad-9322-4ac7-8ac4-67b41722fb48\njob_id: d335d8ad-9322-4ac7-8ac4-67b41722fb48\ndescription: FRAME FORMAT:256x256 transparent, fixed unit and pivot. Subtle braced-hold loop with his held object kept exactly VERTICAL UP. He flexes elbows/shoulders a couple pixels, then relaxes. Both feet stay planted, torso facing viewer. Look up. All equipment remains dark and inactive. No flash, sparks, smoke, glow, streak or additional object. Preserve the same face, haircut, red sleeves, dark armor, rifle shape and pixel clusters. No camera change or scaling.\nframes: 8\nsize: 256x256px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d335d8ad-9322-4ac7-8ac4-67b41722fb48\")\nasset_id: f4710c4e-eec5-54bc-8a82-6b8d0ec3b088\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "walk_slide",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Exact approved Yuri, lean brown mohawk and close beard, red SLEEVED jacket with round shoulder badge, fitted black tactical armor, red-black boots and black rifle",
+      "first_frame_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/ed161843-bd3f-4a36-ba4c-7cc48d9e210d/download?index=0",
+      "frame_count": 20,
+      "initial_pose": "Standing upright, facing left with rifle held left",
+      "description": "FRAME FORMAT:256x256 transparent, same character unit and camera. ONE nonlooping walk into a FLAT ground power-slide ending exactly at supplied final low slide pose. Start with one small walking step: left foot plants, rear foot passes. Bend knees to lower hips, kick front boot straight left, fold rear knee under, settle hips just above the horizontal baseline y234. Upper body leans back, rifle stays aimed left. NOT a diagonal chute, tumble, somersault, jump or prone dive. Only feet-first slide. Both boots, entire rifle, mohawk and limbs always inside frame. Same red-sleeved Yuri. No scene, slope, floor, dirt, streak, muzzle flash or effect."
+    },
+    "id": "3115f702-a14f-44e0-b4e1-20407a3ca4a9",
+    "receipt": "id: 3115f702-a14f-44e0-b4e1-20407a3ca4a9\njob_id: 3115f702-a14f-44e0-b4e1-20407a3ca4a9\ndescription: FRAME FORMAT:256x256 transparent, same character unit and camera. ONE nonlooping walk into a FLAT ground power-slide ending exactly at supplied final low slide pose. Start with one small walking step: left foot plants, rear foot passes. Bend knees to lower hips, kick front boot straight left, fold rear knee under, settle hips just above the horizontal baseline y234. Upper body leans back, rifle stays aimed left. NOT a diagonal chute, tumble, somersault, jump or prone dive. Only feet-first slide. Both boots, entire rifle, mohawk and limbs always inside frame. Same red-sleeved Yuri. No scene, slope, floor, dirt, streak, muzzle flash or effect.\nframes: 20\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3115f702-a14f-44e0-b4e1-20407a3ca4a9\")\nasset_id: 76ee2271-7d26-5ebe-bb2d-e7c431054c74\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "run_slide",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Exact approved Yuri, lean brown mohawk and close beard, red SLEEVED jacket with round shoulder badge, fitted black tactical armor, red-black boots and black rifle",
+      "first_frame_url": "upload:434ceb3f-cc92-4dcc-85e7-14386609433e",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/ed161843-bd3f-4a36-ba4c-7cc48d9e210d/download?index=0",
+      "frame_count": 24,
+      "initial_pose": "Facing left mid-run, rifle held in both hands",
+      "description": "FRAME FORMAT:256x256 transparent, fixed camera and original Yuri body unit. ONE nonlooping RUN into a low FEET-FIRST power slide on FLAT horizontal ground, reaching exact final supplied pose. First continue two quick alternating running contacts with one passing/crossover and push-off. Then compress knees, thrust leading boot LEFT, fold trailing knee, drop hips to near floor y234, lean torso backward into final low slide. Clear smooth contact-load-lowering-heel-skid phases. Do not pause upright, tumble, roll, jump, dive prone or slide downhill. Rifle stays steady left. Keep brown mohawk, beard, red sleeves, badge, armor and boots. All limbs visible. NO floor, slope, object, smoke, dust, trail, light, flash or background."
+    },
+    "id": "1cedd710-963c-4f94-b12d-43178a90140e",
+    "receipt": "id: 1cedd710-963c-4f94-b12d-43178a90140e\njob_id: 1cedd710-963c-4f94-b12d-43178a90140e\ndescription: FRAME FORMAT:256x256 transparent, fixed camera and original Yuri body unit. ONE nonlooping RUN into a low FEET-FIRST power slide on FLAT horizontal ground, reaching exact final supplied pose. First continue two quick alternating running contacts with one passing/crossover and push-off. Then compress knees, thrust leading boot LEFT, fold trailing knee, drop hips to near floor y234, lean torso backward into final low slide. Clear smooth contact-load-lowering-heel-skid phases. Do not pause upright, tumble, roll, jump, dive prone or slide downhill. Rifle stays steady left. Keep brown mohawk, beard, red sleeves, badge, armor and boots. All limbs visible. NO floor, slope, object, smoke, dust, trail, light, flash or background.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"1cedd710-963c-4f94-b12d-43178a90140e\")\nasset_id: c9bc0480-de07-5364-852d-68d3eb7e6e34\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "slide_exit",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Exact approved Yuri, lean brown mohawk and close beard, red SLEEVED jacket with round shoulder badge, fitted black tactical armor, red-black boots and black rifle",
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/ed161843-bd3f-4a36-ba4c-7cc48d9e210d/download?index=0",
+      "last_frame_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "frame_count": 16,
+      "initial_pose": "Low seated feet-first slide to the left on level ground",
+      "description": "FRAME FORMAT:256x256 transparent same body unit. Recover smoothly out of the supplied FLAT ground slide into the exact supplied standing ready stance. Draw extended boot inward, bring rear knee underneath, plant both boots, raise hips through low crouch into standing while keeping rifle aimed left. No jump, roll, backward flip or sliding down a slope. Feet return to y234. Preserve exact Yuri identity and full limb proportions. Transparent empty background, no walls/boxes/floor, no muzzle light or effects."
+    },
+    "id": "ae43b5bb-9ef1-4862-982e-14ffd6bb741b",
+    "receipt": "id: ae43b5bb-9ef1-4862-982e-14ffd6bb741b\njob_id: ae43b5bb-9ef1-4862-982e-14ffd6bb741b\ndescription: FRAME FORMAT:256x256 transparent same body unit. Recover smoothly out of the supplied FLAT ground slide into the exact supplied standing ready stance. Draw extended boot inward, bring rear knee underneath, plant both boots, raise hips through low crouch into standing while keeping rifle aimed left. No jump, roll, backward flip or sliding down a slope. Feet return to y234. Preserve exact Yuri identity and full limb proportions. Transparent empty background, no walls/boxes/floor, no muzzle light or effects.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ae43b5bb-9ef1-4862-982e-14ffd6bb741b\")\nasset_id: 56248f67-28c2-5be1-9752-9c8a875a29df\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "cover_enter",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Exact approved Yuri, lean brown mohawk and close beard, red SLEEVED jacket with round shoulder badge, fitted black tactical armor, red-black boots and black rifle",
+      "first_frame_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/fb80179c-501f-4ca9-a50a-4f8f57790e78/download?index=0",
+      "frame_count": 12,
+      "initial_pose": "Standing facing left with rifle aimed forward",
+      "description": "FRAME FORMAT:256x256 transparent, fixed pixel scale and view. Yuri smoothly retreats a half-step toward an INVISIBLE cover surface behind his RIGHT shoulder, tucks rifle vertically close to chest, turns shoulders, brings shoulder blades/back against that imaginary vertical surface and bends knees slightly. Ends at exact supplied back-to-cover pose looking left. Keep complete body and gun. No aiming shot or attack. Crucially draw ONLY Yuri, NEVER draw the cover, wall, crate, shield, floor, background, shadow plane, flashes or effects."
+    },
+    "id": "a76526eb-aa1e-41ce-a9b2-72efa4b0b6b8",
+    "receipt": "id: a76526eb-aa1e-41ce-a9b2-72efa4b0b6b8\njob_id: a76526eb-aa1e-41ce-a9b2-72efa4b0b6b8\ndescription: FRAME FORMAT:256x256 transparent, fixed pixel scale and view. Yuri smoothly retreats a half-step toward an INVISIBLE cover surface behind his RIGHT shoulder, tucks rifle vertically close to chest, turns shoulders, brings shoulder blades/back against that imaginary vertical surface and bends knees slightly. Ends at exact supplied back-to-cover pose looking left. Keep complete body and gun. No aiming shot or attack. Crucially draw ONLY Yuri, NEVER draw the cover, wall, crate, shield, floor, background, shadow plane, flashes or effects.\nframes: 12\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a76526eb-aa1e-41ce-a9b2-72efa4b0b6b8\")\nasset_id: f956d622-3628-5c1f-acaa-279a58138172\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "cover_peek",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Exact approved Yuri, lean brown mohawk and close beard, red SLEEVED jacket with round shoulder badge, fitted black tactical armor, red-black boots and black rifle",
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/fb80179c-501f-4ca9-a50a-4f8f57790e78/download?index=0",
+      "frame_count": 16,
+      "initial_pose": "Upright back pressed to invisible cover on his right, rifle close to chest barrel up, looking left",
+      "description": "FRAME FORMAT:256x256 transparent, fixed unit and camera. ONE nonlooping PARTIAL POP-OUT toward LEFT from back-to-cover. Keep right/back foot planted and hips within cover; move only head, left shoulder and arms out LEFT, pivot chest and swing rifle from vertical into horizontal aim LEFT. End leaned half-out ready to shoot; lower body remains tucked near cover. Not a full step into the open. Smooth head-look, shoulder-pivot, elbows-extend progression. Preserve exact red-jacket Yuri proportions. Render ONLY whole character and gun on alpha. Absolutely NO wall, box, cover, ground, shadow, background, muzzle flash, spark, glow or effect."
+    },
+    "id": "64a39154-2906-4ba0-abd3-1a4d8f2d1746",
+    "receipt": "id: 64a39154-2906-4ba0-abd3-1a4d8f2d1746\njob_id: 64a39154-2906-4ba0-abd3-1a4d8f2d1746\ndescription: FRAME FORMAT:256x256 transparent, fixed unit and camera. ONE nonlooping PARTIAL POP-OUT toward LEFT from back-to-cover. Keep right/back foot planted and hips within cover; move only head, left shoulder and arms out LEFT, pivot chest and swing rifle from vertical into horizontal aim LEFT. End leaned half-out ready to shoot; lower body remains tucked near cover. Not a full step into the open. Smooth head-look, shoulder-pivot, elbows-extend progression. Preserve exact red-jacket Yuri proportions. Render ONLY whole character and gun on alpha. Absolutely NO wall, box, cover, ground, shadow, background, muzzle flash, spark, glow or effect.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"64a39154-2906-4ba0-abd3-1a4d8f2d1746\")\nasset_id: 30764e0e-dbed-5431-ae63-82b5ffcfeb41\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "cover_crouch",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "Exact approved Yuri, lean brown mohawk and close beard, red SLEEVED jacket with round shoulder badge, fitted black tactical armor, red-black boots and black rifle",
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/fb80179c-501f-4ca9-a50a-4f8f57790e78/download?index=0",
+      "frame_count": 12,
+      "initial_pose": "Standing back-to-cover with rifle tucked upright",
+      "description": "FRAME FORMAT:256x256 transparent, fixed unit and view. ONE nonlooping lower into CROUCHED BACK-TO-COVER. Keep upper back close to an invisible vertical plane on his RIGHT, bend knees deeply, lower hips, plant one knee near ground y234, both feet stay nearby. Rifle stays tight and upright at chest, head looking LEFT. End low protected crouch, not lying prone. No growth/shrink or sideways walking. Preserve red sleeves, face, mohawk, shoulder badge and full rifle. Draw ONLY Yuri, absolutely NO wall, object, crate, floor, shadow plane or background. No sparks, glow or effects."
+    },
+    "id": "d7c52a79-a2a6-4a0f-819e-88d248e59906",
+    "receipt": "id: d7c52a79-a2a6-4a0f-819e-88d248e59906\njob_id: d7c52a79-a2a6-4a0f-819e-88d248e59906\ndescription: FRAME FORMAT:256x256 transparent, fixed unit and view. ONE nonlooping lower into CROUCHED BACK-TO-COVER. Keep upper back close to an invisible vertical plane on his RIGHT, bend knees deeply, lower hips, plant one knee near ground y234, both feet stay nearby. Rifle stays tight and upright at chest, head looking LEFT. End low protected crouch, not lying prone. No growth/shrink or sideways walking. Preserve red sleeves, face, mohawk, shoulder badge and full rifle. Draw ONLY Yuri, absolutely NO wall, object, crate, floor, shadow plane or background. No sparks, glow or effects.\nframes: 12\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d7c52a79-a2a6-4a0f-819e-88d248e59906\")\nasset_id: 0b12de1b-d24b-50da-95f3-d6a39c4f6e97\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "crouch_peek",
+    "args": {
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d7c52a79-a2a6-4a0f-819e-88d248e59906/download?index=12",
+      "frame_count": 16,
+      "initial_pose": "Yuri kneeling low with back against invisible cover on his right and rifle tucked upright",
+      "subject_description": "Same brown-mohawk bearded red-sleeved Yuri with black tactical armor and round shoulder badge",
+      "description": "FRAME FORMAT:256x256 transparent fixed character unit and grounded feet. A SINGLE smooth PARTIAL COVER PEEK from the supplied crouched pose: keep his right knee near the floor and back hip tucked in, lift head and left shoulder modestly, lean left, swing rifle from tucked upright to horizontal aiming left. Finish in a low half-kneeling lean-out ready stance; rifle about waist-height of a standing man. Do NOT stand fully up or step out into the open. The return will be authored by reversing this same controlled lean, so finish stable. Full body and gun always shown, preserve exact costume and crisp pixel style. Draw ONLY Yuri; NO wall, box, shield, crate, environment, floor, smoke, glow, flash or effects."
+    },
+    "id": "2b1589a5-1236-4ac7-8a40-b7e66bff2d6b",
+    "receipt": "id: 2b1589a5-1236-4ac7-8a40-b7e66bff2d6b\njob_id: 2b1589a5-1236-4ac7-8a40-b7e66bff2d6b\ndescription: FRAME FORMAT:256x256 transparent fixed character unit and grounded feet. A SINGLE smooth PARTIAL COVER PEEK from the supplied crouched pose: keep his right knee near the floor and back hip tucked in, lift head and left shoulder modestly, lean left, swing rifle from tucked upright to horizontal aiming left. Finish in a low half-kneeling lean-out ready stance; rifle about waist-height of a standing man. Do NOT stand fully up or step out into the open. The return will be authored by reversing this same controlled lean, so finish stable. Full body and gun always shown, preserve exact costume and crisp pixel style. Draw ONLY Yuri; NO wall, box, shield, crate, environment, floor, smoke, glow, flash or effects.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2b1589a5-1236-4ac7-8a40-b7e66bff2d6b\")\nasset_id: f5b02898-0318-5272-a0cf-5d8f4199c8d5\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "walk_slide_clean",
+    "args": {
+      "first_frame_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/ed161843-bd3f-4a36-ba4c-7cc48d9e210d/download?index=0",
+      "description": "FRAME FORMAT:256x256 transparent fixed original character unit and view. ONE controlled transitional movement from the first pose into the final seated leg-extension pose. First a short leftward walking step, then bend both knees and lower the pelvis. Extend the forward left boot while folding the other knee underneath. Let the body settle low into the exact final position. Horizontal level motion with constant vertical gravity and no jumping. The held long object is completely inert, inactive, unlit. Empty transparent surroundings. The only pixels in any frame belong to his body, clothing, boots or held object; no extra marks or contact effects. Retain exactly the supplied character identity, hair, face, red sleeves, shoulder badge, fitted dark outfit and full proportions.",
+      "frame_count": 20,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "initial_pose": "See supplied full-body first frame, facing left",
+      "subject_description": "The same brown-mohawk bearded red-jacketed man in the supplied frames"
+    },
+    "id": "51545aea-fa4f-4769-904e-2f97055565d0",
+    "receipt": "id: 51545aea-fa4f-4769-904e-2f97055565d0\njob_id: 51545aea-fa4f-4769-904e-2f97055565d0\ndescription: FRAME FORMAT:256x256 transparent fixed original character unit and view. ONE controlled transitional movement from the first pose into the final seated leg-extension pose. First a short leftward walking step, then bend both knees and lower the pelvis. Extend the forward left boot while folding the other knee underneath. Let the body settle low into the exact final position. Horizontal level motion with constant vertical gravity and no jumping. The held long object is completely inert, inactive, unlit. Empty transparent surroundings. The only pixels in any frame belong to his body, clothing, boots or held object; no extra marks or contact effects. Retain exactly the supplied character identity, hair, face, red sleeves, shoulder badge, fitted dark outfit and full proportions.\nframes: 20\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"51545aea-fa4f-4769-904e-2f97055565d0\")\nasset_id: 34248324-bd21-5d6b-b351-681e482d32f9\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "slide_exit_clean",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/ed161843-bd3f-4a36-ba4c-7cc48d9e210d/download?index=0",
+      "last_frame_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "description": "FRAME FORMAT:256x256 transparent fixed original character unit and view. ONE slow controlled rise from the first seated leg-extension pose into the supplied upright standing pose. Bring front heel toward body, place rear foot under hips, shift weight into boots, slowly straighten knees. Feet maintain contact throughout; no jump or bounce. The held object remains inert, inactive and unlit. Only the subject's body, outfit and held object have pixels; the rest is perfectly empty alpha. No added marks or contact effects. Retain exactly the supplied character identity, hair, face, red sleeves, shoulder badge, fitted dark outfit and full proportions.",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "initial_pose": "See supplied full-body first frame, facing left",
+      "subject_description": "The same brown-mohawk bearded red-jacketed man in the supplied frames"
+    },
+    "id": "a9a5a0a9-ef12-4502-96ef-7a1526a3f0ef",
+    "receipt": "id: a9a5a0a9-ef12-4502-96ef-7a1526a3f0ef\njob_id: a9a5a0a9-ef12-4502-96ef-7a1526a3f0ef\ndescription: FRAME FORMAT:256x256 transparent fixed original character unit and view. ONE slow controlled rise from the first seated leg-extension pose into the supplied upright standing pose. Bring front heel toward body, place rear foot under hips, shift weight into boots, slowly straighten knees. Feet maintain contact throughout; no jump or bounce. The held object remains inert, inactive and unlit. Only the subject's body, outfit and held object have pixels; the rest is perfectly empty alpha. No added marks or contact effects. Retain exactly the supplied character identity, hair, face, red sleeves, shoulder badge, fitted dark outfit and full proportions.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a9a5a0a9-ef12-4502-96ef-7a1526a3f0ef\")\nasset_id: 18b421d9-c6df-56c0-9692-56509d50bb21\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "cover_enter_clean",
+    "args": {
+      "first_frame_url": "upload:b74b8a64-c23a-4aba-93a8-04f16530a15f",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/fb80179c-501f-4ca9-a50a-4f8f57790e78/download?index=0",
+      "description": "FRAME FORMAT:256x256 transparent fixed original character unit and view. ONE cautious short backward step to the right, raising the held long object to vertical against chest as the shoulders rotate and settle backward into the supplied final pose. Smooth torso and elbow motion across the FULL clip, not an early action then a long hold. Hold final posture. Both boots on same baseline. Nothing touches him or appears around him. The long object is entirely inactive and unlit. Only subject pixels are present; every other pixel is transparent. No sparks, contact marks, streaks or visual effects. Retain exactly the supplied character identity, hair, face, red sleeves, shoulder badge, fitted dark outfit and full proportions.",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "initial_pose": "See supplied full-body first frame, facing left",
+      "subject_description": "The same brown-mohawk bearded red-jacketed man in the supplied frames"
+    },
+    "id": "93123a64-e881-4c03-b2af-f27947dcd723",
+    "receipt": "id: 93123a64-e881-4c03-b2af-f27947dcd723\njob_id: 93123a64-e881-4c03-b2af-f27947dcd723\ndescription: FRAME FORMAT:256x256 transparent fixed original character unit and view. ONE cautious short backward step to the right, raising the held long object to vertical against chest as the shoulders rotate and settle backward into the supplied final pose. Smooth torso and elbow motion across the FULL clip, not an early action then a long hold. Hold final posture. Both boots on same baseline. Nothing touches him or appears around him. The long object is entirely inactive and unlit. Only subject pixels are present; every other pixel is transparent. No sparks, contact marks, streaks or visual effects. Retain exactly the supplied character identity, hair, face, red sleeves, shoulder badge, fitted dark outfit and full proportions.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"93123a64-e881-4c03-b2af-f27947dcd723\")\nasset_id: 7b3bc418-695e-5462-aba7-cea724696039\nasset_status: pending (saved to your gallery when generation completes)"
+  },
+  {
+    "name": "cover_peek_clean",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/fb80179c-501f-4ca9-a50a-4f8f57790e78/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/64a39154-2906-4ba0-abd3-1a4d8f2d1746/download?index=12",
+      "frame_count": 20,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "west",
+      "subject_description": "The same brown-mohawk bearded red-jacketed man with dark fitted armor",
+      "initial_pose": "Upright back at rest, long inactive object tucked vertically to chest",
+      "description": "FRAME FORMAT:256x256 transparent fixed scale. Over the FULL clip smoothly turn the shoulders toward LEFT and unfold the elbows, transitioning the long inactive held prop from vertical to horizontal exactly as in the final image. Keep hips and right boot at the original location; only head, shoulder and arms extend modestly left. The left boot braces slightly. No walk, no full step out. Continuous motion throughout with many in-between angles. All equipment entirely inactive and unlit; only clothing/body/prop pixels, perfect empty alpha everywhere else, no marks or effects. Preserve exact face hair jacket sleeves badge and pixel style."
+    },
+    "receipt": "id: 8e851c9d-d9cf-444d-a62a-acc358011e7d\njob_id: 8e851c9d-d9cf-444d-a62a-acc358011e7d\ndescription: FRAME FORMAT:256x256 transparent fixed scale. Over the FULL clip smoothly turn the shoulders toward LEFT and unfold the elbows, transitioning the long inactive held prop from vertical to horizontal exactly as in the final image. Keep hips and right boot at the original location; only head, shoulder and arms extend modestly left. The left boot braces slightly. No walk, no full step out. Continuous motion throughout with many in-between angles. All equipment entirely inactive and unlit; only clothing/body/prop pixels, perfect empty alpha everywhere else, no marks or effects. Preserve exact face hair jacket sleeves badge and pixel style.\nframes: 20\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8e851c9d-d9cf-444d-a62a-acc358011e7d\")\nasset_id: 78d8d126-7175-53d2-b2f7-eea735c07c17\nasset_status: pending (saved to your gallery when generation completes)",
+    "id": "8e851c9d-d9cf-444d-a62a-acc358011e7d"
+  }
+]

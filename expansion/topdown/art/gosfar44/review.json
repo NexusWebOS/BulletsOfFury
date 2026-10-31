@@ -1,0 +1,912 @@
+[
+  {
+    "bank": "gosfar/ready",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        108,
+        150
+      ]
+    ],
+    "frames": 1,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/walk",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        108,
+        150
+      ],
+      [
+        23,
+        8,
+        110,
+        152
+      ],
+      [
+        27,
+        7,
+        113,
+        150
+      ],
+      [
+        31,
+        5,
+        115,
+        148
+      ],
+      [
+        31,
+        5,
+        115,
+        147
+      ],
+      [
+        29,
+        7,
+        113,
+        151
+      ],
+      [
+        28,
+        9,
+        112,
+        157
+      ],
+      [
+        26,
+        8,
+        109,
+        155
+      ],
+      [
+        25,
+        5,
+        109,
+        153
+      ],
+      [
+        25,
+        4,
+        109,
+        151
+      ],
+      [
+        25,
+        5,
+        110,
+        149
+      ],
+      [
+        26,
+        7,
+        111,
+        151
+      ],
+      [
+        29,
+        8,
+        113,
+        156
+      ],
+      [
+        31,
+        6,
+        115,
+        153
+      ],
+      [
+        31,
+        5,
+        115,
+        150
+      ],
+      [
+        30,
+        5,
+        114,
+        148
+      ],
+      [
+        28,
+        7,
+        112,
+        153
+      ]
+    ],
+    "frames": 17,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/rev",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        108,
+        150
+      ],
+      [
+        24,
+        8,
+        108,
+        150
+      ],
+      [
+        25,
+        8,
+        109,
+        150
+      ],
+      [
+        25,
+        10,
+        109,
+        150
+      ],
+      [
+        25,
+        10,
+        109,
+        150
+      ],
+      [
+        25,
+        9,
+        108,
+        150
+      ],
+      [
+        25,
+        8,
+        107,
+        150
+      ],
+      [
+        25,
+        7,
+        107,
+        150
+      ]
+    ],
+    "frames": 8,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/fire",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        108,
+        150
+      ],
+      [
+        24,
+        7,
+        108,
+        150
+      ],
+      [
+        24,
+        9,
+        108,
+        150
+      ],
+      [
+        22,
+        14,
+        108,
+        150
+      ],
+      [
+        22,
+        14,
+        108,
+        150
+      ],
+      [
+        22,
+        14,
+        108,
+        150
+      ],
+      [
+        23,
+        13,
+        108,
+        150
+      ],
+      [
+        24,
+        13,
+        108,
+        150
+      ]
+    ],
+    "frames": 8,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/death",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        108,
+        150
+      ],
+      [
+        25,
+        8,
+        110,
+        150
+      ],
+      [
+        25,
+        10,
+        110,
+        150
+      ],
+      [
+        25,
+        15,
+        120,
+        150
+      ],
+      [
+        22,
+        23,
+        140,
+        150
+      ],
+      [
+        22,
+        32,
+        145,
+        147
+      ],
+      [
+        21,
+        40,
+        143,
+        149
+      ],
+      [
+        15,
+        73,
+        142,
+        146
+      ],
+      [
+        15,
+        103,
+        143,
+        153
+      ]
+    ],
+    "frames": 9,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "wall",
+    "size": [
+      88,
+      112
+    ],
+    "root": [
+      44,
+      112
+    ],
+    "bounds": [
+      [
+        0,
+        24,
+        88,
+        112
+      ],
+      [
+        0,
+        24,
+        88,
+        112
+      ],
+      [
+        0,
+        24,
+        88,
+        112
+      ],
+      [
+        7,
+        90,
+        81,
+        112
+      ]
+    ],
+    "frames": 4,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/overheat",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        108,
+        150
+      ],
+      [
+        24,
+        8,
+        108,
+        150
+      ],
+      [
+        24,
+        10,
+        108,
+        150
+      ],
+      [
+        24,
+        11,
+        108,
+        150
+      ],
+      [
+        24,
+        11,
+        108,
+        150
+      ]
+    ],
+    "frames": 5,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/fire/east",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        41,
+        7,
+        142,
+        152
+      ],
+      [
+        41,
+        7,
+        154,
+        152
+      ],
+      [
+        41,
+        9,
+        142,
+        152
+      ],
+      [
+        41,
+        9,
+        154,
+        152
+      ],
+      [
+        41,
+        7,
+        142,
+        152
+      ],
+      [
+        41,
+        7,
+        154,
+        152
+      ],
+      [
+        41,
+        8,
+        142,
+        152
+      ],
+      [
+        41,
+        9,
+        154,
+        152
+      ],
+      [
+        41,
+        9,
+        142,
+        152
+      ]
+    ],
+    "frames": 9,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/walk/east",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        41,
+        7,
+        142,
+        152
+      ],
+      [
+        42,
+        6,
+        143,
+        152
+      ],
+      [
+        35,
+        9,
+        144,
+        152
+      ],
+      [
+        25,
+        11,
+        144,
+        152
+      ],
+      [
+        25,
+        9,
+        143,
+        152
+      ],
+      [
+        35,
+        7,
+        142,
+        152
+      ],
+      [
+        39,
+        6,
+        141,
+        150
+      ],
+      [
+        37,
+        8,
+        141,
+        152
+      ],
+      [
+        23,
+        11,
+        141,
+        152
+      ]
+    ],
+    "frames": 9,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/ready/east",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        41,
+        7,
+        142,
+        152
+      ]
+    ],
+    "frames": 1,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/fire/west",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        10,
+        6,
+        109,
+        152
+      ],
+      [
+        3,
+        6,
+        119,
+        152
+      ],
+      [
+        10,
+        7,
+        119,
+        152
+      ],
+      [
+        3,
+        8,
+        109,
+        152
+      ],
+      [
+        10,
+        10,
+        110,
+        153
+      ],
+      [
+        3,
+        11,
+        110,
+        153
+      ],
+      [
+        10,
+        10,
+        110,
+        153
+      ],
+      [
+        3,
+        7,
+        109,
+        152
+      ],
+      [
+        10,
+        6,
+        109,
+        152
+      ]
+    ],
+    "frames": 9,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/walk/west",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        10,
+        6,
+        109,
+        152
+      ],
+      [
+        11,
+        7,
+        110,
+        152
+      ],
+      [
+        12,
+        10,
+        114,
+        152
+      ],
+      [
+        13,
+        10,
+        120,
+        152
+      ],
+      [
+        14,
+        7,
+        112,
+        151
+      ],
+      [
+        15,
+        5,
+        110,
+        149
+      ],
+      [
+        14,
+        7,
+        110,
+        150
+      ],
+      [
+        13,
+        9,
+        119,
+        151
+      ],
+      [
+        11,
+        10,
+        123,
+        152
+      ]
+    ],
+    "frames": 9,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/ready/west",
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        10,
+        6,
+        109,
+        152
+      ]
+    ],
+    "frames": 1,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/fire/north",
+    "size": [
+      256,
+      256
+    ],
+    "root": [
+      128,
+      248
+    ],
+    "bounds": [
+      [
+        74,
+        37,
+        182,
+        250
+      ],
+      [
+        74,
+        24,
+        182,
+        250
+      ],
+      [
+        74,
+        9,
+        189,
+        250
+      ],
+      [
+        74,
+        39,
+        182,
+        250
+      ],
+      [
+        74,
+        42,
+        183,
+        250
+      ],
+      [
+        74,
+        39,
+        182,
+        250
+      ],
+      [
+        74,
+        36,
+        182,
+        250
+      ],
+      [
+        73,
+        9,
+        189,
+        250
+      ],
+      [
+        73,
+        38,
+        182,
+        250
+      ]
+    ],
+    "frames": 9,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/walk/north",
+    "size": [
+      256,
+      256
+    ],
+    "root": [
+      128,
+      248
+    ],
+    "bounds": [
+      [
+        74,
+        37,
+        182,
+        250
+      ],
+      [
+        77,
+        20,
+        182,
+        250
+      ],
+      [
+        81,
+        34,
+        183,
+        251
+      ],
+      [
+        80,
+        32,
+        183,
+        251
+      ],
+      [
+        80,
+        36,
+        183,
+        251
+      ],
+      [
+        78,
+        37,
+        182,
+        250
+      ],
+      [
+        74,
+        37,
+        180,
+        250
+      ],
+      [
+        73,
+        19,
+        180,
+        251
+      ],
+      [
+        72,
+        34,
+        181,
+        251
+      ]
+    ],
+    "frames": 9,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  },
+  {
+    "bank": "gosfar/ready/north",
+    "size": [
+      256,
+      256
+    ],
+    "root": [
+      128,
+      248
+    ],
+    "bounds": [
+      [
+        74,
+        37,
+        182,
+        250
+      ]
+    ],
+    "frames": 1,
+    "provider": "PixelLab",
+    "normalization": "Fixed canvas, one common root, no frame fitting or resizing; shared armor palette."
+  }
+]

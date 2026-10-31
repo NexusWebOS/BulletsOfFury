@@ -1,0 +1,10556 @@
+[
+  {
+    "bank": "gosfar/ready/south",
+    "frames": 1,
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        144,
+        150
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/walk/south",
+    "frames": 17,
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        144,
+        150
+      ],
+      [
+        25,
+        4,
+        144,
+        151
+      ],
+      [
+        24,
+        6,
+        143,
+        153
+      ],
+      [
+        22,
+        8,
+        141,
+        156
+      ],
+      [
+        22,
+        6,
+        141,
+        152
+      ],
+      [
+        22,
+        4,
+        141,
+        147
+      ],
+      [
+        22,
+        7,
+        143,
+        153
+      ],
+      [
+        25,
+        8,
+        144,
+        156
+      ],
+      [
+        24,
+        6,
+        144,
+        152
+      ],
+      [
+        25,
+        4,
+        144,
+        147
+      ],
+      [
+        24,
+        6,
+        144,
+        153
+      ],
+      [
+        22,
+        8,
+        141,
+        156
+      ],
+      [
+        22,
+        5,
+        141,
+        152
+      ],
+      [
+        22,
+        5,
+        141,
+        152
+      ],
+      [
+        24,
+        6,
+        155,
+        152
+      ],
+      [
+        24,
+        6,
+        155,
+        152
+      ],
+      [
+        24,
+        6,
+        155,
+        152
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/throw/south",
+    "frames": 9,
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        24,
+        6,
+        144,
+        150
+      ],
+      [
+        26,
+        7,
+        147,
+        150
+      ],
+      [
+        26,
+        7,
+        146,
+        150
+      ],
+      [
+        16,
+        6,
+        144,
+        150
+      ],
+      [
+        15,
+        7,
+        143,
+        150
+      ],
+      [
+        15,
+        6,
+        144,
+        150
+      ],
+      [
+        26,
+        9,
+        148,
+        150
+      ],
+      [
+        26,
+        7,
+        146,
+        150
+      ],
+      [
+        23,
+        6,
+        144,
+        150
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/south",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/south-east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        93,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/north-east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/north",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/north-west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        35,
+        36,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/ready/south-west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/south",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/south-east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        88,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        35,
+        98,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/north-east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        34,
+        91,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/north",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        51,
+        35,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/north-west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        35,
+        79,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        30,
+        35,
+        78,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/ready/south-west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        78,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/ready/west",
+    "frames": 1,
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        5,
+        6,
+        112,
+        152
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/ready/east",
+    "frames": 1,
+    "root": [
+      80,
+      152
+    ],
+    "bounds": [
+      [
+        39,
+        7,
+        148,
+        155
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/ready/north",
+    "frames": 1,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        57,
+        5,
+        167,
+        218
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/north",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        43,
+        36,
+        80,
+        120
+      ],
+      [
+        50,
+        32,
+        78,
+        120
+      ],
+      [
+        50,
+        24,
+        78,
+        120
+      ],
+      [
+        50,
+        24,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/north",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        24,
+        78,
+        120
+      ],
+      [
+        50,
+        10,
+        78,
+        120
+      ],
+      [
+        50,
+        8,
+        78,
+        120
+      ],
+      [
+        50,
+        10,
+        78,
+        120
+      ],
+      [
+        50,
+        8,
+        78,
+        120
+      ],
+      [
+        50,
+        10,
+        78,
+        120
+      ],
+      [
+        50,
+        8,
+        78,
+        120
+      ],
+      [
+        50,
+        10,
+        78,
+        120
+      ],
+      [
+        50,
+        8,
+        78,
+        120
+      ],
+      [
+        50,
+        10,
+        78,
+        120
+      ],
+      [
+        50,
+        8,
+        78,
+        120
+      ],
+      [
+        50,
+        10,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/south",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        46,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        80,
+        122
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/south",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        37,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        96,
+        122
+      ],
+      [
+        48,
+        37,
+        96,
+        122
+      ],
+      [
+        48,
+        37,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        96,
+        122
+      ],
+      [
+        48,
+        37,
+        96,
+        122
+      ],
+      [
+        48,
+        37,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        80,
+        122
+      ],
+      [
+        48,
+        37,
+        96,
+        122
+      ],
+      [
+        48,
+        37,
+        96,
+        122
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/east",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        46,
+        36,
+        95,
+        120
+      ],
+      [
+        42,
+        36,
+        93,
+        120
+      ],
+      [
+        40,
+        36,
+        91,
+        120
+      ],
+      [
+        40,
+        36,
+        91,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/east",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        40,
+        36,
+        106,
+        120
+      ],
+      [
+        40,
+        35,
+        111,
+        120
+      ],
+      [
+        40,
+        36,
+        106,
+        120
+      ],
+      [
+        40,
+        36,
+        112,
+        120
+      ],
+      [
+        40,
+        34,
+        107,
+        120
+      ],
+      [
+        40,
+        36,
+        91,
+        120
+      ],
+      [
+        40,
+        36,
+        110,
+        120
+      ],
+      [
+        40,
+        36,
+        111,
+        120
+      ],
+      [
+        40,
+        36,
+        107,
+        120
+      ],
+      [
+        40,
+        36,
+        112,
+        120
+      ],
+      [
+        40,
+        36,
+        106,
+        120
+      ],
+      [
+        40,
+        35,
+        111,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/west",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        29,
+        36,
+        73,
+        120
+      ],
+      [
+        25,
+        36,
+        74,
+        120
+      ],
+      [
+        27,
+        36,
+        74,
+        120
+      ],
+      [
+        27,
+        36,
+        74,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/west",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        27,
+        36,
+        74,
+        120
+      ],
+      [
+        8,
+        36,
+        74,
+        120
+      ],
+      [
+        4,
+        36,
+        77,
+        120
+      ],
+      [
+        27,
+        36,
+        74,
+        120
+      ],
+      [
+        9,
+        36,
+        77,
+        120
+      ],
+      [
+        3,
+        36,
+        76,
+        120
+      ],
+      [
+        27,
+        36,
+        74,
+        120
+      ],
+      [
+        9,
+        36,
+        77,
+        120
+      ],
+      [
+        3,
+        36,
+        76,
+        120
+      ],
+      [
+        27,
+        36,
+        74,
+        120
+      ],
+      [
+        7,
+        36,
+        77,
+        120
+      ],
+      [
+        3,
+        36,
+        75,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/north",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        51,
+        35,
+        78,
+        120
+      ],
+      [
+        51,
+        35,
+        78,
+        120
+      ],
+      [
+        49,
+        33,
+        78,
+        120
+      ],
+      [
+        49,
+        20,
+        78,
+        120
+      ],
+      [
+        49,
+        18,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/north",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        49,
+        18,
+        78,
+        120
+      ],
+      [
+        49,
+        18,
+        78,
+        120
+      ],
+      [
+        48,
+        8,
+        78,
+        120
+      ],
+      [
+        46,
+        10,
+        78,
+        120
+      ],
+      [
+        49,
+        18,
+        78,
+        120
+      ],
+      [
+        48,
+        8,
+        78,
+        120
+      ],
+      [
+        46,
+        10,
+        78,
+        120
+      ],
+      [
+        49,
+        18,
+        78,
+        120
+      ],
+      [
+        48,
+        8,
+        78,
+        120
+      ],
+      [
+        46,
+        9,
+        78,
+        120
+      ],
+      [
+        49,
+        18,
+        78,
+        120
+      ],
+      [
+        48,
+        8,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/south",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/south",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        124
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        37,
+        81,
+        120
+      ],
+      [
+        47,
+        36,
+        81,
+        120
+      ],
+      [
+        44,
+        36,
+        83,
+        122
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        37,
+        81,
+        120
+      ],
+      [
+        47,
+        36,
+        81,
+        120
+      ],
+      [
+        44,
+        36,
+        83,
+        122
+      ],
+      [
+        48,
+        37,
+        81,
+        120
+      ],
+      [
+        47,
+        19,
+        81,
+        120
+      ],
+      [
+        44,
+        9,
+        83,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/east",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        35,
+        98,
+        121
+      ],
+      [
+        43,
+        35,
+        100,
+        120
+      ],
+      [
+        34,
+        35,
+        93,
+        121
+      ],
+      [
+        32,
+        35,
+        92,
+        121
+      ],
+      [
+        34,
+        31,
+        112,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/east",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        33,
+        29,
+        117,
+        121
+      ],
+      [
+        34,
+        34,
+        115,
+        121
+      ],
+      [
+        34,
+        30,
+        118,
+        121
+      ],
+      [
+        33,
+        35,
+        114,
+        121
+      ],
+      [
+        34,
+        35,
+        109,
+        121
+      ],
+      [
+        34,
+        30,
+        118,
+        121
+      ],
+      [
+        33,
+        35,
+        114,
+        121
+      ],
+      [
+        34,
+        31,
+        113,
+        121
+      ],
+      [
+        33,
+        29,
+        118,
+        121
+      ],
+      [
+        32,
+        34,
+        115,
+        121
+      ],
+      [
+        28,
+        30,
+        118,
+        121
+      ],
+      [
+        33,
+        35,
+        92,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/west",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        30,
+        35,
+        78,
+        121
+      ],
+      [
+        20,
+        34,
+        79,
+        121
+      ],
+      [
+        21,
+        34,
+        81,
+        121
+      ],
+      [
+        21,
+        34,
+        83,
+        121
+      ],
+      [
+        21,
+        34,
+        82,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/west",
+    "frames": 12,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        21,
+        34,
+        81,
+        121
+      ],
+      [
+        7,
+        34,
+        82,
+        121
+      ],
+      [
+        0,
+        28,
+        85,
+        121
+      ],
+      [
+        9,
+        33,
+        83,
+        121
+      ],
+      [
+        7,
+        34,
+        82,
+        121
+      ],
+      [
+        0,
+        28,
+        85,
+        121
+      ],
+      [
+        8,
+        33,
+        83,
+        121
+      ],
+      [
+        3,
+        30,
+        85,
+        121
+      ],
+      [
+        8,
+        33,
+        81,
+        121
+      ],
+      [
+        8,
+        33,
+        81,
+        121
+      ],
+      [
+        13,
+        34,
+        82,
+        121
+      ],
+      [
+        3,
+        30,
+        85,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "lift/open",
+    "frames": 9,
+    "root": [
+      96,
+      184
+    ],
+    "bounds": [
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ]
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/north",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        43,
+        35,
+        82,
+        120
+      ],
+      [
+        42,
+        35,
+        81,
+        121
+      ],
+      [
+        42,
+        36,
+        81,
+        122
+      ],
+      [
+        41,
+        36,
+        80,
+        122
+      ],
+      [
+        40,
+        35,
+        80,
+        118
+      ],
+      [
+        40,
+        35,
+        80,
+        120
+      ],
+      [
+        41,
+        36,
+        80,
+        122
+      ],
+      [
+        42,
+        36,
+        81,
+        122
+      ],
+      [
+        42,
+        36,
+        81,
+        119
+      ],
+      [
+        43,
+        35,
+        82,
+        119
+      ],
+      [
+        42,
+        35,
+        81,
+        121
+      ],
+      [
+        41,
+        36,
+        80,
+        122
+      ],
+      [
+        41,
+        36,
+        80,
+        121
+      ],
+      [
+        40,
+        35,
+        80,
+        119
+      ],
+      [
+        41,
+        35,
+        80,
+        121
+      ],
+      [
+        41,
+        36,
+        80,
+        122
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/south",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        49,
+        35,
+        85,
+        118
+      ],
+      [
+        49,
+        34,
+        85,
+        119
+      ],
+      [
+        48,
+        35,
+        84,
+        120
+      ],
+      [
+        47,
+        36,
+        83,
+        122
+      ],
+      [
+        46,
+        36,
+        82,
+        120
+      ],
+      [
+        46,
+        35,
+        82,
+        118
+      ],
+      [
+        47,
+        35,
+        83,
+        119
+      ],
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        48,
+        36,
+        84,
+        122
+      ],
+      [
+        49,
+        35,
+        85,
+        119
+      ],
+      [
+        49,
+        34,
+        85,
+        119
+      ],
+      [
+        48,
+        35,
+        84,
+        120
+      ],
+      [
+        47,
+        36,
+        83,
+        122
+      ],
+      [
+        46,
+        36,
+        82,
+        120
+      ],
+      [
+        46,
+        35,
+        82,
+        118
+      ],
+      [
+        47,
+        35,
+        83,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/east",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        50,
+        36,
+        88,
+        120
+      ],
+      [
+        46,
+        37,
+        89,
+        120
+      ],
+      [
+        41,
+        38,
+        92,
+        120
+      ],
+      [
+        36,
+        38,
+        89,
+        120
+      ],
+      [
+        36,
+        37,
+        89,
+        120
+      ],
+      [
+        40,
+        37,
+        89,
+        119
+      ],
+      [
+        45,
+        36,
+        89,
+        119
+      ],
+      [
+        52,
+        36,
+        90,
+        119
+      ],
+      [
+        51,
+        36,
+        90,
+        120
+      ],
+      [
+        46,
+        37,
+        90,
+        120
+      ],
+      [
+        42,
+        38,
+        93,
+        120
+      ],
+      [
+        37,
+        38,
+        90,
+        120
+      ],
+      [
+        36,
+        38,
+        90,
+        120
+      ],
+      [
+        39,
+        37,
+        89,
+        120
+      ],
+      [
+        44,
+        36,
+        89,
+        120
+      ],
+      [
+        54,
+        36,
+        88,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/west",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        38,
+        36,
+        81,
+        120
+      ],
+      [
+        38,
+        37,
+        88,
+        120
+      ],
+      [
+        33,
+        38,
+        91,
+        120
+      ],
+      [
+        38,
+        37,
+        85,
+        120
+      ],
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        38,
+        37,
+        83,
+        120
+      ],
+      [
+        38,
+        38,
+        89,
+        120
+      ],
+      [
+        35,
+        38,
+        89,
+        120
+      ],
+      [
+        31,
+        36,
+        77,
+        120
+      ],
+      [
+        39,
+        36,
+        81,
+        120
+      ],
+      [
+        39,
+        37,
+        88,
+        120
+      ],
+      [
+        39,
+        38,
+        91,
+        120
+      ],
+      [
+        38,
+        37,
+        85,
+        120
+      ],
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        38,
+        37,
+        83,
+        120
+      ],
+      [
+        35,
+        38,
+        89,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/north-east",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        78,
+        120
+      ],
+      [
+        49,
+        35,
+        82,
+        121
+      ],
+      [
+        55,
+        36,
+        87,
+        121
+      ],
+      [
+        52,
+        37,
+        87,
+        122
+      ],
+      [
+        48,
+        38,
+        87,
+        122
+      ],
+      [
+        50,
+        36,
+        87,
+        121
+      ],
+      [
+        54,
+        35,
+        87,
+        120
+      ],
+      [
+        55,
+        35,
+        87,
+        121
+      ],
+      [
+        50,
+        37,
+        87,
+        121
+      ],
+      [
+        46,
+        38,
+        87,
+        121
+      ],
+      [
+        46,
+        36,
+        87,
+        121
+      ],
+      [
+        49,
+        35,
+        87,
+        121
+      ],
+      [
+        56,
+        36,
+        103,
+        121
+      ],
+      [
+        51,
+        37,
+        92,
+        122
+      ],
+      [
+        48,
+        38,
+        87,
+        122
+      ],
+      [
+        50,
+        36,
+        87,
+        121
+      ],
+      [
+        56,
+        35,
+        87,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/north-west",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        35,
+        36,
+        78,
+        120
+      ],
+      [
+        31,
+        36,
+        78,
+        120
+      ],
+      [
+        29,
+        36,
+        77,
+        120
+      ],
+      [
+        28,
+        37,
+        77,
+        120
+      ],
+      [
+        28,
+        38,
+        82,
+        120
+      ],
+      [
+        28,
+        37,
+        80,
+        120
+      ],
+      [
+        28,
+        36,
+        75,
+        119
+      ],
+      [
+        28,
+        36,
+        75,
+        119
+      ],
+      [
+        28,
+        37,
+        80,
+        119
+      ],
+      [
+        28,
+        38,
+        86,
+        120
+      ],
+      [
+        28,
+        37,
+        84,
+        120
+      ],
+      [
+        28,
+        36,
+        78,
+        120
+      ],
+      [
+        28,
+        36,
+        75,
+        120
+      ],
+      [
+        3,
+        37,
+        77,
+        120
+      ],
+      [
+        28,
+        38,
+        82,
+        120
+      ],
+      [
+        0,
+        37,
+        80,
+        120
+      ],
+      [
+        28,
+        36,
+        75,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/south-east",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        93,
+        120
+      ],
+      [
+        46,
+        35,
+        94,
+        119
+      ],
+      [
+        50,
+        35,
+        95,
+        118
+      ],
+      [
+        50,
+        36,
+        96,
+        120
+      ],
+      [
+        46,
+        37,
+        95,
+        121
+      ],
+      [
+        43,
+        37,
+        94,
+        121
+      ],
+      [
+        48,
+        36,
+        93,
+        121
+      ],
+      [
+        51,
+        35,
+        94,
+        120
+      ],
+      [
+        48,
+        36,
+        94,
+        120
+      ],
+      [
+        42,
+        37,
+        93,
+        120
+      ],
+      [
+        38,
+        37,
+        93,
+        119
+      ],
+      [
+        43,
+        35,
+        93,
+        119
+      ],
+      [
+        50,
+        35,
+        95,
+        118
+      ],
+      [
+        50,
+        36,
+        96,
+        120
+      ],
+      [
+        46,
+        37,
+        95,
+        121
+      ],
+      [
+        43,
+        37,
+        94,
+        121
+      ],
+      [
+        48,
+        36,
+        94,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/walk/south-west",
+    "frames": 17,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        78,
+        120
+      ],
+      [
+        48,
+        37,
+        83,
+        120
+      ],
+      [
+        51,
+        36,
+        82,
+        120
+      ],
+      [
+        51,
+        35,
+        78,
+        119
+      ],
+      [
+        49,
+        35,
+        79,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        121
+      ],
+      [
+        48,
+        37,
+        84,
+        121
+      ],
+      [
+        49,
+        36,
+        81,
+        121
+      ],
+      [
+        51,
+        35,
+        77,
+        121
+      ],
+      [
+        51,
+        36,
+        76,
+        120
+      ],
+      [
+        48,
+        37,
+        83,
+        120
+      ],
+      [
+        51,
+        36,
+        82,
+        120
+      ],
+      [
+        51,
+        35,
+        78,
+        119
+      ],
+      [
+        49,
+        35,
+        79,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        121
+      ],
+      [
+        48,
+        37,
+        84,
+        121
+      ],
+      [
+        49,
+        36,
+        81,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        51,
+        35,
+        78,
+        120
+      ],
+      [
+        52,
+        34,
+        78,
+        120
+      ],
+      [
+        53,
+        33,
+        79,
+        122
+      ],
+      [
+        53,
+        33,
+        78,
+        122
+      ],
+      [
+        52,
+        35,
+        77,
+        122
+      ],
+      [
+        51,
+        35,
+        76,
+        118
+      ],
+      [
+        50,
+        33,
+        76,
+        120
+      ],
+      [
+        51,
+        33,
+        77,
+        122
+      ],
+      [
+        52,
+        34,
+        79,
+        122
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        47,
+        35,
+        81,
+        117
+      ],
+      [
+        53,
+        34,
+        76,
+        119
+      ],
+      [
+        54,
+        34,
+        76,
+        118
+      ],
+      [
+        54,
+        36,
+        76,
+        120
+      ],
+      [
+        53,
+        35,
+        75,
+        118
+      ],
+      [
+        52,
+        34,
+        75,
+        118
+      ],
+      [
+        52,
+        34,
+        74,
+        118
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        35,
+        98,
+        121
+      ],
+      [
+        48,
+        35,
+        98,
+        121
+      ],
+      [
+        38,
+        37,
+        98,
+        121
+      ],
+      [
+        35,
+        37,
+        98,
+        122
+      ],
+      [
+        40,
+        36,
+        98,
+        120
+      ],
+      [
+        50,
+        35,
+        98,
+        120
+      ],
+      [
+        48,
+        35,
+        98,
+        120
+      ],
+      [
+        38,
+        37,
+        98,
+        120
+      ],
+      [
+        35,
+        37,
+        98,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        30,
+        35,
+        78,
+        121
+      ],
+      [
+        30,
+        36,
+        81,
+        121
+      ],
+      [
+        30,
+        37,
+        94,
+        123
+      ],
+      [
+        30,
+        37,
+        92,
+        121
+      ],
+      [
+        30,
+        36,
+        88,
+        119
+      ],
+      [
+        30,
+        35,
+        79,
+        119
+      ],
+      [
+        30,
+        35,
+        78,
+        120
+      ],
+      [
+        30,
+        36,
+        80,
+        120
+      ],
+      [
+        30,
+        37,
+        87,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/north-east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        34,
+        91,
+        120
+      ],
+      [
+        51,
+        34,
+        91,
+        120
+      ],
+      [
+        50,
+        35,
+        91,
+        120
+      ],
+      [
+        48,
+        36,
+        90,
+        120
+      ],
+      [
+        46,
+        37,
+        91,
+        120
+      ],
+      [
+        43,
+        37,
+        91,
+        120
+      ],
+      [
+        46,
+        35,
+        91,
+        119
+      ],
+      [
+        51,
+        34,
+        91,
+        119
+      ],
+      [
+        52,
+        34,
+        91,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/north-west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        35,
+        79,
+        120
+      ],
+      [
+        38,
+        36,
+        85,
+        119
+      ],
+      [
+        38,
+        37,
+        91,
+        120
+      ],
+      [
+        38,
+        38,
+        93,
+        120
+      ],
+      [
+        37,
+        37,
+        89,
+        120
+      ],
+      [
+        37,
+        36,
+        82,
+        120
+      ],
+      [
+        37,
+        35,
+        76,
+        120
+      ],
+      [
+        36,
+        36,
+        76,
+        120
+      ],
+      [
+        37,
+        37,
+        81,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "lift/depart",
+    "frames": 9,
+    "root": [
+      96,
+      184
+    ],
+    "bounds": [
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ],
+      [
+        11,
+        9,
+        181,
+        186
+      ]
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "lift/shaft",
+    "frames": 1,
+    "root": [
+      96,
+      184
+    ],
+    "bounds": [
+      [
+        11,
+        9,
+        181,
+        186
+      ]
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/fire/south",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        56,
+        70,
+        176,
+        214
+      ],
+      [
+        55,
+        69,
+        175,
+        214
+      ],
+      [
+        53,
+        67,
+        210,
+        224
+      ],
+      [
+        54,
+        69,
+        217,
+        224
+      ],
+      [
+        53,
+        67,
+        210,
+        224
+      ],
+      [
+        54,
+        69,
+        217,
+        224
+      ],
+      [
+        54,
+        69,
+        217,
+        224
+      ],
+      [
+        53,
+        67,
+        210,
+        224
+      ],
+      [
+        54,
+        69,
+        217,
+        224
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/fire/east",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        71,
+        71,
+        180,
+        219
+      ],
+      [
+        72,
+        71,
+        220,
+        219
+      ],
+      [
+        70,
+        71,
+        214,
+        219
+      ],
+      [
+        68,
+        71,
+        217,
+        219
+      ],
+      [
+        71,
+        71,
+        222,
+        219
+      ],
+      [
+        69,
+        71,
+        218,
+        219
+      ],
+      [
+        72,
+        71,
+        221,
+        219
+      ],
+      [
+        70,
+        71,
+        216,
+        219
+      ],
+      [
+        68,
+        71,
+        217,
+        219
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/walk/east",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        71,
+        71,
+        180,
+        219
+      ],
+      [
+        71,
+        70,
+        219,
+        218
+      ],
+      [
+        64,
+        70,
+        215,
+        215
+      ],
+      [
+        54,
+        72,
+        219,
+        214
+      ],
+      [
+        47,
+        73,
+        205,
+        218
+      ],
+      [
+        42,
+        74,
+        221,
+        219
+      ],
+      [
+        46,
+        74,
+        216,
+        219
+      ],
+      [
+        54,
+        72,
+        220,
+        219
+      ],
+      [
+        66,
+        71,
+        214,
+        219
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/fire/west",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        37,
+        70,
+        144,
+        216
+      ],
+      [
+        6,
+        70,
+        146,
+        221
+      ],
+      [
+        6,
+        69,
+        149,
+        222
+      ],
+      [
+        6,
+        69,
+        149,
+        222
+      ],
+      [
+        13,
+        3,
+        221,
+        216
+      ],
+      [
+        6,
+        7,
+        220,
+        222
+      ],
+      [
+        36,
+        70,
+        146,
+        216
+      ],
+      [
+        6,
+        69,
+        149,
+        221
+      ],
+      [
+        6,
+        12,
+        211,
+        222
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/walk/west",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        37,
+        70,
+        144,
+        216
+      ],
+      [
+        10,
+        68,
+        145,
+        216
+      ],
+      [
+        37,
+        68,
+        154,
+        213
+      ],
+      [
+        29,
+        70,
+        163,
+        212
+      ],
+      [
+        22,
+        71,
+        166,
+        212
+      ],
+      [
+        13,
+        69,
+        158,
+        211
+      ],
+      [
+        24,
+        68,
+        144,
+        215
+      ],
+      [
+        13,
+        69,
+        144,
+        214
+      ],
+      [
+        21,
+        70,
+        153,
+        218
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/fire/north",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        57,
+        5,
+        167,
+        218
+      ],
+      [
+        59,
+        4,
+        167,
+        218
+      ],
+      [
+        57,
+        4,
+        179,
+        218
+      ],
+      [
+        57,
+        4,
+        176,
+        218
+      ],
+      [
+        59,
+        4,
+        171,
+        218
+      ],
+      [
+        57,
+        4,
+        167,
+        218
+      ],
+      [
+        57,
+        4,
+        179,
+        218
+      ],
+      [
+        60,
+        4,
+        176,
+        218
+      ],
+      [
+        57,
+        4,
+        171,
+        218
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/walk/north",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        57,
+        5,
+        167,
+        218
+      ],
+      [
+        56,
+        5,
+        166,
+        219
+      ],
+      [
+        56,
+        7,
+        166,
+        220
+      ],
+      [
+        56,
+        5,
+        166,
+        220
+      ],
+      [
+        57,
+        4,
+        176,
+        219
+      ],
+      [
+        59,
+        5,
+        195,
+        217
+      ],
+      [
+        58,
+        7,
+        169,
+        220
+      ],
+      [
+        59,
+        7,
+        169,
+        220
+      ],
+      [
+        58,
+        4,
+        168,
+        219
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/overheat/south",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        56,
+        70,
+        176,
+        214
+      ],
+      [
+        57,
+        70,
+        177,
+        214
+      ],
+      [
+        57,
+        69,
+        178,
+        214
+      ],
+      [
+        57,
+        69,
+        179,
+        214
+      ],
+      [
+        57,
+        68,
+        180,
+        214
+      ],
+      [
+        57,
+        44,
+        180,
+        214
+      ],
+      [
+        57,
+        28,
+        180,
+        214
+      ],
+      [
+        57,
+        24,
+        179,
+        214
+      ],
+      [
+        56,
+        26,
+        180,
+        214
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "gosfar/death/south",
+    "frames": 9,
+    "root": [
+      112,
+      216
+    ],
+    "bounds": [
+      [
+        56,
+        70,
+        176,
+        214
+      ],
+      [
+        56,
+        56,
+        176,
+        200
+      ],
+      [
+        56,
+        43,
+        176,
+        187
+      ],
+      [
+        45,
+        43,
+        182,
+        173
+      ],
+      [
+        28,
+        64,
+        194,
+        160
+      ],
+      [
+        20,
+        61,
+        205,
+        180
+      ],
+      [
+        18,
+        64,
+        210,
+        180
+      ],
+      [
+        18,
+        64,
+        206,
+        180
+      ],
+      [
+        18,
+        64,
+        206,
+        180
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch/north",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        46,
+        79,
+        114
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch/south",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        58,
+        82,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch/east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        33,
+        52,
+        99,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch/west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        21,
+        51,
+        89,
+        113
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch/north",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        47,
+        81,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch/south",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        43,
+        55,
+        80,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch/east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        54,
+        97,
+        117
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch/west",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        22,
+        49,
+        78,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone/north",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        73,
+        82,
+        107,
+        150
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone/south",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        76,
+        79,
+        106,
+        155
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone/east",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        26,
+        96,
+        154,
+        126
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone/west",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        33,
+        104,
+        153,
+        133
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone/north",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        79,
+        79,
+        108,
+        153
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone/south",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        79,
+        76,
+        107,
+        153
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone/east",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        31,
+        105,
+        153,
+        133
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone/west",
+    "frames": 1,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        32,
+        103,
+        162,
+        134
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/south-east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        88,
+        121
+      ],
+      [
+        52,
+        35,
+        88,
+        119
+      ],
+      [
+        52,
+        36,
+        88,
+        119
+      ],
+      [
+        48,
+        37,
+        88,
+        121
+      ],
+      [
+        44,
+        37,
+        88,
+        121
+      ],
+      [
+        49,
+        36,
+        88,
+        121
+      ],
+      [
+        50,
+        35,
+        88,
+        121
+      ],
+      [
+        49,
+        36,
+        88,
+        121
+      ],
+      [
+        42,
+        37,
+        90,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/walk/south-west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        78,
+        121
+      ],
+      [
+        38,
+        35,
+        79,
+        120
+      ],
+      [
+        38,
+        34,
+        77,
+        119
+      ],
+      [
+        38,
+        34,
+        74,
+        120
+      ],
+      [
+        38,
+        35,
+        77,
+        120
+      ],
+      [
+        38,
+        36,
+        81,
+        121
+      ],
+      [
+        38,
+        36,
+        79,
+        121
+      ],
+      [
+        38,
+        35,
+        75,
+        121
+      ],
+      [
+        38,
+        34,
+        75,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/north-east",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        78,
+        120
+      ],
+      [
+        50,
+        34,
+        96,
+        120
+      ],
+      [
+        50,
+        34,
+        95,
+        120
+      ],
+      [
+        50,
+        21,
+        117,
+        120
+      ],
+      [
+        50,
+        34,
+        94,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/north-east",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        21,
+        117,
+        120
+      ],
+      [
+        50,
+        34,
+        94,
+        120
+      ],
+      [
+        50,
+        21,
+        117,
+        120
+      ],
+      [
+        50,
+        34,
+        94,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/north-west",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        35,
+        36,
+        78,
+        120
+      ],
+      [
+        30,
+        36,
+        80,
+        120
+      ],
+      [
+        31,
+        36,
+        80,
+        120
+      ],
+      [
+        7,
+        36,
+        80,
+        120
+      ],
+      [
+        18,
+        36,
+        82,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/north-west",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        9,
+        36,
+        80,
+        120
+      ],
+      [
+        7,
+        36,
+        80,
+        120
+      ],
+      [
+        18,
+        36,
+        82,
+        120
+      ],
+      [
+        9,
+        36,
+        80,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/south-east",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        93,
+        120
+      ],
+      [
+        46,
+        37,
+        101,
+        120
+      ],
+      [
+        39,
+        39,
+        101,
+        120
+      ],
+      [
+        39,
+        39,
+        99,
+        120
+      ],
+      [
+        39,
+        39,
+        99,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/south-east",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        39,
+        38,
+        123,
+        120
+      ],
+      [
+        39,
+        39,
+        120,
+        120
+      ],
+      [
+        39,
+        39,
+        120,
+        120
+      ],
+      [
+        39,
+        38,
+        123,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/draw_forward/south-west",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        78,
+        120
+      ],
+      [
+        48,
+        36,
+        78,
+        120
+      ],
+      [
+        33,
+        36,
+        78,
+        120
+      ],
+      [
+        33,
+        36,
+        78,
+        120
+      ],
+      [
+        12,
+        36,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/fire/south-west",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        34,
+        36,
+        78,
+        120
+      ],
+      [
+        33,
+        36,
+        78,
+        120
+      ],
+      [
+        12,
+        36,
+        78,
+        120
+      ],
+      [
+        34,
+        36,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/north-east",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        34,
+        91,
+        120
+      ],
+      [
+        46,
+        34,
+        98,
+        120
+      ],
+      [
+        45,
+        34,
+        97,
+        120
+      ],
+      [
+        42,
+        31,
+        120,
+        120
+      ],
+      [
+        42,
+        32,
+        120,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/north-east",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        44,
+        34,
+        97,
+        120
+      ],
+      [
+        42,
+        31,
+        120,
+        120
+      ],
+      [
+        44,
+        32,
+        119,
+        120
+      ],
+      [
+        42,
+        31,
+        120,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/north-west",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        35,
+        79,
+        120
+      ],
+      [
+        32,
+        35,
+        79,
+        120
+      ],
+      [
+        38,
+        28,
+        80,
+        120
+      ],
+      [
+        38,
+        28,
+        80,
+        120
+      ],
+      [
+        38,
+        28,
+        80,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/north-west",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        14,
+        13,
+        82,
+        120
+      ],
+      [
+        27,
+        25,
+        82,
+        120
+      ],
+      [
+        27,
+        25,
+        82,
+        120
+      ],
+      [
+        14,
+        13,
+        82,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/south-east",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        36,
+        88,
+        121
+      ],
+      [
+        47,
+        36,
+        95,
+        121
+      ],
+      [
+        44,
+        36,
+        98,
+        121
+      ],
+      [
+        44,
+        36,
+        98,
+        121
+      ],
+      [
+        44,
+        36,
+        121,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/south-east",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        44,
+        34,
+        122,
+        121
+      ],
+      [
+        44,
+        33,
+        123,
+        121
+      ],
+      [
+        44,
+        36,
+        121,
+        121
+      ],
+      [
+        44,
+        35,
+        122,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        46,
+        79,
+        114
+      ],
+      [
+        41,
+        24,
+        82,
+        114
+      ],
+      [
+        41,
+        45,
+        79,
+        114
+      ],
+      [
+        41,
+        46,
+        79,
+        114
+      ],
+      [
+        41,
+        46,
+        79,
+        114
+      ],
+      [
+        41,
+        45,
+        79,
+        114
+      ],
+      [
+        41,
+        46,
+        79,
+        114
+      ],
+      [
+        41,
+        25,
+        82,
+        114
+      ],
+      [
+        41,
+        46,
+        79,
+        114
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        58,
+        82,
+        120
+      ],
+      [
+        41,
+        58,
+        103,
+        120
+      ],
+      [
+        41,
+        58,
+        103,
+        120
+      ],
+      [
+        41,
+        58,
+        112,
+        120
+      ],
+      [
+        42,
+        58,
+        91,
+        120
+      ],
+      [
+        41,
+        58,
+        111,
+        120
+      ],
+      [
+        42,
+        58,
+        82,
+        120
+      ],
+      [
+        41,
+        58,
+        111,
+        120
+      ],
+      [
+        42,
+        58,
+        112,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        33,
+        52,
+        99,
+        120
+      ],
+      [
+        33,
+        52,
+        119,
+        120
+      ],
+      [
+        33,
+        52,
+        121,
+        120
+      ],
+      [
+        33,
+        52,
+        99,
+        120
+      ],
+      [
+        33,
+        52,
+        119,
+        120
+      ],
+      [
+        33,
+        52,
+        121,
+        120
+      ],
+      [
+        33,
+        52,
+        99,
+        120
+      ],
+      [
+        33,
+        52,
+        119,
+        120
+      ],
+      [
+        33,
+        52,
+        121,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch_fire/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        21,
+        51,
+        89,
+        113
+      ],
+      [
+        2,
+        51,
+        90,
+        113
+      ],
+      [
+        0,
+        51,
+        90,
+        113
+      ],
+      [
+        0,
+        51,
+        90,
+        113
+      ],
+      [
+        0,
+        51,
+        90,
+        113
+      ],
+      [
+        0,
+        51,
+        89,
+        113
+      ],
+      [
+        1,
+        51,
+        90,
+        113
+      ],
+      [
+        2,
+        51,
+        90,
+        113
+      ],
+      [
+        0,
+        51,
+        90,
+        113
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/north",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        73,
+        82,
+        107,
+        150
+      ],
+      [
+        73,
+        61,
+        108,
+        150
+      ],
+      [
+        73,
+        50,
+        111,
+        150
+      ],
+      [
+        73,
+        41,
+        109,
+        150
+      ],
+      [
+        73,
+        61,
+        108,
+        150
+      ],
+      [
+        73,
+        49,
+        110,
+        150
+      ],
+      [
+        73,
+        41,
+        109,
+        150
+      ],
+      [
+        73,
+        67,
+        108,
+        150
+      ],
+      [
+        73,
+        63,
+        108,
+        150
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/east",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        26,
+        96,
+        154,
+        126
+      ],
+      [
+        26,
+        95,
+        171,
+        126
+      ],
+      [
+        26,
+        96,
+        163,
+        126
+      ],
+      [
+        26,
+        96,
+        154,
+        126
+      ],
+      [
+        26,
+        95,
+        172,
+        126
+      ],
+      [
+        26,
+        96,
+        163,
+        126
+      ],
+      [
+        26,
+        96,
+        154,
+        126
+      ],
+      [
+        26,
+        95,
+        171,
+        126
+      ],
+      [
+        26,
+        96,
+        163,
+        126
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/west",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        33,
+        104,
+        153,
+        133
+      ],
+      [
+        13,
+        104,
+        155,
+        133
+      ],
+      [
+        4,
+        104,
+        154,
+        133
+      ],
+      [
+        5,
+        104,
+        153,
+        133
+      ],
+      [
+        9,
+        104,
+        154,
+        133
+      ],
+      [
+        2,
+        104,
+        153,
+        133
+      ],
+      [
+        13,
+        104,
+        155,
+        133
+      ],
+      [
+        5,
+        104,
+        154,
+        133
+      ],
+      [
+        5,
+        104,
+        153,
+        133
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crawl/north",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        73,
+        82,
+        107,
+        150
+      ],
+      [
+        75,
+        72,
+        108,
+        153
+      ],
+      [
+        75,
+        73,
+        110,
+        155
+      ],
+      [
+        75,
+        84,
+        108,
+        151
+      ],
+      [
+        74,
+        87,
+        108,
+        147
+      ],
+      [
+        74,
+        89,
+        107,
+        153
+      ],
+      [
+        73,
+        57,
+        119,
+        155
+      ],
+      [
+        73,
+        66,
+        121,
+        151
+      ],
+      [
+        75,
+        82,
+        108,
+        152
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crawl/east",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        26,
+        96,
+        154,
+        126
+      ],
+      [
+        31,
+        96,
+        152,
+        127
+      ],
+      [
+        29,
+        96,
+        147,
+        127
+      ],
+      [
+        33,
+        96,
+        175,
+        130
+      ],
+      [
+        43,
+        96,
+        143,
+        127
+      ],
+      [
+        51,
+        96,
+        175,
+        130
+      ],
+      [
+        43,
+        96,
+        151,
+        127
+      ],
+      [
+        32,
+        97,
+        155,
+        127
+      ],
+      [
+        26,
+        96,
+        154,
+        126
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crawl/west",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        33,
+        104,
+        153,
+        133
+      ],
+      [
+        15,
+        103,
+        146,
+        134
+      ],
+      [
+        16,
+        52,
+        170,
+        135
+      ],
+      [
+        9,
+        49,
+        182,
+        135
+      ],
+      [
+        8,
+        49,
+        175,
+        135
+      ],
+      [
+        0,
+        104,
+        143,
+        136
+      ],
+      [
+        8,
+        27,
+        154,
+        135
+      ],
+      [
+        11,
+        20,
+        167,
+        134
+      ],
+      [
+        33,
+        14,
+        184,
+        133
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        47,
+        81,
+        118
+      ],
+      [
+        40,
+        22,
+        82,
+        118
+      ],
+      [
+        41,
+        15,
+        81,
+        118
+      ],
+      [
+        41,
+        18,
+        81,
+        118
+      ],
+      [
+        40,
+        22,
+        82,
+        118
+      ],
+      [
+        41,
+        15,
+        81,
+        118
+      ],
+      [
+        41,
+        18,
+        81,
+        118
+      ],
+      [
+        40,
+        22,
+        82,
+        118
+      ],
+      [
+        41,
+        15,
+        81,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        43,
+        55,
+        80,
+        120
+      ],
+      [
+        43,
+        55,
+        80,
+        120
+      ],
+      [
+        43,
+        55,
+        80,
+        120
+      ],
+      [
+        43,
+        55,
+        80,
+        120
+      ],
+      [
+        43,
+        55,
+        80,
+        120
+      ],
+      [
+        43,
+        54,
+        80,
+        120
+      ],
+      [
+        43,
+        55,
+        80,
+        120
+      ],
+      [
+        43,
+        54,
+        80,
+        120
+      ],
+      [
+        43,
+        54,
+        80,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        54,
+        97,
+        117
+      ],
+      [
+        41,
+        54,
+        97,
+        117
+      ],
+      [
+        39,
+        53,
+        117,
+        117
+      ],
+      [
+        40,
+        50,
+        121,
+        117
+      ],
+      [
+        40,
+        50,
+        121,
+        117
+      ],
+      [
+        39,
+        52,
+        117,
+        117
+      ],
+      [
+        40,
+        50,
+        121,
+        117
+      ],
+      [
+        40,
+        50,
+        121,
+        117
+      ],
+      [
+        39,
+        52,
+        117,
+        117
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crouch_fire/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        22,
+        49,
+        78,
+        118
+      ],
+      [
+        7,
+        49,
+        80,
+        118
+      ],
+      [
+        2,
+        49,
+        81,
+        118
+      ],
+      [
+        8,
+        49,
+        78,
+        118
+      ],
+      [
+        25,
+        49,
+        80,
+        118
+      ],
+      [
+        22,
+        49,
+        78,
+        118
+      ],
+      [
+        7,
+        49,
+        80,
+        118
+      ],
+      [
+        2,
+        49,
+        81,
+        118
+      ],
+      [
+        8,
+        49,
+        79,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/north",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        79,
+        79,
+        108,
+        153
+      ],
+      [
+        79,
+        53,
+        108,
+        153
+      ],
+      [
+        79,
+        57,
+        108,
+        153
+      ],
+      [
+        79,
+        53,
+        108,
+        153
+      ],
+      [
+        79,
+        78,
+        108,
+        153
+      ],
+      [
+        79,
+        58,
+        108,
+        153
+      ],
+      [
+        79,
+        58,
+        108,
+        153
+      ],
+      [
+        79,
+        57,
+        108,
+        153
+      ],
+      [
+        79,
+        54,
+        108,
+        153
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/east",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        31,
+        105,
+        153,
+        133
+      ],
+      [
+        31,
+        105,
+        153,
+        133
+      ],
+      [
+        30,
+        103,
+        171,
+        134
+      ],
+      [
+        31,
+        105,
+        170,
+        134
+      ],
+      [
+        31,
+        105,
+        153,
+        133
+      ],
+      [
+        31,
+        105,
+        153,
+        133
+      ],
+      [
+        31,
+        105,
+        153,
+        133
+      ],
+      [
+        30,
+        103,
+        171,
+        134
+      ],
+      [
+        31,
+        105,
+        169,
+        134
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/west",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        32,
+        103,
+        162,
+        134
+      ],
+      [
+        34,
+        103,
+        163,
+        134
+      ],
+      [
+        19,
+        103,
+        165,
+        135
+      ],
+      [
+        27,
+        103,
+        166,
+        135
+      ],
+      [
+        26,
+        103,
+        163,
+        135
+      ],
+      [
+        32,
+        103,
+        162,
+        134
+      ],
+      [
+        18,
+        103,
+        164,
+        135
+      ],
+      [
+        27,
+        103,
+        166,
+        135
+      ],
+      [
+        26,
+        103,
+        163,
+        135
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crawl/north",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        79,
+        79,
+        108,
+        153
+      ],
+      [
+        78,
+        67,
+        108,
+        157
+      ],
+      [
+        78,
+        84,
+        109,
+        159
+      ],
+      [
+        78,
+        71,
+        110,
+        157
+      ],
+      [
+        78,
+        87,
+        110,
+        144
+      ],
+      [
+        76,
+        77,
+        110,
+        153
+      ],
+      [
+        79,
+        86,
+        111,
+        155
+      ],
+      [
+        79,
+        78,
+        110,
+        159
+      ],
+      [
+        79,
+        66,
+        108,
+        153
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crawl/east",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        31,
+        105,
+        153,
+        133
+      ],
+      [
+        30,
+        105,
+        149,
+        133
+      ],
+      [
+        41,
+        104,
+        170,
+        136
+      ],
+      [
+        48,
+        105,
+        167,
+        136
+      ],
+      [
+        40,
+        105,
+        141,
+        136
+      ],
+      [
+        36,
+        103,
+        159,
+        136
+      ],
+      [
+        44,
+        101,
+        160,
+        136
+      ],
+      [
+        46,
+        102,
+        153,
+        136
+      ],
+      [
+        36,
+        105,
+        156,
+        135
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crawl/west",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        32,
+        103,
+        162,
+        134
+      ],
+      [
+        35,
+        101,
+        161,
+        139
+      ],
+      [
+        40,
+        100,
+        149,
+        140
+      ],
+      [
+        45,
+        100,
+        143,
+        139
+      ],
+      [
+        37,
+        100,
+        151,
+        139
+      ],
+      [
+        18,
+        102,
+        156,
+        139
+      ],
+      [
+        7,
+        104,
+        151,
+        139
+      ],
+      [
+        8,
+        103,
+        136,
+        139
+      ],
+      [
+        32,
+        100,
+        142,
+        138
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/draw_forward/south-west",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        78,
+        121
+      ],
+      [
+        31,
+        36,
+        78,
+        121
+      ],
+      [
+        31,
+        36,
+        78,
+        121
+      ],
+      [
+        10,
+        35,
+        78,
+        121
+      ],
+      [
+        10,
+        35,
+        78,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/fire/south-west",
+    "frames": 4,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        10,
+        35,
+        78,
+        121
+      ],
+      [
+        10,
+        35,
+        78,
+        121
+      ],
+      [
+        10,
+        35,
+        78,
+        121
+      ],
+      [
+        10,
+        35,
+        78,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/reload/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        42,
+        36,
+        83,
+        120
+      ],
+      [
+        42,
+        36,
+        82,
+        120
+      ],
+      [
+        42,
+        36,
+        85,
+        120
+      ],
+      [
+        42,
+        36,
+        85,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_fire/south",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        76,
+        79,
+        106,
+        155
+      ],
+      [
+        76,
+        79,
+        106,
+        155
+      ],
+      [
+        61,
+        79,
+        122,
+        160
+      ],
+      [
+        61,
+        79,
+        122,
+        160
+      ],
+      [
+        61,
+        79,
+        122,
+        160
+      ],
+      [
+        61,
+        79,
+        122,
+        160
+      ],
+      [
+        61,
+        79,
+        122,
+        160
+      ],
+      [
+        61,
+        79,
+        122,
+        160
+      ],
+      [
+        71,
+        79,
+        108,
+        156
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crawl/south",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        76,
+        79,
+        106,
+        155
+      ],
+      [
+        74,
+        77,
+        107,
+        155
+      ],
+      [
+        72,
+        75,
+        109,
+        155
+      ],
+      [
+        75,
+        77,
+        110,
+        155
+      ],
+      [
+        75,
+        80,
+        110,
+        155
+      ],
+      [
+        77,
+        81,
+        111,
+        154
+      ],
+      [
+        79,
+        77,
+        115,
+        154
+      ],
+      [
+        77,
+        75,
+        111,
+        155
+      ],
+      [
+        75,
+        78,
+        111,
+        155
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/prone_fire/south",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        79,
+        76,
+        107,
+        153
+      ],
+      [
+        79,
+        76,
+        107,
+        160
+      ],
+      [
+        68,
+        76,
+        117,
+        160
+      ],
+      [
+        79,
+        76,
+        107,
+        160
+      ],
+      [
+        68,
+        76,
+        117,
+        160
+      ],
+      [
+        68,
+        76,
+        117,
+        160
+      ],
+      [
+        79,
+        76,
+        107,
+        160
+      ],
+      [
+        72,
+        76,
+        112,
+        150
+      ],
+      [
+        72,
+        76,
+        112,
+        150
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/crawl/south",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        79,
+        76,
+        107,
+        153
+      ],
+      [
+        79,
+        74,
+        107,
+        150
+      ],
+      [
+        76,
+        72,
+        107,
+        143
+      ],
+      [
+        75,
+        72,
+        107,
+        137
+      ],
+      [
+        74,
+        76,
+        109,
+        135
+      ],
+      [
+        73,
+        80,
+        110,
+        139
+      ],
+      [
+        74,
+        76,
+        112,
+        144
+      ],
+      [
+        76,
+        72,
+        111,
+        146
+      ],
+      [
+        80,
+        72,
+        111,
+        146
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/reload/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        47,
+        36,
+        85,
+        120
+      ],
+      [
+        47,
+        37,
+        86,
+        120
+      ],
+      [
+        47,
+        37,
+        86,
+        120
+      ],
+      [
+        47,
+        37,
+        86,
+        120
+      ],
+      [
+        47,
+        37,
+        86,
+        120
+      ],
+      [
+        46,
+        37,
+        86,
+        120
+      ],
+      [
+        47,
+        37,
+        86,
+        120
+      ],
+      [
+        47,
+        37,
+        85,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/reload/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        54,
+        36,
+        93,
+        120
+      ],
+      [
+        54,
+        36,
+        96,
+        120
+      ],
+      [
+        54,
+        36,
+        97,
+        120
+      ],
+      [
+        55,
+        36,
+        97,
+        120
+      ],
+      [
+        55,
+        36,
+        96,
+        120
+      ],
+      [
+        54,
+        25,
+        95,
+        120
+      ],
+      [
+        55,
+        36,
+        97,
+        120
+      ],
+      [
+        54,
+        36,
+        95,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/reload/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        36,
+        36,
+        73,
+        120
+      ],
+      [
+        34,
+        36,
+        73,
+        120
+      ],
+      [
+        34,
+        36,
+        73,
+        120
+      ],
+      [
+        34,
+        36,
+        73,
+        120
+      ],
+      [
+        34,
+        36,
+        73,
+        120
+      ],
+      [
+        34,
+        36,
+        73,
+        120
+      ],
+      [
+        34,
+        36,
+        73,
+        120
+      ],
+      [
+        35,
+        36,
+        73,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/reload/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        51,
+        35,
+        78,
+        120
+      ],
+      [
+        48,
+        35,
+        78,
+        120
+      ],
+      [
+        43,
+        35,
+        84,
+        120
+      ],
+      [
+        40,
+        35,
+        87,
+        120
+      ],
+      [
+        40,
+        35,
+        80,
+        120
+      ],
+      [
+        40,
+        35,
+        78,
+        120
+      ],
+      [
+        40,
+        35,
+        78,
+        120
+      ],
+      [
+        40,
+        35,
+        78,
+        120
+      ],
+      [
+        43,
+        35,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/reload/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        84,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        48,
+        38,
+        81,
+        120
+      ],
+      [
+        48,
+        37,
+        81,
+        120
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/reload/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        35,
+        98,
+        121
+      ],
+      [
+        50,
+        35,
+        100,
+        121
+      ],
+      [
+        51,
+        35,
+        98,
+        121
+      ],
+      [
+        51,
+        35,
+        98,
+        121
+      ],
+      [
+        51,
+        35,
+        97,
+        121
+      ],
+      [
+        51,
+        35,
+        97,
+        121
+      ],
+      [
+        51,
+        35,
+        94,
+        121
+      ],
+      [
+        51,
+        35,
+        93,
+        121
+      ],
+      [
+        51,
+        35,
+        98,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/reload/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        30,
+        35,
+        78,
+        121
+      ],
+      [
+        25,
+        35,
+        78,
+        121
+      ],
+      [
+        24,
+        35,
+        78,
+        121
+      ],
+      [
+        24,
+        35,
+        78,
+        121
+      ],
+      [
+        26,
+        35,
+        78,
+        121
+      ],
+      [
+        26,
+        35,
+        78,
+        121
+      ],
+      [
+        27,
+        35,
+        78,
+        121
+      ],
+      [
+        27,
+        35,
+        78,
+        121
+      ],
+      [
+        25,
+        35,
+        78,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        40,
+        38,
+        81,
+        121
+      ],
+      [
+        40,
+        34,
+        81,
+        121
+      ],
+      [
+        40,
+        33,
+        80,
+        112
+      ],
+      [
+        39,
+        37,
+        80,
+        116
+      ],
+      [
+        37,
+        38,
+        79,
+        120
+      ],
+      [
+        35,
+        34,
+        78,
+        118
+      ],
+      [
+        35,
+        34,
+        78,
+        111
+      ],
+      [
+        36,
+        38,
+        78,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        48,
+        36,
+        84,
+        116
+      ],
+      [
+        45,
+        33,
+        81,
+        108
+      ],
+      [
+        44,
+        34,
+        80,
+        116
+      ],
+      [
+        44,
+        37,
+        82,
+        120
+      ],
+      [
+        46,
+        33,
+        86,
+        108
+      ],
+      [
+        47,
+        34,
+        88,
+        116
+      ],
+      [
+        47,
+        38,
+        87,
+        120
+      ],
+      [
+        45,
+        33,
+        81,
+        108
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        35,
+        36,
+        93,
+        120
+      ],
+      [
+        25,
+        38,
+        98,
+        115
+      ],
+      [
+        25,
+        38,
+        98,
+        115
+      ],
+      [
+        36,
+        37,
+        99,
+        119
+      ],
+      [
+        24,
+        38,
+        100,
+        117
+      ],
+      [
+        24,
+        38,
+        100,
+        117
+      ],
+      [
+        42,
+        37,
+        97,
+        120
+      ],
+      [
+        26,
+        38,
+        98,
+        115
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        30,
+        32,
+        91,
+        119
+      ],
+      [
+        28,
+        33,
+        101,
+        110
+      ],
+      [
+        23,
+        36,
+        98,
+        119
+      ],
+      [
+        27,
+        36,
+        81,
+        119
+      ],
+      [
+        26,
+        32,
+        89,
+        119
+      ],
+      [
+        26,
+        33,
+        100,
+        111
+      ],
+      [
+        27,
+        36,
+        97,
+        119
+      ],
+      [
+        38,
+        36,
+        73,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        51,
+        35,
+        78,
+        120
+      ],
+      [
+        52,
+        35,
+        77,
+        118
+      ],
+      [
+        52,
+        33,
+        78,
+        120
+      ],
+      [
+        52,
+        35,
+        78,
+        113
+      ],
+      [
+        52,
+        35,
+        77,
+        118
+      ],
+      [
+        51,
+        33,
+        77,
+        120
+      ],
+      [
+        52,
+        35,
+        77,
+        113
+      ],
+      [
+        52,
+        35,
+        77,
+        118
+      ],
+      [
+        52,
+        33,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        51,
+        35,
+        79,
+        116
+      ],
+      [
+        53,
+        36,
+        75,
+        120
+      ],
+      [
+        53,
+        38,
+        76,
+        120
+      ],
+      [
+        53,
+        35,
+        75,
+        112
+      ],
+      [
+        52,
+        36,
+        74,
+        120
+      ],
+      [
+        51,
+        38,
+        73,
+        120
+      ],
+      [
+        51,
+        35,
+        74,
+        114
+      ],
+      [
+        48,
+        36,
+        81,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        35,
+        98,
+        121
+      ],
+      [
+        40,
+        33,
+        99,
+        122
+      ],
+      [
+        28,
+        32,
+        99,
+        114
+      ],
+      [
+        26,
+        33,
+        99,
+        118
+      ],
+      [
+        36,
+        35,
+        98,
+        119
+      ],
+      [
+        32,
+        33,
+        98,
+        119
+      ],
+      [
+        32,
+        33,
+        98,
+        119
+      ],
+      [
+        31,
+        35,
+        99,
+        121
+      ],
+      [
+        31,
+        35,
+        99,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        30,
+        35,
+        78,
+        121
+      ],
+      [
+        28,
+        34,
+        89,
+        122
+      ],
+      [
+        26,
+        33,
+        100,
+        114
+      ],
+      [
+        27,
+        35,
+        102,
+        115
+      ],
+      [
+        28,
+        37,
+        95,
+        119
+      ],
+      [
+        27,
+        36,
+        82,
+        119
+      ],
+      [
+        28,
+        34,
+        88,
+        119
+      ],
+      [
+        27,
+        33,
+        97,
+        112
+      ],
+      [
+        27,
+        35,
+        98,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/roll/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        41,
+        44,
+        79,
+        111
+      ],
+      [
+        40,
+        48,
+        79,
+        76
+      ],
+      [
+        39,
+        30,
+        80,
+        79
+      ],
+      [
+        44,
+        32,
+        79,
+        79
+      ],
+      [
+        47,
+        40,
+        83,
+        76
+      ],
+      [
+        47,
+        33,
+        84,
+        74
+      ],
+      [
+        47,
+        23,
+        86,
+        84
+      ],
+      [
+        47,
+        15,
+        88,
+        91
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/roll/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        47,
+        35,
+        90,
+        118
+      ],
+      [
+        46,
+        41,
+        89,
+        104
+      ],
+      [
+        43,
+        37,
+        88,
+        75
+      ],
+      [
+        42,
+        29,
+        85,
+        72
+      ],
+      [
+        44,
+        25,
+        74,
+        71
+      ],
+      [
+        38,
+        33,
+        74,
+        70
+      ],
+      [
+        39,
+        18,
+        78,
+        70
+      ],
+      [
+        39,
+        7,
+        80,
+        69
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/roll/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        47,
+        43,
+        91,
+        120
+      ],
+      [
+        31,
+        42,
+        91,
+        115
+      ],
+      [
+        24,
+        46,
+        99,
+        98
+      ],
+      [
+        28,
+        47,
+        67,
+        96
+      ],
+      [
+        31,
+        54,
+        80,
+        100
+      ],
+      [
+        36,
+        58,
+        90,
+        120
+      ],
+      [
+        47,
+        46,
+        91,
+        120
+      ],
+      [
+        54,
+        36,
+        88,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/roll/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        44,
+        42,
+        84,
+        115
+      ],
+      [
+        36,
+        32,
+        97,
+        103
+      ],
+      [
+        35,
+        26,
+        99,
+        77
+      ],
+      [
+        34,
+        25,
+        95,
+        72
+      ],
+      [
+        33,
+        26,
+        92,
+        72
+      ],
+      [
+        33,
+        32,
+        91,
+        73
+      ],
+      [
+        30,
+        41,
+        90,
+        94
+      ],
+      [
+        29,
+        35,
+        74,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/grenade/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        40,
+        36,
+        78,
+        120
+      ],
+      [
+        43,
+        36,
+        82,
+        120
+      ],
+      [
+        49,
+        36,
+        90,
+        120
+      ],
+      [
+        50,
+        36,
+        88,
+        120
+      ],
+      [
+        50,
+        37,
+        88,
+        120
+      ],
+      [
+        38,
+        17,
+        88,
+        120
+      ],
+      [
+        37,
+        7,
+        78,
+        120
+      ],
+      [
+        38,
+        13,
+        78,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/grenade/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        48,
+        37,
+        83,
+        120
+      ],
+      [
+        48,
+        38,
+        86,
+        120
+      ],
+      [
+        48,
+        38,
+        83,
+        120
+      ],
+      [
+        48,
+        38,
+        83,
+        120
+      ],
+      [
+        48,
+        40,
+        90,
+        120
+      ],
+      [
+        43,
+        37,
+        88,
+        120
+      ],
+      [
+        35,
+        15,
+        79,
+        120
+      ],
+      [
+        26,
+        8,
+        79,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/grenade/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        55,
+        36,
+        90,
+        120
+      ],
+      [
+        55,
+        36,
+        91,
+        120
+      ],
+      [
+        55,
+        36,
+        91,
+        120
+      ],
+      [
+        55,
+        36,
+        91,
+        120
+      ],
+      [
+        55,
+        38,
+        91,
+        120
+      ],
+      [
+        48,
+        32,
+        94,
+        120
+      ],
+      [
+        36,
+        7,
+        93,
+        120
+      ],
+      [
+        28,
+        7,
+        88,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/grenade/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        41,
+        36,
+        73,
+        120
+      ],
+      [
+        43,
+        36,
+        73,
+        120
+      ],
+      [
+        43,
+        36,
+        73,
+        120
+      ],
+      [
+        42,
+        36,
+        73,
+        120
+      ],
+      [
+        36,
+        36,
+        75,
+        120
+      ],
+      [
+        33,
+        33,
+        99,
+        120
+      ],
+      [
+        32,
+        9,
+        118,
+        120
+      ],
+      [
+        36,
+        36,
+        73,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/jump/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        42,
+        31,
+        81,
+        118
+      ],
+      [
+        40,
+        23,
+        82,
+        100
+      ],
+      [
+        40,
+        20,
+        82,
+        87
+      ],
+      [
+        40,
+        17,
+        82,
+        79
+      ],
+      [
+        40,
+        16,
+        82,
+        77
+      ],
+      [
+        40,
+        17,
+        82,
+        80
+      ],
+      [
+        40,
+        19,
+        82,
+        89
+      ],
+      [
+        40,
+        23,
+        82,
+        100
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/jump/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        47,
+        31,
+        84,
+        112
+      ],
+      [
+        46,
+        30,
+        85,
+        102
+      ],
+      [
+        46,
+        30,
+        85,
+        96
+      ],
+      [
+        46,
+        30,
+        86,
+        94
+      ],
+      [
+        46,
+        31,
+        85,
+        96
+      ],
+      [
+        46,
+        32,
+        85,
+        103
+      ],
+      [
+        47,
+        37,
+        83,
+        120
+      ],
+      [
+        47,
+        36,
+        83,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        46,
+        79,
+        114
+      ],
+      [
+        42,
+        47,
+        79,
+        116
+      ],
+      [
+        42,
+        46,
+        79,
+        118
+      ],
+      [
+        42,
+        44,
+        79,
+        119
+      ],
+      [
+        41,
+        45,
+        77,
+        121
+      ],
+      [
+        40,
+        19,
+        77,
+        118
+      ],
+      [
+        40,
+        19,
+        77,
+        118
+      ],
+      [
+        38,
+        46,
+        77,
+        114
+      ],
+      [
+        38,
+        44,
+        77,
+        116
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "yuri/cover/east",
+    "frames": 1,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        41,
+        53,
+        86,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "yuri/drop/north",
+    "frames": 5,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        40,
+        53,
+        87,
+        120
+      ],
+      [
+        42,
+        9,
+        87,
+        122
+      ],
+      [
+        44,
+        27,
+        85,
+        122
+      ],
+      [
+        45,
+        45,
+        85,
+        122
+      ],
+      [
+        44,
+        49,
+        85,
+        122
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        33,
+        52,
+        99,
+        120
+      ],
+      [
+        29,
+        53,
+        99,
+        120
+      ],
+      [
+        28,
+        53,
+        99,
+        120
+      ],
+      [
+        36,
+        52,
+        99,
+        120
+      ],
+      [
+        40,
+        51,
+        99,
+        120
+      ],
+      [
+        36,
+        52,
+        99,
+        120
+      ],
+      [
+        33,
+        53,
+        99,
+        120
+      ],
+      [
+        30,
+        53,
+        99,
+        120
+      ],
+      [
+        34,
+        52,
+        99,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/crouch_walk/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        21,
+        51,
+        89,
+        113
+      ],
+      [
+        21,
+        51,
+        97,
+        113
+      ],
+      [
+        21,
+        51,
+        104,
+        113
+      ],
+      [
+        21,
+        50,
+        96,
+        113
+      ],
+      [
+        21,
+        50,
+        96,
+        113
+      ],
+      [
+        16,
+        50,
+        94,
+        113
+      ],
+      [
+        13,
+        51,
+        101,
+        113
+      ],
+      [
+        21,
+        51,
+        109,
+        113
+      ],
+      [
+        21,
+        51,
+        105,
+        113
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        10,
+        78,
+        120
+      ],
+      [
+        50,
+        10,
+        76,
+        120
+      ],
+      [
+        50,
+        14,
+        75,
+        122
+      ],
+      [
+        51,
+        25,
+        75,
+        123
+      ],
+      [
+        52,
+        10,
+        76,
+        118
+      ],
+      [
+        53,
+        14,
+        77,
+        117
+      ],
+      [
+        52,
+        12,
+        76,
+        120
+      ],
+      [
+        51,
+        25,
+        76,
+        119
+      ],
+      [
+        50,
+        10,
+        76,
+        114
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        37,
+        96,
+        122
+      ],
+      [
+        48,
+        38,
+        83,
+        118
+      ],
+      [
+        48,
+        38,
+        83,
+        118
+      ],
+      [
+        48,
+        38,
+        99,
+        117
+      ],
+      [
+        48,
+        36,
+        105,
+        114
+      ],
+      [
+        48,
+        36,
+        105,
+        114
+      ],
+      [
+        49,
+        40,
+        101,
+        122
+      ],
+      [
+        48,
+        38,
+        105,
+        122
+      ],
+      [
+        48,
+        38,
+        105,
+        122
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        40,
+        35,
+        111,
+        120
+      ],
+      [
+        33,
+        38,
+        93,
+        119
+      ],
+      [
+        36,
+        36,
+        93,
+        119
+      ],
+      [
+        25,
+        35,
+        93,
+        115
+      ],
+      [
+        18,
+        37,
+        93,
+        118
+      ],
+      [
+        27,
+        38,
+        93,
+        120
+      ],
+      [
+        27,
+        38,
+        93,
+        120
+      ],
+      [
+        37,
+        36,
+        93,
+        120
+      ],
+      [
+        37,
+        36,
+        93,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        3,
+        36,
+        75,
+        120
+      ],
+      [
+        3,
+        36,
+        97,
+        118
+      ],
+      [
+        4,
+        32,
+        98,
+        114
+      ],
+      [
+        3,
+        36,
+        97,
+        118
+      ],
+      [
+        3,
+        36,
+        97,
+        118
+      ],
+      [
+        4,
+        32,
+        82,
+        118
+      ],
+      [
+        29,
+        35,
+        95,
+        116
+      ],
+      [
+        29,
+        35,
+        95,
+        116
+      ],
+      [
+        3,
+        32,
+        85,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        48,
+        8,
+        78,
+        120
+      ],
+      [
+        51,
+        21,
+        83,
+        120
+      ],
+      [
+        53,
+        21,
+        80,
+        120
+      ],
+      [
+        48,
+        8,
+        76,
+        120
+      ],
+      [
+        53,
+        20,
+        76,
+        120
+      ],
+      [
+        48,
+        8,
+        76,
+        120
+      ],
+      [
+        52,
+        21,
+        76,
+        119
+      ],
+      [
+        48,
+        21,
+        76,
+        120
+      ],
+      [
+        48,
+        8,
+        76,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        44,
+        9,
+        83,
+        120
+      ],
+      [
+        52,
+        37,
+        78,
+        120
+      ],
+      [
+        44,
+        18,
+        83,
+        120
+      ],
+      [
+        44,
+        18,
+        83,
+        120
+      ],
+      [
+        42,
+        35,
+        86,
+        124
+      ],
+      [
+        53,
+        37,
+        75,
+        120
+      ],
+      [
+        53,
+        39,
+        74,
+        120
+      ],
+      [
+        53,
+        37,
+        75,
+        120
+      ],
+      [
+        44,
+        18,
+        84,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        33,
+        35,
+        92,
+        121
+      ],
+      [
+        33,
+        35,
+        92,
+        121
+      ],
+      [
+        30,
+        29,
+        108,
+        119
+      ],
+      [
+        19,
+        32,
+        90,
+        112
+      ],
+      [
+        19,
+        29,
+        114,
+        121
+      ],
+      [
+        19,
+        29,
+        114,
+        121
+      ],
+      [
+        32,
+        36,
+        92,
+        121
+      ],
+      [
+        33,
+        30,
+        109,
+        121
+      ],
+      [
+        33,
+        30,
+        109,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        3,
+        30,
+        85,
+        121
+      ],
+      [
+        3,
+        25,
+        87,
+        121
+      ],
+      [
+        22,
+        33,
+        93,
+        120
+      ],
+      [
+        21,
+        35,
+        101,
+        115
+      ],
+      [
+        20,
+        37,
+        94,
+        119
+      ],
+      [
+        13,
+        36,
+        81,
+        119
+      ],
+      [
+        2,
+        29,
+        88,
+        119
+      ],
+      [
+        3,
+        25,
+        96,
+        121
+      ],
+      [
+        24,
+        35,
+        83,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/north-east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        50,
+        34,
+        94,
+        120
+      ],
+      [
+        50,
+        34,
+        94,
+        120
+      ],
+      [
+        40,
+        12,
+        113,
+        120
+      ],
+      [
+        32,
+        34,
+        94,
+        116
+      ],
+      [
+        34,
+        35,
+        94,
+        119
+      ],
+      [
+        45,
+        34,
+        94,
+        119
+      ],
+      [
+        45,
+        34,
+        94,
+        119
+      ],
+      [
+        32,
+        12,
+        113,
+        117
+      ],
+      [
+        33,
+        35,
+        93,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/north-west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        9,
+        36,
+        80,
+        120
+      ],
+      [
+        13,
+        35,
+        103,
+        117
+      ],
+      [
+        31,
+        37,
+        109,
+        120
+      ],
+      [
+        31,
+        37,
+        109,
+        120
+      ],
+      [
+        31,
+        36,
+        103,
+        114
+      ],
+      [
+        31,
+        36,
+        103,
+        114
+      ],
+      [
+        4,
+        35,
+        100,
+        119
+      ],
+      [
+        21,
+        37,
+        86,
+        119
+      ],
+      [
+        31,
+        36,
+        80,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/south-east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        39,
+        38,
+        123,
+        120
+      ],
+      [
+        16,
+        41,
+        93,
+        119
+      ],
+      [
+        23,
+        39,
+        90,
+        119
+      ],
+      [
+        27,
+        37,
+        87,
+        119
+      ],
+      [
+        17,
+        38,
+        114,
+        120
+      ],
+      [
+        24,
+        41,
+        92,
+        120
+      ],
+      [
+        24,
+        41,
+        92,
+        120
+      ],
+      [
+        41,
+        37,
+        102,
+        120
+      ],
+      [
+        41,
+        37,
+        102,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/run_fire/south-west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        34,
+        36,
+        78,
+        120
+      ],
+      [
+        30,
+        36,
+        78,
+        119
+      ],
+      [
+        30,
+        36,
+        78,
+        119
+      ],
+      [
+        19,
+        37,
+        91,
+        119
+      ],
+      [
+        19,
+        37,
+        91,
+        119
+      ],
+      [
+        19,
+        36,
+        74,
+        119
+      ],
+      [
+        20,
+        38,
+        94,
+        120
+      ],
+      [
+        20,
+        38,
+        94,
+        120
+      ],
+      [
+        30,
+        36,
+        85,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north-east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        31,
+        120,
+        120
+      ],
+      [
+        40,
+        22,
+        124,
+        120
+      ],
+      [
+        39,
+        32,
+        95,
+        120
+      ],
+      [
+        35,
+        33,
+        96,
+        120
+      ],
+      [
+        26,
+        35,
+        97,
+        116
+      ],
+      [
+        27,
+        36,
+        98,
+        119
+      ],
+      [
+        38,
+        35,
+        96,
+        119
+      ],
+      [
+        40,
+        34,
+        95,
+        119
+      ],
+      [
+        40,
+        34,
+        95,
+        119
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/north-west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        14,
+        13,
+        82,
+        120
+      ],
+      [
+        16,
+        15,
+        95,
+        119
+      ],
+      [
+        38,
+        27,
+        98,
+        120
+      ],
+      [
+        39,
+        26,
+        85,
+        120
+      ],
+      [
+        39,
+        25,
+        87,
+        120
+      ],
+      [
+        38,
+        27,
+        98,
+        120
+      ],
+      [
+        38,
+        27,
+        93,
+        119
+      ],
+      [
+        14,
+        13,
+        82,
+        120
+      ],
+      [
+        14,
+        13,
+        82,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/south-east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        44,
+        35,
+        122,
+        121
+      ],
+      [
+        37,
+        30,
+        121,
+        121
+      ],
+      [
+        30,
+        38,
+        93,
+        119
+      ],
+      [
+        32,
+        30,
+        118,
+        118
+      ],
+      [
+        32,
+        30,
+        118,
+        118
+      ],
+      [
+        31,
+        38,
+        94,
+        121
+      ],
+      [
+        38,
+        38,
+        94,
+        121
+      ],
+      [
+        38,
+        38,
+        94,
+        121
+      ],
+      [
+        33,
+        36,
+        92,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/eagle/run_fire/south-west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        10,
+        35,
+        78,
+        121
+      ],
+      [
+        10,
+        33,
+        77,
+        116
+      ],
+      [
+        33,
+        35,
+        85,
+        120
+      ],
+      [
+        16,
+        36,
+        78,
+        121
+      ],
+      [
+        19,
+        33,
+        86,
+        112
+      ],
+      [
+        10,
+        36,
+        84,
+        117
+      ],
+      [
+        10,
+        36,
+        84,
+        117
+      ],
+      [
+        33,
+        33,
+        83,
+        112
+      ],
+      [
+        33,
+        35,
+        85,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/death/north",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        42,
+        36,
+        81,
+        120
+      ],
+      [
+        31,
+        11,
+        97,
+        112
+      ],
+      [
+        33,
+        33,
+        96,
+        102
+      ],
+      [
+        33,
+        64,
+        91,
+        94
+      ],
+      [
+        33,
+        65,
+        94,
+        99
+      ],
+      [
+        33,
+        67,
+        94,
+        114
+      ],
+      [
+        33,
+        67,
+        94,
+        120
+      ],
+      [
+        33,
+        67,
+        94,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/death/south",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        47,
+        36,
+        83,
+        120
+      ],
+      [
+        16,
+        11,
+        106,
+        101
+      ],
+      [
+        13,
+        9,
+        110,
+        95
+      ],
+      [
+        21,
+        37,
+        104,
+        96
+      ],
+      [
+        17,
+        51,
+        101,
+        96
+      ],
+      [
+        17,
+        56,
+        104,
+        98
+      ],
+      [
+        17,
+        67,
+        108,
+        98
+      ],
+      [
+        17,
+        69,
+        110,
+        102
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/death/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        12,
+        12,
+        117,
+        119
+      ],
+      [
+        8,
+        10,
+        120,
+        111
+      ],
+      [
+        12,
+        16,
+        114,
+        106
+      ],
+      [
+        21,
+        57,
+        112,
+        100
+      ],
+      [
+        16,
+        72,
+        116,
+        104
+      ],
+      [
+        11,
+        81,
+        119,
+        121
+      ],
+      [
+        11,
+        93,
+        119,
+        120
+      ],
+      [
+        11,
+        98,
+        119,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/death/west",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        38,
+        36,
+        73,
+        120
+      ],
+      [
+        20,
+        12,
+        114,
+        115
+      ],
+      [
+        15,
+        15,
+        111,
+        106
+      ],
+      [
+        12,
+        11,
+        114,
+        102
+      ],
+      [
+        12,
+        58,
+        116,
+        102
+      ],
+      [
+        12,
+        64,
+        117,
+        109
+      ],
+      [
+        12,
+        65,
+        116,
+        114
+      ],
+      [
+        12,
+        65,
+        116,
+        114
+      ],
+      [
+        12,
+        65,
+        116,
+        114
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/north",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        73,
+        82,
+        107,
+        150
+      ],
+      [
+        63,
+        83,
+        108,
+        150
+      ],
+      [
+        55,
+        93,
+        125,
+        144
+      ],
+      [
+        55,
+        89,
+        131,
+        129
+      ],
+      [
+        67,
+        80,
+        106,
+        148
+      ],
+      [
+        60,
+        78,
+        125,
+        140
+      ],
+      [
+        52,
+        98,
+        127,
+        132
+      ],
+      [
+        70,
+        86,
+        125,
+        150
+      ],
+      [
+        73,
+        82,
+        107,
+        150
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/south",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        76,
+        79,
+        106,
+        155
+      ],
+      [
+        74,
+        77,
+        108,
+        153
+      ],
+      [
+        64,
+        77,
+        114,
+        142
+      ],
+      [
+        54,
+        81,
+        113,
+        128
+      ],
+      [
+        69,
+        86,
+        113,
+        125
+      ],
+      [
+        69,
+        80,
+        130,
+        128
+      ],
+      [
+        70,
+        77,
+        123,
+        138
+      ],
+      [
+        74,
+        77,
+        112,
+        149
+      ],
+      [
+        78,
+        78,
+        108,
+        155
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/east",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        26,
+        96,
+        154,
+        126
+      ],
+      [
+        30,
+        96,
+        150,
+        127
+      ],
+      [
+        37,
+        94,
+        134,
+        127
+      ],
+      [
+        48,
+        84,
+        105,
+        126
+      ],
+      [
+        42,
+        75,
+        95,
+        126
+      ],
+      [
+        49,
+        77,
+        108,
+        127
+      ],
+      [
+        41,
+        86,
+        126,
+        126
+      ],
+      [
+        32,
+        91,
+        149,
+        126
+      ],
+      [
+        26,
+        96,
+        154,
+        126
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/prone_roll/west",
+    "frames": 9,
+    "root": [
+      96,
+      152
+    ],
+    "bounds": [
+      [
+        33,
+        104,
+        153,
+        133
+      ],
+      [
+        33,
+        104,
+        153,
+        133
+      ],
+      [
+        37,
+        103,
+        151,
+        132
+      ],
+      [
+        42,
+        106,
+        150,
+        132
+      ],
+      [
+        61,
+        93,
+        150,
+        132
+      ],
+      [
+        56,
+        89,
+        149,
+        132
+      ],
+      [
+        45,
+        96,
+        150,
+        134
+      ],
+      [
+        36,
+        106,
+        153,
+        131
+      ],
+      [
+        33,
+        104,
+        153,
+        133
+      ]
+    ],
+    "size": [
+      192,
+      160
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/jump/east",
+    "frames": 9,
+    "root": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        54,
+        36,
+        88,
+        120
+      ],
+      [
+        54,
+        39,
+        90,
+        120
+      ],
+      [
+        49,
+        14,
+        93,
+        114
+      ],
+      [
+        47,
+        10,
+        92,
+        82
+      ],
+      [
+        47,
+        8,
+        92,
+        64
+      ],
+      [
+        49,
+        10,
+        93,
+        74
+      ],
+      [
+        55,
+        23,
+        94,
+        120
+      ],
+      [
+        54,
+        39,
+        90,
+        122
+      ],
+      [
+        54,
+        36,
+        88,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "hotwire/rifle/jump/west",
+    "frames": 9,
+    "root": [
+      63,
+      120
+    ],
+    "bounds": [
+      [
+        40,
+        36,
+        74,
+        120
+      ],
+      [
+        38,
+        39,
+        74,
+        120
+      ],
+      [
+        35,
+        14,
+        79,
+        114
+      ],
+      [
+        36,
+        10,
+        81,
+        82
+      ],
+      [
+        36,
+        8,
+        81,
+        64
+      ],
+      [
+        35,
+        10,
+        79,
+        74
+      ],
+      [
+        34,
+        23,
+        73,
+        120
+      ],
+      [
+        38,
+        39,
+        74,
+        122
+      ],
+      [
+        40,
+        36,
+        74,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "env/cover",
+    "frames": 3,
+    "root": [
+      40,
+      76
+    ],
+    "bounds": [
+      [
+        0,
+        21,
+        80,
+        75
+      ],
+      [
+        0,
+        22,
+        80,
+        74
+      ],
+      [
+        0,
+        56,
+        80,
+        75
+      ]
+    ],
+    "size": [
+      80,
+      96
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "env/side",
+    "frames": 3,
+    "root": [
+      48,
+      136
+    ],
+    "bounds": [
+      [
+        14,
+        8,
+        77,
+        136
+      ],
+      [
+        14,
+        8,
+        77,
+        136
+      ],
+      [
+        14,
+        8,
+        77,
+        136
+      ]
+    ],
+    "size": [
+      96,
+      144
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  },
+  {
+    "bank": "env/return",
+    "frames": 3,
+    "root": [
+      48,
+      136
+    ],
+    "bounds": [
+      [
+        14,
+        83,
+        77,
+        136
+      ],
+      [
+        14,
+        83,
+        77,
+        136
+      ],
+      [
+        14,
+        117,
+        82,
+        136
+      ]
+    ],
+    "size": [
+      96,
+      144
+    ],
+    "normalization": "Common physical body unit, fixed canvas/root per bank, binary alpha and shared identity palette; no frame resizing."
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "provider": "PixelLab",
+  "identity_sources": {
+    "gosfar": "Approved silver skull/violet armor PixelLab reference; new giant rigid Gatling master7320cf6b-270d-4e63-9ad2-e1b2bd19f266",
+    "hotwire": "Shipping88px Hotwire unit, orange/black armor and cyan trim; weapon-specific rifle and silver Desert Eagle references",
+    "environment": "Existing Level36 grey fortress wall and hexagon floor supplied as style references"
+  },
+  "rejected": [
+    {
+      "job": "bd153442-9c8b-4932-8b86-8118611c11af",
+      "reason": "Gun changed to white during rev; not registered"
+    },
+    {
+      "job": "0bff86fb-8524-45a7-af4e-12125f737f43",
+      "reason": "Firing recolored the armor orange; replaced"
+    },
+    {
+      "job": "44d25e8f-a495-4c9e-8189-2d13a2f914d5",
+      "reason": "South-facing rifle prone pose faced sideways; replaced and dependent clips regenerated"
+    },
+    {
+      "job": "68d11a0c-d239-4fc7-9c65-fa22fc85430d",
+      "reason": "South-facing pistol prone pose faced sideways; replaced and dependent clips regenerated"
+    },
+    {
+      "job": "d8df29ce-fe03-48a9-b6e9-dd62418f271b",
+      "reason": "Yuri rose while turning before dropping; replaced with already-north-facing lowering clip"
+    },
+    {
+      "reason": "Moving-fire clips that started at low ready were replaced from aimed weapon references to prevent a recurring weapon-lowering pop"
+    },
+    {
+      "reason": "Archived Gosfar44 flattened muzzle paint and oversized Yuri brace are not used by pass45 boss and brace banks"
+    }
+  ],
+  "normalization": "Fixed body units and roots per bank, even cells, hard alpha, shared armor palette. No per-frame resizing or runtime limb/gun deformation. PixelLab whole-body frames also supply non-discharge barrel spin phases.",
+  "queue_registry": "jobs.json contains canonical job IDs, counts and source roots; raw/_job.txt guards replaced source IDs. Only registered frame counts are used.",
+  "available_art_finish": {
+    "authorization": "User: Finish with the available art. No further paid generations.",
+    "held_low_gaits": [
+      "rifle/south",
+      "eagle/north",
+      "eagle/south",
+      "eagle/east",
+      "eagle/west"
+    ],
+    "review": "Reject gross body recolors, white gun replacement, clipped actor pixels and unwanted gait muzzle flashes. Use nearest clean whole authored pose for individual rejects; preserve authored edge sparks. See accepted-holds.json and pixel-motion.json.",
+    "west_jump": "PixelLab exact full-plate mirror 4f6072ab-c3f0-4385-8ab9-cf0d07e21fa9; all nine frames verified equal to source horizontal mirror with zero changed pixels."
+  }
+}

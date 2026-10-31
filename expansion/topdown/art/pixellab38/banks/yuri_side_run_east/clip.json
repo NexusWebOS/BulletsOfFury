@@ -1,0 +1,40 @@
+{
+  "frames": [
+    "pl38_yuri_side_run_east_0",
+    "pl38_yuri_side_run_east_1",
+    "pl38_yuri_side_run_east_2",
+    "pl38_yuri_side_run_east_3",
+    "pl38_yuri_side_run_east_4",
+    "pl38_yuri_side_run_east_5",
+    "pl38_yuri_side_run_east_6",
+    "pl38_yuri_side_run_east_7"
+  ],
+  "fps": 12,
+  "loop": true,
+  "events": {},
+  "origin": [
+    90,
+    144
+  ],
+  "size": [
+    180,
+    176
+  ],
+  "duration": 0.6666666666666666,
+  "provider": "PixelLab",
+  "source_review": "gait reviewed",
+  "export_scale": 1,
+  "source_master": "yuri_side",
+  "source_action": "run",
+  "source_direction": "east",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

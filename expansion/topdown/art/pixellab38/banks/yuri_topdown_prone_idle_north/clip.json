@@ -1,0 +1,32 @@
+{
+  "frames": [
+    "pl38_yuri_topdown_prone_idle_north_0",
+    "pl38_yuri_topdown_prone_idle_north_1",
+    "pl38_yuri_topdown_prone_idle_north_2",
+    "pl38_yuri_topdown_prone_idle_north_3"
+  ],
+  "fps": 12,
+  "loop": true,
+  "events": {},
+  "origin": [
+    120,
+    146
+  ],
+  "size": [
+    240,
+    192
+  ],
+  "duration": 0.3333333333333333,
+  "provider": "PixelLab",
+  "source_review": "cleanup reviewed",
+  "export_scale": 1,
+  "source_master": "yuri_topdown",
+  "source_action": "prone_idle",
+  "source_direction": "north",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

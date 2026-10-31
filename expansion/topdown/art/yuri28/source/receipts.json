@@ -1,0 +1,66 @@
+{
+  "requests": [
+    {
+      "direction": "east",
+      "action": "up_step",
+      "args": {
+        "first_frame_url": "upload:ee7fee77-0c2f-4729-8a5c-47d64993c9c4",
+        "description": "FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen RIGHT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim RIGHT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Keep both hands and rifle steady while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.",
+        "direction": "east",
+        "view": "low top-down",
+        "subject_description": "Yuri, an adult male arcade soldier in a red tactical jacket and black armored trousers, brown undercut hair and beard, shouldering a black rifle",
+        "initial_pose": "Rifle aimed horizontally to screen RIGHT, shoulders and head face RIGHT, knees bent ready to cross-step upward",
+        "frame_count": 16,
+        "no_background": true
+      },
+      "receipt": "id: fe6923e2-b1e3-4eb0-8c91-988ccbb88a28\njob_id: fe6923e2-b1e3-4eb0-8c91-988ccbb88a28\ndescription: FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen RIGHT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim RIGHT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Keep both hands and rifle steady while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fe6923e2-b1e3-4eb0-8c91-988ccbb88a28\")\nasset_id: eca7c4cb-395c-58b0-aff5-8767c534fcc6\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "direction": "east",
+      "action": "up_fire",
+      "args": {
+        "first_frame_url": "upload:ee7fee77-0c2f-4729-8a5c-47d64993c9c4",
+        "description": "FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen RIGHT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim RIGHT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Both hands brace the gun with small repeated shoulder/hand recoil while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.",
+        "direction": "east",
+        "view": "low top-down",
+        "subject_description": "Yuri, an adult male arcade soldier in a red tactical jacket and black armored trousers, brown undercut hair and beard, shouldering a black rifle",
+        "initial_pose": "Rifle aimed horizontally to screen RIGHT, shoulders and head face RIGHT, knees bent ready to cross-step upward",
+        "frame_count": 16,
+        "no_background": true
+      },
+      "receipt": "id: 8ea29565-8ea2-4892-8c3e-4caf686dca6c\njob_id: 8ea29565-8ea2-4892-8c3e-4caf686dca6c\ndescription: FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen RIGHT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim RIGHT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Both hands brace the gun with small repeated shoulder/hand recoil while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8ea29565-8ea2-4892-8c3e-4caf686dca6c\")\nasset_id: 7814f4d3-866b-5ffc-85c5-dac2736a8280\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "direction": "west",
+      "action": "up_step",
+      "args": {
+        "first_frame_url": "upload:de87ce38-f8fd-485c-9730-d7c0bde366d5",
+        "description": "FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen LEFT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim LEFT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Keep both hands and rifle steady while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.",
+        "direction": "west",
+        "view": "low top-down",
+        "subject_description": "Yuri, an adult male arcade soldier in a red tactical jacket and black armored trousers, brown undercut hair and beard, shouldering a black rifle",
+        "initial_pose": "Rifle aimed horizontally to screen LEFT, shoulders and head face LEFT, knees bent ready to cross-step upward",
+        "frame_count": 16,
+        "no_background": true
+      },
+      "receipt": "id: ff1bcba3-ca76-4c08-b530-65215845bccc\njob_id: ff1bcba3-ca76-4c08-b530-65215845bccc\ndescription: FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen LEFT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim LEFT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Keep both hands and rifle steady while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ff1bcba3-ca76-4c08-b530-65215845bccc\")\nasset_id: 6cedaab8-a7fe-5ab3-9ab0-af1e226a66af\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "direction": "west",
+      "action": "up_fire",
+      "args": {
+        "first_frame_url": "upload:de87ce38-f8fd-485c-9730-d7c0bde366d5",
+        "description": "FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen LEFT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim LEFT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Both hands brace the gun with small repeated shoulder/hand recoil while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.",
+        "direction": "west",
+        "view": "low top-down",
+        "subject_description": "Yuri, an adult male arcade soldier in a red tactical jacket and black armored trousers, brown undercut hair and beard, shouldering a black rifle",
+        "initial_pose": "Rifle aimed horizontally to screen LEFT, shoulders and head face LEFT, knees bent ready to cross-step upward",
+        "frame_count": 16,
+        "no_background": true
+      },
+      "receipt": "id: 074b2b13-ede4-4e07-81bd-fad2a2fefb9d\njob_id: 074b2b13-ede4-4e07-81bd-fad2a2fefb9d\ndescription: FRAME FORMAT: same192x224canvas, foot root and body size. Preserve Yuri's red jacket, black armor, hair, beard and rifle.16-frame looping TOP-DOWN tactical cross-step. Head, chest, arms and rifle remain facing screen LEFT. Pelvis and legs point UP SCREEN, walking away from viewer while the torso twists to aim LEFT. He must NOT walk toward his barrel. Feet alternate vertical contacts, loading, knee passing/crossover, toe-off and opposite contacts. Animate in place around a grounded root, slight hip bob. Return smoothly to starting stride. Both hands brace the gun with small repeated shoulder/hand recoil while cross-stepping upward. No flashes, projectiles, sparks, smoke, glow or lighting change. Never face camera, aim upward, resize body, change clothes or add limbs. Full hands, feet and rifle inside margins.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"074b2b13-ede4-4e07-81bd-fad2a2fefb9d\")\nasset_id: fd99bec9-3241-5e31-bc05-76a943be86d6\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "publicOnlyReferences": true,
+  "notes": "Source PNGs fetched from public GitHub and byte-matched to local originals before cropping. No unpublished game artwork uploaded."
+}

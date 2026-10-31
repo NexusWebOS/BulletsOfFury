@@ -1,0 +1,40 @@
+{
+  "frames": [
+    "pl38_yuri_topdown_walk_north_0",
+    "pl38_yuri_topdown_walk_north_1",
+    "pl38_yuri_topdown_walk_north_2",
+    "pl38_yuri_topdown_walk_north_3",
+    "pl38_yuri_topdown_walk_north_4",
+    "pl38_yuri_topdown_walk_north_5",
+    "pl38_yuri_topdown_walk_north_6",
+    "pl38_yuri_topdown_walk_north_7"
+  ],
+  "fps": 12,
+  "loop": true,
+  "events": {},
+  "origin": [
+    120,
+    146
+  ],
+  "size": [
+    240,
+    192
+  ],
+  "duration": 0.6666666666666666,
+  "provider": "PixelLab",
+  "source_review": "pending",
+  "export_scale": 1,
+  "source_master": "yuri_topdown",
+  "source_action": "walk",
+  "source_direction": "north",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

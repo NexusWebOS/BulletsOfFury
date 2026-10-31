@@ -1,0 +1,2037 @@
+{
+  "provider": "PixelLab pixelart_workbench",
+  "source": {
+    "rev": "5ca49181-3655-4807-be7f-a834c9e209fd",
+    "fire": "c54117f1-f23f-490f-9114-70825c81cbf8"
+  },
+  "result": {
+    "rev": "c0373749-f69f-4347-b8c3-0dfa02d1dfa7",
+    "fire": "3d328976-1ff6-42af-bc53-e3cf38cd9a04"
+  },
+  "changes": [
+    {
+      "operation": "select_mask",
+      "layer": "image",
+      "frames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "name": "muzzle",
+      "selector": {
+        "kind": "polygon",
+        "points": [
+          [
+            76,
+            88
+          ],
+          [
+            88,
+            88
+          ],
+          [
+            95,
+            96
+          ],
+          [
+            95,
+            108
+          ],
+          [
+            88,
+            115
+          ],
+          [
+            76,
+            115
+          ],
+          [
+            69,
+            108
+          ],
+          [
+            69,
+            96
+          ]
+        ]
+      },
+      "reason": "Only the observed rotary muzzle face; preserve shroud and full authored body."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          102
+        ]
+      ],
+      "color": "#262226ff",
+      "size": 27,
+      "shape": "circle",
+      "reason": "Stable registered rotating face inside unchanged barrel shroud."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          93
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          93
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          98
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          98
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          107
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          107
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          111
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          111
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          107
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          107
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          98
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          98
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          96
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          96
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          104
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          104
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          111
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          111
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          108
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          108
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          100
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          100
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          93
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        2
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          93
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          102
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          102
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          110
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          110
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          110
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          110
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          102
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          102
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          94
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          94
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          94
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        3
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          94
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          108
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          108
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          111
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          111
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          104
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          104
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          96
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          96
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          93
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          93
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          100
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        4
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          100
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          111
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          111
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          107
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          107
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          98
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          98
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          93
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          93
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          98
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          98
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          107
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        5
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          107
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          108
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          108
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          100
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          100
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          93
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          93
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          96
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          96
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          104
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          104
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          111
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        6
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          111
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          102
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          102
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          94
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          94
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          94
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          94
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          102
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          102
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          110
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          87,
+          110
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          110
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        7
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          78,
+          110
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          96
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          76,
+          96
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          93
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          84,
+          93
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          100
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          91,
+          100
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          108
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          88,
+          108
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          111
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          80,
+          111
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          104
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        8
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          73,
+          104
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          93
+        ]
+      ],
+      "color": "#a89c9bff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          93
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          98
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          98
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          107
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          90,
+          107
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          111
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          82,
+          111
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          107
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          107
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          98
+        ]
+      ],
+      "color": "#675e63ff",
+      "size": 7,
+      "shape": "circle",
+      "reason": "Six registered barrel rims, one complete mechanical revolution."
+    },
+    {
+      "operation": "brush",
+      "layer": "image",
+      "frames": [
+        9
+      ],
+      "mask": "muzzle",
+      "points": [
+        [
+          74,
+          98
+        ]
+      ],
+      "color": "#050505ff",
+      "size": 5,
+      "shape": "circle",
+      "reason": "Rigid bore radius; no barrel extension."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "frames": [
+    "pl38_minigunner_pseudo3d_fire_south_0",
+    "pl38_minigunner_pseudo3d_fire_south_1",
+    "pl38_minigunner_pseudo3d_fire_south_2",
+    "pl38_minigunner_pseudo3d_fire_south_3",
+    "pl38_minigunner_pseudo3d_fire_south_4",
+    "pl38_minigunner_pseudo3d_fire_south_5",
+    "pl38_minigunner_pseudo3d_fire_south_6",
+    "pl38_minigunner_pseudo3d_fire_south_7",
+    "pl38_minigunner_pseudo3d_fire_south_8",
+    "pl38_minigunner_pseudo3d_fire_south_9",
+    "pl38_minigunner_pseudo3d_fire_south_10",
+    "pl38_minigunner_pseudo3d_fire_south_11"
+  ],
+  "fps": 24,
+  "loop": true,
+  "events": {
+    "muzzle_frames": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10
+    ]
+  },
+  "origin": [
+    105,
+    162
+  ],
+  "size": [
+    210,
+    214
+  ],
+  "duration": 0.5,
+  "provider": "PixelLab",
+  "source_review": "mechanics reviewed",
+  "export_scale": 1.25,
+  "source_master": "minigunner_pseudo3d",
+  "source_action": "fire",
+  "source_direction": "south",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ]
+}

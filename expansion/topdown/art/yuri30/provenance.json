@@ -1,0 +1,12 @@
+{
+  "build": "overdrive1015-yuri30-r1",
+  "service": "PixelLab transfer_outfit",
+  "reference": "expansion/topdown/art/yuri28/source/west_setup.png",
+  "originalIdentity": "expansion/topdown/art/yuri_motion_1013/frames/od_ym_west_walk_0.png",
+  "sourceDrawings": 108,
+  "exports": 213,
+  "promptsAndJobs": "source/generation_requests.json",
+  "proneRepair": "source/prone_repair.json",
+  "selection": "All primary jobs except prone source frames11,12 use repair job2c0a8558-11d6-4e70-9406-aa60abda1d05 indices0,1. Fast Pixen test21c24ca0 is rejected/unshipped.",
+  "unchanged": "Original art including Escape29; gameplay, enemies, scenery, timings, muzzle coordinates and frame keys."
+}

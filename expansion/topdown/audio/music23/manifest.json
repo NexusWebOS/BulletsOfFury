@@ -1,0 +1,30 @@
+{
+  "tracks": [
+    {
+      "file": "BOF-BASE.wav",
+      "sha256": "9643e759d53480fd570fe6eb20e77814a5c1c53a51aaeded7eab0d47d661c436",
+      "bytes": 23501374,
+      "seconds": 122.4,
+      "channels": 2,
+      "sampleRate": 48000,
+      "bits": 16,
+      "source": "User-supplied WAV; original bytes preserved"
+    },
+    {
+      "file": "rise_of_the_last_hope_fast_riff_genesis.wav",
+      "sha256": "52c74e790a224027e4d783b99cf0a949d193b96812dcb0ac0b0eb2ca9221206c",
+      "bytes": 7113220,
+      "seconds": 40.324126984126984,
+      "channels": 2,
+      "sampleRate": 44100,
+      "bits": 16,
+      "source": "User-supplied WAV; original bytes preserved"
+    }
+  ],
+  "stageLevels": [
+    3,
+    7
+  ],
+  "bossCue": "Level 3 entrance completion and post-dialogue transformation; level 7 room 8 reactor reveal",
+  "crossfadeSeconds": 1.8
+}

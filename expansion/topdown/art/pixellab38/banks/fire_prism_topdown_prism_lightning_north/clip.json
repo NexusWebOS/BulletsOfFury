@@ -1,0 +1,50 @@
+{
+  "frames": [
+    "pl38_fire_prism_topdown_prism_lightning_north_0",
+    "pl38_fire_prism_topdown_prism_lightning_north_1",
+    "pl38_fire_prism_topdown_prism_lightning_north_2",
+    "pl38_fire_prism_topdown_prism_lightning_north_3",
+    "pl38_fire_prism_topdown_prism_lightning_north_4",
+    "pl38_fire_prism_topdown_prism_lightning_north_5",
+    "pl38_fire_prism_topdown_prism_lightning_north_6",
+    "pl38_fire_prism_topdown_prism_lightning_north_7",
+    "pl38_fire_prism_topdown_prism_lightning_north_8",
+    "pl38_fire_prism_topdown_prism_lightning_north_9",
+    "pl38_fire_prism_topdown_prism_lightning_north_10",
+    "pl38_fire_prism_topdown_prism_lightning_north_11",
+    "pl38_fire_prism_topdown_prism_lightning_north_12"
+  ],
+  "fps": 12,
+  "loop": false,
+  "events": {},
+  "origin": [
+    252,
+    464
+  ],
+  "size": [
+    504,
+    528
+  ],
+  "duration": 1.0833333333333333,
+  "provider": "PixelLab",
+  "source_review": "identity repair reviewed",
+  "export_scale": 2,
+  "source_master": "fire_prism_topdown",
+  "source_action": "prism_lightning",
+  "source_direction": "north",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ]
+}

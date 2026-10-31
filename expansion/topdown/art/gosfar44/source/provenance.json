@@ -1,0 +1,15 @@
+{
+  "master": "Original approved PixelLab Gosfar -> PixelLab Pro edit 8b3477ff -> PixelLab front-facing edit317dab9f",
+  "character": "2c67c97e-1473-476a-8f96-3c04ce4050c8",
+  "north": "PixelLab rear rotation, common padding, PixelLab edit d5ce4e20, common256canvas padding; no scaling",
+  "wall": "PixelLab Pro98d70d65 -> taller editdc5a1ded -> exact edge/rail edits -> Pro damage states -> exact seam/alpha/baseline repairs",
+  "exact_exports": {
+    "ready_rev": "94ae1e54-b547-483e-8ea9-c9484b040762",
+    "fire": "77e57206-709f-43b1-ae81-ef770208be07",
+    "walk": "5bc661d9-2ff3-4a50-a16d-ef89780b5982",
+    "overheat": "157dad35-9f16-4b47-af5c-10a6c37f4895",
+    "east_fire": "aa5a6879-50ff-4561-931d-781b91dac83d",
+    "west_fire": "e90f16b2-34e4-43e4-bf34-8a8fcaa845f4"
+  },
+  "rejected": "ImageGen-derived pass43 Gosfar is archived and unreferenced by the live pack. Elevator/crew are preserved."
+}

@@ -1,0 +1,33 @@
+{
+  "workflow": "built-in image_gen; ColeForge locomotion/registration review for existing Yuri sprites",
+  "layoutReference": "User level 1.png, 2026-10-16",
+  "generationRequests": [
+    {
+      "source": "exec-1b6959ef-64c2-4305-80ff-44e273f63fda.png",
+      "requestSummary": "4x4 modular top-down dark16bit atlas. Rows: tall steel beam, low horizontal wall, red electric relay, weapon chest. Four damage/opening states each. Opaque top/front faces, real transparent exterior; no isometric view."
+    },
+    {
+      "source": "exec-6707f216-5c83-4062-aa08-149da37e2dbf.png",
+      "requestSummary": "Seamless dark overhead gunmetal floor material. Calm steel panel grid, grilles and restrained edge highlights. No baked obstacles or characters."
+    },
+    {
+      "source": "exec-c2b3be90-7486-4235-9978-3bb6b8e8a341.png",
+      "requestSummary": "Independent outerwall directions, four electrical-field frames, four door states, machinery/barrel/crate. Screen-aligned dimensional 16bit props on transparent background."
+    },
+    {
+      "source": "exec-4119dfa0-15fc-42c7-b9c1-8343fdbbe999.png",
+      "requestSummary": "Six-sided dark metal overhead arena deck, empty walkable interior. Candidate before entry-gap edit."
+    },
+    {
+      "source": "exec-ca8d97ee-ab48-446a-98f8-556afc27837f.png",
+      "reference": "exec-4119dfa0-15fc-42c7-b9c1-8343fdbbe999.png",
+      "requestSummary": "Preserve arena; lower border to walkable trim and open north/south floor passages. Final selected arena."
+    }
+  ],
+  "export": "Even 256px prop cells, 512px arena, 256px floor and800x2800 map. Same .5 proportional nearest-neighbor scale per prop bank (.4 arena), opaque-material groundroot registration; source alpha preserved. Body width ignores alpha below96 for registration only; no source repaint. Wall modules overlap12worldpixels atjoins.",
+  "moduleHashes": {
+    "level36.js": "b3e6e0ce22e516ab449dd9063b8472200aa61a2a0bbb9ed1fe1bcade5fd14836",
+    "tactics36.js": "b59315822c549076dd6d18af3a9b245728ab8e57c6699cc51112ee6d61e4c3bd",
+    "yuri36.js": "708e270c8ec36d2d4e6138e044d971985a063fca6111542ef7d157c2584feaf7"
+  }
+}

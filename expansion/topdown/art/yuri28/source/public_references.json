@@ -1,0 +1,40 @@
+[
+  {
+    "direction": "east",
+    "publicURL": "https://raw.githubusercontent.com/NexusWebOS/BulletsOfFury/main/expansion/topdown/art/yuri_motion_1013/frames/od_ym_east_walk_0.png",
+    "publicSHA256": "0f6275a281c9ee0e40484ed8d8c287cadb13d85269039915ff38334e2c9e974f",
+    "crop": [
+      64,
+      48,
+      256,
+      272
+    ],
+    "seedSize": [
+      192,
+      224
+    ],
+    "anchor": [
+      96,
+      208
+    ]
+  },
+  {
+    "direction": "west",
+    "publicURL": "https://raw.githubusercontent.com/NexusWebOS/BulletsOfFury/main/expansion/topdown/art/yuri_motion_1013/frames/od_ym_west_walk_0.png",
+    "publicSHA256": "10449698866f9e41b25b63e6cdc7bd156810580f50d7113462bc83f3e743c3ab",
+    "crop": [
+      64,
+      48,
+      256,
+      272
+    ],
+    "seedSize": [
+      192,
+      224
+    ],
+    "anchor": [
+      96,
+      208
+    ]
+  }
+]

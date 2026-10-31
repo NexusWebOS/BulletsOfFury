@@ -1,0 +1,56 @@
+{
+  "frames": [
+    "pl38_door_core_topdown_active_south_0",
+    "pl38_door_core_topdown_active_south_1",
+    "pl38_door_core_topdown_active_south_2",
+    "pl38_door_core_topdown_active_south_3",
+    "pl38_door_core_topdown_active_south_4",
+    "pl38_door_core_topdown_active_south_5",
+    "pl38_door_core_topdown_active_south_6",
+    "pl38_door_core_topdown_active_south_7",
+    "pl38_door_core_topdown_active_south_8",
+    "pl38_door_core_topdown_active_south_9",
+    "pl38_door_core_topdown_active_south_10",
+    "pl38_door_core_topdown_active_south_11",
+    "pl38_door_core_topdown_active_south_12",
+    "pl38_door_core_topdown_active_south_13",
+    "pl38_door_core_topdown_active_south_14",
+    "pl38_door_core_topdown_active_south_15"
+  ],
+  "fps": 12.5,
+  "loop": true,
+  "events": {},
+  "origin": [
+    24,
+    25
+  ],
+  "size": [
+    48,
+    50
+  ],
+  "duration": 1.28,
+  "provider": "PixelLab",
+  "source_review": "material animation reviewed",
+  "export_scale": 0.5,
+  "source_master": "door_core_topdown",
+  "source_action": "active",
+  "source_direction": "south",
+  "source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

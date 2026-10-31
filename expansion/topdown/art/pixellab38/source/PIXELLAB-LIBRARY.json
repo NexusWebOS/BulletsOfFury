@@ -1,0 +1,145 @@
+{
+  "note": "Reviewed native renders saved permanently to the user's PixelLab Creator gallery. Canonical local clips and review status remain in selected/manifest.json.",
+  "assets": [
+    {
+      "group": "original",
+      "key": "bc413039-f96d-4ff1-a794-830aa621cd41",
+      "image": "bc413039-f96d-4ff1-a794-830aa621cd41",
+      "gallery_reference": "gallery:7f77906d-12ab-4f6c-a6d1-9f4ef9e504ab",
+      "description": "Bullets of Fury Overdrive — ochre minigunner pseudo-3D firing, polished 13-frame source bank. Rigid outer housing, six rotating barrel ports, palette-locked generated recoil. Forward attack."
+    },
+    {
+      "group": "original",
+      "key": "ec4f9558-f968-4937-9190-ab5efddcfe79",
+      "image": "ec4f9558-f968-4937-9190-ab5efddcfe79",
+      "gallery_reference": "gallery:10140dda-537b-4d27-95d5-d6bf8c8731bd",
+      "description": "Bullets of Fury Overdrive — ochre minigunner pseudo-3D spin-up, polished 13-frame source bank. Six rigid ports accelerate within a fixed housing."
+    },
+    {
+      "group": "original",
+      "key": "bec3d5fd-745e-482d-ba96-2715680302e1",
+      "image": "bec3d5fd-745e-482d-ba96-2715680302e1",
+      "gallery_reference": "gallery:bfff151a-a435-4ed5-b7b8-f99eb72bc97b",
+      "description": "Bullets of Fury Overdrive — ochre minigunner pseudo-3D spin-down, polished 13-frame source bank. Six rigid ports decelerate within a fixed housing."
+    },
+    {
+      "group": "original",
+      "key": "8253e860-e158-4b16-a861-e94c29308677",
+      "image": "8253e860-e158-4b16-a861-e94c29308677",
+      "gallery_reference": "gallery:97b091d3-ea5d-41ae-939d-ab9aec3a3794",
+      "description": "Bullets of Fury Overdrive — Helios Fire Prism north-facing cast, polished 13-frame bank. Original obsidian backplate preserved, violet energy, orange flame crown; no chest core showing through the back."
+    },
+    {
+      "group": "original",
+      "key": "ddb14546-8174-4435-b92f-960482931962:south",
+      "image": "ddb14546-8174-4435-b92f-960482931962:south",
+      "gallery_reference": "gallery:df3dd4d3-5257-44fd-8496-a8ac3572f343",
+      "description": "Bullets of Fury Overdrive — Dead Signal Fortress top-down electrical gate, powered off. Original generated posts, exact fixed placement, transparent passage."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "floor_hatch_topdown/open",
+      "image": "d648423f-8fa5-4e41-a9f9-ff2045090890:south",
+      "gallery_reference": "gallery:884917b0-fe5b-4621-85ea-95209abe6096",
+      "description": "Bullets of Fury Overdrive: floor_hatch_topdown/open. Sixteen PixelLab native frames; all rigid panels and casing reviewed, original closed body pixels verified."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "floor_hatch_topdown/close",
+      "image": "253f055d-b780-4fb0-9dd9-f8da38cb3e54:south",
+      "gallery_reference": "gallery:69504deb-fa14-484e-9378-26b5994c594a",
+      "description": "Bullets of Fury Overdrive: floor_hatch_topdown/close. Sixteen PixelLab native frames; all rigid panels and casing reviewed, original closed body pixels verified."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "floor_hatch_side/open",
+      "image": "aedce9c9-89fe-4f1c-b460-ede9d4c8bbfd:south",
+      "gallery_reference": "gallery:f94d5097-55d2-4b76-bcbf-ca290181822c",
+      "description": "Bullets of Fury Overdrive: floor_hatch_side/open. Sixteen PixelLab native frames; all rigid panels and casing reviewed, original closed body pixels verified."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "floor_hatch_side/close",
+      "image": "b9cb7cab-4aa9-4aef-96d4-3d6db126e8cb:south",
+      "gallery_reference": "gallery:c09b0c74-3f2b-4d6a-92e0-d678a1ffa180",
+      "description": "Bullets of Fury Overdrive: floor_hatch_side/close. Sixteen PixelLab native frames; all rigid panels and casing reviewed, original closed body pixels verified."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "door_core_topdown/active",
+      "image": "18f06b62-f9d1-4a09-ab7f-4a2bf2c33a19:topdown",
+      "gallery_reference": "gallery:695d1841-0bf1-4bf7-a265-451700f6ae89",
+      "description": "Bullets of Fury Overdrive: topdown door core active. Generated mechanical casing stays fixed; only chamber and tube energy material changes."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "door_core_pseudo3d/active",
+      "image": "bbe6cb2e-7882-43e3-9b10-693ba7a42f0c:pseudo3d",
+      "gallery_reference": "gallery:4900ebf0-c15e-4a6e-a330-318bc0c97908",
+      "description": "Bullets of Fury Overdrive: pseudo3d door core active. Generated mechanical casing stays fixed; only chamber and tube energy material changes."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "door_core_side/active",
+      "image": "0cb97e4f-1a6a-4d2b-bf3a-41194581d757:side",
+      "gallery_reference": "gallery:546304ef-3b63-4d0c-9028-ccde34c93cd2",
+      "description": "Bullets of Fury Overdrive: side door core active. Generated mechanical casing stays fixed; only chamber and tube energy material changes."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "door_core_topdown/inactive",
+      "image": "273c29c3-f1f0-46d2-9282-a0cbe41d0cd0:topdown",
+      "gallery_reference": "gallery:bc599650-e037-4a5b-895d-dd50b1860590",
+      "description": "Bullets of Fury Overdrive: topdown door core inactive. Generated mechanical casing stays fixed; only chamber and tube energy material changes."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "door_core_pseudo3d/inactive",
+      "image": "273c29c3-f1f0-46d2-9282-a0cbe41d0cd0:pseudo3d",
+      "gallery_reference": "gallery:5c948753-fef7-4103-8f0d-a057e548e7e7",
+      "description": "Bullets of Fury Overdrive: pseudo3d door core inactive. Generated mechanical casing stays fixed; only chamber and tube energy material changes."
+    },
+    {
+      "group": "hatches_and_cores",
+      "key": "door_core_side/inactive",
+      "image": "273c29c3-f1f0-46d2-9282-a0cbe41d0cd0:side",
+      "gallery_reference": "gallery:a494170d-069a-4415-8524-1a991704b2a1",
+      "description": "Bullets of Fury Overdrive: side door core inactive. Generated mechanical casing stays fixed; only chamber and tube energy material changes."
+    },
+    {
+      "group": "firing_repairs",
+      "key": "shotgunner_pseudo3d/fire_front_native_r5",
+      "image": "50653f60-b617-46e4-a4bb-3ffa32fa6681:south",
+      "gallery_reference": "gallery:502e93c0-8091-4477-b525-20c6bad94e25",
+      "description": "Bullets of Fury Overdrive shotgunner forward firing. 8 native PixelLab recoil frames; original head-on gun/hands and body palette retained, feet/hips fixed, exact ready bookends."
+    },
+    {
+      "group": "firing_repairs",
+      "key": "double_barrel_pseudo3d/fire_front_native_r5",
+      "image": "5d45a6aa-1069-4aad-a8dc-3df1dd1a5cd1:south",
+      "gallery_reference": "gallery:a763bb3b-e399-44c7-aeb5-1072c9bdcb62",
+      "description": "Bullets of Fury Overdrive double_barrel forward firing. 16 native PixelLab recoil frames; original head-on gun/hands and body palette retained, feet/hips fixed, exact ready bookends."
+    },
+    {
+      "group": "firing_repairs",
+      "key": "wall_turret_gun_pseudo3d/fire_native_r2",
+      "image": "14bbab0b-110e-45f1-a55c-945bbd3f3f03:south",
+      "gallery_reference": "gallery:8a7bc5fc-3c0e-406a-9819-08fa64b8baaf",
+      "description": "Bullets of Fury Overdrive twin wall turret forward firing. Sixteen native frames; original two cannons and casing, fixed hardware, no third barrel."
+    },
+    {
+      "group": "firing_repairs",
+      "key": "rocket_launcher_pseudo3d/fire_native_repair",
+      "image": "cb01ee4a-b8e1-4e57-8abe-3fe339848793",
+      "gallery_reference": "gallery:880a17fc-37ca-4a41-9c59-7c24c09cf3ae",
+      "description": "Bullets of Fury Overdrive rocket soldier front firing. Twelve generated recoil frames with a 36-pixel guarded native shoulder-pod correction; stable armor and launcher geometry."
+    },
+    {
+      "group": "firing_repairs",
+      "key": "roller_alien_pseudo3d/fire_front_clean",
+      "image": "79dd5ff7-a24c-4e02-8c50-38947ec4af70",
+      "gallery_reference": "gallery:693ac4c5-c613-4f73-a088-fc1093e30fe8",
+      "description": "Bullets of Fury Overdrive coral roller alien front firing. Thirteen PixelLab V3 frames, coherent claws and tail, four off-body generated X artifacts removed with exact native pixel guards."
+    }
+  ]
+}
