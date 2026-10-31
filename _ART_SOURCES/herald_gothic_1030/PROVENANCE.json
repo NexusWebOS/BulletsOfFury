@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-30",
+  "tool": "OpenAI built-in image generation",
+  "mode": "Reference image editing with transparent background",
+  "reference": "herald-skull-reference.png extracted from actual head_rage frame8, not a generic skull",
+  "generated": [
+    "gpt_gothic_skull.png",
+    "gpt_gothic_shatter.png"
+  ],
+  "briefs": {
+    "skull": "4x4 sixteen-frame pixel-art loop of the reference Herald mechanical skull, preserving its narrow bone face, long jaw, black iron temples, spikes and red evil eyes; dark gothic sinister design inside black/ruby glass with animated crimson electricity, consistent identity, pose, scale and pivot; transparent, no text, no orange cartoon skull.",
+    "shatter": "4x4 sixteen-frame destruction of that exact reference skull orb: intact, red cracks, bone and glass fracture, electrical rupture, empty center, expanding angular ruby/black shards and lightning, then sparse fading sparks; shared pivot and consistent palette, transparent."
+  },
+  "normalization": "Original generated1254x1254 images retained. Measured310px source windows, common anchors, offline nearest-pixel resizing through Aseprite. No runtime sprite scaling/rotation/glow/opacity.",
+  "depth": "Existing approved genuine32-view PixelLab turntable and Falva red/black roller reused; no new paid PixelLab generation.96-frame spiral and32-frame yaw authored offline; per-frame muzzle sockets and alpha-row collision masks exported.",
+  "effects": "Skull destruction uses the full generated sequence. Depth sphere/counter impact uses only empty-center glass/lightning frames7\u201315, retimed across16 cells; no skull appears in a depth sphere burst."
+}

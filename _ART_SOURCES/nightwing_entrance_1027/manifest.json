@@ -1,0 +1,68 @@
+{
+  "whole": {
+    "key": "nw28_whole",
+    "path": "assets/game/levels/stage_06/boss/nightwing_entrance_1027/whole.png",
+    "cw": 272,
+    "ch": 272,
+    "cols": 8,
+    "frames": 107,
+    "pivot": [
+      136,
+      136
+    ]
+  },
+  "whole_hit": {
+    "key": "nw28_whole_hit",
+    "path": "assets/game/levels/stage_06/boss/nightwing_entrance_1027/whole_hit.png",
+    "cw": 272,
+    "ch": 272,
+    "cols": 8,
+    "frames": 107,
+    "pivot": [
+      136,
+      136
+    ]
+  },
+  "groups": {
+    "south": {
+      "start": 0,
+      "count": 8
+    },
+    "damaged": {
+      "start": 8,
+      "count": 8
+    },
+    "inverted": {
+      "start": 16,
+      "count": 1
+    },
+    "roll": {
+      "start": 17,
+      "count": 16
+    },
+    "somer": {
+      "start": 33,
+      "count": 16
+    },
+    "inverted_somer": {
+      "start": 49,
+      "count": 16
+    },
+    "bank_right": {
+      "start": 65,
+      "count": 1
+    },
+    "bank_left": {
+      "start": 66,
+      "count": 1
+    },
+    "north": {
+      "start": 67,
+      "count": 8
+    },
+    "death": {
+      "start": 75,
+      "count": 32
+    }
+  }
+}

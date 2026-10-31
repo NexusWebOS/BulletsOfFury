@@ -1,0 +1,16 @@
+{
+  "generator": "built-in image_gen",
+  "sources": {
+    "menu_xl": "415ce3d5-8983-4367-8541-beba97ac20c6",
+    "menu_l": "0b1e79a8-88f0-478e-b5d2-d614c573b6d1",
+    "menu_m": "7275210d-dbfd-4ab7-a57d-43ebc2d2aff3",
+    "menu_s": "e5fdc4c8-ebcc-4e7e-a438-40b305500a89",
+    "concept_1": "7cf7a3e7-3a97-49d0-88c0-39f65bf1b804",
+    "concept_2": "48633915-d398-4a8b-8eb7-5b507118d927",
+    "concept_3": "81293d30-8214-4c92-9c41-6799374ed37f",
+    "concept_4": "a80c0743-dc87-409e-b51a-911f5e7f9007",
+    "concept_5": "9981dc4f-c291-40d7-9e3d-4640ad661c87",
+    "heart_master": "bc3fb4bd-ef35-448f-b599-76b6ff8af86e"
+  },
+  "notes": "UI generated separately for each size and concept; source artwork retained. Animation seed uses uniform scale on fixed256 transparent canvas."
+}

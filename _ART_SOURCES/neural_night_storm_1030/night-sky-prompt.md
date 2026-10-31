@@ -1,0 +1,7 @@
+Built-in image generator: local reference edit, opaque output.
+
+Reference: assets/game/levels/stage_08/boss/arena_download_1020/sky/terrain.webp
+
+Edit target: the supplied existing Bullets of Fury pixel-art sky arena image. Preserve its overhead cloud-and-sky composition, the cloud textures and deliberate 16-bit pixel clusters. Remove ALL mechanical wreckage: the four grey/brown metal structures, cables, wing shapes, purple technological lights and every artificial object. Inpaint those areas seamlessly with matching clouds and sky. Palette-swap the entire image into a proper NIGHT sky: deep midnight navy and indigo empty sky, subdued blue-violet clouds with restrained dim moonlit rims. The scene should clearly be nighttime, dark enough for brilliant violet lightning to read, while cloud shapes remain visible. ONLY clouds and sky. No stars, moon, planets, buildings, aircraft, symbols, code, grids, text, frame or UI. Keep the central sky clearing. Maintain a square full-bleed background and crisp retro arcade pixel art, no blur, no soft painted gradients. Preserve existing cloud layout as closely as possible, and make top/bottom edges visually compatible for a gentle vertical parallax loop.
+
+After generation: normalized offline to an even 680x680, baked a vertical seam and a stored-alpha near-cloud layer. No runtime palette processing, generated graphics or animated opacity. Source pose glow is baked from all9 existing approved brain poses in6 intensity banks; no new PixelLab generation/credits.

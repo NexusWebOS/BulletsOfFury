@@ -1,0 +1,218 @@
+[
+  {
+    "bank": "command_6",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_7",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_8",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_9",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_10",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_11",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_12",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_14",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_18",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_21",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_24",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_28",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_35",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_42",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_8",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_10",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_12",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_14",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_16",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_18",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_20",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_22",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_24",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_26",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_28",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "fury_strike_32",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  },
+  {
+    "bank": "command_narrow_8",
+    "zeroCounter": 1,
+    "eightCounters": 2,
+    "rConnected": true,
+    "digitsStable": true,
+    "inkBounds": true
+  }
+]

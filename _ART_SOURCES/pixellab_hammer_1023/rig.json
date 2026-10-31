@@ -1,0 +1,1095 @@
+{
+  "jump": [
+    {
+      "frame": 0,
+      "head": [
+        257,
+        411
+      ],
+      "tip": [
+        257,
+        456
+      ],
+      "hands": [
+        [
+          302,
+          390
+        ],
+        [
+          411,
+          340
+        ]
+      ],
+      "sourceHands": [
+        [
+          118,
+          186
+        ],
+        [
+          180,
+          158
+        ]
+      ],
+      "angle": -24.64166199955834,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        204,
+        213,
+        444,
+        482
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 1,
+      "head": [
+        228,
+        375
+      ],
+      "tip": [
+        228,
+        420
+      ],
+      "hands": [
+        [
+          288,
+          354
+        ],
+        [
+          376,
+          323
+        ]
+      ],
+      "sourceHands": [
+        [
+          110,
+          166
+        ],
+        [
+          160,
+          148
+        ]
+      ],
+      "angle": -19.405970754001178,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        177,
+        209,
+        442,
+        482
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 2,
+      "head": [
+        239,
+        265
+      ],
+      "tip": [
+        239,
+        310
+      ],
+      "hands": [
+        [
+          308,
+          265
+        ],
+        [
+          390,
+          265
+        ]
+      ],
+      "sourceHands": [
+        [
+          121,
+          115
+        ],
+        [
+          168,
+          115
+        ]
+      ],
+      "angle": 0.0,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        196,
+        206,
+        444,
+        482
+      ],
+      "weaponBehindBody": true
+    },
+    {
+      "frame": 3,
+      "head": [
+        246,
+        197
+      ],
+      "tip": [
+        246,
+        242
+      ],
+      "hands": [
+        [
+          332,
+          199
+        ],
+        [
+          380,
+          200
+        ]
+      ],
+      "sourceHands": [
+        [
+          135,
+          77
+        ],
+        [
+          162,
+          78
+        ]
+      ],
+      "angle": 1.193489423982035,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        204,
+        152,
+        441,
+        482
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 4,
+      "head": [
+        263,
+        145
+      ],
+      "tip": [
+        263,
+        190
+      ],
+      "hands": [
+        [
+          336,
+          199
+        ],
+        [
+          367,
+          222
+        ]
+      ],
+      "sourceHands": [
+        [
+          137,
+          77
+        ],
+        [
+          155,
+          90
+        ]
+      ],
+      "angle": 36.573030978519334,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        225,
+        93,
+        441,
+        482
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 5,
+      "head": [
+        353,
+        386
+      ],
+      "tip": [
+        353,
+        430
+      ],
+      "hands": [
+        [
+          348,
+          295
+        ],
+        [
+          346,
+          258
+        ]
+      ],
+      "sourceHands": [
+        [
+          144,
+          132
+        ],
+        [
+          143,
+          111
+        ]
+      ],
+      "angle": -93.09405805891711,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        254,
+        204,
+        441,
+        480
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 6,
+      "head": [
+        342,
+        469
+      ],
+      "tip": [
+        342,
+        509
+      ],
+      "hands": [
+        [
+          346,
+          379
+        ],
+        [
+          348,
+          339
+        ]
+      ],
+      "sourceHands": [
+        [
+          143,
+          180
+        ],
+        [
+          144,
+          157
+        ]
+      ],
+      "angle": -87.13759477388825,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        252,
+        222,
+        441,
+        510
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 7,
+      "head": [
+        341,
+        496
+      ],
+      "tip": [
+        341,
+        536
+      ],
+      "hands": [
+        [
+          346,
+          405
+        ],
+        [
+          348,
+          367
+        ]
+      ],
+      "sourceHands": [
+        [
+          143,
+          195
+        ],
+        [
+          144,
+          173
+        ]
+      ],
+      "angle": -86.98721249581666,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        252,
+        225,
+        441,
+        537
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 8,
+      "head": [
+        341,
+        496
+      ],
+      "tip": [
+        341,
+        536
+      ],
+      "hands": [
+        [
+          346,
+          405
+        ],
+        [
+          348,
+          367
+        ]
+      ],
+      "sourceHands": [
+        [
+          143,
+          195
+        ],
+        [
+          144,
+          173
+        ]
+      ],
+      "angle": -86.98721249581666,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        252,
+        225,
+        441,
+        537
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 9,
+      "head": [
+        268,
+        438
+      ],
+      "tip": [
+        268,
+        483
+      ],
+      "hands": [
+        [
+          330,
+          405
+        ],
+        [
+          399,
+          368
+        ]
+      ],
+      "sourceHands": [
+        [
+          134,
+          195
+        ],
+        [
+          173,
+          174
+        ]
+      ],
+      "angle": -28.201628218694708,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        215,
+        218,
+        441,
+        484
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 10,
+      "head": [
+        271,
+        424
+      ],
+      "tip": [
+        271,
+        468
+      ],
+      "hands": [
+        [
+          318,
+          396
+        ],
+        [
+          413,
+          340
+        ]
+      ],
+      "sourceHands": [
+        [
+          127,
+          190
+        ],
+        [
+          181,
+          158
+        ]
+      ],
+      "angle": -30.518230678875234,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        217,
+        211,
+        441,
+        480
+      ],
+      "weaponBehindBody": false
+    },
+    {
+      "frame": 11,
+      "head": [
+        257,
+        411
+      ],
+      "tip": [
+        257,
+        456
+      ],
+      "hands": [
+        [
+          302,
+          390
+        ],
+        [
+          411,
+          340
+        ]
+      ],
+      "sourceHands": [
+        [
+          118,
+          186
+        ],
+        [
+          180,
+          158
+        ]
+      ],
+      "angle": -24.64166199955834,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        204,
+        211,
+        441,
+        480
+      ],
+      "weaponBehindBody": false
+    }
+  ],
+  "sides": [
+    {
+      "frame": 0,
+      "sourceFrame": 0,
+      "mirroredBodyOffline": false,
+      "head": [
+        279,
+        394
+      ],
+      "tip": [
+        279,
+        394
+      ],
+      "hands": [
+        [
+          360,
+          344
+        ],
+        [
+          386,
+          328
+        ]
+      ],
+      "angle": -31.6075022462489,
+      "bounds": [
+        225,
+        253,
+        493,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 1,
+      "sourceFrame": 1,
+      "mirroredBodyOffline": false,
+      "head": [
+        304,
+        301
+      ],
+      "tip": [
+        304,
+        301
+      ],
+      "hands": [
+        [
+          390,
+          321
+        ],
+        [
+          432,
+          331
+        ]
+      ],
+      "angle": 13.392497753751098,
+      "bounds": [
+        238,
+        254,
+        493,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 2,
+      "sourceFrame": 2,
+      "mirroredBodyOffline": false,
+      "head": [
+        334,
+        293
+      ],
+      "tip": [
+        334,
+        293
+      ],
+      "hands": [
+        [
+          414,
+          314
+        ],
+        [
+          467,
+          328
+        ]
+      ],
+      "angle": 14.796762245057346,
+      "bounds": [
+        238,
+        248,
+        510,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 3,
+      "sourceFrame": 3,
+      "mirroredBodyOffline": false,
+      "head": [
+        311,
+        288
+      ],
+      "tip": [
+        311,
+        288
+      ],
+      "hands": [
+        [
+          395,
+          317
+        ],
+        [
+          436,
+          331
+        ]
+      ],
+      "angle": 18.85315876441911,
+      "bounds": [
+        238,
+        243,
+        493,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 4,
+      "sourceFrame": 4,
+      "mirroredBodyOffline": false,
+      "head": [
+        226,
+        297
+      ],
+      "tip": [
+        226,
+        297
+      ],
+      "hands": [
+        [
+          310,
+          328
+        ],
+        [
+          348,
+          342
+        ]
+      ],
+      "angle": 20.224859431168078,
+      "bounds": [
+        188,
+        251,
+        491,
+        487
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 5,
+      "sourceFrame": 5,
+      "mirroredBodyOffline": false,
+      "head": [
+        193,
+        305
+      ],
+      "tip": [
+        193,
+        305
+      ],
+      "hands": [
+        [
+          273,
+          338
+        ],
+        [
+          316,
+          356
+        ]
+      ],
+      "angle": 22.714412353167237,
+      "bounds": [
+        155,
+        254,
+        493,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 6,
+      "sourceFrame": 6,
+      "mirroredBodyOffline": false,
+      "head": [
+        182,
+        321
+      ],
+      "tip": [
+        182,
+        321
+      ],
+      "hands": [
+        [
+          264,
+          352
+        ],
+        [
+          306,
+          368
+        ]
+      ],
+      "angle": 20.854458039578347,
+      "bounds": [
+        144,
+        253,
+        493,
+        487
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 7,
+      "sourceFrame": 7,
+      "mirroredBodyOffline": false,
+      "head": [
+        211,
+        293
+      ],
+      "tip": [
+        211,
+        293
+      ],
+      "hands": [
+        [
+          290,
+          324
+        ],
+        [
+          336,
+          342
+        ]
+      ],
+      "angle": 21.370622269343183,
+      "bounds": [
+        173,
+        247,
+        493,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 8,
+      "sourceFrame": 0,
+      "mirroredBodyOffline": true,
+      "head": [
+        360,
+        394
+      ],
+      "tip": [
+        360,
+        394
+      ],
+      "hands": [
+        [
+          279,
+          344
+        ],
+        [
+          253,
+          328
+        ]
+      ],
+      "angle": -148.39249775375112,
+      "bounds": [
+        147,
+        253,
+        402,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 9,
+      "sourceFrame": 1,
+      "mirroredBodyOffline": true,
+      "head": [
+        335,
+        301
+      ],
+      "tip": [
+        335,
+        301
+      ],
+      "hands": [
+        [
+          249,
+          321
+        ],
+        [
+          207,
+          331
+        ]
+      ],
+      "angle": 166.6075022462489,
+      "bounds": [
+        147,
+        254,
+        402,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 10,
+      "sourceFrame": 2,
+      "mirroredBodyOffline": true,
+      "head": [
+        305,
+        293
+      ],
+      "tip": [
+        305,
+        293
+      ],
+      "hands": [
+        [
+          225,
+          314
+        ],
+        [
+          172,
+          328
+        ]
+      ],
+      "angle": 165.20323775494268,
+      "bounds": [
+        125,
+        247,
+        402,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 11,
+      "sourceFrame": 3,
+      "mirroredBodyOffline": true,
+      "head": [
+        328,
+        288
+      ],
+      "tip": [
+        328,
+        288
+      ],
+      "hands": [
+        [
+          244,
+          317
+        ],
+        [
+          203,
+          331
+        ]
+      ],
+      "angle": 161.1468412355809,
+      "bounds": [
+        147,
+        242,
+        402,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 12,
+      "sourceFrame": 4,
+      "mirroredBodyOffline": true,
+      "head": [
+        413,
+        297
+      ],
+      "tip": [
+        413,
+        297
+      ],
+      "hands": [
+        [
+          329,
+          328
+        ],
+        [
+          291,
+          342
+        ]
+      ],
+      "angle": 159.77514056883192,
+      "bounds": [
+        149,
+        251,
+        465,
+        487
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 13,
+      "sourceFrame": 5,
+      "mirroredBodyOffline": true,
+      "head": [
+        446,
+        305
+      ],
+      "tip": [
+        446,
+        305
+      ],
+      "hands": [
+        [
+          366,
+          338
+        ],
+        [
+          323,
+          356
+        ]
+      ],
+      "angle": 157.28558764683277,
+      "bounds": [
+        147,
+        254,
+        498,
+        489
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 14,
+      "sourceFrame": 6,
+      "mirroredBodyOffline": true,
+      "head": [
+        457,
+        321
+      ],
+      "tip": [
+        457,
+        321
+      ],
+      "hands": [
+        [
+          375,
+          352
+        ],
+        [
+          333,
+          368
+        ]
+      ],
+      "angle": 159.14554196042167,
+      "bounds": [
+        147,
+        253,
+        509,
+        487
+      ],
+      "weaponBehindBody": false,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bankRootOffset": [
+        0,
+        10
+      ]
+    },
+    {
+      "frame": 15,
+      "head": [
+        257,
+        411
+      ],
+      "tip": [
+        257,
+        456
+      ],
+      "hands": [
+        [
+          302,
+          390
+        ],
+        [
+          411,
+          340
+        ]
+      ],
+      "sourceHands": [
+        [
+          118,
+          186
+        ],
+        [
+          180,
+          158
+        ]
+      ],
+      "angle": -24.64166199955834,
+      "bodyUnit": 1.75,
+      "weaponUnit": 0.13,
+      "bounds": [
+        204,
+        213,
+        444,
+        482
+      ],
+      "weaponBehindBody": false,
+      "sourceFrame": "jump-ready"
+    }
+  ]
+}

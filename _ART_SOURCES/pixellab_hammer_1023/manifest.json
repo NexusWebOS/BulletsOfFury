@@ -1,0 +1,2276 @@
+{
+  "banks": {
+    "corrupt_jump": [
+      {
+        "key": "ha21_ma23_corrupt_jump_0",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          0,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          213,
+          444,
+          482
+        ],
+        "tip": [
+          257,
+          411
+        ],
+        "glow": [
+          257,
+          411
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_0",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 0,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_1",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          640,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          177,
+          209,
+          442,
+          482
+        ],
+        "tip": [
+          228,
+          375
+        ],
+        "glow": [
+          228,
+          375
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_1",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 1,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_2",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          1280,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          196,
+          206,
+          444,
+          482
+        ],
+        "tip": [
+          239,
+          265
+        ],
+        "glow": [
+          239,
+          265
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_2",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 2,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_3",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          1920,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          152,
+          441,
+          482
+        ],
+        "tip": [
+          246,
+          197
+        ],
+        "glow": [
+          246,
+          197
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_3",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 3,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_4",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          0,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          225,
+          93,
+          441,
+          482
+        ],
+        "tip": [
+          263,
+          145
+        ],
+        "glow": [
+          263,
+          145
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_4",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 4,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_5",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          640,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          254,
+          204,
+          441,
+          480
+        ],
+        "tip": [
+          353,
+          386
+        ],
+        "glow": [
+          353,
+          386
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_5",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 5,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_6",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          1280,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          252,
+          222,
+          441,
+          510
+        ],
+        "tip": [
+          342,
+          469
+        ],
+        "glow": [
+          342,
+          469
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_6",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 6,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_7",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          1920,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          252,
+          225,
+          441,
+          537
+        ],
+        "tip": [
+          341,
+          536
+        ],
+        "glow": [
+          341,
+          496
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_7",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 7,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_8",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          0,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          252,
+          225,
+          441,
+          537
+        ],
+        "tip": [
+          341,
+          496
+        ],
+        "glow": [
+          341,
+          496
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_8",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 8,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_9",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          640,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          215,
+          218,
+          441,
+          484
+        ],
+        "tip": [
+          268,
+          438
+        ],
+        "glow": [
+          268,
+          438
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_9",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 9,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_10",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          1280,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          217,
+          211,
+          441,
+          480
+        ],
+        "tip": [
+          271,
+          424
+        ],
+        "glow": [
+          271,
+          424
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_10",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 10,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_11",
+        "sheet": "ma23_corrupt_jump",
+        "cell": [
+          1920,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          211,
+          441,
+          480
+        ],
+        "tip": [
+          257,
+          411
+        ],
+        "glow": [
+          257,
+          411
+        ],
+        "white": "ha21_ma23_corrupt_jump_hit_11",
+        "kind": "corrupt",
+        "bank": "corrupt_jump",
+        "frame": 11,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      }
+    ],
+    "corrupt_jump_red": [
+      {
+        "key": "ha21_ma23_corrupt_jump_red_0",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          0,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          213,
+          444,
+          482
+        ],
+        "tip": [
+          257,
+          411
+        ],
+        "glow": [
+          257,
+          411
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_0",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 0,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_1",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          640,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          177,
+          209,
+          442,
+          482
+        ],
+        "tip": [
+          228,
+          375
+        ],
+        "glow": [
+          228,
+          375
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_1",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 1,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_2",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          1280,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          196,
+          206,
+          444,
+          482
+        ],
+        "tip": [
+          239,
+          265
+        ],
+        "glow": [
+          239,
+          265
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_2",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 2,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_3",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          1920,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          152,
+          441,
+          482
+        ],
+        "tip": [
+          246,
+          197
+        ],
+        "glow": [
+          246,
+          197
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_3",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 3,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_4",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          0,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          225,
+          93,
+          441,
+          482
+        ],
+        "tip": [
+          263,
+          145
+        ],
+        "glow": [
+          263,
+          145
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_4",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 4,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_5",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          640,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          254,
+          204,
+          441,
+          480
+        ],
+        "tip": [
+          353,
+          386
+        ],
+        "glow": [
+          353,
+          386
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_5",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 5,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_6",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          1280,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          252,
+          222,
+          441,
+          510
+        ],
+        "tip": [
+          342,
+          469
+        ],
+        "glow": [
+          342,
+          469
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_6",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 6,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_7",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          1920,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          252,
+          225,
+          441,
+          537
+        ],
+        "tip": [
+          341,
+          536
+        ],
+        "glow": [
+          341,
+          496
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_7",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 7,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_8",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          0,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          252,
+          225,
+          441,
+          537
+        ],
+        "tip": [
+          341,
+          496
+        ],
+        "glow": [
+          341,
+          496
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_8",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 8,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_9",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          640,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          215,
+          218,
+          441,
+          484
+        ],
+        "tip": [
+          268,
+          438
+        ],
+        "glow": [
+          268,
+          438
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_9",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 9,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_10",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          1280,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          217,
+          211,
+          441,
+          480
+        ],
+        "tip": [
+          271,
+          424
+        ],
+        "glow": [
+          271,
+          424
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_10",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 10,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_jump_red_11",
+        "sheet": "ma23_corrupt_jump_red",
+        "cell": [
+          1920,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          211,
+          441,
+          480
+        ],
+        "tip": [
+          257,
+          411
+        ],
+        "glow": [
+          257,
+          411
+        ],
+        "white": "ha21_ma23_corrupt_jump_red_hit_11",
+        "kind": "corrupt",
+        "bank": "corrupt_jump_red",
+        "frame": 11,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      }
+    ],
+    "corrupt_sides": [
+      {
+        "key": "ha21_ma23_corrupt_sides_0",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          0,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          225,
+          253,
+          493,
+          489
+        ],
+        "tip": [
+          279,
+          394
+        ],
+        "glow": [
+          279,
+          394
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_0",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 0,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_1",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          640,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          238,
+          254,
+          493,
+          489
+        ],
+        "tip": [
+          304,
+          301
+        ],
+        "glow": [
+          304,
+          301
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_1",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 1,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_2",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1280,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          238,
+          248,
+          510,
+          489
+        ],
+        "tip": [
+          334,
+          293
+        ],
+        "glow": [
+          334,
+          293
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_2",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 2,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_3",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1920,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          238,
+          243,
+          493,
+          489
+        ],
+        "tip": [
+          311,
+          288
+        ],
+        "glow": [
+          311,
+          288
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_3",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 3,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_4",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          0,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          188,
+          251,
+          491,
+          487
+        ],
+        "tip": [
+          226,
+          297
+        ],
+        "glow": [
+          226,
+          297
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_4",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 4,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_5",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          640,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          155,
+          254,
+          493,
+          489
+        ],
+        "tip": [
+          193,
+          305
+        ],
+        "glow": [
+          193,
+          305
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_5",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 5,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_6",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1280,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          144,
+          253,
+          493,
+          487
+        ],
+        "tip": [
+          182,
+          321
+        ],
+        "glow": [
+          182,
+          321
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_6",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 6,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_7",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1920,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          173,
+          247,
+          493,
+          489
+        ],
+        "tip": [
+          211,
+          293
+        ],
+        "glow": [
+          211,
+          293
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_7",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 7,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_8",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          0,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          253,
+          402,
+          489
+        ],
+        "tip": [
+          360,
+          394
+        ],
+        "glow": [
+          360,
+          394
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_8",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 8,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_9",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          640,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          254,
+          402,
+          489
+        ],
+        "tip": [
+          335,
+          301
+        ],
+        "glow": [
+          335,
+          301
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_9",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 9,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_10",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1280,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          125,
+          247,
+          402,
+          489
+        ],
+        "tip": [
+          305,
+          293
+        ],
+        "glow": [
+          305,
+          293
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_10",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 10,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_11",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1920,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          242,
+          402,
+          489
+        ],
+        "tip": [
+          328,
+          288
+        ],
+        "glow": [
+          328,
+          288
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_11",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 11,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_12",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          0,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          149,
+          251,
+          465,
+          487
+        ],
+        "tip": [
+          413,
+          297
+        ],
+        "glow": [
+          413,
+          297
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_12",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 12,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_13",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          640,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          254,
+          498,
+          489
+        ],
+        "tip": [
+          446,
+          305
+        ],
+        "glow": [
+          446,
+          305
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_13",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 13,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_14",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1280,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          253,
+          509,
+          487
+        ],
+        "tip": [
+          457,
+          321
+        ],
+        "glow": [
+          457,
+          321
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_14",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 14,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_15",
+        "sheet": "ma23_corrupt_sides",
+        "cell": [
+          1920,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          213,
+          444,
+          482
+        ],
+        "tip": [
+          257,
+          411
+        ],
+        "glow": [
+          257,
+          411
+        ],
+        "white": "ha21_ma23_corrupt_sides_hit_15",
+        "kind": "corrupt",
+        "bank": "corrupt_sides",
+        "frame": 15,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      }
+    ],
+    "corrupt_sides_red": [
+      {
+        "key": "ha21_ma23_corrupt_sides_red_0",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          0,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          225,
+          253,
+          493,
+          489
+        ],
+        "tip": [
+          279,
+          394
+        ],
+        "glow": [
+          279,
+          394
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_0",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 0,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_1",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          640,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          238,
+          254,
+          493,
+          489
+        ],
+        "tip": [
+          304,
+          301
+        ],
+        "glow": [
+          304,
+          301
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_1",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 1,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_2",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1280,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          238,
+          248,
+          510,
+          489
+        ],
+        "tip": [
+          334,
+          293
+        ],
+        "glow": [
+          334,
+          293
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_2",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 2,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_3",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1920,
+          0,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          238,
+          243,
+          493,
+          489
+        ],
+        "tip": [
+          311,
+          288
+        ],
+        "glow": [
+          311,
+          288
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_3",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 3,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_4",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          0,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          188,
+          251,
+          491,
+          487
+        ],
+        "tip": [
+          226,
+          297
+        ],
+        "glow": [
+          226,
+          297
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_4",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 4,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_5",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          640,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          155,
+          254,
+          493,
+          489
+        ],
+        "tip": [
+          193,
+          305
+        ],
+        "glow": [
+          193,
+          305
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_5",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 5,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_6",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1280,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          144,
+          253,
+          493,
+          487
+        ],
+        "tip": [
+          182,
+          321
+        ],
+        "glow": [
+          182,
+          321
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_6",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 6,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_7",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1920,
+          640,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          173,
+          247,
+          493,
+          489
+        ],
+        "tip": [
+          211,
+          293
+        ],
+        "glow": [
+          211,
+          293
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_7",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 7,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_8",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          0,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          253,
+          402,
+          489
+        ],
+        "tip": [
+          360,
+          394
+        ],
+        "glow": [
+          360,
+          394
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_8",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 8,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_9",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          640,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          254,
+          402,
+          489
+        ],
+        "tip": [
+          335,
+          301
+        ],
+        "glow": [
+          335,
+          301
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_9",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 9,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_10",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1280,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          125,
+          247,
+          402,
+          489
+        ],
+        "tip": [
+          305,
+          293
+        ],
+        "glow": [
+          305,
+          293
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_10",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 10,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_11",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1920,
+          1280,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          242,
+          402,
+          489
+        ],
+        "tip": [
+          328,
+          288
+        ],
+        "glow": [
+          328,
+          288
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_11",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 11,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_12",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          0,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          149,
+          251,
+          465,
+          487
+        ],
+        "tip": [
+          413,
+          297
+        ],
+        "glow": [
+          413,
+          297
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_12",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 12,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_13",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          640,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          254,
+          498,
+          489
+        ],
+        "tip": [
+          446,
+          305
+        ],
+        "glow": [
+          446,
+          305
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_13",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 13,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_14",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1280,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          147,
+          253,
+          509,
+          487
+        ],
+        "tip": [
+          457,
+          321
+        ],
+        "glow": [
+          457,
+          321
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_14",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 14,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      },
+      {
+        "key": "ha21_ma23_corrupt_sides_red_15",
+        "sheet": "ma23_corrupt_sides_red",
+        "cell": [
+          1920,
+          1920,
+          640,
+          640
+        ],
+        "w": 640,
+        "h": 640,
+        "pivot": [
+          320,
+          354
+        ],
+        "bounds": [
+          204,
+          213,
+          444,
+          482
+        ],
+        "tip": [
+          257,
+          411
+        ],
+        "glow": [
+          257,
+          411
+        ],
+        "white": "ha21_ma23_corrupt_sides_red_hit_15",
+        "kind": "corrupt",
+        "bank": "corrupt_sides_red",
+        "frame": 15,
+        "_hf22": true,
+        "_hc23": true,
+        "_ma23": true,
+        "weaponUnit": 0.13,
+        "armed": true
+      }
+    ]
+  },
+  "sheets": {
+    "ma23_corrupt_jump": {
+      "key": "nca_ma23_corrupt_jump",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "d4cc9707dfe90071eadf91a87d776ffc6f8984ceb03ae10a376bcaaa34b23685"
+    },
+    "ma23_corrupt_jump_hit": {
+      "key": "nca_ma23_corrupt_jump_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump_hit.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "bcbb54ecc12b0fe5daf6c2eec965504e6b48c9ae3e6b7c9161bf4c8294c2931e"
+    },
+    "ma23_corrupt_jump_red": {
+      "key": "nca_ma23_corrupt_jump_red",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump_red.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "ad73e243106cacb0757d05b3e2715ff2e06ae0ffc374f33d3b2588e17b2dffdb"
+    },
+    "ma23_corrupt_jump_red_hit": {
+      "key": "nca_ma23_corrupt_jump_red_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_jump_red_hit.webp",
+      "w": 2560,
+      "h": 1920,
+      "legacy": false,
+      "sha256": "bcbb54ecc12b0fe5daf6c2eec965504e6b48c9ae3e6b7c9161bf4c8294c2931e"
+    },
+    "ma23_corrupt_sides": {
+      "key": "nca_ma23_corrupt_sides",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "fc693e39f46d7af22a8c0637df99c894b03849175396ca3cc94a89e0e73d5dd5"
+    },
+    "ma23_corrupt_sides_hit": {
+      "key": "nca_ma23_corrupt_sides_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "1d6ab0009ce091c95ee36bab90012391a8c96810a32c2bbe6deb7401ac2f7aaf"
+    },
+    "ma23_corrupt_sides_red": {
+      "key": "nca_ma23_corrupt_sides_red",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides_red.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "68facccc7e61193ea16a0bed2f81822ca2d2e619539cc676f0ff0efbd5b53dab"
+    },
+    "ma23_corrupt_sides_red_hit": {
+      "key": "nca_ma23_corrupt_sides_red_hit",
+      "path": "assets/game/shared/combat/pixellab_hammer_1023/corrupt_sides_red_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": false,
+      "sha256": "1d6ab0009ce091c95ee36bab90012391a8c96810a32c2bbe6deb7401ac2f7aaf"
+    }
+  },
+  "phases": {
+    "corrupt": {
+      "windEnd": 4,
+      "strikeEnd": 7,
+      "recoverStart": 8
+    }
+  },
+  "sources": {
+    "bodyJob": "63077c51-07d4-43f3-857f-12359cf84d0e",
+    "sideJob": "85c23e09-9c8e-4845-82dc-ee94694dd636",
+    "lockedWeaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  "owner": "_BUILD_SOURCE/build_pixellab_hammer_candidate_1023.py",
+  "weaponUnit": 0.13
+}

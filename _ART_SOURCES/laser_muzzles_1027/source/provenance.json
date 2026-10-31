@@ -1,0 +1,18 @@
+{
+  "provider": "PixelLab VFX Workbench",
+  "effectId": "ba5669e0-cf0d-4acf-9de2-9a14830f7824",
+  "imageId": "bb1ed7f8-4733-427d-8b21-9ea044232702",
+  "stepId": "5966223d-7347-4f37-be13-2d6988d2703c",
+  "canvas": [
+    64,
+    64
+  ],
+  "frames": 16,
+  "fps": 24,
+  "pivot": [
+    16,
+    32
+  ],
+  "costUSD": 0,
+  "direction": "right"
+}

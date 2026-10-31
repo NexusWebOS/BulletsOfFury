@@ -1,0 +1,277 @@
+{
+  "instructor": {
+    "prompt": "Use case: identity-preserve / game portrait expression sheet.\nCreate a production pixel-art portrait sheet of INSTRUCTOR COLE for Bullets of Fury. Reference photos1.jpg and2.jpg define the actual man's facial identity, hairline, short naturally swept-back brown hair, broad forehead, blue-gray/green eyes, nose, trimmed brown beard, cheek/jaw shape and age. The existing cole-neutral.png defines only BOF's crisp16-bit NeoGeo/Sega32X pixel-art rendering and green riveted metal square portrait-box styling; the photographs take priority for likeness. Do not simply redraw the older game character's face or tall quiff.\nFRAME FORMAT: exactly1024x1024 image, four512x512 square cells in a strict2x2 grid, no gutters between cells. Every cell contains the exact same dark-green/black riveted military portrait frame, neon-green indicator accents and dark navy interior. Same head/shoulder scale, camera, face center and border geometry in all four cells. Keep every frame entirely inside its cell. No cell labels, words or lettering.\nCharacter outfit: black blazer over a BLACK COLLARED SHIRT with a vivid RED TIE, visible blazer lapels and tie knot; no green scarf, flight harness, combat armor, military uniform, cap or sunglasses. Head and shoulders, upright instructor posture, mild three-quarter turn toward viewer's left, eyes toward player. Black blazer clearly distinct from shirt through small charcoal pixel highlights. Preserve his natural photographed appearance, do not slim his face, invent an exaggerated squared superhero jaw, huge anime eyes or angry slanted brows.\nExpressions in reading order: top-left closed-mouth attentive neutral instructor; top-right talking with a small relaxed mouth opening; bottom-left talking with a medium mouth opening; bottom-right a restrained encouraging smile. Apart from mouth and very small natural expression changes, keep the subject registered and visually identical.\nCrisp deliberately visible pixel clusters, carefully dithered limited color ramps, sharp neutral outlines, handsome high-quality mid1990s arcade portrait work, not smooth painted illustration, not photoreal, no blur, no gradients. Square portrait boxes fully fill their cells. Opaque image with no checkerboard. No text, watermark, UI overlays, extra people or objects.",
+    "source": "returned/instructor-portraits.png"
+  },
+  "pixel": {
+    "whole": {
+      "view_args": {
+        "image_url": "upload:4c9d54cb-6384-433b-bf29-a5de0be4e2f9",
+        "method": "text",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "description": "FRAME FORMAT: keep the same256x256 transparent square, fixed center pivot128,128 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored B.O.B. three-module steel/orange training drone with amber eye, ice-blue core, left missile pod and right rotary cannon with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border."
+      },
+      "view_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"df276f68-503c-492a-a390-0a74d4b79faf\",\n  \"image_id\": \"ea6401a7-4fe0-5249-b57a-625e97e47d85\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ea6401a7-4fe0-5249-b57a-625e97e47d85\",\n  \"job_id\": \"df276f68-503c-492a-a390-0a74d4b79faf\",\n  \"description\": \"FRAME FORMAT: keep the same256x256 transparent square, fixed center pivot128,128 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored B.O.B. three-module steel/orange training drone with amber eye, ice-blue core, left missile pod and right rotary cannon with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 256\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/df276f68-503c-492a-a390-0a74d4b79faf/download\"\n}\nPoll get_image(job_id=\"df276f68-503c-492a-a390-0a74d4b79faf\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "df276f68-503c-492a-a390-0a74d4b79faf",
+          "image_id": "ea6401a7-4fe0-5249-b57a-625e97e47d85",
+          "status": "processing",
+          "source_image_id": "ea6401a7-4fe0-5249-b57a-625e97e47d85",
+          "job_id": "df276f68-503c-492a-a390-0a74d4b79faf",
+          "description": "FRAME FORMAT: keep the same256x256 transparent square, fixed center pivot128,128 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored B.O.B. three-module steel/orange training drone with amber eye, ice-blue core, left missile pod and right rotary cannon with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.",
+          "seed": 0,
+          "image_size": {
+            "width": 256,
+            "height": 256
+          },
+          "output_count": 1,
+          "estimated_generations": 9,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/df276f68-503c-492a-a390-0a74d4b79faf/download"
+        },
+        "isError": false
+      },
+      "turn_args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/df276f68-503c-492a-a390-0a74d4b79faf/download?index=0",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/df276f68-503c-492a-a390-0a74d4b79faf/download?index=0",
+        "frame_count": 32,
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south",
+        "view": "low top-down",
+        "subject_description": "The same B.O.B. steel and orange training hover robot with blue reactor as the supplied image",
+        "initial_pose": "Centered elevated three-quarter front view, upright, floating still.",
+        "description": "Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop."
+      },
+      "turn_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 3a76de5a-6924-4006-a284-57147a92c0a9\njob_id: 3a76de5a-6924-4006-a284-57147a92c0a9\ndescription: Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3a76de5a-6924-4006-a284-57147a92c0a9\")\nasset_id: 3d79d087-cea4-53a4-a05b-18426265e8a3\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      }
+    },
+    "missile": {
+      "view_args": {
+        "image_url": "upload:f3c6ac9b-ed37-4352-bff4-f46db902785a",
+        "method": "text",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "description": "FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored missile module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border."
+      },
+      "view_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"dea0653a-d720-4ad3-82cc-a27191636145\",\n  \"image_id\": \"18f1277b-51cb-5a04-9625-6dbd0a0350fe\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"18f1277b-51cb-5a04-9625-6dbd0a0350fe\",\n  \"job_id\": \"dea0653a-d720-4ad3-82cc-a27191636145\",\n  \"description\": \"FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored missile module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 192,\n    \"height\": 192\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/dea0653a-d720-4ad3-82cc-a27191636145/download\"\n}\nPoll get_image(job_id=\"dea0653a-d720-4ad3-82cc-a27191636145\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "dea0653a-d720-4ad3-82cc-a27191636145",
+          "image_id": "18f1277b-51cb-5a04-9625-6dbd0a0350fe",
+          "status": "processing",
+          "source_image_id": "18f1277b-51cb-5a04-9625-6dbd0a0350fe",
+          "job_id": "dea0653a-d720-4ad3-82cc-a27191636145",
+          "description": "FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored missile module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.",
+          "seed": 0,
+          "image_size": {
+            "width": 192,
+            "height": 192
+          },
+          "output_count": 1,
+          "estimated_generations": 6,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/dea0653a-d720-4ad3-82cc-a27191636145/download"
+        },
+        "isError": false
+      },
+      "turn_args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/dea0653a-d720-4ad3-82cc-a27191636145/download?index=0",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/dea0653a-d720-4ad3-82cc-a27191636145/download?index=0",
+        "frame_count": 32,
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south",
+        "view": "low top-down",
+        "subject_description": "The same missile training robot module as the supplied image",
+        "initial_pose": "Centered elevated three-quarter front view, upright, floating still.",
+        "description": "Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop."
+      },
+      "turn_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: e0c547b4-6590-4d5d-afea-ee433292bf81\njob_id: e0c547b4-6590-4d5d-afea-ee433292bf81\ndescription: Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop.\nframes: 32\nsize: 192x192px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e0c547b4-6590-4d5d-afea-ee433292bf81\")\nasset_id: bba4397e-6712-5181-8ad3-6c287266a490\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      }
+    },
+    "core": {
+      "view_args": {
+        "image_url": "upload:8fd97360-67b6-4986-8b48-f74b7aadfeb3",
+        "method": "text",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "description": "FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored core module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border."
+      },
+      "view_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"e888373d-7be1-4d63-9d67-6696b254d794\",\n  \"image_id\": \"7d2fb559-8140-570e-b1a6-df06b1fade1a\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"7d2fb559-8140-570e-b1a6-df06b1fade1a\",\n  \"job_id\": \"e888373d-7be1-4d63-9d67-6696b254d794\",\n  \"description\": \"FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored core module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 192,\n    \"height\": 192\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/e888373d-7be1-4d63-9d67-6696b254d794/download\"\n}\nPoll get_image(job_id=\"e888373d-7be1-4d63-9d67-6696b254d794\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "e888373d-7be1-4d63-9d67-6696b254d794",
+          "image_id": "7d2fb559-8140-570e-b1a6-df06b1fade1a",
+          "status": "processing",
+          "source_image_id": "7d2fb559-8140-570e-b1a6-df06b1fade1a",
+          "job_id": "e888373d-7be1-4d63-9d67-6696b254d794",
+          "description": "FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored core module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.",
+          "seed": 0,
+          "image_size": {
+            "width": 192,
+            "height": 192
+          },
+          "output_count": 1,
+          "estimated_generations": 6,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/e888373d-7be1-4d63-9d67-6696b254d794/download"
+        },
+        "isError": false
+      },
+      "turn_args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e888373d-7be1-4d63-9d67-6696b254d794/download?index=0",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/e888373d-7be1-4d63-9d67-6696b254d794/download?index=0",
+        "frame_count": 32,
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south",
+        "view": "low top-down",
+        "subject_description": "The same core training robot module as the supplied image",
+        "initial_pose": "Centered elevated three-quarter front view, upright, floating still.",
+        "description": "Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop."
+      },
+      "turn_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 3bfe5f8d-4367-431f-ac36-5ceee2b87ca1\njob_id: 3bfe5f8d-4367-431f-ac36-5ceee2b87ca1\ndescription: Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop.\nframes: 32\nsize: 192x192px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3bfe5f8d-4367-431f-ac36-5ceee2b87ca1\")\nasset_id: 9dc7e6d1-f852-5748-9484-a9c61b7248b0\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      }
+    },
+    "cannon": {
+      "view_args": {
+        "image_url": "upload:1c36f7a5-3547-4fb5-80c0-b32f8f7f45ab",
+        "method": "text",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "description": "FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored cannon module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border."
+      },
+      "view_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"aa7861b6-67e2-4722-9eb1-c487ee7295fb\",\n  \"image_id\": \"ac927689-0741-5593-a38a-377dae3aa702\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ac927689-0741-5593-a38a-377dae3aa702\",\n  \"job_id\": \"aa7861b6-67e2-4722-9eb1-c487ee7295fb\",\n  \"description\": \"FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored cannon module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 192,\n    \"height\": 192\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/aa7861b6-67e2-4722-9eb1-c487ee7295fb/download\"\n}\nPoll get_image(job_id=\"aa7861b6-67e2-4722-9eb1-c487ee7295fb\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "aa7861b6-67e2-4722-9eb1-c487ee7295fb",
+          "image_id": "ac927689-0741-5593-a38a-377dae3aa702",
+          "status": "processing",
+          "source_image_id": "ac927689-0741-5593-a38a-377dae3aa702",
+          "job_id": "aa7861b6-67e2-4722-9eb1-c487ee7295fb",
+          "description": "FRAME FORMAT: keep the same192x192 transparent square, fixed center pivot96,96 and a consistent proportional size, at least16px clear margins around every extremity. Preserve this EXACT authored cannon module from B.O.B. with all the same design, surface colors, proportions, ports and machinery. Change only the viewpoint to a clean low-top-down elevated three-quarter FRONT technical-inspection view, giving visible side thickness and structural volume so it can rotate as a3D turntable. No new design or extra machinery. Keep its front pointing down toward the viewer, exact same pixel-art style, true transparent background, no platform or floor, no shadows outside the subject, no text, UI, labels, arrows or border.",
+          "seed": 0,
+          "image_size": {
+            "width": 192,
+            "height": 192
+          },
+          "output_count": 1,
+          "estimated_generations": 6,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/aa7861b6-67e2-4722-9eb1-c487ee7295fb/download"
+        },
+        "isError": false
+      },
+      "turn_args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/aa7861b6-67e2-4722-9eb1-c487ee7295fb/download?index=0",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/aa7861b6-67e2-4722-9eb1-c487ee7295fb/download?index=0",
+        "frame_count": 32,
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south",
+        "view": "low top-down",
+        "subject_description": "The same cannon training robot module as the supplied image",
+        "initial_pose": "Centered elevated three-quarter front view, upright, floating still.",
+        "description": "Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop."
+      },
+      "turn_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 904580ec-99e3-4ee0-8e31-1853d727d357\njob_id: 904580ec-99e3-4ee0-8e31-1853d727d357\ndescription: Inspection turntable: the object slowly rotates exactly one full 360 degree turn around its upright vertical yaw axis, revealing its front, right side thickness, back mechanical casing, left side, then original front. Fixed camera, fixed center pivot and size, no camera motion or zoom, no flat in-plane spinning, no tilting, no weapons firing or morphing. Preserve the exact mechanical design and colors. All tips remain within the canvas with transparent margin. Smooth evenly spaced poses, seamless loop.\nframes: 32\nsize: 192x192px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"904580ec-99e3-4ee0-8e31-1853d727d357\")\nasset_id: 68e99269-76cd-5a78-ad05-944f10aca414\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      }
+    },
+    "seed": {
+      "args": {
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "max_colors": 40,
+        "description": "FRAME FORMAT: exactly256x256 transparent canvas, common physical pivot128,128, preserve16px transparent margins around all parts and exhaust. A brand-new exclusive tutorial boss for Bullets of Fury, called B.O.B. the Ballistics Orientation Bot, a long-suffering veteran training machine with a slightly grumpy mechanical expression, humorous personality but credible mid1990s military arcade boss design. Strict TOP-DOWN overhead shooter view, front points straight DOWN toward the player, perfectly centered upright and bilaterally readable. One coherent hovering armored training drone with THREE unmistakable connected modules: a central squat steel/charcoal body with a bright ICE-BLUE circular exposed reactor in the lower chest/nose and a small amber scanning eye above; a separate left rectangular missile pod, and a separate right rotary bullet-cannon pod. The left pod occupies x20..76, the right pod x180..236, central body x88..168; short narrow dark mounting struts bridge the transparent gaps. Reserve clear transparent separation between the main mass and both pods except those struts. Body from y45..216, pods y80..192. Gray steel and muted orange safety panels, tiny green readiness lights, icy-blue exposed core. Scuffed aged metal, crisp black outlines and strong pixel cluster shading, Sega32X/NeoGeo16-bit arcade art with detailed but readable silhouette. No human pilot, no legs, no scenery, no floor, no glow cloud, no firing bullets, no exhaust covering the outline, no lettering, text, labels, UI, symbols, arrows, reticles or border. Entire craft fits comfortably inside canvas. This will be a modular, targetable instructor boss, and the core/missile pod/cannon pod will each receive matching turntable animations."
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: cd10bd5f-a02f-4fc3-86c9-d4ff5b0bef8c\njob_id: cd10bd5f-a02f-4fc3-86c9-d4ff5b0bef8c\nmodel: pro\ndescription: FRAME FORMAT: exactly256x256 transparent canvas, common physical pivot128,128, preserve16px transparent margins around all parts and exhaust. A brand-new exclusive tutorial boss for Bullets of Fury, called B.O.B. the Ballistics Orientation Bot, a long-suffering veteran training machine with a slightly grumpy mechanical expression, humorous personality but credible mid1990s military arcade boss design. Strict TOP-DOWN overhead shooter view, front points straight DOWN toward the player, perfectly centered upright and bilaterally readable. One coherent hovering armored training drone with THREE unmistakable connected modules: a central squat steel/charcoal body with a bright ICE-BLUE circular exposed reactor in the lower chest/nose and a small amber scanning eye above; a separate left rectangular missile pod, and a separate right rotary bullet-cannon pod. The left pod occupies x20..76, the right pod x180..236, central body x88..168; short narrow dark mounting struts bridge the transparent gaps. Reserve clear transparent separation between the main mass and both pods except those struts. Body from y45..216, pods y80..192. Gray steel and muted orange safety panels, tiny green readiness lights, icy-blue exposed core. Scuffed aged metal, crisp black outlines and strong pixel cluster shading, Sega32X/NeoGeo16-bit arcade art with detailed but readable silhouette. No human pilot, no legs, no scenery, no floor, no glow cloud, no firing bullets, no exhaust covering the outline, no lettering, text, labels, UI, symbols, arrows, reticles or border. Entire craft fits comfortably inside canvas. This will be a modular, targetable instructor boss, and the core/missile pod/cannon pod will each receive matching turntable animations.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nmax colours: 40 per image\nasset_id: a360c3ea-bb61-5327-9d0c-cc42f57e8271\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"cd10bd5f-a02f-4fc3-86c9-d4ff5b0bef8c\")"
+          }
+        ],
+        "isError": false
+      }
+    }
+  },
+  "charge_summary": {
+    "credits_usd": 0.3644,
+    "subscription_generations": 3,
+    "note": "PixelLab receipts only; built-in image generator metering separate."
+  },
+  "completed_turns": {
+    "whole": {
+      "job_id": "3a76de5a-6924-4006-a284-57147a92c0a9",
+      "credits": 0.0608
+    },
+    "missile": {
+      "job_id": "e0c547b4-6590-4d5d-afea-ee433292bf81",
+      "generations": 3
+    },
+    "core": {
+      "job_id": "3bfe5f8d-4367-431f-ac36-5ceee2b87ca1",
+      "credits": 0.0497
+    },
+    "cannon": {
+      "job_id": "904580ec-99e3-4ee0-8e31-1853d727d357",
+      "credits": 0.0369
+    }
+  }
+}

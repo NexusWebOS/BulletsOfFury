@@ -1,0 +1,25 @@
+{
+  "checksPassed": 13,
+  "checks": 13,
+  "banks": 3,
+  "phases": 16,
+  "directions": 64,
+  "cell": [
+    64,
+    64
+  ],
+  "allCellsInsideAlphaBounds": true,
+  "source": "PixelLab VFX Workbench",
+  "effectId": "ba5669e0-cf0d-4acf-9de2-9a14830f7824",
+  "generationCostUSD": 0,
+  "pngBytes": 508757,
+  "decodedBytes": 50331648,
+  "requiredSuiteExit": 1,
+  "sameFiveBaselineFailures": [
+    "and the flash is held long enough for a single hit to register",
+    "dialogue ends with the opening jump warning",
+    "opening jump lands and returns before chromium activation",
+    "unchosen right route persists as the opposite Stage X fight",
+    "Stage X right branch launches a full encounter"
+  ]
+}

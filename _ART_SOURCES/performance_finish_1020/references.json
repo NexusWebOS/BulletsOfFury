@@ -1,0 +1,74 @@
+{
+  "cole_report_face": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\cole_report_face.png",
+    "canvas": [
+      192,
+      192
+    ],
+    "source_region": [
+      160,
+      0,
+      352,
+      192
+    ],
+    "source_size": [
+      512,
+      1024
+    ],
+    "ref": "upload:75d9154f-3a77-43a8-a155-8aa3fc63ed4c"
+  },
+  "cole_report_gesture": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\cole_report_gesture.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "source_region": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "source_size": [
+      512,
+      1024
+    ],
+    "ref": "upload:1e9d010e-0510-42c9-852e-c74ece759d44"
+  },
+  "cole_horror_face": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\cole_horror_face.png",
+    "canvas": [
+      192,
+      192
+    ],
+    "source_region": [
+      160,
+      0,
+      352,
+      192
+    ],
+    "source_size": [
+      512,
+      1024
+    ],
+    "ref": "upload:4eb3dbde-afc6-41b5-b9d0-0f65eb886a9a"
+  },
+  "cole_horror_gesture": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\cole_horror_gesture.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "source_region": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "source_size": [
+      512,
+      1024
+    ],
+    "ref": "upload:fee3c732-55a6-4173-9b57-67cb911e4b7c"
+  }
+}

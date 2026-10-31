@@ -74,3 +74,9 @@ for row,key in enumerate(KEYS):
 contact.save(S/'flight-contact.png')
 art=dict(banks=banks,font=dict(chars=CHARS,glyphs=fontGlyphs,lineHeight=32),models=models)
 (O/'manifest.json').write_text(json.dumps(dict(**art,sources=sources,crewName='The Rough Riders',members=KEYS),indent=2),encoding='utf-8');(R/'assets/rough_riders_art_1028.js').write_text('"use strict";\nconst RR33_ART='+json.dumps(art,separators=(',',':'))+';\n',encoding='utf-8');(S/'sources.json').write_text(json.dumps(sources,indent=2),encoding='utf-8');print('Built',len(banks),'banks, 360 whole flight cells, 80 glyphs x3 palettes')
+
+# Preserve the October30 approved true-roll extension after rebuilding the original72 cells.
+import subprocess,shutil
+roll_builder=R/'_BUILD_SOURCE/build_riders_roll_type_1030.py'
+aseprite=shutil.which('aseprite')or str(Path(r'C:/Users/Mike/Desktop/Retro Dev Tools/Graphics/Aseprite/aseprite.exe'))
+if roll_builder.exists():subprocess.run([__import__('sys').executable,str(roll_builder),'--aseprite',aseprite],check=True)

@@ -1,0 +1,39 @@
+{
+  "right": {
+    "file": "hud-right-square.png",
+    "size": [
+      376,
+      1024
+    ],
+    "portrait": [
+      70,
+      74,
+      228,
+      228
+    ],
+    "name": [
+      82,
+      329,
+      216,
+      39
+    ],
+    "source": "square-bay-generated.png",
+    "unchangedBelowY": 384
+  },
+  "headers": {
+    "wide": [
+      376,
+      88
+    ],
+    "compactHalf": [
+      480,
+      88
+    ]
+  },
+  "sha256": {
+    "hud-right-square.png": "98a6f582b4cf8fe95fdbbae959f95e0fb797b761bd5eee929b05da32c2e22375",
+    "square-bay-generated.png": "9d320805ae7dc2f30ad860b60a0e80562ee1693e621f6fea35bd2b771d600bcc",
+    "timer-376.png": "8b56683f973b066874a4c4d7148d1833a4125081fb9665f51eeeba8a915435d1",
+    "timer-480.png": "69e607c67f2066f0a71125d38045994c7c823bfa23dfed060f0b3563d030ad6d"
+  }
+}

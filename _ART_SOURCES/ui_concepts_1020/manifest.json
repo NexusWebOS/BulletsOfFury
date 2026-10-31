@@ -1,0 +1,69 @@
+{
+  "tool": "built-in image_gen",
+  "selection": {
+    "dialogue": null,
+    "hud": null
+  },
+  "runtimeChanges": "Only dedicated Dracodia portrait installed; window/HUD remain concept choices",
+  "portrait": {
+    "key": "dp20_dracodia_portrait",
+    "path": "assets/game/levels/stage_08/cinematics/dracodia_portrait_1020/portrait.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "masterPixelsPreserved": true,
+    "sha256": "d03c1d316f0bc60de9c55f8d6808153a796b91dc2193242e8be1ed6a6fda9af2"
+  },
+  "concepts": {
+    "dialogue-a": {
+      "path": "_ART_SOURCES/ui_concepts_1020/art/dialogue-a.png",
+      "size": [
+        1672,
+        942
+      ]
+    },
+    "dialogue-b": {
+      "path": "_ART_SOURCES/ui_concepts_1020/art/dialogue-b.png",
+      "size": [
+        1672,
+        942
+      ]
+    },
+    "dialogue-c": {
+      "path": "_ART_SOURCES/ui_concepts_1020/art/dialogue-c.png",
+      "size": [
+        1672,
+        942
+      ]
+    },
+    "dracodia-portrait": {
+      "path": "_ART_SOURCES/ui_concepts_1020/art/dracodia-portrait.png",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "hud-a": {
+      "path": "_ART_SOURCES/ui_concepts_1020/art/hud-a.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    "hud-b": {
+      "path": "_ART_SOURCES/ui_concepts_1020/art/hud-b.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    "hud-c": {
+      "path": "_ART_SOURCES/ui_concepts_1020/art/hud-c.png",
+      "size": [
+        1536,
+        1024
+      ]
+    }
+  }
+}

@@ -1,0 +1,352 @@
+[
+  {
+    "id": "dasher",
+    "kind": "master",
+    "job_id": "ebe3d5e1-07b0-45f3-a8b0-0dcfd9ffc2b7",
+    "prompt": "FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Exclusive suicide turbo interceptor, a very slender arrowhead aircraft with tiny swept folding wings, long pointed silver nose DOWN, white chromium armour, dark grey dorsal spine, vivid teal turbine rings and paired compact cannon pods. A distinct speedster silhouette, much narrower and more needle-like than the reference Zephyr. Readable canopy, 2 small wing roots and twin accelerator engines. Teal/white/gray only; no red. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.",
+    "frames": 4,
+    "status": "completed",
+    "receipt": "id: ebe3d5e1-07b0-45f3-a8b0-0dcfd9ffc2b7\njob_id: ebe3d5e1-07b0-45f3-a8b0-0dcfd9ffc2b7\nmodel: pro\ndescription: FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Exclusive suicide turbo interceptor, a very slender arrowhead aircraft with tiny swept folding wings, long pointed silver nose DOWN, white chromium armour, dark grey dorsal spine, vivid teal turbine rings and paired compact cannon pods. A distinct speedster silhouette, much narrower and more needle-like than the reference Zephyr. Readable canopy, 2 small wing roots and twin accelerator engines. Teal/white/gray only; no red. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nreferences: 1\nasset_id: 14a11565-e583-5e55-85bb-aacf7b9cae64\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"ebe3d5e1-07b0-45f3-a8b0-0dcfd9ffc2b7\")",
+    "completion": "status: completed\nid: ebe3d5e1-07b0-45f3-a8b0-0dcfd9ffc2b7\njob_id: ebe3d5e1-07b0-45f3-a8b0-0dcfd9ffc2b7\nframe: 0 of 4\nasset_id: 14a11565-e583-5e55-85bb-aacf7b9cae64\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/ebe3d5e1-07b0-45f3-a8b0-0dcfd9ffc2b7/download?index=0"
+  },
+  {
+    "id": "slimejet",
+    "kind": "master",
+    "job_id": "e538f398-84a2-40ad-88ad-ab7df5cd7472",
+    "prompt": "FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Toxic alien/robotic slime jet. Gunmetal dark olive mechanical fuselage, swept split wings, exposed neon lime corrosive fluid channels and a glass green acid reactor. Organic viscous slime contained inside tubing, no loose amorphous blob. Clearly recognisable airplane nose DOWN, symmetric paired acid cannons near(40,94) and(88,94), mechanical ailerons and turbines. Cohesive olive/black/lime sewer biome, white metal highlights. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.",
+    "frames": 4,
+    "status": "completed",
+    "receipt": "id: e538f398-84a2-40ad-88ad-ab7df5cd7472\njob_id: e538f398-84a2-40ad-88ad-ab7df5cd7472\nmodel: pro\ndescription: FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Toxic alien/robotic slime jet. Gunmetal dark olive mechanical fuselage, swept split wings, exposed neon lime corrosive fluid channels and a glass green acid reactor. Organic viscous slime contained inside tubing, no loose amorphous blob. Clearly recognisable airplane nose DOWN, symmetric paired acid cannons near(40,94) and(88,94), mechanical ailerons and turbines. Cohesive olive/black/lime sewer biome, white metal highlights. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nreferences: 1\nasset_id: 308a5b15-22ad-55df-9bc3-725ae13acad4\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"e538f398-84a2-40ad-88ad-ab7df5cd7472\")",
+    "completion": "status: completed\nid: e538f398-84a2-40ad-88ad-ab7df5cd7472\njob_id: e538f398-84a2-40ad-88ad-ab7df5cd7472\nframe: 0 of 4\nasset_id: 308a5b15-22ad-55df-9bc3-725ae13acad4\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/e538f398-84a2-40ad-88ad-ab7df5cd7472/download?index=0"
+  },
+  {
+    "id": "sewerdrone",
+    "kind": "master",
+    "job_id": "c32367df-90b4-4ca3-b230-27c759ae3308",
+    "prompt": "FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Compact floating alien robotic sewer scout drone, diamond-shaped olive/gunmetal armour, four compact bladed fins and two articulated lateral acid gun pods, no humanoid legs. Mechanical singular bright lime reactor eye at centre and neon-green toxic capillaries. Small recognizable robotic flying craft, downward-facing attack axis. Symmetric guns aimed DOWN near(40,92),(88,92), dark outlines and deliberate silver highlights. Cohesive olive/black/lime palette of the toxic jet. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.",
+    "frames": 4,
+    "status": "completed",
+    "receipt": "id: c32367df-90b4-4ca3-b230-27c759ae3308\njob_id: c32367df-90b4-4ca3-b230-27c759ae3308\nmodel: pro\ndescription: FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Compact floating alien robotic sewer scout drone, diamond-shaped olive/gunmetal armour, four compact bladed fins and two articulated lateral acid gun pods, no humanoid legs. Mechanical singular bright lime reactor eye at centre and neon-green toxic capillaries. Small recognizable robotic flying craft, downward-facing attack axis. Symmetric guns aimed DOWN near(40,92),(88,92), dark outlines and deliberate silver highlights. Cohesive olive/black/lime palette of the toxic jet. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nreferences: 1\nasset_id: 96e88e08-2d31-5389-921d-da18a3f74198\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"c32367df-90b4-4ca3-b230-27c759ae3308\")",
+    "completion": "status: completed\nid: c32367df-90b4-4ca3-b230-27c759ae3308\njob_id: c32367df-90b4-4ca3-b230-27c759ae3308\nframe: 0 of 4\nasset_id: 96e88e08-2d31-5389-921d-da18a3f74198\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/c32367df-90b4-4ca3-b230-27c759ae3308/download?index=0"
+  },
+  {
+    "id": "sewerheavy",
+    "kind": "master",
+    "job_id": "06428f77-eff1-48fb-aac2-2aa5162ed203",
+    "prompt": "FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Heavy alien robotic sewer drone aircraft, squat broad central armoured hover reactor, two large articulated side cannon nacelles and four short swept metal wings. Closed lime biohazard plasma capsule in centre, green fluid pipes, dark olive/gunmetal chrome with neutral white highlights. Symmetric nose/weapon axis faces DOWN. Clearly machinery, not a tank, not a standing robot; menacing toxic support gunship. Paired barrel tips near(36,94),(92,94). Match toxic jet's olive/black/lime identity. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.",
+    "frames": 4,
+    "status": "completed",
+    "receipt": "id: 06428f77-eff1-48fb-aac2-2aa5162ed203\njob_id: 06428f77-eff1-48fb-aac2-2aa5162ed203\nmodel: pro\ndescription: FRAME FORMAT: single128x128 transparent sprite, fixed pivot(64,64), one proportional scale, reserve all animation within x16..112,y14..114. Premium HD16-bit Neo Geo arcade pixel art, crisp clusters, clean metal highlights. Strict ORTHOGRAPHIC TOP DOWN, nose points DOWN, no perspective or isometric angle. Heavy alien robotic sewer drone aircraft, squat broad central armoured hover reactor, two large articulated side cannon nacelles and four short swept metal wings. Closed lime biohazard plasma capsule in centre, green fluid pipes, dark olive/gunmetal chrome with neutral white highlights. Symmetric nose/weapon axis faces DOWN. Clearly machinery, not a tank, not a standing robot; menacing toxic support gunship. Paired barrel tips near(36,94),(92,94). Match toxic jet's olive/black/lime identity. Central fuselage x48..80, left/right attached wing and weapon modules x18..48/x80..110, clean mechanical joints. No flames/exhaust, no muzzle flash, projectile, shadow, text, background or sheet. One complete assembled craft only.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nreferences: 1\nasset_id: a77ec5fc-133b-5bb5-b45b-a378d9ddc505\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"06428f77-eff1-48fb-aac2-2aa5162ed203\")",
+    "completion": "status: completed\nid: 06428f77-eff1-48fb-aac2-2aa5162ed203\njob_id: 06428f77-eff1-48fb-aac2-2aa5162ed203\nframe: 0 of 4\nasset_id: a77ec5fc-133b-5bb5-b45b-a378d9ddc505\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/06428f77-eff1-48fb-aac2-2aa5162ed203/download?index=0"
+  },
+  {
+    "id": "herald_wingL",
+    "kind": "motion",
+    "job_id": "2d110b26-d03a-4b4d-8c2d-00febd34c23f",
+    "frames": 9,
+    "prompt": "The same attached skeletal demonic eagle wing performs one powerful flight flap: wing bones fold closer, feathers flex upward, then wing extends out in a smooth forceful downbeat and returns. The shoulder joint stays pinned at(111,80), no whole-image translation. Preserve the exact bone/metal/black-red design, do not add arm/body/other wing or loose particles. FRAME FORMAT128x192 transparent, fixed original canvas and common scale. Physical root pivot(111,80) NEVER moves; fit every pose inside transparent safety margins. No body, glow plume, shadow, camera move or background; crisp HD16-bit pixel art.",
+    "status": "completed",
+    "receipt": "id: 2d110b26-d03a-4b4d-8c2d-00febd34c23f\njob_id: 2d110b26-d03a-4b4d-8c2d-00febd34c23f\naction: The same attached skeletal demonic eagle wing performs one powerful flight flap: wing bones fold closer, feathers flex upward, then wing extends out in a smooth forceful downbeat and returns. The shoulder joint stays pinned at(111,80), no whole-image translation. Preserve the exact bone/metal/black-red design, do not add arm/body/other wing or loose particles. FRAME FORMAT128x192 transparent, fixed original canvas and common scale. Physical root pivot(111,80) NEVER moves; fit every pose inside transparent safety margins. No body, glow plume, shadow, camera move or background; crisp HD16-bit pixel art.\nframes: 8\nsize: 128x192px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: c56e5714-64b1-533b-a29a-977f0a28c672\nasset_status: pending (saved when generation completes)\ncost: 3 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2d110b26-d03a-4b4d-8c2d-00febd34c23f\")",
+    "completion": "status: completed\nid: 2d110b26-d03a-4b4d-8c2d-00febd34c23f\njob_id: 2d110b26-d03a-4b4d-8c2d-00febd34c23f\nframe: 0 of 9\nasset_id: c56e5714-64b1-533b-a29a-977f0a28c672\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0279 in credits\ndownload: https://api.pixellab.ai/mcp/images/2d110b26-d03a-4b4d-8c2d-00febd34c23f/download?index=0"
+  },
+  {
+    "id": "herald_wingR",
+    "kind": "motion",
+    "job_id": "ca64c6a1-7b4e-4d35-86e4-377b979d9886",
+    "frames": 9,
+    "prompt": "The same attached skeletal demonic eagle wing performs one powerful flight flap: wing bones fold closer, feathers flex upward, then wing extends out in a smooth forceful downbeat and returns. The shoulder joint stays pinned at(16,80), no whole-image translation. Preserve the exact bone/metal/black-red design, do not add arm/body/other wing or loose particles. FRAME FORMAT128x192 transparent, fixed original canvas and common scale. Physical root pivot(16,80) NEVER moves; fit every pose inside transparent safety margins. No body, glow plume, shadow, camera move or background; crisp HD16-bit pixel art.",
+    "status": "completed",
+    "receipt": "id: ca64c6a1-7b4e-4d35-86e4-377b979d9886\njob_id: ca64c6a1-7b4e-4d35-86e4-377b979d9886\naction: The same attached skeletal demonic eagle wing performs one powerful flight flap: wing bones fold closer, feathers flex upward, then wing extends out in a smooth forceful downbeat and returns. The shoulder joint stays pinned at(16,80), no whole-image translation. Preserve the exact bone/metal/black-red design, do not add arm/body/other wing or loose particles. FRAME FORMAT128x192 transparent, fixed original canvas and common scale. Physical root pivot(16,80) NEVER moves; fit every pose inside transparent safety margins. No body, glow plume, shadow, camera move or background; crisp HD16-bit pixel art.\nframes: 8\nsize: 128x192px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 10e67a53-7bac-5918-98a3-098061d84723\nasset_status: pending (saved when generation completes)\ncost: 3 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ca64c6a1-7b4e-4d35-86e4-377b979d9886\")",
+    "completion": "status: completed\nid: ca64c6a1-7b4e-4d35-86e4-377b979d9886\njob_id: ca64c6a1-7b4e-4d35-86e4-377b979d9886\nframe: 0 of 9\nasset_id: 10e67a53-7bac-5918-98a3-098061d84723\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0232 in credits\ndownload: https://api.pixellab.ai/mcp/images/ca64c6a1-7b4e-4d35-86e4-377b979d9886/download?index=0"
+  },
+  {
+    "id": "herald_head",
+    "kind": "motion",
+    "job_id": "7c0bedcf-4e65-4e36-9475-3839e4d54106",
+    "frames": 9,
+    "prompt": "The same frontal demonic robotic skull head slowly opens its jaw into a predatory eagle-like screech, red eyes pulse brighter, small deliberate downwards peck/nod and return. Preserve the exact skull, horns, mechanical jaw and existing colours. FRAME FORMAT128x192 transparent, fixed original canvas and common scale. Physical root pivot(65,149) NEVER moves; fit every pose inside transparent safety margins. No body, glow plume, shadow, camera move or background; crisp HD16-bit pixel art.",
+    "status": "completed",
+    "receipt": "id: 7c0bedcf-4e65-4e36-9475-3839e4d54106\njob_id: 7c0bedcf-4e65-4e36-9475-3839e4d54106\naction: The same frontal demonic robotic skull head slowly opens its jaw into a predatory eagle-like screech, red eyes pulse brighter, small deliberate downwards peck/nod and return. Preserve the exact skull, horns, mechanical jaw and existing colours. FRAME FORMAT128x192 transparent, fixed original canvas and common scale. Physical root pivot(65,149) NEVER moves; fit every pose inside transparent safety margins. No body, glow plume, shadow, camera move or background; crisp HD16-bit pixel art.\nframes: 8\nsize: 128x192px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 76419ade-381f-5389-bcde-39d3499bd315\nasset_status: pending (saved when generation completes)\ncost: 3 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7c0bedcf-4e65-4e36-9475-3839e4d54106\")",
+    "completion": "status: completed\nid: 7c0bedcf-4e65-4e36-9475-3839e4d54106\njob_id: 7c0bedcf-4e65-4e36-9475-3839e4d54106\nframe: 0 of 9\nasset_id: 76419ade-381f-5389-bcde-39d3499bd315\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0329 in credits\ndownload: https://api.pixellab.ai/mcp/images/7c0bedcf-4e65-4e36-9475-3839e4d54106/download?index=0"
+  },
+  {
+    "id": "toxic_orb",
+    "kind": "fxmaster",
+    "job_id": "960881ac-9e1f-4959-8781-1636afdbaaa2",
+    "frames": 16,
+    "prompt": "FRAME FORMAT64x64 transparent, fixed pivot(32,32) and even cell, one complete effect, all art inside8..56. HD16-bit Neo Geo pixel art, crisp pixels, no background, text, ship, person or sheet. Spinning corrosive green orb, lime acidic plasma centre, dark olive outline, enclosed viscous swirl, small white glints; compact round single projectile diameter30 at(32,32).",
+    "status": "completed",
+    "receipt": "id: 960881ac-9e1f-4959-8781-1636afdbaaa2\njob_id: 960881ac-9e1f-4959-8781-1636afdbaaa2\nmodel: pro\ndescription: FRAME FORMAT64x64 transparent, fixed pivot(32,32) and even cell, one complete effect, all art inside8..56. HD16-bit Neo Geo pixel art, crisp pixels, no background, text, ship, person or sheet. Spinning corrosive green orb, lime acidic plasma centre, dark olive outline, enclosed viscous swirl, small white glints; compact round single projectile diameter30 at(32,32).\nsize: 64x64px\ntransparent: True\ncandidates: 16\nasset_id: fad6b8b6-5e5e-55bb-8c6a-c933ce9a30b6\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"960881ac-9e1f-4959-8781-1636afdbaaa2\")",
+    "completion": "status: completed\nid: 960881ac-9e1f-4959-8781-1636afdbaaa2\njob_id: 960881ac-9e1f-4959-8781-1636afdbaaa2\nframe: 0 of 16\nasset_id: fad6b8b6-5e5e-55bb-8c6a-c933ce9a30b6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/960881ac-9e1f-4959-8781-1636afdbaaa2/download?index=0"
+  },
+  {
+    "id": "toxic_muzzle",
+    "kind": "fxmaster",
+    "job_id": "48fd8b1e-2b03-4969-904a-eb8aba98594c",
+    "frames": 16,
+    "prompt": "FRAME FORMAT64x64 transparent, fixed pivot(32,32) and even cell, one complete effect, all art inside8..56. HD16-bit Neo Geo pixel art, crisp pixels, no background, text, ship, person or sheet. Single compact lime/white corrosive cannon muzzle flash, origin(32,32), four bright prongs and tiny acid droplets, radius18, no gun or travelling projectile.",
+    "status": "completed",
+    "receipt": "id: 48fd8b1e-2b03-4969-904a-eb8aba98594c\njob_id: 48fd8b1e-2b03-4969-904a-eb8aba98594c\nmodel: pro\ndescription: FRAME FORMAT64x64 transparent, fixed pivot(32,32) and even cell, one complete effect, all art inside8..56. HD16-bit Neo Geo pixel art, crisp pixels, no background, text, ship, person or sheet. Single compact lime/white corrosive cannon muzzle flash, origin(32,32), four bright prongs and tiny acid droplets, radius18, no gun or travelling projectile.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nasset_id: 76b4d501-35b7-5aee-ba97-2af1d4224441\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"48fd8b1e-2b03-4969-904a-eb8aba98594c\")",
+    "completion": "status: completed\nid: 48fd8b1e-2b03-4969-904a-eb8aba98594c\njob_id: 48fd8b1e-2b03-4969-904a-eb8aba98594c\nframe: 0 of 16\nasset_id: 76b4d501-35b7-5aee-ba97-2af1d4224441\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/48fd8b1e-2b03-4969-904a-eb8aba98594c/download?index=0"
+  },
+  {
+    "id": "dasher_turbo",
+    "kind": "fxmaster",
+    "job_id": "b2a1abd3-8683-43f9-8f0b-5ccf038e3b3c",
+    "frames": 16,
+    "prompt": "FRAME FORMAT64x64 transparent, fixed pivot(32,32) and even cell, one complete effect, all art inside8..56. HD16-bit Neo Geo pixel art, crisp pixels, no background, text, ship, person or sheet. Teal and white aircraft turbo speed wake, a narrow tapered accelerator streak, tip at(32,52), stream spreads toward TOP, translucent cyan contour rings and sharp white luminous bands, no aircraft itself, no flame or explosion.",
+    "status": "completed",
+    "receipt": "id: b2a1abd3-8683-43f9-8f0b-5ccf038e3b3c\njob_id: b2a1abd3-8683-43f9-8f0b-5ccf038e3b3c\nmodel: pro\ndescription: FRAME FORMAT64x64 transparent, fixed pivot(32,32) and even cell, one complete effect, all art inside8..56. HD16-bit Neo Geo pixel art, crisp pixels, no background, text, ship, person or sheet. Teal and white aircraft turbo speed wake, a narrow tapered accelerator streak, tip at(32,52), stream spreads toward TOP, translucent cyan contour rings and sharp white luminous bands, no aircraft itself, no flame or explosion.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nasset_id: 8c799f94-42f2-54f4-a08a-1742f8f99192\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"b2a1abd3-8683-43f9-8f0b-5ccf038e3b3c\")",
+    "completion": "status: completed\nid: b2a1abd3-8683-43f9-8f0b-5ccf038e3b3c\njob_id: b2a1abd3-8683-43f9-8f0b-5ccf038e3b3c\nframe: 0 of 16\nasset_id: 8c799f94-42f2-54f4-a08a-1742f8f99192\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/b2a1abd3-8683-43f9-8f0b-5ccf038e3b3c/download?index=0"
+  },
+  {
+    "id": "dasher",
+    "kind": "idle",
+    "job_id": "f3db1e3c-e4e2-47f1-9f8a-72a9ea07b6b8",
+    "prompt": "Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: f3db1e3c-e4e2-47f1-9f8a-72a9ea07b6b8\njob_id: f3db1e3c-e4e2-47f1-9f8a-72a9ea07b6b8\naction: Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 4fc90e40-d167-5c3e-bbd3-11a89e29884b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f3db1e3c-e4e2-47f1-9f8a-72a9ea07b6b8\")",
+    "completion": "status: completed\nid: f3db1e3c-e4e2-47f1-9f8a-72a9ea07b6b8\njob_id: f3db1e3c-e4e2-47f1-9f8a-72a9ea07b6b8\nframe: 0 of 5\nasset_id: 4fc90e40-d167-5c3e-bbd3-11a89e29884b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0221 in credits\ndownload: https://api.pixellab.ai/mcp/images/f3db1e3c-e4e2-47f1-9f8a-72a9ea07b6b8/download?index=0"
+  },
+  {
+    "id": "dasher",
+    "kind": "attack",
+    "job_id": "8ca1308a-6e09-49e9-b0d4-5cf9b828cfc5",
+    "prompt": "Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 8ca1308a-6e09-49e9-b0d4-5cf9b828cfc5\njob_id: 8ca1308a-6e09-49e9-b0d4-5cf9b828cfc5\naction: Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ce681552-3903-504e-9617-7de220745ab0\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8ca1308a-6e09-49e9-b0d4-5cf9b828cfc5\")",
+    "completion": "status: completed\nid: 8ca1308a-6e09-49e9-b0d4-5cf9b828cfc5\njob_id: 8ca1308a-6e09-49e9-b0d4-5cf9b828cfc5\nframe: 0 of 9\nasset_id: ce681552-3903-504e-9617-7de220745ab0\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0275 in credits\ndownload: https://api.pixellab.ai/mcp/images/8ca1308a-6e09-49e9-b0d4-5cf9b828cfc5/download?index=0"
+  },
+  {
+    "id": "dasher",
+    "kind": "drift",
+    "job_id": "59e0bdab-bbb1-453f-a87c-53c3052770b1",
+    "prompt": "Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: 59e0bdab-bbb1-453f-a87c-53c3052770b1\njob_id: 59e0bdab-bbb1-453f-a87c-53c3052770b1\naction: Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 73fccef9-438a-51aa-b564-4cbfa08387ed\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"59e0bdab-bbb1-453f-a87c-53c3052770b1\")",
+    "completion": "status: completed\nid: 59e0bdab-bbb1-453f-a87c-53c3052770b1\njob_id: 59e0bdab-bbb1-453f-a87c-53c3052770b1\nframe: 0 of 5\nasset_id: 73fccef9-438a-51aa-b564-4cbfa08387ed\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0256 in credits\ndownload: https://api.pixellab.ai/mcp/images/59e0bdab-bbb1-453f-a87c-53c3052770b1/download?index=0"
+  },
+  {
+    "id": "dasher",
+    "kind": "roll",
+    "job_id": "20b48a88-5f53-4b8b-9055-f5e4497977db",
+    "prompt": "One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 20b48a88-5f53-4b8b-9055-f5e4497977db\njob_id: 20b48a88-5f53-4b8b-9055-f5e4497977db\naction: One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: a471a91d-de59-5cfb-94ab-b0025825d0db\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"20b48a88-5f53-4b8b-9055-f5e4497977db\")",
+    "completion": "status: completed\nid: 20b48a88-5f53-4b8b-9055-f5e4497977db\njob_id: 20b48a88-5f53-4b8b-9055-f5e4497977db\nframe: 0 of 9\nasset_id: a471a91d-de59-5cfb-94ab-b0025825d0db\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0332 in credits\ndownload: https://api.pixellab.ai/mcp/images/20b48a88-5f53-4b8b-9055-f5e4497977db/download?index=0"
+  },
+  {
+    "id": "dasher",
+    "kind": "somer",
+    "job_id": "f879d958-1a5f-4f51-9c22-39c3d127c950",
+    "prompt": "One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: f879d958-1a5f-4f51-9c22-39c3d127c950\njob_id: f879d958-1a5f-4f51-9c22-39c3d127c950\naction: One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: a6a42534-faf5-5b8c-869b-284e1a998a28\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f879d958-1a5f-4f51-9c22-39c3d127c950\")",
+    "completion": "status: completed\nid: f879d958-1a5f-4f51-9c22-39c3d127c950\njob_id: f879d958-1a5f-4f51-9c22-39c3d127c950\nframe: 0 of 9\nasset_id: a6a42534-faf5-5b8c-869b-284e1a998a28\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0275 in credits\ndownload: https://api.pixellab.ai/mcp/images/f879d958-1a5f-4f51-9c22-39c3d127c950/download?index=0"
+  },
+  {
+    "id": "slimejet",
+    "kind": "idle",
+    "job_id": "0f99f727-d985-4816-8dc2-9d565ee3618b",
+    "prompt": "Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: 0f99f727-d985-4816-8dc2-9d565ee3618b\njob_id: 0f99f727-d985-4816-8dc2-9d565ee3618b\naction: Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: dd3f6a27-7bb3-5048-97a6-0f850b5c4c91\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0f99f727-d985-4816-8dc2-9d565ee3618b\")",
+    "completion": "status: completed\nid: 0f99f727-d985-4816-8dc2-9d565ee3618b\njob_id: 0f99f727-d985-4816-8dc2-9d565ee3618b\nframe: 0 of 5\nasset_id: dd3f6a27-7bb3-5048-97a6-0f850b5c4c91\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0287 in credits\ndownload: https://api.pixellab.ai/mcp/images/0f99f727-d985-4816-8dc2-9d565ee3618b/download?index=0"
+  },
+  {
+    "id": "slimejet",
+    "kind": "attack",
+    "job_id": "f5ce33df-3b38-42cb-8ca3-15744645eb8d",
+    "prompt": "Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: f5ce33df-3b38-42cb-8ca3-15744645eb8d\njob_id: f5ce33df-3b38-42cb-8ca3-15744645eb8d\naction: Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: f7d54112-209d-58cb-9147-ea6bd7979dd9\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f5ce33df-3b38-42cb-8ca3-15744645eb8d\")",
+    "completion": "status: completed\nid: f5ce33df-3b38-42cb-8ca3-15744645eb8d\njob_id: f5ce33df-3b38-42cb-8ca3-15744645eb8d\nframe: 0 of 9\nasset_id: f7d54112-209d-58cb-9147-ea6bd7979dd9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0267 in credits\ndownload: https://api.pixellab.ai/mcp/images/f5ce33df-3b38-42cb-8ca3-15744645eb8d/download?index=0"
+  },
+  {
+    "id": "slimejet",
+    "kind": "drift",
+    "job_id": "40d0433e-e171-4cab-a01a-012c20823f5c",
+    "prompt": "Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: 40d0433e-e171-4cab-a01a-012c20823f5c\njob_id: 40d0433e-e171-4cab-a01a-012c20823f5c\naction: Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: a646cc9e-2c3e-5ac0-ab0a-41bf16923f13\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"40d0433e-e171-4cab-a01a-012c20823f5c\")",
+    "completion": "status: completed\nid: 40d0433e-e171-4cab-a01a-012c20823f5c\njob_id: 40d0433e-e171-4cab-a01a-012c20823f5c\nframe: 0 of 5\nasset_id: a646cc9e-2c3e-5ac0-ab0a-41bf16923f13\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0305 in credits\ndownload: https://api.pixellab.ai/mcp/images/40d0433e-e171-4cab-a01a-012c20823f5c/download?index=0"
+  },
+  {
+    "id": "slimejet",
+    "kind": "roll",
+    "job_id": "9eb14229-660f-42eb-b805-275c73f6f889",
+    "prompt": "One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 9eb14229-660f-42eb-b805-275c73f6f889\njob_id: 9eb14229-660f-42eb-b805-275c73f6f889\naction: One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 6e076951-ac2a-550f-946b-37ad1830a2f4\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"9eb14229-660f-42eb-b805-275c73f6f889\")",
+    "completion": "status: completed\nid: 9eb14229-660f-42eb-b805-275c73f6f889\njob_id: 9eb14229-660f-42eb-b805-275c73f6f889\nframe: 0 of 9\nasset_id: 6e076951-ac2a-550f-946b-37ad1830a2f4\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0276 in credits\ndownload: https://api.pixellab.ai/mcp/images/9eb14229-660f-42eb-b805-275c73f6f889/download?index=0"
+  },
+  {
+    "id": "slimejet",
+    "kind": "somer",
+    "job_id": "39411b46-c381-4711-9f08-abc3af0b0c34",
+    "prompt": "One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 39411b46-c381-4711-9f08-abc3af0b0c34\njob_id: 39411b46-c381-4711-9f08-abc3af0b0c34\naction: One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64. Keep exact source colours, crisp Neo Geo pixel clusters, all art within the same128x128 transparent canvas with 8px margin.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 98a06d23-04c2-5e84-815c-8962e565400c\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"39411b46-c381-4711-9f08-abc3af0b0c34\")",
+    "completion": "status: completed\nid: 39411b46-c381-4711-9f08-abc3af0b0c34\njob_id: 39411b46-c381-4711-9f08-abc3af0b0c34\nframe: 0 of 9\nasset_id: 98a06d23-04c2-5e84-815c-8962e565400c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0423 in credits\ndownload: https://api.pixellab.ai/mcp/images/39411b46-c381-4711-9f08-abc3af0b0c34/download?index=0"
+  },
+  {
+    "id": "sewerdrone",
+    "kind": "idle",
+    "job_id": "33405949-ddfd-4d3f-92b7-50489c4c4bb6",
+    "prompt": "Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: 33405949-ddfd-4d3f-92b7-50489c4c4bb6\njob_id: 33405949-ddfd-4d3f-92b7-50489c4c4bb6\naction: Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles. Preserve exact robotic drone design, canvas128x128, no extra objects or trails.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 1668579e-45c7-57cf-98f8-2fc5de98d532\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"33405949-ddfd-4d3f-92b7-50489c4c4bb6\")",
+    "completion": "status: completed\nid: 33405949-ddfd-4d3f-92b7-50489c4c4bb6\njob_id: 33405949-ddfd-4d3f-92b7-50489c4c4bb6\nframe: 0 of 5\nasset_id: 1668579e-45c7-57cf-98f8-2fc5de98d532\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0250 in credits\ndownload: https://api.pixellab.ai/mcp/images/33405949-ddfd-4d3f-92b7-50489c4c4bb6/download?index=0"
+  },
+  {
+    "id": "sewerdrone",
+    "kind": "attack",
+    "job_id": "3092c412-96df-4b89-a931-45b7a79cd877",
+    "prompt": "Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 3092c412-96df-4b89-a931-45b7a79cd877\njob_id: 3092c412-96df-4b89-a931-45b7a79cd877\naction: Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects. Preserve exact robotic drone design, canvas128x128, no extra objects or trails.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 3051079f-0329-5d7c-b812-a829a238f645\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3092c412-96df-4b89-a931-45b7a79cd877\")",
+    "completion": "status: completed\nid: 3092c412-96df-4b89-a931-45b7a79cd877\njob_id: 3092c412-96df-4b89-a931-45b7a79cd877\nframe: 0 of 9\nasset_id: 3051079f-0329-5d7c-b812-a829a238f645\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0250 in credits\ndownload: https://api.pixellab.ai/mcp/images/3092c412-96df-4b89-a931-45b7a79cd877/download?index=0"
+  },
+  {
+    "id": "sewerdrone",
+    "kind": "drift",
+    "job_id": "b2453e6c-9958-46bb-a27a-1f444c15cbf8",
+    "prompt": "Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: b2453e6c-9958-46bb-a27a-1f444c15cbf8\njob_id: b2453e6c-9958-46bb-a27a-1f444c15cbf8\naction: Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects. Preserve exact robotic drone design, canvas128x128, no extra objects or trails.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 33078dfe-a9d3-5f59-b07d-6a1410656bfa\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b2453e6c-9958-46bb-a27a-1f444c15cbf8\")",
+    "completion": "status: completed\nid: b2453e6c-9958-46bb-a27a-1f444c15cbf8\njob_id: b2453e6c-9958-46bb-a27a-1f444c15cbf8\nframe: 0 of 5\nasset_id: 33078dfe-a9d3-5f59-b07d-6a1410656bfa\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0228 in credits\ndownload: https://api.pixellab.ai/mcp/images/b2453e6c-9958-46bb-a27a-1f444c15cbf8/download?index=0"
+  },
+  {
+    "id": "sewerdrone",
+    "kind": "roll",
+    "job_id": "28f80ad3-45ae-4bc0-a85b-f4bd923b3af9",
+    "prompt": "One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 28f80ad3-45ae-4bc0-a85b-f4bd923b3af9\njob_id: 28f80ad3-45ae-4bc0-a85b-f4bd923b3af9\naction: One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64. Preserve exact robotic drone design, canvas128x128, no extra objects or trails.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 5d7e1c60-1e2d-5892-9582-9b0ef49f6338\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"28f80ad3-45ae-4bc0-a85b-f4bd923b3af9\")",
+    "completion": "status: completed\nid: 28f80ad3-45ae-4bc0-a85b-f4bd923b3af9\njob_id: 28f80ad3-45ae-4bc0-a85b-f4bd923b3af9\nframe: 0 of 9\nasset_id: 5d7e1c60-1e2d-5892-9582-9b0ef49f6338\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0303 in credits\ndownload: https://api.pixellab.ai/mcp/images/28f80ad3-45ae-4bc0-a85b-f4bd923b3af9/download?index=0"
+  },
+  {
+    "id": "sewerdrone",
+    "kind": "somer",
+    "job_id": "3a8863da-1b7d-41ce-b274-f57f5ca01df0",
+    "prompt": "One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 3a8863da-1b7d-41ce-b274-f57f5ca01df0\njob_id: 3a8863da-1b7d-41ce-b274-f57f5ca01df0\naction: One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64. Preserve exact robotic drone design, canvas128x128, no extra objects or trails.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: b656c69f-73da-5dfc-985b-8385bb98629e\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3a8863da-1b7d-41ce-b274-f57f5ca01df0\")",
+    "completion": "status: completed\nid: 3a8863da-1b7d-41ce-b274-f57f5ca01df0\njob_id: 3a8863da-1b7d-41ce-b274-f57f5ca01df0\nframe: 0 of 9\nasset_id: b656c69f-73da-5dfc-985b-8385bb98629e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0333 in credits\ndownload: https://api.pixellab.ai/mcp/images/3a8863da-1b7d-41ce-b274-f57f5ca01df0/download?index=0"
+  },
+  {
+    "id": "sewerheavy",
+    "kind": "idle",
+    "job_id": "caa7045f-6863-44e8-b221-b56f6d568dc4",
+    "prompt": "Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: caa7045f-6863-44e8-b221-b56f6d568dc4\njob_id: caa7045f-6863-44e8-b221-b56f6d568dc4\naction: Subtle contained reactor pulse and mechanical breathing, tiny synchronized aileron vibration. Body remains perfectly still with exact centre pivot64,64. No added fire, exhaust, beams or projectiles. Preserve exact heavy gunship shape,128x128 transparent canvas, contained attached mechanisms only.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: c7109640-b1fe-5491-839e-59f4be88e060\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"caa7045f-6863-44e8-b221-b56f6d568dc4\")",
+    "completion": "status: completed\nid: caa7045f-6863-44e8-b221-b56f6d568dc4\njob_id: caa7045f-6863-44e8-b221-b56f6d568dc4\nframe: 0 of 5\nasset_id: c7109640-b1fe-5491-839e-59f4be88e060\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0216 in credits\ndownload: https://api.pixellab.ai/mcp/images/caa7045f-6863-44e8-b221-b56f6d568dc4/download?index=0"
+  },
+  {
+    "id": "sewerheavy",
+    "kind": "attack",
+    "job_id": "d6dcd5d4-cc85-4f7c-b44d-7dc4cb892003",
+    "prompt": "Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: d6dcd5d4-cc85-4f7c-b44d-7dc4cb892003\njob_id: d6dcd5d4-cc85-4f7c-b44d-7dc4cb892003\naction: Paired attached gun barrels charge, visibly recoil twice and settle; core brightens then recovers. Preserve silhouette and centre pivot64,64. Do not add any muzzle flash, fire, projectile or detached effects. Preserve exact heavy gunship shape,128x128 transparent canvas, contained attached mechanisms only.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 7893e0dc-8526-599c-8d92-51bf8e8118de\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d6dcd5d4-cc85-4f7c-b44d-7dc4cb892003\")",
+    "completion": "status: completed\nid: d6dcd5d4-cc85-4f7c-b44d-7dc4cb892003\njob_id: d6dcd5d4-cc85-4f7c-b44d-7dc4cb892003\nframe: 0 of 9\nasset_id: 7893e0dc-8526-599c-8d92-51bf8e8118de\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0294 in credits\ndownload: https://api.pixellab.ai/mcp/images/d6dcd5d4-cc85-4f7c-b44d-7dc4cb892003/download?index=0"
+  },
+  {
+    "id": "sewerheavy",
+    "kind": "drift",
+    "job_id": "b09697f1-faeb-42ea-9303-8486ffea17d6",
+    "prompt": "Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: b09697f1-faeb-42ea-9303-8486ffea17d6\njob_id: b09697f1-faeb-42ea-9303-8486ffea17d6\naction: Shallow left bank then right bank then level, gentle 20 degree aircraft drift, foreshorten wing depth with centre fixed64,64. Nose remains DOWN, no translation, no effects. Preserve exact heavy gunship shape,128x128 transparent canvas, contained attached mechanisms only.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 85c4b9a6-4d7b-5415-a9fc-5ca5427e70b5\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b09697f1-faeb-42ea-9303-8486ffea17d6\")",
+    "completion": "status: completed\nid: b09697f1-faeb-42ea-9303-8486ffea17d6\njob_id: b09697f1-faeb-42ea-9303-8486ffea17d6\nframe: 0 of 5\nasset_id: 85c4b9a6-4d7b-5415-a9fc-5ca5427e70b5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0284 in credits\ndownload: https://api.pixellab.ai/mcp/images/b09697f1-faeb-42ea-9303-8486ffea17d6/download?index=0"
+  },
+  {
+    "id": "sewerheavy",
+    "kind": "roll",
+    "job_id": "e2e419a8-b73f-4ead-a562-5d74981211a8",
+    "prompt": "One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: e2e419a8-b73f-4ead-a562-5d74981211a8\njob_id: e2e419a8-b73f-4ead-a562-5d74981211a8\naction: One complete 360 degree BARREL ROLL around the vertical fuselage longitudinal axis: left wing rises, edge-on silhouette, visible underside, opposite wing rises, then return to the original top view. Nose always points DOWN. This is not a flat clockwise image rotation. No translation, no fire, no effects. Fixed pivot64,64. Preserve exact heavy gunship shape,128x128 transparent canvas, contained attached mechanisms only.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 47bfd583-1c12-5063-8708-8449a213c973\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e2e419a8-b73f-4ead-a562-5d74981211a8\")",
+    "completion": "status: completed\nid: e2e419a8-b73f-4ead-a562-5d74981211a8\njob_id: e2e419a8-b73f-4ead-a562-5d74981211a8\nframe: 0 of 9\nasset_id: 47bfd583-1c12-5063-8708-8449a213c973\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0302 in credits\ndownload: https://api.pixellab.ai/mcp/images/e2e419a8-b73f-4ead-a562-5d74981211a8/download?index=0"
+  },
+  {
+    "id": "sewerheavy",
+    "kind": "somer",
+    "job_id": "8edc93bb-d2da-4a3e-88ce-31784f470133",
+    "prompt": "One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64.",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 8edc93bb-d2da-4a3e-88ce-31784f470133\njob_id: 8edc93bb-d2da-4a3e-88ce-31784f470133\naction: One complete forward pitch SOMERSAULT around the horizontal wing axis: nose pitches away, foreshortened short body, front-on wings, underside as nose points UP midway, then foreshortens and returns nose DOWN to original top view. No flat image spinning, no barrel roll, no translation or fire. Fixed centre64,64. Preserve exact heavy gunship shape,128x128 transparent canvas, no detached effects.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 4b43efca-1222-550b-b0f5-33b29dad6785\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8edc93bb-d2da-4a3e-88ce-31784f470133\")",
+    "completion": "status: completed\nid: 8edc93bb-d2da-4a3e-88ce-31784f470133\njob_id: 8edc93bb-d2da-4a3e-88ce-31784f470133\nframe: 0 of 9\nasset_id: 4b43efca-1222-550b-b0f5-33b29dad6785\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0253 in credits\ndownload: https://api.pixellab.ai/mcp/images/8edc93bb-d2da-4a3e-88ce-31784f470133/download?index=0"
+  },
+  {
+    "id": "toxic_orb",
+    "kind": "effect_motion",
+    "job_id": "5a8c7891-45df-4668-9e69-8484cf8479e0",
+    "prompt": "Contained corrosive lime orb swirls clockwise and bubbles; keep circular silhouette, fixed32,32 pivot and64x64 transparent canvas, no trails or projectiles, seamless loop.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: 5a8c7891-45df-4668-9e69-8484cf8479e0\njob_id: 5a8c7891-45df-4668-9e69-8484cf8479e0\naction: Contained corrosive lime orb swirls clockwise and bubbles; keep circular silhouette, fixed32,32 pivot and64x64 transparent canvas, no trails or projectiles, seamless loop.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 8eaa5f40-b022-552d-92a7-047329402f3e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5a8c7891-45df-4668-9e69-8484cf8479e0\")",
+    "completion": "status: completed\nid: 5a8c7891-45df-4668-9e69-8484cf8479e0\njob_id: 5a8c7891-45df-4668-9e69-8484cf8479e0\nframe: 0 of 5\nasset_id: 8eaa5f40-b022-552d-92a7-047329402f3e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0218 in credits\ndownload: https://api.pixellab.ai/mcp/images/5a8c7891-45df-4668-9e69-8484cf8479e0/download?index=0"
+  },
+  {
+    "id": "toxic_muzzle",
+    "kind": "effect_motion",
+    "job_id": "c74c4548-92d2-4dc3-b9ad-97206171c878",
+    "prompt": "Compact white/lime acid cannon muzzle flash blooms then rapidly shrinks and fades, fixed centre32,32,64x64 transparent canvas, no projectile or detached secondary flash.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: c74c4548-92d2-4dc3-b9ad-97206171c878\njob_id: c74c4548-92d2-4dc3-b9ad-97206171c878\naction: Compact white/lime acid cannon muzzle flash blooms then rapidly shrinks and fades, fixed centre32,32,64x64 transparent canvas, no projectile or detached secondary flash.\nframes: 4\nsize: 64x64px\ntransparent: True\nasset_id: 4e162425-8496-5649-8662-900a76d6c5cb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c74c4548-92d2-4dc3-b9ad-97206171c878\")",
+    "completion": "status: completed\nid: c74c4548-92d2-4dc3-b9ad-97206171c878\njob_id: c74c4548-92d2-4dc3-b9ad-97206171c878\nframe: 0 of 5\nasset_id: 4e162425-8496-5649-8662-900a76d6c5cb\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0256 in credits\ndownload: https://api.pixellab.ai/mcp/images/c74c4548-92d2-4dc3-b9ad-97206171c878/download?index=0"
+  },
+  {
+    "id": "dasher_turbo",
+    "kind": "effect_motion",
+    "job_id": "f57afa88-d646-4107-8dd9-9bb7ee23f8ad",
+    "prompt": "Teal white turbo wake streams UP behind a down-facing fighter, concentric compression rings ripple upward and brightness pulses, fixed canvas64x64, no ship or new objects, seamless loop.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: f57afa88-d646-4107-8dd9-9bb7ee23f8ad\njob_id: f57afa88-d646-4107-8dd9-9bb7ee23f8ad\naction: Teal white turbo wake streams UP behind a down-facing fighter, concentric compression rings ripple upward and brightness pulses, fixed canvas64x64, no ship or new objects, seamless loop.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: a10ef08a-459c-5bef-b41c-f201d85e4509\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f57afa88-d646-4107-8dd9-9bb7ee23f8ad\")",
+    "completion": "status: completed\nid: f57afa88-d646-4107-8dd9-9bb7ee23f8ad\njob_id: f57afa88-d646-4107-8dd9-9bb7ee23f8ad\nframe: 0 of 5\nasset_id: a10ef08a-459c-5bef-b41c-f201d85e4509\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0251 in credits\ndownload: https://api.pixellab.ai/mcp/images/f57afa88-d646-4107-8dd9-9bb7ee23f8ad/download?index=0"
+  },
+  {
+    "id": "soul_feather",
+    "kind": "fxmaster",
+    "job_id": "1485b7a3-f4f8-4880-9c68-968f06aa29ed",
+    "prompt": "One demonic eagle soul feather projectile, points DOWN orthographic top down. Bone-white sharp feather quill, black chrome barbs and glowing crimson digital code seams, red smoke contained around edge. Crisp premium Neo Geo pixel art, readable12x24 silhouette centred within64x64 transparent canvas with generous margin. No head, wings, text, sheet or background.",
+    "frames": 16,
+    "status": "completed",
+    "receipt": "id: 1485b7a3-f4f8-4880-9c68-968f06aa29ed\njob_id: 1485b7a3-f4f8-4880-9c68-968f06aa29ed\nmodel: pro\ndescription: One demonic eagle soul feather projectile, points DOWN orthographic top down. Bone-white sharp feather quill, black chrome barbs and glowing crimson digital code seams, red smoke contained around edge. Crisp premium Neo Geo pixel art, readable12x24 silhouette centred within64x64 transparent canvas with generous margin. No head, wings, text, sheet or background.\nsize: 64x64px\ntransparent: True\ncandidates: 16\nreferences: 1\nasset_id: 1edfec1e-02c1-5c4a-b8cf-8aae2dfa653b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1485b7a3-f4f8-4880-9c68-968f06aa29ed\")",
+    "completion": "status: completed\nid: 1485b7a3-f4f8-4880-9c68-968f06aa29ed\njob_id: 1485b7a3-f4f8-4880-9c68-968f06aa29ed\nframe: 0 of 16\nasset_id: 1edfec1e-02c1-5c4a-b8cf-8aae2dfa653b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/1485b7a3-f4f8-4880-9c68-968f06aa29ed/download?index=0"
+  },
+  {
+    "id": "soul_feather",
+    "kind": "effect_motion",
+    "job_id": "b827c881-aa73-4c72-b026-65218e3bbefb",
+    "prompt": "Bone white, black chrome and crimson soul feather spins gently around its long downward-pointing quill axis, red code seams pulse and smoky edge flickers. Keep same fixed centre32,32,64x64 transparent canvas, complete slim feather silhouette, no displacement, no extra objects, seamless loop.",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: b827c881-aa73-4c72-b026-65218e3bbefb\njob_id: b827c881-aa73-4c72-b026-65218e3bbefb\naction: Bone white, black chrome and crimson soul feather spins gently around its long downward-pointing quill axis, red code seams pulse and smoky edge flickers. Keep same fixed centre32,32,64x64 transparent canvas, complete slim feather silhouette, no displacement, no extra objects, seamless loop.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 94cd4abc-a909-51f3-aa24-efdc44a37321\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b827c881-aa73-4c72-b026-65218e3bbefb\")",
+    "completion": "status: completed\nid: b827c881-aa73-4c72-b026-65218e3bbefb\njob_id: b827c881-aa73-4c72-b026-65218e3bbefb\nframe: 0 of 5\nasset_id: 94cd4abc-a909-51f3-aa24-efdc44a37321\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0231 in credits\ndownload: https://api.pixellab.ai/mcp/images/b827c881-aa73-4c72-b026-65218e3bbefb/download?index=0"
+  }
+]

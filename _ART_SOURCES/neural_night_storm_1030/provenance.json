@@ -1,0 +1,18 @@
+{
+  "sources": {
+    "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp": "60a2f177dfa1cb3e260d9cd462a08441169bd1b6821c151795c3a15a88f5ac94"
+  },
+  "generatedSource": "night-sky-generated.png",
+  "mode": "Built-in image generator edit of approved sky plate; mechanical wreckage removed, midnight palette.",
+  "glowFrames": 54,
+  "levels": 6,
+  "poses": 9,
+  "sky": [
+    680,
+    680
+  ],
+  "runtime": "Fixed blits, source alpha, source-locked poses; no live tint, scaling, alpha animation or generated glow.",
+  "referenceSHA256": "b9315aeef654440982c3e73df7c7b4d8c0b1573b4a9f0d825faeb2ae34428f29",
+  "generatedSHA256": "5218c838602e7fc26a7562df6e2530c9c284bfd95434b6c7b48a2ac811b5b023",
+  "prompt": "night-sky-prompt.md"
+}

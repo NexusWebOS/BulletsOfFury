@@ -1,0 +1,198 @@
+{
+  "fonts": [
+    {
+      "font": "fury_strike_chrome",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "50a9e006f6ed13a294f9422d6165e517b77d3d85a14648b18332b5e4e36b2e71"
+    },
+    {
+      "font": "fury_strike_ice",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "6bc552df1f2577b6a790ef6738c1ea6bfb38ffd88f90a3310fa703cbe18b3703"
+    },
+    {
+      "font": "fury_strike_ember",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "36a172b36c22c566d396f4f66229dfd3051edb3e11ec76d7fa5ce8744bf9a7bb"
+    },
+    {
+      "font": "fury_strike_gold",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "53fee53cb18729d665d0486bbf51db435d18d98205dbc31c12ca19058797926a"
+    },
+    {
+      "font": "fury_strike_toxic",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "542a25d78beb3a1ff55ec0aa78b1c3113c3705a6001cd44ffde3fdda68dd8ba3"
+    },
+    {
+      "font": "fury_strike_rose",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "fa5232065f111708368b2ff8323a2cc0d3b8b34666097457af803ca8a48a3516"
+    },
+    {
+      "font": "fury_strike_signal",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "4585266b54dc484718a626f94f925cc3c8d9267e6228b9eb270b66b504cccc25"
+    },
+    {
+      "font": "fury_strike_corrupt",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "99888c6319bd9513d3153998141c4e88af842b52d215ac10c6cac9f108f3192a"
+    },
+    {
+      "font": "overdrive_chrome",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "b23368d3eab7e4028e332eef0540e6fe864dc7adf9516dfd22604a9c7c1a8a4e"
+    },
+    {
+      "font": "overdrive_ice",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "4577bd593e15f08d15b3f299ac1d8ed2e22396a7bd0c3f793b8291c301fee7eb"
+    },
+    {
+      "font": "overdrive_ember",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "3bb5b3726eda247c95eeeac8817661c7ed18e3b3c8640bb2d49d5784f3447062"
+    },
+    {
+      "font": "overdrive_gold",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "5c82c2b9720ab82257752e71236278ba9fb07760cdd8fdbc5f7eafcbd4b65eb1"
+    },
+    {
+      "font": "overdrive_toxic",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "7dc583c0a7eaa8926207af2945455230eb55bb476a60e26e82cc8124aca2210f"
+    },
+    {
+      "font": "overdrive_rose",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "8dbcbc6245a94fec9a5a8b2cbbfecb1c6dda4c140ead38dbb9bdc0e64137e506"
+    },
+    {
+      "font": "overdrive_signal",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "eea5b9716596cea54bb84607e162dfffe3b5be0aca2a998c2bde40d98547bcd7"
+    },
+    {
+      "font": "overdrive_corrupt",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "8e4e7efd5862b6756bc996af80faf7fb0402d724ffbfa24f845a2067458c77db"
+    },
+    {
+      "font": "vermilion_chrome",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "d5710443d773def2a5cd5ac3946d6869538c2cbe5b3114f96699b31a20217e67"
+    },
+    {
+      "font": "vermilion_ice",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "a12ce10f90930aec3c4042d4b373cb8ceeabe8712361a5c8a6145bb96f0c55b9"
+    },
+    {
+      "font": "vermilion_ember",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "3871c648c22ac8835e665acf65d0347089c49a0b3e3ffd65b542fedba6c199f2"
+    },
+    {
+      "font": "vermilion_gold",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "87d450a99ca37aee53a51a304f653afe83cd204616ff26e5db9eaa8e41ef341a"
+    },
+    {
+      "font": "vermilion_toxic",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "c66d3ba8299b8562121fa11ceff910ca01c11a989457a1a0ebe5f2f664727d9e"
+    },
+    {
+      "font": "vermilion_rose",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "2ce7f0e4e9949cb1ccd0dff970dfc26f677ed1aec28f87330ea7913c0f8ab249"
+    },
+    {
+      "font": "vermilion_signal",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "ea578dc7e58f5e262964998e5ee39813cf4122cb6a0fce424453e8f5d51a1bb3"
+    },
+    {
+      "font": "vermilion_corrupt",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "1e32cc999679f700a9561fdd174e65b5d3e40370a8cd356c20fe0a32296e4380"
+    },
+    {
+      "font": "command_chrome",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "6702552bfc444d33c4f4645a2d176b01dd1d0330c14102bf2d4d506343a3e60e"
+    },
+    {
+      "font": "command_ice",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "dad2ffb0e0c47ac5d9244ef416e42b4faeac84e4e74226b4983d1ea1754c26fc"
+    },
+    {
+      "font": "command_ember",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "d5a95176ce07dfe64b1c55304e162fe224445a5c556b681569506066463ba77f"
+    },
+    {
+      "font": "command_gold",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "22cd89d794480bccaff8b08ba5ce985957ad3bcd57b3d40966ece995877a4b66"
+    },
+    {
+      "font": "command_toxic",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "1f00984c399438e513f4d7a67501e124281698078f7b76d56db239eba1ab68b2"
+    },
+    {
+      "font": "command_rose",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "be515ace3a1f0367d58dcb36d3e05223127102151b00b1ccb79e8571d753d2a3"
+    },
+    {
+      "font": "command_signal",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "cab4bcf4ce9520fbc9005d5b668fadaf7e217e29568e863e631703103fa20820"
+    },
+    {
+      "font": "command_corrupt",
+      "glyphs": 95,
+      "evenCell": true,
+      "sha256": "0fef14cdedf7aed0e94d1fc3a08cace91c35ed2b80dad9a8071501850cec50a2"
+    }
+  ],
+  "totalGlyphs": 3040,
+  "missing": []
+}

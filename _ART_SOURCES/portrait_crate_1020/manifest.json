@@ -1,0 +1,59 @@
+{
+  "method": "built-in image_gen; proportional nearest-neighbor export; no generated letters/numerals",
+  "assets": [
+    {
+      "name": "portrait",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-fef900fc-a684-4980-bb85-c148f72e72c8.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        256,
+        256
+      ],
+      "path": "assets/game/levels/stage_08/cinematics/dracodia_portrait_box_1020/portrait.webp",
+      "scale": 0.4082934609250399
+    },
+    {
+      "name": "crate",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-259f3a9b-b32e-40be-8775-6a78ef98018b.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        64
+      ],
+      "path": "assets/game/shared/pickups/hammer_chaingun_1020/crate.webp",
+      "scale": 0.10207336523125997
+    },
+    {
+      "name": "icon",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-ac81ce0e-8ebb-4ac6-9242-4613ab4582f4.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        64
+      ],
+      "path": "assets/game/shared/pickups/hammer_chaingun_1020/icon.webp",
+      "scale": 0.10207336523125997
+    }
+  ]
+}

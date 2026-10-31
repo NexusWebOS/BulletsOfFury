@@ -1,0 +1,33 @@
+{
+  "source": "assets/game/levels/stage_05/boss/stage5_hammer/reticle.png",
+  "sourceSha256": "128522f35d8d39f9a3080ea87c18f1ec65794c9c1aa0ee04b63c1809138e3516",
+  "cell": [
+    64,
+    32
+  ],
+  "pivot": [
+    32,
+    16
+  ],
+  "cols": 8,
+  "frames": 24,
+  "colors": [
+    "green",
+    "yellow",
+    "red"
+  ],
+  "fadeLevels": [
+    0.08,
+    0.17,
+    0.29,
+    0.43,
+    0.59,
+    0.76,
+    0.88,
+    1
+  ],
+  "revealSeconds": 0.18,
+  "maxFlightFraction": 0.25,
+  "floorPad": 36,
+  "runtimeSha256": "2f5033b43bfed33863f7e5b2c531706aaf10b8b027a2df82b6123f1cd829d8de"
+}

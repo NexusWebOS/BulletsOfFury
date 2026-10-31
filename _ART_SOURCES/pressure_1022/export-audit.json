@@ -1,0 +1,147 @@
+[
+  {
+    "name": "dasher_attack.webp",
+    "bytes": 2330,
+    "sha256": "e32f5dc725995563cfb7dbbd3d780b5721ad7d4c5681e8b57ee00a2e0baa12a3"
+  },
+  {
+    "name": "dasher_drift.webp",
+    "bytes": 3236,
+    "sha256": "dc210d048859921f42bea86849574171036c3ba65abe7a5ef0c6aecfd48d68d2"
+  },
+  {
+    "name": "dasher_idle.webp",
+    "bytes": 2330,
+    "sha256": "e32f5dc725995563cfb7dbbd3d780b5721ad7d4c5681e8b57ee00a2e0baa12a3"
+  },
+  {
+    "name": "dasher_roll.webp",
+    "bytes": 8466,
+    "sha256": "6ebbcef920dcee6ae427021c89d5e74f0406b868db2d0403e68a55c34450c76e"
+  },
+  {
+    "name": "dasher_somer.webp",
+    "bytes": 7386,
+    "sha256": "5c2005f20163e612c73adb138f4f3f73e337a6a2f1ac1f778c4ec8717df001e4"
+  },
+  {
+    "name": "dasher_turbo.webp",
+    "bytes": 3276,
+    "sha256": "a4796c39d42f67a892ada077a57967d03a06987ff0c86f09859472e29613d9fb"
+  },
+  {
+    "name": "herald_head.webp",
+    "bytes": 33068,
+    "sha256": "ea7cd1c77261179f5c8871edd28bf1f34f2f45690a9795500fe185a2a77554ff"
+  },
+  {
+    "name": "herald_wingL.webp",
+    "bytes": 50382,
+    "sha256": "8ff11882fe7608251af256707fafd9925d7bc1fac1ee8fa0a70f6e9b87792388"
+  },
+  {
+    "name": "herald_wingR.webp",
+    "bytes": 52014,
+    "sha256": "1eb1a758f213225d00d49e823f4af90b2a8cacfd1148c1e9ebac92d43209eef3"
+  },
+  {
+    "name": "sewerdrone_attack.webp",
+    "bytes": 9376,
+    "sha256": "d218ed6a4dba8516f5f7f90006e1a02711796d90f6167744fa3272fd1797c06a"
+  },
+  {
+    "name": "sewerdrone_drift.webp",
+    "bytes": 7804,
+    "sha256": "80b739e0a3d5a86b6d5b089c6cb9660596aa432d1ea9406b92111e627eceff25"
+  },
+  {
+    "name": "sewerdrone_idle.webp",
+    "bytes": 5994,
+    "sha256": "6dcc1a4f2d2383aea9eea7513276f8260ea637d466c84d2938b5850bba732d9e"
+  },
+  {
+    "name": "sewerdrone_roll.webp",
+    "bytes": 15780,
+    "sha256": "90772aa0cf1c2a12ba506d5ad765f3c730d496abc6c37daa1f4e649723a19cda"
+  },
+  {
+    "name": "sewerdrone_somer.webp",
+    "bytes": 11612,
+    "sha256": "8289297b36f2f54c5702ff3bb6e17495bce8a2ff89c4960baaeac58b9b86c38d"
+  },
+  {
+    "name": "sewerheavy_attack.webp",
+    "bytes": 10178,
+    "sha256": "db46355b16d63fa8030aa1621cf72779eedb0525a6925f8e167bdca7c5812951"
+  },
+  {
+    "name": "sewerheavy_drift.webp",
+    "bytes": 8200,
+    "sha256": "a93b19d4eede75c0461871b6cbc4b4c0add33993ab7395a1429df2636aa6c165"
+  },
+  {
+    "name": "sewerheavy_idle.webp",
+    "bytes": 6982,
+    "sha256": "48b87e780f0535311a4d1769c9926440e74e6130b190167b4107f586b2f6df67"
+  },
+  {
+    "name": "sewerheavy_roll.webp",
+    "bytes": 12280,
+    "sha256": "fa02f3952fc8514dcf66cdaa85fc9ba70bd795396079b9014207d265f93c5360"
+  },
+  {
+    "name": "sewerheavy_somer.webp",
+    "bytes": 15860,
+    "sha256": "a087df0baf20358af7560cae04d38e624f46620c6e63a5273c25790a06b3f1e7"
+  },
+  {
+    "name": "slimejet_attack.webp",
+    "bytes": 17426,
+    "sha256": "4e9ec65de2b687b850e5260d21f48e46f7a786d9574fe771d0639fa00c549e9c"
+  },
+  {
+    "name": "slimejet_drift.webp",
+    "bytes": 7554,
+    "sha256": "7309d611fae270ef26ca46d2224f8c7da7819b175578193e740a582ce5e9376b"
+  },
+  {
+    "name": "slimejet_idle.webp",
+    "bytes": 6178,
+    "sha256": "e41f398c4e9a846317ace331e2273d2d7294bab9afd314839457ad332d32e3d1"
+  },
+  {
+    "name": "slimejet_roll.webp",
+    "bytes": 11440,
+    "sha256": "0cb02d2313a72ee7b97bbb967c11220a25e9470882535f4778c81c8387e55791"
+  },
+  {
+    "name": "slimejet_somer.webp",
+    "bytes": 20726,
+    "sha256": "9fb3ab4b89a4a6ea09837fa04fbbdee42c3f22ad5ec8a4eb9dcd5fd80fbe1152"
+  },
+  {
+    "name": "soul_feather.webp",
+    "bytes": 1196,
+    "sha256": "60248090ba5b4b0a91b1ab5dfe18c48f08f7082dc6417a6cdf39e27d0d71b4a9"
+  },
+  {
+    "name": "toxic_muzzle.webp",
+    "bytes": 2438,
+    "sha256": "1c8ac2a713e4d416c7e253b85bd28152d765cd575221a7747ca69fc0d20734be"
+  },
+  {
+    "name": "toxic_needle.webp",
+    "bytes": 1156,
+    "sha256": "6fc791fa677caca72978a004fbe413f35fba05624ff49cd2ea41a71740977581"
+  },
+  {
+    "name": "toxic_orb.webp",
+    "bytes": 2042,
+    "sha256": "8e91738936eaf554627f08bd8b944661708ae90365006a51c8c62ad0b80a27de"
+  },
+  {
+    "name": "toxic_wave.webp",
+    "bytes": 920,
+    "sha256": "82e80e8e8381304403041574964d8ab82a105d4d3eb5910d740addc7d93c4f15"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "assets/game/levels/stage_08/boss/neural_archon_1023/brain.webp": "60a2f177dfa1cb3e260d9cd462a08441169bd1b6821c151795c3a15a88f5ac94",
+    "assets/game/levels/stage_08/boss/neural_archon_1023/charge.webp": "6ec74d6beb56dc004d44cc74e17b9b9ecc93e27001ddca944b52456e38896da7",
+    "assets/game/levels/stage_08/boss/neural_archon_1023/focus.webp": "8fa20435a7468f4cf4f6169684a0e57541adeddcf6878ee01475223309e8f048",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/01.png": "10078ecff3a0320328af5845730d3f1df835c50fca8b7c02b7ccc510c12df2a3",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/02.png": "d86473715ead3010bcc457f2d9bdfe53bdee2d980c72e0fcc991cb39fc20e070",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/03.png": "ff03d198330cdf8ab30a4ecadf32b6a2c0b3e5aeb8a12e641283df813b1eb8e4",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/04.png": "fa08ad6d440223b081577219d143cc799098639a921e425b1f315ffc5f17bce2",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/05.png": "3f2f38668be79e1262614ad2f1fd1dcecaaeb86dac54829bf98dd22ffc1e7e1f",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/06.png": "6d4eccdde59dd887935246ac2bab94e1a3099eb13e3d4d4588ba3a3484d5bf2b",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/07.png": "851959e1d4a70e451b7cad9747ff88ed5d2156b2fdbaffb291a9c6ef03b62a42",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/08.png": "f419b1dec8486245162c63a285a229b88338e449b4bb4ce3c7028a2c4e9c5217",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/09.png": "09ec3832b24f2e6de8687d1e7041f0ae4fa0c2109a969145e02565a22f8366fc",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/10.png": "7811c06c5211d4bf9eac9225594cc8843ac7aae9c7c6b199611595fe06919510",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/11.png": "ac8bf3b720db085f54a9eccf9f70e8d8483438062aeac363426b91860aa06de0",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/12.png": "86b7bda461beb8f4c60043e5a7e23b4ffdc10782ca3ed5ab36f2ba3a9622ba5b",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/13.png": "4d6425b2144ee2d32d95c8bb7495c9a8e604090ec9069b5d4dbd9aeba0f251fc",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/14.png": "c9b1198b32141e67c974f9f9dab2899e3fae278df03a803fd754ea12701a0139",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/15.png": "a8f433a637c05409e8b535abb52104e40d126ccd61300226c39ddc859810b8b0",
+    "_ART_SOURCES/dracodia_brain_1023/raw/laser_new/16.png": "7320b2756959fc1096f729f1e4b3764e7924b8bf631cbf80f9ae509319759d06",
+    "assets/bossmode/ui/fov-light-green.png": "c8f8bdeba03a815f8caffda223e4f96dcf362ed1e2033289d314b27891c0d143",
+    "assets/bossmode/ui/fov-yellow.png": "e38beaa584ba4e1f2c3f9a404eebf7eb914773e6e9c72fb3664cc706399468ee",
+    "assets/bossmode/ui/fov-neon-red.png": "d87799026b5435b4b944904f1c57447eb3895c645fb0f3a1240ebf2e56273e66"
+  },
+  "pages": 7,
+  "frames": 166,
+  "palette": "Eye-matched ember red, hot orange/yellow and ivory-white; no violet/blue optical energy.",
+  "beamWidths": [
+    32,
+    34,
+    36,
+    38,
+    40,
+    42
+  ],
+  "beamPivot": [
+    40,
+    12
+  ],
+  "beamLength": 600,
+  "tool": "Offline authoring from approved PixelLab frames; frame/alpha/palette transforms baked, runtime fixed blits only."
+}

@@ -1,0 +1,55 @@
+{
+  "jobs": [
+    {
+      "key": "aa23_slam_output",
+      "job": "63077c51-07d4-43f3-857f-12359cf84d0e",
+      "status": "completed",
+      "frames": 12,
+      "chargedGenerations": 3,
+      "accepted": true
+    },
+    {
+      "key": "aa23_sides_output",
+      "job": "b316c9c8-b857-41ac-912e-8927ef5115e0",
+      "status": "completed",
+      "frames": 17,
+      "chargedGenerations": 2,
+      "accepted": false
+    },
+    {
+      "key": "aa23_sides_v2_output",
+      "job": "3e1d0273-2fdc-4181-b02f-e7aa2f1923d3",
+      "status": "completed",
+      "frames": 14,
+      "chargedUSD": 0.045472080303563006,
+      "accepted": false
+    },
+    {
+      "key": "aa23_sides_v3_output",
+      "job": "85c23e09-9c8e-4845-82dc-ee94694dd636",
+      "status": "completed",
+      "frames": 13,
+      "chargedUSD": 0.03979357908169428,
+      "accepted": true
+    },
+    {
+      "key": "aa23_fleet_result_0",
+      "job": "1558d1c2-eb9a-4e8b-b4ac-1337e4670edc",
+      "status": "completed",
+      "frames": 17,
+      "chargedUSD": 0.03446208745241165,
+      "accepted": true
+    },
+    {
+      "key": "aa23_fleet_result_1",
+      "job": "3d5c0b49-dde8-425c-acb1-a2719c0672a4",
+      "status": "completed",
+      "frames": 17,
+      "chargedUSD": 0.04072975538174311,
+      "accepted": true
+    }
+  ],
+  "approvedWeaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641",
+  "paidUSD": 0.16045750221941205,
+  "bonusGenerations": 5
+}

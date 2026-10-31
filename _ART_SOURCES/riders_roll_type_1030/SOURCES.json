@@ -1,0 +1,58 @@
+{
+  "rolls": [
+    {
+      "key": "voss",
+      "ratio": 0.8806818181818182,
+      "span": 128,
+      "cell": 192,
+      "count": 16,
+      "path": "assets/game/levels/stage_06/boss/air_motion_1013/voss/roll.webp",
+      "sha256": "77a4269e0be05b362069c466cff46bdfb3b2fb5a4c6e43a1a5d6419cd62a9d5b"
+    },
+    {
+      "key": "nyx",
+      "ratio": 1.0170454545454546,
+      "span": 128,
+      "cell": 192,
+      "count": 16,
+      "path": "assets/game/levels/stage_06/boss/air_motion_1013/nyx/roll.webp",
+      "sha256": "eaa5ffcb6a8d21fba0f11716c4da793f880a027edf30afbdf341b960334ba0a9"
+    },
+    {
+      "key": "rook",
+      "ratio": 0.7954545454545454,
+      "span": 128,
+      "cell": 192,
+      "count": 16,
+      "path": "assets/game/levels/stage_06/boss/air_motion_1013/rook/roll.webp",
+      "sha256": "0a6523dad7623a18238866b2d5290b605a307397b5f45114a6129406f231201e"
+    },
+    {
+      "key": "kaia",
+      "ratio": 0.9488636363636364,
+      "span": 128,
+      "cell": 192,
+      "count": 16,
+      "path": "assets/game/levels/stage_06/boss/air_motion_1013/kaia/roll.webp",
+      "sha256": "128db595dc31c147bce87d57735031aa3eed1e4467fa6d3e10a8ffb1ec7fc821"
+    },
+    {
+      "key": "jace",
+      "ratio": 1.0113636363636365,
+      "span": 128,
+      "cell": 192,
+      "count": 16,
+      "path": "assets/game/levels/stage_06/boss/air_motion_1013/jace/roll.webp",
+      "sha256": "3497d925acd8c4f405f2b70b96d6a50e29452c857453966c3fd04b7b7af057e6"
+    }
+  ],
+  "font": "Approved pixelmap_fonts_1027/glyph-masters.json / small family and eight palettes",
+  "recipes": "author.lua; all appearance changes authored offline in Aseprite",
+  "music": {
+    "file": "assets/game/levels/stage_x/audio/music/LevelX.mp3",
+    "sha256": "89254be30d605db4990b6dcc2c5f41e1470f47ea2b7b7bc8b80e33bcde1a5f7c",
+    "title": "Original Gasline",
+    "approval": "Mike confirmed original Gasline on October30; separate from Harrier Level6b and newer StageX track"
+  },
+  "creditSpend": 0
+}

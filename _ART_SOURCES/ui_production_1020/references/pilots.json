@@ -1,0 +1,56 @@
+[
+  {
+    "key": "axel",
+    "name": "AXEL",
+    "color": "#3a8aff",
+    "portrait": "comm_axel_idle"
+  },
+  {
+    "key": "decker",
+    "name": "DECKER",
+    "color": "#ffd24a",
+    "portrait": "comm_decker_idle"
+  },
+  {
+    "key": "maverick",
+    "name": "MAVERICK",
+    "color": "#3ad6c8",
+    "portrait": "comm_maverick_idle"
+  },
+  {
+    "key": "freezer",
+    "name": "FREEZER",
+    "color": "#6fd0ff",
+    "portrait": "comm_freezer_idle"
+  },
+  {
+    "key": "juggernaut",
+    "name": "JUGGERNAUT",
+    "color": "#c08a3a",
+    "portrait": "comm_juggernaut_idle"
+  },
+  {
+    "key": "yuri",
+    "name": "YURI",
+    "color": "#e23a3a",
+    "portrait": "comm_yuri_idle"
+  },
+  {
+    "key": "lizzie",
+    "name": "LIZZIE",
+    "color": "#ffc21a",
+    "portrait": "comm_lizzie_idle"
+  },
+  {
+    "key": "falva",
+    "name": "FALVA",
+    "color": "#ff2a8f",
+    "portrait": "comm_falva_idle"
+  },
+  {
+    "key": "cole",
+    "name": "COLE",
+    "color": "#7ad63a",
+    "portrait": "comm_cole_idle"
+  }
+]

@@ -1,0 +1,262 @@
+{
+  "herald": {
+    "key": "hd1003_parts",
+    "path": "assets/game/levels/stage_08/miniboss/herald_1003f/parts.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "parts": {
+      "core": {
+        "rect": [
+          70,
+          0,
+          310,
+          623
+        ],
+        "pivot": [
+          155,
+          300
+        ],
+        "attach": [
+          0,
+          0
+        ],
+        "scale": 0.34,
+        "z": 1,
+        "hit": [
+          155,
+          315,
+          110,
+          280
+        ]
+      },
+      "head": {
+        "rect": [
+          493,
+          133,
+          270,
+          435
+        ],
+        "pivot": [
+          136,
+          383
+        ],
+        "attach": [
+          0,
+          -12
+        ],
+        "scale": 0.21,
+        "z": 4,
+        "hit": [
+          136,
+          193,
+          95,
+          150
+        ]
+      },
+      "wingL": {
+        "rect": [
+          795,
+          0,
+          459,
+          622
+        ],
+        "pivot": [
+          425,
+          245
+        ],
+        "attach": [
+          -37,
+          -18
+        ],
+        "scale": 0.32,
+        "z": 0,
+        "hit": [
+          230,
+          310,
+          115,
+          225
+        ]
+      },
+      "wingR": {
+        "rect": [
+          0,
+          626,
+          458,
+          622
+        ],
+        "pivot": [
+          30,
+          245
+        ],
+        "attach": [
+          37,
+          -18
+        ],
+        "scale": 0.32,
+        "z": 0,
+        "hit": [
+          225,
+          310,
+          115,
+          225
+        ]
+      },
+      "gunL": {
+        "rect": [
+          549,
+          646,
+          210,
+          594
+        ],
+        "pivot": [
+          56,
+          87
+        ],
+        "attach": [
+          -42,
+          12
+        ],
+        "scale": 0.23,
+        "z": 2,
+        "hit": [
+          101,
+          329,
+          72,
+          228
+        ],
+        "muzzle": [
+          95,
+          497
+        ]
+      },
+      "gunR": {
+        "rect": [
+          902,
+          646,
+          211,
+          594
+        ],
+        "pivot": [
+          155,
+          87
+        ],
+        "attach": [
+          42,
+          12
+        ],
+        "scale": 0.23,
+        "z": 2,
+        "hit": [
+          110,
+          329,
+          72,
+          228
+        ],
+        "muzzle": [
+          113,
+          497
+        ]
+      }
+    },
+    "sha256": "0e0f51b5675c40221a9744dfd5fbb1c4fb42a6901f4c9cfaa1893a0ec4736f45",
+    "source": "_ART_SOURCES/herald_1003f/parts.png"
+  },
+  "stage7": {
+    "s7lamprey": {
+      "art": "armored_lamprey",
+      "hp": 30,
+      "w": 62,
+      "h": 72,
+      "score": 1180
+    },
+    "s7barge": {
+      "art": "armored_sludge_barge",
+      "hp": 76,
+      "w": 76,
+      "h": 72,
+      "score": 2300
+    },
+    "s7pipe": {
+      "art": "pipe_crawler",
+      "hp": 22,
+      "w": 42,
+      "h": 68,
+      "score": 880
+    },
+    "s7walker": {
+      "art": "piston_pump_walker",
+      "hp": 42,
+      "w": 60,
+      "h": 76,
+      "score": 1580
+    },
+    "s7sampler": {
+      "art": "sampling_drone",
+      "hp": 24,
+      "w": 58,
+      "h": 56,
+      "score": 960
+    },
+    "s7serpent": {
+      "art": "sewer_serpent",
+      "hp": 38,
+      "w": 48,
+      "h": 80,
+      "score": 1460
+    },
+    "s7mine": {
+      "art": "sludge_mine",
+      "hp": 26,
+      "w": 58,
+      "h": 58,
+      "score": 1120
+    },
+    "s7canister": {
+      "art": "toxic_canister",
+      "hp": 18,
+      "w": 46,
+      "h": 68,
+      "score": 740
+    },
+    "s7tank": {
+      "art": "toxic_mini_tank",
+      "hp": 44,
+      "w": 58,
+      "h": 70,
+      "score": 1660
+    },
+    "s7skimmer": {
+      "art": "toxic_skimmer",
+      "hp": 32,
+      "w": 70,
+      "h": 62,
+      "score": 1240
+    }
+  },
+  "mini": {
+    "kind": "heralddeath",
+    "at": 0.45,
+    "afterScroll": 1201
+  },
+  "stage6": {
+    "length": 75,
+    "mini": {
+      "at": 0.45,
+      "kind": "siegefortress17",
+      "afterScroll": 1121
+    }
+  },
+  "stage7Length": 58,
+  "stage7cfg": {
+    "master": "nst7_master_v3",
+    "liquid": "nlq_sludgeF",
+    "fill": "#232b12",
+    "tile": 0.5,
+    "fps": 5,
+    "wide": true,
+    "plateW": 680,
+    "h": 4716
+  }
+}

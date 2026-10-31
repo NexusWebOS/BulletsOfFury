@@ -1,0 +1,36 @@
+{
+  "fontBanks": 27,
+  "glyphsPerBank": 95,
+  "palettes": 8,
+  "rStrokesConnectedInAllBanks": true,
+  "zeroAndEightCountersIntactInAllBanks": true,
+  "numericAdvancesStableInAllBanks": true,
+  "paletteAlphaIdentical": true,
+  "menuChecksPassed": 20,
+  "nativeNumericChecksPassed": 6,
+  "numericRunsFit": 45,
+  "speakerNamesFit": 5,
+  "viewports": [
+    [
+      1280,
+      800
+    ],
+    [
+      960,
+      720
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "browserErrors": [],
+  "fullSuiteExit": 1,
+  "unchangedFailures": [
+    "and the flash is held long enough for a single hit to register",
+    "dialogue ends with the opening jump warning",
+    "opening jump lands and returns before chromium activation",
+    "unchosen right route persists as the opposite Stage X fight",
+    "Stage X right branch launches a full encounter"
+  ]
+}

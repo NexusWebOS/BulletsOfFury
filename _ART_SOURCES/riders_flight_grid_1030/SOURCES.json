@@ -1,0 +1,41 @@
+{
+  "editor": "Aseprite1.3.18.6-dev",
+  "source": "author_grid.lua",
+  "editable": "gold_grid.aseprite",
+  "description": "Source-authored amber/gold filled rectangular force-field lattice; no stone/rock tiles, reticle or ring. Stable opaque lattice with authored translucent membrane, energy sweep, deployment and release.",
+  "cell": [
+    480,
+    64
+  ],
+  "pivot": [
+    240,
+    32
+  ],
+  "frames": 40,
+  "cols": 8,
+  "fps": 24,
+  "states": {
+    "deploy": [
+      0,
+      16
+    ],
+    "hold": [
+      16,
+      16
+    ],
+    "release": [
+      32,
+      8
+    ]
+  },
+  "native_owner": "rr26 Golden Aegis",
+  "unchanged": [
+    "native cast/seed",
+    "13.52s duration",
+    "enemy reflection",
+    "friendly pass-through",
+    "native mixer cues"
+  ],
+  "runtime": "ordinary source-over cell blit only",
+  "externalGenerations": 0
+}

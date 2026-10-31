@@ -1,0 +1,37 @@
+{
+  "method": "built-in image_gen; original Cole1774x887 padded1776x888; uniform444x888 cells scaled by122/111 to488x976; shared512x1024 canvas/origin12,24; UI threshold128 alpha bounding crop plus4px padding, proportional rails",
+  "cole": {
+    "size": [
+      512,
+      1024
+    ],
+    "sourceCell": [
+      444,
+      888
+    ],
+    "scale": 1.0990990990990992,
+    "offset": [
+      12,
+      24
+    ],
+    "pivot": [
+      256,
+      994
+    ],
+    "poses": [
+      "neutral",
+      "report",
+      "horror",
+      "talk"
+    ]
+  },
+  "sources": {
+    "dialogue-a": "aba45bab-6043-41af-8c9a-74161f02d5a9",
+    "hud-a": "049a57af-a841-4e8b-a431-30baf6ea6839",
+    "dialogue-b": "72ce3d90-ae67-455b-ad72-d39b7750511b",
+    "hud-b": "43615713-865f-42d6-b9cf-a30082d9440a",
+    "dialogue-c": "cc54d638-b374-4cda-9526-0052ea8a0428",
+    "hud-c": "ba20f1e8-ccf6-4dac-bc41-df90dff764d9",
+    "cole": "e2ace3c1-2537-45de-a95f-90c494156fe5"
+  }
+}

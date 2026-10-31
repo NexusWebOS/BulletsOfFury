@@ -1,0 +1,8 @@
+{
+  "tool": "PixelLab pixelart_workbench",
+  "original": "b0a0b2b9-7435-4628-813d-fd084cc813bd",
+  "edited": "f99183f9-e57b-4742-bf5f-cb4802c429f1",
+  "changed_pixels": 90873,
+  "preserved": "All bright rim pixels, original16 fixed192x224 cells",
+  "reason": "Remove12 observed dark opaque purple background colors from shield opening."
+}

@@ -1,0 +1,32 @@
+{
+  "sources": {
+    "assets/game/levels/stage_08/boss/phoenix_turbo_core_1030/ph82_body_2.webp": "b6c042352119a258ea785fb95887d015cecd9885f0564c623898babfa75d1583",
+    "assets/game/levels/stage_08/boss/phoenix_turbo_core_1030/ph82_body_3.webp": "504ba7eed03beeb910bafd9da08540c1544997be925c0bad44aea4b8d7dd7d4b",
+    "assets/game/levels/stage_08/boss/phoenix_turbo_core_1030/ph82_body_4.webp": "d8e5a3533fc6c393e3511e904b04d710043d55432e665e1cc1e705dfa053fe80",
+    "assets/game/levels/stage_08/boss/phoenix_turbo_core_1030/ph82_body_5.webp": "359359c79c23771e4d165af13e387066139627d18486031aa5e2dc6bd9ce0b0a",
+    "turn-source-1": "54cf97f2a18b79bf900e4b6682ca9544b37eded3a2189d90e5d801bc2ddcd83f",
+    "turn-source-2": "ec4e777559e7f377b3a88ca6939ff894a55decf9d89f48df2e25d46c38973313",
+    "turn-source-3": "d0c9d21d60fd2f583abcb299912ade05bbe034099ea0d95e0a4439774b7ec856",
+    "turn-source-4": "0076aae6d16825700b5acc15523c24ce97f2adaed97e8c7f5950a412d0e41d88",
+    "turn-source-5": "5de197b1ca8f30fc11d171b8960eb75315034f1e6f11afa43e764a81efa3c813",
+    "turn-source-6": "9d7949daaee7625e77d12efe6bd7ac4b6f80cd38652cccd251b47919548bb65b",
+    "turn-source-7": "8a3022c47d996994a868e5a83451497567db6e35fe4622dff8b707ddedbc6188",
+    "assets/game/levels/stage_08/boss/arena_download_1020/download-curtain-32.webp": "eb9f63a152a5298f52cc032ef18eed2944210c86d3119ccf279299cb62c0b031",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_00.png": "55d2f5e0a0976057e9949491ee921d22269348907bee3480da11da0664658e54",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_02.png": "79b383de306cfe4e6a3b8e7fd3cd9bea89a4253e927b9bb4bfcfc96c6ace6960",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_04.png": "8110f11cb02e80ccf88f4ce0d6f6880e30177fe06c9153a54e007892d4838f01",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_06.png": "5d4c074435715482e33a7dde2c86be3b6e5bef4200f1fecf8c9afbcfcbe1f07f",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_08.png": "0a085f8e42455ed7cd0abae29ff5fd52380288b18b545113037b435b87f284a1",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_10.png": "0d31b6c3e0144b518da9d01a3d1ebe1d4c04dc726fa71a1999b784f6861d7483",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_12.png": "b736c89176521f6767b419303b634a5ee18592f271330c45e0cd40aad78955a3",
+    "assets/game/levels/stage_08/boss/corrupted_phoenix_1020/plume_14.png": "5b26d3214b349bace9fd7fc5254de0c06148b241cfe234b582ab35435cf9e8e0",
+    "assets/game/levels/stage_06/boss/nightwing_teal_charge_1030/wind_rear.png": "3c77b0e168e8135bfd3762fff6649bdc70226639740affb51ff55c8e60d1adc6",
+    "assets/game/levels/stage_06/boss/nightwing_teal_charge_1030/wind_front.png": "b55e0cdfc23a76ccaaeb628bec908e1b4780f8d47e28de6911eff4f1c36117b4",
+    "assets/game/levels/stage_08/boss/neural_optics_1030/nb80_page_6.webp": "3c7e5b477dfe362c106697ebd2b32ed2a23c909ffcc4750135a045bdb5b369b9"
+  },
+  "generation": "Built-in GPT local-reference8-view turntable; exact prompt/raw source retained.",
+  "body": "Approved PH82 disabled-pod body, source-locked labels and original wing cycle.",
+  "effects": "Exact body outline, PixelLab fire fill, coded curtain glyphs and improved wind arcs.",
+  "runtime": "Fixed unrotated crops, source alpha, frame selection and movement only.",
+  "newPaidCredits": 0
+}

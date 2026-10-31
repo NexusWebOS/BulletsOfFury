@@ -1,0 +1,48 @@
+{
+  "idle": {
+    "frames": 8,
+    "even": true
+  },
+  "dance": {
+    "frames": 24,
+    "even": true
+  },
+  "slam": {
+    "frames": 20,
+    "even": true
+  },
+  "spin": {
+    "frames": 16,
+    "even": true
+  },
+  "channel": {
+    "frames": 16,
+    "even": true
+  },
+  "heart": {
+    "frames": 12,
+    "even": true
+  },
+  "shield-clean": {
+    "frames": 16,
+    "even": true
+  },
+  "runtime_bytes": 742780,
+  "ui_bytes": 644214,
+  "pixellab_remaining_usd": 2.59,
+  "full_suite": {
+    "assertions": 8943,
+    "zero_errors": true,
+    "exit": 0
+  },
+  "verification": {
+    "checks": 41,
+    "passed": 41,
+    "errors": []
+  },
+  "cross-browser": {
+    "checks": 34,
+    "passed": 34,
+    "errors": []
+  }
+}

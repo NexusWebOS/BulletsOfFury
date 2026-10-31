@@ -1,0 +1,68 @@
+{
+  "bay": {
+    "key": "pb28_bay",
+    "path": "assets/game/levels/stage_06/miniboss/pursuit_1027/bay.png",
+    "cw": 48,
+    "ch": 104,
+    "cols": 8,
+    "frames": 16,
+    "pivot": [
+      24,
+      52
+    ]
+  },
+  "bay_hit": {
+    "key": "pb28_bay_hit",
+    "path": "assets/game/levels/stage_06/miniboss/pursuit_1027/bay_hit.png",
+    "cw": 48,
+    "ch": 104,
+    "cols": 8,
+    "frames": 16,
+    "pivot": [
+      24,
+      52
+    ]
+  },
+  "missile": {
+    "key": "pb28_missile",
+    "path": "assets/game/levels/stage_06/miniboss/pursuit_1027/missile.png",
+    "cw": 64,
+    "ch": 64,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      32,
+      32
+    ],
+    "directions": 64,
+    "cycles": 4,
+    "zeroHeading": "down"
+  },
+  "fragment": {
+    "key": "pb28_fragment",
+    "path": "assets/game/levels/stage_06/miniboss/pursuit_1027/fragment.png",
+    "cw": 32,
+    "ch": 32,
+    "cols": 8,
+    "frames": 256,
+    "pivot": [
+      16,
+      16
+    ],
+    "directions": 64,
+    "cycles": 4,
+    "zeroHeading": "down"
+  },
+  "bomb": {
+    "key": "pb28_bomb",
+    "path": "assets/game/levels/stage_06/miniboss/pursuit_1027/bomb.png",
+    "cw": 64,
+    "ch": 64,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      32,
+      32
+    ]
+  }
+}

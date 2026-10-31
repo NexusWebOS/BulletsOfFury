@@ -1,0 +1,42 @@
+{
+  "carrier_turret": {
+    "ref": "upload:49e58f7c-8fa2-43ce-80d9-fed0eb49ee40",
+    "size": [
+      160,
+      192
+    ],
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\carrier_turret.png"
+  },
+  "bomber_cannon": {
+    "ref": "upload:87d818d4-00be-4224-b045-26212781dd97",
+    "size": [
+      104,
+      240
+    ],
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\bomber_cannon.png"
+  },
+  "laser_terminal": {
+    "ref": "upload:68f5de91-bc5a-4f33-92df-89cc5cf7ba41",
+    "size": [
+      256,
+      256
+    ],
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\laser_terminal.png"
+  },
+  "dark_terminal": {
+    "ref": "upload:3f5dfbd7-ec28-4512-a02a-14c54ba0733d",
+    "size": [
+      256,
+      256
+    ],
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\dark_terminal.png"
+  },
+  "ice_shatter": {
+    "ref": "upload:e474daff-b123-4c7b-ab4e-f2e471036be7",
+    "size": [
+      256,
+      256
+    ],
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\performance_finish_1020\\refs\\ice_shatter.png"
+  }
+}

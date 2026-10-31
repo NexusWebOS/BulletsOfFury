@@ -1,0 +1,99 @@
+{
+  "owner": "_BUILD_SOURCE/build_hq_forge_1023.py",
+  "provider": "PixelLab",
+  "jobs": {
+    "hq": "images/d965b9de-238e-4e49-9be3-abe7c1c2f8b5",
+    "forge": "images/b5a6c1ab-23a1-4ed4-b8ee-69130064537b",
+    "button": "images/f67623f8-f0c6-484d-9d8d-f42972a9b8d2",
+    "menu": "ui-assets/98864ffe-b628-433d-8e1f-b99030702d80"
+  },
+  "assets": {
+    "hf23_hq": {
+      "path": "assets/game/shared/ui/hq_forge_1023/hq.webp",
+      "width": 256,
+      "height": 256,
+      "sha256": "05b38a91957e7c4243718bafec08910c9bd0695fd5749bc473f6dab73ee83829"
+    },
+    "hf23_forge": {
+      "path": "assets/game/shared/ui/hq_forge_1023/forge.webp",
+      "width": 256,
+      "height": 256,
+      "sha256": "0f6e3f16acc5fd1239883ec732836f1eb19830996a54daabe733700bb9cd6e56"
+    },
+    "hf23_row_idle": {
+      "path": "assets/game/shared/ui/hq_forge_1023/row_idle.webp",
+      "width": 324,
+      "height": 40,
+      "sha256": "fdfd2e61e956f98132f801d5eff01fef8031180eb87e83b5f962e9aa8cabb479"
+    },
+    "hf23_row_selected": {
+      "path": "assets/game/shared/ui/hq_forge_1023/row_selected.webp",
+      "width": 324,
+      "height": 40,
+      "sha256": "b867f0ec06eb553a20f3e8a34ae3f068076acd30fe3c231cc24afd7e0ea855e3"
+    },
+    "hf23_row_disabled": {
+      "path": "assets/game/shared/ui/hq_forge_1023/row_disabled.webp",
+      "width": 324,
+      "height": 40,
+      "sha256": "d8171d9d92add12ee26fe623317e7fdd815bb725e11b70b50bae310bb2c8a216"
+    },
+    "hf23_small_idle": {
+      "path": "assets/game/shared/ui/hq_forge_1023/small_idle.webp",
+      "width": 160,
+      "height": 30,
+      "sha256": "1593b80ad660606e73f70578b95631bfe41b54010965d15beda2ba8ee3704e49"
+    },
+    "hf23_small_selected": {
+      "path": "assets/game/shared/ui/hq_forge_1023/small_selected.webp",
+      "width": 160,
+      "height": 30,
+      "sha256": "507a94443be1bcf570645808f6b9fa1c69835e2a9f25ee95a727013b1a08a62e"
+    },
+    "hf23_small_disabled": {
+      "path": "assets/game/shared/ui/hq_forge_1023/small_disabled.webp",
+      "width": 160,
+      "height": 30,
+      "sha256": "d607d5c1cb4f561911019fc2d511026bca562c58c7f01c7ee28210024edf0b46"
+    },
+    "hf23_start_idle": {
+      "path": "assets/game/shared/ui/hq_forge_1023/start_idle.webp",
+      "width": 300,
+      "height": 34,
+      "sha256": "503032e248083f4f1e0f77fbc157e244ce00659536c35bd6cc2b467552d71356"
+    },
+    "hf23_start_selected": {
+      "path": "assets/game/shared/ui/hq_forge_1023/start_selected.webp",
+      "width": 300,
+      "height": 34,
+      "sha256": "01b41871a7c93b163f280421e1980eb3ec2b4517fb4ed0de85c81fca29da4a19"
+    },
+    "hf23_start_disabled": {
+      "path": "assets/game/shared/ui/hq_forge_1023/start_disabled.webp",
+      "width": 300,
+      "height": 34,
+      "sha256": "b4480873e51b142924136e5adc09861fa0e99e0bbe0aa991d5ef702f3e6cc4d2"
+    },
+    "hf23_menu": {
+      "path": "assets/game/shared/ui/hq_forge_1023/menu.webp",
+      "width": 456,
+      "height": 340,
+      "sha256": "6e731d16ad5c24c2952ff0678ee121f00367d7f5a834f3056db2fc18c09888a4"
+    },
+    "hf23_workshop": {
+      "path": "assets/game/shared/ui/hq_forge_1023/workshop.webp",
+      "width": 456,
+      "height": 366,
+      "sha256": "175c952540af25d721cfac1b33a16c47cc5ec4eccba7f1049a44974e60480fb8"
+    },
+    "hf23_backdrop": {
+      "path": "assets/game/shared/ui/hq_forge_1023/backdrop.webp",
+      "width": 480,
+      "height": 512,
+      "sha256": "9851eece58b95f6990f972cb7e50605c10453f705b4694f9a8b7df1459eab16e"
+    }
+  },
+  "fee": 300,
+  "pointsPerCompletedStage": 2,
+  "claudeReference": "a59a2e0704476aa3bf794bd5c11ff5da0d2192a1"
+}

@@ -1,0 +1,117 @@
+{
+  "name": "BOF Laser Emitter Corona",
+  "canvas": {
+    "w": 64,
+    "h": 64
+  },
+  "frames": 16,
+  "fps": 24,
+  "loop": true,
+  "origin": [
+    16,
+    32
+  ],
+  "ramps": {
+    "main": [
+      "#06265e",
+      "#0862bd",
+      "#089cfa",
+      "#17dcff",
+      "#9cfaff",
+      "#eeffff",
+      "#ffffff"
+    ],
+    "corona": [
+      "#073176",
+      "#0755b8",
+      "#088ee8",
+      "#16caff",
+      "#6ff3ff"
+    ]
+  },
+  "outline": {
+    "mode": "none"
+  },
+  "dither": 0,
+  "tones": 7,
+  "detail": 0,
+  "seed": 102728,
+  "layers": [
+    {
+      "id": "nozzle_envelope",
+      "type": "glow",
+      "ramp": "corona",
+      "x": 16,
+      "y": 32,
+      "radius": {
+        "wave": {
+          "mid": 8,
+          "amp": 0.5,
+          "cycles": 2
+        }
+      },
+      "squash": 0.8,
+      "angle": 90,
+      "shape": "linear",
+      "outline": false,
+      "intensity": 1
+    },
+    {
+      "id": "beam_throat",
+      "type": "glow",
+      "ramp": "main",
+      "x": 28,
+      "y": 32,
+      "radius": {
+        "wave": {
+          "mid": 15,
+          "amp": 0.65,
+          "cycles": 2,
+          "phase": 0.25
+        }
+      },
+      "squash": 0.18,
+      "shape": "linear",
+      "outline": false,
+      "intensity": 1
+    },
+    {
+      "id": "emission_lip",
+      "type": "ring",
+      "ramp": "corona",
+      "x": 16,
+      "y": 32,
+      "radius": {
+        "wave": {
+          "mid": 3.8,
+          "amp": 0.25,
+          "cycles": 2
+        }
+      },
+      "squash": 1.65,
+      "width": 1,
+      "soft": 0,
+      "outline": false,
+      "intensity": 0.83
+    },
+    {
+      "id": "core",
+      "type": "glow",
+      "ramp": "main",
+      "x": 17,
+      "y": 32,
+      "radius": {
+        "wave": {
+          "mid": 3.8,
+          "amp": 0.3,
+          "cycles": 2
+        }
+      },
+      "squash": 0.9,
+      "angle": 90,
+      "shape": "linear",
+      "outline": false,
+      "intensity": 1
+    }
+  ]
+}

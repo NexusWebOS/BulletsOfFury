@@ -1,0 +1,139 @@
+{
+  "name": "Command Armor",
+  "portraitSide": "left",
+  "variants": {
+    "axel": {
+      "color": "#3a8aff",
+      "name": "AXEL",
+      "dialogue": "axel/dialogue.webp",
+      "hud": [
+        "axel/hud-left.webp",
+        "axel/hud-right.webp"
+      ]
+    },
+    "decker": {
+      "color": "#ffd24a",
+      "name": "DECKER",
+      "dialogue": "decker/dialogue.webp",
+      "hud": [
+        "decker/hud-left.webp",
+        "decker/hud-right.webp"
+      ]
+    },
+    "maverick": {
+      "color": "#3ad6c8",
+      "name": "MAVERICK",
+      "dialogue": "maverick/dialogue.webp",
+      "hud": [
+        "maverick/hud-left.webp",
+        "maverick/hud-right.webp"
+      ]
+    },
+    "freezer": {
+      "color": "#6fd0ff",
+      "name": "FREEZER",
+      "dialogue": "freezer/dialogue.webp",
+      "hud": [
+        "freezer/hud-left.webp",
+        "freezer/hud-right.webp"
+      ]
+    },
+    "juggernaut": {
+      "color": "#c08a3a",
+      "name": "JUGGERNAUT",
+      "dialogue": "juggernaut/dialogue.webp",
+      "hud": [
+        "juggernaut/hud-left.webp",
+        "juggernaut/hud-right.webp"
+      ]
+    },
+    "yuri": {
+      "color": "#e23a3a",
+      "name": "YURI",
+      "dialogue": "yuri/dialogue.webp",
+      "hud": [
+        "yuri/hud-left.webp",
+        "yuri/hud-right.webp"
+      ]
+    },
+    "lizzie": {
+      "color": "#ffc21a",
+      "name": "LIZZIE",
+      "dialogue": "lizzie/dialogue.webp",
+      "hud": [
+        "lizzie/hud-left.webp",
+        "lizzie/hud-right.webp"
+      ]
+    },
+    "falva": {
+      "color": "#ff2a8f",
+      "name": "FALVA",
+      "dialogue": "falva/dialogue.webp",
+      "hud": [
+        "falva/hud-left.webp",
+        "falva/hud-right.webp"
+      ]
+    },
+    "cole": {
+      "color": "#7ad63a",
+      "name": "COLE",
+      "dialogue": "cole/dialogue.webp",
+      "hud": [
+        "cole/hud-left.webp",
+        "cole/hud-right.webp"
+      ]
+    }
+  },
+  "dialogueSize": [
+    2160,
+    394
+  ],
+  "railSize": [
+    376,
+    1024
+  ],
+  "nameRect": [
+    505,
+    46,
+    345,
+    53
+  ],
+  "portraitRect": [
+    80,
+    50,
+    300,
+    295
+  ],
+  "bodyRect": [
+    510,
+    150,
+    1530,
+    175
+  ],
+  "components": {
+    "portrait": {
+      "path": "components/portrait.webp",
+      "sourceRect": [
+        0,
+        0,
+        470,
+        394
+      ]
+    },
+    "body": {
+      "path": "components/body.webp",
+      "sourceRect": [
+        470,
+        0,
+        1690,
+        394
+      ]
+    }
+  },
+  "nineSliceBody": [
+    440,
+    132,
+    100,
+    58
+  ]
+}

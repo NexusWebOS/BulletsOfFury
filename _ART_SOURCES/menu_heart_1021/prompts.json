@@ -1,0 +1,50 @@
+{
+  "menu_family": {
+    "generator": "built-in image_gen",
+    "common": "Bullets of Fury military digital NeoGeo/Sega32X pixel art. Straight-on gunmetal/chrome bevels, small amber/red lights, clipped corners. One full-width empty header and uninterrupted opaque charcoal body. No avatars, portrait slots, words, icons, or baked buttons. Transparent exterior. Preserve proportions and reusable safe text apertures.",
+    "variants": {
+      "xl": "Substantial landscape large menu window intended720x480.",
+      "l": "Separate16:9 landscape medium menu frame intended720x400; reference XL for material consistency.",
+      "m": "Newly authored short2.6:1 notification/question window intended720x276; reference L.",
+      "s": "Compact4:1 notification intended640x160; reference M."
+    }
+  },
+  "boss_preview_concepts": [
+    {
+      "name": "Fury Threat Console",
+      "prompt": "Original wide enemy inspection console. Gunmetal, silver, red status lights. Large central B.O.B turntable, skinny identity sidebar left, three stat bands right, part carousel and bottom targeting strip. No pilot avatar. Reference actual grey/orange B.O.B and facts, not original card layout."
+    },
+    {
+      "name": "Holoscan",
+      "prompt": "Deep navy technical terminal, restrained cyan/silver chassis. Huge blue holographic B.O.B exploded into body, cannon and pod, leader lines, right part selector, broad title. Bottom readouts240HP/ICE, WEAK:FIRE x1.5, MISSILES:CORE. Original composition, no pilot avatar."
+    },
+    {
+      "name": "Field Manual95",
+      "prompt": "Two-page cream technical instruction folio in olive military case. Chunky black bitmap headings, orange callouts, grey/orange friendly training robot with bright blue core. Left page large B.O.B and stats, right cutaway/module diagram. WHY HAVEN’T I RETIRED YET? Mid1990s printed strategy guide texture. Robot training UI, no combat scene."
+    },
+    {
+      "name": "Arcade Data Cartridge",
+      "prompt": "Huge black Sega-era cartridge inspection UI, knurled charcoal shell, silver label, amber/cobalt tabs and exposed contact pins. Actual B.O.B to right with wireframe and module chips. Large left stats and quote. Original composition, no pilot avatar."
+    },
+    {
+      "name": "Hangar Service Lift",
+      "prompt": "Friendly sci-fi robot maintenance game screen. NeoGeo pixel art, huge grey/orange B.O.B on service turntable, mechanical gantry holding detached utility pods, amber workshop lights and teal monitors. Broad bottom silver stats shelf, fine module callouts and thumbnail strip. No human avatars."
+    }
+  ],
+  "heart_master": {
+    "generator": "built-in image_gen",
+    "reference": "actual blue Hammer idle256",
+    "prompt": "Re-author original Hammer identity as CHROME HEART: athletic armored robot, angular spiked helmet, dark segmented chassis, glowing heart reactor, plated boots, huge long-handled solid heart-shaped chrome hammer. Vibrant hot-pink/rose chromium armor and polished pearl silver highlights. Front-facing entire full body, hammer diagonal down left. NeoGeo/Sega32X production pixel art, transparent background, generous animation margins, one sprite not sheet."
+  },
+  "animation": {
+    "generator": "PixelLab PixMiniMax",
+    "seed": "heart_seed.png, fixed256",
+    "jobs": "pixellab-jobs.json",
+    "constraints": "Fixed camera, full body, stable proportions/armor/palette and shared chest pivot. Idle8, dance24, overhead slam20, hammer spin16, shield channel16, heart projectile12, shield rim16. Only generated frames1..N exported; raw inputframe0 preserved as seed."
+  },
+  "shield_repair": {
+    "tool": "PixelLab pixelart_workbench",
+    "receipt": "shield-alpha-repair.json",
+    "instruction": "Remove exactly12 observed dark opaque purple backdrop colors from every shield frame; preserve bright authored rim/lightning. Common16px transparent outer padding; retain original visible scale."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "source": "current XART.get and native ctx.drawImage, no substituted aircraft/pilot",
+  "pilot": "cole",
+  "boss": "V18 colossus phase3",
+  "exports": [
+    "dracodia-head",
+    "dracodia-body",
+    "cole-portrait",
+    "cole-ship"
+  ]
+}

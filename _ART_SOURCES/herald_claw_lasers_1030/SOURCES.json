@@ -1,0 +1,40 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "pivot": [
+    32,
+    32
+  ],
+  "cols": 32,
+  "phaseFrames": 8,
+  "directions": 64,
+  "frames": 512,
+  "projectileSourceHeight": 46,
+  "muzzleSourceHeight": 64,
+  "muzzleOverlapPixels": 7,
+  "sourceInputs": {
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_0.png": "602d88d89e6f728ca17552cd65692a0f03a1b27998db053a93c0ada150941f37",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_1.png": "25567b0b7a2a831d7923bde065dd747ae466273a136c315beb2f01208623fc8d",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_2.png": "b4bacb32f6d2c4847b7416036dd145fdff8fade18be7a2227e4a50a844bf8517",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_3.png": "27ae79f4b1836753f03877c3d9757bd68b50abeba8692cb623abac90e775f89c",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_4.png": "88a56df168b9ef4a17bb7926f8e79c708176e1fee1e82b5c8c3ffd5802df21db",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_5.png": "0870559a7af7ce2c51d02238bf2b5f74cd07400026e74f735a17e0026780eb6b",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_6.png": "c00ccf7f91451677e1688e173423f5256fa98b79bf3b322fbe1f15c76e9c359b",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_7.png": "2353a9dba81310f7a796e56ec5901c4c9f1f7e7fbb0f484f554f275b1b83c96c",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_0.png": "20c48cf0c892b3ff93349779ffd64fd5100c92c122d867b5e50ac6a7818f9ada",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_1.png": "e7197c57dd0023285b18352e63c1e37740b03aae7f8ade91b3dc8cadad2ccfe2",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_2.png": "cbec9ad005caba796503facd488abce44bb222d3aa989ae9940d5038546ff370",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_3.png": "2f288122d53420114bc75c81a0ca5cc267e5944e32c0d2626f32a87b946c29fc",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_4.png": "6b1fc3fde6a0d7470238713790f1ad5ee47b3e08265c68122cde6d58f271fa5e",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_5.png": "103056142d31068d90a8cb7d76075f9939ff543759b1324cf245af7fb337fa91",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_6.png": "c87c6254e7f7f94e008ee672fe37e250dba49cc313dd6e0d891f81770467adae",
+    "assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_laser_7.png": "83237db426917a1edfc7bda277304c28dd1bd7a54b7596badc51845c035bdb45"
+  },
+  "palette": "Original white cores/dark contours and alpha retained; chroma remapped to crimson/red-magenta.",
+  "banks": {
+    "projectile": "11cc7c418f93ce10fb9a75db413dd7e4e95b261950425adb19c21dd559e6c7cb",
+    "muzzle": "508b06f6c37fdad1855d8f605c023b7c96e243ec062dea5577fcf88467bb3dc6"
+  }
+}

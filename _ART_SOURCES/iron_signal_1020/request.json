@@ -1,0 +1,16 @@
+{
+  "generator": "PixelLab create_font",
+  "job_id": "cfa58012-3393-419d-acf3-3b3de1b398e5",
+  "asset_id": "521976eb-4e8a-5749-b840-40a1b347c86c",
+  "font_name": "BOF Iron Signal",
+  "glyph_px": 16,
+  "weight": "Bold",
+  "seed": 10202026,
+  "reported_cost": "15 generations or $0.115 credits",
+  "brief": "A highly readable military tactical-computer dialogue font for Bullets of Fury, a mid-1990s Sega 32X / Neo Geo arcade jet shooter. Militant meets digital. Strong upright squared block capitals, bold two-pixel strokes, subtly clipped 45-degree corners, a few restrained military stencil breaks and small electronic notches. Clean open counters, clear letter spacing. Readable at native 16-pixel UI size for multi-line dialogue; avoid thin wire outlines, decorative gaps through every stroke, rounded sci-fi hairlines, glow, gradients, textures or 3D. Solid bright white glyph ink on transparent background, consistent cap height and baseline, compact moderately condensed proportions. Distinguish I/L/1, O/0, B/8, S/5. Matching plain readable punctuation, digits and lowercase. An aggressive command-terminal face with the clarity of a professionally designed small bitmap font.",
+  "actual_source_grid": [
+    8,
+    10
+  ],
+  "note": "Tool description claimed10x8; actual128x160 source is8columns x10rows. Verified row-major character identity. Original ink is black alpha; runtime uses white alpha. Two malformed symbols and oversized dollar use the existing authored punctuation."
+}

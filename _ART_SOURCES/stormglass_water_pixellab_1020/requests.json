@@ -1,0 +1,19 @@
+{
+  "seed_job": "09d1b679-e3a5-4506-8be8-011ac609a5c5",
+  "seed_image_id": "5f23e264-d11b-5ba7-95fe-36fe517ec0c0",
+  "seed_prompt": "Native 256x256 pixel-art seamless repeating ocean water texture for a top-down military arcade shooter. Strict vertical overhead camera, water fills every pixel, no shore or objects. Deep dark petrol teal sea, medium teal wave troughs, small broken silver-cyan sun glints and delicate moving foam filaments. Broad natural interlocking ripples, no giant waves, no white circles, no radial splash, no grid, no diagonal stripe pattern. Crisp mid-1990s Neo Geo / Sega 32X pixel clusters, restrained dithering, 24-color palette, dark readable value range so bright game bullets remain visible above it. Seamlessly tileable on all four edges, consistent texture density across the whole square. Opaque full canvas; no transparency, text, border, frame, ships, buildings or clouds. This is a base water tile that will be animated into a smooth cyclic ocean loop.",
+  "seed_format": [
+    256,
+    256
+  ],
+  "animation_job": "afa80ee9-340a-4002-8fff-90a9f79a0d69",
+  "animation_asset_id": "67f8cd96-d179-5388-b4e6-575e96fcb8b8",
+  "animation_prompt": "FRAME FORMAT: 256 x 256 pixels per frame, identical opaque canvas, same fixed overhead camera and 1:1 scale for every frame. Animate this entire square ocean surface into a seamless calm-to-moderate ocean-wave loop. Many independent small ripples travel and curl slowly, wave crests gently rise, break and dissolve into silver-cyan flecks, dark troughs subtly breathe underneath. Water must visibly deform and shimmer locally throughout the surface; do not merely translate, rotate or zoom the starting image. Keep the deep teal palette, restrained highlights, crisp arcade pixel clusters and consistent water density. No camera movement, perspective shift, shore, islands, ships, objects, splashes, vortex or big circular waves. Make every edge suitable for tiling throughout all frames; match the final phase precisely back to the supplied starting tile. Subtle smooth evolution with no flashing or whole-frame brightness changes.",
+  "animation_model": "PixelLab PixMiniMax",
+  "requested_frames": 32,
+  "no_background": false,
+  "starting_and_ending_frame": "same PixelLab-generated seed",
+  "animation_estimated_generations": 5,
+  "animation_reported_charge_usd": 0.08480947522984611,
+  "seed_reported_charge_usd": 0.0348
+}

@@ -1,0 +1,51 @@
+{
+  "editor": "Aseprite1.3.18.6-dev",
+  "author": "author.lua",
+  "inputs": {
+    "assets/game/levels/stage_06/boss/nightwing_stability_1028/wind_rear.png": "dfa51342868064c468c37df09dedac04f955be701986668ef0de28d64fb22822",
+    "assets/game/levels/stage_06/boss/nightwing_stability_1028/wind_front.png": "bfdebae39ec7363bbf1f5c4b3df5a95df01482de9645655a127e53e356935f9b",
+    "assets/game/levels/stage_06/boss/nightwing_wind_1028/clean_identity_1028b.png": "1d6fdc47c86e76f1a7ea57395dfee9ebad0e0735ddd59bf8ee9e28b189485b2f"
+  },
+  "vortex": {
+    "sourceCell": [
+      384,
+      384
+    ],
+    "exportCell": [
+      336,
+      336
+    ],
+    "proportionalScale": 0.875,
+    "framesPerLayer": 24,
+    "cols": 8,
+    "anchor": [
+      168,
+      168
+    ]
+  },
+  "windEnergy": {
+    "cell": [
+      272,
+      272
+    ],
+    "pivot": [
+      136,
+      136
+    ],
+    "poses": [
+      0,
+      8,
+      16
+    ],
+    "levels": 6,
+    "frames": 18,
+    "blankOffFrames": [
+      0,
+      1,
+      2
+    ],
+    "shape": "Exterior-connected transparent pixels within six pixels of the actual approved armor silhouette. No original body/hit pixels covered."
+  },
+  "runtime": "Fixed ordinary source-over cells; existing NW32 charge ladder, no new runtime appearance transform",
+  "externalGenerations": 0
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "dasher",
+    "stage": 6,
+    "name": "TEMPEST DASHER",
+    "size": "small",
+    "description": "Exclusive suicide turbo interceptor, a very slender arrowhead aircraft with tiny swept folding wings, long pointed silver nose DOWN, white chromium armour, dark grey dorsal spine, vivid teal turbine rings and paired compact cannon pods. A distinct speedster silhouette, much narrower and more needle-like than the reference Zephyr. Readable canopy, 2 small wing roots and twin accelerator engines. Teal/white/gray only; no red.",
+    "ref": "upload:23432c68-81c3-4a49-ac81-e373758e94c6"
+  },
+  {
+    "id": "slimejet",
+    "stage": 7,
+    "name": "MIASMA SLIMEWING",
+    "size": "medium",
+    "description": "Toxic alien/robotic slime jet. Gunmetal dark olive mechanical fuselage, swept split wings, exposed neon lime corrosive fluid channels and a glass green acid reactor. Organic viscous slime contained inside tubing, no loose amorphous blob. Clearly recognisable airplane nose DOWN, symmetric paired acid cannons near(40,94) and(88,94), mechanical ailerons and turbines. Cohesive olive/black/lime sewer biome, white metal highlights.",
+    "ref": "upload:b09d5188-6055-4f74-9e50-9be9ec4b43cb"
+  },
+  {
+    "id": "sewerdrone",
+    "stage": 7,
+    "name": "FERROPHAGE SCOUT",
+    "size": "small",
+    "description": "Compact floating alien robotic sewer scout drone, diamond-shaped olive/gunmetal armour, four compact bladed fins and two articulated lateral acid gun pods, no humanoid legs. Mechanical singular bright lime reactor eye at centre and neon-green toxic capillaries. Small recognizable robotic flying craft, downward-facing attack axis. Symmetric guns aimed DOWN near(40,92),(88,92), dark outlines and deliberate silver highlights. Cohesive olive/black/lime palette of the toxic jet.",
+    "ref": "upload:b09d5188-6055-4f74-9e50-9be9ec4b43cb"
+  },
+  {
+    "id": "sewerheavy",
+    "stage": 7,
+    "name": "PLAGUE RELAY",
+    "size": "large",
+    "description": "Heavy alien robotic sewer drone aircraft, squat broad central armoured hover reactor, two large articulated side cannon nacelles and four short swept metal wings. Closed lime biohazard plasma capsule in centre, green fluid pipes, dark olive/gunmetal chrome with neutral white highlights. Symmetric nose/weapon axis faces DOWN. Clearly machinery, not a tank, not a standing robot; menacing toxic support gunship. Paired barrel tips near(36,94),(92,94). Match toxic jet's olive/black/lime identity.",
+    "ref": "upload:b09d5188-6055-4f74-9e50-9be9ec4b43cb"
+  }
+]

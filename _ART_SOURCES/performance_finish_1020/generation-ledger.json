@@ -1,0 +1,167 @@
+{
+  "authorizations": [
+    "User explicitly approved animating Cole's existing in-game reporting/horrified artwork via PixelLab; no original photos uploaded.",
+    "User explicitly approved selected existing BOF boss weapon and finishing-effect artwork via PixelLab."
+  ],
+  "jobs": [
+    {
+      "name": "cole_report_face",
+      "args": {
+        "frame_count": 16,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "side",
+        "direction": "south",
+        "subject_description": "Face close-up of the exact same brown-haired blue-eyed bearded Cole, front facing.",
+        "initial_pose": "Exact fixed registered front view supplied in the reference.",
+        "description": "FRAME FORMAT: identical 192 by 192 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. Small restrained talking mouth shapes, one natural blink midway, eyebrows and nose remain absolutely still. Do not nod or move the head, hair, beard outline, ears, face width or jaw. Preserve every identity feature, original colors and pixel clusters. End at the exact supplied expression."
+      },
+      "receiptTexts": [
+        "id: 19979321-4017-4647-9814-5b07afc3b8f9\njob_id: 19979321-4017-4647-9814-5b07afc3b8f9\ndescription: FRAME FORMAT: identical 192 by 192 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. Small restrained talking mouth shapes, one natural blink midway, eyebrows and nose remain absolutely still. Do not nod or move the head, hair, beard outline, ears, face width or jaw. Preserve every identity feature, original colors and pixel clusters. End at the exact supplied expression.\nframes: 16\nsize: 192x192px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"19979321-4017-4647-9814-5b07afc3b8f9\")\nasset_id: 087c17ba-50a5-553e-a45a-1793a70f97dd\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": [
+        "status: completed\nid: 19979321-4017-4647-9814-5b07afc3b8f9\njob_id: 19979321-4017-4647-9814-5b07afc3b8f9\nframes: 17\ntransparent: yes\nasset_id: 087c17ba-50a5-553e-a45a-1793a70f97dd\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0490 in credits\ndownload: https://api.pixellab.ai/mcp/images/19979321-4017-4647-9814-5b07afc3b8f9/download?index=0 ... ?index=16",
+        "(13 more frames not shown — fetch them from the download URLs above)"
+      ]
+    },
+    {
+      "name": "cole_horror_face",
+      "args": {
+        "frame_count": 16,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "side",
+        "direction": "south",
+        "subject_description": "Face close-up of the exact same brown-haired blue-eyed bearded Cole, horrified expression.",
+        "initial_pose": "Exact fixed registered front view supplied in the reference.",
+        "description": "FRAME FORMAT: identical 192 by 192 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. A brief startled eye widening, a quick natural blink, lips part slightly in disbelief then return. Hair, head, nose, beard outline, ears, jaw and face silhouette stay completely fixed. No new facial features, no sweat, no new teeth. Preserve exact identity and pixel-art style. End at the supplied worried expression."
+      },
+      "receiptTexts": [
+        "id: 76e284ec-b7fc-418d-a7e4-11fa03408836\njob_id: 76e284ec-b7fc-418d-a7e4-11fa03408836\ndescription: FRAME FORMAT: identical 192 by 192 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. A brief startled eye widening, a quick natural blink, lips part slightly in disbelief then return. Hair, head, nose, beard outline, ears, jaw and face silhouette stay completely fixed. No new facial features, no sweat, no new teeth. Preserve exact identity and pixel-art style. End at the supplied worried expression.\nframes: 16\nsize: 192x192px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"76e284ec-b7fc-418d-a7e4-11fa03408836\")\nasset_id: e5e2a8ab-f2c2-5206-bd4b-55b09fe6fc2c\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": []
+    },
+    {
+      "name": "cole_report_gesture",
+      "args": {
+        "frame_count": 24,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "side",
+        "direction": "south",
+        "subject_description": "Upper-body crop of the same olive-green flight-suit pilot Cole, hand held across chest.",
+        "initial_pose": "Exact fixed registered front view supplied in the reference.",
+        "description": "FRAME FORMAT: identical 256 by 256 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. A restrained reporting gesture: the raised gloved hand opens slightly and moves just a little away from the chest, then returns. Subtle chest breathing, at most 2 pixels. Head and hair remain absolutely motionless and unchanged, belt and waist fixed. No new objects. Keep all hands and elbows in frame. Do not change face or costume. Return to the exact original pose for a seamless loop."
+      },
+      "receiptTexts": [
+        "id: 041a8c1a-b99c-48be-968a-8bb0670f9eb9\njob_id: 041a8c1a-b99c-48be-968a-8bb0670f9eb9\ndescription: FRAME FORMAT: identical 256 by 256 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. A restrained reporting gesture: the raised gloved hand opens slightly and moves just a little away from the chest, then returns. Subtle chest breathing, at most 2 pixels. Head and hair remain absolutely motionless and unchanged, belt and waist fixed. No new objects. Keep all hands and elbows in frame. Do not change face or costume. Return to the exact original pose for a seamless loop.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"041a8c1a-b99c-48be-968a-8bb0670f9eb9\")\nasset_id: 7d45a35a-4c10-5e44-ab3f-d90e8ca59551\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": []
+    },
+    {
+      "name": "cole_horror_gesture",
+      "args": {
+        "frame_count": 24,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "side",
+        "direction": "south",
+        "subject_description": "Upper-body crop of the same olive-green flight-suit pilot Cole, both hands held tensely near chest.",
+        "initial_pose": "Exact fixed registered front view supplied in the reference.",
+        "description": "FRAME FORMAT: identical 256 by 256 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. A short alarm reaction: shoulders tense slightly and both gloved hands recoil a few pixels, fingers flex, then settle into anxious shallow breathing. Head, hair and waist stay motionless and unchanged. No head turn, no new props, no scenery or lights. Preserve outfit, face and anatomy exactly, five fingers per hand. Finish at the exact starting worried pose for a seamless loop."
+      },
+      "receiptTexts": [
+        "id: 41d1aa7e-2a1b-4828-9e07-79b3b5a37736\njob_id: 41d1aa7e-2a1b-4828-9e07-79b3b5a37736\ndescription: FRAME FORMAT: identical 256 by 256 pixel canvases, one scale, fixed physical pivot, no reframing or camera motion, crisp 16-bit pixel art. A short alarm reaction: shoulders tense slightly and both gloved hands recoil a few pixels, fingers flex, then settle into anxious shallow breathing. Head, hair and waist stay motionless and unchanged. No head turn, no new props, no scenery or lights. Preserve outfit, face and anatomy exactly, five fingers per hand. Finish at the exact starting worried pose for a seamless loop.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"41d1aa7e-2a1b-4828-9e07-79b3b5a37736\")\nasset_id: 13969820-5746-5cfd-9e03-cf6920231c41\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": []
+    },
+    {
+      "name": "carrier_turret",
+      "args": {
+        "frame_count": 16,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "low top-down",
+        "direction": "south",
+        "subject_description": "The exact supplied gray mechanical carrier laser turret.",
+        "initial_pose": "The exact registered pose of the supplied reference.",
+        "description": "FRAME FORMAT: 160 by 192 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. First half: power capacitors brighten in dark red and barrel telescopes forward a few pixels in a readable charging windup. At midpoint the barrel kicks backward sharply as it fires, no beam drawn. Last quarter: mechanical barrel smoothly returns to its original rest position and the light cools. Housing and mounting collar must remain pixel-registered, no whole-object movement, no rotation, no new parts."
+      },
+      "receiptTexts": [
+        "id: 413cfcec-9e9f-47d0-b975-9f87afdf26d8\njob_id: 413cfcec-9e9f-47d0-b975-9f87afdf26d8\ndescription: FRAME FORMAT: 160 by 192 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. First half: power capacitors brighten in dark red and barrel telescopes forward a few pixels in a readable charging windup. At midpoint the barrel kicks backward sharply as it fires, no beam drawn. Last quarter: mechanical barrel smoothly returns to its original rest position and the light cools. Housing and mounting collar must remain pixel-registered, no whole-object movement, no rotation, no new parts.\nframes: 16\nsize: 160x192px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"413cfcec-9e9f-47d0-b975-9f87afdf26d8\")\nasset_id: 81ad6cea-b0d3-59d2-b87a-6ed4fa59e220\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": []
+    },
+    {
+      "name": "bomber_cannon",
+      "args": {
+        "frame_count": 16,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "low top-down",
+        "direction": "south",
+        "subject_description": "The exact supplied long gray and red bomber laser cannon module.",
+        "initial_pose": "The exact registered pose of the supplied reference.",
+        "description": "FRAME FORMAT: 104 by 240 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. First half: emitter plates open slightly, red inner capacitor lights build up. At midpoint a short sharp barrel recoil as the gun fires, no projectile or beam drawn. Last quarter: barrel returns smoothly and plates close to the original resting pose. Keep the long gray stationary rear housing and its center mounting point perfectly fixed, preserve every original marking and the same silhouette."
+      },
+      "receiptTexts": [
+        "id: 68add865-4711-4bd1-b4ef-22e940fc937b\njob_id: 68add865-4711-4bd1-b4ef-22e940fc937b\ndescription: FRAME FORMAT: 104 by 240 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. First half: emitter plates open slightly, red inner capacitor lights build up. At midpoint a short sharp barrel recoil as the gun fires, no projectile or beam drawn. Last quarter: barrel returns smoothly and plates close to the original resting pose. Keep the long gray stationary rear housing and its center mounting point perfectly fixed, preserve every original marking and the same silhouette.\nframes: 16\nsize: 104x240px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"68add865-4711-4bd1-b4ef-22e940fc937b\")\nasset_id: b759a937-7e97-5401-b7b7-2f2bc32d9200\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": []
+    },
+    {
+      "name": "laser_terminal",
+      "args": {
+        "frame_count": 16,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "low top-down",
+        "direction": "south",
+        "subject_description": "Cyan-white pixel-art laser vaporization energy, effect only.",
+        "initial_pose": "The exact registered pose of the supplied reference.",
+        "description": "FRAME FORMAT: 256 by 256 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. A brief white-hot vertical laser flash resolves into a thin horizontal cyan-white ablation scan edge moving downward through the center. White and icy-cyan pixel motes stream upward from the scan edge and quickly dissipate. Clear downward progression, no circular explosion or purple tint, no aircraft or character, no scenery. Fully disperses to transparent at the end."
+      },
+      "receiptTexts": [
+        "id: 774921e4-77b4-4af6-87ff-81b52fc85e0f\njob_id: 774921e4-77b4-4af6-87ff-81b52fc85e0f\ndescription: FRAME FORMAT: 256 by 256 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. A brief white-hot vertical laser flash resolves into a thin horizontal cyan-white ablation scan edge moving downward through the center. White and icy-cyan pixel motes stream upward from the scan edge and quickly dissipate. Clear downward progression, no circular explosion or purple tint, no aircraft or character, no scenery. Fully disperses to transparent at the end.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"774921e4-77b4-4af6-87ff-81b52fc85e0f\")\nasset_id: ef9a36b9-13a6-5f42-a973-a53aa8aad91e\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": []
+    },
+    {
+      "name": "dark_terminal",
+      "args": {
+        "frame_count": 16,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "low top-down",
+        "direction": "south",
+        "subject_description": "Violet gray and white dark-energy disintegration effect, effect only.",
+        "initial_pose": "The exact registered pose of the supplied reference.",
+        "description": "FRAME FORMAT: 256 by 256 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. The energy becomes a tight inward spiraling void collapse: curved violet tendrils, gray wire-like fragments and white pinprick sparks are pulled into a dark center, then the center contracts and extinguishes completely. Strong inward spiral motion, no expanding fire explosion, no cyan laser stripe, no aircraft or character. Smoothly ends on empty transparency."
+      },
+      "receiptTexts": [
+        "id: 7bcf2847-b15e-45e9-a3ea-5588dfb511ba\njob_id: 7bcf2847-b15e-45e9-a3ea-5588dfb511ba\ndescription: FRAME FORMAT: 256 by 256 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. The energy becomes a tight inward spiraling void collapse: curved violet tendrils, gray wire-like fragments and white pinprick sparks are pulled into a dark center, then the center contracts and extinguishes completely. Strong inward spiral motion, no expanding fire explosion, no cyan laser stripe, no aircraft or character. Smoothly ends on empty transparency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7bcf2847-b15e-45e9-a3ea-5588dfb511ba\")\nasset_id: d38e3973-8ba4-56b6-8d32-9fba7e653459\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": [
+        "status: completed\nid: 7bcf2847-b15e-45e9-a3ea-5588dfb511ba\njob_id: 7bcf2847-b15e-45e9-a3ea-5588dfb511ba\nframes: 17\ntransparent: yes\nasset_id: d38e3973-8ba4-56b6-8d32-9fba7e653459\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0623 in credits\ndownload: https://api.pixellab.ai/mcp/images/7bcf2847-b15e-45e9-a3ea-5588dfb511ba/download?index=0 ... ?index=16",
+        "(13 more frames not shown — fetch them from the download URLs above)"
+      ]
+    },
+    {
+      "name": "ice_shatter",
+      "args": {
+        "frame_count": 16,
+        "no_background": true,
+        "enhance_prompt": false,
+        "view": "low top-down",
+        "direction": "south",
+        "subject_description": "A cyan-white irregular crystalline ice shell, no character or aircraft.",
+        "initial_pose": "The exact registered pose of the supplied reference.",
+        "description": "FRAME FORMAT: 256 by 256 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. The frozen ice shell develops bright jagged fracture lines, then bursts into numerous sharp irregular ice shards. Shards travel outward with distinct sizes and spin, fall and fade naturally. No rectangular tiles, no snowball or water splash, no symmetrical star pattern. Small icy dust trails and clean transparent spaces between the separated shards. End with all shards dispersed beyond view or faded to transparency."
+      },
+      "receiptTexts": [
+        "id: 7d4a44ce-74f7-409b-ab7f-c3f601ca38bf\njob_id: 7d4a44ce-74f7-409b-ab7f-c3f601ca38bf\ndescription: FRAME FORMAT: 256 by 256 pixels per frame, identical canvas and fixed mounting pivot throughout, even transparent margins. One continuous 16-frame clip, fixed camera and scale, no clipping. Crisp classic arcade pixel-art clusters. The frozen ice shell develops bright jagged fracture lines, then bursts into numerous sharp irregular ice shards. Shards travel outward with distinct sizes and spin, fall and fade naturally. No rectangular tiles, no snowball or water splash, no symmetrical star pattern. Small icy dust trails and clean transparent spaces between the separated shards. End with all shards dispersed beyond view or faded to transparency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7d4a44ce-74f7-409b-ab7f-c3f601ca38bf\")\nasset_id: e2476aaa-f19d-56d9-9e43-cdf6ce28a8fc\nasset_status: pending (saved to your gallery when generation completes)"
+      ],
+      "statusTexts": []
+    }
+  ]
+}

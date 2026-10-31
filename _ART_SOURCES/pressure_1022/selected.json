@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dasher",
+    "candidate": 2,
+    "scale": 0.875,
+    "pivot": [
+      64,
+      64
+    ],
+    "bounds": [
+      31,
+      17,
+      97,
+      109
+    ]
+  },
+  {
+    "id": "slimejet",
+    "candidate": 1,
+    "scale": 0.875,
+    "pivot": [
+      64,
+      64
+    ],
+    "bounds": [
+      12,
+      16,
+      116,
+      114
+    ]
+  },
+  {
+    "id": "sewerdrone",
+    "candidate": 1,
+    "scale": 0.875,
+    "pivot": [
+      64,
+      64
+    ],
+    "bounds": [
+      22,
+      15,
+      106,
+      112
+    ]
+  },
+  {
+    "id": "sewerheavy",
+    "candidate": 0,
+    "scale": 0.875,
+    "pivot": [
+      64,
+      64
+    ],
+    "bounds": [
+      12,
+      18,
+      117,
+      112
+    ]
+  }
+]

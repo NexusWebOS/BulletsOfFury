@@ -1,0 +1,26 @@
+{
+  "sources": {
+    "assets/game/shared/combat/boss_integrity_1024/phoenix_recover.webp": "49602ac44eeac6be1e53d170db63c7f33cfbde0e53b9de751c0133479abfacdd",
+    "assets/game/shared/combat/boss_integrity_1024/phoenix_wind.webp": "efecfbc05f1cf8c89847db87ff6c6701cded491a81a99d6dfb48307365d1267a",
+    "assets/game/shared/combat/boss_integrity_1024/phoenix_strike.webp": "bbdac84dbdc39a5d49ab3aacd1db0d47434283c229b9649873f3f6f823ff8fc3",
+    "assets/game/levels/stage_08/boss/neural_optics_1030/nb80_page_0.webp": "679c8307499a2e7f91ce26ba4b2b8c895888d247bc847597e60b36f28a1380e0",
+    "assets/game/levels/stage_08/boss/neural_optics_1030/nb80_page_1.webp": "c878bc9bbc9c303b0b85a9d15fb8b90c68d87add7ad254d06f0ac83ad14fb84b",
+    "assets/game/levels/stage_08/boss/neural_optics_1030/nb80_page_5.webp": "b7b82b5a39d15fea56393a7f22df5eb4fb16716ecfe7a11a634e67c7bbcea864",
+    "assets/game/levels/stage_08/boss/neural_optics_1030/nb80_page_6.webp": "3c7e5b477dfe362c106697ebd2b32ed2a23c909ffcc4750135a045bdb5b369b9",
+    "assets/game/levels/stage_08/boss/arena_download_1020/lava/terrain.webp": "7c1fa803e29ae535ff0da8cb2c257f5220cc74cecf3ca0d09615022a96252eaa",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_0.png": "112305fb6a8e961722babb2e279d6100ba8924874937b40d7257132e970a4cda",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_1.png": "e91c6bd7b02947fcd988364fa7c75a2399a0fd9899c990dc6ca6ed247554fbac",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_2.png": "35e205ed1ed6494b3fab95a3a742215fdb35c86347c395dae88b857629051359",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_3.png": "93b0d4e2b82fe059d1537e8d0b036dcdb2fff0a7bc208eff1005ed0d1ae32787",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_4.png": "074e803c2368679f19ae2b53033abf7c01820c1f2f0b15f7fef8f7055f44c58d",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_5.png": "f824905fd6ed328e2234e30f905c3f1cda1957beed93388838820726c2710ad7",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_6.png": "d104afbc84ea00f693c9edd50b2135bcc1a6aef630a70a7dc9b0f05869212ce2",
+    "assets/game/shared/combat/expansion_v1/lava/nlq3_lava_7.png": "ae8c81e3575203224a74ea13d627a80c7b73812bad15148557ec97999db5f83b"
+  },
+  "mode": "Offline authored conversion of existing approved Phoenix, NB80 optics and lava/metal-edge artwork; no paid generation.",
+  "bodyFrames": 92,
+  "coreFrames": 115,
+  "beamDirections": 13,
+  "beamOrigin": "Measured orange chest-core pixel cluster",
+  "render": "Fixed blits and current source alpha; no new runtime transformations or generated decoration."
+}

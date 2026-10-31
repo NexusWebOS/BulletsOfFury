@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dialogue-a",
+    "refs": [
+      "C:/Users/Mike/Desktop/Github Coding/BulletsOfFury/_ART_SOURCES/ui_concepts_1020/art/dialogue-a.png"
+    ],
+    "prompt": "Produce ONE production-ready blank dialogue frame asset from the dialogue window at the bottom of this reference. Preserve exactly its distinctive art style, metal/silver/ivory bevels, silhouette, portrait bay placement and name tab placement. Remove the character, scenery, portrait, all letters, all words, all numbers and button prompts. ONLY the empty dialogue window enlarged to fill a wide 1536 by 320 canvas. Transparent exterior. Empty portrait bay dark opaque, blank nameplate dark neutral gray, blank text interior nearly black neutral gray. The window MUST contain no colored lights except existing tiny amber hardware for style A, no large green or blue regions: pilot color will be applied by engine. Keep nameplate blank. Preserve style B stepped silver border and RIGHT portrait bay; A and C LEFT portrait bays. Complete clean connected finished frame, all corners visible, crisp Sega32x/NeoGeo premium pixel art. No background, no text, no other objects.",
+    "result": "Generated images are saved to C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f as C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-aba45bab-6043-41af-8c9a-74161f02d5a9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "hud-a",
+    "refs": [
+      "C:/Users/Mike/Desktop/Github Coding/BulletsOfFury/_ART_SOURCES/ui_concepts_1020/art/hud-a.png"
+    ],
+    "prompt": "Create the reusable blank HUD rail pair from this exact reference, maintain the identical housing design and layout. Output 1536x1024 with LEFT and RIGHT rails in their exact current positions and width, transparent central gameplay area. Remove EVERY letter, digit, name, label, portrait, icon, ship, weapon, meter fill, gameplay, water. Preserve all original sculpted metal framework and empty dark wells, including meter recesses and blank name tab. Clean blank opaque nearly-black instrument interiors, tiny original amber hardware accents, polished crisp mid90s pixel art same as reference. Do not add or rearrange compartments. The result is a blank transparent UI template ready for dynamic live values, NO text or pictures or symbols in the wells.",
+    "result": "Generated images are saved to C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f as C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-049a57af-a841-4e8b-a431-30baf6ea6839.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "dialogue-b",
+    "refs": [
+      "C:/Users/Mike/Desktop/Github Coding/BulletsOfFury/_ART_SOURCES/ui_concepts_1020/art/dialogue-b.png"
+    ],
+    "prompt": "Produce ONE production-ready blank dialogue frame asset from the dialogue window at the bottom of this reference. Preserve exactly its distinctive art style, metal/silver/ivory bevels, silhouette, portrait bay placement and name tab placement. Remove the character, scenery, portrait, all letters, all words, all numbers and button prompts. ONLY the empty dialogue window enlarged to fill a wide 1536 by 320 canvas. Transparent exterior. Empty portrait bay dark opaque, blank nameplate dark neutral gray, blank text interior nearly black neutral gray. The window MUST contain no colored lights except existing tiny amber hardware for style A, no large green or blue regions: pilot color will be applied by engine. Keep nameplate blank. Preserve style B stepped silver border and RIGHT portrait bay; A and C LEFT portrait bays. Complete clean connected finished frame, all corners visible, crisp Sega32x/NeoGeo premium pixel art. No background, no text, no other objects.",
+    "result": "Generated images are saved to C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f as C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-72ce3d90-ae67-455b-ad72-d39b7750511b.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "hud-b",
+    "refs": [
+      "C:/Users/Mike/Desktop/Github Coding/BulletsOfFury/_ART_SOURCES/ui_concepts_1020/art/hud-b.png"
+    ],
+    "prompt": "Create the reusable blank HUD rail pair from this exact reference, maintain the identical housing design and layout. Output 1536x1024 with LEFT and RIGHT rails in their exact current positions and width, transparent central gameplay area. Remove EVERY letter, digit, name, label, portrait, icon, ship, weapon, meter fill, gameplay, water. Preserve all original sculpted metal framework and empty dark wells, including meter recesses and blank name tab. Clean blank opaque nearly-black instrument interiors, tiny original amber hardware accents, polished crisp mid90s pixel art same as reference. Do not add or rearrange compartments. The result is a blank transparent UI template ready for dynamic live values, NO text or pictures or symbols in the wells.",
+    "result": "Generated images are saved to C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f as C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-43615713-865f-42d6-b9cf-a30082d9440a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "dialogue-c",
+    "refs": [
+      "C:/Users/Mike/Desktop/Github Coding/BulletsOfFury/_ART_SOURCES/ui_concepts_1020/art/dialogue-c.png"
+    ],
+    "prompt": "Produce ONE production-ready blank dialogue frame asset from the dialogue window at the bottom of this reference. Preserve exactly its distinctive art style, metal/silver/ivory bevels, silhouette, portrait bay placement and name tab placement. Remove the character, scenery, portrait, all letters, all words, all numbers and button prompts. ONLY the empty dialogue window enlarged to fill a wide 1536 by 320 canvas. Transparent exterior. Empty portrait bay dark opaque, blank nameplate dark neutral gray, blank text interior nearly black neutral gray. The window MUST contain no colored lights except existing tiny amber hardware for style A, no large green or blue regions: pilot color will be applied by engine. Keep nameplate blank. Preserve style B stepped silver border and RIGHT portrait bay; A and C LEFT portrait bays. Complete clean connected finished frame, all corners visible, crisp Sega32x/NeoGeo premium pixel art. No background, no text, no other objects.",
+    "result": "Generated images are saved to C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f as C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-cc54d638-b374-4cda-9526-0052ea8a0428.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "hud-c",
+    "refs": [
+      "C:/Users/Mike/Desktop/Github Coding/BulletsOfFury/_ART_SOURCES/ui_concepts_1020/art/hud-c.png"
+    ],
+    "prompt": "Create the reusable blank HUD rail pair from this exact reference, maintain the identical housing design and layout. Output 1536x1024 with LEFT and RIGHT rails in their exact current positions and width, transparent central gameplay area. Remove EVERY letter, digit, name, label, portrait, icon, ship, weapon, meter fill, gameplay, water. Preserve all original sculpted metal framework and empty dark wells, including meter recesses and blank name tab. Clean blank opaque nearly-black instrument interiors, tiny original amber hardware accents, polished crisp mid90s pixel art same as reference. Do not add or rearrange compartments. The result is a blank transparent UI template ready for dynamic live values, NO text or pictures or symbols in the wells.",
+    "result": "Generated images are saved to C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f as C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-ba20f1e8-ccf6-4dac-bc41-df90dff764d9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  }
+]
