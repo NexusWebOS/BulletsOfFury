@@ -1,0 +1,35 @@
+{
+  "build": "overdrive1017-combat39-r1",
+  "providers": {
+    "characters_environment": "PixelLab",
+    "vehicles_supplies_results": "OpenAI image generator"
+  },
+  "vehicle_projection": "Strict orthographic side elevation, wheels in one plane; no three-quarter camera. Mustang pale teal/green and white; truck black/red.",
+  "counts": {
+    "combat": {
+      "banks": 431,
+      "frames": 4087,
+      "stills": 27
+    },
+    "night": {
+      "banks": 53,
+      "frames": 280
+    }
+  },
+  "counts_note": "Playback banks/frames include derived whole-bank mirrors and aliases. They are not generation or unique original-frame counts.",
+  "generation_workspace": "C:\\Users\\Mike\\Documents\\Codex\\2026-10-15\\fo\\work\\overdrive39",
+  "rebuild_owners": [
+    "build_assets.py",
+    "build_night.py",
+    "quality39.py"
+  ],
+  "fixed_frame_contract": "Even padded canvases, one fixed root and one uniform body unit per bank. No individual-frame fitting.",
+  "review_evidence": "_shots/combat39/animation-review.json and *-onion-*.png",
+  "exact_repairs": {
+    "north_enemy_hardware": "source/receipts/north-repair-receipts.json",
+    "north_gosfer": "PixelLab pixel-tools/b904a36b-267c-4e2b-b3a2-b0870d2fc738; body palette locked to 27 original colors, rigid weapon restored, stray body flashes removed.",
+    "quiet_crawl": "PixelLab pixel-tools/6eb4957e-ba2e-42ba-80be-25c7ad87dbb9",
+    "gunner": "PixelLab pixel-tools/371213fc-4368-40a8-9c26-436a73714e27, 7ffc7a3f-6878-4b34-84fe-4e76f878210d and babba52c-c7d7-45e3-ab97-ff78c0cb501b"
+  },
+  "rejected": "Angled vehicle candidates; chibi crew; camera-turning west firing banks; dirty cover/vault clips; standing-start prone rolls; heading-spin north roll; sideways rear prone-roll candidate; generated backpack muzzle flashes; one downward gunner frame with body lighting."
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "role": "double_barrel",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 4e85f6c6-ed50-4d17-a1ee-5b32f9b7bc2d\njob_id: 4e85f6c6-ed50-4d17-a1ee-5b32f9b7bc2d\naction: Fires two successive double barrel shotgun shots north away from camera, brief separate muzzle flashes and two shoulder kicks. Keep stock shouldered, same straight north aim, both hands retain grip. No reload in this clip. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ce964964-57dc-5a8a-a156-e0f59ead86a7\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4e85f6c6-ed50-4d17-a1ee-5b32f9b7bc2d\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "flamethrower",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5321b207-aeb2-4301-84ba-fa215c575c23\njob_id: 5321b207-aeb2-4301-84ba-fa215c575c23\naction: Shoots a short jet of flame straight north away from camera, two hands maintain nozzle grip, slight backpack and shoulder vibration. Do not turn. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 764114a3-8d7e-5867-8055-1e311acd93bb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5321b207-aeb2-4301-84ba-fa215c575c23\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "flying_alien",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5e8476f8-3e23-4e18-9c97-e117ace2b223\njob_id: 5e8476f8-3e23-4e18-9c97-e117ace2b223\naction: Alien flutters wings and fires its attached weapon north away from camera. Keep back facing viewer throughout, tiny northward muzzle flash. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d021db53-24d1-54db-a6cd-3579a96d01d8\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5e8476f8-3e23-4e18-9c97-e117ace2b223\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "machine_gunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 473fa9ed-bc63-4d01-b8b7-c97f038cabed\njob_id: 473fa9ed-bc63-4d01-b8b7-c97f038cabed\naction: Fires three short machine-gun bursts north away from camera, small shoulder recoil, tiny distinct muzzle flashes. Stock stays shouldered. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 0b3340c4-be6c-5f4b-afb6-3853eff2a2f3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"473fa9ed-bc63-4d01-b8b7-c97f038cabed\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "minigunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 1a07b667-877b-4947-8380-adf814cb9b8c\njob_id: 1a07b667-877b-4947-8380-adf814cb9b8c\naction: Fires a heavy minigun north away from camera. Both hands retain the grips, the entire rigid six-barrel cluster spins by changing chamber positions without changing length, tiny northward muzzle flashes, small shoulder recoil, returns to identical aim. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 4d9a4f50-e35e-523a-b3f3-ec4aada2b262\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1a07b667-877b-4947-8380-adf814cb9b8c\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "rocket_launcher",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: af365621-713d-4b69-90d7-3ee15d226661\njob_id: af365621-713d-4b69-90d7-3ee15d226661\naction: Fires a single rocket straight north away from camera from shoulder launcher, brief muzzle flash and slight shoulder kick. Keep launcher rigid and correctly shouldered. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 192dfdd7-e885-58cd-a21b-01780bcab5ce\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"af365621-713d-4b69-90d7-3ee15d226661\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "roller_alien",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 78ef4291-bf55-4f9e-be76-2a7e1044727d\njob_id: 78ef4291-bf55-4f9e-be76-2a7e1044727d\naction: Humanoid alien fires north away from camera, small shoulder recoil and tiny muzzle flash. Remains humanoid facing north for entire clip. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 13c02392-c604-5771-8496-ad8152fc8545\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"78ef4291-bf55-4f9e-be76-2a7e1044727d\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "shotgunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 24c99772-4a97-4d38-8884-ff4e49445ada\njob_id: 24c99772-4a97-4d38-8884-ff4e49445ada\naction: Fires one pump shotgun shot north away from camera, small shoulder kick, then returns to exact initial north aim. Keep stock shouldered. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 23127075-3c47-5e4e-82e3-1d04b9a3aca0\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"24c99772-4a97-4d38-8884-ff4e49445ada\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "role": "sniper",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: d70d3a6a-a533-40a9-a5ee-bce51da7af9b\njob_id: d70d3a6a-a533-40a9-a5ee-bce51da7af9b\naction: Fires one sniper rifle shot north away from camera, small shoulder recoil and single tiny muzzle flash, returns to identical aim. Locked overhead back view, north is straight up the image. Never look at viewer, no rotation of body or gun. Preserve exact armor colors, body scale, boots anchor, gun geometry; transparent background.\nframes: 8\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 56245f48-eaf0-5a2e-8842-26704f43dcce\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d70d3a6a-a533-40a9-a5ee-bce51da7af9b\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

@@ -1,0 +1,310 @@
+[
+  {
+    "bank": "yuri_back42/traverse/east",
+    "frames": 17,
+    "canvas": [
+      160,
+      160
+    ],
+    "origin": [
+      80,
+      136
+    ],
+    "bounds": [
+      [
+        49,
+        46,
+        115,
+        134
+      ],
+      [
+        50,
+        46,
+        115,
+        134
+      ],
+      [
+        51,
+        46,
+        114,
+        134
+      ],
+      [
+        53,
+        46,
+        113,
+        133
+      ],
+      [
+        55,
+        46,
+        110,
+        133
+      ],
+      [
+        57,
+        46,
+        108,
+        133
+      ],
+      [
+        57,
+        46,
+        103,
+        133
+      ],
+      [
+        57,
+        46,
+        102,
+        132
+      ],
+      [
+        57,
+        46,
+        102,
+        132
+      ],
+      [
+        57,
+        46,
+        102,
+        133
+      ],
+      [
+        57,
+        46,
+        103,
+        133
+      ],
+      [
+        54,
+        46,
+        103,
+        133
+      ],
+      [
+        50,
+        46,
+        106,
+        134
+      ],
+      [
+        48,
+        46,
+        107,
+        134
+      ],
+      [
+        46,
+        46,
+        109,
+        134
+      ],
+      [
+        45,
+        46,
+        110,
+        134
+      ],
+      [
+        45,
+        46,
+        111,
+        134
+      ]
+    ],
+    "heightRange": [
+      86,
+      88
+    ],
+    "method": "Common fixed canvas/root; nearest seed palette; hard alpha; no per-frame resizing.",
+    "source_sha256": [
+      "029fa6f3f65fa51510c2681dd5214b7920b642a3fb36a8467959a7fb5d15a47e",
+      "40a29315d1d9cd5f5455fc2d648960b84d1b8bd1cc9fdad59aa993fcb3bc6f3a",
+      "7a13b78d0375c4e71bdac16954660645b1fab92d49ef45bc094aa07007a5f989",
+      "002409ed6ac7660a929a2ca3b5895250ebe48fc70c34c55d16850d580c76dcb3",
+      "36a9ad8dbf50048be47ad7df96f5d07b0cceb215f07676cbf658a4da9d5c8857",
+      "495fe1b301a7286a8bd9f99bfa0a88d3b00c9402e0186d82f67fbe97c2434df7",
+      "ef685bacf504b40dd5ebce8c504c48b4213a9f7ad5891ccdf27d64b3809b4833",
+      "4a9ef278971358d5652c2820acc9b9a961242eb3e428bc3f192bf656378c5bd7",
+      "0fb51dda99e7b37ffa30a3ede9d8188e82d75110fccc6d5f1d0a6fe1d9265407",
+      "62113ddf62d323c302bcbfffc81c4b3f34ee318c65b33b096730167655a33e2b",
+      "3bcc926540a67cc3c7aa6b4d9d72ce51b5a67d7a1b59e70b9e953a960a01269c",
+      "ba035eb34d2193cb2892bb691f2a70153182d7b7c85510441a7706f3e84a04b9",
+      "1546a0100473fbcb179d0cf4bd0ca0f6bde1b8c8d0c3e786dcb50a7399a015a1",
+      "2bcb6510d1c9e5dd8e7e046fe54deacd853158344c66406af87a9fc492c04b05",
+      "d7c5cdf0e6135a936fe7bba1aac431891b548c50ac637eded3864a38f8211f1f",
+      "579c3880d46d459830984da64bcd1aa52c0bf575028fc48a65cecbe477a56d83",
+      "9b1d766a0b6438466525fa1ecb8cb4eee9a7a74d0dc914961adb3c8fbc5697b2"
+    ]
+  },
+  {
+    "bank": "phoenix/sit/east",
+    "frames": 5,
+    "canvas": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        21,
+        22,
+        109,
+        118
+      ],
+      [
+        21,
+        23,
+        109,
+        118
+      ],
+      [
+        21,
+        23,
+        109,
+        118
+      ],
+      [
+        21,
+        22,
+        109,
+        118
+      ],
+      [
+        21,
+        22,
+        109,
+        118
+      ]
+    ],
+    "heightRange": [
+      95,
+      96
+    ],
+    "method": "Common fixed canvas/root; nearest seed palette; hard alpha; no per-frame resizing.",
+    "source_sha256": [
+      "920d229982ab005d4e681194e56445c4d02b9b13363936e7bbc0b6774d10c4c4",
+      "fd1c8402dd1c347aa43e8c16195b0176b5b068e83698781f743925938be9c704",
+      "d60f649ff99a266cabfe015334ec6cecd7c739c748d5fe23f6943ab7de44099d",
+      "84485363617b3e7dd2f239bc804a8fdc701ebd30eefd5ceefcc0652058d6fd2a",
+      "139ca154cc4aa8999041cd12069e9d47a1184c93cb119785eccc8a3919002f2e"
+    ]
+  },
+  {
+    "bank": "hotwire/sit/east",
+    "frames": 5,
+    "canvas": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        9,
+        11,
+        111,
+        120
+      ],
+      [
+        9,
+        11,
+        111,
+        120
+      ],
+      [
+        9,
+        12,
+        111,
+        120
+      ],
+      [
+        9,
+        12,
+        111,
+        120
+      ],
+      [
+        9,
+        12,
+        111,
+        120
+      ]
+    ],
+    "heightRange": [
+      108,
+      109
+    ],
+    "method": "Common fixed canvas/root; nearest seed palette; hard alpha; no per-frame resizing.",
+    "source_sha256": [
+      "cbdb98b06b93786fa4ef5b1b799a3042d7ce6c5bc57fffa82fe2e5cd51a2286f",
+      "7d36614601330ef9788a8735e4787007b4c2b0804ed1de77a7de8ac25d113157",
+      "c75863fc9550a2a3de354087969c90452a080a3d7e81ca1a665a621f5230bfb6",
+      "732a82b2971668d56297cee2ead79ee2a42e8d3592eb420d10c6befb47efa23a",
+      "061209bc086e694b9d2e7a7cc2dd619bfbb097883caf0e2a06429585fa70f033"
+    ]
+  },
+  {
+    "bank": "neil/sit/east",
+    "frames": 5,
+    "canvas": [
+      128,
+      128
+    ],
+    "origin": [
+      64,
+      120
+    ],
+    "bounds": [
+      [
+        24,
+        30,
+        115,
+        107
+      ],
+      [
+        24,
+        30,
+        115,
+        107
+      ],
+      [
+        24,
+        30,
+        125,
+        107
+      ],
+      [
+        24,
+        30,
+        115,
+        107
+      ],
+      [
+        24,
+        30,
+        115,
+        107
+      ]
+    ],
+    "heightRange": [
+      77,
+      77
+    ],
+    "method": "Common fixed canvas/root; nearest seed palette; hard alpha; no per-frame resizing.",
+    "source_sha256": [
+      "c29f21efad359b4753a85012e4c7c5753cdf57cd621915ddc4a853342d2dfd05",
+      "a657ba6ec416e533b1fcefa4960d20558ff1ce2e5c039199da7975f904ce15a9",
+      "50274271124b7c0c82895d934c266d94a09a6d6c9ee140dcaf9b4e76e564b0cf",
+      "6ac28532d84e2dfbcf44c498fa45447f3ea1f337c72fa3e1fd78f494565cb4f2",
+      "216fd7b25f08f86380770e51237341deb7c1b381c05d0b090ea3b15e3428093f"
+    ]
+  }
+]

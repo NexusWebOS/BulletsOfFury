@@ -1,0 +1,2478 @@
+{
+  "build": "overdrive1015-base33-r1",
+  "assets": {
+    "b33_wall_0": {
+      "file": "expansion/topdown/art/base33/frames/b33_wall_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 256,
+      "drawScale": 1,
+      "source": "wall",
+      "sourceRect": [
+        0,
+        0,
+        627,
+        627
+      ]
+    },
+    "b33_wall_1": {
+      "file": "expansion/topdown/art/base33/frames/b33_wall_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 256,
+      "drawScale": 1,
+      "source": "wall",
+      "sourceRect": [
+        627,
+        0,
+        1254,
+        627
+      ]
+    },
+    "b33_wall_2": {
+      "file": "expansion/topdown/art/base33/frames/b33_wall_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 256,
+      "drawScale": 1,
+      "source": "wall",
+      "sourceRect": [
+        0,
+        627,
+        627,
+        1254
+      ]
+    },
+    "b33_wall_3": {
+      "file": "expansion/topdown/art/base33/frames/b33_wall_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 256,
+      "drawScale": 1,
+      "source": "wall",
+      "sourceRect": [
+        627,
+        627,
+        1254,
+        1254
+      ]
+    },
+    "b33_floor_a": {
+      "file": "expansion/topdown/art/base33/frames/b33_floor_a.png",
+      "size": [
+        256,
+        146
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        146
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 146,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        0,
+        0,
+        627,
+        358
+      ]
+    },
+    "b33_floor_b": {
+      "file": "expansion/topdown/art/base33/frames/b33_floor_b.png",
+      "size": [
+        256,
+        146
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        146
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 146,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        627,
+        0,
+        1254,
+        358
+      ]
+    },
+    "b33_ceiling_a": {
+      "file": "expansion/topdown/art/base33/frames/b33_ceiling_a.png",
+      "size": [
+        256,
+        114
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        113
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 113,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        0,
+        358,
+        627,
+        634
+      ]
+    },
+    "b33_ceiling_b": {
+      "file": "expansion/topdown/art/base33/frames/b33_ceiling_b.png",
+      "size": [
+        256,
+        114
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        113
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 113,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        627,
+        358,
+        1254,
+        634
+      ]
+    },
+    "b33_chute_a": {
+      "file": "expansion/topdown/art/base33/frames/b33_chute_a.png",
+      "size": [
+        256,
+        124
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        124
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 124,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        0,
+        634,
+        627,
+        938
+      ]
+    },
+    "b33_chute_b": {
+      "file": "expansion/topdown/art/base33/frames/b33_chute_b.png",
+      "size": [
+        256,
+        124
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        124
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 124,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        627,
+        634,
+        1254,
+        938
+      ]
+    },
+    "b33_pipes": {
+      "file": "expansion/topdown/art/base33/frames/b33_pipes.png",
+      "size": [
+        256,
+        130
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        129
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 129,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        0,
+        938,
+        627,
+        1254
+      ]
+    },
+    "b33_service": {
+      "file": "expansion/topdown/art/base33/frames/b33_service.png",
+      "size": [
+        256,
+        130
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        256,
+        129
+      ],
+      "bodyWidth": 256,
+      "bodyHeight": 129,
+      "drawScale": 1,
+      "source": "strips",
+      "sourceRect": [
+        627,
+        938,
+        1254,
+        1254
+      ]
+    },
+    "b33_crate": {
+      "file": "expansion/topdown/art/base33/frames/b33_crate.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        31,
+        49,
+        100,
+        121
+      ],
+      "bodyWidth": 69,
+      "bodyHeight": 72,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        0,
+        0,
+        310,
+        318
+      ],
+      "sourceRoot": [
+        168.5,
+        314
+      ],
+      "scale": 0.25
+    },
+    "b33_stack": {
+      "file": "expansion/topdown/art/base33/frames/b33_stack.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        26,
+        40,
+        92,
+        119
+      ],
+      "bodyWidth": 66,
+      "bodyHeight": 79,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        318,
+        0,
+        625,
+        318
+      ],
+      "sourceRoot": [
+        153.5,
+        318
+      ],
+      "scale": 0.25
+    },
+    "b33_barrier": {
+      "file": "expansion/topdown/art/base33/frames/b33_barrier.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        21,
+        44,
+        105,
+        120
+      ],
+      "bodyWidth": 84,
+      "bodyHeight": 76,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        635,
+        0,
+        984,
+        318
+      ],
+      "sourceRoot": [
+        170.5,
+        312
+      ],
+      "scale": 0.25
+    },
+    "b33_barrel": {
+      "file": "expansion/topdown/art/base33/frames/b33_barrel.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        32,
+        62,
+        85,
+        121
+      ],
+      "bodyWidth": 53,
+      "bodyHeight": 59,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        990,
+        0,
+        1254,
+        318
+      ],
+      "sourceRoot": [
+        130.0,
+        309
+      ],
+      "scale": 0.25
+    },
+    "b33_pillar": {
+      "file": "expansion/topdown/art/base33/frames/b33_pillar.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        41,
+        41,
+        96,
+        120
+      ],
+      "bodyWidth": 55,
+      "bodyHeight": 79,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        0,
+        318,
+        280,
+        638
+      ],
+      "sourceRoot": [
+        147.0,
+        320
+      ],
+      "scale": 0.25
+    },
+    "b33_slide_pipe": {
+      "file": "expansion/topdown/art/base33/frames/b33_slide_pipe.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        19,
+        92,
+        109,
+        120
+      ],
+      "bodyWidth": 90,
+      "bodyHeight": 28,
+      "drawScale": 1,
+      "source": "pipe_v2",
+      "sourceRect": [
+        105,
+        186,
+        1669,
+        668
+      ],
+      "sourceRoot": [
+        782.0,
+        478
+      ],
+      "scale": 0.05784061696658098
+    },
+    "b33_crawl_duct": {
+      "file": "expansion/topdown/art/base33/frames/b33_crawl_duct.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        22,
+        99,
+        105,
+        120
+      ],
+      "bodyWidth": 83,
+      "bodyHeight": 21,
+      "drawScale": 1,
+      "source": "duct_v2",
+      "sourceRect": [
+        102,
+        274,
+        1672,
+        669
+      ],
+      "sourceRoot": [
+        785.0,
+        391
+      ],
+      "scale": 0.05313700384122919
+    },
+    "b33_door": {
+      "file": "expansion/topdown/art/base33/frames/b33_door.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        32,
+        48,
+        97,
+        120
+      ],
+      "bodyWidth": 65,
+      "bodyHeight": 72,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        984,
+        318,
+        1254,
+        638
+      ],
+      "sourceRoot": [
+        129.0,
+        320
+      ],
+      "scale": 0.25
+    },
+    "b33_vent_closed": {
+      "file": "expansion/topdown/art/base33/frames/b33_vent_closed.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        27,
+        48,
+        103,
+        121
+      ],
+      "bodyWidth": 76,
+      "bodyHeight": 73,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        0,
+        638,
+        320,
+        938
+      ],
+      "sourceRoot": [
+        160,
+        286
+      ],
+      "scale": 0.25
+    },
+    "b33_vent_damaged": {
+      "file": "expansion/topdown/art/base33/frames/b33_vent_damaged.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        49,
+        104,
+        123
+      ],
+      "bodyWidth": 80,
+      "bodyHeight": 74,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        320,
+        638,
+        640,
+        938
+      ],
+      "sourceRoot": [
+        160,
+        286
+      ],
+      "scale": 0.25
+    },
+    "b33_vent_open": {
+      "file": "expansion/topdown/art/base33/frames/b33_vent_open.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        67,
+        109,
+        123
+      ],
+      "bodyWidth": 85,
+      "bodyHeight": 56,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        640,
+        638,
+        980,
+        938
+      ],
+      "sourceRoot": [
+        160,
+        286
+      ],
+      "scale": 0.25
+    },
+    "b33_door_open": {
+      "file": "expansion/topdown/art/base33/frames/b33_door_open.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        33,
+        46,
+        95,
+        120
+      ],
+      "bodyWidth": 62,
+      "bodyHeight": 74,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        980,
+        638,
+        1254,
+        938
+      ],
+      "sourceRoot": [
+        124.5,
+        297
+      ],
+      "scale": 0.25
+    },
+    "b33_drone_hatch": {
+      "file": "expansion/topdown/art/base33/frames/b33_drone_hatch.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        22,
+        41,
+        107,
+        110
+      ],
+      "bodyWidth": 85,
+      "bodyHeight": 69,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        0,
+        938,
+        340,
+        1254
+      ],
+      "sourceRoot": [
+        170.0,
+        316
+      ],
+      "scale": 0.25
+    },
+    "b33_siren": {
+      "file": "expansion/topdown/art/base33/frames/b33_siren.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        47,
+        99,
+        105
+      ],
+      "bodyWidth": 64,
+      "bodyHeight": 58,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        340,
+        938,
+        625,
+        1254
+      ],
+      "sourceRoot": [
+        142.5,
+        316
+      ],
+      "scale": 0.25
+    },
+    "b33_locker": {
+      "file": "expansion/topdown/art/base33/frames/b33_locker.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        26,
+        53,
+        102,
+        116
+      ],
+      "bodyWidth": 76,
+      "bodyHeight": 63,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        625,
+        938,
+        928,
+        1254
+      ],
+      "sourceRoot": [
+        151.5,
+        292
+      ],
+      "scale": 0.25
+    },
+    "b33_barrier_broken": {
+      "file": "expansion/topdown/art/base33/frames/b33_barrier_broken.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        51,
+        103,
+        120
+      ],
+      "bodyWidth": 79,
+      "bodyHeight": 69,
+      "drawScale": 1,
+      "source": "props",
+      "sourceRect": [
+        928,
+        938,
+        1254,
+        1254
+      ],
+      "sourceRoot": [
+        158.5,
+        281
+      ],
+      "scale": 0.25
+    },
+    "b33_recess_0": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_0.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        2,
+        0,
+        221,
+        212
+      ],
+      "bodyWidth": 219,
+      "bodyHeight": 212,
+      "drawScale": 1,
+      "source": "recess",
+      "sourceRect": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "sourceRoot": [
+        313.5,
+        627
+      ],
+      "scale": 0.35
+    },
+    "b33_recess_0_left": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_0_left.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        2,
+        26,
+        46,
+        197
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 171,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_0",
+      "crop": [
+        2,
+        0,
+        46,
+        224
+      ]
+    },
+    "b33_recess_0_right": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_0_right.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        177,
+        14,
+        221,
+        204
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 190,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_0",
+      "crop": [
+        177,
+        0,
+        221,
+        224
+      ]
+    },
+    "b33_recess_1": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_1.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        7,
+        0,
+        217,
+        212
+      ],
+      "bodyWidth": 210,
+      "bodyHeight": 212,
+      "drawScale": 1,
+      "source": "recess",
+      "sourceRect": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "sourceRoot": [
+        300.5,
+        627
+      ],
+      "scale": 0.35
+    },
+    "b33_recess_1_left": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_1_left.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        7,
+        26,
+        51,
+        197
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 171,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_1",
+      "crop": [
+        7,
+        0,
+        51,
+        224
+      ]
+    },
+    "b33_recess_1_right": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_1_right.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        173,
+        26,
+        217,
+        209
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 183,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_1",
+      "crop": [
+        173,
+        0,
+        217,
+        224
+      ]
+    },
+    "b33_recess_2": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_2.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        10,
+        3,
+        220,
+        210
+      ],
+      "bodyWidth": 210,
+      "bodyHeight": 207,
+      "drawScale": 1,
+      "source": "recess",
+      "sourceRect": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "sourceRoot": [
+        313.5,
+        613
+      ],
+      "scale": 0.35
+    },
+    "b33_recess_2_left": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_2_left.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        10,
+        13,
+        54,
+        208
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 195,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_2",
+      "crop": [
+        10,
+        0,
+        54,
+        224
+      ]
+    },
+    "b33_recess_2_right": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_2_right.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        176,
+        13,
+        220,
+        183
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 170,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_2",
+      "crop": [
+        176,
+        0,
+        220,
+        224
+      ]
+    },
+    "b33_recess_3": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_3.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        5,
+        0,
+        218,
+        205
+      ],
+      "bodyWidth": 213,
+      "bodyHeight": 205,
+      "drawScale": 1,
+      "source": "recess",
+      "sourceRect": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "sourceRoot": [
+        304.5,
+        627
+      ],
+      "scale": 0.35
+    },
+    "b33_recess_3_left": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_3_left.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        5,
+        9,
+        49,
+        205
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 196,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_3",
+      "crop": [
+        5,
+        0,
+        49,
+        224
+      ]
+    },
+    "b33_recess_3_right": {
+      "file": "expansion/topdown/art/base33/frames/b33_recess_3_right.png",
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        212
+      ],
+      "bounds": [
+        174,
+        9,
+        218,
+        204
+      ],
+      "bodyWidth": 44,
+      "bodyHeight": 195,
+      "drawScale": 1,
+      "sourceKey": "b33_recess_3",
+      "crop": [
+        174,
+        0,
+        218,
+        224
+      ]
+    },
+    "b33_impact_0": {
+      "file": "expansion/topdown/art/base33/frames/b33_impact_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        17,
+        17,
+        87,
+        89
+      ],
+      "bodyWidth": 70,
+      "bodyHeight": 72,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_impact_1": {
+      "file": "expansion/topdown/art/base33/frames/b33_impact_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        13,
+        87,
+        89
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 76,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        314,
+        0,
+        628,
+        314
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_impact_2": {
+      "file": "expansion/topdown/art/base33/frames/b33_impact_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        11,
+        87,
+        89
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 78,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        628,
+        0,
+        942,
+        314
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_impact_3": {
+      "file": "expansion/topdown/art/base33/frames/b33_impact_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        17,
+        87,
+        86
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 69,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        942,
+        0,
+        1254,
+        314
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_ventburst_0": {
+      "file": "expansion/topdown/art/base33/frames/b33_ventburst_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        11,
+        87,
+        83
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 72,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        0,
+        314,
+        314,
+        604
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_ventburst_1": {
+      "file": "expansion/topdown/art/base33/frames/b33_ventburst_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        13,
+        87,
+        83
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 70,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        314,
+        314,
+        628,
+        604
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_ventburst_2": {
+      "file": "expansion/topdown/art/base33/frames/b33_ventburst_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        11,
+        87,
+        83
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 72,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        628,
+        314,
+        942,
+        604
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_ventburst_3": {
+      "file": "expansion/topdown/art/base33/frames/b33_ventburst_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        11,
+        87,
+        83
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 72,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        942,
+        314,
+        1254,
+        604
+      ],
+      "sourceRoot": [
+        157,
+        147
+      ],
+      "scale": 0.25
+    },
+    "b33_steam_0": {
+      "file": "expansion/topdown/art/base33/frames/b33_steam_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        88
+      ],
+      "bounds": [
+        17,
+        16,
+        87,
+        96
+      ],
+      "bodyWidth": 70,
+      "bodyHeight": 80,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        0,
+        604,
+        314,
+        928
+      ],
+      "sourceRoot": [
+        157,
+        290
+      ],
+      "scale": 0.25
+    },
+    "b33_steam_1": {
+      "file": "expansion/topdown/art/base33/frames/b33_steam_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        88
+      ],
+      "bounds": [
+        9,
+        16,
+        87,
+        96
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 80,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        314,
+        604,
+        628,
+        928
+      ],
+      "sourceRoot": [
+        157,
+        290
+      ],
+      "scale": 0.25
+    },
+    "b33_steam_2": {
+      "file": "expansion/topdown/art/base33/frames/b33_steam_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        88
+      ],
+      "bounds": [
+        9,
+        16,
+        87,
+        96
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 80,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        628,
+        604,
+        942,
+        928
+      ],
+      "sourceRoot": [
+        157,
+        290
+      ],
+      "scale": 0.25
+    },
+    "b33_steam_3": {
+      "file": "expansion/topdown/art/base33/frames/b33_steam_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        88
+      ],
+      "bounds": [
+        9,
+        16,
+        87,
+        96
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 80,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        942,
+        604,
+        1254,
+        928
+      ],
+      "sourceRoot": [
+        157,
+        290
+      ],
+      "scale": 0.25
+    },
+    "b33_blast_0": {
+      "file": "expansion/topdown/art/base33/frames/b33_blast_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        15,
+        8,
+        87,
+        90
+      ],
+      "bodyWidth": 72,
+      "bodyHeight": 82,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        0,
+        928,
+        314,
+        1254
+      ],
+      "sourceRoot": [
+        157,
+        160
+      ],
+      "scale": 0.25
+    },
+    "b33_blast_1": {
+      "file": "expansion/topdown/art/base33/frames/b33_blast_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        8,
+        87,
+        90
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 82,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        314,
+        928,
+        628,
+        1254
+      ],
+      "sourceRoot": [
+        157,
+        160
+      ],
+      "scale": 0.25
+    },
+    "b33_blast_2": {
+      "file": "expansion/topdown/art/base33/frames/b33_blast_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        8,
+        87,
+        90
+      ],
+      "bodyWidth": 78,
+      "bodyHeight": 82,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        628,
+        928,
+        942,
+        1254
+      ],
+      "sourceRoot": [
+        157,
+        160
+      ],
+      "scale": 0.25
+    },
+    "b33_blast_3": {
+      "file": "expansion/topdown/art/base33/frames/b33_blast_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        9,
+        8,
+        80,
+        85
+      ],
+      "bodyWidth": 71,
+      "bodyHeight": 77,
+      "drawScale": 1,
+      "source": "fx",
+      "sourceRect": [
+        942,
+        928,
+        1254,
+        1254
+      ],
+      "sourceRoot": [
+        157,
+        160
+      ],
+      "scale": 0.25
+    },
+    "b33_icon_slide": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_slide.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        2,
+        3,
+        48,
+        46
+      ],
+      "bodyWidth": 46,
+      "bodyHeight": 43,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        24,
+        39,
+        324,
+        329
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_crawl": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_crawl.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        1,
+        3,
+        48,
+        46
+      ],
+      "bodyWidth": 47,
+      "bodyHeight": 43,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        327,
+        39,
+        627,
+        329
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_cover": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_cover.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        1,
+        3,
+        46,
+        46
+      ],
+      "bodyWidth": 45,
+      "bodyHeight": 43,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        629,
+        39,
+        929,
+        329
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_vent": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_vent.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        0,
+        2,
+        47,
+        46
+      ],
+      "bodyWidth": 47,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        932,
+        39,
+        1232,
+        329
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_right": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_right.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        1,
+        2,
+        48,
+        46
+      ],
+      "bodyWidth": 47,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        24,
+        329,
+        324,
+        619
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_down": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_down.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        0,
+        2,
+        46,
+        46
+      ],
+      "bodyWidth": 46,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        327,
+        329,
+        627,
+        619
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_ammo": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_ammo.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        1,
+        2,
+        46,
+        46
+      ],
+      "bodyWidth": 45,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        629,
+        329,
+        929,
+        619
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_danger": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_danger.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        0,
+        2,
+        47,
+        46
+      ],
+      "bodyWidth": 47,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        932,
+        329,
+        1232,
+        619
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_secret": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_secret.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        1,
+        2,
+        48,
+        47
+      ],
+      "bodyWidth": 47,
+      "bodyHeight": 45,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        24,
+        615,
+        324,
+        905
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_bullets": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_bullets.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        48,
+        47
+      ],
+      "bodyWidth": 48,
+      "bodyHeight": 46,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        327,
+        615,
+        627,
+        905
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_alarm": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_alarm.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        0,
+        2,
+        46,
+        47
+      ],
+      "bodyWidth": 46,
+      "bodyHeight": 45,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        629,
+        615,
+        929,
+        905
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_exit": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_exit.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        1,
+        2,
+        47,
+        47
+      ],
+      "bodyWidth": 46,
+      "bodyHeight": 45,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        932,
+        615,
+        1232,
+        905
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_grenade": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_grenade.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        1,
+        1,
+        48,
+        45
+      ],
+      "bodyWidth": 47,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        24,
+        899,
+        324,
+        1189
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_shield": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_shield.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        48,
+        45
+      ],
+      "bodyWidth": 48,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        327,
+        899,
+        627,
+        1189
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_explosion": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_explosion.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        46,
+        46
+      ],
+      "bodyWidth": 46,
+      "bodyHeight": 45,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        629,
+        899,
+        929,
+        1189
+      ],
+      "scale": 0.16
+    },
+    "b33_icon_vault": {
+      "file": "expansion/topdown/art/base33/frames/b33_icon_vault.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        24
+      ],
+      "bounds": [
+        2,
+        1,
+        47,
+        45
+      ],
+      "bodyWidth": 45,
+      "bodyHeight": 44,
+      "drawScale": 1,
+      "source": "icons",
+      "sourceRect": [
+        932,
+        899,
+        1232,
+        1189
+      ],
+      "scale": 0.16
+    }
+  },
+  "sequences": {
+    "b33_impact": {
+      "frames": [
+        "b33_impact_0",
+        "b33_impact_1",
+        "b33_impact_2",
+        "b33_impact_3"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "b33_ventburst": {
+      "frames": [
+        "b33_ventburst_0",
+        "b33_ventburst_1",
+        "b33_ventburst_2",
+        "b33_ventburst_3"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "b33_steam": {
+      "frames": [
+        "b33_steam_0",
+        "b33_steam_1",
+        "b33_steam_2",
+        "b33_steam_3"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "b33_blast": {
+      "frames": [
+        "b33_blast_0",
+        "b33_blast_1",
+        "b33_blast_2",
+        "b33_blast_3"
+      ],
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "audit": [
+    {
+      "key": "b33_wall_0",
+      "sha256": "ca4d79a1a30fb605c857f755ffd3ee3f723658aef35ed0fc6f4cadf7e109d978"
+    },
+    {
+      "key": "b33_wall_1",
+      "sha256": "a03f608667301f299608bbc3beccb07690b837788e41ece7445a597388b40ee8"
+    },
+    {
+      "key": "b33_wall_2",
+      "sha256": "2cafa4d6537c01301973153b25eb94fbb372ac2794706c01e6ed2b1bcaa639dc"
+    },
+    {
+      "key": "b33_wall_3",
+      "sha256": "7189c97f1d51d448035c745924abcda2d97942ddb84c73aa305924acf8b92b6f"
+    },
+    {
+      "key": "b33_floor_a",
+      "sha256": "d358b14eaa6231cf1498e94a29930d7cfb2675aabdbc86dc4b3a0f8cf2d1e63a"
+    },
+    {
+      "key": "b33_floor_b",
+      "sha256": "b88d540c8ceb3f09af4d5a23f40d7c342bc32a1d7daee08075fe33451e6a0020"
+    },
+    {
+      "key": "b33_ceiling_a",
+      "sha256": "2ef6200888c6bb809f4a768518e33408760d6165767096ede13afcc80a14d77b"
+    },
+    {
+      "key": "b33_ceiling_b",
+      "sha256": "cb838f6cfdd4f14b2d7fe80528a6a4dfcd47337b02d4b05a2d63cecb733ee243"
+    },
+    {
+      "key": "b33_chute_a",
+      "sha256": "fa7dae88b886f2f9ac7d0b7e2cce359e9e5d84e034d4dbe2300935af255a2e05"
+    },
+    {
+      "key": "b33_chute_b",
+      "sha256": "fe3d862dbad9c7a30ee9f5b9be426a8e959dbaedd296fb47087419c4a08968d8"
+    },
+    {
+      "key": "b33_pipes",
+      "sha256": "30108c7d0417993f3e60bdb94c4df8191b47e455670fc4627f8ee800a0ef7376"
+    },
+    {
+      "key": "b33_service",
+      "sha256": "dc22f1d73c0e91d89cd2d36fe600ff9667a905ddd5d21055a5f78dcec46542ce"
+    },
+    {
+      "key": "b33_crate",
+      "sha256": "b92315981283d3fc666a6e71f7029a01d8d32820bc48b4ad865e85633fea2826"
+    },
+    {
+      "key": "b33_stack",
+      "sha256": "16e74c38c17d2e56c0d60e59c7f399a2e2213073d7087583228be5ccf8271f42"
+    },
+    {
+      "key": "b33_barrier",
+      "sha256": "590f91170436ba51969cff2d27eeb758d0b68d640f3d413f4a415685ef35a5e5"
+    },
+    {
+      "key": "b33_barrel",
+      "sha256": "2f6b7c483b8e8cfacb1701c80cd6c1d0e61fad98f64a2e666c0eef3cdc35493a"
+    },
+    {
+      "key": "b33_pillar",
+      "sha256": "12c551a3b4bcc701535bace0896f5ea9c6baffa9451d855e92763f6fe6810bd9"
+    },
+    {
+      "key": "b33_slide_pipe",
+      "sha256": "d95bfb2b0a3f45e2bfd49a3105af5d5fbf2021bb69dc15f8a85d1d97dc7d4622"
+    },
+    {
+      "key": "b33_crawl_duct",
+      "sha256": "9de030a5eff9dab973dc140c353f8b4a2d11724e9ae34f9d6dfb426ad7fe9b90"
+    },
+    {
+      "key": "b33_door",
+      "sha256": "c6eb94d7974677243d4dc42297c3e81bd08d5368c2cac56931d2865874559c13"
+    },
+    {
+      "key": "b33_vent_closed",
+      "sha256": "83b61ee180b4a5a6daa4eae525bb5980358d9cc99f77103e65af8ed6d7f3501d"
+    },
+    {
+      "key": "b33_vent_damaged",
+      "sha256": "169880d4f4de956f64515f9cad05e6e79d045020cb4bafed4f9134ee3a522d82"
+    },
+    {
+      "key": "b33_vent_open",
+      "sha256": "8834285c5e819feee2a245604f405a352ea641cca3ad2f5a3182773e285ebc5b"
+    },
+    {
+      "key": "b33_door_open",
+      "sha256": "f9637142c57c6d97f21e9fe6d04f28ab9db2d0a423f2c2a7d08ab5ad1c2b71c6"
+    },
+    {
+      "key": "b33_drone_hatch",
+      "sha256": "0b8adb3f0a5cd12d814cd60f3822a326d93b82a643762f65695af755efd309c5"
+    },
+    {
+      "key": "b33_siren",
+      "sha256": "9493a382c2ecb36a68b246e0e392b5fd6f1bdd61e66a4e7f0c6c872d3218fe4a"
+    },
+    {
+      "key": "b33_locker",
+      "sha256": "b05ce3d372f7bda862e4bdd627508c92706fa64e9137005c27529fb38521b8bb"
+    },
+    {
+      "key": "b33_barrier_broken",
+      "sha256": "61e387caf0345620e0520669680555818b098baa685c49b00c1d9b306d860cfc"
+    },
+    {
+      "key": "b33_recess_0",
+      "sha256": "9135c2306583a7445a35f9da9835aeee4adb955263be8dc06e07a3e334b24e3e"
+    },
+    {
+      "key": "b33_recess_0_left",
+      "sha256": "6efd0560523fe0eb78c2aa59883507bd5ce7699a26d96afe6dda94f00b82ed0c"
+    },
+    {
+      "key": "b33_recess_0_right",
+      "sha256": "c7afa5dfa233fcf64a6f1fd1b19e4cdbf80c9841e4e573d6c8546be65a7daa68"
+    },
+    {
+      "key": "b33_recess_1",
+      "sha256": "f512a69b5d4195c21059fd133436088ced3eb21b9daf2dd8aaac5712f87b6159"
+    },
+    {
+      "key": "b33_recess_1_left",
+      "sha256": "e226ed4bd0d4ad691e501194a54b18f902d6f533c3b1c9818878fbbfde266388"
+    },
+    {
+      "key": "b33_recess_1_right",
+      "sha256": "b7fd6c16fa9265659b2b32484932a008bad2c430039de998433b2eed03d29ee0"
+    },
+    {
+      "key": "b33_recess_2",
+      "sha256": "8eafbf71eca0647d1c191dd31fd96052487c9d8f6c70ab5cfe6261f4a8de953f"
+    },
+    {
+      "key": "b33_recess_2_left",
+      "sha256": "aa52e7de9040f198d431f56069f64e7666b88a6f2b8dde3b66974561df1a73ad"
+    },
+    {
+      "key": "b33_recess_2_right",
+      "sha256": "f8bfdd39cb700d39ebe570e05d5f4eca83a88460618b490ae7f7db99585c60cd"
+    },
+    {
+      "key": "b33_recess_3",
+      "sha256": "fb46bec48752bb5529c5681ac8b5457a77f66ef9ef546e7467eb0e557c12a419"
+    },
+    {
+      "key": "b33_recess_3_left",
+      "sha256": "c7baa3a178faeb1599c60428ad07abec675ea2ffbb8c5c38c44f9335d64da007"
+    },
+    {
+      "key": "b33_recess_3_right",
+      "sha256": "b3d79b724b7a052540ffd2e98dda36a21fe88c826b907ffc029ab5f6f937e269"
+    },
+    {
+      "key": "b33_impact_0",
+      "sha256": "a1754345d5a92426467a87e1df1c15577059ba50fe8727a300de12a065cf5b85"
+    },
+    {
+      "key": "b33_impact_1",
+      "sha256": "2527506b162629e45a7b64664b2f30d39e02a504c839e3ccbe70ddd8c1169682"
+    },
+    {
+      "key": "b33_impact_2",
+      "sha256": "e7d4b3eace713a799bccb2e7a2d65709e86e6518cd3a99048bc8c57c2152a5dd"
+    },
+    {
+      "key": "b33_impact_3",
+      "sha256": "c4406f8ca524372d99745a3fe8b3d1da057fcb30e6d93e885012f2c519b35c19"
+    },
+    {
+      "key": "b33_ventburst_0",
+      "sha256": "43fb5113bbaba62b2cdd3a4be43f0a5b69a18890fa54056e45217fb3431be827"
+    },
+    {
+      "key": "b33_ventburst_1",
+      "sha256": "0218640bdad64a4070d8e86cc23af4950aa6fe6f4ce9f7070c52aed89663cbea"
+    },
+    {
+      "key": "b33_ventburst_2",
+      "sha256": "67c52902ef8506c40f9f2ba173c7272e50c5571d064a7624eb1dc5dc015e0222"
+    },
+    {
+      "key": "b33_ventburst_3",
+      "sha256": "a8d533a9f9fe02da6ea3c44fbd763996ed2d959fe696db0e565dadaa27cdea34"
+    },
+    {
+      "key": "b33_steam_0",
+      "sha256": "7fc21b21edbee05812af8c0e4a7d989f39787e55584e3f343de32c785de56719"
+    },
+    {
+      "key": "b33_steam_1",
+      "sha256": "855298592aca030df7f478fb536e9144c03433aacdf97c3f279023ee0d6b69bd"
+    },
+    {
+      "key": "b33_steam_2",
+      "sha256": "2eebadd1b06996134a073263ed2274a75ce361d7e8c22e786e73aba8999f89ee"
+    },
+    {
+      "key": "b33_steam_3",
+      "sha256": "2bb59fd181c41acc0941e658d1402c6f1df72b7570778366b3a192ea73aafa20"
+    },
+    {
+      "key": "b33_blast_0",
+      "sha256": "8f25e6d4170fbdc9cbf43d7d7c37dbfe90d8e33100601391b6879a5c66122827"
+    },
+    {
+      "key": "b33_blast_1",
+      "sha256": "7ec24ea321aab11391c222c3b91ca3e22dd08104ce9d96ceddcbe796676bb1e0"
+    },
+    {
+      "key": "b33_blast_2",
+      "sha256": "708d094bf19d4999fbb130b89b77953ae640ee68798535144509e04b869e7127"
+    },
+    {
+      "key": "b33_blast_3",
+      "sha256": "eb24b832940d18c3a8ad5aaca63b204d6aaa3a39dc8cfb1f968893576731808a"
+    },
+    {
+      "key": "b33_icon_slide",
+      "sha256": "978c5c592e0cb60f913c24310a255f52180e9ca3ac43f2244990a18c67332caf"
+    },
+    {
+      "key": "b33_icon_crawl",
+      "sha256": "e8a3538e8c8a4f3d800739b5cfb90651b964d4f6ac8be94f83d64bdf03693c7d"
+    },
+    {
+      "key": "b33_icon_cover",
+      "sha256": "51631b079c061c4875b4b8459630b45fa76c294c8fd5563f608d8431813ad409"
+    },
+    {
+      "key": "b33_icon_vent",
+      "sha256": "b9e4f53463d6301df47eb3301e14d43c98b78bf28478821721dbe36cbf712d97"
+    },
+    {
+      "key": "b33_icon_right",
+      "sha256": "a8acc14d77f6c084d14f945ffed242fe80a79008b96615c78ab373a91b3f7b04"
+    },
+    {
+      "key": "b33_icon_down",
+      "sha256": "f5c50c7388049cb46582c765871e80d0bcd17abc78b801db0ab3fa85a1d0d8c5"
+    },
+    {
+      "key": "b33_icon_ammo",
+      "sha256": "30d13dd67d9278ef6eec80dc7b7f30714c915d400359b64178d7e8742aae91d9"
+    },
+    {
+      "key": "b33_icon_danger",
+      "sha256": "8f019aef085be933c41dbe18f2f194c6c6bcec3a7ee7b02d8c972bcdff54c586"
+    },
+    {
+      "key": "b33_icon_secret",
+      "sha256": "eeab7fd78b9f59f109ee71c66df3b4b8e3972a8f25f69acffa8a47f2e21c6422"
+    },
+    {
+      "key": "b33_icon_bullets",
+      "sha256": "7d9de060fd3a0bef8950ce98744f23b7d7f67c9aa7db3e7f2f2cde6c79fa80df"
+    },
+    {
+      "key": "b33_icon_alarm",
+      "sha256": "bb77fd0a520f110a20c412a30c6a7969e4fba774c48cca3fbfdf04a1149c4f59"
+    },
+    {
+      "key": "b33_icon_exit",
+      "sha256": "b6df5050889f75ffb47bb549a9a5de444df5f22183b04f432278904c7c282a22"
+    },
+    {
+      "key": "b33_icon_grenade",
+      "sha256": "9d490a7fa5962cf993cdc693d2689aeb36261d29716accb20956a227f80b14f4"
+    },
+    {
+      "key": "b33_icon_shield",
+      "sha256": "42013a62fe9094c24c3e606ac27667046cd328ddf3b2f786c849f6921b5736e9"
+    },
+    {
+      "key": "b33_icon_explosion",
+      "sha256": "922708ac3459b530cc727f5bfcad4df24414357bcbd45da36d858583acebe607"
+    },
+    {
+      "key": "b33_icon_vault",
+      "sha256": "6977c2d607db94ea5e01c35ae1a4cd27d44db56c0f28998ef06a3319f1e28766"
+    }
+  ],
+  "source": "Six image_gen sheets; measured source rectangles, proportional nearest-neighbor exports; no character/enemy regeneration."
+}

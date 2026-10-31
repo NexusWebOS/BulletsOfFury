@@ -1,0 +1,5 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "source": "reticle.png",
+  "prompt": "FRAME FORMAT: exactly2columns×2rows,4small isolated aim-reticle sprites. Each512×512cell,1024×1024total. ACTUALtransparentalpha. Renderpixelart UI production sprites with noantialias. Eachsprite EXACTLY a PLUS/CROSSHAIR with EMPTY center: four thick rectangular CYAN/WHITE strokes north south east west, central gap. No cornerbrackets, NOBLACK OUTLINE, noblackpixels, nolargering,noglow,nofading. Eachreticlefills256×256centralarea ofcell, eachstroke32pixelsthick×80pixelslong soat16pixelgameplaysize itremains2pixelsthick×5pixelslong. Flatverybrightcyan#54d9cdwithwhite#ffe4a1tips. Large128pixelclearalpha paddingperside. Fourframes tinywhite-tip pulsevariationonly, samecrossgeometry. Easilyreadable tinycrosshair for16bit BulletsOfFuryguncombat. Noletters,nolabels,no background,no extras."
+}

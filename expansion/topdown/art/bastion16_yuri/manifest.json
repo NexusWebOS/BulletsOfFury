@@ -1,0 +1,4381 @@
+{
+  "version": "1013-bastion16-r1",
+  "generator": "built-in image_gen",
+  "assets": {
+    "pb16_yuri_aim_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_aim_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        51,
+        56,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        57.52,
+        79.49
+      ]
+    },
+    "pb16_yuri_aim_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_aim_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        59,
+        56,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        67.7,
+        76.01
+      ]
+    },
+    "pb16_yuri_aim_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_aim_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        68,
+        57,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.71,
+        73.97
+      ]
+    },
+    "pb16_yuri_aim_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_aim_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        55,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        125.34,
+        73.27
+      ]
+    },
+    "pb16_yuri_aim_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_aim_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        56,
+        143,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        135.51,
+        79.49
+      ]
+    },
+    "pb16_yuri_crouch_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        57,
+        90,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        61.78,
+        109.58
+      ]
+    },
+    "pb16_yuri_crouch_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        89,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        69.53,
+        106.84
+      ]
+    },
+    "pb16_yuri_crouch_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        67,
+        90,
+        137,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.71,
+        103.05
+      ]
+    },
+    "pb16_yuri_crouch_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        66,
+        89,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        122.98,
+        103.79
+      ]
+    },
+    "pb16_yuri_crouch_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        96,
+        136,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        130.43,
+        114.27
+      ]
+    },
+    "pb16_yuri_fire_0_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_0_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        42,
+        68,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        62.45,
+        89.75
+      ]
+    },
+    "pb16_yuri_fire_0_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_0_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        50,
+        61,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        56.09,
+        83.62
+      ]
+    },
+    "pb16_yuri_fire_1_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_1_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        59,
+        66,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        68.14,
+        83.4
+      ]
+    },
+    "pb16_yuri_fire_1_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_1_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        60,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        67.39,
+        79.14
+      ]
+    },
+    "pb16_yuri_fire_2_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_2_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        67,
+        67,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        97.02,
+        81.79
+      ]
+    },
+    "pb16_yuri_fire_2_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_2_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        67,
+        61,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.58,
+        76.44
+      ]
+    },
+    "pb16_yuri_fire_3_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_3_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        66,
+        66,
+        147,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        125.59,
+        84.7
+      ]
+    },
+    "pb16_yuri_fire_3_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_3_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        60,
+        132,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        126.34,
+        76.53
+      ]
+    },
+    "pb16_yuri_fire_4_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_4_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        68,
+        151,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        130.12,
+        89.75
+      ]
+    },
+    "pb16_yuri_fire_4_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_4_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        61,
+        142,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        135.95,
+        83.62
+      ]
+    },
+    "pb16_yuri_fire_forward_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_forward_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        67,
+        54,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        97.42,
+        74.7
+      ]
+    },
+    "pb16_yuri_fire_forward_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_forward_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        67,
+        49,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        97.78,
+        73.72
+      ]
+    },
+    "pb16_yuri_fire_forward_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_forward_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        68,
+        58,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        98.24,
+        78.52
+      ]
+    },
+    "pb16_yuri_fire_forward_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_fire_forward_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        68,
+        54,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        98.06,
+        73.35
+      ]
+    },
+    "pb16_yuri_strafe_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        60,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.9,
+        75.4
+      ]
+    },
+    "pb16_yuri_strafe_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        60,
+        147,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.8,
+        77.05
+      ]
+    },
+    "pb16_yuri_strafe_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        59,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.25,
+        76.05
+      ]
+    },
+    "pb16_yuri_strafe_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        59,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        94.7,
+        74.4
+      ]
+    },
+    "pb16_yuri_strafe_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        59,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.35,
+        76.6
+      ]
+    },
+    "pb16_yuri_strafe_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        59,
+        140,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.8,
+        75.5
+      ]
+    },
+    "pb16_yuri_strafe_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        60,
+        143,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.35,
+        76.22
+      ]
+    },
+    "pb16_yuri_strafe_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        60,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.8,
+        75.4
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        61,
+        82,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.2,
+        91.9
+      ]
+    },
+    "pb16_yuri_crouch_strafe_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        61,
+        82,
+        155,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.2,
+        93.0
+      ]
+    },
+    "pb16_yuri_crouch_strafe_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        61,
+        81,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.2,
+        92.0
+      ]
+    },
+    "pb16_yuri_crouch_strafe_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        81,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        97.2,
+        92.0
+      ]
+    },
+    "pb16_yuri_crouch_strafe_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        81,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.3,
+        92.0
+      ]
+    },
+    "pb16_yuri_crouch_strafe_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        81,
+        136,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.3,
+        86.22
+      ]
+    },
+    "pb16_yuri_crouch_strafe_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        61,
+        81,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.65,
+        90.9
+      ]
+    },
+    "pb16_yuri_crouch_strafe_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        81,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.55,
+        90.9
+      ]
+    },
+    "pb16_yuri_rise_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        61,
+        86,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.1,
+        97.55
+      ]
+    },
+    "pb16_yuri_rise_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        61,
+        84,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.75,
+        90.6
+      ]
+    },
+    "pb16_yuri_rise_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        61,
+        81,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.2,
+        95.85
+      ]
+    },
+    "pb16_yuri_rise_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        75,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.0,
+        84.08
+      ]
+    },
+    "pb16_yuri_rise_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        71,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.0,
+        83.1
+      ]
+    },
+    "pb16_yuri_rise_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        69,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.55,
+        84.4
+      ]
+    },
+    "pb16_yuri_rise_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        64,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        94.45,
+        79.95
+      ]
+    },
+    "pb16_yuri_rise_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_rise_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        60,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        97.65,
+        77.05
+      ]
+    },
+    "pb16_yuri_advance_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        53,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        94.45,
+        72.53
+      ]
+    },
+    "pb16_yuri_advance_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        54,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.45,
+        72.7
+      ]
+    },
+    "pb16_yuri_advance_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        57,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.0,
+        74.6
+      ]
+    },
+    "pb16_yuri_advance_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        53,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.45,
+        72.8
+      ]
+    },
+    "pb16_yuri_advance_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        53,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.55,
+        71.7
+      ]
+    },
+    "pb16_yuri_advance_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        56,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.45,
+        74.15
+      ]
+    },
+    "pb16_yuri_advance_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        58,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        93.9,
+        75.88
+      ]
+    },
+    "pb16_yuri_advance_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_advance_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        53,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.9,
+        71.7
+      ]
+    },
+    "pb16_yuri_strafe_0_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        50,
+        57,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        56.05,
+        81.75
+      ]
+    },
+    "pb16_yuri_strafe_0_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        53,
+        57,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        57.95,
+        81.47
+      ]
+    },
+    "pb16_yuri_strafe_0_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        56,
+        57,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        60.95,
+        83.4
+      ]
+    },
+    "pb16_yuri_strafe_0_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        57,
+        123,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        64.95,
+        81.75
+      ]
+    },
+    "pb16_yuri_strafe_0_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        56,
+        57,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        60.95,
+        81.2
+      ]
+    },
+    "pb16_yuri_strafe_0_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        56,
+        57,
+        125,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        60.95,
+        81.2
+      ]
+    },
+    "pb16_yuri_strafe_0_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        50,
+        57,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        56.6,
+        81.47
+      ]
+    },
+    "pb16_yuri_strafe_0_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_strafe_0_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        55,
+        57,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        59.95,
+        81.2
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        50,
+        83,
+        133,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        54.4,
+        106.1
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        51,
+        82,
+        124,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        54.85,
+        105.38
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        50,
+        82,
+        132,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        54.4,
+        106.2
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        56,
+        83,
+        124,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        59.85,
+        105.83
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        52,
+        83,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        55.85,
+        106.65
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        53,
+        86,
+        132,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        56.45,
+        110.75
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        52,
+        86,
+        138,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        55.85,
+        109.65
+      ]
+    },
+    "pb16_yuri_crouch_strafe_0_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_crouch_strafe_0_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        51,
+        85,
+        133,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        55.33,
+        108.1
+      ]
+    },
+    "pb16_yuri_blindfire_0_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_0_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        53,
+        75,
+        127,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        58.66,
+        80.22
+      ]
+    },
+    "pb16_yuri_blindfire_0_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_0_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        41,
+        77,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        65.8,
+        84.39
+      ]
+    },
+    "pb16_yuri_blindfire_0_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_0_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        54,
+        80,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        59.66,
+        85.66
+      ]
+    },
+    "pb16_yuri_blindfire_0_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_0_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        55,
+        83,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        60.66,
+        89.09
+      ]
+    },
+    "pb16_yuri_blindfire_1_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_1_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        59,
+        72,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        74.22,
+        75.48
+      ]
+    },
+    "pb16_yuri_blindfire_1_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_1_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        64,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        76.97,
+        77.7
+      ]
+    },
+    "pb16_yuri_blindfire_1_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_1_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        78,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        76.53,
+        81.48
+      ]
+    },
+    "pb16_yuri_blindfire_1_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_1_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        59,
+        78,
+        133,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        74.91,
+        81.05
+      ]
+    },
+    "pb16_yuri_blindfire_2_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_2_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        66,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.89,
+        80.36
+      ]
+    },
+    "pb16_yuri_blindfire_2_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_2_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        58,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.19,
+        81.92
+      ]
+    },
+    "pb16_yuri_blindfire_2_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_2_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        73,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.75,
+        86.05
+      ]
+    },
+    "pb16_yuri_blindfire_2_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_2_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        73,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.62,
+        86.48
+      ]
+    },
+    "pb16_yuri_blindfire_3_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_3_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        72,
+        133,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        117.81,
+        76.13
+      ]
+    },
+    "pb16_yuri_blindfire_3_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_3_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        64,
+        133,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        115.07,
+        77.92
+      ]
+    },
+    "pb16_yuri_blindfire_3_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_3_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        78,
+        132,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        115.25,
+        81.05
+      ]
+    },
+    "pb16_yuri_blindfire_3_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_3_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        59,
+        78,
+        133,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        116.85,
+        81.48
+      ]
+    },
+    "pb16_yuri_blindfire_4_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_4_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        76,
+        140,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        134.17,
+        81.66
+      ]
+    },
+    "pb16_yuri_blindfire_4_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_4_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        77,
+        152,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        126.2,
+        84.39
+      ]
+    },
+    "pb16_yuri_blindfire_4_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_4_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        80,
+        139,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        132.91,
+        85.66
+      ]
+    },
+    "pb16_yuri_blindfire_4_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_blindfire_4_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        83,
+        138,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        132.66,
+        89.09
+      ]
+    },
+    "pb16_yuri_death_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        68,
+        56,
+        125,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.9,
+        73.68
+      ]
+    },
+    "pb16_yuri_death_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        66,
+        65,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        95.58,
+        79.28
+      ]
+    },
+    "pb16_yuri_death_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        72,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        98.72,
+        85.94
+      ]
+    },
+    "pb16_yuri_death_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        60,
+        83,
+        131,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.04,
+        106.46
+      ]
+    },
+    "pb16_yuri_death_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        58,
+        115,
+        134,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        88.26,
+        125.2
+      ]
+    },
+    "pb16_yuri_death_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        57,
+        110,
+        134,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        99.5,
+        121.56
+      ]
+    },
+    "pb16_yuri_death_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        54,
+        132,
+        138,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        94.12,
+        143.22
+      ]
+    },
+    "pb16_yuri_death_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_death_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        54,
+        132,
+        139,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        93.78,
+        142.88
+      ]
+    },
+    "pb16_yuri_revive_0": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        47,
+        129,
+        145,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        94.15,
+        138.84
+      ]
+    },
+    "pb16_yuri_revive_1": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        47,
+        110,
+        145,
+        171
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        117.72,
+        121.48
+      ]
+    },
+    "pb16_yuri_revive_2": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        47,
+        101,
+        145,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        80.0,
+        110.02
+      ]
+    },
+    "pb16_yuri_revive_3": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        63,
+        80,
+        129,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        101.13,
+        95.17
+      ]
+    },
+    "pb16_yuri_revive_4": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_4.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        62,
+        79,
+        130,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        99.72,
+        93.35
+      ]
+    },
+    "pb16_yuri_revive_5": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_5.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        67,
+        65,
+        125,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        96.52,
+        89.19
+      ]
+    },
+    "pb16_yuri_revive_6": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_6.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        65,
+        59,
+        126,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        100.67,
+        75.81
+      ]
+    },
+    "pb16_yuri_revive_7": {
+      "file": "expansion/topdown/art/bastion16_yuri/frames/pb16_yuri_revive_7.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96,
+        172
+      ],
+      "bounds": [
+        64,
+        56,
+        128,
+        172
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        97.21,
+        71.58
+      ]
+    }
+  },
+  "sequences": {
+    "pb16_yuri_aim": {
+      "frames": [
+        "pb16_yuri_aim_0",
+        "pb16_yuri_aim_1",
+        "pb16_yuri_aim_2",
+        "pb16_yuri_aim_3",
+        "pb16_yuri_aim_4"
+      ],
+      "fps": 8,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_crouch": {
+      "frames": [
+        "pb16_yuri_crouch_0",
+        "pb16_yuri_crouch_1",
+        "pb16_yuri_crouch_2",
+        "pb16_yuri_crouch_3",
+        "pb16_yuri_crouch_4"
+      ],
+      "fps": 8,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_fire_0": {
+      "frames": [
+        "pb16_yuri_aim_0",
+        "pb16_yuri_fire_0_0",
+        "pb16_yuri_fire_0_1",
+        "pb16_yuri_aim_0"
+      ],
+      "fps": 20,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_fire_1": {
+      "frames": [
+        "pb16_yuri_aim_1",
+        "pb16_yuri_fire_1_0",
+        "pb16_yuri_fire_1_1",
+        "pb16_yuri_aim_1"
+      ],
+      "fps": 20,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_fire_2": {
+      "frames": [
+        "pb16_yuri_fire_forward_0",
+        "pb16_yuri_fire_forward_1",
+        "pb16_yuri_fire_forward_2",
+        "pb16_yuri_fire_forward_3"
+      ],
+      "fps": 20,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_fire_3": {
+      "frames": [
+        "pb16_yuri_aim_3",
+        "pb16_yuri_fire_3_0",
+        "pb16_yuri_fire_3_1",
+        "pb16_yuri_aim_3"
+      ],
+      "fps": 20,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_fire_4": {
+      "frames": [
+        "pb16_yuri_aim_4",
+        "pb16_yuri_fire_4_0",
+        "pb16_yuri_fire_4_1",
+        "pb16_yuri_aim_4"
+      ],
+      "fps": 20,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_strafe": {
+      "frames": [
+        "pb16_yuri_strafe_0",
+        "pb16_yuri_strafe_1",
+        "pb16_yuri_strafe_2",
+        "pb16_yuri_strafe_3",
+        "pb16_yuri_strafe_4",
+        "pb16_yuri_strafe_5",
+        "pb16_yuri_strafe_6",
+        "pb16_yuri_strafe_7"
+      ],
+      "fps": 12,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_crouch_strafe": {
+      "frames": [
+        "pb16_yuri_crouch_strafe_0",
+        "pb16_yuri_crouch_strafe_1",
+        "pb16_yuri_crouch_strafe_2",
+        "pb16_yuri_crouch_strafe_3",
+        "pb16_yuri_crouch_strafe_4",
+        "pb16_yuri_crouch_strafe_5",
+        "pb16_yuri_crouch_strafe_6",
+        "pb16_yuri_crouch_strafe_7"
+      ],
+      "fps": 12,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_rise": {
+      "frames": [
+        "pb16_yuri_rise_0",
+        "pb16_yuri_rise_1",
+        "pb16_yuri_rise_2",
+        "pb16_yuri_rise_3",
+        "pb16_yuri_rise_4",
+        "pb16_yuri_rise_5",
+        "pb16_yuri_rise_6",
+        "pb16_yuri_rise_7"
+      ],
+      "fps": 12,
+      "loop": false,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_advance": {
+      "frames": [
+        "pb16_yuri_advance_0",
+        "pb16_yuri_advance_1",
+        "pb16_yuri_advance_2",
+        "pb16_yuri_advance_3",
+        "pb16_yuri_advance_4",
+        "pb16_yuri_advance_5",
+        "pb16_yuri_advance_6",
+        "pb16_yuri_advance_7"
+      ],
+      "fps": 12,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_strafe_0": {
+      "frames": [
+        "pb16_yuri_strafe_0_0",
+        "pb16_yuri_strafe_0_1",
+        "pb16_yuri_strafe_0_2",
+        "pb16_yuri_strafe_0_3",
+        "pb16_yuri_strafe_0_4",
+        "pb16_yuri_strafe_0_5",
+        "pb16_yuri_strafe_0_6",
+        "pb16_yuri_strafe_0_7"
+      ],
+      "fps": 12,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_crouch_strafe_0": {
+      "frames": [
+        "pb16_yuri_crouch_strafe_0_0",
+        "pb16_yuri_crouch_strafe_0_1",
+        "pb16_yuri_crouch_strafe_0_2",
+        "pb16_yuri_crouch_strafe_0_3",
+        "pb16_yuri_crouch_strafe_0_4",
+        "pb16_yuri_crouch_strafe_0_5",
+        "pb16_yuri_crouch_strafe_0_6",
+        "pb16_yuri_crouch_strafe_0_7"
+      ],
+      "fps": 12,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_blindfire_0": {
+      "frames": [
+        "pb16_yuri_blindfire_0_0",
+        "pb16_yuri_blindfire_0_1",
+        "pb16_yuri_blindfire_0_2",
+        "pb16_yuri_blindfire_0_3"
+      ],
+      "fps": 14,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_blindfire_1": {
+      "frames": [
+        "pb16_yuri_blindfire_1_0",
+        "pb16_yuri_blindfire_1_1",
+        "pb16_yuri_blindfire_1_2",
+        "pb16_yuri_blindfire_1_3"
+      ],
+      "fps": 14,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_blindfire_2": {
+      "frames": [
+        "pb16_yuri_blindfire_2_0",
+        "pb16_yuri_blindfire_2_1",
+        "pb16_yuri_blindfire_2_2",
+        "pb16_yuri_blindfire_2_3"
+      ],
+      "fps": 14,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_blindfire_3": {
+      "frames": [
+        "pb16_yuri_blindfire_3_0",
+        "pb16_yuri_blindfire_3_1",
+        "pb16_yuri_blindfire_3_2",
+        "pb16_yuri_blindfire_3_3"
+      ],
+      "fps": 14,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_blindfire_4": {
+      "frames": [
+        "pb16_yuri_blindfire_4_0",
+        "pb16_yuri_blindfire_4_1",
+        "pb16_yuri_blindfire_4_2",
+        "pb16_yuri_blindfire_4_3"
+      ],
+      "fps": 14,
+      "loop": true,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_death": {
+      "frames": [
+        "pb16_yuri_death_0",
+        "pb16_yuri_death_1",
+        "pb16_yuri_death_2",
+        "pb16_yuri_death_3",
+        "pb16_yuri_death_4",
+        "pb16_yuri_death_5",
+        "pb16_yuri_death_6",
+        "pb16_yuri_death_7"
+      ],
+      "fps": 10,
+      "loop": false,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    },
+    "pb16_yuri_revive": {
+      "frames": [
+        "pb16_yuri_revive_0",
+        "pb16_yuri_revive_1",
+        "pb16_yuri_revive_2",
+        "pb16_yuri_revive_3",
+        "pb16_yuri_revive_4",
+        "pb16_yuri_revive_5",
+        "pb16_yuri_revive_6",
+        "pb16_yuri_revive_7"
+      ],
+      "fps": 10,
+      "loop": false,
+      "rootContract": {
+        "cell": [
+          192,
+          192
+        ],
+        "anchor": [
+          96,
+          172
+        ],
+        "scale": "one proportional scale per source",
+        "physicalRoot": "feet baseline and head/pelvis axis"
+      }
+    }
+  },
+  "audit": [
+    {
+      "key": "pb16_yuri_aim_0",
+      "source": "aim.png",
+      "crop": [
+        23,
+        40,
+        207,
+        306
+      ],
+      "scale": 0.435,
+      "rootX": 104.0,
+      "sourceFootY": 266,
+      "sha256": "7181c32b1cf7ad967af487af464bd3affea3f0e4398f455584a572e5439115d5"
+    },
+    {
+      "key": "pb16_yuri_aim_1",
+      "source": "aim.png",
+      "crop": [
+        915,
+        38,
+        1068,
+        305
+      ],
+      "scale": 0.435,
+      "rootX": 85.0,
+      "sourceFootY": 267,
+      "sha256": "9beab5c5d012ab45933e8de4bfe2ac6ac5b7284d43025c71f29765e0f8ec5d1a"
+    },
+    {
+      "key": "pb16_yuri_aim_2",
+      "source": "aim.png",
+      "crop": [
+        637,
+        41,
+        770,
+        306
+      ],
+      "scale": 0.435,
+      "rootX": 65.0,
+      "sourceFootY": 265,
+      "sha256": "0d2558297e4a3bc4ad26dc80d22a40afabe2a9bc1f83c3149ba771f30ec0d4be"
+    },
+    {
+      "key": "pb16_yuri_aim_3",
+      "source": "aim.png",
+      "crop": [
+        333,
+        36,
+        488,
+        306
+      ],
+      "scale": 0.435,
+      "rootX": 73.0,
+      "sourceFootY": 270,
+      "sha256": "2c02aa37b4f974239aedf73fde889c2775922e75ab06b334b148ee766881c00a"
+    },
+    {
+      "key": "pb16_yuri_aim_4",
+      "source": "aim.png",
+      "crop": [
+        1193,
+        39,
+        1379,
+        305
+      ],
+      "scale": 0.435,
+      "rootX": 79.0,
+      "sourceFootY": 266,
+      "sha256": "08fc7d9f4eb5630da6401497a4340e90094dbec450e1080d32e4bb6717180253"
+    },
+    {
+      "key": "pb16_yuri_crouch_0",
+      "source": "aim.png",
+      "crop": [
+        41,
+        900,
+        206,
+        1088
+      ],
+      "scale": 0.435,
+      "rootX": 89.0,
+      "sourceFootY": 188,
+      "sha256": "23fdc8b4f3b525682fb42552d9def07bb22e0a39530f172927babff682d77e36"
+    },
+    {
+      "key": "pb16_yuri_crouch_1",
+      "source": "aim.png",
+      "crop": [
+        906,
+        898,
+        1053,
+        1088
+      ],
+      "scale": 0.435,
+      "rootX": 76.0,
+      "sourceFootY": 190,
+      "sha256": "dff6a62537f2bf82ce3a6f08a8e262abb339063d16d13dbe6b150fb3aaa25458"
+    },
+    {
+      "key": "pb16_yuri_crouch_2",
+      "source": "aim.png",
+      "crop": [
+        634,
+        900,
+        794,
+        1088
+      ],
+      "scale": 0.435,
+      "rootX": 67.0,
+      "sourceFootY": 188,
+      "sha256": "75e4b4267dce7bb35b667bf28df5f8f0c31dc58af051e16677fd3e401fbab1c5"
+    },
+    {
+      "key": "pb16_yuri_crouch_3",
+      "source": "aim.png",
+      "crop": [
+        350,
+        897,
+        491,
+        1088
+      ],
+      "scale": 0.435,
+      "rootX": 69.0,
+      "sourceFootY": 191,
+      "sha256": "2599bfdea32bb305256150ff1bc69b58d9f04ce0a91b578750f748f88bc5c6ad"
+    },
+    {
+      "key": "pb16_yuri_crouch_4",
+      "source": "aim.png",
+      "crop": [
+        1197,
+        914,
+        1364,
+        1088
+      ],
+      "scale": 0.435,
+      "rootX": 77.0,
+      "sourceFootY": 174,
+      "sha256": "db4536be8daa9058253209826aab0ee7460ca79b74f7179d323efe73d4e9409b"
+    },
+    {
+      "key": "pb16_yuri_fire_0_0",
+      "source": "aim.png",
+      "crop": [
+        13,
+        339,
+        212,
+        579
+      ],
+      "scale": 0.435,
+      "rootX": 123.0,
+      "sourceFootY": 240,
+      "sha256": "397ff9075d677b5748913dab14812ae42c93b4755d9e964ccea1e616c1268ecd"
+    },
+    {
+      "key": "pb16_yuri_fire_0_1",
+      "source": "aim.png",
+      "crop": [
+        23,
+        612,
+        207,
+        867
+      ],
+      "scale": 0.435,
+      "rootX": 105.0,
+      "sourceFootY": 255,
+      "sha256": "f66bfc5663268d0936f360b5f1cf6afddb4cdfbcd253c478390614a02a539b00"
+    },
+    {
+      "key": "pb16_yuri_fire_1_0",
+      "source": "aim.png",
+      "crop": [
+        913,
+        336,
+        1070,
+        579
+      ],
+      "scale": 0.435,
+      "rootX": 86.0,
+      "sourceFootY": 243,
+      "sha256": "da32cb4fca00daa157d32b61dbed1a38ca37377a68b9415f264031813cfddbe4"
+    },
+    {
+      "key": "pb16_yuri_fire_1_1",
+      "source": "aim.png",
+      "crop": [
+        916,
+        609,
+        1069,
+        867
+      ],
+      "scale": 0.435,
+      "rootX": 83.0,
+      "sourceFootY": 258,
+      "sha256": "24a2c452fbd2c94721001d1bcf91bdcfb7303ad24bfdd313242011234bde978b"
+    },
+    {
+      "key": "pb16_yuri_fire_2_0",
+      "source": "aim.png",
+      "crop": [
+        635,
+        338,
+        782,
+        580
+      ],
+      "scale": 0.435,
+      "rootX": 67.0,
+      "sourceFootY": 242,
+      "sha256": "2a776526164dd8ae16cc471f15923a1ef5018dfb5ff49f3413016140ba3b1692"
+    },
+    {
+      "key": "pb16_yuri_fire_2_1",
+      "source": "aim.png",
+      "crop": [
+        635,
+        612,
+        770,
+        867
+      ],
+      "scale": 0.435,
+      "rootX": 67.0,
+      "sourceFootY": 255,
+      "sha256": "5bb7381fc6b1997c43874e9e12974f8035775bc2730f5d103a94c84affe6cbde"
+    },
+    {
+      "key": "pb16_yuri_fire_3_0",
+      "source": "aim.png",
+      "crop": [
+        333,
+        336,
+        519,
+        579
+      ],
+      "scale": 0.435,
+      "rootX": 70.0,
+      "sourceFootY": 243,
+      "sha256": "1ad1441ee2e82b55cf8769703c934dcfd08bc6aca7e87a188a94dbdf9574ba41"
+    },
+    {
+      "key": "pb16_yuri_fire_3_1",
+      "source": "aim.png",
+      "crop": [
+        333,
+        609,
+        487,
+        867
+      ],
+      "scale": 0.435,
+      "rootX": 71.0,
+      "sourceFootY": 258,
+      "sha256": "f138c3935e116d9048af4cd15ef0dd4ceeda673788b2cb11b7c76f93901ddb3b"
+    },
+    {
+      "key": "pb16_yuri_fire_4_0",
+      "source": "aim.png",
+      "crop": [
+        1188,
+        339,
+        1388,
+        579
+      ],
+      "scale": 0.435,
+      "rootX": 73.0,
+      "sourceFootY": 240,
+      "sha256": "b2d88a9d40bd408cb6ace41d218bf54f736bbd0e77e429b772893f5422b17a74"
+    },
+    {
+      "key": "pb16_yuri_fire_4_1",
+      "source": "aim.png",
+      "crop": [
+        1193,
+        612,
+        1378,
+        868
+      ],
+      "scale": 0.435,
+      "rootX": 78.0,
+      "sourceFootY": 256,
+      "sha256": "cce4615296b5312b2da0c485e44ecda8db9a5f0972df3dc7bb1138a101571c8a"
+    },
+    {
+      "key": "pb16_yuri_fire_forward_0",
+      "source": "forward_fire.png",
+      "crop": [
+        112,
+        65,
+        439,
+        720
+      ],
+      "scale": 0.18,
+      "rootX": 159.0,
+      "sourceFootY": 655,
+      "sha256": "088c692a981490616c1aa2ddfdcba0550c2bdcfe0a8184a53a112dc13cf7a4dd"
+    },
+    {
+      "key": "pb16_yuri_fire_forward_1",
+      "source": "forward_fire.png",
+      "crop": [
+        615,
+        20,
+        943,
+        720
+      ],
+      "scale": 0.18,
+      "rootX": 160.0,
+      "sourceFootY": 700,
+      "sha256": "06510147e85c5dfde5bd36c23cca38e8505bce408f55bad5c99bca65c63e82f5"
+    },
+    {
+      "key": "pb16_yuri_fire_forward_2",
+      "source": "forward_fire.png",
+      "crop": [
+        1143,
+        89,
+        1467,
+        720
+      ],
+      "scale": 0.18,
+      "rootX": 157.0,
+      "sourceFootY": 631,
+      "sha256": "79c1757c16c3867dab6c62204c977df741061c60f1850ea5f69d3cb599d4ed13"
+    },
+    {
+      "key": "pb16_yuri_fire_forward_3",
+      "source": "forward_fire.png",
+      "crop": [
+        1637,
+        65,
+        1966,
+        720
+      ],
+      "scale": 0.18,
+      "rootX": 154.0,
+      "sourceFootY": 655,
+      "sha256": "58165a4a1613d07504c1537a0ab06a974a93975cdf8405546208a5bde9ccf87b"
+    },
+    {
+      "key": "pb16_yuri_strafe_0",
+      "source": "forward_motion.png",
+      "crop": [
+        95,
+        12,
+        213,
+        216
+      ],
+      "scale": 0.55,
+      "rootX": 59.0,
+      "sourceFootY": 204,
+      "sha256": "72aa819ec7028699ad13bd0e820399a4e2237e7cf219d091116035859d40ca98"
+    },
+    {
+      "key": "pb16_yuri_strafe_1",
+      "source": "forward_motion.png",
+      "crop": [
+        300,
+        12,
+        450,
+        216
+      ],
+      "scale": 0.55,
+      "rootX": 57.0,
+      "sourceFootY": 204,
+      "sha256": "92d8a68fb744cb58aae69818ed45a1857dd049a99bfb21e3d3c212d999d172f7"
+    },
+    {
+      "key": "pb16_yuri_strafe_2",
+      "source": "forward_motion.png",
+      "crop": [
+        499,
+        12,
+        614,
+        217
+      ],
+      "scale": 0.55,
+      "rootX": 56.0,
+      "sourceFootY": 205,
+      "sha256": "60c748ad8f9fdee25966e45747f390e22285ee3fa708e947bf922873eb46aa4b"
+    },
+    {
+      "key": "pb16_yuri_strafe_3",
+      "source": "forward_motion.png",
+      "crop": [
+        701,
+        12,
+        813,
+        217
+      ],
+      "scale": 0.55,
+      "rootX": 56.0,
+      "sourceFootY": 205,
+      "sha256": "8f014be6af9836f02b232239e7acb1da1603869da3ab5bd4fa27f8891d101c3c"
+    },
+    {
+      "key": "pb16_yuri_strafe_4",
+      "source": "forward_motion.png",
+      "crop": [
+        907,
+        12,
+        1022,
+        217
+      ],
+      "scale": 0.55,
+      "rootX": 56.0,
+      "sourceFootY": 205,
+      "sha256": "df27b7ebd172ba75800b7f1daacaa631cc693cb410bc522666175ac44d0ff3a9"
+    },
+    {
+      "key": "pb16_yuri_strafe_5",
+      "source": "forward_motion.png",
+      "crop": [
+        1129,
+        12,
+        1266,
+        217
+      ],
+      "scale": 0.55,
+      "rootX": 57.0,
+      "sourceFootY": 205,
+      "sha256": "df03d98e2753ef3b9e30da934ad965ef58c1184bd126c4bc9e8f456ac23222d0"
+    },
+    {
+      "key": "pb16_yuri_strafe_6",
+      "source": "forward_motion.png",
+      "crop": [
+        1343,
+        12,
+        1487,
+        216
+      ],
+      "scale": 0.55,
+      "rootX": 58.0,
+      "sourceFootY": 204,
+      "sha256": "885f6244a72d47b7faeedb21eb754fe7ae967c17dc807739638ffa6eba1efacb"
+    },
+    {
+      "key": "pb16_yuri_strafe_7",
+      "source": "forward_motion.png",
+      "crop": [
+        1564,
+        12,
+        1679,
+        216
+      ],
+      "scale": 0.55,
+      "rootX": 57.0,
+      "sourceFootY": 204,
+      "sha256": "8b9e2a3dec16e640d4115fe4aec0db5aa1d89c395c2c305ca4ae593662c49c89"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0",
+      "source": "forward_motion.png",
+      "crop": [
+        84,
+        244,
+        211,
+        408
+      ],
+      "scale": 0.55,
+      "rootX": 64.0,
+      "sourceFootY": 164,
+      "sha256": "2c063098f161cb05dddb82629045a63d96303ed0e3d9ff7f1263e78927a747dd"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_1",
+      "source": "forward_motion.png",
+      "crop": [
+        291,
+        244,
+        462,
+        408
+      ],
+      "scale": 0.55,
+      "rootX": 64.0,
+      "sourceFootY": 164,
+      "sha256": "406b91c00b8b2395887d0ce6dc3a46b70123ebff6aa656330a6565247c5c0a0d"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_2",
+      "source": "forward_motion.png",
+      "crop": [
+        500,
+        245,
+        624,
+        410
+      ],
+      "scale": 0.55,
+      "rootX": 64.0,
+      "sourceFootY": 165,
+      "sha256": "fbc7b3364d97a10f0377bbc4ca7bb9d3538a887d34ca27047f3dfa5dbfb17848"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_3",
+      "source": "forward_motion.png",
+      "crop": [
+        708,
+        244,
+        833,
+        410
+      ],
+      "scale": 0.55,
+      "rootX": 62.0,
+      "sourceFootY": 166,
+      "sha256": "c51b10154a8eabdebf7df35bce1462c6197c3e717b84432e4244fb273f71a1a0"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_4",
+      "source": "forward_motion.png",
+      "crop": [
+        921,
+        244,
+        1047,
+        410
+      ],
+      "scale": 0.55,
+      "rootX": 65.0,
+      "sourceFootY": 166,
+      "sha256": "3b53d09db87418dc14c077282fac83c647ab506602debd887d74bc3b5ff93e93"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_5",
+      "source": "forward_motion.png",
+      "crop": [
+        1134,
+        245,
+        1273,
+        410
+      ],
+      "scale": 0.55,
+      "rootX": 65.0,
+      "sourceFootY": 165,
+      "sha256": "679f6dd6e5c4dd239570812ca8218899180e9a3b99adce15725cc310dbe18e5b"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_6",
+      "source": "forward_motion.png",
+      "crop": [
+        1349,
+        245,
+        1473,
+        410
+      ],
+      "scale": 0.55,
+      "rootX": 64.0,
+      "sourceFootY": 165,
+      "sha256": "bbd076823c096cc1446bbf301641b59403d686d83e1c99e70cb05991bbf829bc"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_7",
+      "source": "forward_motion.png",
+      "crop": [
+        1563,
+        244,
+        1687,
+        410
+      ],
+      "scale": 0.55,
+      "rootX": 61.0,
+      "sourceFootY": 166,
+      "sha256": "ad70881a922d35f9dd077f6e27cd9055c61f372dcef5d4e0385c65d7d0a09698"
+    },
+    {
+      "key": "pb16_yuri_rise_0",
+      "source": "forward_motion.png",
+      "crop": [
+        84,
+        477,
+        212,
+        633
+      ],
+      "scale": 0.55,
+      "rootX": 64.0,
+      "sourceFootY": 156,
+      "sha256": "a7330e7e3b82c8baca85fe535c4b6f47b6d054e68633a04407b8b31929a5eb83"
+    },
+    {
+      "key": "pb16_yuri_rise_1",
+      "source": "forward_motion.png",
+      "crop": [
+        296,
+        473,
+        423,
+        633
+      ],
+      "scale": 0.55,
+      "rootX": 64.0,
+      "sourceFootY": 160,
+      "sha256": "8505ce772bd8c43c54ecec5e1a2fac0e1443df1bc20b8551e96f3078adc3a1e4"
+    },
+    {
+      "key": "pb16_yuri_rise_2",
+      "source": "forward_motion.png",
+      "crop": [
+        507,
+        468,
+        634,
+        633
+      ],
+      "scale": 0.55,
+      "rootX": 64.0,
+      "sourceFootY": 165,
+      "sha256": "e9e459eda06cfc6e6202e2940401697f443b1944328b8f0bbe99b5381c1123a7"
+    },
+    {
+      "key": "pb16_yuri_rise_3",
+      "source": "forward_motion.png",
+      "crop": [
+        719,
+        457,
+        843,
+        634
+      ],
+      "scale": 0.55,
+      "rootX": 61.0,
+      "sourceFootY": 177,
+      "sha256": "2c2a53a5351115ea0b1085b166894c69705b56a9a7522efbaaebfc150786c7f6"
+    },
+    {
+      "key": "pb16_yuri_rise_4",
+      "source": "forward_motion.png",
+      "crop": [
+        927,
+        450,
+        1049,
+        634
+      ],
+      "scale": 0.55,
+      "rootX": 61.0,
+      "sourceFootY": 184,
+      "sha256": "8d3f2cb86153168d457cc87bd1d0ed0d2709f9c14b148502c23c830e7368d0b4"
+    },
+    {
+      "key": "pb16_yuri_rise_5",
+      "source": "forward_motion.png",
+      "crop": [
+        1137,
+        446,
+        1260,
+        634
+      ],
+      "scale": 0.55,
+      "rootX": 62.0,
+      "sourceFootY": 188,
+      "sha256": "6eee2890f2c26bcf74a9b3b03616b33dbaa55b04e7a0db8aa5411f88dfc75bff"
+    },
+    {
+      "key": "pb16_yuri_rise_6",
+      "source": "forward_motion.png",
+      "crop": [
+        1352,
+        438,
+        1474,
+        634
+      ],
+      "scale": 0.55,
+      "rootX": 61.0,
+      "sourceFootY": 196,
+      "sha256": "9c20b01684ce21ec51b69e10e27c5859ec47ae57a603cfc6664ec71fdc670527"
+    },
+    {
+      "key": "pb16_yuri_rise_7",
+      "source": "forward_motion.png",
+      "crop": [
+        1563,
+        430,
+        1685,
+        634
+      ],
+      "scale": 0.55,
+      "rootX": 60.0,
+      "sourceFootY": 204,
+      "sha256": "dff58ac30c3a120a058b029b8e672be0d2c2bc881ee8d18884ed37f1def0943d"
+    },
+    {
+      "key": "pb16_yuri_advance_0",
+      "source": "forward_motion.png",
+      "crop": [
+        87,
+        651,
+        207,
+        868
+      ],
+      "scale": 0.55,
+      "rootX": 61.0,
+      "sourceFootY": 217,
+      "sha256": "cdab25587c85eaef38839aa606a2e64c61b524cf3eac7ae67d11e3c677430043"
+    },
+    {
+      "key": "pb16_yuri_advance_1",
+      "source": "forward_motion.png",
+      "crop": [
+        300,
+        654,
+        419,
+        868
+      ],
+      "scale": 0.55,
+      "rootX": 60.0,
+      "sourceFootY": 214,
+      "sha256": "14cfc0b2bf3443f666a72001c1267444ea2914f718f06c76d754927facdfc791"
+    },
+    {
+      "key": "pb16_yuri_advance_2",
+      "source": "forward_motion.png",
+      "crop": [
+        506,
+        655,
+        627,
+        864
+      ],
+      "scale": 0.55,
+      "rootX": 60.0,
+      "sourceFootY": 209,
+      "sha256": "942cd08a4e3f239abbee0e0de33706eeecbd05445edd50649761701fde058bc2"
+    },
+    {
+      "key": "pb16_yuri_advance_3",
+      "source": "forward_motion.png",
+      "crop": [
+        712,
+        654,
+        832,
+        871
+      ],
+      "scale": 0.55,
+      "rootX": 60.0,
+      "sourceFootY": 217,
+      "sha256": "11526970487f35d654954a821b2e04c80f4e4ee07d34aaf8ba4735a671168903"
+    },
+    {
+      "key": "pb16_yuri_advance_4",
+      "source": "forward_motion.png",
+      "crop": [
+        923,
+        655,
+        1044,
+        871
+      ],
+      "scale": 0.55,
+      "rootX": 61.0,
+      "sourceFootY": 216,
+      "sha256": "fbdf1adeabcafd934d7488a2cc44592e08a896c07737e0192cdfa73b82b851b2"
+    },
+    {
+      "key": "pb16_yuri_advance_5",
+      "source": "forward_motion.png",
+      "crop": [
+        1127,
+        654,
+        1246,
+        864
+      ],
+      "scale": 0.55,
+      "rootX": 59.0,
+      "sourceFootY": 210,
+      "sha256": "ce112010a77c7f0bbaaa98f07db1717987ab72114a975fc32cb7da685de0c73c"
+    },
+    {
+      "key": "pb16_yuri_advance_6",
+      "source": "forward_motion.png",
+      "crop": [
+        1338,
+        656,
+        1457,
+        864
+      ],
+      "scale": 0.55,
+      "rootX": 61.0,
+      "sourceFootY": 208,
+      "sha256": "284b5c70168d46d8bbdd2a7e4d42315ff04126db054dd5a8b50ffd4dca71f024"
+    },
+    {
+      "key": "pb16_yuri_advance_7",
+      "source": "forward_motion.png",
+      "crop": [
+        1559,
+        655,
+        1677,
+        871
+      ],
+      "scale": 0.55,
+      "rootX": 59.0,
+      "sourceFootY": 216,
+      "sha256": "26ad60359a04ebce5628264aa4211d8fdf6aa74536bc03668f96c2035cf708bc"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_0",
+      "source": "left_motion.png",
+      "crop": [
+        73,
+        14,
+        217,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 83.0,
+      "sourceFootY": 209,
+      "sha256": "04899d1652e3282f54d336f8fb0a2d3684921f3414d0397ca2807dc37fdcc54e"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_1",
+      "source": "left_motion.png",
+      "crop": [
+        308,
+        14,
+        448,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 79.0,
+      "sourceFootY": 209,
+      "sha256": "ce5105923cf3a5b74da11263bbf623aa011c8e3c0ee90997ff4e816cc3744358"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_2",
+      "source": "left_motion.png",
+      "crop": [
+        542,
+        14,
+        672,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 72.0,
+      "sourceFootY": 209,
+      "sha256": "63b09b32a639dd87ad9a04acb0ffef949903b002dbb905a6be57b7febc877dea"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_3",
+      "source": "left_motion.png",
+      "crop": [
+        755,
+        14,
+        869,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 66.0,
+      "sourceFootY": 209,
+      "sha256": "c74c792112ba04168af045ab7abdb9f3f1a5942b2587ba17ba2726bbe07dc3ba"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_4",
+      "source": "left_motion.png",
+      "crop": [
+        961,
+        14,
+        1096,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 72.0,
+      "sourceFootY": 209,
+      "sha256": "ddda6ce2b678a7f3ddb486846508b3ac7e668226034f500a212fa7c66cfe9d00"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_5",
+      "source": "left_motion.png",
+      "crop": [
+        1190,
+        14,
+        1316,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 72.0,
+      "sourceFootY": 209,
+      "sha256": "7c9ab3444cd19f27c58a7ec245b2cc26caebe363dab67f93d6cb27d140badc1f"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_6",
+      "source": "left_motion.png",
+      "crop": [
+        1409,
+        14,
+        1547,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 83.0,
+      "sourceFootY": 209,
+      "sha256": "3f2615edd49d802d03fb23e19f3b66ff11d152b85b615e77f62c75a57d0b29f4"
+    },
+    {
+      "key": "pb16_yuri_strafe_0_7",
+      "source": "left_motion.png",
+      "crop": [
+        1614,
+        14,
+        1747,
+        223
+      ],
+      "scale": 0.55,
+      "rootX": 75.0,
+      "sourceFootY": 209,
+      "sha256": "ead49ae937b34ac23b8a6ca4a9dc0b17c359619c8e267cd6ff4d4f77621acac0"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_0",
+      "source": "left_motion.png",
+      "crop": [
+        60,
+        261,
+        211,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 83.0,
+      "sourceFootY": 161,
+      "sha256": "7dfadaafcc30dc50375646ea68dfba6a266383311946d2234fac070b9d2736ad"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_1",
+      "source": "left_motion.png",
+      "crop": [
+        305,
+        259,
+        438,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 81.0,
+      "sourceFootY": 163,
+      "sha256": "3cc8a78a2b0f1257ff59c696b7481d6b56ec6ba48b978a6254e0436abb850eae"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_2",
+      "source": "left_motion.png",
+      "crop": [
+        524,
+        259,
+        674,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 83.0,
+      "sourceFootY": 163,
+      "sha256": "fb4b4b2c6ada61dd1f6fad78c4b7eb9d9a5a2ad0511345a670a2d32a33937cb3"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_3",
+      "source": "left_motion.png",
+      "crop": [
+        748,
+        260,
+        871,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 72.0,
+      "sourceFootY": 162,
+      "sha256": "ae241c461395d2970022facd90984f9bfaa6df48f51710cab85ce270d4e6b3f8"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_4",
+      "source": "left_motion.png",
+      "crop": [
+        956,
+        260,
+        1094,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 80.0,
+      "sourceFootY": 162,
+      "sha256": "e9f504d0343cf27e92932565f3ea9719e09ebbf75f57d7e6b737d963433bd342"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_5",
+      "source": "left_motion.png",
+      "crop": [
+        1182,
+        265,
+        1326,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 78.0,
+      "sourceFootY": 157,
+      "sha256": "2d604e173f5406ae7cc57c535de2afde19a484728829c3156b3405d5bd67dca3"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_6",
+      "source": "left_motion.png",
+      "crop": [
+        1401,
+        265,
+        1557,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 80.0,
+      "sourceFootY": 157,
+      "sha256": "7fa04304f75dda2b97c95b4b08cf741379c2df5b1487761bcab663af65302230"
+    },
+    {
+      "key": "pb16_yuri_crouch_strafe_0_7",
+      "source": "left_motion.png",
+      "crop": [
+        1595,
+        264,
+        1745,
+        422
+      ],
+      "scale": 0.55,
+      "rootX": 81.0,
+      "sourceFootY": 158,
+      "sha256": "00f21e550959bfd26347bc849366b1abe972c41d11daf5b7ae7dc74220c0e3da"
+    },
+    {
+      "key": "pb16_yuri_blindfire_0_0",
+      "source": "blindfire.png",
+      "crop": [
+        37,
+        67,
+        208,
+        290
+      ],
+      "scale": 0.435,
+      "rootX": 99.0,
+      "sourceFootY": 223,
+      "sha256": "61a08dcf52eae43b0f097056366addd5f3b8914422d3ca9752d9e795e98f6b77"
+    },
+    {
+      "key": "pb16_yuri_blindfire_0_1",
+      "source": "blindfire.png",
+      "crop": [
+        14,
+        359,
+        216,
+        578
+      ],
+      "scale": 0.435,
+      "rootX": 127.0,
+      "sourceFootY": 219,
+      "sha256": "e4f9f28f92a9c86a317eb1a06230da4476298001834fd871354d1798c4c5fc2e"
+    },
+    {
+      "key": "pb16_yuri_blindfire_0_2",
+      "source": "blindfire.png",
+      "crop": [
+        44,
+        629,
+        220,
+        841
+      ],
+      "scale": 0.435,
+      "rootX": 96.0,
+      "sourceFootY": 212,
+      "sha256": "a3c8eb6c48848ea687dd89e14e13cd0a5a17c09e8e7981bdcacd8b108cd6603e"
+    },
+    {
+      "key": "pb16_yuri_blindfire_0_3",
+      "source": "blindfire.png",
+      "crop": [
+        40,
+        885,
+        211,
+        1090
+      ],
+      "scale": 0.435,
+      "rootX": 95.0,
+      "sourceFootY": 205,
+      "sha256": "8a9e3d69e4bc35f26bf7c20bad176eae4945272e82a42080045668fdf68e6e2a"
+    },
+    {
+      "key": "pb16_yuri_blindfire_1_0",
+      "source": "blindfire.png",
+      "crop": [
+        337,
+        61,
+        497,
+        290
+      ],
+      "scale": 0.435,
+      "rootX": 85.0,
+      "sourceFootY": 229,
+      "sha256": "a63bcedd29d85e2baab3deb6e45d8cc98402725036c63b1253bf7116bc8ba2bf"
+    },
+    {
+      "key": "pb16_yuri_blindfire_1_1",
+      "source": "blindfire.png",
+      "crop": [
+        338,
+        330,
+        501,
+        578
+      ],
+      "scale": 0.435,
+      "rootX": 83.0,
+      "sourceFootY": 248,
+      "sha256": "acb76a37fc3359bd4fa43a5a6dfc88150793313240a9c9e10045a0a82511c0b2"
+    },
+    {
+      "key": "pb16_yuri_blindfire_1_2",
+      "source": "blindfire.png",
+      "crop": [
+        340,
+        625,
+        504,
+        841
+      ],
+      "scale": 0.435,
+      "rootX": 82.0,
+      "sourceFootY": 216,
+      "sha256": "60152c6ac37e78b55a61915d198bcb756cffcc28ceb99b31e73dbac6d85bd890"
+    },
+    {
+      "key": "pb16_yuri_blindfire_1_3",
+      "source": "blindfire.png",
+      "crop": [
+        337,
+        874,
+        506,
+        1089
+      ],
+      "scale": 0.435,
+      "rootX": 85.0,
+      "sourceFootY": 215,
+      "sha256": "8232592a76a3e9b2f056f7050ba23230d9751ea9cdb593a8455cc388ebd200d0"
+    },
+    {
+      "key": "pb16_yuri_blindfire_2_0",
+      "source": "blindfire.png",
+      "crop": [
+        629,
+        47,
+        773,
+        290
+      ],
+      "scale": 0.435,
+      "rootX": 72.0,
+      "sourceFootY": 243,
+      "sha256": "0f2262ec8809da36fdcfe5dec231219084befe0c28a59342fa00741bc0b35969"
+    },
+    {
+      "key": "pb16_yuri_blindfire_2_1",
+      "source": "blindfire.png",
+      "crop": [
+        627,
+        315,
+        775,
+        578
+      ],
+      "scale": 0.435,
+      "rootX": 73.0,
+      "sourceFootY": 263,
+      "sha256": "e37a13b572b491b1e94cda3d72e60ed0b742625b189cf67f9661b2cd8abec24d"
+    },
+    {
+      "key": "pb16_yuri_blindfire_2_2",
+      "source": "blindfire.png",
+      "crop": [
+        628,
+        614,
+        774,
+        841
+      ],
+      "scale": 0.435,
+      "rootX": 73.0,
+      "sourceFootY": 227,
+      "sha256": "8656628df80a9eb77b96fc59a6d4b859df5d6902d007a8efb6968ad763e7d7b0"
+    },
+    {
+      "key": "pb16_yuri_blindfire_2_3",
+      "source": "blindfire.png",
+      "crop": [
+        626,
+        861,
+        777,
+        1089
+      ],
+      "scale": 0.435,
+      "rootX": 75.0,
+      "sourceFootY": 228,
+      "sha256": "83ea1cf956efe97d2f98f03f17035ac287747cb9180412ed2b3a46b95e331e8c"
+    },
+    {
+      "key": "pb16_yuri_blindfire_3_0",
+      "source": "blindfire.png",
+      "crop": [
+        903,
+        61,
+        1065,
+        290
+      ],
+      "scale": 0.435,
+      "rootX": 77.0,
+      "sourceFootY": 229,
+      "sha256": "6b6665fcc776195e54abed4dac9b76f05bd028e25544c8ad31a41ee690bce410"
+    },
+    {
+      "key": "pb16_yuri_blindfire_3_1",
+      "source": "blindfire.png",
+      "crop": [
+        901,
+        330,
+        1064,
+        578
+      ],
+      "scale": 0.435,
+      "rootX": 78.0,
+      "sourceFootY": 248,
+      "sha256": "bfa067400cb3e21c2c329de5daa0ff1362e80db9d542180f33f5ffa8fa3758c7"
+    },
+    {
+      "key": "pb16_yuri_blindfire_3_2",
+      "source": "blindfire.png",
+      "crop": [
+        897,
+        625,
+        1062,
+        841
+      ],
+      "scale": 0.435,
+      "rootX": 82.0,
+      "sourceFootY": 216,
+      "sha256": "836833367ae0edca8e61d756edc0b60840ca097dc4f36fdc55a9d7157f68c47f"
+    },
+    {
+      "key": "pb16_yuri_blindfire_3_3",
+      "source": "blindfire.png",
+      "crop": [
+        896,
+        873,
+        1065,
+        1089
+      ],
+      "scale": 0.435,
+      "rootX": 84.0,
+      "sourceFootY": 216,
+      "sha256": "2f721800fdf5eef7c0dd15f82fe18862e9469049ba114992bace0e5011c03baf"
+    },
+    {
+      "key": "pb16_yuri_blindfire_4_0",
+      "source": "blindfire.png",
+      "crop": [
+        1194,
+        69,
+        1366,
+        290
+      ],
+      "scale": 0.435,
+      "rootX": 71.0,
+      "sourceFootY": 221,
+      "sha256": "243becfe8c8cd88988b9301cc7905082e2e0d4cce729839efe2c34a4117ec07d"
+    },
+    {
+      "key": "pb16_yuri_blindfire_4_1",
+      "source": "blindfire.png",
+      "crop": [
+        1186,
+        359,
+        1388,
+        578
+      ],
+      "scale": 0.435,
+      "rootX": 74.0,
+      "sourceFootY": 219,
+      "sha256": "62ed55b83c8ae5becf253cc8ad26dbdd1cbc1546f4e8af6470ee8db066887aa4"
+    },
+    {
+      "key": "pb16_yuri_blindfire_4_2",
+      "source": "blindfire.png",
+      "crop": [
+        1182,
+        629,
+        1358,
+        841
+      ],
+      "scale": 0.435,
+      "rootX": 78.0,
+      "sourceFootY": 212,
+      "sha256": "1a29f59d4dfe98fb9aa3148e4c7e67399aa34494e70c09103f227724ee2dd171"
+    },
+    {
+      "key": "pb16_yuri_blindfire_4_3",
+      "source": "blindfire.png",
+      "crop": [
+        1191,
+        885,
+        1362,
+        1090
+      ],
+      "scale": 0.435,
+      "rootX": 74.0,
+      "sourceFootY": 205,
+      "sha256": "492d5818b564e311f99888a1eb44abc0ad18912132a3d6cadddf601d1018e888"
+    },
+    {
+      "key": "pb16_yuri_death_0",
+      "source": "death_revive.png",
+      "crop": [
+        30,
+        58,
+        197,
+        398
+      ],
+      "scale": 0.34,
+      "rootX": 83.5,
+      "sourceFootY": 340,
+      "sha256": "d8f5074654ec053fdc1502d50f0f5510b14f55c4646b5873ea30510094b6f73f"
+    },
+    {
+      "key": "pb16_yuri_death_1",
+      "source": "death_revive.png",
+      "crop": [
+        298,
+        82,
+        474,
+        398
+      ],
+      "scale": 0.34,
+      "rootX": 88.0,
+      "sourceFootY": 316,
+      "sha256": "8c310d232647ca5a13dc68f2307837700adf5dfaaa3c5bf87b28787d6466948b"
+    },
+    {
+      "key": "pb16_yuri_death_2",
+      "source": "death_revive.png",
+      "crop": [
+        580,
+        101,
+        780,
+        396
+      ],
+      "scale": 0.34,
+      "rootX": 100.0,
+      "sourceFootY": 295,
+      "sha256": "4a9e4411f9be02be9f89432ab83f031843b156580440cd71903fe016e253a22b"
+    },
+    {
+      "key": "pb16_yuri_death_3",
+      "source": "death_revive.png",
+      "crop": [
+        845,
+        133,
+        1054,
+        394
+      ],
+      "scale": 0.34,
+      "rootX": 104.5,
+      "sourceFootY": 261,
+      "sha256": "a2d19392e8a53725584d53c7b86fd6e7549aa16446ea891e8d964e775397cbb2"
+    },
+    {
+      "key": "pb16_yuri_death_4",
+      "source": "death_revive.png",
+      "crop": [
+        1090,
+        227,
+        1313,
+        395
+      ],
+      "scale": 0.34,
+      "rootX": 111.5,
+      "sourceFootY": 168,
+      "sha256": "533ee13084fc54d24367f201e18448ea50925288dff8da28454a7dc0a3ea5139"
+    },
+    {
+      "key": "pb16_yuri_death_5",
+      "source": "death_revive.png",
+      "crop": [
+        1339,
+        216,
+        1566,
+        398
+      ],
+      "scale": 0.34,
+      "rootX": 113.5,
+      "sourceFootY": 182,
+      "sha256": "9617a0ddb76e21ccad8437796f5c4b0c1a9b8c307e7e6382904047876eb98548"
+    },
+    {
+      "key": "pb16_yuri_death_6",
+      "source": "death_revive.png",
+      "crop": [
+        1620,
+        292,
+        1868,
+        410
+      ],
+      "scale": 0.34,
+      "rootX": 124.0,
+      "sourceFootY": 118,
+      "sha256": "4a82ec2a01056e06e4616e69ab1aaffa887573ac40ed4b1186a01f9c6a63b2f4"
+    },
+    {
+      "key": "pb16_yuri_death_7",
+      "source": "death_revive.png",
+      "crop": [
+        1899,
+        292,
+        2149,
+        410
+      ],
+      "scale": 0.34,
+      "rootX": 125.0,
+      "sourceFootY": 118,
+      "sha256": "3044bc6264dc742b0a079517c255f7287ac9a3fbc26da7d56bf1436f25a5843e"
+    },
+    {
+      "key": "pb16_yuri_revive_0",
+      "source": "death_revive.png",
+      "crop": [
+        29,
+        601,
+        268,
+        705
+      ],
+      "scale": 0.41,
+      "rootX": 119.5,
+      "sourceFootY": 104,
+      "sha256": "d17aaebc9d3ba79c1eb1149a22235de13d9d68f76b4a430db4afe29489e5b1dc"
+    },
+    {
+      "key": "pb16_yuri_revive_1",
+      "source": "death_revive.png",
+      "crop": [
+        298,
+        540,
+        537,
+        690
+      ],
+      "scale": 0.41,
+      "rootX": 119.5,
+      "sourceFootY": 150,
+      "sha256": "45f10c01118b173cbeb5707e8c97fcd8c1fa4930c671cdaafd9c78d4cdd37d75"
+    },
+    {
+      "key": "pb16_yuri_revive_2",
+      "source": "death_revive.png",
+      "crop": [
+        580,
+        517,
+        819,
+        690
+      ],
+      "scale": 0.41,
+      "rootX": 119.5,
+      "sourceFootY": 173,
+      "sha256": "5594f887c3e03100db4450b6e4d4210f2344aadccb9a60a999f06e1722bfee76"
+    },
+    {
+      "key": "pb16_yuri_revive_3",
+      "source": "death_revive.png",
+      "crop": [
+        882,
+        470,
+        1043,
+        695
+      ],
+      "scale": 0.41,
+      "rootX": 80.5,
+      "sourceFootY": 225,
+      "sha256": "56214e1daf1a5e2df632672548f87f5726003210dafd4c0443776e2c8e4cf993"
+    },
+    {
+      "key": "pb16_yuri_revive_4",
+      "source": "death_revive.png",
+      "crop": [
+        1132,
+        470,
+        1299,
+        697
+      ],
+      "scale": 0.41,
+      "rootX": 83.5,
+      "sourceFootY": 227,
+      "sha256": "cddd754e60aaf3b763552f434623d68c55308eb0731563bc850a2bee248e1386"
+    },
+    {
+      "key": "pb16_yuri_revive_5",
+      "source": "death_revive.png",
+      "crop": [
+        1424,
+        439,
+        1565,
+        701
+      ],
+      "scale": 0.41,
+      "rootX": 70.5,
+      "sourceFootY": 262,
+      "sha256": "ded01cbea3292f5214daec35ce1c2e508543162222fa17f0f7720831e320d4ae"
+    },
+    {
+      "key": "pb16_yuri_revive_6",
+      "source": "death_revive.png",
+      "crop": [
+        1661,
+        428,
+        1811,
+        704
+      ],
+      "scale": 0.41,
+      "rootX": 75.0,
+      "sourceFootY": 276,
+      "sha256": "d1668ad75e0e2ca9b090d9e8819d28e0bfc85ea22bf499947cb0e8aab4f6d01b"
+    },
+    {
+      "key": "pb16_yuri_revive_7",
+      "source": "death_revive.png",
+      "crop": [
+        1937,
+        420,
+        2094,
+        704
+      ],
+      "scale": 0.41,
+      "rootX": 78.5,
+      "sourceFootY": 284,
+      "sha256": "11f2d42b797fa9f43734c026951a57026e96af02d590cc8672a653dc6660eb88"
+    }
+  ],
+  "sources": {
+    "aim.png": "cd31938a54e8781358c8ad6021f8a09b7b6119aea91063ed0be50b2c7c6406b1",
+    "blindfire.png": "9a020df993964040a852710c631b2ec89e761f4cabb3b07a4a3fa626661379de",
+    "death_revive.png": "6431eeee4e1d06a0293482bd9c4995f4aa412bd80592e2c6cc90ef7fe57151cc",
+    "forward_fire.png": "faeb836705ce1bfb2ca19ec9d5d94c59b1a81c4ec766f0de1bfcef429e8af508",
+    "forward_motion.png": "d76e534cecbef263ba65335e92a6ee7847065860917e491d6cca281916496e0a",
+    "left_motion.png": "ef6f4dd7fb41f5609f7f71a5d302db04cba3c6faa66f635fd63311760ea747a3"
+  },
+  "promptSet": "source/prompts.json"
+}

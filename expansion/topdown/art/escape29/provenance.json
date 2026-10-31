@@ -1,0 +1,40 @@
+{
+  "build": "overdrive1015-escape29-r1",
+  "pixelLabIncludedGenerationsUsedThisPass": 415,
+  "pixelLabRemaining": 1275,
+  "runtimeExports": 238,
+  "mirroredRight": true,
+  "sourceUnit": [
+    192,
+    224
+  ],
+  "runtimeRoot": [
+    96,
+    160
+  ],
+  "normalization": "Fixed 0.5 scale for PixelLab actor sources. Measured ground contact root deltas, no per-frame body fitting. Imagegen backward slide uses one whole-image conversion to the 172px source-unit silhouette, then the same half scale. Binary alpha, nearest sampling.",
+  "generationReceipts": "source/escape29/generation_receipts.json",
+  "selectedAimV2": [
+    -75,
+    -60,
+    -45,
+    60,
+    75
+  ],
+  "rejected": [
+    "top_down and top_up identity drift",
+    "top_aim skipped angular transitions",
+    "run contained baked muzzle flashes",
+    "cover_peek clipped lower body",
+    "last two cover_clean frames contained muzzle flashes",
+    "slide_back, slide_back_fixed and slide_back_twist did not turn the torso backward",
+    "first attempts at steep aiming reused shallow angles"
+  ],
+  "imagegen": {
+    "tool": "built-in image_gen",
+    "source": "source/escape29/slide_back_imagegen/original.png",
+    "prompt": "Full-body Yuri matching the approved slide reference. Red tactical vest, charcoal pants, red boots, dark slicked hair and beard. Legs and boots diagonally lower left; twist torso and look back over right shoulder, firing assault rifle upper right. Back of red vest toward viewer. Rifle points opposite boots. Whole anatomy, crisp limited-palette pixel art, transparent background, no glow, flash, bullets, props or text. 192x224 sprite unit enlarged for presentation.",
+    "reason": "PixelLab edits repeatedly retained a forward gun; the selected imagegen result resolves the actual reverse-torso pose."
+  },
+  "reuse": "Existing authored Pixel25 enemies and doors, Bastion19 rubble, effects, HUD and portraits retained. No existing PNG replaced."
+}

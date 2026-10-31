@@ -1,0 +1,1229 @@
+[
+  {
+    "bank": "gosfar/ready",
+    "bounds": [
+      [
+        32,
+        4,
+        128,
+        152
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 1,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "hotwire/ready",
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      120
+    ],
+    "frames": 1,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/ready/east",
+    "bounds": [
+      [
+        24,
+        4,
+        152,
+        157
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 1,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/ready/west",
+    "bounds": [
+      [
+        6,
+        4,
+        135,
+        157
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 1,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/ready/north",
+    "bounds": [
+      [
+        65,
+        8,
+        158,
+        216
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "root": [
+      112,
+      216
+    ],
+    "frames": 1,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "hotwire/hack",
+    "bounds": [
+      [
+        47,
+        37,
+        74,
+        121
+      ],
+      [
+        48,
+        36,
+        74,
+        121
+      ],
+      [
+        50,
+        35,
+        74,
+        121
+      ],
+      [
+        49,
+        36,
+        74,
+        121
+      ],
+      [
+        47,
+        37,
+        74,
+        121
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      120
+    ],
+    "frames": 5,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "hotwire/cover",
+    "bounds": [
+      [
+        35,
+        38,
+        93,
+        118
+      ],
+      [
+        35,
+        38,
+        93,
+        118
+      ],
+      [
+        35,
+        38,
+        93,
+        118
+      ],
+      [
+        35,
+        38,
+        93,
+        118
+      ],
+      [
+        35,
+        38,
+        93,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      120
+    ],
+    "frames": 5,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "hotwire/fire",
+    "bounds": [
+      [
+        20,
+        38,
+        102,
+        118
+      ],
+      [
+        35,
+        38,
+        102,
+        118
+      ],
+      [
+        33,
+        39,
+        102,
+        118
+      ],
+      [
+        33,
+        39,
+        102,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      120
+    ],
+    "frames": 4,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "hotwire/run",
+    "bounds": [
+      [
+        48,
+        36,
+        81,
+        120
+      ],
+      [
+        47,
+        36,
+        82,
+        120
+      ],
+      [
+        47,
+        36,
+        83,
+        119
+      ],
+      [
+        45,
+        36,
+        84,
+        119
+      ],
+      [
+        42,
+        37,
+        86,
+        119
+      ],
+      [
+        42,
+        38,
+        87,
+        119
+      ],
+      [
+        41,
+        39,
+        87,
+        120
+      ],
+      [
+        42,
+        37,
+        81,
+        120
+      ],
+      [
+        44,
+        36,
+        77,
+        120
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      120
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "yuri/cover",
+    "bounds": [
+      [
+        38,
+        32,
+        92,
+        115
+      ],
+      [
+        38,
+        31,
+        92,
+        115
+      ],
+      [
+        38,
+        32,
+        92,
+        115
+      ],
+      [
+        38,
+        31,
+        92,
+        115
+      ],
+      [
+        38,
+        30,
+        92,
+        115
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      120
+    ],
+    "frames": 5,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/walk",
+    "bounds": [
+      [
+        32,
+        4,
+        128,
+        152
+      ],
+      [
+        34,
+        5,
+        130,
+        152
+      ],
+      [
+        35,
+        4,
+        131,
+        150
+      ],
+      [
+        34,
+        3,
+        130,
+        150
+      ],
+      [
+        33,
+        4,
+        129,
+        151
+      ],
+      [
+        31,
+        5,
+        127,
+        154
+      ],
+      [
+        29,
+        6,
+        125,
+        156
+      ],
+      [
+        28,
+        5,
+        123,
+        155
+      ],
+      [
+        29,
+        3,
+        124,
+        154
+      ],
+      [
+        30,
+        4,
+        125,
+        152
+      ],
+      [
+        31,
+        4,
+        127,
+        153
+      ],
+      [
+        33,
+        6,
+        128,
+        156
+      ],
+      [
+        34,
+        5,
+        130,
+        155
+      ],
+      [
+        35,
+        3,
+        131,
+        156
+      ],
+      [
+        34,
+        3,
+        130,
+        155
+      ],
+      [
+        32,
+        4,
+        128,
+        153
+      ],
+      [
+        30,
+        6,
+        126,
+        156
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 17,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/rev",
+    "bounds": [
+      [
+        32,
+        4,
+        128,
+        152
+      ],
+      [
+        32,
+        4,
+        128,
+        152
+      ],
+      [
+        32,
+        3,
+        128,
+        152
+      ],
+      [
+        32,
+        3,
+        128,
+        152
+      ],
+      [
+        32,
+        3,
+        128,
+        152
+      ],
+      [
+        32,
+        3,
+        128,
+        152
+      ],
+      [
+        32,
+        3,
+        128,
+        152
+      ],
+      [
+        32,
+        3,
+        128,
+        152
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 8,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/fire",
+    "bounds": [
+      [
+        32,
+        4,
+        128,
+        152
+      ],
+      [
+        32,
+        4,
+        128,
+        152
+      ],
+      [
+        32,
+        5,
+        128,
+        152
+      ],
+      [
+        32,
+        6,
+        128,
+        152
+      ],
+      [
+        32,
+        7,
+        128,
+        152
+      ],
+      [
+        33,
+        7,
+        128,
+        152
+      ],
+      [
+        34,
+        5,
+        130,
+        152
+      ],
+      [
+        34,
+        6,
+        128,
+        152
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 8,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/death",
+    "bounds": [
+      [
+        32,
+        4,
+        128,
+        152
+      ],
+      [
+        33,
+        5,
+        129,
+        152
+      ],
+      [
+        31,
+        8,
+        130,
+        151
+      ],
+      [
+        30,
+        10,
+        131,
+        151
+      ],
+      [
+        27,
+        14,
+        134,
+        151
+      ],
+      [
+        15,
+        35,
+        134,
+        148
+      ],
+      [
+        15,
+        59,
+        141,
+        151
+      ],
+      [
+        10,
+        67,
+        146,
+        156
+      ],
+      [
+        12,
+        64,
+        144,
+        158
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/overheat",
+    "bounds": [
+      [
+        32,
+        4,
+        133,
+        152
+      ],
+      [
+        32,
+        5,
+        129,
+        152
+      ],
+      [
+        32,
+        6,
+        129,
+        152
+      ],
+      [
+        32,
+        7,
+        128,
+        152
+      ],
+      [
+        32,
+        7,
+        128,
+        152
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 5,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "hotwire/throw",
+    "bounds": [
+      [
+        35,
+        38,
+        93,
+        118
+      ],
+      [
+        35,
+        38,
+        93,
+        118
+      ],
+      [
+        31,
+        38,
+        93,
+        118
+      ],
+      [
+        35,
+        37,
+        93,
+        118
+      ],
+      [
+        35,
+        38,
+        105,
+        118
+      ]
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "root": [
+      64,
+      120
+    ],
+    "frames": 5,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/fire/east",
+    "bounds": [
+      [
+        24,
+        4,
+        152,
+        157
+      ],
+      [
+        25,
+        4,
+        151,
+        157
+      ],
+      [
+        25,
+        4,
+        150,
+        157
+      ],
+      [
+        24,
+        4,
+        152,
+        157
+      ],
+      [
+        23,
+        5,
+        152,
+        157
+      ],
+      [
+        23,
+        4,
+        151,
+        157
+      ],
+      [
+        25,
+        4,
+        151,
+        157
+      ],
+      [
+        25,
+        3,
+        152,
+        157
+      ],
+      [
+        24,
+        3,
+        152,
+        157
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/walk/east",
+    "bounds": [
+      [
+        24,
+        4,
+        152,
+        157
+      ],
+      [
+        24,
+        6,
+        153,
+        157
+      ],
+      [
+        24,
+        8,
+        155,
+        157
+      ],
+      [
+        24,
+        8,
+        155,
+        157
+      ],
+      [
+        24,
+        5,
+        154,
+        157
+      ],
+      [
+        25,
+        2,
+        153,
+        153
+      ],
+      [
+        26,
+        4,
+        152,
+        152
+      ],
+      [
+        26,
+        7,
+        152,
+        156
+      ],
+      [
+        26,
+        9,
+        151,
+        155
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/fire/west",
+    "bounds": [
+      [
+        6,
+        4,
+        135,
+        157
+      ],
+      [
+        7,
+        3,
+        135,
+        157
+      ],
+      [
+        8,
+        3,
+        135,
+        157
+      ],
+      [
+        7,
+        4,
+        135,
+        157
+      ],
+      [
+        6,
+        5,
+        135,
+        157
+      ],
+      [
+        5,
+        6,
+        135,
+        157
+      ],
+      [
+        4,
+        6,
+        135,
+        157
+      ],
+      [
+        4,
+        4,
+        135,
+        157
+      ],
+      [
+        5,
+        3,
+        135,
+        157
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/walk/west",
+    "bounds": [
+      [
+        6,
+        4,
+        135,
+        157
+      ],
+      [
+        7,
+        6,
+        136,
+        157
+      ],
+      [
+        7,
+        8,
+        136,
+        157
+      ],
+      [
+        7,
+        6,
+        135,
+        156
+      ],
+      [
+        6,
+        4,
+        135,
+        155
+      ],
+      [
+        6,
+        3,
+        135,
+        150
+      ],
+      [
+        5,
+        5,
+        135,
+        153
+      ],
+      [
+        5,
+        7,
+        135,
+        156
+      ],
+      [
+        5,
+        8,
+        134,
+        157
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/fire/north",
+    "bounds": [
+      [
+        65,
+        8,
+        158,
+        216
+      ],
+      [
+        66,
+        11,
+        157,
+        216
+      ],
+      [
+        67,
+        13,
+        157,
+        216
+      ],
+      [
+        67,
+        11,
+        157,
+        216
+      ],
+      [
+        65,
+        23,
+        156,
+        216
+      ],
+      [
+        65,
+        23,
+        156,
+        216
+      ],
+      [
+        65,
+        23,
+        156,
+        216
+      ],
+      [
+        65,
+        23,
+        156,
+        216
+      ],
+      [
+        67,
+        18,
+        158,
+        216
+      ]
+    ],
+    "size": [
+      224,
+      224
+    ],
+    "root": [
+      112,
+      216
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "gosfar/walk/north",
+    "bounds": [
+      [
+        34,
+        3,
+        126,
+        149
+      ],
+      [
+        37,
+        4,
+        124,
+        152
+      ],
+      [
+        38,
+        6,
+        124,
+        157
+      ],
+      [
+        37,
+        4,
+        122,
+        156
+      ],
+      [
+        37,
+        3,
+        121,
+        156
+      ],
+      [
+        37,
+        6,
+        121,
+        155
+      ],
+      [
+        37,
+        4,
+        121,
+        152
+      ],
+      [
+        32,
+        3,
+        123,
+        152
+      ],
+      [
+        32,
+        6,
+        123,
+        156
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 9,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  },
+  {
+    "bank": "elevator",
+    "bounds": [
+      [
+        6,
+        9,
+        157,
+        146
+      ],
+      [
+        5,
+        9,
+        156,
+        146
+      ],
+      [
+        4,
+        9,
+        155,
+        146
+      ],
+      [
+        3,
+        9,
+        154,
+        146
+      ],
+      [
+        6,
+        9,
+        157,
+        147
+      ],
+      [
+        5,
+        9,
+        156,
+        147
+      ],
+      [
+        4,
+        9,
+        155,
+        147
+      ],
+      [
+        3,
+        9,
+        154,
+        147
+      ]
+    ],
+    "size": [
+      160,
+      160
+    ],
+    "root": [
+      80,
+      152
+    ],
+    "frames": 8,
+    "method": "Fixed canvas/root. One shared palette. No per-frame scaling or body transforms."
+  }
+]

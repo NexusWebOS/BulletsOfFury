@@ -1,0 +1,38 @@
+[
+  {
+    "name": "hotwire",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 45f50b00-3a01-45d9-90a7-e44d349d2d98\njob_id: 45f50b00-3a01-45d9-90a7-e44d349d2d98\ndescription: FRAME FORMAT128x128 pixels, full body on transparency. Convert this exact supplied full-body character into crisp gritty realistic-proportion 32-bit arcade pixel art. Preserve silhouette, head-to-body ratio, seven-head adult human proportions, face identity and costume colors exactly: adult woman with asymmetrical black bob and orange hair streak, fitted black tactical suit, orange armor plates and cyan piping. NOT chibi, NOT cartoon huge head. Small anatomically proportionate head, long legs, athletic torso. Pure frontal neutral reference posture with empty hands. No added weapons or accessories. Preserve the entire figure and boots. Transparent padding. Match the serious military action-pixel-art proportions of Yuri.\nsize: 128x128px\ntransparent: True\nasset_id: e85efbe1-39c0-5f24-8889-555b7fc19c74\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 300)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"45f50b00-3a01-45d9-90a7-e44d349d2d98\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "phoenix",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 6d50b786-df09-4c09-a18f-444da1a30a29\njob_id: 6d50b786-df09-4c09-a18f-444da1a30a29\ndescription: FRAME FORMAT128x128 pixels, full body on transparency. Convert this exact supplied full-body character into crisp gritty realistic-proportion 32-bit arcade pixel art. Preserve silhouette, head-to-body ratio, seven-head adult human proportions, face identity and costume colors exactly: adult muscular Black man with short hair and beard, black and crimson armor with fine gold trim. NOT chibi, NOT cartoon huge head. Small anatomically proportionate head, long legs, athletic torso. Pure frontal neutral reference posture with empty hands. No added weapons or accessories. Preserve the entire figure and boots. Transparent padding. Match the serious military action-pixel-art proportions of Yuri.\nsize: 128x128px\ntransparent: True\nasset_id: 7b808c30-4e33-5a69-acfa-a988d22621e0\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 300)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"6d50b786-df09-4c09-a18f-444da1a30a29\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "neil",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 9ac80e77-a590-4fca-bc8a-7802284e5eb5\njob_id: 9ac80e77-a590-4fca-bc8a-7802284e5eb5\ndescription: FRAME FORMAT128x128 pixels, full body on transparency. Convert this exact supplied full-body character into crisp gritty realistic-proportion 32-bit arcade pixel art. Preserve silhouette, head-to-body ratio, seven-head adult human proportions, face identity and costume colors exactly: adult man short dark brown hair and beard, white black and gold armor with teal scarf and shoulder accents. NOT chibi, NOT cartoon huge head. Small anatomically proportionate head, long legs, athletic torso. Pure frontal neutral reference posture with empty hands. No added weapons or accessories. Preserve the entire figure and boots. Transparent padding. Match the serious military action-pixel-art proportions of Yuri.\nsize: 128x128px\ntransparent: True\nasset_id: 9607d3af-500d-5cbb-83e7-70d5139f67ed\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 300)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"9ac80e77-a590-4fca-bc8a-7802284e5eb5\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "provider": "PixelLab",
+  "jobs": {
+    "east": "ac219aa7-777c-4b6c-a995-0c25da1c5925",
+    "south": "75b27bc1-7ded-4d10-848b-6380964eb4aa"
+  },
+  "frames_per_job": 9,
+  "charged_generations": 2
+}

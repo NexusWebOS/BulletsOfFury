@@ -1,0 +1,38 @@
+[
+  {
+    "name": "hotwire",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\nname: Overdrive39 hotwire side\nmode: pro (25 generations, 8 directions)\nbody: humanoid\nsize: 128x128px\nview: side\nstatus: processing (~3-5 min)\n\nhint: get_character(character_id=\"37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "phoenix",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 6c2882c2-4794-40ec-89c6-184965eecf6b\nname: Overdrive39 phoenix side\nmode: pro (25 generations, 8 directions)\nbody: humanoid\nsize: 128x128px\nview: side\nstatus: processing (~3-5 min)\n\nhint: get_character(character_id=\"6c2882c2-4794-40ec-89c6-184965eecf6b\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "neil",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: b3b46e7b-2202-488a-9e5e-c490f9e90bc1\nname: Overdrive39 neil side\nmode: pro (25 generations, 8 directions)\nbody: humanoid\nsize: 128x128px\nview: side\nstatus: processing (~3-5 min)\n\nhint: get_character(character_id=\"b3b46e7b-2202-488a-9e5e-c490f9e90bc1\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

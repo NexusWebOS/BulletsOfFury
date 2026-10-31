@@ -1,0 +1,26 @@
+{
+  "name": "flying_alien-fire",
+  "args": {
+    "character_id": "351aabab-5484-4940-9e99-481ab5bca4af",
+    "mode": "pixminimax",
+    "animation_name": "od39_directional_fire",
+    "directions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "frame_count": 16,
+    "keep_first_frame": true,
+    "action_description": "FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Hover in place with subtle wing or shoulder-fin motion, aim existing weapon along current facing, fire three discrete plasma pulses with small physical recoil, then settle to hover. No camera change, no human silhouette, no morphing. Preserve the same alien body and fixed lighting."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: 351aabab-5484-4940-9e99-481ab5bca4af\nanimation: pixminimax custom (FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Hover in place with subtle wing or shoulder-fin motion, aim existing weapon along current facing, fire three discrete plasma pulses with small physical recoil, then settle to hover. No camera change, no human silhouette, no morphing. Preserve the same alien body and fixed lighting.)\ndirections: north, east, south, west (4 jobs)\njob_ids: north=7c3e5f29-54cc-4bd3-b6ff-4a45caf666c4, east=f3b122bd-2626-4444-9b98-7ce7fc87dbb8, south=c2c14931-9f94-4384-94ce-e7871e700f2e, west=04ba5d70-40d5-48d1-a892-f269f3f483a2\ngroup: ededf932-7471-45bb-9ac6-b967a2c1ef57\nframes: 17 (1 reference + 16 animated)\ncanvas: north 76x76, east 84x84, south 76x76, west 84x84 (frames are stored at this size: the character plus room to move)\ncost: 4 generations (1/dir x 4)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"351aabab-5484-4940-9e99-481ab5bca4af\")\nadd more directions to this group: animate_character(character_id=\"351aabab-5484-4940-9e99-481ab5bca4af\", action_description=\"FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Hover in place with subtle wing or shoulder-fin motion, aim existing weapon along current facing, fire three discrete plasma pulses with small physical recoil, then settle to hover. No camera change, no human silhouette, no morphing. Preserve the same alien body and fixed lighting.\", mode=\"pixminimax\", animation_group_id=\"ededf932-7471-45bb-9ac6-b967a2c1ef57\", directions=[...])"
+      }
+    ],
+    "isError": false
+  }
+}

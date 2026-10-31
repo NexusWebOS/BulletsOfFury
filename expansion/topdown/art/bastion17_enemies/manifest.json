@@ -1,0 +1,3127 @@
+{
+  "version": "1013-bastion17-enemies-r1",
+  "generator": "built-in image_gen",
+  "assets": {
+    "pb17_elite_idle_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_idle_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        127,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "idle",
+      "phase": 0,
+      "role": "elite",
+      "muzzle": [
+        96,
+        166
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_idle_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_idle_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        71,
+        127,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "idle",
+      "phase": 1,
+      "role": "elite",
+      "muzzle": [
+        96,
+        166
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_idle_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_idle_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        127,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "idle",
+      "phase": 2,
+      "role": "elite",
+      "muzzle": [
+        96,
+        166
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_idle_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_idle_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        127,
+        121,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "idle",
+      "phase": 3,
+      "role": "elite",
+      "muzzle": [
+        96,
+        166
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        71,
+        122,
+        120,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 0,
+      "role": "elite",
+      "muzzle": [
+        96,
+        163
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        72,
+        122,
+        121,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 1,
+      "role": "elite",
+      "muzzle": [
+        96,
+        163
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        72,
+        122,
+        121,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 2,
+      "role": "elite",
+      "muzzle": [
+        96,
+        163
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        71,
+        122,
+        120,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 3,
+      "role": "elite",
+      "muzzle": [
+        96,
+        163
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_4": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_4.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        72,
+        124,
+        120,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 4,
+      "role": "elite",
+      "muzzle": [
+        96,
+        164
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_5": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_5.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        72,
+        123,
+        120,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 5,
+      "role": "elite",
+      "muzzle": [
+        96,
+        163
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_6": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_6.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        72,
+        124,
+        120,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 6,
+      "role": "elite",
+      "muzzle": [
+        96,
+        164
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_walk_7": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_walk_7.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        72,
+        123,
+        120,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "walk",
+      "phase": 7,
+      "role": "elite",
+      "muzzle": [
+        96,
+        163
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_fire_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_fire_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        124,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "fire",
+      "phase": 0,
+      "role": "elite",
+      "muzzle": [
+        96,
+        166
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_fire_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_fire_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        128,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "fire",
+      "phase": 1,
+      "role": "elite",
+      "muzzle": [
+        96,
+        168
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_fire_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_fire_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        124,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "fire",
+      "phase": 2,
+      "role": "elite",
+      "muzzle": [
+        96,
+        165
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_fire_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_fire_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        125,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "fire",
+      "phase": 3,
+      "role": "elite",
+      "muzzle": [
+        96,
+        165
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_crouch_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_crouch_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        69,
+        126,
+        123,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "crouch",
+      "phase": 0,
+      "role": "elite",
+      "muzzle": [
+        96,
+        165
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_crouch_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_crouch_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        71,
+        131,
+        121,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "crouch",
+      "phase": 1,
+      "role": "elite",
+      "muzzle": [
+        96,
+        168
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_crouch_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_crouch_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        71,
+        140,
+        121,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "crouch",
+      "phase": 2,
+      "role": "elite",
+      "muzzle": [
+        96,
+        174
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_crouch_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_crouch_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        72,
+        150,
+        121,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "crouch",
+      "phase": 3,
+      "role": "elite",
+      "muzzle": [
+        96,
+        180
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_vault_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_vault_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        71,
+        142,
+        123,
+        225
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "vault",
+      "phase": 0,
+      "role": "elite",
+      "muzzle": [
+        96,
+        175
+      ],
+      "vaultLiftBaked": true
+    },
+    "pb17_elite_vault_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_vault_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        122,
+        122,
+        222
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "vault",
+      "phase": 1,
+      "role": "elite",
+      "muzzle": [
+        96,
+        162
+      ],
+      "vaultLiftBaked": true
+    },
+    "pb17_elite_vault_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_vault_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        69,
+        118,
+        122,
+        221
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "vault",
+      "phase": 2,
+      "role": "elite",
+      "muzzle": [
+        96,
+        159
+      ],
+      "vaultLiftBaked": true
+    },
+    "pb17_elite_vault_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_vault_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        68,
+        120,
+        124,
+        208
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "vault",
+      "phase": 3,
+      "role": "elite",
+      "muzzle": [
+        96,
+        155
+      ],
+      "vaultLiftBaked": true
+    },
+    "pb17_elite_vault_4": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_vault_4.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        132,
+        122,
+        225
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "vault",
+      "phase": 4,
+      "role": "elite",
+      "muzzle": [
+        96,
+        169
+      ],
+      "vaultLiftBaked": true
+    },
+    "pb17_elite_vault_5": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_vault_5.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        70,
+        120,
+        122,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "vault",
+      "phase": 5,
+      "role": "elite",
+      "muzzle": [
+        96,
+        161
+      ],
+      "vaultLiftBaked": true
+    },
+    "pb17_elite_death_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_death_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        68,
+        122,
+        127,
+        222
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "death",
+      "phase": 0,
+      "role": "elite",
+      "muzzle": [
+        96,
+        162
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_death_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_death_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        63,
+        129,
+        123,
+        224
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "death",
+      "phase": 1,
+      "role": "elite",
+      "muzzle": [
+        96,
+        167
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_death_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_death_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        62,
+        140,
+        137,
+        216
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "death",
+      "phase": 2,
+      "role": "elite",
+      "muzzle": [
+        96,
+        170
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_death_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_death_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        58,
+        148,
+        135,
+        206
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "death",
+      "phase": 3,
+      "role": "elite",
+      "muzzle": [
+        96,
+        171
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_death_4": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_death_4.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        52,
+        161,
+        135,
+        211
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "death",
+      "phase": 4,
+      "role": "elite",
+      "muzzle": [
+        96,
+        181
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_elite_death_5": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_elite_death_5.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        49,
+        168,
+        141,
+        210
+      ],
+      "drawScale": 1.288659793814433,
+      "action": "death",
+      "phase": 5,
+      "role": "elite",
+      "muzzle": [
+        96,
+        185
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rifle_crouch_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rifle_crouch_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        67,
+        115,
+        124,
+        224
+      ],
+      "drawScale": 1.0502283105022832,
+      "action": "crouch",
+      "phase": 0,
+      "role": "rifle",
+      "muzzle": [
+        96,
+        159
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rifle_crouch_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rifle_crouch_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        68,
+        129,
+        127,
+        224
+      ],
+      "drawScale": 1.0502283105022832,
+      "action": "crouch",
+      "phase": 1,
+      "role": "rifle",
+      "muzzle": [
+        96,
+        167
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rifle_crouch_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rifle_crouch_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        66,
+        144,
+        129,
+        224
+      ],
+      "drawScale": 1.0502283105022832,
+      "action": "crouch",
+      "phase": 2,
+      "role": "rifle",
+      "muzzle": [
+        96,
+        176
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rifle_crouch_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rifle_crouch_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        67,
+        155,
+        126,
+        224
+      ],
+      "drawScale": 1.0502283105022832,
+      "action": "crouch",
+      "phase": 3,
+      "role": "rifle",
+      "muzzle": [
+        96,
+        183
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_heavy_crouch_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_heavy_crouch_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        55,
+        115,
+        137,
+        224
+      ],
+      "drawScale": 1.25,
+      "action": "crouch",
+      "phase": 0,
+      "role": "heavy",
+      "muzzle": [
+        96,
+        159
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_heavy_crouch_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_heavy_crouch_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        56,
+        129,
+        137,
+        224
+      ],
+      "drawScale": 1.25,
+      "action": "crouch",
+      "phase": 1,
+      "role": "heavy",
+      "muzzle": [
+        96,
+        167
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_heavy_crouch_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_heavy_crouch_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        56,
+        142,
+        136,
+        224
+      ],
+      "drawScale": 1.25,
+      "action": "crouch",
+      "phase": 2,
+      "role": "heavy",
+      "muzzle": [
+        96,
+        175
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_heavy_crouch_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_heavy_crouch_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        59,
+        152,
+        135,
+        224
+      ],
+      "drawScale": 1.25,
+      "action": "crouch",
+      "phase": 3,
+      "role": "heavy",
+      "muzzle": [
+        96,
+        181
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rocket_crouch_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rocket_crouch_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        75,
+        121,
+        134,
+        224
+      ],
+      "drawScale": 1.116504854368932,
+      "action": "crouch",
+      "phase": 0,
+      "role": "rocket",
+      "muzzle": [
+        96,
+        162
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rocket_crouch_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rocket_crouch_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        78,
+        131,
+        138,
+        224
+      ],
+      "drawScale": 1.116504854368932,
+      "action": "crouch",
+      "phase": 1,
+      "role": "rocket",
+      "muzzle": [
+        96,
+        168
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rocket_crouch_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rocket_crouch_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        76,
+        143,
+        137,
+        224
+      ],
+      "drawScale": 1.116504854368932,
+      "action": "crouch",
+      "phase": 2,
+      "role": "rocket",
+      "muzzle": [
+        96,
+        175
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_rocket_crouch_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_rocket_crouch_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        80,
+        151,
+        134,
+        224
+      ],
+      "drawScale": 1.116504854368932,
+      "action": "crouch",
+      "phase": 3,
+      "role": "rocket",
+      "muzzle": [
+        96,
+        180
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_laser_crouch_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_laser_crouch_0.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        67,
+        122,
+        127,
+        224
+      ],
+      "drawScale": 1.1274509803921569,
+      "action": "crouch",
+      "phase": 0,
+      "role": "laser",
+      "muzzle": [
+        96,
+        163
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_laser_crouch_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_laser_crouch_1.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        66,
+        132,
+        128,
+        224
+      ],
+      "drawScale": 1.1274509803921569,
+      "action": "crouch",
+      "phase": 1,
+      "role": "laser",
+      "muzzle": [
+        96,
+        169
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_laser_crouch_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_laser_crouch_2.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        66,
+        145,
+        131,
+        224
+      ],
+      "drawScale": 1.1274509803921569,
+      "action": "crouch",
+      "phase": 2,
+      "role": "laser",
+      "muzzle": [
+        96,
+        177
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_laser_crouch_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_laser_crouch_3.png",
+      "size": [
+        192,
+        256
+      ],
+      "anchor": [
+        96,
+        224
+      ],
+      "bounds": [
+        68,
+        152,
+        127,
+        224
+      ],
+      "drawScale": 1.1274509803921569,
+      "action": "crouch",
+      "phase": 3,
+      "role": "laser",
+      "muzzle": [
+        96,
+        181
+      ],
+      "vaultLiftBaked": false
+    },
+    "pb17_pickup_shotgun_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_shotgun_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        22,
+        77,
+        75
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 0
+    },
+    "pb17_pickup_shotgun_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_shotgun_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        22,
+        77,
+        75
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 1
+    },
+    "pb17_pickup_shotgun_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_shotgun_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        22,
+        77,
+        75
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 2
+    },
+    "pb17_pickup_shotgun_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_shotgun_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        22,
+        77,
+        75
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 3
+    },
+    "pb17_pickup_laser_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_laser_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        22,
+        77,
+        75
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 0
+    },
+    "pb17_pickup_laser_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_laser_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        21,
+        77,
+        74
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 1
+    },
+    "pb17_pickup_laser_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_laser_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        21,
+        77,
+        74
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 2
+    },
+    "pb17_pickup_laser_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_laser_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        22,
+        77,
+        75
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 3
+    },
+    "pb17_pickup_minigun_0": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_minigun_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        21,
+        77,
+        74
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 0
+    },
+    "pb17_pickup_minigun_1": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_minigun_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        21,
+        77,
+        74
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 1
+    },
+    "pb17_pickup_minigun_2": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_minigun_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        21,
+        77,
+        74
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 2
+    },
+    "pb17_pickup_minigun_3": {
+      "file": "expansion/topdown/art/bastion17_enemies/frames/pb17_pickup_minigun_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        19,
+        21,
+        77,
+        74
+      ],
+      "drawScale": 0.6896551724137931,
+      "action": "pickup",
+      "phase": 3
+    }
+  },
+  "sequences": {
+    "pb17_elite_idle": {
+      "frames": [
+        "pb17_elite_idle_0",
+        "pb17_elite_idle_1",
+        "pb17_elite_idle_2",
+        "pb17_elite_idle_3"
+      ],
+      "fps": 6,
+      "loop": true,
+      "drawScale": 1.288659793814433,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.5
+      }
+    },
+    "pb17_elite_walk": {
+      "frames": [
+        "pb17_elite_walk_0",
+        "pb17_elite_walk_1",
+        "pb17_elite_walk_2",
+        "pb17_elite_walk_3",
+        "pb17_elite_walk_4",
+        "pb17_elite_walk_5",
+        "pb17_elite_walk_6",
+        "pb17_elite_walk_7"
+      ],
+      "fps": 12,
+      "loop": true,
+      "drawScale": 1.288659793814433,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.5
+      }
+    },
+    "pb17_elite_fire": {
+      "frames": [
+        "pb17_elite_fire_0",
+        "pb17_elite_fire_1",
+        "pb17_elite_fire_2",
+        "pb17_elite_fire_3"
+      ],
+      "fps": 14,
+      "loop": true,
+      "drawScale": 1.288659793814433,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.5
+      }
+    },
+    "pb17_elite_crouch": {
+      "frames": [
+        "pb17_elite_crouch_0",
+        "pb17_elite_crouch_1",
+        "pb17_elite_crouch_2",
+        "pb17_elite_crouch_3"
+      ],
+      "fps": 12,
+      "loop": false,
+      "drawScale": 1.288659793814433,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.5
+      }
+    },
+    "pb17_elite_vault": {
+      "frames": [
+        "pb17_elite_vault_0",
+        "pb17_elite_vault_1",
+        "pb17_elite_vault_2",
+        "pb17_elite_vault_3",
+        "pb17_elite_vault_4",
+        "pb17_elite_vault_5"
+      ],
+      "fps": 10,
+      "loop": false,
+      "drawScale": 1.288659793814433,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.5
+      }
+    },
+    "pb17_elite_death": {
+      "frames": [
+        "pb17_elite_death_0",
+        "pb17_elite_death_1",
+        "pb17_elite_death_2",
+        "pb17_elite_death_3",
+        "pb17_elite_death_4",
+        "pb17_elite_death_5"
+      ],
+      "fps": 9,
+      "loop": false,
+      "drawScale": 1.288659793814433,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.5
+      }
+    },
+    "pb17_rifle_crouch": {
+      "frames": [
+        "pb17_rifle_crouch_0",
+        "pb17_rifle_crouch_1",
+        "pb17_rifle_crouch_2",
+        "pb17_rifle_crouch_3"
+      ],
+      "fps": 12,
+      "loop": false,
+      "drawScale": 1.0502283105022832,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.3879003558718861
+      }
+    },
+    "pb17_heavy_crouch": {
+      "frames": [
+        "pb17_heavy_crouch_0",
+        "pb17_heavy_crouch_1",
+        "pb17_heavy_crouch_2",
+        "pb17_heavy_crouch_3"
+      ],
+      "fps": 12,
+      "loop": false,
+      "drawScale": 1.25,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.39636363636363636
+      }
+    },
+    "pb17_rocket_crouch": {
+      "frames": [
+        "pb17_rocket_crouch_0",
+        "pb17_rocket_crouch_1",
+        "pb17_rocket_crouch_2",
+        "pb17_rocket_crouch_3"
+      ],
+      "fps": 12,
+      "loop": false,
+      "drawScale": 1.116504854368932,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.3665480427046263
+      }
+    },
+    "pb17_laser_crouch": {
+      "frames": [
+        "pb17_laser_crouch_0",
+        "pb17_laser_crouch_1",
+        "pb17_laser_crouch_2",
+        "pb17_laser_crouch_3"
+      ],
+      "fps": 12,
+      "loop": false,
+      "drawScale": 1.1274509803921569,
+      "rootContract": {
+        "cell": [
+          192,
+          256
+        ],
+        "anchor": [
+          96,
+          224
+        ],
+        "commonSourceScale": 0.3849056603773585
+      }
+    },
+    "pb17_pickup_shotgun": {
+      "frames": [
+        "pb17_pickup_shotgun_0",
+        "pb17_pickup_shotgun_1",
+        "pb17_pickup_shotgun_2",
+        "pb17_pickup_shotgun_3"
+      ],
+      "fps": 8,
+      "loop": true,
+      "drawScale": 0.6896551724137931,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "commonSourceScale": 0.2
+      }
+    },
+    "pb17_pickup_laser": {
+      "frames": [
+        "pb17_pickup_laser_0",
+        "pb17_pickup_laser_1",
+        "pb17_pickup_laser_2",
+        "pb17_pickup_laser_3"
+      ],
+      "fps": 8,
+      "loop": true,
+      "drawScale": 0.6896551724137931,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "commonSourceScale": 0.2
+      }
+    },
+    "pb17_pickup_minigun": {
+      "frames": [
+        "pb17_pickup_minigun_0",
+        "pb17_pickup_minigun_1",
+        "pb17_pickup_minigun_2",
+        "pb17_pickup_minigun_3"
+      ],
+      "fps": 8,
+      "loop": true,
+      "drawScale": 0.6896551724137931,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "commonSourceScale": 0.2
+      }
+    }
+  },
+  "audit": [
+    {
+      "key": "pb17_elite_idle_0",
+      "source": "elite.png",
+      "sourceComponent": 1,
+      "sourceRect": [
+        60,
+        20,
+        163,
+        214
+      ],
+      "sourceRoot": [
+        111.0,
+        214
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        127
+      ],
+      "sha256": "743698afcf573c8b1e331c1633c55a3c2b905370f9741092c7c5d3cbc3ccbe58"
+    },
+    {
+      "key": "pb17_elite_idle_1",
+      "source": "elite.png",
+      "sourceComponent": 2,
+      "sourceRect": [
+        282,
+        20,
+        384,
+        214
+      ],
+      "sourceRoot": [
+        332.0,
+        214
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        71,
+        127
+      ],
+      "sha256": "3c6dd79cc8103f0ecafb9c71f0b640c0231f5b8f68de246305c8dfe9ed6f495f"
+    },
+    {
+      "key": "pb17_elite_idle_2",
+      "source": "elite.png",
+      "sourceComponent": 3,
+      "sourceRect": [
+        502,
+        20,
+        605,
+        214
+      ],
+      "sourceRoot": [
+        554.0,
+        214
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        127
+      ],
+      "sha256": "c4c423041275ea76ec71b995e940188798b406a093af26f9fefdbfc5863f49e2"
+    },
+    {
+      "key": "pb17_elite_idle_3",
+      "source": "elite.png",
+      "sourceComponent": 4,
+      "sourceRect": [
+        725,
+        20,
+        827,
+        214
+      ],
+      "sourceRoot": [
+        776.0,
+        214
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        127
+      ],
+      "sha256": "ede73560fa87721e0894836578a6edf25ea56ea9ece33f9dfe406e830e0d0da1"
+    },
+    {
+      "key": "pb17_elite_walk_0",
+      "source": "elite.png",
+      "sourceComponent": 5,
+      "sourceRect": [
+        61,
+        233,
+        159,
+        437
+      ],
+      "sourceRoot": [
+        110.5,
+        437
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        71,
+        122
+      ],
+      "sha256": "ebd5940e3d7589c2757e91bda98621ed63f70dfb7283ec18077798186f40011e"
+    },
+    {
+      "key": "pb17_elite_walk_1",
+      "source": "elite.png",
+      "sourceComponent": 6,
+      "sourceRect": [
+        283,
+        234,
+        381,
+        438
+      ],
+      "sourceRoot": [
+        332.0,
+        438
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        72,
+        122
+      ],
+      "sha256": "d316a42b87cc7669dd19b65c7bd3ce4bbe50de0277b02766225dbd2021f83538"
+    },
+    {
+      "key": "pb17_elite_walk_2",
+      "source": "elite.png",
+      "sourceComponent": 7,
+      "sourceRect": [
+        504,
+        234,
+        602,
+        439
+      ],
+      "sourceRoot": [
+        553.0,
+        439
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        72,
+        122
+      ],
+      "sha256": "990e0570883994c6fb2cec86ac1a93b7ed79645b18ffaea0dfc9f4f496667795"
+    },
+    {
+      "key": "pb17_elite_walk_3",
+      "source": "elite.png",
+      "sourceComponent": 8,
+      "sourceRect": [
+        726,
+        234,
+        824,
+        438
+      ],
+      "sourceRoot": [
+        776.0,
+        438
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        71,
+        122
+      ],
+      "sha256": "c998a36188e6277c40626c7015ee57caf03344a5fb28d14a76129e9d37fdb8cd"
+    },
+    {
+      "key": "pb17_elite_walk_4",
+      "source": "elite.png",
+      "sourceComponent": 11,
+      "sourceRect": [
+        63,
+        458,
+        160,
+        659
+      ],
+      "sourceRoot": [
+        112.0,
+        659
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        72,
+        124
+      ],
+      "sha256": "e9633d58477e0ebf913f3f5a88388e2df5fc2195795610f7a4442c1c32f8dbf7"
+    },
+    {
+      "key": "pb17_elite_walk_5",
+      "source": "elite.png",
+      "sourceComponent": 9,
+      "sourceRect": [
+        284,
+        457,
+        381,
+        659
+      ],
+      "sourceRoot": [
+        332.0,
+        659
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        72,
+        123
+      ],
+      "sha256": "cb60bde4432c6c0c13a2cbe5fd7c15c4eb0b98c84fc479d83873ffbf01f1982a"
+    },
+    {
+      "key": "pb17_elite_walk_6",
+      "source": "elite.png",
+      "sourceComponent": 12,
+      "sourceRect": [
+        506,
+        458,
+        603,
+        659
+      ],
+      "sourceRoot": [
+        554.0,
+        659
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        72,
+        124
+      ],
+      "sha256": "9ae79a2edd7fed98245308bce71c8aaaf376a94423f57736bffbcc2b94493719"
+    },
+    {
+      "key": "pb17_elite_walk_7",
+      "source": "elite.png",
+      "sourceComponent": 10,
+      "sourceRect": [
+        727,
+        457,
+        824,
+        659
+      ],
+      "sourceRoot": [
+        776.0,
+        659
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        72,
+        123
+      ],
+      "sha256": "33212b41c18d7fbffa3534a8260fbd3362a8a24e721e453fd69e7551f9e75787"
+    },
+    {
+      "key": "pb17_elite_fire_0",
+      "source": "elite.png",
+      "sourceComponent": 13,
+      "sourceRect": [
+        58,
+        680,
+        162,
+        880
+      ],
+      "sourceRoot": [
+        111.0,
+        880
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        124
+      ],
+      "sha256": "8a6ddfb84685ab06210a4db0d5d10c6d0a0dd151f5812122f8908cd085a3f711"
+    },
+    {
+      "key": "pb17_elite_fire_1",
+      "source": "elite.png",
+      "sourceComponent": 14,
+      "sourceRect": [
+        280,
+        680,
+        384,
+        880
+      ],
+      "sourceRoot": [
+        331.0,
+        880
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        124
+      ],
+      "sha256": "9b82827232fd78be4143b287c4c85748312fcd65bcc5ef388f4ed460f1bd2c9b"
+    },
+    {
+      "key": "pb17_elite_fire_2",
+      "source": "elite.png",
+      "sourceComponent": 15,
+      "sourceRect": [
+        501,
+        680,
+        604,
+        880
+      ],
+      "sourceRoot": [
+        553.0,
+        880
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        124
+      ],
+      "sha256": "e10e28b826b412983288abeb24d99e6524f59f2e87dae55a9b59ac67837e2463"
+    },
+    {
+      "key": "pb17_elite_fire_3",
+      "source": "elite.png",
+      "sourceComponent": 16,
+      "sourceRect": [
+        724,
+        682,
+        828,
+        880
+      ],
+      "sourceRoot": [
+        776.0,
+        880
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        125
+      ],
+      "sha256": "115836009d1e6c0cccc25072ceb648e377f44e72b1412bca958cda3611103088"
+    },
+    {
+      "key": "pb17_elite_crouch_0",
+      "source": "elite.png",
+      "sourceComponent": 17,
+      "sourceRect": [
+        56,
+        904,
+        164,
+        1101
+      ],
+      "sourceRoot": [
+        110.0,
+        1101
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        69,
+        126
+      ],
+      "sha256": "40879cfa21fb6eeefa42c4a957b539bd806b1e4a124d9579d69820d155987367"
+    },
+    {
+      "key": "pb17_elite_crouch_1",
+      "source": "elite.png",
+      "sourceComponent": 18,
+      "sourceRect": [
+        284,
+        915,
+        385,
+        1101
+      ],
+      "sourceRoot": [
+        334.0,
+        1101
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        71,
+        131
+      ],
+      "sha256": "f4fe9b122d33b1d4c025d01c4ef8674994c6944dab29333488c16bec2c6157ed"
+    },
+    {
+      "key": "pb17_elite_crouch_2",
+      "source": "elite.png",
+      "sourceComponent": 19,
+      "sourceRect": [
+        505,
+        929,
+        605,
+        1098
+      ],
+      "sourceRoot": [
+        555.0,
+        1098
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        71,
+        140
+      ],
+      "sha256": "13ec48c145635d6c9e88bd178de775e926073194e897c1fec8bd074b0d313da2"
+    },
+    {
+      "key": "pb17_elite_crouch_3",
+      "source": "elite.png",
+      "sourceComponent": 20,
+      "sourceRect": [
+        726,
+        947,
+        824,
+        1095
+      ],
+      "sourceRoot": [
+        775.0,
+        1095
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        72,
+        150
+      ],
+      "sha256": "44012b6e4212fd38318129121320a8202cac779e688cf7a7bce320124402705e"
+    },
+    {
+      "key": "pb17_elite_vault_0",
+      "source": "elite.png",
+      "sourceComponent": 24,
+      "sourceRect": [
+        58,
+        1160,
+        162,
+        1326
+      ],
+      "sourceRoot": [
+        108.0,
+        1324.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        71,
+        142
+      ],
+      "sha256": "3b950a015e52529ec0d233fdb20dcdab461e9362843dc74899ca26ce250d89f8"
+    },
+    {
+      "key": "pb17_elite_vault_1",
+      "source": "elite.png",
+      "sourceComponent": 23,
+      "sourceRect": [
+        280,
+        1120,
+        385,
+        1319
+      ],
+      "sourceRoot": [
+        331.0,
+        1324.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        122
+      ],
+      "sha256": "98ad67af7c0df7c218b4aab50edd56b614dc53d3d4fe2014d93d547526ad9164"
+    },
+    {
+      "key": "pb17_elite_vault_2",
+      "source": "elite.png",
+      "sourceComponent": 21,
+      "sourceRect": [
+        500,
+        1113,
+        606,
+        1319
+      ],
+      "sourceRoot": [
+        554.0,
+        1324.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        69,
+        118
+      ],
+      "sha256": "2a0e1370535e7c931176c5542317f6e7f9448356d83103b35ba39842b38ef77c"
+    },
+    {
+      "key": "pb17_elite_vault_3",
+      "source": "elite.png",
+      "sourceComponent": 22,
+      "sourceRect": [
+        720,
+        1116,
+        833,
+        1291
+      ],
+      "sourceRoot": [
+        776.0,
+        1324.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        68,
+        120
+      ],
+      "sha256": "d26fafd17ee4af83f1032829dc812905e6fc200cfa8aa9b6568dc314821f502b"
+    },
+    {
+      "key": "pb17_elite_vault_4",
+      "source": "elite.png",
+      "sourceComponent": 28,
+      "sourceRect": [
+        58,
+        1360,
+        163,
+        1546
+      ],
+      "sourceRoot": [
+        111.0,
+        1545.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        132
+      ],
+      "sha256": "9fbaff6f7e526d6195187897a90b83ee882492000bc5f8549e136446cdaa3bd7"
+    },
+    {
+      "key": "pb17_elite_vault_5",
+      "source": "elite.png",
+      "sourceComponent": 25,
+      "sourceRect": [
+        279,
+        1338,
+        383,
+        1545
+      ],
+      "sourceRoot": [
+        332.0,
+        1545.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        70,
+        120
+      ],
+      "sha256": "f133aafe3dbf952a3564d95a781ac2f6f207b0ead52d7e9e655f8665d36d3188"
+    },
+    {
+      "key": "pb17_elite_death_0",
+      "source": "elite.png",
+      "sourceComponent": 26,
+      "sourceRect": [
+        498,
+        1341,
+        618,
+        1541
+      ],
+      "sourceRoot": [
+        554.375,
+        1545.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        68,
+        122
+      ],
+      "sha256": "e1aa2b6706c902eb969d7b3359ec60736b69a511b96381ed1d75faa08739a558"
+    },
+    {
+      "key": "pb17_elite_death_1",
+      "source": "elite.png",
+      "sourceComponent": 27,
+      "sourceRect": [
+        710,
+        1355,
+        829,
+        1545
+      ],
+      "sourceRoot": [
+        776.125,
+        1545.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        63,
+        129
+      ],
+      "sha256": "ab24370d3b77597024705846e09d12902ef3f2daa77eb4b2fcfba388129e6441"
+    },
+    {
+      "key": "pb17_elite_death_2",
+      "source": "elite.png",
+      "sourceComponent": 32,
+      "sourceRect": [
+        42,
+        1600,
+        192,
+        1751
+      ],
+      "sourceRoot": [
+        110.875,
+        1767.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        62,
+        140
+      ],
+      "sha256": "7d54dc6e5b23e02ed8b2fa17c7069325e1e50de4df00fbd86c4aba1ea8f5478b"
+    },
+    {
+      "key": "pb17_elite_death_3",
+      "source": "elite.png",
+      "sourceComponent": 33,
+      "sourceRect": [
+        256,
+        1615,
+        410,
+        1732
+      ],
+      "sourceRoot": [
+        332.625,
+        1767.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        58,
+        148
+      ],
+      "sha256": "6e9ba041da61ecdaeb3e244450b783cd6a96ddffd356b793e7c011a55c8b46f2"
+    },
+    {
+      "key": "pb17_elite_death_4",
+      "source": "elite.png",
+      "sourceComponent": 34,
+      "sourceRect": [
+        467,
+        1641,
+        633,
+        1742
+      ],
+      "sourceRoot": [
+        554.375,
+        1767.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        52,
+        161
+      ],
+      "sha256": "22b14c9c7925ed9c19830aecde083801811680086d4b32411d7cdb6f8f6ee48a"
+    },
+    {
+      "key": "pb17_elite_death_5",
+      "source": "elite.png",
+      "sourceComponent": 35,
+      "sourceRect": [
+        683,
+        1655,
+        868,
+        1738
+      ],
+      "sourceRoot": [
+        776.125,
+        1767.0
+      ],
+      "sourceScale": 0.5,
+      "offset": [
+        49,
+        168
+      ],
+      "sha256": "ba1369b97c7201310275735d37ff529c97949e4a6732f2f94b1aecd8ba1a4526"
+    },
+    {
+      "key": "pb17_elite_fire_1",
+      "source": "elite_firefix.png",
+      "sourceRect": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "sourceScale": 0.17679558011049723,
+      "offset": [
+        0,
+        2
+      ],
+      "reason": "builtin image edit moves flash onto actual forward barrel; baseline nudge only",
+      "sha256": "97018ea0ddf937683674bb60e8254aa2d2d7023148d207bee4abe166621389ba"
+    },
+    {
+      "key": "pb17_rifle_crouch_0",
+      "source": "crouch.png",
+      "sourceComponent": 1,
+      "sourceRect": [
+        82,
+        22,
+        230,
+        303
+      ],
+      "sourceRoot": [
+        156.0,
+        303
+      ],
+      "sourceScale": 0.3879003558718861,
+      "offset": [
+        67,
+        115
+      ],
+      "sha256": "61507583855952c852e9200c6ed1e571266a898ac40ab1d3c65fbd6e52be2fcf"
+    },
+    {
+      "key": "pb17_rifle_crouch_1",
+      "source": "crouch.png",
+      "sourceComponent": 2,
+      "sourceRect": [
+        397,
+        59,
+        548,
+        303
+      ],
+      "sourceRoot": [
+        470.0,
+        303
+      ],
+      "sourceScale": 0.3879003558718861,
+      "offset": [
+        68,
+        129
+      ],
+      "sha256": "ca293f0f0a0e95522b2b955313ae65f8502b455a9c53a5bc6ff753978704564e"
+    },
+    {
+      "key": "pb17_rifle_crouch_2",
+      "source": "crouch.png",
+      "sourceComponent": 3,
+      "sourceRect": [
+        703,
+        96,
+        866,
+        303
+      ],
+      "sourceRoot": [
+        781.0,
+        303
+      ],
+      "sourceScale": 0.3879003558718861,
+      "offset": [
+        66,
+        144
+      ],
+      "sha256": "fb01fdf614ee2e26350040269f39a803939776e435ec8674a11863015609ff0c"
+    },
+    {
+      "key": "pb17_rifle_crouch_3",
+      "source": "crouch.png",
+      "sourceComponent": 4,
+      "sourceRect": [
+        1022,
+        125,
+        1173,
+        303
+      ],
+      "sourceRoot": [
+        1096.0,
+        303
+      ],
+      "sourceScale": 0.3879003558718861,
+      "offset": [
+        67,
+        155
+      ],
+      "sha256": "f84e77596f59f3e6e706f00203cd4d1f558bbb27b863311c2014318adf440719"
+    },
+    {
+      "key": "pb17_heavy_crouch_0",
+      "source": "crouch.png",
+      "sourceComponent": 5,
+      "sourceRect": [
+        52,
+        335,
+        260,
+        610
+      ],
+      "sourceRoot": [
+        156.0,
+        610
+      ],
+      "sourceScale": 0.39636363636363636,
+      "offset": [
+        55,
+        115
+      ],
+      "sha256": "ee1e6fba1e62b32dd09ac41695a6207aeaaa4658a35c9f5f50dcc0591f7c487a"
+    },
+    {
+      "key": "pb17_heavy_crouch_1",
+      "source": "crouch.png",
+      "sourceComponent": 6,
+      "sourceRect": [
+        371,
+        371,
+        576,
+        611
+      ],
+      "sourceRoot": [
+        473.0,
+        611
+      ],
+      "sourceScale": 0.39636363636363636,
+      "offset": [
+        56,
+        129
+      ],
+      "sha256": "9b45f802a5854b166f61f7327ac0435bded4d53bc5e9efda3b774806dae45229"
+    },
+    {
+      "key": "pb17_heavy_crouch_2",
+      "source": "crouch.png",
+      "sourceComponent": 7,
+      "sourceRect": [
+        684,
+        404,
+        887,
+        611
+      ],
+      "sourceRoot": [
+        784.5,
+        611
+      ],
+      "sourceScale": 0.39636363636363636,
+      "offset": [
+        56,
+        142
+      ],
+      "sha256": "1decb75168b2af0648bf2238cc80f5229790f930e418376991baefc9f9a4e948"
+    },
+    {
+      "key": "pb17_heavy_crouch_3",
+      "source": "crouch.png",
+      "sourceComponent": 8,
+      "sourceRect": [
+        1007,
+        429,
+        1198,
+        611
+      ],
+      "sourceRoot": [
+        1101.0,
+        611
+      ],
+      "sourceScale": 0.39636363636363636,
+      "offset": [
+        59,
+        152
+      ],
+      "sha256": "04cc179ecf4b3e93513bd12bcce14093abab263fd92ed8c7f80f96e51ca1f95b"
+    },
+    {
+      "key": "pb17_rocket_crouch_0",
+      "source": "crouch.png",
+      "sourceComponent": 9,
+      "sourceRect": [
+        84,
+        639,
+        246,
+        920
+      ],
+      "sourceRoot": [
+        140.0,
+        920
+      ],
+      "sourceScale": 0.3665480427046263,
+      "offset": [
+        75,
+        121
+      ],
+      "sha256": "b8f199c3d418610b004ec39783ae5e8aadcc20f507d96e073c83504b0eacb010"
+    },
+    {
+      "key": "pb17_rocket_crouch_1",
+      "source": "crouch.png",
+      "sourceComponent": 10,
+      "sourceRect": [
+        400,
+        666,
+        563,
+        920
+      ],
+      "sourceRoot": [
+        450.0,
+        920
+      ],
+      "sourceScale": 0.3665480427046263,
+      "offset": [
+        78,
+        131
+      ],
+      "sha256": "b622930b1d67301c5ca5b418c8286870a640efff51d0bd34aaa24b8a7faede33"
+    },
+    {
+      "key": "pb17_rocket_crouch_2",
+      "source": "crouch.png",
+      "sourceComponent": 11,
+      "sourceRect": [
+        709,
+        700,
+        875,
+        920
+      ],
+      "sourceRoot": [
+        764.0,
+        920
+      ],
+      "sourceScale": 0.3665480427046263,
+      "offset": [
+        76,
+        143
+      ],
+      "sha256": "9fafaa4cad8ba35b554c11197a491251c7397bf0c382710e337d3f1ff17d7539"
+    },
+    {
+      "key": "pb17_rocket_crouch_3",
+      "source": "crouch.png",
+      "sourceComponent": 12,
+      "sourceRect": [
+        1035,
+        722,
+        1183,
+        920
+      ],
+      "sourceRoot": [
+        1078.0,
+        920
+      ],
+      "sourceScale": 0.3665480427046263,
+      "offset": [
+        80,
+        151
+      ],
+      "sha256": "70d0081065e24b14cab03b2c09cbe2fae9b0456574bc60bd4126f98e74d8c413"
+    },
+    {
+      "key": "pb17_laser_crouch_0",
+      "source": "crouch.png",
+      "sourceComponent": 13,
+      "sourceRect": [
+        79,
+        964,
+        236,
+        1229
+      ],
+      "sourceRoot": [
+        154.0,
+        1229
+      ],
+      "sourceScale": 0.3849056603773585,
+      "offset": [
+        67,
+        122
+      ],
+      "sha256": "6491db89af5fa3afddbf82eec624a411900e5de0817fedfb30475e63f3ff2716"
+    },
+    {
+      "key": "pb17_laser_crouch_1",
+      "source": "crouch.png",
+      "sourceComponent": 14,
+      "sourceRect": [
+        392,
+        991,
+        554,
+        1229
+      ],
+      "sourceRoot": [
+        470.0,
+        1229
+      ],
+      "sourceScale": 0.3849056603773585,
+      "offset": [
+        66,
+        132
+      ],
+      "sha256": "f539be6fc61ae21b6507ac9e6b912cdac11b5235f85164ecb67c3d1fa6b38bc9"
+    },
+    {
+      "key": "pb17_laser_crouch_2",
+      "source": "crouch.png",
+      "sourceComponent": 15,
+      "sourceRect": [
+        704,
+        1024,
+        872,
+        1229
+      ],
+      "sourceRoot": [
+        783.0,
+        1229
+      ],
+      "sourceScale": 0.3849056603773585,
+      "offset": [
+        66,
+        145
+      ],
+      "sha256": "3a097085ae891579c2fe41a02e0f0dd8e27d12a47922848f881e14cb276b95d2"
+    },
+    {
+      "key": "pb17_laser_crouch_3",
+      "source": "crouch.png",
+      "sourceComponent": 16,
+      "sourceRect": [
+        1023,
+        1042,
+        1177,
+        1229
+      ],
+      "sourceRoot": [
+        1096.0,
+        1229
+      ],
+      "sourceScale": 0.3849056603773585,
+      "offset": [
+        68,
+        152
+      ],
+      "sha256": "648cc570c3fe0954a297c705d423e66b35653b6417fb95df0558bd416961cf3f"
+    },
+    {
+      "key": "pb17_pickup_shotgun_0",
+      "source": "pickup.png",
+      "sourceComponent": 1,
+      "sourceRect": [
+        56,
+        71,
+        347,
+        335
+      ],
+      "sourceRoot": [
+        201.5,
+        203.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        22
+      ],
+      "sha256": "9744ac82412c81b36c56967ce05bc7b4770f1127525b1d9c8c42b54f4034fc74"
+    },
+    {
+      "key": "pb17_pickup_shotgun_1",
+      "source": "pickup.png",
+      "sourceComponent": 2,
+      "sourceRect": [
+        405,
+        71,
+        696,
+        335
+      ],
+      "sourceRoot": [
+        550.5,
+        203.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        22
+      ],
+      "sha256": "6abdb3c38e04decf2a5e5c28cc5e06bf5ad316db5356b64e89a1937d2085696a"
+    },
+    {
+      "key": "pb17_pickup_shotgun_2",
+      "source": "pickup.png",
+      "sourceComponent": 3,
+      "sourceRect": [
+        754,
+        71,
+        1044,
+        335
+      ],
+      "sourceRoot": [
+        899.0,
+        203.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        22
+      ],
+      "sha256": "3f5a96a697fd4f44d8f4024efe533086e1aff5ace4f0f720972e4355d9a474a1"
+    },
+    {
+      "key": "pb17_pickup_shotgun_3",
+      "source": "pickup.png",
+      "sourceComponent": 4,
+      "sourceRect": [
+        1103,
+        71,
+        1393,
+        335
+      ],
+      "sourceRoot": [
+        1248.0,
+        203.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        22
+      ],
+      "sha256": "902a66d71ef0c3ecbf1fdb8a70b024a0e24e36b14e809cd2c9ddc1b5272f896f"
+    },
+    {
+      "key": "pb17_pickup_laser_0",
+      "source": "pickup.png",
+      "sourceComponent": 5,
+      "sourceRect": [
+        56,
+        405,
+        347,
+        670
+      ],
+      "sourceRoot": [
+        201.5,
+        537.5
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        22
+      ],
+      "sha256": "832dd49a9c5fe4e25958b68dc20f545de1aadf698dc954619488aad7880979cb"
+    },
+    {
+      "key": "pb17_pickup_laser_1",
+      "source": "pickup.png",
+      "sourceComponent": 6,
+      "sourceRect": [
+        405,
+        405,
+        696,
+        671
+      ],
+      "sourceRoot": [
+        550.5,
+        538.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        21
+      ],
+      "sha256": "1a26b512c543281938b3d4b3d7cab3c40db8d2ec0ff403b642df02e72fad673a"
+    },
+    {
+      "key": "pb17_pickup_laser_2",
+      "source": "pickup.png",
+      "sourceComponent": 7,
+      "sourceRect": [
+        754,
+        405,
+        1044,
+        671
+      ],
+      "sourceRoot": [
+        899.0,
+        538.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        21
+      ],
+      "sha256": "c759f435a3b738be6d19eb2715d467dc29c72d3fc80e5667a1c044a9963042dc"
+    },
+    {
+      "key": "pb17_pickup_laser_3",
+      "source": "pickup.png",
+      "sourceComponent": 8,
+      "sourceRect": [
+        1103,
+        405,
+        1393,
+        670
+      ],
+      "sourceRoot": [
+        1248.0,
+        537.5
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        22
+      ],
+      "sha256": "d096e4143dd5583f16dd98c3487bbbd5bd5b1d0e797214eb291eb6baa2e2f134"
+    },
+    {
+      "key": "pb17_pickup_minigun_0",
+      "source": "pickup.png",
+      "sourceComponent": 9,
+      "sourceRect": [
+        56,
+        740,
+        347,
+        1006
+      ],
+      "sourceRoot": [
+        201.5,
+        873.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        21
+      ],
+      "sha256": "36727fe3075a613f0203a8a9ce5b68d8289e673810261ac40890eced119c20a9"
+    },
+    {
+      "key": "pb17_pickup_minigun_1",
+      "source": "pickup.png",
+      "sourceComponent": 10,
+      "sourceRect": [
+        405,
+        740,
+        696,
+        1006
+      ],
+      "sourceRoot": [
+        550.5,
+        873.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        21
+      ],
+      "sha256": "b73b9e1d2e7f7b183602c53078905f586be0c8fe049975fd55ad84c680523f65"
+    },
+    {
+      "key": "pb17_pickup_minigun_2",
+      "source": "pickup.png",
+      "sourceComponent": 11,
+      "sourceRect": [
+        754,
+        740,
+        1044,
+        1006
+      ],
+      "sourceRoot": [
+        899.0,
+        873.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        21
+      ],
+      "sha256": "964d33d04a44e85318a5e8b548704074567bb480722dbce9a06b6a307a9531c0"
+    },
+    {
+      "key": "pb17_pickup_minigun_3",
+      "source": "pickup.png",
+      "sourceComponent": 12,
+      "sourceRect": [
+        1103,
+        740,
+        1393,
+        1006
+      ],
+      "sourceRoot": [
+        1248.0,
+        873.0
+      ],
+      "sourceScale": 0.2,
+      "offset": [
+        19,
+        21
+      ],
+      "sha256": "5a12b0e0b7053c85686b252c115321b25f418ff03dcf24e3fdbc2d4067686b4e"
+    }
+  ],
+  "sources": {
+    "elite": {
+      "file": "expansion/topdown/art/bastion17_enemies/source/elite.png",
+      "size": [
+        887,
+        1774
+      ],
+      "sha256": "fa785bf2fd012669d37303096d9612707c5bdc0e71bc41fe6365353db6d9997f",
+      "prompt": "expansion/topdown/art/bastion17_enemies/source/elite_prompt.txt"
+    },
+    "elite_firefix": {
+      "file": "expansion/topdown/art/bastion17_enemies/source/elite_firefix.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "sha256": "3d15c202247e748391f66f8066f72dfc1c739481f9b881834c04736d4ea6b342",
+      "prompt": "expansion/topdown/art/bastion17_enemies/source/elite_firefix_prompt.txt"
+    },
+    "crouch": {
+      "file": "expansion/topdown/art/bastion17_enemies/source/crouch.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "48b54206ed2448e482e5039db867777dea61c2dbde054134a3b133f5cebbb7b0",
+      "prompt": "expansion/topdown/art/bastion17_enemies/source/crouch_prompt.txt"
+    },
+    "pickup": {
+      "file": "expansion/topdown/art/bastion17_enemies/source/pickup.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "abf8f7127ca76d3bdebd10d2be4d607416ffa277dc6afbcbda460cc04e54cce4",
+      "prompt": "expansion/topdown/art/bastion17_enemies/source/pickup_prompt.txt"
+    }
+  },
+  "contract": {
+    "actorCell": [
+      192,
+      256
+    ],
+    "actorAnchor": [
+      96,
+      224
+    ],
+    "pickupCell": [
+      96,
+      96
+    ],
+    "pickupAnchor": [
+      48,
+      48
+    ],
+    "method": "connected authored figure extraction; shared per-bank proportional nearest scale, integer head root/ground registration; binary alpha128",
+    "notes": "Ordinary crouch matches existing approved idle unit height. Original source pixels/prompts retained."
+  }
+}

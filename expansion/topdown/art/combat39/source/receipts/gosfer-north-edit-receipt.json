@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: ad6a3e5b-0135-4541-97d5-12e9f4e55bac\njob_id: ad6a3e5b-0135-4541-97d5-12e9f4e55bac\nmodel: pixen\nedit: Keep exact back-facing Gosfer body, armor, palette, overhead view, feet positions. Change only arms and rifle: shoulder rifle aimed straight NORTH, vertically up away from viewer. Both hands hold grips, elbows low. One rigid gun points up just to right of helmet. Never aim left or toward viewer. Transparent background.\nsource: 160x160px\nsize: 160x160px\ntransparent: True\nasset_id: 19f99159-6875-5878-8b95-7013a53c62c5\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"ad6a3e5b-0135-4541-97d5-12e9f4e55bac\")"
+    }
+  ],
+  "isError": false
+}

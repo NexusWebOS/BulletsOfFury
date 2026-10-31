@@ -1,0 +1,2477 @@
+{
+  "version": "1013-bastion16-environment-r1",
+  "assets": {
+    "pb16_stage": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_stage.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        0,
+        0,
+        640,
+        480
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_0.png",
+      "size": [
+        192,
+        112
+      ],
+      "anchor": [
+        96,
+        100
+      ],
+      "bounds": [
+        16,
+        18,
+        176,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_1.png",
+      "size": [
+        192,
+        112
+      ],
+      "anchor": [
+        96,
+        100
+      ],
+      "bounds": [
+        16,
+        18,
+        176,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_2.png",
+      "size": [
+        192,
+        112
+      ],
+      "anchor": [
+        96,
+        100
+      ],
+      "bounds": [
+        16,
+        18,
+        176,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_3.png",
+      "size": [
+        192,
+        112
+      ],
+      "anchor": [
+        96,
+        100
+      ],
+      "bounds": [
+        16,
+        48,
+        176,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_barrel_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_barrel_0.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        32,
+        50,
+        64,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_barrel_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_barrel_1.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        32,
+        40,
+        62,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_barrel_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_barrel_2.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        28,
+        40,
+        68,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_barrel_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_barrel_3.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        26,
+        58,
+        70,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb16_door_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_door_0.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        14,
+        18,
+        148,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_door_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_door_1.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        14,
+        18,
+        148,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_door_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_door_2.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        14,
+        18,
+        148,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_door_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_door_3.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        14,
+        18,
+        148,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_gun_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_gun_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        20,
+        76,
+        76
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_gun_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_gun_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        20,
+        80,
+        76
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_gun_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_gun_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        20,
+        20,
+        76,
+        76
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_gun_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_gun_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        20,
+        20,
+        78,
+        76
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_laser_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_laser_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        20,
+        80,
+        78
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_laser_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_laser_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        20,
+        80,
+        78
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_laser_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_laser_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        20,
+        78,
+        78
+      ],
+      "drawScale": 1
+    },
+    "pb16_turret_laser_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_turret_laser_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        20,
+        80,
+        78
+      ],
+      "drawScale": 1
+    },
+    "pb16_core_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_core_0.png",
+      "size": [
+        176,
+        176
+      ],
+      "anchor": [
+        88,
+        88
+      ],
+      "bounds": [
+        18,
+        16,
+        158,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb16_core_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_core_1.png",
+      "size": [
+        176,
+        176
+      ],
+      "anchor": [
+        88,
+        88
+      ],
+      "bounds": [
+        18,
+        16,
+        158,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb16_core_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_core_2.png",
+      "size": [
+        176,
+        176
+      ],
+      "anchor": [
+        88,
+        88
+      ],
+      "bounds": [
+        18,
+        16,
+        158,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb16_core_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_core_3.png",
+      "size": [
+        176,
+        176
+      ],
+      "anchor": [
+        88,
+        88
+      ],
+      "bounds": [
+        18,
+        16,
+        158,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_run_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_run_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        60,
+        64,
+        190,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_run_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_run_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        66,
+        64,
+        190,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_run_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_run_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        62,
+        66,
+        190,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_run_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_run_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        58,
+        66,
+        184,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_throw_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_throw_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        50,
+        68,
+        202,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_throw_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_throw_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        50,
+        70,
+        204,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_throw_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_throw_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        56,
+        56,
+        208,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_throw_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_throw_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        52,
+        66,
+        206,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_jump_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_jump_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        58,
+        100,
+        186,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_jump_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_jump_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        70,
+        60,
+        186,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_jump_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_jump_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        82,
+        70,
+        180,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_jump_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_jump_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        48,
+        106,
+        204,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_lightning_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_lightning_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        60,
+        66,
+        188,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_lightning_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_lightning_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        62,
+        66,
+        190,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_lightning_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_lightning_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        38,
+        62,
+        220,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_helios_lightning_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_helios_lightning_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        232
+      ],
+      "bounds": [
+        70,
+        62,
+        194,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb16_orb_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_orb_0.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "bounds": [
+        16,
+        18,
+        46,
+        48
+      ],
+      "drawScale": 1
+    },
+    "pb16_orb_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_orb_1.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "bounds": [
+        16,
+        16,
+        48,
+        46
+      ],
+      "drawScale": 1
+    },
+    "pb16_orb_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_orb_2.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "bounds": [
+        16,
+        16,
+        48,
+        46
+      ],
+      "drawScale": 1
+    },
+    "pb16_orb_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_orb_3.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "bounds": [
+        16,
+        16,
+        48,
+        46
+      ],
+      "drawScale": 1
+    },
+    "pb16_geyser_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_geyser_0.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        40,
+        84,
+        118,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_geyser_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_geyser_1.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        36,
+        48,
+        124,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_geyser_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_geyser_2.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        36,
+        20,
+        128,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_geyser_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_geyser_3.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        36,
+        32,
+        122,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb16_lightning_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_lightning_0.png",
+      "size": [
+        176,
+        96
+      ],
+      "anchor": [
+        88,
+        48
+      ],
+      "bounds": [
+        18,
+        18,
+        158,
+        78
+      ],
+      "drawScale": 1
+    },
+    "pb16_lightning_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_lightning_1.png",
+      "size": [
+        176,
+        96
+      ],
+      "anchor": [
+        88,
+        48
+      ],
+      "bounds": [
+        20,
+        20,
+        158,
+        76
+      ],
+      "drawScale": 1
+    },
+    "pb16_lightning_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_lightning_2.png",
+      "size": [
+        176,
+        96
+      ],
+      "anchor": [
+        88,
+        48
+      ],
+      "bounds": [
+        20,
+        16,
+        158,
+        78
+      ],
+      "drawScale": 1
+    },
+    "pb16_lightning_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_lightning_3.png",
+      "size": [
+        176,
+        96
+      ],
+      "anchor": [
+        88,
+        48
+      ],
+      "bounds": [
+        20,
+        18,
+        156,
+        78
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_low_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_low_0.png",
+      "size": [
+        192,
+        80
+      ],
+      "anchor": [
+        96,
+        68
+      ],
+      "bounds": [
+        16,
+        34,
+        176,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_low_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_low_1.png",
+      "size": [
+        192,
+        80
+      ],
+      "anchor": [
+        96,
+        68
+      ],
+      "bounds": [
+        16,
+        34,
+        176,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_low_2": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_low_2.png",
+      "size": [
+        192,
+        80
+      ],
+      "anchor": [
+        96,
+        68
+      ],
+      "bounds": [
+        16,
+        34,
+        176,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb16_wall_low_3": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_wall_low_3.png",
+      "size": [
+        192,
+        80
+      ],
+      "anchor": [
+        96,
+        68
+      ],
+      "bounds": [
+        16,
+        44,
+        176,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb16_projectile_mg_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_projectile_mg_0.png",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "bounds": [
+        8,
+        8,
+        18,
+        18
+      ],
+      "drawScale": 1
+    },
+    "pb16_projectile_mg_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_projectile_mg_1.png",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "bounds": [
+        6,
+        6,
+        18,
+        18
+      ],
+      "drawScale": 1
+    },
+    "pb16_projectile_laser_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_projectile_laser_0.png",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "bounds": [
+        6,
+        6,
+        16,
+        18
+      ],
+      "drawScale": 1
+    },
+    "pb16_projectile_laser_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_projectile_laser_1.png",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "bounds": [
+        4,
+        4,
+        18,
+        18
+      ],
+      "drawScale": 1
+    },
+    "pb16_projectile_rocket_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_projectile_rocket_0.png",
+      "size": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "bounds": [
+        8,
+        6,
+        30,
+        30
+      ],
+      "drawScale": 1
+    },
+    "pb16_projectile_rocket_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_projectile_rocket_1.png",
+      "size": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "bounds": [
+        8,
+        6,
+        30,
+        32
+      ],
+      "drawScale": 1
+    },
+    "pb16_reticle_0": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_reticle_0.png",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "bounds": [
+        4,
+        4,
+        20,
+        19
+      ],
+      "drawScale": 1
+    },
+    "pb16_reticle_1": {
+      "file": "expansion/topdown/art/bastion16_environment/frames/pb16_reticle_1.png",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "bounds": [
+        4,
+        4,
+        20,
+        19
+      ],
+      "drawScale": 1
+    }
+  },
+  "sequences": {
+    "pb16_wall": {
+      "frames": [
+        "pb16_wall_0",
+        "pb16_wall_1",
+        "pb16_wall_2",
+        "pb16_wall_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.4624277456647399,
+      "rootContract": {
+        "cell": [
+          192,
+          112
+        ],
+        "anchor": [
+          96,
+          100
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_barrel": {
+      "frames": [
+        "pb16_barrel_0",
+        "pb16_barrel_1",
+        "pb16_barrel_2",
+        "pb16_barrel_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.17391304347826086,
+      "rootContract": {
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          100
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_door": {
+      "frames": [
+        "pb16_door_0",
+        "pb16_door_1",
+        "pb16_door_2",
+        "pb16_door_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.40625,
+      "rootContract": {
+        "cell": [
+          160,
+          160
+        ],
+        "anchor": [
+          80,
+          148
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_turret_gun": {
+      "frames": [
+        "pb16_turret_gun_0",
+        "pb16_turret_gun_1",
+        "pb16_turret_gun_2",
+        "pb16_turret_gun_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.21768707482993196,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_turret_laser": {
+      "frames": [
+        "pb16_turret_laser_0",
+        "pb16_turret_laser_1",
+        "pb16_turret_laser_2",
+        "pb16_turret_laser_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.21768707482993196,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_core": {
+      "frames": [
+        "pb16_core_0",
+        "pb16_core_1",
+        "pb16_core_2",
+        "pb16_core_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.438871473354232,
+      "rootContract": {
+        "cell": [
+          176,
+          176
+        ],
+        "anchor": [
+          88,
+          88
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_helios_run": {
+      "frames": [
+        "pb16_helios_run_0",
+        "pb16_helios_run_1",
+        "pb16_helios_run_2",
+        "pb16_helios_run_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "scale": 0.58,
+      "rootContract": {
+        "cell": [
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          232
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_helios_throw": {
+      "frames": [
+        "pb16_helios_throw_0",
+        "pb16_helios_throw_1",
+        "pb16_helios_throw_2",
+        "pb16_helios_throw_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "scale": 0.58,
+      "rootContract": {
+        "cell": [
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          232
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_helios_jump": {
+      "frames": [
+        "pb16_helios_jump_0",
+        "pb16_helios_jump_1",
+        "pb16_helios_jump_2",
+        "pb16_helios_jump_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "scale": 0.58,
+      "rootContract": {
+        "cell": [
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          232
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_helios_lightning": {
+      "frames": [
+        "pb16_helios_lightning_0",
+        "pb16_helios_lightning_1",
+        "pb16_helios_lightning_2",
+        "pb16_helios_lightning_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "scale": 0.58,
+      "rootContract": {
+        "cell": [
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          232
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_orb": {
+      "frames": [
+        "pb16_orb_0",
+        "pb16_orb_1",
+        "pb16_orb_2",
+        "pb16_orb_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.12307692307692308,
+      "rootContract": {
+        "cell": [
+          64,
+          64
+        ],
+        "anchor": [
+          32,
+          32
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_geyser": {
+      "frames": [
+        "pb16_geyser_0",
+        "pb16_geyser_1",
+        "pb16_geyser_2",
+        "pb16_geyser_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.3258145363408521,
+      "rootContract": {
+        "cell": [
+          160,
+          160
+        ],
+        "anchor": [
+          80,
+          148
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_lightning": {
+      "frames": [
+        "pb16_lightning_0",
+        "pb16_lightning_1",
+        "pb16_lightning_2",
+        "pb16_lightning_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.2656546489563567,
+      "rootContract": {
+        "cell": [
+          176,
+          96
+        ],
+        "anchor": [
+          88,
+          48
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_wall_low": {
+      "frames": [
+        "pb16_wall_low_0",
+        "pb16_wall_low_1",
+        "pb16_wall_low_2",
+        "pb16_wall_low_3"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.20100502512562815,
+      "rootContract": {
+        "cell": [
+          192,
+          80
+        ],
+        "anchor": [
+          96,
+          68
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_projectile_mg": {
+      "frames": [
+        "pb16_projectile_mg_0",
+        "pb16_projectile_mg_1"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.08163265306122448,
+      "rootContract": {
+        "cell": [
+          24,
+          24
+        ],
+        "anchor": [
+          12,
+          12
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_projectile_laser": {
+      "frames": [
+        "pb16_projectile_laser_0",
+        "pb16_projectile_laser_1"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.09929078014184398,
+      "rootContract": {
+        "cell": [
+          24,
+          24
+        ],
+        "anchor": [
+          12,
+          12
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_projectile_rocket": {
+      "frames": [
+        "pb16_projectile_rocket_0",
+        "pb16_projectile_rocket_1"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.10232558139534884,
+      "rootContract": {
+        "cell": [
+          36,
+          36
+        ],
+        "anchor": [
+          18,
+          18
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    },
+    "pb16_reticle": {
+      "frames": [
+        "pb16_reticle_0",
+        "pb16_reticle_1"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "scale": 0.04419889502762431,
+      "rootContract": {
+        "cell": [
+          24,
+          24
+        ],
+        "anchor": [
+          12,
+          12
+        ],
+        "method": "fixed proportional bank scale; bottom-center physical root; binary alpha; nearest two-pixel clusters"
+      }
+    }
+  },
+  "audit": [
+    {
+      "key": "pb16_stage",
+      "source": "stage.png",
+      "crop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "proportionalScale": 0.4419889502762431,
+      "pixelStep": 2,
+      "sha256": "bd34aa2a7a9bd5d7a1552b696d86a79f68e60289e42f381ddc2b743ad0216cf4"
+    },
+    {
+      "key": "pb16_wall_0",
+      "source": "props.png",
+      "crop": [
+        0,
+        80,
+        362,
+        300
+      ],
+      "proportionalScale": 0.4624277456647399,
+      "pixelStep": 2,
+      "sha256": "66e0c7c25b7935a2084742d7e474ac498e1bea074ebac4d01a9ba7bb19569139"
+    },
+    {
+      "key": "pb16_wall_1",
+      "source": "props.png",
+      "crop": [
+        362,
+        80,
+        724,
+        300
+      ],
+      "proportionalScale": 0.4624277456647399,
+      "pixelStep": 2,
+      "sha256": "10199efd491689097da3f723ba45f2f021ff9ea74dbcd41132d6f9d7941806d1"
+    },
+    {
+      "key": "pb16_wall_2",
+      "source": "props.png",
+      "crop": [
+        724,
+        80,
+        1086,
+        300
+      ],
+      "proportionalScale": 0.4624277456647399,
+      "pixelStep": 2,
+      "sha256": "9eb11ffa55ad1f8d6c25e9488acf3d7ff2fe2855c41a4809054c814c3fc29ae0"
+    },
+    {
+      "key": "pb16_wall_3",
+      "source": "props.png",
+      "crop": [
+        1086,
+        80,
+        1448,
+        300
+      ],
+      "proportionalScale": 0.4624277456647399,
+      "pixelStep": 2,
+      "sha256": "e75c6cd050f98ca31703031dd95e3d47e74db963a637f6fb92dececb8d84bbfa"
+    },
+    {
+      "key": "pb16_barrel_0",
+      "source": "props.png",
+      "crop": [
+        0,
+        301,
+        362,
+        660
+      ],
+      "proportionalScale": 0.17391304347826086,
+      "pixelStep": 2,
+      "sha256": "b19e55ec5035340aebe5dbc9859e006424cc259f4d9a61e4602436f3579afc2a"
+    },
+    {
+      "key": "pb16_barrel_1",
+      "source": "props.png",
+      "crop": [
+        362,
+        301,
+        724,
+        660
+      ],
+      "proportionalScale": 0.17391304347826086,
+      "pixelStep": 2,
+      "sha256": "627abcf973ce1ec8409c75971ff55dbecf118bc06fe42d2ca35a3017d6a29d6a"
+    },
+    {
+      "key": "pb16_barrel_2",
+      "source": "props.png",
+      "crop": [
+        724,
+        301,
+        1086,
+        660
+      ],
+      "proportionalScale": 0.17391304347826086,
+      "pixelStep": 2,
+      "sha256": "d3cecdfdaca074828faba0fcef3144abe7d09272eb34c6cd4465a2739c76a963"
+    },
+    {
+      "key": "pb16_barrel_3",
+      "source": "props.png",
+      "crop": [
+        1086,
+        301,
+        1448,
+        660
+      ],
+      "proportionalScale": 0.17391304347826086,
+      "pixelStep": 2,
+      "sha256": "f082481e60232687ee56368b0c105424deeab183dc06145696ab33f1345359d0"
+    },
+    {
+      "key": "pb16_door_0",
+      "source": "props.png",
+      "crop": [
+        0,
+        660,
+        362,
+        1008
+      ],
+      "proportionalScale": 0.40625,
+      "pixelStep": 2,
+      "sha256": "e82ce6d0ee5b22de056aa14c83195ced37bbf8989f86febceb250940b81e7852"
+    },
+    {
+      "key": "pb16_door_1",
+      "source": "props.png",
+      "crop": [
+        362,
+        660,
+        724,
+        1008
+      ],
+      "proportionalScale": 0.40625,
+      "pixelStep": 2,
+      "sha256": "859e29a3298260cddbadab60935d2e21cc7fb5344ddba6509f9f6beb3fdfa264"
+    },
+    {
+      "key": "pb16_door_2",
+      "source": "props.png",
+      "crop": [
+        724,
+        660,
+        1086,
+        1008
+      ],
+      "proportionalScale": 0.40625,
+      "pixelStep": 2,
+      "sha256": "55ef54ceeb5169c9a521be67675372a2ac3c4e3c8953c80852d98ee53c29490e"
+    },
+    {
+      "key": "pb16_door_3",
+      "source": "props.png",
+      "crop": [
+        1086,
+        660,
+        1448,
+        1008
+      ],
+      "proportionalScale": 0.40625,
+      "pixelStep": 2,
+      "sha256": "54be0b9904a1c15ca4c729a921cdcdc6d99659b58a0042e5dbece3cfba3da2a5"
+    },
+    {
+      "key": "pb16_turret_gun_0",
+      "source": "machinery.png",
+      "crop": [
+        0,
+        0,
+        362,
+        350
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "a7f3f6ef2051308fe0df2df8b32ca214199b4af37c6a14ddeaa01249c7f64d03"
+    },
+    {
+      "key": "pb16_turret_gun_1",
+      "source": "machinery.png",
+      "crop": [
+        362,
+        0,
+        724,
+        350
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "e5664fb8da62d98be2f30b7740ddd620d593a47ddecc078326526de7a990dc9c"
+    },
+    {
+      "key": "pb16_turret_gun_2",
+      "source": "machinery.png",
+      "crop": [
+        724,
+        0,
+        1086,
+        350
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "0072d3b8fd61c4d10b2784f69879a16e1aa5f3a19ea26391775e1d8451013b7f"
+    },
+    {
+      "key": "pb16_turret_gun_3",
+      "source": "machinery.png",
+      "crop": [
+        1086,
+        0,
+        1448,
+        350
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "2b4888477e59cb5ca471701af4e15d3d1056cb2bce1a30b9396bb8fdb02897dc"
+    },
+    {
+      "key": "pb16_turret_laser_0",
+      "source": "machinery.png",
+      "crop": [
+        0,
+        365,
+        362,
+        690
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "45f33939ca9a085425e3611a4ed57ddfff9ce148cd2abf68e820ac9d6fb2b214"
+    },
+    {
+      "key": "pb16_turret_laser_1",
+      "source": "machinery.png",
+      "crop": [
+        362,
+        365,
+        724,
+        690
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "76e13c3a47ab7f8e04670229173bb1c9ebe1dafb7c333598420e2454e117d61a"
+    },
+    {
+      "key": "pb16_turret_laser_2",
+      "source": "machinery.png",
+      "crop": [
+        724,
+        365,
+        1086,
+        690
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "1e37e86f5a4ba0c8b35d3d1db8de5a97a579ff6f28445e67be865bef94030dc4"
+    },
+    {
+      "key": "pb16_turret_laser_3",
+      "source": "machinery.png",
+      "crop": [
+        1086,
+        365,
+        1448,
+        690
+      ],
+      "proportionalScale": 0.21768707482993196,
+      "pixelStep": 2,
+      "sha256": "503e26c8bd59a6a92e358f187f2eff5e38665a5a790e0fb40df1d51185ef6961"
+    },
+    {
+      "key": "pb16_core_0",
+      "source": "machinery.png",
+      "crop": [
+        0,
+        700,
+        362,
+        1086
+      ],
+      "proportionalScale": 0.438871473354232,
+      "pixelStep": 2,
+      "sha256": "89986833648b2903d96cdb60ab42cae051c74bc834d32f86f71d2e799cd8038d"
+    },
+    {
+      "key": "pb16_core_1",
+      "source": "machinery.png",
+      "crop": [
+        362,
+        700,
+        724,
+        1086
+      ],
+      "proportionalScale": 0.438871473354232,
+      "pixelStep": 2,
+      "sha256": "01f5f5c7fb11921b4940452b6d9d806c19805a5570f2b79e630f10f4276024f6"
+    },
+    {
+      "key": "pb16_core_2",
+      "source": "machinery.png",
+      "crop": [
+        724,
+        700,
+        1086,
+        1086
+      ],
+      "proportionalScale": 0.438871473354232,
+      "pixelStep": 2,
+      "sha256": "2201cc0c1abb5d193f15f48bd8461594cfd0bc6700d9f9a271b9745bc3a6f261"
+    },
+    {
+      "key": "pb16_core_3",
+      "source": "machinery.png",
+      "crop": [
+        1086,
+        700,
+        1448,
+        1086
+      ],
+      "proportionalScale": 0.438871473354232,
+      "pixelStep": 2,
+      "sha256": "f571ff87bf6b18a30baef708d208e2497326998b5a54fc712011acc90145cf96"
+    },
+    {
+      "key": "pb16_helios_run_0",
+      "source": "helios.png",
+      "crop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "b2fb78d7c8901efd9714e2ee460114a3b218daa8037c982868817028e99b1c32"
+    },
+    {
+      "key": "pb16_helios_run_1",
+      "source": "helios.png",
+      "crop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "a8483d33abbfcc73f21ded70151063f89c7c0876d0e7c8b84f8247018857e805"
+    },
+    {
+      "key": "pb16_helios_run_2",
+      "source": "helios.png",
+      "crop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "d61b7c40dfea89515398b939634bb918aee41b9134aaa2edf47a0d53d6ced351"
+    },
+    {
+      "key": "pb16_helios_run_3",
+      "source": "helios.png",
+      "crop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "e77b501967dbfaac110d81a25d68671c931f61068912bd36d41680212137a2be"
+    },
+    {
+      "key": "pb16_helios_throw_0",
+      "source": "helios.png",
+      "crop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "958219bf63b32a81493077716951113754813190fc4ee01925b617a983a22752"
+    },
+    {
+      "key": "pb16_helios_throw_1",
+      "source": "helios.png",
+      "crop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "1242d8ad83787839ef72507bc826a1f6c871d52ba6b58644b574d0596e246f9c"
+    },
+    {
+      "key": "pb16_helios_throw_2",
+      "source": "helios.png",
+      "crop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "b24b457b706ad8ab3ed75f252ae5bdf4a7e28051e925aded0ef00b0e31597695"
+    },
+    {
+      "key": "pb16_helios_throw_3",
+      "source": "helios.png",
+      "crop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "3ecb84f9168d2dab103bd33c648af74bfef3aa3020d8ee8b3a0ee1f770d5dbf1"
+    },
+    {
+      "key": "pb16_helios_jump_0",
+      "source": "helios.png",
+      "crop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "8478ddb15cdfb26b090f2b24c7655fe7df57f7c943f9006e64ddc9f99d5239a8"
+    },
+    {
+      "key": "pb16_helios_jump_1",
+      "source": "helios.png",
+      "crop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "4125aefa0b84a4b363de69bb0f317bb5edd20f7e8464f7ecf4d9d2412d139122"
+    },
+    {
+      "key": "pb16_helios_jump_2",
+      "source": "helios.png",
+      "crop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "1ac76d74b0b0546bc1d25704aa7de1a15dd8e9ef484a36e32b34189fa1e45b17"
+    },
+    {
+      "key": "pb16_helios_jump_3",
+      "source": "helios.png",
+      "crop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "1461a6cb340f467f7f577bb6ed10f220c1d5c7bb4f7864b705faf560970e97e8"
+    },
+    {
+      "key": "pb16_helios_lightning_0",
+      "source": "helios.png",
+      "crop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "eb3e4a6f85d6529c9ebee35522b71142a131e36b6cc67ee613cf89a8c2bf0e61"
+    },
+    {
+      "key": "pb16_helios_lightning_1",
+      "source": "helios.png",
+      "crop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "f98d08d4d9b9a4908cd256c6eb8f6068134ae3db816c339192d54996112d8c7f"
+    },
+    {
+      "key": "pb16_helios_lightning_2",
+      "source": "helios.png",
+      "crop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "0f8da1b8678b5f827c8a2c3aadb00c0c78325c996511ecbbf453a021cf03334c"
+    },
+    {
+      "key": "pb16_helios_lightning_3",
+      "source": "helios.png",
+      "crop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "proportionalScale": 0.58,
+      "pixelStep": 2,
+      "sha256": "e42ffbd3be29fa0a40ccae81f6f10aa0af341b2a6e044b4a4c7b936acf230519"
+    },
+    {
+      "key": "pb16_orb_0",
+      "source": "effects.png",
+      "crop": [
+        0,
+        0,
+        362,
+        360
+      ],
+      "proportionalScale": 0.12307692307692308,
+      "pixelStep": 2,
+      "sha256": "0dfe2e59905169c4cddb32a20bd4b74f063d5182c7a018f8f225fe4af487655a"
+    },
+    {
+      "key": "pb16_orb_1",
+      "source": "effects.png",
+      "crop": [
+        362,
+        0,
+        724,
+        360
+      ],
+      "proportionalScale": 0.12307692307692308,
+      "pixelStep": 2,
+      "sha256": "d2977eea91e63a65b350b2b7be41e7a554030acece732bcaa4359d1238f608f9"
+    },
+    {
+      "key": "pb16_orb_2",
+      "source": "effects.png",
+      "crop": [
+        724,
+        0,
+        1086,
+        360
+      ],
+      "proportionalScale": 0.12307692307692308,
+      "pixelStep": 2,
+      "sha256": "2ab85873e612199ca4251445232e5de0d3b9a42f9530faf648d25fa7c2c87980"
+    },
+    {
+      "key": "pb16_orb_3",
+      "source": "effects.png",
+      "crop": [
+        1086,
+        0,
+        1448,
+        360
+      ],
+      "proportionalScale": 0.12307692307692308,
+      "pixelStep": 2,
+      "sha256": "4ec014bbe6e0747ac46dae89ff79d2308da6b8c44d5117d397a0df06605d88f6"
+    },
+    {
+      "key": "pb16_geyser_0",
+      "source": "effects.png",
+      "crop": [
+        0,
+        638,
+        362,
+        1086
+      ],
+      "proportionalScale": 0.3258145363408521,
+      "pixelStep": 2,
+      "sha256": "671c8829f0539ee48073a4100942453bf495bc20c0631a33d5e9b387f928c2f3"
+    },
+    {
+      "key": "pb16_geyser_1",
+      "source": "effects.png",
+      "crop": [
+        362,
+        638,
+        724,
+        1086
+      ],
+      "proportionalScale": 0.3258145363408521,
+      "pixelStep": 2,
+      "sha256": "6dda560b07eab88555e2a23c01df79e921b3b882371699b8b37a72438eecb739"
+    },
+    {
+      "key": "pb16_geyser_2",
+      "source": "effects.png",
+      "crop": [
+        724,
+        638,
+        1086,
+        1086
+      ],
+      "proportionalScale": 0.3258145363408521,
+      "pixelStep": 2,
+      "sha256": "7a201df65a18fe795fb4faa6063f5aa04a6bef02732692a675a410ef0060cdc1"
+    },
+    {
+      "key": "pb16_geyser_3",
+      "source": "effects.png",
+      "crop": [
+        1086,
+        638,
+        1448,
+        1086
+      ],
+      "proportionalScale": 0.3258145363408521,
+      "pixelStep": 2,
+      "sha256": "81cc69e373030172b741126e404dd34099e6b3c1a5605e29973b340321dee432"
+    },
+    {
+      "key": "pb16_lightning_0",
+      "source": "bolts.png",
+      "crop": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "proportionalScale": 0.2656546489563567,
+      "pixelStep": 2,
+      "sha256": "a6f086edad8aa1c0642349e3865b1d25e864dddad132bbb5affaca7cc353720f"
+    },
+    {
+      "key": "pb16_lightning_1",
+      "source": "bolts.png",
+      "crop": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "proportionalScale": 0.2656546489563567,
+      "pixelStep": 2,
+      "sha256": "53e6f15f5a345af56c5c6bfe285d80b32f47ffaddc7276dcff34f2780267fe5c"
+    },
+    {
+      "key": "pb16_lightning_2",
+      "source": "bolts.png",
+      "crop": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "proportionalScale": 0.2656546489563567,
+      "pixelStep": 2,
+      "sha256": "0d505860d8185fd3676f5a0c27ac97d02bcc5b9a4606e884af4d32e0f739e59a"
+    },
+    {
+      "key": "pb16_lightning_3",
+      "source": "bolts.png",
+      "crop": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "proportionalScale": 0.2656546489563567,
+      "pixelStep": 2,
+      "sha256": "440970029d97bd522303a9bc14588e6aff9ef4ac8b5b0a393d70a416085d529e"
+    },
+    {
+      "key": "pb16_wall_low_0",
+      "source": "wallLow.png",
+      "crop": [
+        0,
+        0,
+        887,
+        444
+      ],
+      "proportionalScale": 0.20100502512562815,
+      "pixelStep": 2,
+      "sha256": "b14836f63716e1dc55bcc0c6c3e3d07677b1438a22fb0da5f715f85401291f0b"
+    },
+    {
+      "key": "pb16_wall_low_1",
+      "source": "wallLow.png",
+      "crop": [
+        887,
+        0,
+        1774,
+        444
+      ],
+      "proportionalScale": 0.20100502512562815,
+      "pixelStep": 2,
+      "sha256": "6465ef50ca9a8195ab8722034573a55fab5a368901b05fe068a621e293c093dc"
+    },
+    {
+      "key": "pb16_wall_low_2",
+      "source": "wallLow.png",
+      "crop": [
+        0,
+        444,
+        887,
+        887
+      ],
+      "proportionalScale": 0.20100502512562815,
+      "pixelStep": 2,
+      "sha256": "aeef573e772b9ee762d3076089efd2511c1ea5a3a6d8d926218ff2561c8148cd"
+    },
+    {
+      "key": "pb16_wall_low_3",
+      "source": "wallLow.png",
+      "crop": [
+        887,
+        444,
+        1774,
+        887
+      ],
+      "proportionalScale": 0.20100502512562815,
+      "pixelStep": 2,
+      "sha256": "39800a9807820fb38e9b5071e76195a88bbecd3cd47c2d0b31c0104613d0600a"
+    },
+    {
+      "key": "pb16_projectile_mg_0",
+      "source": "shots.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "proportionalScale": 0.08163265306122448,
+      "pixelStep": 2,
+      "sha256": "ad364b065af055bee42d7c018ef1151ae44fa8d0649b61922db3c06df1b95f28"
+    },
+    {
+      "key": "pb16_projectile_mg_1",
+      "source": "shots.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "proportionalScale": 0.08163265306122448,
+      "pixelStep": 2,
+      "sha256": "a67d24487da1df00fda09d980d1caad392d9031b2ed7b87dedee2f345c4a1830"
+    },
+    {
+      "key": "pb16_projectile_laser_0",
+      "source": "shots.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "proportionalScale": 0.09929078014184398,
+      "pixelStep": 2,
+      "sha256": "9dc86eb6da19567c5322ce48144beef5842a5473e873d0eb7a41fecb5bbd9889"
+    },
+    {
+      "key": "pb16_projectile_laser_1",
+      "source": "shots.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "proportionalScale": 0.09929078014184398,
+      "pixelStep": 2,
+      "sha256": "068ebfce2c2b112b24987d3637173ed2aec1373ba245a062c41fd07832e3ec75"
+    },
+    {
+      "key": "pb16_projectile_rocket_0",
+      "source": "shots.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "proportionalScale": 0.10232558139534884,
+      "pixelStep": 2,
+      "sha256": "2b6d30317a4e49b52790e47184b1f75955ff3d7d78034d3bf09a4c312b0f3eb6"
+    },
+    {
+      "key": "pb16_projectile_rocket_1",
+      "source": "shots.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "proportionalScale": 0.10232558139534884,
+      "pixelStep": 2,
+      "sha256": "741731a6778bfc0362402a4e7d665e7f23e8721dab223fe8f52df3967712932e"
+    },
+    {
+      "key": "pb16_reticle_0",
+      "source": "reticle.png",
+      "crop": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "proportionalScale": 0.04419889502762431,
+      "pixelStep": 1,
+      "sha256": "efff027cb790e19a5b8812ce79cbd693128be53fd7d9e74ed25b206ba806ede5"
+    },
+    {
+      "key": "pb16_reticle_1",
+      "source": "reticle.png",
+      "crop": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "proportionalScale": 0.04419889502762431,
+      "pixelStep": 1,
+      "sha256": "69c4874c52a4796d544ec948184c1575e9630017a6ca27a85802ebb47b915f3f"
+    }
+  ],
+  "sources": {
+    "bolts.png": {
+      "sha256": "a35f181aa97c6b23551eb4de2f05fcc7aaff779584fc879b38677ecb1988c475",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "effects.png": {
+      "sha256": "453d8c0fba0b98f52e7a10478876e47a9977f21ac1942b8f1f4ccdd1ff3d8dbe",
+      "size": [
+        1448,
+        1086
+      ]
+    },
+    "helios.png": {
+      "sha256": "5bd007e73e6fdb526b20f3042d35cf1d2fec201c842b8b5afa15fc5ba06c01bd",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "machinery.png": {
+      "sha256": "1cd73645b419403dc17bbf873b1e2d61e576ee7f9e32d07ebb5925d351a2ca3d",
+      "size": [
+        1448,
+        1086
+      ]
+    },
+    "props.png": {
+      "sha256": "96204723bfafe03ce42d14d46149bf7c03398e6ee782602a1551102e682ea4fa",
+      "size": [
+        1448,
+        1086
+      ]
+    },
+    "reticle.png": {
+      "sha256": "643d688ba1b00ed06abea9191e9c33a8113b15812aa2d14f1ba247e56aab85b4",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "shots.png": {
+      "sha256": "c1ac533c6bcb507553907d327f891945bf2fc4dbbba000eacff84894af340dc8",
+      "size": [
+        1774,
+        887
+      ]
+    },
+    "stage.png": {
+      "sha256": "25a938bc91f9e424fdd3450e4c0b6c260b68feba988c4f3a7a4fc12d28fea3fc",
+      "size": [
+        1448,
+        1086
+      ]
+    },
+    "wallLow.png": {
+      "sha256": "1b1ebe9ccdeaec3a50ed6c6512cea8daa273395c958c823b10ef5e3d62accdbf",
+      "size": [
+        1774,
+        887
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "assets": {
+    "corner26_portrait": {
+      "file": "expansion/topdown/art/corner26/frames/portrait.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        1,
+        1,
+        54,
+        54
+      ],
+      "drawScale": 1
+    },
+    "corner26_health": {
+      "file": "expansion/topdown/art/corner26/frames/health.png",
+      "size": [
+        144,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        144,
+        24
+      ],
+      "drawScale": 1
+    },
+    "corner26_fill": {
+      "file": "expansion/topdown/art/corner26/frames/fill.png",
+      "size": [
+        128,
+        14
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        1,
+        128,
+        13
+      ],
+      "drawScale": 1
+    },
+    "corner26_fill_low": {
+      "file": "expansion/topdown/art/corner26/frames/fill_low.png",
+      "size": [
+        128,
+        14
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        0,
+        0,
+        128,
+        13
+      ],
+      "drawScale": 1
+    },
+    "corner26_ammo": {
+      "file": "expansion/topdown/art/corner26/frames/ammo.png",
+      "size": [
+        128,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        3,
+        1,
+        124,
+        47
+      ],
+      "drawScale": 1
+    }
+  },
+  "sequences": {},
+  "fill": {
+    "x": 8,
+    "y": 5,
+    "w": 128,
+    "h": 14
+  },
+  "service": "PixelLab",
+  "sourceId": "15d24f31-5fb6-477e-8836-5eed3893f729",
+  "build": "overdrive1015-corner26-r1"
+}

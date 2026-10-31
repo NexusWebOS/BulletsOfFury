@@ -1,0 +1,5892 @@
+{
+  "version": "1014-gosfer20-r1",
+  "assets": {
+    "pb20_gosfer_walk_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        130,
+        202,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        216,
+        258
+      ]
+    },
+    "pb20_gosfer_walk_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        135,
+        202,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        270,
+        271
+      ]
+    },
+    "pb20_gosfer_walk_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        151,
+        202,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        269,
+        270
+      ]
+    },
+    "pb20_gosfer_walk_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        131,
+        205,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        269,
+        274
+      ]
+    },
+    "pb20_gosfer_walk_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        131,
+        202,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        269,
+        270
+      ]
+    },
+    "pb20_gosfer_walk_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        134,
+        202,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        269,
+        274
+      ]
+    },
+    "pb20_gosfer_walk_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        151,
+        201,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        216,
+        258
+      ]
+    },
+    "pb20_gosfer_walk_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        127,
+        205,
+        273,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        270,
+        274
+      ]
+    },
+    "pb20_gosfer_walk_south_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        201,
+        248,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        244,
+        277
+      ]
+    },
+    "pb20_gosfer_walk_south_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        201,
+        247,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        243,
+        278
+      ]
+    },
+    "pb20_gosfer_walk_south_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        201,
+        246,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        242,
+        280
+      ]
+    },
+    "pb20_gosfer_walk_south_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        201,
+        246,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        242,
+        277
+      ]
+    },
+    "pb20_gosfer_walk_south_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        203,
+        248,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        244,
+        278
+      ]
+    },
+    "pb20_gosfer_walk_south_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        203,
+        248,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        244,
+        278
+      ]
+    },
+    "pb20_gosfer_walk_south_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        203,
+        246,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        242,
+        280
+      ]
+    },
+    "pb20_gosfer_walk_south_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_walk_south_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        154,
+        203,
+        247,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        243,
+        277
+      ]
+    },
+    "pb20_gosfer_fire_south_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        157,
+        203,
+        228,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        192,
+        255
+      ]
+    },
+    "pb20_gosfer_fire_south_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        157,
+        202,
+        227,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        192,
+        239
+      ]
+    },
+    "pb20_gosfer_fire_south_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        158,
+        202,
+        228,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        192,
+        244
+      ]
+    },
+    "pb20_gosfer_fire_south_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        158,
+        202,
+        227,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        244
+      ]
+    },
+    "pb20_gosfer_fire_south_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        158,
+        202,
+        228,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        192,
+        244
+      ]
+    },
+    "pb20_gosfer_fire_south_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        158,
+        203,
+        228,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        192,
+        253
+      ]
+    },
+    "pb20_gosfer_fire_south_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        157,
+        202,
+        227,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        244
+      ]
+    },
+    "pb20_gosfer_fire_south_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_south_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        157,
+        203,
+        226,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        256
+      ]
+    },
+    "pb20_gosfer_fire_angle_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        157,
+        202,
+        229,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        215,
+        249
+      ]
+    },
+    "pb20_gosfer_fire_angle_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        155,
+        202,
+        228,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        217,
+        245
+      ]
+    },
+    "pb20_gosfer_fire_angle_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        157,
+        202,
+        230,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        217,
+        246
+      ]
+    },
+    "pb20_gosfer_fire_angle_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        157,
+        202,
+        230,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        218,
+        247
+      ]
+    },
+    "pb20_gosfer_fire_angle_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        156,
+        202,
+        230,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        218,
+        249
+      ]
+    },
+    "pb20_gosfer_fire_angle_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        156,
+        203,
+        229,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        217,
+        255
+      ]
+    },
+    "pb20_gosfer_fire_angle_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        156,
+        202,
+        230,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        218,
+        247
+      ]
+    },
+    "pb20_gosfer_fire_angle_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_fire_angle_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        156,
+        203,
+        229,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        216,
+        254
+      ]
+    },
+    "pb20_gosfer_roll_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        144,
+        241,
+        240,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_roll_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        122,
+        271,
+        261,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_roll_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        137,
+        225,
+        247,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_roll_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        140,
+        265,
+        244,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_roll_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        134,
+        246,
+        250,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_roll_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        129,
+        226,
+        254,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_roll_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        133,
+        222,
+        251,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_roll_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_roll_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        133,
+        204,
+        251,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_run_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        124,
+        207,
+        246,
+        348
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        243,
+        256
+      ]
+    },
+    "pb20_gosfer_run_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        132,
+        205,
+        237,
+        348
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        234,
+        259
+      ]
+    },
+    "pb20_gosfer_run_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        137,
+        205,
+        236,
+        347
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        232,
+        257
+      ]
+    },
+    "pb20_gosfer_run_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        90,
+        208,
+        234,
+        328
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        230,
+        256
+      ]
+    },
+    "pb20_gosfer_run_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        114,
+        208,
+        236,
+        351
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        232,
+        258
+      ]
+    },
+    "pb20_gosfer_run_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        139,
+        207,
+        236,
+        349
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        233,
+        260
+      ]
+    },
+    "pb20_gosfer_run_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        124,
+        208,
+        235,
+        350
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        232,
+        257
+      ]
+    },
+    "pb20_gosfer_run_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_run_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        99,
+        206,
+        230,
+        344
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        226,
+        256
+      ]
+    },
+    "pb20_gosfer_strafe_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        139,
+        202,
+        269,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        190,
+        250
+      ]
+    },
+    "pb20_gosfer_strafe_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        203,
+        239,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        250
+      ]
+    },
+    "pb20_gosfer_strafe_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        148,
+        202,
+        230,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        190,
+        250
+      ]
+    },
+    "pb20_gosfer_strafe_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        202,
+        231,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        250
+      ]
+    },
+    "pb20_gosfer_strafe_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        130,
+        201,
+        259,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        192,
+        249
+      ]
+    },
+    "pb20_gosfer_strafe_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        202,
+        230,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        250
+      ]
+    },
+    "pb20_gosfer_strafe_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        153,
+        201,
+        229,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        249
+      ]
+    },
+    "pb20_gosfer_strafe_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_strafe_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        152,
+        202,
+        229,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        188,
+        250
+      ]
+    },
+    "pb20_gosfer_jump_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        137,
+        221,
+        242,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        238,
+        272
+      ]
+    },
+    "pb20_gosfer_jump_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        138,
+        209,
+        240,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        237,
+        253
+      ]
+    },
+    "pb20_gosfer_jump_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        144,
+        205,
+        233,
+        315
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        229,
+        252
+      ]
+    },
+    "pb20_gosfer_jump_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        147,
+        208,
+        238,
+        313
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        234,
+        252
+      ]
+    },
+    "pb20_gosfer_jump_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        144,
+        204,
+        239,
+        336
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        235,
+        245
+      ]
+    },
+    "pb20_gosfer_jump_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        129,
+        215,
+        235,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        232,
+        264
+      ]
+    },
+    "pb20_gosfer_jump_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        137,
+        233,
+        243,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        240,
+        278
+      ]
+    },
+    "pb20_gosfer_jump_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_jump_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        138,
+        205,
+        236,
+        346
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        232,
+        252
+      ]
+    },
+    "pb20_helios_run_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        94,
+        165,
+        278,
+        349
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_run_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        114,
+        166,
+        277,
+        344
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_run_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        115,
+        162,
+        271,
+        352
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_run_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        90,
+        166,
+        281,
+        357
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_run_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        94,
+        166,
+        281,
+        350
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_run_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        124,
+        165,
+        285,
+        351
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_run_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        114,
+        164,
+        275,
+        351
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_run_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_run_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        82,
+        168,
+        272,
+        343
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        120,
+        136,
+        264,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        123,
+        137,
+        262,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        131,
+        137,
+        253,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        123,
+        135,
+        262,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        115,
+        137,
+        270,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        119,
+        136,
+        266,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        126,
+        137,
+        258,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_walk_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_walk_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        123,
+        136,
+        262,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_0.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        120,
+        144,
+        264,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_1.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        126,
+        136,
+        258,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_2.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        137,
+        137,
+        246,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_3.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        135,
+        134,
+        249,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_4.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        116,
+        143,
+        268,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_5.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        124,
+        136,
+        260,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_6.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        135,
+        135,
+        249,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_helios_strafe_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_helios_strafe_7.png",
+      "size": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        346
+      ],
+      "bounds": [
+        132,
+        135,
+        252,
+        346
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_wall_crouch_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        61,
+        78,
+        131,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        120,
+        99
+      ]
+    },
+    "pb20_yuri_wall_crouch_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        51,
+        79,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        99
+      ]
+    },
+    "pb20_yuri_wall_crouch_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        58,
+        78,
+        122,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        119,
+        97
+      ]
+    },
+    "pb20_yuri_wall_crouch_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        59,
+        79,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        98
+      ]
+    },
+    "pb20_yuri_wall_crouch_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        79,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        99
+      ]
+    },
+    "pb20_yuri_wall_crouch_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        53,
+        79,
+        132,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        100
+      ]
+    },
+    "pb20_yuri_wall_crouch_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        62,
+        78,
+        122,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        119,
+        98
+      ]
+    },
+    "pb20_yuri_wall_crouch_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_crouch_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        63,
+        80,
+        120,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        98
+      ]
+    },
+    "pb20_yuri_wall_prone_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        48,
+        98,
+        117,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        111,
+        112
+      ]
+    },
+    "pb20_yuri_wall_prone_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        42,
+        96,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        113,
+        112
+      ]
+    },
+    "pb20_yuri_wall_prone_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        37,
+        96,
+        116,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        111,
+        110
+      ]
+    },
+    "pb20_yuri_wall_prone_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        45,
+        97,
+        125,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        122,
+        114
+      ]
+    },
+    "pb20_yuri_wall_prone_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        42,
+        98,
+        115,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        112,
+        112
+      ]
+    },
+    "pb20_yuri_wall_prone_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        40,
+        94,
+        115,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        112,
+        108
+      ]
+    },
+    "pb20_yuri_wall_prone_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        42,
+        92,
+        115,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        111,
+        105
+      ]
+    },
+    "pb20_yuri_wall_prone_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_wall_prone_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        51,
+        93,
+        115,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        112,
+        108
+      ]
+    },
+    "pb20_yuri_roll_prone_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        60,
+        92,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        114
+      ]
+    },
+    "pb20_yuri_roll_prone_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        73,
+        106,
+        124,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_prone_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        116,
+        118,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_prone_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        79,
+        106,
+        123,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_prone_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        79,
+        121,
+        138,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_prone_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        42,
+        115,
+        108,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_prone_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        38,
+        109,
+        113,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        110,
+        123
+      ]
+    },
+    "pb20_yuri_roll_prone_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_prone_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        46,
+        109,
+        115,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        112,
+        122
+      ]
+    },
+    "pb20_yuri_roll_stand_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_0.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        59,
+        91,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        112
+      ]
+    },
+    "pb20_yuri_roll_stand_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_1.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        73,
+        106,
+        125,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_stand_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_2.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        68,
+        116,
+        118,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_stand_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_3.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        79,
+        102,
+        123,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_stand_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_4.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        76,
+        109,
+        138,
+        160
+      ],
+      "drawScale": 1
+    },
+    "pb20_yuri_roll_stand_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_5.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        61,
+        89,
+        119,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        116,
+        108
+      ]
+    },
+    "pb20_yuri_roll_stand_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_6.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        63,
+        84,
+        119,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        116,
+        100
+      ]
+    },
+    "pb20_yuri_roll_stand_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_yuri_roll_stand_7.png",
+      "size": [
+        192,
+        224
+      ],
+      "anchor": [
+        96,
+        160
+      ],
+      "bounds": [
+        72,
+        72,
+        121,
+        160
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        118,
+        90
+      ]
+    },
+    "pb20_portrait_yuri_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_yuri_0.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        15,
+        264,
+        257
+      ],
+      "drawScale": 1
+    },
+    "pb20_portrait_yuri_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_yuri_1.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        15,
+        263,
+        257
+      ],
+      "drawScale": 1
+    },
+    "pb20_portrait_yuri_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_yuri_2.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        15,
+        264,
+        257
+      ],
+      "drawScale": 1
+    },
+    "pb20_portrait_yuri_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_yuri_3.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        15,
+        264,
+        257
+      ],
+      "drawScale": 1
+    },
+    "pb20_portrait_gosfer_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_gosfer_0.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        16,
+        264,
+        257
+      ],
+      "drawScale": 1
+    },
+    "pb20_portrait_gosfer_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_gosfer_1.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        16,
+        263,
+        257
+      ],
+      "drawScale": 1
+    },
+    "pb20_portrait_gosfer_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_gosfer_2.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        16,
+        264,
+        256
+      ],
+      "drawScale": 1
+    },
+    "pb20_portrait_gosfer_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_portrait_gosfer_3.png",
+      "size": [
+        272,
+        272
+      ],
+      "anchor": [
+        136,
+        136
+      ],
+      "bounds": [
+        8,
+        16,
+        264,
+        257
+      ],
+      "drawScale": 1
+    },
+    "pb20_hud_top": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_hud_top.png",
+      "size": [
+        624,
+        58
+      ],
+      "anchor": [
+        312,
+        29
+      ],
+      "bounds": [
+        2,
+        2,
+        622,
+        56
+      ],
+      "drawScale": 1,
+      "nineSlice": {
+        "left": 76,
+        "right": 76,
+        "top": 5,
+        "bottom": 5
+      }
+    },
+    "pb20_hud_bottom": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_hud_bottom.png",
+      "size": [
+        624,
+        44
+      ],
+      "anchor": [
+        312,
+        22
+      ],
+      "bounds": [
+        2,
+        2,
+        622,
+        42
+      ],
+      "drawScale": 1,
+      "nineSlice": {
+        "left": 63,
+        "right": 63,
+        "top": 5,
+        "bottom": 5
+      }
+    },
+    "pb20_hud_boss": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_hud_boss.png",
+      "size": [
+        300,
+        42
+      ],
+      "anchor": [
+        150,
+        21
+      ],
+      "bounds": [
+        2,
+        2,
+        298,
+        40
+      ],
+      "drawScale": 1,
+      "nineSlice": {
+        "left": 53,
+        "right": 53,
+        "top": 5,
+        "bottom": 5
+      }
+    },
+    "pb20_hud_dialogue": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_hud_dialogue.png",
+      "size": [
+        362,
+        96
+      ],
+      "anchor": [
+        181,
+        48
+      ],
+      "bounds": [
+        2,
+        2,
+        360,
+        94
+      ],
+      "drawScale": 1,
+      "nineSlice": {
+        "left": 111,
+        "right": 111,
+        "top": 5,
+        "bottom": 5
+      }
+    },
+    "pb20_hud_portrait_player_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_hud_portrait_player_0.png",
+      "size": [
+        144,
+        144
+      ],
+      "anchor": [
+        72,
+        72
+      ],
+      "bounds": [
+        6,
+        19,
+        138,
+        126
+      ],
+      "drawScale": 1
+    },
+    "pb20_hud_portrait_enemy_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_hud_portrait_enemy_0.png",
+      "size": [
+        144,
+        144
+      ],
+      "anchor": [
+        72,
+        72
+      ],
+      "bounds": [
+        6,
+        19,
+        138,
+        126
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_roll": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_roll.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        4,
+        6,
+        52,
+        50
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_prone": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_prone.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        4,
+        19,
+        52,
+        36
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_shield": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_shield.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        5,
+        11,
+        51,
+        45
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_retina": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_retina.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        5,
+        4,
+        50,
+        52
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_grenade": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_grenade.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        9,
+        4,
+        46,
+        52
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_ammo": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_ammo.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        9,
+        4,
+        47,
+        52
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_armor": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_armor.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        5,
+        11,
+        52,
+        45
+      ],
+      "drawScale": 1
+    },
+    "pb20_icon_cover": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_icon_cover.png",
+      "size": [
+        56,
+        56
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "bounds": [
+        4,
+        7,
+        52,
+        48
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        42,
+        28,
+        214,
+        229
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        42,
+        28,
+        213,
+        229
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        42,
+        28,
+        213,
+        229
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        41,
+        28,
+        214,
+        229
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_4.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        41,
+        28,
+        214,
+        227
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_5.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        42,
+        28,
+        214,
+        227
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_6.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        42,
+        28,
+        214,
+        227
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_shield_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_shield_7.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        41,
+        28,
+        214,
+        227
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_0": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_0.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        20,
+        16,
+        237,
+        240
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_1": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_1.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        22,
+        15,
+        234,
+        241
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_2": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_2.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        23,
+        17,
+        232,
+        241
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_3": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_3.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        19,
+        23,
+        237,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_4": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_4.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        21,
+        22,
+        236,
+        234
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_5": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_5.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        22,
+        22,
+        234,
+        234
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_6": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_6.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        25,
+        23,
+        231,
+        232
+      ],
+      "drawScale": 1
+    },
+    "pb20_gosfer_lightning_7": {
+      "file": "expansion/topdown/art/bastion20/frames/pb20_gosfer_lightning_7.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "bounds": [
+        21,
+        24,
+        234,
+        233
+      ],
+      "drawScale": 1
+    }
+  },
+  "sequences": {
+    "pb20_gosfer_walk": {
+      "frames": [
+        "pb20_gosfer_walk_0",
+        "pb20_gosfer_walk_1",
+        "pb20_gosfer_walk_2",
+        "pb20_gosfer_walk_3",
+        "pb20_gosfer_walk_4",
+        "pb20_gosfer_walk_5",
+        "pb20_gosfer_walk_6",
+        "pb20_gosfer_walk_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.13675213675213677,
+        "method": "helmet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_walk_south": {
+      "frames": [
+        "pb20_gosfer_walk_south_0",
+        "pb20_gosfer_walk_south_1",
+        "pb20_gosfer_walk_south_2",
+        "pb20_gosfer_walk_south_3",
+        "pb20_gosfer_walk_south_4",
+        "pb20_gosfer_walk_south_5",
+        "pb20_gosfer_walk_south_6",
+        "pb20_gosfer_walk_south_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.29568788501026694,
+        "method": "helmet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_fire_south": {
+      "frames": [
+        "pb20_gosfer_fire_south_0",
+        "pb20_gosfer_fire_south_1",
+        "pb20_gosfer_fire_south_2",
+        "pb20_gosfer_fire_south_3",
+        "pb20_gosfer_fire_south_4",
+        "pb20_gosfer_fire_south_5",
+        "pb20_gosfer_fire_south_6",
+        "pb20_gosfer_fire_south_7"
+      ],
+      "fps": 22,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.3376318874560375,
+        "method": "helmet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_fire_angle": {
+      "frames": [
+        "pb20_gosfer_fire_angle_0",
+        "pb20_gosfer_fire_angle_1",
+        "pb20_gosfer_fire_angle_2",
+        "pb20_gosfer_fire_angle_3",
+        "pb20_gosfer_fire_angle_4",
+        "pb20_gosfer_fire_angle_5",
+        "pb20_gosfer_fire_angle_6",
+        "pb20_gosfer_fire_angle_7"
+      ],
+      "fps": 22,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.35467980295566504,
+        "method": "helmet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_roll": {
+      "frames": [
+        "pb20_gosfer_roll_0",
+        "pb20_gosfer_roll_1",
+        "pb20_gosfer_roll_2",
+        "pb20_gosfer_roll_3",
+        "pb20_gosfer_roll_4",
+        "pb20_gosfer_roll_5",
+        "pb20_gosfer_roll_6",
+        "pb20_gosfer_roll_7"
+      ],
+      "fps": 15,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.4729064039408867,
+        "method": "feet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_run": {
+      "frames": [
+        "pb20_gosfer_run_0",
+        "pb20_gosfer_run_1",
+        "pb20_gosfer_run_2",
+        "pb20_gosfer_run_3",
+        "pb20_gosfer_run_4",
+        "pb20_gosfer_run_5",
+        "pb20_gosfer_run_6",
+        "pb20_gosfer_run_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.5383177570093458,
+        "method": "helmet_root",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_strafe": {
+      "frames": [
+        "pb20_gosfer_strafe_0",
+        "pb20_gosfer_strafe_1",
+        "pb20_gosfer_strafe_2",
+        "pb20_gosfer_strafe_3",
+        "pb20_gosfer_strafe_4",
+        "pb20_gosfer_strafe_5",
+        "pb20_gosfer_strafe_6",
+        "pb20_gosfer_strafe_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.5383177570093458,
+        "method": "helmet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_jump": {
+      "frames": [
+        "pb20_gosfer_jump_0",
+        "pb20_gosfer_jump_1",
+        "pb20_gosfer_jump_2",
+        "pb20_gosfer_jump_3",
+        "pb20_gosfer_jump_4",
+        "pb20_gosfer_jump_5",
+        "pb20_gosfer_jump_6",
+        "pb20_gosfer_jump_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.5383177570093458,
+        "method": "jump_root",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_helios_run": {
+      "frames": [
+        "pb20_helios_run_0",
+        "pb20_helios_run_1",
+        "pb20_helios_run_2",
+        "pb20_helios_run_3",
+        "pb20_helios_run_4",
+        "pb20_helios_run_5",
+        "pb20_helios_run_6",
+        "pb20_helios_run_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.16335540838852097,
+        "method": "heart_root",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb19_helios_run": {
+      "frames": [
+        "pb20_helios_run_0",
+        "pb20_helios_run_1",
+        "pb20_helios_run_2",
+        "pb20_helios_run_3",
+        "pb20_helios_run_4",
+        "pb20_helios_run_5",
+        "pb20_helios_run_6",
+        "pb20_helios_run_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.16335540838852097,
+        "method": "heart_root",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_helios_walk": {
+      "frames": [
+        "pb20_helios_walk_0",
+        "pb20_helios_walk_1",
+        "pb20_helios_walk_2",
+        "pb20_helios_walk_3",
+        "pb20_helios_walk_4",
+        "pb20_helios_walk_5",
+        "pb20_helios_walk_6",
+        "pb20_helios_walk_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.7155025553662692,
+        "method": "feet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_helios_strafe": {
+      "frames": [
+        "pb20_helios_strafe_0",
+        "pb20_helios_strafe_1",
+        "pb20_helios_strafe_2",
+        "pb20_helios_strafe_3",
+        "pb20_helios_strafe_4",
+        "pb20_helios_strafe_5",
+        "pb20_helios_strafe_6",
+        "pb20_helios_strafe_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.7155025553662692,
+        "method": "feet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb19_helios_walk": {
+      "frames": [
+        "pb20_helios_walk_0",
+        "pb20_helios_walk_1",
+        "pb20_helios_walk_2",
+        "pb20_helios_walk_3",
+        "pb20_helios_walk_4",
+        "pb20_helios_walk_5",
+        "pb20_helios_walk_6",
+        "pb20_helios_walk_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.7155025553662692,
+        "method": "feet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb19_helios_strafe": {
+      "frames": [
+        "pb20_helios_strafe_0",
+        "pb20_helios_strafe_1",
+        "pb20_helios_strafe_2",
+        "pb20_helios_strafe_3",
+        "pb20_helios_strafe_4",
+        "pb20_helios_strafe_5",
+        "pb20_helios_strafe_6",
+        "pb20_helios_strafe_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          384
+        ],
+        "anchor": [
+          192,
+          346
+        ],
+        "sourceScale": 0.7155025553662692,
+        "method": "feet",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_yuri_wall_crouch": {
+      "frames": [
+        "pb20_yuri_wall_crouch_0",
+        "pb20_yuri_wall_crouch_1",
+        "pb20_yuri_wall_crouch_2",
+        "pb20_yuri_wall_crouch_3",
+        "pb20_yuri_wall_crouch_4",
+        "pb20_yuri_wall_crouch_5",
+        "pb20_yuri_wall_crouch_6",
+        "pb20_yuri_wall_crouch_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          192,
+          224
+        ],
+        "anchor": [
+          96,
+          160
+        ],
+        "sourceScale": 0.41509433962264153,
+        "method": "yuri",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_yuri_wall_prone": {
+      "frames": [
+        "pb20_yuri_wall_prone_0",
+        "pb20_yuri_wall_prone_1",
+        "pb20_yuri_wall_prone_2",
+        "pb20_yuri_wall_prone_3",
+        "pb20_yuri_wall_prone_4",
+        "pb20_yuri_wall_prone_5",
+        "pb20_yuri_wall_prone_6",
+        "pb20_yuri_wall_prone_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          192,
+          224
+        ],
+        "anchor": [
+          96,
+          160
+        ],
+        "sourceScale": 0.41509433962264153,
+        "method": "yuri",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_yuri_roll_prone": {
+      "frames": [
+        "pb20_yuri_roll_prone_0",
+        "pb20_yuri_roll_prone_1",
+        "pb20_yuri_roll_prone_2",
+        "pb20_yuri_roll_prone_3",
+        "pb20_yuri_roll_prone_4",
+        "pb20_yuri_roll_prone_5",
+        "pb20_yuri_roll_prone_6",
+        "pb20_yuri_roll_prone_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          192,
+          224
+        ],
+        "anchor": [
+          96,
+          160
+        ],
+        "sourceScale": 0.41509433962264153,
+        "method": "yuri",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_yuri_roll_stand": {
+      "frames": [
+        "pb20_yuri_roll_stand_0",
+        "pb20_yuri_roll_stand_1",
+        "pb20_yuri_roll_stand_2",
+        "pb20_yuri_roll_stand_3",
+        "pb20_yuri_roll_stand_4",
+        "pb20_yuri_roll_stand_5",
+        "pb20_yuri_roll_stand_6",
+        "pb20_yuri_roll_stand_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          192,
+          224
+        ],
+        "anchor": [
+          96,
+          160
+        ],
+        "sourceScale": 0.41509433962264153,
+        "method": "yuri",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_portrait_yuri": {
+      "frames": [
+        "pb20_portrait_yuri_0",
+        "pb20_portrait_yuri_1",
+        "pb20_portrait_yuri_2",
+        "pb20_portrait_yuri_3"
+      ],
+      "fps": 6,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          272,
+          272
+        ],
+        "anchor": [
+          136,
+          136
+        ],
+        "sourceScale": 0.5939675174013921,
+        "method": "center",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_portrait_gosfer": {
+      "frames": [
+        "pb20_portrait_gosfer_0",
+        "pb20_portrait_gosfer_1",
+        "pb20_portrait_gosfer_2",
+        "pb20_portrait_gosfer_3"
+      ],
+      "fps": 6,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          272,
+          272
+        ],
+        "anchor": [
+          136,
+          136
+        ],
+        "sourceScale": 0.5939675174013921,
+        "method": "center",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_hud_portrait_player": {
+      "frames": [
+        "pb20_hud_portrait_player_0"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          144,
+          144
+        ],
+        "anchor": [
+          72,
+          72
+        ],
+        "sourceScale": 0.3687150837988827,
+        "method": "center",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_hud_portrait_enemy": {
+      "frames": [
+        "pb20_hud_portrait_enemy_0"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          144,
+          144
+        ],
+        "anchor": [
+          72,
+          72
+        ],
+        "sourceScale": 0.3687150837988827,
+        "method": "center",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_shield": {
+      "frames": [
+        "pb20_gosfer_shield_0",
+        "pb20_gosfer_shield_1",
+        "pb20_gosfer_shield_2",
+        "pb20_gosfer_shield_3",
+        "pb20_gosfer_shield_4",
+        "pb20_gosfer_shield_5",
+        "pb20_gosfer_shield_6",
+        "pb20_gosfer_shield_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          128
+        ],
+        "sourceScale": 0.6896551724137931,
+        "method": "center",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    },
+    "pb20_gosfer_lightning": {
+      "frames": [
+        "pb20_gosfer_lightning_0",
+        "pb20_gosfer_lightning_1",
+        "pb20_gosfer_lightning_2",
+        "pb20_gosfer_lightning_3",
+        "pb20_gosfer_lightning_4",
+        "pb20_gosfer_lightning_5",
+        "pb20_gosfer_lightning_6",
+        "pb20_gosfer_lightning_7"
+      ],
+      "fps": 18,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          128
+        ],
+        "sourceScale": 0.7348353552859619,
+        "method": "center",
+        "unit": "whole authored figures; shared scale and physical root; no per-frame resizing"
+      }
+    }
+  },
+  "sources": {
+    "gaction.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "78cd64c45f9c"
+    },
+    "gfire.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha12": "0930e75192b3"
+    },
+    "gfx.png": {
+      "size": [
+        1271,
+        1237
+      ],
+      "sha12": "a6ad27800503"
+    },
+    "gmotion.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha12": "e728b7e9db6a"
+    },
+    "gsouth.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha12": "0edd80e1cb29"
+    },
+    "gwalk_0.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "b69bea65d3d6"
+    },
+    "gwalk_1.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "81736fb56ab8"
+    },
+    "gwalk_2.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "967792c4640e"
+    },
+    "gwalk_3.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "e205ad5e7c97"
+    },
+    "gwalk_4.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "3ed94986b65f"
+    },
+    "gwalk_5.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "1573946e3d37"
+    },
+    "gwalk_6.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "6f11c3da7c01"
+    },
+    "gwalk_7.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "d579901d6bfb"
+    },
+    "hmotion.png": {
+      "size": [
+        1983,
+        793
+      ],
+      "sha12": "44f039c3ef9d"
+    },
+    "hrun_0.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "fda88ee2964e"
+    },
+    "hrun_1.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "8d07af0f2579"
+    },
+    "hrun_2.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "2cb61b85d976"
+    },
+    "hrun_3.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "60a987b4b693"
+    },
+    "hrun_4.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "cd93df574eab"
+    },
+    "hrun_5.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "db319cec97ee"
+    },
+    "hrun_6.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "a22c8b35a6d8"
+    },
+    "hrun_7.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "8398d7bd6b8d"
+    },
+    "hud.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha12": "b900e446ad64"
+    },
+    "portraits.png": {
+      "size": [
+        1835,
+        857
+      ],
+      "sha12": "7e765d3744bb"
+    },
+    "ywall.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha12": "5662d74bd101"
+    }
+  },
+  "audit": [
+    {
+      "key": "pb20_gosfer_walk_0",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        189,
+        111,
+        1233,
+        1164
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "670da9681a80"
+    },
+    {
+      "key": "pb20_gosfer_walk_1",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        224,
+        111,
+        1236,
+        1164
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "3409a340d31c"
+    },
+    {
+      "key": "pb20_gosfer_walk_2",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        345,
+        109,
+        1235,
+        1165
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "4fdaccbcca93"
+    },
+    {
+      "key": "pb20_gosfer_walk_3",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        198,
+        109,
+        1235,
+        1141
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "95c3038c87e8"
+    },
+    {
+      "key": "pb20_gosfer_walk_4",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        201,
+        110,
+        1236,
+        1165
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "06f5ab5cd2d5"
+    },
+    {
+      "key": "pb20_gosfer_walk_5",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        223,
+        108,
+        1237,
+        1161
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "8d2d2301013b"
+    },
+    {
+      "key": "pb20_gosfer_walk_6",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        344,
+        109,
+        1236,
+        1166
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "1d45644da96b"
+    },
+    {
+      "key": "pb20_gosfer_walk_7",
+      "source": "gwalk_single.png",
+      "sourceRect": [
+        169,
+        110,
+        1236,
+        1144
+      ],
+      "commonScale": 0.13675213675213677,
+      "sha12": "283ec5abc352"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_0",
+      "source": "gsouth.png",
+      "sourceRect": [
+        59,
+        9,
+        379,
+        498
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "ee3eb9e7ab7c"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_1",
+      "source": "gsouth.png",
+      "sourceRect": [
+        441,
+        9,
+        758,
+        498
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "5ed0d08e571c"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_2",
+      "source": "gsouth.png",
+      "sourceRect": [
+        827,
+        9,
+        1140,
+        498
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "7ed1748051e0"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_3",
+      "source": "gsouth.png",
+      "sourceRect": [
+        1213,
+        9,
+        1528,
+        500
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "7266c2a76d4c"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_4",
+      "source": "gsouth.png",
+      "sourceRect": [
+        58,
+        522,
+        380,
+        1007
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "73c39d284df5"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_5",
+      "source": "gsouth.png",
+      "sourceRect": [
+        442,
+        522,
+        763,
+        1007
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "d25fc0c220c5"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_6",
+      "source": "gsouth.png",
+      "sourceRect": [
+        828,
+        522,
+        1143,
+        1007
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "072a1becd9f2"
+    },
+    {
+      "key": "pb20_gosfer_walk_south_7",
+      "source": "gsouth.png",
+      "sourceRect": [
+        1214,
+        522,
+        1529,
+        1007
+      ],
+      "commonScale": 0.29568788501026694,
+      "sha12": "e6d0c0c28fab"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_0",
+      "source": "gfire.png",
+      "sourceRect": [
+        12,
+        16,
+        223,
+        440
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "1c4953978ba0"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_1",
+      "source": "gfire.png",
+      "sourceRect": [
+        236,
+        13,
+        442,
+        439
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "cee45965060b"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_2",
+      "source": "gfire.png",
+      "sourceRect": [
+        456,
+        13,
+        662,
+        440
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "56dad8685e61"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_3",
+      "source": "gfire.png",
+      "sourceRect": [
+        676,
+        13,
+        881,
+        440
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "46e6fd944293"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_4",
+      "source": "gfire.png",
+      "sourceRect": [
+        896,
+        13,
+        1103,
+        440
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "9ba463d200d1"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_5",
+      "source": "gfire.png",
+      "sourceRect": [
+        1117,
+        16,
+        1324,
+        440
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "341f92eb211e"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_6",
+      "source": "gfire.png",
+      "sourceRect": [
+        1337,
+        13,
+        1544,
+        440
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "aee2b001bebd"
+    },
+    {
+      "key": "pb20_gosfer_fire_south_7",
+      "source": "gfire.png",
+      "sourceRect": [
+        1558,
+        16,
+        1763,
+        440
+      ],
+      "commonScale": 0.3376318874560375,
+      "sha12": "201b12310493"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_0",
+      "source": "gfire.png",
+      "sourceRect": [
+        16,
+        459,
+        220,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "16b95798b3c0"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_1",
+      "source": "gfire.png",
+      "sourceRect": [
+        235,
+        459,
+        442,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "bac80b5790b4"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_2",
+      "source": "gfire.png",
+      "sourceRect": [
+        456,
+        460,
+        662,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "d09f4877edcc"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_3",
+      "source": "gfire.png",
+      "sourceRect": [
+        676,
+        460,
+        883,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "a3e894f7e3ee"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_4",
+      "source": "gfire.png",
+      "sourceRect": [
+        896,
+        460,
+        1104,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "4c3e1327af2c"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_5",
+      "source": "gfire.png",
+      "sourceRect": [
+        1117,
+        464,
+        1324,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "826c8f204f66"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_6",
+      "source": "gfire.png",
+      "sourceRect": [
+        1338,
+        460,
+        1546,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "6699b785c462"
+    },
+    {
+      "key": "pb20_gosfer_fire_angle_7",
+      "source": "gfire.png",
+      "sourceRect": [
+        1559,
+        462,
+        1764,
+        866
+      ],
+      "commonScale": 0.35467980295566504,
+      "sha12": "298eafe1054e"
+    },
+    {
+      "key": "pb20_gosfer_roll_0",
+      "source": "gaction.png",
+      "sourceRect": [
+        38,
+        681,
+        241,
+        902
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "05222e0ed438"
+    },
+    {
+      "key": "pb20_gosfer_roll_1",
+      "source": "gaction.png",
+      "sourceRect": [
+        330,
+        732,
+        624,
+        891
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "4ee0d7649843"
+    },
+    {
+      "key": "pb20_gosfer_roll_2",
+      "source": "gaction.png",
+      "sourceRect": [
+        670,
+        642,
+        903,
+        898
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "b72c0d47c654"
+    },
+    {
+      "key": "pb20_gosfer_roll_3",
+      "source": "gaction.png",
+      "sourceRect": [
+        1001,
+        718,
+        1221,
+        889
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "480391660013"
+    },
+    {
+      "key": "pb20_gosfer_roll_4",
+      "source": "gaction.png",
+      "sourceRect": [
+        50,
+        1005,
+        295,
+        1217
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "e0ac4fb80e12"
+    },
+    {
+      "key": "pb20_gosfer_roll_5",
+      "source": "gaction.png",
+      "sourceRect": [
+        359,
+        958,
+        624,
+        1212
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "8df97d6f0b56"
+    },
+    {
+      "key": "pb20_gosfer_roll_6",
+      "source": "gaction.png",
+      "sourceRect": [
+        678,
+        953,
+        927,
+        1216
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "daf33eeeac76"
+    },
+    {
+      "key": "pb20_gosfer_roll_7",
+      "source": "gaction.png",
+      "sourceRect": [
+        978,
+        920,
+        1228,
+        1220
+      ],
+      "commonScale": 0.4729064039408867,
+      "sha12": "502fa79f15ae"
+    },
+    {
+      "key": "pb20_gosfer_run_0",
+      "source": "gmotion.png",
+      "sourceRect": [
+        16,
+        19,
+        243,
+        281
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "a9275800f078"
+    },
+    {
+      "key": "pb20_gosfer_run_1",
+      "source": "gmotion.png",
+      "sourceRect": [
+        273,
+        18,
+        468,
+        283
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "44f87a795980"
+    },
+    {
+      "key": "pb20_gosfer_run_2",
+      "source": "gmotion.png",
+      "sourceRect": [
+        482,
+        19,
+        665,
+        283
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "7278d4614361"
+    },
+    {
+      "key": "pb20_gosfer_run_3",
+      "source": "gmotion.png",
+      "sourceRect": [
+        645,
+        19,
+        913,
+        241
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "5e54682b468c"
+    },
+    {
+      "key": "pb20_gosfer_run_4",
+      "source": "gmotion.png",
+      "sourceRect": [
+        888,
+        18,
+        1114,
+        283
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "8cb669d05c64"
+    },
+    {
+      "key": "pb20_gosfer_run_5",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1154,
+        20,
+        1334,
+        283
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "716053d1b437"
+    },
+    {
+      "key": "pb20_gosfer_run_6",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1327,
+        19,
+        1533,
+        283
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "3906ae206ea9"
+    },
+    {
+      "key": "pb20_gosfer_run_7",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1521,
+        19,
+        1765,
+        276
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "4039a67420d2"
+    },
+    {
+      "key": "pb20_gosfer_strafe_0",
+      "source": "gmotion.png",
+      "sourceRect": [
+        17,
+        302,
+        259,
+        569
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "05ec730c354e"
+    },
+    {
+      "key": "pb20_gosfer_strafe_1",
+      "source": "gmotion.png",
+      "sourceRect": [
+        271,
+        303,
+        430,
+        569
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "6c0ce488d819"
+    },
+    {
+      "key": "pb20_gosfer_strafe_2",
+      "source": "gmotion.png",
+      "sourceRect": [
+        475,
+        303,
+        627,
+        571
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "91d8afb311b3"
+    },
+    {
+      "key": "pb20_gosfer_strafe_3",
+      "source": "gmotion.png",
+      "sourceRect": [
+        694,
+        303,
+        839,
+        570
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "cdd6e1ae7c4d"
+    },
+    {
+      "key": "pb20_gosfer_strafe_4",
+      "source": "gmotion.png",
+      "sourceRect": [
+        890,
+        303,
+        1130,
+        573
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "a753e823671e"
+    },
+    {
+      "key": "pb20_gosfer_strafe_5",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1157,
+        303,
+        1300,
+        570
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "2879d474ab3f"
+    },
+    {
+      "key": "pb20_gosfer_strafe_6",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1383,
+        303,
+        1525,
+        573
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "cb6c9ca4ad67"
+    },
+    {
+      "key": "pb20_gosfer_strafe_7",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1588,
+        303,
+        1731,
+        571
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "398aa54509f5"
+    },
+    {
+      "key": "pb20_gosfer_jump_0",
+      "source": "gmotion.png",
+      "sourceRect": [
+        17,
+        634,
+        212,
+        867
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "8f2bda93f9bf"
+    },
+    {
+      "key": "pb20_gosfer_jump_1",
+      "source": "gmotion.png",
+      "sourceRect": [
+        257,
+        613,
+        446,
+        867
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "e57f566d5770"
+    },
+    {
+      "key": "pb20_gosfer_jump_2",
+      "source": "gmotion.png",
+      "sourceRect": [
+        485,
+        592,
+        651,
+        796
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "4a99df10c3f5"
+    },
+    {
+      "key": "pb20_gosfer_jump_3",
+      "source": "gmotion.png",
+      "sourceRect": [
+        700,
+        584,
+        869,
+        779
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "1665b5acc302"
+    },
+    {
+      "key": "pb20_gosfer_jump_4",
+      "source": "gmotion.png",
+      "sourceRect": [
+        919,
+        586,
+        1096,
+        831
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "dc633cefa738"
+    },
+    {
+      "key": "pb20_gosfer_jump_5",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1114,
+        617,
+        1310,
+        861
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "8ee486c9637c"
+    },
+    {
+      "key": "pb20_gosfer_jump_6",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1348,
+        655,
+        1544,
+        864
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "7e173883f722"
+    },
+    {
+      "key": "pb20_gosfer_jump_7",
+      "source": "gmotion.png",
+      "sourceRect": [
+        1573,
+        605,
+        1755,
+        866
+      ],
+      "commonScale": 0.5383177570093458,
+      "sha12": "fc8fb8ba4338"
+    },
+    {
+      "key": "pb20_helios_run_0",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        85,
+        21,
+        1209,
+        1150
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "e916dcfa90ce"
+    },
+    {
+      "key": "pb20_helios_run_1",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        223,
+        56,
+        1220,
+        1150
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "fe3ab484d4cb"
+    },
+    {
+      "key": "pb20_helios_run_2",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        229,
+        20,
+        1186,
+        1182
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "5f1e83fa9e6c"
+    },
+    {
+      "key": "pb20_helios_run_3",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        74,
+        19,
+        1246,
+        1186
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "53ff35a66b62"
+    },
+    {
+      "key": "pb20_helios_run_4",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        84,
+        25,
+        1230,
+        1151
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "b750866ecaf5"
+    },
+    {
+      "key": "pb20_helios_run_5",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        266,
+        19,
+        1251,
+        1155
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "e28bdd1809b7"
+    },
+    {
+      "key": "pb20_helios_run_6",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        200,
+        14,
+        1184,
+        1156
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "ae9ae6836e6e"
+    },
+    {
+      "key": "pb20_helios_run_7",
+      "source": "hrun_single.png",
+      "sourceRect": [
+        79,
+        58,
+        1241,
+        1132
+      ],
+      "commonScale": 0.16335540838852097,
+      "sha12": "9c0fa93d3f63"
+    },
+    {
+      "key": "pb20_helios_walk_0",
+      "source": "hmotion.png",
+      "sourceRect": [
+        30,
+        70,
+        231,
+        363
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "38f083418124"
+    },
+    {
+      "key": "pb20_helios_walk_1",
+      "source": "hmotion.png",
+      "sourceRect": [
+        291,
+        68,
+        485,
+        361
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "cd776985e02e"
+    },
+    {
+      "key": "pb20_helios_walk_2",
+      "source": "hmotion.png",
+      "sourceRect": [
+        545,
+        67,
+        716,
+        361
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "eb55fa9ed7e7"
+    },
+    {
+      "key": "pb20_helios_walk_3",
+      "source": "hmotion.png",
+      "sourceRect": [
+        787,
+        66,
+        981,
+        361
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "c7ce33073b6d"
+    },
+    {
+      "key": "pb20_helios_walk_4",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1012,
+        69,
+        1228,
+        361
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "e05b17682e52"
+    },
+    {
+      "key": "pb20_helios_walk_5",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1272,
+        69,
+        1477,
+        364
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "509c8e6dcd78"
+    },
+    {
+      "key": "pb20_helios_walk_6",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1528,
+        69,
+        1712,
+        361
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "07b474f532ca"
+    },
+    {
+      "key": "pb20_helios_walk_7",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1773,
+        68,
+        1967,
+        362
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "bd8f89891f88"
+    },
+    {
+      "key": "pb20_helios_strafe_0",
+      "source": "hmotion.png",
+      "sourceRect": [
+        40,
+        443,
+        241,
+        725
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "a7375c0fe62e"
+    },
+    {
+      "key": "pb20_helios_strafe_1",
+      "source": "hmotion.png",
+      "sourceRect": [
+        294,
+        442,
+        478,
+        736
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "93d09a9fc390"
+    },
+    {
+      "key": "pb20_helios_strafe_2",
+      "source": "hmotion.png",
+      "sourceRect": [
+        557,
+        442,
+        710,
+        735
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "03337de92ca9"
+    },
+    {
+      "key": "pb20_helios_strafe_3",
+      "source": "hmotion.png",
+      "sourceRect": [
+        793,
+        441,
+        952,
+        737
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "f0372f4ae659"
+    },
+    {
+      "key": "pb20_helios_strafe_4",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1016,
+        442,
+        1228,
+        726
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "1e83149d0af3"
+    },
+    {
+      "key": "pb20_helios_strafe_5",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1280,
+        442,
+        1470,
+        736
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "492618a973c7"
+    },
+    {
+      "key": "pb20_helios_strafe_6",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1533,
+        441,
+        1693,
+        736
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "d2ccb29f4a19"
+    },
+    {
+      "key": "pb20_helios_strafe_7",
+      "source": "hmotion.png",
+      "sourceRect": [
+        1773,
+        442,
+        1941,
+        737
+      ],
+      "commonScale": 0.7155025553662692,
+      "sha12": "8d12a078ff91"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_0",
+      "source": "ywall.png",
+      "sourceRect": [
+        35,
+        44,
+        204,
+        242
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "fb396c399fdb"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_1",
+      "source": "ywall.png",
+      "sourceRect": [
+        260,
+        49,
+        429,
+        244
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "97d8a1888124"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_2",
+      "source": "ywall.png",
+      "sourceRect": [
+        490,
+        45,
+        644,
+        243
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "0f45fa2ff911"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_3",
+      "source": "ywall.png",
+      "sourceRect": [
+        723,
+        48,
+        873,
+        244
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "0cdebc0fbdc4"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_4",
+      "source": "ywall.png",
+      "sourceRect": [
+        945,
+        50,
+        1088,
+        244
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "eda08a622eea"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_5",
+      "source": "ywall.png",
+      "sourceRect": [
+        1133,
+        49,
+        1324,
+        243
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "e1fc801e0d27"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_6",
+      "source": "ywall.png",
+      "sourceRect": [
+        1386,
+        49,
+        1530,
+        247
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "1cd433d642c8"
+    },
+    {
+      "key": "pb20_yuri_wall_crouch_7",
+      "source": "ywall.png",
+      "sourceRect": [
+        1606,
+        52,
+        1744,
+        245
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "0c09b756a84e"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_0",
+      "source": "ywall.png",
+      "sourceRect": [
+        33,
+        301,
+        199,
+        450
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "c20c942c474f"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_1",
+      "source": "ywall.png",
+      "sourceRect": [
+        250,
+        301,
+        428,
+        456
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "4dce5b584089"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_2",
+      "source": "ywall.png",
+      "sourceRect": [
+        471,
+        307,
+        662,
+        462
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "dc797a789578"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_3",
+      "source": "ywall.png",
+      "sourceRect": [
+        688,
+        298,
+        880,
+        449
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "a4b44435aca9"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_4",
+      "source": "ywall.png",
+      "sourceRect": [
+        917,
+        305,
+        1092,
+        455
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "52c8c251f5b9"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_5",
+      "source": "ywall.png",
+      "sourceRect": [
+        1135,
+        304,
+        1316,
+        464
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "93408d256933"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_6",
+      "source": "ywall.png",
+      "sourceRect": [
+        1349,
+        303,
+        1524,
+        468
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "251be3a0b30b"
+    },
+    {
+      "key": "pb20_yuri_wall_prone_7",
+      "source": "ywall.png",
+      "sourceRect": [
+        1574,
+        304,
+        1729,
+        466
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "b46a5596cc79"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_0",
+      "source": "ywall.png",
+      "sourceRect": [
+        40,
+        491,
+        186,
+        656
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "8f4fc6e7e8f1"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_1",
+      "source": "ywall.png",
+      "sourceRect": [
+        282,
+        514,
+        405,
+        643
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "dd13ec97dddc"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_2",
+      "source": "ywall.png",
+      "sourceRect": [
+        511,
+        537,
+        631,
+        643
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "f8450b0e2a63"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_3",
+      "source": "ywall.png",
+      "sourceRect": [
+        725,
+        513,
+        831,
+        644
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "f243fbd18d09"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_4",
+      "source": "ywall.png",
+      "sourceRect": [
+        933,
+        541,
+        1076,
+        636
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "e52fcc9d1dcf"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_5",
+      "source": "ywall.png",
+      "sourceRect": [
+        1141,
+        539,
+        1300,
+        647
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "a67a3f895ec9"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_6",
+      "source": "ywall.png",
+      "sourceRect": [
+        1347,
+        528,
+        1528,
+        650
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "a86e78372d7f"
+    },
+    {
+      "key": "pb20_yuri_roll_prone_7",
+      "source": "ywall.png",
+      "sourceRect": [
+        1570,
+        513,
+        1736,
+        635
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "fd80449ff8b5"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_0",
+      "source": "ywall.png",
+      "sourceRect": [
+        38,
+        691,
+        187,
+        857
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "62d258704089"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_1",
+      "source": "ywall.png",
+      "sourceRect": [
+        283,
+        711,
+        408,
+        840
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "351281aaebc8"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_2",
+      "source": "ywall.png",
+      "sourceRect": [
+        511,
+        732,
+        631,
+        837
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "c76f9cea4572"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_3",
+      "source": "ywall.png",
+      "sourceRect": [
+        725,
+        700,
+        831,
+        839
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "181c158020dd"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_4",
+      "source": "ywall.png",
+      "sourceRect": [
+        937,
+        724,
+        1087,
+        847
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "55e5909864e4"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_5",
+      "source": "ywall.png",
+      "sourceRect": [
+        1160,
+        687,
+        1300,
+        858
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "0974e9966688"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_6",
+      "source": "ywall.png",
+      "sourceRect": [
+        1381,
+        678,
+        1515,
+        861
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "a9ca614134b4"
+    },
+    {
+      "key": "pb20_yuri_roll_stand_7",
+      "source": "ywall.png",
+      "sourceRect": [
+        1609,
+        650,
+        1727,
+        862
+      ],
+      "commonScale": 0.41509433962264153,
+      "sha12": "e3564dd62e71"
+    },
+    {
+      "key": "pb20_portrait_yuri_0",
+      "source": "portraits.png",
+      "sourceRect": [
+        14,
+        7,
+        445,
+        415
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "9309a42b6ccf"
+    },
+    {
+      "key": "pb20_portrait_yuri_1",
+      "source": "portraits.png",
+      "sourceRect": [
+        473,
+        7,
+        903,
+        415
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "918344ddca45"
+    },
+    {
+      "key": "pb20_portrait_yuri_2",
+      "source": "portraits.png",
+      "sourceRect": [
+        930,
+        7,
+        1361,
+        415
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "9e6b23cfd8f3"
+    },
+    {
+      "key": "pb20_portrait_yuri_3",
+      "source": "portraits.png",
+      "sourceRect": [
+        1390,
+        7,
+        1821,
+        415
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "bf2e35881213"
+    },
+    {
+      "key": "pb20_portrait_gosfer_0",
+      "source": "portraits.png",
+      "sourceRect": [
+        14,
+        438,
+        445,
+        843
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "bd9a1b0120b5"
+    },
+    {
+      "key": "pb20_portrait_gosfer_1",
+      "source": "portraits.png",
+      "sourceRect": [
+        473,
+        438,
+        903,
+        843
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "c946c1f44b04"
+    },
+    {
+      "key": "pb20_portrait_gosfer_2",
+      "source": "portraits.png",
+      "sourceRect": [
+        930,
+        438,
+        1361,
+        842
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "dca4dec81f38"
+    },
+    {
+      "key": "pb20_portrait_gosfer_3",
+      "source": "portraits.png",
+      "sourceRect": [
+        1390,
+        438,
+        1821,
+        843
+      ],
+      "commonScale": 0.5939675174013921,
+      "sha12": "41802c2de758"
+    },
+    {
+      "key": "pb20_hud_top",
+      "source": "hud.png",
+      "sourceRect": [
+        11,
+        116,
+        616,
+        258
+      ],
+      "commonScale": 0.38028169014084506,
+      "sha12": "440442622058"
+    },
+    {
+      "key": "pb20_hud_bottom",
+      "source": "hud.png",
+      "sourceRect": [
+        634,
+        140,
+        1246,
+        269
+      ],
+      "commonScale": 0.31007751937984496,
+      "sha12": "4ff4f8102b7a"
+    },
+    {
+      "key": "pb20_hud_boss",
+      "source": "hud.png",
+      "sourceRect": [
+        12,
+        407,
+        619,
+        552
+      ],
+      "commonScale": 0.2620689655172414,
+      "sha12": "f372e9ccd041"
+    },
+    {
+      "key": "pb20_hud_dialogue",
+      "source": "hud.png",
+      "sourceRect": [
+        640,
+        386,
+        1240,
+        551
+      ],
+      "commonScale": 0.5575757575757576,
+      "sha12": "b888ca2787ea"
+    },
+    {
+      "key": "pb20_hud_portrait_player_0",
+      "source": "hud.png",
+      "sourceRect": [
+        135,
+        650,
+        493,
+        940
+      ],
+      "commonScale": 0.3687150837988827,
+      "sha12": "3c5418eb2bfc"
+    },
+    {
+      "key": "pb20_hud_portrait_enemy_0",
+      "source": "hud.png",
+      "sourceRect": [
+        762,
+        650,
+        1120,
+        940
+      ],
+      "commonScale": 0.3687150837988827,
+      "sha12": "e1d95f909b06"
+    },
+    {
+      "key": "pb20_icon_roll",
+      "source": "hud.png",
+      "sourceRect": [
+        25,
+        1041,
+        175,
+        1178
+      ],
+      "commonScale": 0.32,
+      "sha12": "4cadc292a655"
+    },
+    {
+      "key": "pb20_icon_prone",
+      "source": "hud.png",
+      "sourceRect": [
+        147,
+        1093,
+        360,
+        1169
+      ],
+      "commonScale": 0.22535211267605634,
+      "sha12": "6f302ab2ed3e"
+    },
+    {
+      "key": "pb20_icon_shield",
+      "source": "hud.png",
+      "sourceRect": [
+        147,
+        940,
+        481,
+        1179
+      ],
+      "commonScale": 0.1437125748502994,
+      "sha12": "b47a1ba82b28"
+    },
+    {
+      "key": "pb20_icon_retina",
+      "source": "hud.png",
+      "sourceRect": [
+        476,
+        1040,
+        609,
+        1182
+      ],
+      "commonScale": 0.3380281690140845,
+      "sha12": "42a39afcf719"
+    },
+    {
+      "key": "pb20_icon_grenade",
+      "source": "hud.png",
+      "sourceRect": [
+        652,
+        1046,
+        756,
+        1182
+      ],
+      "commonScale": 0.35294117647058826,
+      "sha12": "be12b5eb12d0"
+    },
+    {
+      "key": "pb20_icon_ammo",
+      "source": "hud.png",
+      "sourceRect": [
+        778,
+        1048,
+        884,
+        1182
+      ],
+      "commonScale": 0.3582089552238806,
+      "sha12": "76297cc8d5a5"
+    },
+    {
+      "key": "pb20_icon_armor",
+      "source": "hud.png",
+      "sourceRect": [
+        774,
+        940,
+        1107,
+        1178
+      ],
+      "commonScale": 0.14414414414414414,
+      "sha12": "97628bc72bca"
+    },
+    {
+      "key": "pb20_icon_cover",
+      "source": "hud.png",
+      "sourceRect": [
+        1063,
+        1046,
+        1225,
+        1184
+      ],
+      "commonScale": 0.2962962962962963,
+      "sha12": "ec4dfd8db38c"
+    },
+    {
+      "key": "pb20_gosfer_shield_0",
+      "source": "gfx.png",
+      "sourceRect": [
+        39,
+        11,
+        288,
+        302
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "0ea8161659e9"
+    },
+    {
+      "key": "pb20_gosfer_shield_1",
+      "source": "gfx.png",
+      "sourceRect": [
+        353,
+        11,
+        601,
+        302
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "09f10a1904f5"
+    },
+    {
+      "key": "pb20_gosfer_shield_2",
+      "source": "gfx.png",
+      "sourceRect": [
+        670,
+        11,
+        918,
+        302
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "b22f1f483fdb"
+    },
+    {
+      "key": "pb20_gosfer_shield_3",
+      "source": "gfx.png",
+      "sourceRect": [
+        984,
+        11,
+        1235,
+        302
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "ebfa2e311263"
+    },
+    {
+      "key": "pb20_gosfer_shield_4",
+      "source": "gfx.png",
+      "sourceRect": [
+        38,
+        315,
+        289,
+        604
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "5d426637e301"
+    },
+    {
+      "key": "pb20_gosfer_shield_5",
+      "source": "gfx.png",
+      "sourceRect": [
+        352,
+        315,
+        601,
+        604
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "82d28056c1c1"
+    },
+    {
+      "key": "pb20_gosfer_shield_6",
+      "source": "gfx.png",
+      "sourceRect": [
+        669,
+        315,
+        919,
+        604
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "270d2b9fa902"
+    },
+    {
+      "key": "pb20_gosfer_shield_7",
+      "source": "gfx.png",
+      "sourceRect": [
+        984,
+        315,
+        1235,
+        604
+      ],
+      "commonScale": 0.6896551724137931,
+      "sha12": "748c215dc917"
+    },
+    {
+      "key": "pb20_gosfer_lightning_0",
+      "source": "gfx.png",
+      "sourceRect": [
+        13,
+        623,
+        308,
+        928
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "138399a79b5b"
+    },
+    {
+      "key": "pb20_gosfer_lightning_1",
+      "source": "gfx.png",
+      "sourceRect": [
+        332,
+        621,
+        620,
+        928
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "caed295a413d"
+    },
+    {
+      "key": "pb20_gosfer_lightning_2",
+      "source": "gfx.png",
+      "sourceRect": [
+        649,
+        622,
+        934,
+        928
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "3be06d7ac1ba"
+    },
+    {
+      "key": "pb20_gosfer_lightning_3",
+      "source": "gfx.png",
+      "sourceRect": [
+        963,
+        621,
+        1259,
+        906
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "29167da119e6"
+    },
+    {
+      "key": "pb20_gosfer_lightning_4",
+      "source": "gfx.png",
+      "sourceRect": [
+        14,
+        928,
+        306,
+        1217
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "4d0e1bc620a6"
+    },
+    {
+      "key": "pb20_gosfer_lightning_5",
+      "source": "gfx.png",
+      "sourceRect": [
+        333,
+        928,
+        623,
+        1216
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "5a9e906c814c"
+    },
+    {
+      "key": "pb20_gosfer_lightning_6",
+      "source": "gfx.png",
+      "sourceRect": [
+        650,
+        928,
+        931,
+        1213
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "2e115b5ef347"
+    },
+    {
+      "key": "pb20_gosfer_lightning_7",
+      "source": "gfx.png",
+      "sourceRect": [
+        967,
+        929,
+        1257,
+        1213
+      ],
+      "commonScale": 0.7348353552859619,
+      "sha12": "175a8e691cfa"
+    }
+  ]
+}

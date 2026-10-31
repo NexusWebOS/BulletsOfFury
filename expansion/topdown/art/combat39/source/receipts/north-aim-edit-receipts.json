@@ -1,0 +1,74 @@
+[
+  {
+    "name": "machine_gunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 61afdda5-0012-44ce-8b87-5f35913b1e8f\njob_id: 61afdda5-0012-44ce-8b87-5f35913b1e8f\nmodel: pixen\nedit: Keep same soldier armor, size, palette and pixel style. Correct to PURE BACK VIEW facing NORTH, no face/visor visible. Raise BOTH hands and aim his existing assault rifle straight toward the TOP EDGE of the image, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Feet planted, same body height, no flash. Full body and muzzle visible.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 1aee988d-d2b5-5887-adad-9436260a6a88\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"61afdda5-0012-44ce-8b87-5f35913b1e8f\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "minigunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 33b92301-5da0-45e6-a368-19696c305a60\njob_id: 33b92301-5da0-45e6-a368-19696c305a60\nmodel: pixen\nedit: Keep same soldier armor, size, palette and pixel style. Correct to PURE BACK VIEW facing NORTH, no face/visor visible. Raise BOTH hands and aim his existing rigid rotary minigun straight toward the TOP EDGE of the image, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Feet planted, same body height, no flash. Full body and muzzle visible.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: cf0cd32e-5f71-5e2e-8858-7715c2bfb114\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"33b92301-5da0-45e6-a368-19696c305a60\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "sniper",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 16b036fd-2f11-408e-805f-7c7af49fb794\njob_id: 16b036fd-2f11-408e-805f-7c7af49fb794\nmodel: pixen\nedit: Keep same soldier armor, size, palette and pixel style. Correct to PURE BACK VIEW facing NORTH, no face/visor visible. Raise BOTH hands and aim his existing long sniper rifle straight toward the TOP EDGE of the image, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Feet planted, same body height, no flash. Full body and muzzle visible.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: e8a28368-e9f4-5a93-942b-e00ef4c5edf6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"16b036fd-2f11-408e-805f-7c7af49fb794\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "rocket_launcher",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 2cb40920-a765-403d-bd22-a06aed4bbee7\njob_id: 2cb40920-a765-403d-bd22-a06aed4bbee7\nmodel: pixen\nedit: Keep same soldier armor, size, palette and pixel style. Correct to PURE BACK VIEW facing NORTH, no face/visor visible. Raise BOTH hands and aim his existing shoulder rocket launcher straight toward the TOP EDGE of the image, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Feet planted, same body height, no flash. Full body and muzzle visible.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 202ed461-f0d9-56cf-9839-ea2a414425aa\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"2cb40920-a765-403d-bd22-a06aed4bbee7\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "shotgunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: cced160d-701c-4ab0-9062-a66ab2a4f6dc\njob_id: cced160d-701c-4ab0-9062-a66ab2a4f6dc\nmodel: pixen\nedit: Keep same soldier armor, size, palette and pixel style. Correct to PURE BACK VIEW facing NORTH, no face/visor visible. Raise BOTH hands and aim his existing pump shotgun straight toward the TOP EDGE of the image, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Feet planted, same body height, no flash. Full body and muzzle visible.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 9efa5560-492d-5dc1-8999-15c00aadce44\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"cced160d-701c-4ab0-9062-a66ab2a4f6dc\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "double_barrel",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 29e311bf-8c4a-47d6-aaf3-e9edc67d45aa\njob_id: 29e311bf-8c4a-47d6-aaf3-e9edc67d45aa\nmodel: pixen\nedit: Keep same soldier armor, size, palette and pixel style. Correct to PURE BACK VIEW facing NORTH, no face/visor visible. Raise BOTH hands and aim his existing double-barrel shotgun straight toward the TOP EDGE of the image, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Feet planted, same body height, no flash. Full body and muzzle visible.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 1fdb6a61-e617-52f4-8b26-0a7f0246cb69\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"29e311bf-8c4a-47d6-aaf3-e9edc67d45aa\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

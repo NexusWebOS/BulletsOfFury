@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "character: 36f0a12c-304d-4097-9ec5-b14d8aca4f74\nanimation: pixminimax custom (Rear-view Yuri starts lying flat with head at TOP and boots at BOTTOM. Low sideways combat body roll while remaining on the floor: rotate torso about the long head-to-feet axis, back to side to chest to other side to back. Head remains at TOP and boots at BOTTOM in EVERY frame. No spinning around center, no yaw or heading change. Rifle points straight UP away from viewer throughout. Never stand, kneel or sit. Same exact size, colors, camera; finish exact supplied prone pose.)\ndirections: north (1 jobs)\njob_ids: north=055019c0-07eb-47f9-a0be-22f83e44f820\ngroup: d75a6c05-56d9-4f10-bf3c-e5ad7948a619\nframes: 17 (1 reference + 16 animated)\ncanvas: north 160x164 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"36f0a12c-304d-4097-9ec5-b14d8aca4f74\")\nadd more directions to this group: animate_character(character_id=\"36f0a12c-304d-4097-9ec5-b14d8aca4f74\", action_description=\"Rear-view Yuri starts lying flat with head at TOP and boots at BOTTOM. Low sideways combat body roll while remaining on the floor: rotate torso about the long head-to-feet axis, back to side to chest to other side to back. Head remains at TOP and boots at BOTTOM in EVERY frame. No spinning around center, no yaw or heading change. Rifle points straight UP away from viewer throughout. Never stand, kneel or sit. Same exact size, colors, camera; finish exact supplied prone pose.\", mode=\"pixminimax\", animation_group_id=\"d75a6c05-56d9-4f10-bf3c-e5ad7948a619\", directions=[...])"
+    }
+  ],
+  "isError": false
+}

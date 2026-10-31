@@ -1,0 +1,50 @@
+[
+  {
+    "name": "minigunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: d7f76b1c-2bf0-4aee-9f5f-770a72738b02\njob_id: d7f76b1c-2bf0-4aee-9f5f-770a72738b02\nmodel: pixen\nedit: Keep back-view soldier, palette, size unchanged. Lower both ELBOWS toward the ribs, not raised fists. Hands close together IN FRONT OF CHEST, hidden by torso from this BACK view, holding one rigid heavy rotary minigun. Gun points vertically NORTH/up, visible beyond helmet on soldier's RIGHT side. Do not put gun on top of head like antenna. No gun in each fist. No surrender pose. Feet planted, same height, no flash.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: d28acfea-d44b-5b1d-9020-c260edde800a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d7f76b1c-2bf0-4aee-9f5f-770a72738b02\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "double_barrel",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 377b1e41-6210-4db1-b87b-ea69a2bbbab5\njob_id: 377b1e41-6210-4db1-b87b-ea69a2bbbab5\nmodel: pixen\nedit: Keep back-view soldier, palette, size unchanged. Lower both ELBOWS toward the ribs, not raised fists. Hands close together IN FRONT OF CHEST, hidden by torso from this BACK view, holding one double-barrel shotgun with two adjacent barrels. Gun points vertically NORTH/up, visible beyond helmet on soldier's RIGHT side. Do not put gun on top of head like antenna. No gun in each fist. No surrender pose. Feet planted, same height, no flash.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 2a82beaa-422c-5054-b2d2-866e545a2930\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"377b1e41-6210-4db1-b87b-ea69a2bbbab5\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "rocket_launcher",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: c275b464-7d2f-48e1-81ef-a0231ba74ff9\njob_id: c275b464-7d2f-48e1-81ef-a0231ba74ff9\nmodel: pixen\nedit: Keep back-view soldier, palette, size unchanged. Lower both ELBOWS toward the ribs, not raised fists. Hands close together IN FRONT OF CHEST, hidden by torso from this BACK view, holding one shoulder rocket launcher. Gun points vertically NORTH/up, visible beyond helmet on soldier's RIGHT side. Do not put gun on top of head like antenna. No gun in each fist. No surrender pose. Feet planted, same height, no flash.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 858db835-d04e-52c1-991b-92d950b2ba1e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"c275b464-7d2f-48e1-81ef-a0231ba74ff9\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "flamethrower",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5b9b7dc3-86a7-4556-bb24-4bdce89c39d5\njob_id: 5b9b7dc3-86a7-4556-bb24-4bdce89c39d5\nmodel: pixen\nedit: Keep back-view soldier, palette, size unchanged. Lower both ELBOWS toward the ribs, not raised fists. Hands close together IN FRONT OF CHEST, hidden by torso from this BACK view, holding one flamethrower nozzle. Gun points vertically NORTH/up, visible beyond helmet on soldier's RIGHT side. Do not put gun on top of head like antenna. No gun in each fist. No surrender pose. Feet planted, same height, no flash.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 39d6473e-7c8c-5765-8154-1848650c52dd\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5b9b7dc3-86a7-4556-bb24-4bdce89c39d5\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

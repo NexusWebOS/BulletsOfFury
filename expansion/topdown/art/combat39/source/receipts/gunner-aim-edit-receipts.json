@@ -1,0 +1,26 @@
+[
+  {
+    "name": "up",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 34865de7-5949-460d-803a-7a2a922b6ca7\njob_id: 34865de7-5949-460d-803a-7a2a922b6ca7\nmodel: pixen\nedit: Keep exact side-on Yuri body, feet, palette and transparent canvas. Change head and shoulder pose only: look upward to the right at 45 degrees while operating a mounted turret. Both empty hands remain at the same grip position in front of chest. NO handheld gun, NO new props. Preserve face identity, red shirt, black gear, size and fixed boot position.\nsource: 160x160px\nsize: 160x160px\ntransparent: True\nasset_id: 101cf067-d57b-5d31-bfde-535939227223\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"34865de7-5949-460d-803a-7a2a922b6ca7\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "down",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: cac81719-c9ad-4ba8-bda1-746f2a4cb2f8\njob_id: cac81719-c9ad-4ba8-bda1-746f2a4cb2f8\nmodel: pixen\nedit: Keep exact side-on Yuri body, feet, palette and transparent canvas. Change head and shoulder pose only: look downward to the right at 45 degrees while operating a mounted turret. Both empty hands remain at the same grip position in front of chest. NO handheld gun, NO new props. Preserve face identity, red shirt, black gear, size and fixed boot position.\nsource: 160x160px\nsize: 160x160px\ntransparent: True\nasset_id: af665f2e-2649-5f97-abba-576348741c5a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"cac81719-c9ad-4ba8-bda1-746f2a4cb2f8\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "yuri-back": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 2d515003-f121-4c0c-b299-eae6c3837050\njob_id: 2d515003-f121-4c0c-b299-eae6c3837050\nmodel: pixen\nedit: FRAME FORMAT 160x160 transparent, root80,136 fixed. Same exact Yuri identity, red and black armor, short brown mohawk, backpack, adult proportions. Change only torso and head facing: show his BACK to camera, braced slightly crouching in a truck bed. Pelvis/boots fixed. Both hands extend toward upper RIGHT gripping invisible turret handles at chest level. No weapon, no turret, no vehicle. Draw a natural twisting back and shoulders, not a front chest.\nsource: 160x160px\nsize: 160x160px\ntransparent: True\nasset_id: 5a87125d-f929-5946-b45a-bef4d78b437e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"2d515003-f121-4c0c-b299-eae6c3837050\")"
+      }
+    ],
+    "isError": false
+  },
+  "phoenix-drive": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 37cd5341-3d0e-46cf-85bd-dc5915e9bd04\njob_id: 37cd5341-3d0e-46cf-85bd-dc5915e9bd04\nmodel: pixen\nedit: FRAME FORMAT128x128 transparent. Preserve this exact tall adult dark-skinned man, black hair and beard, orange/black armor, face and small head. Pure SIDE PROFILE facing RIGHT, seated driving a car: bent knees, thighs horizontal, both hands reaching forward on invisible steering wheel. No car, no chair, no wheel. Entire body visible, no chibi.\nsource: 128x128px\nsize: 128x128px\ntransparent: True\nasset_id: af5bdff4-a0f0-55d6-b8a3-7e914a709548\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"37cd5341-3d0e-46cf-85bd-dc5915e9bd04\")"
+      }
+    ],
+    "isError": false
+  },
+  "hotwire-drive": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: b80db158-2b04-4af4-b393-13fd80d4a1e1\njob_id: b80db158-2b04-4af4-b393-13fd80d4a1e1\nmodel: pixen\nedit: FRAME FORMAT128x128 transparent. Preserve this exact adult woman, black bob and orange streak, orange/black armor and cyan piping, exact face and small head. Pure SIDE PROFILE facing RIGHT, seated passenger in truck: bent knees, thighs horizontal, hands resting forward in lap. No car, no chair. Entire body visible, no chibi.\nsource: 128x128px\nsize: 128x128px\ntransparent: True\nasset_id: 8045d0a5-89b7-59b3-a56e-fa4a7cc75abc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"b80db158-2b04-4af4-b393-13fd80d4a1e1\")"
+      }
+    ],
+    "isError": false
+  },
+  "neil-drive": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 5e87c34b-dd77-4c95-9d27-ce6c758c2193\njob_id: 5e87c34b-dd77-4c95-9d27-ce6c758c2193\nmodel: pixen\nedit: FRAME FORMAT128x128 transparent. Preserve this exact adult man, dark short hair, sunglasses, short beard, white/black armor with teal trim, face and small head. Pure SIDE PROFILE facing RIGHT, seated driving car: bent knees, thighs horizontal, LEFT hand reaching forward on invisible steering wheel, RIGHT hand holding compact pistol outward through open window. No car, no chair, no wheel. Entire body visible, no chibi.\nsource: 128x128px\nsize: 128x128px\ntransparent: True\nasset_id: 7797c428-016b-5a31-a4b7-90cf5fed86fc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5e87c34b-dd77-4c95-9d27-ce6c758c2193\")"
+      }
+    ],
+    "isError": false
+  }
+}

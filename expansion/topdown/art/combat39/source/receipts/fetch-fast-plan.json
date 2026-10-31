@@ -1,0 +1,18 @@
+[
+  {
+    "name": "machine_gunner39",
+    "url": "https://api.pixellab.ai/mcp/characters/23ea8e2a-0891-4c79-adc6-9e278320034f/download"
+  },
+  {
+    "name": "road",
+    "url": "https://api.pixellab.ai/mcp/images/f94a4ab8-aa39-41b1-89c2-ee7519d2df0a/download"
+  },
+  {
+    "name": "midground",
+    "url": "https://api.pixellab.ai/mcp/images/8fc17b7a-1fdd-402a-aa48-7d9b895266b8/download"
+  },
+  {
+    "name": "gate",
+    "url": "https://api.pixellab.ai/mcp/map-objects/cb8b2549-42d1-4fc9-b660-1b7e8f1f8980/download"
+  }
+]

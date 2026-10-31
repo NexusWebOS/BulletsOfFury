@@ -1,0 +1,198 @@
+{
+  "top_down": [
+    "770bd86f-900a-40cd-8f55-ac612c65f96e",
+    1
+  ],
+  "top_up": [
+    "a1b6d0ee-bb51-45e1-a113-af616ec4232f",
+    1
+  ],
+  "side_setup": [
+    "17cb246c-e1c1-4306-9c07-a04d939f18ee",
+    1
+  ],
+  "barrier": [
+    "6a17d37e-801f-41c7-acdc-aaade7d56d07",
+    1
+  ],
+  "wall": [
+    "ae4a02f1-70c6-4c4c-a661-5abbd8bfad37",
+    1
+  ],
+  "relay": [
+    "edab10d2-6cdd-4048-8cea-8c0a71ed6430",
+    4
+  ],
+  "side_wall": [
+    "66eaf30c-6c7e-4395-8915-224168b4498f",
+    1
+  ],
+  "side_floor": [
+    "1bb91f4b-a193-4d51-8b5e-1dbef220243c",
+    1
+  ],
+  "elevator": [
+    "54e52a7e-df83-47c7-aae1-77b41f467cad",
+    1
+  ],
+  "hatch": [
+    "1e8980a9-3964-4ec4-a2ef-0f70e911ef98",
+    4
+  ],
+  "drone": [
+    "1ed10304-9abe-4e7a-8948-5fd5ef3bc6f1",
+    4
+  ],
+  "top_aim": [
+    "bc7aa424-9b1c-4887-9c52-484a60e4603a",
+    21
+  ],
+  "run": [
+    "7aeb7964-bfd9-442a-a92c-f4d4be551fc1",
+    17
+  ],
+  "vault": [
+    "8b5c714f-a7a7-4107-922f-1ff3979ce94e",
+    17
+  ],
+  "roll": [
+    "dcacf66e-de83-4b77-86ad-6d6ddc9173b7",
+    17
+  ],
+  "crouch": [
+    "f1259b59-6ea9-4a91-9ed0-eb9d8bd463bc",
+    17
+  ],
+  "prone": [
+    "8f744a26-29fd-4549-929d-d65d13074e8a",
+    17
+  ],
+  "side_up": [
+    "88829edb-b7ac-4f0f-8a33-1015a2e2ab30",
+    1
+  ],
+  "slide_setup": [
+    "0b4dbb5b-1d68-4b3d-a1ae-b5303152be7d",
+    1
+  ],
+  "cover_setup": [
+    "3638a4b4-209d-4095-a307-05883ea80e16",
+    1
+  ],
+  "aim_-75": [
+    "c9fa1bec-14c2-41f3-92e2-eb10b34e70da",
+    1
+  ],
+  "aim_-60": [
+    "4eceaafb-2c3a-487c-a151-9c40452fd55d",
+    1
+  ],
+  "aim_-45": [
+    "326e405f-1072-42de-ace7-bd1cffb17cc8",
+    1
+  ],
+  "aim_-30": [
+    "a7a7d95f-2ec8-4ee3-bb1a-707301419fe2",
+    1
+  ],
+  "aim_-15": [
+    "0d1101b8-0f7e-431f-b09a-023fe471c7e7",
+    1
+  ],
+  "aim_15": [
+    "b11c2f93-869e-4abb-befd-a5e4d4f6bdf6",
+    1
+  ],
+  "aim_30": [
+    "6c986faa-5258-42fb-b9d4-c1b2b2b03386",
+    1
+  ],
+  "aim_45": [
+    "378ae007-4f56-42fb-847b-31c0b74f0c31",
+    1
+  ],
+  "side_down": [
+    "5b050078-3077-463a-a83d-23e867ab50e2",
+    1
+  ],
+  "aim_60": [
+    "d6a9c2b8-080b-413c-bf1b-788b8886d437",
+    1
+  ],
+  "aim_75": [
+    "49d7cedf-d3ec-43c4-8f4e-626eeaafa55e",
+    1
+  ],
+  "cover_peek": [
+    "11b16267-aa81-4ec9-b92e-e8f0cb3704e5",
+    17
+  ],
+  "slide_motion": [
+    "7c49055b-b88e-4175-af37-4bc2055f7354",
+    13
+  ],
+  "crate": [
+    "362157db-6a17-491b-82c2-6a10f2b47bfa",
+    4
+  ],
+  "barrel": [
+    "6e82b86a-4fad-4517-a83e-e6a3970dfd21",
+    9
+  ],
+  "run_clean": [
+    "7ab4e7ec-50bb-49a7-8939-5deadab637a9",
+    17
+  ],
+  "drone_motion": [
+    "a9e84cc0-51b8-4c98-bab1-dd18fa13acee",
+    13
+  ],
+  "slide_up": [
+    "e4ef6822-ff6f-47f7-bcd1-b48427603a4e",
+    1
+  ],
+  "slide_back": [
+    "d518452a-9cb4-4807-ac53-f6f3b92f2bc8",
+    1
+  ],
+  "slide_down": [
+    "e5b5afc7-abc9-49ea-91c6-93e770d746f3",
+    1
+  ],
+  "slide_flat": [
+    "72ed650d-d568-43b1-8c81-153e20b22662",
+    1
+  ],
+  "cover_clean": [
+    "8c37f286-f420-404f-a0d3-1519b3a97755",
+    9
+  ],
+  "aim_-75_v2": [
+    "13036c55-9aad-4164-b413-44d72649cedd",
+    1
+  ],
+  "aim_-60_v2": [
+    "c28ba25e-eb05-4dae-972a-4570a282c893",
+    1
+  ],
+  "aim_-45_v2": [
+    "e95d14de-8121-42a0-8839-f509f1529891",
+    1
+  ],
+  "aim_60_v2": [
+    "8ab6a31d-7cd1-4540-8712-87c732888dc4",
+    1
+  ],
+  "aim_75_v2": [
+    "20856f77-4d54-4ced-ae14-665a4460e612",
+    1
+  ],
+  "slide_back_fixed": [
+    "535e06be-f902-43ec-83e9-6f4df974e2f6",
+    1
+  ],
+  "slide_back_twist": [
+    "e7fb56f4-5e8c-4048-97e7-b4f0e3bf5c91",
+    1
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "service": "PixelLab",
+  "id": "15d24f31-5fb6-477e-8836-5eed3893f729",
+  "request": {
+    "name": "Overdrive Genesis corner HUD components 26",
+    "width": 512,
+    "height": 288,
+    "no_background": true,
+    "color_palette": "Sega Genesis 16-bit palette: black navy shadows, light gray and blue steel bevels, white highlights, saturated lime green health, red low-health accent. Restricted solid color ramps.",
+    "description": "FRAME FORMAT: 512 x 288 pixel transparent sprite atlas. Crisp Sega Genesis / Mega Drive 16-bit arcade HUD COMPONENTS, sharp single pixel edges and limited 3-tone bevels. Minimal compact classic action-game interface, no large modern panels, no rounded glossy UI, no blur, no gradients. EXACTLY preserve the provided separate component silhouettes and blank transparent gaps. Upper left: a small empty square portrait frame with a dark inset for a face, thin silver/blue pixel border. Beside it: a thin empty horizontal rectangular health gauge frame, black interior with a narrow metallic border. Below that: a separate bright lime green horizontal HEALTH FILL strip with tiny lighter top highlight and regular black segment separators; fill must be rectangular edge-to-edge, no frame. Upper right: a compact blank two-line information bracket, subtle dark backing and thin top/bottom pixel trim. Lower left: a small red alternate HEALTH FILL strip with same segment spacing as green. Rest of atlas fully transparent. All component interiors BLANK for runtime text and existing pilot portrait. NO lettering, NO digits, NO face, NO icons, NO scenery. Consistent crisp pixel density. The bars must be horizontal rectangles, not ornate windows.",
+    "pieces": [
+      {
+        "id": "portrait_frame",
+        "kind": "rounded_rect",
+        "x": 8,
+        "y": 8,
+        "w": 56,
+        "h": 56,
+        "radius": 0
+      },
+      {
+        "id": "health_track",
+        "kind": "rounded_rect",
+        "x": 80,
+        "y": 8,
+        "w": 144,
+        "h": 20,
+        "radius": 0
+      },
+      {
+        "id": "health_fill",
+        "kind": "rounded_rect",
+        "x": 80,
+        "y": 48,
+        "w": 136,
+        "h": 12,
+        "radius": 0
+      },
+      {
+        "id": "ammo_bracket",
+        "kind": "rounded_rect",
+        "x": 376,
+        "y": 8,
+        "w": 128,
+        "h": 48,
+        "radius": 0
+      },
+      {
+        "id": "health_fill_low",
+        "kind": "rounded_rect",
+        "x": 80,
+        "y": 84,
+        "w": 136,
+        "h": 12,
+        "radius": 0
+      }
+    ]
+  },
+  "receipt": "id: 15d24f31-5fb6-477e-8836-5eed3893f729\ndescription: FRAME FORMAT: 512 x 288 pixel transparent sprite atlas. Crisp Sega Genesis / Mega Drive 16-bit arcade HUD COMPONENTS, sharp single pixel edges and limited 3-tone bevels. Minimal compact classic action-game interface, no large modern panels, no rounded glossy UI, no blur, no gradients. EXACTLY preserve the provided separate component silhouettes and blank transparent gaps. Upper left: a small empty square portrait frame with a dark inset for a face, thin silver/blue pixel border. Beside it: a thin empty horizontal rectangular health gauge frame, black interior with a narrow metallic border. Below that: a separate bright lime green horizontal HEALTH FILL strip with tiny lighter top highlight and regular black segment separators; fill must be rectangular edge-to-edge, no frame. Upper right: a compact blank two-line information bracket, subtle dark backing and thin top/bottom pixel trim. Lower left: a small red alternate HEALTH FILL strip with same segment spacing as green. Rest of atlas fully transparent. All component interiors BLANK for runtime text and existing pilot portrait. NO lettering, NO digits, NO face, NO icons, NO scenery. Consistent crisp pixel density. The bars must be horizontal rectangles, not ornate windows.\nmode: ui-panel (512x288px)\ncost: 25 generations\nstatus: processing (~30-90s)\n\nhint: get_ui_asset(ui_asset_id=\"15d24f31-5fb6-477e-8836-5eed3893f729\")",
+  "generations": 25
+}

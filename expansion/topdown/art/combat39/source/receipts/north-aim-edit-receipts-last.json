@@ -1,0 +1,38 @@
+[
+  {
+    "name": "flamethrower",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 21e9eb5f-500d-4b00-9ebf-9642868d55a0\njob_id: 21e9eb5f-500d-4b00-9ebf-9642868d55a0\nmodel: pixen\nedit: Keep this exact alien soldier's armor, body and head size, palette and pixel style. PURE BACK VIEW facing NORTH, no face visible. Aim his existing flamethrower nozzle straight toward the TOP EDGE, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Keep wings/fins/tanks and same original body proportions. No flash or projectiles.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: fb00e947-d76f-5152-b077-549cb2f0c08a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"21e9eb5f-500d-4b00-9ebf-9642868d55a0\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "roller_alien",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 8888432a-ff25-41b0-a360-426429f8cb17\njob_id: 8888432a-ff25-41b0-a360-426429f8cb17\nmodel: pixen\nedit: Keep this exact alien soldier's armor, body and head size, palette and pixel style. PURE BACK VIEW facing NORTH, no face visible. Aim his existing acid gun straight toward the TOP EDGE, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Keep wings/fins/tanks and same original body proportions. No flash or projectiles.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: a78d333d-8812-5ba1-b5d5-4e10df426eb0\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8888432a-ff25-41b0-a360-426429f8cb17\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "flying_alien",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 1cd9bdc5-0999-4784-aad9-2a3cd2e774c5\njob_id: 1cd9bdc5-0999-4784-aad9-2a3cd2e774c5\nmodel: pixen\nedit: Keep this exact alien soldier's armor, body and head size, palette and pixel style. PURE BACK VIEW facing NORTH, no face visible. Aim his existing plasma weapon straight toward the TOP EDGE, barrel vertical UP, never left/right/down. Ready to FIRE UPWARD away from viewer. Keep wings/fins/tanks and same original body proportions. No flash or projectiles.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 40352f2f-dc28-58fe-8643-872ccfabc9c3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"1cd9bdc5-0999-4784-aad9-2a3cd2e774c5\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

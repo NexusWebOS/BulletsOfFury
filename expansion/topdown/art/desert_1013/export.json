@@ -1,0 +1,35 @@
+{
+  "source": "source/desert_raw.png",
+  "source_sha256": "073afd686c4cb00f77a4c45256fb1a0518272f9dc168f6251d54c28297a247cf",
+  "source_size": [
+    1024,
+    1536
+  ],
+  "size": [
+    800,
+    1200
+  ],
+  "scale": 0.78125,
+  "uniform_scale": true,
+  "method": "nearest-neighbor proportional downsample",
+  "world_bounds": [
+    0,
+    0,
+    800,
+    1200
+  ],
+  "blocked_rock_edges": [
+    [
+      0,
+      0,
+      100,
+      1200
+    ],
+    [
+      700,
+      0,
+      800,
+      1200
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "gosfer-death",
+  "args": {
+    "character_id": "f9cbf57d-c666-48d5-8599-8e7c50da05c3",
+    "mode": "pixminimax",
+    "animation_name": "od39_death",
+    "directions": [
+      "south"
+    ],
+    "frame_count": 16,
+    "keep_first_frame": true,
+    "action_description": "FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Gosfer is struck in chest, reels backward, knees buckle, whole armored body falls heavily onto the floor, then lies motionless defeated. Smooth weight, boots and heavy gun follow body. No explosion replacing body, no separation into parts, no color shift, no standing again. Final frame lies on floor."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: f9cbf57d-c666-48d5-8599-8e7c50da05c3\nanimation: pixminimax custom (FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Gosfer is struck in chest, reels backward, knees buckle, whole armored body falls heavily onto the floor, then lies motionless defeated. Smooth weight, boots and heavy gun follow body. No explosion replacing body, no separation into parts, no color shift, no standing again. Final frame lies on floor.)\ndirections: south (1 jobs)\njob_ids: south=38df978f-5a6a-4cab-8d39-f75b3fd69a3b\ngroup: b21614cc-39f9-46bb-b3a0-301483c096e7\nframes: 17 (1 reference + 16 animated)\ncanvas: south 168x168 (frames are stored at this size: the character plus room to move)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\")\nadd more directions to this group: animate_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\", action_description=\"FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Gosfer is struck in chest, reels backward, knees buckle, whole armored body falls heavily onto the floor, then lies motionless defeated. Smooth weight, boots and heavy gun follow body. No explosion replacing body, no separation into parts, no color shift, no standing again. Final frame lies on floor.\", mode=\"pixminimax\", animation_group_id=\"b21614cc-39f9-46bb-b3a0-301483c096e7\", directions=[...])"
+      }
+    ],
+    "isError": false
+  }
+}

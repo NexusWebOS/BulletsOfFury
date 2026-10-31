@@ -1,0 +1,19 @@
+{
+  "build": "overdrive1015-base33-r1",
+  "generator": "built-in image_gen",
+  "sourceFiles": {
+    "duct_v2.png": "a8ee146abe05747548cbd1bbf55b25cec6cf33354cb14f97e59190b371524a71",
+    "fx.png": "659b8040d8a38c9b2db1f3f0a040d12c06103c5cf6d8ee464ac02e6472b8d822",
+    "icons.png": "480fb0e9bcb04c148863a8eaccc3793582edb2d4ed505dae699e7fa18e14a801",
+    "pipe_v2.png": "f0047fce83f6c78ba1c1a5573e88b2d1765e4d124c983808af72902406cbede4",
+    "props.png": "e72c218837e92d40e35fd943de256903e4d491e984566099cedeb422214059f5",
+    "recess.png": "9d42cb8e6378123759d0bd7bb02bdc3e37a329c2336d4a3ecc5335c006e3b368",
+    "strips.png": "f40a7e6156e934e653a8e24674079b3fbc7e0e840f1c847803fb3a5826535694",
+    "wall.png": "20f199bae05c3778fc436020bd92d54b9f58295ed14f4d4ffc9072499b6106de"
+  },
+  "prompts": "source/prompts.json",
+  "exporter": "expansion/topdown/_research/build_base33.py",
+  "transform": "Measured crops, fixed proportional nearest-neighbor scales, transparent padding; no sprite painting; source alpha preserved.",
+  "retainedOriginalArt": 820,
+  "pixelLab": "Two optional Pixen refinement requests were rejected for exhausted shared credits; no PixelLab output is used in this pass."
+}

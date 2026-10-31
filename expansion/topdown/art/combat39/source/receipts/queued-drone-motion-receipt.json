@@ -1,0 +1,18 @@
+{
+  "name": "drone-motion",
+  "args": {
+    "first_frame_url": "https://api.pixellab.ai/mcp/images/99964864-8c7d-42e0-b753-d4ccef9bda95/download",
+    "frame_count": 8,
+    "no_background": true,
+    "action": "FRAME FORMAT224x128 each, fixed center pivot112,64. Same strict 2D side profile alien hunter drone facing right, rigid hull and same silhouette. Turbine fans spin, segmented stabilizer fins adjust subtly, teal engine pulses. At midpoint one underslung missile pod briefly flashes to launch a missile; do not draw the departing missile. No turning, no barrel/hull growth, no new details or palette changes, no background, no camera move. Smooth original frames."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: b0ecdf18-e156-4ec9-b8e8-c820a852bcb3\njob_id: b0ecdf18-e156-4ec9-b8e8-c820a852bcb3\naction: FRAME FORMAT224x128 each, fixed center pivot112,64. Same strict 2D side profile alien hunter drone facing right, rigid hull and same silhouette. Turbine fans spin, segmented stabilizer fins adjust subtly, teal engine pulses. At midpoint one underslung missile pod briefly flashes to launch a missile; do not draw the departing missile. No turning, no barrel/hull growth, no new details or palette changes, no background, no camera move. Smooth original frames.\nframes: 8\nsize: 224x128px\ntransparent: True\nasset_id: 5f624782-6eba-5e8e-8218-51b3dda8471a\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b0ecdf18-e156-4ec9-b8e8-c820a852bcb3\")"
+      }
+    ],
+    "isError": false
+  }
+}

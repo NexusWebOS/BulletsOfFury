@@ -1,0 +1,218 @@
+[
+  {
+    "id": "minigunner",
+    "family": "minigunner",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-df04f4b2-2ef5-4aeb-a059-aa2caa38cf94.png",
+    "generated_image_sha256": "2d9cd171edf2d6bf3b007fcda61cd7b04c207de56874638920b9fa0fb2d38681",
+    "source_grid": [
+      8,
+      8
+    ],
+    "atlas_resolution_ratio": 1
+  },
+  {
+    "id": "shotgunner",
+    "family": "shotgunner",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-e3142ce4-c526-4772-9035-6948a6ca8b84.png",
+    "generated_image_sha256": "f80b890098c626bc9e6a55c48488380d1538848ee15cfe5ba7d24271838d023e",
+    "source_grid": [
+      8,
+      8
+    ],
+    "atlas_resolution_ratio": 1
+  },
+  {
+    "id": "double_barrel",
+    "family": "double_barrel",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-29240a2c-7d94-4e5b-9f9f-c9f50dbf347e.png",
+    "generated_image_sha256": "8079441ad7d276d2f7d89c0c8d0120a2efbdfa4e4db878019579165b3cb593dc",
+    "source_grid": [
+      8,
+      8
+    ],
+    "atlas_resolution_ratio": 1
+  },
+  {
+    "id": "double_barrel_forward_fire",
+    "family": "double_barrel",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-a8931153-e2a1-4f62-927c-812facae20e3.png",
+    "generated_image_sha256": "486a89d46d2af0ff2184beb6147c5a8db73163b8bb3071f74ac6b7f6cca3f307",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "sniper",
+    "family": "sniper",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-763fe732-41f1-41c0-841e-ca6829ea39df.png",
+    "generated_image_sha256": "4b4cc3fcb0020ef2daedacb617ef1ad53f93958189ffc4997c7c89729a9a5405",
+    "source_grid": [
+      10,
+      7
+    ],
+    "atlas_resolution_ratio": 1
+  },
+  {
+    "id": "machine_gunner",
+    "family": "machine_gunner",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-16b51b85-512f-4443-bcc4-25da7cb83374.png",
+    "generated_image_sha256": "f892347dabbc5ab2d18292a8149f6cead4b373eebd9dbec1ab788bfdf7702455",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "rocket_launcher",
+    "family": "rocket_launcher",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-6ede0ad2-3dd2-457b-bcbf-be992a16cbb3.png",
+    "generated_image_sha256": "3d6f73776b5340fb45a97f0ba8b3dea62f537e07e478d2bb013388b450715486",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "flamethrower",
+    "family": "flamethrower",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-4791e6b1-508f-4a41-898c-4f09916660db.png",
+    "generated_image_sha256": "d4100c1e2c189d55eba65e0b3a4c4f2ad91a98e28b8235cbbf1eaf1320df5dba",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "flying_alien",
+    "family": "flying_alien",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-cc125506-94dd-4eaa-89d3-58252e5a1f4a.png",
+    "generated_image_sha256": "ce65cb23953b09753a14d0620548809166a04175178817d9a2a53b967e8f2bff",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "roller_alien",
+    "family": "roller_alien",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-0fd3fca7-4f06-4a8f-927b-f644dee25471.png",
+    "generated_image_sha256": "01aaea0db18040e9d3444e986be4793fee924fd1ac581016c1eb6a1ec104e3e6",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "bat_drone",
+    "family": "bat_drone",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-110fd7cd-5e7e-45ec-a3e7-eb9674fe813c.png",
+    "generated_image_sha256": "847dd506dd0e9ef366b7360cd9477001bcb6fee39b95b1e023205a53753186de",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "wall_turret_gun",
+    "family": "wall_turret_gun",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-93adc29d-006d-41e4-8caf-535a2e5d28e2.png",
+    "generated_image_sha256": "c02bc037ad09c94ca5268c9c85e98b8c87bfafba70706f1529757be6b8bf5251",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "wall_turret_laser",
+    "family": "wall_turret_laser",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-0ba2ba8c-a81e-4af2-a585-9d725843e22c.png",
+    "generated_image_sha256": "774dd818b5d867b88fe9ce67ce656a222254d22bbd9f7bc1127b063f5eec89ca",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "door_core",
+    "family": "door_core",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-24a0d9ff-50af-478d-a2f8-0b4ff226e2c5.png",
+    "generated_image_sha256": "c7cc75303a30765c952eeca961aaf7a241d778b65e085556a38910561e37667c",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "fire_prism",
+    "family": "fire_prism",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-7438fee9-d4fc-481e-9a3c-4cd1dde14d13.png",
+    "generated_image_sha256": "01b10e02bde45d91e2d974b411414cb733b24ced6e0d32dd9b0ed88fa6357c6e",
+    "source_grid": [
+      4,
+      4
+    ],
+    "atlas_resolution_ratio": 1
+  },
+  {
+    "id": "ballistic_effects",
+    "family": "ballistic_effects",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-4145b5f2-b2c6-4876-80f4-81a2182ae528.png",
+    "generated_image_sha256": "6fa46c52b12450da05fc29c0e8e0dccd8e165a5299e09d64fdf9d7daabeae88a",
+    "source_grid": [
+      8,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "energy_effects",
+    "family": "energy_effects",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-0488eeee-7988-426f-a290-2f869cd31d44.png",
+    "generated_image_sha256": "ebfbfbe5e5a96d02bd5de778e694dad5cf9f6d63ac14d15817b46097124d6830",
+    "source_grid": [
+      8,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  },
+  {
+    "id": "rocket_flame_flash_effects",
+    "family": "rocket_flame_flash_effects",
+    "generator": "OpenAI built-in image generator",
+    "generated_image_filename": "exec-2d6d72a1-0b2a-4f9c-8942-93a9659e659c.png",
+    "generated_image_sha256": "8f318893e756528075470cc3c254449724e72e229fac124375e5c4a3763555f5",
+    "source_grid": [
+      8,
+      4
+    ],
+    "atlas_resolution_ratio": 0.5
+  }
+]

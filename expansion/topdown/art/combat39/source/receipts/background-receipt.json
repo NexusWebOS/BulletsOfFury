@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 346a5069-8425-4621-84f6-f00ac222cf8f\njob_id: 346a5069-8425-4621-84f6-f00ac222cf8f\nmodel: pro\ndescription: FRAME FORMAT: 688x384 pixels. Finished crisp detailed 16/32-bit arcade SIDE-VIEW 2D repeating parallax backdrop for Bullets of Fury Overdrive NIGHT RUN. A distant burning industrial city and alien refinery silhouettes at a very low horizon, dark indigo violet ridges, deep crimson storm clouds with amber slits far behind. Original dystopian military alien arsenal art. Quiet readable dark central sky for shooting drones. Background only, no people, vehicles, robots, HUD, text, roads, foreground props or projectiles. Dense clean pixel clusters, no antialias blur or modern digital painting. Seamless left/right edges for horizontal looping, no dominant unique central tower, darkest bottom edge to sit behind road layer. No Terminator skull fields.\nsize: 688x384px\ntransparent: False\ncandidates: 1\nmax colours: 64 per image\nasset_id: 3b4f6a8f-97c6-5aad-961b-8ce2996ffd0d\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"346a5069-8425-4621-84f6-f00ac222cf8f\")"
+    }
+  ],
+  "isError": false
+}

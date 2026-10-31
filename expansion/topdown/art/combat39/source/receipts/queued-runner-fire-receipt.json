@@ -1,0 +1,24 @@
+{
+  "name": "runner-fire",
+  "args": {
+    "character_id": "ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb",
+    "mode": "pixminimax",
+    "animation_name": "od39_fire",
+    "directions": [
+      "east",
+      "west"
+    ],
+    "frame_count": 16,
+    "keep_first_frame": true,
+    "action_description": "FRAME FORMAT128x128 source, even fixed canvas, constant pivot and whole-body size. Strict pure side-scroller profile, same original blue Arsenal robot and carbine. Stop running and plant boots, raise carbine horizontally toward facing, fire a three-round burst at frames3,6,9 with real shoulder and hand recoil and brief muzzle flashes, then return ready. Gun barrel is rigid constant length. Maintain palette, head size and light. No turning to viewer, no Terminator skull, no changing robot design."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\nanimation: pixminimax custom (FRAME FORMAT128x128 source, even fixed canvas, constant pivot and whole-body size. Strict pure side-scroller profile, same original blue Arsenal robot and carbine. Stop running and plant boots, raise carbine horizontally toward facing, fire a three-round burst at frames3,6,9 with real shoulder and hand recoil and brief muzzle flashes, then return ready. Gun barrel is rigid constant length. Maintain palette, head size and light. No turning to viewer, no Terminator skull, no changing robot design.)\ndirections: east, west (2 jobs)\njob_ids: east=dba51461-0304-4cc2-9356-13c3edbefc53, west=52e9b2f6-c821-4ffb-b4e8-93d969561b74\ngroup: b84a35dd-093d-49d6-bc60-de3e76db22a5\nframes: 17 (1 reference + 16 animated)\ncanvas: east 156x156, west 160x160 (frames are stored at this size: the character plus room to move)\ncost: 2 generations (1/dir x 2)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\")\nadd more directions to this group: animate_character(character_id=\"ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\", action_description=\"FRAME FORMAT128x128 source, even fixed canvas, constant pivot and whole-body size. Strict pure side-scroller profile, same original blue Arsenal robot and carbine. Stop running and plant boots, raise carbine horizontally toward facing, fire a three-round burst at frames3,6,9 with real shoulder and hand recoil and brief muzzle flashes, then return ready. Gun barrel is rigid constant length. Maintain palette, head size and light. No turning to viewer, no Terminator skull, no changing robot design.\", mode=\"pixminimax\", animation_group_id=\"b84a35dd-093d-49d6-bc60-de3e76db22a5\", directions=[...])"
+      }
+    ],
+    "isError": false
+  }
+}

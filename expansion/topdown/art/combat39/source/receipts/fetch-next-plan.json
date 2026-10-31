@@ -1,0 +1,35 @@
+[
+  {
+    "name": "midground",
+    "cache": "midground-cutout",
+    "url": "https://api.pixellab.ai/mcp/pixel-tools/0570b7e8-2e4d-42ae-990d-5a3b166bf72f/image.png"
+  },
+  {
+    "name": "hunter_drone",
+    "url": "https://api.pixellab.ai/mcp/images/99964864-8c7d-42e0-b753-d4ccef9bda95/download"
+  },
+  {
+    "name": "minigunner39",
+    "url": "https://api.pixellab.ai/mcp/characters/a52f6581-2b5e-40ea-924b-a3cceb04fa1c/download"
+  },
+  {
+    "name": "sniper39",
+    "url": "https://api.pixellab.ai/mcp/characters/12a8da7f-38aa-42b8-9d59-f9a13a17baed/download"
+  },
+  {
+    "name": "hotwire-real",
+    "url": "https://api.pixellab.ai/mcp/characters/438a420f-0c23-497e-aab5-639e376dfabd/download"
+  },
+  {
+    "name": "phoenix-real",
+    "url": "https://api.pixellab.ai/mcp/characters/89f836c1-2538-4288-bf67-0bee42442305/download"
+  },
+  {
+    "name": "neil-real",
+    "url": "https://api.pixellab.ai/mcp/characters/a46b13ad-d55b-4776-8411-a4df054cf544/download"
+  },
+  {
+    "name": "arsenal_runner",
+    "url": "https://api.pixellab.ai/mcp/characters/ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb/download"
+  }
+]

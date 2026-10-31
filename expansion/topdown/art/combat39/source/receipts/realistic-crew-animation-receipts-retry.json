@@ -1,0 +1,67 @@
+[
+  {
+    "name": "hotwire",
+    "action": "board",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 438a420f-0c23-497e-aab5-639e376dfabd\nanimation: v3 custom (Strict pure SIDE PROFILE facing RIGHT. Preserve exactly this adult character's REALISTIC tall body proportions, small head, same armor palette and identity throughout. Start standing, lift one boot into an unseen car, bend knees and hips and sit down in an INVISIBLE seat with knees bent, torso upright and hands stretched forward to an INVISIBLE dashboard or steering wheel. Final three frames stay SEATED, feet forward, small shoulder and head settling. No standing back up, no looping to beginning. Draw only the whole character, no car, no seat, no floor, no wheel, no scenery. Full body and boots visible with transparent margin. No camera change, no chibi, no growing body parts. Final one hand braced forward on an invisible dashboard, passenger looking right.)\ndirections: east (1 jobs)\njob_ids: east=0dc041f7-9dd6-44f3-bdfe-31496d4f145e\ngroup: a28ecea6-5ac6-488f-81a0-a8eab24412a3\nframes: 13 (1 reference + 12 animated)\ncanvas: east 160x160 (frames are stored at this size: the character plus room to move)\ncost: 5 generations (5/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"438a420f-0c23-497e-aab5-639e376dfabd\")\nadd more directions to this group: animate_character(character_id=\"438a420f-0c23-497e-aab5-639e376dfabd\", action_description=\"Strict pure SIDE PROFILE facing RIGHT. Preserve exactly this adult character's REALISTIC tall body proportions, small head, same armor palette and identity throughout. Start standing, lift one boot into an unseen car, bend knees and hips and sit down in an INVISIBLE seat with knees bent, torso upright and hands stretched forward to an INVISIBLE dashboard or steering wheel. Final three frames stay SEATED, feet forward, small shoulder and head settling. No standing back up, no looping to beginning. Draw only the whole character, no car, no seat, no floor, no wheel, no scenery. Full body and boots visible with transparent margin. No camera change, no chibi, no growing body parts. Final one hand braced forward on an invisible dashboard, passenger looking right.\", animation_group_id=\"a28ecea6-5ac6-488f-81a0-a8eab24412a3\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "phoenix",
+    "action": "run",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 89f836c1-2538-4288-bf67-0bee42442305\nanimation: running-8-frames\nmode: template\ndirections: east (1 jobs)\njob_ids: east=f4654389-eb2a-4309-82b4-665107fe2624\ngroup: 66b4663b-a599-4a11-820d-ee529e7beeb2\ncost: up to 2 generations (2/dir x 1 at most). On a 128x128 canvas this 8-frame clip runs in up to 2 batches per direction, 1 generation per batch, charged as each batch finishes\neta: ~2-10 min per batch, one batch at a time (up to 2 per direction)\nadd more directions to this group: animate_character(character_id=\"89f836c1-2538-4288-bf67-0bee42442305\", template_animation_id=\"running-8-frames\", animation_group_id=\"66b4663b-a599-4a11-820d-ee529e7beeb2\", directions=[...])\n\nhint: get_character(character_id=\"89f836c1-2538-4288-bf67-0bee42442305\")\nif poor: delete_animation(character_id=\"89f836c1-2538-4288-bf67-0bee42442305\", animation_type=\"...\") then retry with mode=\"v3\""
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "phoenix",
+    "action": "board",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 89f836c1-2538-4288-bf67-0bee42442305\nanimation: v3 custom (Strict pure SIDE PROFILE facing RIGHT. Preserve exactly this adult character's REALISTIC tall body proportions, small head, same armor palette and identity throughout. Start standing, lift one boot into an unseen car, bend knees and hips and sit down in an INVISIBLE seat with knees bent, torso upright and hands stretched forward to an INVISIBLE dashboard or steering wheel. Final three frames stay SEATED, feet forward, small shoulder and head settling. No standing back up, no looping to beginning. Draw only the whole character, no car, no seat, no floor, no wheel, no scenery. Full body and boots visible with transparent margin. No camera change, no chibi, no growing body parts. Final both hands gripping an invisible steering wheel, looking right.)\ndirections: east (1 jobs)\njob_ids: east=927506a1-a526-457b-86bc-3aeac190c17f\ngroup: 65706f0a-8018-4681-8646-4510daef8f1f\nframes: 13 (1 reference + 12 animated)\ncanvas: east 160x160 (frames are stored at this size: the character plus room to move)\ncost: 5 generations (5/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"89f836c1-2538-4288-bf67-0bee42442305\")\nadd more directions to this group: animate_character(character_id=\"89f836c1-2538-4288-bf67-0bee42442305\", action_description=\"Strict pure SIDE PROFILE facing RIGHT. Preserve exactly this adult character's REALISTIC tall body proportions, small head, same armor palette and identity throughout. Start standing, lift one boot into an unseen car, bend knees and hips and sit down in an INVISIBLE seat with knees bent, torso upright and hands stretched forward to an INVISIBLE dashboard or steering wheel. Final three frames stay SEATED, feet forward, small shoulder and head settling. No standing back up, no looping to beginning. Draw only the whole character, no car, no seat, no floor, no wheel, no scenery. Full body and boots visible with transparent margin. No camera change, no chibi, no growing body parts. Final both hands gripping an invisible steering wheel, looking right.\", animation_group_id=\"65706f0a-8018-4681-8646-4510daef8f1f\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "neil",
+    "action": "run",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: a46b13ad-d55b-4776-8411-a4df054cf544\nanimation: running-8-frames\nmode: template\ndirections: east (1 jobs)\njob_ids: east=49cf27d9-6fc5-4e92-a1f1-376aab5706d8\ngroup: 4830cffd-ab22-4774-bb39-d84c5365f100\ncost: up to 2 generations (2/dir x 1 at most). On a 128x128 canvas this 8-frame clip runs in up to 2 batches per direction, 1 generation per batch, charged as each batch finishes\neta: ~2-10 min per batch, one batch at a time (up to 2 per direction)\nadd more directions to this group: animate_character(character_id=\"a46b13ad-d55b-4776-8411-a4df054cf544\", template_animation_id=\"running-8-frames\", animation_group_id=\"4830cffd-ab22-4774-bb39-d84c5365f100\", directions=[...])\n\nhint: get_character(character_id=\"a46b13ad-d55b-4776-8411-a4df054cf544\")\nif poor: delete_animation(character_id=\"a46b13ad-d55b-4776-8411-a4df054cf544\", animation_type=\"...\") then retry with mode=\"v3\""
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "neil",
+    "action": "board",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: a46b13ad-d55b-4776-8411-a4df054cf544\nanimation: v3 custom (Strict pure SIDE PROFILE facing RIGHT. Preserve exactly this adult character's REALISTIC tall body proportions, small head, same armor palette and identity throughout. Start standing, lift one boot into an unseen car, bend knees and hips and sit down in an INVISIBLE seat with knees bent, torso upright and hands stretched forward to an INVISIBLE dashboard or steering wheel. Final three frames stay SEATED, feet forward, small shoulder and head settling. No standing back up, no looping to beginning. Draw only the whole character, no car, no seat, no floor, no wheel, no scenery. Full body and boots visible with transparent margin. No camera change, no chibi, no growing body parts. Final pose: one hand steering forward, other holds a small pistol outward right through an unseen open window.)\ndirections: east (1 jobs)\njob_ids: east=bf73f49f-40ad-4c2c-9f28-241eb7c61dbe\ngroup: 87067583-a56d-4704-b882-9806958f9b9e\nframes: 13 (1 reference + 12 animated)\ncanvas: east 168x168 (frames are stored at this size: the character plus room to move)\ncost: 6 generations (6/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"a46b13ad-d55b-4776-8411-a4df054cf544\")\nadd more directions to this group: animate_character(character_id=\"a46b13ad-d55b-4776-8411-a4df054cf544\", action_description=\"Strict pure SIDE PROFILE facing RIGHT. Preserve exactly this adult character's REALISTIC tall body proportions, small head, same armor palette and identity throughout. Start standing, lift one boot into an unseen car, bend knees and hips and sit down in an INVISIBLE seat with knees bent, torso upright and hands stretched forward to an INVISIBLE dashboard or steering wheel. Final three frames stay SEATED, feet forward, small shoulder and head settling. No standing back up, no looping to beginning. Draw only the whole character, no car, no seat, no floor, no wheel, no scenery. Full body and boots visible with transparent margin. No camera change, no chibi, no growing body parts. Final pose: one hand steering forward, other holds a small pistol outward right through an unseen open window.\", animation_group_id=\"87067583-a56d-4704-b882-9806958f9b9e\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

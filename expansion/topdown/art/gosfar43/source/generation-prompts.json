@@ -1,0 +1,28 @@
+{
+  "workflow": "ImageGen identity masters and elevator; PixelLab generated whole-character motion; PixelLab exact pixel repairs; one palette/root/unit per bank; no runtime limb or barrel transforms.",
+  "imagegen": [
+    {"asset":"Gosfar master", "reference":"gosfer-native-reference.png", "prompt":"Preserve the approved silver pointed skull helmet, amber eyes, enormous violet shoulder armor, black articulated power armor, orange joints and boots. Replace the rifle with a gigantic six-barrel rotary minigun held in both hands with a backpack ammunition belt. High top-down game view facing south directly toward the viewer; foreshortened circular muzzle, six distinct holes, fixed rigid barrel length. Entire whole-body authored plate, crisp 32-bit pixel art, transparent background, no flash or scene. Fixed body unit and centered root; full boots, helmet and gun visible."},
+    {"asset":"Freight elevator", "prompt":"Eight-cell industrial freight elevator door animation, 4 columns by 2 rows. Identical housing, threshold, scale and root. Detailed graphite fortress pixel art, hazard stripes, top red/green beacon and cyan terminal on left. States: closed, red alarm, seam open, quarter open, half open, three-quarter open, fully open dark cabin, fully open restored power. Retracting doors inside unchanged housing, transparent outside, no characters or text."},
+    {"asset":"North-facing Gosfar", "reference":"north-padded.png and front minigun master", "prompt":"Retain the exact rear-facing armor, skull helmet back, violet shoulders, black backpack with orange power symbol, belt and boots. Both hands grip ONE gigantic minigun projecting north toward the TOP edge, visibly beside the LEFT of the helmet into reserved headroom. No east-facing gun or dual arm cannons. High top-down camera, whole-character plate, same physical body unit, silver/violet/charcoal/amber palette, no firing effects, transparent. Export normalized to224x224, root112,216, 148px body unit."}
+  ],
+  "pixellab": {
+    "character_rotation_id":"7d5d03cd-56ac-43b2-b0f9-fdd221a32969",
+    "motion_contract":"Same identity, physical body unit, exact palette and fixed canvas/root. Continuous real alternating gait for walks/runs. Heavy gun remains rigid and gripped in both hands. Firing uses shoulder recoil, rotating barrel highlights and small muzzle flashes only at the actual gun end. Crouched helpers stay low. Hacking alternates fingers and wrists. Throws show wind-up/release/extension. No new weapons, arm guns, flame jets or camera turns.",
+    "accepted_raw_jobs":"See generation_jobs in art/gosfar43/manifest.json",
+    "exact_repairs": {
+      "ready":"115741d0-2dbb-4736-9b2a-9b1818750529",
+      "rev":"c0373749-f69f-4347-b8c3-0dfa02d1dfa7",
+      "fire":"76b6e9cf-13d4-4058-9ba8-685c9633c10c",
+      "overheat":"787bd269-ddc1-488a-aca0-880b192c3ab0",
+      "yuri_quiet_cover":"c797805b-d74e-4eb2-898d-a3d87410b9fd",
+      "west_fire":"ad90c6f2-0d87-4b24-b516-77e0715cf161"
+    },
+    "repair_contract":"Retain the whole authored body/shroud. Six fixed-size bores rotate in eight45-degree phases with one bright rim marking travel. Rebuild no limbs. Remove the unwanted quiet-cover flash, backpack/shoulder flashes and duplicate loop ignition frames. Export all changes into full plates; runtime selects complete frames.",
+    "rejected": {
+      "48c9397c-86b4-45bc-857e-fc249f6be0ae":"Initial gun remained sideways; replaced by ImageGen front master.",
+      "54a0e47e-e404-40e6-92a8-3e05dbfa52b5":"Rear firing invented dual arm flashes; replaced by one visible north minigun.",
+      "5ee4e19b-713f-4399-8f5e-cd7625727bc2":"North edit pointed the gun east; replaced by ImageGen north master."
+    }
+  },
+  "normalization": {"gosfar_body_unit":148,"gosfar_front_side_canvas":[160,160],"gosfar_front_side_root":[80,152],"gosfar_north_firing_canvas":[224,224],"gosfar_north_firing_root":[112,216],"crew_canvas":[128,128],"crew_root":[64,120],"hotwire_bank_scale":0.75,"alpha":"binary0/255","palette":"one seed-derived median-cut palette per identity; explicit hot-core/steam colours","resizing":"One proportional unit bake per bank, no individual frame fitting."}
+}

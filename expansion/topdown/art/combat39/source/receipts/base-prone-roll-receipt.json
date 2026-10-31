@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "character: 36f0a12c-304d-4097-9ec5-b14d8aca4f74\nanimation: pixminimax custom (From the exact flat prone pose, one complete low tactical barrel body roll sideways along ground: belly to side to back to other side to belly. Shoulders and hips rotate together, legs extended, gun tucked tightly against chest. Never stand or kneel or shoot. End in identical prone pose facing north away from camera. Fixed rear base-level camera, same exact Yuri size and colors, stable root; transparent.)\ndirections: north (1 jobs)\njob_ids: north=628e7183-409f-4072-a4c2-4d14c04bcad2\ngroup: 1c5f983d-1670-449f-aea7-17fff016f82a\nframes: 17 (1 reference + 16 animated)\ncanvas: north 172x160 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"36f0a12c-304d-4097-9ec5-b14d8aca4f74\")\nadd more directions to this group: animate_character(character_id=\"36f0a12c-304d-4097-9ec5-b14d8aca4f74\", action_description=\"From the exact flat prone pose, one complete low tactical barrel body roll sideways along ground: belly to side to back to other side to belly. Shoulders and hips rotate together, legs extended, gun tucked tightly against chest. Never stand or kneel or shoot. End in identical prone pose facing north away from camera. Fixed rear base-level camera, same exact Yuri size and colors, stable root; transparent.\", mode=\"pixminimax\", animation_group_id=\"1c5f983d-1670-449f-aea7-17fff016f82a\", directions=[...])"
+    }
+  ],
+  "isError": false
+}

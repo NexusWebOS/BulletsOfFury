@@ -1,0 +1,981 @@
+{
+  "version": "1013-bastion17-environment-r1",
+  "assets": {
+    "pb17_stage_0": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_stage_0.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        0,
+        0,
+        640,
+        480
+      ],
+      "drawScale": 1,
+      "aperture": [
+        170,
+        78,
+        300,
+        192
+      ],
+      "biome": "entry"
+    },
+    "pb17_stage_1": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_stage_1.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        0,
+        0,
+        640,
+        480
+      ],
+      "drawScale": 1,
+      "aperture": [
+        170,
+        78,
+        300,
+        192
+      ],
+      "biome": "coolant"
+    },
+    "pb17_stage_2": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_stage_2.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        0,
+        0,
+        640,
+        480
+      ],
+      "drawScale": 1,
+      "aperture": [
+        170,
+        78,
+        300,
+        192
+      ],
+      "biome": "reactor"
+    },
+    "pb17_backwall_0": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_backwall_0.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        138,
+        78,
+        500,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb17_backwall_1": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_backwall_1.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        140,
+        78,
+        502,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb17_backwall_2": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_backwall_2.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        138,
+        62,
+        500,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb17_backwall_3": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_backwall_3.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        138,
+        78,
+        500,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb17_backwall_4": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_backwall_4.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        138,
+        134,
+        500,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb17_backwall_5": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_backwall_5.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        138,
+        134,
+        500,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_crate_0": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_crate_0.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        20,
+        30,
+        94,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_crate_1": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_crate_1.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        20,
+        30,
+        94,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_crate_2": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_crate_2.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        18,
+        30,
+        92,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_crate_3": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_crate_3.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        16,
+        44,
+        96,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_wall_0": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_wall_0.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        16,
+        34,
+        96,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_wall_1": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_wall_1.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        16,
+        34,
+        96,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_wall_2": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_wall_2.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        16,
+        32,
+        96,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_enemy_cover_wall_3": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_enemy_cover_wall_3.png",
+      "size": [
+        112,
+        80
+      ],
+      "anchor": [
+        56,
+        68
+      ],
+      "bounds": [
+        16,
+        44,
+        96,
+        68
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_0": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_0.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        96,
+        68,
+        288,
+        192
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_1": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_1.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        64,
+        38,
+        318,
+        216
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_2": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_2.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        24,
+        12,
+        362,
+        246
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_3": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_3.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        22,
+        14,
+        362,
+        242
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_4": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_4.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        28,
+        18,
+        356,
+        236
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_5": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_5.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        38,
+        20,
+        348,
+        238
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_6": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_6.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        54,
+        28,
+        328,
+        230
+      ],
+      "drawScale": 1
+    },
+    "pb17_blast_7": {
+      "file": "expansion/topdown/art/bastion17_environment/frames/pb17_blast_7.png",
+      "size": [
+        384,
+        256
+      ],
+      "anchor": [
+        192,
+        128
+      ],
+      "bounds": [
+        76,
+        56,
+        310,
+        202
+      ],
+      "drawScale": 1
+    }
+  },
+  "sequences": {
+    "pb17_stage": {
+      "frames": [
+        "pb17_stage_0",
+        "pb17_stage_1",
+        "pb17_stage_2"
+      ],
+      "fps": 0,
+      "drawScale": 1
+    },
+    "pb17_backwall": {
+      "frames": [
+        "pb17_backwall_0",
+        "pb17_backwall_1",
+        "pb17_backwall_2",
+        "pb17_backwall_3",
+        "pb17_backwall_4",
+        "pb17_backwall_5"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          640,
+          480
+        ],
+        "anchor": [
+          320,
+          240
+        ],
+        "scale": 0.6552901023890785,
+        "pixelStep": 2,
+        "root": "fixed wall-floor"
+      }
+    },
+    "pb17_enemy_cover_crate": {
+      "frames": [
+        "pb17_enemy_cover_crate_0",
+        "pb17_enemy_cover_crate_1",
+        "pb17_enemy_cover_crate_2",
+        "pb17_enemy_cover_crate_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          112,
+          80
+        ],
+        "anchor": [
+          56,
+          68
+        ],
+        "scale": 0.1596806387225549,
+        "pixelStep": 2,
+        "root": "bottom center"
+      }
+    },
+    "pb17_enemy_cover_wall": {
+      "frames": [
+        "pb17_enemy_cover_wall_0",
+        "pb17_enemy_cover_wall_1",
+        "pb17_enemy_cover_wall_2",
+        "pb17_enemy_cover_wall_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          112,
+          80
+        ],
+        "anchor": [
+          56,
+          68
+        ],
+        "scale": 0.15779092702169625,
+        "pixelStep": 2,
+        "root": "bottom center"
+      }
+    },
+    "pb17_blast": {
+      "frames": [
+        "pb17_blast_0",
+        "pb17_blast_1",
+        "pb17_blast_2",
+        "pb17_blast_3",
+        "pb17_blast_4",
+        "pb17_blast_5",
+        "pb17_blast_6",
+        "pb17_blast_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          256
+        ],
+        "anchor": [
+          192,
+          128
+        ],
+        "scale": 0.7172995780590717,
+        "pixelStep": 2,
+        "root": "fixed center"
+      }
+    }
+  },
+  "audit": [
+    {
+      "key": "pb17_stage_0",
+      "source": "entry.png",
+      "crop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "proportionalScale": 0.4419889502762431,
+      "pixelStep": 2,
+      "sha256": "5f56f12f6db4f219b857bf8ca037e3a1ec9433c3ba533d25214c4b0cdc9fe41a"
+    },
+    {
+      "key": "pb17_stage_1",
+      "source": "coolant.png",
+      "crop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "proportionalScale": 0.4419889502762431,
+      "pixelStep": 2,
+      "sha256": "54cb063f8de6a1d4fa1fec6e39b111403798c209dfa0c667451332af4c2a5ab1"
+    },
+    {
+      "key": "pb17_stage_2",
+      "source": "reactor.png",
+      "crop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "proportionalScale": 0.4419889502762431,
+      "pixelStep": 2,
+      "sha256": "8184c43334cfd7e41032ae3cb622a07c909d7dbc770b640871c36b2c9d5406cf"
+    },
+    {
+      "key": "pb17_backwall_0",
+      "source": "backwall.png",
+      "crop": [
+        0,
+        0,
+        591,
+        443
+      ],
+      "proportionalScale": 0.6552901023890785,
+      "pixelStep": 2,
+      "sha256": "a3bc40a13a074c779426d47fc8203b78c71babac0d463925cd4f5a7349faed4d"
+    },
+    {
+      "key": "pb17_backwall_1",
+      "source": "backwall.png",
+      "crop": [
+        591,
+        0,
+        1182,
+        443
+      ],
+      "proportionalScale": 0.6552901023890785,
+      "pixelStep": 2,
+      "sha256": "57458ae6ef9a8167efa81e946628fcfc9290ba6fe2b69955690679cecb9b3773"
+    },
+    {
+      "key": "pb17_backwall_2",
+      "source": "backwall.png",
+      "crop": [
+        0,
+        443,
+        591,
+        887
+      ],
+      "proportionalScale": 0.6552901023890785,
+      "pixelStep": 2,
+      "sha256": "5ca0f83c08d788a0f0ea023bef7e076d54ab179d05346a2133e49d46807356e2"
+    },
+    {
+      "key": "pb17_backwall_3",
+      "source": "backwall.png",
+      "crop": [
+        591,
+        443,
+        1182,
+        887
+      ],
+      "proportionalScale": 0.6552901023890785,
+      "pixelStep": 2,
+      "sha256": "ccb17f0b2b83d8fabbf864174485cd0d1dc3ce127a231a7ac5ab51a810ba0d5f"
+    },
+    {
+      "key": "pb17_backwall_4",
+      "source": "backwall.png",
+      "crop": [
+        0,
+        887,
+        591,
+        1330
+      ],
+      "proportionalScale": 0.6552901023890785,
+      "pixelStep": 2,
+      "sha256": "f69f6e15fbf131b1697b4755459e236c3a2a482348415ceb58da0ca41ada69a9"
+    },
+    {
+      "key": "pb17_backwall_5",
+      "source": "backwall.png",
+      "crop": [
+        591,
+        887,
+        1182,
+        1330
+      ],
+      "proportionalScale": 0.6552901023890785,
+      "pixelStep": 2,
+      "sha256": "77ec7db95c3dbde22448ae7c44c6f962d179a46e20d4a8cde1d6e6ae83f4ae27"
+    },
+    {
+      "key": "pb17_enemy_cover_crate_0",
+      "source": "cover.png",
+      "crop": [
+        0,
+        0,
+        543,
+        362
+      ],
+      "proportionalScale": 0.1596806387225549,
+      "pixelStep": 2,
+      "sha256": "8c7f16b096fd4ba5ed8d2585ff71beaecf0c86f03f78e9b9bd3e5c6deb0babed"
+    },
+    {
+      "key": "pb17_enemy_cover_crate_1",
+      "source": "cover.png",
+      "crop": [
+        543,
+        0,
+        1086,
+        362
+      ],
+      "proportionalScale": 0.1596806387225549,
+      "pixelStep": 2,
+      "sha256": "67a5df5a20efc09cf10aa235539d5ecae3d9b38f87b682f5b32a27bc33cba1b9"
+    },
+    {
+      "key": "pb17_enemy_cover_crate_2",
+      "source": "cover.png",
+      "crop": [
+        1086,
+        0,
+        1629,
+        362
+      ],
+      "proportionalScale": 0.1596806387225549,
+      "pixelStep": 2,
+      "sha256": "9fd70cbf96922d15b7b69a73a5e0f865d69940f67fa70a79d057e65a745205e6"
+    },
+    {
+      "key": "pb17_enemy_cover_crate_3",
+      "source": "cover.png",
+      "crop": [
+        1629,
+        0,
+        2172,
+        362
+      ],
+      "proportionalScale": 0.1596806387225549,
+      "pixelStep": 2,
+      "sha256": "0f19e8e03388363e28ef220517570f9e4dba41759d8e664c50621f53b629050d"
+    },
+    {
+      "key": "pb17_enemy_cover_wall_0",
+      "source": "cover.png",
+      "crop": [
+        0,
+        362,
+        543,
+        724
+      ],
+      "proportionalScale": 0.15779092702169625,
+      "pixelStep": 2,
+      "sha256": "b2f6262f141a340dae4f831804f6307e286b41f2759b66266a29efc15a7dcd4d"
+    },
+    {
+      "key": "pb17_enemy_cover_wall_1",
+      "source": "cover.png",
+      "crop": [
+        543,
+        362,
+        1086,
+        724
+      ],
+      "proportionalScale": 0.15779092702169625,
+      "pixelStep": 2,
+      "sha256": "3bfc50d031d77773afaa4b92b7f2bc79f682bb19b9bcd273ddcf45b877d7c5cc"
+    },
+    {
+      "key": "pb17_enemy_cover_wall_2",
+      "source": "cover.png",
+      "crop": [
+        1086,
+        362,
+        1629,
+        724
+      ],
+      "proportionalScale": 0.15779092702169625,
+      "pixelStep": 2,
+      "sha256": "ae39b387c1c8d695a94a836a5751587a5adf5d1b345fc53c4fcd6027754b2a68"
+    },
+    {
+      "key": "pb17_enemy_cover_wall_3",
+      "source": "cover.png",
+      "crop": [
+        1629,
+        362,
+        2172,
+        724
+      ],
+      "proportionalScale": 0.15779092702169625,
+      "pixelStep": 2,
+      "sha256": "50fad9ed87cca8c2f28a005933deeff3179a435776671ee9b74d3134e6c989e0"
+    },
+    {
+      "key": "pb17_blast_0",
+      "source": "blast.png",
+      "crop": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "8fcf1596b9f966af289fddc47119ccfce1c98c1e51e4e8229a207581d9b1a399"
+    },
+    {
+      "key": "pb17_blast_1",
+      "source": "blast.png",
+      "crop": [
+        512,
+        0,
+        1024,
+        384
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "b0efa7cfa4872a1839b2f611116f95d458c9334904efede820e29099bd05dd97"
+    },
+    {
+      "key": "pb17_blast_2",
+      "source": "blast.png",
+      "crop": [
+        1024,
+        0,
+        1536,
+        384
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "6c87d402a7b25b62dbb241e961d2a8d5853a22f7972b434ec56ecb270b2c1e62"
+    },
+    {
+      "key": "pb17_blast_3",
+      "source": "blast.png",
+      "crop": [
+        1536,
+        0,
+        2048,
+        384
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "2560366659a8b556ffffdf65005ed1b8c8d8872fd23a702e77b19f1e58fad36f"
+    },
+    {
+      "key": "pb17_blast_4",
+      "source": "blast.png",
+      "crop": [
+        0,
+        384,
+        512,
+        768
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "24fa713cde798b80797ae2304d8eb2aa520b3d776214d25a66ce9cc0bf24bfad"
+    },
+    {
+      "key": "pb17_blast_5",
+      "source": "blast.png",
+      "crop": [
+        512,
+        384,
+        1024,
+        768
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "ba0abc11c429f0e24ce45a9f152c88344fae9c53a89095155ea183b559f5b72f"
+    },
+    {
+      "key": "pb17_blast_6",
+      "source": "blast.png",
+      "crop": [
+        1024,
+        384,
+        1536,
+        768
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "e74aea448d12b7f61fec3bac48a8ac104802fd22cc93ae5748154737e1384f1c"
+    },
+    {
+      "key": "pb17_blast_7",
+      "source": "blast.png",
+      "crop": [
+        1536,
+        384,
+        2048,
+        768
+      ],
+      "proportionalScale": 0.7172995780590717,
+      "pixelStep": 2,
+      "sha256": "a8d100cf19618a77a3db846136ff79ecbe82341d698fdfbe63c8380027a3b972"
+    }
+  ],
+  "sources": {
+    "backwall.png": {
+      "size": [
+        1182,
+        1330
+      ],
+      "sha256": "ceb8ba804d84a76b9ebd44db77bee3f4283d3bf4b6e3358072a73989e8eb2057"
+    },
+    "blast.png": {
+      "size": [
+        2048,
+        768
+      ],
+      "sha256": "f02ec8f751ab8f497fac12b81abd30f9c9372ee6d94c7f1b7a0304bc90694e8f"
+    },
+    "coolant.png": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "efec3961ea3ec67a19f2e23f59932923d5f0020ed1ade436bb245ef8d9efb890"
+    },
+    "cover.png": {
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "1e5568d0e465876f28732debb6536c6e595274c5ae815116983e93a508b3cbae"
+    },
+    "entry.png": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "aeccbd129fcc14e0dc2967f60a8ac5111f40adc37496db283bf9e6c92d8778b0"
+    },
+    "reactor.png": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "28412ab1fd112239f234f6af9e1c740f8e5b885763c0ae78b0919ba7d0ad4da0"
+    }
+  },
+  "layout": {
+    "aperture": [
+      170,
+      78,
+      300,
+      192
+    ],
+    "safeAperture": [
+      184,
+      98,
+      272,
+      156
+    ],
+    "rearFloor": 270,
+    "troopDoor": [
+      320,
+      250
+    ],
+    "wallFootprint": [
+      138,
+      78,
+      500,
+      270
+    ]
+  }
+}

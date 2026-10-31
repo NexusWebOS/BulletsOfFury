@@ -1,0 +1,65 @@
+{
+  "phoenix-drive-retry": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 2372a87c-daa0-4953-99de-06ad4b1bddf3\njob_id: 2372a87c-daa0-4953-99de-06ad4b1bddf3\naction: Seated driver moves his steering hands left and right just a few pixels, returns to the exact initial posture. Torso stays planted, head remains looking ahead right. No breathing effects, NO smoke, NO sparks, NO trails, NO symbols, NO fire. Keep entire armor and face and chair identical, no new objects or changed colors.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: a0320210-2ae7-5fe0-8af5-6aa6fa69aad4\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2372a87c-daa0-4953-99de-06ad4b1bddf3\")"
+      }
+    ],
+    "isError": false
+  },
+  "neil-drive-retry": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 2ca53aeb-b3f8-439e-a379-a04c097ad6bc\njob_id: 2ca53aeb-b3f8-439e-a379-a04c097ad6bc\naction: Seated man holds a RIGID black pistol with his RIGHT hand aimed right, left hand remains on steering wheel. One very small pistol recoil pulse, then return to exact starting pose. Preserve the gun shape throughout; pistol must never disappear or change into a hand. Boots and pelvis fixed. No muzzle flash, no particles, no added objects, no color changes.\nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 7cb3eed1-6038-535c-9a37-4d843145b723\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2ca53aeb-b3f8-439e-a379-a04c097ad6bc\")"
+      }
+    ],
+    "isError": false
+  },
+  "yuri-recoil-0": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 245274c5-4984-4b04-a642-b658c7327bcc\njob_id: 245274c5-4984-4b04-a642-b658c7327bcc\naction: Gunner holds this EXACT current torso facing throughout. One small controlled recoil pulse: shoulders and elbows absorb kick 1-2 pixels and return to EXACT starting posture. EMPTY hands grip invisible fixed turret handles, feet and pelvis completely stationary. Same red-black armor, mohawk, backpack, body size and colors. No gun, NO added object, no smoke or flash. Do not turn, walk, change viewing direction or change body proportions.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: dcd0322c-ee32-5741-89f4-f7e9bdba844d\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"245274c5-4984-4b04-a642-b658c7327bcc\")"
+      }
+    ],
+    "isError": false
+  },
+  "yuri-recoil-4": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: f3048931-5ea2-47c2-8add-ce021daf1ef3\njob_id: f3048931-5ea2-47c2-8add-ce021daf1ef3\naction: Gunner holds this EXACT current torso facing throughout. One small controlled recoil pulse: shoulders and elbows absorb kick 1-2 pixels and return to EXACT starting posture. EMPTY hands grip invisible fixed turret handles, feet and pelvis completely stationary. Same red-black armor, mohawk, backpack, body size and colors. No gun, NO added object, no smoke or flash. Do not turn, walk, change viewing direction or change body proportions.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 06c91e3b-5a69-561c-97bc-7c39c9f58e66\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f3048931-5ea2-47c2-8add-ce021daf1ef3\")"
+      }
+    ],
+    "isError": false
+  },
+  "yuri-recoil-8": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: fb69344f-1c91-425f-a732-b1a30e34093e\njob_id: fb69344f-1c91-425f-a732-b1a30e34093e\naction: Gunner holds this EXACT current torso facing throughout. One small controlled recoil pulse: shoulders and elbows absorb kick 1-2 pixels and return to EXACT starting posture. EMPTY hands grip invisible fixed turret handles, feet and pelvis completely stationary. Same red-black armor, mohawk, backpack, body size and colors. No gun, NO added object, no smoke or flash. Do not turn, walk, change viewing direction or change body proportions.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 2c91741f-13a7-56a0-97e8-c91db88be33d\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fb69344f-1c91-425f-a732-b1a30e34093e\")"
+      }
+    ],
+    "isError": false
+  },
+  "yuri-recoil-12": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 1a91f355-e305-4c2d-8db2-a08cde315a4c\njob_id: 1a91f355-e305-4c2d-8db2-a08cde315a4c\naction: Gunner holds this EXACT current torso facing throughout. One small controlled recoil pulse: shoulders and elbows absorb kick 1-2 pixels and return to EXACT starting posture. EMPTY hands grip invisible fixed turret handles, feet and pelvis completely stationary. Same red-black armor, mohawk, backpack, body size and colors. No gun, NO added object, no smoke or flash. Do not turn, walk, change viewing direction or change body proportions.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 93b7ad04-5b00-543f-b013-9f71cf4ea989\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1a91f355-e305-4c2d-8db2-a08cde315a4c\")"
+      }
+    ],
+    "isError": false
+  },
+  "yuri-recoil-16": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: c681925d-d079-429d-bc8c-7aa0544f891e\njob_id: c681925d-d079-429d-bc8c-7aa0544f891e\naction: Gunner holds this EXACT current torso facing throughout. One small controlled recoil pulse: shoulders and elbows absorb kick 1-2 pixels and return to EXACT starting posture. EMPTY hands grip invisible fixed turret handles, feet and pelvis completely stationary. Same red-black armor, mohawk, backpack, body size and colors. No gun, NO added object, no smoke or flash. Do not turn, walk, change viewing direction or change body proportions.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: e47c0f5f-104d-5661-9d55-c086578a59fe\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c681925d-d079-429d-bc8c-7aa0544f891e\")"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,991 @@
+{
+  "build": "overdrive1018-combat42-r5",
+  "assets": {
+    "od42_yuri_back42_traverse_east_0": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        49,
+        46,
+        115,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 0
+    },
+    "od42_yuri_back42_traverse_east_1": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        50,
+        46,
+        115,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 1
+    },
+    "od42_yuri_back42_traverse_east_2": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        51,
+        46,
+        114,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 2
+    },
+    "od42_yuri_back42_traverse_east_3": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        53,
+        46,
+        113,
+        133
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 3
+    },
+    "od42_yuri_back42_traverse_east_4": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        55,
+        46,
+        110,
+        133
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 4
+    },
+    "od42_yuri_back42_traverse_east_5": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        57,
+        46,
+        108,
+        133
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 5
+    },
+    "od42_yuri_back42_traverse_east_6": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        57,
+        46,
+        103,
+        133
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 6
+    },
+    "od42_yuri_back42_traverse_east_7": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        57,
+        46,
+        102,
+        132
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 7
+    },
+    "od42_yuri_back42_traverse_east_8": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        57,
+        46,
+        102,
+        132
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 8
+    },
+    "od42_yuri_back42_traverse_east_9": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        160,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        57,
+        46,
+        102,
+        133
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 9
+    },
+    "od42_yuri_back42_traverse_east_10": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        320,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        57,
+        46,
+        103,
+        133
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 10
+    },
+    "od42_yuri_back42_traverse_east_11": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        480,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        54,
+        46,
+        103,
+        133
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 11
+    },
+    "od42_yuri_back42_traverse_east_12": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        640,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        50,
+        46,
+        106,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 12
+    },
+    "od42_yuri_back42_traverse_east_13": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        800,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        48,
+        46,
+        107,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 13
+    },
+    "od42_yuri_back42_traverse_east_14": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        960,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        46,
+        46,
+        109,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 14
+    },
+    "od42_yuri_back42_traverse_east_15": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        1120,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        45,
+        46,
+        110,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 15
+    },
+    "od42_yuri_back42_traverse_east_16": {
+      "file": "expansion/topdown/art/combat42/yuri_back42_traverse_east.png",
+      "rect": [
+        0,
+        320,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        136
+      ],
+      "bounds": [
+        45,
+        46,
+        111,
+        134
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "yuri_back42/traverse/east",
+      "phase": 16
+    },
+    "od42_phoenix_sit_east_0": {
+      "file": "expansion/topdown/art/combat42/phoenix_sit_east.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        21,
+        22,
+        109,
+        118
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "phoenix/sit/east",
+      "phase": 0
+    },
+    "od42_phoenix_sit_east_1": {
+      "file": "expansion/topdown/art/combat42/phoenix_sit_east.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        21,
+        23,
+        109,
+        118
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "phoenix/sit/east",
+      "phase": 1
+    },
+    "od42_phoenix_sit_east_2": {
+      "file": "expansion/topdown/art/combat42/phoenix_sit_east.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        21,
+        23,
+        109,
+        118
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "phoenix/sit/east",
+      "phase": 2
+    },
+    "od42_phoenix_sit_east_3": {
+      "file": "expansion/topdown/art/combat42/phoenix_sit_east.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        21,
+        22,
+        109,
+        118
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "phoenix/sit/east",
+      "phase": 3
+    },
+    "od42_phoenix_sit_east_4": {
+      "file": "expansion/topdown/art/combat42/phoenix_sit_east.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        21,
+        22,
+        109,
+        118
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "phoenix/sit/east",
+      "phase": 4
+    },
+    "od42_hotwire_sit_east_0": {
+      "file": "expansion/topdown/art/combat42/hotwire_sit_east.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        9,
+        11,
+        111,
+        120
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "hotwire/sit/east",
+      "phase": 0
+    },
+    "od42_hotwire_sit_east_1": {
+      "file": "expansion/topdown/art/combat42/hotwire_sit_east.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        9,
+        11,
+        111,
+        120
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "hotwire/sit/east",
+      "phase": 1
+    },
+    "od42_hotwire_sit_east_2": {
+      "file": "expansion/topdown/art/combat42/hotwire_sit_east.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        9,
+        12,
+        111,
+        120
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "hotwire/sit/east",
+      "phase": 2
+    },
+    "od42_hotwire_sit_east_3": {
+      "file": "expansion/topdown/art/combat42/hotwire_sit_east.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        9,
+        12,
+        111,
+        120
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "hotwire/sit/east",
+      "phase": 3
+    },
+    "od42_hotwire_sit_east_4": {
+      "file": "expansion/topdown/art/combat42/hotwire_sit_east.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        9,
+        12,
+        111,
+        120
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "hotwire/sit/east",
+      "phase": 4
+    },
+    "od42_neil_sit_east_0": {
+      "file": "expansion/topdown/art/combat42/neil_sit_east.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        30,
+        115,
+        107
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "neil/sit/east",
+      "phase": 0
+    },
+    "od42_neil_sit_east_1": {
+      "file": "expansion/topdown/art/combat42/neil_sit_east.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        30,
+        115,
+        107
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "neil/sit/east",
+      "phase": 1
+    },
+    "od42_neil_sit_east_2": {
+      "file": "expansion/topdown/art/combat42/neil_sit_east.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        30,
+        125,
+        107
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "neil/sit/east",
+      "phase": 2
+    },
+    "od42_neil_sit_east_3": {
+      "file": "expansion/topdown/art/combat42/neil_sit_east.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        30,
+        115,
+        107
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "neil/sit/east",
+      "phase": 3
+    },
+    "od42_neil_sit_east_4": {
+      "file": "expansion/topdown/art/combat42/neil_sit_east.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        24,
+        30,
+        115,
+        107
+      ],
+      "provider": "PixelLab",
+      "drawScale": 1,
+      "bank": "neil/sit/east",
+      "phase": 4
+    },
+    "od39_truck_body": {
+      "file": "expansion/topdown/art/combat42/truck_body42.png",
+      "size": [
+        1240,
+        340
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": [
+        10,
+        0,
+        1227,
+        340
+      ],
+      "drawScale": 1,
+      "provider": "ImageGen",
+      "extraction": "Original body component only; unrelated wheel row fragments removed; no intended body pixels redrawn."
+    }
+  },
+  "banks": {
+    "yuri_back42/traverse/east": {
+      "frames": [
+        "od42_yuri_back42_traverse_east_0",
+        "od42_yuri_back42_traverse_east_1",
+        "od42_yuri_back42_traverse_east_2",
+        "od42_yuri_back42_traverse_east_3",
+        "od42_yuri_back42_traverse_east_4",
+        "od42_yuri_back42_traverse_east_5",
+        "od42_yuri_back42_traverse_east_6",
+        "od42_yuri_back42_traverse_east_7",
+        "od42_yuri_back42_traverse_east_8",
+        "od42_yuri_back42_traverse_east_9",
+        "od42_yuri_back42_traverse_east_10",
+        "od42_yuri_back42_traverse_east_11",
+        "od42_yuri_back42_traverse_east_12",
+        "od42_yuri_back42_traverse_east_13",
+        "od42_yuri_back42_traverse_east_14",
+        "od42_yuri_back42_traverse_east_15",
+        "od42_yuri_back42_traverse_east_16"
+      ],
+      "fps": 24,
+      "loop": false,
+      "duration": 0.7083333333333334,
+      "origin": [
+        80,
+        136
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "phoenix/sit/east": {
+      "frames": [
+        "od42_phoenix_sit_east_0",
+        "od42_phoenix_sit_east_1",
+        "od42_phoenix_sit_east_2",
+        "od42_phoenix_sit_east_3",
+        "od42_phoenix_sit_east_4"
+      ],
+      "fps": 8,
+      "loop": true,
+      "duration": 0.625,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "hotwire/sit/east": {
+      "frames": [
+        "od42_hotwire_sit_east_0",
+        "od42_hotwire_sit_east_1",
+        "od42_hotwire_sit_east_2",
+        "od42_hotwire_sit_east_3",
+        "od42_hotwire_sit_east_4"
+      ],
+      "fps": 8,
+      "loop": true,
+      "duration": 0.625,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "neil/sit/east": {
+      "frames": [
+        "od42_neil_sit_east_0",
+        "od42_neil_sit_east_1",
+        "od42_neil_sit_east_2",
+        "od42_neil_sit_east_3",
+        "od42_neil_sit_east_4"
+      ],
+      "fps": 14,
+      "loop": true,
+      "duration": 0.35714285714285715,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    }
+  },
+  "counts": {
+    "banks": 4,
+    "frames": 32
+  }
+}

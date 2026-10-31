@@ -3,6 +3,7 @@
  'use strict';
  const TD=root.TD,I=TD.Input,F=TD.Frontend,A=TD.Audio,VW=480,VH=512,clamp=TD.M.clamp;
  let ctx,processing=false,consumed=new Set(),followSelection=true,deferredSetup=false;
+ let captureNeutral=false;
  let voiceVol=F.settings.voice,optScroll=0,optSnap=null,optDrag=-1,optSbDrag=false,optSelIdx=0,rebindAction=null,rebindWho=1;
  const SEL_RISE=.20,SEL_FLASH=.10,SEL_REST=.62,SEL_CYCLE=SEL_RISE+SEL_FLASH+SEL_REST;
  const KEY_UNBINDABLE=['alt','control','meta','shift','backspace'];
@@ -18,11 +19,11 @@
  const token=b=>typeof b==='number'?'pad_'+b:b&&b.axis!=null?'pad_axis'+b.axis+'_'+(b.sign<0?'neg':'pos'):null;
  const binding=k=>{const n=/^pad_(\d+)$/.exec(k);if(n)return+n[1];const a=/^pad_axis(\d+)_(neg|pos)$/.exec(k);return a?{axis:+a[1],sign:a[2]==='neg'?-1:1}:null;};
  const same=(a,b)=>a!=null&&b!=null&&JSON.stringify(a)===JSON.stringify(b);
- function physicalProfile(){return Object.assign({up:12,down:13,left:14,right:15},I.padProfile());}
- const padTable=new Proxy({}, {ownKeys(){return Object.keys(physicalProfile());},getOwnPropertyDescriptor(){return{enumerable:true,configurable:true};},get(_,k){if(k==='preset')return[I.padStyle()==='six'?'6 BUTTON':'STANDARD'];if(k==='learn')return['SELECT TO LEARN'];const b=token(physicalProfile()[k]);return b?[b]:[];},set(_,k,v){const b=v.map(binding).filter(x=>x!=null).at(-1);if(b==null)return true;for(const [other,assigned]of Object.entries(physicalProfile()))if(other!==k&&same(assigned,b))I.setPadBinding(other,null);I.setPadBinding(k,b);return true;}});
+ function physicalProfile(){return Object.assign(I.directionDefaults(),I.padProfile());}
+ const padTable=new Proxy({}, {ownKeys(){return Object.keys(physicalProfile());},getOwnPropertyDescriptor(){return{enumerable:true,configurable:true};},get(_,k){if(k==='preset')return[I.padPreset()==='standard'?'STANDARD':I.padPreset()==='m30'?'M30 2.4G':'GENESIS 6'];if(k==='learn')return['SELECT TO LEARN'];const b=token(physicalProfile()[k]);return b?[b]:[];},set(_,k,v){const b=v.map(binding).filter(x=>x!=null).at(-1);if(b==null)return true;for(const [other,assigned]of Object.entries(physicalProfile()))if(other!==k&&same(assigned,b))I.setPadBinding(other,null);I.setPadBinding(k,b);return true;}});
  const keybind={get fire(){return TD.BIND.A;}};
  function keybindFor(who){return who===2?padTable:TD.BIND;}
- function makeRows(){const rows=[{t:'head',label:'VOLUME'},...['master','music','sfx','voice'].map(k=>({t:'vol',k,label:k.toUpperCase()})),{t:'head',label:'CONTROLS'},...keyboardOrder.map(act=>({t:'ctrl',act,label:labels[act],who:1})),{t:'head',label:'CONTROLLER BINDINGS'},{t:'ctrl',act:'preset',label:'CONTROLLER PRESET',who:2}];const keys=I.padStyle()==='six'?['up','down','left','right','A','B','C','X','Y','Z','mode','start','L','R']:['up','down','left','right','A','B','X','Y','mode','start','L','R','boost'];for(const act of keys)rows.push({t:'ctrl',act,label:padLabels[act],who:2});rows.push({t:'ctrl',act:'learn',label:'LEARN ALL BUTTONS',who:2},{t:'reset',label:'RESET CONTROLS'});return rows;}
+ function makeRows(){const rows=[{t:'head',label:'VOLUME'},...['master','music','sfx','voice'].map(k=>({t:'vol',k,label:k.toUpperCase()})),{t:'head',label:'CONTROLS'},...keyboardOrder.map(act=>({t:'ctrl',act,label:labels[act],who:1})),{t:'head',label:I.padName()},{t:'ctrl',act:'preset',label:'CONTROLLER PRESET',who:2}];const keys=I.padStyle()==='six'?['up','down','left','right','A','B','C','X','Y','Z','mode','start','L','R']:['up','down','left','right','A','B','X','Y','mode','start','L','R','boost'];for(const act of keys.filter(k=>I.padPreset()!=='genesis'||!['L','R'].includes(k)))rows.push({t:'ctrl',act,label:padLabels[act],who:2});rows.push({t:'ctrl',act:'learn',label:'LEARN ALL BUTTONS',who:2},{t:'reset',label:'RESET CONTROLS'});return rows;}
  const raw=()=>I.raw||{};
  function tap(k){if(!processing||consumed.has(k)||!raw()[k]||I.lastRaw?.[k])return false;consumed.add(k);return true;}
  function action(a){const map=physicalProfile(),keys=[...(TD.BIND[a]||[])];if(a==='back')keys.push(token(map.B),token(map.mode));else if(a==='A')keys.push(...I.menuFaceTokens());else if(a==='start')keys.push(token(map[a]));else if(['up','down','left','right'].includes(a)){keys.push(token(map[a]));if(!(a in I.padProfile())){const axis=a==='left'||a==='right'?0:1,sign=a==='up'||a==='left'?-1:1;keys.push(token({axis,sign}));}}return keys.filter(Boolean).some(tap);}
@@ -34,19 +35,27 @@
  function optApply(){I.saveKeys();try{localStorage.setItem('bof_od_options',JSON.stringify(F.settings));}catch(e){}rebindAction=null;optSnap=null;F.back();}
  function optResetControls(){I.resetKeys();I.resetPad();optResetControls._t=1.8;Audio.SFX.select();}
  optResetControls._t=0;
- function armControl(r){if(r.act==='preset'){I.setPadStyle(I.padStyle()==='six'?'standard':'six');Audio.SFX.select();}else if(r.act==='learn'){deferredSetup=true;}else if(r.who===2&&!I.padId){F.message='CONNECT YOUR CONTROLLER FIRST';Audio.SFX.hit();}else{rebindAction=r.act;rebindWho=r.who||1;Audio.SFX.blip();}}
+ function armControl(r){if(r.act==='preset'){I.setPadPreset(['m30','genesis','standard'][(['m30','genesis','standard'].indexOf(I.padPreset())+1)%3]);Audio.SFX.select();}else if(r.act==='learn'){deferredSetup=true;}else if(r.who===2&&!I.padId){F.message='CONNECT YOUR CONTROLLER FIRST';Audio.SFX.hit();}else{rebindAction=r.act;rebindWho=r.who||1;captureNeutral=false;F.message='RELEASE INPUT, THEN PRESS YOUR NEW '+(rebindWho===2?'BUTTON':'KEY');Audio.SFX.blip();}}
 
+ function finishCapture(k){
+  if(k==='escape'){rebindAction=null;F.message='BINDING CANCELLED';return;}
+  if(rebindWho===2){const b=binding(k);if(b==null)return;padTable[rebindAction]=[k];}
+  else {for(const a in TD.BIND)if(a!==rebindAction&&TD.BIND[a].length>1)TD.BIND[a]=TD.BIND[a].filter(v=>v!==k);TD.BIND[rebindAction]=[k];}
+  F.message='BOUND '+(rebindWho===2?I.physicalLabel(binding(k)):I.keyLabel(rebindAction))+' / APPLY TO KEEP';rebindAction=null;rebindWho=1;captureNeutral=false;Audio.SFX.select();
+ }
+ function pollCapture(){if(!rebindAction||rebindWho!==2)return;const pressed=Object.keys(raw()).filter(k=>k.startsWith('pad_')&&raw()[k]);if(!pressed.length){captureNeutral=true;return;}if(!captureNeutral)return;const expected=token(physicalProfile()[rebindAction]);const k=pressed.includes(expected)?expected:pressed.find(k=>/^pad_\d+$/.test(k))||pressed[0];finishCapture(k);}
+ function onKey(e){if(!rebindAction)return false;const k=e.key.toLowerCase();if(k==='escape'){finishCapture(k);return true;}if(rebindWho!==1)return true;if(e.repeat||['alt','control','meta','backspace'].includes(k))return true;finishCapture(k);return true;}
  /* ORIGINAL_RENDERER */
 
  const originalKeyName=keyName;
- keyName=function(k){const button=/^pad_(\d+)$/.exec(k||'');if(button)return'BUTTON '+button[1];const axis=/^pad_axis(\d+)_(neg|pos)$/.exec(k||'');return axis?'AXIS '+axis[1]+(axis[2]==='neg'?'-':'+'):originalKeyName(k);};
+ keyName=function(k){const button=/^pad_(\d+)$/.exec(k||'');if(button)return I.physicalLabel(+button[1]);const axis=/^pad_axis(\d+)_(neg|pos)$/.exec(k||'');return axis&&+axis[1]<2?'D-PAD '+(+axis[1]===0?(axis[2]==='neg'?'LEFT':'RIGHT'):(axis[2]==='neg'?'UP':'DOWN')):axis?'AXIS '+axis[1]+(axis[2]==='neg'?'-':'+'):originalKeyName(k);};
 
  const O=TD.OriginalOptions={
   enter(preserve){if(!preserve){optScroll=0;optSelIdx=0;rebindAction=null;rebindWho=1;optSnap=null;followSelection=true;}voiceVol=F.settings.voice;drawOptions._md=false;},
-  rows:makeRows,
+  rows:makeRows,onKey,
   snapshot(){return{sel:optSelIdx,scroll:optScroll,capture:rebindAction,who:rebindWho,rows:makeRows()};},
   select(index){optSelIdx=index;followSelection=true;},
-  update(dt){ctx=document.getElementById('screen').getContext('2d');processing=true;consumed.clear();if(I.state.wheel)followSelection=false;ctx.save();const s=document.getElementById('screen').width/VW;ctx.setTransform(s,0,0,s,0,0);ctx.imageSmoothingEnabled=false;drawOptions(dt);ctx.restore();processing=false;if(deferredSetup){deferredSetup=false;F.setupReturn='options';I.beginSetup();F.go('padsetup');}},
+  update(dt){ctx=document.getElementById('screen').getContext('2d');processing=true;consumed.clear();const capturing=!!rebindAction;pollCapture();if(capturing&&!rebindAction)for(const k in raw())if(raw()[k])consumed.add(k);if(I.state.wheel)followSelection=false;ctx.save();const s=document.getElementById('screen').width/VW;ctx.setTransform(s,0,0,s,0,0);ctx.imageSmoothingEnabled=false;drawOptions(dt);ctx.restore();processing=false;if(deferredSetup){deferredSetup=false;F.setupReturn='options';I.beginSetup();F.go('padsetup');}},
   draw(context){ctx=context;processing=false;voiceVol=F.settings.voice;const before={md:drawOptions._md,drag:optDrag,sb:optSbDrag,scroll:optScroll,sel:optSelIdx};drawOptions(0);drawOptions._md=before.md;optDrag=before.drag;optSbDrag=before.sb;optScroll=before.scroll;optSelIdx=before.sel;F.hints([['pad_dpad','ADJUST'],['pad_a','SELECT'],['pad_b','CANCEL']],491);if(F.message){ctx.save();ctx.font='bold 9px "BOFmil",monospace';ctx.textAlign='center';ctx.fillStyle='#ffb347';ctx.fillText(F.message,VW/2,465);ctx.restore();}},
  };
  // The original hint layout is centered in the original 480-pixel menu.

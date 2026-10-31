@@ -1,0 +1,1780 @@
+{
+  "version": "1013-cover-motion-r1",
+  "assets": {
+    "od_cm_yuri_north_sidestep_0": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_0.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        114,
+        81,
+        206,
+        256
+      ]
+    },
+    "od_cm_yuri_north_sidestep_1": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_1.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        114,
+        80,
+        229,
+        256
+      ]
+    },
+    "od_cm_yuri_north_sidestep_2": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_2.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        112,
+        81,
+        235,
+        256
+      ]
+    },
+    "od_cm_yuri_north_sidestep_3": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_3.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        115,
+        81,
+        209,
+        256
+      ]
+    },
+    "od_cm_yuri_north_sidestep_4": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_4.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        112,
+        78,
+        206,
+        256
+      ]
+    },
+    "od_cm_yuri_north_sidestep_5": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_5.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        114,
+        78,
+        206,
+        256
+      ]
+    },
+    "od_cm_yuri_north_sidestep_6": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_6.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        113,
+        79,
+        205,
+        256
+      ]
+    },
+    "od_cm_yuri_north_sidestep_7": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_sidestep_7.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        114,
+        80,
+        206,
+        257
+      ]
+    },
+    "od_cm_yuri_north_peek_0": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_0.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        111,
+        130,
+        211,
+        256
+      ]
+    },
+    "od_cm_yuri_north_peek_1": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_1.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        108,
+        105,
+        213,
+        256
+      ]
+    },
+    "od_cm_yuri_north_peek_2": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_2.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        103,
+        92,
+        222,
+        256
+      ]
+    },
+    "od_cm_yuri_north_peek_3": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_3.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        101,
+        78,
+        220,
+        256
+      ]
+    },
+    "od_cm_yuri_north_peek_4": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_4.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        103,
+        79,
+        222,
+        256
+      ]
+    },
+    "od_cm_yuri_north_peek_5": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_5.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        113,
+        86,
+        225,
+        256
+      ]
+    },
+    "od_cm_yuri_north_peek_6": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_6.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        111,
+        97,
+        224,
+        256
+      ]
+    },
+    "od_cm_yuri_north_peek_7": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_peek_7.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        107,
+        127,
+        215,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_0": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_0.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        107,
+        80,
+        213,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_1": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_1.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        99,
+        88,
+        222,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_2": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_2.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        98,
+        99,
+        227,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_3": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_3.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        101,
+        145,
+        223,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_4": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_4.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        108,
+        129,
+        222,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_5": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_5.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        99,
+        162,
+        215,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_6": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_6.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        82,
+        157,
+        229,
+        256
+      ]
+    },
+    "od_cm_yuri_north_knockback_7": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_knockback_7.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        76,
+        160,
+        228,
+        256
+      ]
+    },
+    "od_cm_yuri_north_blindfire_0": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_0.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        102,
+        131,
+        182,
+        255
+      ],
+      "muzzle": [
+        140.0,
+        132
+      ]
+    },
+    "od_cm_yuri_north_blindfire_1": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_1.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        98,
+        110,
+        178,
+        256
+      ],
+      "muzzle": [
+        150.0,
+        111
+      ]
+    },
+    "od_cm_yuri_north_blindfire_2": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_2.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        100,
+        87,
+        179,
+        255
+      ],
+      "muzzle": [
+        142.0,
+        88
+      ]
+    },
+    "od_cm_yuri_north_blindfire_3": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_3.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        101,
+        86,
+        179,
+        256
+      ],
+      "muzzle": [
+        141.0,
+        87
+      ]
+    },
+    "od_cm_yuri_north_blindfire_4": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_4.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        100,
+        91,
+        180,
+        256
+      ],
+      "muzzle": [
+        131.5,
+        92
+      ]
+    },
+    "od_cm_yuri_north_blindfire_5": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_5.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        97,
+        109,
+        178,
+        255
+      ],
+      "muzzle": [
+        145.5,
+        110
+      ]
+    },
+    "od_cm_yuri_north_blindfire_6": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_6.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        96,
+        130,
+        180,
+        255
+      ],
+      "muzzle": [
+        131.0,
+        131
+      ]
+    },
+    "od_cm_yuri_north_blindfire_7": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_yuri_north_blindfire_7.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        103,
+        133,
+        181,
+        255
+      ],
+      "muzzle": [
+        141.0,
+        134
+      ]
+    },
+    "od_cm_robot_south_strafe_0": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_0.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        99,
+        93,
+        241,
+        283
+      ]
+    },
+    "od_cm_robot_south_strafe_1": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_1.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        101,
+        93,
+        240,
+        283
+      ]
+    },
+    "od_cm_robot_south_strafe_2": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_2.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        102,
+        93,
+        250,
+        284
+      ]
+    },
+    "od_cm_robot_south_strafe_3": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_3.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        101,
+        92,
+        240,
+        284
+      ]
+    },
+    "od_cm_robot_south_strafe_4": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_4.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        102,
+        94,
+        241,
+        283
+      ]
+    },
+    "od_cm_robot_south_strafe_5": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_5.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        101,
+        94,
+        240,
+        283
+      ]
+    },
+    "od_cm_robot_south_strafe_6": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_6.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        101,
+        94,
+        243,
+        283
+      ]
+    },
+    "od_cm_robot_south_strafe_7": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_robot_south_strafe_7.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        100,
+        93,
+        239,
+        283
+      ]
+    },
+    "od_cm_gosfer_south_strafe_0": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_0.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        87,
+        32,
+        258,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_strafe_1": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_1.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        85,
+        33,
+        260,
+        269
+      ]
+    },
+    "od_cm_gosfer_south_strafe_2": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_2.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        86,
+        29,
+        259,
+        269
+      ]
+    },
+    "od_cm_gosfer_south_strafe_3": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_3.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        85,
+        35,
+        258,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_strafe_4": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_4.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        87,
+        24,
+        261,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_strafe_5": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_5.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        86,
+        28,
+        261,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_strafe_6": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_6.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        85,
+        23,
+        264,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_strafe_7": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_strafe_7.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        86,
+        28,
+        260,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_walk_0": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_walk_0.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        98,
+        27,
+        230,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_walk_1": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_walk_1.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        99,
+        42,
+        234,
+        269
+      ]
+    },
+    "od_cm_gosfer_south_walk_2": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_walk_2.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        99,
+        30,
+        232,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_walk_3": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_walk_3.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        98,
+        26,
+        234,
+        269
+      ]
+    },
+    "od_cm_gosfer_south_walk_4": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_walk_4.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        99,
+        32,
+        232,
+        270
+      ]
+    },
+    "od_cm_gosfer_south_walk_5": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cm_gosfer_south_walk_5.png",
+      "size": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        256
+      ],
+      "bounds": [
+        97,
+        24,
+        230,
+        270
+      ]
+    },
+    "od_cover_bunker": {
+      "file": "expansion/topdown/art/cover_motion_1013/frames/od_cover_bunker.png",
+      "size": [
+        320,
+        192
+      ],
+      "anchor": [
+        160,
+        160
+      ],
+      "bounds": [
+        39,
+        102,
+        281,
+        160
+      ]
+    }
+  },
+  "sequences": {
+    "yuri_north_sidestep": {
+      "frames": [
+        "od_cm_yuri_north_sidestep_0",
+        "od_cm_yuri_north_sidestep_1",
+        "od_cm_yuri_north_sidestep_2",
+        "od_cm_yuri_north_sidestep_3",
+        "od_cm_yuri_north_sidestep_4",
+        "od_cm_yuri_north_sidestep_5",
+        "od_cm_yuri_north_sidestep_6",
+        "od_cm_yuri_north_sidestep_7"
+      ],
+      "fps": 16,
+      "motion": true,
+      "stride": 96,
+      "contacts": [
+        0,
+        4
+      ],
+      "scale": 0.5856905158069884
+    },
+    "yuri_north_peek": {
+      "frames": [
+        "od_cm_yuri_north_peek_0",
+        "od_cm_yuri_north_peek_1",
+        "od_cm_yuri_north_peek_2",
+        "od_cm_yuri_north_peek_3",
+        "od_cm_yuri_north_peek_4",
+        "od_cm_yuri_north_peek_5",
+        "od_cm_yuri_north_peek_6",
+        "od_cm_yuri_north_peek_7"
+      ],
+      "fps": 14,
+      "motion": false,
+      "stride": 96,
+      "contacts": [
+        0,
+        4
+      ],
+      "scale": 0.5856905158069884
+    },
+    "yuri_north_knockback": {
+      "frames": [
+        "od_cm_yuri_north_knockback_0",
+        "od_cm_yuri_north_knockback_1",
+        "od_cm_yuri_north_knockback_2",
+        "od_cm_yuri_north_knockback_3",
+        "od_cm_yuri_north_knockback_4",
+        "od_cm_yuri_north_knockback_5",
+        "od_cm_yuri_north_knockback_6",
+        "od_cm_yuri_north_knockback_7"
+      ],
+      "fps": 14,
+      "motion": false,
+      "stride": 96,
+      "contacts": [
+        0,
+        4
+      ],
+      "scale": 0.5569620253164557
+    },
+    "yuri_north_blindfire": {
+      "frames": [
+        "od_cm_yuri_north_blindfire_0",
+        "od_cm_yuri_north_blindfire_1",
+        "od_cm_yuri_north_blindfire_2",
+        "od_cm_yuri_north_blindfire_3",
+        "od_cm_yuri_north_blindfire_4",
+        "od_cm_yuri_north_blindfire_5",
+        "od_cm_yuri_north_blindfire_6",
+        "od_cm_yuri_north_blindfire_7"
+      ],
+      "fps": 14,
+      "motion": false,
+      "stride": 96,
+      "contacts": [
+        0,
+        4
+      ],
+      "scale": 0.29069767441860467
+    },
+    "robot_south_strafe": {
+      "frames": [
+        "od_cm_robot_south_strafe_0",
+        "od_cm_robot_south_strafe_1",
+        "od_cm_robot_south_strafe_2",
+        "od_cm_robot_south_strafe_3",
+        "od_cm_robot_south_strafe_4",
+        "od_cm_robot_south_strafe_5",
+        "od_cm_robot_south_strafe_6",
+        "od_cm_robot_south_strafe_7"
+      ],
+      "fps": 14,
+      "motion": false,
+      "stride": 96,
+      "contacts": [
+        0,
+        4
+      ],
+      "scale": 0.8059071729957806
+    },
+    "gosfer_south_strafe": {
+      "frames": [
+        "od_cm_gosfer_south_strafe_0",
+        "od_cm_gosfer_south_strafe_1",
+        "od_cm_gosfer_south_strafe_2",
+        "od_cm_gosfer_south_strafe_3",
+        "od_cm_gosfer_south_strafe_4",
+        "od_cm_gosfer_south_strafe_5",
+        "od_cm_gosfer_south_strafe_6",
+        "od_cm_gosfer_south_strafe_7"
+      ],
+      "fps": 14,
+      "motion": false,
+      "stride": 96,
+      "contacts": [
+        0,
+        4
+      ],
+      "scale": 0.8120805369127517
+    },
+    "gosfer_south_walk": {
+      "frames": [
+        "od_cm_gosfer_south_walk_0",
+        "od_cm_gosfer_south_walk_1",
+        "od_cm_gosfer_south_walk_2",
+        "od_cm_gosfer_south_walk_3",
+        "od_cm_gosfer_south_walk_4",
+        "od_cm_gosfer_south_walk_5"
+      ],
+      "fps": 14,
+      "motion": false,
+      "stride": 96,
+      "contacts": [
+        0,
+        3
+      ],
+      "scale": 0.7634069400630915
+    }
+  },
+  "audit": [
+    {
+      "key": "od_cm_yuri_north_sidestep_0",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        69,
+        4,
+        229,
+        307
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "20cf12061c6c13679067dfa736b12ce3b6bb9d848d3c34923e39ebccc4bce9a2"
+    },
+    {
+      "key": "od_cm_yuri_north_sidestep_1",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        397,
+        3,
+        596,
+        307
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "d7cd67741c96335bf572d3211d6407c5489c3d7f36c40fe61eeceadff13be73a"
+    },
+    {
+      "key": "od_cm_yuri_north_sidestep_2",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        726,
+        3,
+        939,
+        307
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "84a1e20632436be05bf4e4fe1f087c4c5a9f8fd667db4104fe5bf1e1ecaec08d"
+    },
+    {
+      "key": "od_cm_yuri_north_sidestep_3",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        1045,
+        4,
+        1209,
+        307
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "be94dd7e88acc01778241e4ddfa289157512c8ef40c8fa5ab288aad0862d9ac2"
+    },
+    {
+      "key": "od_cm_yuri_north_sidestep_4",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        64,
+        312,
+        228,
+        619
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "214571df017e37d2026f29f4eeb47958e64a46d0b88e0e0e3b8e06567d1ff098"
+    },
+    {
+      "key": "od_cm_yuri_north_sidestep_5",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        407,
+        312,
+        568,
+        619
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "73b40cf8603349d399b516c7906054e7be26b0aeafaf09d6d9bdc40316b12c73"
+    },
+    {
+      "key": "od_cm_yuri_north_sidestep_6",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        732,
+        312,
+        893,
+        618
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "3bb861fdc53d3c1a01274b747e4f9d9b372484270689d1dc73ae83a6e54b82da"
+    },
+    {
+      "key": "od_cm_yuri_north_sidestep_7",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        1054,
+        313,
+        1214,
+        618
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "9bc2b10fe95162cdc76a1e2a73ae436631687e8ae5d35e69ee54225f7bd0dcff"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_0",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        72,
+        703,
+        246,
+        921
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "a6c2aac23fc79e303b4043e339284fcdcba8d03158102900069ba33be6bcb59f"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_1",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        397,
+        661,
+        579,
+        922
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "b24cecaf0ffe3065a93c79ff744175cdd58cdad8750e7d7f1e89e008bf0b81f6"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_2",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        713,
+        639,
+        919,
+        923
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "6cc0cfe05fd9939055ce0546a8acd8568e0e078b06927c19edd258da1bc8afe1"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_3",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        1023,
+        620,
+        1230,
+        928
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "841b6f7b5e67993c10b6b31210d128ff51b31d98a254bdfb58995df43bb534c9"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_4",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        57,
+        924,
+        263,
+        1230
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "1b123f7b5ec124aa3a5a8133a1573ba208f6dc3eeaf4c8b75a1cd1f7f83149b1"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_5",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        395,
+        931,
+        589,
+        1225
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "9a9d431f59a4dab4264adf78f241f0472a31f347ebf8da552e722d09e1c1a602"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_6",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        712,
+        953,
+        909,
+        1228
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "215d56620126437ae0038d9e52491fc7c91a9969bdab47d2319dcb2ab656d8c1"
+    },
+    {
+      "key": "od_cm_yuri_north_peek_7",
+      "source": "yuri_sidestep_peek.png",
+      "crop": [
+        1028,
+        1003,
+        1215,
+        1227
+      ],
+      "scale": 0.5856905158069884,
+      "sha256": "8e0a8dbb5f449e576d8960ceb48fc5a4ebcaebbe8078b9b23b0d68352e4b62af"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_0",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        54,
+        630,
+        248,
+        950
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "2b07589caeaa29861ff205441f567f0c5d5c900d6de236b9e48408766a2ff3be"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_1",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        368,
+        647,
+        592,
+        952
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "3ce3f150e2fe10cb6478ba5974816074ab24578aa90908181b2a5804f519c725"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_2",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        665,
+        660,
+        901,
+        945
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "da27bc0e065003426373eedc662024634fd86c6027819fc2d7a0142a90218369"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_3",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        980,
+        722,
+        1202,
+        925
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "f93609b8ebc02bacbf57b28c7f99bfaad99b825ae6dd2802a96dfa5aae7aca53"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_4",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        61,
+        987,
+        269,
+        1218
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "9814f93c16a15aaf858d51fb4b9dfc85475b969b9881c944a521d5d75ca8f580"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_5",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        371,
+        1029,
+        583,
+        1202
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "f37c489ff9ab4151b52660bb6e8520351e74a52fa38c999d5caeeebe7269fb84"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_6",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        642,
+        1046,
+        910,
+        1227
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "c8d8097f3048f3943b0efffb82b014ec13c1cb88d65c299eb48066c24f2457f4"
+    },
+    {
+      "key": "od_cm_yuri_north_knockback_7",
+      "source": "yuri_blindfire_knockback.png",
+      "crop": [
+        953,
+        1053,
+        1229,
+        1229
+      ],
+      "scale": 0.5569620253164557,
+      "sha256": "12dff99e61ed5f013df7db814cf994131a5faff226aec0e050ddfc33a616124a"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_0",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        23,
+        181,
+        305,
+        615
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "71c9d8b2fc7d5067f595bbf02cdb29545ae1e5a8df94f10878f1930ce4808bf0"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_1",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        344,
+        106,
+        626,
+        614
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "50d2eab4b770d153193b147eeb1c282e94f97d8e92a4af91fdbf6da2f043827a"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_2",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        642,
+        27,
+        920,
+        613
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "301a8157ebc879926551829406339ca7a4f73712327b0423999a90afe60e7306"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_3",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        957,
+        23,
+        1232,
+        613
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "7e4055f82f6264f75c12a743f768a00b519d3fd83b697e2a9769a50e20ab808e"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_4",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        28,
+        643,
+        310,
+        1216
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "8cd9a2d751194fc3df8ada8ffaf3e08bef7909f94cf4f8605d6352681e0eace0"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_5",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        341,
+        706,
+        626,
+        1216
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "db6814e137d398384f43cfe685e9b4e1017cbeaaa14a36e338105764d46182db"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_6",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        636,
+        778,
+        931,
+        1216
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "3daf436f127cb7102216f2d0862094cc94b990d64ccdb9471eb72e3233365f96"
+    },
+    {
+      "key": "od_cm_yuri_north_blindfire_7",
+      "source": "yuri_blindfire_front.png",
+      "crop": [
+        958,
+        789,
+        1233,
+        1216
+      ],
+      "scale": 0.29069767441860467,
+      "sha256": "df785f15cd7e2bc28005adb63ef4367e79f0a076ce51b71273e5d861d41b46df"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_0",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        34,
+        21,
+        215,
+        262
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "9e3611317d83fa4903d2469b1f41479007b385ff3447d1ade903b5b90b5301f2"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_1",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        282,
+        20,
+        459,
+        261
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "f54924d312faf660a3024b9a476aad09d03cd2f1ff5845a2dd88da792dbf61ea"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_2",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        530,
+        21,
+        719,
+        263
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "a2ff0e0531fc763564d1f946852d6b12fd3af9f71e435077a630ad5e61eb16a8"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_3",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        796,
+        20,
+        974,
+        263
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "123b91f6c1690c7a09cce22cef61c47cb3d980ef64e5beb66c26eb9c8ceb5933"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_4",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        33,
+        279,
+        211,
+        519
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "513646532ad0da441ed1d6e7c652f43789ea132eead45075f1108f2c8058f29c"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_5",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        289,
+        279,
+        466,
+        519
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "db3beba0470abb4d7258ed73bda834831dd534a5aa32252ad552b10e886f91b6"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_6",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        554,
+        280,
+        735,
+        520
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "22e8ec0c9cdb4d8ff8ffaf5559d56556771d45fb9bd7ea1e96a75df751a0e34d"
+    },
+    {
+      "key": "od_cm_robot_south_strafe_7",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        801,
+        279,
+        979,
+        520
+      ],
+      "scale": 0.8059071729957806,
+      "sha256": "53a6debddd17edeea2103f480c62a5821575b33514373156bf11d136deb19164"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_0",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        32,
+        525,
+        248,
+        823
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "9244c2c0c545270d198bdcd9e7f984c8db0e9694a88baaffd9e3f38a6bd2490c"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_1",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        274,
+        525,
+        494,
+        821
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "a9f6b65c85f5e9b25efe439be2bcd9cbe83d51605c514730ea17867805e342d7"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_2",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        531,
+        525,
+        749,
+        826
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "5556d32d313d2e1187609c40ef87913bbcf5a1517001554e77377aa797570f60"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_3",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        788,
+        525,
+        1006,
+        819
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "b011204655cd9a8c819581c7911f2c791a41087b46ac33217e16f0936577ed5b"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_4",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        26,
+        827,
+        245,
+        1135
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "cdd400dc101d63464baeb01a3a7bb90696ab0df1b681f1720ad7b5cb4c4c35b3"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_5",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        271,
+        826,
+        492,
+        1129
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "50b7a8602aa0b03f1823c98271805302f7f31a4f34da072f6c040822c305ea58"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_6",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        536,
+        828,
+        761,
+        1137
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "764315edcd2cf9edcc290821d86e30f1521630aee6ec1702f3c41dc8c2153149"
+    },
+    {
+      "key": "od_cm_gosfer_south_strafe_7",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        790,
+        825,
+        1009,
+        1128
+      ],
+      "scale": 0.8120805369127517,
+      "sha256": "5f54078149abb24e04335da855f185901a3971ecdfb90ef83836c4647a9e7cf9"
+    },
+    {
+      "key": "od_cm_gosfer_south_walk_0",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        8,
+        1149,
+        186,
+        1472
+      ],
+      "scale": 0.7634069400630915,
+      "sha256": "3b2cbf711f70f7ffb0ef68e78ddb028adee89689405a0f4758b391229286f57e"
+    },
+    {
+      "key": "od_cm_gosfer_south_walk_1",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        175,
+        1148,
+        357,
+        1451
+      ],
+      "scale": 0.7634069400630915,
+      "sha256": "bcf0076d1a8cffd21fea85a86563a72863b6ec63711f7c9496662a8426f52ffb"
+    },
+    {
+      "key": "od_cm_gosfer_south_walk_2",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        345,
+        1148,
+        524,
+        1467
+      ],
+      "scale": 0.7634069400630915,
+      "sha256": "7feb16b92cbefb377efaf9122075dd3e7b7e0cf66fcdf448f6eb3dab716658c8"
+    },
+    {
+      "key": "od_cm_gosfer_south_walk_3",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        512,
+        1149,
+        695,
+        1473
+      ],
+      "scale": 0.7634069400630915,
+      "sha256": "cdf16f25f10f0a35159513a9f45348d1577020e11e8e3fe9e5023b281bc70ac7"
+    },
+    {
+      "key": "od_cm_gosfer_south_walk_4",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        682,
+        1149,
+        862,
+        1466
+      ],
+      "scale": 0.7634069400630915,
+      "sha256": "6a7b67457f5ab2bd2faf8ad7a1c2f4d11575354e4fa7ca396e1a338eccaecf6b"
+    },
+    {
+      "key": "od_cm_gosfer_south_walk_5",
+      "source": "enemy_sidestep.png",
+      "crop": [
+        847,
+        1148,
+        1026,
+        1475
+      ],
+      "scale": 0.7634069400630915,
+      "sha256": "606bb2e6a080ef912cf517c8bcb5f8276d57356cd1abf3c85e0d36526f620416"
+    },
+    {
+      "key": "od_cover_bunker",
+      "source": "bunker.png",
+      "crop": [
+        113,
+        327,
+        1661,
+        697
+      ],
+      "scale": 0.15633074935400518,
+      "sha256": "ff9f2b70ce8aaa791fa6a1f10dea70f81717a5a7b8f895679ea0c732491d136f"
+    }
+  ],
+  "sources": {
+    "yuri_sidestep_peek.png": "992bc4cbecee5f9b64fcc377324ac1d6e1acdfe3995393bf23132924250a07ad",
+    "yuri_blindfire_knockback.png": "3782c2cdf2a221a430aad830884f2b1b4016ad2efcaeda488090c1d7992d0665",
+    "yuri_blindfire_front.png": "0d622f9f1918d09dcdb874017ae0d5d76d7386264ed9c1b85bb388406a8681ee",
+    "enemy_sidestep.png": "db63a29661480db0dbf3666fe3a4f4b5c9e2b64af5a9c41a421cf4aca7c86c79"
+  }
+}

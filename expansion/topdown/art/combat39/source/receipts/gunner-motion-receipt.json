@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: fb004b83-cbe6-47d3-a612-8e31a2ddcd8c\njob_id: fb004b83-cbe6-47d3-a612-8e31a2ddcd8c\naction: FRAME FORMAT160x160 each, unchanged root80,136, same whole-body size. Same pure side-profile Yuri with EMPTY HANDS on invisible mounted-turret grips. A smooth recoil cycle: forearms and shoulders absorb a short strong vibration backward, knees brace and torso rocks very slightly, then return to the exact starting pose. Hands stay at chest height close together holding the invisible handles, NEVER draw a gun, rifle, weapon, turret, vehicle or projectile. Keep exact red-black outfit, face and hair, fixed body and head sizes, same lighting and color palette. No stepping, no turning toward viewer, no background. Animate real elbows and shoulders rather than stretching hands.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 07ada744-5382-5e5b-91e6-66c2584b3c7b\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fb004b83-cbe6-47d3-a612-8e31a2ddcd8c\")"
+    }
+  ],
+  "isError": false
+}

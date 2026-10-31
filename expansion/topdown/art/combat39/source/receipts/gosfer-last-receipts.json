@@ -1,0 +1,26 @@
+[
+  {
+    "name": "gosfer-north-fire",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: e20b9453-88e3-42f6-82cc-37a36e012a1e\njob_id: e20b9453-88e3-42f6-82cc-37a36e012a1e\naction: Gosfer fires three rifle bursts straight NORTH away from viewer. Entire body remains facing north. Gun stays rigid and vertical north, length constant in all frames. Both hands on grips. Tiny shoulder recoil only and small muzzle flashes. Preserve identical dark red-black armor palette, NO lighting or color changes on the body. Fixed feet root, body scale and transparent background.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 032a8680-6902-530a-a762-f8f2692294f8\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e20b9453-88e3-42f6-82cc-37a36e012a1e\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "gosfer-ns-roll",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "error: no animation group 781093b6-a7f1-4376-b453-7c1eac4a848a on character f9cbf57d-c666-48d5-8599-8e7c50da05c3\n\nhint: get_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\") to see [group: ...] ids, or omit animation_group_id to start a new group"
+        }
+      ],
+      "isError": true
+    }
+  }
+]

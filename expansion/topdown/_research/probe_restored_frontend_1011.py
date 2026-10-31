@@ -116,9 +116,10 @@ try:
   index=page.evaluate('TD.OriginalOptions.rows().filter(r=>r.t!=="head").findIndex(r=>r.t==="reset")');page.evaluate('i=>TD.OriginalOptions.select(i)',index);frames(1);tap('Enter');check('original Reset Controls restores keyboard and physical pad defaults',page.evaluate('TD.BIND.left[0]==="a" && TD.Input.padProfile().L===6 && TD.Input.padProfile().R===7'))
   click(350,455)
 
-  for sel in [0,2,3]:
+  visible_missions=page.evaluate('TD.MISSIONS.flatMap((m,i)=>m.hidden?[]:[i])')
+  for sel in visible_missions:
    page.evaluate("sel=>{TDGAME.G.sel=sel;TD.difficulty='normal';TDGAME.start();TDGAME.G.results={};TD.Frontend.saveClear(TDGAME.G);}",sel)
-   if sel!=3:check('clearing mission '+str(sel)+' alone does not unlock Insanity',page.evaluate('!TD.Frontend.insanityUnlocked()'))
+   if sel!=visible_missions[-1]:check('clearing mission '+str(sel)+' alone does not unlock Insanity',page.evaluate('!TD.Frontend.insanityUnlocked()'))
   check('completing the campaign unlocks Insanity and saves that unlock',page.evaluate('TD.Frontend.insanityUnlocked() && JSON.parse(localStorage.bof_od_unlocks).insanity===true'))
   page.reload();page.wait_for_function('window.TDGAME && TDGAME.G.state==="boot"',timeout=60000);page.evaluate('TDGAME.freeze()');frames(24)
   check('campaign unlock and applied Voice volume survive a real reload',page.evaluate('TD.Frontend.insanityUnlocked() && TD.Frontend.settings.voice===.7'))

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "runner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\nname: Overdrive39 Arsenal Pursuit Runner\nmode: pro (25 generations, 8 directions)\nbody: humanoid\nsize: 128x128px\nview: side\nstatus: processing (~3-5 min)\n\nhint: get_character(character_id=\"ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "road",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: f94a4ab8-aa39-41b1-89c2-ee7519d2df0a\njob_id: f94a4ab8-aa39-41b1-89c2-ee7519d2df0a\ndescription: Pure orthographic side-scroller highway road surface repeating horizontal strip for an intense sci-fi night pursuit. Dark indigo cracked asphalt, bright little cold blue gravel specks, scorched red rusty concrete curb at upper edge, layered rock and drainage pipes cutaway at bottom. Flat straight horizontal road contact line across full image at y35, no vanishing point, no perspective angle, no cars, no humans, no text, no weapons. Seamlessly repeating left-to-right, rich crisp 32-bit arcade pixel art.\nsize: 400x128px\ntransparent: False\nasset_id: 14c304d5-92a2-540f-a042-ad5a37526e8f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"f94a4ab8-aa39-41b1-89c2-ee7519d2df0a\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "midground",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 8fc17b7a-1fdd-402a-aa48-7d9b895266b8\njob_id: 8fc17b7a-1fdd-402a-aa48-7d9b895266b8\ndescription: Transparent repeating side-scrolling industrial midground silhouette band. Original alien occupied refinery: distant oil tanks, skeletal gantries, metal pipes and cooling towers, purple-black and wine red with small cyan and amber warning lights. Pure side elevation, no top-down perspective, clear transparent sky above silhouette, no ground road, no vehicles, no humans, no lettering. Buildings only lower two-thirds with varied low skyline, seamless left/right border heights. Crisp gritty 32-bit arcade pixel art, restrained teal/indigo shadows.\nsize: 400x192px\ntransparent: True\nasset_id: 0c031374-438d-5e00-a94c-887984cff15e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8fc17b7a-1fdd-402a-aa48-7d9b895266b8\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "gate",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: cb8b2549-42d1-4fc9-b660-1b7e8f1f8980\ndescription: A complete massive closed sci-fi military base gate in STRICT FLAT SIDE-SCROLLING ELEVATION. This is the base fence seen broadside from the road in a 2D vehicle game. Two heavy rectangular red-black steel gate panels and a central reinforced blast door, tall bolted concrete side posts with amber beacons and cyan locks, barbed wire above, no lettering. Entire gate intact, no characters, no vehicles, no road, no background, generous transparent margin. Dark gunmetal/red pixel art with clear warm industrial highlights, no perspective, no diagonal edges receding into distance.\nsize: 384x256px\nview: side\nmode: basic\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"cb8b2549-42d1-4fc9-b660-1b7e8f1f8980\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

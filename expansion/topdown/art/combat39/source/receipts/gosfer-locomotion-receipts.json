@@ -1,0 +1,26 @@
+[
+  {
+    "name": "jump",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: f9cbf57d-c666-48d5-8599-8e7c50da05c3\nanimation: pixminimax custom (FRAME FORMAT: constant even canvas, constant root, one body scale. Preserve exact Gosfer skull face, dark red-black armor, amber eyes and fixed palette with same camera and direction. A heavy Gosfer armored boss makes a powerful jump, bends knees to load the weight, lifts off, tucks knees in air, extends and lands on both boots, absorbs impact and settles. Same whole armored body, gun held safely, no roll or shooting, no scenery.)\ndirections: south (1 jobs)\njob_ids: south=92e8069e-3b09-4f9a-b115-5ce4d94022ef\ngroup: f6205757-e404-4840-95c1-f1457c6ac960\nframes: 17 (1 reference + 16 animated)\ncanvas: south 168x168 (frames are stored at this size: the character plus room to move)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\")\nadd more directions to this group: animate_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\", action_description=\"FRAME FORMAT: constant even canvas, constant root, one body scale. Preserve exact Gosfer skull face, dark red-black armor, amber eyes and fixed palette with same camera and direction. A heavy Gosfer armored boss makes a powerful jump, bends knees to load the weight, lifts off, tucks knees in air, extends and lands on both boots, absorbs impact and settles. Same whole armored body, gun held safely, no roll or shooting, no scenery.\", mode=\"pixminimax\", animation_group_id=\"f6205757-e404-4840-95c1-f1457c6ac960\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "roll",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "error: need 2 job slots but only 1 available (9/10 used)\n\nhint: wait for jobs to finish (~2-4 min each), then retry, or start 1 now with directions=[...] and add the rest to the same group afterwards (animation_group_id)"
+        }
+      ],
+      "isError": true
+    }
+  }
+]

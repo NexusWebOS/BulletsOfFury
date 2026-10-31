@@ -1,0 +1,38 @@
+[
+  {
+    "name": "hotwire",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\nanimation: v3 custom (Steps up one short step, lowers the hips into a seated passenger posture facing right with both knees bent, then settles seated upright and braces one hand on dashboard. No seat, no car or background drawn. Final seated pose visible complete head to boots. Fixed strictly side-on camera. Exact same original woman and orange black armor, constant palette and size.)\ndirections: east (1 jobs)\njob_ids: east=5bc413b2-6138-4145-b7db-82dd245ad99c\ngroup: 1e0ae81c-57d3-41c4-8471-b73f599530d8\nframes: 13 (1 reference + 12 animated)\ncanvas: east 156x156 (frames are stored at this size: the character plus room to move)\ncost: 5 generations (5/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\")\nadd more directions to this group: animate_character(character_id=\"37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\", action_description=\"Steps up one short step, lowers the hips into a seated passenger posture facing right with both knees bent, then settles seated upright and braces one hand on dashboard. No seat, no car or background drawn. Final seated pose visible complete head to boots. Fixed strictly side-on camera. Exact same original woman and orange black armor, constant palette and size.\", animation_group_id=\"1e0ae81c-57d3-41c4-8471-b73f599530d8\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "phoenix",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 6c2882c2-4794-40ec-89c6-184965eecf6b\nanimation: v3 custom (Steps up, sits down into an invisible driver seat facing right, both knees bent naturally, reaches both hands forward to an invisible steering wheel, then settles and makes small steering hand motion. No seat, vehicle, steering wheel or background drawn. Full body visible. Strict perpendicular side view throughout. Preserve exact original man identity and red black gold armor palette, no turning toward viewer, no size change.)\ndirections: east (1 jobs)\njob_ids: east=c39e18ab-5eea-4164-b2a3-f4e23a0a3a93\ngroup: 2cad5390-6dea-42ad-8942-789405be1197\nframes: 13 (1 reference + 12 animated)\ncanvas: east 152x152 (frames are stored at this size: the character plus room to move)\ncost: 5 generations (5/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"6c2882c2-4794-40ec-89c6-184965eecf6b\")\nadd more directions to this group: animate_character(character_id=\"6c2882c2-4794-40ec-89c6-184965eecf6b\", action_description=\"Steps up, sits down into an invisible driver seat facing right, both knees bent naturally, reaches both hands forward to an invisible steering wheel, then settles and makes small steering hand motion. No seat, vehicle, steering wheel or background drawn. Full body visible. Strict perpendicular side view throughout. Preserve exact original man identity and red black gold armor palette, no turning toward viewer, no size change.\", animation_group_id=\"2cad5390-6dea-42ad-8942-789405be1197\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "neil",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: b3b46e7b-2202-488a-9e5e-c490f9e90bc1\nanimation: v3 custom (Steps into a car, lowers hips into an invisible driver seat facing right, bends knees naturally, puts right hand forward on invisible steering wheel and raises left hand holding a small black pistol out to the right through an invisible open window. End on a seated driving-and-firing posture with small real shoulder recoil. No car, seats, wheel, walls or background drawn. Strict pure side-on view, preserve exact Niel face, short brown hair/beard, white black gold armor and teal scarf. Constant head and body size and exact fixed palette across every frame.)\ndirections: east (1 jobs)\njob_ids: east=c55c9646-57c9-4fc4-8990-ab720d716d83\ngroup: a9f9cd10-765a-4c3e-b184-be3226573f6c\nframes: 13 (1 reference + 12 animated)\ncanvas: east 160x160 (frames are stored at this size: the character plus room to move)\ncost: 5 generations (5/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"b3b46e7b-2202-488a-9e5e-c490f9e90bc1\")\nadd more directions to this group: animate_character(character_id=\"b3b46e7b-2202-488a-9e5e-c490f9e90bc1\", action_description=\"Steps into a car, lowers hips into an invisible driver seat facing right, bends knees naturally, puts right hand forward on invisible steering wheel and raises left hand holding a small black pistol out to the right through an invisible open window. End on a seated driving-and-firing posture with small real shoulder recoil. No car, seats, wheel, walls or background drawn. Strict pure side-on view, preserve exact Niel face, short brown hair/beard, white black gold armor and teal scarf. Constant head and body size and exact fixed palette across every frame.\", animation_group_id=\"a9f9cd10-765a-4c3e-b184-be3226573f6c\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

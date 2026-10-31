@@ -1,0 +1,50 @@
+[
+  {
+    "name": "hotwire",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\nanimation: running-8-frames\nmode: template\ndirections: east (1 jobs)\njob_ids: east=798bd2af-aa3d-48d2-b1fe-545bee421936\ngroup: 4cb2d1af-4eff-499f-96cb-0d770e129aa3\ncost: up to 2 generations (2/dir x 1 at most). On a 128x128 canvas this 8-frame clip runs in up to 2 batches per direction, 1 generation per batch, charged as each batch finishes\neta: ~2-10 min per batch, one batch at a time (up to 2 per direction)\nadd more directions to this group: animate_character(character_id=\"37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\", template_animation_id=\"running-8-frames\", animation_group_id=\"4cb2d1af-4eff-499f-96cb-0d770e129aa3\", directions=[...])\n\nhint: get_character(character_id=\"37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\")\nif poor: delete_animation(character_id=\"37cdbffa-7cd9-4c55-89a7-3b1d6f17e20a\", animation_type=\"...\") then retry with mode=\"v3\""
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "phoenix",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 6c2882c2-4794-40ec-89c6-184965eecf6b\nanimation: running-8-frames\nmode: template\ndirections: east (1 jobs)\njob_ids: east=fc14aa80-7f21-4929-a71f-105242c172c5\ngroup: d8154129-ef6e-4293-9a21-904fce6fe52a\ncost: up to 2 generations (2/dir x 1 at most). On a 128x128 canvas this 8-frame clip runs in up to 2 batches per direction, 1 generation per batch, charged as each batch finishes\neta: ~2-10 min per batch, one batch at a time (up to 2 per direction)\nadd more directions to this group: animate_character(character_id=\"6c2882c2-4794-40ec-89c6-184965eecf6b\", template_animation_id=\"running-8-frames\", animation_group_id=\"d8154129-ef6e-4293-9a21-904fce6fe52a\", directions=[...])\n\nhint: get_character(character_id=\"6c2882c2-4794-40ec-89c6-184965eecf6b\")\nif poor: delete_animation(character_id=\"6c2882c2-4794-40ec-89c6-184965eecf6b\", animation_type=\"...\") then retry with mode=\"v3\""
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "neil",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: b3b46e7b-2202-488a-9e5e-c490f9e90bc1\nanimation: running-8-frames\nmode: template\ndirections: east (1 jobs)\njob_ids: east=72ebe9c8-80bf-44b3-b8c2-106d4bf1dfbc\ngroup: bb6c7d81-6487-4431-b76e-4955684ed2fb\ncost: up to 2 generations (2/dir x 1 at most). On a 128x128 canvas this 8-frame clip runs in up to 2 batches per direction, 1 generation per batch, charged as each batch finishes\neta: ~2-10 min per batch, one batch at a time (up to 2 per direction)\nadd more directions to this group: animate_character(character_id=\"b3b46e7b-2202-488a-9e5e-c490f9e90bc1\", template_animation_id=\"running-8-frames\", animation_group_id=\"bb6c7d81-6487-4431-b76e-4955684ed2fb\", directions=[...])\n\nhint: get_character(character_id=\"b3b46e7b-2202-488a-9e5e-c490f9e90bc1\")\nif poor: delete_animation(character_id=\"b3b46e7b-2202-488a-9e5e-c490f9e90bc1\", animation_type=\"...\") then retry with mode=\"v3\""
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "yuri_prone_roll",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 2d9ebaaf-adbe-4208-9bdb-4ed789584734\nanimation: v3 custom (A complete smooth tactical body roll beginning already fully prone flat on the belly with rifle safely tucked close. Roll sideways over one shoulder and hip in a tight continuous cylinder, turning the whole torso and pelvis together with bent knees and elbows, pass through lying on the back, then settle fully prone on the belly again. Never stand or kneel at any point. No muzzle flash or gunfire. Locked character identity, exact same dark armor and cyan accents, constant lighting and palette, fixed camera, consistent head and body size, full body visible with generous transparent padding, smooth intermediate poses. Begin and end in identical flat prone pose.)\ndirections: north, east, south, west (4 jobs)\njob_ids: north=6939ba1b-7131-4e72-a288-11d4f8adea70, east=1ede21b8-2746-4882-ac00-ef24b5452687, south=3c1a3539-59b6-4e75-8807-d05acc5fae18, west=535b3892-ed74-4c65-873d-117b8eb5a4a3\ngroup: 1ed37951-7452-4537-bb4e-aa4fb77f8845\nframes: 12 (reference stripped, keep_first_frame=false)\ncanvas: north 160x160, east 160x160, south 160x160, west 160x160 (frames are stored at this size: the character plus room to move)\ncost: 20 generations (5/dir x 4)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\")\nadd more directions to this group: animate_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\", action_description=\"A complete smooth tactical body roll beginning already fully prone flat on the belly with rifle safely tucked close. Roll sideways over one shoulder and hip in a tight continuous cylinder, turning the whole torso and pelvis together with bent knees and elbows, pass through lying on the back, then settle fully prone on the belly again. Never stand or kneel at any point. No muzzle flash or gunfire. Locked character identity, exact same dark armor and cyan accents, constant lighting and palette, fixed camera, consistent head and body size, full body visible with generous transparent padding, smooth intermediate poses. Begin and end in identical flat prone pose.\", animation_group_id=\"1ed37951-7452-4537-bb4e-aa4fb77f8845\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

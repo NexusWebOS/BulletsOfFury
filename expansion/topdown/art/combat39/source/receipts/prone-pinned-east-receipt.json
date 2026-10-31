@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: f6e45ab9-89ae-46ed-90f1-16baa41f97c1\njob_id: f6e45ab9-89ae-46ed-90f1-16baa41f97c1\naction: FRAME FORMAT160x160 each, fixed physical root at80,136. This soldier is ALREADY LYING FLAT on his belly, pointing rifle right. Animate ONE smooth prone barrel-roll along his long horizontal body axis: tuck elbows, rotate shoulder and hip together onto his side, then back with chest facing up while remaining on the floor, then over the other side and return flat belly-down to the exact supplied final frame. The spine stays horizontal throughout. Never stand, sit, kneel, crouch or rise. Keep boots, head, rifle and whole body same sizes and exact same fixed red/black palette. No firing, no muzzle flash, no motion blur, no camera change. Full body stays visible and ground-height remains fixed. Every intermediate frame must be freshly drawn continuous rotation.\nframes: 8\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 21024fa9-e5b7-501e-921f-663774304f43\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f6e45ab9-89ae-46ed-90f1-16baa41f97c1\")"
+    }
+  ],
+  "isError": false
+}

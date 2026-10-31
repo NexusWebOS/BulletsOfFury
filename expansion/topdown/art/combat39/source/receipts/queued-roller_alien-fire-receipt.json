@@ -1,0 +1,26 @@
+{
+  "name": "roller_alien-fire",
+  "args": {
+    "character_id": "97f134a7-ea17-4fe3-9c90-645536fa255a",
+    "mode": "pixminimax",
+    "animation_name": "od39_directional_fire",
+    "directions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "frame_count": 16,
+    "keep_first_frame": true,
+    "action_description": "FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. As a humanoid alien soldier with the existing gun, raise gun along facing and fire three discrete acid energy pulses with brief attached flashes and small full-body recoil, then return ready. Do not transform to ball during this clip. Fixed rigid gun, no morphing."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: 97f134a7-ea17-4fe3-9c90-645536fa255a\nanimation: pixminimax custom (FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. As a humanoid alien soldier with the existing gun, raise gun along facing and fire three discrete acid energy pulses with brief attached flashes and small full-body recoil, then return ready. Do not transform to ball during this clip. Fixed rigid gun, no morphing.)\ndirections: north, east, south, west (4 jobs)\njob_ids: north=f91b10b0-25d4-4756-bd1e-b284a393ff51, east=14642cc0-06ae-446d-829e-7fc4c55a5ea3, south=3de831db-5939-4a65-94dd-f0e736711440, west=450f4dc0-5a27-4eff-845c-e8c08d72c779\ngroup: da77b714-e142-4722-8e79-949f610b232e\nframes: 17 (1 reference + 16 animated)\ncanvas: north 84x84, east 84x84, south 84x84, west 84x84 (frames are stored at this size: the character plus room to move)\ncost: 4 generations (1/dir x 4)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"97f134a7-ea17-4fe3-9c90-645536fa255a\")\nadd more directions to this group: animate_character(character_id=\"97f134a7-ea17-4fe3-9c90-645536fa255a\", action_description=\"FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. As a humanoid alien soldier with the existing gun, raise gun along facing and fire three discrete acid energy pulses with brief attached flashes and small full-body recoil, then return ready. Do not transform to ball during this clip. Fixed rigid gun, no morphing.\", mode=\"pixminimax\", animation_group_id=\"da77b714-e142-4722-8e79-949f610b232e\", directions=[...])"
+      }
+    ],
+    "isError": false
+  }
+}

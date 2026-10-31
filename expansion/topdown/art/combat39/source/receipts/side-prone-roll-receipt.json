@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "character: 4dcf6052-5cb3-468f-a0e2-9b333e7017c0\nanimation: pixminimax custom (From this exact flat prone side-view pose perform one complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked securely against chest. Never stand, kneel, crouch, shoot or change weapon. Finish identical flat prone side-view pose. Preserve exact Yuri body size, palette, camera, fixedroot and transparent background.)\ndirections: east (1 jobs)\njob_ids: east=7aa1bce4-d418-4237-836a-f5c60d2c81b0\ngroup: 2b9d2d18-b596-49a0-850e-158c6078cd08\nframes: 17 (1 reference + 16 animated)\ncanvas: east 160x160 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"4dcf6052-5cb3-468f-a0e2-9b333e7017c0\")\nadd more directions to this group: animate_character(character_id=\"4dcf6052-5cb3-468f-a0e2-9b333e7017c0\", action_description=\"From this exact flat prone side-view pose perform one complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked securely against chest. Never stand, kneel, crouch, shoot or change weapon. Finish identical flat prone side-view pose. Preserve exact Yuri body size, palette, camera, fixedroot and transparent background.\", mode=\"pixminimax\", animation_group_id=\"2b9d2d18-b596-49a0-850e-158c6078cd08\", directions=[...])"
+    }
+  ],
+  "isError": false
+}

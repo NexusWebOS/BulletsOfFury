@@ -1,0 +1,9 @@
+BULLETS OF FURY - OVERDRIVE / GENERATED WEAPON FRAMES
+
+Open preview.html. Every exported pose and VFX frame is selected from new artwork made by the built-in OpenAI image generator. This is the replacement for the rejected rigged weapon draft.
+
+Includes the nine soldier/alien identities, alien bat, both wall turrets, door energy core and Helios / Fire Prism. The minigun has draw, spin-up, sustained fire, spin-down and ready poses. The pump and double-barrel shotguns have separate generated reloads. Projectiles and attacks face the viewer.
+
+Use assets/<enemy>/<clip>.png with the matching JSON, or individual PNGs under frames/<clip>. Each clip supplies its exact frame rectangles, origin, fps and source-frame provenance. Most game export cells are 256x256; the boss uses 384x384. A single fixed atlas resolution ratio is recorded where large generated sheets were converted for a common character unit; there is no adaptive per-frame size normalization. Grounded frames receive a whole-image contact-baseline registration. Source art is not posed, stretched, procedurally redrawn, mirrored or interpolated. Generated transparency is preserved. PROMPTS.json contains the full prompt set. Only selected frames are included in this deliverable; discarded source cells stay in the working archive.
+
+The preview has full action sequences, individual clips, slow playback, frame stepping, projectiles and optional origin guides. EXPORT-CHECK.txt records frame, atlas and margin validation. This is an asset export, not a change to the live game. Full pseudo-3D locomotion and cover sets remain separate.

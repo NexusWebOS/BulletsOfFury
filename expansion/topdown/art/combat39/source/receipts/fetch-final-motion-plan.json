@@ -1,0 +1,47 @@
+[
+  {
+    "name": "hotwire-real",
+    "cache": "hotwire-real-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/438a420f-0c23-497e-aab5-639e376dfabd/download"
+  },
+  {
+    "name": "phoenix-real",
+    "cache": "phoenix-real-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/89f836c1-2538-4288-bf67-0bee42442305/download"
+  },
+  {
+    "name": "neil-real",
+    "cache": "neil-real-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/a46b13ad-d55b-4776-8411-a4df054cf544/download"
+  },
+  {
+    "name": "rocket_launcher39",
+    "cache": "rocket_launcher39-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/89b48297-d236-4bc2-8266-b5a6728a2ee2/download"
+  },
+  {
+    "name": "flamethrower39",
+    "cache": "flamethrower39-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/f32faf2f-0657-4e76-af4c-78ee25a51382/download"
+  },
+  {
+    "name": "roller_alien39",
+    "cache": "roller_alien39-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/97f134a7-ea17-4fe3-9c90-645536fa255a/download"
+  },
+  {
+    "name": "flying_alien39",
+    "cache": "flying_alien39-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/351aabab-5484-4940-9e99-481ab5bca4af/download"
+  },
+  {
+    "name": "arsenal_runner",
+    "cache": "arsenal_runner-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb/download"
+  },
+  {
+    "name": "yuri39",
+    "cache": "yuri39-motion-v2",
+    "url": "https://api.pixellab.ai/mcp/characters/2d9ebaaf-adbe-4208-9bdb-4ed789584734/download"
+  }
+]

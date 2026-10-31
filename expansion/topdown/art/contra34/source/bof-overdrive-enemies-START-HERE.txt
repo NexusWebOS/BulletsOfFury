@@ -1,0 +1,63 @@
+BULLETS OF FURY - OVERDRIVE
+PixelLab enemy animation and weapon effects pack
+
+OPEN preview.html to play, pause, step through frames, change speed, face
+left, and compare animation states. The viewer works from this folder.
+
+ROSTER
+Cobalt Machine Gunner - cobalt blue; belt-fed machine gun.
+Ochre Minigunner - yellow ochre; heavy rotary minigun and ammo pack.
+Jade Sniper - green; long scoped rifle and shoulder mantle.
+Vermilion Rocketeer - red; shoulder rocket launcher.
+Violet Breacher - purple; pump-action shotgun.
+Bronze Twin Barrel - bronze; short double-barrel shotgun.
+Cyan Skyrake - teal/cyan; winged alien with forearm plasma emitter.
+Crimson Armadroid - crimson; plated alien that folds into a rolling ball.
+
+CHARACTERS
+Each character folder contains transparent right/left sprite sheets and
+matching JSON files. Each animation cell is 128 x 128 pixels. The shared
+origin is (64,112). Art remains at its native pixel scale inside the cell;
+armor bulk and standing height vary by enemy. Left sheets mirror the right.
+
+Core sequences: walk, run, standing fire, jump, crouch-and-fire,
+prone-and-fire, wall-cover-and-fire, combat roll, and a static ready pose.
+Crouch and prone pose PNGs are included for holding those states.
+The flying alien adds takeoff/landing, flying and firing while flying.
+The roller alien adds transform-to-ball, ball-roll and reverse transform.
+
+Crouch, prone, jump, cover and roll sheets are complete action sequences.
+The wall itself is a viewer overlay; no scenery is baked into the actor.
+The ball-to-humanoid transition reverses the same transformation frames so
+both endpoints and armor plates match. The roller's combat-roll sequence
+joins folding, rolling and unfolding.
+
+EFFECTS
+Open effects/index.json for the eight effect kits and their individual
+clips. Each kit's clips.json describes frame size, frame count, frame rate,
+looping and origin. Every normalized clip has right/left PNG sheets.
+The parts/ folder and original game ZIP preserve PixelLab's source export.
+
+Rifle/minigun: tracer, muzzle flash, brass casing and metal impact.
+Sniper: long tracer, muzzle glint and precise impact.
+Shotgun: single pellet, broad muzzle flash, smoke and scatter impact.
+Double barrel: pellet, twin muzzle flash, smoke and red shell.
+Rocket: rocket projectile, exhaust trail, launch flash and explosion.
+Flying alien: cyan plasma bolt, forked muzzle flare and plasma impact.
+Roller alien: lime acid globule, spit flare and acid splat.
+Movement: rolling dust, landing dust and armor sparks.
+
+Spawn multiple instances of the pellet sprite for a shotgun spread.
+Move projectiles through the game; travel is not baked into their sheets.
+
+IMPORT
+Use nearest-neighbor texture filtering and preserve transparency. Frame
+rectangles and durations are in the JSON. Gameplay movement, collision,
+weapon timing, cover logic and damage logic belong to the game. Jump and
+tumble motion is drawn inside the cells. Check attachment points and
+movement together in the target engine when integrating.
+
+The pack contains original PixelLab-generated designs using the supplied
+arcade references for visual direction. It does not contain reference
+screenshots. The generated sources remain in your PixelLab Creator gallery;
+the effect kits are saved in My effects for later editing.

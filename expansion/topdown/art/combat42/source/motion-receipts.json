@@ -1,0 +1,38 @@
+{
+  "yuri-traverse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 23cd34dd-b302-4412-b6c2-902e9e9ec259\njob_id: 23cd34dd-b302-4412-b6c2-902e9e9ec259\naction: Keeping hips, knees and both boots COMPLETELY FIXED, smoothly twist the upper back and shoulders from aiming RIGHT to aiming LEFT through a back-to-camera midpoint. Always turn AWAY from camera so we see backpack/back panels, never chest. Both empty hands sweep together with the torso gripping invisible fixed turret handles. Elbows bend naturally, spine rotates over stationary pelvis. No weapon, no chair, no added object. Keep exact proportions and palette. One continuous turn, not a walk.\nframes: 16\nsize: 160x160px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 33ce7c9b-22cb-5bfd-a3ac-55d846d61cbd\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"23cd34dd-b302-4412-b6c2-902e9e9ec259\")"
+      }
+    ],
+    "isError": false
+  },
+  "phoenix-drive": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: ea57f127-fc2e-4d2d-ad26-20a1ea7f8db5\njob_id: ea57f127-fc2e-4d2d-ad26-20a1ea7f8db5\naction: Seated driver breathing and gently absorbing road vibration. Both hands stay on invisible steering wheel, head looks right ahead. Tiny elbow and shoulder movement, realistic controlled posture. Exact same face and armor, fixed pelvis and knees, no added objects.\nframes: 4\nsize: 128x128px\ntransparent: True\nasset_id: 714d6f80-49b7-50d3-91c7-bdc0da60a1e4\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ea57f127-fc2e-4d2d-ad26-20a1ea7f8db5\")"
+      }
+    ],
+    "isError": false
+  },
+  "hotwire-drive": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 90a4a0c6-22e6-4175-b30c-2ca0211712c2\njob_id: 90a4a0c6-22e6-4175-b30c-2ca0211712c2\naction: Seated passenger breathing, subtly bobbing shoulders from suspension, head glances forward right and returns. Hands remain resting in lap, fixed pelvis. Exact same woman, face, orange hair, teal trim, no added objects.\nframes: 4\nsize: 128x128px\ntransparent: True\nasset_id: 77628572-5d6a-541e-b123-67a5dfdc6b2c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"90a4a0c6-22e6-4175-b30c-2ca0211712c2\")"
+      }
+    ],
+    "isError": false
+  },
+  "neil-drive": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 2febff8f-9379-43c6-8635-3a423541ff21\njob_id: 2febff8f-9379-43c6-8635-3a423541ff21\naction: Seated driver firing pistol through open window. Left hand stays reaching toward steering wheel. Right wrist and elbow recoil briefly and reset, shoulder absorbs recoil. Exact same man, sunglasses white armor teal trim. Fixed pelvis and knees. No flash covering face, no added objects.\nframes: 8\nsize: 128x128px\ntransparent: True\nasset_id: 9ea6b719-8e03-5984-847b-e409352f2c5e\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2febff8f-9379-43c6-8635-3a423541ff21\")"
+      }
+    ],
+    "isError": false
+  }
+}

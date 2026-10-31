@@ -1,0 +1,560 @@
+[
+  {
+    "role": "double_barrel",
+    "source": "97827333-f4d2-4849-a695-45025000289e",
+    "edited": "2f50062f-67e9-45a4-84d6-161346161e09",
+    "result": "image_id: 2f50062f-67e9-45a4-84d6-161346161e09  (edited from 97827333-f4d2-4849-a695-45025000289e)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 1501 px changed, 23680 matched\n2. copy_region: 301 px changed, 1792 matched\nsheet rows: frames [3, 4, 7]\n8 frames changed, in 20,17,57,47; see every one: inspect 2f50062f-67e9-45a4-84d6-161346161e09 --frames 2,3,4,5,6,7,8,9 --region 20,17,57,47\npalette (68): #040001ff x2062, #000000ff x889, #211b28ff x816, #611f0eff x529, #be5e11ff x387, #b5570eff x337, #c06113ff x235, #25212eff x169, #62200eff x165, #635a2fff x162, #daad67ff x153, #43311fff x145, #586373ff x135, #221c29ff x131, #5a1d0eff x119, #c66414ff x114, … +52 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/2f50062f-67e9-45a4-84d6-161346161e09/: frames.png, animation.gif\nnext: edit 2f50062f-67e9-45a4-84d6-161346161e09 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          44,
+          18,
+          51,
+          45
+        ],
+        "at": [
+          44,
+          18
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "flamethrower",
+    "source": "51c15509-7e03-4177-b4ee-31d0ab0eee7b",
+    "edited": "84ee396f-638e-42c2-95a2-2d46d763ab4c",
+    "result": "image_id: 84ee396f-638e-42c2-95a2-2d46d763ab4c  (edited from 51c15509-7e03-4177-b4ee-31d0ab0eee7b)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 482 px changed, 23680 matched\n2. copy_region: 298 px changed, 1344 matched\nsheet rows: frames [3, 4, 5]\n8 frames changed, in 34,17,51,49; see every one: inspect 84ee396f-638e-42c2-95a2-2d46d763ab4c --frames 2,3,4,5,6,7,8,9 --region 34,17,51,49\npalette (65): #000000ff x1530, #030203ff x1127, #da3419ff x487, #c96c18ff x364, #67717dff x172, #3b2317ff x113, #691a1bff x113, #36343dff x108, #4e545bff x106, #7c1b1cff x104, #ca6a15ff x103, #861c1dff x101, #44484eff x101, #821a1cff x95, #84351aff x84, #8899a7ff x81, … +49 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/84ee396f-638e-42c2-95a2-2d46d763ab4c/: frames.png, animation.gif\nnext: edit 84ee396f-638e-42c2-95a2-2d46d763ab4c --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          43,
+          24,
+          49,
+          47
+        ],
+        "at": [
+          43,
+          24
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "flying_alien",
+    "source": "2257d5bd-2427-4d87-9d02-d198f4e5055d",
+    "edited": "f8c079c5-401b-4fac-af63-f840d69a3418",
+    "result": "image_id: f8c079c5-401b-4fac-af63-f840d69a3418  (edited from 2257d5bd-2427-4d87-9d02-d198f4e5055d)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 303 px changed, 19840 matched\n2. copy_region: 227 px changed, 1232 matched\nsheet rows: frames [3, 4, 7]\n7 frames changed, in 11,15,68,40; see every one: inspect f8c079c5-401b-4fac-af63-f840d69a3418 --frames 2,3,4,5,6,7,8 --region 11,15,68,40\npalette (86): #000004ff x2362, #53ccc7ff x1691, #223962ff x598, #2f6c84ff x302, #1e305aff x264, #2c627eff x249, #234068ff x243, #3a99a1ff x238, #25486dff x236, #295675ff x210, #202d4eff x205, #2f7389ff x166, #040608ff x161, #1b253dff x156, #46b9b8ff x151, #348091ff x141, … +70 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/f8c079c5-401b-4fac-af63-f840d69a3418/: frames.png, animation.gif\nnext: edit f8c079c5-401b-4fac-af63-f840d69a3418 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          30
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          37,
+          17,
+          43,
+          38
+        ],
+        "at": [
+          37,
+          17
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "machine_gunner",
+    "source": "b2646657-39b7-4d4b-85f5-248e75793fc3",
+    "edited": "d1770fe3-7fbd-43a7-b9bb-eb472f212057",
+    "result": "image_id: d1770fe3-7fbd-43a7-b9bb-eb472f212057  (edited from b2646657-39b7-4d4b-85f5-248e75793fc3)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 729 px changed, 23680 matched\n2. copy_region: 0 px changed, 1232 matched\nsheet rows: frames [2, 3, 4]\n7 frames changed, in 26,16,55,38; see every one: inspect d1770fe3-7fbd-43a7-b9bb-eb472f212057 --frames 2,3,4,5,6,7,8 --region 26,16,55,38\npalette (89): #000000ff x2407, #1f325dff x366, #2d3242ff x300, #3a2c20ff x285, #141a2aff x227, #4583b9ff x177, #1d2d56ff x168, #392b1fff x147, #635f44ff x133, #356497ff x128, #325a8cff x119, #3a4050ff x108, #172343ff x103, #040203ff x102, #355e90ff x101, #4e92c9ff x92, … +73 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/d1770fe3-7fbd-43a7-b9bb-eb472f212057/: frames.png, animation.gif\nnext: edit d1770fe3-7fbd-43a7-b9bb-eb472f212057 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          37,
+          15,
+          43,
+          36
+        ],
+        "at": [
+          37,
+          15
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "minigunner",
+    "source": "58afd528-d5d1-454a-a86f-1fb6c16f0a31",
+    "edited": "2bf835ac-3121-4782-9d78-e5c450e20fb0",
+    "result": "image_id: 2bf835ac-3121-4782-9d78-e5c450e20fb0  (edited from 58afd528-d5d1-454a-a86f-1fb6c16f0a31)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 904 px changed, 23680 matched\n2. copy_region: 499 px changed, 2176 matched\nsheet rows: frames [3, 7, 8]\n6 frames changed, in 26,16,56,51; see every one: inspect 2bf835ac-3121-4782-9d78-e5c450e20fb0 --frames 3,4,5,6,7,8 --region 26,16,56,51\npalette (68): #040304ff x2153, #74391cff x888, #d49029ff x808, #3e3127ff x617, #01050fff x588, #030403ff x515, #4c4c58ff x484, #241f2bff x378, #7b7747ff x275, #9a5b17ff x234, #eecd78ff x221, #8a8992ff x199, #585763ff x165, #a66517ff x160, #2c2120ff x102, #352822ff x101, … +52 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/2bf835ac-3121-4782-9d78-e5c450e20fb0/: frames.png, animation.gif\nnext: edit 2bf835ac-3121-4782-9d78-e5c450e20fb0 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          43,
+          16,
+          50,
+          49
+        ],
+        "at": [
+          43,
+          16
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "rocket_launcher",
+    "source": "bf5a7145-5b37-400c-96af-a30d25fb1949",
+    "edited": "2d8e1f2b-9178-465c-bd67-6f8358940f55",
+    "result": "image_id: 2d8e1f2b-9178-465c-bd67-6f8358940f55  (edited from bf5a7145-5b37-400c-96af-a30d25fb1949)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 694 px changed, 23680 matched\n2. copy_region: 22 px changed, 1232 matched\nsheet rows: frames [3, 4, 5]\n7 frames changed, in 27,18,54,42; see every one: inspect 2d8e1f2b-9178-465c-bd67-6f8358940f55 --frames 2,3,4,5,6,7,8 --region 27,18,54,42\npalette (32): #000004ff x2170, #e35416ff x758, #6a8891ff x530, #791328ff x447, #6e1128ff x439, #241e31ff x436, #414d5bff x311, #574b2dff x247, #fba769ff x225, #ac261bff x205, #1f192bff x178, #2e2f3fff x153, #3a4251ff x152, #3b1024ff x144, #320c1cff x99, #d34315ff x89, … +16 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/2d8e1f2b-9178-465c-bd67-6f8358940f55/: frames.png, animation.gif\nnext: edit 2d8e1f2b-9178-465c-bd67-6f8358940f55 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          47,
+          19,
+          53,
+          40
+        ],
+        "at": [
+          47,
+          19
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "roller_alien",
+    "source": "f90a35cf-5e83-47ce-8c9e-8f144eafe4c1",
+    "edited": "2031a744-8a21-4921-a566-c24d56767721",
+    "result": "image_id: 2031a744-8a21-4921-a566-c24d56767721  (edited from f90a35cf-5e83-47ce-8c9e-8f144eafe4c1)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 671 px changed, 23680 matched\n2. copy_region: 28 px changed, 1288 matched\nsheet rows: frames [5, 6, 8]\n8 frames changed, in 25,12,58,39; see every one: inspect 2031a744-8a21-4921-a566-c24d56767721 --frames 2,3,4,5,6,7,8,9 --region 25,12,58,39\npalette (83): #030505ff x2750, #c83345ff x881, #506273ff x691, #f07883ff x515, #98afbeff x497, #040505ff x493, #353b50ff x434, #7e1e3cff x410, #711d3cff x311, #56132fff x290, #25293bff x193, #a2273fff x143, #3e0d21ff x139, #748f8dff x99, #be223bff x80, #513440ff x76, … +67 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/2031a744-8a21-4921-a566-c24d56767721/: frames.png, animation.gif\nnext: edit 2031a744-8a21-4921-a566-c24d56767721 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          37,
+          15,
+          43,
+          37
+        ],
+        "at": [
+          37,
+          15
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "shotgunner",
+    "source": "09895884-1730-447c-92e8-9d3628e65b52",
+    "edited": "c8cb5742-e885-41eb-8c59-58f4b3a61475",
+    "result": "image_id: c8cb5742-e885-41eb-8c59-58f4b3a61475  (edited from 09895884-1730-447c-92e8-9d3628e65b52)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 863 px changed, 23680 matched\n2. copy_region: 165 px changed, 1344 matched\nsheet rows: frames [4, 5, 8]\n7 frames changed, in 30,17,54,42; see every one: inspect c8cb5742-e885-41eb-8c59-58f4b3a61475 --frames 2,3,4,5,6,7,8 --region 30,17,54,42\npalette (51): #010204ff x2351, #47296aff x336, #a17ec2ff x306, #533279ff x300, #4e2e73ff x236, #8260adff x224, #555f71ff x186, #3a404eff x182, #242432ff x175, #2a2d3cff x169, #343948ff x145, #7a57a3ff x142, #4d5568ff x133, #b2a5d6ff x113, #724f9bff x106, #59377fff x95, … +35 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/c8cb5742-e885-41eb-8c59-58f4b3a61475/: frames.png, animation.gif\nnext: edit c8cb5742-e885-41eb-8c59-58f4b3a61475 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          46,
+          17,
+          52,
+          40
+        ],
+        "at": [
+          46,
+          17
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  },
+  {
+    "role": "sniper",
+    "source": "3604c127-eb79-4778-a758-328ca2b3f403",
+    "edited": "b9485d08-984e-4d89-94e1-549f26153348",
+    "result": "image_id: b9485d08-984e-4d89-94e1-549f26153348  (edited from 3604c127-eb79-4778-a758-328ca2b3f403)\ncanvas: 80x96, 9 frame(s)\n1. copy_region: 546 px changed, 23680 matched\n2. copy_region: 0 px changed, 912 matched\nsheet rows: frames [4, 5, 8]\n7 frames changed, in 30,10,51,38; see every one: inspect b9485d08-984e-4d89-94e1-549f26153348 --frames 2,3,4,5,6,7,8 --region 30,10,51,38\npalette (73): #000000ff x1968, #122524ff x536, #6aaf5bff x238, #102222ff x217, #040505ff x210, #214a37ff x205, #234e38ff x187, #393e51ff x169, #336940ff x109, #65aa5aff x100, #17322bff x97, #152c2aff x91, #19372fff x85, #2a5a3cff x85, #5a6478ff x81, #2e3344ff x81, … +57 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/b9485d08-984e-4d89-94e1-549f26153348/: frames.png, animation.gif\nnext: edit b9485d08-984e-4d89-94e1-549f26153348 --changes […]",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          0,
+          0,
+          79,
+          36
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "reason": "Generated north-fire clip shortened or lost its rigid gun. Restore its original upper hardware and background; native authored muzzle flashes remain owned by shot events."
+      },
+      {
+        "operation": "copy_region",
+        "frames": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_frame": 1,
+        "source_layer": "image",
+        "layer": "image",
+        "region": [
+          38,
+          17,
+          43,
+          35
+        ],
+        "at": [
+          38,
+          17
+        ],
+        "reason": "Preserve the rigid weapon and grip at its original north aim while retaining generated recoil motion below the repaired part."
+      }
+    ]
+  }
+]

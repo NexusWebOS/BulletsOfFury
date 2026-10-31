@@ -1,0 +1,6877 @@
+{
+  "version": "1013-bastion18-r1",
+  "assets": {
+    "pb18_room": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_room.png",
+      "size": [
+        640,
+        480
+      ],
+      "anchor": [
+        320,
+        240
+      ],
+      "bounds": [
+        0,
+        0,
+        640,
+        480
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_0.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        188,
+        105,
+        708,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_1.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        188,
+        106,
+        708,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_2.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        178,
+        106,
+        718,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_3.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        106,
+        97,
+        790,
+        271
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_4.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        67,
+        50,
+        829,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_5.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        56,
+        53,
+        840,
+        271
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_6.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        60,
+        115,
+        836,
+        271
+      ],
+      "drawScale": 1
+    },
+    "pb18_backwall_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_backwall_7.png",
+      "size": [
+        896,
+        480
+      ],
+      "anchor": [
+        448,
+        240
+      ],
+      "bounds": [
+        57,
+        188,
+        839,
+        270
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        15,
+        21,
+        81,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        16,
+        21,
+        80,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        16,
+        21,
+        80,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        15,
+        21,
+        81,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_4.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        15,
+        21,
+        81,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_5.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        16,
+        21,
+        80,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_6.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        15,
+        21,
+        81,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_door_core_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_door_core_7.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        15,
+        21,
+        81,
+        75
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_gun_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_gun_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        26,
+        78,
+        70
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_gun_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_gun_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        26,
+        78,
+        70
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_gun_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_gun_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        26,
+        78,
+        70
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_gun_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_gun_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        26,
+        78,
+        70
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_laser_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_laser_0.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        24,
+        78,
+        72
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_laser_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_laser_1.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        24,
+        78,
+        72
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_laser_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_laser_2.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        24,
+        78,
+        72
+      ],
+      "drawScale": 1
+    },
+    "pb18_turret_laser_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_turret_laser_3.png",
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        48
+      ],
+      "bounds": [
+        18,
+        24,
+        78,
+        72
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_0.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        30,
+        50,
+        66,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_1.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        30,
+        50,
+        66,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_2.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        28,
+        50,
+        70,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_3.png",
+      "size": [
+        96,
+        112
+      ],
+      "anchor": [
+        48,
+        100
+      ],
+      "bounds": [
+        20,
+        48,
+        76,
+        100
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_blast_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_blast_0.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        33,
+        51,
+        123,
+        147
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_blast_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_blast_1.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        27,
+        40,
+        133,
+        148
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_blast_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_blast_2.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        20,
+        35,
+        140,
+        147
+      ],
+      "drawScale": 1
+    },
+    "pb18_barrel_blast_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_barrel_blast_3.png",
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        148
+      ],
+      "bounds": [
+        24,
+        33,
+        136,
+        147
+      ],
+      "drawScale": 1
+    },
+    "pb18_enemy_crate_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_enemy_crate_0.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        21,
+        45,
+        91,
+        115
+      ],
+      "drawScale": 1
+    },
+    "pb18_enemy_crate_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_enemy_crate_1.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        22,
+        45,
+        90,
+        115
+      ],
+      "drawScale": 1
+    },
+    "pb18_enemy_crate_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_enemy_crate_2.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        22,
+        45,
+        90,
+        115
+      ],
+      "drawScale": 1
+    },
+    "pb18_enemy_crate_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_enemy_crate_3.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        16,
+        58,
+        96,
+        114
+      ],
+      "drawScale": 1
+    },
+    "pb18_armored_crate_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_armored_crate_0.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        24,
+        39,
+        88,
+        115
+      ],
+      "drawScale": 1
+    },
+    "pb18_armored_crate_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_armored_crate_1.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        24,
+        39,
+        88,
+        115
+      ],
+      "drawScale": 1
+    },
+    "pb18_armored_crate_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_armored_crate_2.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        20,
+        38,
+        92,
+        114
+      ],
+      "drawScale": 1
+    },
+    "pb18_armored_crate_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_armored_crate_3.png",
+      "size": [
+        112,
+        128
+      ],
+      "anchor": [
+        56,
+        114
+      ],
+      "bounds": [
+        16,
+        59,
+        96,
+        115
+      ],
+      "drawScale": 1
+    },
+    "pb18_laser_ray_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_laser_ray_0.png",
+      "size": [
+        384,
+        96
+      ],
+      "anchor": [
+        192,
+        48
+      ],
+      "bounds": [
+        50,
+        38,
+        332,
+        58
+      ],
+      "drawScale": 1
+    },
+    "pb18_laser_ray_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_laser_ray_1.png",
+      "size": [
+        384,
+        96
+      ],
+      "anchor": [
+        192,
+        48
+      ],
+      "bounds": [
+        50,
+        38,
+        332,
+        58
+      ],
+      "drawScale": 1
+    },
+    "pb18_laser_ray_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_laser_ray_2.png",
+      "size": [
+        384,
+        96
+      ],
+      "anchor": [
+        192,
+        48
+      ],
+      "bounds": [
+        50,
+        38,
+        334,
+        58
+      ],
+      "drawScale": 1
+    },
+    "pb18_laser_ray_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_laser_ray_3.png",
+      "size": [
+        384,
+        96
+      ],
+      "anchor": [
+        192,
+        48
+      ],
+      "bounds": [
+        50,
+        38,
+        334,
+        58
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_0.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        52,
+        253,
+        268
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_1.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        52,
+        253,
+        268
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_2.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        52,
+        253,
+        268
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_3.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        52,
+        253,
+        268
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_4.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_5.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_6.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_7.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_8": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_8.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_9": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_9.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_10": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_10.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_11": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_11.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        35,
+        51,
+        253,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_12": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_12.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        20,
+        53,
+        268,
+        267
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_13": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_13.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        21,
+        53,
+        267,
+        267
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_14": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_14.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        17,
+        53,
+        271,
+        267
+      ],
+      "drawScale": 1
+    },
+    "pb18_master_15": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_master_15.png",
+      "size": [
+        288,
+        320
+      ],
+      "anchor": [
+        144,
+        160
+      ],
+      "bounds": [
+        14,
+        51,
+        274,
+        269
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        104,
+        106,
+        262,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        103,
+        106,
+        251,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        114,
+        105,
+        228,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        92,
+        107,
+        244,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        91,
+        106,
+        253,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        101,
+        105,
+        231,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        75,
+        106,
+        239,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_walk_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_walk_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        75,
+        106,
+        231,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        87,
+        119,
+        263,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        100,
+        116,
+        248,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        76,
+        118,
+        238,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        64,
+        120,
+        246,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        85,
+        120,
+        263,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        95,
+        114,
+        235,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        73,
+        118,
+        243,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_run_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_run_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        66,
+        123,
+        240,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        85,
+        106,
+        249,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        87,
+        108,
+        249,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        76,
+        116,
+        244,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        64,
+        116,
+        244,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        76,
+        126,
+        268,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        80,
+        128,
+        270,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        85,
+        116,
+        251,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_throw_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_throw_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        75,
+        110,
+        241,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        75,
+        121,
+        265,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        85,
+        111,
+        265,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        87,
+        90,
+        251,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        77,
+        84,
+        245,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        87,
+        112,
+        257,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        87,
+        120,
+        251,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        86,
+        120,
+        252,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_lightning_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_lightning_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        73,
+        114,
+        245,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_jump_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        102,
+        112,
+        256,
+        316
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_jump_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        90,
+        163,
+        248,
+        315
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_jump_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        92,
+        111,
+        234,
+        313
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_jump_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        92,
+        73,
+        232,
+        317
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_jump_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        106,
+        89,
+        244,
+        277
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_jump_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        115,
+        69,
+        223,
+        287
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_jump_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        116,
+        90,
+        224,
+        308
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_jump_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_jump_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        73,
+        163,
+        235,
+        315
+      ],
+      "drawScale": 1,
+      "jumpLiftBaked": true
+    },
+    "pb18_helios_death_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        83,
+        113,
+        267,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_death_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        94,
+        117,
+        250,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_death_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        96,
+        147,
+        244,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_death_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        63,
+        193,
+        245,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_death_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        85,
+        214,
+        253,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_death_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        71,
+        220,
+        247,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_death_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        69,
+        234,
+        245,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_death_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_death_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        67,
+        258,
+        243,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        99,
+        92,
+        259,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        101,
+        93,
+        251,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        94,
+        90,
+        244,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        85,
+        93,
+        235,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        96,
+        92,
+        258,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        98,
+        89,
+        252,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        89,
+        90,
+        243,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_idle_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_idle_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        81,
+        92,
+        235,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_0.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        92,
+        106,
+        258,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_1.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        104,
+        115,
+        250,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_2.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        95,
+        109,
+        253,
+        315
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_3.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        87,
+        106,
+        239,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_4.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        94,
+        101,
+        250,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_5.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        96,
+        102,
+        250,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_6.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        89,
+        104,
+        243,
+        316
+      ],
+      "drawScale": 1
+    },
+    "pb18_helios_hit_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_helios_hit_7.png",
+      "size": [
+        320,
+        352
+      ],
+      "anchor": [
+        160,
+        316
+      ],
+      "bounds": [
+        79,
+        101,
+        235,
+        317
+      ],
+      "drawScale": 1
+    },
+    "pb18_gosfer_walk_south_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        86,
+        131,
+        186,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        181,
+        190
+      ]
+    },
+    "pb18_gosfer_walk_south_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        87,
+        132,
+        187,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        181,
+        192
+      ]
+    },
+    "pb18_gosfer_walk_south_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        85,
+        132,
+        185,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        181,
+        192
+      ]
+    },
+    "pb18_gosfer_walk_south_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        83,
+        133,
+        181,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        177,
+        193
+      ]
+    },
+    "pb18_gosfer_walk_south_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        78,
+        130,
+        184,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        156,
+        188
+      ]
+    },
+    "pb18_gosfer_walk_south_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        79,
+        131,
+        179,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        174,
+        197
+      ]
+    },
+    "pb18_gosfer_walk_south_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        85,
+        132,
+        185,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        161,
+        198
+      ]
+    },
+    "pb18_gosfer_walk_south_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_south_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        87,
+        132,
+        185,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        179,
+        188
+      ]
+    },
+    "pb18_gosfer_walk_north_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        77,
+        127,
+        173,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        161,
+        170
+      ]
+    },
+    "pb18_gosfer_walk_north_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        74,
+        126,
+        172,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        160,
+        180
+      ]
+    },
+    "pb18_gosfer_walk_north_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        74,
+        125,
+        170,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        140,
+        165
+      ]
+    },
+    "pb18_gosfer_walk_north_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        72,
+        125,
+        168,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        156,
+        185
+      ]
+    },
+    "pb18_gosfer_walk_north_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        73,
+        127,
+        171,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        161,
+        170
+      ]
+    },
+    "pb18_gosfer_walk_north_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        70,
+        126,
+        168,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        136,
+        169
+      ]
+    },
+    "pb18_gosfer_walk_north_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        70,
+        126,
+        170,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        162,
+        169
+      ]
+    },
+    "pb18_gosfer_walk_north_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_north_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        72,
+        126,
+        170,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        148,
+        167
+      ]
+    },
+    "pb18_gosfer_walk_east_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        86,
+        133,
+        188,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        184,
+        183
+      ]
+    },
+    "pb18_gosfer_walk_east_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        83,
+        134,
+        185,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        182,
+        183
+      ]
+    },
+    "pb18_gosfer_walk_east_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        76,
+        133,
+        184,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        183,
+        187
+      ]
+    },
+    "pb18_gosfer_walk_east_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        77,
+        134,
+        181,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        178,
+        188
+      ]
+    },
+    "pb18_gosfer_walk_east_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        74,
+        134,
+        186,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        182,
+        186
+      ]
+    },
+    "pb18_gosfer_walk_east_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        74,
+        134,
+        184,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        181,
+        184
+      ]
+    },
+    "pb18_gosfer_walk_east_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        74,
+        132,
+        186,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        185,
+        183
+      ]
+    },
+    "pb18_gosfer_walk_east_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_east_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        78,
+        134,
+        182,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        179,
+        188
+      ]
+    },
+    "pb18_gosfer_walk_west_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        76,
+        132,
+        180,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        149,
+        184
+      ]
+    },
+    "pb18_gosfer_walk_west_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        73,
+        133,
+        181,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        149,
+        185
+      ]
+    },
+    "pb18_gosfer_walk_west_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        75,
+        134,
+        183,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        148,
+        182
+      ]
+    },
+    "pb18_gosfer_walk_west_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        75,
+        134,
+        181,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        134,
+        187
+      ]
+    },
+    "pb18_gosfer_walk_west_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        70,
+        133,
+        180,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        133,
+        185
+      ]
+    },
+    "pb18_gosfer_walk_west_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        71,
+        134,
+        179,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        130,
+        187
+      ]
+    },
+    "pb18_gosfer_walk_west_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        72,
+        134,
+        182,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        133,
+        184
+      ]
+    },
+    "pb18_gosfer_walk_west_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_walk_west_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        74,
+        134,
+        176,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        133,
+        186
+      ]
+    },
+    "pb18_gosfer_fire_south_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        83,
+        130,
+        179,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        175,
+        184
+      ]
+    },
+    "pb18_gosfer_fire_south_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        80,
+        130,
+        188,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        187,
+        184
+      ]
+    },
+    "pb18_gosfer_fire_south_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        81,
+        130,
+        195,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        182
+      ]
+    },
+    "pb18_gosfer_fire_south_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        79,
+        129,
+        191,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        190,
+        183
+      ]
+    },
+    "pb18_gosfer_fire_south_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        83,
+        130,
+        179,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        137,
+        189
+      ]
+    },
+    "pb18_gosfer_fire_south_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        78,
+        130,
+        194,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        181
+      ]
+    },
+    "pb18_gosfer_fire_south_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        78,
+        130,
+        186,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        184,
+        188
+      ]
+    },
+    "pb18_gosfer_fire_south_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_south_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        83,
+        130,
+        179,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        177,
+        190
+      ]
+    },
+    "pb18_gosfer_fire_east_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        73,
+        134,
+        187,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        148,
+        181
+      ]
+    },
+    "pb18_gosfer_fire_east_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        70,
+        134,
+        184,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        181,
+        178
+      ]
+    },
+    "pb18_gosfer_fire_east_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        66,
+        134,
+        194,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        172
+      ]
+    },
+    "pb18_gosfer_fire_east_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        67,
+        134,
+        191,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        190,
+        170
+      ]
+    },
+    "pb18_gosfer_fire_east_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        73,
+        134,
+        183,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        149,
+        175
+      ]
+    },
+    "pb18_gosfer_fire_east_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        67,
+        134,
+        193,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        190,
+        173
+      ]
+    },
+    "pb18_gosfer_fire_east_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        67,
+        134,
+        185,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        184,
+        171
+      ]
+    },
+    "pb18_gosfer_fire_east_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_fire_east_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        75,
+        134,
+        183,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        140,
+        180
+      ]
+    },
+    "pb18_gosfer_dash_east_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        65,
+        150,
+        193,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        190,
+        201
+      ]
+    },
+    "pb18_gosfer_dash_east_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        64,
+        145,
+        192,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        152,
+        191
+      ]
+    },
+    "pb18_gosfer_dash_east_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        77,
+        141,
+        193,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        157,
+        185
+      ]
+    },
+    "pb18_gosfer_dash_east_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        52,
+        149,
+        190,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        188,
+        187
+      ]
+    },
+    "pb18_gosfer_dash_east_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        66,
+        148,
+        192,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        189,
+        194
+      ]
+    },
+    "pb18_gosfer_dash_east_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        69,
+        141,
+        197,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        159,
+        183
+      ]
+    },
+    "pb18_gosfer_dash_east_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        66,
+        140,
+        202,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        198,
+        183
+      ]
+    },
+    "pb18_gosfer_dash_east_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_dash_east_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        75,
+        150,
+        195,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        191,
+        191
+      ]
+    },
+    "pb18_gosfer_death_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_0.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        74,
+        139,
+        192,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        136,
+        170
+      ]
+    },
+    "pb18_gosfer_death_1": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_1.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        70,
+        140,
+        184,
+        260
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        139,
+        164
+      ]
+    },
+    "pb18_gosfer_death_2": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_2.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        71,
+        149,
+        191,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        150,
+        178
+      ]
+    },
+    "pb18_gosfer_death_3": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_3.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        65,
+        149,
+        191,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        166,
+        195
+      ]
+    },
+    "pb18_gosfer_death_4": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_4.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        73,
+        169,
+        189,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        122,
+        200
+      ]
+    },
+    "pb18_gosfer_death_5": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_5.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        64,
+        189,
+        192,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        159,
+        229
+      ]
+    },
+    "pb18_gosfer_death_6": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_6.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        67,
+        201,
+        193,
+        259
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        162,
+        225
+      ]
+    },
+    "pb18_gosfer_death_7": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_gosfer_death_7.png",
+      "size": [
+        256,
+        288
+      ],
+      "anchor": [
+        128,
+        260
+      ],
+      "bounds": [
+        72,
+        205,
+        188,
+        261
+      ],
+      "drawScale": 1,
+      "muzzle": [
+        111,
+        225
+      ]
+    },
+    "pb18_pad_m30_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_pad_m30_0.png",
+      "size": [
+        768,
+        384
+      ],
+      "anchor": [
+        384,
+        192
+      ],
+      "bounds": [
+        44,
+        30,
+        724,
+        354
+      ],
+      "drawScale": 1
+    },
+    "pb18_pad_m30": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_pad_m30_0.png",
+      "size": [
+        768,
+        384
+      ],
+      "anchor": [
+        384,
+        192
+      ],
+      "bounds": [
+        44,
+        30,
+        724,
+        354
+      ],
+      "drawScale": 1
+    },
+    "pb18_pad_genesis_0": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_pad_genesis_0.png",
+      "size": [
+        768,
+        384
+      ],
+      "anchor": [
+        384,
+        192
+      ],
+      "bounds": [
+        44,
+        46,
+        724,
+        338
+      ],
+      "drawScale": 1
+    },
+    "pb18_pad_genesis": {
+      "file": "expansion/topdown/art/bastion18/frames/pb18_pad_genesis_0.png",
+      "size": [
+        768,
+        384
+      ],
+      "anchor": [
+        384,
+        192
+      ],
+      "bounds": [
+        44,
+        46,
+        724,
+        338
+      ],
+      "drawScale": 1
+    }
+  },
+  "sequences": {
+    "pb18_backwall": {
+      "frames": [
+        "pb18_backwall_0",
+        "pb18_backwall_1",
+        "pb18_backwall_2",
+        "pb18_backwall_3",
+        "pb18_backwall_4",
+        "pb18_backwall_5",
+        "pb18_backwall_6",
+        "pb18_backwall_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          896,
+          480
+        ],
+        "anchor": [
+          448,
+          240
+        ],
+        "sourceScale": 0.6924101198402131,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_door_core": {
+      "frames": [
+        "pb18_door_core_0",
+        "pb18_door_core_1",
+        "pb18_door_core_2",
+        "pb18_door_core_3",
+        "pb18_door_core_4",
+        "pb18_door_core_5",
+        "pb18_door_core_6",
+        "pb18_door_core_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "sourceScale": 0.2214765100671141,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_turret_gun": {
+      "frames": [
+        "pb18_turret_gun_0",
+        "pb18_turret_gun_1",
+        "pb18_turret_gun_2",
+        "pb18_turret_gun_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "sourceScale": 0.19480519480519481,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_turret_laser": {
+      "frames": [
+        "pb18_turret_laser_0",
+        "pb18_turret_laser_1",
+        "pb18_turret_laser_2",
+        "pb18_turret_laser_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          96,
+          96
+        ],
+        "anchor": [
+          48,
+          48
+        ],
+        "sourceScale": 0.18867924528301888,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_barrel": {
+      "frames": [
+        "pb18_barrel_0",
+        "pb18_barrel_1",
+        "pb18_barrel_2",
+        "pb18_barrel_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          100
+        ],
+        "sourceScale": 0.20437956204379562,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_barrel_blast": {
+      "frames": [
+        "pb18_barrel_blast_0",
+        "pb18_barrel_blast_1",
+        "pb18_barrel_blast_2",
+        "pb18_barrel_blast_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          160,
+          160
+        ],
+        "anchor": [
+          80,
+          148
+        ],
+        "sourceScale": 0.42704626334519574,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_enemy_crate": {
+      "frames": [
+        "pb18_enemy_crate_0",
+        "pb18_enemy_crate_1",
+        "pb18_enemy_crate_2",
+        "pb18_enemy_crate_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          112,
+          128
+        ],
+        "anchor": [
+          56,
+          114
+        ],
+        "sourceScale": 0.26936026936026936,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_armored_crate": {
+      "frames": [
+        "pb18_armored_crate_0",
+        "pb18_armored_crate_1",
+        "pb18_armored_crate_2",
+        "pb18_armored_crate_3"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          112,
+          128
+        ],
+        "anchor": [
+          56,
+          114
+        ],
+        "sourceScale": 0.27586206896551724,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_laser_ray": {
+      "frames": [
+        "pb18_laser_ray_0",
+        "pb18_laser_ray_1",
+        "pb18_laser_ray_2",
+        "pb18_laser_ray_3"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          384,
+          96
+        ],
+        "anchor": [
+          192,
+          48
+        ],
+        "sourceScale": 0.17067307692307693,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_master": {
+      "frames": [
+        "pb18_master_0",
+        "pb18_master_1",
+        "pb18_master_2",
+        "pb18_master_3",
+        "pb18_master_4",
+        "pb18_master_5",
+        "pb18_master_6",
+        "pb18_master_7",
+        "pb18_master_8",
+        "pb18_master_9",
+        "pb18_master_10",
+        "pb18_master_11",
+        "pb18_master_12",
+        "pb18_master_13",
+        "pb18_master_14",
+        "pb18_master_15"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          288,
+          320
+        ],
+        "anchor": [
+          144,
+          160
+        ],
+        "sourceScale": 0.7785714285714286,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_walk": {
+      "frames": [
+        "pb18_helios_walk_0",
+        "pb18_helios_walk_1",
+        "pb18_helios_walk_2",
+        "pb18_helios_walk_3",
+        "pb18_helios_walk_4",
+        "pb18_helios_walk_5",
+        "pb18_helios_walk_6",
+        "pb18_helios_walk_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_run": {
+      "frames": [
+        "pb18_helios_run_0",
+        "pb18_helios_run_1",
+        "pb18_helios_run_2",
+        "pb18_helios_run_3",
+        "pb18_helios_run_4",
+        "pb18_helios_run_5",
+        "pb18_helios_run_6",
+        "pb18_helios_run_7"
+      ],
+      "fps": 16,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_throw": {
+      "frames": [
+        "pb18_helios_throw_0",
+        "pb18_helios_throw_1",
+        "pb18_helios_throw_2",
+        "pb18_helios_throw_3",
+        "pb18_helios_throw_4",
+        "pb18_helios_throw_5",
+        "pb18_helios_throw_6",
+        "pb18_helios_throw_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_lightning": {
+      "frames": [
+        "pb18_helios_lightning_0",
+        "pb18_helios_lightning_1",
+        "pb18_helios_lightning_2",
+        "pb18_helios_lightning_3",
+        "pb18_helios_lightning_4",
+        "pb18_helios_lightning_5",
+        "pb18_helios_lightning_6",
+        "pb18_helios_lightning_7"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_jump": {
+      "frames": [
+        "pb18_helios_jump_0",
+        "pb18_helios_jump_1",
+        "pb18_helios_jump_2",
+        "pb18_helios_jump_3",
+        "pb18_helios_jump_4",
+        "pb18_helios_jump_5",
+        "pb18_helios_jump_6",
+        "pb18_helios_jump_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_death": {
+      "frames": [
+        "pb18_helios_death_0",
+        "pb18_helios_death_1",
+        "pb18_helios_death_2",
+        "pb18_helios_death_3",
+        "pb18_helios_death_4",
+        "pb18_helios_death_5",
+        "pb18_helios_death_6",
+        "pb18_helios_death_7"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_idle": {
+      "frames": [
+        "pb18_helios_idle_0",
+        "pb18_helios_idle_1",
+        "pb18_helios_idle_2",
+        "pb18_helios_idle_3",
+        "pb18_helios_idle_4",
+        "pb18_helios_idle_5",
+        "pb18_helios_idle_6",
+        "pb18_helios_idle_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_helios_hit": {
+      "frames": [
+        "pb18_helios_hit_0",
+        "pb18_helios_hit_1",
+        "pb18_helios_hit_2",
+        "pb18_helios_hit_3",
+        "pb18_helios_hit_4",
+        "pb18_helios_hit_5",
+        "pb18_helios_hit_6",
+        "pb18_helios_hit_7"
+      ],
+      "fps": 10,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          320,
+          352
+        ],
+        "anchor": [
+          160,
+          316
+        ],
+        "sourceScale": 0.6698564593301436,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_walk_south": {
+      "frames": [
+        "pb18_gosfer_walk_south_0",
+        "pb18_gosfer_walk_south_1",
+        "pb18_gosfer_walk_south_2",
+        "pb18_gosfer_walk_south_3",
+        "pb18_gosfer_walk_south_4",
+        "pb18_gosfer_walk_south_5",
+        "pb18_gosfer_walk_south_6",
+        "pb18_gosfer_walk_south_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_walk_north": {
+      "frames": [
+        "pb18_gosfer_walk_north_0",
+        "pb18_gosfer_walk_north_1",
+        "pb18_gosfer_walk_north_2",
+        "pb18_gosfer_walk_north_3",
+        "pb18_gosfer_walk_north_4",
+        "pb18_gosfer_walk_north_5",
+        "pb18_gosfer_walk_north_6",
+        "pb18_gosfer_walk_north_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_walk_east": {
+      "frames": [
+        "pb18_gosfer_walk_east_0",
+        "pb18_gosfer_walk_east_1",
+        "pb18_gosfer_walk_east_2",
+        "pb18_gosfer_walk_east_3",
+        "pb18_gosfer_walk_east_4",
+        "pb18_gosfer_walk_east_5",
+        "pb18_gosfer_walk_east_6",
+        "pb18_gosfer_walk_east_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_walk_west": {
+      "frames": [
+        "pb18_gosfer_walk_west_0",
+        "pb18_gosfer_walk_west_1",
+        "pb18_gosfer_walk_west_2",
+        "pb18_gosfer_walk_west_3",
+        "pb18_gosfer_walk_west_4",
+        "pb18_gosfer_walk_west_5",
+        "pb18_gosfer_walk_west_6",
+        "pb18_gosfer_walk_west_7"
+      ],
+      "fps": 12,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_fire_south": {
+      "frames": [
+        "pb18_gosfer_fire_south_0",
+        "pb18_gosfer_fire_south_1",
+        "pb18_gosfer_fire_south_2",
+        "pb18_gosfer_fire_south_3",
+        "pb18_gosfer_fire_south_4",
+        "pb18_gosfer_fire_south_5",
+        "pb18_gosfer_fire_south_6",
+        "pb18_gosfer_fire_south_7"
+      ],
+      "fps": 24,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_fire_east": {
+      "frames": [
+        "pb18_gosfer_fire_east_0",
+        "pb18_gosfer_fire_east_1",
+        "pb18_gosfer_fire_east_2",
+        "pb18_gosfer_fire_east_3",
+        "pb18_gosfer_fire_east_4",
+        "pb18_gosfer_fire_east_5",
+        "pb18_gosfer_fire_east_6",
+        "pb18_gosfer_fire_east_7"
+      ],
+      "fps": 24,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_dash_east": {
+      "frames": [
+        "pb18_gosfer_dash_east_0",
+        "pb18_gosfer_dash_east_1",
+        "pb18_gosfer_dash_east_2",
+        "pb18_gosfer_dash_east_3",
+        "pb18_gosfer_dash_east_4",
+        "pb18_gosfer_dash_east_5",
+        "pb18_gosfer_dash_east_6",
+        "pb18_gosfer_dash_east_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_gosfer_death": {
+      "frames": [
+        "pb18_gosfer_death_0",
+        "pb18_gosfer_death_1",
+        "pb18_gosfer_death_2",
+        "pb18_gosfer_death_3",
+        "pb18_gosfer_death_4",
+        "pb18_gosfer_death_5",
+        "pb18_gosfer_death_6",
+        "pb18_gosfer_death_7"
+      ],
+      "fps": 14,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          256,
+          288
+        ],
+        "anchor": [
+          128,
+          260
+        ],
+        "sourceScale": 0.6198547215496368,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_pad_m30": {
+      "frames": [
+        "pb18_pad_m30_0"
+      ],
+      "fps": 0,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          768,
+          384
+        ],
+        "anchor": [
+          384,
+          192
+        ],
+        "sourceScale": 0.7606263982102909,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    },
+    "pb18_pad_genesis": {
+      "frames": [
+        "pb18_pad_genesis_0"
+      ],
+      "fps": 0,
+      "drawScale": 1,
+      "rootContract": {
+        "cell": [
+          768,
+          384
+        ],
+        "anchor": [
+          384,
+          192
+        ],
+        "sourceScale": 0.6882591093117408,
+        "unit": "common proportional body scale; registered feet/pelvis; authored flight"
+      }
+    }
+  },
+  "audit": [
+    {
+      "key": "pb18_room",
+      "source": "room.png",
+      "crop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "scale": 0.4419889502762431,
+      "sha256": "dff1873b3dc142d92f520df5a1c766b30c676c350322fc3f8a2a0fe064dc046a"
+    },
+    {
+      "key": "pb18_backwall_0",
+      "source": "wall_wide.png",
+      "crop": [
+        205,
+        51,
+        956,
+        289
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "c3873ba00233934f26f03dbbd816d3b6da68b538cf37b42d7cc42253e28b5c0b"
+    },
+    {
+      "key": "pb18_backwall_1",
+      "source": "wall_wide.png",
+      "crop": [
+        205,
+        377,
+        956,
+        614
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "d6e78cb48261d1407ae8d12b64c98ec1de47292d31c5dc3d85554f4a7c5e7c8d"
+    },
+    {
+      "key": "pb18_backwall_2",
+      "source": "wall_wide.png",
+      "crop": [
+        192,
+        704,
+        972,
+        941
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "6881679c7d592117eb051c0ade1a7ccfce2a00f6e5e21ef7a88a5b0c0b9c6fcb"
+    },
+    {
+      "key": "pb18_backwall_3",
+      "source": "wall_wide.png",
+      "crop": [
+        81,
+        1029,
+        1068,
+        1279
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "ca4b9b27cac5773598a0c6eaa54a73ef8bddc15817c0053a5a233204a2e7a195"
+    },
+    {
+      "key": "pb18_backwall_4",
+      "source": "wall_wide.png",
+      "crop": [
+        28,
+        37,
+        1128,
+        355
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "7eb444770df9e32523b53327ef95a0b3de246fbdf8a60bfa8482a34972e58b2c"
+    },
+    {
+      "key": "pb18_backwall_5",
+      "source": "wall_wide.png",
+      "crop": [
+        14,
+        415,
+        1145,
+        729
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "e094451d15f5e1a2feeabf800aae0fbd561861b988937f0fac1b616788defae0"
+    },
+    {
+      "key": "pb18_backwall_6",
+      "source": "wall_wide.png",
+      "crop": [
+        19,
+        812,
+        1141,
+        1036
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "dbf3c8430b5e5a921c5206db14ab503d7584260b73632dbd57676a06bfe193ac"
+    },
+    {
+      "key": "pb18_backwall_7",
+      "source": "wall_wide.png",
+      "crop": [
+        15,
+        1212,
+        1143,
+        1330
+      ],
+      "scale": 0.6924101198402131,
+      "sha256": "2aea1b2aa4f179d1f161e4154063d8f963aaf4fb39c7f8c4ccd4f31e85c59563"
+    },
+    {
+      "key": "pb18_door_core_0",
+      "source": "machinery.png",
+      "crop": [
+        92,
+        8,
+        390,
+        249
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "affcf2e1a40c18dee0da8d7a3aa29f71e5f19e626698864689006b7226af2217"
+    },
+    {
+      "key": "pb18_door_core_1",
+      "source": "machinery.png",
+      "crop": [
+        446,
+        8,
+        736,
+        249
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "47c31bed962ac80f3bc86a9e0f7feb42e37687f4f6ad99815128d25cb14d9d05"
+    },
+    {
+      "key": "pb18_door_core_2",
+      "source": "machinery.png",
+      "crop": [
+        799,
+        8,
+        1092,
+        249
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "746bb995c015434b2bfc10a56e766cb4550b4f4b613601300c5caf142991eef5"
+    },
+    {
+      "key": "pb18_door_core_3",
+      "source": "machinery.png",
+      "crop": [
+        1147,
+        8,
+        1443,
+        249
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "1650241ff00a25bbec0ff135b0344bf40ab37a548589009e7b971b4e3bf54a78"
+    },
+    {
+      "key": "pb18_door_core_4",
+      "source": "machinery.png",
+      "crop": [
+        92,
+        262,
+        390,
+        503
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "b60e05851ab2f6e470e7bbc8d6b43d0514be03864e2778f34372341c9d88dbe5"
+    },
+    {
+      "key": "pb18_door_core_5",
+      "source": "machinery.png",
+      "crop": [
+        446,
+        262,
+        736,
+        503
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "017cd242a895cd03e97dd1a73d684591cd65dbc322051beb5b954805eb09900f"
+    },
+    {
+      "key": "pb18_door_core_6",
+      "source": "machinery.png",
+      "crop": [
+        798,
+        262,
+        1092,
+        503
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "e6a8454fc9328bd3126044411cadc9050d46600f0d5924f2b06930677a4c6f0d"
+    },
+    {
+      "key": "pb18_door_core_7",
+      "source": "machinery.png",
+      "crop": [
+        1147,
+        262,
+        1443,
+        503
+      ],
+      "scale": 0.2214765100671141,
+      "sha256": "9db55c42bbfcc9189d7fe563614ce53cae79d22fec4092e2829a6adcd8745dda"
+    },
+    {
+      "key": "pb18_turret_gun_0",
+      "source": "machinery.png",
+      "crop": [
+        86,
+        514,
+        394,
+        737
+      ],
+      "scale": 0.19480519480519481,
+      "sha256": "8f87aafc60a809f14907b01f1389479ac5459ca83ba4f328de24fed3ede2a050"
+    },
+    {
+      "key": "pb18_turret_gun_1",
+      "source": "machinery.png",
+      "crop": [
+        437,
+        514,
+        744,
+        737
+      ],
+      "scale": 0.19480519480519481,
+      "sha256": "2b51b1ba5d48bbfa6ac3d285e6c0d0873532e45ddf7b758983db96032ee14adb"
+    },
+    {
+      "key": "pb18_turret_gun_2",
+      "source": "machinery.png",
+      "crop": [
+        791,
+        514,
+        1099,
+        737
+      ],
+      "scale": 0.19480519480519481,
+      "sha256": "0a9f6e1532ae41eb4dda79ffc58388c0b6e4428797ade09dfbcfaf6ec9be241f"
+    },
+    {
+      "key": "pb18_turret_gun_3",
+      "source": "machinery.png",
+      "crop": [
+        1143,
+        514,
+        1451,
+        737
+      ],
+      "scale": 0.19480519480519481,
+      "sha256": "eb5910bbfed09a5a85d21b19b1a7ad4f1a34d84b2d5a49166e299e840947cc71"
+    },
+    {
+      "key": "pb18_turret_laser_0",
+      "source": "machinery.png",
+      "crop": [
+        81,
+        748,
+        399,
+        999
+      ],
+      "scale": 0.18867924528301888,
+      "sha256": "d7f40c628216f966dabc706d6e4e516ff1ef2aa6ed4372648d3cc3eee7546429"
+    },
+    {
+      "key": "pb18_turret_laser_1",
+      "source": "machinery.png",
+      "crop": [
+        432,
+        748,
+        749,
+        999
+      ],
+      "scale": 0.18867924528301888,
+      "sha256": "4fbdd1e4254d3e7122a646d0db30752bae918eb2f3bb18bae46b7d49e7dd3810"
+    },
+    {
+      "key": "pb18_turret_laser_2",
+      "source": "machinery.png",
+      "crop": [
+        786,
+        748,
+        1104,
+        999
+      ],
+      "scale": 0.18867924528301888,
+      "sha256": "e466988890106924f081eb8d50643ee12b5e1ec43adcd9533cb18af8eb54ae1d"
+    },
+    {
+      "key": "pb18_turret_laser_3",
+      "source": "machinery.png",
+      "crop": [
+        1137,
+        748,
+        1455,
+        999
+      ],
+      "scale": 0.18867924528301888,
+      "sha256": "f91ab139778f806fe0d667159da128cb9fdbbcfa4aed85d6c48e47bfa717e084"
+    },
+    {
+      "key": "pb18_barrel_0",
+      "source": "props.png",
+      "crop": [
+        71,
+        34,
+        244,
+        278
+      ],
+      "scale": 0.20437956204379562,
+      "sha256": "fb721dd443ae5a449413a5ac1521a980c305acce7423d6f779145871de5157c0"
+    },
+    {
+      "key": "pb18_barrel_1",
+      "source": "props.png",
+      "crop": [
+        385,
+        34,
+        559,
+        278
+      ],
+      "scale": 0.20437956204379562,
+      "sha256": "c25c614a5d6526704b01ac6aee41d1a3505df4311e15f98464286a1cd306c8d3"
+    },
+    {
+      "key": "pb18_barrel_2",
+      "source": "props.png",
+      "crop": [
+        670,
+        34,
+        885,
+        278
+      ],
+      "scale": 0.20437956204379562,
+      "sha256": "47c3a7fc5905f5eb2d9dd4aebcb33e5ce590fb93e997a31286ee0027faba42c1"
+    },
+    {
+      "key": "pb18_barrel_3",
+      "source": "props.png",
+      "crop": [
+        963,
+        16,
+        1237,
+        282
+      ],
+      "scale": 0.20437956204379562,
+      "sha256": "abf1f8b8507c8f240074af641c09d2e603198066c88163e3b024cc57d3b8720e"
+    },
+    {
+      "key": "pb18_barrel_blast_0",
+      "source": "props.png",
+      "crop": [
+        50,
+        352,
+        268,
+        578
+      ],
+      "scale": 0.42704626334519574,
+      "sha256": "22c185e165bc4e378406379f486e220961ea063f6c4974ba1c496aca27d4b7b6"
+    },
+    {
+      "key": "pb18_barrel_blast_1",
+      "source": "props.png",
+      "crop": [
+        343,
+        334,
+        590,
+        586
+      ],
+      "scale": 0.42704626334519574,
+      "sha256": "9e0aec03dbca8593aeb42bbae7627a50edea4a44926321e9f0114e276d7f142b"
+    },
+    {
+      "key": "pb18_barrel_blast_2",
+      "source": "props.png",
+      "crop": [
+        643,
+        335,
+        924,
+        599
+      ],
+      "scale": 0.42704626334519574,
+      "sha256": "5784d6c55d1c26a01bed9ed740d036176b94f5a7e2fc76701355090a30c39088"
+    },
+    {
+      "key": "pb18_barrel_blast_3",
+      "source": "props.png",
+      "crop": [
+        972,
+        318,
+        1233,
+        587
+      ],
+      "scale": 0.42704626334519574,
+      "sha256": "99db355993009a99ad26439bd26b7e046b26d2bf1e68cb7aa92dc9cec7cdb07d"
+    },
+    {
+      "key": "pb18_enemy_crate_0",
+      "source": "props.png",
+      "crop": [
+        29,
+        633,
+        286,
+        891
+      ],
+      "scale": 0.26936026936026936,
+      "sha256": "be5c7e6685bce95fa609f70059ac90f7d51d3b89b24ddd74e0550158d7aed263"
+    },
+    {
+      "key": "pb18_enemy_crate_1",
+      "source": "props.png",
+      "crop": [
+        342,
+        633,
+        598,
+        891
+      ],
+      "scale": 0.26936026936026936,
+      "sha256": "ba302e77d7d36b14bce7cfb04749a72248774cc3478c45ee4eabfa110ed1f3d3"
+    },
+    {
+      "key": "pb18_enemy_crate_2",
+      "source": "props.png",
+      "crop": [
+        656,
+        633,
+        912,
+        891
+      ],
+      "scale": 0.26936026936026936,
+      "sha256": "f34078c91f86b189b10ad01f936d6159c3dcaed3cb33c6de50fa59fdf893aa9f"
+    },
+    {
+      "key": "pb18_enemy_crate_3",
+      "source": "props.png",
+      "crop": [
+        946,
+        687,
+        1243,
+        895
+      ],
+      "scale": 0.26936026936026936,
+      "sha256": "e1c500fa2e45156811cd1716615b217ce40cc7889dcbb24a5792b9ab2c11810b"
+    },
+    {
+      "key": "pb18_armored_crate_0",
+      "source": "props.png",
+      "crop": [
+        41,
+        934,
+        274,
+        1207
+      ],
+      "scale": 0.27586206896551724,
+      "sha256": "7e90c5e671b848ca7b9e3d6a1a142aa39f5420645b1b6eb47bf930b154b50a55"
+    },
+    {
+      "key": "pb18_armored_crate_1",
+      "source": "props.png",
+      "crop": [
+        353,
+        934,
+        588,
+        1207
+      ],
+      "scale": 0.27586206896551724,
+      "sha256": "2e2a38dd90e0e148a27687179f53fb36efe757ed0219ba85bef5b28fab806a89"
+    },
+    {
+      "key": "pb18_armored_crate_2",
+      "source": "props.png",
+      "crop": [
+        650,
+        943,
+        912,
+        1217
+      ],
+      "scale": 0.27586206896551724,
+      "sha256": "4777a57fa1696b9b081e05f949b6006dad26b31dd7a71082c4ecb7bc6226fbfa"
+    },
+    {
+      "key": "pb18_armored_crate_3",
+      "source": "props.png",
+      "crop": [
+        946,
+        1017,
+        1236,
+        1217
+      ],
+      "scale": 0.27586206896551724,
+      "sha256": "c9d14ef7036d4578926fca6b3ff2640cca3b1b46731642e91070b5beb60e88b9"
+    },
+    {
+      "key": "pb18_laser_ray_0",
+      "source": "laser_ray.png",
+      "crop": [
+        55,
+        74,
+        1719,
+        190
+      ],
+      "scale": 0.17067307692307693,
+      "sha256": "ae9c1927570156b30a4d8f44d898d1f7a54aa92b929ef65ba64b370ae121be65"
+    },
+    {
+      "key": "pb18_laser_ray_1",
+      "source": "laser_ray.png",
+      "crop": [
+        55,
+        287,
+        1719,
+        404
+      ],
+      "scale": 0.17067307692307693,
+      "sha256": "3ce049c589336698b5d248bbd789e6a251d7ed08e4b42a858185252be96d270d"
+    },
+    {
+      "key": "pb18_laser_ray_2",
+      "source": "laser_ray.png",
+      "crop": [
+        55,
+        502,
+        1719,
+        619
+      ],
+      "scale": 0.17067307692307693,
+      "sha256": "672b0953fb5b711e580e9fdd05b66cddf13a55614e9b9cc0207e8d525bf93e32"
+    },
+    {
+      "key": "pb18_laser_ray_3",
+      "source": "laser_ray.png",
+      "crop": [
+        55,
+        712,
+        1719,
+        828
+      ],
+      "scale": 0.17067307692307693,
+      "sha256": "449ce71876147db06faaab4ea138f2268944a43fc92959171c9ececffa412c4f"
+    },
+    {
+      "key": "pb18_master_0",
+      "source": "master.png",
+      "crop": [
+        36,
+        0,
+        315,
+        278
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "ee78c6b0083efab52ab412264a6f4e0bf37aa932f994784c79dde662a285c87c"
+    },
+    {
+      "key": "pb18_master_1",
+      "source": "master.png",
+      "crop": [
+        386,
+        0,
+        666,
+        278
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "2fb4e2c465c9f8d707b7fbe7dc14e57775d01829d36fe142b8d8266ca2e7d62e"
+    },
+    {
+      "key": "pb18_master_2",
+      "source": "master.png",
+      "crop": [
+        737,
+        0,
+        1016,
+        278
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "96eb1c1125ef07c4d7896bf66beeba91d86bb9e2ce49674f9924b97b36dbb542"
+    },
+    {
+      "key": "pb18_master_3",
+      "source": "master.png",
+      "crop": [
+        1088,
+        0,
+        1367,
+        278
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "7909ad265e730ca00aef9daee01d170da73a445eda0658cc5f9a9d609864a056"
+    },
+    {
+      "key": "pb18_master_4",
+      "source": "master.png",
+      "crop": [
+        35,
+        281,
+        315,
+        561
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "7a0f9c3a2a076ae096d336b11a9770849e7340f37757a1d91085f51e076a35ef"
+    },
+    {
+      "key": "pb18_master_5",
+      "source": "master.png",
+      "crop": [
+        386,
+        281,
+        666,
+        561
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "a0fcf674154531b99420ebac936263962b231d2a1a3674c6f89fed652444a714"
+    },
+    {
+      "key": "pb18_master_6",
+      "source": "master.png",
+      "crop": [
+        737,
+        281,
+        1016,
+        561
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "dbb9b97a0a45d75be84ec255cd0a481b0b72b0d7d78520dc224871929cb4f4ad"
+    },
+    {
+      "key": "pb18_master_7",
+      "source": "master.png",
+      "crop": [
+        1087,
+        281,
+        1367,
+        561
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "6584f98f53c3002fd5f367a475981fafa325bda0f9d1ed81e785a9450b26bb13"
+    },
+    {
+      "key": "pb18_master_8",
+      "source": "master.png",
+      "crop": [
+        35,
+        561,
+        315,
+        842
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "56c35f91d1ed84ed6bfa5b2f3bd6bde9d3d7a3d3cf61763e34b4e44e1348ca37"
+    },
+    {
+      "key": "pb18_master_9",
+      "source": "master.png",
+      "crop": [
+        386,
+        561,
+        666,
+        842
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "2db4c748a50e88726a91200641fc95a2b0d8fd78831b962f56da04c1d5bd510d"
+    },
+    {
+      "key": "pb18_master_10",
+      "source": "master.png",
+      "crop": [
+        737,
+        561,
+        1016,
+        842
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "61d578ec0ce627caf760ddcc1ea8386bc10fec8749e4c91ba9e32e6db946f48d"
+    },
+    {
+      "key": "pb18_master_11",
+      "source": "master.png",
+      "crop": [
+        1088,
+        561,
+        1367,
+        842
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "71ab21b3bb3a27896f4042584d90a3d2a20e3fe42d6da35a2840362690a58e87"
+    },
+    {
+      "key": "pb18_master_12",
+      "source": "master.png",
+      "crop": [
+        12,
+        842,
+        331,
+        1117
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "b81ca4656e2eb79c112568c338567dd542002c0bcec1764e6e0d1c941900566b"
+    },
+    {
+      "key": "pb18_master_13",
+      "source": "master.png",
+      "crop": [
+        363,
+        842,
+        680,
+        1117
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "e9420f8e09cb201a6fa813f638197c76d13e1de72d341988b77420b3e40952a0"
+    },
+    {
+      "key": "pb18_master_14",
+      "source": "master.png",
+      "crop": [
+        710,
+        842,
+        1036,
+        1117
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "7655c8c2e0db714e9a37e18dd572ac688b1f992bd68f801875ec7cd013315bf7"
+    },
+    {
+      "key": "pb18_master_15",
+      "source": "master.png",
+      "crop": [
+        1059,
+        842,
+        1392,
+        1122
+      ],
+      "scale": 0.7785714285714286,
+      "sha256": "d2ab3e1af34dfeec31eb64af1a453dd12dd2af6b81e6799808af39fdf2b73d6f"
+    },
+    {
+      "key": "pb18_helios_walk_0",
+      "source": "helios_motion.png",
+      "crop": [
+        56,
+        39,
+        291,
+        353
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "6e24bd56eea0692166f48a5cbcdeb7c30ab52fc9cc37710a0e3ad6825634e6fe"
+    },
+    {
+      "key": "pb18_helios_walk_1",
+      "source": "helios_motion.png",
+      "crop": [
+        335,
+        40,
+        556,
+        354
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "9a8307799c77e4a5d162079f6c966bbde2e103e8510471190c2c60450941ecad"
+    },
+    {
+      "key": "pb18_helios_walk_2",
+      "source": "helios_motion.png",
+      "crop": [
+        633,
+        40,
+        802,
+        355
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "e3ddebfea3766dbb4df68ba27896cfc3211574ff8cc8cec48fd1b1fe57cf8cd8"
+    },
+    {
+      "key": "pb18_helios_walk_3",
+      "source": "helios_motion.png",
+      "crop": [
+        881,
+        43,
+        1107,
+        355
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "d197acc89aa79adada38cd8e4149402ef0f450e60717cd09e8d08d891fc7a9e0"
+    },
+    {
+      "key": "pb18_helios_walk_4",
+      "source": "helios_motion.png",
+      "crop": [
+        37,
+        382,
+        278,
+        695
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "8424e20c8fd737c7c2541e8ac16ecfe20a128d04d40afe87901d8a43f7d20f86"
+    },
+    {
+      "key": "pb18_helios_walk_5",
+      "source": "helios_motion.png",
+      "crop": [
+        332,
+        381,
+        526,
+        696
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "0da3a68f9619286947fb7ed0c4499d9094ca14c79acc5776b5948fef62336a0e"
+    },
+    {
+      "key": "pb18_helios_walk_6",
+      "source": "helios_motion.png",
+      "crop": [
+        574,
+        382,
+        820,
+        695
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "4fce560ee7ee67d0c404ebb96d9911e25a571ae98e2720ad574ea5c421717971"
+    },
+    {
+      "key": "pb18_helios_walk_7",
+      "source": "helios_motion.png",
+      "crop": [
+        856,
+        380,
+        1088,
+        693
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "f2740eaa853bb1663d774b85f2bf44caa7be97b3c3ba2bd0a9fd2ca50f5f58e1"
+    },
+    {
+      "key": "pb18_helios_run_0",
+      "source": "helios_motion.png",
+      "crop": [
+        31,
+        735,
+        294,
+        1029
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "42cf9707e69b612652232cde96a858c6e5937de52ee03884aaa7ed23d2e78908"
+    },
+    {
+      "key": "pb18_helios_run_1",
+      "source": "helios_motion.png",
+      "crop": [
+        330,
+        730,
+        550,
+        1029
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "1beb9df7f02bafac5055599e8eea43ec3d0c6a9412ee83e495a27821c196fe2c"
+    },
+    {
+      "key": "pb18_helios_run_2",
+      "source": "helios_motion.png",
+      "crop": [
+        576,
+        733,
+        817,
+        1029
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "dcb6be70b9df07a908e109217f9f16a7025885a1b9712c1afcace76800c87d6f"
+    },
+    {
+      "key": "pb18_helios_run_3",
+      "source": "helios_motion.png",
+      "crop": [
+        839,
+        721,
+        1111,
+        1014
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "b6950e25b7f8343bdcad57f603fa738b654d25832388a2a8186a2039023ab076"
+    },
+    {
+      "key": "pb18_helios_run_4",
+      "source": "helios_motion.png",
+      "crop": [
+        28,
+        1064,
+        293,
+        1356
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "e7bada9e83cc00a24dbc8f2f12b0713dcba4b598311d1bb2390d439ef4b4287f"
+    },
+    {
+      "key": "pb18_helios_run_5",
+      "source": "helios_motion.png",
+      "crop": [
+        323,
+        1057,
+        533,
+        1359
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "d1572fb98f686c139f07afef310543786fde8402f386e85874401c2f62a8d2d7"
+    },
+    {
+      "key": "pb18_helios_run_6",
+      "source": "helios_motion.png",
+      "crop": [
+        571,
+        1064,
+        824,
+        1359
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "b5b478a6417a08bdb3ff4fe8be95d8d5a846bf1fd403d2c0879dae1e9cc8d9d3"
+    },
+    {
+      "key": "pb18_helios_run_7",
+      "source": "helios_motion.png",
+      "crop": [
+        842,
+        1046,
+        1102,
+        1334
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "ebf4fb1787d24c6b761b2b699252fd6b84991b818583d48bd62b73cb24d6d810"
+    },
+    {
+      "key": "pb18_helios_throw_0",
+      "source": "helios_attack.png",
+      "crop": [
+        29,
+        33,
+        274,
+        346
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "3440a5efdaf90193248ed3388b82452950c67453d9d274b736c1f7863dfcec51"
+    },
+    {
+      "key": "pb18_helios_throw_1",
+      "source": "helios_attack.png",
+      "crop": [
+        312,
+        37,
+        553,
+        347
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "84410c674f510aad4ec2744042d822ad5ea0834c31cec57cbfba17f263ac30e0"
+    },
+    {
+      "key": "pb18_helios_throw_2",
+      "source": "helios_attack.png",
+      "crop": [
+        576,
+        49,
+        828,
+        348
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "5321d73b82007b140a9ef792bd9df8f8d87fe553130f65ae28701f7374facfad"
+    },
+    {
+      "key": "pb18_helios_throw_3",
+      "source": "helios_attack.png",
+      "crop": [
+        839,
+        50,
+        1108,
+        349
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "0c148e9a47fea494ec3dd61d7b5c5f0a31b53546f3b21ce215672f182321d537"
+    },
+    {
+      "key": "pb18_helios_throw_4",
+      "source": "helios_attack.png",
+      "crop": [
+        15,
+        395,
+        304,
+        678
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "f3047cfd70683b35a25cfec48c8ee6704f9526bc1883dab6f3b9cfaaff1c2f37"
+    },
+    {
+      "key": "pb18_helios_throw_5",
+      "source": "helios_attack.png",
+      "crop": [
+        301,
+        398,
+        588,
+        679
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "23a5f3195d96ae29ecf47c6c95fc4a1e7c9a644d80cc1883af038565d0babf0a"
+    },
+    {
+      "key": "pb18_helios_throw_6",
+      "source": "helios_attack.png",
+      "crop": [
+        589,
+        380,
+        837,
+        679
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "721a805af5d190b0c0d030d558a78b66ce19a156c44ea0449dcf988320ff6bf4"
+    },
+    {
+      "key": "pb18_helios_throw_7",
+      "source": "helios_attack.png",
+      "crop": [
+        856,
+        372,
+        1105,
+        679
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "4d515a1ee3ca6b0fd25a5e52895fde99564304809aecafc2c3ae8c4ec73538b0"
+    },
+    {
+      "key": "pb18_helios_lightning_0",
+      "source": "helios_attack.png",
+      "crop": [
+        13,
+        746,
+        298,
+        1037
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "1c6a786c55e0e56e05ca554a008162239da119edfe996a6f9a55a8ef2efd1d76"
+    },
+    {
+      "key": "pb18_helios_lightning_1",
+      "source": "helios_attack.png",
+      "crop": [
+        309,
+        731,
+        579,
+        1037
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "69c4309e9fae8bbc1de1d55f6b1ebe9cccea3193390add09ed9bd869f9f187a8"
+    },
+    {
+      "key": "pb18_helios_lightning_2",
+      "source": "helios_attack.png",
+      "crop": [
+        593,
+        703,
+        837,
+        1040
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "afceb2b1b056a92b231128664e40870268bd3ab84a6e84894c5b24c3009da1e3"
+    },
+    {
+      "key": "pb18_helios_lightning_3",
+      "source": "helios_attack.png",
+      "crop": [
+        859,
+        693,
+        1111,
+        1040
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "af47bc45bb287cbc7afdf4a7b104a04120071dcc20e972ec29efc20a31b1b41d"
+    },
+    {
+      "key": "pb18_helios_lightning_4",
+      "source": "helios_attack.png",
+      "crop": [
+        31,
+        1050,
+        286,
+        1355
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "d612ad74bc76ff81f68e144bd74a5a39e09b722dddc7577878990a9376842e46"
+    },
+    {
+      "key": "pb18_helios_lightning_5",
+      "source": "helios_attack.png",
+      "crop": [
+        312,
+        1063,
+        558,
+        1356
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "343e51069450f1b270061213d1f5ef14682f27143c4c5488d5310f2f7b9d893c"
+    },
+    {
+      "key": "pb18_helios_lightning_6",
+      "source": "helios_attack.png",
+      "crop": [
+        591,
+        1064,
+        838,
+        1356
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "e61c13e764aebbb5eb6164bdd71617ee546075b334ad2292d3e54dd044a7888a"
+    },
+    {
+      "key": "pb18_helios_lightning_7",
+      "source": "helios_attack.png",
+      "crop": [
+        853,
+        1054,
+        1111,
+        1356
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "9575b0c7e1343b53d2623e9d993cf48b818a25db581238d1a44c17a65a98fa42"
+    },
+    {
+      "key": "pb18_helios_jump_0",
+      "source": "helios_jump.png",
+      "crop": [
+        54,
+        67,
+        285,
+        371
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "8107f0d561ef5a9a0ce489419998d030800485a2f883450e17fd8250367f28b7"
+    },
+    {
+      "key": "pb18_helios_jump_1",
+      "source": "helios_jump.png",
+      "crop": [
+        316,
+        143,
+        552,
+        371
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "29d32d9c9dd4266b952b18d01af357d074773c65483bca46b58355bc8ea0cec8"
+    },
+    {
+      "key": "pb18_helios_jump_2",
+      "source": "helios_jump.png",
+      "crop": [
+        599,
+        65,
+        812,
+        368
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "edf230bb0c51e33249915890c974584d80a32a4d1423b51044e1dce740d82a18"
+    },
+    {
+      "key": "pb18_helios_jump_3",
+      "source": "helios_jump.png",
+      "crop": [
+        881,
+        8,
+        1091,
+        372
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "19c5212c57cf2cd7aa48dd2d572c10d572a1064cba0c213e0f32a6dce72c8ae5"
+    },
+    {
+      "key": "pb18_helios_jump_4",
+      "source": "helios_jump.png",
+      "crop": [
+        60,
+        416,
+        266,
+        697
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "c2dee0b2ebba85cba16c593624b45c6f26ac71380ef4646800d7555b5bb9fe89"
+    },
+    {
+      "key": "pb18_helios_jump_5",
+      "source": "helios_jump.png",
+      "crop": [
+        353,
+        386,
+        515,
+        711
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "c0fbdff6938a61039a30768f945c77e54764b32e052803259b67a49cbe31c10c"
+    },
+    {
+      "key": "pb18_helios_jump_6",
+      "source": "helios_jump.png",
+      "crop": [
+        635,
+        417,
+        796,
+        743
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "319b34024661c112585e50340f0394b17dd530e2f7d0d067150532a46966a123"
+    },
+    {
+      "key": "pb18_helios_jump_7",
+      "source": "helios_jump.png",
+      "crop": [
+        852,
+        527,
+        1094,
+        755
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "6cf7e75f8e0b294233cb3e47e5e839975f3dde26cdaf4caea28d8bc44c1088ad"
+    },
+    {
+      "key": "pb18_helios_death_0",
+      "source": "helios_jump.png",
+      "crop": [
+        26,
+        777,
+        301,
+        1080
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "98c57d554d3e853fd90eb8431d3fc87586ba6483de1d4e61ab4b382b690d56fc"
+    },
+    {
+      "key": "pb18_helios_death_1",
+      "source": "helios_jump.png",
+      "crop": [
+        322,
+        782,
+        556,
+        1079
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "8f8906d14610a91027d0b10fb299bbd8e851d684d8d5c0f5015e5773d97fba3d"
+    },
+    {
+      "key": "pb18_helios_death_2",
+      "source": "helios_jump.png",
+      "crop": [
+        605,
+        821,
+        825,
+        1074
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "5f5eb4627e6fafc7d8d367299a795a9a404d7607d5b7267a4636506d97c793fe"
+    },
+    {
+      "key": "pb18_helios_death_3",
+      "source": "helios_jump.png",
+      "crop": [
+        837,
+        896,
+        1108,
+        1079
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "af5cafc5f5ff6379ccd53f1ac3d9e7b0d5b113a7cff421e6b2d3a81f597921cb"
+    },
+    {
+      "key": "pb18_helios_death_4",
+      "source": "helios_jump.png",
+      "crop": [
+        28,
+        1206,
+        280,
+        1359
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "00bb2e204b0fd102aa7691fa94f27373b74dc2ac780139d630c133c99318bf0a"
+    },
+    {
+      "key": "pb18_helios_death_5",
+      "source": "helios_jump.png",
+      "crop": [
+        287,
+        1219,
+        551,
+        1363
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "f97da5f6cf060e6b7f8f11a015769cac174dc51467dde2c889372fdd078cf5d2"
+    },
+    {
+      "key": "pb18_helios_death_6",
+      "source": "helios_jump.png",
+      "crop": [
+        565,
+        1248,
+        829,
+        1370
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "57572742827201512028628d97258fa6f2c490571133edb363f2179525aebbaf"
+    },
+    {
+      "key": "pb18_helios_death_7",
+      "source": "helios_jump.png",
+      "crop": [
+        844,
+        1282,
+        1107,
+        1368
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "09f5b018f60552ad64a31608341d38a82851855b0b27bea34b20793f79f09479"
+    },
+    {
+      "key": "pb18_helios_idle_0",
+      "source": "helios_idle.png",
+      "crop": [
+        49,
+        23,
+        287,
+        357
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "ce1d57f2350761b3fc66c582ebe8144d9cffeff1bfcaf4ce39f879fc189816db"
+    },
+    {
+      "key": "pb18_helios_idle_1",
+      "source": "helios_idle.png",
+      "crop": [
+        332,
+        24,
+        557,
+        357
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "03cb0094945cd5d1b54bb3ed1c5a1cbfa868a9fdb300c00cfb66862406a6488f"
+    },
+    {
+      "key": "pb18_helios_idle_2",
+      "source": "helios_idle.png",
+      "crop": [
+        603,
+        19,
+        826,
+        357
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "33a9a91ae025af914d9d3d55720a4fc150c37ea8450e56d713dde3b0ad2870d7"
+    },
+    {
+      "key": "pb18_helios_idle_3",
+      "source": "helios_idle.png",
+      "crop": [
+        871,
+        24,
+        1096,
+        357
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "5f3db386bd3cc5d3527fe9862cc793f6433a237ee57a7ee4fa54e5ad047d8ae4"
+    },
+    {
+      "key": "pb18_helios_idle_4",
+      "source": "helios_idle.png",
+      "crop": [
+        44,
+        374,
+        285,
+        708
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "e8d5230ba8f48892e7e4961856c738b232318f90eff1e5c2c5b7241f55e1b5bb"
+    },
+    {
+      "key": "pb18_helios_idle_5",
+      "source": "helios_idle.png",
+      "crop": [
+        327,
+        369,
+        557,
+        708
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "fba9ba04ca52ba582bd8516ed443e0cd2d93b1dc0879c7f79cfcd11072b1a22e"
+    },
+    {
+      "key": "pb18_helios_idle_6",
+      "source": "helios_idle.png",
+      "crop": [
+        596,
+        371,
+        826,
+        708
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "9e35db247e5204626089318a93aa888c552bca251eb8e6118f05d563f206b36a"
+    },
+    {
+      "key": "pb18_helios_idle_7",
+      "source": "helios_idle.png",
+      "crop": [
+        865,
+        374,
+        1096,
+        708
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "0e8d868730b5470447bda05bfd4977364fb3ab4f633d5ed639748c2b92678b60"
+    },
+    {
+      "key": "pb18_helios_hit_0",
+      "source": "helios_idle.png",
+      "crop": [
+        38,
+        718,
+        287,
+        1031
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "a8816c22f6e1e8b69c389dbe2cd4cff388ce5c75366d5b2546c47a7fe6e80343"
+    },
+    {
+      "key": "pb18_helios_hit_1",
+      "source": "helios_idle.png",
+      "crop": [
+        337,
+        731,
+        555,
+        1031
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "82587dbdbe420fb4e9d08d40c5d32d73d2d39170702049ef7541ba734c92ec5a"
+    },
+    {
+      "key": "pb18_helios_hit_2",
+      "source": "helios_idle.png",
+      "crop": [
+        604,
+        722,
+        841,
+        1031
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "6ce19ae08863efec85c7cce2a1d6e31315c1ebe81b883dd0795a699c614eb5ef"
+    },
+    {
+      "key": "pb18_helios_hit_3",
+      "source": "helios_idle.png",
+      "crop": [
+        873,
+        718,
+        1100,
+        1031
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "5c0eaf17ab601f76c2256695833484aee018c7bc28e1c3f1622a76213dc5cc54"
+    },
+    {
+      "key": "pb18_helios_hit_4",
+      "source": "helios_idle.png",
+      "crop": [
+        41,
+        1039,
+        274,
+        1360
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "b781abbb5540f239589dd5f8abd7d7ea87fa8628492733f47790c21da5b0ca9c"
+    },
+    {
+      "key": "pb18_helios_hit_5",
+      "source": "helios_idle.png",
+      "crop": [
+        325,
+        1040,
+        556,
+        1360
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "438bd851b26134ff7b216e5e9ac50e69bbec7fdf26c7b4f6244cd976a699e182"
+    },
+    {
+      "key": "pb18_helios_hit_6",
+      "source": "helios_idle.png",
+      "crop": [
+        595,
+        1043,
+        826,
+        1360
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "a8ef63906d9ccc3c382101c93f0e2a4a499e2d33162fe24d289cd337b3e5217f"
+    },
+    {
+      "key": "pb18_helios_hit_7",
+      "source": "helios_idle.png",
+      "crop": [
+        861,
+        1039,
+        1095,
+        1360
+      ],
+      "scale": 0.6698564593301436,
+      "sha256": "03ccdd3e77615dc99c60757317b2112201f2c3c3eeba5093534268f0ecfaa84f"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_0",
+      "source": "gosfer_walk.png",
+      "crop": [
+        43,
+        15,
+        203,
+        223
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "f1f090f9a40c0b1ec50e93aba0a1cdb42e10d2b3c878c5a8effed689f29b053c"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_1",
+      "source": "gosfer_walk.png",
+      "crop": [
+        266,
+        13,
+        428,
+        219
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "3f3781e1297cd7b7c96a8af4c3d767688e90ea2b3c4d2e05627dbbe81fabc28f"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_2",
+      "source": "gosfer_walk.png",
+      "crop": [
+        485,
+        16,
+        647,
+        223
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "70ec79738c12ad5fb14ccb308d18931d6df54ff1798ef1d14a3440f5a039389a"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_3",
+      "source": "gosfer_walk.png",
+      "crop": [
+        704,
+        14,
+        863,
+        219
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "bf3c790965d09f453a792c7ac865e3feb072626471038dc51ba9f934ee6c7298"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_4",
+      "source": "gosfer_walk.png",
+      "crop": [
+        917,
+        15,
+        1088,
+        225
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "1099ae41da56361aa99b3338c07eae620ba0c80a517e12fae0cebf24b6fb1912"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_5",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1141,
+        16,
+        1303,
+        224
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "ee5cc88286b1e7751905866e858322792e88fa5c9ba4c46e13e93bb42d7ddb5c"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_6",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1371,
+        16,
+        1532,
+        222
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "30cf3e6bb1c6789ec02b0234d3d96b2737c1b330649b0d5bdf353d410568c001"
+    },
+    {
+      "key": "pb18_gosfer_walk_south_7",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1596,
+        16,
+        1754,
+        222
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "55d2c70f80a9cc405a54e31cd56f48e60a6ba5db64d86da9b09e28f8076c104b"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_0",
+      "source": "gosfer_walk.png",
+      "crop": [
+        28,
+        228,
+        182,
+        443
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "cfa81ee992ca9e00fef399da00b36e35874c56ab011a346ebf9a28660c51aabf"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_1",
+      "source": "gosfer_walk.png",
+      "crop": [
+        245,
+        229,
+        403,
+        445
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "ca1189a39f311d9e3a38ed47d002ecc8d1f56e1e70cf3f5055192a66e302d9ec"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_2",
+      "source": "gosfer_walk.png",
+      "crop": [
+        467,
+        228,
+        623,
+        445
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "2ad208285f6a4b6d5f566a191e79c11381c2c6b8d0c91a34b27f76821a439abc"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_3",
+      "source": "gosfer_walk.png",
+      "crop": [
+        686,
+        228,
+        841,
+        445
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "11084da4b87ab510b2353528337bc8f0be52181d0da661ac4bd4b4850a30d1d6"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_4",
+      "source": "gosfer_walk.png",
+      "crop": [
+        909,
+        228,
+        1068,
+        443
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "5b4a5c9023c40574014508e076e549de18fa428d63dc8ff02541b9e0524ccd0e"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_5",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1127,
+        229,
+        1286,
+        445
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "ec29626c91e314f9a104836c61972ab3af38721c8cbf23184636fb1ebe1ae395"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_6",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1348,
+        229,
+        1508,
+        445
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "51d61bda9a989d3038de32136579b4c72f26cd5969c236d081f566c4afab038d"
+    },
+    {
+      "key": "pb18_gosfer_walk_north_7",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1572,
+        229,
+        1729,
+        445
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "fa9a405b90eaa289ddafe5ddd98868bd593d5bba21f16830e3e63ddc88514866"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_0",
+      "source": "gosfer_walk.png",
+      "crop": [
+        43,
+        452,
+        206,
+        657
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "bb7e8f498d7ff66b7196dc30f9eff684e51f2d660aef60d4cf3651fd508bcd3c"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_1",
+      "source": "gosfer_walk.png",
+      "crop": [
+        260,
+        453,
+        425,
+        657
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "48f05148c4d991950edcb82e9fc7dbc149bff51ff4f33b798e12530137953233"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_2",
+      "source": "gosfer_walk.png",
+      "crop": [
+        471,
+        453,
+        645,
+        658
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "1f2f5819bb4e8a4d93bbb699edd44276b030d769da245ea45b9e0488e5fd04e0"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_3",
+      "source": "gosfer_walk.png",
+      "crop": [
+        694,
+        453,
+        861,
+        657
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "c8e2f43adc0bb75351a7e2a201abda40427ae4442d50e7fbdc47235bec102c70"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_4",
+      "source": "gosfer_walk.png",
+      "crop": [
+        911,
+        454,
+        1091,
+        658
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "f0612d1243ebb7addf0a5baf411c632ecd8d307624fa5999a9f817d338b5d322"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_5",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1133,
+        455,
+        1310,
+        659
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "a53a6f785617ad1c70b593aff3e400160a9cd23146016fa517c9c369de65fe6f"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_6",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1353,
+        453,
+        1533,
+        659
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "5709167a9dac3cbabcffce0d7e930e5edba86411a4b05cac1144b8f25508a566"
+    },
+    {
+      "key": "pb18_gosfer_walk_east_7",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1583,
+        454,
+        1751,
+        657
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "a0862eb39a914f24302c18f4a941dd609bede49bac806e8f849f20581186f204"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_0",
+      "source": "gosfer_walk.png",
+      "crop": [
+        27,
+        666,
+        194,
+        872
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "788f51cbbf3b79e1e3f5c38db049faf61dfe4b55c04e642a911fead858c77e5f"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_1",
+      "source": "gosfer_walk.png",
+      "crop": [
+        244,
+        666,
+        418,
+        871
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "45c14fd7d81bf4094e5e90b8513235f3784dedba6112f84aab3447bd5d2ca820"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_2",
+      "source": "gosfer_walk.png",
+      "crop": [
+        470,
+        667,
+        643,
+        871
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "a15bea4ae861b4e47e30e47848c018091b0e597fd2fa1c316ceca75ce7ae4802"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_3",
+      "source": "gosfer_walk.png",
+      "crop": [
+        691,
+        666,
+        862,
+        870
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "c2c3b661d3bb17720783c639e182ecc4e4d1ab7eb10a119ef9b3b0863aec4d29"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_4",
+      "source": "gosfer_walk.png",
+      "crop": [
+        904,
+        667,
+        1080,
+        872
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "d5233cf84e3d071750e5a08989b6d476d767ebd5b8bb64d95c672b428672c322"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_5",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1128,
+        667,
+        1303,
+        870
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "6ce0f3cdababc47624632356c358b5daa9a19bbbade4f50e93151e40ad7578db"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_6",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1351,
+        668,
+        1529,
+        872
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "623206e57bb3032a820af729995f4a49eebd07acf347416e0f3c708ca674dca7"
+    },
+    {
+      "key": "pb18_gosfer_walk_west_7",
+      "source": "gosfer_walk.png",
+      "crop": [
+        1576,
+        666,
+        1742,
+        869
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "a5d963c63dcdf72319fe2dac30f3705c183f3a892acf794f3580a5526ee3e48c"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_0",
+      "source": "gosfer_actions.png",
+      "crop": [
+        39,
+        10,
+        193,
+        220
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "d61cf8160c91a4dcf37c12e34ea6f3512da6d541490deebce0805093463f9266"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_1",
+      "source": "gosfer_actions.png",
+      "crop": [
+        255,
+        10,
+        429,
+        220
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "0010e960f2ae01d95c69fa95d9c26c734b9735a4fd734aff5b7bc88731a5ac74"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_2",
+      "source": "gosfer_actions.png",
+      "crop": [
+        479,
+        10,
+        663,
+        220
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "fc3b2a1cf00fd17fefce7a714fb562157fa47c6513bda9c4ea4bd75a009426d6"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_3",
+      "source": "gosfer_actions.png",
+      "crop": [
+        697,
+        9,
+        878,
+        220
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "cebf744df0cd8d5334ef4e57d023def8ffcaffa6dc53fe956ea88d551aa49684"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_4",
+      "source": "gosfer_actions.png",
+      "crop": [
+        926,
+        10,
+        1081,
+        220
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "ac9e3669c199fea58f830018848cf707768490fd8e4d543f9751e514901bdb26"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_5",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1140,
+        10,
+        1330,
+        219
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "a0a89bb58be98f895d36a36a15b87fb44c89ca39ae40bf27124ea726f17a0f31"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_6",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1360,
+        10,
+        1535,
+        220
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "0c5949d65ec0f7511b889bab4401e6cef7033f533df2bcbc295239ac7503bd81"
+    },
+    {
+      "key": "pb18_gosfer_fire_south_7",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1590,
+        10,
+        1744,
+        220
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "f77fde1d20d57852b06a5f994541861c9584ae65028daeb0c214c35ce4a09050"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_0",
+      "source": "gosfer_actions.png",
+      "crop": [
+        22,
+        235,
+        205,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "c84cafc09bf78d62edb0877cb0aa1d9159dad82443415ccbd4ae8fc43dfb6ff2"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_1",
+      "source": "gosfer_actions.png",
+      "crop": [
+        239,
+        235,
+        423,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "b3bcbdeffc66ef33876392fa8248b4ed0895202fe16fc5528f65a9d8de465a7f"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_2",
+      "source": "gosfer_actions.png",
+      "crop": [
+        455,
+        236,
+        661,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "4bc7a4cb0971e7f63a60cf24ad374711722b2fe1df656acdfc0658f2a1979d18"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_3",
+      "source": "gosfer_actions.png",
+      "crop": [
+        677,
+        235,
+        876,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "9e74f377bffb57a7a8b93d03f0a56b6d31d4e7fb325d319a927fb44ff287275d"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_4",
+      "source": "gosfer_actions.png",
+      "crop": [
+        909,
+        235,
+        1085,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "f772e8fc68fbc90592897b5e4c0f4cc0314a56753d37dfad8a0f5d5a43a50581"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_5",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1122,
+        235,
+        1328,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "56299aeb8be51d76c72e662b8cd7f6c5896b71a599efee0eefc9db39dc4efccc"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_6",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1343,
+        236,
+        1533,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "f4b42dd7d981f404a42047d831410d0c87111758a28268e0021e89c45afe64df"
+    },
+    {
+      "key": "pb18_gosfer_fire_east_7",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1577,
+        235,
+        1750,
+        439
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "b14d4462c0ea3c88bb0df5ba299d21666ee6bc2f8265f81ab464379f4852e827"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_0",
+      "source": "gosfer_actions.png",
+      "crop": [
+        10,
+        478,
+        217,
+        656
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "d5155be88f5239dc6c4506db44c7e2d0f561a68a6efb6dd97e940deb3a1040e8"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_1",
+      "source": "gosfer_actions.png",
+      "crop": [
+        230,
+        470,
+        438,
+        656
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "1c8a05bb39364ad7ce34d74f1cc1ead3012063abe2aeac6d4368863a4147c264"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_2",
+      "source": "gosfer_actions.png",
+      "crop": [
+        473,
+        465,
+        659,
+        657
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "ae01dbfabfa820c62bbda667e5652977699f51bd798a36ad0672771910e0d71f"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_3",
+      "source": "gosfer_actions.png",
+      "crop": [
+        653,
+        453,
+        875,
+        632
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "a69776cf76663dfa1fafedd6994bc2c4b14429c57b57cc4308aa1de2266b6069"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_4",
+      "source": "gosfer_actions.png",
+      "crop": [
+        898,
+        478,
+        1100,
+        659
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "faa4df6a042e76049ff69339ec3c621706043ef759c729dca77eb224af12692b"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_5",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1124,
+        466,
+        1331,
+        658
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "e4ddb44b702ae26de7536f17ed87483b68d23a5f71e7287a2b787ae7cf86288d"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_6",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1341,
+        463,
+        1562,
+        657
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "1521c4d43fdb73548307448d9afb913a73fa96c530ff242650c7f75ad75e8821"
+    },
+    {
+      "key": "pb18_gosfer_dash_east_7",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1578,
+        484,
+        1770,
+        662
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "74395e323a638b780253e667a8e77413628ea82c7da032770a51f4b733cd48ea"
+    },
+    {
+      "key": "pb18_gosfer_death_0",
+      "source": "gosfer_actions.png",
+      "crop": [
+        24,
+        679,
+        214,
+        875
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "234c2bd6fcdbdaf8b7ee5c42e838da15c1e06645c8625d82b55b57c01ae0b2ae"
+    },
+    {
+      "key": "pb18_gosfer_death_1",
+      "source": "gosfer_actions.png",
+      "crop": [
+        240,
+        682,
+        424,
+        875
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "8b3b2676129327cf1023fac5d58ce2d019c11d40e8e630f0537b1a4718d62d58"
+    },
+    {
+      "key": "pb18_gosfer_death_2",
+      "source": "gosfer_actions.png",
+      "crop": [
+        463,
+        696,
+        657,
+        875
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "93892805c03e4ddf1ecad6125f12b0f6d04e9910727f4cfe5247587d393973be"
+    },
+    {
+      "key": "pb18_gosfer_death_3",
+      "source": "gosfer_actions.png",
+      "crop": [
+        674,
+        695,
+        876,
+        874
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "e47abd663eca9b8651ed205a8439fe16fb514ef49456bc680ed5216173f70be3"
+    },
+    {
+      "key": "pb18_gosfer_death_4",
+      "source": "gosfer_actions.png",
+      "crop": [
+        909,
+        729,
+        1096,
+        876
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "86d24fbc1656c8fa895f3d03be6b98f9746c6ee0247895477464fbe6bfd16029"
+    },
+    {
+      "key": "pb18_gosfer_death_5",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1117,
+        760,
+        1324,
+        875
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "6fd7bb41538551c59e843d03ea88ce38d84318af576e22073a8393d95edeabbc"
+    },
+    {
+      "key": "pb18_gosfer_death_6",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1343,
+        780,
+        1545,
+        875
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "64eaa78f22578e8cd6140140823aaab67969bcd688f35ecfa2c308c18907f717"
+    },
+    {
+      "key": "pb18_gosfer_death_7",
+      "source": "gosfer_actions.png",
+      "crop": [
+        1573,
+        785,
+        1759,
+        874
+      ],
+      "scale": 0.6198547215496368,
+      "sha256": "e13fc6578758b78b3df07adbb3304b38f16e71960d3fbdb70f4e0ea6b7c444c1"
+    },
+    {
+      "key": "pb18_pad_m30_0",
+      "source": "pads.png",
+      "crop": [
+        440,
+        19,
+        1334,
+        444
+      ],
+      "scale": 0.7606263982102909,
+      "sha256": "bb33c3ced21e121d4bb9d3c29e192a71c25971f6ce9915d4bc39c9bf5c6be161"
+    },
+    {
+      "key": "pb18_pad_genesis_0",
+      "source": "pads.png",
+      "crop": [
+        437,
+        444,
+        1425,
+        868
+      ],
+      "scale": 0.6882591093117408,
+      "sha256": "b81b2edad4b6110180734d9a2d649de812ba94cb798f01076177f23499763508"
+    }
+  ],
+  "sources": {
+    "gosfer_actions.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "8e3fa108df396ef21621ee7f53bd942a2d28fc9487c99f1abb23e23ac64ea1be"
+    },
+    "gosfer_walk.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "35d7929948bcac97c008e8de53f3a570ad97e75a85120bc4cf88efb990c6a07e"
+    },
+    "helios_attack.png": {
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "63e2a42f2854a48a215973ba6dbfb98b6a07adecbb4d36b4db75a7c1711039e4"
+    },
+    "helios_attack_first.png": {
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "496291b9ed47946028a1b94142b6b7ce1cb99627ab82867fda02b596f08e96e2"
+    },
+    "helios_idle.png": {
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "1f53e5251e36d3ce23f768663e361ae3799382660a851aa99c0f99c4808a12b3"
+    },
+    "helios_jump.png": {
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "fbf244a4804574ae321b2e2125b7c7111a0a8868c005b503d1e67586e1967813"
+    },
+    "helios_motion.png": {
+      "size": [
+        1122,
+        1402
+      ],
+      "sha256": "8cbc050257261846666cbc7d381ec26bbb67cc4aee6fbdba5060200be8bb3ca9"
+    },
+    "laser_ray.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "5dde8a69704a9ee447ad76fa5ac2241abeab8ed8b7b003e1e2b14ab4b59a288d"
+    },
+    "machinery.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "2a239930bbe7093096bdcf945a98ee7d4fa99155258fe0b0089814562bf62573"
+    },
+    "master.png": {
+      "size": [
+        1402,
+        1122
+      ],
+      "sha256": "10da29af57f945db57ffe91220fcc82ae7575ee22ea58a467684c5d734c41d82"
+    },
+    "pads.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "8bd1719972ff67ffb8580c24dc87c2b0ca6fbaabf92ae3275e671a180de66c30"
+    },
+    "props.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "fa8711844015f28e34addeeb2e238d8b7422ed2470251a4991af6bec7d0cfab2"
+    },
+    "room.png": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "3be2f84142e2289399d7adb8a366a7f92b08a75a36bc01860f6803d8c12d65a8"
+    },
+    "wall.png": {
+      "size": [
+        1642,
+        958
+      ],
+      "sha256": "95a65c7dcd7e6b62af7045073c8e3848cb8f2f70a3d146b1df53b73a1d2d23e2"
+    },
+    "wall_after.png": {
+      "size": [
+        1160,
+        1355
+      ],
+      "sha256": "1e7b220e8e5748263b142496512501cdfa3e785df866e418216809360f7d6b94"
+    },
+    "wall_wide.png": {
+      "size": [
+        1161,
+        1355
+      ],
+      "sha256": "5bc8af0335aa6f5d0e2f19ba3e484723ce0d32554b7e083cce9efe346304915a"
+    }
+  },
+  "layout": {
+    "rearFloor": 270,
+    "door": [
+      320,
+      250
+    ],
+    "core": [
+      318,
+      139
+    ],
+    "turrets": [
+      [
+        128,
+        148
+      ],
+      [
+        512,
+        148
+      ]
+    ],
+    "aperture": [
+      160,
+      100,
+      320,
+      168
+    ],
+    "wallDepth": 4.8,
+    "coverDepth": 1.43,
+    "horizon": 190
+  }
+}

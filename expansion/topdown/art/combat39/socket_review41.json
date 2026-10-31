@@ -1,0 +1,12 @@
+{
+  "scope": "South-facing firing hardware reviewed against the authored cells at 3x nearest-neighbour scale; no sprite pixels, roots or sizes changed.",
+  "banks": {
+    "machine_gunner_topdown/fire/south": [56, 38],
+    "minigunner_topdown/fire/south": [53, 45],
+    "rocket_launcher_topdown/fire/south": [59, 46],
+    "shotgunner_topdown/fire/south": [49, 40],
+    "double_barrel_topdown/fire/south": [61, 40],
+    "flamethrower_topdown/fire/south": [61, 47],
+    "flying_alien_topdown/fire/south": [53, 41]
+  }
+}

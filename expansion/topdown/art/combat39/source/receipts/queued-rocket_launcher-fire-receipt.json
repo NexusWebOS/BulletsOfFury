@@ -1,0 +1,26 @@
+{
+  "name": "rocket_launcher-fire",
+  "args": {
+    "character_id": "89b48297-d236-4bc2-8266-b5a6728a2ee2",
+    "mode": "pixminimax",
+    "animation_name": "od39_directional_fire",
+    "directions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "frame_count": 16,
+    "keep_first_frame": true,
+    "action_description": "FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Brace the existing shoulder rocket launcher, aim forward in the current facing, fire ONE rocket with a brief orange muzzle flash and small shoulder recoil, then lower the tube slightly and return to ready. No barrel stretching or new weapons. Do not draw a rocket flying far away; projectile leaves muzzle."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: 89b48297-d236-4bc2-8266-b5a6728a2ee2\nanimation: pixminimax custom (FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Brace the existing shoulder rocket launcher, aim forward in the current facing, fire ONE rocket with a brief orange muzzle flash and small shoulder recoil, then lower the tube slightly and return to ready. No barrel stretching or new weapons. Do not draw a rocket flying far away; projectile leaves muzzle.)\ndirections: north, east, south, west (4 jobs)\njob_ids: north=d8887b6c-e615-4a7e-ae0d-511cb6fde943, east=6d04bdc7-ce5a-4377-863d-917e14226274, south=05ccf95e-1f7d-4343-adc5-7394034db9c0, west=e402cfd6-4487-4ce2-9798-524acdee84f2\ngroup: 7050e25c-a8a8-4d7d-9411-540b42ad1e71\nframes: 17 (1 reference + 16 animated)\ncanvas: north 76x76, east 76x76, south 76x76, west 76x76 (frames are stored at this size: the character plus room to move)\ncost: 4 generations (1/dir x 4)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"89b48297-d236-4bc2-8266-b5a6728a2ee2\")\nadd more directions to this group: animate_character(character_id=\"89b48297-d236-4bc2-8266-b5a6728a2ee2\", action_description=\"FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Brace the existing shoulder rocket launcher, aim forward in the current facing, fire ONE rocket with a brief orange muzzle flash and small shoulder recoil, then lower the tube slightly and return to ready. No barrel stretching or new weapons. Do not draw a rocket flying far away; projectile leaves muzzle.\", mode=\"pixminimax\", animation_group_id=\"7050e25c-a8a8-4d7d-9411-540b42ad1e71\", directions=[...])"
+      }
+    ],
+    "isError": false
+  }
+}

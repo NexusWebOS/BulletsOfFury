@@ -1,0 +1,27 @@
+[
+  {
+    "name": "minigunner-north-pose",
+    "cache": "minigunner-north-grip-v2",
+    "url": "https://api.pixellab.ai/mcp/images/d7f76b1c-2bf0-4aee-9f5f-770a72738b02/download"
+  },
+  {
+    "name": "double_barrel-north-pose",
+    "cache": "double_barrel-north-grip-v2",
+    "url": "https://api.pixellab.ai/mcp/images/377b1e41-6210-4db1-b87b-ea69a2bbbab5/download"
+  },
+  {
+    "name": "rocket_launcher-north-pose",
+    "cache": "rocket_launcher-north-grip-v2",
+    "url": "https://api.pixellab.ai/mcp/images/c275b464-7d2f-48e1-81ef-a0231ba74ff9/download"
+  },
+  {
+    "name": "flamethrower-north-pose",
+    "cache": "flamethrower-north-grip-v2",
+    "url": "https://api.pixellab.ai/mcp/images/5b9b7dc3-86a7-4556-bb24-4bdce89c39d5/download"
+  },
+  {
+    "name": "midground",
+    "cache": "midground-final",
+    "url": "https://api.pixellab.ai/mcp/pixel-tools/f566a568-083d-4429-8506-efc5e3294789/image.png"
+  }
+]

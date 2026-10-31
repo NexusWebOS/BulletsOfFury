@@ -1,0 +1,42 @@
+[
+  {
+    "name": "machine_gunner-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/61afdda5-0012-44ce-8b87-5f35913b1e8f/download"
+  },
+  {
+    "name": "minigunner-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/33b92301-5da0-45e6-a368-19696c305a60/download"
+  },
+  {
+    "name": "sniper-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/16b036fd-2f11-408e-805f-7c7af49fb794/download"
+  },
+  {
+    "name": "rocket_launcher-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/2cb40920-a765-403d-bd22-a06aed4bbee7/download"
+  },
+  {
+    "name": "shotgunner-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/cced160d-701c-4ab0-9062-a66ab2a4f6dc/download"
+  },
+  {
+    "name": "double_barrel-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/29e311bf-8c4a-47d6-aaf3-e9edc67d45aa/download"
+  },
+  {
+    "name": "flamethrower-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/21e9eb5f-500d-4b00-9ebf-9642868d55a0/download"
+  },
+  {
+    "name": "roller_alien-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/8888432a-ff25-41b0-a360-426429f8cb17/download"
+  },
+  {
+    "name": "flying_alien-north-pose",
+    "url": "https://api.pixellab.ai/mcp/images/1cd9bdc5-0999-4784-aad9-2a3cd2e774c5/download"
+  },
+  {
+    "name": "gunner-still",
+    "url": "https://api.pixellab.ai/mcp/images/bfd2ff2f-254e-410f-be84-aab7c658c1d5/download"
+  }
+]

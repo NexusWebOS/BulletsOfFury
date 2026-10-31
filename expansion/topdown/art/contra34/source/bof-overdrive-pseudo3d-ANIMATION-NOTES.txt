@@ -1,0 +1,19 @@
+BULLETS OF FURY - OVERDRIVE / ARTICULATED WEAPON UPDATE
+
+Open weapon-motion.html. Select a full cycle or an individual action. Half/quarter speed and frame stepping are provided. Uncheck Projectiles to see the mechanism clearly.
+
+Added in this update
+- 24-frame forward draws for all nine soldier families and Fire Prism.
+- Arm and grip articulation, independent weapon motion and visible firing recoil.
+- Minigun: six rotating bores, a rotating rim index, moving ammunition belt, 24-frame spin-up, firing and spin-down clips; twelve alternating discharges per firing loop.
+- Pump shotgun: 48-frame lower, reach belt, shell insert, pump rack and return to aim sequence.
+- Double barrel: 64-frame hinge opening, two spent casings, loading-hand travel, two-shell reload, closing and latching sequence.
+- Wing movement and recoil during bat firing, independent turret barrel/lens retraction, and Fire Prism arm bracing during its forward chest volley.
+- Reverse lowering clips derived from the PixelLab draw frames, allowing the full preview cycle to return to rest.
+
+Timing and import
+New authored clips use 60 ms per frame (16.6667 fps). Clip JSON files include the common cell/origin, release_frames and per-frame muzzle positions. Release frames are zero-based. weapon_cycle in each manifest asset is the ordered demonstration sequence; repeated entries repeat that action. All attacks and projectiles travel toward the viewer along camera depth.
+
+The new drawings and layered animation were rendered in PixelLab's pixel-art workbench. Local tools extract the returned frames, pad to the common export cells, reverse the draw sequence for lowering, and assemble previews/atlases. No per-frame character resizing is used.
+
+These are exported art assets and previews. Full pseudo-3D soldier locomotion, prone, crouch, jump and cover conversions remain a separate pass; this update addresses the requested weapon mechanics. The live game repository is not modified.

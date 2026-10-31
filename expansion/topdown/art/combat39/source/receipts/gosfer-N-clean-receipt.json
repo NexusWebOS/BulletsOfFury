@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "character: f9cbf57d-c666-48d5-8599-8e7c50da05c3\nanimation: v3 custom (Tiny NORTHWARD RIFLE RECOIL ONLY: shoulder and rigid rifle pull backward two pixels then return, three times. Back always faces viewer, rifle points vertically UP in every frame. No muzzle flashes, no lighting effects, no sparks, no energy swirls, no bullets, no fullbody flashes. Armor colors never change. Feet planted. Transparent background.)\ndirections: north (1 jobs)\njob_ids: north=f0c34049-19e3-42b1-9a7b-da60af7fa499\ngroup: e028c0dd-e94d-42dd-8a34-320e06de98bf\nframes: 9 (1 reference + 8 animated)\ncanvas: north 160x204 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 4 generations (4/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\")\nadd more directions to this group: animate_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\", action_description=\"Tiny NORTHWARD RIFLE RECOIL ONLY: shoulder and rigid rifle pull backward two pixels then return, three times. Back always faces viewer, rifle points vertically UP in every frame. No muzzle flashes, no lighting effects, no sparks, no energy swirls, no bullets, no fullbody flashes. Armor colors never change. Feet planted. Transparent background.\", animation_group_id=\"e028c0dd-e94d-42dd-8a34-320e06de98bf\", directions=[...])"
+    }
+  ],
+  "isError": false
+}

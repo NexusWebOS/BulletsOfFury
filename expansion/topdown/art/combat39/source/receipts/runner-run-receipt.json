@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "character: ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\nanimation: v3 custom (Strict side-scroller side profile running LEFT in a complete repeating sprint cycle while holding the existing carbine at the ready. Real alternating leg contacts, extension, passing pose, knees lift and recover, hips and shoulders counter-rotate slightly, boots plant, no sliding. Exact same original blue armored robot body and helmet, unchanged head size, gun geometry, palette and lighting. No human skull. Gun stays rigid and does not stretch. Fixed camera, transparent margin, grounded pivot.)\ndirections: west (1 jobs)\njob_ids: west=d18ea625-76c1-4fc9-a13e-4980daa8f4fd\ngroup: 285a28a1-d38c-4d17-8229-14aeee4e930c\nframes: 12 (reference stripped, keep_first_frame=false)\ncanvas: west 160x160 (frames are stored at this size: the character plus room to move)\ncost: 5 generations (5/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\")\nadd more directions to this group: animate_character(character_id=\"ceecc775-4c8d-422c-9dd0-f3ffffcf4dcb\", action_description=\"Strict side-scroller side profile running LEFT in a complete repeating sprint cycle while holding the existing carbine at the ready. Real alternating leg contacts, extension, passing pose, knees lift and recover, hips and shoulders counter-rotate slightly, boots plant, no sliding. Exact same original blue armored robot body and helmet, unchanged head size, gun geometry, palette and lighting. No human skull. Gun stays rigid and does not stretch. Fixed camera, transparent margin, grounded pivot.\", animation_group_id=\"285a28a1-d38c-4d17-8229-14aeee4e930c\", directions=[...])"
+    }
+  ],
+  "isError": false
+}

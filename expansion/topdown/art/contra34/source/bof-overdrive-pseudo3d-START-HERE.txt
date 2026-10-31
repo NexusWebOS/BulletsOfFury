@@ -1,0 +1,25 @@
+BULLETS OF FURY - OVERDRIVE / BASE PSEUDO-3D
+
+Open preview.html to view the sprites, directions and motion clips. The viewer works directly from the exported PNG sheets and manifest.js.
+
+Open weapon-motion.html for full draw -> fire -> reload/spin-down -> lower cycles, isolated action selection, slow playback and frame stepping. ANIMATION-NOTES.txt describes the added mechanics.
+
+Contents
+- The eight prior enemy identities remade in solid, shaded pseudo-3D: machine gunner, minigunner, sniper, rocketeer, pump shotgunner, double-barrel shotgunner, flying alien and roller alien.
+- Flamethrower soldier, with eight facing poses and a front firing burst.
+- Alien bat drone, with a complete wing cycle and transparent margins.
+- Two wall turret types with compact firing cycles, and a pulsing door energy core.
+- Helios / Fire Prism remade from the actual approved boss identity: idle, walk, run, prism throw, leap/slam, lightning cast and defeat.
+- Armadroid fold, ball roll, hold, and unfold sequences.
+- Camera-forward bullets, pellet spreads, rockets, flame volumes, plasma, acid, prism shots, shockwave and radial muzzle flash under forward-effects. Previous lateral effects are removed from this pack.
+
+Firing direction
+All attack profiles face the viewer. Projectiles start at the supplied muzzle and approach the camera along depth, growing in apparent size. Use forward-range.html to inspect the corrected firing. Do not assign horizontal left/right travel to these shots.
+
+Scope
+The regular soldiers have eight directional still poses. Their full walk/run/crouch/prone/jump/cover animation sets from the side-view pack have not yet been converted to this camera. This folder is an art export and preview; it does not modify the live game.
+
+Import
+Use manifest.json. Each clip supplies its frame rectangles, common cell size, origin, fps and loop flag. Character bodies retain native pixel size. Grounded Armadroid transforms use a contact-baseline adjustment only; no frame is independently resized. Body cell: 224x240, origin 112,216. Boss cell: 320x320, origin 160,292. Fixed props: 160x160, origin 80,80. The preview enlarges assets with nearest-neighbor sampling.
+
+All new art, creative edits and animation were made in PixelLab. The complete bat wings and turret corrections were drawn in PixelLab's exact workbench and saved in its Creator gallery. Local processing only pads, registers roots, assembles, previews and checks files. EXPORT-CHECK.txt records export validation.

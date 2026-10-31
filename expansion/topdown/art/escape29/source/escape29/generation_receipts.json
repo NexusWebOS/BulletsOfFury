@@ -1,0 +1,332 @@
+{
+  "side_setup": [
+    {
+      "type": "text",
+      "text": "id: 17cb246c-e1c1-4306-9c07-a04d939f18ee\njob_id: 17cb246c-e1c1-4306-9c07-a04d939f18ee\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT: Deliver 192 x 224 pixels. Same body scale and feet baseline, transparent margins, crisp dark gritty Genesis/Neo Geo pixel art. This exact Yuri identity, red sleeveless tactical vest, muscular bare arms, black trousers and boots, slick dark hair. Change camera to a TRUE SIDE PROFILE facing LEFT for a 2D side-scroller. Feet on same horizontal ground plane, upright ready stance, rifle held horizontal left in both hands, one boot half step ahead. Full body. No isometric overhead angle. No muzzle flash or scene.\nasset_id: 6df7801a-6faf-586d-b79a-a2b374b5c46f\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"17cb246c-e1c1-4306-9c07-a04d939f18ee\")"
+    }
+  ],
+  "side_wall": [
+    {
+      "type": "text",
+      "text": "id: 66eaf30c-6c7e-4395-8915-224168b4498f\njob_id: 66eaf30c-6c7e-4395-8915-224168b4498f\nmodel: pro\ndescription: FRAME FORMAT 256 x 256 pixels. Seamless horizontal side-scroller industrial military base BACK WALL tile, flat front elevation. Gritty Sega Genesis 16-bit arcade pixels, Doom rusty gunmetal wall panels, deep navy steel, copper pipes, rectangular vent upper right, blue cyan thin lamps. No perspective, no isometric, no floor, no sprites, no text. Modular repeatable hard pixel edges and sharp rivets, dark but readable.\nsize: 256x256px\ntransparent: False\ncandidates: 1\nmax colours: 32 per image\nasset_id: ec039902-9292-5cdd-bfc9-fc6334477e16\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"66eaf30c-6c7e-4395-8915-224168b4498f\")"
+    }
+  ],
+  "side_floor": [
+    {
+      "type": "text",
+      "text": "id: 1bb91f4b-a193-4d51-8b5e-1dbef220243c\njob_id: 1bb91f4b-a193-4d51-8b5e-1dbef220243c\nmodel: pro\ndescription: FRAME FORMAT 256 x 64 pixels. Single horizontal PLATFORM GROUND strip for flat 2D side-scroller industrial base. Sharp steel treadplate walking surface along top, thick dark riveted metal vertical fascia, rusty mechanical braces and sparse yellow hazard edge. Gritty Sega Genesis16bit pixels. Seamlessly tileable horizontally. Orthographic side elevation, no isometric, no perspective, transparent beneath.\nsize: 256x64px\ntransparent: True\ncandidates: 1\nmax colours: 32 per image\nasset_id: 8d4c4e1d-bffe-5b75-86c0-bc76dbe48383\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1bb91f4b-a193-4d51-8b5e-1dbef220243c\")"
+    }
+  ],
+  "elevator": [
+    {
+      "type": "text",
+      "text": "id: 54e52a7e-df83-47c7-aae1-77b41f467cad\njob_id: 54e52a7e-df83-47c7-aae1-77b41f467cad\nmodel: pro\ndescription: FRAME FORMAT 512 x 384 pixels. Pixel art game background interior of industrial cargo ELEVATOR, straight front-on side-view compatible with a side-scrolling hero standing at bottom. Gritty Sega Genesis Neo Geo 16-bit Doom aesthetic. Symmetrical steel shaft cab, exposed pistons on left/right, central rear vertical double doors, dark blue grey panels and dim overhead cyan lamps, floor shallow level horizontal strip at y330. Empty space for character at center. Separate FLOOR HATCH will be layered on top, do not draw hatch or characters. Sharp deliberate pixel clusters no blur no text.\nsize: 512x384px\ntransparent: False\ncandidates: 1\nmax colours: 40 per image\nasset_id: 1084adee-2d42-5d99-9e08-4b0127079698\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"54e52a7e-df83-47c7-aae1-77b41f467cad\")"
+    }
+  ],
+  "hatch": [
+    {
+      "type": "text",
+      "text": "id: 1e8980a9-3964-4ec4-a2ef-0f70e911ef98\njob_id: 1e8980a9-3964-4ec4-a2ef-0f70e911ef98\nmodel: pro\ndescription: FRAME FORMAT 128 x 64 pixels. Rectangular riveted steel FLOOR HATCH panel, viewed straight from slightly above, horizontal top edge and level bottom edge. 16bit gritty dark gunmetal, bold yellow black hazard border, four locking bolts, central battered recessed panel. Transparent background. No isometric, no diagonal silhouette, no text. This will be a shootable floor panel in sideview elevator.\nsize: 128x64px\ntransparent: True\ncandidates: 4\nmax colours: 24 per image\nasset_id: 79affef8-bce5-56a7-8b87-7ac2887608db\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1e8980a9-3964-4ec4-a2ef-0f70e911ef98\")"
+    }
+  ],
+  "drone": [
+    {
+      "type": "text",
+      "text": "id: 1ed10304-9abe-4e7a-8948-5fd5ef3bc6f1\njob_id: 1ed10304-9abe-4e7a-8948-5fd5ef3bc6f1\nmodel: pro\ndescription: FRAME FORMAT 128 x 128 pixels. Single hovering alien robot attack drone, front view for 16-bit run-and-gun arcade. Bullets of Fury dark gritty mechanical military design: round charcoal armored body, glowing magenta visor, two pivot thrusters at sides, underslung cyan laser barrel, small sawlike fins. Compact readable silhouette with black outline and metal highlights. Orthographic front, not isometric. Transparent, entire drone visible, no glow haze or baked projectiles. Not cute.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nmax colours: 32 per image\nasset_id: be5473b2-7461-5acf-90ce-ab40694cd909\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1ed10304-9abe-4e7a-8948-5fd5ef3bc6f1\")"
+    }
+  ],
+  "top_aim": [
+    {
+      "type": "text",
+      "text": "id: bc7aa424-9b1c-4887-9c52-484a60e4603a\njob_id: bc7aa424-9b1c-4887-9c52-484a60e4603a\ndescription: FRAME FORMAT 192x224 fixed root/scale. Remain planted and smoothly raise rifle with both hands in one monotonic continuous 180-degree arc on LEFT SIDE from pointing vertically DOWN, through down-left, horizontal LEFT, up-left, then vertically UP. Hold feet hips and head size stationary, naturally rotate shoulders and bend elbows, track sights with head. No turning toward camera. No flashing, firing effects or idle pauses. Each successive frame a small equal angle increment. End holding straight up.\nframes: 20\nsize: 192x224px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"bc7aa424-9b1c-4887-9c52-484a60e4603a\")\nasset_id: 52cb8d22-ad03-5e23-bbbb-ada6f6d35c11\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "run": [
+    {
+      "type": "text",
+      "text": "id: 7aeb7964-bfd9-442a-a92c-f4d4be551fc1\njob_id: 7aeb7964-bfd9-442a-a92c-f4d4be551fc1\ndescription: FRAME FORMAT 192x224 fixed full-body scale and transparent margins. Run LEFT in place with a strong smooth alternating full gait, heel strike compression crossover toe-off and flight. Hold rifle level left in both hands, little steady firing recoil without any muzzle flash or smoke. Constant identity and scale, stationary pelvis root, complete loop returning to starting stride. Do not turn or move across canvas.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7aeb7964-bfd9-442a-a92c-f4d4be551fc1\")\nasset_id: d259bb9f-63de-531f-ba45-8227edc012f1\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "vault": [
+    {
+      "type": "text",
+      "text": "id: 8b5c714f-a7a7-4107-922f-1ff3979ce94e\njob_id: 8b5c714f-a7a7-4107-922f-1ff3979ce94e\ndescription: FRAME FORMAT 192x224 fixed full-body scale and transparent margins. Perform a nimble wall vault LEFT: crouch preload, left palm reaches forward onto an invisible waist-height ledge, push shoulders up, tuck both legs over, release hand, land low left, settle to crouched rifle-ready stance. Full articulated body motion in place, no wall drawn, no background. Stable actor size. Complete feet and rifle visible. Do not merely jump straight up.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8b5c714f-a7a7-4107-922f-1ff3979ce94e\")\nasset_id: 71d988a0-a60f-50a2-aa41-81b960f30ad0\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "roll": [
+    {
+      "type": "text",
+      "text": "id: dcacf66e-de83-4b77-86ad-6d6ddc9173b7\njob_id: dcacf66e-de83-4b77-86ad-6d6ddc9173b7\ndescription: FRAME FORMAT 192x224 fixed full-body scale and transparent margins. Quick tactical forward combat roll LEFT: lower shoulders tuck head, shoulder hits ground, body curls and rolls over back, boots pass overhead, unfold into low kneel with rifle ready. Smooth continuous full rotation with drawn poses, not a rotating rigid sprite. Finish upright ready stance, no smoke/effects.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"dcacf66e-de83-4b77-86ad-6d6ddc9173b7\")\nasset_id: d3f41fdb-691c-5697-be94-33818fbf04e7\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "crouch": [
+    {
+      "type": "text",
+      "text": "id: f1259b59-6ea9-4a91-9ed0-eb9d8bd463bc\njob_id: f1259b59-6ea9-4a91-9ed0-eb9d8bd463bc\ndescription: FRAME FORMAT 192x224 fixed full-body scale and transparent margins. Lower into a deep crouch then crouch-walk LEFT in place, knees deeply bent with clear alternating small steps and stable low pelvis. Keep rifle level left. No scale change. Remain side profile. First4frames lowering, then twelve frames slow complete alternating crouch step cycle.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f1259b59-6ea9-4a91-9ed0-eb9d8bd463bc\")\nasset_id: 7b26334f-ff30-55cd-a52a-68717ae23922\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "prone": [
+    {
+      "type": "text",
+      "text": "id: 8f744a26-29fd-4549-929d-d65d13074e8a\njob_id: 8f744a26-29fd-4549-929d-d65d13074e8a\ndescription: FRAME FORMAT 192x224 fixed full-body scale and transparent margins. Lower rifle and chest smoothly from standing through kneeling onto stomach, finish lying PRONE facing LEFT on elbows with rifle held level left. Chest near ground legs stretched behind to right, fully side profile. Each frame distinct anatomy, no effects. Ending is held prone, not back upright.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8f744a26-29fd-4549-929d-d65d13074e8a\")\nasset_id: 4d468fd0-baea-5923-84d1-208e7ceb8bfc\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "side_up": [
+    {
+      "type": "text",
+      "text": "id: 88829edb-b7ac-4f0f-8a33-1015a2e2ab30\njob_id: 88829edb-b7ac-4f0f-8a33-1015a2e2ab30\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT:192 x 224 fixed cell/root and original body scale, same Yuri identity/red vest/black trousers/dark hair, crisp gritty16bit pixel art. Keep exact true SIDE PROFILE facing LEFT, feet/root and body size unchanged. Point rifle vertically STRAIGHT UP beside head, shoulders and arms naturally raised, looking up along sights. No baked projectiles, flashes or effects.\nasset_id: 1fc4ff2a-bd19-5d6e-82d6-01a342755405\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"88829edb-b7ac-4f0f-8a33-1015a2e2ab30\")"
+    }
+  ],
+  "slide_setup": [
+    {
+      "type": "text",
+      "text": "id: 0b4dbb5b-1d68-4b3d-a1ae-b5303152be7d\njob_id: 0b4dbb5b-1d68-4b3d-a1ae-b5303152be7d\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT:192 x 224 fixed cell/root and original body scale, same Yuri identity/red vest/black trousers/dark hair, crisp gritty16bit pixel art. New tactical SLIDING pose down a 45 DEGREE CHUTE sloping from upper RIGHT to lower LEFT. True side view facing LEFT. Lean torso back to upper right, left boot extended lower-left along slope, other knee bent, hips low sitting on slope, rifle held two handed aiming up-left. Empty transparent environment, no slope or dust drawn. Whole body fully in generous margins, same physical body proportions and size, don't shrink to fill. No baked projectiles, flashes or effects.\nasset_id: 69ba286b-06b5-5c94-90c0-e9d29d02409a\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"0b4dbb5b-1d68-4b3d-a1ae-b5303152be7d\")"
+    }
+  ],
+  "cover_setup": [
+    {
+      "type": "text",
+      "text": "id: 3638a4b4-209d-4095-a307-05883ea80e16\njob_id: 3638a4b4-209d-4095-a307-05883ea80e16\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT:192 x 224 fixed cell/root and original body scale, same Yuri identity/red vest/black trousers/dark hair, crisp gritty16bit pixel art. True side profile facing LEFT. Press BACK and right shoulder against an invisible VERTICAL cover box to his RIGHT, knees deeply crouched, feet braced, rifle close against chest pointing diagonally up-left ready to peek out. Back genuinely leans against cover edge. No box drawn, transparent. Same body proportions, fully visible. No baked projectiles, flashes or effects.\nasset_id: 7c6f8ffb-333f-5873-9fb1-e6f50efa9400\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"3638a4b4-209d-4095-a307-05883ea80e16\")"
+    }
+  ],
+  "aim_-75": [
+    {
+      "type": "text",
+      "text": "id: c9fa1bec-14c2-41f3-92e2-eb10b34e70da\njob_id: c9fa1bec-14c2-41f3-92e2-eb10b34e70da\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming almost vertically down-left, exactly75 degrees BELOW horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 42a1660a-0a25-5534-b514-ca02eb81516c\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"c9fa1bec-14c2-41f3-92e2-eb10b34e70da\")"
+    }
+  ],
+  "aim_-60": [
+    {
+      "type": "text",
+      "text": "id: 4eceaafb-2c3a-487c-a151-9c40452fd55d\njob_id: 4eceaafb-2c3a-487c-a151-9c40452fd55d\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming down-left exactly60 degrees BELOW horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 30fd4fd7-217e-550c-ad13-9e155e46be63\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"4eceaafb-2c3a-487c-a151-9c40452fd55d\")"
+    }
+  ],
+  "aim_-45": [
+    {
+      "type": "text",
+      "text": "id: 326e405f-1072-42de-ace7-bd1cffb17cc8\njob_id: 326e405f-1072-42de-ace7-bd1cffb17cc8\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming down-left exactly45 degrees BELOW horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 70e0643e-bc41-5ce0-9193-926af4d015a4\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"326e405f-1072-42de-ace7-bd1cffb17cc8\")"
+    }
+  ],
+  "aim_-30": [
+    {
+      "type": "text",
+      "text": "id: a7a7d95f-2ec8-4ee3-bb1a-707301419fe2\njob_id: a7a7d95f-2ec8-4ee3-bb1a-707301419fe2\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming down-left exactly30 degrees BELOW horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 881186ee-1b88-5602-b16c-2bcd6fdc1bd2\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"a7a7d95f-2ec8-4ee3-bb1a-707301419fe2\")"
+    }
+  ],
+  "aim_-15": [
+    {
+      "type": "text",
+      "text": "id: 0d1101b8-0f7e-431f-b09a-023fe471c7e7\njob_id: 0d1101b8-0f7e-431f-b09a-023fe471c7e7\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming left slightly downward exactly15 degrees BELOW horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 1cefaa17-b3c0-56b6-a677-181c9e7a937f\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"0d1101b8-0f7e-431f-b09a-023fe471c7e7\")"
+    }
+  ],
+  "aim_15": [
+    {
+      "type": "text",
+      "text": "id: b11c2f93-869e-4abb-befd-a5e4d4f6bdf6\njob_id: b11c2f93-869e-4abb-befd-a5e4d4f6bdf6\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming left slightly upward exactly15 degrees ABOVE horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 0532a2f3-8572-577c-85a4-b330dfb1be73\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"b11c2f93-869e-4abb-befd-a5e4d4f6bdf6\")"
+    }
+  ],
+  "aim_30": [
+    {
+      "type": "text",
+      "text": "id: 6c986faa-5258-42fb-b9d4-c1b2b2b03386\njob_id: 6c986faa-5258-42fb-b9d4-c1b2b2b03386\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming up-left exactly30 degrees ABOVE horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 04dd302a-fcfa-569c-bb32-1b8883bcb60c\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"6c986faa-5258-42fb-b9d4-c1b2b2b03386\")"
+    }
+  ],
+  "aim_45": [
+    {
+      "type": "text",
+      "text": "id: 378ae007-4f56-42fb-847b-31c0b74f0c31\njob_id: 378ae007-4f56-42fb-847b-31c0b74f0c31\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 fixed scale/feet pivot. Keep EXACT hairstyle black slick hair (no mohawk), red vest, body identity. Freeze legs hips and head height exactly as reference. Change ONLY arms, rifle and head gaze: both hands holding gun aiming up-left exactly45 degrees ABOVE horizontal. Exact rotated barrel direction, naturally posed shoulders/elbows, rifle stock touching shoulder. He stays side-facing LEFT, feet planted. No whole-body rotation, no flash/smoke, no background. Full rifle within cell. Sharp 16bit pixel art matching source.\nasset_id: 84027307-da0f-5020-b748-a3d5c9406aa3\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"378ae007-4f56-42fb-847b-31c0b74f0c31\")"
+    }
+  ],
+  "side_down": [
+    {
+      "type": "text",
+      "text": "error: image 1: timed out fetching the image from https://api.pixellab.ai/mcp/images/17cb246c-e1c1-4306-9c07-a after 25s — the host may be slow or blocking us. Try a different host, or pass the image inline as base64."
+    }
+  ],
+  "aim_60": [
+    {
+      "type": "text",
+      "text": "id: d6a9c2b8-080b-413c-bf1b-788b8886d437\njob_id: d6a9c2b8-080b-413c-bf1b-788b8886d437\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224. Exact same black slick hairstyle, red vest, legs/hips fixed to same pixels and body scale. Aim rifle up LEFT exactly60 degrees ABOVE horizontal in two hands, shoulder stock and anatomically raised arms. Only arms/rifle/head gaze change. No mohawk, no effects. Crisp16bit.\nasset_id: 8f7bbfa7-955f-5da9-b60f-c8d3ae0b2f3b\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"d6a9c2b8-080b-413c-bf1b-788b8886d437\")"
+    }
+  ],
+  "aim_75": [
+    {
+      "type": "text",
+      "text": "id: 49d7cedf-d3ec-43c4-8f4e-626eeaafa55e\njob_id: 49d7cedf-d3ec-43c4-8f4e-626eeaafa55e\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224. Exact same black slick hairstyle, red vest, legs/hips fixed to same pixels and body scale. Aim rifle up LEFT exactly75 degrees ABOVE horizontal, almost straight up, in two hands, shoulder stock and anatomically raised arms. Only arms/rifle/head gaze change. No mohawk, no effects. Crisp16bit.\nasset_id: 52a27974-d7b8-5a3c-8504-b29296fe0ba5\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"49d7cedf-d3ec-43c4-8f4e-626eeaafa55e\")"
+    }
+  ],
+  "cover_peek": [
+    {
+      "type": "text",
+      "text": "id: 11b16267-aa81-4ec9-b92e-e8f0cb3704e5\njob_id: 11b16267-aa81-4ec9-b92e-e8f0cb3704e5\ndescription: FRAME FORMAT192x224 same root/scale. Start back and shoulder braced against an invisible box to right, crouch deeply to hide. Smoothly lean and step upper body LEFT out of cover, raise rifle level left to shoot, then retract body behind cover and crouch again. Distinct anticipation, peek, held aim, recoil, retract. Fixed feet/hips contact, never turn toward camera. No box, no muzzle flash or projectiles. Complete safe-return loop.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"11b16267-aa81-4ec9-b92e-e8f0cb3704e5\")\nasset_id: 5454b173-a7b4-52e9-bbce-e636ace3d984\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "slide_motion": [
+    {
+      "type": "text",
+      "text": "id: 7c49055b-b88e-4175-af37-4bc2055f7354\njob_id: 7c49055b-b88e-4175-af37-4bc2055f7354\ndescription: FRAME FORMAT192x224 constant hips root and body scale. Continuous slide downhill to lower LEFT in place. Boots and knees absorb rhythmic bumps, body leans back and stays seated, rifle held up-left in both hands with short recoil. Clear smooth twelve-frame sliding loop, no standing or jumping, no tumble, no background or effects.\nframes: 12\nsize: 192x224px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7c49055b-b88e-4175-af37-4bc2055f7354\")\nasset_id: 561884da-f48b-502d-8f92-cd5842ad5ca0\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "crate": [
+    {
+      "type": "text",
+      "text": "id: 362157db-6a17-491b-82c2-6a10f2b47bfa\njob_id: 362157db-6a17-491b-82c2-6a10f2b47bfa\nmodel: pro\ndescription: FRAME FORMAT128x128. One tall military armored cargo CRATE, straight front elevation with horizontal top and bottom, perfectly vertical sides. No isometric or perspective skew. Dark gritty Sega Genesis16bit pixelart riveted gunmetal face, rusty orange X bracing, black recesses, tiny hazard corners. Shallow flat top lip. Transparent, no ground shadow, no text.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nmax colours: 32 per image\nasset_id: 4fb90952-cfc4-5700-9246-f9e7f177f31e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"362157db-6a17-491b-82c2-6a10f2b47bfa\")"
+    }
+  ],
+  "barrel": [
+    {
+      "type": "text",
+      "text": "id: 6e82b86a-4fad-4517-a83e-e6a3970dfd21\njob_id: 6e82b86a-4fad-4517-a83e-e6a3970dfd21\nmodel: pro\ndescription: FRAME FORMAT64x96. Single explosive industrial fuel BARREL upright straight front orthographic view for16bit runandgun. Dark rusty red body, thick steel bands, faded yellow flammable triangle. Gritty sharp Genesis pixel clusters. No isometric angle, no scene or text, transparent, black outline.\nsize: 64x96px\ntransparent: True\ncandidates: 9\nmax colours: 24 per image\nasset_id: a9b78674-57c0-57a8-97f3-9cc2db77b2d4\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"6e82b86a-4fad-4517-a83e-e6a3970dfd21\")"
+    }
+  ],
+  "run_clean": [
+    {
+      "type": "text",
+      "text": "id: 7ab4e7ec-50bb-49a7-8939-5deadab637a9\njob_id: 7ab4e7ec-50bb-49a7-8939-5deadab637a9\ndescription: FRAME FORMAT192x224 same scale/root, smooth continuous RUNNING LEFT IN PLACE. Alternate legs through heel contact, compression, crossover, toe off, airborne stride. Rifle stays held quietly steady horizontal in both hands: INACTIVE, NO FIRING, NO MUZZLE FLASH, NO GLOW, NO SMOKE. Feet arrive on fixed baseline. Loop full stride, no pauses. Preserve exact appearance.\nframes: 16\nsize: 192x224px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7ab4e7ec-50bb-49a7-8939-5deadab637a9\")\nasset_id: 045a26f6-8e5d-5757-8737-57fe87dc0362\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "drone_motion": [
+    {
+      "type": "text",
+      "text": "id: a9e84cc0-51b8-4c98-bab1-dd18fa13acee\njob_id: a9e84cc0-51b8-4c98-bab1-dd18fa13acee\ndescription: FRAME FORMAT128x128 fixed center/scale. Smooth hover loop, side thrusters articulate subtly and mechanical fins flex, center eye pulses bright magenta, underslung barrel recoils briefly. Body gently banks left then right without changing facing, tiny vertical bob2pixels. No muzzle flash, no emitted ordnance, no smoke or background.\nframes: 12\nsize: 128x128px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a9e84cc0-51b8-4c98-bab1-dd18fa13acee\")\nasset_id: bd34b4b5-7f67-508d-b289-985a4515c7dc\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "slide_up": [
+    {
+      "type": "text",
+      "text": "id: e4ef6822-ff6f-47f7-bcd1-b48427603a4e\njob_id: e4ef6822-ff6f-47f7-bcd1-b48427603a4e\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 same Yuri black slick hair/red vest/black trousers, fixed proportions, crisp16bit. Keep lower body exactly sliding down-left on45degree invisible slope. Rifle points vertically STRAIGHT UP beside his head, both arms raised. No effects, complete body with transparent margins.\nasset_id: f777cbe1-f9fd-55b3-ba18-26386557ceff\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"e4ef6822-ff6f-47f7-bcd1-b48427603a4e\")"
+    }
+  ],
+  "slide_back": [
+    {
+      "type": "text",
+      "text": "id: d518452a-9cb4-4807-ac53-f6f3b92f2bc8\njob_id: d518452a-9cb4-4807-ac53-f6f3b92f2bc8\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 same Yuri black slick hair/red vest/black trousers, fixed proportions, crisp16bit. Keep lower body boots pointing DOWN-LEFT and hips sliding down-left exactly. Twist shoulders and head looking back over right shoulder, both hands aiming rifle horizontally to RIGHT behind him. Legs and travel NEVER turn right. No effects, complete body with transparent margins.\nasset_id: 958fa126-9609-5840-8eb0-32608e987e63\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"d518452a-9cb4-4807-ac53-f6f3b92f2bc8\")"
+    }
+  ],
+  "slide_down": [
+    {
+      "type": "text",
+      "text": "id: e5b5afc7-abc9-49ea-91c6-93e770d746f3\njob_id: e5b5afc7-abc9-49ea-91c6-93e770d746f3\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 same Yuri black slick hair/red vest/black trousers, fixed proportions, crisp16bit. Keep lower body and hips in exact same seated45degree slide. Both hands angle rifle DOWN-LEFT toward boot, head looks down along sights. No effects, complete body with transparent margins.\nasset_id: b45100f3-0bda-512f-929f-0db168f06780\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"e5b5afc7-abc9-49ea-91c6-93e770d746f3\")"
+    }
+  ],
+  "slide_flat": [
+    {
+      "type": "text",
+      "text": "id: 72ed650d-d568-43b1-8c81-153e20b22662\njob_id: 72ed650d-d568-43b1-8c81-153e20b22662\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: FRAME FORMAT192x224 same Yuri black slick hair/red vest/black trousers, fixed proportions, crisp16bit. Change to a ground combat SLIDE on a HORIZONTAL floor: feet extended LEFT at same level as hips, torso leans back to right, one knee bent. Rifle held level LEFT. True sideview, same proportions, nofloor or effects. No effects, complete body with transparent margins.\nasset_id: c0f80ece-32c4-50cd-9b47-6f4335f54c13\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"72ed650d-d568-43b1-8c81-153e20b22662\")"
+    }
+  ],
+  "cover_clean": [
+    {
+      "type": "text",
+      "text": "id: 8c37f286-f420-404f-a0d3-1519b3a97755\njob_id: 8c37f286-f420-404f-a0d3-1519b3a97755\ndescription: FRAME FORMAT192x224. ENTIRE BODY ALWAYS VISIBLE, never occluded or cut by a wall. Hold pelvis X and feet absolutely fixed. Lean forward slightly while straightening knees and lower rifle smoothly to level left, ready to shoot. Full body in everyframe no parts disappearing, no wall or box or hidden surface, no firing or muzzle flash. A subtle eight-frame peek-out motion between these exact endpoints, NOT walking off-screen.\nframes: 8\nsize: 192x224px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8c37f286-f420-404f-a0d3-1519b3a97755\")\nasset_id: 777200e5-94e1-545f-a4a4-df1278f02bd0\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "aim_-75_v2": {
+    "args": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/17cb246c-e1c1-4306-9c07-a04d939f18ee/download"
+      ],
+      "description": "Point the entire rifle STEEPLY DOWN at 75 degrees below horizontal, almost straight at the floor. Butt at (122,95), barrel tip at (99,182). His left hand must support the lower foregrip near his thigh; elbows held low. Muzzle BELOW KNEE HEIGHT. Rotate forearms and weapon together. He looks down toward his feet. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.",
+      "width": 192,
+      "height": 224,
+      "no_background": true
+    },
+    "text": [
+      {
+        "type": "text",
+        "text": "id: 13036c55-9aad-4164-b413-44d72649cedd\njob_id: 13036c55-9aad-4164-b413-44d72649cedd\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: Point the entire rifle STEEPLY DOWN at 75 degrees below horizontal, almost straight at the floor. Butt at (122,95), barrel tip at (99,182). His left hand must support the lower foregrip near his thigh; elbows held low. Muzzle BELOW KNEE HEIGHT. Rotate forearms and weapon together. He looks down toward his feet. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.\nasset_id: dbf10a43-7b7c-5c31-9f94-adcd80458ad9\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"13036c55-9aad-4164-b413-44d72649cedd\")"
+      }
+    ]
+  },
+  "aim_-60_v2": {
+    "args": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/17cb246c-e1c1-4306-9c07-a04d939f18ee/download"
+      ],
+      "description": "Point the rifle DOWN-LEFT at 60 degrees below horizontal, not horizontal. Butt at (121,93), barrel tip at (76,171). Muzzle at THIGH HEIGHT below the waist; arms lowered and bent to grip this diagonal weapon. His face looks diagonally down. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.",
+      "width": 192,
+      "height": 224,
+      "no_background": true
+    },
+    "text": [
+      {
+        "type": "text",
+        "text": "id: c28ba25e-eb05-4dae-972a-4570a282c893\njob_id: c28ba25e-eb05-4dae-972a-4570a282c893\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: Point the rifle DOWN-LEFT at 60 degrees below horizontal, not horizontal. Butt at (121,93), barrel tip at (76,171). Muzzle at THIGH HEIGHT below the waist; arms lowered and bent to grip this diagonal weapon. His face looks diagonally down. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.\nasset_id: b38e5aa6-d057-595d-be27-63540361a9a3\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"c28ba25e-eb05-4dae-972a-4570a282c893\")"
+      }
+    ]
+  },
+  "aim_-45_v2": {
+    "args": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/17cb246c-e1c1-4306-9c07-a04d939f18ee/download"
+      ],
+      "description": "Point the rifle DOWN-LEFT at exactly 45 degrees below horizontal: butt near (122,91), muzzle near (55,158). Muzzle clearly BELOW HIS BELT. Both forearms angle downward to hold the lowered weapon, arms not extended level. He looks down-left. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.",
+      "width": 192,
+      "height": 224,
+      "no_background": true
+    },
+    "text": [
+      {
+        "type": "text",
+        "text": "id: e95d14de-8121-42a0-8839-f509f1529891\njob_id: e95d14de-8121-42a0-8839-f509f1529891\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: Point the rifle DOWN-LEFT at exactly 45 degrees below horizontal: butt near (122,91), muzzle near (55,158). Muzzle clearly BELOW HIS BELT. Both forearms angle downward to hold the lowered weapon, arms not extended level. He looks down-left. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.\nasset_id: 0b5a55c1-be5a-5d6d-bcb8-346a4c133223\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"e95d14de-8121-42a0-8839-f509f1529891\")"
+      }
+    ]
+  },
+  "aim_60_v2": {
+    "args": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/17cb246c-e1c1-4306-9c07-a04d939f18ee/download"
+      ],
+      "description": "Raise the rifle STEEPLY UP-LEFT at 60 degrees above horizontal. Rifle butt at (124,102), barrel tip at (77,20). This is above his head, NOT a shallow diagonal. Both arms raised, cheek against the rifle stock, face tilted up. Gun has a nearly vertical long silhouette. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.",
+      "width": 192,
+      "height": 224,
+      "no_background": true
+    },
+    "text": [
+      {
+        "type": "text",
+        "text": "id: 8ab6a31d-7cd1-4540-8712-87c732888dc4\njob_id: 8ab6a31d-7cd1-4540-8712-87c732888dc4\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: Raise the rifle STEEPLY UP-LEFT at 60 degrees above horizontal. Rifle butt at (124,102), barrel tip at (77,20). This is above his head, NOT a shallow diagonal. Both arms raised, cheek against the rifle stock, face tilted up. Gun has a nearly vertical long silhouette. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.\nasset_id: 66d1366c-bc5e-50f3-9956-77bd71135751\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"8ab6a31d-7cd1-4540-8712-87c732888dc4\")"
+      }
+    ]
+  },
+  "aim_75_v2": {
+    "args": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/17cb246c-e1c1-4306-9c07-a04d939f18ee/download"
+      ],
+      "description": "Raise rifle almost STRAIGHT UP: 75 degrees above horizontal. Butt at (125,100), muzzle at (102,10). Both hands above shoulder level, chin raised. Very steep long gun just left of his face, tip above his head. NOT a shallow diagonal. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.",
+      "width": 192,
+      "height": 224,
+      "no_background": true
+    },
+    "text": [
+      {
+        "type": "text",
+        "text": "id: 20856f77-4d54-4ced-ae14-665a4460e612\njob_id: 20856f77-4d54-4ced-ae14-665a4460e612\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: Raise rifle almost STRAIGHT UP: 75 degrees above horizontal. Butt at (125,100), muzzle at (102,10). Both hands above shoulder level, chin raised. Very steep long gun just left of his face, tip above his head. NOT a shallow diagonal. Replace the current level rifle. Preserve the existing full standing feet, legs, scale, centered framing, dark hair and beard, red tactical vest, dark trousers and red boots. Same adult Yuri, left-facing profile, sharp gritty 16-bit pixel art. Transparent background. One whole full-body sprite; no glow, flash or loose weapon.\nasset_id: c8303466-8ee6-5b0d-ba4f-6a5815a69eeb\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"20856f77-4d54-4ced-ae14-665a4460e612\")"
+      }
+    ]
+  },
+  "slide_back_fixed": [
+    {
+      "type": "text",
+      "text": "id: 535e06be-f902-43ec-83e9-6f4df974e2f6\njob_id: 535e06be-f902-43ec-83e9-6f4df974e2f6\nmodel: pro\ndescription: FRAME FORMAT192x224. A completely visible crisp16bit Yuri doing a tactical slide down toward BOTTOM LEFT. Boots extend bottom-left, hips seated middle. CRITICAL DIFFERENT POSE: upper torso TWISTS BACK toward RIGHT and head faces RIGHT, both hands hold rifle with barrel pointing horizontally RIGHT, opposite to his feet. He shoots behind him while sliding feet-first left. Rifle stock at right shoulder, barrel extends to the RIGHT of his head, no barrel on left. Feet never turn to right. Same body scale as reference, transparent, no effects or ground.\nsize: 192x224px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 85cc8ff3-b09a-5a17-a18b-0d804068ab2a\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"535e06be-f902-43ec-83e9-6f4df974e2f6\")"
+    }
+  ],
+  "slide_back_twist": {
+    "args": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/0b4dbb5b-1d68-4b3d-a1ae-b5303152be7d/download"
+      ],
+      "description": "Change ONLY the head, arms and gun to aim BACKWARDS, toward the RIGHT EDGE of this canvas. Keep his seated sliding legs and boots pointing down-left unchanged. Twist his shoulders clockwise and turn his face RIGHT, revealing his BACK and red vest back panel to us. The assault rifle MUST extend from his hands at x125,y85 to its muzzle at x185,y75, pointing RIGHT. The existing rifle pointing left must be removed. This is one back-firing slide pose, NOT the original front-firing pose. Keep the same adult dark-haired bearded Yuri character, dark red vest, gray trousers, red boots, gritty crisp pixel art, 192x224 transparent canvas, full figure including boots.",
+      "width": 192,
+      "height": 224,
+      "no_background": true
+    },
+    "text": [
+      {
+        "type": "text",
+        "text": "id: e7fb56f4-5e8c-4048-97e7-b4f0e3bf5c91\njob_id: e7fb56f4-5e8c-4048-97e7-b4f0e3bf5c91\nmode: text\nframes: 1\nsize: 192x224px\ntransparent: True\nedit: Change ONLY the head, arms and gun to aim BACKWARDS, toward the RIGHT EDGE of this canvas. Keep his seated sliding legs and boots pointing down-left unchanged. Twist his shoulders clockwise and turn his face RIGHT, revealing his BACK and red vest back panel to us. The assault rifle MUST extend from his hands at x125,y85 to its muzzle at x185,y75, pointing RIGHT. The existing rifle pointing left must be removed. This is one back-firing slide pose, NOT the original front-firing pose. Keep the same adult dark-haired bearded Yuri character, dark red vest, gray trousers, red boots, gritty crisp pixel art, 192x224 transparent canvas, full figure including boots.\nasset_id: ddccece7-b0cd-5849-9483-dd16fa0ff387\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"e7fb56f4-5e8c-4048-97e7-b4f0e3bf5c91\")"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "character: 2d9ebaaf-adbe-4208-9bdb-4ed789584734\nanimation: pixminimax custom (From this exact flat prone pose, perform one complete tactical BARREL BODY ROLL sideways on the ground: belly to side, back, other side, belly. Both shoulders and hips rotate together; legs remain extended, rifle tucked securely against chest. NEVER stand, kneel or crouch. Remain low and flat throughout; finish identical prone pose facing north. Constant whole-body size, palette and root; transparent background, fixed overhead camera.)\ndirections: north (1 jobs)\njob_ids: north=7ab6df8b-5cb9-4146-a833-dd1c3479c362\ngroup: 60eff076-b2a9-4c67-9a2b-336419dee217\nframes: 17 (1 reference + 16 animated)\ncanvas: north 160x164 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\")\nadd more directions to this group: animate_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\", action_description=\"From this exact flat prone pose, perform one complete tactical BARREL BODY ROLL sideways on the ground: belly to side, back, other side, belly. Both shoulders and hips rotate together; legs remain extended, rifle tucked securely against chest. NEVER stand, kneel or crouch. Remain low and flat throughout; finish identical prone pose facing north. Constant whole-body size, palette and root; transparent background, fixed overhead camera.\", mode=\"pixminimax\", animation_group_id=\"60eff076-b2a9-4c67-9a2b-336419dee217\", directions=[...])"
+    }
+  ],
+  "isError": false
+}

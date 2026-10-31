@@ -1,0 +1,26 @@
+{
+  "name": "flamethrower-fire",
+  "args": {
+    "character_id": "f32faf2f-0657-4e76-af4c-78ee25a51382",
+    "mode": "pixminimax",
+    "animation_name": "od39_directional_fire",
+    "directions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "frame_count": 16,
+    "keep_first_frame": true,
+    "action_description": "FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Raise the flamethrower nozzle forward in the facing direction, open the trigger and sustain a burst of orange flame attached to the muzzle, pulsing and flickering naturally, shoulders shake gently under recoil, then stop and settle. Fixed rigid nozzle and fuel hoses. Never fire sideways to the facing, never turn to viewer."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: f32faf2f-0657-4e76-af4c-78ee25a51382\nanimation: pixminimax custom (FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Raise the flamethrower nozzle forward in the facing direction, open the trigger and sustain a burst of orange flame attached to the muzzle, pulsing and flickering naturally, shoulders shake gently under recoil, then stop and settle. Fixed rigid nozzle and fuel hoses. Never fire sideways to the facing, never turn to viewer.)\ndirections: north, east, south, west (4 jobs)\njob_ids: north=c3d4e72b-b53d-4406-8539-a7b81fcf7f51, east=af56325d-05a5-4b22-86f5-f536c6309a96, south=ff5c60ca-4cd7-4b7e-934b-a0a8bbf8eaad, west=c491b20f-589a-4452-8106-6573930d8aa1\ngroup: 54b28d49-6ce9-492a-a3ab-177374a13dbb\nframes: 17 (1 reference + 16 animated)\ncanvas: north 76x76, east 76x76, south 76x76, west 76x76 (frames are stored at this size: the character plus room to move)\ncost: 4 generations (1/dir x 4)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"f32faf2f-0657-4e76-af4c-78ee25a51382\")\nadd more directions to this group: animate_character(character_id=\"f32faf2f-0657-4e76-af4c-78ee25a51382\", action_description=\"FRAME FORMAT: identical even canvas, constant physical pivot, fixed whole-body scale and exact source palette. Preserve original character, helmet, armor, body height and rigid weapon dimensions in every frame. Keep the existing LOW TOP-DOWN view and existing direction. North aims up away from viewer, south down, east right, west left. Never switch to front pseudo3D or a different camera. Full body visible with transparent margins. Raise the flamethrower nozzle forward in the facing direction, open the trigger and sustain a burst of orange flame attached to the muzzle, pulsing and flickering naturally, shoulders shake gently under recoil, then stop and settle. Fixed rigid nozzle and fuel hoses. Never fire sideways to the facing, never turn to viewer.\", mode=\"pixminimax\", animation_group_id=\"54b28d49-6ce9-492a-a3ab-177374a13dbb\", directions=[...])"
+      }
+    ],
+    "isError": false
+  }
+}

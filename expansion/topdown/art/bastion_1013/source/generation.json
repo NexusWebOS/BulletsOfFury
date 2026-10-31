@@ -1,0 +1,40 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-13",
+  "normalization": "authored source extraction only; binary alpha; one proportional scale per bank; even canvases and registered roots; original PNGs retained",
+  "identity_reference": "expansion/topdown/art/yuri_motion_1013/source/yuri_north.png",
+  "passes": [
+    {
+      "file": "stage.png",
+      "description": "Original 16-bit rear-view military prism-reactor fortress corridor, straight walls, corner fixtures, floor depth, no actors."
+    },
+    {
+      "file": "yuri.png",
+      "description": "Rear-view Yuri identity reference; eight sidestep, eight rise-from-cover, eight firing and eight rear-knockdown drawings. All poses remain facing away."
+    },
+    {
+      "file": "enemies.png",
+      "description": "Four original armored enemy families, six authored motion/fire/hurt poses each: bronze minigunner, purple rifle robot, red rocket and teal laser."
+    },
+    {
+      "file": "props.png",
+      "description": "Animated prism core, gun and laser corner turrets, straight front-facing concrete/steel cover wall states. Actual irregular source row boundaries explicitly recorded by builder."
+    },
+    {
+      "file": "helios.png",
+      "description": "Original obsidian/fire/prism giant: six running, six throwing, six leap/slam and six lightning/hurt poses, fixed identity and scale."
+    },
+    {
+      "file": "fx.png",
+      "description": "Original six-frame prism orbs, bolts and geysers; only clean orb row used in final runtime."
+    },
+    {
+      "file": "geyser.png",
+      "description": "Separate six-frame geyser 3x2 grid to preserve complete tall apices; initial mixed FX sheet retained."
+    },
+    {
+      "file": "lightning.png",
+      "description": "Separate six horizontal prism lightning frames, 3x2 cells with clear gutters, no orbs or geysers. Original FX sheet used as reference."
+    }
+  ]
+}

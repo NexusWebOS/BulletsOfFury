@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "character: f9cbf57d-c666-48d5-8599-8e7c50da05c3\nanimation: pixminimax custom (Gosfer bends down, tucks head and limbs, does one heavy forward shoulder combat roll, returns upright ready. Same skull face and heavy dark red armor, whole body mass, fixed palette. Constant body unit and fixed root. No gunfire, transparency.)\ndirections: north, south (2 jobs)\njob_ids: north=3ac767a1-bfb2-4249-8f62-c8ddf5306ca2, south=b3cecc4f-9134-4df0-94c7-3f9252641884\ngroup: a563fd10-fa3b-4063-802b-4ced29a7d77b\nframes: 17 (1 reference + 16 animated)\ncanvas: north 180x180, south 168x168 (frames are stored at this size: the character plus room to move)\ncost: 2 generations (1/dir x 2)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\")\nadd more directions to this group: animate_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\", action_description=\"Gosfer bends down, tucks head and limbs, does one heavy forward shoulder combat roll, returns upright ready. Same skull face and heavy dark red armor, whole body mass, fixed palette. Constant body unit and fixed root. No gunfire, transparency.\", mode=\"pixminimax\", animation_group_id=\"a563fd10-fa3b-4063-802b-4ced29a7d77b\", directions=[...])"
+    }
+  ],
+  "isError": false
+}

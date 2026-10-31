@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: bfd2ff2f-254e-410f-be84-aab7c658c1d5\njob_id: bfd2ff2f-254e-410f-be84-aab7c658c1d5\nmodel: pixen\nedit: Remove the ENTIRE handheld rifle, including stock, receiver and barrel. Replace it with empty space. Draw BOTH empty hands reaching straight forward at chest height, gripping INVISIBLE turret handles. Keep every other detail, face, red-black armor, legs, proportions, size, side-facing direction and exact pixel style unchanged. No gun or weapon anywhere in this sprite.\nsource: 160x160px\nsize: 160x160px\ntransparent: True\nasset_id: 79e08060-81d1-5862-9b04-0a2c914ba3b3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"bfd2ff2f-254e-410f-be84-aab7c658c1d5\")"
+    }
+  ],
+  "isError": false
+}

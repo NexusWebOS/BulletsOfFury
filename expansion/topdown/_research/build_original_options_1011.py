@@ -44,6 +44,10 @@ draw=draw.replace("rebindAction=selRow.act; rebindWho=(selRow.who||1); Audio.SFX
 draw=draw.replace("rebindAction=r.act; rebindWho=(r.who||1); optSelIdx=selectable.findIndex(o=>o.r===r); Audio.SFX.blip();",'armControl(r); optSelIdx=selectable.findIndex(o=>o.r===r);')
 draw=draw.replace("active?'PRESS KEY':keyName(_shownBind)","active?(r.who===2?'PRESS BUTTON':'PRESS KEY'):keyName(_shownBind)")
 draw=draw.replace("  { const targetY=pad+selY*rh;","  if(followSelection) { const targetY=pad+selY*rh;")
+# Input capture is owned by the adapter, outside navigation and paint calls.
+begin=draw.index('  if(rebindAction){ for(const k in Input.keys)')
+end=draw.index('  const _cDef=',begin)
+draw=draw[:begin]+draw[end:]
 copied['drawOptions']=draw
 adapter=(ROOT/'expansion/topdown/_research/original_options_adapter_1011.js').read_text()
 assert adapter.count('/* ORIGINAL_RENDERER */')==1

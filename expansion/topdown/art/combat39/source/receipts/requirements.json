@@ -1,0 +1,26 @@
+{
+  "build": "overdrive1017-combat39-r1",
+  "request": "Repair Overdrive levels 3/4 and replace the old pursuit with a new side-scrolling level 5.",
+  "requirements": [
+    "Keep pseudo-3D front sprites exclusive to the base level; level 3 uses directional top-down art through every action.",
+    "Use one consistent Yuri identity/unit across all level-3 poses; new Gosfer whole plates through compatible boss actions.",
+    "Enemy perception uses FOV, sight obstruction, last-known position, pursuit, real cover, readable committed attacks and BOF green/yellow/red FOV warning art.",
+    "Expose keyboard prone controls; add generated roll-to-prone and rolling-from-prone animation frames.",
+    "At Gosfer 50% HP, throw claymores to both side walls, detonate breaches, then flamethrower reinforcements enter.",
+    "Flamethrowers are real travelling flame attacks; player can obtain flamethrower in levels 3 and 4.",
+    "Add a segmented cryogenic lance-bolt weapon, neither orb nor beam.",
+    "Level 4: four regular waves, each turret-protected core; only after all turrets are dead can the core take damage; core destruction advances to next wave, then boss after wave four.",
+    "Campaign order: level2 tank, level3 fortress, level4 base, level5 new pursuit, then former Machinists and Desert later.",
+    "Level5 starts on foot, all four crew; shoot ammo boxes open and collect missiles before boarding.",
+    "ImageGen modular 1996 S-10 black/red with separate wheel/door/turret parts; Phoenix driver, Hotwire passenger, Yuri bed gunner.",
+    "ImageGen modular 2004 Mustang GT with rolled-down windows and visible Neil, larger foreground car behind/near the camera relative to background truck.",
+    "PixelLab crew running/sitting/boarding art; new decent-sized original arsenal-derived side-view running/firing robots, no Terminator skeletons.",
+    "PixelLab parallax environment, road/terrain tiles, base gate/fence and hybrid alien hunter drone.",
+    "Truck health exactly100%; each enemy bullet1%, drone missile5%; player missiles acquired from boxes; interceptable enemy missiles.",
+    "Lightgun reticle and turret aim/visible turning Yuri; Neil drives up and fires on robot runners; fast side-scrolling combat.",
+    "Survive encounter, ram base fence/front metal gate, authored explosion, fade black, then new Overdrive results UI based on original BOF.",
+    "Preserve existing local work; no commit/push unless asked; retain source prompts/provider receipts; syntax, focused gameplay checks, full required suite and visible rendering verification."
+  ],
+  "status": "implemented_pending_live_browser_playtest",
+  "generation_budget_note": "Observed remaining PixelLab subscription allowance 26.91; credits $0.00. No purchases. Other account jobs may share this allowance."
+}

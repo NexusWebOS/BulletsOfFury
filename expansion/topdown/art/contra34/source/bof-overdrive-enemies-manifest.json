@@ -1,0 +1,3418 @@
+{
+  "title": "Bullets of Fury \u2014 Overdrive",
+  "description": "PixelLab side-scroller enemy animation pack",
+  "cell": [
+    128,
+    128
+  ],
+  "origin": [
+    64,
+    112
+  ],
+  "art_scale": 1,
+  "enemies": [
+    {
+      "id": "machine_gunner",
+      "name": "Cobalt Machine Gunner",
+      "color": "#6f9aff",
+      "design": "Lean infantryman, faceless angular COBALT BLUE segmented combat armor and icy cyan visor. Compact BLACK BELT-FED MACHINE GUN with box magazine, straight barrel at chest height held in both hands.",
+      "native_identity_bounds": [
+        13,
+        10,
+        49,
+        57
+      ],
+      "standing_art_height": 47,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/idle_right.png",
+          "left_sheet": "characters/machine_gunner/idle_left.png",
+          "preview": "previews/machine_gunner/idle.gif",
+          "individual_frames": "characters/machine_gunner/frames/idle/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "fa6eb7fc-4cfe-475c-8da3-abe3dc5632a1",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/walk_right.png",
+          "left_sheet": "characters/machine_gunner/walk_left.png",
+          "preview": "previews/machine_gunner/walk.gif",
+          "individual_frames": "characters/machine_gunner/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "405513e4-57c6-4dab-9369-eb85d558bc28",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/run_right.png",
+          "left_sheet": "characters/machine_gunner/run_left.png",
+          "preview": "previews/machine_gunner/run.gif",
+          "individual_frames": "characters/machine_gunner/frames/run/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "d2e95493-9066-4a26-b91a-2f48e20f4f95",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/crouch_fire_right.png",
+          "left_sheet": "characters/machine_gunner/crouch_fire_left.png",
+          "preview": "previews/machine_gunner/crouch_fire.gif",
+          "individual_frames": "characters/machine_gunner/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 24,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "eb360796-4e4e-472a-a4fc-8e0a2fec97e7",
+            "generated_frames": 25,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/combat_roll_right.png",
+          "left_sheet": "characters/machine_gunner/combat_roll_left.png",
+          "preview": "previews/machine_gunner/combat_roll.gif",
+          "individual_frames": "characters/machine_gunner/frames/combat_roll/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "66807319-dc7c-457d-8977-a48f5151ae35",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/prone_fire_right.png",
+          "left_sheet": "characters/machine_gunner/prone_fire_left.png",
+          "preview": "previews/machine_gunner/prone_fire.gif",
+          "individual_frames": "characters/machine_gunner/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "4b0888c7-140b-44f6-a1c8-611a3eabf86e",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/fire_right.png",
+          "left_sheet": "characters/machine_gunner/fire_left.png",
+          "preview": "previews/machine_gunner/fire.gif",
+          "individual_frames": "characters/machine_gunner/frames/fire/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "53ca4389-d20b-4961-8a04-2db4e2599f41",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/jump_right.png",
+          "left_sheet": "characters/machine_gunner/jump_left.png",
+          "preview": "previews/machine_gunner/jump.gif",
+          "individual_frames": "characters/machine_gunner/frames/jump/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "173d1ae3-313f-47dd-85b2-55bcea33544a",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/machine_gunner/cover_fire_right.png",
+          "left_sheet": "characters/machine_gunner/cover_fire_left.png",
+          "preview": "previews/machine_gunner/cover_fire.gif",
+          "individual_frames": "characters/machine_gunner/frames/cover_fire/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "rifle_ballistics"
+    },
+    {
+      "id": "minigunner",
+      "name": "Ochre Minigunner",
+      "color": "#e8b443",
+      "design": "Broad heavy infantryman in OCHRE YELLOW armor, charcoal undersuit and orange visor. Chunky six-barrel ROTARY MINIGUN held at hip height, rear handle, forward grip, ammo belt feeding to compact backpack. Thick calves and reinforced shoulder plates.",
+      "native_identity_bounds": [
+        4,
+        3,
+        60,
+        62
+      ],
+      "standing_art_height": 59,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/idle_right.png",
+          "left_sheet": "characters/minigunner/idle_left.png",
+          "preview": "previews/minigunner/idle.gif",
+          "individual_frames": "characters/minigunner/frames/idle/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "1aa9d0bb-c908-4875-91ba-ebb5110268d6",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/walk_right.png",
+          "left_sheet": "characters/minigunner/walk_left.png",
+          "preview": "previews/minigunner/walk.gif",
+          "individual_frames": "characters/minigunner/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "fa12cf3b-17d7-4dfe-a292-a5f2e8e00406",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/run_right.png",
+          "left_sheet": "characters/minigunner/run_left.png",
+          "preview": "previews/minigunner/run.gif",
+          "individual_frames": "characters/minigunner/frames/run/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "33415037-ab44-4319-82bd-2e868d9920fe",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/fire_right.png",
+          "left_sheet": "characters/minigunner/fire_left.png",
+          "preview": "previews/minigunner/fire.gif",
+          "individual_frames": "characters/minigunner/frames/fire/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "3d774f9b-7c8c-424d-aed4-57313408fd37",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/jump_right.png",
+          "left_sheet": "characters/minigunner/jump_left.png",
+          "preview": "previews/minigunner/jump.gif",
+          "individual_frames": "characters/minigunner/frames/jump/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "5028ce7f-48b5-4f28-9c55-33c9034f7415",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/crouch_fire_right.png",
+          "left_sheet": "characters/minigunner/crouch_fire_left.png",
+          "preview": "previews/minigunner/crouch_fire.gif",
+          "individual_frames": "characters/minigunner/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 24,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "8b86f3b5-608b-44b8-99b5-84fe47be1a40",
+            "generated_frames": 25,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/combat_roll_right.png",
+          "left_sheet": "characters/minigunner/combat_roll_left.png",
+          "preview": "previews/minigunner/combat_roll.gif",
+          "individual_frames": "characters/minigunner/frames/combat_roll/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "method": "standing to pinned prone target, prone firing loop, reverse get-up transition"
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/prone_fire_right.png",
+          "left_sheet": "characters/minigunner/prone_fire_left.png",
+          "preview": "previews/minigunner/prone_fire.gif",
+          "individual_frames": "characters/minigunner/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "af43bfc9-1197-4cb0-9e6a-ef2c7cd85e39",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/cover_fire_right.png",
+          "left_sheet": "characters/minigunner/cover_fire_left.png",
+          "preview": "previews/minigunner/cover_fire.gif",
+          "individual_frames": "characters/minigunner/frames/cover_fire/{facing}/{index:03}.png"
+        },
+        "prone_hold": {
+          "name": "prone_hold",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "1a18ba0c-0f9c-4023-b70d-1c31a5ceddcf",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/minigunner/prone_hold_right.png",
+          "left_sheet": "characters/minigunner/prone_hold_left.png",
+          "preview": "previews/minigunner/prone_hold.gif",
+          "individual_frames": "characters/minigunner/frames/prone_hold/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "rifle_ballistics"
+    },
+    {
+      "id": "sniper",
+      "name": "Jade Sniper",
+      "color": "#70b887",
+      "design": "Tall lean infantryman in JADE GREEN armor with dark olive cloth shoulder mantle and bright lime single-eye scope visor. Very long thin SNIPER RIFLE with obvious telescopic scope, narrow barrel and stock braced to shoulder.",
+      "native_identity_bounds": [
+        3,
+        6,
+        61,
+        60
+      ],
+      "standing_art_height": 54,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/idle_right.png",
+          "left_sheet": "characters/sniper/idle_left.png",
+          "preview": "previews/sniper/idle.gif",
+          "individual_frames": "characters/sniper/frames/idle/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "c5c1c40b-d91c-40f5-a432-24b10ad73a11",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/walk_right.png",
+          "left_sheet": "characters/sniper/walk_left.png",
+          "preview": "previews/sniper/walk.gif",
+          "individual_frames": "characters/sniper/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "4d4a27f9-c5a3-4b12-a9a1-72d7b297fb6a",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/run_right.png",
+          "left_sheet": "characters/sniper/run_left.png",
+          "preview": "previews/sniper/run.gif",
+          "individual_frames": "characters/sniper/frames/run/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "c4d0523c-ced7-4554-ab89-3aa9177accee",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/fire_right.png",
+          "left_sheet": "characters/sniper/fire_left.png",
+          "preview": "previews/sniper/fire.gif",
+          "individual_frames": "characters/sniper/frames/fire/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "4583fc13-bf79-4235-b650-9657867848d6",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/jump_right.png",
+          "left_sheet": "characters/sniper/jump_left.png",
+          "preview": "previews/sniper/jump.gif",
+          "individual_frames": "characters/sniper/frames/jump/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "d1e23041-4517-45a4-b927-d5085b875ee2",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/crouch_fire_right.png",
+          "left_sheet": "characters/sniper/crouch_fire_left.png",
+          "preview": "previews/sniper/crouch_fire.gif",
+          "individual_frames": "characters/sniper/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 24,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "e9ec2d24-7721-4727-b63c-3a0fc93cdece",
+            "generated_frames": 25,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/combat_roll_right.png",
+          "left_sheet": "characters/sniper/combat_roll_left.png",
+          "preview": "previews/sniper/combat_roll.gif",
+          "individual_frames": "characters/sniper/frames/combat_roll/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "6d30901d-7251-4083-bfa8-d0060f3bc570",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/prone_fire_right.png",
+          "left_sheet": "characters/sniper/prone_fire_left.png",
+          "preview": "previews/sniper/prone_fire.gif",
+          "individual_frames": "characters/sniper/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "4942b6ee-80f2-4503-8dee-db9b033ff5d9",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/sniper/cover_fire_right.png",
+          "left_sheet": "characters/sniper/cover_fire_left.png",
+          "preview": "previews/sniper/cover_fire.gif",
+          "individual_frames": "characters/sniper/frames/cover_fire/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "sniper_ballistics"
+    },
+    {
+      "id": "rocket_launcher",
+      "name": "Vermilion Rocketeer",
+      "color": "#f36b59",
+      "design": "Stocky infantryman in VERMILION RED segmented armor, charcoal undersuit and white visor. One thick cylindrical SHOULDER ROCKET LAUNCHER with open dark front bore pointing right, compact rear blast shield and a small spare rocket on back.",
+      "native_identity_bounds": [
+        15,
+        14,
+        51,
+        51
+      ],
+      "standing_art_height": 37,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/idle_right.png",
+          "left_sheet": "characters/rocket_launcher/idle_left.png",
+          "preview": "previews/rocket_launcher/idle.gif",
+          "individual_frames": "characters/rocket_launcher/frames/idle/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "1ebe7b2f-f82d-443f-9f71-7662cd41dd68",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/walk_right.png",
+          "left_sheet": "characters/rocket_launcher/walk_left.png",
+          "preview": "previews/rocket_launcher/walk.gif",
+          "individual_frames": "characters/rocket_launcher/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "70a20def-b162-42e2-9dbe-8560779d619d",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/run_right.png",
+          "left_sheet": "characters/rocket_launcher/run_left.png",
+          "preview": "previews/rocket_launcher/run.gif",
+          "individual_frames": "characters/rocket_launcher/frames/run/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "e7ab9fa4-29a7-4299-a633-41df736cded2",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/fire_right.png",
+          "left_sheet": "characters/rocket_launcher/fire_left.png",
+          "preview": "previews/rocket_launcher/fire.gif",
+          "individual_frames": "characters/rocket_launcher/frames/fire/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "7a7f8474-6b55-417e-a36d-1294d0b2c6b2",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/jump_right.png",
+          "left_sheet": "characters/rocket_launcher/jump_left.png",
+          "preview": "previews/rocket_launcher/jump.gif",
+          "individual_frames": "characters/rocket_launcher/frames/jump/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "aa58c338-f516-4077-8fea-2a5a044340c4",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/crouch_fire_right.png",
+          "left_sheet": "characters/rocket_launcher/crouch_fire_left.png",
+          "preview": "previews/rocket_launcher/crouch_fire.gif",
+          "individual_frames": "characters/rocket_launcher/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 24,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "fd3d142d-f10c-446b-80a1-564738e89ee6",
+            "generated_frames": 25,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/combat_roll_right.png",
+          "left_sheet": "characters/rocket_launcher/combat_roll_left.png",
+          "preview": "previews/rocket_launcher/combat_roll.gif",
+          "individual_frames": "characters/rocket_launcher/frames/combat_roll/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "ae7ddc76-d941-47b4-92fd-66f8bd723390",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/prone_fire_right.png",
+          "left_sheet": "characters/rocket_launcher/prone_fire_left.png",
+          "preview": "previews/rocket_launcher/prone_fire.gif",
+          "individual_frames": "characters/rocket_launcher/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "8e4437f7-8101-49db-b83a-bae558e9a4bc",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/rocket_launcher/cover_fire_right.png",
+          "left_sheet": "characters/rocket_launcher/cover_fire_left.png",
+          "preview": "previews/rocket_launcher/cover_fire.gif",
+          "individual_frames": "characters/rocket_launcher/frames/cover_fire/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "rocket_ballistics"
+    },
+    {
+      "id": "shotgunner",
+      "name": "Violet Breacher",
+      "color": "#b786f3",
+      "design": "Athletic infantryman in VIOLET PURPLE armored jacket with lilac helmet plates and silver visor. Distinct short PUMP ACTION SHOTGUN held at chest with visible underslung tubular magazine and ribbed sliding foregrip.",
+      "native_identity_bounds": [
+        9,
+        7,
+        49,
+        59
+      ],
+      "standing_art_height": 52,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/idle_right.png",
+          "left_sheet": "characters/shotgunner/idle_left.png",
+          "preview": "previews/shotgunner/idle.gif",
+          "individual_frames": "characters/shotgunner/frames/idle/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "064c4272-fc2d-44e6-a3a5-95f9ba81ff28",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/walk_right.png",
+          "left_sheet": "characters/shotgunner/walk_left.png",
+          "preview": "previews/shotgunner/walk.gif",
+          "individual_frames": "characters/shotgunner/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "eeac5bd4-c2d0-4e10-b867-b3a2aead90bc",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/run_right.png",
+          "left_sheet": "characters/shotgunner/run_left.png",
+          "preview": "previews/shotgunner/run.gif",
+          "individual_frames": "characters/shotgunner/frames/run/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "28deb814-b237-4f35-9f7f-8d47897f50b2",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/fire_right.png",
+          "left_sheet": "characters/shotgunner/fire_left.png",
+          "preview": "previews/shotgunner/fire.gif",
+          "individual_frames": "characters/shotgunner/frames/fire/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "0e083a83-9bc0-4626-a1e3-c3d09d63eb83",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/jump_right.png",
+          "left_sheet": "characters/shotgunner/jump_left.png",
+          "preview": "previews/shotgunner/jump.gif",
+          "individual_frames": "characters/shotgunner/frames/jump/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "9125458a-e206-4bd6-bdf9-27e69432167c",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/crouch_fire_right.png",
+          "left_sheet": "characters/shotgunner/crouch_fire_left.png",
+          "preview": "previews/shotgunner/crouch_fire.gif",
+          "individual_frames": "characters/shotgunner/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "95acfd72-aeec-48d5-a4cc-0143469763ae",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/prone_fire_right.png",
+          "left_sheet": "characters/shotgunner/prone_fire_left.png",
+          "preview": "previews/shotgunner/prone_fire.gif",
+          "individual_frames": "characters/shotgunner/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 24,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "db70a670-b1cf-4d22-af79-ff4ef283b32d",
+            "generated_frames": 25,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/combat_roll_right.png",
+          "left_sheet": "characters/shotgunner/combat_roll_left.png",
+          "preview": "previews/shotgunner/combat_roll.gif",
+          "individual_frames": "characters/shotgunner/frames/combat_roll/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "0ad4d830-5161-485a-bcb0-ea622b200f9c",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/shotgunner/cover_fire_right.png",
+          "left_sheet": "characters/shotgunner/cover_fire_left.png",
+          "preview": "previews/shotgunner/cover_fire.gif",
+          "individual_frames": "characters/shotgunner/frames/cover_fire/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "shotgun_ballistics"
+    },
+    {
+      "id": "double_barrel",
+      "name": "Bronze Twin Barrel",
+      "color": "#cb9861",
+      "design": "Rugged infantryman in BRONZE ORANGE and brown segmented armor with cream visor. Distinct short SIDE BY SIDE DOUBLE BARREL SHOTGUN, two dark muzzle bores and two adjacent short barrels with wooden brown stock and break-action hinge. No magazine or pump.",
+      "native_identity_bounds": [
+        7,
+        0,
+        58,
+        64
+      ],
+      "standing_art_height": 64,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/idle_right.png",
+          "left_sheet": "characters/double_barrel/idle_left.png",
+          "preview": "previews/double_barrel/idle.gif",
+          "individual_frames": "characters/double_barrel/frames/idle/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "f080f63e-3aec-4e21-98ee-39530ac09336",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/walk_right.png",
+          "left_sheet": "characters/double_barrel/walk_left.png",
+          "preview": "previews/double_barrel/walk.gif",
+          "individual_frames": "characters/double_barrel/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "b35d2d56-46f9-48bb-be4c-ba9e07ca8c4d",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/run_right.png",
+          "left_sheet": "characters/double_barrel/run_left.png",
+          "preview": "previews/double_barrel/run.gif",
+          "individual_frames": "characters/double_barrel/frames/run/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "ea758021-b20d-466e-9853-68f940e97621",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/fire_right.png",
+          "left_sheet": "characters/double_barrel/fire_left.png",
+          "preview": "previews/double_barrel/fire.gif",
+          "individual_frames": "characters/double_barrel/frames/fire/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "ccb034d4-e421-49d2-bd0a-6d440213ad03",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/jump_right.png",
+          "left_sheet": "characters/double_barrel/jump_left.png",
+          "preview": "previews/double_barrel/jump.gif",
+          "individual_frames": "characters/double_barrel/frames/jump/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "43257e78-85be-41fc-b82c-b9e6182f020b",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/crouch_fire_right.png",
+          "left_sheet": "characters/double_barrel/crouch_fire_left.png",
+          "preview": "previews/double_barrel/crouch_fire.gif",
+          "individual_frames": "characters/double_barrel/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "f6c18fae-8156-4638-acb2-f9f1475e60f2",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/prone_fire_right.png",
+          "left_sheet": "characters/double_barrel/prone_fire_left.png",
+          "preview": "previews/double_barrel/prone_fire.gif",
+          "individual_frames": "characters/double_barrel/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 24,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "7b171207-1f5c-478e-9652-082d43d3c31d",
+            "generated_frames": 25,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/combat_roll_right.png",
+          "left_sheet": "characters/double_barrel/combat_roll_left.png",
+          "preview": "previews/double_barrel/combat_roll.gif",
+          "individual_frames": "characters/double_barrel/frames/combat_roll/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "0c53edc9-6f67-4fb6-b572-ed1a0f7947f9",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/double_barrel/cover_fire_right.png",
+          "left_sheet": "characters/double_barrel/cover_fire_left.png",
+          "preview": "previews/double_barrel/cover_fire.gif",
+          "individual_frames": "characters/double_barrel/frames/cover_fire/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "double_barrel_ballistics"
+    },
+    {
+      "id": "flying_alien",
+      "name": "Cyan Skyrake",
+      "color": "#59dadd",
+      "design": "Alien biped soldier in CYAN TEAL chitin armor, midnight violet exposed organic joints, narrow luminous MAGENTA eye, swept-back smooth skull crest, slender digitigrade legs, two compact folded insect-like biomechanical wing blades mounted on upper back, wrist mounted organic plasma gun pointing right. Clearly humanoid warrior, alien and agile.",
+      "native_identity_bounds": [
+        6,
+        5,
+        53,
+        60
+      ],
+      "standing_art_height": 55,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/idle_right.png",
+          "left_sheet": "characters/flying_alien/idle_left.png",
+          "preview": "previews/flying_alien/idle.gif",
+          "individual_frames": "characters/flying_alien/frames/idle/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "5d3751b5-97ac-4f9f-a6e9-b5617ebbef41",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/walk_right.png",
+          "left_sheet": "characters/flying_alien/walk_left.png",
+          "preview": "previews/flying_alien/walk.gif",
+          "individual_frames": "characters/flying_alien/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "72f8bcca-d957-484f-bdc8-89bff52fb15f",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/run_right.png",
+          "left_sheet": "characters/flying_alien/run_left.png",
+          "preview": "previews/flying_alien/run.gif",
+          "individual_frames": "characters/flying_alien/frames/run/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "8c504218-7715-4d7b-ac87-924ff94124e9",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/fire_right.png",
+          "left_sheet": "characters/flying_alien/fire_left.png",
+          "preview": "previews/flying_alien/fire.gif",
+          "individual_frames": "characters/flying_alien/frames/fire/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "dcbc8111-35fe-4910-aee5-e565d75c253a",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/jump_right.png",
+          "left_sheet": "characters/flying_alien/jump_left.png",
+          "preview": "previews/flying_alien/jump.gif",
+          "individual_frames": "characters/flying_alien/frames/jump/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "8ef61a06-3c0e-4776-9b62-16f0e2fcdf86",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/crouch_fire_right.png",
+          "left_sheet": "characters/flying_alien/crouch_fire_left.png",
+          "preview": "previews/flying_alien/crouch_fire.gif",
+          "individual_frames": "characters/flying_alien/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "7bc7e6ed-5426-4cfa-8a6d-45e35e667f74",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/prone_fire_right.png",
+          "left_sheet": "characters/flying_alien/prone_fire_left.png",
+          "preview": "previews/flying_alien/prone_fire.gif",
+          "individual_frames": "characters/flying_alien/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "takeoff_land": {
+          "name": "takeoff_land",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "1d358901-aaee-420a-849d-3722b62c1dd6",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/takeoff_land_right.png",
+          "left_sheet": "characters/flying_alien/takeoff_land_left.png",
+          "preview": "previews/flying_alien/takeoff_land.gif",
+          "individual_frames": "characters/flying_alien/frames/takeoff_land/{facing}/{index:03}.png"
+        },
+        "fly": {
+          "name": "fly",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 14,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "e8c66b70-2903-49b4-bf6c-c92c7752eea1",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/fly_right.png",
+          "left_sheet": "characters/flying_alien/fly_left.png",
+          "preview": "previews/flying_alien/fly.gif",
+          "individual_frames": "characters/flying_alien/frames/fly/{facing}/{index:03}.png"
+        },
+        "fly_fire": {
+          "name": "fly_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 12,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "da0f6386-9739-4647-8f06-6365ef364bfd",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/fly_fire_right.png",
+          "left_sheet": "characters/flying_alien/fly_fire_left.png",
+          "preview": "previews/flying_alien/fly_fire.gif",
+          "individual_frames": "characters/flying_alien/frames/fly_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 4,
+          "frame_count": 25,
+          "fps": 24,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "601e25ac-0884-446f-bb9b-e5aa4f5fd8cf",
+            "generated_frames": 25,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/combat_roll_right.png",
+          "left_sheet": "characters/flying_alien/combat_roll_left.png",
+          "preview": "previews/flying_alien/combat_roll.gif",
+          "individual_frames": "characters/flying_alien/frames/combat_roll/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "8175dc64-2bcd-498c-b7b2-ed06c281ee74",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/flying_alien/cover_fire_right.png",
+          "left_sheet": "characters/flying_alien/cover_fire_left.png",
+          "preview": "previews/flying_alien/cover_fire.gif",
+          "individual_frames": "characters/flying_alien/frames/cover_fire/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "alien_plasma"
+    },
+    {
+      "id": "roller_alien",
+      "name": "Crimson Armadroid",
+      "color": "#df5086",
+      "design": "Alien biped soldier in CRIMSON MAGENTA segmented carapace, coal black organic joints, luminous LIME eye and abdomen core. Rounded overlapping shell plates on back, shoulders and forearms designed to fold into a sphere, compact muscular humanoid with digitigrade legs and short forearm acid blaster aimed right. Distinct plated armadillo alien, no wings.",
+      "native_identity_bounds": [
+        8,
+        13,
+        54,
+        54
+      ],
+      "standing_art_height": 41,
+      "clips": {
+        "idle": {
+          "name": "idle",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 1,
+          "rows": 1,
+          "frame_count": 1,
+          "fps": 8,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": null,
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/idle_right.png",
+          "left_sheet": "characters/roller_alien/idle_left.png",
+          "preview": "previews/roller_alien/idle.gif",
+          "individual_frames": "characters/roller_alien/frames/idle/{facing}/{index:03}.png"
+        },
+        "transform_to_ball": {
+          "name": "transform_to_ball",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "69927d5f-0ace-4a64-a650-39072f60dcc6",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/transform_to_ball_right.png",
+          "left_sheet": "characters/roller_alien/transform_to_ball_left.png",
+          "preview": "previews/roller_alien/transform_to_ball.gif",
+          "individual_frames": "characters/roller_alien/frames/transform_to_ball/{facing}/{index:03}.png"
+        },
+        "transform_to_humanoid": {
+          "name": "transform_to_humanoid",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "method": "exact reverse of transform_to_ball; same plates and endpoints"
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/transform_to_humanoid_right.png",
+          "left_sheet": "characters/roller_alien/transform_to_humanoid_left.png",
+          "preview": "previews/roller_alien/transform_to_humanoid.gif",
+          "individual_frames": "characters/roller_alien/frames/transform_to_humanoid/{facing}/{index:03}.png"
+        },
+        "walk": {
+          "name": "walk",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 12,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "4f4846d9-2731-4b4c-af40-f83deb6d88bf",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/walk_right.png",
+          "left_sheet": "characters/roller_alien/walk_left.png",
+          "preview": "previews/roller_alien/walk.gif",
+          "individual_frames": "characters/roller_alien/frames/walk/{facing}/{index:03}.png"
+        },
+        "run": {
+          "name": "run",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "64a0c74c-9a87-4ea7-ae49-a7208971ce8e",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/run_right.png",
+          "left_sheet": "characters/roller_alien/run_left.png",
+          "preview": "previews/roller_alien/run.gif",
+          "individual_frames": "characters/roller_alien/frames/run/{facing}/{index:03}.png"
+        },
+        "fire": {
+          "name": "fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "75f6bd6b-8936-43f1-af13-0ca04239f100",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/fire_right.png",
+          "left_sheet": "characters/roller_alien/fire_left.png",
+          "preview": "previews/roller_alien/fire.gif",
+          "individual_frames": "characters/roller_alien/frames/fire/{facing}/{index:03}.png"
+        },
+        "ball_roll": {
+          "name": "ball_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 1,
+          "frame_count": 8,
+          "fps": 16,
+          "loop": true,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "65c3c25f-c3bb-4096-99c3-6f472c051702",
+            "generated_frames": 9,
+            "input_frame_omitted_for_loop": true
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/ball_roll_right.png",
+          "left_sheet": "characters/roller_alien/ball_roll_left.png",
+          "preview": "previews/roller_alien/ball_roll.gif",
+          "individual_frames": "characters/roller_alien/frames/ball_roll/{facing}/{index:03}.png"
+        },
+        "jump": {
+          "name": "jump",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 2,
+          "frame_count": 13,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "fe382885-da6b-4e95-9d2f-e3d538f1e3f7",
+            "generated_frames": 13,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/jump_right.png",
+          "left_sheet": "characters/roller_alien/jump_left.png",
+          "preview": "previews/roller_alien/jump.gif",
+          "individual_frames": "characters/roller_alien/frames/jump/{facing}/{index:03}.png"
+        },
+        "crouch_fire": {
+          "name": "crouch_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 16,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "f5ce2cd9-9a2b-485e-b326-10507dd70899",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/crouch_fire_right.png",
+          "left_sheet": "characters/roller_alien/crouch_fire_left.png",
+          "preview": "previews/roller_alien/crouch_fire.gif",
+          "individual_frames": "characters/roller_alien/frames/crouch_fire/{facing}/{index:03}.png"
+        },
+        "prone_fire": {
+          "name": "prone_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "f8a07a7f-6c7d-4b70-800d-e0b207491179",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/prone_fire_right.png",
+          "left_sheet": "characters/roller_alien/prone_fire_left.png",
+          "preview": "previews/roller_alien/prone_fire.gif",
+          "individual_frames": "characters/roller_alien/frames/prone_fire/{facing}/{index:03}.png"
+        },
+        "cover_fire": {
+          "name": "cover_fire",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 3,
+          "frame_count": 17,
+          "fps": 14,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "service": "PixelLab",
+            "job_id": "c4e944ff-66cd-475f-bf50-ccae2584e6f3",
+            "generated_frames": 17,
+            "input_frame_omitted_for_loop": false
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/cover_fire_right.png",
+          "left_sheet": "characters/roller_alien/cover_fire_left.png",
+          "preview": "previews/roller_alien/cover_fire.gif",
+          "individual_frames": "characters/roller_alien/frames/cover_fire/{facing}/{index:03}.png"
+        },
+        "combat_roll": {
+          "name": "combat_roll",
+          "frame_size": [
+            128,
+            128
+          ],
+          "columns": 8,
+          "rows": 6,
+          "frame_count": 42,
+          "fps": 18,
+          "loop": false,
+          "origin": [
+            64,
+            112
+          ],
+          "facing": "right",
+          "left_facing": "mirror of right; same pivot",
+          "source": {
+            "method": "transform to ball, one rolling cycle, transform back"
+          },
+          "normalization": "constant transparent padding; binary alpha; no per-frame rescaling",
+          "root_delta": [
+            0,
+            0
+          ],
+          "sheet": "characters/roller_alien/combat_roll_right.png",
+          "left_sheet": "characters/roller_alien/combat_roll_left.png",
+          "preview": "previews/roller_alien/combat_roll.gif",
+          "individual_frames": "characters/roller_alien/frames/combat_roll/{facing}/{index:03}.png"
+        }
+      },
+      "weapon_effect_kit": "alien_acid"
+    }
+  ],
+  "effects": [
+    {
+      "id": "rifle_ballistics",
+      "name": "Rifle & Minigun Ballistics",
+      "manifest": "effects/rifle_ballistics/clips.json",
+      "clips": 4,
+      "clip_data": {
+        "projectile": {
+          "role": "projectile",
+          "frames": 1,
+          "fps": 12,
+          "loop": true,
+          "frame_size": [
+            16,
+            16
+          ],
+          "columns": 1,
+          "rows": 1,
+          "origin": [
+            8,
+            4
+          ],
+          "left_origin": [
+            8,
+            4
+          ],
+          "right_sheet": "projectile_right.png",
+          "left_sheet": "projectile_left.png",
+          "motion_baked_for_casing": false
+        },
+        "muzzle": {
+          "role": "cast",
+          "frames": 6,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            16,
+            16
+          ],
+          "columns": 6,
+          "rows": 1,
+          "origin": [
+            3,
+            6
+          ],
+          "left_origin": [
+            13,
+            6
+          ],
+          "right_sheet": "muzzle_right.png",
+          "left_sheet": "muzzle_left.png",
+          "motion_baked_for_casing": false
+        },
+        "casing": {
+          "role": "ambient",
+          "frames": 11,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            16,
+            28
+          ],
+          "columns": 8,
+          "rows": 2,
+          "origin": [
+            3,
+            15
+          ],
+          "left_origin": [
+            13,
+            15
+          ],
+          "right_sheet": "casing_right.png",
+          "left_sheet": "casing_left.png",
+          "motion_baked_for_casing": true
+        },
+        "impact": {
+          "role": "impact",
+          "frames": 6,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            16,
+            16
+          ],
+          "columns": 6,
+          "rows": 1,
+          "origin": [
+            5,
+            5
+          ],
+          "left_origin": [
+            11,
+            5
+          ],
+          "right_sheet": "impact_right.png",
+          "left_sheet": "impact_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    },
+    {
+      "id": "sniper_ballistics",
+      "name": "Sniper Ballistics",
+      "manifest": "effects/sniper_ballistics/clips.json",
+      "clips": 3,
+      "clip_data": {
+        "projectile": {
+          "role": "projectile",
+          "frames": 4,
+          "fps": 12,
+          "loop": true,
+          "frame_size": [
+            24,
+            16
+          ],
+          "columns": 4,
+          "rows": 1,
+          "origin": [
+            12,
+            4
+          ],
+          "left_origin": [
+            12,
+            4
+          ],
+          "right_sheet": "projectile_right.png",
+          "left_sheet": "projectile_left.png",
+          "motion_baked_for_casing": false
+        },
+        "muzzle": {
+          "role": "cast",
+          "frames": 6,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            20,
+            20
+          ],
+          "columns": 6,
+          "rows": 1,
+          "origin": [
+            7,
+            11
+          ],
+          "left_origin": [
+            13,
+            11
+          ],
+          "right_sheet": "muzzle_right.png",
+          "left_sheet": "muzzle_left.png",
+          "motion_baked_for_casing": false
+        },
+        "impact": {
+          "role": "impact",
+          "frames": 5,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            32,
+            32
+          ],
+          "columns": 5,
+          "rows": 1,
+          "origin": [
+            15,
+            13
+          ],
+          "left_origin": [
+            17,
+            13
+          ],
+          "right_sheet": "impact_right.png",
+          "left_sheet": "impact_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    },
+    {
+      "id": "shotgun_ballistics",
+      "name": "Shotgun Ballistics",
+      "manifest": "effects/shotgun_ballistics/clips.json",
+      "clips": 4,
+      "clip_data": {
+        "muzzle": {
+          "role": "cast",
+          "frames": 5,
+          "fps": 15,
+          "loop": false,
+          "frame_size": [
+            40,
+            36
+          ],
+          "columns": 5,
+          "rows": 1,
+          "origin": [
+            10,
+            17
+          ],
+          "left_origin": [
+            30,
+            17
+          ],
+          "right_sheet": "muzzle_right.png",
+          "left_sheet": "muzzle_left.png",
+          "motion_baked_for_casing": false
+        },
+        "projectile": {
+          "role": "projectile",
+          "frames": 1,
+          "fps": 15,
+          "loop": true,
+          "frame_size": [
+            16,
+            16
+          ],
+          "columns": 1,
+          "rows": 1,
+          "origin": [
+            5,
+            4
+          ],
+          "left_origin": [
+            11,
+            4
+          ],
+          "right_sheet": "projectile_right.png",
+          "left_sheet": "projectile_left.png",
+          "motion_baked_for_casing": false
+        },
+        "muzzle_smoke": {
+          "role": "linger",
+          "frames": 2,
+          "fps": 15,
+          "loop": false,
+          "frame_size": [
+            24,
+            20
+          ],
+          "columns": 2,
+          "rows": 1,
+          "origin": [
+            12,
+            9
+          ],
+          "left_origin": [
+            12,
+            9
+          ],
+          "right_sheet": "muzzle_smoke_right.png",
+          "left_sheet": "muzzle_smoke_left.png",
+          "motion_baked_for_casing": false
+        },
+        "scatter_spark": {
+          "role": "impact",
+          "frames": 2,
+          "fps": 15,
+          "loop": false,
+          "frame_size": [
+            40,
+            28
+          ],
+          "columns": 2,
+          "rows": 1,
+          "origin": [
+            18,
+            12
+          ],
+          "left_origin": [
+            22,
+            12
+          ],
+          "right_sheet": "scatter_spark_right.png",
+          "left_sheet": "scatter_spark_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    },
+    {
+      "id": "double_barrel_ballistics",
+      "name": "Twin Barrel Blast",
+      "manifest": "effects/double_barrel_ballistics/clips.json",
+      "clips": 4,
+      "clip_data": {
+        "muzzle": {
+          "role": "cast",
+          "frames": 7,
+          "fps": 14,
+          "loop": false,
+          "frame_size": [
+            60,
+            28
+          ],
+          "columns": 7,
+          "rows": 1,
+          "origin": [
+            3,
+            14
+          ],
+          "left_origin": [
+            57,
+            14
+          ],
+          "right_sheet": "muzzle_right.png",
+          "left_sheet": "muzzle_left.png",
+          "motion_baked_for_casing": false
+        },
+        "pellet": {
+          "role": "projectile",
+          "frames": 1,
+          "fps": 14,
+          "loop": true,
+          "frame_size": [
+            16,
+            16
+          ],
+          "columns": 1,
+          "rows": 1,
+          "origin": [
+            5,
+            4
+          ],
+          "left_origin": [
+            11,
+            4
+          ],
+          "right_sheet": "pellet_right.png",
+          "left_sheet": "pellet_left.png",
+          "motion_baked_for_casing": false
+        },
+        "smoke": {
+          "role": "linger",
+          "frames": 5,
+          "fps": 14,
+          "loop": false,
+          "frame_size": [
+            24,
+            28
+          ],
+          "columns": 5,
+          "rows": 1,
+          "origin": [
+            12,
+            13
+          ],
+          "left_origin": [
+            12,
+            13
+          ],
+          "right_sheet": "smoke_right.png",
+          "left_sheet": "smoke_left.png",
+          "motion_baked_for_casing": false
+        },
+        "shell": {
+          "role": "linger",
+          "frames": 3,
+          "fps": 14,
+          "loop": false,
+          "frame_size": [
+            16,
+            40
+          ],
+          "columns": 3,
+          "rows": 1,
+          "origin": [
+            5,
+            19
+          ],
+          "left_origin": [
+            11,
+            19
+          ],
+          "right_sheet": "shell_right.png",
+          "left_sheet": "shell_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    },
+    {
+      "id": "rocket_ballistics",
+      "name": "Rocket Flight & Blast",
+      "manifest": "effects/rocket_ballistics/clips.json",
+      "clips": 4,
+      "clip_data": {
+        "trail": {
+          "role": "linger",
+          "frames": 12,
+          "fps": 12,
+          "loop": true,
+          "frame_size": [
+            88,
+            28
+          ],
+          "columns": 8,
+          "rows": 2,
+          "origin": [
+            80,
+            13
+          ],
+          "left_origin": [
+            8,
+            13
+          ],
+          "right_sheet": "trail_right.png",
+          "left_sheet": "trail_left.png",
+          "motion_baked_for_casing": false
+        },
+        "muzzle": {
+          "role": "cast",
+          "frames": 10,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            36,
+            24
+          ],
+          "columns": 8,
+          "rows": 2,
+          "origin": [
+            3,
+            11
+          ],
+          "left_origin": [
+            33,
+            11
+          ],
+          "right_sheet": "muzzle_right.png",
+          "left_sheet": "muzzle_left.png",
+          "motion_baked_for_casing": false
+        },
+        "impact": {
+          "role": "impact",
+          "frames": 12,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            56,
+            60
+          ],
+          "columns": 8,
+          "rows": 2,
+          "origin": [
+            30,
+            37
+          ],
+          "left_origin": [
+            26,
+            37
+          ],
+          "right_sheet": "impact_right.png",
+          "left_sheet": "impact_left.png",
+          "motion_baked_for_casing": false
+        },
+        "projectile": {
+          "role": "projectile",
+          "frames": 2,
+          "fps": 12,
+          "loop": true,
+          "frame_size": [
+            28,
+            16
+          ],
+          "columns": 2,
+          "rows": 1,
+          "origin": [
+            14,
+            6
+          ],
+          "left_origin": [
+            14,
+            6
+          ],
+          "right_sheet": "projectile_right.png",
+          "left_sheet": "projectile_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    },
+    {
+      "id": "alien_plasma",
+      "name": "Skyrake Plasma",
+      "manifest": "effects/alien_plasma/clips.json",
+      "clips": 3,
+      "clip_data": {
+        "projectile": {
+          "role": "projectile",
+          "frames": 4,
+          "fps": 12,
+          "loop": true,
+          "frame_size": [
+            24,
+            16
+          ],
+          "columns": 4,
+          "rows": 1,
+          "origin": [
+            10,
+            5
+          ],
+          "left_origin": [
+            14,
+            5
+          ],
+          "right_sheet": "projectile_right.png",
+          "left_sheet": "projectile_left.png",
+          "motion_baked_for_casing": false
+        },
+        "cast": {
+          "role": "cast",
+          "frames": 12,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            20,
+            20
+          ],
+          "columns": 8,
+          "rows": 2,
+          "origin": [
+            2,
+            8
+          ],
+          "left_origin": [
+            18,
+            8
+          ],
+          "right_sheet": "cast_right.png",
+          "left_sheet": "cast_left.png",
+          "motion_baked_for_casing": false
+        },
+        "hit_star": {
+          "role": "impact",
+          "frames": 12,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            24,
+            24
+          ],
+          "columns": 8,
+          "rows": 2,
+          "origin": [
+            11,
+            11
+          ],
+          "left_origin": [
+            13,
+            11
+          ],
+          "right_sheet": "hit_star_right.png",
+          "left_sheet": "hit_star_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    },
+    {
+      "id": "alien_acid",
+      "name": "Armadroid Acid",
+      "manifest": "effects/alien_acid/clips.json",
+      "clips": 3,
+      "clip_data": {
+        "projectile": {
+          "role": "projectile",
+          "frames": 12,
+          "fps": 12,
+          "loop": true,
+          "frame_size": [
+            16,
+            16
+          ],
+          "columns": 8,
+          "rows": 2,
+          "origin": [
+            6,
+            6
+          ],
+          "left_origin": [
+            10,
+            6
+          ],
+          "right_sheet": "projectile_right.png",
+          "left_sheet": "projectile_left.png",
+          "motion_baked_for_casing": false
+        },
+        "cast": {
+          "role": "cast",
+          "frames": 4,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            24,
+            20
+          ],
+          "columns": 4,
+          "rows": 1,
+          "origin": [
+            3,
+            8
+          ],
+          "left_origin": [
+            21,
+            8
+          ],
+          "right_sheet": "cast_right.png",
+          "left_sheet": "cast_left.png",
+          "motion_baked_for_casing": false
+        },
+        "impact": {
+          "role": "impact",
+          "frames": 5,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            16,
+            16
+          ],
+          "columns": 5,
+          "rows": 1,
+          "origin": [
+            7,
+            7
+          ],
+          "left_origin": [
+            9,
+            7
+          ],
+          "right_sheet": "impact_right.png",
+          "left_sheet": "impact_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    },
+    {
+      "id": "movement_fx",
+      "name": "Movement Dust & Armor Sparks",
+      "manifest": "effects/movement_fx/clips.json",
+      "clips": 3,
+      "clip_data": {
+        "dust_trail": {
+          "role": "ambient",
+          "frames": 8,
+          "fps": 12,
+          "loop": true,
+          "frame_size": [
+            40,
+            20
+          ],
+          "columns": 8,
+          "rows": 1,
+          "origin": [
+            18,
+            16
+          ],
+          "left_origin": [
+            22,
+            16
+          ],
+          "right_sheet": "dust_trail_right.png",
+          "left_sheet": "dust_trail_left.png",
+          "motion_baked_for_casing": false
+        },
+        "landing_dust": {
+          "role": "impact",
+          "frames": 8,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            28,
+            28
+          ],
+          "columns": 8,
+          "rows": 1,
+          "origin": [
+            14,
+            22
+          ],
+          "left_origin": [
+            14,
+            22
+          ],
+          "right_sheet": "landing_dust_right.png",
+          "left_sheet": "landing_dust_left.png",
+          "motion_baked_for_casing": false
+        },
+        "spark_burst": {
+          "role": "impact",
+          "frames": 8,
+          "fps": 12,
+          "loop": false,
+          "frame_size": [
+            40,
+            28
+          ],
+          "columns": 8,
+          "rows": 1,
+          "origin": [
+            18,
+            13
+          ],
+          "left_origin": [
+            22,
+            13
+          ],
+          "right_sheet": "spark_burst_right.png",
+          "left_sheet": "spark_burst_left.png",
+          "motion_baked_for_casing": false
+        }
+      }
+    }
+  ],
+  "totals": {
+    "enemies": 8,
+    "character_clips_per_facing": 79,
+    "character_frames_per_facing": 1024,
+    "character_png_frames_both_facings": 2048,
+    "effect_clips": 28
+  }
+}

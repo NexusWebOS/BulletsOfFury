@@ -1,0 +1,5087 @@
+{
+  "build": "overdrive1018-gosfar43-r4",
+  "assets": {
+    "g43_gosfar_ready_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_ready.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        152
+      ],
+      "provider": "ImageGen + PixelLab exact",
+      "bank": "gosfar/ready",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_hotwire_ready_0": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_ready.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        48,
+        36,
+        81,
+        120
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/ready",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_gosfar_ready_east_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_ready_east.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        4,
+        152,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/ready/east",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        83
+      ]
+    },
+    "g43_gosfar_ready_west_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_ready_west.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        4,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/ready/west",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        10,
+        83
+      ]
+    },
+    "g43_gosfar_ready_north_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_ready_north.png",
+      "rect": [
+        0,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        65,
+        8,
+        158,
+        216
+      ],
+      "provider": "ImageGen",
+      "bank": "gosfar/ready/north",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_hotwire_hack_0": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_hack.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        47,
+        37,
+        74,
+        121
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/hack",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_hotwire_hack_1": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_hack.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        48,
+        36,
+        74,
+        121
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/hack",
+      "phase": 1,
+      "drawScale": 1
+    },
+    "g43_hotwire_hack_2": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_hack.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        50,
+        35,
+        74,
+        121
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/hack",
+      "phase": 2,
+      "drawScale": 1
+    },
+    "g43_hotwire_hack_3": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_hack.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        49,
+        36,
+        74,
+        121
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/hack",
+      "phase": 3,
+      "drawScale": 1
+    },
+    "g43_hotwire_hack_4": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_hack.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        47,
+        37,
+        74,
+        121
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/hack",
+      "phase": 4,
+      "drawScale": 1
+    },
+    "g43_hotwire_cover_0": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_cover.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/cover",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_hotwire_cover_1": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_cover.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/cover",
+      "phase": 1,
+      "drawScale": 1
+    },
+    "g43_hotwire_cover_2": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_cover.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/cover",
+      "phase": 2,
+      "drawScale": 1
+    },
+    "g43_hotwire_cover_3": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_cover.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/cover",
+      "phase": 3,
+      "drawScale": 1
+    },
+    "g43_hotwire_cover_4": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_cover.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/cover",
+      "phase": 4,
+      "drawScale": 1
+    },
+    "g43_hotwire_fire_0": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_fire.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        20,
+        38,
+        102,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/fire",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_hotwire_fire_1": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_fire.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        102,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/fire",
+      "phase": 1,
+      "drawScale": 1
+    },
+    "g43_hotwire_fire_2": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_fire.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        33,
+        39,
+        102,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/fire",
+      "phase": 2,
+      "drawScale": 1
+    },
+    "g43_hotwire_fire_3": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_fire.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        33,
+        39,
+        102,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/fire",
+      "phase": 3,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_0": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        48,
+        36,
+        81,
+        120
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_1": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        47,
+        36,
+        82,
+        120
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 1,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_2": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        47,
+        36,
+        83,
+        119
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 2,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_3": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        45,
+        36,
+        84,
+        119
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 3,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_4": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        42,
+        37,
+        86,
+        119
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 4,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_5": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        640,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        42,
+        38,
+        87,
+        119
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 5,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_6": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        768,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        41,
+        39,
+        87,
+        120
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 6,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_7": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        896,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        42,
+        37,
+        81,
+        120
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 7,
+      "drawScale": 1
+    },
+    "g43_hotwire_run_8": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_run.png",
+      "rect": [
+        0,
+        128,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        44,
+        36,
+        77,
+        120
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/run",
+      "phase": 8,
+      "drawScale": 1
+    },
+    "g43_yuri_cover_0": {
+      "file": "expansion/topdown/art/gosfar43/yuri_cover.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        38,
+        32,
+        92,
+        115
+      ],
+      "provider": "PixelLab",
+      "bank": "yuri/cover",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_yuri_cover_1": {
+      "file": "expansion/topdown/art/gosfar43/yuri_cover.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        38,
+        31,
+        92,
+        115
+      ],
+      "provider": "PixelLab",
+      "bank": "yuri/cover",
+      "phase": 1,
+      "drawScale": 1
+    },
+    "g43_yuri_cover_2": {
+      "file": "expansion/topdown/art/gosfar43/yuri_cover.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        38,
+        32,
+        92,
+        115
+      ],
+      "provider": "PixelLab",
+      "bank": "yuri/cover",
+      "phase": 2,
+      "drawScale": 1
+    },
+    "g43_yuri_cover_3": {
+      "file": "expansion/topdown/art/gosfar43/yuri_cover.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        38,
+        31,
+        92,
+        115
+      ],
+      "provider": "PixelLab",
+      "bank": "yuri/cover",
+      "phase": 3,
+      "drawScale": 1
+    },
+    "g43_yuri_cover_4": {
+      "file": "expansion/topdown/art/gosfar43/yuri_cover.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        38,
+        30,
+        92,
+        115
+      ],
+      "provider": "PixelLab",
+      "bank": "yuri/cover",
+      "phase": 4,
+      "drawScale": 1
+    },
+    "g43_gosfar_walk_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        34,
+        5,
+        130,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        35,
+        4,
+        131,
+        150
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        34,
+        3,
+        130,
+        150
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        33,
+        4,
+        129,
+        151
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        31,
+        5,
+        127,
+        154
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        29,
+        6,
+        125,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        28,
+        5,
+        123,
+        155
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        29,
+        3,
+        124,
+        154
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_9": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        160,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        30,
+        4,
+        125,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 9,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_10": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        320,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        31,
+        4,
+        127,
+        153
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 10,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_11": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        480,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        33,
+        6,
+        128,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 11,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_12": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        640,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        34,
+        5,
+        130,
+        155
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 12,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_13": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        800,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        35,
+        3,
+        131,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 13,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_14": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        960,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        34,
+        3,
+        130,
+        155
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 14,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_15": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        1120,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        153
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 15,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_walk_16": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk.png",
+      "rect": [
+        0,
+        320,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        30,
+        6,
+        126,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk",
+      "phase": 16,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        3,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        3,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        3,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        3,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        3,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_rev_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_rev.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        3,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/rev",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        5,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        6,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        7,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        33,
+        7,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        34,
+        5,
+        130,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_fire_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        34,
+        6,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        33,
+        5,
+        129,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        31,
+        8,
+        130,
+        151
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        30,
+        10,
+        131,
+        151
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        27,
+        14,
+        134,
+        151
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        15,
+        35,
+        134,
+        148
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        15,
+        59,
+        141,
+        151
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        10,
+        67,
+        146,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_death_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_death.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        12,
+        64,
+        144,
+        158
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/death",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_overheat_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_overheat.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        4,
+        133,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/overheat",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_overheat_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_overheat.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        5,
+        129,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/overheat",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_overheat_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_overheat.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        6,
+        129,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/overheat",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_overheat_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_overheat.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        7,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/overheat",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_gosfar_overheat_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_overheat.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        7,
+        128,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/overheat",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        82,
+        102
+      ]
+    },
+    "g43_hotwire_throw_0": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_throw.png",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/throw",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_hotwire_throw_1": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_throw.png",
+      "rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/throw",
+      "phase": 1,
+      "drawScale": 1
+    },
+    "g43_hotwire_throw_2": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_throw.png",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        31,
+        38,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/throw",
+      "phase": 2,
+      "drawScale": 1
+    },
+    "g43_hotwire_throw_3": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_throw.png",
+      "rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        37,
+        93,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/throw",
+      "phase": 3,
+      "drawScale": 1
+    },
+    "g43_hotwire_throw_4": {
+      "file": "expansion/topdown/art/gosfar43/hotwire_throw.png",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        120
+      ],
+      "bounds": [
+        35,
+        38,
+        105,
+        118
+      ],
+      "provider": "PixelLab",
+      "bank": "hotwire/throw",
+      "phase": 4,
+      "drawScale": 1
+    },
+    "g43_gosfar_fire_east_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        4,
+        152,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        83
+      ]
+    },
+    "g43_gosfar_fire_east_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        25,
+        4,
+        151,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        146,
+        84
+      ]
+    },
+    "g43_gosfar_fire_east_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        25,
+        4,
+        150,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        145,
+        86
+      ]
+    },
+    "g43_gosfar_fire_east_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        4,
+        152,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        83
+      ]
+    },
+    "g43_gosfar_fire_east_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        23,
+        5,
+        152,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        81
+      ]
+    },
+    "g43_gosfar_fire_east_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        23,
+        4,
+        151,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        146,
+        82
+      ]
+    },
+    "g43_gosfar_fire_east_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        25,
+        4,
+        151,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        146,
+        85
+      ]
+    },
+    "g43_gosfar_fire_east_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        25,
+        3,
+        152,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        86
+      ]
+    },
+    "g43_gosfar_fire_east_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_east.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        3,
+        152,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/east",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        85
+      ]
+    },
+    "g43_gosfar_walk_east_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        4,
+        152,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        83
+      ]
+    },
+    "g43_gosfar_walk_east_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        6,
+        153,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        148,
+        81
+      ]
+    },
+    "g43_gosfar_walk_east_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        8,
+        155,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        150,
+        80
+      ]
+    },
+    "g43_gosfar_walk_east_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        8,
+        155,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        150,
+        80
+      ]
+    },
+    "g43_gosfar_walk_east_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        24,
+        5,
+        154,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        149,
+        81
+      ]
+    },
+    "g43_gosfar_walk_east_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        25,
+        2,
+        153,
+        153
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        148,
+        81
+      ]
+    },
+    "g43_gosfar_walk_east_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        26,
+        4,
+        152,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        83
+      ]
+    },
+    "g43_gosfar_walk_east_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        26,
+        7,
+        152,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        147,
+        85
+      ]
+    },
+    "g43_gosfar_walk_east_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_east.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        26,
+        9,
+        151,
+        155
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/east",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        146,
+        87
+      ]
+    },
+    "g43_gosfar_fire_west_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        4,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        10,
+        83
+      ]
+    },
+    "g43_gosfar_fire_west_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        7,
+        3,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        11,
+        83
+      ]
+    },
+    "g43_gosfar_fire_west_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        8,
+        3,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        12,
+        82
+      ]
+    },
+    "g43_gosfar_fire_west_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        7,
+        4,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        11,
+        82
+      ]
+    },
+    "g43_gosfar_fire_west_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        5,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        10,
+        82
+      ]
+    },
+    "g43_gosfar_fire_west_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        5,
+        6,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        9,
+        82
+      ]
+    },
+    "g43_gosfar_fire_west_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        4,
+        6,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        8,
+        82
+      ]
+    },
+    "g43_gosfar_fire_west_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        4,
+        4,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        8,
+        83
+      ]
+    },
+    "g43_gosfar_fire_west_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_west.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        5,
+        3,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/west",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        9,
+        83
+      ]
+    },
+    "g43_gosfar_walk_west_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        4,
+        135,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        10,
+        83
+      ]
+    },
+    "g43_gosfar_walk_west_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        7,
+        6,
+        136,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        11,
+        84
+      ]
+    },
+    "g43_gosfar_walk_west_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        7,
+        8,
+        136,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        11,
+        86
+      ]
+    },
+    "g43_gosfar_walk_west_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        7,
+        6,
+        135,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        11,
+        84
+      ]
+    },
+    "g43_gosfar_walk_west_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        4,
+        135,
+        155
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        10,
+        81
+      ]
+    },
+    "g43_gosfar_walk_west_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        3,
+        135,
+        150
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        10,
+        77
+      ]
+    },
+    "g43_gosfar_walk_west_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        5,
+        5,
+        135,
+        153
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        9,
+        76
+      ]
+    },
+    "g43_gosfar_walk_west_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        5,
+        7,
+        135,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        9,
+        79
+      ]
+    },
+    "g43_gosfar_walk_west_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_west.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        5,
+        8,
+        134,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/west",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        9,
+        82
+      ]
+    },
+    "g43_gosfar_fire_north_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        0,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        65,
+        8,
+        158,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        224,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        66,
+        11,
+        157,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        448,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        67,
+        13,
+        157,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        672,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        67,
+        11,
+        157,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        896,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        65,
+        23,
+        156,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        1120,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        65,
+        23,
+        156,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        1344,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        65,
+        23,
+        156,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        1568,
+        0,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        65,
+        23,
+        156,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_fire_north_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_fire_north.png",
+      "rect": [
+        0,
+        224,
+        224,
+        224
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "anchor": [
+        112,
+        216
+      ],
+      "bounds": [
+        67,
+        18,
+        158,
+        216
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/fire/north",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        93,
+        15
+      ]
+    },
+    "g43_gosfar_walk_north_0": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        34,
+        3,
+        126,
+        149
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 0,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_1": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        37,
+        4,
+        124,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 1,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_2": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        38,
+        6,
+        124,
+        157
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 2,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_3": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        37,
+        4,
+        122,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 3,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_4": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        37,
+        3,
+        121,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 4,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_5": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        37,
+        6,
+        121,
+        155
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 5,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_6": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        37,
+        4,
+        121,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 6,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_7": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        3,
+        123,
+        152
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 7,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_gosfar_walk_north_8": {
+      "file": "expansion/topdown/art/gosfar43/gosfar_walk_north.png",
+      "rect": [
+        0,
+        160,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        32,
+        6,
+        123,
+        156
+      ],
+      "provider": "PixelLab",
+      "bank": "gosfar/walk/north",
+      "phase": 8,
+      "drawScale": 1,
+      "muzzle": [
+        58,
+        30
+      ]
+    },
+    "g43_elevator_0": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        9,
+        157,
+        146
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 0,
+      "drawScale": 1
+    },
+    "g43_elevator_1": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        160,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        5,
+        9,
+        156,
+        146
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 1,
+      "drawScale": 1
+    },
+    "g43_elevator_2": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        320,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        4,
+        9,
+        155,
+        146
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 2,
+      "drawScale": 1
+    },
+    "g43_elevator_3": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        480,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        3,
+        9,
+        154,
+        146
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 3,
+      "drawScale": 1
+    },
+    "g43_elevator_4": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        640,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        6,
+        9,
+        157,
+        147
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 4,
+      "drawScale": 1
+    },
+    "g43_elevator_5": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        800,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        5,
+        9,
+        156,
+        147
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 5,
+      "drawScale": 1
+    },
+    "g43_elevator_6": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        960,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        4,
+        9,
+        155,
+        147
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 6,
+      "drawScale": 1
+    },
+    "g43_elevator_7": {
+      "file": "expansion/topdown/art/gosfar43/elevator.png",
+      "rect": [
+        1120,
+        0,
+        160,
+        160
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        152
+      ],
+      "bounds": [
+        3,
+        9,
+        154,
+        147
+      ],
+      "provider": "ImageGen",
+      "bank": "elevator",
+      "phase": 7,
+      "drawScale": 1
+    }
+  },
+  "banks": {
+    "gosfar/ready": {
+      "frames": [
+        "g43_gosfar_ready_0"
+      ],
+      "fps": 10,
+      "loop": true,
+      "duration": 0.1,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "hotwire/ready": {
+      "frames": [
+        "g43_hotwire_ready_0"
+      ],
+      "fps": 10,
+      "loop": true,
+      "duration": 0.1,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "gosfar/ready/east": {
+      "frames": [
+        "g43_gosfar_ready_east_0"
+      ],
+      "fps": 10,
+      "loop": true,
+      "duration": 0.1,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/ready/west": {
+      "frames": [
+        "g43_gosfar_ready_west_0"
+      ],
+      "fps": 10,
+      "loop": true,
+      "duration": 0.1,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/ready/north": {
+      "frames": [
+        "g43_gosfar_ready_north_0"
+      ],
+      "fps": 10,
+      "loop": true,
+      "duration": 0.1,
+      "origin": [
+        112,
+        216
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "palette_locked": true
+    },
+    "hotwire/hack": {
+      "frames": [
+        "g43_hotwire_hack_0",
+        "g43_hotwire_hack_1",
+        "g43_hotwire_hack_2",
+        "g43_hotwire_hack_3",
+        "g43_hotwire_hack_4"
+      ],
+      "fps": 8,
+      "loop": true,
+      "duration": 0.625,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "hotwire/cover": {
+      "frames": [
+        "g43_hotwire_cover_0",
+        "g43_hotwire_cover_1",
+        "g43_hotwire_cover_2",
+        "g43_hotwire_cover_3",
+        "g43_hotwire_cover_4"
+      ],
+      "fps": 7,
+      "loop": true,
+      "duration": 0.7142857142857143,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "hotwire/fire": {
+      "frames": [
+        "g43_hotwire_fire_0",
+        "g43_hotwire_fire_1",
+        "g43_hotwire_fire_2",
+        "g43_hotwire_fire_3"
+      ],
+      "fps": 12,
+      "loop": false,
+      "duration": 0.3333333333333333,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "hotwire/run": {
+      "frames": [
+        "g43_hotwire_run_0",
+        "g43_hotwire_run_1",
+        "g43_hotwire_run_2",
+        "g43_hotwire_run_3",
+        "g43_hotwire_run_4",
+        "g43_hotwire_run_5",
+        "g43_hotwire_run_6",
+        "g43_hotwire_run_7",
+        "g43_hotwire_run_8"
+      ],
+      "fps": 13,
+      "loop": true,
+      "duration": 0.6923076923076923,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "yuri/cover": {
+      "frames": [
+        "g43_yuri_cover_0",
+        "g43_yuri_cover_1",
+        "g43_yuri_cover_2",
+        "g43_yuri_cover_3",
+        "g43_yuri_cover_4"
+      ],
+      "fps": 7,
+      "loop": true,
+      "duration": 0.7142857142857143,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "gosfar/walk": {
+      "frames": [
+        "g43_gosfar_walk_0",
+        "g43_gosfar_walk_1",
+        "g43_gosfar_walk_2",
+        "g43_gosfar_walk_3",
+        "g43_gosfar_walk_4",
+        "g43_gosfar_walk_5",
+        "g43_gosfar_walk_6",
+        "g43_gosfar_walk_7",
+        "g43_gosfar_walk_8",
+        "g43_gosfar_walk_9",
+        "g43_gosfar_walk_10",
+        "g43_gosfar_walk_11",
+        "g43_gosfar_walk_12",
+        "g43_gosfar_walk_13",
+        "g43_gosfar_walk_14",
+        "g43_gosfar_walk_15",
+        "g43_gosfar_walk_16"
+      ],
+      "fps": 16,
+      "loop": true,
+      "duration": 1.0625,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/rev": {
+      "frames": [
+        "g43_gosfar_rev_0",
+        "g43_gosfar_rev_1",
+        "g43_gosfar_rev_2",
+        "g43_gosfar_rev_3",
+        "g43_gosfar_rev_4",
+        "g43_gosfar_rev_5",
+        "g43_gosfar_rev_6",
+        "g43_gosfar_rev_7"
+      ],
+      "fps": 24,
+      "loop": true,
+      "duration": 0.3333333333333333,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/fire": {
+      "frames": [
+        "g43_gosfar_fire_0",
+        "g43_gosfar_fire_1",
+        "g43_gosfar_fire_2",
+        "g43_gosfar_fire_3",
+        "g43_gosfar_fire_4",
+        "g43_gosfar_fire_5",
+        "g43_gosfar_fire_6",
+        "g43_gosfar_fire_7"
+      ],
+      "fps": 64,
+      "loop": true,
+      "duration": 0.125,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/death": {
+      "frames": [
+        "g43_gosfar_death_0",
+        "g43_gosfar_death_1",
+        "g43_gosfar_death_2",
+        "g43_gosfar_death_3",
+        "g43_gosfar_death_4",
+        "g43_gosfar_death_5",
+        "g43_gosfar_death_6",
+        "g43_gosfar_death_7",
+        "g43_gosfar_death_8"
+      ],
+      "fps": 5,
+      "loop": false,
+      "duration": 1.8,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/overheat": {
+      "frames": [
+        "g43_gosfar_overheat_0",
+        "g43_gosfar_overheat_1",
+        "g43_gosfar_overheat_2",
+        "g43_gosfar_overheat_3",
+        "g43_gosfar_overheat_4"
+      ],
+      "fps": 8,
+      "loop": true,
+      "duration": 0.625,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "hotwire/throw": {
+      "frames": [
+        "g43_hotwire_throw_0",
+        "g43_hotwire_throw_1",
+        "g43_hotwire_throw_2",
+        "g43_hotwire_throw_3",
+        "g43_hotwire_throw_4"
+      ],
+      "fps": 10,
+      "loop": false,
+      "duration": 0.5,
+      "origin": [
+        64,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "palette_locked": true
+    },
+    "gosfar/fire/east": {
+      "frames": [
+        "g43_gosfar_fire_east_0",
+        "g43_gosfar_fire_east_1",
+        "g43_gosfar_fire_east_2",
+        "g43_gosfar_fire_east_3",
+        "g43_gosfar_fire_east_4",
+        "g43_gosfar_fire_east_5",
+        "g43_gosfar_fire_east_6",
+        "g43_gosfar_fire_east_7",
+        "g43_gosfar_fire_east_8"
+      ],
+      "fps": 22,
+      "loop": true,
+      "duration": 0.4090909090909091,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/walk/east": {
+      "frames": [
+        "g43_gosfar_walk_east_0",
+        "g43_gosfar_walk_east_1",
+        "g43_gosfar_walk_east_2",
+        "g43_gosfar_walk_east_3",
+        "g43_gosfar_walk_east_4",
+        "g43_gosfar_walk_east_5",
+        "g43_gosfar_walk_east_6",
+        "g43_gosfar_walk_east_7",
+        "g43_gosfar_walk_east_8"
+      ],
+      "fps": 12,
+      "loop": true,
+      "duration": 0.75,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/fire/west": {
+      "frames": [
+        "g43_gosfar_fire_west_0",
+        "g43_gosfar_fire_west_1",
+        "g43_gosfar_fire_west_2",
+        "g43_gosfar_fire_west_3",
+        "g43_gosfar_fire_west_4",
+        "g43_gosfar_fire_west_5",
+        "g43_gosfar_fire_west_6",
+        "g43_gosfar_fire_west_7",
+        "g43_gosfar_fire_west_8"
+      ],
+      "fps": 22,
+      "loop": true,
+      "duration": 0.4090909090909091,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/walk/west": {
+      "frames": [
+        "g43_gosfar_walk_west_0",
+        "g43_gosfar_walk_west_1",
+        "g43_gosfar_walk_west_2",
+        "g43_gosfar_walk_west_3",
+        "g43_gosfar_walk_west_4",
+        "g43_gosfar_walk_west_5",
+        "g43_gosfar_walk_west_6",
+        "g43_gosfar_walk_west_7",
+        "g43_gosfar_walk_west_8"
+      ],
+      "fps": 12,
+      "loop": true,
+      "duration": 0.75,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "gosfar/fire/north": {
+      "frames": [
+        "g43_gosfar_fire_north_0",
+        "g43_gosfar_fire_north_1",
+        "g43_gosfar_fire_north_2",
+        "g43_gosfar_fire_north_3",
+        "g43_gosfar_fire_north_4",
+        "g43_gosfar_fire_north_5",
+        "g43_gosfar_fire_north_6",
+        "g43_gosfar_fire_north_7",
+        "g43_gosfar_fire_north_8"
+      ],
+      "fps": 22,
+      "loop": true,
+      "duration": 0.4090909090909091,
+      "origin": [
+        112,
+        216
+      ],
+      "size": [
+        224,
+        224
+      ],
+      "palette_locked": true
+    },
+    "gosfar/walk/north": {
+      "frames": [
+        "g43_gosfar_walk_north_0",
+        "g43_gosfar_walk_north_1",
+        "g43_gosfar_walk_north_2",
+        "g43_gosfar_walk_north_3",
+        "g43_gosfar_walk_north_4",
+        "g43_gosfar_walk_north_5",
+        "g43_gosfar_walk_north_6",
+        "g43_gosfar_walk_north_7",
+        "g43_gosfar_walk_north_8"
+      ],
+      "fps": 12,
+      "loop": true,
+      "duration": 0.75,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": true
+    },
+    "elevator": {
+      "frames": [
+        "g43_elevator_0",
+        "g43_elevator_1",
+        "g43_elevator_2",
+        "g43_elevator_3",
+        "g43_elevator_4",
+        "g43_elevator_5",
+        "g43_elevator_6",
+        "g43_elevator_7"
+      ],
+      "fps": 4,
+      "loop": false,
+      "duration": 2.0,
+      "origin": [
+        80,
+        152
+      ],
+      "size": [
+        160,
+        160
+      ],
+      "palette_locked": false
+    }
+  },
+  "generation_jobs": {
+    "hotwire/hack": [
+      "0febd270-6d92-41b1-8ab8-98030fe3e609",
+      5,
+      8,
+      true,
+      [
+        64,
+        120
+      ]
+    ],
+    "hotwire/cover": [
+      "6df314b9-0b8b-46f7-b992-bee104215249",
+      5,
+      7,
+      true,
+      [
+        64,
+        120
+      ]
+    ],
+    "hotwire/fire": [
+      "147e305e-aad0-4990-8a78-15001ee75c59",
+      5,
+      12,
+      false,
+      [
+        64,
+        120
+      ]
+    ],
+    "hotwire/run": [
+      "534fdcd9-5fd6-4148-aae3-099f16819b34",
+      9,
+      13,
+      true,
+      [
+        64,
+        120
+      ]
+    ],
+    "yuri/cover": [
+      "04d8fcae-9736-4481-ab04-efcf73ec374c",
+      5,
+      7,
+      true,
+      [
+        64,
+        120
+      ]
+    ],
+    "gosfar/walk": [
+      "6c0278b8-967e-4b2e-a2bd-57208d7fd4fa",
+      17,
+      16,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/rev": [
+      "5ca49181-3655-4807-be7f-a834c9e209fd",
+      9,
+      24,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/fire": [
+      "c54117f1-f23f-490f-9114-70825c81cbf8",
+      9,
+      64,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/death": [
+      "fa719b2e-f1e0-4355-a5d5-743547d4f6a1",
+      9,
+      5,
+      false,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/overheat": [
+      "cc1276aa-30c6-4419-a725-eac44b797405",
+      5,
+      8,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "hotwire/throw": [
+      "e29f9f4c-e6d8-4961-8d70-5acefcd203ec",
+      5,
+      10,
+      false,
+      [
+        64,
+        120
+      ]
+    ],
+    "gosfar/fire/east": [
+      "b451fab2-d3a9-4f0f-b65a-bb4717538c19",
+      9,
+      22,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/walk/east": [
+      "64041bfc-3deb-4109-bed9-d26c2859b620",
+      9,
+      12,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/fire/west": [
+      "3f4d907d-5c9c-4e64-8697-e4794df541ba",
+      9,
+      22,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/walk/west": [
+      "ea50a7ca-43bf-42f8-bc49-565de6018a1b",
+      9,
+      12,
+      true,
+      [
+        80,
+        152
+      ]
+    ],
+    "gosfar/fire/north": [
+      "76d011a8-71aa-422d-9317-f09dcae6017c",
+      9,
+      22,
+      true,
+      [
+        112,
+        216
+      ]
+    ],
+    "gosfar/walk/north": [
+      "093ef27e-3cdb-4de7-b579-8c75a3ba94c7",
+      9,
+      12,
+      true,
+      [
+        80,
+        152
+      ]
+    ]
+  },
+  "counts": {
+    "banks": 23,
+    "frames": 147
+  }
+}

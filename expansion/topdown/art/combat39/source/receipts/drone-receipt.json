@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 99964864-8c7d-42e0-b753-d4ccef9bda95\njob_id: 99964864-8c7d-42e0-b753-d4ccef9bda95\ndescription: An ORIGINAL alien biomechanical hunter drone for a fast 2D side-scroller shooter. Strict pure SIDE PROFILE facing LEFT, no three-quarter perspective. 180px long angular armored flying attack machine: broad swept insect carapace, charcoal gunmetal shell, teal reactor vents, orange compound optical slit, tucked claw landing limbs and two underslung missile pods, glowing purple alien tissue integrated into turbine housing. Strong readable silhouette, compact menace, not a human-shaped robot, no Terminator skull and no existing franchise aircraft. Full drone entirely visible with transparent margin, no smoke, no projectiles, no background, no text. Crisp detailed 32-bit pixel art with fixed palette.\nsize: 224x128px\ntransparent: True\nasset_id: 9aeb39fa-0a61-570e-ae2c-bc1a18c10d2f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"99964864-8c7d-42e0-b753-d4ccef9bda95\")"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,105 @@
+[
+  {
+    "type": "prone",
+    "dir": "north-east",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 2d9ebaaf-adbe-4208-9bdb-4ed789584734\nanimation: pixminimax custom (Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing north-east. Preserve exact whole body size, palette, overhead view, transparent background.)\ndirections: north-east (1 jobs)\njob_ids: north-east=47892064-adb2-450f-a738-9e70fb879e27\ngroup: 8c2b7e1c-5f18-48c9-9f5e-c9fb54a365fa\nframes: 17 (1 reference + 16 animated)\ncanvas: north-east 160x192 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\")\nadd more directions to this group: animate_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\", action_description=\"Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing north-east. Preserve exact whole body size, palette, overhead view, transparent background.\", mode=\"pixminimax\", animation_group_id=\"8c2b7e1c-5f18-48c9-9f5e-c9fb54a365fa\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "type": "prone",
+    "dir": "north-west",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 2d9ebaaf-adbe-4208-9bdb-4ed789584734\nanimation: pixminimax custom (Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing north-west. Preserve exact whole body size, palette, overhead view, transparent background.)\ndirections: north-west (1 jobs)\njob_ids: north-west=191e8cc7-d7f7-4578-8021-6659c9463205\ngroup: 77149985-3dec-4c45-9fb8-6664af37993b\nframes: 17 (1 reference + 16 animated)\ncanvas: north-west 160x176 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\")\nadd more directions to this group: animate_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\", action_description=\"Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing north-west. Preserve exact whole body size, palette, overhead view, transparent background.\", mode=\"pixminimax\", animation_group_id=\"77149985-3dec-4c45-9fb8-6664af37993b\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "type": "prone",
+    "dir": "south-east",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 2d9ebaaf-adbe-4208-9bdb-4ed789584734\nanimation: pixminimax custom (Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing south-east. Preserve exact whole body size, palette, overhead view, transparent background.)\ndirections: south-east (1 jobs)\njob_ids: south-east=35e04aed-23d7-4622-84f4-b65fa07c3e6f\ngroup: 0853d978-4916-4fac-b2be-900506dd061b\nframes: 17 (1 reference + 16 animated)\ncanvas: south-east 160x160 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\")\nadd more directions to this group: animate_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\", action_description=\"Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing south-east. Preserve exact whole body size, palette, overhead view, transparent background.\", mode=\"pixminimax\", animation_group_id=\"0853d978-4916-4fac-b2be-900506dd061b\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "type": "prone",
+    "dir": "south-west",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 2d9ebaaf-adbe-4208-9bdb-4ed789584734\nanimation: pixminimax custom (Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing south-west. Preserve exact whole body size, palette, overhead view, transparent background.)\ndirections: south-west (1 jobs)\njob_ids: south-west=850be798-c86c-4680-b9db-4f304863993e\ngroup: 5f266555-027c-4b4e-bbe1-9744d8330653\nframes: 17 (1 reference + 16 animated)\ncanvas: south-west 160x160 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\")\nadd more directions to this group: animate_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\", action_description=\"Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing south-west. Preserve exact whole body size, palette, overhead view, transparent background.\", mode=\"pixminimax\", animation_group_id=\"5f266555-027c-4b4e-bbe1-9744d8330653\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "type": "prone",
+    "dir": "south",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: 2d9ebaaf-adbe-4208-9bdb-4ed789584734\nanimation: pixminimax custom (Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing south. Preserve exact whole body size, palette, overhead view, transparent background.)\ndirections: south (1 jobs)\njob_ids: south=e787474b-6eec-4cf9-a60a-1647e3c1d2f9\ngroup: 2f648c6f-52cc-48d9-a04c-bd2686eecb8b\nframes: 17 (1 reference + 16 animated)\ncanvas: south 160x188 (generated at this size; with custom frames the stored canvas is re-measured around the motion)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\")\nadd more directions to this group: animate_character(character_id=\"2d9ebaaf-adbe-4208-9bdb-4ed789584734\", action_description=\"Begin in exact supplied flat prone pose. One complete low tactical BARREL BODY ROLL sideways: belly, side, back, other side, belly. Shoulders and hips rotate together, legs extended, rifle tucked tightly against chest. Never stand, kneel, crouch or fire. End identical flat prone pose facing south. Preserve exact whole body size, palette, overhead view, transparent background.\", mode=\"pixminimax\", animation_group_id=\"2f648c6f-52cc-48d9-a04c-bd2686eecb8b\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "type": "gosfer-roll",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "character: f9cbf57d-c666-48d5-8599-8e7c50da05c3\nanimation: pixminimax custom (Gosfer bends down, tucks head and limbs, does one heavy forward shoulder combat roll, returns upright ready. Same skull face and heavy dark red armor, whole body mass, fixed palette. Constant body unit and fixed root. No gunfire, transparency.)\ndirections: east, west (2 jobs)\njob_ids: east=6190ecbe-83f5-4f06-8bd8-7e1ce6a151c5, west=421122f1-7ed2-405d-8675-d853880c5a8a\ngroup: a563fd10-fa3b-4063-802b-4ced29a7d77b\nframes: 17 (1 reference + 16 animated)\ncanvas: east 180x180, west 180x180 (frames are stored at this size: the character plus room to move)\ncost: 2 generations (1/dir x 2)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\")\nadd more directions to this group: animate_character(character_id=\"f9cbf57d-c666-48d5-8599-8e7c50da05c3\", action_description=\"Gosfer bends down, tucks head and limbs, does one heavy forward shoulder combat roll, returns upright ready. Same skull face and heavy dark red armor, whole body mass, fixed palette. Constant body unit and fixed root. No gunfire, transparency.\", mode=\"pixminimax\", animation_group_id=\"a563fd10-fa3b-4063-802b-4ced29a7d77b\", directions=[...])"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "type": "reload",
+    "role": "shotgunner",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: ab8de1c9-4153-4a4d-b0fc-2f463bfe36ba\njob_id: ab8de1c9-4153-4a4d-b0fc-2f463bfe36ba\naction: North-facing reload cycle, rigid overhead back view, NEVER turn toward camera. Pump forearm straight back then forward, load shells through the receiver port with support hand, reseat hand on forearm, raise back to exact north-facing aim. Gun always points north away from viewer. Same armor colors, size and boots anchor. No firing or muzzle flash.\nframes: 16\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 53fc6631-26d3-543c-9638-1d74708cceb5\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ab8de1c9-4153-4a4d-b0fc-2f463bfe36ba\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "type": "reload",
+    "role": "double_barrel",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: f4dcb947-1072-4bb7-8537-65d99cc83439\njob_id: f4dcb947-1072-4bb7-8537-65d99cc83439\naction: North-facing reload cycle, rigid overhead back view, NEVER turn toward camera. Lower the double barrel shotgun slightly, break it open at hinge, eject two spent shells, insert two shells, snap closed and raise back to exact north-facing aim. Gun always points north away from viewer. Same armor colors, size and boots anchor. No firing or muzzle flash.\nframes: 16\nsize: 80x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 846b3e36-ec36-5153-9ad0-4a53e3999904\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f4dcb947-1072-4bb7-8537-65d99cc83439\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]
